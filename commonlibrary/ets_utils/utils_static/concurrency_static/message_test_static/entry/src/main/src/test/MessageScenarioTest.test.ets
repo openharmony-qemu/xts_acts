@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -60,7 +60,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest0100';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
@@ -95,6 +95,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       })
 
     /**
@@ -106,7 +107,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest0200';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -157,6 +158,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -168,7 +170,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest0300';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -204,6 +206,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -215,7 +218,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest0400';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -250,6 +253,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -261,7 +265,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'MessageScenarioTest0500';
         console.info(`${TAG} test start`);
         let executed = false;
@@ -306,6 +310,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -317,7 +322,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'MessageScenarioTest0600';
         console.info(`${TAG} test start`);
         let executed = false;
@@ -365,6 +370,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       }
     );
 
@@ -377,7 +383,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest0700';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -423,6 +429,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -434,7 +441,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest0800';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
@@ -468,6 +475,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -479,7 +487,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest0900';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
@@ -518,6 +526,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       })
 
     /**
@@ -529,7 +538,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest1000';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
@@ -564,6 +573,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       })
 
     /**
@@ -575,7 +585,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest1100';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
@@ -612,6 +622,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -623,7 +634,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest1200';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
@@ -660,6 +671,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -671,7 +683,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest1300';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -702,6 +714,7 @@ export default function MessageScenarioTest(): void {
         } finally {
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
 
@@ -714,7 +727,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest1400';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -756,6 +769,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -767,7 +781,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest1500';
         console.info(`${TAG} test start`);
         let flag: boolean = false;
@@ -808,6 +822,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -819,7 +834,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      (): void => {
         const TAG: string = 'MessageScenarioTest1600';
         console.info(`${TAG} test start`);
         let flag: boolean = false;
@@ -864,7 +879,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest1700';
         let flag: boolean = false;
         console.info(`${TAG} test start`);
@@ -906,6 +921,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -917,7 +933,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest1800';
         let flag: boolean = false;
         console.info(`${TAG} test start`);
@@ -959,6 +975,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -970,7 +987,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest1900';
         console.info(`${TAG} test start`);
         let flag: boolean = false;
@@ -1012,6 +1029,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -1023,7 +1041,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest2000';
         console.info(`${TAG} test start`);
         let flag: boolean = false;
@@ -1065,6 +1083,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
 
@@ -1077,7 +1096,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      (): void => {
         const TAG: string = 'MessageScenarioTest2100';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1116,7 +1135,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest2200';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1167,6 +1186,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -1178,7 +1198,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      (): void => {
         const TAG: string = 'MessageScenarioTest2300';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -1216,7 +1236,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageScenarioTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest2400';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1263,6 +1283,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1274,7 +1295,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      (): void => {
         const TAG: string = 'MessageScenarioTest2500';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -1312,7 +1333,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      (): void => {
         const TAG: string = 'MessageScenarioTest2600';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1351,7 +1372,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageScenarioTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest2700';
         console.info(`${TAG} test start`);
         let messageObject = new MessageObject(10);
@@ -1418,6 +1439,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1429,7 +1451,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest2800';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1470,6 +1492,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1481,7 +1504,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageScenarioTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest2900';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -1526,6 +1549,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1537,7 +1561,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest3000';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1578,6 +1602,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1589,7 +1614,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      (): void => {
         const TAG: string = 'MessageScenarioTest3100';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1628,7 +1653,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest3200';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1663,6 +1688,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1674,7 +1700,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest3300';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1710,6 +1736,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1721,7 +1748,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest3400';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1756,6 +1783,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1767,7 +1795,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest3500';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1803,6 +1831,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1814,7 +1843,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      (): void => {
         const TAG: string = 'MessageScenarioTest3600';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1853,7 +1882,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageScenarioTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest3700';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1923,6 +1952,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1934,7 +1964,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      (): void => {
         const TAG: string = 'MessageScenarioTest3800';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -1973,7 +2003,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageScenarioTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest3900';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -2021,6 +2051,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -2032,7 +2063,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      (): void => {
         const TAG: string = 'MessageScenarioTest4000';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -2071,7 +2102,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      (): void => {
         const TAG: string = 'MessageScenarioTest4100';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -2109,7 +2140,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest4200';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -2143,6 +2174,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -2154,7 +2186,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest4300';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -2188,6 +2220,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -2199,7 +2232,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest4400';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -2255,6 +2288,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -2266,7 +2300,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest4500';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -2300,6 +2334,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -2311,7 +2346,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest4600';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -2345,6 +2380,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -2356,7 +2392,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest4700';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -2391,6 +2427,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -2402,7 +2439,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest4800';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -2437,6 +2474,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -2448,7 +2486,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest4900';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -2483,6 +2521,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -2494,7 +2533,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest5000';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -2551,6 +2590,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -2562,7 +2602,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest5100';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -2597,6 +2637,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -2608,7 +2649,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest5200';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -2643,6 +2684,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
 
@@ -2655,7 +2697,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest5300';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -2687,6 +2729,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -2698,7 +2741,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest5400';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -2730,6 +2773,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -2741,7 +2785,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest5500';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -2773,6 +2817,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -2784,7 +2829,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest5600';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -2817,6 +2862,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -2828,7 +2874,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest5700';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -2861,6 +2907,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
   });
 }

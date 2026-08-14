@@ -1103,21 +1103,34 @@ export default function MessageTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages002';
         console.info(`${TAG} test start`);
-        let flag = false;
+        let callbackCount = new AtomicInt(0);
+        let removed = new AtomicInt(0);
         let handler: concurrency.MessageHandler;
         let worker = new EAWorker();
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
-              await Sleep(1000);
-              flag = true;
-            })
+            let callback: (() => void) | undefined = msg.getCallback();
+            if (callback !== undefined) {
+              callback();
+              return;
+            }
+            callbackCount.fetchAdd(1);
           }, worker);
-          let message = new concurrency.Message(1, handler)
-          handler.sendMessage(message);
-          expect(handler.removeMessages(1)).assertEqual(true);
-          expect(flag).assertEqual(false);
+          handler.post((): void => {
+            let message = new concurrency.Message(1, handler)
+            handler.sendMessage(message);
+            if (handler.removeMessages(1)) {
+              removed.store(1);
+            }
+          });
+          let waitCount: number = 0;
+          while (removed.load() < 1 && waitCount < 50) {
+            waitCount++;
+            await Sleep(100);
+          }
+          expect(removed.load()).assertEqual(1);
+          expect(callbackCount.load()).assertEqual(0);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();

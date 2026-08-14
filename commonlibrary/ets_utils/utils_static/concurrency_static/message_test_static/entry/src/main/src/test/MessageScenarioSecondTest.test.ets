@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -70,7 +70,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest0100';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -105,6 +105,7 @@ export default function MessageScenarioSecondTest(): void {
           }
 
         }
+        done();
       });
 
     /**
@@ -116,7 +117,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest0200';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -175,6 +176,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -186,7 +188,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest0300';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -245,6 +247,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -256,7 +259,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest0400';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -291,6 +294,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -302,7 +306,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest0500';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -337,6 +341,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -348,7 +353,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest0600';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -383,6 +388,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -394,7 +400,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest0700';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -432,6 +438,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
 
@@ -444,7 +451,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest0800';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -479,6 +486,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -490,7 +498,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest0900';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -525,6 +533,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -536,7 +545,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest1000';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -571,6 +580,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -582,7 +592,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest1100';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -618,6 +628,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -629,7 +640,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest1200';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -678,6 +689,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -689,7 +701,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest1300';
         let flag: boolean = false;
         console.info(`${TAG} test start`);
@@ -746,6 +758,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -757,7 +770,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageScenarioSecondTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest1400';
         let flag: boolean = false;
         console.info(`${TAG} test start`);
@@ -820,6 +833,7 @@ export default function MessageScenarioSecondTest(): void {
           }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -831,7 +845,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageScenarioSecondTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest1500';
         let flag: boolean = false;
         let eaw = new EAWorker();
@@ -884,6 +898,7 @@ export default function MessageScenarioSecondTest(): void {
           if (eaw.isAlive()) { eaw.quit(); }
           console.info(`${TAG} test end`)
         }
+        done();
       });
 
     /**
@@ -895,7 +910,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest1600';
         let flag: boolean = false;
         let firstStarted: boolean = false;
@@ -948,6 +963,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -959,7 +975,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      (): void => {
         const TAG: string = 'MessageScenarioSecondTest1700';
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
@@ -991,7 +1007,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      (): void => {
         const TAG: string = 'MessageScenarioSecondTest1800';
         console.info(`${TAG} test start`);
         let eaw1 = new EAWorker();
@@ -1026,7 +1042,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'MessageScenarioSecondTest1900';
         console.info(`${TAG} test start`);
         let doneFlag: boolean = false;
@@ -1065,6 +1081,7 @@ export default function MessageScenarioSecondTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1076,7 +1093,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'MessageScenarioSecondTest2000';
         console.info(`${TAG} test start`);
         let doneFlag: boolean = false;
@@ -1116,6 +1133,7 @@ export default function MessageScenarioSecondTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1127,7 +1145,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      (): void => {
         const TAG = 'MessageScenarioSecondTest2100';
         console.info(`${TAG} test start`);
         let h1Received = false;
@@ -1172,7 +1190,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'MessageScenarioSecondTest2200';
         console.info(`${TAG} test start`);
         let received = false;
@@ -1204,6 +1222,7 @@ export default function MessageScenarioSecondTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1215,7 +1234,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      (): void => {
         const TAG = 'MessageScenarioSecondTest2300';
         console.info(`${TAG} test start`);
         const worker1 = new EAWorker();
@@ -1262,7 +1281,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'MessageScenarioSecondTest2400';
         console.info(`${TAG} test start`);
         let received = false;
@@ -1300,6 +1319,7 @@ export default function MessageScenarioSecondTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1311,7 +1331,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'MessageScenarioSecondTest2500';
         console.info(`${TAG} test start`);
         let executed: boolean = false;
@@ -1354,6 +1374,7 @@ export default function MessageScenarioSecondTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1365,7 +1386,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      (): void => {
         const TAG = 'MessageScenarioSecondTest2600';
         console.info(`${TAG} test start`);
         let h1Received = false;
@@ -1410,7 +1431,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'MessageScenarioSecondTest2700';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1444,6 +1465,7 @@ export default function MessageScenarioSecondTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1455,7 +1477,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      (): void => {
         const TAG = 'MessageScenarioSecondTest2800';
         console.info(`${TAG} test start`);
         let h1Received = false;
@@ -1502,7 +1524,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'MessageScenarioSecondTest2900';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1538,6 +1560,7 @@ export default function MessageScenarioSecondTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1549,7 +1572,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL0
      */
     it('MessageScenarioSecondTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG = 'MessageScenarioSecondTest3000';
         console.info(`${TAG} test start`);
         let flag = false;
@@ -1592,6 +1615,7 @@ export default function MessageScenarioSecondTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1603,7 +1627,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      (): void => {
         const TAG = 'MessageScenarioSecondTest3100';
         console.info(`${TAG} test start`);
         let h1Received = false;
@@ -1649,7 +1673,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest001';
         let worker1 = new EAWorker("worker one");
         let flag: boolean = false;
@@ -1683,6 +1707,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       })
 
     /**
@@ -1694,7 +1719,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest3300';
         let worker = new EAWorker();
         let flag: boolean = false;
@@ -1738,6 +1763,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -1749,7 +1775,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest3400';
         let worker = new EAWorker();
         let flag: boolean = false;
@@ -1783,6 +1809,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
 
@@ -1795,7 +1822,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest3500';
         let worker = new EAWorker();
         let received = new AtomicInt(0);
@@ -1825,6 +1852,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -1836,7 +1864,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest3400';
         let worker = new EAWorker();
         let flag: boolean = false;
@@ -1870,6 +1898,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -1881,7 +1910,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest3400';
         let worker = new EAWorker();
         let handler: concurrency.MessageHandler;
@@ -1915,6 +1944,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -1926,7 +1956,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest3400';
         let worker = new EAWorker();
         let flag: boolean = false;
@@ -1961,6 +1991,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -1972,7 +2003,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest3400';
         let worker = new EAWorker();
         let flag: boolean = false;
@@ -2006,6 +2037,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -2017,7 +2049,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest3500';
         let worker = new EAWorker();
         let flag: boolean = false;
@@ -2050,6 +2082,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -2061,7 +2094,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let handler: concurrency.MessageHandler;
@@ -2098,6 +2131,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       })
 
 
@@ -2110,7 +2144,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let handler: concurrency.MessageHandler;
@@ -2150,6 +2184,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       })
 
     /**
@@ -2161,7 +2196,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageScenarioSecondTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let handler: concurrency.MessageHandler | undefined;
@@ -2208,6 +2243,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       })
 
     /**
@@ -2219,7 +2255,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageScenarioSecondTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let handler: concurrency.MessageHandler;
@@ -2266,6 +2302,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       })
 
     /**
@@ -2277,7 +2314,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let flag: boolean = false;
@@ -2324,6 +2361,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       })
 
     /**
@@ -2335,7 +2373,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let flag: boolean = false;
@@ -2386,6 +2424,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       })
 
     /**
@@ -2397,7 +2436,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let flag: boolean = false;
@@ -2443,6 +2482,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       })
 
     /**
@@ -2454,7 +2494,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL2
      */
     it('MessageScenarioSecondTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let flag: boolean = false;
@@ -2495,6 +2535,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       })
 
     /**
@@ -2506,7 +2547,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         let worker = new EAWorker();
         const TAG: string = 'MessageTest061';
         let flag: boolean = false;
@@ -2542,6 +2583,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -2553,7 +2595,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest062';
         let worker = new EAWorker();
         let removed = new AtomicInt(0);
@@ -2592,6 +2634,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -2603,7 +2646,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         let worker = new EAWorker();
         worker.start();
         const TAG: string = 'MessageTest063';
@@ -2630,6 +2673,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -2641,7 +2685,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest064';
         let worker = new EAWorker();
         let removed = new AtomicInt(0);
@@ -2681,6 +2725,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -2692,7 +2737,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest065';
         let handler: concurrency.MessageHandler;
         let worker = new EAWorker();
@@ -2728,6 +2773,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -2739,7 +2785,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let removed = new AtomicInt(0);
@@ -2777,6 +2823,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
 
     /**
@@ -2788,7 +2835,7 @@ export default function MessageScenarioSecondTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest067';
         let handler: concurrency.MessageHandler;
         let worker = new EAWorker();
@@ -2816,6 +2863,7 @@ export default function MessageScenarioSecondTest(): void {
             expect(false).assertFail();
           }
         }
+        done();
       });
   });
 }

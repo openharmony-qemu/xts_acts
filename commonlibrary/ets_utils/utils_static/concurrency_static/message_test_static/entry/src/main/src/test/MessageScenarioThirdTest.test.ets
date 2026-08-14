@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -84,7 +84,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0100';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -131,6 +131,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -142,7 +143,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0200';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -184,6 +185,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -195,7 +197,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0300';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -248,6 +250,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -259,7 +262,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0400';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -303,6 +306,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -314,7 +318,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0500';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -350,6 +354,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -361,7 +366,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0600';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -398,6 +403,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -409,7 +415,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0700';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -447,6 +453,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
 
@@ -459,7 +466,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0800';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -509,6 +516,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
 
@@ -521,7 +529,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0900';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -573,6 +581,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -584,7 +593,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1000';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -623,6 +632,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -634,7 +644,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1100';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -673,6 +683,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -684,7 +695,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1200';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -726,6 +737,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -737,7 +749,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1300';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -776,6 +788,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -787,7 +800,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1400';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -826,6 +839,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -837,7 +851,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1500';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -874,6 +888,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -885,7 +900,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1600';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -933,6 +948,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -944,7 +960,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1700';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -982,6 +998,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -993,7 +1010,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1800';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -1030,6 +1047,7 @@ export default function MessageScenarioThirdTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
   });
 }
