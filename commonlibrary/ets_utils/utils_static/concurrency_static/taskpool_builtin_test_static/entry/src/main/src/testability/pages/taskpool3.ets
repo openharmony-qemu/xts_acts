@@ -1,6 +1,6 @@
 'use static';
 
-export function testArrayConstructor1(): void {
+export function testArrayConstructor1() {
   let TAG = 'testArrayConstructor1'
   try {
     let element0 = 'app';
@@ -15,7 +15,7 @@ export function testArrayConstructor1(): void {
 }
 
 
-export function testArrayFrom1(): void {
+export function testArrayFrom1() {
   let TAG = 'testArrayFrom1'
   try {
     const set = new Set<string>(['foo', 'bar', 'baz', 'foo']);
@@ -31,7 +31,7 @@ export function testArrayFrom1(): void {
 }
 
 
-export function testArrayIsArray1(): void {
+export function testArrayIsArray1() {
   let TAG = 'testArrayIsArray1'
   try {
     let arr:int[] = []
@@ -46,7 +46,7 @@ export function testArrayIsArray1(): void {
 }
 
 
-export function testArrayOf1(): void {
+export function testArrayOf1() {
   let TAG = 'testArrayOf1'
   try {
     let result = Array.of(1);
@@ -60,7 +60,7 @@ export function testArrayOf1(): void {
 }
 
 
-export function testArrayConcat1(): void {
+export function testArrayConcat1() {
   let TAG = 'testArrayConcat1'
   try {
     const letters1 = ['a', 'b', 'c'];
@@ -76,7 +76,7 @@ export function testArrayConcat1(): void {
 }
 
 
-export function testArrayCopyWithin1(): void {
+export function testArrayCopyWithin1() {
   let TAG = 'testArrayCopyWithin1'
   try {
     let arr1:int[] = [1, 2, 3, 4, 5];
@@ -91,7 +91,7 @@ export function testArrayCopyWithin1(): void {
 }
 
 
-export function testArrayFill1(): void {
+export function testArrayFill1() {
   let TAG = 'testArrayFill1'
   try {
     let arr:int[] = [1, 2, 3];
@@ -106,7 +106,7 @@ export function testArrayFill1(): void {
 }
 
 
-export function testArrayFind1(): void {
+export function testArrayFind1() {
   let TAG = 'testArrayFind1'
   try {
     const array1:int[] = [11, 12];
@@ -121,7 +121,7 @@ export function testArrayFind1(): void {
 }
 
 
-export function testArrayFlat1(): void {
+export function testArrayFlat1() {
   let TAG = 'testArrayFlat1'
   try {
     const arr1 = [0, 1, 2, [3, 4]];
@@ -136,7 +136,7 @@ export function testArrayFlat1(): void {
 }
 
 
-export function testArrayFlatMap1(): void {
+export function testArrayFlatMap1() {
   let TAG = 'testArrayFlatMap1'
   try {
     const arr1 = [1, 2, 1];
@@ -151,7 +151,7 @@ export function testArrayFlatMap1(): void {
 }
 
 
-export function testArrayIncludes1(): void {
+export function testArrayIncludes1() {
   let TAG = 'testArrayIncludes1'
   try {
     const array1 = [1, 2, 3];
@@ -166,7 +166,7 @@ export function testArrayIncludes1(): void {
 }
 
 
-export function testArrayIndexOf1(): void {
+export function testArrayIndexOf1() {
   let TAG = 'testArrayIndexOf1'
   try {
     const array = [2, 9, 9];
@@ -181,7 +181,7 @@ export function testArrayIndexOf1(): void {
 }
 
 
-export function testArrayJoin1(): void {
+export function testArrayJoin1() {
   let TAG = 'testArrayJoin1'
   try {
     const array = ['Wind', 'Water', 'Fire'];
@@ -196,7 +196,7 @@ export function testArrayJoin1(): void {
 }
 
 
-export function testArrayKeys1(): void {
+export function testArrayKeys1() {
   let TAG = 'testArrayKeys1'
   try {
     const arr = ['a', 'b', 'c'];
@@ -211,7 +211,7 @@ export function testArrayKeys1(): void {
 }
 
 
-export function testArrayLastIndexOf1(): void {
+export function testArrayLastIndexOf1() {
   let TAG = 'testArrayLastIndexOf1'
   try {
     const numbers = [2, 5, 9, 2];
@@ -226,7 +226,7 @@ export function testArrayLastIndexOf1(): void {
 }
 
 
-export function testArrayMap1(): void {
+export function testArrayMap1() {
   let TAG = 'testArrayMap1'
   try {
     const numbers = [1, 4, 9];
@@ -241,7 +241,7 @@ export function testArrayMap1(): void {
 }
 
 
-export function testArrayPop1(): void {
+export function testArrayPop1() {
   let TAG = 'testArrayPop1'
   try {
     const myFish = ['app', 'banana', 'cat', 'duck'];
@@ -256,7 +256,7 @@ export function testArrayPop1(): void {
 }
 
 
-export function testArrayPush1(): void {
+export function testArrayPush1() {
   let TAG = 'testArrayPush1'
   try {
     const sports = ['soccer', 'baseball'];
@@ -271,7 +271,7 @@ export function testArrayPush1(): void {
 }
 
 
-export function testArrayReduceRight1(): void {
+export function testArrayReduceRight1() {
   let TAG = 'testArrayReduceRight1'
   try {
     const sum = [0, 1, 2, 3].reduceRight((a, b) => a + b);
@@ -285,7 +285,7 @@ export function testArrayReduceRight1(): void {
 }
 
 
-export function testArrayReverse1(): void {
+export function testArrayReverse1() {
   let TAG = 'testArrayReverse1'
   try {
     const items = [1, 2, 3];
@@ -300,7 +300,7 @@ export function testArrayReverse1(): void {
 }
 
 
-export function testArrayShift1(): void {
+export function testArrayShift1() {
   let TAG = 'testArrayShift1'
   try {
     const array1 = [1, 2, 3];
@@ -315,7 +315,7 @@ export function testArrayShift1(): void {
 }
 
 
-export function testArraySlice1(): void {
+export function testArraySlice1() {
   let TAG = 'testArraySlice1'
   try {
     const fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
@@ -330,7 +330,7 @@ export function testArraySlice1(): void {
 }
 
 
-export function testArraySome1(): void {
+export function testArraySome1() {
   let TAG = 'testArraySome1'
   try {
     let array = [1, 2, 3];
@@ -345,7 +345,7 @@ export function testArraySome1(): void {
 }
 
 
-export function testArraySort1(): void {
+export function testArraySort1() {
   let TAG = 'testArraySort1'
   try {
     const value = ['Cat', 'Duck', 'Zoo', 'Apple', 'Desk'];
@@ -360,7 +360,7 @@ export function testArraySort1(): void {
 }
 
 
-export function testArraySplice1(): void {
+export function testArraySplice1() {
   let TAG = 'testArraySplice1'
   try {
     const months = ['Jan', 'March', 'April', 'June'];
@@ -375,7 +375,7 @@ export function testArraySplice1(): void {
 }
 
 
-export function testArraySymbolIterator1(): void {
+export function testArraySymbolIterator1() {
   let TAG = 'testArraySymbolIterator1'
   try {
     const array1 = ['a', 'b', 'c'];
@@ -391,7 +391,7 @@ export function testArraySymbolIterator1(): void {
 }
 
 
-export function testArrayToLocaleString1(): void {
+export function testArrayToLocaleString1() {
   let TAG = 'testArrayToLocaleString1'
   try {
     const array1: string[] = [];
@@ -406,7 +406,7 @@ export function testArrayToLocaleString1(): void {
 }
 
 
-export function testArrayToString1(): void {
+export function testArrayToString1() {
   let TAG = 'testArrayToString1'
   try {
     const array1 = [1, 2, 'a', '1a'];
@@ -421,7 +421,7 @@ export function testArrayToString1(): void {
 }
 
 
-export function testArrayUnshift1(): void {
+export function testArrayUnshift1() {
   let TAG = 'testArrayUnshift1'
   try {
     let arr = [4, 5, 6];
@@ -436,7 +436,7 @@ export function testArrayUnshift1(): void {
 }
 
 
-export function testArrayValues1(): void {
+export function testArrayValues1() {
   let TAG = 'testArrayValues1'
   try {
     const arr = ['a', 'b', 'c', 'd', 'e'];

@@ -1,7 +1,7 @@
 'use static';
 /* 1. encodeURI */
 
-export function testGlobalEncodeURI(): void {
+export function testGlobalEncodeURI() {
   const TAG = 'testGlobalEncodeURI';
   try {
     const input = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEF" +
@@ -19,7 +19,7 @@ export function testGlobalEncodeURI(): void {
 
 /* 2. decodeURI */
 
-export function testGlobalDecodeURI(): void {
+export function testGlobalDecodeURI() {
   const TAG = 'testGlobalDecodeURI';
   try {
     const input =
@@ -35,7 +35,7 @@ export function testGlobalDecodeURI(): void {
 
 /* 3. encodeURIComponent */
 
-export function testGlobalEncodeURIComponent(): void {
+export function testGlobalEncodeURIComponent() {
   const TAG = 'testGlobalEncodeURIComponent';
   try {
     const input = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEF" +
@@ -55,7 +55,7 @@ export function testGlobalEncodeURIComponent(): void {
 
 /* 4. decodeURIComponent */
 
-export function testGlobalDecodeURIComponent(): void {
+export function testGlobalDecodeURIComponent() {
   const TAG = 'testGlobalDecodeURIComponent';
   try {
     const input =
@@ -71,7 +71,7 @@ export function testGlobalDecodeURIComponent(): void {
 
 /* 5. escape */
 
-export function testGlobalEscape(): void {
+export function testGlobalEscape() {
   const TAG = 'testGlobalEscape';
   try {
     const input = '!\\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEF' +
@@ -90,7 +90,7 @@ export function testGlobalEscape(): void {
 
 /* 6. unescape */
 
-export function testGlobalUnescape(): void {
+export function testGlobalUnescape() {
   const TAG = 'testGlobalUnescape';
   try {
     let result = unescape('%20%21%22%23%24%25%26%27%28%29*+%2C-./0123456789%3A' +
@@ -107,7 +107,7 @@ export function testGlobalUnescape(): void {
 
 /* 7. isFinite */
 
-export function testGlobalIsFinite(): void {
+export function testGlobalIsFinite() {
   const TAG = 'testGlobalIsFinite';
   try {
     if (isFinite(123) !== true) {
@@ -123,7 +123,7 @@ export function testGlobalIsFinite(): void {
 
 /* 8. isNaN */
 
-export function testGlobalIsNaN(): void {
+export function testGlobalIsNaN() {
   const TAG = 'testGlobalIsNaN';
   try {
     if (isNaN(123) !== false) {

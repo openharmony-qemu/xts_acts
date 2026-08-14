@@ -1,7 +1,7 @@
 'use static';
 
 
-export function testCharSingle(): void {
+export function testCharSingle() {
   const caseName = 'testCharSingle';
   try {
     console.log(`${caseName} test start`);
@@ -15,7 +15,7 @@ export function testCharSingle(): void {
 }
 
 
-export function testCharArray(): void {
+export function testCharArray() {
   const caseName = 'testCharArray';
   try {
     console.log(`${caseName} test start`);
@@ -30,7 +30,7 @@ export function testCharArray(): void {
 
 
 interface CharObj { charProp: string }
-export function testCharInObj(): void {
+export function testCharInObj() {
   const caseName = 'testCharInObj';
   try {
     console.log(`${caseName} test start`);
@@ -44,7 +44,7 @@ export function testCharInObj(): void {
 }
 
 
-export function testCharNestedArray(): void {
+export function testCharNestedArray() {
   const caseName = 'testCharNestedArray';
   try {
     console.log(`${caseName} test start`);
@@ -58,7 +58,7 @@ export function testCharNestedArray(): void {
 }
 
 
-export function testCharTernary(): void {
+export function testCharTernary() {
   const caseName = 'testCharTernary';
   try {
     console.log(`${caseName} test start`);
@@ -72,7 +72,7 @@ export function testCharTernary(): void {
 }
 
 
-export function testCharLogicAnd(): void {
+export function testCharLogicAnd() {
   const caseName = 'testCharLogicAnd';
   try {
     console.log(`${caseName} test start`);
@@ -86,7 +86,7 @@ export function testCharLogicAnd(): void {
 }
 
 
-export function testCharSet(): void {
+export function testCharSet() {
   const caseName = 'testCharSet';
   try {
     console.log(`${caseName} test start`);
@@ -100,7 +100,7 @@ export function testCharSet(): void {
 }
 
 
-export function testCharMap(): void {
+export function testCharMap() {
   const caseName = 'testCharMap';
   try {
     console.log(`${caseName} test start`);
@@ -114,7 +114,7 @@ export function testCharMap(): void {
 }
 
 
-export function testCharConcat(): void {
+export function testCharConcat() {
   const caseName = 'testCharConcat';
   try {
     console.log(`${caseName} test start`);
@@ -130,7 +130,7 @@ export function testCharConcat(): void {
 }
 
 
-export function testCharToUpper(): void {
+export function testCharToUpper() {
   const caseName = 'testCharToUpper';
   try {
     console.log(`${caseName} test start`);

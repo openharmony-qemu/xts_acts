@@ -1,7 +1,7 @@
 'use static';
 
 
-export function BuiltinsAsIntNTest2600(): void {
+export function BuiltinsAsIntNTest2600() {
   const TAG = 'BuiltinsAsIntNTest2600';
   const bits: int = 8;
   const int1: bigint = 127n;
@@ -19,7 +19,7 @@ export function BuiltinsAsIntNTest2600(): void {
 }
 
 
-export function BuiltinsAsUintNTest0100(): void {
+export function BuiltinsAsUintNTest0100() {
   let TAG='BuiltinsAsUintNTest0100'
   try {
     const bits: int = 1;
@@ -36,7 +36,7 @@ export function BuiltinsAsUintNTest0100(): void {
 }
 
 
-export function BuiltinsBigIntLiteralTest0100(): void {
+export function BuiltinsBigIntLiteralTest0100() {
   let TAG='BuiltinsBigIntLiteralTest0100'
   try {
     const bigInt1 = 123n;
@@ -61,7 +61,7 @@ export function BuiltinsBigIntLiteralTest0100(): void {
 }
 
 
-export function BuiltinsBigIntLiteralTest1500(): void {
+export function BuiltinsBigIntLiteralTest1500() {
   let TAG='BuiltinsBigIntLiteralTest1500'
   try {
     const str1 = '1_2_3_4_5';
@@ -78,7 +78,7 @@ export function BuiltinsBigIntLiteralTest1500(): void {
 }
 
 
-export function testBigIntAdd(): void {
+export function testBigIntAdd() {
   const TAG = 'testBigIntAdd';
   try {
     const num1 = 123n;
@@ -95,7 +95,7 @@ export function testBigIntAdd(): void {
 
 // ============ 2. 减法 ======================================
 
-export function testBigIntSub(): void {
+export function testBigIntSub() {
   const TAG = 'testBigIntSub';
   try {
     const num1 = 456n;
@@ -112,7 +112,7 @@ export function testBigIntSub(): void {
 
 // ============ 3. 乘法 ======================================
 
-export function testBigIntMul(): void {
+export function testBigIntMul() {
   const TAG = 'testBigIntMul';
   try {
     const num1 = 123n;
@@ -129,7 +129,7 @@ export function testBigIntMul(): void {
 
 // ============ 4. 除法 ======================================
 
-export function testBigIntDiv(): void {
+export function testBigIntDiv() {
   const TAG = 'testBigIntDiv';
   try {
     const num1 = 456n;
@@ -146,7 +146,7 @@ export function testBigIntDiv(): void {
 
 // ============ 5. 取余 ======================================
 
-export function testBigIntMod(): void {
+export function testBigIntMod() {
   const TAG = 'testBigIntMod';
   try {
     const num1 = 456n;
@@ -163,7 +163,7 @@ export function testBigIntMod(): void {
 
 // ============ 6. 幂运算 =====================================
 
-export function testBigIntPow(): void {
+export function testBigIntPow() {
   const TAG = 'testBigIntPow';
   try {
     const base = 2n;
@@ -180,7 +180,7 @@ export function testBigIntPow(): void {
 
 // ============ 7. 小于比较 ===================================
 
-export function testBigIntLessThan(): void {
+export function testBigIntLessThan() {
   const TAG = 'testBigIntLessThan';
   try {
     const num1 = 123n;
@@ -197,7 +197,7 @@ export function testBigIntLessThan(): void {
 
 // ============ 8. 判偶运算 ===================================
 
-export function testBigIntIsEven(): void {
+export function testBigIntIsEven() {
   const TAG = 'testBigIntIsEven';
   try {
     const num = 12n;

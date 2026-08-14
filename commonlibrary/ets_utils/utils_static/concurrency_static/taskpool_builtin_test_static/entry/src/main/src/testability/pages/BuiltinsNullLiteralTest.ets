@@ -1,6 +1,6 @@
 'use static';
 
-export function BuiltinsNullLiteralTest0900(): void {
+export function BuiltinsNullLiteralTest0900() {
   let TAG='BuiltinsNullLiteralTest'
   try {
     let value1 = null;

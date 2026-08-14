@@ -1,7 +1,7 @@
 'use static';
 // 1. 字面量本身
 
-export function testFloatLiteral(): void {
+export function testFloatLiteral() {
   const TAG = 'testFloatLiteral';
   try {
     const floatNum = 5.8;
@@ -17,7 +17,7 @@ export function testFloatLiteral(): void {
 
 // 2. 字符串解析
 
-export function testParseFloat(): void {
+export function testParseFloat() {
   const TAG = 'testParseFloat';
   try {
     const floatValue = parseFloat('2.3');
@@ -35,7 +35,7 @@ export function testParseFloat(): void {
 
 // 3. 科学计数法
 
-export function testScientific(): void {
+export function testScientific() {
   const TAG = 'testScientific';
   try {
     const expFloat: number = 3.5e2;
@@ -50,7 +50,7 @@ export function testScientific(): void {
 
 // 4. 千位分隔符
 
-export function testUnderscore(): void {
+export function testUnderscore() {
   const TAG = 'testUnderscore';
   try {
     const num = 1_000.5;
@@ -65,7 +65,7 @@ export function testUnderscore(): void {
 
 // 5. 数组聚合
 
-export function testArraySum(): void {
+export function testArraySum() {
   const TAG = 'testArraySum';
   try {
     const arr = [1.5, 2.7, 3.2, 0.8, 4.1];
@@ -86,7 +86,7 @@ export function testArraySum(): void {
 
 // 6. 基本加法
 
-export function testAdd(): void {
+export function testAdd() {
   const TAG = 'testAdd';
   try {
     const result = 1.2 + 2.3;
@@ -101,7 +101,7 @@ export function testAdd(): void {
 
 // 7. 取整函数
 
-export function testFloor(): void {
+export function testFloor() {
   const TAG = 'testFloor';
   try {
     const res = Math.floor(3.9);
@@ -116,7 +116,7 @@ export function testFloor(): void {
 
 // 8. 复利计算
 
-export function testCompoundInterest(): void {
+export function testCompoundInterest() {
   const TAG = 'testCompoundInterest';
   try {
     const amount: number = 1000 * Math.pow(1 + 0.05 / 12.0, 12 * 2);

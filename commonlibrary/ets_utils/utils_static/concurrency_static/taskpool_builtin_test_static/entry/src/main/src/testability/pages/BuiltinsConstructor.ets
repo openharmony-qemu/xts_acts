@@ -9,7 +9,7 @@ class BigIntConverter {
     this.value = BigInt(input);
   }
 }
-export function testBigIntPositive(): void {
+export function testBigIntPositive() {
   const TAG = 'testBigIntPositive';
   try {
     const caseName = 'BuiltinsConstructorTest0100';

@@ -1,6 +1,6 @@
 'use static';
 
-export function builtinsNumberConstructorTest0200(): void {
+export function builtinsNumberConstructorTest0200() {
   let TAG='builtinsNumberConstructorTest0200'
   try {
     let numObj = new Number();
@@ -15,7 +15,7 @@ export function builtinsNumberConstructorTest0200(): void {
 }
 
 
-export function builtinsNumberIsFiniteTest0100(): void {
+export function builtinsNumberIsFiniteTest0100() {
   let TAG='builtinsNumberIsFiniteTest0100'
   try {
     const num = Number.isFinite(0);
@@ -30,7 +30,7 @@ export function builtinsNumberIsFiniteTest0100(): void {
 }
 
 
-export function builtinsNumberIsIntegerTest0100(): void {
+export function builtinsNumberIsIntegerTest0100() {
   let TAG='builtinsNumberIsIntegerTest0100'
   try {
     const num = Number.isInteger(0);
@@ -44,7 +44,7 @@ export function builtinsNumberIsIntegerTest0100(): void {
   }
 }
 
-export function builtinsNumberIsSafeIntegerTest0100(): void {
+export function builtinsNumberIsSafeIntegerTest0100() {
   let TAG='builtinsNumberIsSafeIntegerTest0100'
   try {
     const num = Number.isSafeInteger(3);
@@ -58,7 +58,7 @@ export function builtinsNumberIsSafeIntegerTest0100(): void {
   }
 }
 
-export function builtinsNumberParseTest0100(): void {
+export function builtinsNumberParseTest0100() {
   let TAG='builtinsNumberParseTest0100'
   try {
     const num = Number.parseFloat('3');
@@ -73,7 +73,7 @@ export function builtinsNumberParseTest0100(): void {
 }
 
 
-export function builtinsNumberPropertyTest0100(): void {
+export function builtinsNumberPropertyTest0100() {
   let TAG='builtinsNumberPropertyTest0100'
   try {
     const num1 = Number.EPSILON;
@@ -88,7 +88,7 @@ export function builtinsNumberPropertyTest0100(): void {
 }
 
 
-export function builtinsNumberPrototypeTest0100(): void {
+export function builtinsNumberPrototypeTest0100() {
   let TAG='builtinsNumberPrototypeTest0100'
   try {
     const num = 77.1234;
