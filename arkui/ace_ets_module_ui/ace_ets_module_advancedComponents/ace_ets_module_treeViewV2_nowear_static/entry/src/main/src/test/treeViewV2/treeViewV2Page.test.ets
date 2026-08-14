@@ -425,24 +425,29 @@ export default function treeViewV2PageTest(): void {
      */
     it('treeViewV2PageTest_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_1300] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_1300] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let rootNodeText = await driver.findComponent(ON.text('Root Node'));
-        if (rootNodeText) {
-          await rootNodeText.click();
-          await CommonFunc.sleep(500);
+          let rootNodeText = await driver.findComponent(ON.text('Root Node'));
+          if (rootNodeText) {
+            await rootNodeText.click();
+            await CommonFunc.sleep(500);
+          }
+
+          let modifyBtn = await driver.findComponent(ON.text('Modify'));
+          expect(modifyBtn !== null).assertTrue();
+          if (modifyBtn) {
+            await modifyBtn.click();
+            await CommonFunc.sleep(1000);
+          }
+
+          console.info('[treeViewV2PageTest_static_1300] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_1300] error: ' + error);
+          expect().assertFail();
         }
-
-        let modifyBtn = await driver.findComponent(ON.text('Modify'));
-        expect(modifyBtn !== null).assertTrue();
-        if (modifyBtn) {
-          await modifyBtn.click();
-          await CommonFunc.sleep(1000);
-        }
-
-        console.info('[treeViewV2PageTest_static_1300] END');
         done();
       });
 
