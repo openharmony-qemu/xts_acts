@@ -134,7 +134,7 @@ export default function onBackPress() {
 
     /**
      * @tc.name   NodeIdentity_0100
-     * @tc.number NodeIdentity_0100
+     * @tc.number SUB_ARKUI_COMMONATTRSOTHER_NODEIDENTITY_0100
      * @tc.desc   NodeIdentity 类型覆盖：s1 为 string、s2 为 number
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

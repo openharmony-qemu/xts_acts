@@ -58,7 +58,7 @@ export default function onBackPress(): void {
 
     /**
      * @tc.name   onBackPress_0100
-     * @tc.number onBackPress_0100
+     * @tc.number SUB_ARKUI_COMMONATTRSOTHER_ONBACKPRESS_0100
      * @tc.desc   显示浮层后可关闭浮层
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -66,23 +66,28 @@ export default function onBackPress(): void {
      */
     it('onBackPress_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[onBackPress_0100] START');
-      await CommonFunc.sleep(1000);
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let buttonS = await driver.findComponent(ON.id('show'));
-      await buttonS!.click();
-      await CommonFunc.sleep(1500);
-      let buttonClose = await driver.findComponent(ON.text('关闭'));
-      expect(buttonClose).not().assertUndefined();
-      await CommonFunc.sleep(1500);
-      await buttonClose!.click();
+      try {
+        await CommonFunc.sleep(1000);
+        let driver = await Driver.create()
+        await CommonFunc.sleep(1000);
+        let buttonS = await driver.findComponent(ON.id('show'));
+        await buttonS!.click();
+        await CommonFunc.sleep(1500);
+        let buttonClose = await driver.findComponent(ON.text('关闭'));
+        expect(buttonClose).not().assertUndefined();
+        await CommonFunc.sleep(1500);
+        await buttonClose!.click();
+      } catch (err) {
+        console.error('[onBackPress_0100] error: ' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
       console.info('[onBackPress_0100] END');
       done();
     });
 
     /**
      * @tc.name   NodeIdentity_0100
-     * @tc.number NodeIdentity_0100
+     * @tc.number SUB_ARKUI_COMMONATTRSOTHER_NODEIDENTITY_0100
      * @tc.desc   NodeIdentity 类型覆盖：s1 为 string、s2 为 number
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -90,14 +95,19 @@ export default function onBackPress(): void {
      */
     it('NodeIdentity_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[NodeIdentity_0100] START');
-      await CommonFunc.sleep(2000);
-      let s1Type: string = AppStorage.get<string>('NodeIdentity_sring') as string;
-      let s2Type: string = AppStorage.get<string>('NodeIdentity_number') as string;
-      console.info('[NodeIdentity_0100] s1Type: ' + s1Type + ', s2Type: ' + s2Type);
-      expect(s1Type).assertEqual('string');
-      // ArkTS 静态模式下整数字面量推断为 int，typeof 返回 'int'；动态模式返回 'number'。
-      // 两者均为数值类型，NodeIdentity 覆盖验证以数值语义为准。
-      expect(s2Type === 'number' || s2Type === 'int').assertTrue();
+      try {
+        await CommonFunc.sleep(2000);
+        let s1Type: string = AppStorage.get<string>('NodeIdentity_sring') as string;
+        let s2Type: string = AppStorage.get<string>('NodeIdentity_number') as string;
+        console.info('[NodeIdentity_0100] s1Type: ' + s1Type + ', s2Type: ' + s2Type);
+        expect(s1Type).assertEqual('string');
+        // ArkTS 静态模式下整数字面量推断为 int，typeof 返回 'int'；动态模式返回 'number'。
+        // 两者均为数值类型，NodeIdentity 覆盖验证以数值语义为准。
+        expect(s2Type === 'number' || s2Type === 'int').assertTrue();
+      } catch (err) {
+        console.error('[NodeIdentity_0100] error: ' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
       console.info('[NodeIdentity_0100] END');
       done();
     });
