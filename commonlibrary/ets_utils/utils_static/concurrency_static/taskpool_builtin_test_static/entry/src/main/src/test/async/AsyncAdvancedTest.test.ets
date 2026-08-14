@@ -48,7 +48,7 @@ export default function asyncAdvancedTest(): void {
 
     /**
      * @tc.name   asyncAdvancedTest004
-     * @tc.number SUB_BUILTINS_asyncAdvanced_TEST_004
+     * @tc.number SUB_BUILTINS_asyncAdvanced_TEST_0004
      * @tc.desc   Test async function with utility types (Partial, Required)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -74,7 +74,7 @@ export default function asyncAdvancedTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncAdvancedTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncAdvancedTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const chainWithRecovery = async (): Promise<string> => {
         try {
           const val1: number = await Promise.resolve(1);
@@ -92,11 +92,12 @@ export default function asyncAdvancedTest(): void {
 
       const result = await chainWithRecovery();
       expect(result).assertEqual('recovered');
+      done();
     });
 
     /**
      * @tc.name   asyncAdvancedTest011
-     * @tc.number SUB_BUILTINS_asyncAdvanced_TEST_011
+     * @tc.number SUB_BUILTINS_asyncAdvanced_TEST_0011
      * @tc.desc   Test async function with recursive types
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

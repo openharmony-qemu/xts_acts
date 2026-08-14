@@ -71,8 +71,12 @@ export default function asyncBoundaryTest(): void {
      * @tc.level  LEVEL2
      */
     it('asyncBoundaryTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const result = await level10(10);
-      expect(result).assertEqual(11);
+      try {
+        const result = await level10(10);
+        expect(result).assertEqual(11);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
@@ -190,7 +194,7 @@ export default function asyncBoundaryTest(): void {
 
     /**
      * @tc.name   asyncBoundaryTest007
-     * @tc.number SUB_BUILTINS_asyncBoundary_TEST_007
+     * @tc.number SUB_BUILTINS_asyncBoundary_TEST_0007
      * @tc.desc   Test async function with very long string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -207,7 +211,7 @@ export default function asyncBoundaryTest(): void {
 
     /**
      * @tc.name   asyncBoundaryTest008
-     * @tc.number SUB_BUILTINS_asyncBoundary_TEST_008
+     * @tc.number SUB_BUILTINS_asyncBoundary_TEST_0008
      * @tc.desc   Test async function with deeply nested object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -234,7 +238,7 @@ export default function asyncBoundaryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncBoundaryTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncBoundaryTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       // ArkTS 只允许抛出 Error 类型
       const throwString = async (): Promise<never> => {
         throw new Error('string error');
@@ -269,11 +273,12 @@ export default function asyncBoundaryTest(): void {
       }
 
       expect(errorsCaught).assertEqual(3);
+      done();
     });
 
     /**
      * @tc.name   asyncBoundaryTest010
-     * @tc.number SUB_BUILTINS_asyncBoundary_TEST_010
+     * @tc.number SUB_BUILTINS_asyncBoundary_TEST_0010
      * @tc.desc   Test async function with cyclic promise chain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -283,7 +288,7 @@ export default function asyncBoundaryTest(): void {
       const chainPromise = async (count: number): Promise<int> => {
         let promise = Promise.resolve(0);
         for (let i: int = 0; i < count; i++) {
-          promise = promise.then(val => val + 1);
+          promise = promise.then((val: int): int => val + 1, (error: Error): int => { throw error; });
         }
         return await promise;
       };
@@ -337,10 +342,14 @@ export default function asyncBoundaryTest(): void {
         return await Promise.all(promises);
       };
 
-      const result = await memoryTest();
-      expect(result.length).assertEqual(100);
-      expect(result[0]).assertEqual(0);
-      expect(result[99]).assertEqual(99);
+      try {
+        const result = await memoryTest();
+        expect(result.length).assertEqual(100);
+        expect(result[0]).assertEqual(0);
+        expect(result[99]).assertEqual(99);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
@@ -370,19 +379,27 @@ export default function asyncBoundaryTest(): void {
 
         for (let i: int = 0; i < 10; i++) {
           results.push(i); // sync
-          const val = await Promise.resolve(i * 2);
-          results.push(val); // async
+          try {
+            const val = await Promise.resolve(i * 2);
+            results.push(val); // async
+          } catch (err) {
+            expect(err).assertFail();
+          }
         }
 
         return results;
       };
 
-      const result = await interleaved();
-      expect(result.length).assertEqual(20);
-      expect(result[0]).assertEqual(0);
-      expect(result[1]).assertEqual(0);
-      expect(result[18]).assertEqual(9);
-      expect(result[19]).assertEqual(18);
+      try {
+        const result = await interleaved();
+        expect(result.length).assertEqual(20);
+        expect(result[0]).assertEqual(0);
+        expect(result[1]).assertEqual(0);
+        expect(result[18]).assertEqual(9);
+        expect(result[19]).assertEqual(18);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
@@ -417,18 +434,27 @@ export default function asyncBoundaryTest(): void {
         } else if (condition === 2) {
           return await Promise.resolve('two');
         } else {
-          const val = await Promise.resolve('three');
-          return val;
+          try {
+            const val = await Promise.resolve('three');
+            return val;
+          } catch (err) {
+            expect(err).assertFail();
+            return '';
+          }
         }
       };
 
-      const r1 = await multiReturn(1);
-      const r2 = await multiReturn(2);
-      const r3 = await multiReturn(3);
+      try {
+        const r1 = await multiReturn(1);
+        const r2 = await multiReturn(2);
+        const r3 = await multiReturn(3);
 
-      expect(r1).assertEqual('one');
-      expect(r2).assertEqual('two');
-      expect(r3).assertEqual('three');
+        expect(r1).assertEqual('one');
+        expect(r2).assertEqual('two');
+        expect(r3).assertEqual('three');
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
   });
 }

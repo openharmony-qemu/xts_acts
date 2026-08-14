@@ -54,8 +54,12 @@ export default function asyncPerformanceTest(): void {
         return sum;
       };
 
-      const result = await sequential();
-      expect(result).assertEqual(4950); // 0+1+...+99
+      try {
+        const result = await sequential();
+        expect(result).assertEqual(4950); // 0+1+...+99
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
@@ -66,7 +70,7 @@ export default function asyncPerformanceTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const memoryEfficient = async (): Promise<number[]> => {
         const batchSize: int = 100;
         const results: number[] = [];
@@ -76,8 +80,12 @@ export default function asyncPerformanceTest(): void {
           for (let i: int = 0; i < batchSize; i++) {
             batchPromises.push(Promise.resolve(batch * batchSize + i));
           }
-          const batchResults = await Promise.all(batchPromises);
-          results.push(...batchResults);
+          try {
+            const batchResults = await Promise.all(batchPromises);
+            results.push(...batchResults);
+          } catch (err) {
+            expect(err).assertFail();
+          }
         }
 
         return results;
@@ -87,6 +95,7 @@ export default function asyncPerformanceTest(): void {
       expect(result.length).assertEqual(1000);
       expect(result[0]).assertEqual(0);
       expect(result[999]).assertEqual(999);
+      done();
     });
 
     /**
@@ -97,7 +106,7 @@ export default function asyncPerformanceTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const rapidCreation = async (): Promise<int[]> => {
         const promises: Promise<int>[] = [];
 
@@ -111,10 +120,15 @@ export default function asyncPerformanceTest(): void {
         return await Promise.all(promises);
       };
 
-      const result = await rapidCreation();
-      expect(result.length).assertEqual(500);
-      expect(result[0]).assertEqual(0);
-      expect(result[499]).assertEqual(998);
+      try {
+        const result = await rapidCreation();
+        expect(result.length).assertEqual(500);
+        expect(result[0]).assertEqual(0);
+        expect(result[499]).assertEqual(998);
+      } catch (err) {
+        expect(err).assertFail();
+      }
+      done();
     });
 
     /**
@@ -133,7 +147,12 @@ export default function asyncPerformanceTest(): void {
           promise = promise.then(val => val + 1);
         }
 
-        return await promise;
+        try {
+          return await promise;
+        } catch (err) {
+          expect(err).assertFail();
+          return 0;
+        }
       };
 
       const result = await chainPerformance();
@@ -148,7 +167,7 @@ export default function asyncPerformanceTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const objectProcessing = async (): Promise<DataObject[]> => {
         const objects: DataObject[] = [];
 
@@ -167,6 +186,7 @@ export default function asyncPerformanceTest(): void {
       expect(result.length).assertEqual(1000);
       expect(result[0].id).assertEqual(0);
       expect(result[999].id).assertEqual(999);
+      done();
     });
 
     /**
@@ -188,13 +208,18 @@ export default function asyncPerformanceTest(): void {
           return results;
         };
 
-        const numbers = await generateNumbers(100);
-        let sum: number = 0;
-        for (let i: int = 0; i < numbers.length; i++) {
-          sum += numbers[i];
-        }
+        try {
+          const numbers = await generateNumbers(100);
+          let sum: number = 0;
+          for (let i: int = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+          }
 
-        return sum;
+          return sum;
+        } catch (err) {
+          expect(err).assertFail();
+          return 0;
+        }
       };
 
       const result = await iteratorProcessing();
@@ -209,7 +234,7 @@ export default function asyncPerformanceTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const executionOrder = async (): Promise<number[]> => {
         const order: number[] = [];
 
@@ -235,6 +260,7 @@ export default function asyncPerformanceTest(): void {
       expect(result).assertContain(2);
       expect(result).assertContain(3);
       expect(result).assertContain(4);
+      done();
     });
 
     /**
@@ -277,20 +303,32 @@ export default function asyncPerformanceTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const conditionalBranching = async (): Promise<number[]> => {
         const results: number[] = [];
 
         for (let i: int = 0; i < 100; i++) {
           if (i % 3 === 0) {
-            const val = await Promise.resolve(i);
-            results.push(val);
+            try {
+              const val = await Promise.resolve(i);
+              results.push(val);
+            } catch (err) {
+              expect(err).assertFail();
+            }
           } else if (i % 3 === 1) {
-            const val = await Promise.resolve(i * 2);
-            results.push(val);
+            try {
+              const val = await Promise.resolve(i * 2);
+              results.push(val);
+            } catch (err) {
+              expect(err).assertFail();
+            }
           } else {
-            const val = await Promise.resolve(i * 3);
-            results.push(val);
+            try {
+              const val = await Promise.resolve(i * 3);
+              results.push(val);
+            } catch (err) {
+              expect(err).assertFail();
+            }
           }
         }
 
@@ -302,6 +340,7 @@ export default function asyncPerformanceTest(): void {
       expect(result[0]).assertEqual(0);
       expect(result[1]).assertEqual(2);
       expect(result[2]).assertEqual(6);
+      done();
     });
 
     /**
@@ -335,13 +374,13 @@ export default function asyncPerformanceTest(): void {
 
     /**
      * @tc.name   asyncPerformanceTest013
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_013
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0013
      * @tc.desc   Test async function with promise recycling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const promiseRecycling = async (): Promise<int> => {
         const reusablePromise = Promise.resolve(42);
 
@@ -358,6 +397,7 @@ export default function asyncPerformanceTest(): void {
 
       const result = await promiseRecycling();
       expect(result).assertEqual(210); // 42 * 5
+      done();
     });
 
     /**
@@ -368,7 +408,7 @@ export default function asyncPerformanceTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const nestedPromiseAll = async (): Promise<int> => {
         const level1 = await Promise.all([
           Promise.all([Promise.resolve(1), Promise.resolve(2)]),
@@ -382,6 +422,7 @@ export default function asyncPerformanceTest(): void {
 
       const result = await nestedPromiseAll();
       expect(result).assertEqual(10); // 1+2+3+4
+      done();
     });
 
     /**
@@ -392,7 +433,7 @@ export default function asyncPerformanceTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const stateManagement = async (): Promise<string> => {
         let state = 'initial';
 
@@ -401,14 +442,19 @@ export default function asyncPerformanceTest(): void {
           await Promise.resolve();
         };
 
-        await updateState('processing');
-        await updateState('completed');
+        try {
+          await updateState('processing');
+          await updateState('completed');
+        } catch (err) {
+          expect(err).assertFail();
+        }
 
         return state;
       };
 
       const result = await stateManagement();
       expect(result).assertEqual('completed');
+      done();
     });
 
     /**
@@ -421,17 +467,22 @@ export default function asyncPerformanceTest(): void {
      */
     it('asyncPerformanceTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const arrayOperations = async (): Promise<int[]> => {
-        const arr = await Promise.resolve([1, 2, 3, 4, 5]);
+        try {
+          const arr = await Promise.resolve([1, 2, 3, 4, 5]);
 
-        const mapped = await Promise.resolve(
-          arr.map((x: int) => x * 2)
-        );
+          const mapped = await Promise.resolve(
+            arr.map((x: int) => x * 2)
+          );
 
-        const filtered = await Promise.resolve(
-          mapped.filter(x => x > 4)
-        );
+          const filtered = await Promise.resolve(
+            mapped.filter(x => x > 4)
+          );
 
-        return filtered;
+          return filtered;
+        } catch (err) {
+          expect(err).assertFail();
+          return new Array<int>();
+        }
       };
 
       const result = await arrayOperations();
@@ -469,10 +520,14 @@ export default function asyncPerformanceTest(): void {
           for (let i: int = 0; i < batchSize; i++) {
             batchItems.push(batch * batchSize + i);
           }
-          const processed = await Promise.all(
-            batchItems.map(x => Promise.resolve(x))
-          );
-          allItems.push(...processed);
+          try {
+            const processed = await Promise.all(
+              batchItems.map(x => Promise.resolve(x))
+            );
+            allItems.push(...processed);
+          } catch (err) {
+            expect(err).assertFail();
+          }
         }
 
         return allItems;

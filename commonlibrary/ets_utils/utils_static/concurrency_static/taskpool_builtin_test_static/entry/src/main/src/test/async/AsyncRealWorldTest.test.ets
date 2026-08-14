@@ -48,7 +48,7 @@ export default function asyncRealWorldTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncRealWorldTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const cache = new Map<string, string>();
 
       const getDataWithCache = async (key: string): Promise<string> => {
@@ -72,6 +72,7 @@ export default function asyncRealWorldTest(): void {
       expect(result1).assertEqual('data-user1');
       expect(result2).assertEqual('data-user1');
       expect(cache.size).assertEqual(1);
+      done();
     });
 
     /**
@@ -148,13 +149,13 @@ export default function asyncRealWorldTest(): void {
 
     /**
      * @tc.name   asyncRealWorldTest006
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_006
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0006
      * @tc.desc   Simulate request debouncing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncRealWorldTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let lastCallTime: number = 0;
       const debounceTime: number = 50;
 
@@ -173,6 +174,7 @@ export default function asyncRealWorldTest(): void {
 
       expect(result1).assertEqual('result-request1');
       expect(result2).assertEqual('result-request2');
+      done();
     });
 
     /**
@@ -319,13 +321,13 @@ export default function asyncRealWorldTest(): void {
 
     /**
      * @tc.name   asyncRealWorldTest013
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_013
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0013
      * @tc.desc   Simulate async data pagination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncRealWorldTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const pageSize: int = 10;
       const totalPages: int = 3;
 
@@ -353,6 +355,7 @@ export default function asyncRealWorldTest(): void {
       expect(result.length).assertEqual(30);
       expect(result[0]).assertEqual(0);
       expect(result[29]).assertEqual(29);
+      done();
     });
 
     /**
@@ -384,13 +387,13 @@ export default function asyncRealWorldTest(): void {
 
     /**
      * @tc.name   asyncRealWorldTest015
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_015
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0015
      * @tc.desc   Simulate async resource pool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncRealWorldTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const poolSize: int = 3;
       const available: number[] = [1, 2, 3];
 
@@ -413,27 +416,32 @@ export default function asyncRealWorldTest(): void {
         return result;
       };
 
-      const results = await Promise.all([
-        useResource(),
-        useResource(),
-        useResource()
-      ]);
+      try {
+        const results = await Promise.all([
+          useResource(),
+          useResource(),
+          useResource()
+        ]);
 
-      expect(results.length).assertEqual(3);
-      expect(results).assertContain('used-1');
-      expect(results).assertContain('used-2');
-      expect(results).assertContain('used-3');
+        expect(results.length).assertEqual(3);
+        expect(results).assertContain('used-1');
+        expect(results).assertContain('used-2');
+        expect(results).assertContain('used-3');
+      } catch (err) {
+        expect(err).assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncRealWorldTest016
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_016
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0016
      * @tc.desc   Simulate async data deduplication
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncRealWorldTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const pendingRequests = new Map<string, Promise<string>>();
 
       const deduplicatedFetch = async (key: string): Promise<string> => {
@@ -456,14 +464,19 @@ export default function asyncRealWorldTest(): void {
       };
 
       // 不使用 Promise.all 的泛型，分别获取结果
-      const r1 = await deduplicatedFetch('key1');
-      const r2 = await deduplicatedFetch('key1'); // Should use same request
-      const r3 = await deduplicatedFetch('key2');
+      try {
+        const r1 = await deduplicatedFetch('key1');
+        const r2 = await deduplicatedFetch('key1'); // Should use same request
+        const r3 = await deduplicatedFetch('key2');
 
-      expect(r1).assertEqual('data-key1');
-      expect(r2).assertEqual('data-key1');
-      expect(r3).assertEqual('data-key2');
-      expect(pendingRequests.size).assertEqual(0);
+        expect(r1).assertEqual('data-key1');
+        expect(r2).assertEqual('data-key1');
+        expect(r3).assertEqual('data-key2');
+        expect(pendingRequests.size).assertEqual(0);
+      } catch (err) {
+        expect(err).assertFail();
+      }
+      done();
     });
 
     /**
@@ -486,7 +499,11 @@ export default function asyncRealWorldTest(): void {
         const totalSteps: number = 5;
 
         for (let step: number = 1; step <= totalSteps; step++) {
-          await reportProgress(Math.floor((step / totalSteps) * 100));
+          try {
+            await reportProgress(Math.floor((step / totalSteps) * 100));
+          } catch (err) {
+            expect(err).assertFail();
+          }
         }
 
         return 'completed';
@@ -520,10 +537,15 @@ export default function asyncRealWorldTest(): void {
       };
 
       // 不使用解构，使用数组索引访问
-      const results = await Promise.all<User[] | Post[]>([
-        fetchUsers(),
-        fetchPosts()
-      ]);
+      let results: (User[] | Post[])[] = new Array<User[] | Post[]>();
+      try {
+        results = await Promise.all<User[] | Post[]>([
+          fetchUsers(),
+          fetchPosts()
+        ]);
+      } catch (err) {
+        expect(err).assertFail();
+      }
       const users = results[0] as User[];
       const posts = results[1] as Post[];
 
@@ -596,17 +618,25 @@ export default function asyncRealWorldTest(): void {
       const streamData = async (count: number): Promise<number[]> => {
         const results: number[] = [];
         for (let i: int = 0; i < count; i++) {
-          await sleep(1);
+          try {
+            await sleep(1);
+          } catch (err) {
+            expect(err).assertFail();
+          }
           results.push(i);
         }
         return results;
       };
 
-      const collectedData = await streamData(10);
+      try {
+        const collectedData = await streamData(10);
 
-      expect(collectedData.length).assertEqual(10);
-      let res: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-      expect(collectedData).assertDeepEquals(res);
+        expect(collectedData.length).assertEqual(10);
+        let res: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        expect(collectedData).assertDeepEquals(res);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
   });
 }

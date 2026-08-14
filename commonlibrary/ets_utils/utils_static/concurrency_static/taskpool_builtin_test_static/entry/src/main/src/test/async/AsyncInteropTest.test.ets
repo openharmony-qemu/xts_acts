@@ -74,7 +74,7 @@ export default function asyncInteropTest(): void {
 
     /**
      * @tc.name   asyncInteropTest001
-     * @tc.number SUB_BUILTINS_asyncInterop_TEST_001
+     * @tc.number SUB_BUILTINS_asyncInterop_TEST_0001
      * @tc.desc   Test async function mixing with callbacks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -84,18 +84,27 @@ export default function asyncInteropTest(): void {
       const callbackWrapper = async (
         callback: (value: int) => void
       ): Promise<int> => {
-        const value = await Promise.resolve(42);
-        callback(value);
-        return value;
+        try {
+          const value = await Promise.resolve(42);
+          callback(value);
+          return value;
+        } catch (err) {
+          expect(err).assertFail();
+          return 0;
+        }
       };
 
       let callbackValue: int = 0;
-      const result = await callbackWrapper((val) => {
-        callbackValue = val;
-      });
+      try {
+        const result = await callbackWrapper((val) => {
+          callbackValue = val;
+        });
 
-      expect(result).assertEqual(42);
-      expect(callbackValue).assertEqual(42);
+        expect(result).assertEqual(42);
+        expect(callbackValue).assertEqual(42);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
@@ -140,8 +149,12 @@ export default function asyncInteropTest(): void {
         });
       };
 
-      const result = await waitForEvent();
-      expect(result).assertEqual('event-data');
+      try {
+        const result = await waitForEvent();
+        expect(result).assertEqual('event-data');
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
@@ -158,8 +171,13 @@ export default function asyncInteropTest(): void {
       };
 
       const asyncOperation = async (): Promise<number> => {
-        const value: number = await Promise.resolve(5);
-        return syncMultiply(value);
+        try {
+          const value: number = await Promise.resolve(5);
+          return syncMultiply(value);
+        } catch (err) {
+          expect(err).assertFail();
+          return 0;
+        }
       };
 
       const result = await asyncOperation();
@@ -178,14 +196,23 @@ export default function asyncInteropTest(): void {
       const mixedStyle = async (): Promise<int> => {
         return Promise.resolve(10)
           .then((val: int) => val * 2)
-          .then(async (val: int) => {
-            const doubled = await Promise.resolve(val * 2);
-            return doubled;
+          .then(async (val: int): Promise<int> => {
+            try {
+              const doubled = await Promise.resolve(val * 2);
+              return doubled;
+            } catch (err) {
+              expect(err).assertFail();
+              return 0;
+            }
           });
       };
 
-      const result = await mixedStyle();
-      expect(result).assertEqual(40); // 10 * 2 * 2
+      try {
+        const result = await mixedStyle();
+        expect(result).assertEqual(40); // 10 * 2 * 2
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
@@ -196,7 +223,7 @@ export default function asyncInteropTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncInteropTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncInteropTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const promiseWrapper = (asyncFn: () => Promise<int>): Promise<int> => {
         return new Promise<int>((resolve, reject) => {
           asyncFn()
@@ -211,6 +238,7 @@ export default function asyncInteropTest(): void {
 
       const result = await promiseWrapper(myAsync);
       expect(result).assertEqual(42);
+      done();
     });
 
     /**
@@ -260,7 +288,7 @@ export default function asyncInteropTest(): void {
 
     /**
      * @tc.name   asyncInteropTest010
-     * @tc.number SUB_BUILTINS_asyncInterop_TEST_010
+     * @tc.number SUB_BUILTINS_asyncInterop_TEST_0010
      * @tc.desc   Test async function with reduce
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -295,12 +323,17 @@ export default function asyncInteropTest(): void {
         const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
         const filtered = await Promise.all(
-          values.map(async (val) => {
-            const shouldKeep = await Promise.resolve(val % 2 === 0);
-            const item: FilterItem = new FilterItem();
-            item.val = val;
-            item.shouldKeep = shouldKeep;
-            return item;
+          values.map(async (val): Promise<FilterItem> => {
+            try {
+              const shouldKeep = await Promise.resolve(val % 2 === 0);
+              const item: FilterItem = new FilterItem();
+              item.val = val;
+              item.shouldKeep = shouldKeep;
+              return item;
+            } catch (err) {
+              expect(err).assertFail();
+              return new FilterItem();
+            }
           })
         );
 
@@ -324,12 +357,16 @@ export default function asyncInteropTest(): void {
      */
     it('asyncInteropTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const obj = new TestObj();
-      const result1 = await obj.getValue();
-      await obj.setValue(20);
-      const result2 = await obj.getValue();
+      try {
+        const result1 = await obj.getValue();
+        await obj.setValue(20);
+        const result2 = await obj.getValue();
 
-      expect(result1).assertEqual(10);
-      expect(result2).assertEqual(20);
+        expect(result1).assertEqual(10);
+        expect(result2).assertEqual(20);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
@@ -340,11 +377,12 @@ export default function asyncInteropTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncInteropTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncInteropTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const instance = new DerivedClass();
       const result = await instance.derivedMethod();
 
       expect(result).assertEqual('base-derived');
+      done();
     });
 
     /**
@@ -384,7 +422,7 @@ export default function asyncInteropTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncInteropTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncInteropTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const multiErrorHandling = async (): Promise<string> => {
         return Promise.resolve('value')
           .then(val => val.toUpperCase())
@@ -396,8 +434,13 @@ export default function asyncInteropTest(): void {
           });
       };
 
-      const result = await multiErrorHandling();
-      expect(result).assertEqual('VALUE');
+      try {
+        const result = await multiErrorHandling();
+        expect(result).assertEqual('VALUE');
+      } catch (err) {
+        expect(err).assertFail();
+      }
+      done();
     });
 
     /**
@@ -421,14 +464,18 @@ export default function asyncInteropTest(): void {
         return parsed;
       };
 
-      const json = await jsonify();
-      const parsed = await parse(json);
+      try {
+        const json = await jsonify();
+        const parsed = await parse(json);
 
-      expect(json).assertEqual('{"id":1,"name":"test"}');
-      let expected: TestData = new TestData();
-      expected.id = 1;
-      expected.name = 'test';
-      expect(parsed).assertDeepEquals(expected);
+        expect(json).assertEqual('{"id":1,"name":"test"}');
+        let expected: TestData = new TestData();
+        expected.id = 1;
+        expected.name = 'test';
+        expect(parsed).assertDeepEquals(expected);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
@@ -464,11 +511,11 @@ export default function asyncInteropTest(): void {
           });
 
           // Wait for the first operation to "clear"
-          Promise.resolve().then(() => {
+          Promise.resolve().then((): void => {
             if (!resolved && cleared) {
               resolved = true;
             }
-          });
+          }, (error: Error): void => { throw error; });
 
           delayedPromise.then((result) => {
             if (!resolved) {
@@ -479,8 +526,12 @@ export default function asyncInteropTest(): void {
         });
       };
 
-      const result = await clearTimeoutTest();
-      expect(result).assertEqual('cleared');
+      try {
+        const result = await clearTimeoutTest();
+        expect(result).assertEqual('cleared');
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
@@ -491,7 +542,7 @@ export default function asyncInteropTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncInteropTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncInteropTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const step1 = async (input: number): Promise<number> => {
         return input * 2;
       };
@@ -514,6 +565,7 @@ export default function asyncInteropTest(): void {
 
       const result = await pipeline(5);
       expect(result).assertEqual(10); // (5 * 2 + 10) / 2 = 10
+      done();
     });
   });
 }
