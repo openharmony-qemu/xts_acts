@@ -39,14 +39,9 @@ export default function ChipV2PrefixIconTest(): void {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
-        let pages = routerInstance.getState();
-        console.info("get ChipV2PrefixIconTest state pages:" + JSON.stringify(pages));
-        if (!("ChipV2PrefixIconTest" == pages.name)) {
-          console.info("get ChipV2PrefixIconTest pages.name:" + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
-        }
+        AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', false);
+        routerInstance.replaceUrl(options);
+        await CommonFunc.sleep(2000);
       } catch (err) {
         console.error("push ChipV2PrefixIconTest page error:" + err);
       }
@@ -68,7 +63,6 @@ export default function ChipV2PrefixIconTest(): void {
     it('SUB_ARKUI_API_ChipV2PrefixIconTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0100] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
       let btnElement1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[0]
@@ -78,8 +72,9 @@ export default function ChipV2PrefixIconTest(): void {
       JSON.stringify(btnElement1.getElement('$attrs').getString('fontColor')));
       expect(btnElement1.getElement('$attrs').getString('fontColor')).assertEqual("#FF008000");
 
-      let btn1 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_true'));
-      btn1?.click();
+      AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', true);
+      const routerInstance = AppStorage.get<Router>('router') as Router;
+      routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2PrefixIconTest' });
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -91,8 +86,7 @@ export default function ChipV2PrefixIconTest(): void {
       JSON.stringify(btnElement2.getElement('$attrs').getString('fontColor')));
       expect(btnElement2.getElement('$attrs').getString('fontColor')).assertEqual("#FFFF0000");
 
-      let btn2 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_false'));
-      btn2?.click();
+      AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', false);
       await CommonFunc.sleep(2000);
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0100] END');
       done();
@@ -107,7 +101,6 @@ export default function ChipV2PrefixIconTest(): void {
     it('SUB_ARKUI_API_ChipV2PrefixIconTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0200] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
       let btnElement1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
@@ -117,8 +110,9 @@ export default function ChipV2PrefixIconTest(): void {
       JSON.stringify(btnElement1.getElement('$attrs').getString('fillColor')));
       expect(btnElement1.getElement('$attrs').getString('fillColor')).assertEqual("#FFFFC0CB");
 
-      let btn1 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_true'));
-      btn1?.click();
+      AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', true);
+      const routerInstance = AppStorage.get<Router>('router') as Router;
+      routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2PrefixIconTest' });
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -130,8 +124,7 @@ export default function ChipV2PrefixIconTest(): void {
       JSON.stringify(btnElement2.getElement('$attrs').getString('fillColor')));
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
-      let btn2 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_false'));
-      btn2?.click();
+      AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', false);
       await CommonFunc.sleep(2000);
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0200] END');
       done();
@@ -146,7 +139,6 @@ export default function ChipV2PrefixIconTest(): void {
     it('SUB_ARKUI_API_ChipV2PrefixIconTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0300] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
       let btnElement1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[2]
@@ -156,8 +148,9 @@ export default function ChipV2PrefixIconTest(): void {
       JSON.stringify(btnElement1.getElement('$attrs').getString('fillColor')));
       expect(btnElement1.getElement('$attrs').getString('fillColor')).assertEqual("#FFFFC0CB");
 
-      let btn1 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_true'));
-      btn1?.click();
+      AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', true);
+      const routerInstance = AppStorage.get<Router>('router') as Router;
+      routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2PrefixIconTest' });
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -169,8 +162,7 @@ export default function ChipV2PrefixIconTest(): void {
       JSON.stringify(btnElement2.getElement('$attrs').getString('fillColor')));
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
-      let btn2 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_false'));
-      btn2?.click();
+      AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', false);
       await CommonFunc.sleep(2000);
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0300] END');
       done();
@@ -185,7 +177,6 @@ export default function ChipV2PrefixIconTest(): void {
     it('SUB_ARKUI_API_ChipV2PrefixIconTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0400] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
       let btnElement1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[3]
@@ -195,8 +186,9 @@ export default function ChipV2PrefixIconTest(): void {
       JSON.stringify(btnElement1.getElement('$attrs').getString('fillColor')));
       expect(btnElement1.getElement('$attrs').getString('fillColor')).assertEqual("#FFFFC0CB");
 
-      let btn1 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_true'));
-      btn1?.click();
+      AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', true);
+      const routerInstance = AppStorage.get<Router>('router') as Router;
+      routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2PrefixIconTest' });
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -208,8 +200,7 @@ export default function ChipV2PrefixIconTest(): void {
       JSON.stringify(btnElement2.getElement('$attrs').getString('fillColor')));
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
-      let btn2 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_false'));
-      btn2?.click();
+      AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', false);
       await CommonFunc.sleep(2000);
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0400] END');
       done();
@@ -224,7 +215,6 @@ export default function ChipV2PrefixIconTest(): void {
     it('SUB_ARKUI_API_ChipV2PrefixIconTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0500] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
       let btnElement = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[4]
@@ -243,8 +233,9 @@ export default function ChipV2PrefixIconTest(): void {
       expect(btnElement.getElement('$attrs').getString('fillColor'))
         .assertEqual(btnUn.getElement('$attrs').getString('fillColor'));
 
-      let btn1 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_true'));
-      btn1?.click();
+      AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', true);
+      const routerInstance = AppStorage.get<Router>('router') as Router;
+      routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2PrefixIconTest' });
       await CommonFunc.sleep(2000);
 
       console.info("[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0500] btnElement fillColor2 is: " +
@@ -254,8 +245,7 @@ export default function ChipV2PrefixIconTest(): void {
       expect(btnElement.getElement('$attrs').getString('fillColor'))
         .assertEqual(btnUn.getElement('$attrs').getString('fillColor'));
       
-      let btn2 = await driver.findComponent(ON.id('ChipV2PrefixIcon_isActivated_false'));
-      btn2?.click();
+      AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', false);
       await CommonFunc.sleep(2000);
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0500] END');
       done();
