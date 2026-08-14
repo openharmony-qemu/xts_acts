@@ -1345,16 +1345,23 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     it('MessageHandlerHasMessagesWhatObjTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      handler.sendMessage(new concurrency.Message(1, "obj1", handler));
-      handler.sendMessage(new concurrency.Message(1, "obj2", handler));
-      handler.sendMessage(new concurrency.Message(2, "obj1", handler));
-      expect(handler.hasMessages(1, "obj1")).assertTrue();
-      expect(handler.hasMessages(1, "obj2")).assertTrue();
-      expect(handler.hasMessages(2, "obj1")).assertTrue();
-      expect(handler.hasMessages(2, "obj2")).assertFalse();
-      if (eaw.isAlive()) {
-        eaw.quit();
+      try {
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        handler.sendMessage(new concurrency.Message(1, "obj1", handler));
+        handler.sendMessage(new concurrency.Message(1, "obj2", handler));
+        handler.sendMessage(new concurrency.Message(2, "obj1", handler));
+        expect(handler.hasMessages(1, "obj1")).assertTrue();
+        expect(handler.hasMessages(1, "obj2")).assertTrue();
+        expect(handler.hasMessages(2, "obj1")).assertTrue();
+        expect(handler.hasMessages(2, "obj2")).assertFalse();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1369,16 +1376,23 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     it('MessageHandlerHasMessagesWhatObjTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      handler.sendMessage(new concurrency.Message(1, "obj1", handler));
-      handler.sendMessage(new concurrency.Message(1, "obj2", handler));
-      handler.sendMessage(new concurrency.Message(1, "obj3", handler));
-      expect(handler.hasMessages(1, "obj1")).assertTrue();
-      expect(handler.hasMessages(1, "obj2")).assertTrue();
-      expect(handler.hasMessages(1, "obj3")).assertTrue();
-      expect(handler.hasMessages(1, "obj4")).assertFalse();
-      if (eaw.isAlive()) {
-        eaw.quit();
+      try {
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        handler.sendMessage(new concurrency.Message(1, "obj1", handler));
+        handler.sendMessage(new concurrency.Message(1, "obj2", handler));
+        handler.sendMessage(new concurrency.Message(1, "obj3", handler));
+        expect(handler.hasMessages(1, "obj1")).assertTrue();
+        expect(handler.hasMessages(1, "obj2")).assertTrue();
+        expect(handler.hasMessages(1, "obj3")).assertTrue();
+        expect(handler.hasMessages(1, "obj4")).assertFalse();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1393,16 +1407,23 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     it('MessageHandlerHasMessagesWhatObjTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      handler.sendMessage(new concurrency.Message(1, "obj", handler));
-      handler.sendMessage(new concurrency.Message(2, "obj", handler));
-      handler.sendMessage(new concurrency.Message(3, "obj", handler));
-      expect(handler.hasMessages(1, "obj")).assertTrue();
-      expect(handler.hasMessages(2, "obj")).assertTrue();
-      expect(handler.hasMessages(3, "obj")).assertTrue();
-      expect(handler.hasMessages(4, "obj")).assertFalse();
-      if (eaw.isAlive()) {
-        eaw.quit();
+      try {
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        handler.sendMessage(new concurrency.Message(1, "obj", handler));
+        handler.sendMessage(new concurrency.Message(2, "obj", handler));
+        handler.sendMessage(new concurrency.Message(3, "obj", handler));
+        expect(handler.hasMessages(1, "obj")).assertTrue();
+        expect(handler.hasMessages(2, "obj")).assertTrue();
+        expect(handler.hasMessages(3, "obj")).assertTrue();
+        expect(handler.hasMessages(4, "obj")).assertFalse();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1416,35 +1437,37 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      */
     it('MessageHandlerHasMessagesWhatObjTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
-      let verified = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) {
-          cb();
+      try {
+        let verified = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) {
+            cb();
+          }
+        }, eaw);
+        eaw.start();
+        handler.post((): void => {
+          handler.sendMessage(new concurrency.Message(1, "test", handler));
+          handler.removeMessages(1, "test");
+          let result: boolean = handler.hasMessages(1, "test");
+          if (!result) {
+            verified.fetchAdd(1);
+          }
+        });
+        let waitCount: int = 0;
+        while (verified.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
         }
-      }, eaw);
-      eaw.start();
-      let removeAndSendCallback = (): void => {
-        handler.removeMessages(1, "test");
-        let msg = new concurrency.Message(1, "test", handler);
-        handler.sendMessage(msg);
-      };
-      let verifyCallback = (): void => {
-        let result: boolean = handler.hasMessages(1, "test");
-        if (result) {
-          verified.fetchAdd(1);
+        expect(verified.load()).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
         }
-      };
-      handler.post(removeAndSendCallback);
-      handler.post(verifyCallback);
-      let waitCount: int = 0;
-      while (verified.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(verified.load() >= 1).assertTrue();
-      if (eaw.isAlive()) {
-        eaw.quit();
       }
     })
 
@@ -1459,35 +1482,42 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     it('MessageHandlerHasMessagesWhatObjTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let verified = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) {
-          cb();
+      try {
+        let verified = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) {
+            cb();
+          }
+        }, eaw);
+        let msg1 = new concurrency.Message(1, "obj1", handler);
+        let msg2 = new concurrency.Message(1, "obj2", handler);
+        let testCallback = (): void => {
+          handler.sendMessage(msg1);
+          handler.sendMessage(msg2);
+          if (handler.hasMessages(1, "obj1")) {
+            handler.removeMessages(1, "obj1");
+            if (!handler.hasMessages(1, "obj1") && handler.hasMessages(1, "obj2")) {
+              verified.fetchAdd(1);
+            }
+          }
+        };
+        let callbackMsg = new concurrency.Message(testCallback, handler);
+        handler.sendMessage(callbackMsg);
+        let waitCount: int = 0;
+        while (verified.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
         }
-      }, eaw);
-      let msg1 = new concurrency.Message(1, "obj1", handler);
-      let msg2 = new concurrency.Message(1, "obj2", handler);
-      let testCallback = (): void => {
-        handler.sendMessage(msg1);
-        handler.sendMessage(msg2);
-        if (handler.hasMessages(1, "obj1")) {
-          handler.removeMessages(1, "obj1");
-          if (!handler.hasMessages(1, "obj1") && handler.hasMessages(1, "obj2")) {
-            verified.fetchAdd(1);
+        expect(verified.load()).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
           }
         }
-      };
-      let callbackMsg = new concurrency.Message(testCallback, handler);
-      handler.sendMessage(callbackMsg);
-      let waitCount: int = 0;
-      while (verified.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(verified.load() >= 1).assertTrue();
-      if (eaw.isAlive()) {
-        eaw.quit();
       }
     })
 
@@ -1502,14 +1532,21 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     it('MessageHandlerHasMessagesWhatObjTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message(1, "obj", handler);
-      handler.sendMessage(msg);
-      expect(handler.hasMessages(1)).assertTrue();
-      expect(handler.hasMessages(1, "obj")).assertTrue();
-      expect(handler.hasMessages(1, "other")).assertFalse();
-      if (eaw.isAlive()) {
-        eaw.quit();
+      try {
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(1, "obj", handler);
+        handler.sendMessage(msg);
+        expect(handler.hasMessages(1)).assertTrue();
+        expect(handler.hasMessages(1, "obj")).assertTrue();
+        expect(handler.hasMessages(1, "other")).assertFalse();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1524,15 +1561,22 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     it('MessageHandlerHasMessagesWhatObjTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      handler.sendMessage(new concurrency.Message(1, "obj1", handler));
-      handler.sendMessage(new concurrency.Message(1, "obj2", handler));
-      expect(handler.hasMessages(1)).assertTrue();
-      expect(handler.hasMessages(1, "obj1")).assertTrue();
-      expect(handler.hasMessages(1, "obj2")).assertTrue();
-      expect(handler.hasMessages(1, "obj3")).assertFalse();
-      if (eaw.isAlive()) {
-        eaw.quit();
+      try {
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        handler.sendMessage(new concurrency.Message(1, "obj1", handler));
+        handler.sendMessage(new concurrency.Message(1, "obj2", handler));
+        expect(handler.hasMessages(1)).assertTrue();
+        expect(handler.hasMessages(1, "obj1")).assertTrue();
+        expect(handler.hasMessages(1, "obj2")).assertTrue();
+        expect(handler.hasMessages(1, "obj3")).assertFalse();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1547,15 +1591,22 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     it('MessageHandlerHasMessagesWhatObjTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg1 = new concurrency.Message(1, "obj1", handler);
-      let msg2 = new concurrency.Message(2, "obj2", handler);
-      handler.sendMessage(msg1);
-      handler.sendMessage(msg2);
-      expect(handler.hasMessages(1, "obj1")).assertTrue();
-      expect(handler.hasMessages(2, "obj2")).assertTrue();
-      if (eaw.isAlive()) {
-        eaw.quit();
+      try {
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg1 = new concurrency.Message(1, "obj1", handler);
+        let msg2 = new concurrency.Message(2, "obj2", handler);
+        handler.sendMessage(msg1);
+        handler.sendMessage(msg2);
+        expect(handler.hasMessages(1, "obj1")).assertTrue();
+        expect(handler.hasMessages(2, "obj2")).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1570,24 +1621,31 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      */
     it('MessageHandlerHasMessagesWhatObjTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
-      let msgSent = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        if (msg.getWhat() === 100) {
-          let innerMsg = new concurrency.Message(1, "async_obj", msg.getTarget());
-          msg.getTarget().sendMessage(innerMsg);
-          msgSent.fetchAdd(1);
+      try {
+        let msgSent = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          if (msg.getWhat() === 100) {
+            let innerMsg = new concurrency.Message(1, "async_obj", msg.getTarget());
+            msg.getTarget().sendMessage(innerMsg);
+            msgSent.fetchAdd(1);
+          }
+        }, eaw);
+        eaw.start();
+        handler.sendEmptyMessage(100);
+        let waitCount: int = 0;
+        while (msgSent.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
         }
-      }, eaw);
-      eaw.start();
-      handler.sendEmptyMessage(100);
-      let waitCount: int = 0;
-      while (msgSent.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(handler.hasMessages(1, "async_obj")).assertTrue();
-      if (eaw.isAlive()) {
-        eaw.quit();
+        expect(handler.hasMessages(1, "async_obj")).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1601,34 +1659,41 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      */
     it('MessageHandlerHasMessagesWhatObjTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
-      let queryCount = new AtomicInt(0);
-      let trueCount = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        if (msg.getWhat() >= 10 && msg.getWhat() < 20) {
-          let result: boolean = msg.getTarget().hasMessages(1, "test");
-          if (result) {
-            trueCount.fetchAdd(1);
+      try {
+        let queryCount = new AtomicInt(0);
+        let trueCount = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          if (msg.getWhat() >= 10 && msg.getWhat() < 20) {
+            let result: boolean = msg.getTarget().hasMessages(1, "test");
+            if (result) {
+              trueCount.fetchAdd(1);
+            }
+            queryCount.fetchAdd(1);
           }
-          queryCount.fetchAdd(1);
+        }, eaw);
+        eaw.start();
+        // Prefill targets before query messages so FIFO still leaves what/obj in queue.
+        for (let i: int = 0; i < 5; i++) {
+          handler.sendMessage(new concurrency.Message(1, "test", handler));
         }
-      }, eaw);
-      eaw.start();
-      // Prefill targets before query messages so FIFO still leaves what/obj in queue.
-      for (let i: int = 0; i < 5; i++) {
-        handler.sendMessage(new concurrency.Message(1, "test", handler));
-      }
-      for (let i: int = 0; i < 5; i++) {
-        handler.sendEmptyMessage(10 + i);
-      }
-      let waitCount: int = 0;
-      while (queryCount.load() < 5 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(queryCount.load()).assertEqual(5);
-      expect(trueCount.load() >= 1).assertTrue();
-      if (eaw.isAlive()) {
-        eaw.quit();
+        for (let i: int = 0; i < 5; i++) {
+          handler.sendEmptyMessage(10 + i);
+        }
+        let waitCount: int = 0;
+        while (queryCount.load() < 5 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(queryCount.load()).assertEqual(5);
+        expect(trueCount.load()).assertEqual(5);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1644,44 +1709,51 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
       // Shared obj refs + atomic enqueue so nested hasMessages(what, obj) sees siblings
       let eaw = new EAWorker();
       eaw.start();
-      let checkResult = new AtomicInt(0);
-      let done = new AtomicInt(0);
-      let obj1: Object = "obj1" as Object;
-      let obj2: Object = "obj2" as Object;
-      let obj3: Object = "obj3" as Object;
-      let obj4: Object = "obj4" as Object;
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) {
-          cb();
-        }
-        if (msg.getWhat() === 1) {
-          let has2: boolean = msg.getTarget().hasMessages(2, obj2);
-          let has3: boolean = msg.getTarget().hasMessages(3, obj3);
-          if (has2) {
-            checkResult.fetchAdd(1);
+      try {
+        let checkResult = new AtomicInt(0);
+        let done = new AtomicInt(0);
+        let obj1: Object = "obj1" as Object;
+        let obj2: Object = "obj2" as Object;
+        let obj3: Object = "obj3" as Object;
+        let obj4: Object = "obj4" as Object;
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) {
+            cb();
           }
-          if (has3) {
-            checkResult.fetchAdd(1);
+          if (msg.getWhat() === 1) {
+            let has2: boolean = msg.getTarget().hasMessages(2, obj2);
+            let has3: boolean = msg.getTarget().hasMessages(3, obj3);
+            if (has2) {
+              checkResult.fetchAdd(1);
+            }
+            if (has3) {
+              checkResult.fetchAdd(1);
+            }
+          } else if (msg.getWhat() === 4) {
+            done.fetchAdd(1);
           }
-        } else if (msg.getWhat() === 4) {
-          done.fetchAdd(1);
+        }, eaw);
+        handler.post((): void => {
+          handler.sendMessage(new concurrency.Message(1, obj1, handler));
+          handler.sendMessage(new concurrency.Message(2, obj2, handler));
+          handler.sendMessage(new concurrency.Message(3, obj3, handler));
+          handler.sendMessage(new concurrency.Message(4, obj4, handler));
+        });
+        let waitCount: int = 0;
+        while (done.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
         }
-      }, eaw);
-      handler.post((): void => {
-        handler.sendMessage(new concurrency.Message(1, obj1, handler));
-        handler.sendMessage(new concurrency.Message(2, obj2, handler));
-        handler.sendMessage(new concurrency.Message(3, obj3, handler));
-        handler.sendMessage(new concurrency.Message(4, obj4, handler));
-      });
-      let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(checkResult.load() >= 1).assertTrue();
-      if (eaw.isAlive()) {
-        eaw.quit();
+        expect(checkResult.load()).assertEqual(2);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1695,24 +1767,31 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      */
     it('MessageHandlerHasMessagesWhatObjTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
-      let selfCheckDone = new AtomicInt(0);
-      let selfCheckResult: boolean = false;
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        if (msg.getWhat() === 1) {
-          selfCheckResult = msg.getTarget().hasMessages(1, "self");
-          selfCheckDone.fetchAdd(1);
+      try {
+        let selfCheckDone = new AtomicInt(0);
+        let selfCheckResult: boolean = false;
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          if (msg.getWhat() === 1) {
+            selfCheckResult = msg.getTarget().hasMessages(1, "self");
+            selfCheckDone.fetchAdd(1);
+          }
+        }, eaw);
+        eaw.start();
+        handler.sendMessage(new concurrency.Message(1, "self", handler));
+        let waitCount: int = 0;
+        while (selfCheckDone.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
         }
-      }, eaw);
-      eaw.start();
-      handler.sendMessage(new concurrency.Message(1, "self", handler));
-      let waitCount: int = 0;
-      while (selfCheckDone.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(selfCheckResult).assertTrue();
-      if (eaw.isAlive()) {
-        eaw.quit();
+        expect(selfCheckResult).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1728,34 +1807,41 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      */
     it('MessageHandlerHasMessagesWhatObjTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
-      let queryCount = new AtomicInt(0);
-      let trueCount = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        if (msg.getWhat() >= 100) {
-          let result: boolean = msg.getTarget().hasMessages(1, "shared");
-          if (result) {
-            trueCount.fetchAdd(1);
+      try {
+        let queryCount = new AtomicInt(0);
+        let trueCount = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          if (msg.getWhat() >= 100) {
+            let result: boolean = msg.getTarget().hasMessages(1, "shared");
+            if (result) {
+              trueCount.fetchAdd(1);
+            }
+            queryCount.fetchAdd(1);
           }
-          queryCount.fetchAdd(1);
+        }, eaw);
+        eaw.start();
+        // Prefill enough shared targets before query messages for FIFO stability.
+        for (let i: int = 0; i < 10; i++) {
+          handler.sendMessage(new concurrency.Message(1, "shared", handler));
         }
-      }, eaw);
-      eaw.start();
-      // Prefill enough shared targets before query messages for FIFO stability.
-      for (let i: int = 0; i < 10; i++) {
-        handler.sendMessage(new concurrency.Message(1, "shared", handler));
-      }
-      for (let i: int = 0; i < 10; i++) {
-        handler.sendEmptyMessage(100 + i);
-      }
-      let waitCount: int = 0;
-      while (queryCount.load() < 10 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(queryCount.load()).assertEqual(10);
-      expect(trueCount.load() >= 1).assertTrue();
-      if (eaw.isAlive()) {
-        eaw.quit();
+        for (let i: int = 0; i < 10; i++) {
+          handler.sendEmptyMessage(100 + i);
+        }
+        let waitCount: int = 0;
+        while (queryCount.load() < 10 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(queryCount.load()).assertEqual(10);
+        expect(trueCount.load()).assertEqual(10);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1769,37 +1855,44 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      */
     it('MessageHandlerHasMessagesWhatObjTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
-      let workerDone = new AtomicInt(0);
-      let workerTrueCount = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        if (msg.getWhat() >= 100) {
-          let result: boolean = msg.getTarget().hasMessages(1, "target");
-          if (result) {
-            workerTrueCount.fetchAdd(1);
+      try {
+        let workerDone = new AtomicInt(0);
+        let workerTrueCount = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          if (msg.getWhat() >= 100) {
+            let result: boolean = msg.getTarget().hasMessages(1, "target");
+            if (result) {
+              workerTrueCount.fetchAdd(1);
+            }
+            workerDone.fetchAdd(1);
           }
-          workerDone.fetchAdd(1);
+        }, eaw);
+        eaw.start();
+        handler.sendMessage(new concurrency.Message(1, "target", handler));
+        for (let i: int = 0; i < 5; i++) {
+          handler.sendMessage(new concurrency.Message(100 + i, "trigger", handler));
         }
-      }, eaw);
-      eaw.start();
-      handler.sendMessage(new concurrency.Message(1, "target", handler));
-      for (let i: int = 0; i < 5; i++) {
-        handler.sendMessage(new concurrency.Message(100 + i, "trigger", handler));
-      }
-      let mainResults: boolean[] = [];
-      for (let i: int = 0; i < 5; i++) {
-        mainResults.push(handler.hasMessages(1, "target"));
-      }
-      let waitCount: int = 0;
-      while (workerDone.load() < 5 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      for (let i: int = 0; i < mainResults.length; i++) {
-        expect(mainResults[i]).assertTrue();
-      }
-      expect(workerDone.load()).assertEqual(5);
-      if (eaw.isAlive()) {
-        eaw.quit();
+        let mainResults: boolean[] = [];
+        for (let i: int = 0; i < 5; i++) {
+          mainResults.push(handler.hasMessages(1, "target"));
+        }
+        let waitCount: int = 0;
+        while (workerDone.load() < 5 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        for (let i: int = 0; i < mainResults.length; i++) {
+          expect(mainResults[i]).assertTrue();
+        }
+        expect(workerDone.load()).assertEqual(5);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1813,31 +1906,38 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      */
     it('MessageHandlerHasMessagesWhatObjTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
-      let sendCount = new AtomicInt(0);
-      let done = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        if (msg.getWhat() === 1) {
-          sendCount.fetchAdd(1);
-          if (sendCount.load() >= 6) {
-            done.fetchAdd(1);
+      try {
+        let sendCount = new AtomicInt(0);
+        let done = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          if (msg.getWhat() === 1) {
+            sendCount.fetchAdd(1);
+            if (sendCount.load() >= 6) {
+              done.fetchAdd(1);
+            }
+          } else if (msg.getWhat() >= 100) {
+            msg.getTarget().sendMessage(new concurrency.Message(1, "concurrent", msg.getTarget()));
           }
-        } else if (msg.getWhat() >= 100) {
-          msg.getTarget().sendMessage(new concurrency.Message(1, "concurrent", msg.getTarget()));
+        }, eaw);
+        eaw.start();
+        handler.sendMessage(new concurrency.Message(1, "concurrent", handler));
+        for (let i: int = 0; i < 5; i++) {
+          handler.sendMessage(new concurrency.Message(100 + i, "trigger", handler));
         }
-      }, eaw);
-      eaw.start();
-      handler.sendMessage(new concurrency.Message(1, "concurrent", handler));
-      for (let i: int = 0; i < 5; i++) {
-        handler.sendMessage(new concurrency.Message(100 + i, "trigger", handler));
-      }
-      let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(sendCount.load()).assertEqual(6);
-      if (eaw.isAlive()) {
-        eaw.quit();
+        let waitCount: int = 0;
+        while (done.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(sendCount.load()).assertEqual(6);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1854,56 +1954,91 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
       let eaw2 = new EAWorker();
       eaw1.start();
       eaw2.start();
-      let done1 = new AtomicInt(0);
-      let done2 = new AtomicInt(0);
-      let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        if (msg.getWhat() === 100) {
-          done1.fetchAdd(1);
+      try {
+        let done1 = new AtomicInt(0);
+        let done2 = new AtomicInt(0);
+        let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          if (msg.getWhat() === 100) {
+            done1.fetchAdd(1);
+          }
+        }, eaw1);
+        let handler2 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          if (msg.getWhat() === 100) {
+            done2.fetchAdd(1);
+          }
+        }, eaw2);
+        handler1.sendMessage(new concurrency.Message(1, "handler1", handler1));
+        handler2.sendMessage(new concurrency.Message(1, "handler2", handler2));
+        handler1.sendMessage(new concurrency.Message(100, "trigger", handler1));
+        handler2.sendMessage(new concurrency.Message(100, "trigger", handler2));
+        let waitCount: int = 0;
+        while ((done1.load() < 1 || done2.load() < 1) && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
         }
-      }, eaw1);
-      let handler2 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        if (msg.getWhat() === 100) {
-          done2.fetchAdd(1);
+        expect(handler1.hasMessages(1, "handler1")).assertTrue();
+        expect(handler2.hasMessages(1, "handler2")).assertTrue();
+        expect(handler1.hasMessages(1, "handler2")).assertFalse();
+        expect(handler2.hasMessages(1, "handler1")).assertFalse();
+      } finally {
+        if (eaw1.isAlive()) {
+          try {
+            eaw1.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
         }
-      }, eaw2);
-      handler1.sendMessage(new concurrency.Message(1, "handler1", handler1));
-      handler2.sendMessage(new concurrency.Message(1, "handler2", handler2));
-      handler1.sendMessage(new concurrency.Message(100, "trigger", handler1));
-      handler2.sendMessage(new concurrency.Message(100, "trigger", handler2));
-      let waitCount: int = 0;
-      while ((done1.load() < 1 || done2.load() < 1) && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(handler1.hasMessages(1, "handler1")).assertTrue();
-      expect(handler2.hasMessages(1, "handler2")).assertTrue();
-      expect(handler1.hasMessages(1, "handler2")).assertFalse();
-      expect(handler2.hasMessages(1, "handler1")).assertFalse();
-      if (eaw1.isAlive()) {
-        eaw1.quit();
-      }
-      if (eaw2.isAlive()) {
-        eaw2.quit();
+        if (eaw2.isAlive()) {
+          try {
+            eaw2.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
     /**
      * @tc.name   MessageHandlerHasMessagesWhatObjTest6200
      * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_OBJ_TEST_6200
-     * @tc.desc   Verify MessageHandler.hasMessages(what, obj) resource cleanup before Worker destroy
+     * @tc.desc   Verify MessageHandler.hasMessages(what, obj) returns false after removeMessages(what, obj) removes sent message in callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('MessageHandlerHasMessagesWhatObjTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message(1, "cleanup", handler);
-      handler.sendMessage(msg);
-      handler.removeMessages(1, "cleanup");
-      expect(handler.hasMessages(1, "cleanup")).assertFalse();
-      if (eaw.isAlive()) {
-        eaw.quit();
+      try {
+        let verified = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) {
+            cb();
+          }
+        }, eaw);
+        eaw.start();
+        handler.post((): void => {
+          handler.sendMessage(new concurrency.Message(1, "cleanup", handler));
+          handler.removeMessages(1, "cleanup");
+          let result: boolean = handler.hasMessages(1, "cleanup");
+          if (!result) {
+            verified.fetchAdd(1);
+          }
+        });
+        let waitCount: int = 0;
+        while (verified.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(verified.load()).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1917,38 +2052,45 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      */
     it('MessageHandlerHasMessagesWhatObjTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
-      let actionTaken: string = "";
-      let done = new AtomicInt(0);
-      let msg2Sent = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        if (msg.getWhat() === 1) {
-          let deadline: number = Date.now() + 3000;
-          while (msg2Sent.load() < 1 && Date.now() < deadline) {
+      try {
+        let actionTaken: string = "";
+        let done = new AtomicInt(0);
+        let msg2Sent = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          if (msg.getWhat() === 1) {
+            let deadline: number = Date.now() + 3000;
+            while (msg2Sent.load() < 1 && Date.now() < deadline) {
+            }
+            if (msg.getTarget().hasMessages(2, "priority")) {
+              actionTaken = "handle_priority_first";
+              msg.getTarget().removeMessages(2, "priority");
+            } else if (msg.getTarget().hasMessages(3, "normal")) {
+              actionTaken = "handle_normal";
+            } else {
+              actionTaken = "no_pending";
+            }
+            done.fetchAdd(1);
           }
-          if (msg.getTarget().hasMessages(2, "priority")) {
-            actionTaken = "handle_priority_first";
-            msg.getTarget().removeMessages(2, "priority");
-          } else if (msg.getTarget().hasMessages(3, "normal")) {
-            actionTaken = "handle_normal";
-          } else {
-            actionTaken = "no_pending";
-          }
-          done.fetchAdd(1);
+        }, eaw);
+        eaw.start();
+        handler.sendMessage(new concurrency.Message(1, "trigger", handler));
+        handler.sendMessage(new concurrency.Message(2, "priority", handler));
+        msg2Sent.store(1);
+        let waitCount: int = 0;
+        while (done.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
         }
-      }, eaw);
-      eaw.start();
-      handler.sendMessage(new concurrency.Message(1, "trigger", handler));
-      handler.sendMessage(new concurrency.Message(2, "priority", handler));
-      msg2Sent.store(1);
-      let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(actionTaken).assertEqual("handle_priority_first");
-      expect(handler.hasMessages(2, "priority")).assertFalse();
-      if (eaw.isAlive()) {
-        eaw.quit();
+        expect(actionTaken).assertEqual("handle_priority_first");
+        expect(handler.hasMessages(2, "priority")).assertFalse();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -1962,35 +2104,49 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      */
     it('MessageHandlerHasMessagesWhatObjTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
-      let processedOrder: number[] = [];
-      let done = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        if (msg.getTarget().hasMessages(1, "high")) {
-          processedOrder.push(1);
-          msg.getTarget().removeMessages(1, "high");
+      try {
+        let processedOrder: number[] = [];
+        let done = new AtomicInt(0);
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let callback: (() => void) | undefined = msg.getCallback();
+          if (callback !== undefined) {
+            callback();
+            return;
+          }
+          if (msg.getTarget().hasMessages(1, "high")) {
+            processedOrder.push(1);
+            msg.getTarget().removeMessages(1, "high");
+          }
+          if (msg.getTarget().hasMessages(2, "medium")) {
+            processedOrder.push(2);
+            msg.getTarget().removeMessages(2, "medium");
+          }
+          if (msg.getTarget().hasMessages(3, "low")) {
+            processedOrder.push(3);
+            msg.getTarget().removeMessages(3, "low");
+            done.fetchAdd(1);
+          }
+        }, eaw);
+        eaw.start();
+        handler.post((): void => {
+          handler.sendMessage(new concurrency.Message(3, "low", handler));
+          handler.sendMessage(new concurrency.Message(1, "high", handler));
+          handler.sendMessage(new concurrency.Message(2, "medium", handler));
+        });
+        let waitCount: int = 0;
+        while (done.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
         }
-        if (msg.getTarget().hasMessages(2, "medium")) {
-          processedOrder.push(2);
-          msg.getTarget().removeMessages(2, "medium");
+        expect(processedOrder.length).assertEqual(3);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
         }
-        if (msg.getTarget().hasMessages(3, "low")) {
-          processedOrder.push(3);
-          msg.getTarget().removeMessages(3, "low");
-          done.fetchAdd(1);
-        }
-      }, eaw);
-      eaw.start();
-      handler.sendMessage(new concurrency.Message(3, "low", handler));
-      handler.sendMessage(new concurrency.Message(1, "high", handler));
-      handler.sendMessage(new concurrency.Message(2, "medium", handler));
-      let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(processedOrder.length >= 1).assertTrue();
-      if (eaw.isAlive()) {
-        eaw.quit();
       }
     })
 
@@ -2005,16 +2161,23 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     it('MessageHandlerHasMessagesWhatObjTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let largeObj: Record<string, string> = {};
-      for (let i: int = 0; i < 1000; i++) {
-        largeObj[`key_${i}`] = `value_${i}`;
-      }
-      let msg = new concurrency.Message(1, largeObj as Object, handler);
-      handler.sendMessage(msg);
-      expect(handler.hasMessages(1, largeObj as Object)).assertTrue();
-      if (eaw.isAlive()) {
-        eaw.quit();
+      try {
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let largeObj: Record<string, string> = {};
+        for (let i: int = 0; i < 1000; i++) {
+          largeObj[`key_${i}`] = `value_${i}`;
+        }
+        let msg = new concurrency.Message(1, largeObj as Object, handler);
+        handler.sendMessage(msg);
+        expect(handler.hasMessages(1, largeObj as Object)).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -2029,17 +2192,24 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     it('MessageHandlerHasMessagesWhatObjTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      for (let i: int = 0; i < 100; i++) {
-        let m = new concurrency.Message(i, `obj_${i}`, handler);
-        let sent: boolean = handler.sendMessage(m);
-        if (!sent) {
-          break;
+      try {
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        for (let i: int = 0; i < 100; i++) {
+          let m = new concurrency.Message(i, `obj_${i}`, handler);
+          let sent: boolean = handler.sendMessage(m);
+          if (!sent) {
+            break;
+          }
         }
-      }
-      expect(handler.hasMessages(0, "obj_0")).assertTrue();
-      if (eaw.isAlive()) {
-        eaw.quit();
+        expect(handler.hasMessages(0, "obj_0")).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -2056,17 +2226,28 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
       eaw1.start();
       let eaw2 = new EAWorker();
       eaw2.start();
-      let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw1);
-      let handler2 = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw2);
-      let msg1 = new concurrency.Message(1, "obj1", handler1);
-      handler1.sendMessage(msg1);
-      expect(handler2.hasMessages(1, "obj1")).assertFalse();
-      expect(handler1.hasMessages(1, "obj1")).assertTrue();
-      if (eaw1.isAlive()) {
-        eaw1.quit();
-      }
-      if (eaw2.isAlive()) {
-        eaw2.quit();
+      try {
+        let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw1);
+        let handler2 = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw2);
+        let msg1 = new concurrency.Message(1, "obj1", handler1);
+        handler1.sendMessage(msg1);
+        expect(handler2.hasMessages(1, "obj1")).assertFalse();
+        expect(handler1.hasMessages(1, "obj1")).assertTrue();
+      } finally {
+        if (eaw1.isAlive()) {
+          try {
+            eaw1.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+        if (eaw2.isAlive()) {
+          try {
+            eaw2.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -2081,12 +2262,19 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     it('MessageHandlerHasMessagesWhatObjTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message(1, "test_obj", handler);
-      handler.sendMessage(msg);
-      expect(handler.hasMessages(1, "test_obj")).assertTrue();
-      if (eaw.isAlive()) {
-        eaw.quit();
+      try {
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(1, "test_obj", handler);
+        handler.sendMessage(msg);
+        expect(handler.hasMessages(1, "test_obj")).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
 
@@ -2101,12 +2289,19 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
     it('MessageHandlerHasMessagesWhatObjTest6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message(1, "arkts12", handler);
-      handler.sendMessage(msg);
-      expect(handler.hasMessages(1, "arkts12")).assertTrue();
-      if (eaw.isAlive()) {
-        eaw.quit();
+      try {
+        let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(1, "arkts12", handler);
+        handler.sendMessage(msg);
+        expect(handler.hasMessages(1, "arkts12")).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
     })
   })
