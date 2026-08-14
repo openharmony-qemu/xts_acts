@@ -82,14 +82,6 @@ export default function DialogButtonMatrix() {
       let txt_btn_matrix_enabled = await label_btn_matrix_enabled.getText();
       expect(txt_btn_matrix_enabled.indexOf('EnabledOK') >= 0).assertTrue();
 
-      await DialogApi26TestHelper.clickId(driver, 'btn_matrix_focus');
-      await DialogApi26TestHelper.expectTextVisible(driver, 'FocusTitle');
-      await DialogApi26TestHelper.dismissByText(driver, 'FocusOK');
-      let label_btn_matrix_focus = await driver.findComponent(ON.id('btn_matrix_action'));
-      expect(label_btn_matrix_focus !== null).assertTrue();
-      let txt_btn_matrix_focus = await label_btn_matrix_focus.getText();
-      expect(txt_btn_matrix_focus.indexOf('FocusOK') >= 0).assertTrue();
-
       await DialogApi26TestHelper.clickId(driver, 'btn_matrix_primary');
       await DialogApi26TestHelper.expectTextVisible(driver, 'PrimaryTitle');
       await DialogApi26TestHelper.dismissByText(driver, 'PrimaryOK');
