@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,7 +36,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -64,7 +64,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -92,7 +92,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -120,7 +120,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -148,7 +148,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -176,7 +176,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -204,7 +204,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       try {
         let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -232,7 +232,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -262,7 +262,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -290,7 +290,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -318,7 +318,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -346,7 +346,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -375,7 +375,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -404,7 +404,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -433,7 +433,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -462,7 +462,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -491,7 +491,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -520,7 +520,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -549,7 +549,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -578,7 +578,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -607,7 +607,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -636,7 +636,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -665,7 +665,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -695,7 +695,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -724,7 +724,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -757,7 +757,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -787,7 +787,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -818,7 +818,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -847,7 +847,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -877,7 +877,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -907,7 +907,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -942,7 +942,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       try {
         let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -970,7 +970,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       try {
         let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -997,7 +997,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       try {
         let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1026,7 +1026,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1055,7 +1055,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       try {
         let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1086,7 +1086,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1117,7 +1117,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatObjTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1149,7 +1149,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1179,7 +1179,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       try {
         let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1213,7 +1213,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatObjTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1234,7 +1234,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1261,7 +1261,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       try {
         let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1288,7 +1288,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       try {
         let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1315,7 +1315,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       try {
         let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1342,7 +1342,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1373,7 +1373,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1404,7 +1404,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1435,7 +1435,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       try {
         let verified = new AtomicInt(0);
@@ -1469,6 +1469,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }
       }
+      done();
     })
 
     /**
@@ -1479,7 +1480,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1519,6 +1520,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }
       }
+      done();
     })
 
     /**
@@ -1529,7 +1531,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1558,7 +1560,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1588,7 +1590,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1619,7 +1621,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatObjTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       try {
         let msgSent = new AtomicInt(0);
@@ -1647,6 +1649,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }
       }
+      done();
     })
 
     /**
@@ -1657,7 +1660,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatObjTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       try {
         let queryCount = new AtomicInt(0);
@@ -1695,6 +1698,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }
       }
+      done();
     })
 
     /**
@@ -1705,13 +1709,13 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatObjTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       // Shared obj refs + atomic enqueue so nested hasMessages(what, obj) sees siblings
       let eaw = new EAWorker();
       eaw.start();
       try {
         let checkResult = new AtomicInt(0);
-        let done = new AtomicInt(0);
+        let doneCount = new AtomicInt(0);
         let obj1: Object = "obj1" as Object;
         let obj2: Object = "obj2" as Object;
         let obj3: Object = "obj3" as Object;
@@ -1731,7 +1735,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
               checkResult.fetchAdd(1);
             }
           } else if (msg.getWhat() === 4) {
-            done.fetchAdd(1);
+            doneCount.fetchAdd(1);
           }
         }, eaw);
         handler.post((): void => {
@@ -1741,7 +1745,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           handler.sendMessage(new concurrency.Message(4, obj4, handler));
         });
         let waitCount: int = 0;
-        while (done.load() < 1 && waitCount < 50) {
+        while (doneCount.load() < 1 && waitCount < 50) {
           waitCount++;
           await Utils.msSleep(100);
         }
@@ -1755,6 +1759,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }
       }
+      done();
     })
 
     /**
@@ -1765,7 +1770,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatObjTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       try {
         let selfCheckDone = new AtomicInt(0);
@@ -1793,6 +1798,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }
       }
+      done();
     })
 
 
@@ -1805,7 +1811,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatObjTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       try {
         let queryCount = new AtomicInt(0);
@@ -1843,6 +1849,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }
       }
+      done();
     })
 
     /**
@@ -1853,7 +1860,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatObjTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       try {
         let workerDone = new AtomicInt(0);
@@ -1894,6 +1901,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }
       }
+      done();
     })
 
     /**
@@ -1904,16 +1912,16 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatObjTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       try {
         let sendCount = new AtomicInt(0);
-        let done = new AtomicInt(0);
+        let doneCount = new AtomicInt(0);
         let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
           if (msg.getWhat() === 1) {
             sendCount.fetchAdd(1);
             if (sendCount.load() >= 6) {
-              done.fetchAdd(1);
+              doneCount.fetchAdd(1);
             }
           } else if (msg.getWhat() >= 100) {
             msg.getTarget().sendMessage(new concurrency.Message(1, "concurrent", msg.getTarget()));
@@ -1925,7 +1933,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           handler.sendMessage(new concurrency.Message(100 + i, "trigger", handler));
         }
         let waitCount: int = 0;
-        while (done.load() < 1 && waitCount < 50) {
+        while (doneCount.load() < 1 && waitCount < 50) {
           waitCount++;
           await Utils.msSleep(100);
         }
@@ -1939,6 +1947,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }
       }
+      done();
     })
 
     /**
@@ -1949,7 +1958,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatObjTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw1 = new EAWorker();
       let eaw2 = new EAWorker();
       eaw1.start();
@@ -1996,6 +2005,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }
       }
+      done();
     })
 
     /**
@@ -2006,7 +2016,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       try {
         let verified = new AtomicInt(0);
@@ -2040,6 +2050,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }
       }
+      done();
     })
 
     /**
@@ -2050,11 +2061,11 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatObjTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       try {
         let actionTaken: string = "";
-        let done = new AtomicInt(0);
+        let doneCount = new AtomicInt(0);
         let msg2Sent = new AtomicInt(0);
         let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
           if (msg.getWhat() === 1) {
@@ -2069,7 +2080,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
             } else {
               actionTaken = "no_pending";
             }
-            done.fetchAdd(1);
+            doneCount.fetchAdd(1);
           }
         }, eaw);
         eaw.start();
@@ -2077,7 +2088,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
         handler.sendMessage(new concurrency.Message(2, "priority", handler));
         msg2Sent.store(1);
         let waitCount: int = 0;
-        while (done.load() < 1 && waitCount < 50) {
+        while (doneCount.load() < 1 && waitCount < 50) {
           waitCount++;
           await Utils.msSleep(100);
         }
@@ -2092,6 +2103,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }
       }
+      done();
     })
 
     /**
@@ -2102,11 +2114,11 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatObjTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       try {
         let processedOrder: number[] = [];
-        let done = new AtomicInt(0);
+        let doneCount = new AtomicInt(0);
         let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
           let callback: (() => void) | undefined = msg.getCallback();
           if (callback !== undefined) {
@@ -2124,7 +2136,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           if (msg.getTarget().hasMessages(3, "low")) {
             processedOrder.push(3);
             msg.getTarget().removeMessages(3, "low");
-            done.fetchAdd(1);
+            doneCount.fetchAdd(1);
           }
         }, eaw);
         eaw.start();
@@ -2134,7 +2146,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           handler.sendMessage(new concurrency.Message(2, "medium", handler));
         });
         let waitCount: int = 0;
-        while (done.load() < 1 && waitCount < 50) {
+        while (doneCount.load() < 1 && waitCount < 50) {
           waitCount++;
           await Utils.msSleep(100);
         }
@@ -2148,6 +2160,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }
       }
+      done();
     })
 
     /**
@@ -2158,7 +2171,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatObjTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -2189,7 +2202,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatObjTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -2221,7 +2234,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatObjTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw1 = new EAWorker();
       eaw1.start();
       let eaw2 = new EAWorker();
@@ -2259,7 +2272,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -2286,7 +2299,7 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatObjTest6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatObjTest6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {

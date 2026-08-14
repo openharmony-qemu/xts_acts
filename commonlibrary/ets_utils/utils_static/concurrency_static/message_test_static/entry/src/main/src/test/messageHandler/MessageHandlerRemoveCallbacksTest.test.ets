@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,11 +33,11 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveCallbacksTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
@@ -48,10 +48,10 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (handler.removeCallbacks(callback)) {
           removed.fetchAdd(1);
         }
-        done.fetchAdd(1);
+        doneCount.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
+      while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -63,6 +63,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -73,11 +74,11 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveCallbacksTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
@@ -88,10 +89,10 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (handler.removeCallbacks(arrowCallback)) {
           removed.fetchAdd(1);
         }
-        done.fetchAdd(1);
+        doneCount.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
+      while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -103,6 +104,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -113,7 +115,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveCallbacksTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let verified = new AtomicInt(0);
@@ -144,6 +146,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -154,7 +157,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveCallbacksTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -180,11 +183,11 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveCallbacksTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
@@ -195,10 +198,10 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (handler.removeCallbacks(callback)) {
           removed.fetchAdd(1);
         }
-        done.fetchAdd(1);
+        doneCount.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
+      while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -210,6 +213,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -220,7 +224,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -251,6 +255,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -261,7 +266,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -290,7 +295,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -319,11 +324,11 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveCallbacksTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
@@ -335,10 +340,10 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (handler.removeCallbacks(callback)) {
           removed.fetchAdd(1);
         }
-        done.fetchAdd(1);
+        doneCount.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
+      while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -350,6 +355,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -360,7 +366,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerRemoveCallbacksTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -386,7 +392,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -412,11 +418,11 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
@@ -428,10 +434,10 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (handler.removeCallbacks(callback)) {
           removed.fetchAdd(1);
         }
-        done.fetchAdd(1);
+        doneCount.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
+      while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -443,6 +449,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
     /**
      * @tc.name   MessageHandlerRemoveCallbacksTest1300
@@ -452,7 +459,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let executed = new AtomicInt(0);
@@ -477,6 +484,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
 
@@ -488,7 +496,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -523,6 +531,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -533,7 +542,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let verified = new AtomicInt(0);
@@ -564,6 +573,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -574,11 +584,11 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
@@ -590,10 +600,10 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         handler.sendMessage(new concurrency.Message(callback, handler));
         let result: boolean = handler.removeCallbacks(callback);
         if (result) { removed.fetchAdd(1); }
-        done.fetchAdd(1);
+        doneCount.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
+      while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -605,6 +615,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -615,7 +626,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -641,6 +652,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -651,11 +663,11 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let verified = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
@@ -672,10 +684,10 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (!handler.removeCallbacks(callback)) {
           verified.fetchAdd(1);
         }
-        done.fetchAdd(1);
+        doneCount.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
+      while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -687,6 +699,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -697,7 +710,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let verified = new AtomicInt(0);
@@ -730,6 +743,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -740,11 +754,11 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
@@ -758,10 +772,10 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (handler.removeCallbacks(callback)) {
           removed.fetchAdd(1);
         }
-        done.fetchAdd(1);
+        doneCount.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
+      while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -773,6 +787,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
 
@@ -784,11 +799,11 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removeCount = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
@@ -800,10 +815,10 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         }
         let result: boolean = handler.removeCallbacks(callback);
         if (result) { removeCount.fetchAdd(1); }
-        done.fetchAdd(1);
+        doneCount.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
+      while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -815,6 +830,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -825,7 +841,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removeCount = new AtomicInt(0);
@@ -858,6 +874,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -868,7 +885,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -896,6 +913,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -906,11 +924,11 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
@@ -920,10 +938,10 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         handler.sendMessage(new concurrency.Message(otherCallback, handler));
         let result: boolean = handler.removeCallbacks(otherCallback);
         if (result) { removed.fetchAdd(1); }
-        done.fetchAdd(1);
+        doneCount.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
+      while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -935,6 +953,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -945,7 +964,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -973,6 +992,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -983,7 +1003,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1007,11 +1027,11 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
@@ -1023,10 +1043,10 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (handler.removeCallbacks(callback)) {
           removed.fetchAdd(1);
         }
-        done.fetchAdd(1);
+        doneCount.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
+      while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -1038,6 +1058,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
   })

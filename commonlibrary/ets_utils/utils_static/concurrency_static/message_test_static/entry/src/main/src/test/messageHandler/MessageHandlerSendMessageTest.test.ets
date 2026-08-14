@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,7 +33,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerSendMessageTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -53,7 +53,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerSendMessageTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -71,7 +71,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerSendMessageTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -89,7 +89,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerSendMessageTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let callbackExecuted = new AtomicInt(0);
@@ -110,6 +110,7 @@ export default function MessageHandlerSendMessageTest(): void {
       }
       expect(callbackExecuted.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -120,7 +121,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerSendMessageTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -144,7 +145,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerSendMessageTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -168,7 +169,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerSendMessageTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -191,6 +192,7 @@ export default function MessageHandlerSendMessageTest(): void {
       }
       expect(counter.load()).assertEqual(11);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -201,7 +203,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerSendMessageTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let msg = new concurrency.Message(1, handler);
@@ -219,7 +221,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendMessageTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -241,7 +243,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerSendMessageTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let order0 = new AtomicInt(-1);
@@ -280,6 +282,7 @@ export default function MessageHandlerSendMessageTest(): void {
       expect(order1.load()).assertEqual(2);
       expect(order2.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -290,7 +293,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendMessageTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -308,6 +311,7 @@ export default function MessageHandlerSendMessageTest(): void {
       }
       expect(counter.load()).assertEqual(10);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -318,7 +322,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerSendMessageTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let received = new AtomicInt(0);
@@ -334,6 +338,7 @@ export default function MessageHandlerSendMessageTest(): void {
       }
       expect(received.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -344,7 +349,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerSendMessageTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let whatValue = new AtomicInt(0);
@@ -366,6 +371,7 @@ export default function MessageHandlerSendMessageTest(): void {
       expect(whatValue.load()).assertEqual(42);
       expect(objVerified.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -376,7 +382,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendMessageTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let innerReceived = new AtomicInt(0);
@@ -397,6 +403,7 @@ export default function MessageHandlerSendMessageTest(): void {
       }
       expect(innerReceived.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -407,7 +414,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendMessageTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let order: int[] = [];
@@ -429,6 +436,7 @@ export default function MessageHandlerSendMessageTest(): void {
       expect(order[0]).assertEqual(1);
       expect(order[1]).assertEqual(2);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -439,7 +447,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendMessageTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let order: int[] = [];
@@ -464,6 +472,7 @@ export default function MessageHandlerSendMessageTest(): void {
       expect(order[1]).assertEqual(20);
       expect(order[2]).assertEqual(30);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -474,7 +483,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendMessageTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let received = new AtomicInt(0);
@@ -492,6 +501,7 @@ export default function MessageHandlerSendMessageTest(): void {
       }
       expect(received.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -502,7 +512,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendMessageTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -522,6 +532,7 @@ export default function MessageHandlerSendMessageTest(): void {
       }
       expect(counter.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -532,7 +543,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendMessageTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let order: int[] = [];
@@ -552,6 +563,7 @@ export default function MessageHandlerSendMessageTest(): void {
       expect(order[0]).assertEqual(1);
       expect(order[1]).assertEqual(2);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -562,7 +574,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendMessageTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -580,6 +592,7 @@ export default function MessageHandlerSendMessageTest(): void {
       }
       expect(counter.load()).assertEqual(100);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -590,7 +603,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendMessageTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let eaw2 = new EAWorker();
@@ -618,6 +631,7 @@ export default function MessageHandlerSendMessageTest(): void {
       expect(counter.load()).assertEqual(100);
       if (eaw.isAlive()) { eaw.quit(); }
       if (eaw2.isAlive()) { eaw2.quit(); }
+      done();
     })
 
     /**
@@ -628,7 +642,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendMessageTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let sendCounter = new AtomicInt(0);
@@ -653,6 +667,7 @@ export default function MessageHandlerSendMessageTest(): void {
       }
       expect(processedCounter.load()).assertEqual(sentCount);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -663,7 +678,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendMessageTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let msgStatus = new AtomicInt(0);
@@ -679,6 +694,7 @@ export default function MessageHandlerSendMessageTest(): void {
       }
       expect(msgStatus.load()).assertEqual(42);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -689,7 +705,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendMessageTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw1 = new EAWorker();
       let eaw2 = new EAWorker();
       eaw1.start();
@@ -717,6 +733,7 @@ export default function MessageHandlerSendMessageTest(): void {
       expect(counter2.load()).assertEqual(5);
       if (eaw1.isAlive()) { eaw1.quit(); }
       if (eaw2.isAlive()) { eaw2.quit(); }
+      done();
     })
 
     /**
@@ -727,7 +744,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerSendMessageTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let sharedValue = new AtomicInt(0);
@@ -745,6 +762,7 @@ export default function MessageHandlerSendMessageTest(): void {
       }
       expect(sharedValue.load()).assertEqual(50);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -755,12 +773,12 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerSendMessageTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       // start + atomic send/hasMessages on handler thread (handler must invoke post callbacks)
       let eaw = new EAWorker();
       eaw.start();
       let hasPending = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
@@ -770,15 +788,16 @@ export default function MessageHandlerSendMessageTest(): void {
         if (handler.hasMessages(1)) {
           hasPending.fetchAdd(1);
         }
-        done.fetchAdd(1);
+        doneCount.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
+      while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
       expect(hasPending.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -789,13 +808,13 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerSendMessageTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       // start + atomic send/removeMessages; handler must invoke post callbacks
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
       let cleared = new AtomicInt(0);
-      let done = new AtomicInt(0);
+      let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
@@ -808,16 +827,17 @@ export default function MessageHandlerSendMessageTest(): void {
         if (!handler.hasMessages(1)) {
           cleared.fetchAdd(1);
         }
-        done.fetchAdd(1);
+        doneCount.fetchAdd(1);
       });
       let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
+      while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
       expect(cleared.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -828,7 +848,7 @@ export default function MessageHandlerSendMessageTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerSendMessageTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerSendMessageTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
