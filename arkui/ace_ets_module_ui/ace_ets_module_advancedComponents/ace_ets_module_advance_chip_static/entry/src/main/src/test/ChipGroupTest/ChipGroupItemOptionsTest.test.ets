@@ -358,42 +358,47 @@ export default function chipGroupOptionsTest(): void {
      * @tc.level    Level.LEVEL0
      */
     it('chipGroupOptionsTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[chipGroupOptionsTest_static_007] START');
-      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 6);
-      const routerInstance = AppStorage.get<Router>('router') as Router;
-      routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipGroup/ChipGroupItemOptionsPage' });
-      await CommonFunc.sleep(2000);
+      try {
+        console.info('[chipGroupOptionsTest_static_007] START');
+        AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 6);
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipGroup/ChipGroupItemOptionsPage' });
+        await CommonFunc.sleep(2000);
 
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await CommonFunc.sleep(1000);
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        await CommonFunc.sleep(1000);
 
-      let btn0 = tree.getArray("$children")[0]
-        .getArray('$children')[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-      console.info("[chipGroupOptionsTest_static_007] component btn0.attrs.padding.left is: " +
-      JSON.parseJsonElement(btn0.getElement('$attrs').getString('padding')).getString('left'));
-      let result = JSON.parseJsonElement(btn0.getElement('$attrs').getString('padding')).getString('left');
-      expect(result).assertEqual('16.00vp');
-      await CommonFunc.sleep(1000);
+        let btn0 = tree.getArray("$children")[0]
+          .getArray('$children')[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+        console.info("[chipGroupOptionsTest_static_007] component btn0.attrs.padding.left is: " +
+        JSON.parseJsonElement(btn0.getElement('$attrs').getString('padding')).getString('left'));
+        let result = JSON.parseJsonElement(btn0.getElement('$attrs').getString('padding')).getString('left');
+        expect(result).assertEqual('16.00vp');
+        await CommonFunc.sleep(1000);
 
-      let btn1 = tree.getArray("$children")[0]
-        .getArray('$children')[0]
-        .getArray("$children")[0]
+        let btn1 = tree.getArray("$children")[0]
+          .getArray('$children')[0]
+          .getArray("$children")[0]
 
-      console.info("[chipGroupOptionsTest_static_007] component btn1.attrs.padding.top is: " +
-      JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top'));
-      console.info("[chipGroupOptionsTest_static_007] component btn1.attrs.padding.bottom is: " +
-      JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom'));
+        console.info("[chipGroupOptionsTest_static_007] component btn1.attrs.padding.top is: " +
+        JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top'));
+        console.info("[chipGroupOptionsTest_static_007] component btn1.attrs.padding.bottom is: " +
+        JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom'));
 
-      let result1 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top');
-      let result2 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom');
-      expect(result1).assertEqual('14.00vp');
-      expect(result2).assertEqual('14.00vp');
-      await CommonFunc.sleep(1000);
+        let result1 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top');
+        let result2 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom');
+        expect(result1).assertEqual('14.00vp');
+        expect(result2).assertEqual('14.00vp');
+        await CommonFunc.sleep(1000);
 
-      console.info('[chipGroupOptionsTest_static_007] END');
+        console.info('[chipGroupOptionsTest_static_007] END');
+      } catch (error) {
+        console.error('[chipGroupOptionsTest_static_007] error: ' + error);
+        expect().assertFail();
+      }
       done();
     });
 
