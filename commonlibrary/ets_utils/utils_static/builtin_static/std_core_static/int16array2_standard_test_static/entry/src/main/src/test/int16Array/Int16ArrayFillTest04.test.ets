@@ -1988,3 +1988,437 @@ export default function int16ArrayFillTestFourTest(): void {
       let expected4: number = 50 as short;
       expect(actual4).assertEqual(expected4);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0860
+     * @tc.name testInt16ArrayFillTestFour086
+     * @tc.desc Verify fill(Number.POSITIVE_INFINITY, 0, 3) converts Number.POSITIVE_INFINITY to 0 in range
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([5, 5, 5, 5, 5]);
+      arr.fill(Number.POSITIVE_INFINITY, 0, 3);
+      let sub: Int16Array = arr.subarray(0, 3);
+      let actual1: number = sub.$_get(0);
+      let expected1: number = 0 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = sub.$_get(1);
+      let expected2: number = 0 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = sub.$_get(2);
+      let expected3: number = 0 as short;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0870
+     * @tc.name testInt16ArrayFillTestFour087
+     * @tc.desc Verify fill(3.7) semantics
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arrA: Int16Array = new Int16Array([10, 20, 30, 40]);
+      let arrB: Int16Array = new Int16Array([10, 20, 30, 40]);
+      arrA.fill(3.7);
+      arrB.fill(3 as short);
+      let actual1: number = arrA.$_get(0);
+      let expected1: number = arrB.$_get(0);
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arrA.$_get(1);
+      let expected2: number = arrB.$_get(1);
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = arrA.$_get(3);
+      let expected3: number = arrB.$_get(3);
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0880
+     * @tc.name testInt16ArrayFillTestFour088
+     * @tc.desc Verify fill(32768.9) int16 overflow wrap semantics
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([0, 0, 0, 0]);
+      arr.fill(32768.9);
+      let actual1: number = arr.$_get(0);
+      let expected1: number = -32768 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr.$_get(1);
+      let expected2: number = -32768 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = arr.$_get(3);
+      let expected3: number = -32768 as short;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0890
+     * @tc.name testInt16ArrayFillTestFour089
+     * @tc.desc Verify fill(-32769.2) int16 overflow wrap semantics
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([0, 0, 0, 0]);
+      arr.fill(-32769.2);
+      let actual1: number = arr.$_get(0);
+      let expected1: number = 32767 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr.$_get(1);
+      let expected2: number = 32767 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = arr.$_get(3);
+      let expected3: number = 32767 as short;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0900
+     * @tc.name testInt16ArrayFillTestFour090
+     * @tc.desc Verify fill(99, 1, 3) then copyWithin copies filled region
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([10, 20, 30, 40, 50, 60]);
+      arr.fill(99 as short, 1, 3);
+      arr.copyWithin(3, 1, 3);
+      let actual1: number = arr.$_get(0);
+      let expected1: number = 10 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr.$_get(1);
+      let expected2: number = 99 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = arr.$_get(2);
+      let expected3: number = 99 as short;
+      expect(actual3).assertEqual(expected3);
+      let actual4: number = arr.$_get(3);
+      let expected4: number = 99 as short;
+      expect(actual4).assertEqual(expected4);
+      let actual5: number = arr.$_get(4);
+      let expected5: number = 99 as short;
+      expect(actual5).assertEqual(expected5);
+      let actual6: number = arr.$_get(5);
+      let expected6: number = 60 as short;
+      expect(actual6).assertEqual(expected6);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0910
+     * @tc.name testInt16ArrayFillTestFour091
+     * @tc.desc Verify fill(50) then set() overwrites part of filled region
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([0, 0, 0, 0, 0, 0]);
+      arr.fill(50 as short);
+      let src: Int16Array = Int16Array.of(1, 2);
+      arr.set(src, 2);
+      let actual1: number = arr.$_get(0);
+      let expected1: number = 50 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr.$_get(1);
+      let expected2: number = 50 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = arr.$_get(2);
+      let expected3: number = 1 as short;
+      expect(actual3).assertEqual(expected3);
+      let actual4: number = arr.$_get(3);
+      let expected4: number = 2 as short;
+      expect(actual4).assertEqual(expected4);
+      let actual5: number = arr.$_get(4);
+      let expected5: number = 50 as short;
+      expect(actual5).assertEqual(expected5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0920
+     * @tc.name testInt16ArrayFillTestFour092
+     * @tc.desc Verify fill(32768, 0, 3) then slice preserves overflowed values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Int16Array = new Int16Array([1, 2, 3, 4, 5]);
+      let arr: Int16Array = Int16Array.from(src);
+      arr.fill(32768, 0, 3);
+      let sliced: Int16Array = arr.slice(0, 3);
+      let actual1: number = sliced.$_get(0);
+      let expected1: number = -32768 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = sliced.$_get(1);
+      let expected2: number = -32768 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = sliced.$_get(2);
+      let expected3: number = -32768 as short;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0930
+     * @tc.name testInt16ArrayFillTestFour093
+     * @tc.desc Verify fill(5) then join outputs filled string form
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([1, 2, 3, 4]);
+      arr.fill(5 as short);
+      let str: string = arr.join(',');
+      expect(str).assertEqual('5,5,5,5');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0940
+     * @tc.name testInt16ArrayFillTestFour094
+     * @tc.desc Verify fill(100, 1, 3) then map returns new array, original unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([10, 20, 30, 40]);
+      arr.fill(100 as short, 1, 3);
+      let mapped: Int16Array = arr.map((v: number): number => {
+        return v + 1;
+      });
+      let actual1: number = arr.$_get(1);
+      let expected1: number = 100 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr.$_get(2);
+      let expected2: number = 100 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = mapped.$_get(1);
+      let expected3: number = 101 as short;
+      expect(actual3).assertEqual(expected3);
+      let actual4: number = mapped.$_get(2);
+      let expected4: number = 101 as short;
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0950
+     * @tc.name testInt16ArrayFillTestFour095
+     * @tc.desc Verify fill(99) then ArrayBuffer.isView returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([1, 2, 3, 4]);
+      arr.fill(99 as short);
+      let actual1: boolean = ArrayBuffer.isView(arr);
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0960
+     * @tc.name testInt16ArrayFillTestFour096
+     * @tc.desc Verify fill(200, 0, 4) then $_set mutates one element only
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([1, 2, 3, 4, 5, 6]);
+      arr.fill(200 as short, 0, 4);
+      arr.$_set(2, 999);
+      let actual1: number = arr.$_get(0);
+      let expected1: number = 200 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr.$_get(1);
+      let expected2: number = 200 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = arr.$_get(2);
+      let expected3: number = 999 as short;
+      expect(actual3).assertEqual(expected3);
+      let actual4: number = arr.$_get(3);
+      let expected4: number = 200 as short;
+      expect(actual4).assertEqual(expected4);
+      let actual5: number = arr.$_get(4);
+      let expected5: number = 5 as short;
+      expect(actual5).assertEqual(expected5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0970
+     * @tc.name testInt16ArrayFillTestFour097
+     * @tc.desc Verify fill on subarray view syncs parent after fill
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([10, 20, 30, 40, 50, 60]);
+      arr.fill(100 as short, 0, 6);
+      let sub: Int16Array = arr.subarray(2, 5);
+      sub.fill(999 as short);
+      let actual1: number = arr.$_get(0);
+      let expected1: number = 100 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr.$_get(1);
+      let expected2: number = 100 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = arr.$_get(2);
+      let expected3: number = 999 as short;
+      expect(actual3).assertEqual(expected3);
+      let actual4: number = arr.$_get(4);
+      let expected4: number = 999 as short;
+      expect(actual4).assertEqual(expected4);
+      let actual5: number = arr.$_get(5);
+      let expected5: number = 100 as short;
+      expect(actual5).assertEqual(expected5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0980
+     * @tc.name testInt16ArrayFillTestFour098
+     * @tc.desc Verify fill(50) then with() returns new array original unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([1, 2, 3, 4, 5]);
+      arr.fill(50 as short);
+      let replaced: Int16Array = arr.with(2, 99);
+      let actual1: number = arr.$_get(2);
+      let expected1: number = 50 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = replaced.$_get(2);
+      let expected2: number = 99 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = replaced.$_get(0);
+      let expected3: number = 50 as short;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0990
+     * @tc.name testInt16ArrayFillTestFour099
+     * @tc.desc Verify fill(777) works on ArrayBuffer-backed view with byteOffset
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf: ArrayBuffer = new ArrayBuffer(12);
+      let arr: Int16Array = new Int16Array(buf, 2, 4);
+      arr.fill(777 as short);
+      let actual1: number = arr.$_get(0);
+      let expected1: number = 777 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr.$_get(1);
+      let expected2: number = 777 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = arr.$_get(3);
+      let expected3: number = 777 as short;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_1000
+     * @tc.name testInt16ArrayFillTestFour100
+     * @tc.desc Verify fill(888) works on ArrayBuffer-backed view with byteOffset
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf: ArrayBuffer = new ArrayBuffer(8);
+      let arr: Int16Array = new Int16Array(buf, 0, 4);
+      arr.fill(888 as short);
+      let actual1: number = arr.$_get(0);
+      let expected1: number = 888 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr.$_get(2);
+      let expected2: number = 888 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = arr.$_get(3);
+      let expected3: number = 888 as short;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_1010
+     * @tc.name testInt16ArrayFillTestFour101
+     * @tc.desc Verify fill(999, bigStart) with extreme start clamps without throw
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([11, 22, 33, 44]);
+      let bigStart: int = 2147483647;
+      arr.fill(999 as short, bigStart);
+      let actual1: number = arr.$_get(0);
+      let expected1: number = 11 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr.$_get(1);
+      let expected2: number = 22 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = arr.$_get(3);
+      let expected3: number = 44 as short;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_1020
+     * @tc.name testInt16ArrayFillTestFour102
+     * @tc.desc Verify fill(777, 0, bigEnd) with extreme end clamps without throw
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([11, 22, 33, 44]);
+      let bigEnd: int = 2147483647;
+      arr.fill(777 as short, 0, bigEnd);
+      let actual1: number = arr.$_get(0);
+      let expected1: number = 777 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr.$_get(1);
+      let expected2: number = 777 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = arr.$_get(3);
+      let expected3: number = 777 as short;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_1030
+     * @tc.name testInt16ArrayFillTestFour103
+     * @tc.desc Verify fill(555, bigNeg) with extreme negative start clamps without throw
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestFour103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([10, 20, 30, 40]);
+      let bigNeg: int = -2147483647;
+      arr.fill(555 as short, bigNeg);
+      let actual1: number = arr.$_get(0);
+      let expected1: number = 555 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr.$_get(2);
+      let expected2: number = 555 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = arr.$_get(3);
+      let expected3: number = 555 as short;
+      expect(actual3).assertEqual(expected3);
+    });
+  });
+}
