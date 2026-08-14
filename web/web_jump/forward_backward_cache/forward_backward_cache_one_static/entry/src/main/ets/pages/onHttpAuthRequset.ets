@@ -51,8 +51,8 @@ struct Second {
   @State currentHttpAuthUrl: string = URL_HTTPBIN;
   @State pendingHttpAuthFallback: boolean = false;
   private httpAuthResultEmitted: boolean = false;
-  private httpAuthFallbackTimer: number = -1;
-  private readonly HTTP_AUTH_FALLBACK_TIMEOUT_MS: number = 15000;
+  private httpAuthFallbackTimer: Int = -1;
+  private readonly HTTP_AUTH_FALLBACK_TIMEOUT_MS: Int = 15000;
 
   private clearHttpAuthFallbackTimer(): void {
     if (this.httpAuthFallbackTimer >= 0) {

@@ -57,7 +57,7 @@ export default class Utils{
   }
 
   static registerBaseEvent(testCaseName: string, expected: Object, eventId: Long,
-    done: () => void, expectFunction: (backData: events_emitter.EventData, expected: Object) => void) {
+    done: () => void, expectFunction: (backData: events_emitter.EventData, expected: Object) => void): void {
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
@@ -79,7 +79,7 @@ export default class Utils{
     }
   }
 
-  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void) {
+  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void): void {
     Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
       const data = backData?.data as Record<string, RecordData>;
       const action = data['ACTION'];

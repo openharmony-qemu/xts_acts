@@ -25,7 +25,7 @@ import { Driver, ON } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function webController() {
+export default function webController(): void {
   describe('WebControllerTestSuite', (): void => {
 
     beforeAll(async (): Promise<void> => {

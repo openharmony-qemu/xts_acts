@@ -25,7 +25,6 @@ import {
   Web
 } from '@ohos.arkui.component'
 import events_emitter from '@ohos.events.emitter'
-import { Hypium } from '../../../hypium/index';
 import { BusinessError,Callback, RecordData } from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import Utils from '../../src/test/Utils.test';
@@ -57,8 +56,8 @@ struct httpAuthHandler {
   @State isUsingBackupBasicAuthUrl: boolean = false
   no_error: string = 'no error happened'
   private httpAuthResultEmitted: boolean = false
-  private httpAuthFallbackTimer: number = -1
-  private readonly HTTP_AUTH_FALLBACK_TIMEOUT_MS: number = 15000
+  private httpAuthFallbackTimer: Int = -1
+  private readonly HTTP_AUTH_FALLBACK_TIMEOUT_MS: Int = 15000
 
   private clearHttpAuthFallbackTimer(): void {
     if (this.httpAuthFallbackTimer >= 0) {

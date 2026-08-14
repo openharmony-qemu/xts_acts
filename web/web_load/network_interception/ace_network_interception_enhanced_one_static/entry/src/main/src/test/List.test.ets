@@ -16,7 +16,7 @@
 import webController from './WebController.test';
 import httpAuthHandler from './HttpAuthHandler.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
     httpAuthHandler();
     webController();
 

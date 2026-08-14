@@ -27,7 +27,7 @@ let testAbilityContext:common.UIAbilityContext;
 let emitKey = ''
 
 
-export default function WebPageTest() {
+export default function WebPageTest(): void {
   describe('WebPageTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')

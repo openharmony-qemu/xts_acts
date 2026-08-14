@@ -28,7 +28,7 @@ let emitKey = ''
 
 
 
-export default function WebViewMetaViewport() {
+export default function WebViewMetaViewport(): void {
   describe('WebViewMetaViewport', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')

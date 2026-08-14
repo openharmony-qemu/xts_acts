@@ -27,7 +27,7 @@ let testAbilityContext:common.UIAbilityContext;
 let emitKey = ''
 
 
-export default function OnHttpAuthTest() {
+export default function OnHttpAuthTest(): void {
   describe('OnHttpAuthTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')
