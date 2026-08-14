@@ -71,20 +71,15 @@ export default function ChipV2Api1(): void {
     it('SUB_ARKUI_API_ChipV2Api1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2Api1_static_0100] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let btn1 = await driver.findComponent(ON.id('ChipV2Api1_btn1'));
-      btn1?.click();
-      await CommonFunc.sleep(2000);
-      console.info('SUB_ARKUI_API_ChipV2Api1_static_0100 Activated click after')
-
-      let text = inspector.getInspectorByKey('ChipV2Api1_text');
-      let obj2 = JSON.parseJsonElement(text);
-      console.info("[SUB_ARKUI_API_ChipV2Api1_static_0100] component obj2 is: " + JSON.stringify(obj2));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual("#FFFF0000");
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let chip = tree.getArray("$children")[0].getArray("$children")[0];
+      console.info("[SUB_ARKUI_API_ChipV2Api1_static_0100] component backgroundColor is: " +
+        chip.getElement('$attrs').getString('backgroundColor'));
+      expect(chip.getElement('$attrs').getString('backgroundColor')).assertEqual("#FFFF0000");
       await CommonFunc.sleep(1000);
       
       console.info('[SUB_ARKUI_API_ChipV2Api1_static_0100] 1111111111');
-      let rom = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+      let rom = tree
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]

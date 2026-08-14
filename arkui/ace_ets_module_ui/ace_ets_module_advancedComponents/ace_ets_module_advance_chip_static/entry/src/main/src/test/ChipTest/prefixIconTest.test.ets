@@ -39,17 +39,9 @@ export default function prefixIconTest(): void {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
-        let pages = routerInstance.getState();
-        console.info("get prefixIconTest state pages:" + JSON.stringify(pages));
-        if (!("prefixIconTest" == pages.name)) {
-          console.info("get prefixIconTest pages.name:" + JSON.stringify(pages.name));
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          // console.info("push prefixIconTest page result:" + JSON.stringify(result));
-        }
+        AppStorage.setOrCreate<boolean>('prefixIconActivated', false);
+        routerInstance.replaceUrl(options);
+        await CommonFunc.sleep(2000);
       } catch (err) {
         console.error("push prefixIconTest page error:" + err);
       }
@@ -71,7 +63,6 @@ export default function prefixIconTest(): void {
     it('prefixIconTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[prefixIconTest_static_0010] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
       let btnElement1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[0]
@@ -81,8 +72,9 @@ export default function prefixIconTest(): void {
       JSON.stringify(btnElement1.getElement('$attrs').getString('fontColor')));
       expect(btnElement1.getElement('$attrs').getString('fontColor')).assertEqual("#FF008000");
 
-      let btn1 = await driver.findComponent(ON.id('prefixIcon_isActivated_true'));
-      btn1?.click();
+      AppStorage.setOrCreate<boolean>('prefixIconActivated', true);
+      const routerInstance = AppStorage.get<Router>('router') as Router;
+      routerInstance.replaceUrl({ url: 'MainAbility/pages/Chip/prefixIconTest' });
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -94,8 +86,7 @@ export default function prefixIconTest(): void {
       JSON.stringify(btnElement2.getElement('$attrs').getString('fontColor')));
       expect(btnElement2.getElement('$attrs').getString('fontColor')).assertEqual("#FFFF0000");
 
-      let btn2 = await driver.findComponent(ON.id('prefixIcon_isActivated_false'));
-      btn2?.click();
+      AppStorage.setOrCreate<boolean>('prefixIconActivated', false);
       await CommonFunc.sleep(2000);
       console.info('[prefixIconTest_static_0010] END');
       done();
@@ -110,7 +101,6 @@ export default function prefixIconTest(): void {
     it('prefixIconTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[prefixIconTest_static_0020] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
       let btnElement1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
@@ -120,8 +110,9 @@ export default function prefixIconTest(): void {
       JSON.stringify(btnElement1.getElement('$attrs').getString('fillColor')));
       expect(btnElement1.getElement('$attrs').getString('fillColor')).assertEqual("#FFFFC0CB");
 
-      let btn1 = await driver.findComponent(ON.id('prefixIcon_isActivated_true'));
-      btn1?.click();
+      AppStorage.setOrCreate<boolean>('prefixIconActivated', true);
+      const routerInstance = AppStorage.get<Router>('router') as Router;
+      routerInstance.replaceUrl({ url: 'MainAbility/pages/Chip/prefixIconTest' });
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -133,8 +124,7 @@ export default function prefixIconTest(): void {
       JSON.stringify(btnElement2.getElement('$attrs').getString('fillColor')));
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
-      let btn2 = await driver.findComponent(ON.id('prefixIcon_isActivated_false'));
-      btn2?.click();
+      AppStorage.setOrCreate<boolean>('prefixIconActivated', false);
       await CommonFunc.sleep(2000);
       console.info('[prefixIconTest_static_0020] END');
       done();
@@ -149,7 +139,6 @@ export default function prefixIconTest(): void {
     it('prefixIconTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[prefixIconTest_static_0030] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
       let btnElement1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[2]
@@ -159,8 +148,9 @@ export default function prefixIconTest(): void {
       JSON.stringify(btnElement1.getElement('$attrs').getString('fillColor')));
       expect(btnElement1.getElement('$attrs').getString('fillColor')).assertEqual("#FFFFC0CB");
 
-      let btn1 = await driver.findComponent(ON.id('prefixIcon_isActivated_true'));
-      btn1?.click();
+      AppStorage.setOrCreate<boolean>('prefixIconActivated', true);
+      const routerInstance = AppStorage.get<Router>('router') as Router;
+      routerInstance.replaceUrl({ url: 'MainAbility/pages/Chip/prefixIconTest' });
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -172,8 +162,7 @@ export default function prefixIconTest(): void {
       JSON.stringify(btnElement2.getElement('$attrs').getString('fillColor')));
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
-      let btn2 = await driver.findComponent(ON.id('prefixIcon_isActivated_false'));
-      btn2?.click();
+      AppStorage.setOrCreate<boolean>('prefixIconActivated', false);
       await CommonFunc.sleep(2000);
       console.info('[prefixIconTest_static_0030] END');
       done();
@@ -188,7 +177,6 @@ export default function prefixIconTest(): void {
     it('prefixIconTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[prefixIconTest_static_0040] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
       let btnElement1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[3]
@@ -198,8 +186,9 @@ export default function prefixIconTest(): void {
       JSON.stringify(btnElement1.getElement('$attrs').getString('fillColor')));
       expect(btnElement1.getElement('$attrs').getString('fillColor')).assertEqual("#FFFFC0CB");
 
-      let btn1 = await driver.findComponent(ON.id('prefixIcon_isActivated_true'));
-      btn1?.click();
+      AppStorage.setOrCreate<boolean>('prefixIconActivated', true);
+      const routerInstance = AppStorage.get<Router>('router') as Router;
+      routerInstance.replaceUrl({ url: 'MainAbility/pages/Chip/prefixIconTest' });
       await CommonFunc.sleep(2000);
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -211,8 +200,7 @@ export default function prefixIconTest(): void {
       JSON.stringify(btnElement2.getElement('$attrs').getString('fillColor')));
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
-      let btn2 = await driver.findComponent(ON.id('prefixIcon_isActivated_false'));
-      btn2?.click();
+      AppStorage.setOrCreate<boolean>('prefixIconActivated', false);
       await CommonFunc.sleep(2000);
       console.info('[prefixIconTest_static_0040] END');
       done();
@@ -227,7 +215,6 @@ export default function prefixIconTest(): void {
     it('prefixIconTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[prefixIconTest_static_0050] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let btnElement = tree
         .getArray("$children")[0]
@@ -247,8 +234,9 @@ export default function prefixIconTest(): void {
       expect(btnElement.getElement('$attrs').getString('fillColor'))
         .assertEqual(btnUn.getElement('$attrs').getString('fillColor'));
 
-      let btn1 = await driver.findComponent(ON.id('prefixIcon_isActivated_true'));
-      btn1?.click();
+      AppStorage.setOrCreate<boolean>('prefixIconActivated', true);
+      const routerInstance = AppStorage.get<Router>('router') as Router;
+      routerInstance.replaceUrl({ url: 'MainAbility/pages/Chip/prefixIconTest' });
       await CommonFunc.sleep(2000);
 
       console.info("[prefixIconTest_static_0050] btnElement fillColor2 is: " +
@@ -258,8 +246,7 @@ export default function prefixIconTest(): void {
       expect(btnElement.getElement('$attrs').getString('fillColor'))
         .assertEqual(btnUn.getElement('$attrs').getString('fillColor'));
       
-      let btn2 = await driver.findComponent(ON.id('prefixIcon_isActivated_false'));
-      btn2?.click();
+      AppStorage.setOrCreate<boolean>('prefixIconActivated', false);
       await CommonFunc.sleep(2000);
       console.info('[prefixIconTest_static_0050] END');
       done();
