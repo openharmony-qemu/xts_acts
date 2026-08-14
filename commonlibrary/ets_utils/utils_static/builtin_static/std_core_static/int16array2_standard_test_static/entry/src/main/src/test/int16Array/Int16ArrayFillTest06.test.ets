@@ -1980,3 +1980,156 @@ export default function int16ArrayFillTestSixTest(): void {
       let idx = arr.indexOf(55 as short);
       expect(idx).assertEqual(0);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_SIX_1000
+     * @tc.name testInt16ArrayFillTestSix100
+     * @tc.desc Verify E fill start equals length makes no modification
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestSix100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Int16Array([10, 20, 30]);
+      let val: short = 99 as short;
+      let ret = arr.fill(val, 3);
+      let actual1: boolean = ret === arr;
+      expect(actual1).assertTrue();
+      let actual2: number = arr.$_get(0);
+      let expected2: number = 10 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = arr.$_get(2);
+      let expected3: number = 30 as short;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_SIX_1010
+     * @tc.name testInt16ArrayFillTestSix101
+     * @tc.desc Verify number fill start equals length makes no modification
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestSix101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Int16Array([10, 20, 30]);
+      let ret = arr.fill(99, 3);
+      let actual1: boolean = ret === arr;
+      expect(actual1).assertTrue();
+      let actual2: number = arr.$_get(0);
+      expect(actual2).assertEqual(10);
+      let actual3: number = arr.$_get(2);
+      expect(actual3).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_SIX_1020
+     * @tc.name testInt16ArrayFillTestSix102
+     * @tc.desc Verify E fill start greater than length makes no modification
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestSix102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Int16Array([10, 20, 30]);
+      let val: short = 99 as short;
+      arr.fill(val, 10);
+      let actual1: number = arr.$_get(0);
+      let expected1: number = 10 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr.$_get(1);
+      let expected2: number = 20 as short;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = arr.$_get(2);
+      let expected3: number = 30 as short;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_SIX_1030
+     * @tc.name testInt16ArrayFillTestSix103
+     * @tc.desc Verify number fill start greater than length makes no modification
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestSix103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Int16Array([10, 20, 30]);
+      arr.fill(99, 10);
+      let actual1: number = arr.$_get(0);
+      expect(actual1).assertEqual(10);
+      let actual2: number = arr.$_get(1);
+      expect(actual2).assertEqual(20);
+      let actual3: number = arr.$_get(2);
+      expect(actual3).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_SIX_1040
+     * @tc.name testInt16ArrayFillTestSix104
+     * @tc.desc Verify E fill start greater-or-equal end makes no modification
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestSix104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Int16Array([10, 20, 30, 40]);
+      let val: short = 7 as short;
+      arr.fill(val, 3, 3);
+      let actual1: number = arr.$_get(0);
+      let expected1: number = 10 as short;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr.$_get(3);
+      let expected2: number = 40 as short;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_SIX_1050
+     * @tc.name testInt16ArrayFillTestSix105
+     * @tc.desc Verify number fill start greater-or-equal end makes no modification
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestSix105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Int16Array([10, 20, 30, 40]);
+      arr.fill(7, 3, 3);
+      let actual1: number = arr.$_get(0);
+      expect(actual1).assertEqual(10);
+      let actual2: number = arr.$_get(3);
+      expect(actual2).assertEqual(40);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_SIX_1060
+     * @tc.name testInt16ArrayFillTestSix106
+     * @tc.desc Verify E fill empty array makes no modification length stays 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestSix106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Int16Array(0);
+      let val: short = 5 as short;
+      let ret = arr.fill(val);
+      let actual1: int = arr.length;
+      expect(actual1).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_SIX_1070
+     * @tc.name testInt16ArrayFillTestSix107
+     * @tc.desc Verify number fill empty array makes no modification length stays 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestSix107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Int16Array(0);
+      let ret = arr.fill(5);
+      let actual1: int = arr.length;
+      expect(actual1).assertEqual(0);
+    });
+  });
+}
