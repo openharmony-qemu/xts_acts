@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,13 +13,17 @@
  * limitations under the License.
  */
 
-import hilog from '@ohos.hilog';
-import AbilityStage from "@ohos.app.ability.AbilityStage"
+export class JsonUtil {
 
-export default class TestAbilityStage extends AbilityStage {
-    onCreate() {
-        globalThis.appContext = this.context.getApplicationContext();
-        hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
-        hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbilityStage onCreate');
-    }
+public static json2line(json: string): string {
+  let res = '';
+  try {
+    const obj: Object = JSON.parse(json) as Object;
+    res = JSON.stringify(obj);
+  } catch (e) {
+    let err: Error = e as Error;
+    console.error(err.message);
+  }
+  return res;
+}
 }
