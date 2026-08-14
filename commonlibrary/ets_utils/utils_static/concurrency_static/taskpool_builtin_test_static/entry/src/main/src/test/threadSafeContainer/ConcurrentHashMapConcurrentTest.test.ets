@@ -80,7 +80,7 @@ export default function ConcurrentHashMapConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testConcurrentHashMapConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         let seed = new Map<string, number>();
         for (let i: number = 0; i < 100; i++) {
           seed.set('base_' + i, i);
@@ -110,6 +110,7 @@ export default function ConcurrentHashMapConcurrentTest(): void {
         expect(map.has('task_9_9')).assertFalse();
         expect(map.get('base_0')).assertEqual(0.0);
         expect(map.get('base_99')).assertEqual(99.0);
+        done();
       });
 
     /**
@@ -128,10 +129,14 @@ export default function ConcurrentHashMapConcurrentTest(): void {
         }
         let iteratePromise: Promise<Any> = taskpool.execute(iterateMap, map);
         let modifyPromise: Promise<Any> = taskpool.execute(modifyMap, map);
-        let iterated: number = await iteratePromise as number;
-        await modifyPromise;
-        expect(iterated >= 90 && iterated <= 110).assertTrue();
-        expect(map.size).assertEqual(100);
+        try {
+          let iterated: number = await iteratePromise as number;
+          await modifyPromise;
+          expect(iterated >= 90 && iterated <= 110).assertTrue();
+          expect(map.size).assertEqual(100);
+        } catch (err) {
+          expect(err).assertFail();
+        }
         for (let i: int = 0; i < 10; i++) {
           expect(map.has('key' + i)).assertFalse();
           expect(map.get('newKey' + i)).assertEqual(i);

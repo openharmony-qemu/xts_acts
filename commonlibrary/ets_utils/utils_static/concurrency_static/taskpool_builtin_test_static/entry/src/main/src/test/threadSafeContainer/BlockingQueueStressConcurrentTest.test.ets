@@ -44,7 +44,7 @@ export default function BlockingQueueStressConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBlockingQueueStressConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testBlockingQueueStressConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       // TaskPool 50+50 并发压力验证（仅 AtomicInt 共享）
       // 注：BlockingQueue 非 @Sendable，主线程串行验证队列压力语义
       let producerCount: AtomicInt = new AtomicInt(0);
@@ -56,7 +56,7 @@ export default function BlockingQueueStressConcurrentTest(): void {
         taskpool.execute(testBlockingQueueStressProducer, producerCount).then((): void => { });
       }
       for (let i: number = 0; i < totalConsumers; i++) {
-        taskpool.execute(testBlockingQueueStressConsumer, consumerCount).then((): void => { });
+        taskpool.execute(testBlockingQueueStressConsumer, consumerCount).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
       }
       let waits: number = 0;
       while ((producerCount.load() < totalProducers * 50 || consumerCount.load() < totalConsumers * 50) && waits < 200) {
@@ -74,6 +74,7 @@ export default function BlockingQueueStressConcurrentTest(): void {
       expect(queue.size).assertEqual(0);
       expect(producerCount.load()).assertEqual(totalProducers * 50);
       expect(consumerCount.load()).assertEqual(totalConsumers * 50);
+      done();
     });
   });
 }
