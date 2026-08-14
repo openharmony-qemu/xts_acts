@@ -15,3 +15,5 @@
 export const OH_Pasteboard_GetMimeTypes0100: () => number;
 export const OH_Pasteboard_GetMimeTypes0200: () => number;
 export const OH_Pasteboard_GetMimeTypes0300: () => number;
+export const OH_Pasteboard_GetDataWithNoProgress001: () => number;
+export const OH_Pasteboard_GetData0100: () => number;

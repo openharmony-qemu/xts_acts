@@ -72,6 +72,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress001(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri1);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -122,6 +123,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress002(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri1);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -172,6 +174,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress003(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -206,6 +209,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress004(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -239,6 +243,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress005(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -287,6 +292,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress006(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -335,6 +341,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress007(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -383,6 +390,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress008(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -431,6 +439,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress009(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -480,6 +489,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress010(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -528,6 +538,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress011(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -561,6 +572,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress012(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -608,6 +620,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress013(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -645,6 +658,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress014(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -692,6 +706,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress015(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -740,6 +755,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress016(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -790,6 +806,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress017(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -824,6 +841,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress018(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -872,6 +890,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress019(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -912,6 +931,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress020(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -959,6 +979,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress020(napi_env env, napi_callba
 static napi_value OH_Pasteboard_GetDataWithProgress021(napi_env env, napi_callback_info info)
 {
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     const char* uri1 = "file://com.acts.Pastboard.ndkWithPermissionstest/data/storage/el2/base/files/haps/";
     g_params = OH_Pasteboard_GetDataParams_Create();
     int num = strlen(uri1);
@@ -987,6 +1008,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress022(napi_env env, napi_callba
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* unifiedData = OH_UdmfData_Create();
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
     OH_UdsFileUri_SetFileUri(fileUri, uri);
     OH_UdmfRecord_AddFileUri(record, fileUri);
@@ -1024,6 +1046,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress022(napi_env env, napi_callba
 static napi_value OH_Pasteboard_GetChangeCount0100(napi_env env, napi_callback_info info)
 {
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     uint32_t changeCount = OH_Pasteboard_GetChangeCount(pasteboard);
     OH_Pasteboard_ClearData(pasteboard);
     uint32_t newCount = OH_Pasteboard_GetChangeCount(pasteboard);
@@ -1038,6 +1061,7 @@ static napi_value OH_Pasteboard_GetChangeCount0100(napi_env env, napi_callback_i
 static napi_value OH_Pasteboard_GetChangeCount0200(napi_env env, napi_callback_info info)
 {
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     uint32_t changeCount = OH_Pasteboard_GetChangeCount(pasteboard);
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
@@ -1059,6 +1083,7 @@ static napi_value OH_Pasteboard_GetChangeCount0200(napi_env env, napi_callback_i
 static napi_value OH_Pasteboard_GetChangeCount0300(napi_env env, napi_callback_info info)
 {
     OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    NAPI_ASSERT(env, pasteboard != nullptr, "OH_Pasteboard_Create is fail");
     uint32_t changeCount = OH_Pasteboard_GetChangeCount(pasteboard);
     OH_UdmfData* setData = OH_UdmfData_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
