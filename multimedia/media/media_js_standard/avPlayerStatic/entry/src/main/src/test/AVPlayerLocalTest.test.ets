@@ -3489,7 +3489,9 @@ export default function AVPlayerLocalTest() {
     expect(fileDescriptor).not().assertNull();
     if (fileDescriptor) {
       testAVPlayerSeekContinuous(fileDescriptor!, avPlayer, done);
-      }
+      } else {
+        done();
+      };
     });
   })
 }
