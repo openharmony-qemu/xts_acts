@@ -5938,7 +5938,7 @@ export default function UDMFApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testUnifiedDataChannelInsertDataErrTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testUnifiedDataChannelInsertDataErrTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest1100 start');
       let options: unifiedDataChannel.Options = {
         intention: "999" as unifiedDataChannel.Intention,
@@ -5955,6 +5955,7 @@ export default function UDMFApiTest() {
         expect(e.code).assertEqual("401");
       }
       console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest1100 end');
+      done();
     })
 
     /**
@@ -6074,7 +6075,7 @@ export default function UDMFApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testUnifiedDataChannelQueryDataErrTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testUnifiedDataChannelQueryDataErrTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0800 start');
       let options: unifiedDataChannel.Options = {
         intention: "999" as unifiedDataChannel.Intention,
@@ -6088,6 +6089,7 @@ export default function UDMFApiTest() {
         expect(error.code).assertEqual("401");
       }
       console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0800 end');
+      done();
     })
 
     /**
@@ -6131,7 +6133,7 @@ export default function UDMFApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testUnifiedDataChannelDeleteDataErrTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testUnifiedDataChannelDeleteDataErrTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG + 'testUnifiedDataChannelDeleteDataErrTest0800 start');
       let options: unifiedDataChannel.Options = {
         intention: "999" as unifiedDataChannel.Intention,
@@ -6145,6 +6147,7 @@ export default function UDMFApiTest() {
         expect(error.code).assertEqual("401");
       }
       console.info(TAG + 'testUnifiedDataChannelDeleteDataErrTest0800 end');
+      done();
     })
 
     /**

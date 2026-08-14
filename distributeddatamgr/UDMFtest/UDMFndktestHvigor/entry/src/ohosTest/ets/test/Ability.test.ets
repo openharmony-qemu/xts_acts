@@ -1026,7 +1026,7 @@ export default function pasteboardNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6700', ' begin');
       let result = testNapi.OH_UdmfRecord_SetProvider0300();
       expect(result).assertEqual(1);

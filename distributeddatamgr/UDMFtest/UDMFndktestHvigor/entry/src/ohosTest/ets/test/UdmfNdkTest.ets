@@ -1778,7 +1778,7 @@ export default function UdmfNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('OH_Udmf_GetDataElementAt_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('OH_Udmf_GetDataElementAt_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + 'OH_Udmf_GetDataElementAt_002');
       let data = testNapi.OH_Udmf_GetDataElementAt_002();
       console.info(TAG + 'OH_Udmf_GetDataElementAt_002 data= ' + JSON.stringify(data));
