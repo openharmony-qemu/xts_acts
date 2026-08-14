@@ -179,37 +179,42 @@ export default function chipGroupOptionsTest(): void {
      * @tc.level    Level.LEVEL0
      */
     it('chipGroupOptionsTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[chipGroupOptionsTest_static_003] START');
-      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 2);
-      const routerInstance = AppStorage.get<Router>('router') as Router;
-      routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipGroup/ChipGroupItemOptionsPage' });
-      await CommonFunc.sleep(2000);
+      try {
+        console.info('[chipGroupOptionsTest_static_003] START');
+        AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 2);
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipGroup/ChipGroupItemOptionsPage' });
+        await CommonFunc.sleep(2000);
 
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await CommonFunc.sleep(1000);
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        await CommonFunc.sleep(1000);
 
-      let btn0 = tree.getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-      console.info('[chipGroupOptionsTest_static_003] component btn0.attrs.accessibilityLevel is: ' +
-      JSON.stringify(btn0.getElement('$attrs').getString('accessibilityDescription')));
-      expect(btn0.getElement('$attrs').getString('accessibilityLevel')).assertEqual('no-hide-descendants');
-      await CommonFunc.sleep(1000);
+        let btn0 = tree.getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+        console.info('[chipGroupOptionsTest_static_003] component btn0.attrs.accessibilityLevel is: ' +
+        JSON.stringify(btn0.getElement('$attrs').getString('accessibilityDescription')));
+        expect(btn0.getElement('$attrs').getString('accessibilityLevel')).assertEqual('no-hide-descendants');
+        await CommonFunc.sleep(1000);
 
-      let btn1 = tree.getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[1]
-      console.info('[chipGroupOptionsTest_static_003] component btn1.attrs.accessibilityLevel is: ' +
-      JSON.stringify(btn1.getElement('$attrs').getString('accessibilityDescription')));
-      expect(btn1.getElement('$attrs').getString('accessibilityLevel')).assertEqual('auto');
-      await CommonFunc.sleep(1000);
-      console.info('[chipGroupOptionsTest_static_003] END');
+        let btn1 = tree.getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[1]
+        console.info('[chipGroupOptionsTest_static_003] component btn1.attrs.accessibilityLevel is: ' +
+        JSON.stringify(btn1.getElement('$attrs').getString('accessibilityDescription')));
+        expect(btn1.getElement('$attrs').getString('accessibilityLevel')).assertEqual('auto');
+        await CommonFunc.sleep(1000);
+        console.info('[chipGroupOptionsTest_static_003] END');
+      } catch (error) {
+        console.error('[chipGroupOptionsTest_static_003] error: ' + error);
+        expect().assertFail();
+      }
       done();
     });
 
