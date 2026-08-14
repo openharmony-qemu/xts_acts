@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 
 class CustomData {
@@ -24,6 +24,17 @@ class CustomData {
 
 export default function MessageEqualsBasicTest(): void {
     describe('MessageEqualsBasicTest', (): void => {
+        beforeAll((): void => {
+        })
+
+        beforeEach((): void => {
+        })
+
+        afterEach((): void => {
+        })
+
+        afterAll((): void => {
+        })
 
         /**
          * @tc.name   MessageEqualsBasicTest0100
@@ -34,7 +45,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL0
          */
         it('MessageEqualsBasicTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest0100';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -63,7 +74,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -76,7 +86,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL0
          */
         it('MessageEqualsBasicTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest0200';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -106,7 +116,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -119,7 +128,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL0
          */
         it('MessageEqualsBasicTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest0300';
                 console.info(`${TAG} test start`);
                 const eaw1 = new EAWorker();
@@ -155,7 +164,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -168,7 +176,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL0
          */
         it('MessageEqualsBasicTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest0400';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -196,7 +204,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -209,7 +216,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL0
          */
         it('MessageEqualsBasicTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest0500';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -238,7 +245,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -251,7 +257,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL1
          */
         it('MessageEqualsBasicTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest0600';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -283,7 +289,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -296,7 +301,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL1
          */
         it('MessageEqualsBasicTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest0700';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -332,7 +337,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -345,7 +349,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL1
          */
         it('MessageEqualsBasicTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest0800';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -373,7 +377,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -386,7 +389,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL1
          */
         it('MessageEqualsBasicTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest0900';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -416,7 +419,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -429,7 +431,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL1
          */
         it('MessageEqualsBasicTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest1000';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -459,7 +461,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -472,7 +473,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL2
          */
         it('MessageEqualsBasicTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest1100';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -505,7 +506,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -518,7 +518,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL2
          */
         it('MessageEqualsBasicTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest1200';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -548,7 +548,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -561,7 +560,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL2
          */
         it('MessageEqualsBasicTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest1300';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -590,7 +589,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -603,7 +601,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL2
          */
         it('MessageEqualsBasicTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest1400';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -632,7 +630,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -645,7 +642,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL2
          */
         it('MessageEqualsBasicTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest1500';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -677,7 +674,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -690,7 +686,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL1
          */
         it('MessageEqualsBasicTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest1600';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -717,7 +713,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -730,7 +725,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL1
          */
         it('MessageEqualsBasicTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest1700';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -760,7 +755,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
 
@@ -773,7 +767,7 @@ export default function MessageEqualsBasicTest(): void {
          * @tc.level  LEVEL1
          */
         it('MessageEqualsBasicTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-            async (done: () => void): Promise<void> => {
+            async (): Promise<void> => {
                 const TAG: string = 'MessageEqualsBasicTest1800';
                 console.info(`${TAG} test start`);
                 const eaw = new EAWorker();
@@ -807,7 +801,6 @@ export default function MessageEqualsBasicTest(): void {
                         console.warn(`${TAG} catch quit error: ${error.message}`);
                     }
                     console.info(`${TAG} test end`);
-                    done();
                 }
             });
     })

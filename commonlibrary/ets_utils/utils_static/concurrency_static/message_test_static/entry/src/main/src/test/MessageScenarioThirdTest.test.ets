@@ -63,7 +63,16 @@ type CB = () => void;
 
 export default function MessageScenarioThirdTest(): void {
   describe('MessageScenarioThirdTest', (): void => {
+    beforeAll((): void => {
+    })
+
+    beforeEach((): void => {
+    })
+
     afterEach((): void => {
+    })
+
+    afterAll((): void => {
     })
 
     /**
@@ -75,7 +84,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0100';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -121,20 +130,19 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
     /**
      * @tc.name   MessageScenarioThirdTest0200
      * @tc.number SUB_MESSAGE_SCENARIO_THIRD_TEST_0200
-     * @tc.desc   Test message processing order guarantee
+     * @tc.desc   处理 50 条消息并验证处理数量
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0200';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -175,7 +183,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -188,7 +195,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0300';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -240,7 +247,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -253,7 +259,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0400';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -296,7 +302,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -309,7 +314,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0500';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -344,7 +349,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -357,7 +361,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0600';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -393,7 +397,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -406,7 +409,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0700';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -443,7 +446,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -457,7 +459,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0800';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -506,7 +508,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -520,7 +521,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest0900';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -571,7 +572,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -584,7 +584,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1000';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -622,7 +622,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -635,7 +634,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1100';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -673,7 +672,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -686,7 +684,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1200';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -727,7 +725,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -740,7 +737,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1300';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -778,7 +775,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -791,7 +787,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1400';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -829,20 +825,19 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
     /**
      * @tc.name   MessageScenarioThirdTest1500
      * @tc.number SUB_MESSAGE_SCENARIO_THIRD_TEST_1500
-     * @tc.desc   Test null as message data
+     * @tc.desc   发送 NullData 包装对象并验证 isNull 标记
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1500';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -878,7 +873,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -891,7 +885,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1600';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -938,7 +932,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -951,7 +944,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1700';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -988,7 +981,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
 
@@ -1001,7 +993,7 @@ export default function MessageScenarioThirdTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioThirdTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+      async (): Promise<void> => {
         const TAG: string = 'MessageScenarioThirdTest1800';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
@@ -1037,7 +1029,6 @@ export default function MessageScenarioThirdTest(): void {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
           console.info(`${TAG} test end`);
-          done();
         }
       });
   });

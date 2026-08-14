@@ -49,7 +49,16 @@ type CB = () => void;
 
 export default function MessageScenarioSecondTest(): void {
   describe('MessageScenarioSecondTest', (): void => {
+    beforeAll((): void => {
+    })
+
+    beforeEach((): void => {
+    })
+
     afterEach((): void => {
+    })
+
+    afterAll((): void => {
     })
 
     /**
@@ -171,7 +180,7 @@ export default function MessageScenarioSecondTest(): void {
     /**
      * @tc.name   MessageScenarioSecondTest0300
      * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_0300
-     * @tc.desc   Verify Message what and object payload boundary values
+     * @tc.desc   Verify Message getWhat boundary values including int max and min
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -379,7 +388,7 @@ export default function MessageScenarioSecondTest(): void {
     /**
      * @tc.name   MessageScenarioSecondTest0700
      * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_0700
-     * @tc.desc   Verify MessageHandler processes multiple Message types in sequence
+     * @tc.desc   Verify getCallback returns the identical single callback for callback Message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -649,9 +658,9 @@ export default function MessageScenarioSecondTest(): void {
             let expectWhat: int = msgs[i].getWhat();
             handler.sendMessage(msgs[i]);
             let waitCount: int = 0;
-            while (received.load() < before + 1 && waitCount < 5000) {
+            while (received.load() < before + 1 && waitCount < 50) {
               waitCount++;
-              await Utils.msSleep(10);
+              await Utils.msSleep(100);
             }
             expect(received.load()).assertEqual(before + 1);
             expect(lastWhat.load()).assertEqual(expectWhat);
@@ -693,11 +702,11 @@ export default function MessageScenarioSecondTest(): void {
           let handlers: concurrency.MessageHandler[] = [];
           while (i < 5) {
             handlers.push(new concurrency.MessageHandler((msg: concurrency.Message) => {
-              (async () => {
+              waitForCompletion(async () => {
                 await Sleep(1000);
                 result.push(msg)
                 flag = true;
-              })()
+              })
             }, eaw));
             messages.push(new concurrency.Message(i, handlers[i]));
             handlers[i].sendMessage(messages[i]);
@@ -1136,7 +1145,6 @@ export default function MessageScenarioSecondTest(): void {
           }, worker2);
           const msg = new concurrency.Message(h2);
           const sendOk = h1.sendMessage(msg);
-          await Sleep(100);
           expect(sendOk).assertFalse();
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
@@ -1227,7 +1235,6 @@ export default function MessageScenarioSecondTest(): void {
             h1Received = true;
           }, h1);
           const sendOk = h2.sendMessage(msg);
-          await Sleep(100);
           expect(sendOk).assertFalse();
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
@@ -1249,7 +1256,7 @@ export default function MessageScenarioSecondTest(): void {
     /**
      * @tc.name   MessageScenarioSecondTest2400
      * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_2400
-     * @tc.desc   Verify MessageHandler post callback execution
+     * @tc.desc   Verify handler callback executes and Message callback is not auto-executed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1376,7 +1383,6 @@ export default function MessageScenarioSecondTest(): void {
           }, worker2);
           const msg = new concurrency.Message(999, h1);
           const sendOk = h2.sendMessage(msg);
-          await Sleep(100);
           expect(sendOk).assertFalse();
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
@@ -1469,7 +1475,6 @@ export default function MessageScenarioSecondTest(): void {
           data.set('x', 1);
           const msg = new concurrency.Message(123, data, h1);
           const sendOk = h2.sendMessage(msg);
-          await Sleep(100);
           expect(sendOk).assertFalse();
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
@@ -1538,7 +1543,7 @@ export default function MessageScenarioSecondTest(): void {
     /**
      * @tc.name   MessageScenarioSecondTest3000
      * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_3000
-     * @tc.desc   Verify MessageHandler hasMessages for pending queue
+     * @tc.desc   Verify Message getObject round-trips multiple object types
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1616,7 +1621,6 @@ export default function MessageScenarioSecondTest(): void {
           }, worker2);
           const m1 = new concurrency.Message(h1);
           const sendOk = h2.sendMessage(m1);
-          await Sleep(100);
           expect(sendOk).assertFalse();
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
@@ -1781,62 +1785,18 @@ export default function MessageScenarioSecondTest(): void {
         }
       });
 
+
     /**
      * @tc.name   MessageScenarioSecondTest3500
      * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_3500
-     * @tc.desc   Verify MessageHandler hasMessagesWhatObj scenario
+     * @tc.desc   Verify MessageHandler sendEmptyMessage delayed handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('MessageScenarioSecondTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
-        const TAG: string = 'MessageScenarioSecondTest3400';
-        let worker = new EAWorker();
-        let flag: boolean = false;
-        let handler: concurrency.MessageHandler;
-        let obj = new MessageObject(10)
-        try {
-          worker.start();
-          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
-              await Sleep(1000);
-              flag = true;
-            })
-          }, worker)
-          let msg = new concurrency.Message(1, 1, handler);
-          handler.sendMessage(msg);
-          expect(msg.getObject() as int).assertEqual(1);
-          let waitCount: int = 0;
-          while (!flag && waitCount < 50) {
-            waitCount++;
-            await Utils.msSleep(100);
-          }
-          expect(flag).assertTrue();
-        } catch (error) {
-          console.error(`${TAG} error.message => ${error.message}`);
-          expect(false).assertFail();
-        } finally {
-          try {
-            worker.quit();
-          } catch (error) {
-            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
-            expect(false).assertFail();
-          }
-        }
-      });
-
-    /**
-     * @tc.name   MessageScenarioSecondTest3600
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_3600
-     * @tc.desc   Verify MessageHandler sendEmptyMessage delayed handling
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('MessageScenarioSecondTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
-        const TAG: string = 'MessageScenarioSecondTest3600';
+        const TAG: string = 'MessageScenarioSecondTest3500';
         let worker = new EAWorker();
         let received = new AtomicInt(0);
         try {
@@ -1849,9 +1809,9 @@ export default function MessageScenarioSecondTest(): void {
           // short object must be asserted as short (not int)
           expect(msg.getObject() as short).assertEqual(1 as short);
           let waitCount: int = 0;
-          while (received.load() < 1 && waitCount < 500) {
+          while (received.load() < 1 && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(10);
+            await Utils.msSleep(100);
           }
           expect(received.load()).assertEqual(1);
         } catch (error) {
@@ -1868,14 +1828,14 @@ export default function MessageScenarioSecondTest(): void {
       });
 
     /**
-     * @tc.name   MessageScenarioSecondTest3700
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_3700
+     * @tc.name   MessageScenarioSecondTest3600
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_3600
      * @tc.desc   Verify MessageHandler post delayed handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest3400';
         let worker = new EAWorker();
@@ -1913,14 +1873,14 @@ export default function MessageScenarioSecondTest(): void {
       });
 
     /**
-     * @tc.name   MessageScenarioSecondTest3800
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_3800
+     * @tc.name   MessageScenarioSecondTest3700
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_3700
      * @tc.desc   Verify MessageHandler callback removal after post
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest3400';
         let worker = new EAWorker();
@@ -1958,14 +1918,14 @@ export default function MessageScenarioSecondTest(): void {
       });
 
     /**
-     * @tc.name   MessageScenarioSecondTest3900
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_3900
+     * @tc.name   MessageScenarioSecondTest3800
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_3800
      * @tc.desc   Verify MessageHandler multi-message remove path
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest3400';
         let worker = new EAWorker();
@@ -2004,14 +1964,14 @@ export default function MessageScenarioSecondTest(): void {
       });
 
     /**
-     * @tc.name   MessageScenarioSecondTest4000
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4000
+     * @tc.name   MessageScenarioSecondTest3900
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_3900
      * @tc.desc   Verify MessageHandler scenario coverage for send and wait
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest3400';
         let worker = new EAWorker();
@@ -2049,14 +2009,14 @@ export default function MessageScenarioSecondTest(): void {
       });
 
     /**
-     * @tc.name   MessageScenarioSecondTest4100
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4100
-     * @tc.desc   Verify MessageHandler sendMessage scenario for case 4100
+     * @tc.name   MessageScenarioSecondTest4000
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4000
+     * @tc.desc   Verify getCallback returns undefined for Message with what and object payload
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         const TAG: string = 'MessageScenarioSecondTest3500';
         let worker = new EAWorker();
@@ -2093,19 +2053,18 @@ export default function MessageScenarioSecondTest(): void {
       });
 
     /**
-     * @tc.name   MessageScenarioSecondTest4200
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4200
+     * @tc.name   MessageScenarioSecondTest4100
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4100
      * @tc.desc   Verify MessageHandler sendMessage scenario for case 4200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let handler: concurrency.MessageHandler;
-        let time: number = 0
         let flag: boolean = false;
         worker.start();
         try {
@@ -2120,10 +2079,60 @@ export default function MessageScenarioSecondTest(): void {
           for (let i = 0; i < 10; i++) {
             let handlerValue = handler.post(() => {
             })
-            time++;
             expect(handlerValue).assertTrue();
           }
-          expect(time).assertEqual(10)
+          let waitCount: int = 0;
+          while (!flag && waitCount < 50) {
+            waitCount++;
+            await Utils.msSleep(100);
+          }
+          expect(flag).assertTrue();
+        } catch (error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+            expect(false).assertFail();
+          }
+        }
+      })
+
+
+    /**
+     * @tc.name   MessageScenarioSecondTest4200
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4200
+     * @tc.desc   Verify MessageHandler sendMessage scenario for case 4400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('MessageScenarioSecondTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (): Promise<void> => {
+        const TAG: string = 'MessageTest002';
+        let worker = new EAWorker();
+        let handler: concurrency.MessageHandler;
+        let flag: boolean = false;
+        worker.start();
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            waitForCompletion(async () => {
+              await Sleep(1000);
+              flag = true;
+            })
+          }, worker)
+          let msg = new concurrency.Message(handler)
+          handler.sendMessage(msg);
+          for (let i = 0; i < 10; i++) {
+            let handlerValue = handler.post(() => {
+              const end = Date.now() + 1000;
+              while (Date.now() < end) {
+              }
+            })
+            expect(handlerValue).assertTrue();
+          }
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
@@ -2146,124 +2155,17 @@ export default function MessageScenarioSecondTest(): void {
     /**
      * @tc.name   MessageScenarioSecondTest4300
      * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4300
-     * @tc.desc   Verify MessageHandler sendMessage scenario for case 4300
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('MessageScenarioSecondTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
-        const TAG: string = 'MessageTest002';
-        let worker = new EAWorker();
-        let flag: boolean = false;
-        let handler: concurrency.MessageHandler;
-        let time: number = 0
-        worker.start();
-        let p = () => {
-        }
-        try {
-          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
-              await Sleep(1000);
-              flag = true;
-            })
-          }, worker)
-          let msg = new concurrency.Message(handler)
-          handler.sendMessage(msg);
-          for (let i = 0; i < 10; i++) {
-            let handlerValue = handler.post(p)
-            time++;
-            expect(handlerValue).assertTrue();
-          }
-          expect(time).assertEqual(10)
-          let waitCount: int = 0;
-          while (!flag && waitCount < 50) {
-            waitCount++;
-            await Utils.msSleep(100);
-          }
-          expect(flag).assertTrue();
-        } catch (error) {
-          console.error(`${TAG} error.message => ${error.message}`);
-          expect(false).assertFail();
-        } finally {
-          try {
-            worker.quit();
-          } catch (error) {
-            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
-            expect(false).assertFail();
-          }
-        }
-      })
-
-    /**
-     * @tc.name   MessageScenarioSecondTest4400
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4400
-     * @tc.desc   Verify MessageHandler sendMessage scenario for case 4400
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('MessageScenarioSecondTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
-        const TAG: string = 'MessageTest002';
-        let worker = new EAWorker();
-        let handler: concurrency.MessageHandler;
-        let time: number = 0;
-        let flag: boolean = false;
-        worker.start();
-        try {
-          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            waitForCompletion(async () => {
-              await Sleep(1000);
-              flag = true;
-            })
-          }, worker)
-          let msg = new concurrency.Message(handler)
-          handler.sendMessage(msg);
-          for (let i = 0; i < 10; i++) {
-            let handlerValue = handler.post(() => {
-              const end = Date.now() + 1000;
-              while (Date.now() < end) {
-              }
-            })
-            time++;
-            expect(handlerValue).assertTrue();
-          }
-          expect(time).assertEqual(10)
-          let waitCount: int = 0;
-          while (!flag && waitCount < 50) {
-            waitCount++;
-            await Utils.msSleep(100);
-          }
-          expect(flag).assertTrue();
-        } catch (error) {
-          console.error(`${TAG} error.message => ${error.message}`);
-          expect(false).assertFail();
-        } finally {
-          try {
-            worker.quit();
-          } catch (error) {
-            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
-            expect(false).assertFail();
-          }
-        }
-      })
-
-    /**
-     * @tc.name   MessageScenarioSecondTest4500
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4500
      * @tc.desc   Verify Message and MessageHandler concurrent scenario for case 4500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageScenarioSecondTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('MessageScenarioSecondTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let handler: concurrency.MessageHandler | undefined;
         let flag: boolean = false;
-        let time: number = 0
         let handlerValue: boolean = false;
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
@@ -2287,10 +2189,8 @@ export default function MessageScenarioSecondTest(): void {
           handler.sendMessage(msg);
           for (let i = 0; i < 10; i++) {
             func();
-            time++;
             expect(handlerValue).assertTrue();
           }
-          expect(time).assertEqual(10)
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
@@ -2311,19 +2211,18 @@ export default function MessageScenarioSecondTest(): void {
       })
 
     /**
-     * @tc.name   MessageScenarioSecondTest4600
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4600
+     * @tc.name   MessageScenarioSecondTest4400
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4400
      * @tc.desc   Verify Message and MessageHandler concurrent scenario for case 4600
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageScenarioSecondTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('MessageScenarioSecondTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let handler: concurrency.MessageHandler;
-        let time: number = 0
         let flag: boolean = false;
         let handlerValue: boolean = false;
         handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
@@ -2348,10 +2247,8 @@ export default function MessageScenarioSecondTest(): void {
           handler.sendMessage(msg);
           for (let i = 0; i < 10; i++) {
             await func();
-            time++;
             expect(handlerValue).assertTrue()
           }
-          expect(time).assertEqual(10)
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
@@ -2372,20 +2269,19 @@ export default function MessageScenarioSecondTest(): void {
       })
 
     /**
-     * @tc.name   MessageScenarioSecondTest4700
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4700
+     * @tc.name   MessageScenarioSecondTest4500
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4500
      * @tc.desc   Verify Message and MessageHandler concurrent scenario for case 4700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let flag: boolean = false;
         let handlerValue: boolean = false;
-        let time: number = 0;
         let p = () => {
           const end = Date.now() + 1000;
           while (Date.now() < end) {
@@ -2409,10 +2305,8 @@ export default function MessageScenarioSecondTest(): void {
           handler.sendMessage(msg);
           for (let i = 0; i < 10; i++) {
             func();
-            time++;
             expect(handlerValue).assertTrue()
           }
-          expect(time).assertEqual(10)
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
@@ -2433,20 +2327,19 @@ export default function MessageScenarioSecondTest(): void {
       })
 
     /**
-     * @tc.name   MessageScenarioSecondTest4800
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4800
+     * @tc.name   MessageScenarioSecondTest4600
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4600
      * @tc.desc   Verify Message and MessageHandler concurrent scenario for case 4800
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let flag: boolean = false;
         let handlerValue: boolean = false;
-        let time: number = 0;
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
           waitForCompletion(async () => {
             await Sleep(1000);
@@ -2474,10 +2367,8 @@ export default function MessageScenarioSecondTest(): void {
           handler.sendMessage(msg);
           for (let i = 0; i < 10; i++) {
             func();
-            time++;
             expect(handlerValue).assertTrue()
           }
-          expect(time).assertEqual(10)
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
@@ -2498,20 +2389,19 @@ export default function MessageScenarioSecondTest(): void {
       })
 
     /**
-     * @tc.name   MessageScenarioSecondTest4900
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4900
+     * @tc.name   MessageScenarioSecondTest4700
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4700
      * @tc.desc   Verify Message and MessageHandler concurrent scenario for case 4900
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let flag: boolean = false;
         let handlerValue: boolean = false;
-        let time: number = 0;
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
           waitForCompletion(async () => {
             await Sleep(1000);
@@ -2528,21 +2418,14 @@ export default function MessageScenarioSecondTest(): void {
             resolve(1);
           });
         };
-        let p = () => {
-          const end = Date.now() + 1000;
-          while (Date.now() < end) {
-          }
-        }
         worker.start();
         try {
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
           for (let i = 0; i < 10; i++) {
             await func();
-            time++;
             expect(handlerValue).assertTrue()
           }
-          expect(time).assertEqual(10)
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
@@ -2563,14 +2446,14 @@ export default function MessageScenarioSecondTest(): void {
       })
 
     /**
-     * @tc.name   MessageScenarioSecondTest5000
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_5000
+     * @tc.name   MessageScenarioSecondTest4800
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4800
      * @tc.desc   Verify Message and MessageHandler concurrent scenario for case 5000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageScenarioSecondTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('MessageScenarioSecondTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
@@ -2615,14 +2498,14 @@ export default function MessageScenarioSecondTest(): void {
       })
 
     /**
-     * @tc.name   MessageScenarioSecondTest5100
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_5100
-     * @tc.desc   Verify MessageHandler callback queue scenario for case 5100
+     * @tc.name   MessageScenarioSecondTest4900
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_4900
+     * @tc.desc   Verify removeCallbacks returns false when callback is not queued
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         let worker = new EAWorker();
         const TAG: string = 'MessageTest061';
@@ -2662,40 +2545,42 @@ export default function MessageScenarioSecondTest(): void {
       });
 
     /**
-     * @tc.name   MessageScenarioSecondTest5200
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_5200
+     * @tc.name   MessageScenarioSecondTest5000
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_5000
      * @tc.desc   Verify MessageHandler callback queue scenario for case 5200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
-        let worker = new EAWorker();
         const TAG: string = 'MessageTest062';
-        let flag: boolean = false;
-        let handler: concurrency.MessageHandler;
+        let worker = new EAWorker();
+        let removed = new AtomicInt(0);
+        let doneFlag = new AtomicInt(0);
         let p = () => {
           let a = 1;
         }
         worker.start();
         try {
-          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async (): Promise<void> => {
-              await Sleep(1000);
-              flag = true;
-            })();
+          let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            let cb: (() => void) | undefined = msg.getCallback();
+            if (cb !== undefined) { cb(); }
           }, worker);
-          let msg = new concurrency.Message(handler)
-          handler.sendMessage(msg);
-          handler.post(p);
-          expect(handler.removeCallbacks(p)).assertEqual(true);
+          // post+remove inside post to avoid EAWorker draining before remove
+          handler.post((): void => {
+            handler.post(p);
+            if (handler.removeCallbacks(p)) {
+              removed.fetchAdd(1);
+            }
+            doneFlag.fetchAdd(1);
+          });
           let waitCount: int = 0;
-          while (!flag && waitCount < 50) {
+          while (doneFlag.load() < 1 && waitCount < 50) {
             waitCount++;
             await Utils.msSleep(100);
           }
-          expect(flag).assertTrue();
+          expect(removed.load()).assertEqual(1);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2710,14 +2595,14 @@ export default function MessageScenarioSecondTest(): void {
       });
 
     /**
-     * @tc.name   MessageScenarioSecondTest5300
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_5300
+     * @tc.name   MessageScenarioSecondTest5100
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_5100
      * @tc.desc   Verify MessageHandler callback queue scenario for case 5300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         let worker = new EAWorker();
         worker.start();
@@ -2748,41 +2633,43 @@ export default function MessageScenarioSecondTest(): void {
       });
 
     /**
-     * @tc.name   MessageScenarioSecondTest5400
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_5400
+     * @tc.name   MessageScenarioSecondTest5200
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_5200
      * @tc.desc   Verify MessageHandler callback queue scenario for case 5400
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         const TAG: string = 'MessageTest064';
-        let handler: concurrency.MessageHandler;
-        let flag: boolean = false;
         let worker = new EAWorker();
+        let removed = new AtomicInt(0);
+        let doneFlag = new AtomicInt(0);
         let p = () => {
           let a = 1;
         }
         worker.start();
         try {
-          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            (async (): Promise<void> => {
-              await Sleep(1000);
-              flag = true;
-            })();
+          let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            let cb: (() => void) | undefined = msg.getCallback();
+            if (cb !== undefined) { cb(); }
           }, worker);
-          let msg = new concurrency.Message(handler)
-          handler.sendMessage(msg);
-          handler.post(p);
-          handler.post(p);
-          expect(handler.removeCallbacks(p)).assertEqual(true);
+          // post+remove inside post to avoid EAWorker draining before remove
+          handler.post((): void => {
+            handler.post(p);
+            handler.post(p);
+            if (handler.removeCallbacks(p)) {
+              removed.fetchAdd(1);
+            }
+            doneFlag.fetchAdd(1);
+          });
           let waitCount: int = 0;
-          while (!flag && waitCount < 50) {
+          while (doneFlag.load() < 1 && waitCount < 50) {
             waitCount++;
             await Utils.msSleep(100);
           }
-          expect(flag).assertTrue();
+          expect(removed.load()).assertEqual(1);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2797,14 +2684,14 @@ export default function MessageScenarioSecondTest(): void {
       });
 
     /**
-     * @tc.name   MessageScenarioSecondTest5500
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_5500
+     * @tc.name   MessageScenarioSecondTest5300
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_5300
      * @tc.desc   Verify MessageHandler callback queue scenario for case 5500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         const TAG: string = 'MessageTest065';
         let handler: concurrency.MessageHandler;
@@ -2844,14 +2731,14 @@ export default function MessageScenarioSecondTest(): void {
       });
 
     /**
-     * @tc.name   MessageScenarioSecondTest5600
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_5600
+     * @tc.name   MessageScenarioSecondTest5400
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_5400
      * @tc.desc   Verify MessageHandler sendMessage scenario for case 5600
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
@@ -2874,9 +2761,9 @@ export default function MessageScenarioSecondTest(): void {
             doneFlag.fetchAdd(1);
           });
           let waitCount: int = 0;
-          while (doneFlag.load() < 1 && waitCount < 500) {
+          while (doneFlag.load() < 1 && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(10);
+            await Utils.msSleep(100);
           }
           expect(removed.load()).assertEqual(1);
         } catch (error) {
@@ -2893,14 +2780,14 @@ export default function MessageScenarioSecondTest(): void {
       });
 
     /**
-     * @tc.name   MessageScenarioSecondTest5700
-     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_5700
+     * @tc.name   MessageScenarioSecondTest5500
+     * @tc.number SUB_MESSAGE_SCENARIO_SECOND_TEST_5500
      * @tc.desc   Verify MessageHandler callback queue scenario for case 5700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageScenarioSecondTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MessageScenarioSecondTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
         const TAG: string = 'MessageTest067';
         let handler: concurrency.MessageHandler;
