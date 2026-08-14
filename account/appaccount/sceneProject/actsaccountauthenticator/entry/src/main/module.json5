@@ -17,7 +17,7 @@
     "module": {
         "name": "entry",
         "type": "entry",
-        "srcEntry": "./ets/Application/AbilityStage.ts",
+        "srcEntry": "./ets/Application/AbilityStage.ets",
         "description": "$string:phone_entry_dsc",
         "mainElement": "MainAbility",
         "deviceTypes": [],
@@ -27,7 +27,7 @@
         "abilities": [
             {
                 "name": "com.acts.accountauthenticator.MainAbility",
-                "srcEntry": "./ets/MainAbility/MainAbility.ts",
+                "srcEntry": "./ets/MainAbility/MainAbility.ets",
                 "description": "$string:phone_entry_main",
                 "icon": "$media:icon",
                 "label": "$string:entry_label",
@@ -53,7 +53,7 @@
                 "description": "service",
                 "type": "service",
                 "exported": true,
-                "srcEntry": "./ets/ServiceExtAbility/ServiceExtAbility.ts",
+                "srcEntry": "./ets/ServiceExtAbility/ServiceExtAbility.ets",
                 "skills": [
                     {
                         "actions": [
