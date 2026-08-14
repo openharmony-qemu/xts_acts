@@ -604,23 +604,25 @@ export default function windowInputTest(context: common.UIAbilityContext, window
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL4
      */
-    it('testWindowOffkeyboardDidShow_WindowAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async () => {
+    it('testWindowOffkeyboardDidShow_WindowAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       let caseName = 'testWindowOffkeyboardDidShow_WindowAbnormal';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
       let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
       console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
-      tempWnd =
+      try {
+        tempWnd =
         await windowStage.createSubWindow('testWindowOffkeyboardDidShow_WindowAbnormal').catch((err: BusinessError) => {
           console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         });
-      console.log(msgStr + 'windowStage.createSubWindow success');
-      expect(!!tempWnd).assertTrue();
-      await (tempWnd as window.Window).destroyWindow();
-      try {
+        console.log(msgStr + 'windowStage.createSubWindow success');
+        expect(!!tempWnd).assertTrue();
+        await (tempWnd as window.Window).destroyWindow();
         (tempWnd as window.Window).off('keyboardDidShow');
         console.log(msgStr + 'off keyboardDidShow success');
+        done();
       } catch (exception) {
         console.error(msgStr +
           `Failed to enable the listener for keyboard show. Cause code: ${exception.code}, message: ${exception.message}`);
@@ -630,6 +632,7 @@ export default function windowInputTest(context: common.UIAbilityContext, window
         } else {
           expect().assertFail();
         }
+        done();
       }
     })
 
@@ -677,23 +680,25 @@ export default function windowInputTest(context: common.UIAbilityContext, window
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL4
      */
-    it('testWindowOffkeyboardDidHide_WindowAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async () => {
+    it('testWindowOffkeyboardDidHide_WindowAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       let caseName = 'testWindowOffkeyboardDidHide_WindowAbnormal';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
       let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
       console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
-      tempWnd =
+      try {
+        tempWnd =
         await windowStage.createSubWindow('testWindowOffkeyboardDidHide_WindowAbnormal').catch((err: BusinessError) => {
           console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         });
-      console.log(msgStr + 'windowStage.createSubWindow success');
-      expect(!!tempWnd).assertTrue();
-      await (tempWnd as window.Window).destroyWindow();
-      try {
+        console.log(msgStr + 'windowStage.createSubWindow success');
+        expect(!!tempWnd).assertTrue();
+        await (tempWnd as window.Window).destroyWindow();
         (tempWnd as window.Window).off('keyboardDidHide');
         console.log(msgStr + 'off keyboardDidHide success');
+        done();
       } catch (exception) {
         console.error(msgStr +
           `Failed to enable the listener for keyboard show. Cause code: ${exception.code}, message: ${exception.message}`);
@@ -703,6 +708,7 @@ export default function windowInputTest(context: common.UIAbilityContext, window
         } else {
           expect().assertFail();
         }
+        done();
       }
     })
 

@@ -1681,9 +1681,9 @@ export default function extensionWindowPropertiesTest() {
     it('testOffuiExtensionLimitChange_DestoryedSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         let caseName = 'testOffuiExtensionLimitChange_DestoryedSubWindow';
-        let subWindowClass = await windowStage.createSubWindow('testOffuiExtensionLimitChange_DestoryedSubWindow');
-        await subWindowClass.destroyWindow();
         try {
+          let subWindowClass = await windowStage.createSubWindow('testOffuiExtensionLimitChange_DestoryedSubWindow');
+          await subWindowClass.destroyWindow();
           const callback = (data: boolean) => {
           };
           subWindowClass.off("uiExtensionSecureLimitChange", callback);

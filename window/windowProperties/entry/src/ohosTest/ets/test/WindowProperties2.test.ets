@@ -3437,9 +3437,9 @@ export default function windowPropertiesTest2() {
         let caseName = "testOffScreenShotAppEventwithDestoryedSubWindow";
         let msgStr = 'jsunittest ' + caseName + ' ';
         console.log(msgStr + 'begin.');
-        let windowClass = await windowStage.createSubWindow('testOffScreenShotAppEventwithDestoryedSubWindow');
-        await windowClass.destroyWindow();
         try {
+          let windowClass = await windowStage.createSubWindow('testOffScreenShotAppEventwithDestoryedSubWindow');
+          await windowClass.destroyWindow();
           const callback = (data: window.ScreenshotEventType) => {
             console.log(`${caseName} callback data: ${JSON.stringify(data)}`);
           }
@@ -3492,7 +3492,7 @@ export default function windowPropertiesTest2() {
         }
       });
 
-    /**
+   /**
      * @tc.number     SUB_BASIC_WMS_FUNCTION_FREEWINDOWMODE_0300
      * @tc.name       testOnOffFreeWindowModeChangewithdestoryedSubwindow
      * @tc.desc       验证子窗口销毁后onFreeWindowModeChange和offFreeWindowModeChange监听接口抛1300002错误码
@@ -3503,13 +3503,9 @@ export default function windowPropertiesTest2() {
     it('testOnOffFreeWindowModeChangewithdestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         let caseName: string = 'testOnOffFreeWindowModeChangewithdestoryedSubwindow ';
-        let subWindowClass: window.Window | undefined;
-        let subWindowClass2: window.Window | undefined;
-        subWindowClass = await windowStage.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow1');
-        subWindowClass2 = await windowStage.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow2');
-        await subWindowClass.destroyWindow();
-        await subWindowClass2.destroyWindow();
         try {
+          let subWindowClass: window.Window = await windowStage.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow1')
+          await subWindowClass.destroyWindow();
           const callback = (res: boolean) => {
             console.log(caseName + ' callback result: ' + res);
           }
@@ -3521,11 +3517,12 @@ export default function windowPropertiesTest2() {
           expect(err.message !== '').assertTrue();
         }
         try {
+          let subWindowClass2: window.Window = await windowStage.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow2');
+          await subWindowClass2.destroyWindow();
           const callback = (res: boolean) => {
             console.log(caseName + ' callback result: ' + res);
           }
-          subWindowClass.off('freeWindowModeChange', callback)
-          console.log(caseName + 'off freeWindowModeChange success. ');
+          subWindowClass2.off('freeWindowModeChange', callback)
           done();
         } catch (err) {
           console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);

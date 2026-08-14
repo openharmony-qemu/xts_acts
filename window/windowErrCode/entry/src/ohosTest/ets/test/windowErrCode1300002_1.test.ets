@@ -1191,10 +1191,9 @@ export default function windowErrCode1300002_1() {
       let caseName = "testOffDisplayIdChangeErrCode1300002_0100";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      let subWin: ohosWindow.Window =
-        await windowStage.createSubWindow('testOffDisplayIdChangeErrCode1300002_SubWindow_Promise');
-      await subWin.destroyWindow();
       try {
+        let subWin: ohosWindow.Window = await windowStage.createSubWindow('testOffDisplayIdChangeErrCode1300002_SubWindow_Promise');
+        await subWin.destroyWindow();
         subWin!.off("displayIdChange", (res: number) => {
         });
         console.log(msgStr + 'Succeeded in calling off displayIdChange.');
@@ -1223,10 +1222,10 @@ export default function windowErrCode1300002_1() {
       let caseName = "testOffSystemDensityChangeErrCode1300002_0100";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      let subWin: ohosWindow.Window =
-        await windowStage.createSubWindow('testOffSystemDensityChangeErrCode1300002_SubWindow_Promise');
-      await subWin.destroyWindow();
       try {
+        let subWin: ohosWindow.Window =
+        await windowStage.createSubWindow('testOffSystemDensityChangeErrCode1300002_SubWindow_Promise');
+        await subWin.destroyWindow();
         subWin!.off("systemDensityChange", (res: number) => {
         });
         console.log(msgStr + 'Succeeded in calling off systemDensityChange.');
@@ -1255,10 +1254,10 @@ export default function windowErrCode1300002_1() {
       let caseName = "testOffNoInteractionDetectedErrCode1300002_0100";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      let subWin: ohosWindow.Window =
-        await windowStage.createSubWindow('testOffNoInteractionDetectedErrCode1300002_SubWindow_Promise')
-      await subWin.destroyWindow();
       try {
+        let subWin: ohosWindow.Window =
+        await windowStage.createSubWindow('testOffNoInteractionDetectedErrCode1300002_SubWindow_Promise')
+        await subWin.destroyWindow();
         subWin!.off("noInteractionDetected", () => {
         });
         console.log(msgStr + 'Succeeded in calling off noInteractionDetected.');
@@ -1287,10 +1286,9 @@ export default function windowErrCode1300002_1() {
       let caseName = "testOffSubWindowCloseErrCode1300002_0100";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      let subWin: ohosWindow.Window =
-        await windowStage.createSubWindow('testOffSubWindowCloseErrCode1300002_SubWindow_Promise');
-      await subWin.destroyWindow();
       try {
+        let subWin: ohosWindow.Window = await windowStage.createSubWindow('testOffSubWindowCloseErrCode1300002_SubWindow_Promise');
+        await subWin.destroyWindow();
         subWin!.off("subWindowClose", () => {
         });
         console.log(msgStr + 'Succeeded in calling off subWindowClose.');

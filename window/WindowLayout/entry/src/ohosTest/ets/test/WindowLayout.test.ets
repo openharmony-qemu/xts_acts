@@ -5227,10 +5227,9 @@ export default function windowLayoutTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         const caseName = 'testOffRectChangeInGlobalDisplaywithDestroyedSubwindow_0100';
         console.log(caseName + 'begin.');
-        let windowClass =
-          await windowStage.createSubWindow('testOffRectChangeInGlobalDisplaywithDestroyedSubwindow_0100')
-        await windowClass.destroyWindow()
         try {
+          let windowClass = await windowStage.createSubWindow('testOffRectChangeInGlobalDisplaywithDestroyedSubwindow_0100')
+          await windowClass.destroyWindow()
           windowClass.off('rectChangeInGlobalDisplay')
           console.log(caseName + ' off rectChangeInGlobalDisplay success');
           done();
