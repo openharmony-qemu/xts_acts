@@ -1019,11 +1019,13 @@ export default function WebConfigCookieSync() {
      */
     it('testEtsFetchCookieSyncIncognitoNull014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitEtsFetchCookieSyncIncognitoNull014", 147501)
-      Utils.registerBaseEvent("testEtsFetchCookieSyncIncognitoNull014", true, 148043, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieSyncIncognitoNull014", true, 148043, (error: object) => {isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist((error: object) => isReturn, 'testEtsFetchCookieSyncIncognitoNull014', true,1000);
+      done();
     })
 
     /**
@@ -1036,11 +1038,13 @@ export default function WebConfigCookieSync() {
      */
     it('testEtsFetchCookieSyncIncognitoUndefined015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitEtsFetchCookieSyncIncognitoUndefined015", 147501)
-      Utils.registerBaseEvent("testEtsFetchCookieSyncIncognitoUndefined015", true, 148044, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieSyncIncognitoUndefined015", true, 148044, (error: object) => {isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist((error: object) => isReturn, 'testEtsFetchCookieSyncIncognitoUndefined015', true,1000);
+      done();
     })
 
     /**
@@ -1053,11 +1057,13 @@ export default function WebConfigCookieSync() {
      */
     it('testEtsFetchCookieIncognitoNull016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitEtsFetchCookieIncognitoNull016", 147501)
-      Utils.registerBaseEvent("testEtsFetchCookieIncognitoNull016", true, 148045, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieIncognitoNull016", true, 148045, (error: object) => {isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist((error: object) => isReturn, 'testEtsFetchCookieIncognitoNull016', true,1000);
+      done();
     })
 
     /**
@@ -1070,11 +1076,13 @@ export default function WebConfigCookieSync() {
      */
     it('testEtsFetchCookieIncognitoUndefined017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitEtsFetchCookieIncognitoUndefined017", 147501)
-      Utils.registerBaseEvent("testEtsFetchCookieIncognitoUndefined017", true, 148046, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieIncognitoUndefined017", true, 148046, (error: object) => {isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist((error: object) => isReturn, 'testEtsFetchCookieIncognitoUndefined017', true,1000);
+      done();
     })
 
   })
