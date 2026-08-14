@@ -34,7 +34,7 @@ import {
   Button,
   SizeOptions
 } from '@ohos.arkui.component';
-import { Local } from '@ohos.arkui.stateManagement';
+import { AppStorage, Local } from '@ohos.arkui.stateManagement';
 import {
   ChipV2,
   ChipV2Options,
@@ -52,6 +52,23 @@ struct ChipV2OptionsMethodExample {
   @Local closeText: string = ''
   @Local clickedText: string = ''
 
+  aboutToAppear(): void {
+    const action = AppStorage.get<string>('chipV2OptionsMethodAction');
+    if (action === 'close') {
+      this.handleClose();
+    } else if (action === 'clicked') {
+      this.handleClicked();
+    }
+  }
+
+  private handleClose(): void {
+    this.closeText = 'closeChip0';
+  }
+
+  private handleClicked(): void {
+    this.clickedText = 'clickedChip0';
+  }
+
   build() {
     Column({ space: 20 } as ColumnOptions) {
       Text(this.closeText).id('ChipV2OptionsCloseText')
@@ -63,12 +80,8 @@ struct ChipV2OptionsMethodExample {
             fillColor: ColorMetrics.resourceColor(Color.Blue)
           }) as ChipV2PrefixImageIcon,
           label: new ChipV2Label({ text: 'Chip0' }),
-          onClose: () => {
-            this.closeText = 'closeChip0'
-          },
-          onClicked: () => {
-            this.clickedText = 'clickedChip0'
-          }
+          onClose: () => this.handleClose(),
+          onClicked: () => this.handleClicked()
         })
       })
       ChipV2({
