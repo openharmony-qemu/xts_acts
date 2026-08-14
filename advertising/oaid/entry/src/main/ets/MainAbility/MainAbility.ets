@@ -19,9 +19,10 @@ import testsuite from '../test/List.test';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
+import { BusinessError } from '@ohos.base';
 
 export default class MainAbility extends Ability {
-  async onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+  async onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): Promise<void> {
     // Ability is creating, initialize resources for this ability
     console.log('[Demo] MainAbility onCreate');
     globalThis.abilityWant = want;
@@ -32,37 +33,37 @@ export default class MainAbility extends Ability {
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
   }
 
-  onDestroy() {
+  onDestroy(): void {
     // Ability is destroying, release resources for this ability
     console.log('[Demo] MainAbility onDestroy');
   }
 
-  onWindowStageCreate(windowStage: window.WindowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     console.log('[Demo] MainAbility onWindowStageCreate windowStage=' + windowStage);
     globalThis.windowStage = windowStage;
     globalThis.abilityContext = this.context;
-    windowStage.loadContent("MainAbility/pages/index/index", (err, data) => {
+    windowStage.loadContent("MainAbility/pages/index/index", (err: BusinessError) => {
       if (err.code) {
         console.error('[Demo] Failed to load the content. Cause:' + JSON.stringify(err));
         return;
       }
-      console.info('[Demo] Succeeded in loading the content. Data: ' + JSON.stringify(data));
+      console.info('[Demo] Succeeded in loading the content');
     });
   }
 
-  onWindowStageDestroy() {
+  onWindowStageDestroy(): void {
     //Main window is destroyed, release UI related resources
     console.log('[Demo] MainAbility onWindowStageDestroy');
   }
 
-  onForeground() {
+  onForeground(): void {
     // Ability has brought to foreground
     console.log('[Demo] MainAbility onForeground');
   }
 
-  onBackground() {
+  onBackground(): void {
     // Ability has back to background
     console.log('[Demo] MainAbility onBackground');
   }
-};
+}
