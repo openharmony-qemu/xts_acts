@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { Entry, Text, Column, Component, Button, ClickEvent, Color, $r, ColumnOptions, FlexAlign, Direction, Builder, Row, Margin } from '@ohos.arkui.component'
-import { State, Watch, PropRef, StoragePropRef } from '@ohos.arkui.stateManagement'
+import { State, Watch, PropRef } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import { ChipGroup, IconGroupSuffix, IconItemOptions, ChipGroupItemOptions, ChipItemStyle, SuffixImageIconOptions } from '@ohos.arkui.advanced.ChipGroup';
@@ -24,12 +24,10 @@ import { ChipSize , ChipSymbolGlyphOptions} from '@ohos.arkui.advanced.Chip';
 @Component
 struct ChipGroupOptionsPage {
   @State selected_index: Array<int> = [0, 1, 2, 3, 4, 5, 6];
-  @StoragePropRef('chipGroupOptionsTestIndex') testIndex: int = 0;
 
   build() {
     Column() {
-      if (this.testIndex == 0) {
-        ChipGroup({
+      ChipGroup({
         items: [
           {
             prefixIcon: { src: $r('app.media.startIcon') },
@@ -61,10 +59,8 @@ struct ChipGroupOptionsPage {
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
-        })
-      }
-      if (this.testIndex == 1) {
-        ChipGroup({
+      }).id('chipGroupOptions_0')
+      ChipGroup({
         items: [
           {
             prefixIcon: { src: $r('sys.media.ohos_ic_public_clock') },
@@ -101,10 +97,8 @@ struct ChipGroupOptionsPage {
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
-        })
-      }
-      if (this.testIndex == 2) {
-        ChipGroup({
+      }).id('chipGroupOptions_1')
+      ChipGroup({
         items: [
           {
             prefixIcon: { src: $r('sys.media.ohos_ic_public_cast_mirror') },
@@ -131,10 +125,8 @@ struct ChipGroupOptionsPage {
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
-        })
-      }
-      if (this.testIndex == 3) {
-        ChipGroup({
+      }).id('chipGroupOptions_2')
+      ChipGroup({
         items: [
           {
             prefixIcon: { src: $r('sys.media.ohos_ic_public_cast_mirror') },
@@ -155,10 +147,8 @@ struct ChipGroupOptionsPage {
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
-        })
-      }
-      if (this.testIndex == 4) {
-        ChipGroup({
+      }).id('chipGroupOptions_3')
+      ChipGroup({
         items: [
           {
             prefixIcon: { src: $r('sys.media.ohos_ic_public_cast_mirror') },
@@ -179,11 +169,9 @@ struct ChipGroupOptionsPage {
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
-        })
-      }
+      }).id('chipGroupOptions_4')
 
-      if (this.testIndex == 5) {
-        ChipGroup({
+      ChipGroup({
         items: [
           {
             prefixIcon: { src: $r('sys.media.ohos_ic_public_cast_mirror') },
@@ -204,11 +192,9 @@ struct ChipGroupOptionsPage {
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
-        })
-      }
+      }).id('chipGroupOptions_5')
 
-      if (this.testIndex == 6) {
-        ChipGroup({
+      ChipGroup({
         items: [
           {
             prefixIcon: { src: $r('sys.media.ohos_ic_public_cast_mirror') },
@@ -229,8 +215,7 @@ struct ChipGroupOptionsPage {
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
-        })
-      }
+      }).id('chipGroupOptions_6')
     }.width('100%').margin({ top: 30 } as Margin)
   }
 }
