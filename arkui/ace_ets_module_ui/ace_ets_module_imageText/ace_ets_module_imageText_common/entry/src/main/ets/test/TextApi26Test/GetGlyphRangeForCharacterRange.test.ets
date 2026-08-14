@@ -220,17 +220,23 @@ export default function GetGlyphRangeForCharacterRangeTest() {
      */
     it('GetGlyphRangeForCharacterRangeTest_0060', Level.LEVEL0, async (done: Function) => {
       console.info('[GetGlyphRangeForCharacterRangeTest_0060] START');
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
 
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
-      await button.click();
-      await CommonFunc.sleep(1000);
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
 
-      const result: string | undefined = AppStorage.get<string>('glyphRange_undefined_range');
-      console.info('[GetGlyphRangeForCharacterRangeTest_0060] result: ' + result);
-      expect(result !== undefined).assertTrue();
-      expect(result !== 'undefined').assertTrue();
+        const result: string | undefined = AppStorage.get<string>('glyphRange_undefined_range');
+        console.info('[GetGlyphRangeForCharacterRangeTest_0060] result: ' + result);
+        expect(result !== undefined).assertTrue();
+        expect(result !== 'undefined').assertTrue();
+      }catch (err) {
+        console.error('GetGlyphRangeForCharacterRangeTest_0060 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+      
       console.info('[GetGlyphRangeForCharacterRangeTest_0060] END');
       done();
     });

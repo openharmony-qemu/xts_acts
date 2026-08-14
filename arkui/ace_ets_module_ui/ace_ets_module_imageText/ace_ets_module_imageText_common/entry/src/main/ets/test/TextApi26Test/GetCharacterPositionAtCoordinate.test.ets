@@ -213,23 +213,28 @@ export default function GetCharacterPositionAtCoordinateTest() {
      */
     it('GetCharacterPositionAtCoordinateTest_0060', Level.LEVEL0, async (done: Function) => {
       console.info('[GetCharacterPositionAtCoordinateTest_0060] START');
-      await CommonFunc.sleep(500);
+      try{
+        await CommonFunc.sleep(500);
 
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
-      await button.click();
-      await CommonFunc.sleep(1000);
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
 
-      const result: string | undefined = AppStorage.get<string>('charPos_large');
-      console.info('[GetCharacterPositionAtCoordinateTest_0060] result: ' + result);
-      expect(result).assertContain('position:');
-      expect(result).assertContain('affinity:');
-      expect(result !== 'undefined').assertTrue();
+        const result: string | undefined = AppStorage.get<string>('charPos_large');
+        console.info('[GetCharacterPositionAtCoordinateTest_0060] result: ' + result);
+        expect(result).assertContain('position:');
+        expect(result).assertContain('affinity:');
+        expect(result !== 'undefined').assertTrue();
 
-      const parts: string[] = result!.split(',');
-      const positionStr: string = parts[0].split(':')[1];
-      const position: number = parseInt(positionStr, 10);
-      expect(position >= 0 && position <= 11).assertTrue();
+        const parts: string[] = result!.split(',');
+        const positionStr: string = parts[0].split(':')[1];
+        const position: number = parseInt(positionStr, 10);
+        expect(position >= 0 && position <= 11).assertTrue();
+      }catch (err) {
+        console.error('GetCharacterPositionAtCoordinateTest_0060 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[GetCharacterPositionAtCoordinateTest_0060] END');
       done();
     });
