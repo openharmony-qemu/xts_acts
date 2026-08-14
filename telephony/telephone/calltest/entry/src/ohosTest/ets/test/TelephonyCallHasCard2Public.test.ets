@@ -675,12 +675,12 @@ export default function HasCard2PublicTest() {
         slotId: 3
       }
       call.isEmergencyPhoneNumber(emergencyPhoneNumber, options).then((data: boolean) => {
-        ExpectFail();
         console.info(`${caseName} isEmergencyPhoneNumber,promise: data->${JSON.stringify(data)}`);
+        ExpectTrue(data === true);
         done();
       }).catch((err: BusinessError) => {
         console.info(`${caseName} isEmergencyPhoneNumber fail,promise: err->${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 8300001);
+        ExpectTrue(err.code === 8300001);
         done();
       });
       console.info(`${caseName} test end`);
