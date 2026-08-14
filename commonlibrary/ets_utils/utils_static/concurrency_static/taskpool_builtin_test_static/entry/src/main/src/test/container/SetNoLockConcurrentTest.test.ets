@@ -52,7 +52,11 @@ export default function SetNoLockConcurrentTest(): void {
       testSetNoLock(set);
       count.fetchAdd(1);
       while (count.load() < totalTasks + 1) {
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (err) {
+          expect(err).assertFail();
+        }
       }
       expect(count.load()).assertEqual(totalTasks + 1);
 

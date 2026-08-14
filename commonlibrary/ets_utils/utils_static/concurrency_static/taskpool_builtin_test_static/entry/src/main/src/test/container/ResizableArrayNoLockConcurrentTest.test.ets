@@ -176,7 +176,7 @@ export default function ResizableArrayNoLockConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testResizableArrayCancelConcurrent0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         let canceledTask = new taskpool.Task(arrayOperations, new Array<number>());
         let canceledPromise: Promise<Any> = taskpool.executeDelayed(2000, canceledTask);
         let normalPromise: Promise<Any> = taskpool.execute(arrayOperations, new Array<number>());
@@ -189,6 +189,7 @@ export default function ResizableArrayNoLockConcurrentTest(): void {
         }
         expect(canceled).assertTrue();
         expect(await normalPromise as number).assertEqual(0);
+        done();
       });
   });
 }

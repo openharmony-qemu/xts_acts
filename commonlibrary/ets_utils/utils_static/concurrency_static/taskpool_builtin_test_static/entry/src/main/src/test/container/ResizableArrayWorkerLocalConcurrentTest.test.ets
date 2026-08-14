@@ -52,8 +52,12 @@ export default function ResizableArrayWorkerLocalConcurrentTest(): void {
       }
       testResizableArrayWorkerLocal(wl);
       count.fetchAdd(1);
-      await Promise.all(tasks);
-      expect(count.load()).assertEqual(totalTasks + 1);
+      try {
+        await Promise.all(tasks);
+        expect(count.load()).assertEqual(totalTasks + 1);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
   });
 }

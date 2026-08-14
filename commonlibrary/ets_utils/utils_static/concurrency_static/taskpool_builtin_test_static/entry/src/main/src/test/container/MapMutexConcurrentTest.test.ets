@@ -54,9 +54,13 @@ export default function MapMutexConcurrentTest(): void {
       }
       testMapMutex(map, mutex);
       count.fetchAdd(1);
-      await Promise.all(tasks);
-      expect(count.load()).assertEqual(totalTasks + 1);
-      expect(map.size).assertEqual(0);
+      try {
+        await Promise.all(tasks);
+        expect(count.load()).assertEqual(totalTasks + 1);
+        expect(map.size).assertEqual(0);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
   });
 }

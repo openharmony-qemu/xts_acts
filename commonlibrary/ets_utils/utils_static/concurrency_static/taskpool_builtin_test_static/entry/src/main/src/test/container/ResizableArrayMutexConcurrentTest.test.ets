@@ -49,12 +49,16 @@ export default function ResizableArrayMutexConcurrentTest(): void {
       let mutex: Mutex = new Mutex();
       let totalTasks: number = 10;
       for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testResizableArrayMutex, arr, mutex).then((): void => { count.fetchAdd(1); });
+        taskpool.execute(testResizableArrayMutex, arr, mutex).then((): void => { count.fetchAdd(1); }, (err: Error): void => { expect(err).assertFail(); });
       }
       testResizableArrayMutex(arr, mutex);
       count.fetchAdd(1);
       while (count.load() < totalTasks + 1) {
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (err) {
+          expect(err).assertFail();
+        }
       }
       expect(count.load()).assertEqual(totalTasks + 1);
       expect(arr.length).assertEqual(0);
