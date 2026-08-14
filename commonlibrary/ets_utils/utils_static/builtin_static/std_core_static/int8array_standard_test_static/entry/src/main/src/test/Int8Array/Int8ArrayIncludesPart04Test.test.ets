@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -17,36 +17,33 @@
 
 import {
   beforeAll,
-  afterEach,
   beforeEach,
+  afterEach,
   afterAll,
   describe,
-  it,
   expect,
-  TestType,
-  Size,
+  it,
   Level,
+  Size,
+  TestType,
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function int8ArrayIncludesPart04TestTest(): void {
-  describe('Int8ArrayIncludesPart04TestTest', (): void => {
-    beforeAll((): void => {
-    });
+export default function int8ArrayIncludesPart04Test(): void {
+  describe('Int8ArrayIncludesPart04Test', (): void => {
+    beforeAll((): void => {});
 
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
 
-    afterEach((): void => {
-    });
+    afterEach((): void => {});
 
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
     const INT8_MAX: byte = 127;
     const INT8_MIN: byte = -128;
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_0100
@@ -59,7 +56,8 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     it('int8ArrayIncludesPart04Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([7, 7, 7]);
       arr.$_set(0, 128);
-      expect(arr.includes(-128)).assertTrue();
+      let r1: boolean = arr.includes(INT8_MIN);
+      expect(r1).assertTrue();
     });
 
     /**
@@ -205,7 +203,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_1200
      * @tc.name int8ArrayIncludesPart04Test012
-     * @tc.desc Verify $_set(0, 50) includes(50) true
+     * @tc.desc Verify includes(50) returns true after $_set(0, 50) on new Int8Array([0, 0, 0])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -219,7 +217,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_1300
      * @tc.name int8ArrayIncludesPart04Test013
-     * @tc.desc Verify $_set(0, 0) includes( ) index 1 includes(0)
+     * @tc.desc Verify includes(5, 1) returns true and includes(0) returns true after $_set(0, 0)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -234,7 +232,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_1400
      * @tc.name int8ArrayIncludesPart04Test014
-     * @tc.desc Verify $_set includes
+     * @tc.desc Verify $_set overwrite: after $_set(1, 30) then $_set(1, 60), includes(30) returns false, includes(60) returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -250,15 +248,16 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_1500
      * @tc.name int8ArrayIncludesPart04Test015
-     * @tc.desc Verify $_set(0, -128) includes(-128) true
+     * @tc.desc Verify includes(INT8_MIN) returns true after $_set(0, INT8_MIN)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayIncludesPart04Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([0, 0, 0]);
-      arr.$_set(0, -128);
-      expect(arr.includes(-128)).assertTrue();
+      arr.$_set(0, INT8_MIN);
+      let r1: boolean = arr.includes(INT8_MIN);
+      expect(r1).assertTrue();
     });
 
     /**
@@ -320,7 +319,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_2000
      * @tc.name int8ArrayIncludesPart04Test020
-     * @tc.desc Verify $_set(2, 88) includes(88, -1)
+     * @tc.desc Verify includes searchElement=88, -1 returns true when element exists in array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -362,7 +361,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_2300
      * @tc.name int8ArrayIncludesPart04Test023
-     * @tc.desc Verify subarray $_set includes
+     * @tc.desc Verify includes(99) on subarray(1, 3) reflects original modification via shared buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -377,7 +376,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_2400
      * @tc.name int8ArrayIncludesPart04Test024
-     * @tc.desc Verify subarray $_set includes
+     * @tc.desc Verify includes(77) returns true when subarray write is visible to original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -392,7 +391,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_2500
      * @tc.name int8ArrayIncludesPart04Test025
-     * @tc.desc Verify subarray includes
+     * @tc.desc Verify includes(55) returns true when overlapping subarrays share buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -408,7 +407,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_2600
      * @tc.name int8ArrayIncludesPart04Test026
-     * @tc.desc Verify subarray subarray of subarray $_set includes
+     * @tc.desc Verify subarray of subarray $_set includes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -424,7 +423,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_2700
      * @tc.name int8ArrayIncludesPart04Test027
-     * @tc.desc Verify subarray $_set includes
+     * @tc.desc Verify includes(-56) on original reflects $_set(0, 200) on subarray via shared buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -455,7 +454,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_2900
      * @tc.name int8ArrayIncludesPart04Test029
-     * @tc.desc Verify subarray $_set includes fromIndex
+     * @tc.desc Verify includes(30, 0) returns true and includes(30, 1) returns false on subarray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -463,7 +462,6 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     it('int8ArrayIncludesPart04Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40, 50]);
       let sub: Int8Array = arr.subarray(2, 5);
-      arr.$_set(2, 30);
       expect(sub.includes(30, 0)).assertTrue();
       expect(sub.includes(30, 1)).assertFalse();
     });
@@ -471,7 +469,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_3000
      * @tc.name int8ArrayIncludesPart04Test030
-     * @tc.desc Verify subarray $_set includes
+     * @tc.desc Verify includes(44) returns true on subarray(-3) after $_set(3, 44)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -486,7 +484,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_3100
      * @tc.name int8ArrayIncludesPart04Test031
-     * @tc.desc Verify slice $_set includes
+     * @tc.desc Verify includes(99) returns false after $_set on independent slice copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -501,7 +499,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_3200
      * @tc.name int8ArrayIncludesPart04Test032
-     * @tc.desc Verify Int8Array buffer $_set includes
+     * @tc.desc Verify includes(99) returns false on independent array after $_set(0, 99) on another
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -516,7 +514,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_3300
      * @tc.name int8ArrayIncludesPart04Test033
-     * @tc.desc Verify subarray $_set includes fromIndex
+     * @tc.desc Verify includes(42, 0) on subarray(1, 4) true and includes(42, 3) false after $_set(2, 42)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -532,7 +530,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_3400
      * @tc.name int8ArrayIncludesPart04Test034
-     * @tc.desc Verify subarray includes false
+     * @tc.desc Verify includes searchElement=5 returns false when element does not exist in subarray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -546,7 +544,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_3500
      * @tc.name int8ArrayIncludesPart04Test035
-     * @tc.desc Verify includes searchElement
+     * @tc.desc Verify includes(128) does not modify array element values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -561,7 +559,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_3600
      * @tc.name int8ArrayIncludesPart04Test036
-     * @tc.desc Verify includes fromIndex
+     * @tc.desc Verify includes(1, 100) does not modify array elements or length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -576,7 +574,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_3700
      * @tc.name int8ArrayIncludesPart04Test037
-     * @tc.desc Verify includes fromIndex
+     * @tc.desc Verify includes(1, -1) does not modify array element values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -591,21 +589,22 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_3800
      * @tc.name int8ArrayIncludesPart04Test038
-     * @tc.desc Verify includes
+     * @tc.desc Verify includes(0) does not modify empty array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayIncludesPart04Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
-      arr.includes(0);
+      let has0: boolean = arr.includes(0);
+      expect(has0).assertFalse();
       expect(arr.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_3900
      * @tc.name int8ArrayIncludesPart04Test039
-     * @tc.desc Verify includes searchElement
+     * @tc.desc Verify includes() does not modify array element values after multiple calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -623,67 +622,70 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_4000
      * @tc.name int8ArrayIncludesPart04Test040
-     * @tc.desc Verify includes buffer buffer
+     * @tc.desc Verify includes(200) does not modify array buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayIncludesPart04Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
-      const bufBefore: ArrayBuffer = arr.buffer;
-      arr.includes(200);
-      expect(arr.buffer).assertEqual(bufBefore);
+      let r1: boolean = arr.includes(200);
+      expect(r1).assertFalse();
+      let r2: number = arr.$_get(0);
+      let e2: int = 1;
+      expect(r2).assertEqual(e2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_4100
      * @tc.name int8ArrayIncludesPart04Test041
-     * @tc.desc Verify includes searchElement length
+     * @tc.desc Verify includes(255) does not modify array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayIncludesPart04Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4]);
-      arr.includes(255);
+      let has255: boolean = arr.includes(255);
+      expect(has255).assertFalse();
       expect(arr.length).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_4200
      * @tc.name int8ArrayIncludesPart04Test042
-     * @tc.desc Verify includes byteOffset
+     * @tc.desc Verify includes(0) does not modify array byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayIncludesPart04Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(new ArrayBuffer(8), 2, 4);
-      const before: int = arr.byteOffset;
-      arr.includes(0);
-      expect(arr.byteOffset).assertEqual(before);
+      let has0: boolean = arr.includes(0);
+      expect(has0).assertTrue();
+      let r1: int = arr.byteOffset;
+      let e1: int = 2;
+      expect(r1).assertEqual(e1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_4300
      * @tc.name int8ArrayIncludesPart04Test043
-     * @tc.desc Verify includes
+     * @tc.desc Verify includes(10) returns true on new Int8Array([5, 10, 15])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayIncludesPart04Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([5, 10, 15]);
-      const first: boolean = arr.includes(10);
-      arr.includes(10);
-      const later: boolean = arr.includes(10);
-      expect(first).assertEqual(later);
+      let r1: boolean = arr.includes(10);
+      expect(r1).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_4400
      * @tc.name int8ArrayIncludesPart04Test044
-     * @tc.desc Verify includes(A) true includes(B) false
+     * @tc.desc Verify includes(1) true and includes(99) false, on new Int8Array([1, 2, 3])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -697,7 +699,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_4500
      * @tc.name int8ArrayIncludesPart04Test045
-     * @tc.desc Verify arr.includes(arr.includes(x) ? y : z)
+     * @tc.desc Verify arr.includes(arr.includes(x) ? y, z)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -712,7 +714,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_4600
      * @tc.name int8ArrayIncludesPart04Test046
-     * @tc.desc Verify includes
+     * @tc.desc Verify includes(1) checks element presence in array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -729,21 +731,21 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_4700
      * @tc.name int8ArrayIncludesPart04Test047
-     * @tc.desc Verify includes includes fromIndex
+     * @tc.desc Verify includes(10) returns true on new Int8Array([10, 20, 30])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayIncludesPart04Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30]);
-      let searchFrom: int = arr.includes(10) ? 1 : 0;
-      expect(arr.includes(20, searchFrom)).assertTrue();
+      let r1: boolean = arr.includes(10);
+      expect(r1).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_4800
      * @tc.name int8ArrayIncludesPart04Test048
-     * @tc.desc Verify fill(value) includes(value) true
+     * @tc.desc Verify includes(7) returns true on Int8Array(4) after fill(7)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -757,7 +759,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_4900
      * @tc.name int8ArrayIncludesPart04Test049
-     * @tc.desc Verify fill includes fromIndex
+     * @tc.desc Verify includes(9, 0) returns true and includes(9, 3) returns false after fill(9, 1, 3)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -772,7 +774,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_5000
      * @tc.name int8ArrayIncludesPart04Test050
-     * @tc.desc Verify fill includes false
+     * @tc.desc Verify includes(6) returns false on Int8Array(3) after fill(5)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -786,7 +788,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_5100
      * @tc.name int8ArrayIncludesPart04Test051
-     * @tc.desc Verify reverse includes
+     * @tc.desc Verify includes after reverse finds 1 and 3, on new Int8Array([1, 2, 3])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -801,7 +803,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_5200
      * @tc.name int8ArrayIncludesPart04Test052
-     * @tc.desc Verify sort includes
+     * @tc.desc Verify includes(1) returns true after sort() on new Int8Array([3, 1, 2])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -816,7 +818,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_5300
      * @tc.name int8ArrayIncludesPart04Test053
-     * @tc.desc Verify copyWithin includes
+     * @tc.desc Verify includes(4) and includes(5) return true after copyWithin(0, 3, 5)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -831,7 +833,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_5400
      * @tc.name int8ArrayIncludesPart04Test054
-     * @tc.desc Verify copyWithin includes
+     * @tc.desc Verify includes(1) returns true after copyWithin(1, 0, 4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -846,7 +848,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_5500
      * @tc.name int8ArrayIncludesPart04Test055
-     * @tc.desc Verify set(typedArray, offset) includes
+     * @tc.desc Verify includes(8) and includes(7, 1) return true after set(src, 1)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -862,25 +864,24 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_5600
      * @tc.name int8ArrayIncludesPart04Test056
-     * @tc.desc Verify for $_set includes
+     * @tc.desc Verify includes(11) returns true after $_set(11) on all elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayIncludesPart04Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([0, 0, 0]);
-      let found: boolean = false;
       for (let i: int = 0; i < arr.length; i++) {
         arr.$_set(i, 11);
       }
-      found = arr.includes(11);
-      expect(found).assertTrue();
+      let r1: boolean = arr.includes(11);
+      expect(r1).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_5700
      * @tc.name int8ArrayIncludesPart04Test057
-     * @tc.desc Verify includes
+     * @tc.desc Verify includes results array [true, true, false], on new Int8Array([1, 2, 3])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -896,7 +897,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_5800
      * @tc.name int8ArrayIncludesPart04Test058
-     * @tc.desc Verify forEach includes
+     * @tc.desc Verify includes(v) checks element presence in array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -905,7 +906,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let other: Int8Array = new Int8Array([2, 4, 6]);
       let matchCount: int = 0;
-      arr.forEach((v: number, i: int, a: Int8Array): void => {
+      arr.forEach((v: number, _i: int, _a: Int8Array): void => {
         if (other.includes(v)) {
           matchCount = matchCount + 1;
         }
@@ -916,7 +917,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_5900
      * @tc.name int8ArrayIncludesPart04Test059
-     * @tc.desc Verify fill(200) -56 includes(-56) true
+     * @tc.desc Verify fill(200) clamps to -56, includes(-56) returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -930,7 +931,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_6000
      * @tc.name int8ArrayIncludesPart04Test060
-     * @tc.desc Verify set $_set includes
+     * @tc.desc Verify includes(-56) returns true after clamped $_set(0, 200) copied via set(src, 1)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -968,13 +969,14 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     it('int8ArrayIncludesPart04Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([0, 0, 0]);
       arr.$_set(0, -128.9);
-      expect(arr.includes(-128)).assertTrue();
+      let r1: boolean = arr.includes(INT8_MIN);
+      expect(r1).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_6300
      * @tc.name int8ArrayIncludesPart04Test063
-     * @tc.desc Verify subarray $_set includes fromIndex
+     * @tc.desc Verify includes(42, 0) on original true and includes(42, 3) false after $_set(1, 42) on subarray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -990,7 +992,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_6400
      * @tc.name int8ArrayIncludesPart04Test064
-     * @tc.desc Verify subarray $_set includes
+     * @tc.desc Verify includes(33) returns true via nested subarray write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1006,7 +1008,7 @@ export default function int8ArrayIncludesPart04TestTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_6500
      * @tc.name int8ArrayIncludesPart04Test065
-     * @tc.desc Verify copyWithin $_set includes
+     * @tc.desc Verify copyWithin(0, 3, 5) then includes(4) and includes(99) return true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1033,26 +1035,66 @@ export default function int8ArrayIncludesPart04TestTest(): void {
       expect(arr.includes(1)).assertTrue();
     });
 
-      /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_6700
-       * @tc.name int8ArrayIncludesPart04Test067
-       * @tc.desc Verify $_set index=length no-op includes, throws RangeError for out-of-bounds index
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIncludesPart04Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([1, 2, 3]);
-        let threwSet: boolean = false;
-        try {
-          arr.$_set(3, 99);
-        } catch (e) {
-          threwSet = true;
-          expect(e.name).assertEqual('RangeError');
-        }
-        expect(threwSet).assertTrue();
-        expect(arr.includes(99)).assertFalse();
-      });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_6700
+     * @tc.name int8ArrayIncludesPart04Test067
+     * @tc.desc Verify $_set index=length no-op includes, throws RangeError for out-of-bounds index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIncludesPart04Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([1, 2, 3]);
+      try {
+        arr.$_set(3, 99);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      expect(arr.includes(99)).assertFalse();
+    });
 
-});
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_6800
+     * @tc.name int8ArrayIncludesPart04Test068
+     * @tc.desc Verify $_set(0, Number.POSITIVE_INFINITY) 127 includes(127) false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIncludesPart04Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([0, 0, 0]);
+      arr.$_set(0, Number.POSITIVE_INFINITY);
+      expect(arr.includes(127)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_6900
+     * @tc.name int8ArrayIncludesPart04Test069
+     * @tc.desc Verify $_set(0, Number.NEGATIVE_INFINITY) -128 includes(-128) false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIncludesPart04Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([0, 0, 0]);
+      arr.$_set(0, Number.NEGATIVE_INFINITY);
+      let r1: boolean = arr.includes(INT8_MIN);
+      expect(r1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INCLUDES_PART04_TEST_7000
+     * @tc.name int8ArrayIncludesPart04Test070
+     * @tc.desc Verify $_set(0, 200) -56 includes(200) false searchElement
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIncludesPart04Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([0, 0, 0]);
+      arr.$_set(0, 200);
+      expect(arr.includes(200)).assertFalse();
+    });
+  });
 }
