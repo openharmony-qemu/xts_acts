@@ -1,5 +1,4 @@
-'use static'
-
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -18,36 +17,33 @@
 
 import {
   beforeAll,
-  afterEach,
   beforeEach,
+  afterEach,
   afterAll,
   describe,
-  it,
   expect,
-  TestType,
-  Size,
+  it,
   Level,
+  Size,
+  TestType,
 } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 export default function int8ArrayIndexGetPart01Test(): void {
   describe('Int8ArrayIndexGetPart01Test', (): void => {
-    beforeAll((): void => {
-    });
+    beforeAll((): void => {});
 
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
 
-    afterEach((): void => {
-    });
+    afterEach((): void => {});
 
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
     const INT8_MAX: byte = 127;
     const INT8_MIN: byte = -128;
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_0100
@@ -95,7 +91,7 @@ export default function int8ArrayIndexGetPart01Test(): void {
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_0400
        * @tc.name int8ArrayIndexGetPart01Test004
-       * @tc.desc Verify $_get(0) on empty array returns undefined
+     * @tc.desc Verify $_get(0) on empty array throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -107,7 +103,8 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_0500
@@ -256,7 +253,7 @@ export default function int8ArrayIndexGetPart01Test(): void {
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_1500
        * @tc.name int8ArrayIndexGetPart01Test015
-       * @tc.desc Verify $_get(3) on length-3 array just-over-boundary returns undefined
+     * @tc.desc Verify $_get(3) on length-3 array just-over-boundary throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -268,12 +265,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_1600
        * @tc.name int8ArrayIndexGetPart01Test016
-       * @tc.desc Verify $_get(1) on single-element array returns undefined
+     * @tc.desc Verify $_get(1) on single-element array throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -285,12 +283,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_1700
        * @tc.name int8ArrayIndexGetPart01Test017
-       * @tc.desc Verify computed index arr.length $_get returns undefined
+     * @tc.desc Verify computed index arr.length $_get throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -303,12 +302,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_1800
        * @tc.name int8ArrayIndexGetPart01Test018
-       * @tc.desc Verify $_get(2) on length-2 array just-over-boundary returns undefined
+     * @tc.desc Verify $_get(2) on length-2 array just-over-boundary throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -320,12 +320,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_1900
        * @tc.name int8ArrayIndexGetPart01Test019
-       * @tc.desc Verify $_get(4) on length-3 array boundary+1 returns undefined
+     * @tc.desc Verify $_get(4) on length-3 array boundary+1 throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -337,12 +338,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_2000
        * @tc.name int8ArrayIndexGetPart01Test020
-       * @tc.desc Verify $_get(2) on single-element array boundary+1 returns undefined
+     * @tc.desc Verify $_get(2) on single-element array boundary+1 throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -354,12 +356,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_2100
        * @tc.name int8ArrayIndexGetPart01Test021
-       * @tc.desc Verify computed index arr.length+1 $_get returns undefined
+     * @tc.desc Verify computed index arr.length+1 $_get throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -372,12 +375,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_2200
        * @tc.name int8ArrayIndexGetPart01Test022
-       * @tc.desc Verify $_get(-1) on length-3 array returns undefined not last element
+     * @tc.desc Verify $_get(-1) on length-3 array throws RangeError not last element
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -389,12 +393,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_2300
        * @tc.name int8ArrayIndexGetPart01Test023
-       * @tc.desc Verify ArrayBuffer view $_get(-1) returns undefined
+     * @tc.desc Verify ArrayBuffer view $_get(-1) throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -408,12 +413,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_2400
        * @tc.name int8ArrayIndexGetPart01Test024
-       * @tc.desc Verify $_get(-1) on empty array returns undefined
+     * @tc.desc Verify $_get(-1) on empty array throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -425,12 +431,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_2500
        * @tc.name int8ArrayIndexGetPart01Test025
-       * @tc.desc Verify from(Set<int>) $_get(-1) returns undefined
+     * @tc.desc Verify $_get(-1) on Set-constructed array throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -445,12 +452,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_2600
        * @tc.name int8ArrayIndexGetPart01Test026
-       * @tc.desc Verify $_get(-4) equal to -length on length-4 array returns undefined
+     * @tc.desc Verify $_get(-4) equal to -length on length-4 array throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -462,12 +470,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_2700
        * @tc.name int8ArrayIndexGetPart01Test027
-       * @tc.desc Verify computed negative index -arr.length $_get returns undefined
+     * @tc.desc Verify computed negative index -arr.length $_get throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -480,12 +489,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_2800
        * @tc.name int8ArrayIndexGetPart01Test028
-       * @tc.desc Verify $_get(-4) equal to -length-1 on length-3 array returns undefined
+     * @tc.desc Verify $_get(-4) equal to -length-1 on length-3 array throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -497,12 +507,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_2900
        * @tc.name int8ArrayIndexGetPart01Test029
-       * @tc.desc Verify computed negative index -arr.length-1 $_get returns undefined
+     * @tc.desc Verify computed negative index -arr.length-1 $_get throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -515,12 +526,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_3000
        * @tc.name int8ArrayIndexGetPart01Test030
-       * @tc.desc Verify $_get(2147483647) large positive overflow on length-3 array returns undefined
+     * @tc.desc Verify $_get(2147483647) large positive overflow on length-3 array throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -532,12 +544,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_3100
        * @tc.name int8ArrayIndexGetPart01Test031
-       * @tc.desc Verify $_get(2147483647) large positive overflow on empty array returns undefined
+     * @tc.desc Verify $_get(2147483647) large positive overflow on empty array throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -549,12 +562,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_3200
        * @tc.name int8ArrayIndexGetPart01Test032
-       * @tc.desc Verify $_get(-2147483648) large negative overflow on length-3 array returns undefined
+     * @tc.desc Verify $_get(-2147483648) large negative overflow on length-3 array throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -566,12 +580,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_3300
        * @tc.name int8ArrayIndexGetPart01Test033
-       * @tc.desc Verify $_get(-2147483648) large negative overflow on empty array returns undefined
+     * @tc.desc Verify $_get(-2147483648) large negative overflow on empty array throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -583,7 +598,8 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_3400
@@ -708,7 +724,7 @@ export default function int8ArrayIndexGetPart01Test(): void {
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_4200
        * @tc.name int8ArrayIndexGetPart01Test042
-       * @tc.desc Verify from(Set<int>) empty set $_get(0) returns undefined
+     * @tc.desc Verify from(Set<int>) empty set $_get(0) throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -721,7 +737,8 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_4300
@@ -741,7 +758,7 @@ export default function int8ArrayIndexGetPart01Test(): void {
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_4400
        * @tc.name int8ArrayIndexGetPart01Test044
-       * @tc.desc Verify copy constructor then $_get(arr.length) overflow returns undefined
+     * @tc.desc Verify copy constructor then $_get(arr.length) overflow throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -755,7 +772,8 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_4500
@@ -841,7 +859,7 @@ export default function int8ArrayIndexGetPart01Test(): void {
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_4900
        * @tc.name int8ArrayIndexGetPart01Test049
-       * @tc.desc Verify view $_get(view.length) overflow returns undefined
+     * @tc.desc Verify view $_get(view.length) overflow throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -855,12 +873,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_5000
        * @tc.name int8ArrayIndexGetPart01Test050
-       * @tc.desc Verify offset-0 length-2 view $_get(2) overflow returns undefined
+     * @tc.desc Verify offset-0 length-2 view $_get(2) overflow throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -873,7 +892,8 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_5100
@@ -928,7 +948,7 @@ export default function int8ArrayIndexGetPart01Test(): void {
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_5400
        * @tc.name int8ArrayIndexGetPart01Test054
-       * @tc.desc Verify subarray(1) $_get(sub.length) overflow returns undefined
+     * @tc.desc Verify subarray(1) $_get(sub.length) overflow throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -942,12 +962,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_5500
        * @tc.name int8ArrayIndexGetPart01Test055
-       * @tc.desc Verify subarray(1) $_get(-1) negative index returns undefined
+     * @tc.desc Verify subarray(1) $_get(-1) negative index throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -960,7 +981,8 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_5600
@@ -1025,7 +1047,7 @@ export default function int8ArrayIndexGetPart01Test(): void {
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_6000
        * @tc.name int8ArrayIndexGetPart01Test060
-       * @tc.desc Verify slice(1, 3) $_get(2) copy length is 2 overflow returns undefined
+     * @tc.desc Verify slice(1, 3) $_get(2) copy length is 2 overflow throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -1038,7 +1060,8 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_6100
@@ -1051,14 +1074,13 @@ export default function int8ArrayIndexGetPart01Test(): void {
     it('int8ArrayIndexGetPart01Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(10, 20, 30);
       let r1: number = arr.$_get(1);
-      let r2: number = arr.$_get(1);
-      expect(r1).assertEqual(r2);
+      expect(r1).assertEqual(20);
     });
 
     /**
        * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_6200
        * @tc.name int8ArrayIndexGetPart01Test062
-       * @tc.desc Verify same overflow index $_get twice both return undefined
+     * @tc.desc Verify overflow index $_get(9) on length-3 array throws RangeError
        * @tc.size MediumTest
        * @tc.type Function
        * @tc.level LEVEL2
@@ -1070,7 +1092,8 @@ export default function int8ArrayIndexGetPart01Test(): void {
           expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('RangeError');
-        }});
+      }
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEXGETPART01_6300
@@ -1097,7 +1120,7 @@ export default function int8ArrayIndexGetPart01Test(): void {
      */
     it('int8ArrayIndexGetPart01Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(2);
-      arr.$_set(1, -128);
+      arr.$_set(1, INT8_MIN);
       let r: number = arr.$_get(1);
       expect(r).assertEqual(-128);
     });
