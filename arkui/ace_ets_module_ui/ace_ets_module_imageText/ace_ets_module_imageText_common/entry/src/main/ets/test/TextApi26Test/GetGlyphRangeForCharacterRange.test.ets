@@ -61,29 +61,34 @@ export default function GetGlyphRangeForCharacterRangeTest() {
      */
     it('GetGlyphRangeForCharacterRangeTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[GetGlyphRangeForCharacterRangeTest_0010] START');
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
 
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
-      await button.click();
-      await CommonFunc.sleep(1000);
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
 
-      const result: string | undefined = AppStorage.get<string>('glyphRange_utf8');
-      console.info('[GetGlyphRangeForCharacterRangeTest_0010] result: ' + result);
-      expect(result !== 'undefined').assertTrue();
-      expect(result).assertContain('first:[');
-      expect(result).assertContain('second:[');
+        const result: string | undefined = AppStorage.get<string>('glyphRange_utf8');
+        console.info('[GetGlyphRangeForCharacterRangeTest_0010] result: ' + result);
+        expect(result !== 'undefined').assertTrue();
+        expect(result).assertContain('first:[');
+        expect(result).assertContain('second:[');
 
-      const ranges: string[] = result!.split('],');
-      const firstStart: number = parseInt(ranges[0].split('[')[1].split(',')[0], 10);
-      const firstEnd: number = parseInt(ranges[0].split(',')[1], 10);
-      const secondStart: number = parseInt(ranges[1].split('[')[1].split(',')[0], 10);
-      const secondEnd: number = parseInt(ranges[1].split(',')[1], 10);
+        const ranges: string[] = result!.split('],');
+        const firstStart: number = parseInt(ranges[0].split('[')[1].split(',')[0], 10);
+        const firstEnd: number = parseInt(ranges[0].split(',')[1], 10);
+        const secondStart: number = parseInt(ranges[1].split('[')[1].split(',')[0], 10);
+        const secondEnd: number = parseInt(ranges[1].split(',')[1], 10);
 
-      expect(firstStart).assertEqual(0);
-      expect(firstEnd).assertEqual(1);
-      expect(secondStart).assertEqual(0);
-      expect(secondEnd).assertEqual(3);
+        expect(firstStart).assertEqual(0);
+        expect(firstEnd).assertEqual(1);
+        expect(secondStart).assertEqual(0);
+        expect(secondEnd).assertEqual(3);
+      }catch (err) {
+        console.error('GetGlyphRangeForCharacterRangeTest_0010 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[GetGlyphRangeForCharacterRangeTest_0010] END');
       done();
     });
@@ -98,27 +103,32 @@ export default function GetGlyphRangeForCharacterRangeTest() {
      */
     it('GetGlyphRangeForCharacterRangeTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[GetGlyphRangeForCharacterRangeTest_0020] START');
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
 
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
-      await button.click();
-      await CommonFunc.sleep(1000);
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
 
-      const result: string | undefined = AppStorage.get<string>('glyphRange_utf16');
-      console.info('[GetGlyphRangeForCharacterRangeTest_0020] result: ' + result);
-      expect(result !== 'undefined').assertTrue();
+        const result: string | undefined = AppStorage.get<string>('glyphRange_utf16');
+        console.info('[GetGlyphRangeForCharacterRangeTest_0020] result: ' + result);
+        expect(result !== 'undefined').assertTrue();
 
-      const ranges: string[] = result!.split('],');
-      const firstStart: number = parseInt(ranges[0].split('[')[1].split(',')[0], 10);
-      const firstEnd: number = parseInt(ranges[0].split(',')[1], 10);
-      const secondStart: number = parseInt(ranges[1].split('[')[1].split(',')[0], 10);
-      const secondEnd: number = parseInt(ranges[1].split(',')[1], 10);
+        const ranges: string[] = result!.split('],');
+        const firstStart: number = parseInt(ranges[0].split('[')[1].split(',')[0], 10);
+        const firstEnd: number = parseInt(ranges[0].split(',')[1], 10);
+        const secondStart: number = parseInt(ranges[1].split('[')[1].split(',')[0], 10);
+        const secondEnd: number = parseInt(ranges[1].split(',')[1], 10);
 
-      expect(firstStart).assertEqual(0);
-      expect(firstEnd).assertEqual(1);
-      expect(secondStart).assertEqual(0);
-      expect(secondEnd).assertEqual(1);
+        expect(firstStart).assertEqual(0);
+        expect(firstEnd).assertEqual(1);
+        expect(secondStart).assertEqual(0);
+        expect(secondEnd).assertEqual(1);
+      }catch (err) {
+        console.error('GetGlyphRangeForCharacterRangeTest_0020 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[GetGlyphRangeForCharacterRangeTest_0020] END');
       done();
     });
@@ -133,18 +143,23 @@ export default function GetGlyphRangeForCharacterRangeTest() {
      */
     it('GetGlyphRangeForCharacterRangeTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[GetGlyphRangeForCharacterRangeTest_0030] START');
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
 
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
-      await button.click();
-      await CommonFunc.sleep(1000);
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
 
-      const resultDefault: string | undefined = AppStorage.get<string>('glyphRange_default');
-      const resultUtf8: string | undefined = AppStorage.get<string>('glyphRange_utf8');
-      console.info('[GetGlyphRangeForCharacterRangeTest_0030] default: ' + resultDefault);
-      expect(resultDefault !== 'undefined').assertTrue();
-      expect(resultDefault).assertEqual(resultUtf8);
+        const resultDefault: string | undefined = AppStorage.get<string>('glyphRange_default');
+        const resultUtf8: string | undefined = AppStorage.get<string>('glyphRange_utf8');
+        console.info('[GetGlyphRangeForCharacterRangeTest_0030] default: ' + resultDefault);
+        expect(resultDefault !== 'undefined').assertTrue();
+        expect(resultDefault).assertEqual(resultUtf8);
+      }catch (err) {
+        console.error('GetGlyphRangeForCharacterRangeTest_0030 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[GetGlyphRangeForCharacterRangeTest_0030] END');
       done();
     });
@@ -159,27 +174,32 @@ export default function GetGlyphRangeForCharacterRangeTest() {
      */
     it('GetGlyphRangeForCharacterRangeTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[GetGlyphRangeForCharacterRangeTest_0040] START');
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
 
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
-      await button.click();
-      await CommonFunc.sleep(1000);
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
 
-      const result: string | undefined = AppStorage.get<string>('glyphRange_partial');
-      console.info('[GetGlyphRangeForCharacterRangeTest_0040] result: ' + result);
-      expect(result !== 'undefined').assertTrue();
+        const result: string | undefined = AppStorage.get<string>('glyphRange_partial');
+        console.info('[GetGlyphRangeForCharacterRangeTest_0040] result: ' + result);
+        expect(result !== 'undefined').assertTrue();
 
-      const ranges: string[] = result!.split('],');
-      const firstStart: number = parseInt(ranges[0].split('[')[1].split(',')[0], 10);
-      const firstEnd: number = parseInt(ranges[0].split(',')[1], 10);
-      const secondStart: number = parseInt(ranges[1].split('[')[1].split(',')[0], 10);
-      const secondEnd: number = parseInt(ranges[1].split(',')[1], 10);
+        const ranges: string[] = result!.split('],');
+        const firstStart: number = parseInt(ranges[0].split('[')[1].split(',')[0], 10);
+        const firstEnd: number = parseInt(ranges[0].split(',')[1], 10);
+        const secondStart: number = parseInt(ranges[1].split('[')[1].split(',')[0], 10);
+        const secondEnd: number = parseInt(ranges[1].split(',')[1], 10);
 
-      expect(firstStart).assertEqual(0);
-      expect(firstEnd).assertEqual(1);
-      expect(secondStart).assertEqual(0);
-      expect(secondEnd).assertEqual(3);
+        expect(firstStart).assertEqual(0);
+        expect(firstEnd).assertEqual(1);
+        expect(secondStart).assertEqual(0);
+        expect(secondEnd).assertEqual(3);
+      }catch (err) {
+        console.error('GetGlyphRangeForCharacterRangeTest_0040 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[GetGlyphRangeForCharacterRangeTest_0040] END');
       done();
     });
@@ -194,18 +214,23 @@ export default function GetGlyphRangeForCharacterRangeTest() {
      */
     it('GetGlyphRangeForCharacterRangeTest_0050', Level.LEVEL0, async (done: Function) => {
       console.info('[GetGlyphRangeForCharacterRangeTest_0050] START');
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
 
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
-      await button.click();
-      await CommonFunc.sleep(1000);
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
 
-      const result: string | undefined = AppStorage.get<string>('glyphRange_oob');
-      console.info('[GetGlyphRangeForCharacterRangeTest_0050] result: ' + result);
-      expect(result !== 'undefined').assertTrue();
-      expect(result).assertContain('first:[');
-      expect(result).assertContain('second:[');
+        const result: string | undefined = AppStorage.get<string>('glyphRange_oob');
+        console.info('[GetGlyphRangeForCharacterRangeTest_0050] result: ' + result);
+        expect(result !== 'undefined').assertTrue();
+        expect(result).assertContain('first:[');
+        expect(result).assertContain('second:[');
+      }catch (err) {
+        console.error('GetGlyphRangeForCharacterRangeTest_0050 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[GetGlyphRangeForCharacterRangeTest_0050] END');
       done();
     });
@@ -220,17 +245,23 @@ export default function GetGlyphRangeForCharacterRangeTest() {
      */
     it('GetGlyphRangeForCharacterRangeTest_0060', Level.LEVEL0, async (done: Function) => {
       console.info('[GetGlyphRangeForCharacterRangeTest_0060] START');
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
 
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
-      await button.click();
-      await CommonFunc.sleep(1000);
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_glyph_range_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
 
-      const result: string | undefined = AppStorage.get<string>('glyphRange_undefined_range');
-      console.info('[GetGlyphRangeForCharacterRangeTest_0060] result: ' + result);
-      expect(result !== undefined).assertTrue();
-      expect(result !== 'undefined').assertTrue();
+        const result: string | undefined = AppStorage.get<string>('glyphRange_undefined_range');
+        console.info('[GetGlyphRangeForCharacterRangeTest_0060] result: ' + result);
+        expect(result !== undefined).assertTrue();
+        expect(result !== 'undefined').assertTrue();
+      }catch (err) {
+        console.error('GetGlyphRangeForCharacterRangeTest_0060 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+      
       console.info('[GetGlyphRangeForCharacterRangeTest_0060] END');
       done();
     });

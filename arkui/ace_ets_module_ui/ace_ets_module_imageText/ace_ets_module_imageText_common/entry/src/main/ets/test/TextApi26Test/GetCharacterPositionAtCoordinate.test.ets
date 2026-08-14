@@ -62,23 +62,28 @@ export default function GetCharacterPositionAtCoordinateTest() {
      */
     it('GetCharacterPositionAtCoordinateTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[GetCharacterPositionAtCoordinateTest_0010] START');
-      await CommonFunc.sleep(500);
+      try{
+        await CommonFunc.sleep(500);
 
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
-      await button.click();
-      await CommonFunc.sleep(1000);
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
 
-      const result: string | undefined = AppStorage.get<string>('charPos_utf8');
-      console.info('[GetCharacterPositionAtCoordinateTest_0010] result: ' + result);
-      expect(result).assertContain('position:');
-      expect(result).assertContain('affinity:');
-      expect(result !== 'undefined').assertTrue();
+        const result: string | undefined = AppStorage.get<string>('charPos_utf8');
+        console.info('[GetCharacterPositionAtCoordinateTest_0010] result: ' + result);
+        expect(result).assertContain('position:');
+        expect(result).assertContain('affinity:');
+        expect(result !== 'undefined').assertTrue();
 
-      const parts: string[] = result!.split(',');
-      const positionStr: string = parts[0].split(':')[1];
-      const position: number = parseInt(positionStr, 10);
-      expect(position >= 0 && position <= 11).assertTrue();
+        const parts: string[] = result!.split(',');
+        const positionStr: string = parts[0].split(':')[1];
+        const position: number = parseInt(positionStr, 10);
+        expect(position >= 0 && position <= 11).assertTrue();
+      }catch (err) {
+        console.error('GetCharacterPositionAtCoordinateTest_0010 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[GetCharacterPositionAtCoordinateTest_0010] END');
       done();
     });
@@ -93,23 +98,28 @@ export default function GetCharacterPositionAtCoordinateTest() {
      */
     it('GetCharacterPositionAtCoordinateTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[GetCharacterPositionAtCoordinateTest_0020] START');
-      await CommonFunc.sleep(500);
+      try{
+        await CommonFunc.sleep(500);
 
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
-      await button.click();
-      await CommonFunc.sleep(1000);
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
 
-      const result: string | undefined = AppStorage.get<string>('charPos_utf16');
-      console.info('[GetCharacterPositionAtCoordinateTest_0020] result: ' + result);
-      expect(result).assertContain('position:');
-      expect(result).assertContain('affinity:');
-      expect(result !== 'undefined').assertTrue();
+        const result: string | undefined = AppStorage.get<string>('charPos_utf16');
+        console.info('[GetCharacterPositionAtCoordinateTest_0020] result: ' + result);
+        expect(result).assertContain('position:');
+        expect(result).assertContain('affinity:');
+        expect(result !== 'undefined').assertTrue();
 
-      const parts: string[] = result!.split(',');
-      const positionStr: string = parts[0].split(':')[1];
-      const position: number = parseInt(positionStr, 10);
-      expect(position >= 0 && position <= 7).assertTrue();
+        const parts: string[] = result!.split(',');
+        const positionStr: string = parts[0].split(':')[1];
+        const position: number = parseInt(positionStr, 10);
+        expect(position >= 0 && position <= 7).assertTrue();
+      }catch (err) {
+        console.error('GetCharacterPositionAtCoordinateTest_0020 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[GetCharacterPositionAtCoordinateTest_0020] END');
       done();
     });
@@ -124,19 +134,24 @@ export default function GetCharacterPositionAtCoordinateTest() {
      */
     it('GetCharacterPositionAtCoordinateTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[GetCharacterPositionAtCoordinateTest_0030] START');
-      await CommonFunc.sleep(500);
+      try{
+        await CommonFunc.sleep(500);
 
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
-      await button.click();
-      await CommonFunc.sleep(1000);
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
 
-      const resultDefault: string | undefined = AppStorage.get<string>('charPos_default');
-      const resultUtf8: string | undefined = AppStorage.get<string>('charPos_utf8');
-      console.info('[GetCharacterPositionAtCoordinateTest_0030] default: ' + resultDefault + ', utf8: ' + resultUtf8);
-      expect(resultDefault).assertContain('position:');
-      expect(resultDefault !== 'undefined').assertTrue();
-      expect(resultDefault).assertEqual(resultUtf8);
+        const resultDefault: string | undefined = AppStorage.get<string>('charPos_default');
+        const resultUtf8: string | undefined = AppStorage.get<string>('charPos_utf8');
+        console.info('[GetCharacterPositionAtCoordinateTest_0030] default: ' + resultDefault + ', utf8: ' + resultUtf8);
+        expect(resultDefault).assertContain('position:');
+        expect(resultDefault !== 'undefined').assertTrue();
+        expect(resultDefault).assertEqual(resultUtf8);
+      }catch (err) {
+        console.error('GetCharacterPositionAtCoordinateTest_0030 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[GetCharacterPositionAtCoordinateTest_0030] END');
       done();
     });
@@ -151,23 +166,28 @@ export default function GetCharacterPositionAtCoordinateTest() {
      */
     it('GetCharacterPositionAtCoordinateTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[GetCharacterPositionAtCoordinateTest_0040] START');
-      await CommonFunc.sleep(500);
+      try{
+        await CommonFunc.sleep(500);
 
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
-      await button.click();
-      await CommonFunc.sleep(1000);
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
 
-      const result: string | undefined = AppStorage.get<string>('charPos_zero');
-      console.info('[GetCharacterPositionAtCoordinateTest_0040] result: ' + result);
-      expect(result).assertContain('position:');
-      expect(result).assertContain('affinity:');
-      expect(result !== 'undefined').assertTrue();
+        const result: string | undefined = AppStorage.get<string>('charPos_zero');
+        console.info('[GetCharacterPositionAtCoordinateTest_0040] result: ' + result);
+        expect(result).assertContain('position:');
+        expect(result).assertContain('affinity:');
+        expect(result !== 'undefined').assertTrue();
 
-      const parts: string[] = result!.split(',');
-      const positionStr: string = parts[0].split(':')[1];
-      const position: number = parseInt(positionStr, 10);
-      expect(position >= 0).assertTrue();
+        const parts: string[] = result!.split(',');
+        const positionStr: string = parts[0].split(':')[1];
+        const position: number = parseInt(positionStr, 10);
+        expect(position >= 0).assertTrue();
+      }catch (err) {
+        console.error('GetCharacterPositionAtCoordinateTest_0040 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[GetCharacterPositionAtCoordinateTest_0040] END');
       done();
     });
@@ -182,23 +202,28 @@ export default function GetCharacterPositionAtCoordinateTest() {
      */
     it('GetCharacterPositionAtCoordinateTest_0050', Level.LEVEL0, async (done: Function) => {
       console.info('[GetCharacterPositionAtCoordinateTest_0050] START');
-      await CommonFunc.sleep(500);
+      try{
+        await CommonFunc.sleep(500);
 
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
-      await button.click();
-      await CommonFunc.sleep(1000);
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
 
-      const result: string | undefined = AppStorage.get<string>('charPos_negative');
-      console.info('[GetCharacterPositionAtCoordinateTest_0050] result: ' + result);
-      expect(result).assertContain('position:');
-      expect(result).assertContain('affinity:');
-      expect(result !== 'undefined').assertTrue();
+        const result: string | undefined = AppStorage.get<string>('charPos_negative');
+        console.info('[GetCharacterPositionAtCoordinateTest_0050] result: ' + result);
+        expect(result).assertContain('position:');
+        expect(result).assertContain('affinity:');
+        expect(result !== 'undefined').assertTrue();
 
-      const parts: string[] = result!.split(',');
-      const positionStr: string = parts[0].split(':')[1];
-      const position: number = parseInt(positionStr, 10);
-      expect(position >= 0).assertTrue();
+        const parts: string[] = result!.split(',');
+        const positionStr: string = parts[0].split(':')[1];
+        const position: number = parseInt(positionStr, 10);
+        expect(position >= 0).assertTrue();
+      }catch (err) {
+        console.error('GetCharacterPositionAtCoordinateTest_0050 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[GetCharacterPositionAtCoordinateTest_0050] END');
       done();
     });
@@ -213,23 +238,28 @@ export default function GetCharacterPositionAtCoordinateTest() {
      */
     it('GetCharacterPositionAtCoordinateTest_0060', Level.LEVEL0, async (done: Function) => {
       console.info('[GetCharacterPositionAtCoordinateTest_0060] START');
-      await CommonFunc.sleep(500);
+      try{
+        await CommonFunc.sleep(500);
 
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
-      await button.click();
-      await CommonFunc.sleep(1000);
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
 
-      const result: string | undefined = AppStorage.get<string>('charPos_large');
-      console.info('[GetCharacterPositionAtCoordinateTest_0060] result: ' + result);
-      expect(result).assertContain('position:');
-      expect(result).assertContain('affinity:');
-      expect(result !== 'undefined').assertTrue();
+        const result: string | undefined = AppStorage.get<string>('charPos_large');
+        console.info('[GetCharacterPositionAtCoordinateTest_0060] result: ' + result);
+        expect(result).assertContain('position:');
+        expect(result).assertContain('affinity:');
+        expect(result !== 'undefined').assertTrue();
 
-      const parts: string[] = result!.split(',');
-      const positionStr: string = parts[0].split(':')[1];
-      const position: number = parseInt(positionStr, 10);
-      expect(position >= 0 && position <= 11).assertTrue();
+        const parts: string[] = result!.split(',');
+        const positionStr: string = parts[0].split(':')[1];
+        const position: number = parseInt(positionStr, 10);
+        expect(position >= 0 && position <= 11).assertTrue();
+      }catch (err) {
+        console.error('GetCharacterPositionAtCoordinateTest_0060 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[GetCharacterPositionAtCoordinateTest_0060] END');
       done();
     });
