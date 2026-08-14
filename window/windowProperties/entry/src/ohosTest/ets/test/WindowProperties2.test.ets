@@ -133,6 +133,7 @@ export default function windowPropertiesTest2() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let fileDir: string = '';
+    let canIUseRes: boolean = false;
     let deviceType:string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     beforeAll(() => {
@@ -144,7 +145,8 @@ export default function windowPropertiesTest2() {
         settings.getValueSync(context, 'window_pcmode_switch_status', '', settings.domainName.USER_PROPERTY);
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
       isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
-
+      canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -3421,6 +3423,118 @@ export default function windowPropertiesTest2() {
         done();
       }
     })
+
+        /**
+     * @tc.name   testOffScreenShotAppEventwithDestoryedSubWindow
+     * @tc.number SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0200
+     * @tc.desc   验证子窗销毁后取消监听off_screenshotAppEvent返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffScreenShotAppEventwithDestoryedSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName = "testOffScreenShotAppEventwithDestoryedSubWindow";
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        try {
+          let windowClass = await windowStage.createSubWindow('testOffScreenShotAppEventwithDestoryedSubWindow');
+          await windowClass.destroyWindow();
+          const callback = (data: window.ScreenshotEventType) => {
+            console.log(`${caseName} callback data: ${JSON.stringify(data)}`);
+          }
+          windowClass.off('screenshotAppEvent', callback);
+          console.info(msgStr + 'Succeeded in calling off screenshotAppEvent.');
+          done()
+        } catch (exception) {
+          console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + ',errMessage: ' +
+            exception.message);
+          if (!canIUseRes) {
+            expect(exception.code).assertEqual(801);
+            expect(exception.message !== '').assertTrue();
+          } else {
+            expect().assertFail();
+          }
+          done()
+        }
+      })
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0200
+     * @tc.name       testOffOcclusionStatewithDestoryedSubwindow
+     * @tc.desc       验证子窗销毁后注册OffOcclusionState返回1300002错误码验证
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testOffOcclusionStatewithDestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName: string = 'testOffOcclusionStatewithDestoryedSubwindow ';
+        console.log(caseName + 'begin');
+        let subWindowClass = await windowStage.createSubWindow(caseName);
+        await subWindowClass.destroyWindow();
+        try {
+          const callback = (res: window.OcclusionState) => {
+            console.info(caseName + ' callback res: ' + JSON.stringify(res));
+          }
+          subWindowClass.off('occlusionStateChanged', callback);
+          console.log(caseName + 'success. ');
+          done();
+        } catch (err) {
+          console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+            expect(err.message !== '').assertTrue();
+          } else {
+            expect().assertFail();
+          }
+          done();
+        }
+      });
+
+   /**
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_FREEWINDOWMODE_0300
+     * @tc.name       testOnOffFreeWindowModeChangewithdestoryedSubwindow
+     * @tc.desc       验证子窗口销毁后onFreeWindowModeChange和offFreeWindowModeChange监听接口抛1300002错误码
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testOnOffFreeWindowModeChangewithdestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName: string = 'testOnOffFreeWindowModeChangewithdestoryedSubwindow ';
+        try {
+          let subWindowClass: window.Window = await windowStage.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow1')
+          await subWindowClass.destroyWindow();
+          const callback = (res: boolean) => {
+            console.log(caseName + ' callback result: ' + res);
+          }
+          subWindowClass.on('freeWindowModeChange', callback)
+          done();
+        } catch (err) {
+          console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(1300002);
+          expect(err.message !== '').assertTrue();
+        }
+        try {
+          let subWindowClass2: window.Window = await windowStage.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow2');
+          await subWindowClass2.destroyWindow();
+          const callback = (res: boolean) => {
+            console.log(caseName + ' callback result: ' + res);
+          }
+          subWindowClass2.off('freeWindowModeChange', callback)
+          done();
+        } catch (err) {
+          console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+            expect(err.message !== '').assertTrue();
+          } else {
+            expect().assertFail();
+          }
+          done();
+        }
+      });
 
   })
 }

@@ -5216,6 +5216,36 @@ export default function windowLayoutTest() {
     })
 
     /**
+     * @tc.name   testOffRectChangeInGlobalDisplaywithDestroyedSubwindow_0100
+     * @tc.number SUB_BASIC_WMS_OFF_RECT_CHANGE_IN_GLOBAL_DISPLAY_WITH_DESTROYED_SUBWINDOW_0100
+     * @tc.desc   验证销毁后的子窗调用OffRectChangeInGlobalDisplay接口抛1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOffRectChangeInGlobalDisplaywithDestroyedSubwindow_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        const caseName = 'testOffRectChangeInGlobalDisplaywithDestroyedSubwindow_0100';
+        console.log(caseName + 'begin.');
+        try {
+          let windowClass = await windowStage.createSubWindow('testOffRectChangeInGlobalDisplaywithDestroyedSubwindow_0100')
+          await windowClass.destroyWindow()
+          windowClass.off('rectChangeInGlobalDisplay')
+          console.log(caseName + ' off rectChangeInGlobalDisplay success');
+          done();
+        } catch (err) {
+          console.error(`${caseName} failed, Cause code: ${err.code}, message: ${err.message}`);
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
+            expect(err.message !== '').assertTrue();
+          } else {
+            expect().assertFail();
+          }
+          done()
+        }
+      })
+
+    /**
      * @tc.name   testGlobalDisplayToClientwithOutofRange_0100
      * @tc.number SUB_BASIC_WMS_GLOBAL_DISPLAY_TO_CLIENT_WITH_INVAILD_PARAMETERS
      * @tc.desc   验证子窗调用globalDisplayToClient入参超出int值抛1300016错误码
