@@ -6,17 +6,12 @@
 #include <cstdint>
 #include <cstring>
 #include "napi/native_api.h"
-#include "hilog/log.h"
 #include "web/arkweb_scheme_handler.h"
 #include "web/arkweb_interface.h"
 #include "web/native_interface_arkweb.h"
 
-constexpr uint32_t K_LOG_DOMAIN = 0x0201;
-constexpr const char* K_LOG_TAG = "ArkWebCapiTest";
-
 // ========== 全局状态变量 ==========
 static int32_t g_testResult = 0;
-static bool g_callbackInvoked = false;
 
 static napi_value CreateResult(napi_env env, int32_t resultCode)
 {
@@ -26,51 +21,26 @@ static napi_value CreateResult(napi_env env, int32_t resultCode)
 }
 
 // ========== 回调函数 ==========
-static void OnScrollCallbackImpl(const char* webTag, void* userData, double scrollX, double scrollY)
+static void OnScrollCallbackImpl(const char*, void*, double, double)
 {
-    g_callbackInvoked = true;
-    (void)OH_LOG_Print(LOG_APP, LOG_INFO, K_LOG_DOMAIN, K_LOG_TAG,
-        "OnScrollCallback invoked: webTag=%{public}s, scrollX=%{public}f, scrollY=%{public}f",
-        webTag, scrollX, scrollY);
 }
 
-static void OnJavaScriptCallbackImpl(const char* result)
+static void OnJavaScriptCallbackImpl(const char*)
 {
-    g_callbackInvoked = true;
-    (void)OH_LOG_Print(LOG_APP, LOG_INFO, K_LOG_DOMAIN, K_LOG_TAG,
-        "OnJavaScriptCallback invoked: result=%{public}s", result);
 }
 
-static char* OnNativeJavaScriptProxyCallbackImpl(const char** argv, int32_t argc)
+static char* OnNativeJavaScriptProxyCallbackImpl(const char**, int32_t)
 {
-    g_callbackInvoked = true;
     return nullptr;
 }
 
-static void OnDestroyCallbackImpl(const char* webTag)
+static void OnDestroyCallbackImpl(const char*)
 {
-    g_callbackInvoked = true;
-    (void)OH_LOG_Print(LOG_APP, LOG_INFO, K_LOG_DOMAIN, K_LOG_TAG,
-        "OnDestroyCallback invoked: webTag=%{public}s", webTag);
 }
 
 static void OnCookieSaveCallbackImpl(ArkWeb_ErrorCode errorCode)
 {
-    g_callbackInvoked = true;
     g_testResult = static_cast<int32_t>(errorCode);
-    (void)OH_LOG_Print(LOG_APP, LOG_INFO, K_LOG_DOMAIN, K_LOG_TAG,
-        "OnCookieSaveCallback invoked: errorCode=%{public}d", errorCode);
-}
-
-static void OnCookieFetchCallbackImpl(ArkWeb_ErrorCode errorCode, char* cookieValue)
-{
-    g_callbackInvoked = true;
-    g_testResult = static_cast<int32_t>(errorCode);
-    (void)OH_LOG_Print(LOG_APP, LOG_INFO, K_LOG_DOMAIN, K_LOG_TAG,
-        "OnCookieFetchCallback invoked: errorCode=%{public}d", errorCode);
-    if (cookieValue != nullptr) {
-        OH_ArkWeb_ReleaseString(cookieValue);
-    }
 }
 
 // ========== 测试函数 ==========
