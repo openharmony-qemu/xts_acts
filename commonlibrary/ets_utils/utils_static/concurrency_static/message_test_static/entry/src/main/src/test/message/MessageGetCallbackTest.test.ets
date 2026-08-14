@@ -19,6 +19,14 @@ import Utils from '../Util.test';
 
 type CB = () => void
 
+function normalFunctionCallback(): void {
+  console.info("normal function callback");
+}
+
+function executeRetrievedCallback(fn: CB): void {
+  fn();
+}
+
 export default function MessageGetCallbackTest(): void {
   describe('MessageGetCallbackTest', (): void => {
     beforeAll((): void => {
@@ -41,12 +49,21 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callback: CB = (): void => { console.info("callback message"); }
-      let msg = new concurrency.Message(callback, messageHandler);
-      let result: CB | undefined = msg.getCallback();
-      expect(result !== undefined).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let callback: CB = (): void => { console.info("callback message"); }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let result: CB | undefined = msg.getCallback();
+        expect(result !== undefined).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -60,13 +77,22 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callback: CB = (): void => { console.info("this is callback message"); }
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      expect(cb === callback).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let callback: CB = (): void => { console.info("this is callback message"); }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        expect(cb === callback).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -80,15 +106,24 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let executed: boolean = false;
-      let callback: CB = (): void => { executed = true; }
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      cb!();
-      expect(executed).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let executed: boolean = false;
+        let callback: CB = (): void => { executed = true; }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+        expect(executed).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -102,11 +137,20 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message(messageHandler);
-      let result: CB | undefined = msg.getCallback();
-      expect(result === undefined).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(messageHandler);
+        let result: CB | undefined = msg.getCallback();
+        expect(result === undefined).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -120,11 +164,20 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message(1, messageHandler);
-      let result: CB | undefined = msg.getCallback();
-      expect(result === undefined).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(1, messageHandler);
+        let result: CB | undefined = msg.getCallback();
+        expect(result === undefined).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -138,11 +191,20 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message(1, "data", messageHandler);
-      let result: CB | undefined = msg.getCallback();
-      expect(result === undefined).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(1, "data", messageHandler);
+        let result: CB | undefined = msg.getCallback();
+        expect(result === undefined).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -156,13 +218,22 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let emptyCallback: CB = (): void => {}
-      let msg = new concurrency.Message(emptyCallback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      cb!();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let emptyCallback: CB = (): void => {}
+        let msg = new concurrency.Message(emptyCallback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -176,12 +247,21 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callback: CB = (): void => {}
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let callback: CB = (): void => {}
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -195,14 +275,23 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callback: CB = (): void => { console.info("callback test"); }
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      cb!();
-      // Void function called successfully without error
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let callback: CB = (): void => { console.info("callback test"); }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+        // Void function called successfully without error
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -216,13 +305,22 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callback: CB = (): void => {}
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb1: CB | undefined = msg.getCallback();
-      let cb2: CB | undefined = msg.getCallback();
-      expect(cb1 === cb2).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let callback: CB = (): void => {}
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb1: CB | undefined = msg.getCallback();
+        let cb2: CB | undefined = msg.getCallback();
+        expect(cb1 === cb2).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -236,13 +334,22 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callback1: CB = (): void => { console.info("cb1"); }
-      let callback2: CB = (): void => { console.info("cb2"); }
-      let msg1 = new concurrency.Message(callback1, messageHandler);
-      let msg2 = new concurrency.Message(callback2, messageHandler);
-      expect(msg1.getCallback() !== msg2.getCallback()).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let callback1: CB = (): void => { console.info("cb1"); }
+        let callback2: CB = (): void => { console.info("cb2"); }
+        let msg1 = new concurrency.Message(callback1, messageHandler);
+        let msg2 = new concurrency.Message(callback2, messageHandler);
+        expect(msg1.getCallback() !== msg2.getCallback()).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -256,19 +363,28 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let errorCallback: CB = (): void => { throw new Error("callback error"); }
-      let msg = new concurrency.Message(errorCallback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      let caught = false;
       try {
-        cb!();
-      } catch (e) {
-        caught = true;
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let errorCallback: CB = (): void => { throw new Error("callback error"); }
+        let msg = new concurrency.Message(errorCallback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        let caught = false;
+        try {
+          cb!();
+        } catch (e) {
+          caught = true;
+        }
+        expect(caught).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
-      expect(caught).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
     })
 
     /**
@@ -282,18 +398,27 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callback: CB = (): void => { throw new Error("test error"); }
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      let caught = false;
       try {
-        cb!();
-      } catch (error) {
-        caught = true;
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let callback: CB = (): void => { throw new Error("test error"); }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        let caught = false;
+        try {
+          cb!();
+        } catch (error) {
+          caught = true;
+        }
+        expect(caught).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
-      expect(caught).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
     })
 
     /**
@@ -307,11 +432,20 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message((): void => {}, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message((): void => {}, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -325,21 +459,30 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let asyncCallback: CB = (): void => {
-        (async (): Promise<void> => {
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let asyncCallback: CB = (): void => {
+          (async (): Promise<void> => {
+            try {
+              await Promise.resolve();
+              console.info("async callback done");
+            } catch (e) {
+              console.info("async callback error caught");
+            }
+          })();
+        };
+        let msg = new concurrency.Message(asyncCallback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
           try {
-            await Promise.resolve();
-            console.info("async callback done");
-          } catch (e) {
-            console.info("async callback error caught");
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
           }
-        })();
-      };
-      let msg = new concurrency.Message(asyncCallback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+        }
+      }
     })
 
     /**
@@ -353,16 +496,25 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let promiseCallback: CB = (): void => {
-        let p: Promise<string> = Promise.resolve("result");
-        p.then((r: string): void => { console.info(r); });
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let promiseCallback: CB = (): void => {
+          let p: Promise<string> = Promise.resolve("result");
+          p.then((r: string): void => { console.info(r); });
+        }
+        let msg = new concurrency.Message(promiseCallback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
-      let msg = new concurrency.Message(promiseCallback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      cb!();
-      if (eaw.isAlive()) { eaw.quit(); }
     })
 
     /**
@@ -376,14 +528,23 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callback: CB = (): void => { console.info("executed"); }
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      cb!();
-      // Void function called successfully
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let callback: CB = (): void => { console.info("executed"); }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+        // Void function called successfully
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -397,17 +558,26 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let capturedValue: string = "test";
-      let resultValue: string = "";
-      let callback: CB = (): void => { resultValue = capturedValue; }
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      capturedValue = "modified";
-      cb!();
-      expect(resultValue).assertEqual("modified");
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let capturedValue: string = "test";
+        let resultValue: string = "";
+        let callback: CB = (): void => { resultValue = capturedValue; }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        capturedValue = "modified";
+        cb!();
+        expect(resultValue).assertEqual("modified");
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -421,19 +591,28 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let innerCbNotNull: boolean = false;
-      let msg: concurrency.Message = new concurrency.Message(messageHandler);
-      let callback: CB = (): void => {
-        let innerCb: CB | undefined = msg.getCallback();
-        innerCbNotNull = innerCb !== undefined;
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let innerCbNotNull: boolean = false;
+        let msg: concurrency.Message = new concurrency.Message(messageHandler);
+        let callback: CB = (): void => {
+          let innerCb: CB | undefined = msg.getCallback();
+          innerCbNotNull = innerCb !== undefined;
+        }
+        msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+        expect(innerCbNotNull).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
-      msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      cb!();
-      expect(innerCbNotNull).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
     })
 
     /**
@@ -447,15 +626,24 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let state: AtomicInt = new AtomicInt(0);
-      let callback: CB = (): void => { state.store(1); }
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      cb!();
-      expect(state.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let state: AtomicInt = new AtomicInt(0);
+        let callback: CB = (): void => { state.store(1); }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+        expect(state.load()).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -469,16 +657,25 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let state: AtomicInt = new AtomicInt(0);
-      let result: CB | undefined = undefined;
-      let callback: CB = (): void => { console.info("callback"); }
-      let msg = new concurrency.Message(callback, messageHandler);
-      result = msg.getCallback();
-      state.store(1);
-      expect(result !== undefined).assertTrue();
-      expect(state.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let state: AtomicInt = new AtomicInt(0);
+        let result: CB | undefined = undefined;
+        let callback: CB = (): void => { console.info("callback"); }
+        let msg = new concurrency.Message(callback, messageHandler);
+        result = msg.getCallback();
+        state.store(1);
+        expect(result !== undefined).assertTrue();
+        expect(state.load()).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -492,21 +689,30 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let innerCallbackExecuted: AtomicInt = new AtomicInt(0);
-      let innerCallback: CB = (): void => { innerCallbackExecuted.fetchAdd(1); }
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: CB | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw);
-      let msg = new concurrency.Message(innerCallback, messageHandler);
-      msg.sendToTarget();
-      let waitCount = 0;
-      while (innerCallbackExecuted.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
+      try {
+        let innerCallbackExecuted: AtomicInt = new AtomicInt(0);
+        let innerCallback: CB = (): void => { innerCallbackExecuted.fetchAdd(1); }
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: CB | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, eaw);
+        let msg = new concurrency.Message(innerCallback, messageHandler);
+        msg.sendToTarget();
+        let waitCount = 0;
+        while (innerCallbackExecuted.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(innerCallbackExecuted.load()).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
-      expect(innerCallbackExecuted.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
     })
 
     /**
@@ -520,16 +726,25 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let order: string = "";
-      let msg1 = new concurrency.Message((): void => { order += "1"; }, messageHandler);
-      let msg2 = new concurrency.Message((): void => { order += "2"; }, messageHandler);
-      let msg3 = new concurrency.Message((): void => { order += "3"; }, messageHandler);
-      msg1.getCallback()!();
-      msg2.getCallback()!();
-      msg3.getCallback()!();
-      expect(order).assertEqual("123");
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let order: string = "";
+        let msg1 = new concurrency.Message((): void => { order += "1"; }, messageHandler);
+        let msg2 = new concurrency.Message((): void => { order += "2"; }, messageHandler);
+        let msg3 = new concurrency.Message((): void => { order += "3"; }, messageHandler);
+        msg1.getCallback()!();
+        msg2.getCallback()!();
+        msg3.getCallback()!();
+        expect(order).assertEqual("123");
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -543,23 +758,32 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let counter: AtomicInt = new AtomicInt(0);
-      let callback: CB = (): void => { counter.fetchAdd(1); }
-      let msg1 = new concurrency.Message(callback, messageHandler);
-      let msg2 = new concurrency.Message(callback, messageHandler);
-      let msg3 = new concurrency.Message(callback, messageHandler);
-      let cb1: CB | undefined = msg1.getCallback();
-      let cb2: CB | undefined = msg2.getCallback();
-      let cb3: CB | undefined = msg3.getCallback();
-      expect(cb1 !== undefined).assertTrue();
-      expect(cb2 !== undefined).assertTrue();
-      expect(cb3 !== undefined).assertTrue();
-      cb1!();
-      cb2!();
-      cb3!();
-      expect(counter.load()).assertEqual(3);
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let counter: AtomicInt = new AtomicInt(0);
+        let callback: CB = (): void => { counter.fetchAdd(1); }
+        let msg1 = new concurrency.Message(callback, messageHandler);
+        let msg2 = new concurrency.Message(callback, messageHandler);
+        let msg3 = new concurrency.Message(callback, messageHandler);
+        let cb1: CB | undefined = msg1.getCallback();
+        let cb2: CB | undefined = msg2.getCallback();
+        let cb3: CB | undefined = msg3.getCallback();
+        expect(cb1 !== undefined).assertTrue();
+        expect(cb2 !== undefined).assertTrue();
+        expect(cb3 !== undefined).assertTrue();
+        cb1!();
+        cb2!();
+        cb3!();
+        expect(counter.load()).assertEqual(3);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -573,20 +797,28 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let counter: AtomicInt = new AtomicInt(0);
-      let expectedValue: int = 0;
-      let newValue: int = 1;
-      let exchangeResult: int = counter.exchange(newValue);
-      expect(exchangeResult).assertEqual(0);
-      expect(counter.load()).assertEqual(1);
-      let callback: CB = (): void => { counter.fetchAdd(1); }
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      cb!();
-      expect(counter.load()).assertEqual(2);
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let counter: AtomicInt = new AtomicInt(0);
+        let newValue: int = 1;
+        let exchangeResult: int = counter.exchange(newValue);
+        expect(exchangeResult).assertEqual(0);
+        expect(counter.load()).assertEqual(1);
+        let callback: CB = (): void => { counter.fetchAdd(1); }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+        expect(counter.load()).assertEqual(2);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -600,25 +832,34 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let counter: AtomicInt = new AtomicInt(0);
-      let callback: CB = (): void => { counter.fetchAdd(1); }
-      let messages: concurrency.Message[] = []
-      let msg1 = new concurrency.Message(callback, messageHandler);
-      let msg2 = new concurrency.Message(callback, messageHandler);
-      messages.push(msg1);
-      messages.push(msg2);
-      expect(messages.length).assertEqual(2);
-      let mapMsg1: concurrency.Message = messages[0];
-      let mapMsg2: concurrency.Message = messages[1];
-      let cb1: CB | undefined = mapMsg1.getCallback();
-      let cb2: CB | undefined = mapMsg2.getCallback();
-      expect(cb1 !== undefined).assertTrue();
-      expect(cb2 !== undefined).assertTrue();
-      cb1!();
-      cb2!();
-      expect(counter.load()).assertEqual(2);
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let counter: AtomicInt = new AtomicInt(0);
+        let callback: CB = (): void => { counter.fetchAdd(1); }
+        let messages: concurrency.Message[] = []
+        let msg1 = new concurrency.Message(callback, messageHandler);
+        let msg2 = new concurrency.Message(callback, messageHandler);
+        messages.push(msg1);
+        messages.push(msg2);
+        expect(messages.length).assertEqual(2);
+        let mapMsg1: concurrency.Message = messages[0];
+        let mapMsg2: concurrency.Message = messages[1];
+        let cb1: CB | undefined = mapMsg1.getCallback();
+        let cb2: CB | undefined = mapMsg2.getCallback();
+        expect(cb1 !== undefined).assertTrue();
+        expect(cb2 !== undefined).assertTrue();
+        cb1!();
+        cb2!();
+        expect(counter.load()).assertEqual(2);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -632,12 +873,21 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let arrowCallback: CB = (): void => { console.info("arrow"); }
-      let msg = new concurrency.Message(arrowCallback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let arrowCallback: CB = (): void => { console.info("arrow"); }
+        let msg = new concurrency.Message(arrowCallback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -651,16 +901,25 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callback: CB = (): void => {}
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb1: CB = msg.getCallback() as CB;
-      let cb2: CB | undefined = msg.getCallback();
-      expect(cb1 !== undefined).assertTrue();
-      expect(cb2 !== undefined).assertTrue();
-      cb1();
-      cb2!();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let callback: CB = (): void => {}
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb1: CB = msg.getCallback() as CB;
+        let cb2: CB | undefined = msg.getCallback();
+        expect(cb1 !== undefined).assertTrue();
+        expect(cb2 !== undefined).assertTrue();
+        cb1();
+        cb2!();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -674,21 +933,30 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let callbackExecuted: AtomicInt = new AtomicInt(0);
-      let callback: CB = (): void => { callbackExecuted.fetchAdd(1); }
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: CB | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw);
-      let msg = new concurrency.Message(callback, messageHandler);
-      msg.sendToTarget();
-      let waitCount = 0;
-      while (callbackExecuted.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
+      try {
+        let callbackExecuted: AtomicInt = new AtomicInt(0);
+        let callback: CB = (): void => { callbackExecuted.fetchAdd(1); }
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: CB | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, eaw);
+        let msg = new concurrency.Message(callback, messageHandler);
+        msg.sendToTarget();
+        let waitCount = 0;
+        while (callbackExecuted.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(callbackExecuted.load()).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
-      expect(callbackExecuted.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
     })
 
     /**
@@ -702,14 +970,23 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callback: CB = (): void => {}
-      let msg1 = new concurrency.Message(callback, messageHandler);
-      let msg2 = new concurrency.Message(callback, messageHandler);
-      let cb1: CB | undefined = msg1.getCallback();
-      let cb2: CB | undefined = msg2.getCallback();
-      expect(cb1 === cb2).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let callback: CB = (): void => {}
+        let msg1 = new concurrency.Message(callback, messageHandler);
+        let msg2 = new concurrency.Message(callback, messageHandler);
+        let cb1: CB | undefined = msg1.getCallback();
+        let cb2: CB | undefined = msg2.getCallback();
+        expect(cb1 === cb2).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -723,19 +1000,28 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let targetMatch: boolean = false;
-      let msg: concurrency.Message = new concurrency.Message(messageHandler);
-      let callback: CB = (): void => {
-        let target: concurrency.MessageHandler = msg.getTarget();
-        targetMatch = target === messageHandler;
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let targetMatch: boolean = false;
+        let msg: concurrency.Message = new concurrency.Message(messageHandler);
+        let callback: CB = (): void => {
+          let target: concurrency.MessageHandler = msg.getTarget();
+          targetMatch = target === messageHandler;
+        }
+        msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+        expect(targetMatch).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
-      msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      cb!();
-      expect(targetMatch).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
     })
 
     /**
@@ -749,13 +1035,22 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message(1, "data", messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb === undefined).assertTrue();
-      expect(msg.getWhat()).assertEqual(1);
-      expect(msg.getObject() as string).assertEqual("data");
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(1, "data", messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb === undefined).assertTrue();
+        expect(msg.getWhat()).assertEqual(1);
+        expect(msg.getObject() as string).assertEqual("data");
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -769,17 +1064,26 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callCount: AtomicInt = new AtomicInt(0);
-      let callback: CB = (): void => { callCount.fetchAdd(1); }
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      cb!();
-      cb!();
-      cb!();
-      expect(callCount.load()).assertEqual(3);
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let callCount: AtomicInt = new AtomicInt(0);
+        let callback: CB = (): void => { callCount.fetchAdd(1); }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+        cb!();
+        cb!();
+        expect(callCount.load()).assertEqual(3);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -793,13 +1097,22 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let state: AtomicInt = new AtomicInt(0);
-      let callback: CB = (): void => { state.store(1); }
-      let msg = new concurrency.Message(callback, messageHandler);
-      msg.getCallback()!();
-      expect(state.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let state: AtomicInt = new AtomicInt(0);
+        let callback: CB = (): void => { state.store(1); }
+        let msg = new concurrency.Message(callback, messageHandler);
+        msg.getCallback()!();
+        expect(state.load()).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -813,18 +1126,27 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let counter: AtomicInt = new AtomicInt(0);
-      let results: string[] = [];
-      let msg1 = new concurrency.Message((): void => { results.push("one"); counter.fetchAdd(1); }, messageHandler);
-      let msg2 = new concurrency.Message((): void => { results.push("two"); counter.fetchAdd(1); }, messageHandler);
-      let msg3 = new concurrency.Message((): void => { results.push("three"); counter.fetchAdd(1); }, messageHandler);
-      msg1.getCallback()!();
-      msg2.getCallback()!();
-      msg3.getCallback()!();
-      expect(counter.load()).assertEqual(3);
-      expect(results.length).assertEqual(3);
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let counter: AtomicInt = new AtomicInt(0);
+        let results: string[] = [];
+        let msg1 = new concurrency.Message((): void => { results.push("one"); counter.fetchAdd(1); }, messageHandler);
+        let msg2 = new concurrency.Message((): void => { results.push("two"); counter.fetchAdd(1); }, messageHandler);
+        let msg3 = new concurrency.Message((): void => { results.push("three"); counter.fetchAdd(1); }, messageHandler);
+        msg1.getCallback()!();
+        msg2.getCallback()!();
+        msg3.getCallback()!();
+        expect(counter.load()).assertEqual(3);
+        expect(results.length).assertEqual(3);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -838,15 +1160,24 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let counter: int = 0;
-      let callback: CB = (): void => { counter++; }
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      cb!();
-      expect(counter).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let counter: int = 0;
+        let callback: CB = (): void => { counter++; }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+        expect(counter).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
@@ -860,21 +1191,30 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let state: AtomicInt = new AtomicInt(0);
-      let callback: CB = (): void => { state.fetchAdd(1); }
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: CB | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw);
-      let msg = new concurrency.Message(callback, messageHandler);
-      msg.sendToTarget();
-      let waitCount = 0;
-      while (state.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
+      try {
+        let state: AtomicInt = new AtomicInt(0);
+        let callback: CB = (): void => { state.fetchAdd(1); }
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: CB | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, eaw);
+        let msg = new concurrency.Message(callback, messageHandler);
+        msg.sendToTarget();
+        let waitCount = 0;
+        while (state.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(state.load()).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
-      expect(state.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
     })
 
     /**
@@ -888,24 +1228,33 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let counter: AtomicInt = new AtomicInt(0);
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: CB | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw);
-      let msg1 = new concurrency.Message((): void => { counter.fetchAdd(1); }, messageHandler);
-      let msg2 = new concurrency.Message((): void => { counter.fetchAdd(1); }, messageHandler);
-      let msg3 = new concurrency.Message((): void => { counter.fetchAdd(1); }, messageHandler);
-      msg1.sendToTarget();
-      msg2.sendToTarget();
-      msg3.sendToTarget();
-      let waitCount = 0;
-      while (counter.load() < 3 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
+      try {
+        let counter: AtomicInt = new AtomicInt(0);
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: CB | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, eaw);
+        let msg1 = new concurrency.Message((): void => { counter.fetchAdd(1); }, messageHandler);
+        let msg2 = new concurrency.Message((): void => { counter.fetchAdd(1); }, messageHandler);
+        let msg3 = new concurrency.Message((): void => { counter.fetchAdd(1); }, messageHandler);
+        msg1.sendToTarget();
+        msg2.sendToTarget();
+        msg3.sendToTarget();
+        let waitCount = 0;
+        while (counter.load() < 3 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(counter.load()).assertEqual(3);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
-      expect(counter.load()).assertEqual(3);
-      if (eaw.isAlive()) { eaw.quit(); }
     })
 
     /**
@@ -919,23 +1268,32 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let counter: AtomicInt = new AtomicInt(0);
-      let callback: CB = (): void => { counter.fetchAdd(1); }
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+      try {
+        let counter: AtomicInt = new AtomicInt(0);
+        let callback: CB = (): void => { counter.fetchAdd(1); }
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: CB | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, eaw);
+        let msg = new concurrency.Message(callback, messageHandler);
         let cb: CB | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw);
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      messageHandler.sendMessage(msg);
-      let waitCount = 0;
-      while (counter.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
+        expect(cb !== undefined).assertTrue();
+        messageHandler.sendMessage(msg);
+        let waitCount = 0;
+        while (counter.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(counter.load()).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
-      expect(counter.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
     })
 
     /**
@@ -949,26 +1307,38 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let callbackExecuted: AtomicInt = new AtomicInt(0);
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: CB | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw);
-      let postedCallback: CB = (): void => { callbackExecuted.fetchAdd(1); }
-      messageHandler.post(postedCallback);
-      let waitCount = 0;
-      while (callbackExecuted.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
+      try {
+        let callbackExecuted: AtomicInt = new AtomicInt(0);
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          let cb: CB | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
+        }, eaw);
+        let postedCallback: CB = (): void => { callbackExecuted.fetchAdd(1); }
+        messageHandler.post(postedCallback);
+        let waitCount = 0;
+        while (callbackExecuted.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(callbackExecuted.load()).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
       }
-      expect(callbackExecuted.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
     })
+
+
+
 
     /**
      * @tc.name   MessageGetCallbackTest4100
      * @tc.number SUB_MESSAGE_GET_CALLBACK_TEST_4100
-     * @tc.desc   Verify Message.getCallback() with type cast as CB and non-null assertion both work
+     * @tc.desc   Verify Message.getCallback() combined with getWhat for mixed property access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -976,45 +1346,62 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callback: CB = (): void => {}
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cbAsType: CB = msg.getCallback() as CB;
-      let cbNonNull: CB | undefined = msg.getCallback();
-      expect(cbAsType !== undefined).assertTrue();
-      expect(cbNonNull !== undefined).assertTrue();
-      cbAsType();
-      cbNonNull!();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(1, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb === undefined).assertTrue();
+        expect(msg.getWhat()).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
      * @tc.name   MessageGetCallbackTest4200
      * @tc.number SUB_MESSAGE_GET_CALLBACK_TEST_4200
-     * @tc.desc   Verify Message.getCallback() callback reference equality holds after getCallback call
+     * @tc.desc   Verify Message.getCallback() callback modifies AtomicInt state and state verified by exchange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL2
      */
-    it('MessageGetCallbackTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetCallbackTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callback: CB = (): void => {}
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb1: CB | undefined = msg.getCallback();
-      let cb2: CB | undefined = msg.getCallback();
-      let cb3: CB | undefined = msg.getCallback();
-      expect(cb1 === cb2).assertTrue();
-      expect(cb2 === cb3).assertTrue();
-      expect(cb1 === cb3).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let state: AtomicInt = new AtomicInt(0);
+        let callback: CB = (): void => { state.store(1); }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+        let oldVal: number = state.exchange(0);
+        expect(oldVal).assertEqual(1);
+        expect(state.load()).assertEqual(0);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
+
+
 
     /**
      * @tc.name   MessageGetCallbackTest4300
      * @tc.number SUB_MESSAGE_GET_CALLBACK_TEST_4300
-     * @tc.desc   Verify Message.getCallback() callback with internal console output executes correctly
+     * @tc.desc   Verify Message.getCallback() with try-catch callback, getCallback returns non-undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1022,19 +1409,35 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callback: CB = (): void => { console.info("this is callback message"); }
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB = msg.getCallback() as CB;
-      cb();
-      expect(cb === callback).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let callback: CB = (): void => {
+          try {
+            throw new Error("test error");
+          } catch (e) {
+            console.info("caught error");
+          }
+        }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
+
 
     /**
      * @tc.name   MessageGetCallbackTest4400
      * @tc.number SUB_MESSAGE_GET_CALLBACK_TEST_4400
-     * @tc.desc   Verify Message.getCallback() combined with getWhat for mixed property access
+     * @tc.desc   Verify Message.getCallback() with MessageHandler containing processing logic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1042,18 +1445,33 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg = new concurrency.Message(1, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb === undefined).assertTrue();
-      expect(msg.getWhat()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let processed: AtomicInt = new AtomicInt(0);
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          processed.fetchAdd(1);
+          console.info("message processed");
+        }, eaw);
+        let msg = new concurrency.Message((): void => {
+          console.info("callback after processing");
+        }, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        expect(msg.getTarget() === messageHandler).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
      * @tc.name   MessageGetCallbackTest4500
      * @tc.number SUB_MESSAGE_GET_CALLBACK_TEST_4500
-     * @tc.desc   Verify Message.getCallback() callback modifies AtomicInt state and state verified by exchange
+     * @tc.desc   Verify Message.getCallback() retrieved callback executes long-running operation to completion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1061,63 +1479,107 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let state: AtomicInt = new AtomicInt(0);
-      let callback: CB = (): void => { state.store(1); }
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      cb!();
-      let oldVal: number = state.exchange(0);
-      expect(oldVal).assertEqual(1);
-      expect(state.load()).assertEqual(0);
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let state: AtomicInt = new AtomicInt(0);
+        let callback: CB = (): void => {
+          let sum: int = 0;
+          for (let i: int = 0; i < 10000; i++) {
+            sum += i;
+          }
+          state.store(sum);
+        }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+        expect(state.load()).assertEqual(49995000);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
      * @tc.name   MessageGetCallbackTest4600
      * @tc.number SUB_MESSAGE_GET_CALLBACK_TEST_4600
-     * @tc.desc   Verify Message.getCallback() getCallback on message without callback returns undefined
+     * @tc.desc   Verify Message.getCallback() returned callback executed on event emission as registered listener
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('MessageGetCallbackTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetCallbackTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let msg1 = new concurrency.Message(messageHandler);
-      let msg2 = new concurrency.Message(1, messageHandler);
-      let msg3 = new concurrency.Message(1, "test", messageHandler);
-      expect(msg1.getCallback() === undefined).assertTrue();
-      expect(msg2.getCallback() === undefined).assertTrue();
-      expect(msg3.getCallback() === undefined).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let executed: AtomicInt = new AtomicInt(0);
+        let callback: CB = (): void => { executed.fetchAdd(1); }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        let listeners: CB[] = [];
+        if (cb !== undefined) {
+          listeners.push(cb);
+        }
+        expect(listeners.length).assertEqual(1);
+        for (let i: int = 0; i < listeners.length; i++) {
+          listeners[i]();
+        }
+        expect(executed.load()).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
      * @tc.name   MessageGetCallbackTest4700
      * @tc.number SUB_MESSAGE_GET_CALLBACK_TEST_4700
-     * @tc.desc   Verify Message.getCallback() returned callback is same as original arrow function
+     * @tc.desc   Verify Message.getCallback() return value passed as parameter to other function executes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('MessageGetCallbackTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetCallbackTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let originalCallback: CB = (): void => { console.info("original callback"); }
-      let msg = new concurrency.Message(originalCallback, messageHandler);
-      let retrievedCallback: CB | undefined = msg.getCallback();
-      expect(retrievedCallback === originalCallback).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let executed: AtomicInt = new AtomicInt(0);
+        let callback: CB = (): void => { executed.fetchAdd(1); }
+        let msg = new concurrency.Message(callback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        if (cb !== undefined) {
+          executeRetrievedCallback(cb);
+        }
+        expect(executed.load()).assertEqual(1);
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
 
     /**
      * @tc.name   MessageGetCallbackTest4800
      * @tc.number SUB_MESSAGE_GET_CALLBACK_TEST_4800
-     * @tc.desc   Verify Message.getCallback() with try-catch callback, getCallback returns non-undefined
+     * @tc.desc   Verify Message.getCallback() returns callable normal named function used as callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1125,68 +1587,21 @@ export default function MessageGetCallbackTest(): void {
     it('MessageGetCallbackTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let callback: CB = (): void => {
-        try {
-          throw new Error("test error");
-        } catch (e) {
-          console.info("caught error");
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(normalFunctionCallback, messageHandler);
+        let cb: CB | undefined = msg.getCallback();
+        expect(cb !== undefined).assertTrue();
+        cb!();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
         }
       }
-      let msg = new concurrency.Message(callback, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      cb!();
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
-
-    /**
-     * @tc.name   MessageGetCallbackTest4900
-     * @tc.number SUB_MESSAGE_GET_CALLBACK_TEST_4900
-     * @tc.desc   Verify Message.getCallback() callback with closure modifying local variable
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('MessageGetCallbackTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let counter: int = 0;
-      let msg = new concurrency.Message((): void => {
-        counter++;
-        console.info("counter: " + counter);
-      }, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      cb!();
-      expect(counter).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
-
-    /**
-     * @tc.name   MessageGetCallbackTest5000
-     * @tc.number SUB_MESSAGE_GET_CALLBACK_TEST_5000
-     * @tc.desc   Verify Message.getCallback() with MessageHandler containing processing logic
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('MessageGetCallbackTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let processed: AtomicInt = new AtomicInt(0);
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        processed.fetchAdd(1);
-        console.info("message processed");
-      }, eaw);
-      let msg = new concurrency.Message((): void => {
-        console.info("callback after processing");
-      }, messageHandler);
-      let cb: CB | undefined = msg.getCallback();
-      expect(cb !== undefined).assertTrue();
-      expect(msg.getTarget() === messageHandler).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
     })
   })
 }

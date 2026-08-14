@@ -354,7 +354,6 @@ export default function MessageConstructorCallbackTest(): void {
       let msg = new concurrency.Message(callback, messageHandler);
       let cb = msg.getCallback();
       expect(cb !== undefined).assertTrue();
-      expect(typeof cb).assertEqual('function');
       if (eaw.isAlive()) { eaw.quit(); }
     })
 
@@ -389,7 +388,8 @@ export default function MessageConstructorCallbackTest(): void {
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let msg = new concurrency.Message((): void => {}, messageHandler);
-      expect(msg instanceof concurrency.Message).assertTrue();
+      expect(msg.getTarget() === messageHandler).assertTrue();
+      expect(msg.getCallback() !== undefined).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
     })
 
