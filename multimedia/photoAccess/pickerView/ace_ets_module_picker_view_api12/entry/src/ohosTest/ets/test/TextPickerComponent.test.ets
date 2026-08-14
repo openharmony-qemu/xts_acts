@@ -5223,15 +5223,15 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-      let zoomInTriggered: boolean = false;
+      let onPhotoBrowserZoomTriggered: boolean = false;
+      let capturedScale: number = 0;
 
       let callback = (event: events_emitter.EventData) => {
         let scale: number = event?.data?.msg?.scale;
         if (scale !== undefined) {
-          console.info('SUB_PHOTO_PICKER_TEST_0700 received zoom event, scale: ' + scale);
-          if (scale > 1.0) {
-            zoomInTriggered = true;
-          }
+           console.info('SUB_PHOTO_PICKER_TEST_0700 onPhotoBrowserZoom callback fired, scale: ' + scale);
+           capturedScale = scale;
+           onPhotoBrowserZoomTriggered = true;
         }
       }
 
@@ -5291,11 +5291,10 @@ export default function TextPicker() {
       await clickExitBrowserButton(driver);
       router.back();
       events_emitter.off(event.eventId);
-      if (zoomInTriggered) {
-        expect(zoomInTriggered).assertTrue();
-      } else {
-        console.info("SUB_PHOTO_PICKER_TEST_0700 zoom event not triggered, skipping assertion");
-      } 
+      console.info('SUB_PHOTO_PICKER_TEST_0700 onPhotoBrowserZoom triggered: ' + onPhotoBrowserZoomTriggered
+        + ', captured scale: ' + capturedScale);
+      expect(onPhotoBrowserZoomTriggered).assertTrue();
+      expect(capturedScale >= 1.0).assertTrue();
       console.info("SUB_PHOTO_PICKER_TEST_0700 finish");
       done();
     });
