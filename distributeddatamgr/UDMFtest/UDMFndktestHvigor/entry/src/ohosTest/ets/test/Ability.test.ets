@@ -1016,5 +1016,22 @@ export default function pasteboardNdkTest() {
       hilog.info(0x0000, TAG,
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6600 result= : ' + JSON.stringify(result));
     })
+
+
+    /**
+     * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6700
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6700
+     * @tc.desc   OH_UdmfRecord_SetProvider0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6700', ' begin');
+      let result = testNapi.OH_UdmfRecord_SetProvider0300();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG,
+        TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6700 result= : ' + JSON.stringify(result));
+    })
   })
 }

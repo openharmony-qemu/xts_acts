@@ -1081,6 +1081,35 @@ static napi_value OH_UdmfRecord_SetProvider0200(napi_env env, napi_callback_info
     return returnCode;
 }
 
+static napi_value OH_UdmfRecord_SetProvider0300(napi_env env, napi_callback_info info)
+{
+    napi_value returnCode = nullptr;
+    OH_UdmfRecord *record = OH_UdmfRecord_Create();
+    OH_UdmfRecordProvider* provider = OH_UdmfRecordProvider_Create();
+    int num = 1;
+    void* context = &num;
+    OH_UdmfRecordProvider_SetData(provider, context, GetDataCallbackFunc, FinalizeFunc);
+    const char* types[3] = { "general.plain-text", "general.hyperlink", "general.html" };
+
+    int res1 = OH_UdmfRecord_SetProvider(nullptr, types, 3, provider);
+    NAPI_ASSERT(env, res1 == UDMF_E_INVALID_PARAM, "OH_UdmfRecord_SetProvider is fail");
+
+    int res2 = OH_UdmfRecord_SetProvider(record, nullptr, 3, provider);
+    NAPI_ASSERT(env, res2 == UDMF_E_INVALID_PARAM, "OH_UdmfRecord_SetProvider is fail");
+
+    int res3 = OH_UdmfRecord_SetProvider(record, types, 3, nullptr);
+    NAPI_ASSERT(env, res3 == UDMF_E_INVALID_PARAM, "OH_UdmfRecord_SetProvider is fail");
+
+    int res4 = OH_UdmfRecord_SetProvider(nullptr, nullptr, 0, nullptr);
+    NAPI_ASSERT(env, res4 == UDMF_E_INVALID_PARAM, "OH_UdmfRecord_SetProvider is fail");
+
+    napi_create_int32(env, res1 == UDMF_E_INVALID_PARAM && res2 == UDMF_E_INVALID_PARAM &&
+        res3 == UDMF_E_INVALID_PARAM && res4 == UDMF_E_INVALID_PARAM, &returnCode);
+    OH_UdmfRecordProvider_Destroy(provider);
+    OH_UdmfRecord_Destroy(record);
+    return returnCode;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1214,6 +1243,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OH_UdmfRecord_SetProvider0100", nullptr, OH_UdmfRecord_SetProvider0100, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"OH_UdmfRecord_SetProvider0200", nullptr, OH_UdmfRecord_SetProvider0200, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"OH_UdmfRecord_SetProvider0300", nullptr, OH_UdmfRecord_SetProvider0300, nullptr, nullptr,
          nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

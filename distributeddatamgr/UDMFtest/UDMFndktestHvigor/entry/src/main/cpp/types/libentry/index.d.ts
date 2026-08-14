@@ -77,3 +77,4 @@ export const OH_UdmfRecordProvider_SetData0100: () => number;
 export const OH_UdmfRecordProvider_SetData0200: () => number;
 export const OH_UdmfRecord_SetProvider0100: () => number;
 export const OH_UdmfRecord_SetProvider0200: () => number;
+export const OH_UdmfRecord_SetProvider0300: () => number;
