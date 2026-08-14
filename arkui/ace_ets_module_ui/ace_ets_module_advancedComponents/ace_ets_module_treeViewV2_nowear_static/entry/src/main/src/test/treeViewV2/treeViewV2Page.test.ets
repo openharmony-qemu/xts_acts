@@ -77,14 +77,19 @@ export default function treeViewV2PageTest(): void {
      */
     it('treeViewV2PageTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_0100] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_0100] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let rootNodeText = await driver.findComponent(ON.text('Root Node'));
-        expect(rootNodeText !== null).assertTrue();
+          let rootNodeText = await driver.findComponent(ON.text('Root Node'));
+          expect(rootNodeText !== null).assertTrue();
 
-        console.info('[treeViewV2PageTest_static_0100] END');
+          console.info('[treeViewV2PageTest_static_0100] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_0100] error: ' + error);
+          expect().assertFail();
+        }
         done();
       });
 
@@ -129,14 +134,19 @@ export default function treeViewV2PageTest(): void {
      */
     it('treeViewV2PageTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_0200] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_0200] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let secondRootText = await driver.findComponent(ON.text('Second Root'));
-        expect(secondRootText !== null).assertTrue();
+          let secondRootText = await driver.findComponent(ON.text('Second Root'));
+          expect(secondRootText !== null).assertTrue();
 
-        console.info('[treeViewV2PageTest_static_0200] END');
+          console.info('[treeViewV2PageTest_static_0200] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_0200] error: ' + error);
+          expect().assertFail();
+        }
         done();
       });
 
@@ -148,18 +158,23 @@ export default function treeViewV2PageTest(): void {
      */
     it('treeViewV2PageTest_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_0300] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_0300] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let rootNodeText = await driver.findComponent(ON.text('Root Node'));
-        expect(rootNodeText !== null).assertTrue();
-        if (rootNodeText) {
-          await rootNodeText.click();
-          await CommonFunc.sleep(500);
+          let rootNodeText = await driver.findComponent(ON.text('Root Node'));
+          expect(rootNodeText !== null).assertTrue();
+          if (rootNodeText) {
+            await rootNodeText.click();
+            await CommonFunc.sleep(500);
+          }
+
+          console.info('[treeViewV2PageTest_static_0300] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_0300] error: ' + error);
+          expect().assertFail();
         }
-
-        console.info('[treeViewV2PageTest_static_0300] END');
         done();
       });
 
@@ -171,14 +186,19 @@ export default function treeViewV2PageTest(): void {
      */
     it('treeViewV2PageTest_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_0400] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_0400] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let addNodeButton = await driver.findComponent(ON.text('Add'));
-        expect(addNodeButton !== null).assertTrue();
+          let addNodeButton = await driver.findComponent(ON.text('Add'));
+          expect(addNodeButton !== null).assertTrue();
 
-        console.info('[treeViewV2PageTest_static_0400] END');
+          console.info('[treeViewV2PageTest_static_0400] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_0400] error: ' + error);
+          expect().assertFail();
+        }
         done();
       });
 
@@ -190,14 +210,19 @@ export default function treeViewV2PageTest(): void {
      */
     it('treeViewV2PageTest_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_0500] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_0500] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let deleteNodeButton = await driver.findComponent(ON.text('Remove'));
-        expect(deleteNodeButton !== null).assertTrue();
+          let deleteNodeButton = await driver.findComponent(ON.text('Remove'));
+          expect(deleteNodeButton !== null).assertTrue();
 
-        console.info('[treeViewV2PageTest_static_0500] END');
+          console.info('[treeViewV2PageTest_static_0500] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_0500] error: ' + error);
+          expect().assertFail();
+        }
         done();
       });
 
@@ -209,14 +234,19 @@ export default function treeViewV2PageTest(): void {
      */
     it('treeViewV2PageTest_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_0600] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_0600] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let modifyNodeButton = await driver.findComponent(ON.text('Modify'));
-        expect(modifyNodeButton !== null).assertTrue();
+          let modifyNodeButton = await driver.findComponent(ON.text('Modify'));
+          expect(modifyNodeButton !== null).assertTrue();
 
-        console.info('[treeViewV2PageTest_static_0600] END');
+          console.info('[treeViewV2PageTest_static_0600] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_0600] error: ' + error);
+          expect().assertFail();
+        }
         done();
       });
 
@@ -264,18 +294,23 @@ export default function treeViewV2PageTest(): void {
      */
     it('treeViewV2PageTest_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_0800] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_0800] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let rootNodeText = await driver.findComponent(ON.text('Root Node'));
-        expect(rootNodeText !== null).assertTrue();
-        if (rootNodeText) {
-          await rootNodeText.click();
-          await CommonFunc.sleep(500);
+          let rootNodeText = await driver.findComponent(ON.text('Root Node'));
+          expect(rootNodeText !== null).assertTrue();
+          if (rootNodeText) {
+            await rootNodeText.click();
+            await CommonFunc.sleep(500);
+          }
+
+          console.info('[treeViewV2PageTest_static_0800] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_0800] error: ' + error);
+          expect().assertFail();
         }
-
-        console.info('[treeViewV2PageTest_static_0800] END');
         done();
       });
 
@@ -529,18 +564,23 @@ export default function treeViewV2PageTest(): void {
      */
     it('treeViewV2PageTest_static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_1600] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_1600] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let rootNodeText = await driver.findComponent(ON.text('Root Node'));
-        expect(rootNodeText !== null).assertTrue();
-        if (rootNodeText) {
-          await rootNodeText.click();
-          await CommonFunc.sleep(500);
+          let rootNodeText = await driver.findComponent(ON.text('Root Node'));
+          expect(rootNodeText !== null).assertTrue();
+          if (rootNodeText) {
+            await rootNodeText.click();
+            await CommonFunc.sleep(500);
+          }
+
+          console.info('[treeViewV2PageTest_static_1600] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_1600] error: ' + error);
+          expect().assertFail();
         }
-
-        console.info('[treeViewV2PageTest_static_1600] END');
         done();
       });
 
@@ -552,18 +592,23 @@ export default function treeViewV2PageTest(): void {
      */
     it('treeViewV2PageTest_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_1700] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_1700] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let rootNodeText = await driver.findComponent(ON.text('Root Node'));
-        expect(rootNodeText !== null).assertTrue();
-        if (rootNodeText) {
-          await rootNodeText.click();
-          await CommonFunc.sleep(500);
+          let rootNodeText = await driver.findComponent(ON.text('Root Node'));
+          expect(rootNodeText !== null).assertTrue();
+          if (rootNodeText) {
+            await rootNodeText.click();
+            await CommonFunc.sleep(500);
+          }
+
+          console.info('[treeViewV2PageTest_static_1700] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_1700] error: ' + error);
+          expect().assertFail();
         }
-
-        console.info('[treeViewV2PageTest_static_1700] END');
         done();
       });
 
@@ -575,18 +620,23 @@ export default function treeViewV2PageTest(): void {
      */
     it('treeViewV2PageTest_static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_1800] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_1800] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let rootNodeText = await driver.findComponent(ON.text('Root Node'));
-        expect(rootNodeText !== null).assertTrue();
-        if (rootNodeText) {
-          await rootNodeText.click();
-          await CommonFunc.sleep(500);
+          let rootNodeText = await driver.findComponent(ON.text('Root Node'));
+          expect(rootNodeText !== null).assertTrue();
+          if (rootNodeText) {
+            await rootNodeText.click();
+            await CommonFunc.sleep(500);
+          }
+
+          console.info('[treeViewV2PageTest_static_1800] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_1800] error: ' + error);
+          expect().assertFail();
         }
-
-        console.info('[treeViewV2PageTest_static_1800] END');
         done();
       });
 

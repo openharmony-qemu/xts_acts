@@ -71,13 +71,18 @@ export default function ChipV2OptionsMethodTest(): void {
      * @tc.level    Level.LEVEL2
      */
     it('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] START');
-      await CommonFunc.sleep(1000);
-      const treeText = JSON.stringify(inspector.getInspectorTree());
-      const componentCount = treeText.split('"$type":"Image"').length - 1;
-      console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] length '+componentCount);
-      expect(componentCount).assertEqual(2);
-      console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] END');
+      try {
+        console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] START');
+        await CommonFunc.sleep(1000);
+        const treeText = JSON.stringify(inspector.getInspectorTree());
+        const componentCount = treeText.split('"$type":"Image"').length - 1;
+        console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] length '+componentCount);
+        expect(componentCount).assertEqual(2);
+        console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] END');
+      } catch (error) {
+        console.error('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] error: ' + error);
+        expect().assertFail();
+      }
       done();
     });
 

@@ -75,13 +75,18 @@ export default function ChipOptionsMethodTest(): void {
      * @tc.level    Level.LEVEL2
      */
     it('ChipOptionsMethodTest_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[ChipOptionsMethodTest_static_001] START');
-      await CommonFunc.sleep(1000);
-      const treeText = JSON.stringify(inspector.getInspectorTree());
-      const componentCount = treeText.split('"$type":"Image"').length - 1;
-      console.info('[ChipOptionsMethodTest_static_001] length '+componentCount);
-      expect(componentCount).assertEqual(2);
-      console.info('[ChipOptionsMethodTest_static_001] END');
+      try {
+        console.info('[ChipOptionsMethodTest_static_001] START');
+        await CommonFunc.sleep(1000);
+        const treeText = JSON.stringify(inspector.getInspectorTree());
+        const componentCount = treeText.split('"$type":"Image"').length - 1;
+        console.info('[ChipOptionsMethodTest_static_001] length '+componentCount);
+        expect(componentCount).assertEqual(2);
+        console.info('[ChipOptionsMethodTest_static_001] END');
+      } catch (error) {
+        console.error('[ChipOptionsMethodTest_static_001] error: ' + error);
+        expect().assertFail();
+      }
       done();
     });
 
