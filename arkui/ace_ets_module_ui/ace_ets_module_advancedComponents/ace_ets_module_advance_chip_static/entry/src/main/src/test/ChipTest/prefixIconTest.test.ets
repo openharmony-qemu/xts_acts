@@ -228,12 +228,13 @@ export default function prefixIconTest(): void {
       console.info('[prefixIconTest_static_0050] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      let btnElement = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let btnElement = tree
         .getArray("$children")[0]
         .getArray("$children")[4]
         .getArray("$children")[0]
         .getArray("$children")[0]
-      let btnUn = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+      let btnUn = tree
         .getArray("$children")[0]
         .getArray("$children")[5]
         .getArray("$children")[0]
