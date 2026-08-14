@@ -25,7 +25,7 @@ import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
 
-export default function BuiltinsGenericsActTest(): void {
+export default function BuiltinsGenericsActTest() {
   describe('BuiltinsGenericsActTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

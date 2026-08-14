@@ -22,7 +22,7 @@ import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
 
-export default function BuiltinsMultilineStringLiteralTest(): void {
+export default function BuiltinsMultilineStringLiteralTest() {
   describe('BuiltinsMultilineStringLiteralTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

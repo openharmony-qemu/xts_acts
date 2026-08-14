@@ -27,7 +27,7 @@ import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
 
-export default function builtinsNumberConstructorTest(): void {
+export default function builtinsNumberConstructorTest() {
   describe('builtinsNumberConstructorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

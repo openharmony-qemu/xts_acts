@@ -31,7 +31,7 @@ import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
 
-export default function BuiltinsCharLiteralTest(): void {
+export default function BuiltinsCharLiteralTest() {
   describe('BuiltinsCharLiteralTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

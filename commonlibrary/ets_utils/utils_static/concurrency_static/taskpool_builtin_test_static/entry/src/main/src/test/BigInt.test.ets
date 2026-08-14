@@ -21,7 +21,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
-export default function BigIntTest(): void {
+export default function BigIntTest() {
   describe('BigIntTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

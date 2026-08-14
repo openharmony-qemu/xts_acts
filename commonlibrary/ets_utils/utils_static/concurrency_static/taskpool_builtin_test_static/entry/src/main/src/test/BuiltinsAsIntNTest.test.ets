@@ -30,7 +30,7 @@ import { BuiltinsAsIntNTest2600,
 import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
-export default function BuiltinsAsIntNTest(): void {
+export default function BuiltinsAsIntNTest() {
   describe('BuiltinsAsIntNTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

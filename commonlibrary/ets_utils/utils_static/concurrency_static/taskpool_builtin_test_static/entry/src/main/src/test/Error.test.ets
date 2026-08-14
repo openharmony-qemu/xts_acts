@@ -26,7 +26,7 @@ import { testAggregateError, testError,
 import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
-export default function ErrorTest(): void {
+export default function ErrorTest() {
   describe('ErrorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

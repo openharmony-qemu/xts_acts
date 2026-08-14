@@ -20,7 +20,7 @@ import { BuiltinsNullLiteralTest0900 } from '../testability/pages/BuiltinsNullLi
 import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
-export default function BuiltinsNullLiteralTest(): void {
+export default function BuiltinsNullLiteralTest() {
   describe('BuiltinsNullLiteralTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

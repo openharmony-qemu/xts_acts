@@ -37,7 +37,7 @@ import {sleep} from '../testability/pages/utils'
 
 let concurrentNum: int = 100
 
-export default function BooleanTest(): void {
+export default function BooleanTest() {
   describe('BooleanTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

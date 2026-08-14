@@ -63,7 +63,7 @@ import { sleep } from '../testability/pages/utils'
 let concurrentNum: int = 100
 
 
-export default function globalTest3(): void {
+export default function globalTest3() {
   describe('globalTest3', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
