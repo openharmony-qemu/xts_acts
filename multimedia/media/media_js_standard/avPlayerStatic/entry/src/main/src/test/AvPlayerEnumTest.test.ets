@@ -355,14 +355,14 @@ export default function AvPlayerEnumTest() {
     });
 
      /**
-     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0100
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0100
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0800
      * @tc.desc   AVPlayer Enumeration test - AVMetricsEventType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       expect(string(media.ContainerFormatType.CFT_WAV)).assertEqual('wav');
       done();
     });
