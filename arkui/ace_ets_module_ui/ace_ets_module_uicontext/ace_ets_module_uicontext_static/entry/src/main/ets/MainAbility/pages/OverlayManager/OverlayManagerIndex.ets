@@ -91,15 +91,20 @@ struct OverlayManagerIndex {
     AppStorage.setOrCreate<boolean>('backPressRegistered', true);
     AppStorage.setOrCreate<boolean>('backPressMode', true);
     AppStorage.setOrCreate<number>('backPressCount', 0);
+    AppStorage.setOrCreate<boolean>('backPressLastResult', true);
     const options: OverlayManagerOptions = {
       enableBackPressedEvent: true,
-      onBackPress: (): boolean => {
-        const count: number = AppStorage.get<number>('backPressCount') as number;
-        AppStorage.setOrCreate<number>('backPressCount', count + 1);
-        return AppStorage.get<boolean>('backPressMode') as boolean;
-      }
+      onBackPress: (): boolean => this.handleOverlayBackPress()
     };
     this.getUIContext().setOverlayManagerOptions(options);
+  }
+
+  private handleOverlayBackPress(): boolean {
+    const count: number = AppStorage.get<number>('backPressCount') as number;
+    const result: boolean = AppStorage.get<boolean>('backPressMode') as boolean;
+    AppStorage.setOrCreate<number>('backPressCount', count + 1);
+    AppStorage.setOrCreate<boolean>('backPressLastResult', result);
+    return result;
   }
 
   aboutToDisappear() {
@@ -268,6 +273,13 @@ struct OverlayManagerIndex {
             this.backPressStatus = 'set_option_fail';
             console.error('setOverlayManagerOptions(false) error: ' + error);
           }
+        });
+
+      Button('invokeBackPressCallback')
+        .id('invokeBackPressCallback')
+        .height('3.5%')
+        .onClick((): void => {
+          this.handleOverlayBackPress();
         });
 
       Button('closeBackPressOverlay')

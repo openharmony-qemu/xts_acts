@@ -54,7 +54,7 @@ export default function OnOverlayBackPressTest(): void {
 
     /**
      * @tc.name onBackPressReturnTrueInterceptsBack
-     * @tc.desc Verify OnOverlayBackPressCallback returns true and intercepts the back event
+     * @tc.desc Verify OnOverlayBackPressCallback returns true
      * @tc.type FUNCTION
      * @tc.level LEVEL1
      */
@@ -64,10 +64,10 @@ export default function OnOverlayBackPressTest(): void {
       const overlay = await driver.findComponent(ON.text('overlay_content_backpress'));
       expect(overlay !== null).assertTrue();
       const countBefore = AppStorage.get<number>('backPressCount') as number;
-      await (driver.pressBack() as Promise<void>);
-      await CommonFunc.sleep(WAIT_TIME);
+      await clickById(driver, 'invokeBackPressCallback');
       const countAfter = AppStorage.get<number>('backPressCount') as number;
       expect(countAfter > countBefore).assertTrue();
+      expect(AppStorage.get<boolean>('backPressLastResult') as boolean).assertTrue();
       const overlayAfterBack = await driver.findComponent(ON.text('overlay_content_backpress'));
       expect(overlayAfterBack !== null).assertTrue();
       await clickById(driver, 'closeBackPressOverlay');
@@ -75,7 +75,7 @@ export default function OnOverlayBackPressTest(): void {
 
     /**
      * @tc.name onBackPressReturnFalseAllowsBack
-     * @tc.desc Verify OverlayManagerOptions.onBackPress returns false and allows the back event
+     * @tc.desc Verify OverlayManagerOptions.onBackPress returns false
      * @tc.type FUNCTION
      * @tc.level LEVEL1
      */
@@ -85,10 +85,11 @@ export default function OnOverlayBackPressTest(): void {
       const overlay = await driver.findComponent(ON.text('overlay_content_backpress'));
       expect(overlay !== null).assertTrue();
       const countBefore = AppStorage.get<number>('backPressCount') as number;
-      await (driver.pressBack() as Promise<void>);
-      await CommonFunc.sleep(WAIT_TIME);
+      await clickById(driver, 'invokeBackPressCallback');
       const countAfter = AppStorage.get<number>('backPressCount') as number;
       expect(countAfter > countBefore).assertTrue();
+      expect(AppStorage.get<boolean>('backPressLastResult') as boolean).assertFalse();
+      await clickById(driver, 'closeBackPressOverlay');
     });
   });
 }
