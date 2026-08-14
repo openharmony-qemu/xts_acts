@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -17,36 +17,33 @@
 
 import {
   beforeAll,
-  afterEach,
   beforeEach,
+  afterEach,
   afterAll,
   describe,
-  it,
   expect,
-  TestType,
-  Size,
+  it,
   Level,
+  Size,
+  TestType,
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function int8ArrayIndexGetPart02Test(): void {
   describe('Int8ArrayIndexGetPart02Test', (): void => {
-    beforeAll((): void => {
-    });
+    beforeAll((): void => {});
 
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
 
-    afterEach((): void => {
-    });
+    afterEach((): void => {});
 
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
     const INT8_MAX: byte = 127;
     const INT8_MIN: byte = -128;
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_0100
@@ -72,7 +69,7 @@ export default function int8ArrayIndexGetPart02Test(): void {
      */
     it('int8ArrayIndexGetPart02Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30]);
-      let v: number = arr.$_get(2);
+      let v: number = arr.$_get(arr.length - 1);
       expect(v).assertEqual(30);
     });
 
@@ -113,9 +110,9 @@ export default function int8ArrayIndexGetPart02Test(): void {
      * @tc.level LEVEL2
      */
     it('int8ArrayIndexGetPart02Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([-128]);
+      let arr: Int8Array = new Int8Array([INT8_MIN]);
       let v: number = arr.$_get(0);
-      expect(v).assertEqual(-128);
+      expect(v).assertEqual(INT8_MIN);
     });
 
     /**
@@ -171,7 +168,9 @@ export default function int8ArrayIndexGetPart02Test(): void {
      */
     it('int8ArrayIndexGetPart02Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30]);
-      expect(arr.$_get(2)).assertEqual(30);
+      let r1: number = arr.$_get(arr.length - 1);
+      let e1: int = 30;
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -188,72 +187,76 @@ export default function int8ArrayIndexGetPart02Test(): void {
     });
 
     /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_1100
-       * @tc.name int8ArrayIndexGetPart02Test011
-       * @tc.desc Verify $_get(length+1) out-of-bounds positive index returns undefined
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([10, 20, 30]);
-                try {
-          arr.$_get(4);
-          expect().assertFail();
-        } catch (e) {
-          expect(e.name).assertEqual('RangeError');
-        }});
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_1100
+     * @tc.name int8ArrayIndexGetPart02Test011
+     * @tc.desc Verify $_get(length+1) out-of-bounds positive index throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([10, 20, 30]);
+      try {
+        arr.$_get(4);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
 
     /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_1200
-       * @tc.name int8ArrayIndexGetPart02Test012
-       * @tc.desc Verify $_get(-length-1) out-of-bounds negative index returns undefined
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([10, 20, 30]);
-                try {
-          arr.$_get(-4);
-          expect().assertFail();
-        } catch (e) {
-          expect(e.name).assertEqual('RangeError');
-        }});
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_1200
+     * @tc.name int8ArrayIndexGetPart02Test012
+     * @tc.desc Verify $_get(-length-1) out-of-bounds negative index throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([10, 20, 30]);
+      try {
+        arr.$_get(-4);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
 
     /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_1300
-       * @tc.name int8ArrayIndexGetPart02Test013
-       * @tc.desc Verify $_get(2147483647) large positive index returns undefined
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([10, 20, 30]);
-                try {
-          arr.$_get(2147483647);
-          expect().assertFail();
-        } catch (e) {
-          expect(e.name).assertEqual('RangeError');
-        }});
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_1300
+     * @tc.name int8ArrayIndexGetPart02Test013
+     * @tc.desc Verify $_get(2147483647) large positive index throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([10, 20, 30]);
+      try {
+        arr.$_get(2147483647);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
 
     /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_1400
-       * @tc.name int8ArrayIndexGetPart02Test014
-       * @tc.desc Verify $_get(-2147483648) large negative index returns undefined
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([10, 20, 30]);
-                try {
-          arr.$_get(-2147483648);
-          expect().assertFail();
-        } catch (e) {
-          expect(e.name).assertEqual('RangeError');
-        }});
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_1400
+     * @tc.name int8ArrayIndexGetPart02Test014
+     * @tc.desc Verify $_get(-2147483648) large negative index throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([10, 20, 30]);
+      try {
+        arr.$_get(-2147483648);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_1500
@@ -279,8 +282,10 @@ export default function int8ArrayIndexGetPart02Test(): void {
      */
     it('int8ArrayIndexGetPart02Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(1);
-      arr.$_set(0, -128);
-      expect(arr.$_get(0)).assertEqual(-128);
+      arr.$_set(0, INT8_MIN);
+      let r1: number = arr.$_get(0);
+      let e1: number = INT8_MIN;
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -321,7 +326,7 @@ export default function int8ArrayIndexGetPart02Test(): void {
      */
     it('int8ArrayIndexGetPart02Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(1);
-      arr.$_set(0, 0xFF);
+      arr.$_set(0, 0xff);
       expect(arr.$_get(0)).assertEqual(-1);
     });
 
@@ -390,9 +395,9 @@ export default function int8ArrayIndexGetPart02Test(): void {
      */
     it('int8ArrayIndexGetPart02Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30]);
-      let before: number = arr.length;
-      arr.$_get(1);
-      expect(arr.length).assertEqual(before);
+      let r1: number = arr.$_get(1);
+      let e1: int = 20;
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -405,9 +410,9 @@ export default function int8ArrayIndexGetPart02Test(): void {
      */
     it('int8ArrayIndexGetPart02Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30]);
-      let before: number = arr.byteLength;
-      arr.$_get(1);
-      expect(arr.byteLength).assertEqual(before);
+      let r1: number = arr.$_get(1);
+      let e1: int = 20;
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -421,9 +426,9 @@ export default function int8ArrayIndexGetPart02Test(): void {
     it('int8ArrayIndexGetPart02Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(8);
       let arr: Int8Array = new Int8Array(buf, 2, 4);
-      let before: number = arr.byteOffset;
-      arr.$_get(0);
-      expect(arr.byteOffset).assertEqual(before);
+      let r1: number = arr.$_get(0);
+      let e1: int = 0;
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -437,9 +442,9 @@ export default function int8ArrayIndexGetPart02Test(): void {
     it('int8ArrayIndexGetPart02Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(4);
       let arr: Int8Array = new Int8Array(buf);
-      let before: number = buf.byteLength;
-      arr.$_get(0);
-      expect(buf.byteLength).assertEqual(before);
+      let r1: number = arr.$_get(0);
+      let e1: int = 0;
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -452,9 +457,9 @@ export default function int8ArrayIndexGetPart02Test(): void {
      */
     it('int8ArrayIndexGetPart02Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30]);
-      let bufBefore: ArrayBuffer = arr.buffer;
-      arr.$_get(0);
-      expect(arr.buffer).assertEqual(bufBefore);
+      let r1: number = arr.$_get(0);
+      let e1: int = 10;
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -467,7 +472,6 @@ export default function int8ArrayIndexGetPart02Test(): void {
      */
     it('int8ArrayIndexGetPart02Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30]);
-      arr.$_get(0);
       expect(arr.$_get(0)).assertEqual(10);
     });
 
@@ -481,7 +485,6 @@ export default function int8ArrayIndexGetPart02Test(): void {
      */
     it('int8ArrayIndexGetPart02Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30]);
-      arr.$_get(2);
       expect(arr.$_get(2)).assertEqual(30);
     });
 
@@ -499,7 +502,6 @@ export default function int8ArrayIndexGetPart02Test(): void {
       arr.$_set(0, 50);
       arr.$_set(1, 60);
       arr.$_set(2, 70);
-      arr.$_get(0);
       let view: Int8Array = new Int8Array(buf);
       expect(view.$_get(0)).assertEqual(50);
     });
@@ -515,8 +517,7 @@ export default function int8ArrayIndexGetPart02Test(): void {
     it('int8ArrayIndexGetPart02Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30]);
       let first: number = arr.$_get(1);
-      let second: number = arr.$_get(1);
-      expect(first).assertEqual(second);
+      expect(first).assertEqual(20);
     });
 
     /**
@@ -529,8 +530,6 @@ export default function int8ArrayIndexGetPart02Test(): void {
      */
     it('int8ArrayIndexGetPart02Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30]);
-      arr.$_get(0);
-      arr.$_get(2);
       expect(arr.$_get(1)).assertEqual(20);
     });
 
@@ -559,15 +558,15 @@ export default function int8ArrayIndexGetPart02Test(): void {
     it('int8ArrayIndexGetPart02Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
       let view: Int8Array = arr.subarray(1, 3);
-      let before: number = view.byteOffset;
-      view.$_get(0);
-      expect(view.byteOffset).assertEqual(before);
+      let r1: number = view.$_get(0);
+      let e1: int = 20;
+      expect(r1).assertEqual(e1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_3600
      * @tc.name int8ArrayIndexGetPart02Test036
-     * @tc.desc Verify ArrayBuffer.isView still returns true after subarray view $_get
+     * @tc.desc Verify subarray view $_get(0) returns shared element value 20
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -575,8 +574,12 @@ export default function int8ArrayIndexGetPart02Test(): void {
     it('int8ArrayIndexGetPart02Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
       let view: Int8Array = arr.subarray(1, 3);
-      view.$_get(0);
-      expect(ArrayBuffer.isView(view)).assertTrue();
+      let r1: number = view.$_get(0);
+      let e1: int = 20;
+      expect(r1).assertEqual(e1);
+      let r2: number = arr.$_get(1);
+      let e2: int = 20;
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -642,62 +645,50 @@ export default function int8ArrayIndexGetPart02Test(): void {
     });
 
     /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4100
-       * @tc.name int8ArrayIndexGetPart02Test041
-       * @tc.desc Verify view out-of-bounds positive index $_get returns undefined
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
-        let view: Int8Array = arr.subarray(1, 3);
-                try {
-          view.$_get(2);
-          expect().assertFail();
-        } catch (e) {
-          expect(e.name).assertEqual('RangeError');
-        }});
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4100
+     * @tc.name int8ArrayIndexGetPart02Test041
+     * @tc.desc Verify view out-of-bounds positive index $_get throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
+      let view: Int8Array = arr.subarray(1, 3);
+      try {
+        view.$_get(2);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4200
      * @tc.name int8ArrayIndexGetPart02Test042
-     * @tc.desc Verify parent array corresponding position value unchanged after view $_get
+     * @tc.desc Verify child view $_get reflects shared buffer change after parent array $_set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayIndexGetPart02Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
-      let view: Int8Array = arr.subarray(1, 3);
-      view.$_get(0);
-      expect(arr.$_get(1)).assertEqual(20);
+      let view: Int8Array = arr.subarray(1, 4);
+      arr.$_set(1, 88);
+      let r1: number = view.$_get(0);
+      let e1: int = 88;
+      expect(r1).assertEqual(e1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4300
      * @tc.name int8ArrayIndexGetPart02Test043
-     * @tc.desc Verify child view $_get reflects shared buffer change after parent array $_set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayIndexGetPart02Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
-      let view: Int8Array = arr.subarray(1, 4);
-      arr.$_set(1, 88);
-      expect(view.$_get(0)).assertEqual(88);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4400
-     * @tc.name int8ArrayIndexGetPart02Test044
      * @tc.desc Verify view $_get(0) returns first element value 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayIndexGetPart02Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayIndexGetPart02Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
       let view: Int8Array = arr.subarray(0, 2);
       let v: number = view.$_get(0);
@@ -705,250 +696,252 @@ export default function int8ArrayIndexGetPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4500
-     * @tc.name int8ArrayIndexGetPart02Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4400
+     * @tc.name int8ArrayIndexGetPart02Test044
      * @tc.desc Verify single-element array $_get(0) returns truncated value after $_set(0, 256)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayIndexGetPart02Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayIndexGetPart02Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(1);
       arr.$_set(0, 256);
+      let r1: number = arr.$_get(0);
+      let e1: int = 0;
+      expect(r1).assertEqual(e1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4500
+     * @tc.name int8ArrayIndexGetPart02Test045
+     * @tc.desc Verify single-element array $_get(1) out-of-bounds index throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([64]);
+      try {
+        arr.$_get(1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4600
+     * @tc.name int8ArrayIndexGetPart02Test046
+     * @tc.desc Verify $_get(-1) on new Int8Array([10, 20, 30]) throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([10, 20, 30]);
+      try {
+        arr.$_get(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4700
+     * @tc.name int8ArrayIndexGetPart02Test047
+     * @tc.desc Verify $_get(-3) on new Int8Array([10, 20, 30]) throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([10, 20, 30]);
+      try {
+        arr.$_get(-3);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4800
+     * @tc.name int8ArrayIndexGetPart02Test048
+     * @tc.desc Verify $_get(-1) negative out-of-bounds index on multi-element array throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([10, 20, 30]);
+      try {
+        arr.$_get(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4900
+     * @tc.name int8ArrayIndexGetPart02Test049
+     * @tc.desc Verify $_get(-length) negative out-of-bounds index on multi-element array throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([10, 20, 30]);
+      try {
+        arr.$_get(-3);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5000
+     * @tc.name int8ArrayIndexGetPart02Test050
+     * @tc.desc Verify $_get(100) out-of-bounds index on multi-element array throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([10, 20, 30]);
+      try {
+        arr.$_get(100);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5100
+     * @tc.name int8ArrayIndexGetPart02Test051
+     * @tc.desc Verify $_get(-1) out-of-bounds index on multi-element array throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([10, 20, 30]);
+      try {
+        arr.$_get(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5200
+     * @tc.name int8ArrayIndexGetPart02Test052
+     * @tc.desc Verify first element unchanged after out-of-bounds $_get, throws RangeError for out-of-bounds index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([10, 20, 30]);
+      try {
+        arr.$_get(100);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      let r1: number = arr.$_get(0);
+      let e1: int = 10;
+      expect(r1).assertEqual(e1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5300
+     * @tc.name int8ArrayIndexGetPart02Test053
+     * @tc.desc Verify last element unchanged after negative index $_get, throws RangeError for out-of-bounds index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([10, 20, 30]);
+      try {
+        arr.$_get(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      let r1: number = arr.$_get(2);
+      let e1: int = 30;
+      expect(r1).assertEqual(e1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5400
+     * @tc.name int8ArrayIndexGetPart02Test054
+     * @tc.desc Verify view negative out-of-bounds index $_get throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
+      let view: Int8Array = arr.subarray(1, 4);
+      try {
+        view.$_get(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5500
+     * @tc.name int8ArrayIndexGetPart02Test055
+     * @tc.desc Verify single-element array $_get(-1) negative out-of-bounds index throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array([64]);
+      try {
+        arr.$_get(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5600
+     * @tc.name int8ArrayIndexGetPart02Test056
+     * @tc.desc Verify $_set(0, Number.POSITIVE_INFINITY) truncation then $_get(0) returns 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array(1);
+      arr.$_set(0, Number.POSITIVE_INFINITY);
       expect(arr.$_get(0)).assertEqual(0);
     });
 
     /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4600
-       * @tc.name int8ArrayIndexGetPart02Test046
-       * @tc.desc Verify single-element array $_get(1) out-of-bounds index returns undefined
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([64]);
-                try {
-          arr.$_get(1);
-          expect().assertFail();
-        } catch (e) {
-          expect(e.name).assertEqual('RangeError');
-        }});
-  
-      /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4700
-       * @tc.name int8ArrayIndexGetPart02Test047
-       * @tc.desc Verify $_get(-1) negative index on multi-element array returns typeof 'number', throws RangeError for out-of-bounds index
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([10, 20, 30]);
-        let v: number = 0;
-        let threwGet: boolean = false;
-        try {
-          v = arr.$_get(-1);
-        } catch (e) {
-          threwGet = true;
-          expect(e.name).assertEqual('RangeError');
-        }
-        expect(threwGet).assertTrue();
-        expect(v).assertEqual(0);
-      });
-
-      /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4800
-       * @tc.name int8ArrayIndexGetPart02Test048
-       * @tc.desc Verify $_get(-length) negative index returns typeof 'number', throws RangeError for out-of-bounds index
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([10, 20, 30]);
-        let v: number = 0;
-        let threwGet: boolean = false;
-        try {
-          v = arr.$_get(-3);
-        } catch (e) {
-          threwGet = true;
-          expect(e.name).assertEqual('RangeError');
-        }
-        expect(threwGet).assertTrue();
-        expect(v).assertEqual(0);
-      });
-
-      /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_4900
-       * @tc.name int8ArrayIndexGetPart02Test049
-       * @tc.desc Verify $_get(-1) negative index returns last element value, throws RangeError for out-of-bounds index
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([10, 20, 30]);
-        let __val: number = 0;
-        let threwGet: boolean = false;
-        try {
-          __val = arr.$_get(-1);
-        } catch (e) {
-          threwGet = true;
-          expect(e.name).assertEqual('RangeError');
-        }
-        expect(threwGet).assertTrue();
-      });
-
-      /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5000
-       * @tc.name int8ArrayIndexGetPart02Test050
-       * @tc.desc Verify $_get(-length) negative index returns first element value, throws RangeError for out-of-bounds index
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([10, 20, 30]);
-        let __val: number = 0;
-        let threwGet: boolean = false;
-        try {
-          __val = arr.$_get(-3);
-        } catch (e) {
-          threwGet = true;
-          expect(e.name).assertEqual('RangeError');
-        }
-        expect(threwGet).assertTrue();
-      });
-
-      /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5100
-       * @tc.name int8ArrayIndexGetPart02Test051
-       * @tc.desc Verify arr.length remains unchanged after out-of-bounds $_get, throws RangeError for out-of-bounds index
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([10, 20, 30]);
-        let before: number = arr.length;
-        let threwGet: boolean = false;
-        try {
-          arr.$_get(100);
-        } catch (e) {
-          threwGet = true;
-          expect(e.name).assertEqual('RangeError');
-        }
-        expect(threwGet).assertTrue();
-        expect(arr.length).assertEqual(before);
-      });
-
-      /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5200
-       * @tc.name int8ArrayIndexGetPart02Test052
-       * @tc.desc Verify arr.byteLength remains unchanged after negative index $_get, throws RangeError for out-of-bounds index
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([10, 20, 30]);
-        let before: number = arr.byteLength;
-        let threwGet: boolean = false;
-        try {
-          arr.$_get(-1);
-        } catch (e) {
-          threwGet = true;
-          expect(e.name).assertEqual('RangeError');
-        }
-        expect(threwGet).assertTrue();
-        expect(arr.byteLength).assertEqual(before);
-      });
-
-      /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5300
-       * @tc.name int8ArrayIndexGetPart02Test053
-       * @tc.desc Verify first element unchanged after out-of-bounds $_get, throws RangeError for out-of-bounds index
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([10, 20, 30]);
-        let threwGet: boolean = false;
-        try {
-          arr.$_get(100);
-        } catch (e) {
-          threwGet = true;
-          expect(e.name).assertEqual('RangeError');
-        }
-        expect(threwGet).assertTrue();
-        expect(arr.$_get(0)).assertEqual(10);
-      });
-
-      /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5400
-       * @tc.name int8ArrayIndexGetPart02Test054
-       * @tc.desc Verify last element unchanged after negative index $_get, throws RangeError for out-of-bounds index
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([10, 20, 30]);
-        let threwGet: boolean = false;
-        try {
-          arr.$_get(-1);
-        } catch (e) {
-          threwGet = true;
-          expect(e.name).assertEqual('RangeError');
-        }
-        expect(threwGet).assertTrue();
-        expect(arr.$_get(2)).assertEqual(30);
-      });
-
-      /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5500
-       * @tc.name int8ArrayIndexGetPart02Test055
-       * @tc.desc Verify view negative index $_get reads shared buffer last element, throws RangeError for out-of-bounds index
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
-        let view: Int8Array = arr.subarray(1, 4);
-        let __val: number = 0;
-        let threwGet: boolean = false;
-        try {
-          __val = view.$_get(-1);
-        } catch (e) {
-          threwGet = true;
-          expect(e.name).assertEqual('RangeError');
-        }
-        expect(threwGet).assertTrue();
-      });
-
-      /**
-       * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5600
-       * @tc.name int8ArrayIndexGetPart02Test056
-       * @tc.desc Verify single-element array $_get(-1) negative index returns the only element, throws RangeError for out-of-bounds index
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level LEVEL2
-       */
-      it('int8ArrayIndexGetPart02Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Int8Array = new Int8Array([64]);
-        let __val: number = 0;
-        let threwGet: boolean = false;
-        try {
-          __val = arr.$_get(-1);
-        } catch (e) {
-          threwGet = true;
-          expect(e.name).assertEqual('RangeError');
-        }
-        expect(threwGet).assertTrue();
-      });
-
-});
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_INDEX_GET_PART02_TEST_5700
+     * @tc.name int8ArrayIndexGetPart02Test057
+     * @tc.desc Verify $_set(0, Number.NEGATIVE_INFINITY) truncation then $_get(0) returns 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayIndexGetPart02Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int8Array = new Int8Array(1);
+      arr.$_set(0, Number.NEGATIVE_INFINITY);
+      expect(arr.$_get(0)).assertEqual(0);
+    });
+  });
 }
