@@ -29,7 +29,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import CommonFunc, { EventType } from '../common/Common';
-import { ClickInfo } from '../common/Common';
+import { ClickInfo, ZoomInfo } from '../common/Common';
 import { PhotoPickerResult } from '../common/PhotoPickerResult';
 
 @Entry
@@ -50,6 +50,7 @@ struct PickerComponent {
   private isBlock: boolean = false;
   private isPickerIndexSet: boolean = false;
   private isOnItemClickedNotifySet: boolean = false;
+  private isOnPhotoBrowserZoomSet: boolean = false;
   @State isPhotoPickerShow: boolean = true;
   @State fontColor: string = '#182431222';
   @State selectedFontColor: string = '#007DFF';
@@ -260,6 +261,10 @@ struct PickerComponent {
     console.info(`onError, functionName=${functionName}, errorCode=${errorCode}, message=${message}`);
   }
 
+  private onPhotoBrowserZoom(scale: number): void {
+    console.info(`onPhotoBrowserZoom, scale=${scale}`);
+    this.sendEvent({ scale: scale } as ZoomInfo, this.eventId);
+  }
 
   private onItemClicked(itemInfo: ItemInfo, clickType: ClickType): boolean {
     if (!itemInfo) {
@@ -305,6 +310,9 @@ struct PickerComponent {
     }
     if (parameter['isOnItemClickedNotifySet'] != undefined) {
       this.isOnItemClickedNotifySet = parameter['isOnItemClickedNotifySet'];
+    }
+    if (parameter['isOnPhotoBrowserZoomSet'] != undefined) {
+      this.isOnPhotoBrowserZoomSet = parameter['isOnPhotoBrowserZoomSet'];
     }
     if (parameter['albumOptions'] != undefined) {
       this.albumOptions = parameter['albumOptions'];
@@ -455,6 +463,9 @@ struct PickerComponent {
         onPinchGridSwitched: (gridLevel: photoAccessHelper.GridLevel): void => this.onPinchGridSwitched(gridLevel),
         onPhotoBrowserChangeStart: (itemInfo: BaseItemInfo): void => this.onPhotoBrowserChangeStart(itemInfo),
         onError: (pickerError: PickerError): void => this.onError(pickerError),
+        onPhotoBrowserZoom: this.isOnPhotoBrowserZoomSet
+            ? (scale: number): void => this.onPhotoBrowserZoom(scale)
+            : undefined,
       })
         .height('70%')
         .width('100%')
