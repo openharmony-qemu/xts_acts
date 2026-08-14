@@ -24,7 +24,6 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 
 export default function chipGroupOptionsTest(): void {
-  let tree = JSON.parseJsonElement('{}');
   describe('chipGroupOptionsTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info('chipGroupOptionsTest beforeEach start');
@@ -65,9 +64,10 @@ export default function chipGroupOptionsTest(): void {
      */
     it('chipGroupOptionsTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[chipGroupOptionsTest_static_001] START');
+      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 0);
       await CommonFunc.sleep(1000);
 
-      tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray('$children')[0]
@@ -115,12 +115,14 @@ export default function chipGroupOptionsTest(): void {
      */
     it('chipGroupOptionsTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[chipGroupOptionsTest_static_002] START');
+      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 1);
       await CommonFunc.sleep(1000);
 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray('$children')[0]
-        .getArray('$children')[1]
+        .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
@@ -131,7 +133,7 @@ export default function chipGroupOptionsTest(): void {
       await CommonFunc.sleep(1000);
 
       let btn1 = tree.getArray('$children')[0]
-        .getArray('$children')[1]
+        .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
@@ -142,7 +144,7 @@ export default function chipGroupOptionsTest(): void {
       await CommonFunc.sleep(1000);
 
       let btn2 = tree.getArray('$children')[0]
-        .getArray('$children')[1]
+        .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
@@ -153,7 +155,7 @@ export default function chipGroupOptionsTest(): void {
       await CommonFunc.sleep(1000);
 
       let btn3 = tree.getArray('$children')[0]
-        .getArray('$children')[1]
+        .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
@@ -174,12 +176,14 @@ export default function chipGroupOptionsTest(): void {
      */
     it('chipGroupOptionsTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[chipGroupOptionsTest_static_003] START');
+      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 2);
       await CommonFunc.sleep(1000);
 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray('$children')[0]
-        .getArray('$children')[2]
+        .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
@@ -190,7 +194,7 @@ export default function chipGroupOptionsTest(): void {
       await CommonFunc.sleep(1000);
 
       let btn1 = tree.getArray('$children')[0]
-        .getArray('$children')[2]
+        .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
@@ -211,23 +215,25 @@ export default function chipGroupOptionsTest(): void {
      */
     it('chipGroupOptionsTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[chipGroupOptionsTest_static_004] START');
+      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 3);
       await CommonFunc.sleep(1000);
 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray("$children")[0]
-        .getArray('$children')[3]
+        .getArray('$children')[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
       console.info("[chipGroupOptionsTest_static_004] component btn0.attrs.padding.left is: " +
       JSON.parseJsonElement(btn0.getElement('$attrs').getString('padding')).getString('left'));
       let result = JSON.parseJsonElement(btn0.getElement('$attrs').getString('padding')).getString('left');
-      expect(result).assertEqual('20.00vp');
+      expect(result).assertEqual('16.00vp');
       await CommonFunc.sleep(1000);
 
       let btn1 = tree.getArray("$children")[0]
-        .getArray('$children')[3]
+        .getArray('$children')[0]
         .getArray("$children")[0]
 
       console.info("[chipGroupOptionsTest_static_004] component btn1.attrs.padding.top is: " +
@@ -253,23 +259,25 @@ export default function chipGroupOptionsTest(): void {
      */
     it('chipGroupOptionsTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[chipGroupOptionsTest_static_005] START');
+      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 4);
       await CommonFunc.sleep(1000);
 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray("$children")[0]
-        .getArray('$children')[4]
+        .getArray('$children')[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
       console.info("[chipGroupOptionsTest_static_005] component btn0.attrs.padding.left is: " +
       JSON.parseJsonElement(btn0.getElement('$attrs').getString('padding')).getString('left'));
       let result = JSON.parseJsonElement(btn0.getElement('$attrs').getString('padding')).getString('left');
-      expect(result).assertEqual('20.00vp');
+      expect(result).assertEqual('16.00vp');
       await CommonFunc.sleep(1000);
 
       let btn1 = tree.getArray("$children")[0]
-        .getArray('$children')[4]
+        .getArray('$children')[0]
         .getArray("$children")[0]
 
       console.info("[chipGroupOptionsTest_static_005] component btn1.attrs.padding.top is: " +
@@ -295,12 +303,14 @@ export default function chipGroupOptionsTest(): void {
      */
     it('chipGroupOptionsTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[chipGroupOptionsTest_static_006] START');
+      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 5);
       await CommonFunc.sleep(1000);
 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray("$children")[0]
-        .getArray('$children')[5]
+        .getArray('$children')[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
@@ -311,7 +321,7 @@ export default function chipGroupOptionsTest(): void {
       await CommonFunc.sleep(1000);
 
       let btn1 = tree.getArray("$children")[0]
-        .getArray('$children')[5]
+        .getArray('$children')[0]
         .getArray("$children")[0]
 
       console.info("[chipGroupOptionsTest_static_006] component btn1.attrs.padding.top is: " +
@@ -321,8 +331,8 @@ export default function chipGroupOptionsTest(): void {
 
       let result1 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top');
       let result2 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom');
-      expect(result1).assertEqual('14.00vp');
-      expect(result2).assertEqual('14.00vp');
+      expect(result1).assertEqual('10.00vp');
+      expect(result2).assertEqual('10.00vp');
       await CommonFunc.sleep(1000);
 
       console.info('[chipGroupOptionsTest_static_006] END');
@@ -337,12 +347,14 @@ export default function chipGroupOptionsTest(): void {
      */
     it('chipGroupOptionsTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[chipGroupOptionsTest_static_007] START');
+      AppStorage.setOrCreate<int>('chipGroupOptionsTestIndex', 6);
       await CommonFunc.sleep(1000);
 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray("$children")[0]
-        .getArray('$children')[6]
+        .getArray('$children')[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
@@ -353,7 +365,7 @@ export default function chipGroupOptionsTest(): void {
       await CommonFunc.sleep(1000);
 
       let btn1 = tree.getArray("$children")[0]
-        .getArray('$children')[6]
+        .getArray('$children')[0]
         .getArray("$children")[0]
 
       console.info("[chipGroupOptionsTest_static_007] component btn1.attrs.padding.top is: " +
@@ -363,8 +375,8 @@ export default function chipGroupOptionsTest(): void {
 
       let result1 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top');
       let result2 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom');
-      expect(result1).assertEqual('14.00vp');
-      expect(result2).assertEqual('14.00vp');
+      expect(result1).assertEqual('10.00vp');
+      expect(result2).assertEqual('10.00vp');
       await CommonFunc.sleep(1000);
 
       console.info('[chipGroupOptionsTest_static_007] END');
