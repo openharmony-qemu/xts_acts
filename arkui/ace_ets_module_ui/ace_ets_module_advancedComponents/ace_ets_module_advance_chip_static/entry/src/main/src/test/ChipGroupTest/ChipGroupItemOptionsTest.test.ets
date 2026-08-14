@@ -29,11 +29,6 @@ export default function chipGroupOptionsTest(): void {
     beforeAll(async (): Promise<void> => {
       console.info('chipGroupOptionsTest beforeEach start');
       await UtilsTest.startAbility('com.arkui.ace.advance.chip.static', 'EntryAbility')
-      const routerInstance = AppStorage.get<Router>('router') as Router;
-      routerInstance.clear();
-      routerInstance.pushUrl({ url: 'MainAbility/pages/ChipGroup/ChipGroupItemOptionsPage' } as router.RouterOptions);
-      await CommonFunc.sleep(2000);
-      tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
     });
 
     beforeEach(async (): Promise<void> => {
@@ -72,6 +67,7 @@ export default function chipGroupOptionsTest(): void {
       console.info('[chipGroupOptionsTest_static_001] START');
       await CommonFunc.sleep(1000);
 
+      tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(1000);
 
       let btn0 = tree.getArray('$children')[0]
