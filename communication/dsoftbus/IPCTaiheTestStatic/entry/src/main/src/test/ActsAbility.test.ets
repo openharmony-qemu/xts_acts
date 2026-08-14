@@ -8697,6 +8697,90 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   SUB_IPC_RemoteObject_Constructor_Direct_0100
+     * @tc.number SUB_IPC_RemoteObject_Constructor_Direct_0100
+     * @tc.desc   test RemoteObject constructor with empty string descriptor (direct new)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_IPC_RemoteObject_Constructor_Direct_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_Constructor_Direct_0100 --------------------');
+      try {
+        let testRemoteObject = new rpc.RemoteObject("");
+        let res = testRemoteObject.getDescriptor();
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_Constructor_Direct_0100 res is: ' + res);
+        expect(res == "").assertTrue();
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_Constructor_Direct_0100 error is: ' + error);
+        expect(error == null).assertTrue();
+      } finally {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_Constructor_Direct_0100 done');
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_Constructor_Direct_0100 --------------------');
+    });
+
+    /**
+     * @tc.name   SUB_IPC_RemoteObject_Constructor_Class_0100
+     * @tc.number SUB_IPC_RemoteObject_Constructor_Class_0100
+     * @tc.desc   test RemoteObject constructor with empty string descriptor (class form)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_IPC_RemoteObject_Constructor_Class_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_Constructor_Class_0100 --------------------');
+      try {
+        let testRemoteObject = new TestRemoteObject("");
+        let res = testRemoteObject.getDescriptor();
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_Constructor_Class_0100 res is: ' + res);
+        expect(res == "").assertTrue();
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_Constructor_Class_0100 error is: ' + error);
+        expect(error == null).assertTrue();
+      } finally {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_Constructor_Class_0100 done');
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_Constructor_Class_0100 --------------------');
+    });
+
+    /**
+     * @tc.name      SUB_IPC_MessageSequence_ReadArrayBuffer_OutOfTypeCode_0100
+     * @tc.number    SUB_IPC_MessageSequence_ReadArrayBuffer_OutOfTypeCode_0100
+     * @tc.desc      test readArrayBuffer with mismatched TypeCode
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     * @tc.level     LEVEL1
+     */
+    it("SUB_IPC_MessageSequence_ReadArrayBuffer_OutOfTypeCode_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_ReadArrayBuffer_OutOfTypeCode_0100 --------------------');
+      let data = rpc.MessageSequence.create();
+      try {
+        let buffer = new ArrayBuffer(1);
+        let int8View = new Int8Array(buffer);
+        int8View[0] = 1;
+        data.writeArrayBuffer(buffer, rpc.TypeCode.INT8_ARRAY);
+        let result = data.readArrayBuffer(rpc.TypeCode.BIGUINT64_ARRAY);
+        hilog.info(domain, tag, '%{public}s', 'readArrayBuffer success');
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadArrayBuffer_OutOfTypeCode_0100 error is: ' + error);
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadArrayBuffer_OutOfTypeCode_0100 error code is: ' + error.code);
+        expect(error.code).assertEqual(1900010);
+      } finally {
+        data.reclaim();
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadArrayBuffer_OutOfTypeCode_0100 reclaim done');
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_ReadArrayBuffer_OutOfTypeCode_0100 --------------------');
+    });
+
+    /**
      * @tc.name     SUB_IPC_onRemoteDied_0100
      * @tc.number   SUB_IPC_onRemoteDied_0100
      * @tc.desc     test onRemoteDied
