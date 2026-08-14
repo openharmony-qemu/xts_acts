@@ -637,7 +637,7 @@ export default function asyncFirTest(): void {
 
     /**
      * @tc.name   asyncFirTest0001
-     * @tc.number ASYNC_FIR_TEST_0001
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0001
      * @tc.desc   Must explicitly declare async to use await
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -661,7 +661,7 @@ export default function asyncFirTest(): void {
 
     /**
      * @tc.name   asyncFirTest0002
-     * @tc.number ASYNC_FIR_TEST_0002
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0002
      * @tc.desc   Regular arrow function async syntax validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -691,37 +691,41 @@ export default function asyncFirTest(): void {
 
     /**
      * @tc.name   asyncFirTest0003
-     * @tc.number ASYNC_FIR_TEST_0003
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0003
      * @tc.desc   Immediately invoked async arrow function syntax validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('asyncFirTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const result1 = await (async (): Promise<string> => {
-        return await Promise.resolve('iife1');
-      })();
+      try {
+        const result1 = await (async (): Promise<string> => {
+          return await Promise.resolve('iife1');
+        })();
 
-      const result2 = await (async (num: int): Promise<int> => {
-        return await Promise.resolve(num + 10);
-      })(5);
+        const result2 = await (async (num: int): Promise<int> => {
+          return await Promise.resolve(num + 10);
+        })(5);
 
-      const result3 = await (async (data: string[]): Promise<number> => {
-        const promises = data.map(async (item: string): Promise<int> => {
-          return await Promise.resolve(item.length);
-        });
-        const processed = await Promise.all(promises);
-        return processed.reduce((sum: number, len: int) => sum + len, 0);
-      })(['hello', 'world']);
+        const result3 = await (async (data: string[]): Promise<number> => {
+          const promises = data.map(async (item: string): Promise<int> => {
+            return await Promise.resolve(item.length);
+          });
+          const processed = await Promise.all(promises);
+          return processed.reduce((sum: number, len: int) => sum + len, 0);
+        })(['hello', 'world']);
 
-      expect(result1).assertEqual('iife1');
-      expect(result2).assertEqual(15);
-      expect(result3).assertEqual(10);
+        expect(result1).assertEqual('iife1');
+        expect(result2).assertEqual(15);
+        expect(result3).assertEqual(10);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0004
-     * @tc.number ASYNC_FIR_TEST_0004
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0004
      * @tc.desc   Class instance method async syntax validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -730,21 +734,25 @@ export default function asyncFirTest(): void {
     it('asyncFirTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const instance = new AsyncMethodClass();
 
-      const result1 = await instance.getValue();
-      const result2 = await instance.addValue(20);
-      const result3 = await instance.getInfo();
-      const result4 = await instance.processValue(3);
+      try {
+        const result1 = await instance.getValue();
+        const result2 = await instance.addValue(20);
+        const result3 = await instance.getInfo();
+        const result4 = await instance.processValue(3);
 
-      expect(result1).assertEqual(10);
-      expect(result2).assertEqual(30);
-      expect(result3.value).assertEqual(10);
-      expect(result3.doubled).assertEqual(20);
-      expect(result4).assertEqual(45);
+        expect(result1).assertEqual(10);
+        expect(result2).assertEqual(30);
+        expect(result3.value).assertEqual(10);
+        expect(result3.doubled).assertEqual(20);
+        expect(result4).assertEqual(45);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0005
-     * @tc.number ASYNC_FIR_TEST_0005
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0005
      * @tc.desc   Class static method async syntax validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -766,115 +774,151 @@ export default function asyncFirTest(): void {
 
     /**
      * @tc.name   asyncFirTest0006
-     * @tc.number ASYNC_FIR_TEST_0006
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0006
      * @tc.desc   Class private and protected async method syntax validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const base = new BaseAsyncClass();
-      const derived = new DerivedAsyncClass();
+    it('asyncFirTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const base = new BaseAsyncClass();
+        const derived = new DerivedAsyncClass();
 
-      const result1 = await base.getProcessedValue(2);
-      const result2 = await derived.getCombinedResult();
-      const result3 = await derived.getProcessedValue(3);
+        const result1 = await base.getProcessedValue(2);
+        const result2 = await derived.getCombinedResult();
+        const result3 = await derived.getProcessedValue(3);
 
-      expect(result1).assertEqual(100);
-      expect(result2).assertEqual(75);
-      expect(result3).assertEqual(225);
+        expect(result1).assertEqual(100);
+        expect(result2).assertEqual(75);
+        expect(result3).assertEqual(225);
+        done();
+      } catch (err) {
+        try {
+          expect(err).assertFail();
+        } finally {
+          done();
+        }
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0007
-     * @tc.number ASYNC_FIR_TEST_0007
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0007
      * @tc.desc   Generic async function basic syntax validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      const stringResult = await helperGenericReturn<string>('test');
-      const numberResult = await helperGenericReturn<number>(42);
-      const booleanResult = await helperGenericReturn<boolean>(true);
+    it('asyncFirTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        const stringResult = await helperGenericReturn<string>('test');
+        const numberResult = await helperGenericReturn<number>(42);
+        const booleanResult = await helperGenericReturn<boolean>(true);
 
-      expect(stringResult).assertEqual('test');
-      expect(typeof stringResult).assertEqual('string');
-      expect(numberResult).assertEqual(42);
-      expect(typeof numberResult).assertEqual('number');
-      expect(booleanResult).assertEqual(true);
-      expect(typeof booleanResult).assertEqual('boolean');
+        expect(stringResult).assertEqual('test');
+        expect(typeof stringResult).assertEqual('string');
+        expect(numberResult).assertEqual(42);
+        expect(typeof numberResult).assertEqual('number');
+        expect(booleanResult).assertEqual(true);
+        expect(typeof booleanResult).assertEqual('boolean');
 
-      const transformResult1 =
-        await helperGenericTransform<string, number>('hello', (str: string): number => str.length);
-      const transformResult2 =
-        await helperGenericTransform<number, string>(123, (num: number): string => num.toString());
+        const transformResult1 =
+          await helperGenericTransform<string, number>('hello', (str: string): number => str.length);
+        const transformResult2 =
+          await helperGenericTransform<number, string>(123, (num: number): string => num.toString());
 
-      expect(transformResult1).assertEqual(5);
-      expect(typeof transformResult1).assertEqual('number');
-      expect(transformResult2).assertEqual('123');
-      expect(typeof transformResult2).assertEqual('string');
+        expect(transformResult1).assertEqual(5);
+        expect(typeof transformResult1).assertEqual('number');
+        expect(transformResult2).assertEqual('123');
+        expect(typeof transformResult2).assertEqual('string');
+        done();
+      } catch (err) {
+        try {
+          expect(err).assertFail();
+        } finally {
+          done();
+        }
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0008
-     * @tc.number ASYNC_FIR_TEST_0008
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0008
      * @tc.desc   Generic async function array and optional parameter validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      const arrayResult1 = await helperGenericArrayProcess<number>([1, 2, 3]);
-      const arrayResult2 = await helperGenericArrayProcess<string>(['a', 'b', 'c']);
+    it('asyncFirTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        const arrayResult1 = await helperGenericArrayProcess<number>([1, 2, 3]);
+        const arrayResult2 = await helperGenericArrayProcess<string>(['a', 'b', 'c']);
 
-      let res: number[] = [1, 2, 3]
-      expect(arrayResult1).assertDeepEquals(res);
-      expect(arrayResult2).assertDeepEquals(['a', 'b', 'c']);
+        let res: number[] = [1, 2, 3]
+        expect(arrayResult1).assertDeepEquals(res);
+        expect(arrayResult2).assertDeepEquals(['a', 'b', 'c']);
 
-      const optionalResult1 = await helperGenericOptional<string>('value');
-      const optionalResult2 = await helperGenericOptional<string>(null);
+        const optionalResult1 = await helperGenericOptional<string>('value');
+        const optionalResult2 = await helperGenericOptional<string>(null);
 
-      expect(optionalResult1).assertEqual('value');
-      expect(optionalResult2).assertEqual(null);
+        expect(optionalResult1).assertEqual('value');
+        expect(optionalResult2).assertEqual(null);
 
-      const constrainedResult1 = await helperGenericConstrained<string>('constrained');
-      const constrainedResult2 = await helperGenericConstrained<number>(100);
+        const constrainedResult1 = await helperGenericConstrained<string>('constrained');
+        const constrainedResult2 = await helperGenericConstrained<number>(100);
 
-      expect(constrainedResult1).assertEqual('constrained');
-      expect(constrainedResult2).assertEqual(100);
+        expect(constrainedResult1).assertEqual('constrained');
+        expect(constrainedResult2).assertEqual(100);
+        done();
+      } catch (err) {
+        try {
+          expect(err).assertFail();
+        } finally {
+          done();
+        }
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0009
-     * @tc.number ASYNC_FIR_TEST_0009
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0009
      * @tc.desc   Generic async class methods and multiple parameters validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      const multipleResult = await helperGenericMultiple<string, number, string>(
-        'Count: ',
-        5,
-        (str: string, num: number): string => str + num.toString()
-      );
+    it('asyncFirTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        const multipleResult = await helperGenericMultiple<string, number, string>(
+          'Count: ',
+          5,
+          (str: string, num: number): string => str + num.toString()
+        );
 
-      expect(multipleResult).assertEqual('Count: 5');
+        expect(multipleResult).assertEqual('Count: 5');
 
-      const stringProcessor = new GenericProcessor<string>();
-      const numberProcessor = new GenericProcessor<number>();
+        const stringProcessor = new GenericProcessor<string>();
+        const numberProcessor = new GenericProcessor<number>();
 
-      const classResult1 = await stringProcessor.process('class_test');
-      const classResult2 = await numberProcessor.processArray([10, 20, 30]);
+        const classResult1 = await stringProcessor.process('class_test');
+        const classResult2 = await numberProcessor.processArray([10, 20, 30]);
 
-      expect(classResult1).assertEqual('class_test');
-      let res: number[] = [10, 20, 30]
-      expect(classResult2).assertDeepEquals(res);
+        expect(classResult1).assertEqual('class_test');
+        let res: number[] = [10, 20, 30]
+        expect(classResult2).assertDeepEquals(res);
+        done();
+      } catch (err) {
+        try {
+          expect(err).assertFail();
+        } finally {
+          done();
+        }
+      }
     });
     /**
      * @tc.name   asyncFirTest0010
-     * @tc.number ASYNC_FIR_TEST_0010
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0010
      * @tc.desc   Async function returns primitive values wrapped as Promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -919,17 +963,21 @@ export default function asyncFirTest(): void {
       expect(result5 instanceof Promise).assertEqual(true);
       expect(result6 instanceof Promise).assertEqual(true);
 
-      expect(await result1).assertEqual(42);
-      expect(await result2).assertEqual('hello');
-      expect(await result3).assertEqual(true);
-      expect(await result4).assertEqual(100n);
-      expect(await result5).assertEqual(null);
-      expect(await result6).assertEqual(undefined);
+      try {
+        expect(await result1).assertEqual(42);
+        expect(await result2).assertEqual('hello');
+        expect(await result3).assertEqual(true);
+        expect(await result4).assertEqual(100n);
+        expect(await result5).assertEqual(null);
+        expect(await result6).assertEqual(undefined);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0011
-     * @tc.number ASYNC_FIR_TEST_0011
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0011
      * @tc.desc   Async function returns objects and arrays wrapped as Promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1013,7 +1061,7 @@ export default function asyncFirTest(): void {
 
     /**
      * @tc.name   asyncFirTest0012
-     * @tc.number ASYNC_FIR_TEST_0012
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0012
      * @tc.desc   Async function with no return statement returns Promise<undefined>
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1052,18 +1100,22 @@ export default function asyncFirTest(): void {
       expect(result3 instanceof Promise).assertEqual(true);
       expect(result4 instanceof Promise).assertEqual(true);
 
-      expect(await result1).assertEqual(undefined);
-      expect(await result2).assertEqual(undefined);
-      expect(await result3).assertEqual(undefined);
-      expect(await result4).assertEqual(undefined);
+      try {
+        expect(await result1).assertEqual(undefined);
+        expect(await result2).assertEqual(undefined);
+        expect(await result3).assertEqual(undefined);
+        expect(await result4).assertEqual(undefined);
 
-      const result5 = await conditionalReturn(true);
-      expect(result5).assertEqual('returned');
+        const result5 = await conditionalReturn(true);
+        expect(result5).assertEqual('returned');
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0013
-     * @tc.number ASYNC_FIR_TEST_0013
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0013
      * @tc.desc   Async function returns resolved Promise compatibility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1110,21 +1162,25 @@ export default function asyncFirTest(): void {
       expect(result4 instanceof Promise).assertEqual(true);
       expect(result5 instanceof Promise).assertEqual(true);
 
-      expect(await result1).assertEqual(100);
-      expect(await result2).assertEqual('initial_processed_final');
+      try {
+        expect(await result1).assertEqual(100);
+        expect(await result2).assertEqual('initial_processed_final');
 
-      const obj = await result3;
-      expect(obj.status).assertEqual('success');
-      let res: number[] = [1, 2, 3]
-      expect(obj.data).assertDeepEquals(res);
+        const obj = await result3;
+        expect(obj.status).assertEqual('success');
+        let res: number[] = [1, 2, 3]
+        expect(obj.data).assertDeepEquals(res);
 
-      expect(await result4).assertEqual(50);
-      expect(await result5).assertEqual(true);
+        expect(await result4).assertEqual(50);
+        expect(await result5).assertEqual(true);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0014
-     * @tc.number ASYNC_FIR_TEST_0014
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0014
      * @tc.desc   Async function returns basic pending Promise compatibility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1152,96 +1208,122 @@ export default function asyncFirTest(): void {
       expect(result1 instanceof Promise).assertEqual(true);
       expect(result2 instanceof Promise).assertEqual(true);
 
-      expect(await result1).assertEqual('delayed_result');
-      expect(await result2).assertEqual(42);
+      try {
+        expect(await result1).assertEqual('delayed_result');
+        expect(await result2).assertEqual(42);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0015
-     * @tc.number ASYNC_FIR_TEST_0015
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0015
      * @tc.desc   Async function returns pending Promise with rejection handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const returnPendingWithPossibleReject = async (shouldReject: boolean): Promise<string> => {
-        return new Promise<string>((resolve: (value: string) => void, reject: (reason: Error) => void) => {
-          setTimeout(() => {
-            if (shouldReject) {
-              reject(new Error('Intentional rejection'));
-            } else {
-              resolve('success_result');
-            }
-          }, 100);
-        });
-      };
-
-      const result3 = returnPendingWithPossibleReject(false);
-      expect(result3 instanceof Promise).assertEqual(true);
-      expect(await result3).assertEqual('success_result');
-
-      let rejectionCaught = false;
+    it('asyncFirTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        await returnPendingWithPossibleReject(true);
-      } catch (error) {
-        rejectionCaught = true;
-        expect(error instanceof Error).assertTrue();
+        const returnPendingWithPossibleReject = async (shouldReject: boolean): Promise<string> => {
+          return new Promise<string>((resolve: (value: string) => void, reject: (reason: Error) => void) => {
+            setTimeout(() => {
+              if (shouldReject) {
+                reject(new Error('Intentional rejection'));
+              } else {
+                resolve('success_result');
+              }
+            }, 100);
+          });
+        };
+
+        const result3 = returnPendingWithPossibleReject(false);
+        expect(result3 instanceof Promise).assertEqual(true);
+        expect(await result3).assertEqual('success_result');
+
+        let rejectionCaught = false;
+        try {
+          await returnPendingWithPossibleReject(true);
+        } catch (error) {
+          rejectionCaught = true;
+          expect(error instanceof Error).assertTrue();
+        }
+        expect(rejectionCaught).assertEqual(true);
+        done();
+      } catch (err) {
+        try {
+          expect(err).assertFail();
+        } finally {
+          done();
+        }
       }
-      expect(rejectionCaught).assertEqual(true);
     });
 
     /**
      * @tc.name   asyncFirTest0016
-     * @tc.number ASYNC_FIR_TEST_0016
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0016
      * @tc.desc   Async function returns chained and complex pending Promises
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const returnChainedPending = async (): Promise<number> => {
-        const firstPromise = new Promise<number>((resolve: (value: number) => void) => {
-          setTimeout(() => resolve(10), 100);
-        });
+    it('asyncFirTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const returnChainedPending = async (): Promise<number> => {
+          try {
+            const firstPromise = new Promise<number>((resolve: (value: number) => void) => {
+              setTimeout(() => resolve(10), 100);
+            });
 
-        return firstPromise.then((val: number) => {
-          return new Promise<number>((resolve: (value: number) => void) => {
-            setTimeout(() => resolve(val * 3), 100);
+            const firstVal: number = await firstPromise;
+            return await new Promise<number>((resolve: (value: number) => void) => {
+              setTimeout(() => resolve(firstVal * 3), 100);
+            });
+          } catch (err) {
+            expect(err).assertFail();
+            return -1;
+          }
+        };
+
+        const returnComplexPending = async (): Promise<ComplexResult> => {
+          return new Promise<ComplexResult>((resolve: (value: ComplexResult) => void) => {
+            setTimeout(() => {
+              const result: ComplexResult = {
+                processed: true,
+                value: Math.floor(Math.random() * 100) + 1
+              };
+              resolve(result);
+            }, 120);
           });
-        });
-      };
+        };
 
-      const returnComplexPending = async (): Promise<ComplexResult> => {
-        return new Promise<ComplexResult>((resolve: (value: ComplexResult) => void) => {
-          setTimeout(() => {
-            const result: ComplexResult = {
-              processed: true,
-              value: Math.floor(Math.random() * 100) + 1
-            };
-            resolve(result);
-          }, 120);
-        });
-      };
+        const result4 = returnChainedPending();
+        const result5 = returnComplexPending();
 
-      const result4 = returnChainedPending();
-      const result5 = returnComplexPending();
+        expect(result4 instanceof Promise).assertEqual(true);
+        expect(result5 instanceof Promise).assertEqual(true);
 
-      expect(result4 instanceof Promise).assertEqual(true);
-      expect(result5 instanceof Promise).assertEqual(true);
+        expect(await result4).assertEqual(30);
 
-      expect(await result4).assertEqual(30);
-
-      const complexResult = await result5;
-      expect(complexResult.processed).assertEqual(true);
-      expect(typeof complexResult.value).assertEqual('number');
-      expect(complexResult.value).assertLarger(0);
-      expect(complexResult.value).assertLessOrEqual(100);
+        const complexResult = await result5;
+        expect(complexResult.processed).assertEqual(true);
+        expect(typeof complexResult.value).assertEqual('number');
+        expect(complexResult.value).assertLarger(0);
+        expect(complexResult.value).assertLessOrEqual(100);
+        done();
+      } catch (err) {
+        try {
+          expect(err).assertFail();
+        } finally {
+          done();
+        }
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0017
-     * @tc.number ASYNC_FIR_TEST_0017
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0017
      * @tc.desc   Generic async function basic return type validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1258,46 +1340,59 @@ export default function asyncFirTest(): void {
 
     /**
      * @tc.name   asyncFirTest0018
-     * @tc.number ASYNC_FIR_TEST_0018
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0018
      * @tc.desc   Generic async function array and optional return validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('asyncFirTest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      const arrayResult = await helperGenericArrayProcess<number>([3, 1, 4]);
-      const optionalValue = await helperGenericOptional<number>(0);
-      const optionalNull = await helperGenericOptional<number>(null);
+      try {
+        const arrayResult = await helperGenericArrayProcess<number>([3, 1, 4]);
+        const optionalValue = await helperGenericOptional<number>(0);
+        const optionalNull = await helperGenericOptional<number>(null);
 
-      expect(arrayResult).assertDeepEquals([3.0, 1.0, 4.0]);
-      expect(optionalValue).assertEqual(0);
-      expect(optionalNull).assertEqual(null);
+        expect(arrayResult).assertDeepEquals([3.0, 1.0, 4.0]);
+        expect(optionalValue).assertEqual(0);
+        expect(optionalNull).assertEqual(null);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0019
-     * @tc.number ASYNC_FIR_TEST_0019
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0019
      * @tc.desc   Generic async class methods and multiple parameter return validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      const multipleResult = await helperGenericMultiple<string, number, boolean>(
-        'test',
-        4,
-        (str: string, num: number): boolean => str.length === num
-      );
-      const numberProcessor = new GenericProcessor<number>();
-      const classResult = await numberProcessor.processArray([7, 8, 9]);
+    it('asyncFirTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        const multipleResult = await helperGenericMultiple<string, number, boolean>(
+          'test',
+          4,
+          (str: string, num: number): boolean => str.length === num
+        );
+        const numberProcessor = new GenericProcessor<number>();
+        const classResult = await numberProcessor.processArray([7, 8, 9]);
 
-      expect(multipleResult).assertTrue();
-      expect(classResult).assertDeepEquals([7.0, 8.0, 9.0]);
+        expect(multipleResult).assertTrue();
+        expect(classResult).assertDeepEquals([7.0, 8.0, 9.0]);
+        done();
+      } catch (err) {
+        try {
+          expect(err).assertFail();
+        } finally {
+          done();
+        }
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0020
-     * @tc.number ASYNC_FIR_TEST_0020
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0020
      * @tc.desc   await only works inside async functions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1313,22 +1408,26 @@ export default function asyncFirTest(): void {
         return await Promise.resolve(42);
       };
 
-      const result1 = await validAsyncFunction();
-      const result2 = await validAsyncArrow();
+      try {
+        const result1 = await validAsyncFunction();
+        const result2 = await validAsyncArrow();
 
-      const instance = new AsyncClass();
-      const result3 = await instance.validMethod();
-      const result4 = await AsyncClass.validStaticMethod();
+        const instance = new AsyncClass();
+        const result3 = await instance.validMethod();
+        const result4 = await AsyncClass.validStaticMethod();
 
-      expect(result1).assertEqual('valid_await');
-      expect(result2).assertEqual(42);
-      expect(result3).assertEqual(true);
-      expect(result4).assertEqual('static_result');
+        expect(result1).assertEqual('valid_await');
+        expect(result2).assertEqual(42);
+        expect(result3).assertEqual(true);
+        expect(result4).assertEqual('static_result');
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0021
-     * @tc.number ASYNC_FIR_TEST_0021
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0021
      * @tc.desc   Nested async functions with multi-level await usage validity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1336,57 +1435,95 @@ export default function asyncFirTest(): void {
      */
     it('asyncFirTest0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const level1Async = async (value: int): Promise<int> => {
-        const level2Async = async (innerValue: int): Promise<int> => {
-          const level3Async = async (deepValue: int): Promise<int> => {
-            const step1 = await Promise.resolve(deepValue * 2);
-            const step2 = await Promise.resolve(step1 + 10);
-            const step3 = await Promise.resolve(step2 * 3);
-            return step3;
+        try {
+          const level2Async = async (innerValue: int): Promise<int> => {
+            try {
+              const level3Async = async (deepValue: int): Promise<int> => {
+                try {
+                  const step1 = await Promise.resolve(deepValue * 2);
+                  const step2 = await Promise.resolve(step1 + 10);
+                  const step3 = await Promise.resolve(step2 * 3);
+                  return step3;
+                } catch (err) {
+                  expect(err).assertFail();
+                  return -1;
+                }
+              };
+
+              const deepResult = await level3Async(innerValue);
+              const level2Result = await Promise.resolve(deepResult + 5);
+              return level2Result;
+            } catch (err) {
+              expect(err).assertFail();
+              return -1;
+            }
           };
 
-          const deepResult = await level3Async(innerValue);
-          const level2Result = await Promise.resolve(deepResult + 5);
-          return level2Result;
-        };
-
-        const nestedResult = await level2Async(value);
-        const finalResult = await Promise.resolve(nestedResult + 1);
-        return finalResult;
-      };
-
-      const result = await level1Async(3);
-      expect(result).assertEqual(54);
-
-      const conditionalNested = async (usePathA: boolean): Promise<string> => {
-        const pathA = async (): Promise<string> => {
-          const step1 = await Promise.resolve('A1');
-          const step2 = await Promise.resolve(step1 + '_A2');
-          return step2;
-        };
-
-        const pathB = async (): Promise<string> => {
-          const step1 = await Promise.resolve('B1');
-          const step2 = await Promise.resolve(step1 + '_B2');
-          return step2;
-        };
-
-        if (usePathA) {
-          return await pathA();
-        } else {
-          return await pathB();
+          const nestedResult = await level2Async(value);
+          const finalResult = await Promise.resolve(nestedResult + 1);
+          return finalResult;
+        } catch (err) {
+          expect(err).assertFail();
+          return -1;
         }
       };
 
-      const resultA = await conditionalNested(true);
-      const resultB = await conditionalNested(false);
+      try {
+        const result = await level1Async(3);
+        expect(result).assertEqual(54);
+      } catch (err) {
+        expect(err).assertFail();
+      }
 
-      expect(resultA).assertEqual('A1_A2');
-      expect(resultB).assertEqual('B1_B2');
+      const conditionalNested = async (usePathA: boolean): Promise<string> => {
+        const pathA = async (): Promise<string> => {
+          try {
+            const step1 = await Promise.resolve('A1');
+            const step2 = await Promise.resolve(step1 + '_A2');
+            return step2;
+          } catch (err) {
+            expect(err).assertFail();
+            return '';
+          }
+        };
+
+        const pathB = async (): Promise<string> => {
+          try {
+            const step1 = await Promise.resolve('B1');
+            const step2 = await Promise.resolve(step1 + '_B2');
+            return step2;
+          } catch (err) {
+            expect(err).assertFail();
+            return '';
+          }
+        };
+
+        try {
+          if (usePathA) {
+            return await pathA();
+          } else {
+            return await pathB();
+          }
+        } catch (err) {
+          expect(err).assertFail();
+          return '';
+        }
+      };
+
+      try {
+        const resultA = await conditionalNested(true);
+        const resultB = await conditionalNested(false);
+
+        expect(resultA).assertEqual('A1_A2');
+        expect(resultB).assertEqual('B1_B2');
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0022
-     * @tc.number ASYNC_FIR_TEST_0022
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0022
      * @tc.desc   Array map and filter with async/await syntax validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1413,17 +1550,21 @@ export default function asyncFirTest(): void {
         return filterResults.filter((result: FilterResult) => result.keep).map((result: FilterResult) => result.value);
       };
 
-      const mapResult = await mapWithAsync(testData);
-      expect(mapResult).assertDeepEquals([2, 4, 6, 8, 10]);
+      try {
+        const mapResult = await mapWithAsync(testData);
+        expect(mapResult).assertDeepEquals([2, 4, 6, 8, 10]);
 
-      const filterResult = await filterWithAsync(testData);
-      let res: number[] = [2, 4]
-      expect(filterResult).assertDeepEquals(res);
+        const filterResult = await filterWithAsync(testData);
+        let res: number[] = [2, 4]
+        expect(filterResult).assertDeepEquals(res);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0023
-     * @tc.number ASYNC_FIR_TEST_0023
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0023
      * @tc.desc   Array reduce and forEach with async/await syntax validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1433,12 +1574,17 @@ export default function asyncFirTest(): void {
       const testData = [1, 2, 3, 4, 5];
 
       const reduceWithAsync = async (numbers: int[]): Promise<int> => {
-        let accumulator: int = 0;
-        for (const num of numbers) {
-          const processedValue: int = await Promise.resolve(num * 3);
-          accumulator += processedValue;
+        try {
+          let accumulator: int = 0;
+          for (const num of numbers) {
+            const processedValue: int = await Promise.resolve(num * 3);
+            accumulator += processedValue;
+          }
+          return accumulator;
+        } catch (err) {
+          expect(err).assertFail();
+          return -1;
         }
-        return accumulator;
       };
 
       const forEachWithAsync = async (numbers: int[]): Promise<int[]> => {
@@ -1460,7 +1606,7 @@ export default function asyncFirTest(): void {
 
     /**
      * @tc.name   asyncFirTest0024
-     * @tc.number ASYNC_FIR_TEST_0024
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0024
      * @tc.desc   Nested array processing with async/await syntax validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1483,42 +1629,55 @@ export default function asyncFirTest(): void {
         return flatResult;
       };
 
-      const matrix: number[][] = [[1, 2], [3, 4], [5, 6]];
-      const flatResult = await nestedArrayAsync(matrix);
-      expect(flatResult).assertDeepEquals([1.0, 4.0, 9.0, 16.0, 25.0, 36.0]);
+      try {
+        const matrix: number[][] = [[1, 2], [3, 4], [5, 6]];
+        const flatResult = await nestedArrayAsync(matrix);
+        expect(flatResult).assertDeepEquals([1.0, 4.0, 9.0, 16.0, 25.0, 36.0]);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0025
-     * @tc.number ASYNC_FIR_TEST_0025
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0025
      * @tc.desc   Complex async class with nested methods validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      const processor = new AsyncDataProcessor();
-      const sourceData = [1.5, 2.7, 3.2, 4.8, 5.1];
-      await processor.loadData(sourceData);
-      const result = await processor.processData();
-      expect(result.status).assertEqual('success');
-      let res: number[] = [5, 7, 7, 11, 11]
-      expect(result.data).assertDeepEquals(res);
-
-      const emptyProcessor = new AsyncDataProcessor();
-      let errorCaught = false;
+    it('asyncFirTest0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        await emptyProcessor.processData();
-      } catch (error) {
-        errorCaught = true;
-        expect(error instanceof Error).assertTrue();
+        const processor = new AsyncDataProcessor();
+        const sourceData = [1.5, 2.7, 3.2, 4.8, 5.1];
+        await processor.loadData(sourceData);
+        const result = await processor.processData();
+        expect(result.status).assertEqual('success');
+        let res: number[] = [5, 7, 7, 11, 11]
+        expect(result.data).assertDeepEquals(res);
+
+        const emptyProcessor = new AsyncDataProcessor();
+        let errorCaught = false;
+        try {
+          await emptyProcessor.processData();
+        } catch (error) {
+          errorCaught = true;
+          expect(error instanceof Error).assertTrue();
+        }
+        expect(errorCaught).assertEqual(true);
+        done();
+      } catch (err) {
+        try {
+          expect(err).assertFail();
+        } finally {
+          done();
+        }
       }
-      expect(errorCaught).assertEqual(true);
     });
 
     /**
      * @tc.name   asyncFirTest0026
-     * @tc.number ASYNC_FIR_TEST_0026
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0026
      * @tc.desc   Await with different Promise states and timing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1546,20 +1705,25 @@ export default function asyncFirTest(): void {
       };
 
       const multipleAwaits = async (): Promise<string[]> => {
-        const results: string[] = [];
+        try {
+          const results: string[] = [];
 
-        const first = await Promise.resolve('first');
-        results.push(first);
+          const first = await Promise.resolve('first');
+          results.push(first);
 
-        const second = await new Promise<string>((resolve) => {
-          setTimeout(() => resolve('second'), 300);
-        });
-        results.push(second);
+          const second = await new Promise<string>((resolve) => {
+            setTimeout(() => resolve('second'), 300);
+          });
+          results.push(second);
 
-        const third = await Promise.resolve('third');
-        results.push(third);
+          const third = await Promise.resolve('third');
+          results.push(third);
 
-        return results;
+          return results;
+        } catch (err) {
+          expect(err).assertFail();
+          return [];
+        }
       };
 
       const parallelAwaits = async (): Promise<string[]> => {
@@ -1574,25 +1738,29 @@ export default function asyncFirTest(): void {
         return await Promise.all(promises);
       };
 
-      const immediateResult = await awaitImmediate();
-      expect(immediateResult).assertEqual('immediate');
+      try {
+        const immediateResult = await awaitImmediate();
+        expect(immediateResult).assertEqual('immediate');
 
-      const delayedResult = await awaitDelayed();
-      expect(delayedResult).assertEqual('delayed');
+        const delayedResult = await awaitDelayed();
+        expect(delayedResult).assertEqual('delayed');
 
-      const chainedResult = await awaitChained();
-      expect(chainedResult).assertEqual(75);
+        const chainedResult = await awaitChained();
+        expect(chainedResult).assertEqual(75);
 
-      const sequentialResults = await multipleAwaits();
-      expect(sequentialResults).assertDeepEquals(['first', 'second', 'third']);
+        const sequentialResults = await multipleAwaits();
+        expect(sequentialResults).assertDeepEquals(['first', 'second', 'third']);
 
-      const parallelResults = await parallelAwaits();
-      expect(parallelResults).assertDeepEquals(['parallel1', 'parallel2', 'parallel3']);
+        const parallelResults = await parallelAwaits();
+        expect(parallelResults).assertDeepEquals(['parallel1', 'parallel2', 'parallel3']);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0027
-     * @tc.number ASYNC_FIR_TEST_0027
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0027
      * @tc.desc   Await with non-Promise values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1640,29 +1808,33 @@ export default function asyncFirTest(): void {
         return results;
       };
 
-      const nonPromiseResult = await awaitNonPromise();
-      expect(nonPromiseResult).assertEqual(42);
+      try {
+        const nonPromiseResult = await awaitNonPromise();
+        expect(nonPromiseResult).assertEqual(42);
 
-      const stringResult = await awaitString();
-      expect(stringResult).assertEqual('hello');
+        const stringResult = await awaitString();
+        expect(stringResult).assertEqual('hello');
 
-      const objectResult = await awaitObject();
-      expect(objectResult.name).assertEqual('test');
-      expect(objectResult.age).assertEqual(25);
+        const objectResult = await awaitObject();
+        expect(objectResult.name).assertEqual('test');
+        expect(objectResult.age).assertEqual(25);
 
-      const nullResult = await awaitNull();
-      expect(nullResult).assertEqual(null);
+        const nullResult = await awaitNull();
+        expect(nullResult).assertEqual(null);
 
-      const undefinedResult = await awaitUndefined();
-      expect(undefinedResult).assertEqual(undefined);
+        const undefinedResult = await awaitUndefined();
+        expect(undefinedResult).assertEqual(undefined);
 
-      const mixedResults = await mixedAwaits();
-      expect(mixedResults).assertDeepEquals(['direct', 'promise', 'base_transformed']);
+        const mixedResults = await mixedAwaits();
+        expect(mixedResults).assertDeepEquals(['direct', 'promise', 'base_transformed']);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0028
-     * @tc.number ASYNC_FIR_TEST_0028
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0028
      * @tc.desc   Basic type parameters consistency with TS annotations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1682,7 +1854,12 @@ export default function asyncFirTest(): void {
       };
 
       const processBigInt = async (input: bigint): Promise<bigint> => {
-        return await Promise.resolve(input + 1n);
+        try {
+          return await Promise.resolve(input + 1n);
+        } catch (err) {
+          expect(err).assertFail();
+          return 0n;
+        }
       };
 
       const processMultiple = async (str: string, num: int, bool: boolean): Promise<string> => {
@@ -1690,28 +1867,32 @@ export default function asyncFirTest(): void {
         return await Promise.resolve(result);
       };
 
-      const stringResult = await processString('hello');
-      expect(stringResult).assertEqual('HELLO');
-      expect(typeof stringResult).assertEqual('string');
+      try {
+        const stringResult = await processString('hello');
+        expect(stringResult).assertEqual('HELLO');
+        expect(typeof stringResult).assertEqual('string');
 
-      const numberResult = await processNumber(21);
-      expect(numberResult).assertEqual(42);
+        const numberResult = await processNumber(21);
+        expect(numberResult).assertEqual(42);
 
-      const booleanResult = await processBoolean(true);
-      expect(booleanResult).assertEqual('true');
-      expect(typeof booleanResult).assertEqual('string');
+        const booleanResult = await processBoolean(true);
+        expect(booleanResult).assertEqual('true');
+        expect(typeof booleanResult).assertEqual('string');
 
-      const bigintResult = await processBigInt(99n);
-      expect(bigintResult).assertEqual(100n);
-      expect(typeof bigintResult).assertEqual('bigint');
+        const bigintResult = await processBigInt(99n);
+        expect(bigintResult).assertEqual(100n);
+        expect(typeof bigintResult).assertEqual('bigint');
 
-      const multipleResult = await processMultiple('test', 123, false);
-      expect(multipleResult).assertEqual('test_123_false');
+        const multipleResult = await processMultiple('test', 123, false);
+        expect(multipleResult).assertEqual('test_123_false');
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0029
-     * @tc.number ASYNC_FIR_TEST_0029
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0029
      * @tc.desc   Boundary value validation for basic type parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1731,7 +1912,12 @@ export default function asyncFirTest(): void {
       };
 
       const handleNull = async (input: string | null): Promise<string> => {
-        return await Promise.resolve(input === null ? 'null_received' : input);
+        try {
+          return await Promise.resolve(input === null ? 'null_received' : input);
+        } catch (err) {
+          expect(err).assertFail();
+          return '';
+        }
       };
 
       const handleUndefined = async (input: int | undefined): Promise<string> => {
@@ -1739,49 +1925,58 @@ export default function asyncFirTest(): void {
       };
 
       const handleExtremeNumbers = async (input: number): Promise<string> => {
-        if (input === Number.MAX_SAFE_INTEGER) {
-          return await Promise.resolve('max_safe_integer');
-        } else if (input === Number.MIN_SAFE_INTEGER) {
-          return await Promise.resolve('min_safe_integer');
-        } else if (input === Infinity) {
-          return await Promise.resolve('positive_infinity');
-        } else if (input === -Infinity) {
-          return await Promise.resolve('negative_infinity');
+        try {
+          if (input === Number.MAX_SAFE_INTEGER) {
+            return await Promise.resolve('max_safe_integer');
+          } else if (input === Number.MIN_SAFE_INTEGER) {
+            return await Promise.resolve('min_safe_integer');
+          } else if (input === Infinity) {
+            return await Promise.resolve('positive_infinity');
+          } else if (input === -Infinity) {
+            return await Promise.resolve('negative_infinity');
+          }
+          return await Promise.resolve('normal_number');
+        } catch (err) {
+          expect(err).assertFail();
+          return '';
         }
-        return await Promise.resolve('normal_number');
       };
 
-      const emptyStringResult = await handleEmptyString('');
-      expect(emptyStringResult).assertEqual(0);
+      try {
+        const emptyStringResult = await handleEmptyString('');
+        expect(emptyStringResult).assertEqual(0);
 
-      const zeroResult = await handleZero(0);
-      expect(zeroResult).assertEqual(true);
+        const zeroResult = await handleZero(0);
+        expect(zeroResult).assertEqual(true);
 
-      const nanResult = await handleNaN(NaN);
-      expect(nanResult).assertEqual(true);
+        const nanResult = await handleNaN(NaN);
+        expect(nanResult).assertEqual(true);
 
-      const nullResult = await handleNull(null);
-      expect(nullResult).assertEqual('null_received');
+        const nullResult = await handleNull(null);
+        expect(nullResult).assertEqual('null_received');
 
-      const undefinedResult = await handleUndefined(undefined);
-      expect(undefinedResult).assertEqual('undefined_received');
+        const undefinedResult = await handleUndefined(undefined);
+        expect(undefinedResult).assertEqual('undefined_received');
 
-      const maxIntResult = await handleExtremeNumbers(Number.MAX_SAFE_INTEGER);
-      expect(maxIntResult).assertEqual('max_safe_integer');
+        const maxIntResult = await handleExtremeNumbers(Number.MAX_SAFE_INTEGER);
+        expect(maxIntResult).assertEqual('max_safe_integer');
 
-      const minIntResult = await handleExtremeNumbers(Number.MIN_SAFE_INTEGER);
-      expect(minIntResult).assertEqual('min_safe_integer');
+        const minIntResult = await handleExtremeNumbers(Number.MIN_SAFE_INTEGER);
+        expect(minIntResult).assertEqual('min_safe_integer');
 
-      const infinityResult = await handleExtremeNumbers(Infinity);
-      expect(infinityResult).assertEqual('positive_infinity');
+        const infinityResult = await handleExtremeNumbers(Infinity);
+        expect(infinityResult).assertEqual('positive_infinity');
 
-      const negInfinityResult = await handleExtremeNumbers(-Infinity);
-      expect(negInfinityResult).assertEqual('negative_infinity');
+        const negInfinityResult = await handleExtremeNumbers(-Infinity);
+        expect(negInfinityResult).assertEqual('negative_infinity');
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0030
-     * @tc.number ASYNC_FIR_TEST_0030
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0030
      * @tc.desc   Optional parameters default behavior validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1799,8 +1994,13 @@ export default function asyncFirTest(): void {
       };
 
       const processOptionalBoolean = async (value: string, uppercase?: boolean): Promise<string> => {
-        const shouldUppercase = uppercase || false;
-        return await Promise.resolve(shouldUppercase ? value.toUpperCase() : value.toLowerCase());
+        try {
+          const shouldUppercase = uppercase || false;
+          return await Promise.resolve(shouldUppercase ? value.toUpperCase() : value.toLowerCase());
+        } catch (err) {
+          expect(err).assertFail();
+          return '';
+        }
       };
 
       const processMultipleOptional = async (
@@ -1815,37 +2015,41 @@ export default function asyncFirTest(): void {
         return await Promise.resolve(`${required}_${num}_${bool}_${str}`);
       };
 
-      const result1 = await processOptionalString('test');
-      expect(result1).assertEqual('test_default_string');
+      try {
+        const result1 = await processOptionalString('test');
+        expect(result1).assertEqual('test_default_string');
 
-      const result2 = await processOptionalNumber(5);
-      expect(result2).assertEqual(5);
+        const result2 = await processOptionalNumber(5);
+        expect(result2).assertEqual(5);
 
-      const result3 = await processOptionalBoolean('Hello');
-      expect(result3).assertEqual('hello');
+        const result3 = await processOptionalBoolean('Hello');
+        expect(result3).assertEqual('hello');
 
-      const result4 = await processOptionalString('test', 'provided');
-      expect(result4).assertEqual('test_provided');
+        const result4 = await processOptionalString('test', 'provided');
+        expect(result4).assertEqual('test_provided');
 
-      const result5 = await processOptionalNumber(5, 3);
-      expect(result5).assertEqual(15);
+        const result5 = await processOptionalNumber(5, 3);
+        expect(result5).assertEqual(15);
 
-      const result6 = await processOptionalBoolean('Hello', true);
-      expect(result6).assertEqual('HELLO');
+        const result6 = await processOptionalBoolean('Hello', true);
+        expect(result6).assertEqual('HELLO');
 
-      const result7 = await processMultipleOptional('base');
-      expect(result7).assertEqual('base_0_false_default');
+        const result7 = await processMultipleOptional('base');
+        expect(result7).assertEqual('base_0_false_default');
 
-      const result8 = await processMultipleOptional('base', 10, true, 'custom');
-      expect(result8).assertEqual('base_10_true_custom');
+        const result8 = await processMultipleOptional('base', 10, true, 'custom');
+        expect(result8).assertEqual('base_10_true_custom');
 
-      const result9 = await processMultipleOptional('base', 5);
-      expect(result9).assertEqual('base_5_false_default');
+        const result9 = await processMultipleOptional('base', 5);
+        expect(result9).assertEqual('base_5_false_default');
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0031
-     * @tc.number ASYNC_FIR_TEST_0031
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0031
      * @tc.desc   Default parameters validation for basic types, objects and arrays
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1881,45 +2085,54 @@ export default function asyncFirTest(): void {
         arr: number[] = [1, 2, 3],
         obj: DefaultConfig = { timeout: 1000, retries: 1 }
       ): Promise<string> => {
-        const arrSum = arr.reduce((sum: number, val: number) => sum + val, 0);
-        return await Promise.resolve(`${base}_${num}_${arrSum}_${obj.timeout}_${obj.retries}`);
+        try {
+          const arrSum = arr.reduce((sum: number, val: number) => sum + val, 0);
+          return await Promise.resolve(`${base}_${num}_${arrSum}_${obj.timeout}_${obj.retries}`);
+        } catch (err) {
+          expect(err).assertFail();
+          return '';
+        }
       };
 
-      const result1 = await processWithDefaults('test');
-      expect(result1).assertEqual('test_10_true_1.5');
+      try {
+        const result1 = await processWithDefaults('test');
+        expect(result1).assertEqual('test_10_true_1.5');
 
-      const result2 = await processWithDefaults('test', 20);
-      expect(result2).assertEqual('test_20_true_1.5');
+        const result2 = await processWithDefaults('test', 20);
+        expect(result2).assertEqual('test_20_true_1.5');
 
-      const result3 = await processWithDefaults('test', 20, false);
-      expect(result3).assertEqual('test_20_false_1.5');
+        const result3 = await processWithDefaults('test', 20, false);
+        expect(result3).assertEqual('test_20_false_1.5');
 
-      const result4 = await processWithDefaults('test', 20, false, 2.0);
-      expect(result4).assertEqual('test_20_false_2');
+        const result4 = await processWithDefaults('test', 20, false, 2.0);
+        expect(result4).assertEqual('test_20_false_2');
 
-      const result5 = await processWithDefaultObject('obj1');
-      expect(result5).assertEqual('obj1_5000_3');
+        const result5 = await processWithDefaultObject('obj1');
+        expect(result5).assertEqual('obj1_5000_3');
 
-      const customConfig: DefaultConfig = { timeout: 2000, retries: 5 };
-      const result6 = await processWithDefaultObject('obj2', customConfig);
-      expect(result6).assertEqual('obj2_2000_5');
+        const customConfig: DefaultConfig = { timeout: 2000, retries: 5 };
+        const result6 = await processWithDefaultObject('obj2', customConfig);
+        expect(result6).assertEqual('obj2_2000_5');
 
-      const result7 = await processWithDefaultArray('arr');
-      expect(result7).assertEqual('arr_default1_default2');
+        const result7 = await processWithDefaultArray('arr');
+        expect(result7).assertEqual('arr_default1_default2');
 
-      const result8 = await processWithDefaultArray('arr', ['custom1', 'custom2', 'custom3']);
-      expect(result8).assertEqual('arr_custom1_custom2_custom3');
+        const result8 = await processWithDefaultArray('arr', ['custom1', 'custom2', 'custom3']);
+        expect(result8).assertEqual('arr_custom1_custom2_custom3');
 
-      const result9 = await processWithMixedDefaults('mixed');
-      expect(result9).assertEqual('mixed_100_6_1000_1');
+        const result9 = await processWithMixedDefaults('mixed');
+        expect(result9).assertEqual('mixed_100_6_1000_1');
 
-      const result10 = await processWithMixedDefaults('mixed', 200, [5, 10]);
-      expect(result10).assertEqual('mixed_200_15_1000_1');
+        const result10 = await processWithMixedDefaults('mixed', 200, [5, 10]);
+        expect(result10).assertEqual('mixed_200_15_1000_1');
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0032
-     * @tc.number ASYNC_FIR_TEST_0032
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0032
      * @tc.desc   Multi-layer async parameter pass-through validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1945,16 +2158,20 @@ export default function asyncFirTest(): void {
         return await Promise.resolve(transform ? intermediate.toUpperCase() : intermediate);
       };
 
-      const result1 = await level1Process('test', 2, '_end', false);
-      expect(result1).assertEqual('testtest_end');
+      try {
+        const result1 = await level1Process('test', 2, '_end', false);
+        expect(result1).assertEqual('testtest_end');
 
-      const result2 = await level1Process('hello', 3, '_done', true);
-      expect(result2).assertEqual('HELLOHELLOHELLO_DONE');
+        const result2 = await level1Process('hello', 3, '_done', true);
+        expect(result2).assertEqual('HELLOHELLOHELLO_DONE');
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0033
-     * @tc.number ASYNC_FIR_TEST_0033
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0033
      * @tc.desc   Complex object parameter pass-through validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1965,31 +2182,40 @@ export default function asyncFirTest(): void {
         data: string[],
         config: ProcessConfig
       ): Promise<string[]> => {
-        const processItem = async (item: string): Promise<string> => {
-          const prefixed = await Promise.resolve(config.prefix + item);
-          const repeated = await Promise.resolve(prefixed.repeat(config.multiplier.toInt()));
-          return config.uppercase ? repeated.toUpperCase() : repeated;
+        try {
+          const processItem = async (item: string): Promise<string> => {
+            const prefixed = await Promise.resolve(config.prefix + item);
+            const repeated = await Promise.resolve(prefixed.repeat(config.multiplier.toInt()));
+            return config.uppercase ? repeated.toUpperCase() : repeated;
+          };
+
+          const promises = data.map(async (item: string): Promise<string> => {
+            return await processItem(item);
+          });
+
+          return await Promise.all(promises);
+        } catch (err) {
+          expect(err).assertFail();
+          return [];
+        }
+      };
+
+      try {
+        const config: ProcessConfig = {
+          prefix: 'pre_',
+          multiplier: 2,
+          uppercase: true
         };
-
-        const promises = data.map(async (item: string): Promise<string> => {
-          return await processItem(item);
-        });
-
-        return await Promise.all(promises);
-      };
-
-      const config: ProcessConfig = {
-        prefix: 'pre_',
-        multiplier: 2,
-        uppercase: true
-      };
-      const result3 = await processWithConfig(['a', 'b'], config);
-      expect(result3).assertDeepEquals(['PRE_APRE_A', 'PRE_BPRE_B']);
+        const result3 = await processWithConfig(['a', 'b'], config);
+        expect(result3).assertDeepEquals(['PRE_APRE_A', 'PRE_BPRE_B']);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0034
-     * @tc.number ASYNC_FIR_TEST_0034
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0034
      * @tc.desc   Parameter validation and immutability validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2031,7 +2257,7 @@ export default function asyncFirTest(): void {
 
     /**
      * @tc.name   asyncFirTest0035
-     * @tc.number ASYNC_FIR_TEST_0035
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0035
      * @tc.desc   Basic static type parameters validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2049,22 +2275,31 @@ export default function asyncFirTest(): void {
       };
 
       const processDoubleLike = async (value: number): Promise<number> => {
-        return await Promise.resolve(value * Math.PI);
+        try {
+          return await Promise.resolve(value * Math.PI);
+        } catch (err) {
+          expect(err).assertFail();
+          return -1;
+        }
       };
 
-      const intResult = await processIntegerLike(3.7);
-      expect(intResult).assertEqual(4);
+      try {
+        const intResult = await processIntegerLike(3.7);
+        expect(intResult).assertEqual(4);
 
-      const floatResult = await processFloatLike(3.456);
-      expect(floatResult).assertEqual(6.92);
+        const floatResult = await processFloatLike(3.456);
+        expect(floatResult).assertEqual(6.92);
 
-      const doubleResult = await processDoubleLike(2.0);
-      expect(Math.abs(doubleResult - (2.0 * Math.PI))).assertLess(0.0001);
+        const doubleResult = await processDoubleLike(2.0);
+        expect(Math.abs(doubleResult - (2.0 * Math.PI))).assertLess(0.0001);
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0036
-     * @tc.number ASYNC_FIR_TEST_0036
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0036
      * @tc.desc   Character and byte type parameters validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2083,17 +2318,21 @@ export default function asyncFirTest(): void {
         return await Promise.resolve(isValidByte);
       };
 
-      const charResult = await processCharLike('A');
-      expect(charResult).assertEqual(65);
+      try {
+        const charResult = await processCharLike('A');
+        expect(charResult).assertEqual(65);
 
-      const byteResult1 = await processByteLike(128);
-      expect(byteResult1).assertEqual(true);
+        const byteResult1 = await processByteLike(128);
+        expect(byteResult1).assertEqual(true);
 
-      const byteResult2 = await processByteLike(256);
-      expect(byteResult2).assertEqual(false);
+        const byteResult2 = await processByteLike(256);
+        expect(byteResult2).assertEqual(false);
 
-      const byteResult3 = await processByteLike(-1);
-      expect(byteResult3).assertEqual(false);
+        const byteResult3 = await processByteLike(-1);
+        expect(byteResult3).assertEqual(false);
+      } catch (err) {
+        expect(err).assertFail();
+      }
 
       let errorCaught = false;
       try {
@@ -2107,7 +2346,7 @@ export default function asyncFirTest(): void {
 
     /**
      * @tc.name   asyncFirTest0037
-     * @tc.number ASYNC_FIR_TEST_0037
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0037
      * @tc.desc   Long type and mixed parameters validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2120,8 +2359,13 @@ export default function asyncFirTest(): void {
       };
 
       const processFloatLike = async (value: number): Promise<number> => {
-        const floatValue: number = Math.round(value * 100) / 100.0;
-        return await Promise.resolve(floatValue * 2);
+        try {
+          const floatValue: number = Math.round(value * 100) / 100.0;
+          return await Promise.resolve(floatValue * 2);
+        } catch (err) {
+          expect(err).assertFail();
+          return -1;
+        }
       };
 
       const processCharLike = async (chars: string): Promise<int|number> => {
@@ -2141,26 +2385,35 @@ export default function asyncFirTest(): void {
         charLike: string,
         longLike: bigint
       ): Promise<string> => {
-        const intResult = await processIntegerLike(intLike);
-        const floatResult = await processFloatLike(floatLike);
-        const charResult = await processCharLike(charLike);
-        const longResult = await processLongLike(longLike);
+        try {
+          const intResult = await processIntegerLike(intLike);
+          const floatResult = await processFloatLike(floatLike);
+          const charResult = await processCharLike(charLike);
+          const longResult = await processLongLike(longLike);
 
-        return await Promise.resolve(
-          `int:${intResult}_float:${floatResult}_char:${charResult}_long:${longResult}`
-        );
+          return await Promise.resolve(
+            `int:${intResult}_float:${floatResult}_char:${charResult}_long:${longResult}`
+          );
+        } catch (err) {
+          expect(err).assertFail();
+          return '';
+        }
       };
 
-      const longResult = await processLongLike(1000000000000n);
-      expect(longResult).assertEqual(2000000000001n);
+      try {
+        const longResult = await processLongLike(1000000000000n);
+        expect(longResult).assertEqual(2000000000001n);
 
-      const mixedResult = await processMixedTypes(5.8, 2.345, 'B', 500n);
-      expect(mixedResult).assertEqual('int:6_float:4.7_char:66_long:1001');
+        const mixedResult = await processMixedTypes(5.8, 2.345, 'B', 500n);
+        expect(mixedResult).assertEqual('int:6_float:4.7_char:66_long:1001');
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0038
-     * @tc.number ASYNC_FIR_TEST_0038
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0038
      * @tc.desc   Object parameter basic validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2179,22 +2432,26 @@ export default function asyncFirTest(): void {
         age: 30
       };
 
-      const result1 = await processUserProfile(completeProfile);
-      expect(result1).assertEqual('John Doe_john@example.com_30');
+      try {
+        const result1 = await processUserProfile(completeProfile);
+        expect(result1).assertEqual('John Doe_john@example.com_30');
 
-      const partialProfile: ComplexUserProfile = {
-        id: 2,
-        name: 'Jane Smith',
-        email: 'jane@example.com'
-      };
+        const partialProfile: ComplexUserProfile = {
+          id: 2,
+          name: 'Jane Smith',
+          email: 'jane@example.com'
+        };
 
-      const result2 = await processUserProfile(partialProfile);
-      expect(result2).assertContain('Jane Smith_jane@example.com_');
+        const result2 = await processUserProfile(partialProfile);
+        expect(result2).assertContain('Jane Smith_jane@example.com_');
+      } catch (err) {
+        expect(err).assertFail();
+      }
     });
 
     /**
      * @tc.name   asyncFirTest0039
-     * @tc.number ASYNC_FIR_TEST_0039
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0039
      * @tc.desc   Complex object with nested properties validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2220,54 +2477,63 @@ export default function asyncFirTest(): void {
 
     /**
      * @tc.name   asyncFirTest0040
-     * @tc.number ASYNC_FIR_TEST_0040
+     * @tc.number SUB_BUILTINS_asyncFir_TEST_0040
      * @tc.desc   Object parameter validation and error handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const validateUserProfile = async (profile: ComplexUserProfile): Promise<ValidationResult> => {
-        const errors: string[] = [];
+    it('asyncFirTest0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const validateUserProfile = async (profile: ComplexUserProfile): Promise<ValidationResult> => {
+          const errors: string[] = [];
 
-        if (!profile.name || profile.name.length === 0) {
-          errors.push('Name is required');
-        }
-        if (!profile.email || !profile.email.includes('@')) {
-          errors.push('Valid email is required');
-        }
-        if (profile.age !== undefined && (profile.age as number) < 0) {
-          errors.push('Age must be non-negative');
-        }
+          if (!profile.name || profile.name.length === 0) {
+            errors.push('Name is required');
+          }
+          if (!profile.email || !profile.email.includes('@')) {
+            errors.push('Valid email is required');
+          }
+          if (profile.age !== undefined && (profile.age as number) < 0) {
+            errors.push('Age must be non-negative');
+          }
 
-        const result: ValidationResult = {
-          isValid: errors.length === 0,
-          errors: errors
+          const result: ValidationResult = {
+            isValid: errors.length === 0,
+            errors: errors
+          };
+          return await Promise.resolve(result);
         };
-        return await Promise.resolve(result);
-      };
 
-      const validProfile: ComplexUserProfile = {
-        id: 3,
-        name: 'Valid User',
-        email: 'valid@test.com',
-        age: 25
-      };
+        const validProfile: ComplexUserProfile = {
+          id: 3,
+          name: 'Valid User',
+          email: 'valid@test.com',
+          age: 25
+        };
 
-      const validation1 = await validateUserProfile(validProfile);
-      expect(validation1.isValid).assertEqual(true);
-      expect(validation1.errors.length).assertEqual(0);
+        const validation1 = await validateUserProfile(validProfile);
+        expect(validation1.isValid).assertEqual(true);
+        expect(validation1.errors.length).assertEqual(0);
 
-      const invalidProfile: ComplexUserProfile = {
-        id: 4,
-        name: '',
-        email: 'invalid-email',
-        age: -5
-      };
+        const invalidProfile: ComplexUserProfile = {
+          id: 4,
+          name: '',
+          email: 'invalid-email',
+          age: -5
+        };
 
-      const validation2 = await validateUserProfile(invalidProfile);
-      expect(validation2.isValid).assertEqual(false);
-      expect(validation2.errors.length).assertEqual(3);
+        const validation2 = await validateUserProfile(invalidProfile);
+        expect(validation2.isValid).assertEqual(false);
+        expect(validation2.errors.length).assertEqual(3);
+        done();
+      } catch (err) {
+        try {
+          expect(err).assertFail();
+        } finally {
+          done();
+        }
+      }
     });
 
     /**
