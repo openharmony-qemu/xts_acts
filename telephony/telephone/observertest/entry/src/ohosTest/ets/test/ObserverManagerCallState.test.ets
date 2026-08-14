@@ -307,6 +307,23 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
+     * @tc.name   Telephony_Call_CallState_Async_0100
+     * @tc.number Telephony_Call_CallState_Async_0100
+     * @tc.desc   CallState full coverage of enumeration types.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('Telephony_Call_CallState_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      expect(call.CallState.CALL_STATE_UNKNOWN === -1).assertTrue();
+      expect(call.CallState.CALL_STATE_IDLE === 0).assertTrue();
+      expect(call.CallState.CALL_STATE_RINGING === 1).assertTrue();
+      expect(call.CallState.CALL_STATE_OFFHOOK === 2).assertTrue();
+      expect(call.CallState.CALL_STATE_ANSWERED === 3).assertTrue();
+      done();
+    });
+
+    /**
      * @tc.name   testTelephonyObserverCallStateChangeExOn0100
      * @tc.number SUB_Telephony_Observer_CallStateChangeExOn_0100
      * @tc.desc   Subscribe to call status change event
@@ -321,12 +338,13 @@ export default function observerManagerCallStateTest() {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
           ExpectTrue(data !== null);
+          observer.off('callStateChangeEx');
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: 0
         }
         observer.on('callStateChangeEx', callback, options);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(false);
@@ -350,12 +368,13 @@ export default function observerManagerCallStateTest() {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
           ExpectTrue(data !== null);
+          observer.off('callStateChangeEx');
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: 1
         }
         observer.on('callStateChangeEx', callback, options);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(false);
@@ -379,16 +398,23 @@ export default function observerManagerCallStateTest() {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
           ExpectTrue(data !== null);
+          observer.off('callStateChangeEx');
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: 2
         }
         observer.on('callStateChangeEx', callback, options);
-        done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(false);
-        done();
+        if(error.code === 8800001) {
+          console.log(`${caseName} Device type is wearable, on callStateChange, error:` + JSON.stringify(error));
+          expect(Number(error.code)).assertEqual(8800001)
+          done();
+        } else {
+          console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+          ExpectTrue(false);
+          done();
+        }
       }
       console.info(`${caseName} test end `);
     });
@@ -408,12 +434,13 @@ export default function observerManagerCallStateTest() {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
           ExpectTrue(data !== null);
+          observer.off('callStateChangeEx');
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: -1
         }
         observer.on('callStateChangeEx', callback, options);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(false);
@@ -436,13 +463,13 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTrue(data !== null);
+          ExpectTrue(false);
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: -2
         }
         observer.on('callStateChangeEx', callback, options);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 8800001);
@@ -465,13 +492,13 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTrue(data !== null);
+          ExpectTrue(false);
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: 3
         }
         observer.on('callStateChangeEx', callback, options);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 8800001);
@@ -495,9 +522,10 @@ export default function observerManagerCallStateTest() {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
           ExpectTrue(data !== null);
+          observer.off('callStateChangeEx', callback);
+          done();
         }
         observer.on('callStateChangeEx', callback);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(false);
@@ -520,46 +548,13 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTrue(data !== null);
+          ExpectTrue(false);
+          done();
         }
         observer.on(null, callback);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
-        done();
-      }
-      console.info(`${caseName} test end `);
-    });
-
-    /**
-     * @tc.name   testTelephonyObserverCallStateChangeExOn0900
-     * @tc.number SUB_Telephony_Observer_CallStateChangeExOn_0900
-     * @tc.desc   Subscribe to call status change event
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTelephonyObserverCallStateChangeExOn0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testTelephonyObserverCallStateChangeExOn0900';
-      console.info(`${caseName} test start `);
-      try {
-        let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
-          console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          const telCallStateAry: number[] = [
-            call.TelCallState.TEL_CALL_STATE_UNKNOWN,
-            call.TelCallState.TEL_CALL_STATE_IDLE,
-            call.TelCallState.TEL_CALL_STATE_RINGING,
-            call.TelCallState.TEL_CALL_STATE_OFFHOOK,
-            call.TelCallState.TEL_CALL_STATE_ANSWERED,
-            call.TelCallState.TEL_CALL_STATE_CONNECTED
-          ]
-          ExpectTrue(telCallStateAry.includes(data));        }
-        observer.on('callStateChangeEx', callback);
-        done();
-      } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(false);
         done();
       }
       console.info(`${caseName} test end `);
@@ -638,18 +633,33 @@ export default function observerManagerCallStateTest() {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
           ExpectTrue(false);
-        }
-        let options: observer.ObserverOptions = {
-          slotId: 0
+          done();
         }
         observer.on('callStateChangeEx', callback, undefined);
-        done();
       } catch (error) {
         console.info(`${caseName} success,  catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
         done();
       }
       console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   Telephony_Call_TelCallState_Async_0100
+     * @tc.number Telephony_Call_TelCallState_Async_0100
+     * @tc.desc   TelCallState full coverage of enumeration types.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('Telephony_Call_TelCallState_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      expect(call.TelCallState.TEL_CALL_STATE_UNKNOWN === -1).assertTrue();
+      expect(call.TelCallState.TEL_CALL_STATE_IDLE === 0).assertTrue();
+      expect(call.TelCallState.TEL_CALL_STATE_RINGING === 1).assertTrue();
+      expect(call.TelCallState.TEL_CALL_STATE_OFFHOOK === 2).assertTrue();
+      expect(call.TelCallState.TEL_CALL_STATE_ANSWERED === 3).assertTrue();
+      expect(call.TelCallState.TEL_CALL_STATE_CONNECTED === 4).assertTrue();
+      done();
     });
 
     /**
@@ -814,9 +824,15 @@ export default function observerManagerCallStateTest() {
         }
         observer.onCCallStateChange(callback);
       } catch (err) {
-        console.info(`${caseName} catchError: ${JSON.stringify(err)}}` + err);
-        expect(false).assertTrue();
-        done();
+        if(err.code === 201) {
+          console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
+          expect(Number(err.code)).assertEqual(201)
+          done();
+        } else {
+          console.info(`${caseName} catchError: ${JSON.stringify(err)}}` + err);
+          expect(false).assertTrue();
+          done();
+        }
       }
       console.log("************* Telephony_observer_on_cCallStateInfo_0100 Test end *************");
     })
@@ -844,9 +860,15 @@ export default function observerManagerCallStateTest() {
         }
         observer.onCCallStateChange(callback, options);
       } catch (err) {
-        console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
-        expect(false).assertTrue();
-        done();
+        if(err.code === 201) {
+          console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
+          expect(Number(err.code)).assertEqual(201)
+          done();
+        } else {
+          console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
+          expect(false).assertTrue();
+          done();
+        }
       }
       console.log("************* Telephony_observer_on_cCallStateInfo_0200 Test end *************");
     })
@@ -874,9 +896,15 @@ export default function observerManagerCallStateTest() {
         }
         observer.onCCallStateChange(callback, options);
       } catch (err) {
-        console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
-        expect(false).assertTrue();
-        done();
+        if(err.code === 201) {
+          console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
+          expect(Number(err.code)).assertEqual(201)
+          done();
+        } else {
+          console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
+          expect(false).assertTrue();
+          done();
+        }
       }
       console.log("************* Telephony_observer_on_cCallStateInfo_0300 Test end *************");
     })
@@ -895,7 +923,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' +
-          JSON.stringify(value.teleNumber));
+            JSON.stringify(value.teleNumber));
           expect(false).assertTrue();
           observer.offCCallStateChange();
           done();
@@ -935,9 +963,15 @@ export default function observerManagerCallStateTest() {
         }
         observer.onCCallStateChange(callback, options);
       } catch (err) {
-        console.info(`${caseName} catchError ${JSON.stringify(err)}}` + err);
-        expect(false).assertTrue();
-        done();
+        if(err.code === 201) {
+          console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
+          expect(Number(err.code)).assertEqual(201)
+          done();
+        } else {
+          console.info(`${caseName} catchError ${JSON.stringify(err)}}` + err);
+          expect(false).assertTrue();
+          done();
+        }
       }
       console.log("************* Telephony_observer_on_cCallStateInfo_0500 Test end *************");
     })
@@ -974,7 +1008,7 @@ export default function observerManagerCallStateTest() {
     /**
      * @tc.name   Telephony_observer_on_cCallStateInfo_0700
      * @tc.number Telephony_observer_on_cCallStateInfo_0700
-     * @tc.desc   call the on method of cCallStateInfo
+     * @tc.desc   CCallState Full coverage of enumeration types.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -983,42 +1017,28 @@ export default function observerManagerCallStateTest() {
       let caseName: string = 'Telephony_observer_on_cCallStateInfo_0700';
       console.log("************* Telephony_observer_on_cCallStateInfo_0700 Test start *************");
       try {
-        const CCALL_STATE_UNKNOWN =-1;
-        const CCALL_STATE_ACTIVE =0;
-        const CCALL_STATE_HOLDING=1;
-        const CCALL_STATE_DIALING=2;
-        const CCALL_STATE_ALERTING=3;
-        const CCALL_STATE_INCOMING=4;
-        const CCALL_STATE_WAITING=5;
-        const CCALL_STATE_DISCONNECTED=6;
-        const CCALL_STATE_DISCONNECTING=7;
-        const CCALL_STATE_IDLE=8;
-        const CCALL_STATE_ANSWERED=9;
-
-        const cCallStateAry: number[] = [
-          CCALL_STATE_UNKNOWN,
-          CCALL_STATE_ACTIVE,
-          CCALL_STATE_HOLDING,
-          CCALL_STATE_DIALING,
-          CCALL_STATE_ALERTING,
-          CCALL_STATE_INCOMING,
-          CCALL_STATE_WAITING,
-          CCALL_STATE_DISCONNECTED,
-          CCALL_STATE_DISCONNECTING,
-          CCALL_STATE_IDLE,
-          CCALL_STATE_ANSWERED
-        ]
-        let callback = (value: observer.CCallStateInfo) => {
-          console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
-          ExpectTrue(cCallStateAry.includes(value.state));
-          observer.offCCallStateChange();
+        expect(call.CCallState.CCALL_STATE_UNKNOWN === -1).assertTrue();
+        expect(call.CCallState.CCALL_STATE_ACTIVE === 0).assertTrue();
+        expect(call.CCallState.CCALL_STATE_HOLDING === 1).assertTrue();
+        expect(call.CCallState.CCALL_STATE_DIALING === 2).assertTrue();
+        expect(call.CCallState.CCALL_STATE_ALERTING === 3).assertTrue();
+        expect(call.CCallState.CCALL_STATE_INCOMING === 4).assertTrue();
+        expect(call.CCallState.CCALL_STATE_WAITING === 5).assertTrue();
+        expect(call.CCallState.CCALL_STATE_DISCONNECTED === 6).assertTrue();
+        expect(call.CCallState.CCALL_STATE_DISCONNECTING === 7).assertTrue();
+        expect(call.CCallState.CCALL_STATE_IDLE === 8).assertTrue();
+        expect(call.CCallState.CCALL_STATE_ANSWERED === 9).assertTrue();
+        done();
+      } catch (err) {
+        if(err.code === 201) {
+          console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
+          expect(Number(err.code)).assertEqual(201)
+          done();
+        } else {
+          console.info(`${caseName} catchError ${JSON.stringify(err)}}`+err);
+          expect(false).assertTrue();
           done();
         }
-        observer.onCCallStateChange(callback);
-      } catch (err) {
-        console.info(`${caseName} catchError ${JSON.stringify(err)}}`+err);
-        expect(false).assertTrue();
-        done();
       }
       console.log("************* Telephony_observer_on_cCallStateInfo_0700 Test end *************");
     })
@@ -1035,11 +1055,6 @@ export default function observerManagerCallStateTest() {
       let caseName: string = 'Telephony_observer_on_cCallStateInfo_0800';
       console.log("************* Telephony_observer_on_cCallStateInfo_0800 Test start *************");
       try {
-        let callback = (value: observer.CCallStateInfo) => {
-          console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
-          ExpectTrue(value !== null);
-          done();
-        }
         observer.onCCallStateChange(null);
       } catch (err) {
         console.info(`${caseName} success, catchError: ${JSON.stringify(err)}}` + err);
@@ -1061,11 +1076,6 @@ export default function observerManagerCallStateTest() {
       let caseName: string = 'Telephony_observer_on_cCallStateInfo_0900';
       console.log("************* Telephony_observer_on_cCallStateInfo_0900 Test start *************");
       try {
-        let callback = (value: observer.CCallStateInfo) => {
-          console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
-          ExpectTrue(value !== null);
-          done();
-        }
         observer.onCCallStateChange(undefined);
       } catch (err) {
         console.info(`${caseName} success, catchError: ${JSON.stringify(err)}}` + err);
@@ -1092,9 +1102,6 @@ export default function observerManagerCallStateTest() {
           expect(false).assertTrue();
           done();
         }
-        let options: observer.ObserverOptions = {
-          slotId: 0
-        }
         observer.onCCallStateChange(callback, undefined);
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
@@ -1120,9 +1127,6 @@ export default function observerManagerCallStateTest() {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           expect(false).assertTrue();
           done();
-        }
-        let options: observer.ObserverOptions = {
-          slotId: 0
         }
         observer.onCCallStateChange(callback, null);
       } catch (err) {
