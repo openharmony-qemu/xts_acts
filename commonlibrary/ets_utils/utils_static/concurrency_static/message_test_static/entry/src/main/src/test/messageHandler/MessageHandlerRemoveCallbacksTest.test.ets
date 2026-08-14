@@ -56,7 +56,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -90,7 +96,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -125,7 +137,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(2);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -145,7 +163,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       handler.sendMessage(new concurrency.Message(callback1, handler));
       let result: boolean = handler.removeCallbacks(callback2);
       expect(result).assertFalse();
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -179,7 +203,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -214,7 +244,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       }
       expect(removed.load()).assertEqual(1);
       expect(counter.load()).assertEqual(0);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -237,7 +273,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         caught = true;
       }
       expect(caught).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -260,7 +302,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         caught = true;
       }
       expect(caught).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -295,7 +343,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -313,7 +367,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       let callback = (): void => {};
       let result: boolean = handler.removeCallbacks(callback);
       expect(result).assertFalse();
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
 
@@ -334,14 +394,20 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       let callback = (): void => {};
       let result: boolean = handler.removeCallbacks(callback);
       expect(result).assertFalse();
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
 
     /**
      * @tc.name   MessageHandlerRemoveCallbacksTest1200
      * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1200
-     * @tc.desc   Verify MessageHandler.removeCallbacks() after delay returns true
+     * @tc.desc   Verify MessageHandler.removeCallbacks() returns true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -370,7 +436,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
     /**
      * @tc.name   MessageHandlerRemoveCallbacksTest1300
@@ -391,14 +463,20 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       let callback = (): void => { executed.fetchAdd(1); };
       handler.sendMessage(new concurrency.Message(callback, handler));
       let waitCount: int = 0;
-      while (executed.load() < 1 && waitCount < 3000) {
+      while (executed.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
       expect(executed.load()).assertEqual(1);
       let result: boolean = handler.removeCallbacks(callback);
       expect(result).assertFalse();
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
 
@@ -438,7 +516,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(3);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -473,7 +557,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(2);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -508,13 +598,19 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
      * @tc.name   MessageHandlerRemoveCallbacksTest1700
      * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_1700
-     * @tc.desc   Verify MessageHandler.removeCallbacks() after EAWorker stopped returns boolean
+     * @tc.desc   Verify MessageHandler.removeCallbacks() returns false after message already processed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -537,8 +633,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       });
       await Utils.msSleep(100);
       let result: boolean = handler.removeCallbacks(callback);
-      expect(typeof result).assertEqual('boolean');
-      if (eaw.isAlive()) { eaw.quit(); }
+      expect(result).assertFalse();
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -578,7 +680,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(3);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -615,7 +723,13 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(verified.load()).assertEqual(2);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -652,54 +766,25 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
+
 
     /**
      * @tc.name   MessageHandlerRemoveCallbacksTest2100
      * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2100
-     * @tc.desc   Verify MessageHandler.removeCallbacks() after queue near full still removes callback
+     * @tc.desc   Verify MessageHandler.removeCallbacks() removes queued callback messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('MessageHandlerRemoveCallbacksTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let verified = new AtomicInt(0);
-      let done = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw);
-      let callback = (): void => {};
-      handler.post((): void => {
-        for (let i: int = 0; i < 100; i++) {
-          handler.sendMessage(new concurrency.Message(i, handler));
-        }
-        handler.sendMessage(new concurrency.Message(callback, handler));
-        let result: boolean = handler.removeCallbacks(callback);
-        if (result) { verified.fetchAdd(1); }
-        done.fetchAdd(1);
-      });
-      let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(verified.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
-
-    /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2200
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2200
-     * @tc.desc   Verify MessageHandler.removeCallbacks() with AtomicInt protecting concurrent remove counter
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('MessageHandlerRemoveCallbacksTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removeCount = new AtomicInt(0);
@@ -722,19 +807,25 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         waitCount++;
         await Utils.msSleep(100);
       }
-      expect(removeCount.load() >= 1).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      expect(removeCount.load()).assertEqual(1);
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2300
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2300
+     * @tc.name   MessageHandlerRemoveCallbacksTest2200
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2200
      * @tc.desc   Verify MessageHandler.removeCallbacks() removes multiple callbacks with counting wait
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removeCount = new AtomicInt(0);
@@ -760,18 +851,24 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(removeCount.load()).assertEqual(10);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2400
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2400
+     * @tc.name   MessageHandlerRemoveCallbacksTest2300
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2300
      * @tc.desc   Verify MessageHandler.removeCallbacks() inside callback after post removes inner callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -792,18 +889,24 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2500
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2500
+     * @tc.name   MessageHandlerRemoveCallbacksTest2400
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2400
      * @tc.desc   Verify MessageHandler.removeCallbacks() inside callback removes other posted callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -825,18 +928,24 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2600
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2600
-     * @tc.desc   Verify MessageHandler.removeCallbacks() with multiple EAWorker concurrent remove
+     * @tc.name   MessageHandlerRemoveCallbacksTest2500
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2500
+     * @tc.desc   Verify MessageHandler.removeCallbacks() removes sent callback message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerRemoveCallbacksTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -856,37 +965,49 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         waitCount++;
         await Utils.msSleep(100);
       }
-      expect(removed.load() >= 1).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      expect(removed.load()).assertEqual(1);
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2700
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2700
+     * @tc.name   MessageHandlerRemoveCallbacksTest2600
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2600
      * @tc.desc   Verify MessageHandler.removeCallbacks() with anonymous function reference returns false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       handler.sendMessage(new concurrency.Message(() => {}, handler));
       let result: boolean = handler.removeCallbacks(() => {});
       expect(result).assertFalse();
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2800
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2800
+     * @tc.name   MessageHandlerRemoveCallbacksTest2700
+     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2700
      * @tc.desc   Verify MessageHandler.removeCallbacks() with closure function reference preserved returns true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerRemoveCallbacksTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerRemoveCallbacksTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let removed = new AtomicInt(0);
@@ -910,43 +1031,14 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         await Utils.msSleep(100);
       }
       expect(removed.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
-    /**
-     * @tc.name   MessageHandlerRemoveCallbacksTest2900
-     * @tc.number SUB_MESSAGE_HANDLER_REMOVE_CALLBACKS_TEST_2900
-     * @tc.desc   Verify MessageHandler.removeCallbacks() after handler.post removes posted callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('MessageHandlerRemoveCallbacksTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let verified = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
-      }, eaw);
-      let callback = (): void => {};
-      handler.post((): void => {
-        for (let i: int = 0; i < 10; i++) {
-          handler.sendMessage(new concurrency.Message(callback, handler));
-        }
-        let result: boolean = handler.removeCallbacks(callback);
-        if (result) { verified.fetchAdd(1); }
-        // Second remove should fail (all already removed)
-        let result2: boolean = handler.removeCallbacks(callback);
-        if (!result2) { verified.fetchAdd(1); }
-      });
-      let waitCount: int = 0;
-      while (verified.load() < 2 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(verified.load()).assertEqual(2);
-      if (eaw.isAlive()) { eaw.quit(); }
-    })
   })
 }

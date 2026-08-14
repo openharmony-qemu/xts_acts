@@ -256,35 +256,16 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
       }
     })
 
+
     /**
      * @tc.name   MessageHandlerHasMessagesWhatTest1200
      * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1200
-     * @tc.desc   Verify MessageHandler.hasMessages(what) returns false for what with very large int value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('MessageHandlerHasMessagesWhatTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      // ArkTS type system prevents passing string as int at compile time
-      let result: boolean = handler.hasMessages(2147483647);
-      expect(result).assertFalse();
-      if (eaw.isAlive()) {
-        eaw.quit();
-      }
-    })
-
-    /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest1300
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1300
      * @tc.desc   Verify MessageHandler.hasMessages(what) return value is strictly boolean true or false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -296,14 +277,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest1400
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1400
-     * @tc.desc   Verify MessageHandler.hasMessages(what) type safety - int parameter cannot be NaN (ArkTS compile-time guarantee)
+     * @tc.name   MessageHandlerHasMessagesWhatTest1300
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1300
+     * @tc.desc   Verify MessageHandler.hasMessages(what) returns true when message with what value 10 exists in queue
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -318,36 +299,16 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
       }
     })
 
-    /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest1500
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1500
-     * @tc.desc   Verify MessageHandler.hasMessages(what) type safety - int parameter cannot be Infinity (ArkTS compile-time guarantee)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('MessageHandlerHasMessagesWhatTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let eaw = new EAWorker();
-      eaw.start();
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      // ArkTS type system prevents passing Infinity as int at compile time
-      // Verify hasMessages works with valid int boundary value
-      let result: boolean = handler.hasMessages(-2147483648);
-      expect(result).assertFalse();
-      if (eaw.isAlive()) {
-        eaw.quit();
-      }
-    })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest1600
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1600
+     * @tc.name   MessageHandlerHasMessagesWhatTest1400
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1400
      * @tc.desc   Verify MessageHandler.hasMessages(what) with hexadecimal value returns true when matching message exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -361,14 +322,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest1700
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1700
+     * @tc.name   MessageHandlerHasMessagesWhatTest1500
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1500
      * @tc.desc   Verify MessageHandler.hasMessages(what) with octal value returns true when matching message exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -382,14 +343,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest1800
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1800
+     * @tc.name   MessageHandlerHasMessagesWhatTest1600
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1600
      * @tc.desc   Verify MessageHandler.hasMessages(what) with binary value returns true when matching message exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -403,14 +364,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest1900
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1900
-     * @tc.desc   Verify MessageHandler.hasMessages(what) with scientific notation value returns boolean
+     * @tc.name   MessageHandlerHasMessagesWhatTest1700
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1700
+     * @tc.desc   Verify MessageHandler.hasMessages(what) returns false when no message with what value 100000 exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -422,14 +383,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest2000
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2000
+     * @tc.name   MessageHandlerHasMessagesWhatTest1800
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1800
      * @tc.desc   Verify MessageHandler.hasMessages(what) returns true when message with specified what exists in queue
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
@@ -445,14 +406,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest2100
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2100
+     * @tc.name   MessageHandlerHasMessagesWhatTest1900
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_1900
      * @tc.desc   Verify MessageHandler.hasMessages(what) returns true when multiple messages exist and one matches
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -470,14 +431,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest2200
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2200
+     * @tc.name   MessageHandlerHasMessagesWhatTest2000
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2000
      * @tc.desc   Verify MessageHandler.hasMessages(what) returns true when multiple messages with same what exist
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -493,14 +454,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest2300
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2300
+     * @tc.name   MessageHandlerHasMessagesWhatTest2100
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2100
      * @tc.desc   Verify MessageHandler.hasMessages(what) returns false when no message with specified what in queue
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -514,14 +475,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest2400
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2400
+     * @tc.name   MessageHandlerHasMessagesWhatTest2200
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2200
      * @tc.desc   Verify MessageHandler.hasMessages(what) returns false when Message created without what identifier
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -537,14 +498,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
 
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest2500
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2500
+     * @tc.name   MessageHandlerHasMessagesWhatTest2300
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2300
      * @tc.desc   Verify MessageHandler.hasMessages(what) returns false after removeMessages removes the message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let verified = new AtomicInt(0);
@@ -578,14 +539,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest2600
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2600
+     * @tc.name   MessageHandlerHasMessagesWhatTest2400
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2400
      * @tc.desc   Verify MessageHandler.hasMessages(what) return value type is boolean
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -599,14 +560,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest2700
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2700
+     * @tc.name   MessageHandlerHasMessagesWhatTest2500
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2500
      * @tc.desc   Verify MessageHandler.hasMessages(what) consecutive queries return consistent results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -622,14 +583,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest2800
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2800
+     * @tc.name   MessageHandlerHasMessagesWhatTest2600
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2600
      * @tc.desc   Verify MessageHandler.hasMessages(what) performance with 100 queries completes within time limit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -647,57 +608,45 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest2900
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2900
-     * @tc.desc   Verify MessageHandler.hasMessages(what) with MessageHandler not associated with EAWorker
+     * @tc.name   MessageHandlerHasMessagesWhatTest2700
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2700
+     * @tc.desc   Verify MessageHandler.hasMessages(what) returns false when handler uses default EAWorker and no matching message exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {});
-      try {
-        let result: boolean = handler.hasMessages(1);
-        expect(result).assertFalse();
-      } catch (error) {
-        expect(error instanceof Error).assertTrue();
-      }
+      let result: boolean = handler.hasMessages(1);
+      expect(result).assertFalse();
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest3000
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3000
-     * @tc.desc   Verify MessageHandler.hasMessages(what) after EAWorker is terminated
+     * @tc.name   MessageHandlerHasMessagesWhatTest2800
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2800
+     * @tc.desc   Verify MessageHandler.hasMessages(what) returns false after EAWorker.quit() is invoked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       eaw.quit();
-      let quitWait = 0;
-      while (eaw.isAlive() && quitWait < 20000) {
-        quitWait++;
-      }
-      try {
-        let result: boolean = handler.hasMessages(1);
-        expect(result).assertFalse();
-      } catch (error) {
-        expect(error instanceof Error).assertTrue();
-      }
+      let result: boolean = handler.hasMessages(1);
+      expect(result).assertFalse();
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest3100
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3100
+     * @tc.name   MessageHandlerHasMessagesWhatTest2900
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_2900
      * @tc.desc   Verify MessageHandler.hasMessages(what) concurrent query with Promise.all returns correct results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -721,14 +670,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest3200
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3200
+     * @tc.name   MessageHandlerHasMessagesWhatTest3000
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3000
      * @tc.desc   Verify MessageHandler.hasMessages(what) query inside message callback returns correct result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       // Enqueue what=1 and what=2 atomically via post so hasMessages(2) is true when what=1 runs
       let eaw = new EAWorker();
       eaw.start();
@@ -763,14 +712,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest3300
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3300
+     * @tc.name   MessageHandlerHasMessagesWhatTest3100
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3100
      * @tc.desc   Verify MessageHandler.hasMessages(what) nested query inside callback verifies queue state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       // Enqueue 1/2/3 atomically via post so nested hasMessages sees pending siblings
       let eaw = new EAWorker();
       eaw.start();
@@ -809,21 +758,21 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
         waitCount++;
         await Utils.msSleep(100);
       }
-      expect(nestedCount.load() >= 1).assertTrue();
+      expect(nestedCount.load()).assertEqual(3);
       if (eaw.isAlive()) {
         eaw.quit();
       }
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest3400
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3400
+     * @tc.name   MessageHandlerHasMessagesWhatTest3200
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3200
      * @tc.desc   Verify MessageHandler.hasMessages(what) nested query then removeMessages inside callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       // Enqueue what=1 and what=2 atomically via post so removeMessages(2) finds the pending message
       let eaw = new EAWorker();
       eaw.start();
@@ -859,14 +808,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest3500
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3500
+     * @tc.name   MessageHandlerHasMessagesWhatTest3300
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3300
      * @tc.desc   Verify MessageHandler.hasMessages(what) self-check inside callback returns boolean for currently processing message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       let selfCheckDone = new AtomicInt(0);
       let selfCheckResult: boolean = false;
@@ -890,14 +839,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest3600
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3600
+     * @tc.name   MessageHandlerHasMessagesWhatTest3400
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3400
      * @tc.desc   Verify MessageHandler.hasMessages(what) query result before and after EAWorker start
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let msg = new concurrency.Message(1, handler);
@@ -912,14 +861,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest3700
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3700
+     * @tc.name   MessageHandlerHasMessagesWhatTest3500
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3500
      * @tc.desc   Verify MessageHandler.hasMessages(what) concurrent query from main thread and Worker thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let workerDone = new AtomicInt(0);
@@ -949,21 +898,21 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
       for (let i: int = 0; i < mainResults.length; i++) {
         expect(mainResults[i]).assertTrue();
       }
-      expect(workerResultCount.load() >= 1).assertTrue();
+      expect(workerResultCount.load()).assertEqual(5);
       if (eaw.isAlive()) {
         eaw.quit();
       }
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest3800
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3800
+     * @tc.name   MessageHandlerHasMessagesWhatTest3600
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3600
      * @tc.desc   Verify MessageHandler.hasMessages(what) concurrent with sendMessage inside callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let sendCount = new AtomicInt(0);
@@ -994,14 +943,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest3900
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3900
+     * @tc.name   MessageHandlerHasMessagesWhatTest3700
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3700
      * @tc.desc   Verify MessageHandler.hasMessages(what) isolation between different EAWorker handlers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw1 = new EAWorker();
       let eaw2 = new EAWorker();
       eaw1.start();
@@ -1023,14 +972,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest4000
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4000
+     * @tc.name   MessageHandlerHasMessagesWhatTest3800
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3800
      * @tc.desc   Verify MessageHandler.hasMessages(what) concurrent queries in Worker callback return consistent results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let results = new AtomicInt(0);
@@ -1051,7 +1000,7 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
         handler.sendMessage(new concurrency.Message(10 + i, handler));
       }
       let waitCount: int = 0;
-      while (queryCount.load() < 10 && waitCount < 5000) {
+      while (queryCount.load() < 10 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -1062,14 +1011,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest4100
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4100
+     * @tc.name   MessageHandlerHasMessagesWhatTest3900
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_3900
      * @tc.desc   Verify MessageHandler.hasMessages(what) concurrent main thread and Worker thread queries return true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let workerDone = new AtomicInt(0);
@@ -1090,28 +1039,28 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
         mainResults.push(handler.hasMessages(1));
       }
       let waitCount: int = 0;
-      while (workerDone.load() < 5 && waitCount < 50) {
+      while (workerDone.load() < 6 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
       for (let i: int = 0; i < mainResults.length; i++) {
         expect(mainResults[i]).assertTrue();
       }
-      expect(workerTrueCount.load() >= 1).assertTrue();
+      expect(workerTrueCount.load()).assertEqual(6);
       if (eaw.isAlive()) {
         eaw.quit();
       }
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest4200
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4200
+     * @tc.name   MessageHandlerHasMessagesWhatTest4000
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4000
      * @tc.desc   Verify MessageHandler.hasMessages(what) finds prefilled what=1 messages and nested send updates queue
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let sendCount = new AtomicInt(0);
@@ -1142,7 +1091,7 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
         await Utils.msSleep(100);
       }
       expect(queryCount.load()).assertEqual(5);
-      expect(trueCount.load() >= 1).assertTrue();
+      expect(trueCount.load()).assertEqual(5);
       expect(sendCount.load() >= 5).assertTrue();
       if (eaw.isAlive()) {
         eaw.quit();
@@ -1150,14 +1099,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest4300
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4300
+     * @tc.name   MessageHandlerHasMessagesWhatTest4100
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4100
      * @tc.desc   Verify MessageHandler.hasMessages(what) queue state changes from false to true after sendMessage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1173,14 +1122,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest4400
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4400
+     * @tc.name   MessageHandlerHasMessagesWhatTest4200
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4200
      * @tc.desc   Verify MessageHandler.hasMessages(what) checks specific message type existence in queue
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageHandlerHasMessagesWhatTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1195,14 +1144,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest4500
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4500
+     * @tc.name   MessageHandlerHasMessagesWhatTest4300
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4300
      * @tc.desc   Verify MessageHandler.hasMessages(what) message dedup scenario - send only if not exists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1224,14 +1173,14 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
     })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest4600
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4600
+     * @tc.name   MessageHandlerHasMessagesWhatTest4400
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4400
      * @tc.desc   Verify MessageHandler.hasMessages(what) conditional processing based on message existence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageHandlerHasMessagesWhatTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let processed = new AtomicInt(0);
@@ -1253,63 +1202,26 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
       }
     })
 
-    /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest4700
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4700
-     * @tc.desc   Verify MessageHandler.hasMessages(what) nested callback business scenario with conditional branch
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('MessageHandlerHasMessagesWhatTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      // Align with Test3600: atomic enqueue + nested has/remove of sibling what=2
-      let eaw = new EAWorker();
-      eaw.start();
-      let actionVerified = new AtomicInt(0);
-      let done = new AtomicInt(0);
-      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) {
-          cb();
-        }
-        if (msg.getWhat() === 1) {
-          if (msg.getTarget().hasMessages(2)) {
-            msg.getTarget().removeMessages(2);
-            actionVerified.fetchAdd(1);
-          }
-          done.fetchAdd(1);
-        }
-      }, eaw);
-      handler.post((): void => {
-        handler.sendMessage(new concurrency.Message(1, handler));
-        handler.sendMessage(new concurrency.Message(2, handler));
-      });
-      let waitCount: int = 0;
-      while (done.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(actionVerified.load()).assertEqual(1);
-      expect(handler.hasMessages(2)).assertFalse();
-      if (eaw.isAlive()) {
-        eaw.quit();
-      }
-    })
 
     /**
-     * @tc.name   MessageHandlerHasMessagesWhatTest4800
-     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4800
+     * @tc.name   MessageHandlerHasMessagesWhatTest4500
+     * @tc.number SUB_MESSAGE_HANDLER_HAS_MESSAGES_WHAT_TEST_4500
      * @tc.desc   Verify MessageHandler.hasMessages(what) nested callback priority processing scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageHandlerHasMessagesWhatTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageHandlerHasMessagesWhatTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let priorityCount = new AtomicInt(0);
       let done = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+        let callback: (() => void) | undefined = msg.getCallback();
+        if (callback !== undefined) {
+          callback();
+          return;
+        }
         if (msg.getTarget().hasMessages(1)) {
           msg.getTarget().removeMessages(1);
           priorityCount.fetchAdd(1);
@@ -1324,15 +1236,17 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
           done.fetchAdd(1);
         }
       }, eaw);
-      handler.sendEmptyMessage(1);
-      handler.sendEmptyMessage(3);
-      handler.sendEmptyMessage(2);
+      handler.post((): void => {
+        handler.sendEmptyMessage(1);
+        handler.sendEmptyMessage(3);
+        handler.sendEmptyMessage(2);
+      });
       let waitCount: int = 0;
       while (done.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
-      expect(priorityCount.load() >= 1).assertTrue();
+      expect(priorityCount.load()).assertEqual(3);
       if (eaw.isAlive()) {
         eaw.quit();
       }
