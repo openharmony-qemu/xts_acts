@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -71,7 +71,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -97,7 +97,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -123,7 +123,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -149,7 +149,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -174,7 +174,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -199,7 +199,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -228,7 +228,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -257,7 +257,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -284,7 +284,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -311,7 +311,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -337,7 +337,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -364,7 +364,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -389,7 +389,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -415,7 +415,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -441,7 +441,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -466,7 +466,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -492,7 +492,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -517,7 +517,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -543,7 +543,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -568,7 +568,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -594,7 +594,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -620,7 +620,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -646,7 +646,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -678,7 +678,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -704,7 +704,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -733,7 +733,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -758,7 +758,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -783,7 +783,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -808,7 +808,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -833,7 +833,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -858,7 +858,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -883,7 +883,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -908,7 +908,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -935,7 +935,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -960,7 +960,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -985,7 +985,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1011,7 +1011,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1037,6 +1037,7 @@ export default function MessageGetObjectTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -1047,7 +1048,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1076,7 +1077,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1102,6 +1103,7 @@ export default function MessageGetObjectTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -1112,7 +1114,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1143,7 +1145,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1175,6 +1177,7 @@ export default function MessageGetObjectTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
 
@@ -1186,7 +1189,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1214,7 +1217,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1242,7 +1245,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1269,7 +1272,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1297,7 +1300,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1325,7 +1328,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetObjectTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetObjectTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1361,7 +1364,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1389,7 +1392,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1416,7 +1419,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1442,7 +1445,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageGetObjectTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageGetObjectTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1468,7 +1471,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageGetObjectTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageGetObjectTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1494,7 +1497,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageGetObjectTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageGetObjectTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1520,7 +1523,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageGetObjectTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageGetObjectTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1546,7 +1549,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetObjectTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetObjectTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1571,7 +1574,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1602,7 +1605,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
@@ -1632,7 +1635,7 @@ export default function MessageGetObjectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetObjectTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetObjectTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {

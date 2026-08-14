@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,7 +36,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorCallbackTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -57,7 +57,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorCallbackTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -79,7 +79,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -96,7 +96,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -115,7 +115,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -136,7 +136,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -159,7 +159,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorCallbackTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -176,7 +176,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let processed = new AtomicInt(0);
@@ -199,7 +199,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorCallbackTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -220,7 +220,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -240,7 +240,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -258,7 +258,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorCallbackTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -276,7 +276,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorCallbackTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -295,7 +295,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorCallbackTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -312,7 +312,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorCallbackTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -329,7 +329,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorCallbackTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -346,7 +346,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -365,7 +365,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -383,7 +383,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -401,7 +401,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -431,7 +431,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -459,7 +459,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorCallbackTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -478,7 +478,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let callbackExecuted = new AtomicInt(0);
@@ -503,6 +503,7 @@ export default function MessageConstructorCallbackTest(): void {
       expect(messageProcessed.load()).assertEqual(1);
       expect(callbackExecuted.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -513,7 +514,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handlerStep = new AtomicInt(0);
@@ -544,6 +545,7 @@ export default function MessageConstructorCallbackTest(): void {
       expect(callbackStep.load()).assertEqual(1);
       expect(handlerOrder.load() < callbackOrder.load()).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -554,7 +556,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -576,6 +578,7 @@ export default function MessageConstructorCallbackTest(): void {
       }
       expect(counter.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -586,7 +589,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -613,7 +616,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let chainCount = new AtomicInt(0);
@@ -639,6 +642,7 @@ export default function MessageConstructorCallbackTest(): void {
       }
       expect(chainCount.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -649,7 +653,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let processedCount = new AtomicInt(0);
@@ -676,6 +680,7 @@ export default function MessageConstructorCallbackTest(): void {
       expect(processedCount.load()).assertEqual(5);
       expect(callbackCount.load()).assertEqual(5);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -686,7 +691,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let sharedCounter = new AtomicInt(0);
@@ -715,7 +720,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let nestedCreated = new AtomicInt(0);
@@ -745,6 +750,7 @@ export default function MessageConstructorCallbackTest(): void {
       }
       expect(nestedCreated.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -755,7 +761,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let nestedMessageCreated = new AtomicInt(0);
@@ -781,6 +787,7 @@ export default function MessageConstructorCallbackTest(): void {
       }
       expect(nestedMessageCreated.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -791,7 +798,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let secondCallbackExecuted = new AtomicInt(0);
@@ -817,6 +824,7 @@ export default function MessageConstructorCallbackTest(): void {
       }
       expect(secondCallbackExecuted.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -827,7 +835,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageConstructorCallbackTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -850,7 +858,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageConstructorCallbackTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -869,7 +877,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageConstructorCallbackTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -891,7 +899,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageConstructorCallbackTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -915,7 +923,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let order = new AtomicInt(0);
@@ -941,6 +949,7 @@ export default function MessageConstructorCallbackTest(): void {
       expect(order.load()).assertEqual(3);
       expect(callbackCount.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -951,7 +960,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let chainResult = new AtomicInt(0);
@@ -980,6 +989,7 @@ export default function MessageConstructorCallbackTest(): void {
       }
       expect(chainResult.load()).assertEqual(4);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -990,7 +1000,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let createdCount = new AtomicInt(0);
@@ -1003,6 +1013,7 @@ export default function MessageConstructorCallbackTest(): void {
       await Promise.all([createAndCount(), createAndCount(), createAndCount()]);
       expect(createdCount.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -1013,7 +1024,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter = new AtomicInt(0);
@@ -1043,6 +1054,7 @@ export default function MessageConstructorCallbackTest(): void {
       expect(counter.load()).assertEqual(10);
       expect(callbackCount.load()).assertEqual(10);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -1053,7 +1065,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let completed = new AtomicInt(0);
@@ -1074,6 +1086,7 @@ export default function MessageConstructorCallbackTest(): void {
       }
       expect(completed.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -1084,7 +1097,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let retryCount = new AtomicInt(0);
@@ -1120,7 +1133,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let eventTriggered = new AtomicInt(0);
@@ -1144,6 +1157,7 @@ export default function MessageConstructorCallbackTest(): void {
       }
       expect(eventTriggered.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -1154,7 +1168,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageConstructorCallbackTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let eventCount = new AtomicInt(0);
@@ -1175,6 +1189,7 @@ export default function MessageConstructorCallbackTest(): void {
       }
       expect(eventCount.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -1185,7 +1200,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1204,7 +1219,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1223,7 +1238,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1242,7 +1257,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1262,7 +1277,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageConstructorCallbackTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1281,7 +1296,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorCallbackTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let callbackExecuted = new AtomicInt(0);
@@ -1303,6 +1318,7 @@ export default function MessageConstructorCallbackTest(): void {
       }
       expect(callbackExecuted.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -1313,7 +1329,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageConstructorCallbackTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -1336,7 +1352,7 @@ export default function MessageConstructorCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageConstructorCallbackTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageConstructorCallbackTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);

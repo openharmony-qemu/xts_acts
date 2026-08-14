@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageSendToTargetTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageSendToTargetTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -60,6 +60,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -70,7 +71,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageSendToTargetTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageSendToTargetTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let receivedWhat: AtomicInt = new AtomicInt(-1);
@@ -95,6 +96,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -105,7 +107,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageSendToTargetTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageSendToTargetTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let objData: string = "hello";
@@ -134,6 +136,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -144,7 +147,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageSendToTargetTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageSendToTargetTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let callbackExecuted: AtomicInt = new AtomicInt(0);
@@ -175,6 +178,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -185,7 +189,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageSendToTargetTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageSendToTargetTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -209,6 +213,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -219,7 +224,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageSendToTargetTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageSendToTargetTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -248,6 +253,7 @@ export default function MessageSendToTargetTest(): void {
       }
       await Utils.msSleep(100);
       expect(counter.load()).assertEqual(1);
+      done();
     })
 
     /**
@@ -258,7 +264,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageSendToTargetTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageSendToTargetTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -288,6 +294,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -298,7 +305,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageSendToTargetTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageSendToTargetTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -326,6 +333,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -336,7 +344,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -361,6 +369,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -371,7 +380,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -393,6 +402,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -403,7 +413,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -427,6 +437,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -437,7 +448,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let nestedCounter: AtomicInt = new AtomicInt(0);
@@ -466,6 +477,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -476,7 +488,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -504,6 +516,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -514,7 +527,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let state: AtomicInt = new AtomicInt(0);
@@ -546,6 +559,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -556,7 +570,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -580,6 +594,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -590,7 +605,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -616,6 +631,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -626,7 +642,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -659,6 +675,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -669,7 +686,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -694,6 +711,7 @@ export default function MessageSendToTargetTest(): void {
       msg2.sendToTarget();
       await Utils.msSleep(100);
       expect(counter.load()).assertEqual(1);
+      done();
     })
 
     /**
@@ -704,7 +722,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let state: AtomicInt = new AtomicInt(0);
@@ -730,6 +748,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -740,7 +759,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -769,6 +788,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -779,7 +799,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -804,6 +824,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -814,7 +835,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageSendToTargetTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageSendToTargetTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handlerCalled: AtomicInt = new AtomicInt(0);
@@ -858,6 +879,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -868,7 +890,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageSendToTargetTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageSendToTargetTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let receivedLength: AtomicInt = new AtomicInt(0);
@@ -900,6 +922,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -910,7 +933,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageSendToTargetTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageSendToTargetTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let receivedWhat: AtomicInt = new AtomicInt(0);
@@ -934,6 +957,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -944,7 +968,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageSendToTargetTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageSendToTargetTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let receivedWhat: AtomicInt = new AtomicInt(-1);
@@ -976,6 +1000,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -986,7 +1011,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('MessageSendToTargetTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('MessageSendToTargetTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -1010,6 +1035,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -1020,7 +1046,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -1044,6 +1070,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -1054,7 +1081,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -1079,6 +1106,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -1089,7 +1117,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageSendToTargetTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageSendToTargetTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let processed: AtomicInt = new AtomicInt(0);
@@ -1129,6 +1157,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -1139,7 +1168,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageSendToTargetTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageSendToTargetTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let processed: AtomicInt = new AtomicInt(0);
@@ -1167,6 +1196,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
 
     /**
@@ -1177,7 +1207,7 @@ export default function MessageSendToTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageSendToTargetTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageSendToTargetTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -1202,6 +1232,7 @@ export default function MessageSendToTargetTest(): void {
           console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
         }
       }
+      done();
     })
   })
 }

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetTargetTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetTargetTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -58,7 +58,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetTargetTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetTargetTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let EmptyMessageType: int = 1;
@@ -77,7 +77,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetTargetTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetTargetTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let StringMessage: int = 2;
@@ -96,7 +96,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetTargetTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetTargetTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -115,7 +115,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetTargetTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -132,6 +132,7 @@ export default function MessageGetTargetTest(): void {
       }
       expect(counter.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -142,7 +143,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetTargetTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handlerCallCount: AtomicInt = new AtomicInt(0);
@@ -159,6 +160,7 @@ export default function MessageGetTargetTest(): void {
       }
       expect(handlerCallCount.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -169,7 +171,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetTargetTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetTargetTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw1 = new EAWorker();
       eaw1.start();
       let eaw2 = new EAWorker();
@@ -194,7 +196,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetTargetTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetTargetTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -218,7 +220,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetTargetTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -237,6 +239,7 @@ export default function MessageGetTargetTest(): void {
       expect(counter.load()).assertEqual(1);
       expect(targetHolder === messageHandler).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
 
@@ -249,7 +252,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetTargetTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -268,6 +271,7 @@ export default function MessageGetTargetTest(): void {
       expect(counter.load()).assertEqual(1);
       expect(targetHolder === messageHandler).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -278,7 +282,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetTargetTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -303,7 +307,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetTargetTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handlerExecuted: AtomicInt = new AtomicInt(0);
@@ -323,6 +327,7 @@ export default function MessageGetTargetTest(): void {
       expect(targetAfter === messageHandler).assertTrue();
       expect(targetBefore === targetAfter).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -333,7 +338,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetTargetTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -349,6 +354,7 @@ export default function MessageGetTargetTest(): void {
       }
       expect(counter.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -359,7 +365,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetTargetTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let receivedWhat: AtomicInt = new AtomicInt(-1);
@@ -385,6 +391,7 @@ export default function MessageGetTargetTest(): void {
       let targetAfterSend: concurrency.MessageHandler = msg.getTarget();
       expect(targetAfterSend === messageHandler).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -395,7 +402,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetTargetTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetTargetTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let whatValue: int = 100;
@@ -414,7 +421,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetTargetTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetTargetTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let objData: string = "test_object";
@@ -435,7 +442,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetTargetTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetTargetTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let callbackExecuted: boolean = false;
@@ -458,7 +465,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetTargetTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let handlerExecuted: AtomicInt = new AtomicInt(0);
@@ -475,6 +482,7 @@ export default function MessageGetTargetTest(): void {
       }
       expect(handlerExecuted.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -485,7 +493,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetTargetTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetTargetTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -506,7 +514,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetTargetTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -525,7 +533,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetTargetTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -554,7 +562,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetTargetTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let callCount: AtomicInt = new AtomicInt(0);
@@ -574,6 +582,7 @@ export default function MessageGetTargetTest(): void {
       }
       expect(callCount.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -584,7 +593,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetTargetTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -605,7 +614,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetTargetTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetTargetTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -625,7 +634,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MessageGetTargetTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('MessageGetTargetTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -651,7 +660,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetTargetTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -671,6 +680,7 @@ export default function MessageGetTargetTest(): void {
       expect(counter.load()).assertEqual(1);
       expect(targetHolder === messageHandler).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
+      done();
     })
 
     /**
@@ -681,7 +691,7 @@ export default function MessageGetTargetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MessageGetTargetTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('MessageGetTargetTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let eaw = new EAWorker();
       eaw.start();
       try {
