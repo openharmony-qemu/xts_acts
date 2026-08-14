@@ -915,13 +915,14 @@ struct WebConfigCookieSync {
                     console.log('emitEtsFetchCookieSyncIncognitoNull014 cookie : ' + resultValue);
                   } catch (error) {
                     let e: business_error.BusinessError = error as business_error.BusinessError;
-                    console.error(`emitEtsFetchCookieSyncIncognitoNull014 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    console.error('emitEtsFetchCookieSyncIncognitoNull014 ErrorCode: ' + e.code +
+                      ',  Message: ' + e.message);
                     resultValue = String(e.code)
                   }
                   if (resultValue === 'incog=null' || resultValue === '401') {
-                    Utils.emitEvent(true, 148050)
+                    Utils.emitEvent(true, 148043)
                   } else {
-                    Utils.emitEvent(false, 148050)
+                    Utils.emitEvent(false, 148043)
                   }
                   break
                 }
@@ -934,13 +935,14 @@ struct WebConfigCookieSync {
                     console.log('emitEtsFetchCookieSyncIncognitoUndefined015 cookie : ' + resultValue);
                   } catch (error) {
                     let e: business_error.BusinessError = error as business_error.BusinessError;
-                    console.error(`emitEtsFetchCookieSyncIncognitoUndefined015 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    console.error('emitEtsFetchCookieSyncIncognitoUndefined015 ErrorCode: ' + e.code +
+                      ',  Message: ' + e.message);
                     resultValue = String(e.code)
                   }
                   if (resultValue === 'incog=undefined' || resultValue === '401') {
-                    Utils.emitEvent(true, 148060)
+                    Utils.emitEvent(true, 148044)
                   } else {
-                    Utils.emitEvent(false, 148060)
+                    Utils.emitEvent(false, 148044)
                   }
                   break
                 }
@@ -955,20 +957,22 @@ struct WebConfigCookieSync {
                         resultValue = cookie
                       })
                       .catch((error: business_error.BusinessError) => {
-                        console.error(`emitEtsFetchCookieIncognitoNull016 ErrorCode: ${error.code},  Message: ${error.message}`);
+                        console.error('emitEtsFetchCookieIncognitoNull016 ErrorCode: ' + error.code +
+                          ',  Message: ' + error.message);
                         resultValue = String(error.code)
                       })
                   } catch (error) {
                     let e: business_error.BusinessError = error as business_error.BusinessError;
-                    console.error(`emitEtsFetchCookieIncognitoNull016 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    console.error('emitEtsFetchCookieIncognitoNull016 ErrorCode: ' + e.code +
+                      ',  Message: ' + e.message);
                     resultValue = String(e.code)
                   }
                   await waitForExist(() => (resultValue === 'async_incog=null' || resultValue === '401'),
                     'emitEtsFetchCookieIncognitoNull016', true, 200)
                   if (resultValue === 'async_incog=null' || resultValue === '401') {
-                    Utils.emitEvent(true, 148070)
+                    Utils.emitEvent(true, 148045)
                   } else {
-                    Utils.emitEvent(false, 148070)
+                    Utils.emitEvent(false, 148045)
                   }
                   break
                 }
@@ -983,20 +987,22 @@ struct WebConfigCookieSync {
                         resultValue = cookie
                       })
                       .catch((error: business_error.BusinessError) => {
-                        console.error(`emitEtsFetchCookieIncognitoUndefined017 ErrorCode: ${error.code},  Message: ${error.message}`);
+                        console.error('emitEtsFetchCookieIncognitoUndefined017 ErrorCode: ' + error.code +
+                          ',  Message: ' + error.message);
                         resultValue = String(error.code)
                       })
                   } catch (error) {
                     let e: business_error.BusinessError = error as business_error.BusinessError;
-                    console.error(`emitEtsFetchCookieIncognitoUndefined017 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    console.error('emitEtsFetchCookieIncognitoUndefined017 ErrorCode: ' + e.code +
+                      ',  Message: ' + e.message);
                     resultValue = String(e.code)
                   }
                   await waitForExist(() => (resultValue === 'async_incog=undefined' || resultValue === '401'),
                     'emitEtsFetchCookieIncognitoUndefined017', true, 200)
                   if (resultValue === 'async_incog=undefined' || resultValue === '401') {
-                    Utils.emitEvent(true, 148080)
+                    Utils.emitEvent(true, 148046)
                   } else {
-                    Utils.emitEvent(false, 148080)
+                    Utils.emitEvent(false, 148046)
                   }
                   break
                 }
