@@ -23,7 +23,7 @@ import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 
 
-export default function GetWindowIdTest() {
+export default function GetWindowIdTest(): void {
   describe('GetWindowIdTest', () => {
 
     beforeAll(async (): Promise<void> => {

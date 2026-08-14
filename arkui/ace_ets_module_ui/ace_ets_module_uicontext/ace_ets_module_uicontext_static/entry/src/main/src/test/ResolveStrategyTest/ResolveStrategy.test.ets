@@ -31,7 +31,7 @@ function getContentByKey(key: string): string {
   return inspectorObj.getElement('$attrs').getString('content');
 }
 
-export default function ResolveStrategyTest() {
+export default function ResolveStrategyTest(): void {
   describe('ResolveStrategyTest', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility('com.arkui.ace.ets.module.uicontext.static', 'EntryAbility');

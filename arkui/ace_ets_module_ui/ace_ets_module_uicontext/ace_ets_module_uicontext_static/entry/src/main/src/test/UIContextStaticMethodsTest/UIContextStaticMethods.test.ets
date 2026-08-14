@@ -37,7 +37,7 @@ function arkuiNewErr(suite: string, phase: string, detail: string): void {
 }
 
 
-export default function UIContextStaticMethodsTest() {
+export default function UIContextStaticMethodsTest(): void {
   describe('UIContextStaticMethodsTest', () => {
     beforeAll(async (): Promise<void> => {
       arkuiNewLog(SUITE, 'beforeAll', 'start');
