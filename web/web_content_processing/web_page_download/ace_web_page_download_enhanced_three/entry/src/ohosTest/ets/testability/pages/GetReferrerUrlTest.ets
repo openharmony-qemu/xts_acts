@@ -222,7 +222,7 @@ struct GetReferrerUrlTest {
                 this.activeTestCase = 'testGetOriginal001';
                 this.originalUrl = ''
                 this.startPrimaryDownload();
-                await waitForExist(() => this.originalUrl, this.str, null);
+                await waitForExist(() => this.originalUrl !== '' ? this.originalUrl : null, this.str, null);
                 let result = false
                 if (this.originalUrl == DOWNLOAD_URL || this.originalUrl == this.currentDownloadUrl) {
                   result = true

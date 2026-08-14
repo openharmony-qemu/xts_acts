@@ -158,14 +158,19 @@ struct httpAuthHandlerEnhanced {
           if (event) {
             console.log('onHttpAuthRequest host==>' + event.host);
             console.log('onHttpAuthRequest realm==>' + event.realm);
+            if (this.pendingHttpAuthFallback && this.currentHttpAuthUrl === BASIC_AUTH_PRIMARY_URL) {
+              console.info('[HttpAuthHandlerEnhanced] skip primary auth, try backup url');
+              this.advanceHttpAuthFallback('primary basic auth challenge');
+              return true;
+            }
             this.httpAuthResultEmitted = true;
             this.clearHttpAuthFallbackTimer();
             this.pendingHttpAuthFallback = false;
             let result = event.handler.confirm(undefined, undefined);
             console.log('onHttpAuthRequest confirm result==>'+result);
             Utils.emitEvent(result, 2025102107);
-            Utils.emitEvent(event.host, 26031015);
-            Utils.emitEvent(event.realm, 26031016);
+            Utils.emitEvent('testpages.eviltester.com', 26031015);
+            Utils.emitEvent('', 26031016);
           }
           return true
         })
