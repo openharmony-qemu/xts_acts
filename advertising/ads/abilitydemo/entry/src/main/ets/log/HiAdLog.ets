@@ -24,19 +24,19 @@ class Logger {
     this.tag = 0xFF00;
   }
 
-  d(...args: any[]) {
+  d(...args: string[]): void {
     hilog.debug(this.tag, this.pre, this.format, args);
   }
 
-  i(...args: any[]) {
+  i(...args: string[]): void {
     hilog.info(this.tag, this.pre, this.format, args);
   }
 
-  w(...args: any[]) {
+  w(...args: string[]): void {
     hilog.warn(this.tag, this.pre, this.format, args);
   }
 
-  e(...args: any[]) {
+  e(...args: string[]): void {
     hilog.error(this.tag, this.pre, this.format, args);
   }
 }

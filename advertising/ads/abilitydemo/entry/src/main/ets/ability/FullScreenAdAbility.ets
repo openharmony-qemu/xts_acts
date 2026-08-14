@@ -13,29 +13,32 @@
  * limitations under the License.
  */
 import UIAbility from '@ohos.app.ability.UIAbility';
+import Want from '@ohos.app.ability.Want';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
+import { BusinessError } from '@ohos.base';
 import { FullScreenAdEventPublish } from "../publish/FullScreenAdEventPublish";
 import Logger from '../log/HiAdLog';
 
 const TAG = 'FullScreenAdAbility';
 
 export default class FullScreenAdAbility extends UIAbility {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     let fullScreenAdEventPublish = FullScreenAdEventPublish.getInstance();
     fullScreenAdEventPublish.publishEvents("onAdOpen");
     let name = want?.bundleName;
     Logger.i(TAG, `testTag, Ability onCreate is : ${name}`);
-    let AdDisplayOptions = want?.parameters["AdDisplayOptions"];
+    let AdDisplayOptions: Object | undefined = want?.parameters?.["AdDisplayOptions"] as Object;
     Logger.i(TAG, `testTag, Ability onCreate is : ${AdDisplayOptions}`);
   }
 
-  onDestroy() {
+  onDestroy(): void {
     Logger.i(TAG, 'FullScreenAdAbility onDestroy');
   }
 
-  async onWindowStageCreate(windowStage: window.WindowStage) {
+  async onWindowStageCreate(windowStage: window.WindowStage): Promise<void> {
     Logger.i(TAG, 'FullScreenAdAbility onWindowStageCreate');
-    windowStage.loadContent('pages/FullScreenAdPage', (err, data) => {
+    windowStage.loadContent('pages/FullScreenAdPage', (err: BusinessError) => {
       if (err.code) {
         Logger.i(TAG, 'Failed to load the content.');
         return;
@@ -44,17 +47,17 @@ export default class FullScreenAdAbility extends UIAbility {
     });
   }
 
-  onWindowStageDestroy() {
+  onWindowStageDestroy(): void {
     // Main window is destroyed, release UI related resources
     Logger.i(TAG, 'FullScreenAdAbility onWindowStageDestroy');
   }
 
-  onForeground() {
+  onForeground(): void {
     // Ability has brought to foreground
     Logger.i(TAG, 'FullScreenAdAbility onForeground');
   }
 
-  onBackground() {
+  onBackground(): void {
     // Ability has back to background
     Logger.i(TAG, 'FullScreenAdAbility onBackground');
   }

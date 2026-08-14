@@ -13,14 +13,15 @@
  * limitations under the License.
  */
 import commonEvent from '@ohos.commonEventManager';
+import { BusinessError } from '@ohos.base';
 import Logger from '../log/HiAdLog';
 
 const TAG = 'EventPublish';
 
 export class EventPublish {
-  static publishEvents(event: string, options) {
+  static publishEvents(event: string, options: commonEvent.CommonEventPublishData): void {
     // 发布公共事件
-    commonEvent.publish(event, options, (err) => {
+    commonEvent.publish(event, options, (err: BusinessError) => {
       if (err) {
         Logger.e(TAG, `PublishCallBack err=${JSON.stringify(err)}`);
       } else {

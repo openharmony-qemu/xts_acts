@@ -12,27 +12,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import commonEvent from '@ohos.commonEventManager';
 import { EventPublish } from './EventPublish';
 
+interface RewardAdParameters {
+  reward_ad_status: string;
+  reward_ad_data?: string;
+}
+
 export class FullScreenAdEventPublish {
-  private static instance: FullScreenAdEventPublish;
+  private static instance: FullScreenAdEventPublish = new FullScreenAdEventPublish();
 
   static getInstance(): FullScreenAdEventPublish {
-    if (!this.instance) {
-      this.instance = new FullScreenAdEventPublish();
-    }
-    return this.instance;
+    return FullScreenAdEventPublish.instance;
   }
 
-  publishEvents(status: string, data?) {
-    let options = {
+  publishEvents(status: string, data?: string): void {
+    let parameters: RewardAdParameters = {
+      reward_ad_status: status,
+      reward_ad_data: data
+    };
+    let options: commonEvent.CommonEventPublishData = {
       code: 1, // 公共事件的初始代码
-      data: "initial data", // 公共事件的初始数据
-      parameters: {
-        "reward_ad_status": status,
-        "reward_ad_data": data
-      },
-    }
-    EventPublish.publishEvents("com.company.pps.action.PPS_REWARD_STATUS_CHANGED", options);
+      data: 'initial data', // 公共事件的初始数据
+      parameters: parameters
+    };
+    EventPublish.publishEvents('com.company.pps.action.PPS_REWARD_STATUS_CHANGED', options);
   }
 }

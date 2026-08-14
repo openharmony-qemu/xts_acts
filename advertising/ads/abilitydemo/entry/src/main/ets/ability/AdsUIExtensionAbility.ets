@@ -22,23 +22,23 @@ const TAG: string = '[AdsUIExtensionAbility]';
  * UEA入口
  */
 export default class AdsUIExtensionAbility extends UIExtensionAbility {
-  onCreate() {
+  onCreate(): void {
     Logger.i(TAG, `AdsUIExtensionAbility test onCreate`);
     Logger.i(TAG, `AdsUIExtensionAbility test onCreate dir :${this.context.cacheDir}`);
   }
 
-  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+  onSessionCreate(want: Want, session: UIExtensionContentSession): void {
     Logger.i(TAG, `AdsUIExtensionAbility test onSessionCreate`);
     const storage: LocalStorage = new LocalStorage();
     storage.setOrCreate('session', session);
     storage.setOrCreate('want', want);
     let parameters = want?.parameters;
     Logger.i(TAG, `AdsUIExtensionAbility AdDisplayOptions: ${JSON.stringify(parameters)}`);
-    let advertisement = want?.parameters['Advertisement'];
+    let advertisement: Object | string | undefined = want?.parameters?.['Advertisement'] as Object | string | undefined;
     Logger.i(TAG, `AdsUIExtensionAbility Advertisement: ${JSON.stringify(advertisement)}`);
-    let result = JSON.parse(advertisement as string);
+    let result: Record<string, Object> = JSON.parse(advertisement as string) as Record<string, Object>;
     Logger.i(TAG, `AdsUIExtensionAbility result adType: ${result['adType']}`);
-    let adType = result['adType'];
+    let adType: Object = result['adType'];
     if (adType === 21800004) {
       Logger.i(TAG, `error code is 21800004, return value`);
       session.sendData({ 'processShowAdFailed': 21800004 });
@@ -49,8 +49,8 @@ export default class AdsUIExtensionAbility extends UIExtensionAbility {
       session.sendData(null);
       return;
     }
-    if (advertisement['refreshTime']) {
-      Logger.i(TAG, `AdsUIExtensionAbility refreshTime: ${advertisement['refreshTime']}`);
+    if ((advertisement as Record<string, Object>)['refreshTime']) {
+      Logger.i(TAG, `AdsUIExtensionAbility refreshTime: ${(advertisement as Record<string, Object>)['refreshTime']}`);
       session.loadContent("pages/AutoRefreshPage", storage);
     } else {
       Logger.i(TAG, `enter loadContent UIExtensionAbilityPage`);
@@ -59,15 +59,15 @@ export default class AdsUIExtensionAbility extends UIExtensionAbility {
   }
 
 
-  onForeground() {
+  onForeground(): void {
     Logger.i(TAG, `AdsUIExtensionAbility test onForeground`);
   }
 
-  onBackground() {
+  onBackground(): void {
     Logger.i(TAG, `AdsUIExtensionAbility test onBackground`);
   }
 
-  onDestroy() {
+  onDestroy(): void {
     Logger.i(TAG, `AdsUIExtensionAbility test onDestroy`);
   }
 }

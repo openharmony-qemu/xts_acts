@@ -22,7 +22,7 @@ const TAG: string = "AdsExtensionAbility";
 
 export default class AdsExtensionAbility extends AdsServiceExtensionAbility {
 
-  onLoadAd(adParam: advertising.AdRequestParams, adOptions: advertising.AdOptions, respCallback: RespCallback) {
+  onLoadAd(adParam: advertising.AdRequestParams, adOptions: advertising.AdOptions, respCallback: RespCallback): void {
     Logger.i(TAG, `onLoadAd, adid is : ${adParam.adId}`);
     const resMap: Map<string, Array<advertising.Advertisement>> = new Map();
     if (adParam.adId === 'adRequest21800003') {
@@ -35,20 +35,20 @@ export default class AdsExtensionAbility extends AdsServiceExtensionAbility {
     try {
       Logger.i(TAG, `onLoadAd, adParam: ${JSON.stringify(adParam)}, adOptions: ${JSON.stringify(adOptions)}`);
       const ads: Array<advertising.Advertisement> = [];
-      ads.push({adType: 7, uniqueId: '122222', rewardVerifyConfig: null, rewarded: false, shown: false,  clicked: false});
+      ads.push({adType: 7, uniqueId: '122222', rewardVerifyConfig: new Map<string, string>(), rewarded: false, shown: false,  clicked: false});
       const slot1: string = "test1";
       resMap.set(slot1, ads);
       Logger.i(TAG, `onLoadAd, resMap: ${JSON.stringify(resMap.get(slot1))}`);
       test();
       Logger.i(TAG, `onLoadAd, respCallback`);
       respCallback(resMap);
-    } catch(e) {
-      Logger.i(TAG, `onLoadAd, error: ${JSON.stringify(e)}`);
+    } catch (e) {
+      Logger.i(TAG, `onLoadAd, error: ${JSON.stringify(e as Object)}`);
       respCallback(resMap);
     }
   }
 
-  onLoadAdWithMultiSlots(adParams: advertising.AdRequestParams[], adOptions: advertising.AdOptions, respCallback: RespCallback) {
+  onLoadAdWithMultiSlots(adParams: advertising.AdRequestParams[], adOptions: advertising.AdOptions, respCallback: RespCallback): void {
     const resMap: Map<string, Array<advertising.Advertisement>> = new Map();
     Logger.i(TAG, `onLoadAdWithMultiSlots, adParams is : ${adParams.length}, adid is : ${adParams[0]?.adId}`);
     if (adParams.length === 1 && adParams[0].adId === 'multiAdRequestError21800003') {
@@ -61,8 +61,8 @@ export default class AdsExtensionAbility extends AdsServiceExtensionAbility {
     }
     Logger.i(TAG, `onLoadAdWithMultiSlots, adParams: ${JSON.stringify(adParams)}, adOptions: ${JSON.stringify(adOptions)}`);
     const ads: Array<advertising.Advertisement> = [];
-    ads.push({adType: 7, uniqueId: '122222', rewardVerifyConfig: null, rewarded: false, shown: false,  clicked: false});
-    ads.push({adType: 7, uniqueId: '133333', rewardVerifyConfig: null, rewarded: false, shown: false,  clicked: false});
+    ads.push({adType: 7, uniqueId: '122222', rewardVerifyConfig: new Map<string, string>(), rewarded: false, shown: false,  clicked: false});
+    ads.push({adType: 7, uniqueId: '133333', rewardVerifyConfig: new Map<string, string>(), rewarded: false, shown: false,  clicked: false});
     const slot1: string = "test1";
     resMap.set(slot1, ads);
     Logger.i(TAG, `onLoadAdWithMultiSlots, resMap: ${JSON.stringify(resMap.get(slot1))}`);
@@ -70,6 +70,6 @@ export default class AdsExtensionAbility extends AdsServiceExtensionAbility {
   }
 }
 
-function test() {
+function test(): void {
   Logger.i(TAG, `onLoadAd, test`);
 }
