@@ -13,7 +13,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessLoadingWithKey
-     * @tc.number SUB_ARkWEB_CAPI_TestNativeArkWeb_SetBlanklessLoadingWithKey
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_SET_BLANKLESS_LOADING_WITH_KEY_0010
      * @tc.desc Test OH_NativeArkWeb_SetBlanklessLoadingWithKey
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -29,7 +29,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_ClearBlanklessLoadingCache
-     * @tc.number SUB_ARkWEB_CAPI_TestNativeArkWeb_ClearBlanklessLoadingCache
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_CLEAR_BLANKLESS_LOADING_CACHE_0011
      * @tc.desc Test OH_NativeArkWeb_ClearBlanklessLoadingCache
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -43,7 +43,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_GetBlanklessInfoWithKey
-     * @tc.number SUB_ARkWEB_CAPI_TestNativeArkWeb_GetBlanklessInfoWithKey
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_GET_BLANKLESS_INFO_WITH_KEY_0012
      * @tc.desc Test OH_NativeArkWeb_GetBlanklessInfoWithKey
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -57,7 +57,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessLoadingCacheCapacity
-     * @tc.number SUB_ARkWEB_CAPI_TestNativeArkWeb_SetBlanklessLoadingCacheCapacity
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_SET_BLANKLESS_LOADING_CACHE_CAPACITY_0013
      * @tc.desc Test OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

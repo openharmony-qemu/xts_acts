@@ -13,7 +13,7 @@ export default function http_body_streamTest() {
 
     /**
      * @tc.name TestArkWebResourceRequest_GetHttpBodyStream
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResourceRequest_GetHttpBodyStream
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_REQUEST_GET_HTTP_BODY_STREAM_0001
      * @tc.desc Test OH_ArkWebResourceRequest_GetHttpBodyStream
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -27,7 +27,7 @@ export default function http_body_streamTest() {
 
     /**
      * @tc.name TestArkWebResourceRequest_DestroyHttpBodyStream
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResourceRequest_DestroyHttpBodyStream
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_REQUEST_DESTROY_HTTP_BODY_STREAM_0002
      * @tc.desc Test OH_ArkWebResourceRequest_DestroyHttpBodyStream
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -41,7 +41,7 @@ export default function http_body_streamTest() {
 
     /**
      * @tc.name TestArkWebHttpBodyStream_SetUserData
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebHttpBodyStream_SetUserData
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_HTTP_BODY_STREAM_SET_USER_DATA_0003
      * @tc.desc Test OH_ArkWebHttpBodyStream_SetUserData
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -55,7 +55,7 @@ export default function http_body_streamTest() {
 
     /**
      * @tc.name TestArkWebHttpBodyStream_SetReadCallback
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebHttpBodyStream_SetReadCallback
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_HTTP_BODY_STREAM_SET_READ_CALLBACK_0004
      * @tc.desc Test OH_ArkWebHttpBodyStream_SetReadCallback
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -69,7 +69,7 @@ export default function http_body_streamTest() {
 
     /**
      * @tc.name TestArkWebHttpBodyStream_SetAsyncReadCallback
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebHttpBodyStream_SetAsyncReadCallback
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_HTTP_BODY_STREAM_SET_ASYNC_READ_CALLBACK_0005
      * @tc.desc Test OH_ArkWebHttpBodyStream_SetAsyncReadCallback
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -83,7 +83,7 @@ export default function http_body_streamTest() {
 
     /**
      * @tc.name TestArkWebHttpBodyStream_Init
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebHttpBodyStream_Init
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_HTTP_BODY_STREAM_INIT_0006
      * @tc.desc Test OH_ArkWebHttpBodyStream_Init
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -97,7 +97,7 @@ export default function http_body_streamTest() {
 
     /**
      * @tc.name TestArkWebHttpBodyStream_Read
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebHttpBodyStream_Read
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_HTTP_BODY_STREAM_READ_0007
      * @tc.desc Test OH_ArkWebHttpBodyStream_Read
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -111,7 +111,7 @@ export default function http_body_streamTest() {
 
     /**
      * @tc.name TestArkWebHttpBodyStream_GetSize
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebHttpBodyStream_GetSize
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_HTTP_BODY_STREAM_GET_SIZE_0008
      * @tc.desc Test OH_ArkWebHttpBodyStream_GetSize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -125,7 +125,7 @@ export default function http_body_streamTest() {
 
     /**
      * @tc.name TestArkWebHttpBodyStream_GetPosition
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebHttpBodyStream_GetPosition
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_HTTP_BODY_STREAM_GET_POSITION_0009
      * @tc.desc Test OH_ArkWebHttpBodyStream_GetPosition
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

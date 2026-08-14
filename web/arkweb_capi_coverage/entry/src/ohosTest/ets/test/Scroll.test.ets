@@ -4,24 +4,24 @@ import { Driver, ON } from '@kit.TestKit';
 import Utils from './Utils.test';
 import nativeFunc from 'libentry.so';
 
-export default function native_loadTest() {
-  describe('native_loadTest', () => {
+export default function scrollTest() {
+  describe('scrollTest', () => {
     beforeEach(async (done: Function) => {
       await Utils.sleep(500);
       done();
     });
 
     /**
-     * @tc.name TestNativeArkWeb_LoadData
-     * @tc.number SUB_ARkWEB_CAPI_TestNativeArkWeb_LoadData
-     * @tc.desc Test OH_NativeArkWeb_LoadData
+     * @tc.name TestArkWeb_RegisterScrollCallback
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_REGISTER_SCROLL_CALLBACK_0046
+     * @tc.desc Test OH_ArkWeb_RegisterScrollCallback
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('TestNativeArkWeb_LoadData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('TestArkWeb_RegisterScrollCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestNativeArkWeb_LoadData()).assertEqual(17100001);
+        expect(nativeFunc.TestArkWeb_RegisterScrollCallback()).assertEqual(-1);
         done();
       });
 

@@ -13,7 +13,7 @@ export default function resource_requestTest() {
 
     /**
      * @tc.name TestArkWebResourceRequest_SetUserData
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResourceRequest_SetUserData
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_REQUEST_SET_USER_DATA_0036
      * @tc.desc Test OH_ArkWebResourceRequest_SetUserData
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -27,7 +27,7 @@ export default function resource_requestTest() {
 
     /**
      * @tc.name TestArkWebResourceRequest_GetMethod
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResourceRequest_GetMethod
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_REQUEST_GET_METHOD_0037
      * @tc.desc Test OH_ArkWebResourceRequest_GetMethod
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -41,7 +41,7 @@ export default function resource_requestTest() {
 
     /**
      * @tc.name TestArkWebResourceRequest_GetUrl
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResourceRequest_GetUrl
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_REQUEST_GET_URL_0038
      * @tc.desc Test OH_ArkWebResourceRequest_GetUrl
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -55,7 +55,7 @@ export default function resource_requestTest() {
 
     /**
      * @tc.name TestArkWebResourceRequest_GetResourceType
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResourceRequest_GetResourceType
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_REQUEST_GET_RESOURCE_TYPE_0039
      * @tc.desc Test OH_ArkWebResourceRequest_GetResourceType
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -69,7 +69,7 @@ export default function resource_requestTest() {
 
     /**
      * @tc.name TestArkWebResourceRequest_GetFrameUrl
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResourceRequest_GetFrameUrl
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_REQUEST_GET_FRAME_URL_0040
      * @tc.desc Test OH_ArkWebResourceRequest_GetFrameUrl
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -83,7 +83,7 @@ export default function resource_requestTest() {
 
     /**
      * @tc.name TestArkWebResourceRequest_Destroy
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResourceRequest_Destroy
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_REQUEST_DESTROY_0041
      * @tc.desc Test OH_ArkWebResourceRequest_Destroy
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -97,7 +97,7 @@ export default function resource_requestTest() {
 
     /**
      * @tc.name TestArkWebResourceRequest_GetReferrer
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResourceRequest_GetReferrer
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_REQUEST_GET_REFERRER_0042
      * @tc.desc Test OH_ArkWebResourceRequest_GetReferrer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -111,7 +111,7 @@ export default function resource_requestTest() {
 
     /**
      * @tc.name TestArkWebResourceRequest_GetRequestHeaders
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResourceRequest_GetRequestHeaders
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_REQUEST_GET_REQUEST_HEADERS_0043
      * @tc.desc Test OH_ArkWebResourceRequest_GetRequestHeaders
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

@@ -13,7 +13,7 @@ export default function request_headerTest() {
 
     /**
      * @tc.name TestArkWebRequestHeaderList_Destroy
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebRequestHeaderList_Destroy
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_REQUEST_HEADER_LIST_DESTROY_0030
      * @tc.desc Test OH_ArkWebRequestHeaderList_Destroy
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -27,7 +27,7 @@ export default function request_headerTest() {
 
     /**
      * @tc.name TestArkWebRequestHeaderList_GetHeader
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebRequestHeaderList_GetHeader
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_REQUEST_HEADER_LIST_GET_HEADER_0031
      * @tc.desc Test OH_ArkWebRequestHeaderList_GetHeader
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

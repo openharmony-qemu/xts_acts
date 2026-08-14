@@ -13,7 +13,7 @@ export default function resource_handlerTest() {
 
     /**
      * @tc.name TestArkWebResourceHandler_Destroy
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResourceHandler_Destroy
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_HANDLER_DESTROY_0032
      * @tc.desc Test OH_ArkWebResourceHandler_Destroy
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -27,7 +27,7 @@ export default function resource_handlerTest() {
 
     /**
      * @tc.name TestArkWebResourceHandler_DidReceiveResponse
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResourceHandler_DidReceiveResponse
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_HANDLER_DID_RECEIVE_RESPONSE_0033
      * @tc.desc Test OH_ArkWebResourceHandler_DidReceiveResponse
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -41,7 +41,7 @@ export default function resource_handlerTest() {
 
     /**
      * @tc.name TestArkWebResourceHandler_DidReceiveData
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResourceHandler_DidReceiveData
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_HANDLER_DID_RECEIVE_DATA_0034
      * @tc.desc Test OH_ArkWebResourceHandler_DidReceiveData
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -55,7 +55,7 @@ export default function resource_handlerTest() {
 
     /**
      * @tc.name TestArkWebResourceHandler_DidFinish
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebResourceHandler_DidFinish
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESOURCE_HANDLER_DID_FINISH_0035
      * @tc.desc Test OH_ArkWebResourceHandler_DidFinish
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

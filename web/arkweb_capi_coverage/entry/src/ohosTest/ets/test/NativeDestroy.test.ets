@@ -13,7 +13,7 @@ export default function native_destroyTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetDestroyCallback
-     * @tc.number SUB_ARkWEB_CAPI_TestNativeArkWeb_SetDestroyCallback
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_SET_DESTROY_CALLBACK_0015
      * @tc.desc Test OH_NativeArkWeb_SetDestroyCallback
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -27,7 +27,7 @@ export default function native_destroyTest() {
 
     /**
      * @tc.name TestNativeArkWeb_GetDestroyCallback
-     * @tc.number SUB_ARkWEB_CAPI_TestNativeArkWeb_GetDestroyCallback
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_GET_DESTROY_CALLBACK_0016
      * @tc.desc Test OH_NativeArkWeb_GetDestroyCallback
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

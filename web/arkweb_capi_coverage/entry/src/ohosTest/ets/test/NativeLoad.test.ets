@@ -4,24 +4,24 @@ import { Driver, ON } from '@kit.TestKit';
 import Utils from './Utils.test';
 import nativeFunc from 'libentry.so';
 
-export default function native_cookieTest() {
-  describe('native_cookieTest', () => {
+export default function native_loadTest() {
+  describe('native_loadTest', () => {
     beforeEach(async (done: Function) => {
       await Utils.sleep(500);
       done();
     });
 
     /**
-     * @tc.name TestArkWebCookieManager_SaveCookieAsync
-     * @tc.number SUB_ARkWEB_CAPI_TestArkWebCookieManager_SaveCookieAsync
-     * @tc.desc Test OH_ArkWebCookieManager_SaveCookieAsync
+     * @tc.name TestNativeArkWeb_LoadData
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_LOAD_DATA_0021
+     * @tc.desc Test OH_NativeArkWeb_LoadData
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('TestArkWebCookieManager_SaveCookieAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('TestNativeArkWeb_LoadData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestArkWebCookieManager_SaveCookieAsync()).assertEqual(0);
+        expect(nativeFunc.TestNativeArkWeb_LoadData()).assertEqual(17100001);
         done();
       });
 

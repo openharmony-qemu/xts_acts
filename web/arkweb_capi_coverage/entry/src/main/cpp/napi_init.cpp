@@ -367,7 +367,8 @@ static napi_value TestNativeArkWeb_RegisterJavaScriptProxy(napi_env env, napi_ca
     NativeArkWeb_OnJavaScriptProxyCallback callbacks[] = {
         OnNativeJavaScriptProxyCallbackImpl, OnNativeJavaScriptProxyCallbackImpl
     };
-    OH_NativeArkWeb_RegisterJavaScriptProxy("test_tag", "testObj", methodNames, callbacks, 2, false);
+    const size_t callbackCount = sizeof(callbacks) / sizeof(callbacks[0]);
+    OH_NativeArkWeb_RegisterJavaScriptProxy("test_tag", "testObj", methodNames, callbacks, callbackCount, false);
     g_testResult = 0;
 
     napi_value result;
@@ -465,7 +466,8 @@ static napi_value TestNativeArkWeb_SetBlanklessLoadingWithKey(napi_env env, napi
 static napi_value TestNativeArkWeb_ClearBlanklessLoadingCache(napi_env env, napi_callback_info info)
 {
     const char* keys[] = {"key1", "key2"};
-    OH_NativeArkWeb_ClearBlanklessLoadingCache(keys, 2);
+    const size_t keyCount = sizeof(keys) / sizeof(keys[0]);
+    OH_NativeArkWeb_ClearBlanklessLoadingCache(keys, keyCount);
     g_testResult = 0;
 
     napi_value result;
@@ -541,58 +543,64 @@ static napi_value TestArkWebCookieManager_SaveCookieAsync(napi_env env, napi_cal
 }
 
 // ========== 模块注册 ==========
+#define NAPI_TEST_EXPORT(function) \
+    { #function, nullptr, function, nullptr, nullptr, nullptr, napi_default, nullptr }
+
+static napi_property_descriptor g_napiDescriptors[] = {
+    NAPI_TEST_EXPORT(TestArkWeb_RegisterScrollCallback),
+    NAPI_TEST_EXPORT(TestArkWebRequestHeaderList_Destroy),
+    NAPI_TEST_EXPORT(TestArkWebRequestHeaderList_GetHeader),
+    NAPI_TEST_EXPORT(TestArkWebResourceRequest_SetUserData),
+    NAPI_TEST_EXPORT(TestArkWebResourceRequest_GetMethod),
+    NAPI_TEST_EXPORT(TestArkWebResourceRequest_GetUrl),
+    NAPI_TEST_EXPORT(TestArkWebResourceRequest_GetResourceType),
+    NAPI_TEST_EXPORT(TestArkWebResourceRequest_GetFrameUrl),
+    NAPI_TEST_EXPORT(TestArkWebResourceRequest_Destroy),
+    NAPI_TEST_EXPORT(TestArkWebResourceRequest_GetReferrer),
+    NAPI_TEST_EXPORT(TestArkWebResourceRequest_GetRequestHeaders),
+    NAPI_TEST_EXPORT(TestArkWebResourceRequest_GetHttpBodyStream),
+    NAPI_TEST_EXPORT(TestArkWebResourceRequest_DestroyHttpBodyStream),
+    NAPI_TEST_EXPORT(TestArkWebHttpBodyStream_SetUserData),
+    NAPI_TEST_EXPORT(TestArkWebHttpBodyStream_SetReadCallback),
+    NAPI_TEST_EXPORT(TestArkWebHttpBodyStream_SetAsyncReadCallback),
+    NAPI_TEST_EXPORT(TestArkWebHttpBodyStream_Init),
+    NAPI_TEST_EXPORT(TestArkWebHttpBodyStream_Read),
+    NAPI_TEST_EXPORT(TestArkWebHttpBodyStream_GetSize),
+    NAPI_TEST_EXPORT(TestArkWebHttpBodyStream_GetPosition),
+    NAPI_TEST_EXPORT(TestArkWebSchemeHandler_SetUserData),
+    NAPI_TEST_EXPORT(TestArkWebResponse_GetHeaderByName),
+    NAPI_TEST_EXPORT(TestArkWebResourceHandler_Destroy),
+    NAPI_TEST_EXPORT(TestArkWebResourceHandler_DidReceiveResponse),
+    NAPI_TEST_EXPORT(TestArkWebResourceHandler_DidReceiveData),
+    NAPI_TEST_EXPORT(TestArkWebResourceHandler_DidFinish),
+    NAPI_TEST_EXPORT(TestArkWeb_ReleaseString),
+    NAPI_TEST_EXPORT(TestArkWeb_ReleaseByteArray),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_RunJavaScript),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_RegisterJavaScriptProxy),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_UnregisterJavaScriptProxy),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_SetJavaScriptProxyValidCallback),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_GetJavaScriptProxyValidCallback),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_RegisterAsyncThreadJavaScriptProxy),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_SetDestroyCallback),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_GetDestroyCallback),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_LoadData),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_SetBlanklessLoadingWithKey),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_ClearBlanklessLoadingCache),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_GetBlanklessInfoWithKey),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_SetBlanklessLoadingCacheCapacity),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_SetActiveWebEngineVersion),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_GetActiveWebEngineVersion),
+    NAPI_TEST_EXPORT(TestNativeArkWeb_IsActiveWebEngineEvergreen),
+    NAPI_TEST_EXPORT(TestArkWebCookieManager_SaveCookieAsync),
+};
+
+#undef NAPI_TEST_EXPORT
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_property_descriptor desc[] = {
-        { "TestArkWeb_RegisterScrollCallback", nullptr, TestArkWeb_RegisterScrollCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebRequestHeaderList_Destroy", nullptr, TestArkWebRequestHeaderList_Destroy, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebRequestHeaderList_GetHeader", nullptr, TestArkWebRequestHeaderList_GetHeader, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_SetUserData", nullptr, TestArkWebResourceRequest_SetUserData, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_GetMethod", nullptr, TestArkWebResourceRequest_GetMethod, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_GetUrl", nullptr, TestArkWebResourceRequest_GetUrl, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_GetResourceType", nullptr, TestArkWebResourceRequest_GetResourceType, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_GetFrameUrl", nullptr, TestArkWebResourceRequest_GetFrameUrl, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_Destroy", nullptr, TestArkWebResourceRequest_Destroy, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_GetReferrer", nullptr, TestArkWebResourceRequest_GetReferrer, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_GetRequestHeaders", nullptr, TestArkWebResourceRequest_GetRequestHeaders, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_GetHttpBodyStream", nullptr, TestArkWebResourceRequest_GetHttpBodyStream, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceRequest_DestroyHttpBodyStream", nullptr, TestArkWebResourceRequest_DestroyHttpBodyStream, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebHttpBodyStream_SetUserData", nullptr, TestArkWebHttpBodyStream_SetUserData, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebHttpBodyStream_SetReadCallback", nullptr, TestArkWebHttpBodyStream_SetReadCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebHttpBodyStream_SetAsyncReadCallback", nullptr, TestArkWebHttpBodyStream_SetAsyncReadCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebHttpBodyStream_Init", nullptr, TestArkWebHttpBodyStream_Init, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebHttpBodyStream_Read", nullptr, TestArkWebHttpBodyStream_Read, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebHttpBodyStream_GetSize", nullptr, TestArkWebHttpBodyStream_GetSize, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebHttpBodyStream_GetPosition", nullptr, TestArkWebHttpBodyStream_GetPosition, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebSchemeHandler_SetUserData", nullptr, TestArkWebSchemeHandler_SetUserData, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResponse_GetHeaderByName", nullptr, TestArkWebResponse_GetHeaderByName, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceHandler_Destroy", nullptr, TestArkWebResourceHandler_Destroy, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceHandler_DidReceiveResponse", nullptr, TestArkWebResourceHandler_DidReceiveResponse, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceHandler_DidReceiveData", nullptr, TestArkWebResourceHandler_DidReceiveData, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebResourceHandler_DidFinish", nullptr, TestArkWebResourceHandler_DidFinish, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWeb_ReleaseString", nullptr, TestArkWeb_ReleaseString, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWeb_ReleaseByteArray", nullptr, TestArkWeb_ReleaseByteArray, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_RunJavaScript", nullptr, TestNativeArkWeb_RunJavaScript, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_RegisterJavaScriptProxy", nullptr, TestNativeArkWeb_RegisterJavaScriptProxy, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_UnregisterJavaScriptProxy", nullptr, TestNativeArkWeb_UnregisterJavaScriptProxy, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_SetJavaScriptProxyValidCallback", nullptr, TestNativeArkWeb_SetJavaScriptProxyValidCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_GetJavaScriptProxyValidCallback", nullptr, TestNativeArkWeb_GetJavaScriptProxyValidCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_RegisterAsyncThreadJavaScriptProxy", nullptr, TestNativeArkWeb_RegisterAsyncThreadJavaScriptProxy, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_SetDestroyCallback", nullptr, TestNativeArkWeb_SetDestroyCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_GetDestroyCallback", nullptr, TestNativeArkWeb_GetDestroyCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_LoadData", nullptr, TestNativeArkWeb_LoadData, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_SetBlanklessLoadingWithKey", nullptr, TestNativeArkWeb_SetBlanklessLoadingWithKey, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_ClearBlanklessLoadingCache", nullptr, TestNativeArkWeb_ClearBlanklessLoadingCache, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_GetBlanklessInfoWithKey", nullptr, TestNativeArkWeb_GetBlanklessInfoWithKey, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_SetBlanklessLoadingCacheCapacity", nullptr, TestNativeArkWeb_SetBlanklessLoadingCacheCapacity, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_SetActiveWebEngineVersion", nullptr, TestNativeArkWeb_SetActiveWebEngineVersion, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_GetActiveWebEngineVersion", nullptr, TestNativeArkWeb_GetActiveWebEngineVersion, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestNativeArkWeb_IsActiveWebEngineEvergreen", nullptr, TestNativeArkWeb_IsActiveWebEngineEvergreen, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestArkWebCookieManager_SaveCookieAsync", nullptr, TestArkWebCookieManager_SaveCookieAsync, nullptr, nullptr, nullptr, napi_default, nullptr },
-    };
-    napi_define_properties(env, exports,
-        sizeof(desc) / sizeof(desc[0]), desc);
+    napi_define_properties(env, exports, sizeof(g_napiDescriptors) / sizeof(g_napiDescriptors[0]),
+        g_napiDescriptors);
     return exports;
 }
 EXTERN_C_END
