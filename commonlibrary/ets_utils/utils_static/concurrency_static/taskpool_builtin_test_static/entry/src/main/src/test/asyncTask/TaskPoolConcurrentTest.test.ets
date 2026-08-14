@@ -134,7 +134,7 @@ export default function TaskPoolConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolDelayedConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testTaskPoolDelayedConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let counter: AtomicInt = new AtomicInt(0);
       let delayedCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: int = 10;
@@ -148,6 +148,7 @@ export default function TaskPoolConcurrentTest(): void {
       await Promise.all(tasks);
       expect(delayedCounter.load()).assertEqual(totalTasks);
       expect(counter.load()).assertEqual(totalTasks);
+      done();
     });
 
     /**
@@ -217,7 +218,11 @@ export default function TaskPoolConcurrentTest(): void {
       task.onReceiveData((data: Object): void => {
         receiveCounter.fetchAdd(1);
       });
-      await taskpool.execute(task);
+      try {
+        await taskpool.execute(task);
+      } catch (err) {
+        expect(err).assertFail();
+      }
       let waitCount: number = 0;
       while (receiveCounter.load() < 10 && waitCount < 100) {
         await Utils.msSleep(100);
@@ -235,7 +240,7 @@ export default function TaskPoolConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolTimeoutConcurrent0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testTaskPoolTimeoutConcurrent0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task: taskpool.Task = new taskpool.Task(testTaskPoolTimeout);
       let timeoutCaught: boolean = false;
       try {
@@ -244,6 +249,7 @@ export default function TaskPoolConcurrentTest(): void {
         timeoutCaught = true;
       }
       expect(timeoutCaught).assertTrue();
+      done();
     });
 
     /**
@@ -299,7 +305,7 @@ export default function TaskPoolConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolStressConcurrent1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testTaskPoolStressConcurrent1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let counter: AtomicInt = new AtomicInt(0);
       let taskCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: number = 100;
@@ -307,8 +313,13 @@ export default function TaskPoolConcurrentTest(): void {
       for (let i: number = 0; i < totalTasks; i++) {
         tasks.push(taskpool.execute(testTaskPoolStress, counter, taskCounter));
       }
-      await Promise.all(tasks);
-      expect(counter.load()).assertEqual(totalTasks * 100);
+      try {
+        await Promise.all(tasks);
+        expect(counter.load()).assertEqual(totalTasks * 100);
+      } catch (err) {
+        expect(err).assertFail();
+      }
+      done();
     });
   });
 }
