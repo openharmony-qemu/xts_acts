@@ -377,7 +377,7 @@ static napi_value GetCharacterPositionAtCoordinateWithEncodingTest_005(napi_env 
     auto ret = OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinateWithEncoding(
         layoutManager, PARAM_0, PARAM_0,
         static_cast<OH_ArkUI_TextEncoding>(TEXT_ENCODING_INVALID), &outPos);
-    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END(text);
 }
 

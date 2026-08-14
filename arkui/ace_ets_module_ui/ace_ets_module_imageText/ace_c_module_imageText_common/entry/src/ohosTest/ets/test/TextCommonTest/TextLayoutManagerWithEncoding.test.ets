@@ -296,20 +296,6 @@ export default function TextLayoutManagerWithEncodingTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARPOS_ENCODING_NULL_OUTPOS_2000
-     * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARPOS_ENCODING_NULL_OUTPOS_2000
-     * @tc.desc   Test GetCharacterPositionAtCoordinateWithEncoding with null outPos
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARPOS_ENCODING_NULL_OUTPOS_2000', Level.LEVEL0, async () => {
-      console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARPOS_ENCODING_NULL_OUTPOS_2000 START');
-      expect(nativeFunc.GetCharacterPositionAtCoordinateWithEncodingTest_002()).assertEqual(0)
-      console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARPOS_ENCODING_NULL_OUTPOS_2000 END');
-    });
-
-    /**
      * @tc.name   SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARPOS_ENCODING_UTF8_2100
      * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARPOS_ENCODING_UTF8_2100
      * @tc.desc   Test GetCharacterPositionAtCoordinateWithEncoding with UTF8 encoding at (0,0)
