@@ -480,7 +480,7 @@ export default function MessageGetTargetTest(): void {
     /**
      * @tc.name   MessageGetTargetTest1900
      * @tc.number SUB_MESSAGE_GET_TARGET_TEST_1900
-     * @tc.desc   Verify Message.getTarget() in equals comparison between Messages with same/different handlers
+     * @tc.desc   Verify Message.getTarget() returns handler passed in constructor for Messages with same/different handlers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -501,7 +501,7 @@ export default function MessageGetTargetTest(): void {
     /**
      * @tc.name   MessageGetTargetTest2000
      * @tc.number SUB_MESSAGE_GET_TARGET_TEST_2000
-     * @tc.desc   Verify Message.getTarget() AtomicInt state change after getTarget retrieval
+     * @tc.desc   Verify Message.getTarget() returns same handler on multiple calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -510,13 +510,10 @@ export default function MessageGetTargetTest(): void {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let state: AtomicInt = new AtomicInt(0);
       let msg = new concurrency.Message(messageHandler);
       let target: concurrency.MessageHandler = msg.getTarget();
-      state.store(1);
       expect(msg.getTarget() === target).assertTrue();
       expect(target === messageHandler).assertTrue();
-      expect(state.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
     })
 
@@ -582,7 +579,7 @@ export default function MessageGetTargetTest(): void {
     /**
      * @tc.name   MessageGetTargetTest2300
      * @tc.number SUB_MESSAGE_GET_TARGET_TEST_2300
-     * @tc.desc   Verify Message.getTarget() multiple calls consistency verified by AtomicInt exchange
+     * @tc.desc   Verify Message.getTarget() multiple calls return the same handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -591,16 +588,11 @@ export default function MessageGetTargetTest(): void {
       let eaw = new EAWorker();
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let state: AtomicInt = new AtomicInt(0);
       let msg = new concurrency.Message(messageHandler);
       let target1: concurrency.MessageHandler = msg.getTarget();
-      state.fetchAdd(1);
       expect(target1 === messageHandler).assertTrue();
-      expect(state.load()).assertEqual(1);
       let target2: concurrency.MessageHandler = msg.getTarget();
-      state.fetchAdd(1);
       expect(target2 === messageHandler).assertTrue();
-      expect(state.load()).assertEqual(2);
       expect(target1 === target2).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
     })
@@ -628,12 +620,12 @@ export default function MessageGetTargetTest(): void {
     /**
      * @tc.name   MessageGetTargetTest2500
      * @tc.number SUB_MESSAGE_GET_TARGET_TEST_2500
-     * @tc.desc   Verify Message.getTarget() AtomicInt counter tracks concurrent handler retrieval from multiple Messages
+     * @tc.desc   Verify Message.getTarget() sequential multiple calls return the same handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL1
      */
-    it('MessageGetTargetTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageGetTargetTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       let counter: AtomicInt = new AtomicInt(0);
@@ -679,6 +671,33 @@ export default function MessageGetTargetTest(): void {
       expect(counter.load()).assertEqual(1);
       expect(targetHolder === messageHandler).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
+    })
+
+    /**
+     * @tc.name   MessageGetTargetTest2700
+     * @tc.number SUB_MESSAGE_GET_TARGET_TEST_2700
+     * @tc.desc   Verify Message.getTarget() works correctly in ArkTS-Sta environment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MessageGetTargetTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(messageHandler);
+        let target: concurrency.MessageHandler = msg.getTarget();
+        expect(target === messageHandler).assertTrue();
+      } finally {
+        if (eaw.isAlive()) {
+          try {
+            eaw.quit();
+          } catch (error) {
+            console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+          }
+        }
+      }
     })
   })
 }

@@ -53,7 +53,13 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -82,7 +88,13 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(receivedWhat.load()).assertEqual(whatValue);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -115,7 +127,13 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(receivedObj).assertEqual(objData);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -150,7 +168,13 @@ export default function MessageSendToTargetTest(): void {
       }
       expect(counter.load()).assertEqual(1);
       expect(callbackExecuted.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -178,7 +202,13 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(2);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -251,7 +281,13 @@ export default function MessageSendToTargetTest(): void {
       }
       expect(caught).assertTrue();
       expect(counter.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -283,7 +319,13 @@ export default function MessageSendToTargetTest(): void {
       expect(whatAfter).assertEqual(whatBefore);
       expect(targetAfter === targetBefore).assertTrue();
       expect(targetAfter === messageHandler).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -312,7 +354,13 @@ export default function MessageSendToTargetTest(): void {
       }
       expect(counter.load()).assertEqual(1);
       expect(receivedWhat.load()).assertEqual(99);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -338,7 +386,13 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -366,13 +420,19 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(10);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
      * @tc.name   MessageSendToTargetTest1200
      * @tc.number SUB_MESSAGE_SEND_TO_TARGET_TEST_1200
-     * @tc.desc   Verify nested sendToTarget inside MessageHandler callback processes inner message with AsyncLock
+     * @tc.desc   Verify nested sendToTarget inside MessageHandler callback processes inner message with AtomicInt counter tracking
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -399,13 +459,19 @@ export default function MessageSendToTargetTest(): void {
       }
       expect(outerCounter.load()).assertEqual(1);
       expect(nestedCounter.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
      * @tc.name   MessageSendToTargetTest1300
      * @tc.number SUB_MESSAGE_SEND_TO_TARGET_TEST_1300
-     * @tc.desc   Verify AtomicInt.compareExchange conditionally triggers sendToTarget when state transitions
+     * @tc.desc   Verify AtomicInt state store/load conditionally triggers sendToTarget when state transitions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -431,7 +497,13 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -465,9 +537,15 @@ export default function MessageSendToTargetTest(): void {
         waitCount++;
         await Utils.msSleep(100);
       }
-      expect(counter.load() >= 1).assertTrue();
+      expect(counter.load()).assertEqual(1);
       expect(state.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -495,7 +573,13 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(3);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -525,7 +609,13 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(3);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -562,7 +652,13 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(3);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -590,18 +686,14 @@ export default function MessageSendToTargetTest(): void {
       expect(counter.load()).assertEqual(1);
       eaw.quit();
       let waitCount2 = 0;
-      while (eaw.isAlive() && waitCount2 < 100) {
+      while (eaw.isAlive() && waitCount2 < 50) {
         waitCount2++;
-        await Utils.msSleep(10);
+        await Utils.msSleep(100);
       }
       let msg2 = new concurrency.Message(2, messageHandler);
-      try {
-        msg2.sendToTarget();
-        await Utils.msSleep(100);
-        expect(counter.load()).assertEqual(1);
-      } catch (e) {
-        expect(e instanceof Error).assertTrue();
-      }
+      msg2.sendToTarget();
+      await Utils.msSleep(100);
+      expect(counter.load()).assertEqual(1);
     })
 
     /**
@@ -625,13 +717,19 @@ export default function MessageSendToTargetTest(): void {
       state.store(1);
       msg.sendToTarget();
       let waitCount: int = 0;
-      while (state.load() !== 2 && waitCount < 10000) {
+      while (state.load() !== 2 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
       expect(state.load()).assertEqual(2);
       expect(counter.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -664,7 +762,13 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -693,7 +797,13 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(3);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -715,7 +825,7 @@ export default function MessageSendToTargetTest(): void {
       let msg = new concurrency.Message(messageHandler);
       messageHandler.sendMessage(msg);
       let waitCount: int = 0;
-      while (handlerCalled.load() < 1 && waitCount < 10000) {
+      while (handlerCalled.load() < 1 && waitCount < 50) {
         waitCount++;
         await Utils.msSleep(100);
       }
@@ -729,13 +839,25 @@ export default function MessageSendToTargetTest(): void {
       let msg2 = new concurrency.Message(1, messageHandler2);
       messageHandler2.sendMessage(msg2);
       let waitCount2: int = 0;
-      while (counter2.load() < 1 && waitCount2 < 6000) {
+      while (counter2.load() < 1 && waitCount2 < 50) {
         waitCount2++;
         await Utils.msSleep(100);
       }
       expect(counter2.load()).assertEqual(1);
-      if (eaw.isAlive()) { eaw.quit(); }
-      if (eaw2.isAlive()) { eaw2.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+      if (eaw2.isAlive()) {
+        try {
+          eaw2.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -771,7 +893,13 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(receivedLength.load()).assertEqual(10000);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -799,7 +927,13 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(receivedWhat.load()).assertEqual(-1000000);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -835,7 +969,13 @@ export default function MessageSendToTargetTest(): void {
       expect(targetHolder === messageHandler).assertTrue();
       expect(msg.getTarget() === messageHandler).assertTrue();
       expect(msg.getTarget() === targetHolder).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -863,7 +1003,13 @@ export default function MessageSendToTargetTest(): void {
         await Utils.msSleep(100);
       }
       expect(counter.load()).assertEqual(5);
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -891,7 +1037,13 @@ export default function MessageSendToTargetTest(): void {
       }
       let isEqual: boolean = msg1.equals(msg2);
       expect(isEqual).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
 
     /**
@@ -920,7 +1072,136 @@ export default function MessageSendToTargetTest(): void {
       let targetAfter: concurrency.MessageHandler = msg.getTarget();
       expect(targetAfter === messageHandler).assertTrue();
       expect(targetBefore === targetAfter).assertTrue();
-      if (eaw.isAlive()) { eaw.quit(); }
+      if (eaw.isAlive()) {
+        try {
+          eaw.quit();
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   MessageSendToTargetTest2900
+     * @tc.number SUB_MESSAGE_SEND_TO_TARGET_TEST_2900
+     * @tc.desc   Verify Message.sendToTarget() retry after a failed send eventually delivers the message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('MessageSendToTargetTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      let processed: AtomicInt = new AtomicInt(0);
+      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+        processed.fetchAdd(1);
+      }, eaw);
+      try {
+        let msg = new concurrency.Message(1, messageHandler);
+        msg.sendToTarget();
+        let waitCount = 0;
+        while (processed.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(processed.load()).assertEqual(1);
+        // Re-sending an already-sent Message is a failed send.
+        let sendFailed = false;
+        try {
+          msg.sendToTarget();
+        } catch (error) {
+          sendFailed = true;
+        }
+        expect(sendFailed).assertTrue();
+        // Retry with a fresh Message carrying the same handler.
+        let retryMsg = new concurrency.Message(1, messageHandler);
+        retryMsg.sendToTarget();
+        let retryWait = 0;
+        while (processed.load() < 2 && retryWait < 50) {
+          retryWait++;
+          await Utils.msSleep(100);
+        }
+        expect(processed.load()).assertEqual(2);
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   MessageSendToTargetTest3000
+     * @tc.number SUB_MESSAGE_SEND_TO_TARGET_TEST_3000
+     * @tc.desc   Verify Message.sendToTarget() with null obj delivers message and handler receives null object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('MessageSendToTargetTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      let processed: AtomicInt = new AtomicInt(0);
+      let nullObjSeen: AtomicInt = new AtomicInt(0);
+      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+        if (msg.getObject() === null) {
+          nullObjSeen.store(1);
+        }
+        processed.fetchAdd(1);
+      }, eaw);
+      try {
+        let msg = new concurrency.Message(1, null, messageHandler);
+        msg.sendToTarget();
+        let waitCount = 0;
+        while (processed.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(processed.load()).assertEqual(1);
+        expect(nullObjSeen.load()).assertEqual(1);
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   MessageSendToTargetTest3100
+     * @tc.number SUB_MESSAGE_SEND_TO_TARGET_TEST_3100
+     * @tc.desc   Verify Message.sendToTarget() executes normally in ArkTS-Sta environment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MessageSendToTargetTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      let counter: AtomicInt = new AtomicInt(0);
+      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+        counter.fetchAdd(1);
+      }, eaw);
+      try {
+        let msg = new concurrency.Message(messageHandler);
+        expect(msg.getTarget() === messageHandler).assertTrue();
+        msg.sendToTarget();
+        let waitCount = 0;
+        while (counter.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(counter.load()).assertEqual(1);
+        expect(msg.getTarget() === messageHandler).assertTrue();
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
   })
 }

@@ -111,7 +111,7 @@ export default function MessageConstructorHandlerTest(): void {
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let msg = new concurrency.Message(messageHandler);
-      expect(msg instanceof concurrency.Message).assertTrue();
+      expect(msg.getTarget() === messageHandler).assertTrue();
       if (eaw.isAlive()) {
         eaw.quit();
       }
@@ -418,7 +418,7 @@ export default function MessageConstructorHandlerTest(): void {
     /**
      * @tc.name   MessageConstructorHandlerTest1700
      * @tc.number SUB_MESSAGE_CONSTRUCTOR_HANDLER_TEST_1700
-     * @tc.desc   Verify Atomics.compareExchange for atomic branch Message creation
+     * @tc.desc   Verify AtomicInt.compareAndSwap for atomic branch Message creation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -608,29 +608,37 @@ export default function MessageConstructorHandlerTest(): void {
     /**
      * @tc.name   MessageConstructorHandlerTest2300
      * @tc.number SUB_MESSAGE_CONSTRUCTOR_HANDLER_TEST_2300
-     * @tc.desc   Verify Message created with AsyncLock protected shared state
+     * @tc.desc   Verify Message(handler) interface works under ArkTS-Sta environment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('MessageConstructorHandlerTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('MessageConstructorHandlerTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
-      let sharedCount = new AtomicInt(0);
-      let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
-        sharedCount.fetchAdd(1);
-      }, eaw);
-      let msg = new concurrency.Message(messageHandler);
-      msg.sendToTarget();
-      let waitCount = 0;
-      while (sharedCount.load() < 1 && waitCount < 50) {
-        waitCount++;
-        await Utils.msSleep(100);
-      }
-      expect(sharedCount.load()).assertEqual(1);
-      if (eaw.isAlive()) {
-        eaw.quit();
+      try {
+        let counter = new AtomicInt(0);
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+          counter.fetchAdd(1);
+        }, eaw);
+        let msg = new concurrency.Message(messageHandler);
+        expect(msg.getTarget()).assertEqual(messageHandler);
+        expect(msg.getWhat()).assertEqual(-1000000);
+        msg.sendToTarget();
+        let waitCount = 0;
+        while (counter.load() < 1 && waitCount < 50) {
+          waitCount++;
+          await Utils.msSleep(100);
+        }
+        expect(counter.load()).assertEqual(1);
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
       }
     })
+
   })
 }

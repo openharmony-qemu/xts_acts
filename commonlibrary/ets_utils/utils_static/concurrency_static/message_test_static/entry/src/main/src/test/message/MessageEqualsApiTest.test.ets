@@ -1002,7 +1002,7 @@ export default function MessageEqualsApiTest(): void {
     /**
      * @tc.name   MessageEqualsApiTest4800
      * @tc.number SUB_MESSAGE_EQUALS_TEST_4800
-     * @tc.desc   Verify Message.equals() in message queue scenario comparing task messages
+     * @tc.desc   Verify Message.equals() returns true for messages with equal what and object values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1076,6 +1076,33 @@ export default function MessageEqualsApiTest(): void {
       expect(incomingMsg.equals(templateError)).assertFalse();
       expect(templateStart.getWhat()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
+    })
+
+    /**
+     * @tc.name   MessageEqualsApiTest5200
+     * @tc.number SUB_MESSAGE_EQUALS_TEST_5200
+     * @tc.desc   Verify Message.equals() returns true when both messages carry null obj
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('MessageEqualsApiTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+      try {
+        let msg1 = new concurrency.Message(1, null, handler);
+        let msg2 = new concurrency.Message(1, null, handler);
+        expect(msg1.getObject() === null).assertTrue();
+        expect(msg2.getObject() === null).assertTrue();
+        expect(msg1.equals(msg2)).assertTrue();
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
   })
 }

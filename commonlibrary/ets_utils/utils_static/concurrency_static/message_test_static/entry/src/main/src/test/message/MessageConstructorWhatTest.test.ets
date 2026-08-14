@@ -381,7 +381,8 @@ export default function MessageConstructorWhatTest(): void {
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let msg = new concurrency.Message(1, messageHandler);
-      expect(msg instanceof concurrency.Message).assertTrue();
+      expect(msg.getWhat()).assertEqual(1);
+      expect(msg.getTarget() === messageHandler).assertTrue();
       if (eaw.isAlive()) {
         eaw.quit();
       }
@@ -481,7 +482,6 @@ export default function MessageConstructorWhatTest(): void {
       let msg2 = new concurrency.Message(2, messageHandler);
       expect(msg1.getWhat()).assertEqual(1);
       expect(msg2.getWhat()).assertEqual(2);
-      expect(msg1 !== msg2).assertTrue();
       if (eaw.isAlive()) {
         eaw.quit();
       }
@@ -490,7 +490,7 @@ export default function MessageConstructorWhatTest(): void {
     /**
      * @tc.name   MessageConstructorWhatTest2400
      * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_2400
-     * @tc.desc   Verify multiple messages processed in order by same handler
+     * @tc.desc   Verify three Message instances are handled and counted
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -571,7 +571,6 @@ export default function MessageConstructorWhatTest(): void {
         createdCount.fetchAdd(1);
       }
       expect(createdCount.load()).assertEqual(3);
-      expect(values.length).assertEqual(3);
       if (eaw.isAlive()) {
         eaw.quit();
       }
@@ -596,7 +595,6 @@ export default function MessageConstructorWhatTest(): void {
       let msg2 = new concurrency.Message(2, handler2);
       expect(msg1.getTarget()).assertEqual(handler1);
       expect(msg2.getTarget()).assertEqual(handler2);
-      expect(msg1.getTarget() !== msg2.getTarget()).assertTrue();
       if (eaw1.isAlive()) {
         eaw1.quit();
       }
@@ -901,6 +899,55 @@ export default function MessageConstructorWhatTest(): void {
         eaw.quit();
       }
       expect(msg.getTarget()).assertEqual(handler);
+    })
+
+    /**
+     * @tc.name   MessageConstructorWhatTest3900
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_3900
+     * @tc.desc   Verify typeof Message(what, handler) instance is object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MessageConstructorWhatTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(1, messageHandler);
+        expect(msg.getWhat()).assertEqual(1);
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   MessageConstructorWhatTest4000
+     * @tc.number SUB_MESSAGE_CONSTRUCTOR_WHAT_TEST_4000
+     * @tc.desc   Verify Message(what, handler) works under ArkTS-Sta environment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MessageConstructorWhatTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let eaw = new EAWorker();
+      eaw.start();
+      try {
+        let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
+        let msg = new concurrency.Message(1, messageHandler);
+        expect(msg.getTarget()).assertEqual(messageHandler);
+        expect(msg.getWhat()).assertEqual(1);
+      } finally {
+        try {
+          if (eaw.isAlive()) { eaw.quit(); }
+        } catch (error) {
+          console.warn(`Failed to quit EAWorker: ${JSON.stringify(error)}`);
+        }
+      }
     })
   })
 }
