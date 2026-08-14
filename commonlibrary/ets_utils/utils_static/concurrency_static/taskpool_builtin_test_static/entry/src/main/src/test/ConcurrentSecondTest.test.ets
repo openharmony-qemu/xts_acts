@@ -2390,7 +2390,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_bigint64array_bytesperelement_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_bigint64array_bytesperelement_002';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2399,30 +2399,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigInt64ArrayBytesPerElement1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -2434,7 +2425,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_bigint64array_from_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_bigint64array_from_003';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2443,30 +2434,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigInt64ArrayFrom1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -2478,7 +2460,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_bigint64array_of_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_bigint64array_of_004';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2487,30 +2469,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigInt64ArrayOf1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -2522,7 +2495,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_bigint64array_byteoffset_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_bigint64array_byteoffset_005';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2531,30 +2504,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigInt64ArrayByteOffset1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -2566,7 +2530,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_bigint64array_bytelength_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_bigint64array_bytelength_006';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2575,30 +2539,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigInt64ArrayByteLength1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -2610,7 +2565,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_bigint64array_buffer_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_bigint64array_buffer_007';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2619,30 +2574,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigInt64ArrayBuffer1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -2654,7 +2600,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_bigint64array_length_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_bigint64array_length_008';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2663,30 +2609,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigInt64ArrayLength1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -2698,7 +2635,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_bigint64array_from_array_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_bigint64array_from_array_009';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2707,30 +2644,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigInt64ArrayFromArray1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -2742,7 +2670,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_biguint64array_constructor_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_biguint64array_constructor_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2751,30 +2679,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigUint64ArrayConstructor1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -2786,7 +2705,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_biguint64array_bytesperelement_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_biguint64array_bytesperelement_002';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2795,30 +2714,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigUint64ArrayBytesPerElement1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -2830,7 +2740,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_biguint64array_from_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_biguint64array_from_003';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2839,30 +2749,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigUint64ArrayFrom1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -2874,7 +2775,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_biguint64array_of_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_biguint64array_of_004';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2883,30 +2784,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigUint64ArrayOf1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -2918,7 +2810,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_biguint64array_byteoffset_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_biguint64array_byteoffset_005';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2927,30 +2819,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigUint64ArrayByteOffset1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -2962,7 +2845,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_biguint64array_bytelength_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_biguint64array_bytelength_006';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -2971,30 +2854,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigUint64ArrayByteLength1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3006,7 +2880,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_biguint64array_buffer_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_biguint64array_buffer_007';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3015,30 +2889,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigUint64ArrayBuffer1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3050,7 +2915,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_biguint64array_length_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_biguint64array_length_008';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3059,30 +2924,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigUint64ArrayLength1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3094,7 +2950,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_biguint64array_from_array_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_biguint64array_from_array_009';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3103,30 +2959,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testBigUint64ArrayFromArray1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3138,7 +2985,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float32array_constructor_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float32array_constructor_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3147,30 +2994,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat32ArrayConstructor1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3182,7 +3020,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float32array_bytesperelement_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float32array_bytesperelement_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3191,30 +3029,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat32ArrayBytesPerElement1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3226,7 +3055,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float32array_from_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float32array_from_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3235,30 +3064,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat32ArrayFrom1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3270,7 +3090,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float32array_of_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float32array_of_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3279,30 +3099,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat32ArrayOf1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3314,7 +3125,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float32array_byteoffset_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float32array_byteoffset_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3323,30 +3134,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat32ArrayByteOffset1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3358,7 +3160,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float32array_bytelength_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float32array_bytelength_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3367,30 +3169,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat32ArrayByteLength1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3402,7 +3195,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float32array_buffer_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float32array_buffer_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3411,30 +3204,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat32ArrayBuffer1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3446,7 +3230,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float32array_length_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float32array_length_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3455,30 +3239,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat32ArrayLength1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3490,7 +3265,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float64array_constructor_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float64array_constructor_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3499,30 +3274,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat64ArrayConstructor1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3534,7 +3300,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float64array_bytesperelement_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float64array_bytesperelement_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3543,30 +3309,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat64ArrayBytesPerElement1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3578,7 +3335,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float64array_from_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float64array_from_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3587,30 +3344,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat64ArrayFrom1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3622,7 +3370,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float64array_of_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float64array_of_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3631,30 +3379,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat64ArrayOf1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3666,7 +3405,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float64array_byteoffset_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float64array_byteoffset_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3675,30 +3414,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat64ArrayByteOffset1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3710,7 +3440,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float64array_bytelength_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float64array_bytelength_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3719,30 +3449,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat64ArrayByteLength1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3754,7 +3475,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float64array_buffer_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float64array_buffer_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3763,30 +3484,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat64ArrayBuffer1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
 
     /**
@@ -3798,7 +3510,7 @@ export default function globalTest2(): void {
      * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_float64array_length_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_builtins_float64array_length_001';
         console.info(`${caseName} test start`);
         let result: int = 0
@@ -3807,30 +3519,21 @@ export default function globalTest2(): void {
           for (let i: int = 0; i < concurrentNum; i++) {
             group.addTask(testFloat64ArrayLength1)
           }
-          taskpool.execute(group).then((res: Any[]): void => {
+          await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);
-            result = res.length;
-            try {
-              expect(result).assertEqual(concurrentNum);
-            } finally {
-              done();
-            }
-          }, (e: Error): void => {
+            result = res.length
+          }).catch((e: Error) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            try {
-              expect().assertFail();
-            } finally {
-              done();
-            }
-          });
+            expect().assertFail()
+          })
+          console.info(`${caseName} Task result: ${result}`);
+          expect(result).assertEqual(concurrentNum)
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          try {
-            expect().assertFail();
-          } finally {
-            done();
-          }
+          expect().assertFail()
         }
+        console.info(`${caseName} test end`);
+        done()
       })
   })
 }
