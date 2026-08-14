@@ -35,7 +35,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { TreeListenerManagerV2, TreeListenerV2 } from '@ohos.arkui.advanced.TreeViewV2';
 
-export default function treeViewV2PageTest() {
+export default function treeViewV2PageTest(): void {
   describe('treeViewV2Page', (): void => {
 
     beforeAll(async (): Promise<void> => {
