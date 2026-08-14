@@ -53,43 +53,57 @@ export default function OnOverlayBackPressTest(): void {
     });
 
     /**
+     * @tc.number SUB_arkui_uicontext_overlay_manager_on_back_press_true_0100
      * @tc.name onBackPressReturnTrueInterceptsBack
      * @tc.desc Verify OnOverlayBackPressCallback returns true
      * @tc.type FUNCTION
      * @tc.level LEVEL1
      */
-    it('onBackPressReturnTrueInterceptsBack', Level.LEVEL1, async (): Promise<void> => {
-      const driver = Driver.create();
-      await clickById(driver, 'setBackPressTrue');
-      const overlay = await driver.findComponent(ON.text('overlay_content_backpress'));
-      expect(overlay !== null).assertTrue();
-      const countBefore = AppStorage.get<number>('backPressCount') as number;
-      await clickById(driver, 'invokeBackPressCallback');
-      const countAfter = AppStorage.get<number>('backPressCount') as number;
-      expect(countAfter > countBefore).assertTrue();
-      expect(AppStorage.get<boolean>('backPressLastResult') as boolean).assertTrue();
-      const overlayAfterBack = await driver.findComponent(ON.text('overlay_content_backpress'));
-      expect(overlayAfterBack !== null).assertTrue();
-      await clickById(driver, 'closeBackPressOverlay');
+    it('onBackPressReturnTrueInterceptsBack', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const driver = Driver.create();
+        await clickById(driver, 'setBackPressTrue');
+        const overlay = await driver.findComponent(ON.text('overlay_content_backpress'));
+        expect(overlay !== null).assertTrue();
+        const countBefore = AppStorage.get<number>('backPressCount') as number;
+        await clickById(driver, 'invokeBackPressCallback');
+        const countAfter = AppStorage.get<number>('backPressCount') as number;
+        expect(countAfter > countBefore).assertTrue();
+        expect(AppStorage.get<boolean>('backPressLastResult') as boolean).assertTrue();
+        const overlayAfterBack = await driver.findComponent(ON.text('overlay_content_backpress'));
+        expect(overlayAfterBack !== null).assertTrue();
+        await clickById(driver, 'closeBackPressOverlay');
+      } catch (error) {
+        console.error('onBackPressReturnTrueInterceptsBack error: ' + error);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
+     * @tc.number SUB_arkui_uicontext_overlay_manager_on_back_press_false_0200
      * @tc.name onBackPressReturnFalseAllowsBack
      * @tc.desc Verify OverlayManagerOptions.onBackPress returns false
      * @tc.type FUNCTION
      * @tc.level LEVEL1
      */
-    it('onBackPressReturnFalseAllowsBack', Level.LEVEL1, async (): Promise<void> => {
-      const driver = Driver.create();
-      await clickById(driver, 'setBackPressFalse');
-      const overlay = await driver.findComponent(ON.text('overlay_content_backpress'));
-      expect(overlay !== null).assertTrue();
-      const countBefore = AppStorage.get<number>('backPressCount') as number;
-      await clickById(driver, 'invokeBackPressCallback');
-      const countAfter = AppStorage.get<number>('backPressCount') as number;
-      expect(countAfter > countBefore).assertTrue();
-      expect(AppStorage.get<boolean>('backPressLastResult') as boolean).assertFalse();
-      await clickById(driver, 'closeBackPressOverlay');
+    it('onBackPressReturnFalseAllowsBack', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const driver = Driver.create();
+        await clickById(driver, 'setBackPressFalse');
+        const overlay = await driver.findComponent(ON.text('overlay_content_backpress'));
+        expect(overlay !== null).assertTrue();
+        const countBefore = AppStorage.get<number>('backPressCount') as number;
+        await clickById(driver, 'invokeBackPressCallback');
+        const countAfter = AppStorage.get<number>('backPressCount') as number;
+        expect(countAfter > countBefore).assertTrue();
+        expect(AppStorage.get<boolean>('backPressLastResult') as boolean).assertFalse();
+        await clickById(driver, 'closeBackPressOverlay');
+      } catch (error) {
+        console.error('onBackPressReturnFalseAllowsBack error: ' + error);
+        expect().assertFail();
+      }
+      done();
     });
   });
 }

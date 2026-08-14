@@ -70,7 +70,7 @@ export default function treeViewV2PageTest(): void {
     })
 
     /**
-     * @tc.number   treeViewV2PageTest_static_0100
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_0100
      * @tc.name     treeViewV2PageTest_static_0100
      * @tc.desc     Test TreeViewV2 display root node
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -89,35 +89,40 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_0101
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_0101
      * @tc.name     treeViewV2PageTest_static_0101
      * @tc.desc     Test TreeListenerV2 onNodeClick callback triggered with correct nodeId
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('treeViewV2PageTest_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_0101] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_0101] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let clickIdText = await driver.findComponent(ON.text('ClickId=0'));
-        expect(clickIdText !== null).assertTrue();
+          let clickIdText = await driver.findComponent(ON.text('ClickId=0'));
+          expect(clickIdText !== null).assertTrue();
 
-        let rootNodeText = await driver.findComponent(ON.text('Root Node'));
-        if (rootNodeText) {
-          await rootNodeText.click();
-          await CommonFunc.sleep(1000);
+          let rootNodeText = await driver.findComponent(ON.text('Root Node'));
+          if (rootNodeText) {
+            await rootNodeText.click();
+            await CommonFunc.sleep(1000);
+          }
+
+          let clickIdTextUpdated = await driver.findComponent(ON.text('ClickId=0'));
+          expect(clickIdTextUpdated !== null).assertTrue();
+
+          console.info('[treeViewV2PageTest_static_0101] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_0101] error: ' + error);
+          expect().assertFail();
         }
-
-        let clickIdTextUpdated = await driver.findComponent(ON.text('ClickId=0'));
-        expect(clickIdTextUpdated !== null).assertTrue();
-
-        console.info('[treeViewV2PageTest_static_0101] END');
         done();
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_0200
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_0200
      * @tc.name     treeViewV2PageTest_static_0200
      * @tc.desc     Test TreeViewV2 display second root node
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -136,7 +141,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_0300
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_0300
      * @tc.name     treeViewV2PageTest_static_0300
      * @tc.desc     Test TreeViewV2 node click event
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
@@ -148,6 +153,7 @@ export default function treeViewV2PageTest(): void {
         await CommonFunc.sleep(2000);
 
         let rootNodeText = await driver.findComponent(ON.text('Root Node'));
+        expect(rootNodeText !== null).assertTrue();
         if (rootNodeText) {
           await rootNodeText.click();
           await CommonFunc.sleep(500);
@@ -158,7 +164,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_0400
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_0400
      * @tc.name     treeViewV2PageTest_static_0400
      * @tc.desc     Test TreeViewV2 add node button exists
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -177,7 +183,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_0500
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_0500
      * @tc.name     treeViewV2PageTest_static_0500
      * @tc.desc     Test TreeViewV2 delete node button exists
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -196,7 +202,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_0600
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_0600
      * @tc.name     treeViewV2PageTest_static_0600
      * @tc.desc     Test TreeViewV2 modify node button exists
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -215,7 +221,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_0701
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_0701
      * @tc.name     treeViewV2PageTest_static_0701
      * @tc.desc     Test TreeListenerV2 onNodeAdd callback triggered when adding node
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -246,7 +252,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_0800
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_0800
      * @tc.name     treeViewV2PageTest_static_0800
      * @tc.desc     Test TreeListenerV2 offNodeClick cancel listener
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -258,6 +264,7 @@ export default function treeViewV2PageTest(): void {
         await CommonFunc.sleep(2000);
 
         let rootNodeText = await driver.findComponent(ON.text('Root Node'));
+        expect(rootNodeText !== null).assertTrue();
         if (rootNodeText) {
           await rootNodeText.click();
           await CommonFunc.sleep(500);
@@ -268,7 +275,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_0900
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_0900
      * @tc.name     treeViewV2PageTest_static_0900
      * @tc.desc     Test TreeListenerV2 onceNodeAdd listener triggers only once
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -286,6 +293,7 @@ export default function treeViewV2PageTest(): void {
         }
 
         let addBtn = await driver.findComponent(ON.text('Add'));
+        expect(addBtn !== null).assertTrue();
         if (addBtn) {
           await addBtn.click();
           await CommonFunc.sleep(1000);
@@ -298,7 +306,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_1000
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_1000
      * @tc.name     treeViewV2PageTest_static_1000
      * @tc.desc     Test TreeListenerV2 offNodeAdd cancel listener
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -316,6 +324,7 @@ export default function treeViewV2PageTest(): void {
         }
 
         let addBtn = await driver.findComponent(ON.text('Add'));
+        expect(addBtn !== null).assertTrue();
         if (addBtn) {
           await addBtn.click();
           await CommonFunc.sleep(1000);
@@ -326,7 +335,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_1100
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_1100
      * @tc.name     treeViewV2PageTest_static_1100
      * @tc.desc     Test TreeListenerV2 onceNodeDelete listener triggers only once
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -344,6 +353,7 @@ export default function treeViewV2PageTest(): void {
         }
 
         let removeBtn = await driver.findComponent(ON.text('Remove'));
+        expect(removeBtn !== null).assertTrue();
         if (removeBtn) {
           await removeBtn.click();
           await CommonFunc.sleep(1000);
@@ -354,7 +364,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_1200
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_1200
      * @tc.name     treeViewV2PageTest_static_1200
      * @tc.desc     Test TreeListenerV2 offNodeDelete cancel listener
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -372,6 +382,7 @@ export default function treeViewV2PageTest(): void {
         }
 
         let removeBtn = await driver.findComponent(ON.text('Remove'));
+        expect(removeBtn !== null).assertTrue();
         if (removeBtn) {
           await removeBtn.click();
           await CommonFunc.sleep(1000);
@@ -382,7 +393,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_1300
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_1300
      * @tc.name     treeViewV2PageTest_static_1300
      * @tc.desc     Test TreeListenerV2 onNodeModify listener triggers
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -400,6 +411,7 @@ export default function treeViewV2PageTest(): void {
         }
 
         let modifyBtn = await driver.findComponent(ON.text('Modify'));
+        expect(modifyBtn !== null).assertTrue();
         if (modifyBtn) {
           await modifyBtn.click();
           await CommonFunc.sleep(1000);
@@ -410,7 +422,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_1400
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_1400
      * @tc.name     treeViewV2PageTest_static_1400
      * @tc.desc     Test TreeListenerV2 onceNodeModify listener triggers only once
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -428,6 +440,7 @@ export default function treeViewV2PageTest(): void {
         }
 
         let modifyBtn = await driver.findComponent(ON.text('Modify'));
+        expect(modifyBtn !== null).assertTrue();
         if (modifyBtn) {
           await modifyBtn.click();
           await CommonFunc.sleep(1000);
@@ -440,7 +453,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_1500
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_1500
      * @tc.name     treeViewV2PageTest_static_1500
      * @tc.desc     Test TreeListenerV2 offNodeModify cancel listener
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -458,6 +471,7 @@ export default function treeViewV2PageTest(): void {
         }
 
         let modifyBtn = await driver.findComponent(ON.text('Modify'));
+        expect(modifyBtn !== null).assertTrue();
         if (modifyBtn) {
           await modifyBtn.click();
           await CommonFunc.sleep(1000);
@@ -468,7 +482,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_1600
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_1600
      * @tc.name     treeViewV2PageTest_static_1600
      * @tc.desc     Test TreeListenerV2 onNodeMove listener triggers
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -480,6 +494,7 @@ export default function treeViewV2PageTest(): void {
         await CommonFunc.sleep(2000);
 
         let rootNodeText = await driver.findComponent(ON.text('Root Node'));
+        expect(rootNodeText !== null).assertTrue();
         if (rootNodeText) {
           await rootNodeText.click();
           await CommonFunc.sleep(500);
@@ -490,7 +505,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_1700
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_1700
      * @tc.name     treeViewV2PageTest_static_1700
      * @tc.desc     Test TreeListenerV2 offNodeMove cancel listener
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -502,6 +517,7 @@ export default function treeViewV2PageTest(): void {
         await CommonFunc.sleep(2000);
 
         let rootNodeText = await driver.findComponent(ON.text('Root Node'));
+        expect(rootNodeText !== null).assertTrue();
         if (rootNodeText) {
           await rootNodeText.click();
           await CommonFunc.sleep(500);
@@ -512,7 +528,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_1800
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_1800
      * @tc.name     treeViewV2PageTest_static_1800
      * @tc.desc     Test TreeListenerV2 off method with undefined parameter clears all listeners
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
@@ -524,6 +540,7 @@ export default function treeViewV2PageTest(): void {
         await CommonFunc.sleep(2000);
 
         let rootNodeText = await driver.findComponent(ON.text('Root Node'));
+        expect(rootNodeText !== null).assertTrue();
         if (rootNodeText) {
           await rootNodeText.click();
           await CommonFunc.sleep(500);
@@ -534,7 +551,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_1900
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_1900
      * @tc.name     treeViewV2PageTest_static_1900
      * @tc.desc     Test TreeListenerManagerV2 getInstance returns singleton instance
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -554,7 +571,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_2000
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_2000
      * @tc.name     treeViewV2PageTest_static_2000
      * @tc.desc     Test TreeListenerManagerV2 getTreeListener returns valid listener
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -573,7 +590,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_2100
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_2100
      * @tc.name     treeViewV2PageTest_static_2100
      * @tc.desc     Test TreeListenerManagerV2 getInstance returns same instance multiple times
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
@@ -597,166 +614,196 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_2400
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_2400
      * @tc.name     treeViewV2PageTest_static_2400
      * @tc.desc     Test TreeControllerV2 refreshNode with invalid parentId parameter
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('treeViewV2PageTest_static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_2400] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_2400] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let rootNodeText = await driver.findComponent(ON.text('Root Node'));
-        if (rootNodeText) {
-          await rootNodeText.click();
-          await CommonFunc.sleep(500);
+          let rootNodeText = await driver.findComponent(ON.text('Root Node'));
+          if (rootNodeText) {
+            await rootNodeText.click();
+            await CommonFunc.sleep(500);
+          }
+
+          let clickIdBefore = await driver.findComponent(ON.id('clickIdText'));
+          expect(clickIdBefore !== null).assertTrue();
+
+          console.info('[treeViewV2PageTest_static_2400] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_2400] error: ' + error);
+          expect().assertFail();
         }
-
-        let clickIdBefore = await driver.findComponent(ON.id('clickIdText'));
-        expect(clickIdBefore !== null).assertTrue();
-
-        console.info('[treeViewV2PageTest_static_2400] END');
         done();
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_2900
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_2900
      * @tc.name     treeViewV2PageTest_static_2900
      * @tc.desc     Test NodeParamV2 isFolder parameter
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('treeViewV2PageTest_static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_2900] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_2900] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let folderNode = await driver.findComponent(ON.text('目录3'));
-        expect(folderNode !== null).assertTrue();
+          let folderNode = await driver.findComponent(ON.text('目录3'));
+          expect(folderNode !== null).assertTrue();
 
-        let fileNode = await driver.findComponent(ON.text('项目4'));
-        expect(fileNode !== null).assertTrue();
+          let fileNode = await driver.findComponent(ON.text('项目4'));
+          expect(fileNode !== null).assertTrue();
 
-        console.info('[treeViewV2PageTest_static_2900] END');
+          console.info('[treeViewV2PageTest_static_2900] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_2900] error: ' + error);
+          expect().assertFail();
+        }
         done();
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_3700
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_3700
      * @tc.name     treeViewV2PageTest_static_3700
      * @tc.desc     Test CallbackParamV2 childIndex parameter validation
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('treeViewV2PageTest_static_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_3700] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_3700] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let rootNode = await driver.findComponent(ON.text('Root Node'));
-        if (rootNode) {
-          await rootNode.click();
-          await CommonFunc.sleep(500);
+          let rootNode = await driver.findComponent(ON.text('Root Node'));
+          if (rootNode) {
+            await rootNode.click();
+            await CommonFunc.sleep(500);
+          }
+
+          let addBtn = await driver.findComponent(ON.text('Add'));
+          if (addBtn) {
+            await addBtn.click();
+            await CommonFunc.sleep(1000);
+          }
+
+          let clickIdText = await driver.findComponent(ON.id('clickIdText'));
+          expect(clickIdText !== null).assertTrue();
+
+          console.info('[treeViewV2PageTest_static_3700] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_3700] error: ' + error);
+          expect().assertFail();
         }
-
-        let addBtn = await driver.findComponent(ON.text('Add'));
-        if (addBtn) {
-          await addBtn.click();
-          await CommonFunc.sleep(1000);
-        }
-
-        let clickIdText = await driver.findComponent(ON.id('clickIdText'));
-        expect(clickIdText !== null).assertTrue();
-
-        console.info('[treeViewV2PageTest_static_3700] END');
         done();
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_5030
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_5030
      * @tc.name     treeViewV2PageTest_static_5030
      * @tc.desc     Test NodeParamV2 primaryTitle with empty string boundary
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('treeViewV2PageTest_static_5030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_5030] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_5030] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let emptyTitleBtn = await driver.findComponent(ON.text('Test Empty Title'));
-        expect(emptyTitleBtn !== null).assertTrue();
+          let emptyTitleBtn = await driver.findComponent(ON.text('Test Empty Title'));
+          expect(emptyTitleBtn !== null).assertTrue();
 
-        if (emptyTitleBtn) {
-          await emptyTitleBtn.click();
-          await CommonFunc.sleep(1000);
+          if (emptyTitleBtn) {
+            await emptyTitleBtn.click();
+            await CommonFunc.sleep(1000);
+          }
+
+          let testMessage = await driver.findComponent(ON.id('testMessage'));
+          expect(testMessage !== null).assertTrue();
+
+          console.info('[treeViewV2PageTest_static_5030] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_5030] error: ' + error);
+          expect().assertFail();
         }
-
-        let testMessage = await driver.findComponent(ON.id('testMessage'));
-        expect(testMessage !== null).assertTrue();
-
-        console.info('[treeViewV2PageTest_static_5030] END');
         done();
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_5031
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_5031
      * @tc.name     treeViewV2PageTest_static_5031
      * @tc.desc     Test NodeParamV2 primaryTitle with long string boundary (>50 chars)
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('treeViewV2PageTest_static_5031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_5031] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_5031] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let longTitleBtn = await driver.findComponent(ON.text('Test Long Title'));
-        expect(longTitleBtn !== null).assertTrue();
+          let longTitleBtn = await driver.findComponent(ON.text('Test Long Title'));
+          expect(longTitleBtn !== null).assertTrue();
 
-        if (longTitleBtn) {
-          await longTitleBtn.click();
-          await CommonFunc.sleep(1000);
+          if (longTitleBtn) {
+            await longTitleBtn.click();
+            await CommonFunc.sleep(1000);
+          }
+
+          let testMessage = await driver.findComponent(ON.id('testMessage'));
+          expect(testMessage !== null).assertTrue();
+
+          console.info('[treeViewV2PageTest_static_5031] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_5031] error: ' + error);
+          expect().assertFail();
         }
-
-        let testMessage = await driver.findComponent(ON.id('testMessage'));
-        expect(testMessage !== null).assertTrue();
-
-        console.info('[treeViewV2PageTest_static_5031] END');
         done();
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_5017
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_5017
      * @tc.name     treeViewV2PageTest_static_5017
      * @tc.desc     Test NodeParamV2 parentNodeId with invalid value (999)
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('treeViewV2PageTest_static_5017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_5017] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_5017] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        let invalidParentBtn = await driver.findComponent(ON.text('Test Invalid Parent'));
-        expect(invalidParentBtn !== null).assertTrue();
+          let invalidParentBtn = await driver.findComponent(ON.text('Test Invalid Parent'));
+          expect(invalidParentBtn !== null).assertTrue();
 
-        if (invalidParentBtn) {
-          await invalidParentBtn.click();
-          await CommonFunc.sleep(1000);
+          if (invalidParentBtn) {
+            await invalidParentBtn.click();
+            await CommonFunc.sleep(1000);
+          }
+
+          let testMessage = await driver.findComponent(ON.id('testMessage'));
+          expect(testMessage !== null).assertTrue();
+
+          console.info('[treeViewV2PageTest_static_5017] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_5017] error: ' + error);
+          expect().assertFail();
         }
-
-        let testMessage = await driver.findComponent(ON.id('testMessage'));
-        expect(testMessage !== null).assertTrue();
-
-        console.info('[treeViewV2PageTest_static_5017] END');
         done();
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_5040
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_5040
      * @tc.name     treeViewV2PageTest_static_5040
      * @tc.desc     Test CallbackParamV2 all parameters display
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -781,7 +828,7 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_5500
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_5500
      * @tc.name     treeViewV2PageTest_static_5500
      * @tc.desc     Test TreeListenerV2 onceNodeMove listener triggers and fires only once
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -814,222 +861,252 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_5600
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_5600
      * @tc.name     treeViewV2PageTest_static_5600
      * @tc.desc     Test TreeListenerV2 offNodeClick cancels specific callback
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('treeViewV2PageTest_static_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_5600] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_5600] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        // Click the "Test offClick" button to call offNodeClick with the specific callback
-        let offClickBtn = await driver.findComponent(ON.text('Test offClick'));
-        if (offClickBtn) {
-          await offClickBtn.click();
-          await CommonFunc.sleep(500);
+          // Click the "Test offClick" button to call offNodeClick with the specific callback
+          let offClickBtn = await driver.findComponent(ON.text('Test offClick'));
+          if (offClickBtn) {
+            await offClickBtn.click();
+            await CommonFunc.sleep(500);
+          }
+
+          // Now click a node - the offClickCallback should NOT be triggered
+          let rootNode = await driver.findComponent(ON.text('Root Node'));
+          if (rootNode) {
+            await rootNode.click();
+            await CommonFunc.sleep(1000);
+          }
+
+          // Verify offClickResult remains "offClickNotTriggered" (callback was removed)
+          let offClickResultComp = await driver.findComponent(ON.id('offClickResult'));
+          expect(offClickResultComp !== null).assertTrue();
+
+          console.info('[treeViewV2PageTest_static_5600] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_5600] error: ' + error);
+          expect().assertFail();
         }
-
-        // Now click a node - the offClickCallback should NOT be triggered
-        let rootNode = await driver.findComponent(ON.text('Root Node'));
-        if (rootNode) {
-          await rootNode.click();
-          await CommonFunc.sleep(1000);
-        }
-
-        // Verify offClickResult remains "offClickNotTriggered" (callback was removed)
-        let offClickResultComp = await driver.findComponent(ON.id('offClickResult'));
-        expect(offClickResultComp !== null).assertTrue();
-
-        console.info('[treeViewV2PageTest_static_5600] END');
         done();
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_5601
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_5601
      * @tc.name     treeViewV2PageTest_static_5601
      * @tc.desc     Test TreeListenerV2 offNodeAdd cancels specific callback
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('treeViewV2PageTest_static_5601', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_5601] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_5601] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        // Click the "Test offAdd" button to call offNodeAdd with the specific callback
-        let offAddBtn = await driver.findComponent(ON.text('Test offAdd'));
-        if (offAddBtn) {
-          await offAddBtn.click();
-          await CommonFunc.sleep(500);
+          // Click the "Test offAdd" button to call offNodeAdd with the specific callback
+          let offAddBtn = await driver.findComponent(ON.text('Test offAdd'));
+          if (offAddBtn) {
+            await offAddBtn.click();
+            await CommonFunc.sleep(500);
+          }
+
+          // Click a node and then add a node
+          let rootNode = await driver.findComponent(ON.text('Root Node'));
+          if (rootNode) {
+            await rootNode.click();
+            await CommonFunc.sleep(500);
+          }
+
+          let addBtn = await driver.findComponent(ON.text('Add'));
+          if (addBtn) {
+            await addBtn.click();
+            await CommonFunc.sleep(1000);
+          }
+
+          // Verify offAddResult remains "offAddNotTriggered" (callback was removed)
+          let offAddResultComp = await driver.findComponent(ON.id('offAddResult'));
+          expect(offAddResultComp !== null).assertTrue();
+
+          console.info('[treeViewV2PageTest_static_5601] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_5601] error: ' + error);
+          expect().assertFail();
         }
-
-        // Click a node and then add a node
-        let rootNode = await driver.findComponent(ON.text('Root Node'));
-        if (rootNode) {
-          await rootNode.click();
-          await CommonFunc.sleep(500);
-        }
-
-        let addBtn = await driver.findComponent(ON.text('Add'));
-        if (addBtn) {
-          await addBtn.click();
-          await CommonFunc.sleep(1000);
-        }
-
-        // Verify offAddResult remains "offAddNotTriggered" (callback was removed)
-        let offAddResultComp = await driver.findComponent(ON.id('offAddResult'));
-        expect(offAddResultComp !== null).assertTrue();
-
-        console.info('[treeViewV2PageTest_static_5601] END');
         done();
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_5602
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_5602
      * @tc.name     treeViewV2PageTest_static_5602
      * @tc.desc     Test TreeListenerV2 offNodeDelete cancels specific callback
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('treeViewV2PageTest_static_5602', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_5602] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_5602] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        // Click the "Test offDelete" button to call offNodeDelete with the specific callback
-        let offDeleteBtn = await driver.findComponent(ON.text('Test offDelete'));
-        if (offDeleteBtn) {
-          await offDeleteBtn.click();
-          await CommonFunc.sleep(500);
+          // Click the "Test offDelete" button to call offNodeDelete with the specific callback
+          let offDeleteBtn = await driver.findComponent(ON.text('Test offDelete'));
+          if (offDeleteBtn) {
+            await offDeleteBtn.click();
+            await CommonFunc.sleep(500);
+          }
+
+          // Click a node and then remove it
+          let rootNode = await driver.findComponent(ON.text('Root Node'));
+          if (rootNode) {
+            await rootNode.click();
+            await CommonFunc.sleep(500);
+          }
+
+          let removeBtn = await driver.findComponent(ON.text('Remove'));
+          if (removeBtn) {
+            await removeBtn.click();
+            await CommonFunc.sleep(1000);
+          }
+
+          // Verify offDeleteResult remains "offDeleteNotTriggered" (callback was removed)
+          let offDeleteResultComp = await driver.findComponent(ON.id('offDeleteResult'));
+          expect(offDeleteResultComp !== null).assertTrue();
+
+          console.info('[treeViewV2PageTest_static_5602] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_5602] error: ' + error);
+          expect().assertFail();
         }
-
-        // Click a node and then remove it
-        let rootNode = await driver.findComponent(ON.text('Root Node'));
-        if (rootNode) {
-          await rootNode.click();
-          await CommonFunc.sleep(500);
-        }
-
-        let removeBtn = await driver.findComponent(ON.text('Remove'));
-        if (removeBtn) {
-          await removeBtn.click();
-          await CommonFunc.sleep(1000);
-        }
-
-        // Verify offDeleteResult remains "offDeleteNotTriggered" (callback was removed)
-        let offDeleteResultComp = await driver.findComponent(ON.id('offDeleteResult'));
-        expect(offDeleteResultComp !== null).assertTrue();
-
-        console.info('[treeViewV2PageTest_static_5602] END');
         done();
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_5603
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_5603
      * @tc.name     treeViewV2PageTest_static_5603
      * @tc.desc     Test TreeListenerV2 offNodeModify cancels specific callback
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('treeViewV2PageTest_static_5603', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_5603] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_5603] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        // Click the "Test offModify" button to call offNodeModify with the specific callback
-        let offModifyBtn = await driver.findComponent(ON.text('Test offModify'));
-        if (offModifyBtn) {
-          await offModifyBtn.click();
-          await CommonFunc.sleep(500);
+          // Click the "Test offModify" button to call offNodeModify with the specific callback
+          let offModifyBtn = await driver.findComponent(ON.text('Test offModify'));
+          if (offModifyBtn) {
+            await offModifyBtn.click();
+            await CommonFunc.sleep(500);
+          }
+
+          // Click a node and then modify it
+          let rootNode = await driver.findComponent(ON.text('Root Node'));
+          if (rootNode) {
+            await rootNode.click();
+            await CommonFunc.sleep(500);
+          }
+
+          let modifyBtn = await driver.findComponent(ON.text('Modify'));
+          if (modifyBtn) {
+            await modifyBtn.click();
+            await CommonFunc.sleep(1000);
+          }
+
+          // Verify offModifyResult remains "offModifyNotTriggered" (callback was removed)
+          let offModifyResultComp = await driver.findComponent(ON.id('offModifyResult'));
+          expect(offModifyResultComp !== null).assertTrue();
+
+          console.info('[treeViewV2PageTest_static_5603] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_5603] error: ' + error);
+          expect().assertFail();
         }
-
-        // Click a node and then modify it
-        let rootNode = await driver.findComponent(ON.text('Root Node'));
-        if (rootNode) {
-          await rootNode.click();
-          await CommonFunc.sleep(500);
-        }
-
-        let modifyBtn = await driver.findComponent(ON.text('Modify'));
-        if (modifyBtn) {
-          await modifyBtn.click();
-          await CommonFunc.sleep(1000);
-        }
-
-        // Verify offModifyResult remains "offModifyNotTriggered" (callback was removed)
-        let offModifyResultComp = await driver.findComponent(ON.id('offModifyResult'));
-        expect(offModifyResultComp !== null).assertTrue();
-
-        console.info('[treeViewV2PageTest_static_5603] END');
         done();
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_5604
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_5604
      * @tc.name     treeViewV2PageTest_static_5604
      * @tc.desc     Test TreeListenerV2 offNodeMove cancels specific callback
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('treeViewV2PageTest_static_5604', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_5604] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_5604] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        // Click the "Test offMove" button to call offNodeMove with the specific callback
-        let offMoveBtn = await driver.findComponent(ON.text('Test offMove'));
-        if (offMoveBtn) {
-          await offMoveBtn.click();
-          await CommonFunc.sleep(500);
+          // Click the "Test offMove" button to call offNodeMove with the specific callback
+          let offMoveBtn = await driver.findComponent(ON.text('Test offMove'));
+          if (offMoveBtn) {
+            await offMoveBtn.click();
+            await CommonFunc.sleep(500);
+          }
+
+          // Click a node (move requires drag-and-drop, but we verify the off was called)
+          let rootNode = await driver.findComponent(ON.text('Root Node'));
+          if (rootNode) {
+            await rootNode.click();
+            await CommonFunc.sleep(1000);
+          }
+
+          // Verify offMoveResult remains "offMoveNotTriggered" (callback was removed)
+          let offMoveResultComp = await driver.findComponent(ON.id('offMoveResult'));
+          expect(offMoveResultComp !== null).assertTrue();
+
+          console.info('[treeViewV2PageTest_static_5604] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_5604] error: ' + error);
+          expect().assertFail();
         }
-
-        // Click a node (move requires drag-and-drop, but we verify the off was called)
-        let rootNode = await driver.findComponent(ON.text('Root Node'));
-        if (rootNode) {
-          await rootNode.click();
-          await CommonFunc.sleep(1000);
-        }
-
-        // Verify offMoveResult remains "offMoveNotTriggered" (callback was removed)
-        let offMoveResultComp = await driver.findComponent(ON.id('offMoveResult'));
-        expect(offMoveResultComp !== null).assertTrue();
-
-        console.info('[treeViewV2PageTest_static_5604] END');
         done();
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_5800
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_5800
      * @tc.name     treeViewV2PageTest_static_5800
      * @tc.desc     Test TreeControllerV2 refreshNode with valid parentId updates subtitle
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('treeViewV2PageTest_static_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_5800] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_5800] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        // Click "Test refreshNode" button to call refreshNode(1, 'NewParentSub', 'NewChildSub')
-        let refreshBtn = await driver.findComponent(ON.text('Test refreshNode'));
-        if (refreshBtn) {
-          await refreshBtn.click();
-          await CommonFunc.sleep(1000);
+          // Click "Test refreshNode" button to call refreshNode(1, 'NewParentSub', 'NewChildSub')
+          let refreshBtn = await driver.findComponent(ON.text('Test refreshNode'));
+          if (refreshBtn) {
+            await refreshBtn.click();
+            await CommonFunc.sleep(1000);
+          }
+
+          // Verify refreshResult shows the refresh was called
+          let refreshResultComp = await driver.findComponent(ON.id('refreshResult'));
+          expect(refreshResultComp !== null).assertTrue();
+
+          console.info('[treeViewV2PageTest_static_5800] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_5800] error: ' + error);
+          expect().assertFail();
         }
-
-        // Verify refreshResult shows the refresh was called
-        let refreshResultComp = await driver.findComponent(ON.id('refreshResult'));
-        expect(refreshResultComp !== null).assertTrue();
-
-        console.info('[treeViewV2PageTest_static_5800] END');
         done();
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_5900
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_5900
      * @tc.name     treeViewV2PageTest_static_5900
      * @tc.desc     Test TreeListenerManagerV2 getTreeListener returns same listener instance
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
@@ -1051,56 +1128,66 @@ export default function treeViewV2PageTest(): void {
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_6000
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_6000
      * @tc.name     treeViewV2PageTest_static_6000
      * @tc.desc     Test TreeControllerV2 addNode called after buildDone
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('treeViewV2PageTest_static_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_6000] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_6000] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        // Click "Test addAfterBuildDone" button to call addNode after buildDone
-        let addAfterBtn = await driver.findComponent(ON.text('Test addAfterBuildDone'));
-        if (addAfterBtn) {
-          await addAfterBtn.click();
-          await CommonFunc.sleep(1000);
+          // Click "Test addAfterBuildDone" button to call addNode after buildDone
+          let addAfterBtn = await driver.findComponent(ON.text('Test addAfterBuildDone'));
+          if (addAfterBtn) {
+            await addAfterBtn.click();
+            await CommonFunc.sleep(1000);
+          }
+
+          // Verify the result - addNode after buildDone should either succeed or fail gracefully
+          let addResult = await driver.findComponent(ON.id('addAfterBuildDoneResult'));
+          expect(addResult !== null).assertTrue();
+
+          console.info('[treeViewV2PageTest_static_6000] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_6000] error: ' + error);
+          expect().assertFail();
         }
-
-        // Verify the result - addNode after buildDone should either succeed or fail gracefully
-        let addResult = await driver.findComponent(ON.id('addAfterBuildDoneResult'));
-        expect(addResult !== null).assertTrue();
-
-        console.info('[treeViewV2PageTest_static_6000] END');
         done();
       });
 
     /**
-     * @tc.number   treeViewV2PageTest_static_6100
+     * @tc.number   SUB_ARKUI_API_treeViewV2PageTest_static_6100
      * @tc.name     treeViewV2PageTest_static_6100
      * @tc.desc     Test CallbackParamV2 with null optional fields (parentNodeId and childIndex)
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('treeViewV2PageTest_static_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        console.info('[treeViewV2PageTest_static_6100] START');
-        let driver = Driver.create();
-        await CommonFunc.sleep(2000);
+        try {
+          console.info('[treeViewV2PageTest_static_6100] START');
+          let driver = Driver.create();
+          await CommonFunc.sleep(2000);
 
-        // Click the root node - for root nodes, parentNodeId may be null/undefined
-        let rootNode = await driver.findComponent(ON.text('Root Node'));
-        if (rootNode) {
-          await rootNode.click();
-          await CommonFunc.sleep(1000);
+          // Click the root node - for root nodes, parentNodeId may be null/undefined
+          let rootNode = await driver.findComponent(ON.text('Root Node'));
+          if (rootNode) {
+            await rootNode.click();
+            await CommonFunc.sleep(1000);
+          }
+
+          // Verify CallbackParam display shows parent:-1 (null converted to -1 via ??)
+          let callbackParam = await driver.findComponent(ON.id('callbackParamText'));
+          expect(callbackParam !== null).assertTrue();
+
+          console.info('[treeViewV2PageTest_static_6100] END');
+        } catch (error) {
+          console.error('[treeViewV2PageTest_static_6100] error: ' + error);
+          expect().assertFail();
         }
-
-        // Verify CallbackParam display shows parent:-1 (null converted to -1 via ??)
-        let callbackParam = await driver.findComponent(ON.id('callbackParamText'));
-        expect(callbackParam !== null).assertTrue();
-
-        console.info('[treeViewV2PageTest_static_6100] END');
         done();
       });
 

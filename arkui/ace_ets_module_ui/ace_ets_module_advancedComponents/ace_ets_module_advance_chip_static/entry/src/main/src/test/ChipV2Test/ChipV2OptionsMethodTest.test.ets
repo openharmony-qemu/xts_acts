@@ -107,15 +107,20 @@ export default function ChipV2OptionsMethodTest(): void {
      * @tc.level    Level.LEVEL2
      */
     it('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300] START');
-      AppStorage.setOrCreate<string>('chipV2OptionsMethodAction', 'close');
-      const routerInstance = AppStorage.get<Router>('router') as Router;
-      routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2OptionsMethodTest' });
-      await CommonFunc.sleep(2000);
-      let closeTextJson = inspector.getInspectorByKey('ChipV2OptionsCloseText');
-      console.info('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300' + JSON.parseJsonElement(closeTextJson).getElement('$attrs').getElement('content'));
-      expect(JSON.parseJsonElement(closeTextJson).getElement('$attrs').getString('content')).assertEqual('closeChip0');
-      console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300] END');
+      try {
+        console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300] START');
+        AppStorage.setOrCreate<string>('chipV2OptionsMethodAction', 'close');
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2OptionsMethodTest' });
+        await CommonFunc.sleep(2000);
+        let closeTextJson = inspector.getInspectorByKey('ChipV2OptionsCloseText');
+        console.info('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300' + JSON.parseJsonElement(closeTextJson).getElement('$attrs').getElement('content'));
+        expect(JSON.parseJsonElement(closeTextJson).getElement('$attrs').getString('content')).assertEqual('closeChip0');
+        console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300] END');
+      } catch (error) {
+        console.error('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300] error: ' + error);
+        expect().assertFail();
+      }
       done();
     });
   })
