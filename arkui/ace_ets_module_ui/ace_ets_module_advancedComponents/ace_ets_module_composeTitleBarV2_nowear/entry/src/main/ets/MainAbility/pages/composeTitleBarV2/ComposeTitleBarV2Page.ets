@@ -181,5 +181,6 @@ struct ComposeTitleBarV2Example {
     }
     .width('100%')
     .height('100%')
+    .scrollBar(BarState.Auto)
   }
 }
