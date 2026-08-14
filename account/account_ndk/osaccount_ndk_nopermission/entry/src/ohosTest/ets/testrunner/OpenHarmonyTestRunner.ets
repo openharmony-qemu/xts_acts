@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// project: osaccount_ndk_nopermission
 
 import hilog from '@ohos.hilog';
 import TestRunner from '@ohos.application.testRunner';
