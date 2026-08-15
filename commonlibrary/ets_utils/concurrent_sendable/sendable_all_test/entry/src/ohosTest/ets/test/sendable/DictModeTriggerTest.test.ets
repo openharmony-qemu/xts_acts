@@ -16,7 +16,6 @@
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
-import Utils from '../utils'
 
 @Sendable
 class BoundaryPropertyClass {
@@ -231,16 +230,6 @@ function receiveAndCount(o: TransferableObject): number {
 @Concurrent
 function readArrayLength(arr: collections.Array<number>): number {
   return arr.length
-}
-
-@Concurrent
-function readMapSize(m: collections.Map<string, number>): number {
-  return m.size
-}
-
-@Concurrent
-function readSetSize(s: collections.Set<number>): number {
-  return s.size
 }
 
 @Concurrent
@@ -534,7 +523,6 @@ export default function DictModeTriggerTest(): void {
           tasks.push(new taskpool.Task(concurrentIncrement, obj, `prop_${i}`))
         }
       }
-      const batchSize: number = 30
       const promises: Promise<Object>[] = []
       for (let i = 0; i < tasks.length; i++) {
         promises.push(taskpool.execute(tasks[i]))
@@ -550,7 +538,7 @@ export default function DictModeTriggerTest(): void {
     /**
      * @tc.name   testDictModeTrigger1400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_1400
-     * @tc.desc   Verify property search in dictionary mode with 1025 properties
+     * @tc.desc   Verify fixed-point property sampling and missing key handling with 1025 properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
