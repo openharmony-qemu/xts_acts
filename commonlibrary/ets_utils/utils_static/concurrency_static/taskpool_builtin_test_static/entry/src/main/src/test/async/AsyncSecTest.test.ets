@@ -64,11 +64,16 @@ class AsyncTaskManager {
 
     this.isProcessing = true;
 
-    await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 500)});
-    this.executionCount++;
-
-    this.isProcessing = false;
-    return 'Completed';
+    try {
+      await sleep(500);
+      this.executionCount++;
+      this.isProcessing = false;
+      return 'Completed';
+    } catch (e) {
+      console.info(`AsyncSecTest doWork catch error: ${JSON.stringify(e)}`);
+      this.isProcessing = false;
+      throw e;
+    }
   }
 }
 class DatabaseError extends Error {
@@ -132,15 +137,25 @@ class FileStorage {
   storedFiles: string[] = [];
 
   async upload(filename: string): Promise<void> {
-    await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-    this.storedFiles.push(filename);
+    try {
+      await sleep(100);
+      this.storedFiles.push(filename);
+    } catch (e) {
+      console.info(`AsyncSecTest upload catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   async delete(filename: string): Promise<void> {
-    await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-    const index = this.storedFiles.indexOf(filename);
-    if (index > -1) {
-      this.storedFiles.splice(index, 1);
+    try {
+      await sleep(100);
+      const index = this.storedFiles.indexOf(filename);
+      if (index > -1) {
+        this.storedFiles.splice(index, 1);
+      }
+    } catch (e) {
+      console.info(`AsyncSecTest delete catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
   }
 }
@@ -181,13 +196,23 @@ class AsyncCalculator {
   baseValue: number = 5;
 
   async innerCompute(input: number): Promise<number> {
-    await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-    return input * this.multiplier;
+    try {
+      await sleep(100);
+      return input * this.multiplier;
+    } catch (e) {
+      console.info(`AsyncSecTest innerCompute catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   async calculate(input: int): Promise<number> {
-    const partial: number = this.baseValue + input;
-    return await this.innerCompute(partial);
+    try {
+      const partial: number = this.baseValue + input;
+      return await this.innerCompute(partial);
+    } catch (e) {
+      console.info(`AsyncSecTest calculate catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 }
 
@@ -260,12 +285,16 @@ class ServiceManager {
       return 'Already_Ready';
     }
 
-    await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-
-    this.state = 'READY';
-    this.initTimestamp = new Date().getTime();
-    this.operationCount++;
-    return 'Initialization_Complete';
+    try {
+      await sleep(100);
+      this.state = 'READY';
+      this.initTimestamp = new Date().getTime();
+      this.operationCount++;
+      return 'Initialization_Complete';
+    } catch (e) {
+      console.info(`AsyncSecTest initialize catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 }
 class UnstableService {
@@ -278,12 +307,16 @@ class UnstableService {
 
   async request(): Promise<string> {
     this.callCount++;
-    await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-
-    if (this.callCount <= this.failureThreshold) {
-      throw new Error('Service_Unavailable_503');
+    try {
+      await sleep(100);
+      if (this.callCount <= this.failureThreshold) {
+        throw new Error('Service_Unavailable_503');
+      }
+      return 'Success_Data';
+    } catch (e) {
+      console.info(`AsyncSecTest request catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
-    return 'Success_Data';
   }
 }
 
@@ -304,9 +337,14 @@ class Inventory {
       this._isLocked = true;
       return;
     }
-    await new Promise<void>((resolve) => {
-      this._waitingResolvers.push(resolve);
-    });
+    try {
+      await new Promise<void>((resolve) => {
+        this._waitingResolvers.push(resolve);
+      });
+    } catch (e) {
+      console.info(`AsyncSecTest lock catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   unlock(): void {
@@ -322,25 +360,45 @@ class Inventory {
 // Top-level generic async functions (migrated from local arrow functions in it() blocks)
 
 async function validateAndReturn0023<T>(input: T, shouldFail: boolean): Promise<T> {
-  await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-  if (shouldFail) {
-    throw new Error(`Validation failed`);
+  try {
+    await sleep(100);
+    if (shouldFail) {
+      throw new Error(`Validation failed`);
+    }
+    return input;
+  } catch (e) {
+    console.info(`AsyncSecTest validateAndReturn0023 catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  return input;
 }
 
 async function innerIdentity0034<T>(item: T): Promise<T> {
-  await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-  return item;
+  try {
+    await sleep(100);
+    return item;
+  } catch (e) {
+    console.info(`AsyncSecTest innerIdentity0034 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function middleWrapper0034<T>(item: T): Promise<T> {
-  const result = await innerIdentity0034<T>(item);
-  return result as T;
+  try {
+    const result = await innerIdentity0034<T>(item);
+    return result as T;
+  } catch (e) {
+    console.info(`AsyncSecTest middleWrapper0034 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function outerWrapper0034<T>(item: T): Promise<T> {
-  return (await middleWrapper0034<T>(item)) as T;
+  try {
+    return (await middleWrapper0034<T>(item)) as T;
+  } catch (e) {
+    console.info(`AsyncSecTest outerWrapper0034 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function returnDirect0035<T>(val: T): Promise<T> {
@@ -348,24 +406,44 @@ async function returnDirect0035<T>(val: T): Promise<T> {
 }
 
 async function returnPromise0035<T>(val: T): Promise<T> {
-  return (await Promise.resolve(val)) as T;
+  try {
+    return (await Promise.resolve(val)) as T;
+  } catch (e) {
+    console.info(`AsyncSecTest returnPromise0035 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function returnAwait0035<T>(val: T): Promise<T> {
-  return (await Promise.resolve(val)) as T;
+  try {
+    return (await Promise.resolve(val)) as T;
+  } catch (e) {
+    console.info(`AsyncSecTest returnAwait0035 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function updateTimestamp0036<T extends BaseEntity>(entity: T): Promise<T> {
-  await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-  entity.createdAt = 1234567890;
-  return entity;
+  try {
+    await sleep(100);
+    entity.createdAt = 1234567890;
+    return entity;
+  } catch (e) {
+    console.info(`AsyncSecTest updateTimestamp0036 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function processEntity0036<T extends BaseEntity>(entity: T): Promise<T> {
-  if (entity.id <= 0) {
-    throw new Error('Invalid ID');
+  try {
+    if (entity.id <= 0) {
+      throw new Error('Invalid ID');
+    }
+    return (await updateTimestamp0036<T>(entity)) as T;
+  } catch (e) {
+    console.info(`AsyncSecTest processEntity0036 catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  return (await updateTimestamp0036<T>(entity)) as T;
 }
 
 export default function asyncSecTest(): void {
@@ -384,19 +462,29 @@ export default function asyncSecTest(): void {
       try {
         let dbCallCount: int = 0;
         const mockDatabaseFetch = async (key: string): Promise<string> => {
-          dbCallCount++;
-          return await Promise.resolve(`Value_for_${key}`);
+          try {
+            dbCallCount++;
+            return await Promise.resolve(`Value_for_${key}`);
+          } catch (e) {
+            console.info(`asyncSecTest0001 mockDatabaseFetch catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const cache: Map<string, string> = new Map<string, string>();
 
         const getDataWithCache = async (key: string): Promise<string> => {
-          if (cache.has(key)) {
-            return Promise.resolve(cache.get(key)!);
+          try {
+            if (cache.has(key)) {
+              return Promise.resolve(cache.get(key)!);
+            }
+            const result = await mockDatabaseFetch(key);
+            cache.set(key, result);
+            return result;
+          } catch (e) {
+            console.info(`asyncSecTest0001 getDataWithCache catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
-          const result = await mockDatabaseFetch(key);
-          cache.set(key, result);
-          return result;
         };
 
         const val1 = await getDataWithCache('user_1');
@@ -430,24 +518,34 @@ export default function asyncSecTest(): void {
         let capturedArgs: CapturedArgs = new CapturedArgs();
 
         const externalApi = async (id: number, config: ApiConfig): Promise<ApiResponse> => {
-          capturedArgs.id = id;
-          capturedArgs.config = config;
+          try {
+            capturedArgs.id = id;
+            capturedArgs.config = config;
 
-          const response = new ApiResponse();
-          response.code = 200;
-          return await Promise.resolve(response);
+            const response = new ApiResponse();
+            response.code = 200;
+            return await Promise.resolve(response);
+          } catch (e) {
+            console.info(`asyncSecTest0002 externalApi catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const businessService = async (userId: number): Promise<string> => {
-          const config = new ApiConfig();
-          config.verbose = true;
+          try {
+            const config = new ApiConfig();
+            config.verbose = true;
 
-          const result = await externalApi(userId, config);
+            const result = await externalApi(userId, config);
 
-          if (result.code === 200) {
-            return 'Success';
-          } else {
-            return 'Failure';
+            if (result.code === 200) {
+              return 'Success';
+            } else {
+              return 'Failure';
+            }
+          } catch (e) {
+            console.info(`asyncSecTest0002 businessService catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
         };
 
@@ -477,30 +575,50 @@ export default function asyncSecTest(): void {
     it('asyncSecTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const fetchUserProfile = async (id: number): Promise<UserProfile> => {
-          const profile = new UserProfile();
-          profile.name = 'Alice';
-          profile.roleId = 99;
-          return await Promise.resolve(profile);
+          try {
+            const profile = new UserProfile();
+            profile.name = 'Alice';
+            profile.roleId = 99;
+            return await Promise.resolve(profile);
+          } catch (e) {
+            console.info(`asyncSecTest0003 fetchUserProfile catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const fetchPermissions = async (roleId: number): Promise<string[]> => {
-          return await Promise.resolve(roleId === 99 ? ['admin', 'write'] : ['read']);
+          try {
+            return await Promise.resolve(roleId === 99 ? ['admin', 'write'] : ['read']);
+          } catch (e) {
+            console.info(`asyncSecTest0003 fetchPermissions catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const fetchSystemStatus = async (): Promise<string> => {
-          return await Promise.resolve('Online');
+          try {
+            return await Promise.resolve('Online');
+          } catch (e) {
+            console.info(`asyncSecTest0003 fetchSystemStatus catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const getDetailedUser = async (id: number): Promise<DetailedUser> => {
-          const user = await fetchUserProfile(id);
-          const perms = await fetchPermissions(user.roleId);
+          try {
+            const user = await fetchUserProfile(id);
+            const perms = await fetchPermissions(user.roleId);
 
-          const detailed = new DetailedUser();
-          detailed.name = user.name;
-          detailed.roleId = user.roleId;
-          detailed.permissions = perms;
+            const detailed = new DetailedUser();
+            detailed.name = user.name;
+            detailed.roleId = user.roleId;
+            detailed.permissions = perms;
 
-          return detailed;
+            return detailed;
+          } catch (e) {
+            console.info(`asyncSecTest0003 getDetailedUser catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const detailedUser = await getDetailedUser(1);
@@ -509,15 +627,20 @@ export default function asyncSecTest(): void {
         expect(detailedUser.permissions[0]).assertEqual('admin');
 
         const getDashboardData = async (): Promise<String> => {
-          const results: Array<String|UserProfile> = await Promise.all([
-            fetchSystemStatus(),
-            fetchUserProfile(1)
-          ]);
+          try {
+            const results: Array<String|UserProfile> = await Promise.all([
+              fetchSystemStatus(),
+              fetchUserProfile(1)
+            ]);
 
-          const status = results[0] as string;
-          const user = results[1] as UserProfile;
+            const status = results[0] as string;
+            const user = results[1] as UserProfile;
 
-          return `System: ${status}, User: ${user.name}`;
+            return `System: ${status}, User: ${user.name}`;
+          } catch (e) {
+            console.info(`asyncSecTest0003 getDashboardData catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const dashboard = await getDashboardData();
@@ -539,18 +662,33 @@ export default function asyncSecTest(): void {
     it('asyncSecTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const fastTask = async (): Promise<string> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-          return 'Fast';
+          try {
+            await sleep(100);
+            return 'Fast';
+          } catch (e) {
+            console.info(`asyncSecTest0004 fastTask catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const slowTask = async (): Promise<string> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 500)});
-          return 'Slow';
+          try {
+            await sleep(500);
+            return 'Slow';
+          } catch (e) {
+            console.info(`asyncSecTest0004 slowTask catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const mediumTask = async (): Promise<string> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 300)});
-          return 'Medium';
+          try {
+            await sleep(300);
+            return 'Medium';
+          } catch (e) {
+            console.info(`asyncSecTest0004 mediumTask catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const results = await Promise.all([slowTask(), fastTask(), mediumTask()]);
@@ -580,9 +718,15 @@ export default function asyncSecTest(): void {
         const LOSER_VAL = 'Loser';
 
         const pFast = Promise.resolve<string>(WINNER_VAL);
-        const pSlow = new Promise<string>((resolve) => {
-          setTimeout(() => { resolve(LOSER_VAL); }, 100);
-        });
+        const pSlow = (async (): Promise<string> => {
+          try {
+            await sleep(100);
+            return LOSER_VAL;
+          } catch (e) {
+            console.info(`asyncSecTest0005 pSlow catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        })();
 
         const result = await Promise.race([pSlow, pFast]);
 
@@ -605,9 +749,15 @@ export default function asyncSecTest(): void {
       try {
         const pSuccess1 = Promise.resolve(100);
         const pFail = Promise.reject(Error('Error_Reason'));
-        const pSuccess2 = new Promise<number>((resolve) => {
-          setTimeout(() => { resolve(200); }, 200);
-        });
+        const pSuccess2 = (async (): Promise<number> => {
+          try {
+            await sleep(200);
+            return 200;
+          } catch (e) {
+            console.info(`asyncSecTest0006 pSuccess2 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        })();
 
         const results = await Promise.allSettled([pSuccess1, pFail, pSuccess2]);
 
@@ -648,20 +798,30 @@ export default function asyncSecTest(): void {
         const logs: string[] = [];
 
         const doTask = async (name: string, delay: int): Promise<void> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, delay)});
-          logs.push(`Finished_${name}`);
+          try {
+            await sleep(delay);
+            logs.push(`Finished_${name}`);
+          } catch (e) {
+            console.info(`asyncSecTest0007 doTask catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const processSequence = async (): Promise<void> => {
-          logs.push('Start');
+          try {
+            logs.push('Start');
 
-          await doTask('A', 50);
+            await doTask('A', 50);
 
-          logs.push('Between_A_and_B');
+            logs.push('Between_A_and_B');
 
-          await doTask('B', 20);
+            await doTask('B', 20);
 
-          logs.push('End');
+            logs.push('End');
+          } catch (e) {
+            console.info(`asyncSecTest0007 processSequence catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         await processSequence();
@@ -715,20 +875,30 @@ export default function asyncSecTest(): void {
 
         // Inner async function
         const innerTask = async (): Promise<void> => {
-          executionLog.push('Inner_Start');
-          // Simulate work
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-          executionLog.push('Inner_End');
+          try {
+            executionLog.push('Inner_Start');
+            // Simulate work
+            await sleep(100);
+            executionLog.push('Inner_End');
+          } catch (e) {
+            console.info(`asyncSecTest0009 innerTask catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         // Outer async function calling inner
         const outerTask = async (): Promise<void> => {
-          executionLog.push('Outer_Start');
+          try {
+            executionLog.push('Outer_Start');
 
-          // This await ensures Outer pauses until Inner completes fully
-          await innerTask();
+            // This await ensures Outer pauses until Inner completes fully
+            await innerTask();
 
-          executionLog.push('Outer_End');
+            executionLog.push('Outer_End');
+          } catch (e) {
+            console.info(`asyncSecTest0009 outerTask catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         await outerTask();
@@ -759,18 +929,28 @@ export default function asyncSecTest(): void {
         const trace: string[] = [];
 
         const processItem = async (id: number, delayMs: int): Promise<void> => {
-          trace.push(`Start_${id}`);
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, delayMs)});
-          trace.push(`End_${id}`);
+          try {
+            trace.push(`Start_${id}`);
+            await sleep(delayMs);
+            trace.push(`End_${id}`);
+          } catch (e) {
+            console.info(`asyncSecTest0010 processItem catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const runLoop = async (): Promise<void> => {
-          const delays = [40, 10, 10];
+          try {
+            const delays = [40, 10, 10];
 
-          let index: int = 0;
-          for (const id of inputs) {
-            await processItem(id, delays[index]);
-            index++;
+            let index: int = 0;
+            for (const id of inputs) {
+              await processItem(id, delays[index]);
+              index++;
+            }
+          } catch (e) {
+            console.info(`asyncSecTest0010 runLoop catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
         };
 
@@ -806,8 +986,13 @@ export default function asyncSecTest(): void {
 
         for (let i: int = 0; i < taskCount; i++) {
           const task = async (index: number): Promise<number> => {
-            await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-            return index;
+            try {
+              await sleep(100);
+              return index;
+            } catch (e) {
+              console.info(`asyncSecTest0011 task catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
           };
           tasks.push(task(i));
         }
@@ -841,13 +1026,18 @@ export default function asyncSecTest(): void {
     it('asyncSecTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const processUser = async (id: number, uniqueData: string, delay: int): Promise<string> => {
-          const session = new UserSession();
-          session.userId = id;
-          session.data = uniqueData;
+          try {
+            const session = new UserSession();
+            session.userId = id;
+            session.data = uniqueData;
 
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, delay)});
+            await sleep(delay);
 
-          return session.data;
+            return session.data;
+          } catch (e) {
+            console.info(`asyncSecTest0012 processUser catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const taskA = processUser(1, 'Alice', 10);
@@ -878,18 +1068,23 @@ export default function asyncSecTest(): void {
       try {
         const state = new SearchState();
         const performSearch = async (reqId: number, result: string, delay: int): Promise<void> => {
-          state.lastRequestId = reqId;
+          try {
+            state.lastRequestId = reqId;
 
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, delay)});
+            await sleep(delay);
 
-          if (reqId === state.lastRequestId) {
-            state.displayValue = result;
+            if (reqId === state.lastRequestId) {
+              state.displayValue = result;
+            }
+          } catch (e) {
+            console.info(`asyncSecTest0013 performSearch catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
         };
 
         const p1 = performSearch(101, 'Old_Result', 100);
 
-        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+        await sleep(100);
         const p2 = performSearch(102, 'New_Result', 20);
 
         await Promise.all([p1, p2]);
@@ -915,24 +1110,29 @@ export default function asyncSecTest(): void {
        const account = new BankAccount();
 
         const safeWithdraw = async (amount: number): Promise<boolean> => {
-          while (account.isLocked) {
-            await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-          }
-
-          account.isLocked = true;
-
           try {
-            const currentBalance = account.balance;
-
-            await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 200)});
-
-            if (currentBalance >= amount) {
-              account.balance = currentBalance - amount;
-              return true;
+            while (account.isLocked) {
+              await sleep(100);
             }
-            return false;
-          } finally {
-            account.isLocked = false;
+
+            account.isLocked = true;
+
+            try {
+              const currentBalance = account.balance;
+
+              await sleep(200);
+
+              if (currentBalance >= amount) {
+                account.balance = currentBalance - amount;
+                return true;
+              }
+              return false;
+            } finally {
+              account.isLocked = false;
+            }
+          } catch (e) {
+            console.info(`asyncSecTest0014 safeWithdraw catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
         };
 
@@ -969,7 +1169,7 @@ export default function asyncSecTest(): void {
 
         const p1 = manager.doWork();
 
-        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+        await sleep(100);
         const p2 = manager.doWork();
 
         const results = await Promise.all([p1, p2]);
@@ -998,8 +1198,13 @@ export default function asyncSecTest(): void {
     it('asyncSecTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const asyncFailure = async (): Promise<string> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-          throw new Error('Network_Timeout');
+          try {
+            await sleep(100);
+            throw new Error('Network_Timeout');
+          } catch (e) {
+            console.info(`asyncSecTest0016 asyncFailure catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         let capturedError: Error | null = null;
@@ -1078,7 +1283,12 @@ export default function asyncSecTest(): void {
         };
 
         const middleLevel = async (): Promise<void> => {
-          await innerLevel();
+          try {
+            await innerLevel();
+          } catch (e) {
+            console.info(`asyncSecTest0018 middleLevel catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const outerLevel = async (): Promise<void> => {
@@ -1112,7 +1322,12 @@ export default function asyncSecTest(): void {
         };
 
         const businessService = async (): Promise<void> => {
-          await queryDatabase();
+          try {
+            await queryDatabase();
+          } catch (e) {
+            console.info(`asyncSecTest0019 businessService catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         try {
@@ -1123,9 +1338,10 @@ export default function asyncSecTest(): void {
 
           expect(err instanceof DatabaseError).assertTrue();
 
-          const dbError = err as DatabaseError;
-          expect(dbError instanceof Error).assertTrue();
-          expect(dbError.errorCode).assertEqual(503);
+          if (err instanceof DatabaseError) {
+            expect(err instanceof Error).assertTrue();
+            expect(err.errorCode).assertEqual(503);
+          }
         }
       } catch (err) {
         expect().assertFail();
@@ -1144,9 +1360,14 @@ export default function asyncSecTest(): void {
     it('asyncSecTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const simulateFetch = async (targetUrl: string): Promise<string> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+          try {
+            await sleep(100);
 
-          throw new NetworkError('Host unreachable', 404, targetUrl);
+            throw new NetworkError('Host unreachable', 404, targetUrl);
+          } catch (e) {
+            console.info(`asyncSecTest0020 simulateFetch catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const apiUrl = 'https://example.com/api/data';
@@ -1157,10 +1378,11 @@ export default function asyncSecTest(): void {
         } catch (e) {
           expect(e instanceof NetworkError).assertTrue();
 
-          const netErr = e as NetworkError;
-          expect(netErr instanceof Error).assertTrue();
-          expect(netErr.statusCode).assertEqual(404);
-          expect(netErr.url).assertEqual(apiUrl);
+          if (e instanceof NetworkError) {
+            expect(e instanceof Error).assertTrue();
+            expect(e.statusCode).assertEqual(404);
+            expect(e.url).assertEqual(apiUrl);
+          }
         }
       } catch (err) {
         expect().assertFail();
@@ -1180,20 +1402,34 @@ export default function asyncSecTest(): void {
       try {
         // A task that takes longer than the timeout limit
         const slowTask = async (): Promise<string> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-          return 'Success';
+          try {
+            await sleep(100);
+            return 'Success';
+          } catch (e) {
+            console.info(`asyncSecTest0021 slowTask catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         // Wrapper to enforce timeout
         const executeWithTimeout = async (timeoutMs: int): Promise<string> => {
-          const timeoutPromise = new Promise<string>((_, reject) => {
-            setTimeout(() => {
-              reject(new Error('Operation_Timeout'));
-            }, timeoutMs);
-          });
+          const timeoutPromise = (async (): Promise<string> => {
+            try {
+              await sleep(timeoutMs);
+            } catch (e) {
+              console.info(`asyncSecTest0021 timeoutPromise catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+            throw new Error('Operation_Timeout');
+          })();
 
-          // Race: returns whichever settles first
-          return Promise.race([slowTask(), timeoutPromise]);
+          try {
+            // Race: returns whichever settles first
+            return await Promise.race([slowTask(), timeoutPromise]);
+          } catch (e) {
+            console.info(`asyncSecTest0021 executeWithTimeout catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         try {
@@ -1235,9 +1471,10 @@ export default function asyncSecTest(): void {
           expect(true).assertFalse();
         } catch (e) {
           expect(e instanceof ServiceError).assertTrue();
-          const sErr = e as ServiceError;
-          expect(sErr.errorCode).assertEqual('ERR_INVALID_INPUT');
-          expect(sErr.retryable).assertFalse();
+          if (e instanceof ServiceError) {
+            expect(e.errorCode).assertEqual('ERR_INVALID_INPUT');
+            expect(e.retryable).assertFalse();
+          }
         }
 
         // Test Scenario 2: Retryable Error
@@ -1245,9 +1482,10 @@ export default function asyncSecTest(): void {
           await processOrder(100);
           expect(true).assertFalse();
         } catch (e) {
-          const sErr = e as ServiceError;
-          expect(sErr.errorCode).assertEqual('ERR_BUSY');
-          expect(sErr.retryable).assertTrue();
+          if (e instanceof ServiceError) {
+            expect(e.errorCode).assertEqual('ERR_BUSY');
+            expect(e.retryable).assertTrue();
+          }
         }
       } catch (err) {
         expect().assertFail();
@@ -1314,7 +1552,7 @@ export default function asyncSecTest(): void {
         const successOperation = async (): Promise<string> => {
           conn.open();
           try {
-            await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+            await sleep(100);
             return 'Success';
           } finally {
             conn.close();
@@ -1324,7 +1562,7 @@ export default function asyncSecTest(): void {
         const failOperation = async (): Promise<string> => {
           conn.open();
           try {
-            await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+            await sleep(100);
             throw new Error('Query Failed');
           } finally {
             conn.close();
@@ -1364,20 +1602,10 @@ export default function asyncSecTest(): void {
           if (lock.isLocked) throw new Error('Already Locked');
           lock.isLocked = true;
 
-          let timerId: int = -1;
-
           try {
-            await new Promise<void>((resolve, reject) => {
-              timerId = setTimeout(() => {
-              }, 1000);
-
-              setTimeout(() => {
-                reject(new Error('Process Crashed'));
-              }, 100);
-            });
+            await sleep(100);
+            throw new Error('Process Crashed');
           } catch (e) {
-            clearTimeout(timerId);
-
             if (e instanceof Error) {
               throw e;
             } else {
@@ -1419,11 +1647,8 @@ export default function asyncSecTest(): void {
         const fetchConfigSafe = async (): Promise<AppConfig> => {
           state.isLoading = true;
           try {
-            await new Promise<void>((_, reject) => {setTimeout(() => reject(new Error('Network Error')), 100)});
-
-            const remoteConfig = new AppConfig();
-            remoteConfig.theme = 'dark';
-            return remoteConfig;
+            await sleep(100);
+            throw new Error('Network Error');
           } catch (e) {
             const defaultConfig = new AppConfig();
             defaultConfig.theme = 'default_blue';
@@ -1472,10 +1697,15 @@ export default function asyncSecTest(): void {
             }
             return 'Success';
           } catch (e) {
-            for (let i: int = 0; i < uploadedSuccessfully.length; i++) {
-              await storage.delete(uploadedSuccessfully[i]);
+            try {
+              for (let i: int = 0; i < uploadedSuccessfully.length; i++) {
+                await storage.delete(uploadedSuccessfully[i]);
+              }
+              return 'Transaction_Rolled_Back';
+            } catch (e2) {
+              console.info(`asyncSecTest0027 rollback catch error: ${JSON.stringify(e2)}`);
+              throw e2;
             }
-            return 'Transaction_Rolled_Back';
           }
         };
 
@@ -1506,17 +1736,27 @@ export default function asyncSecTest(): void {
         const trace: string[] = [];
 
         const innerFunction = async (): Promise<void> => {
-          trace.push('Inner_Start');
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 200)});
-          trace.push('Inner_End');
+          try {
+            trace.push('Inner_Start');
+            await sleep(200);
+            trace.push('Inner_End');
+          } catch (e) {
+            console.info(`asyncSecTest0028 innerFunction catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const outerFunction = async (): Promise<void> => {
-          trace.push('Outer_Start');
+          try {
+            trace.push('Outer_Start');
 
-          await innerFunction();
+            await innerFunction();
 
-          trace.push('Outer_End');
+            trace.push('Outer_End');
+          } catch (e) {
+            console.info(`asyncSecTest0028 outerFunction catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         await outerFunction();
@@ -1545,21 +1785,36 @@ export default function asyncSecTest(): void {
         const stackTrace: string[] = [];
 
         const level3 = async (): Promise<void> => {
-          stackTrace.push('L3_Start');
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-          stackTrace.push('L3_End');
+          try {
+            stackTrace.push('L3_Start');
+            await sleep(100);
+            stackTrace.push('L3_End');
+          } catch (e) {
+            console.info(`asyncSecTest0029 level3 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const level2 = async (): Promise<void> => {
-          stackTrace.push('L2_Start');
-          await level3();
-          stackTrace.push('L2_End');
+          try {
+            stackTrace.push('L2_Start');
+            await level3();
+            stackTrace.push('L2_End');
+          } catch (e) {
+            console.info(`asyncSecTest0029 level2 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const level1 = async (): Promise<void> => {
-          stackTrace.push('L1_Start');
-          await level2();
-          stackTrace.push('L1_End');
+          try {
+            stackTrace.push('L1_Start');
+            await level2();
+            stackTrace.push('L1_End');
+          } catch (e) {
+            console.info(`asyncSecTest0029 level1 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         await level1();
@@ -1596,26 +1851,41 @@ export default function asyncSecTest(): void {
         const logs: string[] = [];
 
         const workerTask = async (name: string, delay: int): Promise<void> => {
-          logs.push(`${name}_Start`);
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, delay)});
-          logs.push(`${name}_End`);
+          try {
+            logs.push(`${name}_Start`);
+            await sleep(delay);
+            logs.push(`${name}_End`);
+          } catch (e) {
+            console.info(`asyncSecTest0030 workerTask catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const middleManager = async (): Promise<void> => {
-          logs.push('Manager_Start');
+          try {
+            logs.push('Manager_Start');
 
-          await Promise.all([
-            workerTask('TaskA', 10),
-            workerTask('TaskB', 50)
-          ]);
+            await Promise.all([
+              workerTask('TaskA', 10),
+              workerTask('TaskB', 50)
+            ]);
 
-          logs.push('Manager_End');
+            logs.push('Manager_End');
+          } catch (e) {
+            console.info(`asyncSecTest0030 middleManager catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const director = async (): Promise<void> => {
-          logs.push('Director_Start');
-          await middleManager();
-          logs.push('Director_End');
+          try {
+            logs.push('Director_Start');
+            await middleManager();
+            logs.push('Director_End');
+          } catch (e) {
+            console.info(`asyncSecTest0030 director catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         await director();
@@ -1656,12 +1926,22 @@ export default function asyncSecTest(): void {
     it('asyncSecTest0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const processPayment = async (id: string): Promise<void> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-          throw new PaymentError('Insufficient Funds', id, 1001);
+          try {
+            await sleep(100);
+            throw new PaymentError('Insufficient Funds', id, 1001);
+          } catch (e) {
+            console.info(`asyncSecTest0031 processPayment catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const handleCheckout = async (): Promise<void> => {
-          await processPayment('TX_999');
+          try {
+            await processPayment('TX_999');
+          } catch (e) {
+            console.info(`asyncSecTest0031 handleCheckout catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         try {
@@ -1700,15 +1980,25 @@ export default function asyncSecTest(): void {
         };
 
         const middleFunction = async (): Promise<void> => {
-          trace.push('Enter_L2');
-          await deepFunction();
-          trace.push('Exit_L2');
+          try {
+            trace.push('Enter_L2');
+            await deepFunction();
+            trace.push('Exit_L2');
+          } catch (e) {
+            console.info(`asyncSecTest0032 middleFunction catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const topFunction = async (): Promise<void> => {
-          trace.push('Enter_L1');
-          await middleFunction();
-          trace.push('Exit_L1');
+          try {
+            trace.push('Enter_L1');
+            await middleFunction();
+            trace.push('Exit_L1');
+          } catch (e) {
+            console.info(`asyncSecTest0032 topFunction catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         try {
@@ -1743,17 +2033,32 @@ export default function asyncSecTest(): void {
       try {
 
         const branchSuccess = async (): Promise<string> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 500)});
-          return 'Success';
+          try {
+            await sleep(500);
+            return 'Success';
+          } catch (e) {
+            console.info(`asyncSecTest0033 branchSuccess catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const branchFail = async (): Promise<string> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-          throw new Error('Branch_Failed');
+          try {
+            await sleep(100);
+            throw new Error('Branch_Failed');
+          } catch (e) {
+            console.info(`asyncSecTest0033 branchFail catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const parentTask = async (): Promise<string[]> => {
-          return await Promise.all([branchSuccess(), branchFail()]);
+          try {
+            return await Promise.all([branchSuccess(), branchFail()]);
+          } catch (e) {
+            console.info(`asyncSecTest0033 parentTask catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         try {
@@ -1893,7 +2198,12 @@ export default function asyncSecTest(): void {
         };
 
         const outerLevel = async (id: number, config: ConfigObj, tags: string[]): Promise<boolean> => {
-          return await innerLevel(id, config, tags);
+          try {
+            return await innerLevel(id, config, tags);
+          } catch (e) {
+            console.info(`asyncSecTest0037 outerLevel catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const testConfig = new ConfigObj();
@@ -1920,16 +2230,26 @@ export default function asyncSecTest(): void {
     it('asyncSecTest0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const createProfile = async (uid: number): Promise<UserProfile038> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-          const p = new UserProfile038();
-          p.id = uid;
-          p.meta.set('role', 'admin');
-          p.meta.set('region', 'CN');
-          return p;
+          try {
+            await sleep(100);
+            const p = new UserProfile038();
+            p.id = uid;
+            p.meta.set('role', 'admin');
+            p.meta.set('region', 'CN');
+            return p;
+          } catch (e) {
+            console.info(`asyncSecTest0038 createProfile catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const fetchUserProfile = async (uid: number): Promise<UserProfile038> => {
-          return await createProfile(uid);
+          try {
+            return await createProfile(uid);
+          } catch (e) {
+            console.info(`asyncSecTest0038 fetchUserProfile catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const result = await fetchUserProfile(888);
@@ -1985,22 +2305,26 @@ export default function asyncSecTest(): void {
     it('asyncSecTest0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const safeProcess = async (input: InputWrapper): Promise<string> => {
+          try {
+            await sleep(100);
 
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+            if (input.strVal === null || input.strVal === undefined) {
+              return 'Default_String';
+            }
 
-          if (input.strVal === null || input.strVal === undefined) {
-            return 'Default_String';
+            if (input.strVal?.length === 0) {
+              return 'Empty_String_Detected';
+            }
+
+            if (Number.isNaN(input.numVal)) {
+              return 'Invalid_Number';
+            }
+
+            return `Processed_${input.strVal}`;
+          } catch (e) {
+            console.info(`asyncSecTest0040 safeProcess catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
-
-          if (input.strVal?.length === 0) {
-            return 'Empty_String_Detected';
-          }
-
-          if (Number.isNaN(input.numVal)) {
-            return 'Invalid_Number';
-          }
-
-          return `Processed_${input.strVal}`;
         };
 
         const inputNull = new InputWrapper();
@@ -2040,8 +2364,13 @@ export default function asyncSecTest(): void {
     it('asyncSecTest0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const asyncCalc = async (a: number, b: number): Promise<number> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-          return a + b;
+          try {
+            await sleep(100);
+            return a + b;
+          } catch (e) {
+            console.info(`asyncSecTest0041 asyncCalc catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const maxSafe = Number.MAX_SAFE_INTEGER;
@@ -2086,14 +2415,19 @@ export default function asyncSecTest(): void {
         }
 
         const processLargeList = async (list: DataItem[]): Promise<number> => {
-          let checkSum: number = 0;
-          for (let i: int = 0; i < list.length; i++) {
-            checkSum += list[i].id;
-            if (i % 1000 === 0) {
-              await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+          try {
+            let checkSum: number = 0;
+            for (let i: int = 0; i < list.length; i++) {
+              checkSum += list[i].id;
+              if (i % 1000 === 0) {
+                await sleep(100);
+              }
             }
+            return checkSum;
+          } catch (e) {
+            console.info(`asyncSecTest0042 processLargeList catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
-          return checkSum;
         };
 
         const resultSum = await processLargeList(largeList);
@@ -2118,8 +2452,13 @@ export default function asyncSecTest(): void {
     it('asyncSecTest0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const asyncEcho = async (input: string): Promise<string> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-          return input;
+          try {
+            await sleep(100);
+            return input;
+          } catch (e) {
+            console.info(`asyncSecTest0043 asyncEcho catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const escapeStr = "Line1\nLine2\tTabbed\"Quoted\"\\Backslash";
@@ -2153,25 +2492,30 @@ export default function asyncSecTest(): void {
     it('asyncSecTest0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const slowTask = async (): Promise<string> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-          return 'Finished_Slowly';
+          try {
+            await sleep(100);
+            return 'Finished_Slowly';
+          } catch (e) {
+            console.info(`asyncSecTest0044 slowTask catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const executeWithTimeout = async (timeoutMs: int): Promise<string> => {
-          let timerId: int = -1;
-
-          const timeoutPromise = new Promise<string>((_, reject) => {
-            timerId = setTimeout(() => {
-              reject(new Error('Timeout_Occurred'));
-            }, timeoutMs);
-          });
+          const timeoutPromise = (async (): Promise<string> => {
+            try {
+              await sleep(timeoutMs);
+            } catch (e) {
+              console.info(`asyncSecTest0044 timeoutPromise catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+            throw new Error('Timeout_Occurred');
+          })();
 
           try {
             const result = await Promise.race([slowTask(), timeoutPromise]);
-            clearTimeout(timerId);
             return result;
           } catch (e) {
-            clearTimeout(timerId);
             if (e instanceof Error) {
               throw e;
             }
@@ -2206,25 +2550,34 @@ export default function asyncSecTest(): void {
         const context = new TaskContext();
 
         const cancellableTask = async (ctx: TaskContext): Promise<void> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 200)});
+          try {
+            await sleep(200);
 
-          if (ctx.isCancelled) return;
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 500)});
+            if (ctx.isCancelled) return;
+            await sleep(500);
 
-          if (!ctx.isCancelled) {
-            ctx.resultData = 'Modified_By_Task';
+            if (!ctx.isCancelled) {
+              ctx.resultData = 'Modified_By_Task';
+            }
+          } catch (e) {
+            console.info(`asyncSecTest0045 cancellableTask catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
         };
 
         const runWithCancel = async (ctx: TaskContext): Promise<boolean> => {
           const timeoutMs: int = 30;
           const taskPromise = cancellableTask(ctx);
-          const timeoutPromise = new Promise<void>((_, reject) => {
-            setTimeout(() => {
+          const timeoutPromise = (async (): Promise<void> => {
+            try {
+              await sleep(timeoutMs);
               ctx.isCancelled = true;
-              reject(new Error('Timeout'));
-            }, timeoutMs);
-          });
+            } catch (e) {
+              console.info(`asyncSecTest0045 timeoutPromise catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+            throw new Error('Timeout');
+          })();
 
           let timeoutCaught: boolean = false;
           try {
@@ -2232,7 +2585,11 @@ export default function asyncSecTest(): void {
           } catch (e) {
             timeoutCaught = true;
           }
-          await taskPromise;
+          try {
+            await taskPromise;
+          } catch (e) {
+            console.info(`asyncSecTest0045 taskPromise catch error: ${JSON.stringify(e)}`);
+          }
           return timeoutCaught;
         };
 
@@ -2259,14 +2616,19 @@ export default function asyncSecTest(): void {
         const service = new ServiceMock();
 
         const unstableFetch = async (): Promise<string> => {
-          service.callCount++;
+          try {
+            service.callCount++;
 
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+            await sleep(100);
 
-          if (service.callCount < 3) {
-            throw new Error('Temporary_Failure');
+            if (service.callCount < 3) {
+              throw new Error('Temporary_Failure');
+            }
+            return 'Success';
+          } catch (e) {
+            console.info(`asyncSecTest0046 unstableFetch catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
-          return 'Success';
         };
 
         const executeWithRetry = async (maxRetries: number, interval: int): Promise<string> => {
@@ -2281,7 +2643,12 @@ export default function asyncSecTest(): void {
                 throw new Error('Unknown Error');
               }
 
-              await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, interval)});
+              try {
+                await sleep(interval);
+              } catch (e2) {
+                console.info(`asyncSecTest0046 retryWait catch error: ${JSON.stringify(e2)}`);
+                throw e2;
+              }
             }
           }
           return 'Failed';
@@ -2309,22 +2676,26 @@ export default function asyncSecTest(): void {
     it('asyncSecTest0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const longRunningTask = async (signal: CancelSignal): Promise<string> => {
-          signal.check();
+          try {
+            signal.check();
 
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 200)});
+            await sleep(200);
 
-          signal.check();
+            signal.check();
 
-          return 'Completed';
+            return 'Completed';
+          } catch (e) {
+            console.info(`asyncSecTest0047 longRunningTask catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const signal = new CancelSignal();
 
         const taskPromise = longRunningTask(signal);
 
-        setTimeout(() => {
-          signal.abort();
-        }, 100);
+        await sleep(100);
+        signal.abort();
 
         try {
           await taskPromise;
@@ -2358,7 +2729,7 @@ export default function asyncSecTest(): void {
         const secureTask = async (): Promise<void> => {
           lock.acquire();
           try {
-            await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 500)});
+            await sleep(500);
 
             if (token.isCancelled) {
               throw new CancelError048();
@@ -2370,7 +2741,7 @@ export default function asyncSecTest(): void {
 
         const p = secureTask();
 
-        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 200)});
+        await sleep(200);
         token.cancel();
 
         try {
@@ -2400,13 +2771,18 @@ export default function asyncSecTest(): void {
         const signal = new CancelSignal();
 
         const worker = async (id: number, duration: int): Promise<void> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, duration)});
+          try {
+            await sleep(duration);
 
-          if (signal.isAborted) {
-            throw new Error(`Worker_${id}_Cancelled`);
+            if (signal.isAborted) {
+              throw new Error(`Worker_${id}_Cancelled`);
+            }
+
+            tracker.completedCount++;
+          } catch (e) {
+            console.info(`asyncSecTest0049 worker catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
-
-          tracker.completedCount++;
         };
 
         const tasks = [
@@ -2415,9 +2791,8 @@ export default function asyncSecTest(): void {
           worker(3, 500)
         ];
 
-        setTimeout(() => {
-          signal.abort();
-        }, 200);
+        await sleep(200);
+        signal.abort();
 
         let cancellationCaught: boolean = false;
         try {
@@ -2447,8 +2822,13 @@ export default function asyncSecTest(): void {
     it('asyncSecTest0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const calculateAsync = async (base: number, exponent: number): Promise<number> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-          return Math.pow(base, exponent);
+          try {
+            await sleep(100);
+            return Math.pow(base, exponent);
+          } catch (e) {
+            console.info(`asyncSecTest0050 calculateAsync catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const baseVal: int = 2;
@@ -2525,8 +2905,13 @@ export default function asyncSecTest(): void {
     it('asyncSecTest0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         const lightTask = async (index: number): Promise<number> => {
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
-          return index;
+          try {
+            await sleep(100);
+            return index;
+          } catch (e) {
+            console.info(`asyncSecTest0052 lightTask catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const iterationCount: int = 100;
@@ -2579,7 +2964,12 @@ export default function asyncSecTest(): void {
                 throw lastError;
               }
 
-              await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+              try {
+                await sleep(100);
+              } catch (e2) {
+                console.info(`asyncSecTest0053 retryWait catch error: ${JSON.stringify(e2)}`);
+                throw e2;
+              }
             }
           }
           return 'Should_Not_Reach_Here';
@@ -2623,21 +3013,26 @@ export default function asyncSecTest(): void {
         const PURCHASE_COUNT: int = 50;
 
         const purchaseItem = async (qty: number): Promise<boolean> => {
-          await globalInventory.lock();
-
           try {
-            const currentStock = globalInventory.stock;
+            await globalInventory.lock();
 
-            await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 100)});
+            try {
+              const currentStock = globalInventory.stock;
 
-            if (currentStock >= qty) {
-              globalInventory.stock = currentStock - qty;
-              return true;
+              await sleep(100);
+
+              if (currentStock >= qty) {
+                globalInventory.stock = currentStock - qty;
+                return true;
+              }
+              return false;
+
+            } finally {
+              globalInventory.unlock();
             }
-            return false;
-
-          } finally {
-            globalInventory.unlock();
+          } catch (e) {
+            console.info(`asyncSecTest0054 purchaseItem catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
         };
 

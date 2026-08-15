@@ -127,15 +127,25 @@ class TestClass {
 
 class Parent {
   public async parentMethod(num: number): Promise<number> {
-    return await Promise.resolve(num * 2);
+    try {
+      return await Promise.resolve(num * 2);
+    } catch (e) {
+      console.info(`Parent.parentMethod catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 }
 
 class Child extends Parent {
   public async childMethod(num: number): Promise<number> {
-    const parentVal: number = await this.parentMethod(num);
-    const childVal: number = await Promise.resolve(parentVal + 7);
-    return childVal;
+    try {
+      const parentVal: number = await this.parentMethod(num);
+      const childVal: number = await Promise.resolve(parentVal + 7);
+      return childVal;
+    } catch (e) {
+      console.info(`Child.childMethod catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 }
 
@@ -154,17 +164,37 @@ class DataStore<T> {
 
   async add(item: T): Promise<int> {
     const nestedAdd = async (): Promise<int> => {
-      this.data.push(item);
-      return await Promise.resolve(this.data.length);
+      try {
+        this.data.push(item);
+        return await Promise.resolve(this.data.length);
+      } catch (e) {
+        console.info(`DataStore.add catch error: ${JSON.stringify(e)}`);
+        throw e;
+      }
     };
-    return await nestedAdd();
+    try {
+      return await nestedAdd();
+    } catch (e) {
+      console.info(`DataStore.add catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   async getAt(index: int): Promise<T | undefined> {
     const nestedGet = async (): Promise<T | undefined> => {
-      return (await Promise.resolve(this.data[index])) as T | undefined;
+      try {
+        return (await Promise.resolve(this.data[index])) as T | undefined;
+      } catch (e) {
+        console.info(`DataStore.getAt catch error: ${JSON.stringify(e)}`);
+        throw e;
+      }
     };
-    return await nestedGet();
+    try {
+      return await nestedGet();
+    } catch (e) {
+      console.info(`DataStore.getAt catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 }
 
@@ -173,12 +203,17 @@ class DataStore<T> {
 // formatData implementation
 function formatData(data: string | number): Promise<string> {
   const nestedFormat = async (): Promise<string> => {
-    if (typeof data === 'string') {
-      const s: string = data as string;
-      return await Promise.resolve(s.toUpperCase());
+    try {
+      if (typeof data === 'string') {
+        const s: string = data as string;
+        return await Promise.resolve(s.toUpperCase());
+      }
+      const n: number = data as number;
+      return await Promise.resolve(n.toString().padStart(3, '0'));
+    } catch (e) {
+      console.info(`formatData catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
-    const n: number = data as number;
-    return await Promise.resolve(n.toString().padStart(3, '0'));
   };
   return nestedFormat();
 }
@@ -188,42 +223,88 @@ async function asyncFunctionTest016Fn(): Promise<number> {
   const obj: AsyncMethodObj = {
     method: async (num: number): Promise<number> => num * 2
   };
-  const result: number = await obj.method(7);
-  return result;
+  try {
+    const result: number = await obj.method(7);
+    return result;
+  } catch (e) {
+    console.info(`asyncFunctionTest016Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // asyncFunctionTest043 (rewritten from async generator that yields 1,2,3)
 async function asyncFunctionTest043Fn(): Promise<number[]> {
   const callAsyncGenerator = async (): Promise<number[]> => {
-    const results: number[] = [];
-    results.push(await Promise.resolve(1));
-    results.push(await Promise.resolve(2));
-    results.push(await Promise.resolve(3));
-    return results;
+    try {
+      const results: number[] = [];
+      results.push(await Promise.resolve(1));
+      results.push(await Promise.resolve(2));
+      results.push(await Promise.resolve(3));
+      return results;
+    } catch (e) {
+      console.info(`asyncFunctionTest043Fn catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   };
-  const result: number[] = await callAsyncGenerator();
-  return result;
+  try {
+    const result: number[] = await callAsyncGenerator();
+    return result;
+  } catch (e) {
+    console.info(`asyncFunctionTest043Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // asyncFunctionTest053 (nested async in typed object properties)
 async function asyncFunctionTest053Fn(): Promise<number> {
   const asyncObj: AsyncObj = {
-    step1: async (num: number): Promise<number> => await Promise.resolve(num + 5),
-    step2: async (num: number): Promise<number> => await Promise.resolve(num * 3),
+    step1: async (num: number): Promise<number> => {
+      try {
+        return await Promise.resolve(num + 5);
+      } catch (e) {
+        console.info(`asyncFunctionTest053Fn catch error: ${JSON.stringify(e)}`);
+        throw e;
+      }
+    },
+    step2: async (num: number): Promise<number> => {
+      try {
+        return await Promise.resolve(num * 3);
+      } catch (e) {
+        console.info(`asyncFunctionTest053Fn catch error: ${JSON.stringify(e)}`);
+        throw e;
+      }
+    },
     step3: {
-      nestedStep: async (num: number): Promise<number> => await Promise.resolve(num - 2)
+      nestedStep: async (num: number): Promise<number> => {
+        try {
+          return await Promise.resolve(num - 2);
+        } catch (e) {
+          console.info(`asyncFunctionTest053Fn catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
+      }
     }
   };
 
   const runObjSteps = async (): Promise<number> => {
-    let val: number = 4;
-    val = await asyncObj.step1(val);
-    val = await asyncObj.step2(val);
-    val = await asyncObj.step3.nestedStep(val);
-    return val;
+    try {
+      let val: number = 4;
+      val = await asyncObj.step1(val);
+      val = await asyncObj.step2(val);
+      val = await asyncObj.step3.nestedStep(val);
+      return val;
+    } catch (e) {
+      console.info(`asyncFunctionTest053Fn catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   };
-  const result: number = await runObjSteps();
-  return result;
+  try {
+    const result: number = await runObjSteps();
+    return result;
+  } catch (e) {
+    console.info(`asyncFunctionTest053Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // asyncFunctionTest063 (nested async in module-like object)
@@ -231,97 +312,186 @@ async function asyncFunctionTest063Fn(): Promise<UserProfileResult> {
   const userModule: UserModule = {
     auth: {
       login: async (user: string, pwd: string): Promise<boolean> => {
-        const nestedAuth = async (): Promise<boolean> => await Promise.resolve(user === 'test' && pwd === '123');
-        return await nestedAuth();
+        const nestedAuth = async (): Promise<boolean> => {
+          try {
+            return await Promise.resolve(user === 'test' && pwd === '123');
+          } catch (e) {
+            console.info(`asyncFunctionTest063Fn catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        };
+        try {
+          return await nestedAuth();
+        } catch (e) {
+          console.info(`asyncFunctionTest063Fn catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       },
       getToken: async (): Promise<string> => {
-        const nestedToken = async (): Promise<string> => await Promise.resolve('token_123');
-        return await nestedToken();
+        const nestedToken = async (): Promise<string> => {
+          try {
+            return await Promise.resolve('token_123');
+          } catch (e) {
+            console.info(`asyncFunctionTest063Fn catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        };
+        try {
+          return await nestedToken();
+        } catch (e) {
+          console.info(`asyncFunctionTest063Fn catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       }
     },
     profile: {
       fetchProfile: async (token: string): Promise<UserProfileResult> => {
         const nestedProfile = async (): Promise<UserProfileResult> => {
-          if (token) {
-            const profile: UserProfileResult = { name: 'test', id: 1 };
-            return await Promise.resolve(profile);
+          try {
+            if (token) {
+              const profile: UserProfileResult = { name: 'test', id: 1 };
+              return await Promise.resolve(profile);
+            }
+            throw new Error('no token');
+          } catch (e) {
+            console.info(`asyncFunctionTest063Fn catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
-          throw new Error('no token');
         };
-        return await nestedProfile();
+        try {
+          return await nestedProfile();
+        } catch (e) {
+          console.info(`asyncFunctionTest063Fn catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       }
     }
   };
 
   const getUserProfile = async (user: string, pwd: string): Promise<UserProfileResult> => {
-    const isLogin: boolean = await userModule.auth.login(user, pwd);
-    if (!isLogin) {
-      throw new Error('login fail');
+    try {
+      const isLogin: boolean = await userModule.auth.login(user, pwd);
+      if (!isLogin) {
+        throw new Error('login fail');
+      }
+      const token: string = await userModule.auth.getToken();
+      return await userModule.profile.fetchProfile(token);
+    } catch (e) {
+      console.info(`asyncFunctionTest063Fn catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
-    const token: string = await userModule.auth.getToken();
-    return await userModule.profile.fetchProfile(token);
   };
-  const result: UserProfileResult = await getUserProfile('test', '123');
-  return result;
+  try {
+    const result: UserProfileResult = await getUserProfile('test', '123');
+    return result;
+  } catch (e) {
+    console.info(`asyncFunctionTest063Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // asyncFunctionTest068 (readonly data handling)
 async function asyncFunctionTest068Fn(): Promise<type68> {
   const getReadonly = async (): Promise<ReadonlyData> => {
     const nestedGet = async (): Promise<ReadonlyData> => {
-      const data: ReadonlyData = { id: 1, name: 'readonly' };
-      return await Promise.resolve(data);
+      try {
+        const data: ReadonlyData = { id: 1, name: 'readonly' };
+        return await Promise.resolve(data);
+      } catch (e) {
+        console.info(`asyncFunctionTest068Fn catch error: ${JSON.stringify(e)}`);
+        throw e;
+      }
     };
-    return await nestedGet();
+    try {
+      return await nestedGet();
+    } catch (e) {
+      console.info(`asyncFunctionTest068Fn catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   };
 
   const processReadonly = async (): Promise<type68> => {
-    const data: ReadonlyData = await getReadonly();
-    const result: type68 = { id: data.id, name: data.name };
-    return result;
+    try {
+      const data: ReadonlyData = await getReadonly();
+      const result: type68 = { id: data.id, name: data.name };
+      return result;
+    } catch (e) {
+      console.info(`asyncFunctionTest068Fn catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   };
-  const result: type68 = await processReadonly();
-  result.name = 'modified';
-  return result;
+  try {
+    const result: type68 = await processReadonly();
+    result.name = 'modified';
+    return result;
+  } catch (e) {
+    console.info(`asyncFunctionTest068Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // asyncFunctionTest087 (optional chaining - rewritten without ?.)
 async function asyncFunctionTest087Fn(): Promise<boolean> {
   const getCity = async (user: User087): Promise<string | null> => {
     const nestedGet = async (): Promise<string | null> => {
-      const profile: UserProfile087 | undefined = user.profile;
-      if (profile !== undefined) {
-        const address: UserAddress087 | undefined = profile.address;
-        if (address !== undefined) {
-          return await Promise.resolve(address.city);
+      try {
+        const profile: UserProfile087 | undefined = user.profile;
+        if (profile !== undefined) {
+          const address: UserAddress087 | undefined = profile.address;
+          if (address !== undefined) {
+            return await Promise.resolve(address.city);
+          }
         }
+        return await Promise.resolve(null);
+      } catch (e) {
+        console.info(`asyncFunctionTest087Fn catch error: ${JSON.stringify(e)}`);
+        throw e;
       }
-      return await Promise.resolve(null);
     };
-    return await nestedGet();
+    try {
+      return await nestedGet();
+    } catch (e) {
+      console.info(`asyncFunctionTest087Fn catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   };
 
   const user1: User087 = { id: 1, profile: { name: 'A', address: { city: 'NY' } } };
   const user2: User087 = { id: 2, profile: { name: 'B' } };
   const user3: User087 = { id: 3 };
 
-  const city1: string | null = await getCity(user1);
-  const city2: string | null = await getCity(user2);
-  const city3: string | null = await getCity(user3);
-  return city1 === 'NY' && city2 === null && city3 === null;
+  try {
+    const city1: string | null = await getCity(user1);
+    const city2: string | null = await getCity(user2);
+    const city3: string | null = await getCity(user3);
+    return city1 === 'NY' && city2 === null && city3 === null;
+  } catch (e) {
+    console.info(`asyncFunctionTest087Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // asyncFunctionTest089 (generic class DataStore<T>)
 async function asyncFunctionTest089Fn(): Promise<type89> {
   const useDataStore = async (): Promise<type89> => {
-    const store: DataStore<string> = new DataStore<string>();
-    const length: int = await store.add('item1');
-    const item: string | undefined = await store.getAt(0);
-    const result: type89 = { length: length, item: item };
-    return result;
+    try {
+      const store: DataStore<string> = new DataStore<string>();
+      const length: int = await store.add('item1');
+      const item: string | undefined = await store.getAt(0);
+      const result: type89 = { length: length, item: item };
+      return result;
+    } catch (e) {
+      console.info(`asyncFunctionTest089Fn catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   };
-  const result: type89 = await useDataStore();
-  return result;
+  try {
+    const result: type89 = await useDataStore();
+    return result;
+  } catch (e) {
+    console.info(`asyncFunctionTest089Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // compose function (moved from asyncFunctionTest090, generic arrow → top-level function)
@@ -330,85 +500,161 @@ function composeFn<A, B, C>(
   g: (a: A) => Promise<B>
 ): (a: A) => Promise<C> {
   const composed: (a: A) => Promise<C> = async (a: A): Promise<C> => {
-    return f(await g(a) as B);
+    try {
+      return f(await g(a) as B);
+    } catch (e) {
+      console.info(`composeFn catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   };
   return composed;
 }
 
 // asyncFunctionTest090 (typed function composition)
 async function asyncFunctionTest090Fn(): Promise<number> {
-  const add5: (num: number) => Promise<number> = async (num: number): Promise<number> => await Promise.resolve(num + 5);
-  const multiply2: (num: number) => Promise<number> = async (num: number): Promise<number> => await Promise.resolve(num * 2);
+  const add5: (num: number) => Promise<number> = async (num: number): Promise<number> => {
+    try {
+      return await Promise.resolve(num + 5);
+    } catch (e) {
+      console.info(`asyncFunctionTest090Fn catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
+  };
+  const multiply2: (num: number) => Promise<number> = async (num: number): Promise<number> => {
+    try {
+      return await Promise.resolve(num * 2);
+    } catch (e) {
+      console.info(`asyncFunctionTest090Fn catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
+  };
 
   const composed: (a: number) => Promise<number> = composeFn<number, number, number>(multiply2, add5);
-  const result: number = await composed(3);
-  return result;
+  try {
+    const result: number = await composed(3);
+    return result;
+  } catch (e) {
+    console.info(`asyncFunctionTest090Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // asyncFunctionTest091 (rewritten from async generator composition: gen1=[1,2], gen2=[3,4])
 async function asyncFunctionTest091Fn(): Promise<number[]> {
   const gen1 = async (): Promise<number[]> => {
-    const results: number[] = [];
-    results.push(await Promise.resolve(1));
-    results.push(await Promise.resolve(2));
-    return results;
+    try {
+      const results: number[] = [];
+      results.push(await Promise.resolve(1));
+      results.push(await Promise.resolve(2));
+      return results;
+    } catch (e) {
+      console.info(`asyncFunctionTest091Fn catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   };
   const gen2 = async (): Promise<number[]> => {
-    const results: number[] = [];
-    results.push(await Promise.resolve(3));
-    results.push(await Promise.resolve(4));
-    return results;
+    try {
+      const results: number[] = [];
+      results.push(await Promise.resolve(3));
+      results.push(await Promise.resolve(4));
+      return results;
+    } catch (e) {
+      console.info(`asyncFunctionTest091Fn catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   };
 
   const composeGens = async (): Promise<number[]> => {
-    const results1: number[] = await gen1();
-    const results2: number[] = await gen2();
-    const combined: number[] = [];
-    results1.forEach((val: number) => {
-      combined.push(val);
-    });
-    results2.forEach((val: number) => {
-      combined.push(val);
-    });
-    return combined;
+    try {
+      const results1: number[] = await gen1();
+      const results2: number[] = await gen2();
+      const combined: number[] = [];
+      results1.forEach((val: number) => {
+        combined.push(val);
+      });
+      results2.forEach((val: number) => {
+        combined.push(val);
+      });
+      return combined;
+    } catch (e) {
+      console.info(`asyncFunctionTest091Fn catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   };
-  const result: number[] = await composeGens();
-  return result;
+  try {
+    const result: number[] = await composeGens();
+    return result;
+  } catch (e) {
+    console.info(`asyncFunctionTest091Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // asyncFunctionTest099 (rewritten from async generator: yields 0,3,6,9)
 async function asyncFunctionTest099Fn(): Promise<number[]> {
   const collectValues = async (): Promise<number[]> => {
-    const values: number[] = [];
-    let current: number = 0;
-    while (current < 10) {
-      values.push(current);
-      current += 3;
+    try {
+      const values: number[] = [];
+      let current: number = 0;
+      while (current < 10) {
+        values.push(current);
+        current += 3;
+      }
+      return values;
+    } catch (e) {
+      console.info(`asyncFunctionTest099Fn catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
-    return values;
   };
-  const result: number[] = await collectValues();
-  return result;
+  try {
+    const result: number[] = await collectValues();
+    return result;
+  } catch (e) {
+    console.info(`asyncFunctionTest099Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // genericFetcher (moved from it() 062, generic arrow → top-level function)
 async function genericFetcher<T>(data: T): Promise<Awaited<T>> {
-  const nestedFetch: () => Promise<Awaited<T>> = async (): Promise<Awaited<T>> => await Promise.resolve(data);
-  return await nestedFetch();
+  const nestedFetch: () => Promise<Awaited<T>> = async (): Promise<Awaited<T>> => {
+    try {
+      return await Promise.resolve(data);
+    } catch (e) {
+      console.info(`genericFetcher catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
+  };
+  try {
+    return await nestedFetch();
+  } catch (e) {
+    console.info(`genericFetcher catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // raceTasks (moved from it() 095, generic async arrow → top-level function)
 async function raceTasks<T>(value: T, timeoutMs: int): Promise<T | 'timeout'> {
-  const valueTask: Promise<T> = new Promise<T>((resolve) => {
-    setTimeout(() => {
-      resolve(value);
-    }, timeoutMs * 2);
-  });
-  const timeoutTask: Promise<'timeout'> = new Promise<'timeout'>((resolve) => {
-    setTimeout(() => {
-      resolve('timeout');
-    }, timeoutMs);
-  });
+  const valueWait = async (): Promise<T> => {
+    try {
+      await sleep(timeoutMs * 2);
+      return value;
+    } catch (e) {
+      console.info(`raceTasks catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
+  };
+  const timeoutWait = async (): Promise<'timeout'> => {
+    try {
+      await sleep(timeoutMs);
+      return 'timeout';
+    } catch (e) {
+      console.info(`raceTasks catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
+  };
+  const valueTask: Promise<T> = valueWait();
+  const timeoutTask: Promise<'timeout'> = timeoutWait();
   const tasks: Array<Promise<T | 'timeout'>> = [valueTask, timeoutTask];
   return Promise.race(tasks) as Promise<T | 'timeout'>;
 }
@@ -713,7 +959,10 @@ export default function asyncFunctionTest(): void {
           await p;
           return 'success';
         } catch (err) {
-          return (err as Error).message;
+          if (err instanceof Error) {
+            return err.message;
+          }
+          return `${JSON.stringify(err)}`;
         }
       };
       try {
@@ -1123,13 +1372,15 @@ export default function asyncFunctionTest(): void {
       const orVal = 0b1010;
 
       const asyncAtomicOr = async (mask: number): Promise<number> => {
-        return new Promise<number>((resolve: (value: number) => void) => {
-          setTimeout((): void => {
-            ia[0] = ia[0] | mask;
-            const currentVal: number = ia[0];
-            resolve(currentVal);
-          }, 100);
-        });
+        try {
+          await sleep(100);
+          ia[0] = ia[0] | mask;
+          const currentVal: number = ia[0];
+          return currentVal;
+        } catch (e) {
+          console.info(`asyncFunctionTest029 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -1349,23 +1600,27 @@ export default function asyncFunctionTest(): void {
      */
     it('asyncFunctionTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const asyncCalculate = async (base: number, shouldMultiply: boolean): Promise<number> => {
-        return new Promise<number>((resolve) => {
-          setTimeout(() => {
-            let result = base + 10;
-            if (shouldMultiply) {
-              result *= 2;
-            }
-            resolve(result);
-          }, 100);
-        });
+        try {
+          await sleep(100);
+          let result = base + 10;
+          if (shouldMultiply) {
+            result *= 2;
+          }
+          return result;
+        } catch (e) {
+          console.info(`asyncFunctionTest036 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const asyncDependentProcess = async (prevResult: number): Promise<number> => {
-        return new Promise<number>((resolve) => {
-          setTimeout(() => {
-            resolve(prevResult - 3);
-          }, 100);
-        });
+        try {
+          await sleep(100);
+          return prevResult - 3;
+        } catch (e) {
+          console.info(`asyncFunctionTest036 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -1397,9 +1652,10 @@ export default function asyncFunctionTest(): void {
     it('asyncFunctionTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const promiseChaining = async (): Promise<number> => {
         try {
-          return await Promise.resolve(2 as number)
-            .then((val: number) => val * 3)
-            .then((val: number) => val + 4);
+          const step1: number = await Promise.resolve(2 as number);
+          const step2: number = step1 * 3;
+          const result: number = step2 + 4;
+          return result;
         } catch (e) {
           console.info(`asyncFunctionTest037 catch error: ${JSON.stringify(e)}`);
           throw e;
@@ -1426,9 +1682,15 @@ export default function asyncFunctionTest(): void {
     it('asyncFunctionTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const promiseCatchChain = async (): Promise<string> => {
         try {
-          return await Promise.reject(new Error('chain error'))
-            .catch((err: Error) => err.message)
-            .then((msg: string) => `Caught: ${msg}`);
+          let caughtMsg: string = '';
+          try {
+            await Promise.reject(new Error('chain error'));
+          } catch (err) {
+            if (err instanceof Error) {
+              caughtMsg = err.message;
+            }
+          }
+          return `Caught: ${caughtMsg}`;
         } catch (e) {
           console.info(`asyncFunctionTest038 catch error: ${JSON.stringify(e)}`);
           throw e;
@@ -1591,12 +1853,14 @@ export default function asyncFunctionTest(): void {
       ia[0] = 25;
 
       const asyncAtomicSub = async (subtractVal: number): Promise<number> => {
-        return new Promise<number>((resolve: (value: number) => void) => {
-          setTimeout((): void => {
-            ia[0] = ia[0] - subtractVal;
-            resolve(ia[0]);
-          }, 100);
-        });
+        try {
+          await sleep(100);
+          ia[0] = ia[0] - subtractVal;
+          return ia[0];
+        } catch (e) {
+          console.info(`asyncFunctionTest044 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -1838,14 +2102,23 @@ export default function asyncFunctionTest(): void {
         try {
           return await level3(shouldThrow);
         } catch (err) {
-          throw new Error(`level2 wrapped: ${(err as Error).message}`);
+          let wrappedMsg: string = '';
+          if (err instanceof Error) {
+            wrappedMsg = err.message;
+          } else {
+            wrappedMsg = `${JSON.stringify(err)}`;
+          }
+          throw new Error(`level2 wrapped: ${wrappedMsg}`);
         }
       };
       const level1 = async (shouldThrow: boolean): Promise<string | number> => {
         try {
           return await level2(shouldThrow);
         } catch (err) {
-          return `caught: ${(err as Error).message}`;
+          if (err instanceof Error) {
+            return `caught: ${err.message}`;
+          }
+          return `caught: ${JSON.stringify(err)}`;
         }
       };
 
@@ -2470,27 +2743,33 @@ export default function asyncFunctionTest(): void {
      */
     it('asyncFunctionTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const fetchInitialData = async (value?: number): Promise<number> => {
-        return new Promise<number>((resolve) => {
-          setTimeout(() => {
-            resolve(value ? value : 15);
-          }, 100);
-        });
+        try {
+          await sleep(100);
+          return value ? value : 15;
+        } catch (e) {
+          console.info(`asyncFunctionTest065 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const transformData1 = async (data: number): Promise<number> => {
-        return new Promise<number>((resolve) => {
-          setTimeout(() => {
-            resolve(data * 3);
-          }, 100);
-        });
+        try {
+          await sleep(100);
+          return data * 3;
+        } catch (e) {
+          console.info(`asyncFunctionTest065 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const transformData2 = async (data: number): Promise<number> => {
-        return new Promise<number>((resolve) => {
-          setTimeout(() => {
-            resolve(data + 8);
-          }, 100);
-        });
+        try {
+          await sleep(100);
+          return data + 8;
+        } catch (e) {
+          console.info(`asyncFunctionTest065 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -2695,13 +2974,15 @@ export default function asyncFunctionTest(): void {
       const updateVal = 56;
 
       const asyncAtomicStoreLoad = async (val: number): Promise<number> => {
-        return new Promise<number>((resolve: (value: number) => void) => {
-          setTimeout((): void => {
-            ia[0] = val;
-            const currentVal: number = ia[0];
-            resolve(currentVal);
-          }, 100);
-        });
+        try {
+          await sleep(100);
+          ia[0] = val;
+          const currentVal: number = ia[0];
+          return currentVal;
+        } catch (e) {
+          console.info(`asyncFunctionTest070 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -2832,12 +3113,14 @@ export default function asyncFunctionTest(): void {
       ia[0] = 10;
 
       const asyncAtomicAdd = async (addVal: number): Promise<number> => {
-        return new Promise<number>((resolve: (value: number) => void) => {
-          setTimeout((): void => {
-            ia[0] = ia[0] + addVal;
-            resolve(ia[0]);
-          }, 100);
-        });
+        try {
+          await sleep(100);
+          ia[0] = ia[0] + addVal;
+          return ia[0];
+        } catch (e) {
+          console.info(`asyncFunctionTest073 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -2910,12 +3193,14 @@ export default function asyncFunctionTest(): void {
       ia[0] = 0b1010;
 
       const asyncAtomicXor = async (xorVal: number): Promise<number> => {
-        return new Promise<number>((resolve: (value: number) => void) => {
-          setTimeout((): void => {
-            ia[0] = ia[0] ^ xorVal;
-            resolve(ia[0]);
-          }, 100);
-        });
+        try {
+          await sleep(100);
+          ia[0] = ia[0] ^ xorVal;
+          return ia[0];
+        } catch (e) {
+          console.info(`asyncFunctionTest075 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -3067,12 +3352,14 @@ export default function asyncFunctionTest(): void {
       ia[0] = 42;
 
       const asyncAtomicExchange = async (newVal: number): Promise<number> => {
-        return new Promise<number>((resolve: (value: number) => void) => {
-          setTimeout((): void => {
-            ia[0] = newVal;
-            resolve(ia[0]);
-          }, 100);
-        });
+        try {
+          await sleep(100);
+          ia[0] = newVal;
+          return ia[0];
+        } catch (e) {
+          console.info(`asyncFunctionTest079 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -3380,13 +3667,15 @@ export default function asyncFunctionTest(): void {
      */
     it('asyncFunctionTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const asyncTask = async (taskId: number, delayMs: int): Promise<type86> => {
-        return new Promise<type86>((resolve) => {
-          setTimeout(() => {
-            const result = taskId * 10;
-            const taskResult: type86 = { taskId: taskId, result: result };
-            resolve(taskResult);
-          }, delayMs);
-        });
+        try {
+          await sleep(delayMs);
+          const result = taskId * 10;
+          const taskResult: type86 = { taskId: taskId, result: result };
+          return taskResult;
+        } catch (e) {
+          console.info(`asyncFunctionTest086 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const parallelTasks: Promise<type86>[] = [
@@ -3637,11 +3926,13 @@ export default function asyncFunctionTest(): void {
         let callCount = 0;
         const asyncIncrement = async (step: number): Promise<number> => {
           callCount++;
-          return new Promise<number>((resolve) => {
-            setTimeout(() => {
-              resolve(callCount * step);
-            }, 100);
-          });
+          try {
+            await sleep(100);
+            return callCount * step;
+          } catch (e) {
+            console.info(`asyncFunctionTest094 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         const getCount = (): number => callCount;
         const result: type94 = { asyncIncrement: asyncIncrement, getCount: getCount };
@@ -3692,20 +3983,24 @@ export default function asyncFunctionTest(): void {
      */
     it('asyncFunctionTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const fetchData = async (delayMs: int, data: number): Promise<number> => {
-        return new Promise<number>((resolve) => {
-          setTimeout(() => {
-            resolve(data);
-          }, delayMs);
-        });
+        try {
+          await sleep(delayMs);
+          return data;
+        } catch (e) {
+          console.info(`asyncFunctionTest096 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processData = async (input: number): Promise<number> => {
-        return new Promise<number>((resolve) => {
-          setTimeout(() => {
-            const processed = input * 2 + 3;
-            resolve(processed);
-          }, 100);
-        });
+        try {
+          await sleep(100);
+          const processed = input * 2 + 3;
+          return processed;
+        } catch (e) {
+          console.info(`asyncFunctionTest096 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -3743,12 +4038,14 @@ export default function asyncFunctionTest(): void {
       ia[0] = 10;
 
       const asyncAtomicAdd = async (): Promise<number> => {
-        return new Promise<number>((resolve) => {
-          setTimeout(() => {
-            Atomics.add(ia, 0, 5);
-            resolve(Atomics.load(ia, 0));
-          }, 100);
-        });
+        try {
+          await sleep(100);
+          ia[0] = ia[0] + 5;
+          return ia[0];
+        } catch (e) {
+          console.info(`asyncFunctionTest097 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -3773,15 +4070,17 @@ export default function asyncFunctionTest(): void {
      */
     it('asyncFunctionTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const processValue = async (initial: string): Promise<number> => {
-        return Promise.resolve<string>(initial)
-          .then((val: string): number => val.length)
-          .then((len: number): number => len * 3)
-          .then((num: number): Promise<number> => new Promise<number>((resolve: (value: number) => void) => {
-            setTimeout((): void => {
-              resolve(num + 7);
-            }, 100);
-          }))
-          .then((finalNum: number): number => finalNum >>> 0);
+        try {
+          const val: string = await Promise.resolve<string>(initial);
+          const len: number = val.length;
+          const num: number = len * 3;
+          await sleep(100);
+          const finalNum: number = num + 7;
+          return finalNum;
+        } catch (e) {
+          console.info(`asyncFunctionTest098 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       try {
         const result = await processValue('typescript');
@@ -3823,22 +4122,26 @@ export default function asyncFunctionTest(): void {
     it('asyncFunctionTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const workflow = async (dataList: Data[]): Promise<type100> => {
         const validate = async (data: Data): Promise<boolean> => {
-          return new Promise<boolean>((resolve: (value: boolean) => void) => {
-            setTimeout((): void => {
-              resolve(data.id > 0 && data.value.length > 0);
-            }, 100);
-          });
+          try {
+            await sleep(100);
+            return data.id > 0 && data.value.length > 0;
+          } catch (e) {
+            console.info(`asyncFunctionTest100 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         try {
           const validations = await Promise.all(dataList.map((d: Data): Promise<boolean> => validate(d)));
           const validData = dataList.filter((d: Data, idx: int): boolean => validations[idx]);
 
           const processFn = async (data: Data): Promise<string> => {
-            return new Promise<string>((resolve: (value: string) => void) => {
-              setTimeout((): void => {
-                resolve(`${data.id}-${data.value.toUpperCase()}`);
-              }, 100);
-            });
+            try {
+              await sleep(100);
+              return `${data.id}-${data.value.toUpperCase()}`;
+            } catch (e) {
+              console.info(`asyncFunctionTest100 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
           };
           try {
             const processed = await Promise.all(validData.map((d: Data): Promise<string> => processFn(d)));
