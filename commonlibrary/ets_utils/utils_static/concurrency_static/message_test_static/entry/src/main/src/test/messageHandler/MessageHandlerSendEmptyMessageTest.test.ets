@@ -269,7 +269,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let waitCount: int = 0;
         while (received.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(received.load()).assertEqual(1);
       } finally {
@@ -302,7 +306,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let waitCount: int = 0;
         while (whatValue.load() !== 3 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(whatValue.load()).assertEqual(3);
       } finally {
@@ -338,7 +346,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let waitCount: int = 0;
         while (objChecked.load() !== 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(objChecked.load()).assertEqual(1);
       } finally {
@@ -373,7 +385,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let waitCount: int = 0;
         while (counter.load() < 5 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(counter.load()).assertEqual(5);
       } finally {
@@ -454,17 +470,22 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
           let cb: (() => void) | undefined = msg.getCallback();
           if (cb !== undefined) { cb(); }
         }, eaw);
-        handler.post((): void => {
+        let postedCallback = (): void => {
           handler.sendEmptyMessage(1);
           let removeResult: boolean = handler.removeMessages(1);
           if (removeResult) { verified.fetchAdd(1); }
           let hasResult: boolean = handler.hasMessages(1);
           if (!hasResult) { verified.fetchAdd(1); }
-        });
+        };
+        handler.post(postedCallback);
         let waitCount: int = 0;
         while (verified.load() < 2 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(verified.load()).assertEqual(2);
       } finally {
@@ -502,7 +523,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let waitCount: int = 0;
         while ((emptyMsgCount.load() < 1 || sentMsgCount.load() < 1) && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(emptyMsgCount.load()).assertEqual(1);
         expect(sentMsgCount.load()).assertEqual(1);
@@ -538,7 +563,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let waitCount: int = 0;
         while (counter.load() < 10 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(counter.load()).assertEqual(10);
       } finally {
@@ -575,7 +604,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let waitCount: int = 0;
         while (innerReceived.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(innerReceived.load()).assertEqual(1);
       } finally {
@@ -604,13 +637,18 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
           received.fetchAdd(1);
         }, eaw);
-        handler.post((): void => {
+        let postedCallback = (): void => {
           handler.sendEmptyMessage(1);
-        });
+        };
+        handler.post(postedCallback);
         let waitCount: int = 0;
         while (received.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(received.load()).assertEqual(1);
       } finally {
@@ -645,7 +683,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let waitCount: int = 0;
         while (counter.load() < 100 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(counter.load()).assertEqual(100);
       } finally {
@@ -687,7 +729,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let waitCount: int = 0;
         while ((counter1.load() < 5 || counter2.load() < 5) && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(counter1.load()).assertEqual(5);
         expect(counter2.load()).assertEqual(5);
@@ -761,7 +807,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let waitCount: int = 0;
         while (doneCount.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(removedOk.load()).assertEqual(2);
         // Second sendEmptyMessage should be delivered to handler
@@ -770,7 +820,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         waitCount = 0;
         while (verified.load() < before + 1 && waitCount < 5000) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(verified.load() >= before + 1).assertTrue();
       } finally {
@@ -808,7 +862,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let waitCount: int = 0;
         while (counter.load() < successCount && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(counter.load()).assertEqual(successCount);
       } finally {
@@ -873,7 +931,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let waitCount: int = 0;
         while (msgStatus.load() !== 42 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(msgStatus.load()).assertEqual(42);
       } finally {
@@ -915,7 +977,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let waitCount: int = 0;
         while (processedCounter.load() < sentCount && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(processedCounter.load()).assertEqual(sentCount);
       } finally {

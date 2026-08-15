@@ -1446,18 +1446,23 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }, eaw);
         eaw.start();
-        handler.post((): void => {
+        let postedCallback = (): void => {
           handler.sendMessage(new concurrency.Message(1, "test", handler));
           handler.removeMessages(1, "test");
           let result: boolean = handler.hasMessages(1, "test");
           if (!result) {
             verified.fetchAdd(1);
           }
-        });
+        };
+        handler.post(postedCallback);
         let waitCount: int = 0;
         while (verified.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(verified.load()).assertEqual(1);
       } finally {
@@ -1508,7 +1513,11 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
         let waitCount: int = 0;
         while (verified.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(verified.load()).assertEqual(1);
       } finally {
@@ -1637,7 +1646,11 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
         let waitCount: int = 0;
         while (msgSent.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(handler.hasMessages(1, "async_obj")).assertTrue();
       } finally {
@@ -1685,7 +1698,11 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
         let waitCount: int = 0;
         while (queryCount.load() < 5 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(queryCount.load()).assertEqual(5);
         expect(trueCount.load()).assertEqual(5);
@@ -1738,16 +1755,21 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
             doneCount.fetchAdd(1);
           }
         }, eaw);
-        handler.post((): void => {
+        let postedCallback = (): void => {
           handler.sendMessage(new concurrency.Message(1, obj1, handler));
           handler.sendMessage(new concurrency.Message(2, obj2, handler));
           handler.sendMessage(new concurrency.Message(3, obj3, handler));
           handler.sendMessage(new concurrency.Message(4, obj4, handler));
-        });
+        };
+        handler.post(postedCallback);
         let waitCount: int = 0;
         while (doneCount.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(checkResult.load()).assertEqual(2);
       } finally {
@@ -1786,7 +1808,11 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
         let waitCount: int = 0;
         while (selfCheckDone.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(selfCheckResult).assertTrue();
       } finally {
@@ -1836,7 +1862,11 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
         let waitCount: int = 0;
         while (queryCount.load() < 10 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(queryCount.load()).assertEqual(10);
         expect(trueCount.load()).assertEqual(10);
@@ -1886,7 +1916,11 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
         let waitCount: int = 0;
         while (workerDone.load() < 5 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         for (let i: int = 0; i < mainResults.length; i++) {
           expect(mainResults[i]).assertTrue();
@@ -1935,7 +1969,11 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
         let waitCount: int = 0;
         while (doneCount.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(sendCount.load()).assertEqual(6);
       } finally {
@@ -1983,7 +2021,11 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
         let waitCount: int = 0;
         while ((done1.load() < 1 || done2.load() < 1) && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(handler1.hasMessages(1, "handler1")).assertTrue();
         expect(handler2.hasMessages(1, "handler2")).assertTrue();
@@ -2027,18 +2069,23 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }, eaw);
         eaw.start();
-        handler.post((): void => {
+        let postedCallback = (): void => {
           handler.sendMessage(new concurrency.Message(1, "cleanup", handler));
           handler.removeMessages(1, "cleanup");
           let result: boolean = handler.hasMessages(1, "cleanup");
           if (!result) {
             verified.fetchAdd(1);
           }
-        });
+        };
+        handler.post(postedCallback);
         let waitCount: int = 0;
         while (verified.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(verified.load()).assertEqual(1);
       } finally {
@@ -2090,7 +2137,11 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
         let waitCount: int = 0;
         while (doneCount.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(actionTaken).assertEqual("handle_priority_first");
         expect(handler.hasMessages(2, "priority")).assertFalse();

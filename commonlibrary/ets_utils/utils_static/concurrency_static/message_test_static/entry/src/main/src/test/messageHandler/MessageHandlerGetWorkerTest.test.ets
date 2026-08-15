@@ -281,7 +281,11 @@ export default function MessageHandlerGetWorkerTest(): void {
         let waitCount: int = 0;
         while (completedCount.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(matchCount.load()).assertEqual(1);
       } finally {
@@ -323,7 +327,11 @@ export default function MessageHandlerGetWorkerTest(): void {
         let waitCount: int = 0;
         while (completedCount.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(matchCount.load()).assertEqual(1);
       } finally {
@@ -367,7 +375,11 @@ export default function MessageHandlerGetWorkerTest(): void {
         let waitCount: int = 0;
         while (completedCount.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(innerMatchCount.load()).assertEqual(1);
       } finally {
@@ -421,7 +433,11 @@ export default function MessageHandlerGetWorkerTest(): void {
         let waitCount: int = 0;
         while (callCount.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
 
         expect(matchCount.load()).assertEqual(2);
@@ -475,7 +491,11 @@ export default function MessageHandlerGetWorkerTest(): void {
         let waitCount: int = 0;
         while (completedCount.load() < totalCount && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
 
         expect(matchCount.load()).assertEqual(totalCount);
@@ -520,7 +540,11 @@ export default function MessageHandlerGetWorkerTest(): void {
         let waitCount: int = 0;
         while (received.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(received.load()).assertEqual(1);
       } finally {
@@ -623,7 +647,11 @@ export default function MessageHandlerGetWorkerTest(): void {
         let waitCount: int = 0;
         while (outerCount.load() < 3 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
 
         expect(outerCount.load()).assertEqual(3);
@@ -633,7 +661,11 @@ export default function MessageHandlerGetWorkerTest(): void {
         waitCount = 0;
         while (innerCount.load() < 3 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
 
         expect(innerCount.load()).assertEqual(3);
@@ -708,7 +740,11 @@ export default function MessageHandlerGetWorkerTest(): void {
         let waitCount: int = 0;
         while (level1Count.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
 
         expect(handler1.getWorker() === eaw).assertTrue();
@@ -718,7 +754,11 @@ export default function MessageHandlerGetWorkerTest(): void {
         waitCount = 0;
         while (level2Count.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(level2Count.load()).assertEqual(1);
         expect(level2Match.load()).assertEqual(1);

@@ -44,17 +44,22 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(1, handler));
         if (handler.removeMessages(1)) {
           removed.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       done();
@@ -75,17 +80,22 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(5, handler));
         if (handler.removeMessages(5)) {
           removed.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       done();
@@ -106,17 +116,22 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendEmptyMessage(0);
         if (handler.removeMessages(0)) {
           removed.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       done();
@@ -137,17 +152,22 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(-1, handler));
         if (handler.removeMessages(-1)) {
           removed.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       done();
@@ -183,17 +203,22 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(999999, handler));
         if (handler.removeMessages(999999)) {
           removed.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       done();
@@ -216,17 +241,22 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         if (cb !== undefined) { cb(); }
       }, eaw);
       // send+remove atomically inside post to avoid queue drain races
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(maxVal, handler));
         if (handler.removeMessages(maxVal)) {
           removed.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       done();
@@ -247,7 +277,7 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(1, handler));
         if (handler.removeMessages(1)) {
           verified.fetchAdd(1);
@@ -256,11 +286,16 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
           verified.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(verified.load()).assertEqual(2);
       done();
@@ -281,7 +316,7 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(1, handler));
         if (handler.removeMessages(1)) {
           verified.fetchAdd(1);
@@ -290,11 +325,16 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
           verified.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(verified.load()).assertEqual(2);
       done();
@@ -379,7 +419,11 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
       let waitCount: int = 0;
       while (executed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(executed.load()).assertEqual(1);
       let result: boolean = handler.removeMessages(1);
@@ -404,7 +448,7 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         if (cb !== undefined) { cb(); }
       }, eaw);
       let callback = (): void => {};
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(callback, handler));
         handler.sendMessage(new concurrency.Message(1, handler));
         if (handler.removeMessages(1)) {
@@ -414,11 +458,16 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
           hasCb.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       expect(hasCb.load()).assertEqual(1);
@@ -439,15 +488,20 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(1, handler));
         let result: boolean = handler.removeMessages(1);
         if (result) { removed.fetchAdd(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (removed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       done();
@@ -467,7 +521,7 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(1, handler));
         handler.sendMessage(new concurrency.Message(2, handler));
         handler.sendMessage(new concurrency.Message(3, handler));
@@ -477,11 +531,16 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         if (r1) { removed.fetchAdd(1); }
         if (r2) { removed.fetchAdd(1); }
         if (r3) { removed.fetchAdd(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (removed.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(3);
       done();
@@ -507,14 +566,19 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(1, handler));
         handler.sendMessage(new concurrency.Message(2, handler));
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (nestedDone.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(nestedDone.load()).assertEqual(1);
       done();
@@ -534,7 +598,7 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(1, handler));
         let hasResult: boolean = handler.hasMessages(1);
         if (hasResult) { verified.fetchAdd(1); }
@@ -542,11 +606,16 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         if (removeResult) { verified.fetchAdd(1); }
         let hasResult2: boolean = handler.hasMessages(1);
         if (!hasResult2) { verified.fetchAdd(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (verified.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(verified.load()).assertEqual(3);
       done();
@@ -575,14 +644,19 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(1, handler));
         handler.sendMessage(new concurrency.Message(2, handler));
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (verified.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(verified.load() >= 2).assertTrue();
       done();
@@ -604,18 +678,23 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(1, handler));
         handler.sendMessage(new concurrency.Message(2, handler));
         let result: boolean = handler.removeMessages(1);
         if (result) { verified.fetchAdd(1); }
         let hasResult: boolean = handler.hasMessages(2);
         if (hasResult) { verified.fetchAdd(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (verified.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(verified.load()).assertEqual(2);
       done();
@@ -636,7 +715,7 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(1, handler));
         if (handler.removeMessages(1)) {
           removed.fetchAdd(1);
@@ -646,11 +725,16 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
           removed.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(2);
       done();
@@ -671,17 +755,22 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendEmptyMessage(5);
         let removeResult: boolean = handler.removeMessages(5);
         if (removeResult) { verified.fetchAdd(1); }
         let hasResult: boolean = handler.hasMessages(5);
         if (!hasResult) { verified.fetchAdd(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (verified.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(verified.load()).assertEqual(2);
       done();
@@ -701,7 +790,7 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         for (let i: int = 0; i < 100; i++) {
           handler.sendMessage(new concurrency.Message(i, handler));
         }
@@ -711,11 +800,16 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         if (!hasResult) { removed.fetchAdd(1); }
         let hasOther: boolean = handler.hasMessages(51);
         if (hasOther) { removed.fetchAdd(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (removed.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(3);
       done();
@@ -735,18 +829,23 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(1, handler));
         handler.sendMessage(new concurrency.Message(2, handler));
         let r1: boolean = handler.removeMessages(1);
         if (r1) { removeCount.fetchAdd(1); }
         let r2: boolean = handler.removeMessages(2);
         if (r2) { removeCount.fetchAdd(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (removeCount.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removeCount.load()).assertEqual(2);
       done();
@@ -766,7 +865,7 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         for (let i: int = 0; i < 10; i++) {
           handler.sendMessage(new concurrency.Message(i, handler));
         }
@@ -774,11 +873,16 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
           let result: boolean = handler.removeMessages(i);
           if (result) { verified.fetchAdd(1); }
         }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (verified.load() < 10 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(verified.load()).assertEqual(10);
       done();
@@ -823,7 +927,11 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let waitCount: int = 0;
         while (removed.load() < 2 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(removed.load()).assertEqual(2);
       } finally {

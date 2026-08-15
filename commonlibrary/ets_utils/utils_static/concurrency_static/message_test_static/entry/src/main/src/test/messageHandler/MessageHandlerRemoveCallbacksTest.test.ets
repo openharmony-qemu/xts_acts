@@ -43,17 +43,22 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (cb !== undefined) { cb(); }
       }, eaw);
       let callback = (): void => { console.info("callback"); };
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(callback, handler));
         if (handler.removeCallbacks(callback)) {
           removed.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -84,17 +89,22 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (cb !== undefined) { cb(); }
       }, eaw);
       let arrowCallback = (): void => { console.info("arrow callback"); };
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(arrowCallback, handler));
         if (handler.removeCallbacks(arrowCallback)) {
           removed.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -124,7 +134,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (cb !== undefined) { cb(); }
       }, eaw);
       let callback = (): void => {};
-      handler.post((): void => {
+      let postedCallback = (): void => {
         for (let i: int = 0; i < 10; i++) {
           handler.sendMessage(new concurrency.Message(callback, handler));
         }
@@ -132,11 +142,16 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (result) { verified.fetchAdd(1); }
         let result2: boolean = handler.removeCallbacks(callback);
         if (!result2) { verified.fetchAdd(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (verified.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(verified.load()).assertEqual(2);
       if (eaw.isAlive()) {
@@ -193,17 +208,22 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (cb !== undefined) { cb(); }
       }, eaw);
       let callback = (): void => {};
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(callback, handler));
         if (handler.removeCallbacks(callback)) {
           removed.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -234,17 +254,22 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       }, eaw);
       let counter = new AtomicInt(0);
       let callback = (): void => { counter.fetchAdd(1); };
-      handler.post((): void => {
+      let postedCallback = (): void => {
         for (let i: int = 0; i < 10; i++) {
           handler.sendMessage(new concurrency.Message(callback, handler));
         }
         let result: boolean = handler.removeCallbacks(callback);
         if (result) { removed.fetchAdd(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (removed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       expect(counter.load()).assertEqual(0);
@@ -334,18 +359,23 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (cb !== undefined) { cb(); }
       }, eaw);
       let callback = (): void => { console.info("test"); };
-      handler.post((): void => {
+      let postedCallback = (): void => {
         let msg = new concurrency.Message(callback, handler);
         handler.sendMessage(msg);
         if (handler.removeCallbacks(callback)) {
           removed.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -429,17 +459,22 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       }, eaw);
       let callback = (): void => {};
       // send + removeCallbacks atomically on handler thread (avoid post/remove vs send race)
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(callback, handler));
         if (handler.removeCallbacks(callback)) {
           removed.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -472,7 +507,11 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       let waitCount: int = 0;
       while (executed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(executed.load()).assertEqual(1);
       let result: boolean = handler.removeCallbacks(callback);
@@ -507,7 +546,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       let callback1 = (): void => {};
       let callback2 = (): void => {};
       let callback3 = (): void => {};
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(callback1, handler));
         handler.sendMessage(new concurrency.Message(callback2, handler));
         handler.sendMessage(new concurrency.Message(callback3, handler));
@@ -517,11 +556,16 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (result2) { removed.fetchAdd(1); }
         let result3: boolean = handler.removeCallbacks(callback3);
         if (result3) { removed.fetchAdd(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (removed.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(3);
       if (eaw.isAlive()) {
@@ -551,7 +595,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (cb !== undefined) { cb(); }
       }, eaw);
       let callback = (): void => {};
-      handler.post((): void => {
+      let postedCallback = (): void => {
         for (let i: int = 0; i < 5; i++) {
           handler.sendMessage(new concurrency.Message(callback, handler));
         }
@@ -559,11 +603,16 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (result) { verified.fetchAdd(1); }
         let result2: boolean = handler.removeCallbacks(callback);
         if (!result2) { verified.fetchAdd(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (verified.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(verified.load()).assertEqual(2);
       if (eaw.isAlive()) {
@@ -594,18 +643,23 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (cb !== undefined) { cb(); }
       }, eaw);
       let callback = (): void => { console.info("worker callback"); };
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(callback, handler));
         handler.sendMessage(new concurrency.Message(callback, handler));
         handler.sendMessage(new concurrency.Message(callback, handler));
         let result: boolean = handler.removeCallbacks(callback);
         if (result) { removed.fetchAdd(1); }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -635,14 +689,19 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       }, eaw);
       let callback = (): void => {};
       handler.post(callback);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         let hasBefore: boolean = handler.hasCallbacks(callback);
         let removeResult: boolean = handler.removeCallbacks(callback);
         if (hasBefore && removeResult) {
           handler.hasCallbacks(callback);
         }
-      });
-      await Utils.msSleep(100);
+      };
+      handler.post(postedCallback);
+      try {
+        await Utils.msSleep(100);
+      } catch (error) {
+        expect(error).assertFail();
+      }
       let result: boolean = handler.removeCallbacks(callback);
       expect(result).assertFalse();
       if (eaw.isAlive()) {
@@ -673,7 +732,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (cb !== undefined) { cb(); }
       }, eaw);
       let callback = (): void => {};
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(callback, handler));
         if (handler.removeCallbacks(callback)) {
           verified.fetchAdd(1);
@@ -685,11 +744,16 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           verified.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(verified.load()).assertEqual(3);
       if (eaw.isAlive()) {
@@ -720,7 +784,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (cb !== undefined) { cb(); }
       }, eaw);
       // Send 100 callback messages inside post and verify removal
-      handler.post((): void => {
+      let postedCallback = (): void => {
         for (let i: int = 0; i < 100; i++) {
           handler.sendMessage(new concurrency.Message(callback, handler));
         }
@@ -729,11 +793,16 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         // Second remove should fail (all already removed)
         let result2: boolean = handler.removeCallbacks(callback);
         if (!result2) { verified.fetchAdd(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (verified.load() < 2 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(verified.load()).assertEqual(2);
       if (eaw.isAlive()) {
@@ -764,7 +833,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (cb !== undefined) { cb(); }
       }, eaw);
       let callback = (): void => {};
-      handler.post((): void => {
+      let postedCallback = (): void => {
         for (let i: int = 0; i < 100; i++) {
           handler.sendMessage(new concurrency.Message(i, handler));
         }
@@ -773,11 +842,16 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           removed.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -809,18 +883,23 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (cb !== undefined) { cb(); }
       }, eaw);
       let callback = (): void => {};
-      handler.post((): void => {
+      let postedCallback = (): void => {
         for (let i: int = 0; i < 10; i++) {
           handler.sendMessage(new concurrency.Message(callback, handler));
         }
         let result: boolean = handler.removeCallbacks(callback);
         if (result) { removeCount.fetchAdd(1); }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removeCount.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -849,7 +928,7 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         let callbacks: (() => void)[] = [];
         for (let i: int = 0; i < 10; i++) {
           let cb = (): void => {};
@@ -860,11 +939,16 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
           let result: boolean = handler.removeCallbacks(callbacks[i]);
           if (result) { removeCount.fetchAdd(1); }
         }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (removeCount.load() < 10 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removeCount.load()).assertEqual(10);
       if (eaw.isAlive()) {
@@ -895,15 +979,20 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       }, eaw);
       let innerCallback = (): void => { console.info("inner"); };
       // Merge into single post to avoid race between two separate posts
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(innerCallback, handler));
         let result: boolean = handler.removeCallbacks(innerCallback);
         if (result) { removed.fetchAdd(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (removed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -934,16 +1023,21 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
         if (cb !== undefined) { cb(); }
       }, eaw);
       let otherCallback = (): void => {};
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(otherCallback, handler));
         let result: boolean = handler.removeCallbacks(otherCallback);
         if (result) { removed.fetchAdd(1); }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) {
@@ -974,15 +1068,20 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       }, eaw);
       let callback = (): void => {};
       // Merge into single post to avoid race between two separate posts
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(callback, handler));
         let result: boolean = handler.removeCallbacks(callback);
         if (result) { removed.store(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (removed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) {
