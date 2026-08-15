@@ -84,13 +84,8 @@ export default function webViewControllerJsunit() {
       });
       try {
         await Utils.waitAndClickComponent(driver, "webcomponent");
-        await Utils.waitForExist((error: BusinessError) => {
-          if (error) {
-            console.error(`testPageDown waitForExist error: ${error.message}`);
-            return -1;
-          }
-          return isReturn;
-        }, "testPageDown_checkReturn", 1, 1000, 60);
+        const stateGetter = (): number => isReturn;
+        await Utils.waitForExist(stateGetter, "testPageDown_checkReturn", 1, 1000, 60);
       } catch (err) {
         console.error(`testPageDown execute error: ${JSON.stringify(err)}`);
       }
@@ -116,13 +111,8 @@ export default function webViewControllerJsunit() {
       });
       try {
         await Utils.waitAndClickComponent(driver, "webcomponent");
-        await Utils.waitForExist((error: BusinessError) => {
-          if (error) {
-            console.error(`testSetNetworkAvailable waitForExist error: ${error.message}`);
-            return -1;
-          }
-          return isReturn;
-        }, "testSetNetworkAvailable_checkReturn", 1, 1000, 60);
+        const stateGetter = (): number => isReturn;
+        await Utils.waitForExist(stateGetter, "testSetNetworkAvailable_checkReturn", 1, 1000, 60);
       } catch (err) {
         console.error(`testSetNetworkAvailable execute error: ${JSON.stringify(err)}`);
       }
@@ -148,13 +138,8 @@ export default function webViewControllerJsunit() {
       });
       try {
         await Utils.waitAndClickComponent(driver, "webcomponent");
-        await Utils.waitForExist((error: BusinessError) => {
-          if (error) {
-            console.error(`testSetNetworkAvailableAgain waitForExist error: ${error.message}`);
-            return -1;
-          }
-          return isReturn;
-        }, "testSetNetworkAvailableAgain_checkReturn", 1, 1000, 60);
+        const stateGetter = (): number => isReturn;
+        await Utils.waitForExist(stateGetter, "testSetNetworkAvailableAgain_checkReturn", 1, 1000, 60);
       } catch (err) {
         console.error(`testSetNetworkAvailableAgain execute error: ${JSON.stringify(err)}`);
       }
