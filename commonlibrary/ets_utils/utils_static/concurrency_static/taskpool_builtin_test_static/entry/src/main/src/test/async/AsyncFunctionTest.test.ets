@@ -421,21 +421,27 @@ export default function asyncFunctionTest(): void {
 
     /**
      * @tc.name   asyncFunctionTest001
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_001
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0001
      * @tc.desc   Basic async function returns resolved value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFunctionTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('asyncFunctionTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const getValue = async (): Promise<number> => 42;
-      const result = await getValue();
-      expect(result).assertEqual(42);
+      try {
+        const result = await getValue();
+        expect(result).assertEqual(42);
+      } catch (e) {
+        console.info(`asyncFunctionTest001 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest002
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_002
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0002
      * @tc.desc   Async function returns Promise object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -455,31 +461,42 @@ export default function asyncFunctionTest(): void {
 
     /**
      * @tc.name   asyncFunctionTest003
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_003
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0003
      * @tc.desc   Async function uses await with external Promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const externalPromise: Promise<number> = Promise.resolve(15 as number);
       const useAwait = async (): Promise<number> => {
-        const val = await externalPromise;
-        return val * 2;
+        try {
+          const val = await externalPromise;
+          return val * 2;
+        } catch (e) {
+          console.info(`asyncFunctionTest003 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const result = await useAwait();
-      expect(result).assertEqual(30);
+      try {
+        const result = await useAwait();
+        expect(result).assertEqual(30);
+      } catch (e) {
+        console.info(`asyncFunctionTest003 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest004
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_004
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0004
      * @tc.desc   Async function throws error, caught by try/catch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const throwError = async (): Promise<void> => {
         throw new Error('async error');
       };
@@ -491,6 +508,7 @@ export default function asyncFunctionTest(): void {
         expect(err instanceof Error).assertTrue();
       }
       expect(errorCaught).assertEqual(true);
+      done();
     });
 
     /**
@@ -501,17 +519,23 @@ export default function asyncFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFunctionTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('asyncFunctionTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const noReturn = async (): Promise<undefined> => {
         return;
       };
-      const result = await noReturn();
-      expect(result).assertEqual(undefined);
+      try {
+        const result = await noReturn();
+        expect(result).assertEqual(undefined);
+      } catch (e) {
+        console.info(`asyncFunctionTest005 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest006
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_006
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0006
      * @tc.desc   Async function with nested async arrow function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -528,20 +552,25 @@ export default function asyncFunctionTest(): void {
           throw err;
         }
       };
-      const result = await outerAsync();
-      expect(result).assertEqual(24);
+      try {
+        const result = await outerAsync();
+        expect(result).assertEqual(24);
+      } catch (e) {
+        console.info(`asyncFunctionTest006 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest007
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_007
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0007
      * @tc.desc   Multiple awaits in single async function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const multiAwait = async (): Promise<number> => {
         const p1: Promise<number> = Promise.resolve(2 as number);
         const p2: Promise<number> = Promise.resolve(3 as number);
@@ -554,19 +583,25 @@ export default function asyncFunctionTest(): void {
           throw err;
         }
       };
-      const result = await multiAwait();
-      expect(result).assertEqual(6);
+      try {
+        const result = await multiAwait();
+        expect(result).assertEqual(6);
+      } catch (e) {
+        console.info(`asyncFunctionTest007 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest008
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_008
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0008
      * @tc.desc   Async function returns rejected Promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const returnRejected = async (): Promise<never> => {
         return Promise.reject(new Error('rejected promise'));
       };
@@ -577,31 +612,38 @@ export default function asyncFunctionTest(): void {
         caught = true;
       }
       expect(caught).assertTrue();
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest009
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_009
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0009
      * @tc.desc   Async function with parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFunctionTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('asyncFunctionTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const withParam = async (num: number): Promise<number> => num + 10;
-      const result = await withParam(5);
-      expect(result).assertEqual(15);
+      try {
+        const result = await withParam(5);
+        expect(result).assertEqual(15);
+      } catch (e) {
+        console.info(`asyncFunctionTest009 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest010
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_010
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0010
      * @tc.desc   Async function with default parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const defaultParam = async (num: number = 3): Promise<number> => num * 4;
       try {
         const result1 = await defaultParam();
@@ -611,27 +653,34 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest011
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_011
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0011
      * @tc.desc   Async function with rest parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const restParam = async (...nums: number[]): Promise<number> => {
         return nums.reduce((sum: number, curr: number): number => sum + curr, 0);
       };
-      const result = await restParam(1, 2, 3, 4);
-      expect(result).assertEqual(10);
+      try {
+        const result = await restParam(1, 2, 3, 4);
+        expect(result).assertEqual(10);
+      } catch (e) {
+        console.info(`asyncFunctionTest011 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest012
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_012
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0012
      * @tc.desc   Async function returns BigInt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -639,20 +688,25 @@ export default function asyncFunctionTest(): void {
      */
     it('asyncFunctionTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const returnBigInt = async (): Promise<bigint> => 100n;
-      const result = await returnBigInt();
-      expect(result).assertEqual(100n);
+      try {
+        const result = await returnBigInt();
+        expect(result).assertEqual(100n);
+      } catch (e) {
+        console.info(`asyncFunctionTest012 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest013
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_013
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0013
      * @tc.desc   Async function uses await in try/catch block
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const tryCatchAwait = async (): Promise<string> => {
         try {
           const p: Promise<never> = Promise.reject(new Error('await error'));
@@ -668,17 +722,18 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest014
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_014
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0014
      * @tc.desc   Async function with try/finally block
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let finallyExecuted = false;
       const tryFinally = async (): Promise<number> => {
         try {
@@ -687,44 +742,57 @@ export default function asyncFunctionTest(): void {
           finallyExecuted = true;
         }
       };
-      await tryFinally();
-      expect(finallyExecuted).assertEqual(true);
+      try {
+        await tryFinally();
+        expect(finallyExecuted).assertEqual(true);
+      } catch (e) {
+        console.info(`asyncFunctionTest014 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest015
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_015
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0015
      * @tc.desc   Async function assigned to variable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFunctionTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('asyncFunctionTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const asyncVar = async (): Promise<string> => 'assigned';
-      const result = await asyncVar();
-      expect(result).assertEqual('assigned');
+      try {
+        const result = await asyncVar();
+        expect(result).assertEqual('assigned');
+      } catch (e) {
+        console.info(`asyncFunctionTest015 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest016
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_016
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0016
      * @tc.desc   Async function as object method
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const result = await asyncFunctionTest016Fn();
         expect(result).assertEqual(14);
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest017
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_017
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0017
      * @tc.desc   Async function as class method
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -732,8 +800,13 @@ export default function asyncFunctionTest(): void {
      */
     it('asyncFunctionTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const instance: TestClass = new TestClass();
-      const result = await instance.classMethod('test');
-      expect(result).assertEqual('TEST');
+      try {
+        const result = await instance.classMethod('test');
+        expect(result).assertEqual('TEST');
+      } catch (e) {
+        console.info(`asyncFunctionTest017 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -750,15 +823,20 @@ export default function asyncFunctionTest(): void {
         const obj: ResultObj = { key: 'value', count: 3 };
         return obj;
       };
-      const result = await returnObj();
-      expect(result.key).assertEqual('value');
-      expect(result.count).assertEqual(3);
+      try {
+        const result = await returnObj();
+        expect(result.key).assertEqual('value');
+        expect(result.count).assertEqual(3);
+      } catch (e) {
+        console.info(`asyncFunctionTest018 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest019
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_019
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0019
      * @tc.desc   Async function with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -771,8 +849,13 @@ export default function asyncFunctionTest(): void {
           Promise.resolve(2 as number),
           Promise.resolve(3 as number)
         ];
-        const results = await Promise.all(promises);
-        return results.reduce((a: number, b: number): number => a + b, 0);
+        try {
+          const results = await Promise.all(promises);
+          return results.reduce((a: number, b: number): number => a + b, 0);
+        } catch (e) {
+          console.info(`asyncFunctionTest019 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       try {
         const result = await usePromiseAll();
@@ -786,42 +869,64 @@ export default function asyncFunctionTest(): void {
 
     /**
      * @tc.name   asyncFunctionTest020
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_020
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0020
      * @tc.desc   Async function with Promise.race (resolved first)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const usePromiseRace = async (): Promise<string> => {
         const p1: Promise<string> = Promise.resolve('fast');
         const p2: Promise<string> = Promise.resolve('slow');
-        return await Promise.race([p1, p2]);
+        try {
+          return await Promise.race([p1, p2]);
+        } catch (e) {
+          console.info(`asyncFunctionTest020 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const result = await usePromiseRace();
-      expect(result).assertEqual('fast');
+      try {
+        const result = await usePromiseRace();
+        expect(result).assertEqual('fast');
+      } catch (e) {
+        console.info(`asyncFunctionTest020 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest021
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_021
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0021
      * @tc.desc   Async function with Promise.allSettled
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const useAllSettled = async (): Promise<SettledStatus[]> => {
         const promises: Promise<number>[] = [
           Promise.resolve(5 as number),
           Promise.reject(new Error('fail'))
         ];
-        const results: PromiseSettledResult<number>[] = await Promise.allSettled(promises);
-        const statuses: SettledStatus[] = results.map((res: PromiseSettledResult<number>): SettledStatus => res.status as SettledStatus);
-        return statuses;
+        try {
+          const results: PromiseSettledResult<number>[] = await Promise.allSettled(promises);
+          const statuses: SettledStatus[] = results.map((res: PromiseSettledResult<number>): SettledStatus => res.status as SettledStatus);
+          return statuses;
+        } catch (e) {
+          console.info(`asyncFunctionTest021 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const result = await useAllSettled();
-      expect(result).assertDeepEquals(['fulfilled', 'rejected']);
+      try {
+        const result = await useAllSettled();
+        expect(result).assertDeepEquals(['fulfilled', 'rejected']);
+      } catch (e) {
+        console.info(`asyncFunctionTest021 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -832,7 +937,7 @@ export default function asyncFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const async1 = async (): Promise<number> => 4;
       const async2 = async (): Promise<number> => {
         try {
@@ -843,27 +948,39 @@ export default function asyncFunctionTest(): void {
           throw err;
         }
       };
-      const result = await async2();
-      expect(result).assertEqual(10);
+      try {
+        const result = await async2();
+        expect(result).assertEqual(10);
+      } catch (e) {
+        console.info(`asyncFunctionTest022 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest023
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_023
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0023
      * @tc.desc   Async function returns resolved Promise directly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFunctionTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('asyncFunctionTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const returnResolved = async (): Promise<string> => Promise.resolve('done');
-      const result = await returnResolved();
-      expect(result).assertEqual('done');
+      try {
+        const result = await returnResolved();
+        expect(result).assertEqual('done');
+      } catch (e) {
+        console.info(`asyncFunctionTest023 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest024
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_024
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0024
      * @tc.desc   Async function returns array with typed elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -871,8 +988,13 @@ export default function asyncFunctionTest(): void {
      */
     it('asyncFunctionTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const returnArray = async (): Promise<number[]> => [1, 2, 3];
-      const result = await returnArray();
-      expect(result).assertDeepEquals([1.0, 2.0, 3.0]);
+      try {
+        const result = await returnArray();
+        expect(result).assertDeepEquals([1.0, 2.0, 3.0]);
+      } catch (e) {
+        console.info(`asyncFunctionTest024 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -884,7 +1006,7 @@ export default function asyncFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const conditionalAwait = async (useFast: boolean): Promise<string> => {
         const fastPromise: Promise<string> = Promise.resolve('fast val');
         const slowPromise: Promise<string> = Promise.resolve('slow val');
@@ -903,31 +1025,37 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest026
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_026
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0026
      * @tc.desc   Async function with nested conditional await (typed data flow)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const nestedCondAwait = async (level: number): Promise<number> => {
-        const getVal = async (num: number): Promise<number> => num * 2;
-        if (level === 1) {
-          try {
-            return await getVal(5);
-          } catch (err) {
-            expect().assertFail();
-            throw err;
+        try {
+          const getVal = async (num: number): Promise<number> => num * 2;
+          if (level === 1) {
+            try {
+              return await getVal(5);
+            } catch (err) {
+              expect().assertFail();
+              throw err;
+            }
+          } else if (level === 2) {
+            const val1 = await getVal(3);
+            return await getVal(val1);
           }
-        } else if (level === 2) {
-          const val1 = await getVal(3);
-          return await getVal(val1);
+          return 0;
+        } catch (e) {
+          console.info(`asyncFunctionTest026 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        return 0;
       };
       try {
         const result1 = await nestedCondAwait(1);
@@ -937,20 +1065,27 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest027
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_027
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0027
      * @tc.desc   Async arrow function with typed parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFunctionTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('asyncFunctionTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const asyncArrow = async (str: string): Promise<string> => str.repeat(2);
-      const result = await asyncArrow('test');
-      expect(result).assertEqual('testtest');
+      try {
+        const result = await asyncArrow('test');
+        expect(result).assertEqual('testtest');
+      } catch (e) {
+        console.info(`asyncFunctionTest027 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -961,10 +1096,16 @@ export default function asyncFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFunctionTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('asyncFunctionTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const noParamAsyncArrow = async (): Promise<int> => new Date().getFullYear();
-      const result = await noParamAsyncArrow();
-      expect(typeof result).assertEqual('int');
+      try {
+        const result = await noParamAsyncArrow();
+        expect(typeof result).assertEqual('int');
+      } catch (e) {
+        console.info(`asyncFunctionTest028 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -975,7 +1116,7 @@ export default function asyncFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFunctionTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('asyncFunctionTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 0b0101;
@@ -999,28 +1140,40 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest030
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_030
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0030
      * @tc.desc   Async function with await in loop (typed array result)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const awaitInLoop = async (): Promise<number[]> => {
-        const nums: number[] = [1, 2, 3];
-        const results: number[] = [];
-        for (const num of nums) {
-          const delayedVal: Promise<number> = Promise.resolve(num * 2);
-          results.push(await delayedVal);
+        try {
+          const nums: number[] = [1, 2, 3];
+          const results: number[] = [];
+          for (const num of nums) {
+            const delayedVal: Promise<number> = Promise.resolve(num * 2);
+            results.push(await delayedVal);
+          }
+          return results;
+        } catch (e) {
+          console.info(`asyncFunctionTest030 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        return results;
       };
-      const result = await awaitInLoop();
-      expect(result).assertDeepEquals([2.0, 4.0, 6.0]);
+      try {
+        const result = await awaitInLoop();
+        expect(result).assertDeepEquals([2.0, 4.0, 6.0]);
+      } catch (e) {
+        console.info(`asyncFunctionTest030 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -1039,18 +1192,28 @@ export default function asyncFunctionTest(): void {
 
         nums.forEach((num: number) => {
           const promise: Promise<void> = (async () => {
-            const val: number = await Promise.resolve(num * 2);
-            results.push(val);
+            try {
+              const val: number = await Promise.resolve(num * 2);
+              results.push(val);
+            } catch (e) {
+              console.info(`asyncFunctionTest031 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
           })();
           promiseList.push(promise);
         });
 
-        await Promise.all(promiseList);
-        return results.sort((a: number, b: number): int => {
-          if (a < b) { return -1; }
-          if (a > b) { return 1; }
-          return 0;
-        });
+        try {
+          await Promise.all(promiseList);
+          return results.sort((a: number, b: number): int => {
+            if (a < b) { return -1; }
+            if (a > b) { return 1; }
+            return 0;
+          });
+        } catch (e) {
+          console.info(`asyncFunctionTest031 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       try {
         const result = await awaitInForEach();
@@ -1064,7 +1227,7 @@ export default function asyncFunctionTest(): void {
 
     /**
      * @tc.name   asyncFunctionTest032
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_032
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0032
      * @tc.desc   Async function returns typed Map
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1077,21 +1240,26 @@ export default function asyncFunctionTest(): void {
         map.set('b', 2);
         return map;
       };
-      const result = await returnMap();
-      expect(result.get('a')).assertEqual(1);
-      expect(result.get('b')).assertEqual(2);
+      try {
+        const result = await returnMap();
+        expect(result.get('a')).assertEqual(1);
+        expect(result.get('b')).assertEqual(2);
+      } catch (e) {
+        console.info(`asyncFunctionTest032 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest033
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_033
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0033
      * @tc.desc   Async function returns typed Set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFunctionTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('asyncFunctionTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const returnSet = async (): Promise<Set<number>> => {
         const set: Set<number> = new Set<number>();
         set.add(1);
@@ -1106,31 +1274,43 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest034
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_034
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0034
      * @tc.desc   Async function with async callback in array map (typed promises)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const asyncMapCallback = async (): Promise<number[]> => {
         const nums: number[] = [1, 2, 3];
         const promises: Promise<number>[] = nums.map(async (num: number): Promise<number> => {
-          return await Promise.resolve(num * 3);
+          try {
+            return await Promise.resolve(num * 3);
+          } catch (e) {
+            console.info(`asyncFunctionTest034 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         });
         return Promise.all(promises);
       };
-      const result = await asyncMapCallback();
-      expect(result).assertDeepEquals([3.0, 6.0, 9.0]);
+      try {
+        const result = await asyncMapCallback();
+        expect(result).assertDeepEquals([3.0, 6.0, 9.0]);
+      } catch (e) {
+        console.info(`asyncFunctionTest034 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest035
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_035
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0035
      * @tc.desc   Async function with error propagation from nested async (typed error)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1141,7 +1321,12 @@ export default function asyncFunctionTest(): void {
         const innerAsync = async (): Promise<void> => {
           throw new Error('inner error');
         };
-        await innerAsync();
+        try {
+          await innerAsync();
+        } catch (e) {
+          console.info(`asyncFunctionTest035 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       let errorCaught = false;
       try {
@@ -1156,13 +1341,13 @@ export default function asyncFunctionTest(): void {
 
     /**
      * @tc.name   asyncFunctionTest036
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_036
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0036
      * @tc.desc   Async function with typed custom Promise implementation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const asyncCalculate = async (base: number, shouldMultiply: boolean): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
@@ -1198,11 +1383,12 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest037
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_037
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0037
      * @tc.desc   Async function with typed Promise.resolve chaining
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1210,12 +1396,22 @@ export default function asyncFunctionTest(): void {
      */
     it('asyncFunctionTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const promiseChaining = async (): Promise<number> => {
-        return await Promise.resolve(2 as number)
-          .then((val: number) => val * 3)
-          .then((val: number) => val + 4);
+        try {
+          return await Promise.resolve(2 as number)
+            .then((val: number) => val * 3)
+            .then((val: number) => val + 4);
+        } catch (e) {
+          console.info(`asyncFunctionTest037 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const result = await promiseChaining();
-      expect(result).assertEqual(10);
+      try {
+        const result = await promiseChaining();
+        expect(result).assertEqual(10);
+      } catch (e) {
+        console.info(`asyncFunctionTest037 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -1227,25 +1423,36 @@ export default function asyncFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const promiseCatchChain = async (): Promise<string> => {
-        return await Promise.reject(new Error('chain error'))
-          .catch((err: Error) => err.message)
-          .then((msg: string) => `Caught: ${msg}`);
+        try {
+          return await Promise.reject(new Error('chain error'))
+            .catch((err: Error) => err.message)
+            .then((msg: string) => `Caught: ${msg}`);
+        } catch (e) {
+          console.info(`asyncFunctionTest038 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const result = await promiseCatchChain();
-      expect(result).assertEqual('Caught: chain error');
+      try {
+        const result = await promiseCatchChain();
+        expect(result).assertEqual('Caught: chain error');
+      } catch (e) {
+        console.info(`asyncFunctionTest038 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest039
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_039
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0039
      * @tc.desc   Async function with await on typed non-Promise value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFunctionTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('asyncFunctionTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const awaitNonPromise = async (): Promise<string> => {
         const nonPromiseVal: string = 'not a promise';
         try {
@@ -1262,28 +1469,40 @@ export default function asyncFunctionTest(): void {
         console.info(`asyncFunctionTest039 catch error: ${JSON.stringify(e)}`);
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest040
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_040
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0040
      * @tc.desc   Async function with await on typed null value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFunctionTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('asyncFunctionTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const awaitNull = async (): Promise<null> => {
         const nullVal: null = null;
-        return await nullVal;
+        try {
+          return await nullVal;
+        } catch (e) {
+          console.info(`asyncFunctionTest040 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const result = await awaitNull();
-      expect(result).assertEqual(null);
+      try {
+        const result = await awaitNull();
+        expect(result).assertEqual(null);
+      } catch (e) {
+        console.info(`asyncFunctionTest040 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest041
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_041
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0041
      * @tc.desc   Async function with await on typed undefined value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1292,16 +1511,26 @@ export default function asyncFunctionTest(): void {
     it('asyncFunctionTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const awaitUndefined = async (): Promise<undefined> => {
         const undefinedVal: undefined = undefined;
-        return await undefinedVal;
+        try {
+          return await undefinedVal;
+        } catch (e) {
+          console.info(`asyncFunctionTest041 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const result = await awaitUndefined();
-      expect(result).assertEqual(undefined);
+      try {
+        const result = await awaitUndefined();
+        expect(result).assertEqual(undefined);
+      } catch (e) {
+        console.info(`asyncFunctionTest041 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest042
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_042
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0042
      * @tc.desc   Async function with parallel async calls (typed Promise.all)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1311,8 +1540,13 @@ export default function asyncFunctionTest(): void {
       const parallelAsync = async (): Promise<number> => {
         const p1: Promise<number> = Promise.resolve(10 as number);
         const p2: Promise<number> = Promise.resolve(20 as number);
-        const res = await Promise.all([p1, p2]);
-        return res[0] + res[1];
+        try {
+          const res = await Promise.all([p1, p2]);
+          return res[0] + res[1];
+        } catch (e) {
+          console.info(`asyncFunctionTest042 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       try {
         const result = await parallelAsync();
@@ -1326,26 +1560,32 @@ export default function asyncFunctionTest(): void {
 
     /**
      * @tc.name   asyncFunctionTest043
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_043
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0043
      * @tc.desc   Async function with typed async generator call
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      const result: number[] = await asyncFunctionTest043Fn();
-      expect(result).assertDeepEquals([1.0, 2.0, 3.0]);
+    it('asyncFunctionTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        const result: number[] = await asyncFunctionTest043Fn();
+        expect(result).assertDeepEquals([1.0, 2.0, 3.0]);
+      } catch (e) {
+        console.info(`asyncFunctionTest043 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest044
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_044
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0044
      * @tc.desc   Async function as typed event listener callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 25;
@@ -1369,6 +1609,7 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
@@ -1379,7 +1620,7 @@ export default function asyncFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFunctionTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncFunctionTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const returnInFinally = async (shouldThrow: boolean): Promise<string> => {
         try {
           if (shouldThrow) {
@@ -1400,23 +1641,34 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest046
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_046
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0046
      * @tc.desc   3-level nested async functions with sequential awaits (typed data flow)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const level3 = async (num: number): Promise<number> => {
-        return await Promise.resolve(num * 2);
+        try {
+          return await Promise.resolve(num * 2);
+        } catch (e) {
+          console.info(`asyncFunctionTest046 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       const level2 = async (num: number): Promise<number> => {
-        const val = await level3(num);
-        return await Promise.resolve(val + 3);
+        try {
+          const val = await level3(num);
+          return await Promise.resolve(val + 3);
+        } catch (e) {
+          console.info(`asyncFunctionTest046 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       const level1 = async (num: number): Promise<number> => {
         try {
@@ -1427,8 +1679,14 @@ export default function asyncFunctionTest(): void {
           throw err;
         }
       };
-      const result = await level1(2);
-      expect(result).assertEqual(28);
+      try {
+        const result = await level1(2);
+        expect(result).assertEqual(28);
+      } catch (e) {
+        console.info(`asyncFunctionTest046 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -1440,57 +1698,83 @@ export default function asyncFunctionTest(): void {
      * @tc.level  LEVEL3
      */
     it('asyncFunctionTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      const nestedAsync1 = async (): Promise<number> => await Promise.resolve(5.0);
-      const nestedAsync2 = async (): Promise<number> => await Promise.resolve(8.0);
-      const nestedAsync3 = async (): Promise<number> => {
-        try {
-          return await Promise.resolve(3.0);
-        } catch (err) {
-          expect().assertFail();
-          throw err;
-        }
-      };
+      try {
+        const nestedAsync1 = async (): Promise<number> => await Promise.resolve(5.0);
+        const nestedAsync2 = async (): Promise<number> => await Promise.resolve(8.0);
+        const nestedAsync3 = async (): Promise<number> => {
+          try {
+            return await Promise.resolve(3.0);
+          } catch (err) {
+            expect().assertFail();
+            throw err;
+          }
+        };
 
-      const parallelNested = async (): Promise<number> => {
-        try {
-          const val = await Promise.all([nestedAsync1(), nestedAsync2(), nestedAsync3()]);
-          return val[1] + val[2] + val[0];
-        } catch (err) {
-          expect().assertFail();
-          throw err;
-        }
-      };
-      const result = await parallelNested();
-      expect(result).assertEqual(16);
+        const parallelNested = async (): Promise<number> => {
+          try {
+            const val = await Promise.all([nestedAsync1(), nestedAsync2(), nestedAsync3()]);
+            return val[1] + val[2] + val[0];
+          } catch (err) {
+            expect().assertFail();
+            throw err;
+          }
+        };
+        const result = await parallelNested();
+        expect(result).assertEqual(16);
+      } catch (e) {
+        console.info(`asyncFunctionTest047 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest048
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_048
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0048
      * @tc.desc   Async function with conditional nested async (typed branch results)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const branchA = async (num: number): Promise<number> => {
-        const inner = async (): Promise<number> => await Promise.resolve(num * 3);
-        return await inner();
+        try {
+          const inner = async (): Promise<number> => await Promise.resolve(num * 3);
+          return await inner();
+        } catch (e) {
+          console.info(`asyncFunctionTest048 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       const branchB = async (num: number): Promise<number> => {
-        const inner1 = async (): Promise<number> => await Promise.resolve(num + 2);
-        const inner2 = async (val: number): Promise<number> => await Promise.resolve(val * 4);
-        return await inner2(await inner1());
+        try {
+          const inner1 = async (): Promise<number> => await Promise.resolve(num + 2);
+          const inner2 = async (val: number): Promise<number> => await Promise.resolve(val * 4);
+          return await inner2(await inner1());
+        } catch (e) {
+          console.info(`asyncFunctionTest048 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const conditionalNested = async (useBranchA: boolean, num: number): Promise<number> => {
-        return useBranchA ? await branchA(num) : await branchB(num);
+        try {
+          return useBranchA ? await branchA(num) : await branchB(num);
+        } catch (e) {
+          console.info(`asyncFunctionTest048 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const result1 = await conditionalNested(true, 4);
-      const result2 = await conditionalNested(false, 3);
-      expect(result1).assertEqual(12);
-      expect(result2).assertEqual(20);
+      try {
+        const result1 = await conditionalNested(true, 4);
+        const result2 = await conditionalNested(false, 3);
+        expect(result1).assertEqual(12);
+        expect(result2).assertEqual(20);
+      } catch (e) {
+        console.info(`asyncFunctionTest048 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -1501,22 +1785,33 @@ export default function asyncFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      const asyncTasks: Array<() => Promise<number>> = [
-        async (): Promise<number> => await Promise.resolve(2.0),
-        async (): Promise<number> => await Promise.resolve(5.0),
-        async (): Promise<number> => await Promise.resolve(7.0)
-      ];
+    it('asyncFunctionTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        const asyncTasks: Array<() => Promise<number>> = [
+          async (): Promise<number> => await Promise.resolve(2.0),
+          async (): Promise<number> => await Promise.resolve(5.0),
+          async (): Promise<number> => await Promise.resolve(7.0)
+        ];
 
-      const runNestedArrayTasks = async (): Promise<number> => {
-        const results: number[] = [];
-        for (const task of asyncTasks) {
-          results.push(await task());
-        }
-        return results.reduce((a: number, b: number): number => a * b, 1.0);
-      };
-      const result = await runNestedArrayTasks();
-      expect(result).assertEqual(70);
+        const runNestedArrayTasks = async (): Promise<number> => {
+          try {
+            const results: number[] = [];
+            for (const task of asyncTasks) {
+              results.push(await task());
+            }
+            return results.reduce((a: number, b: number): number => a * b, 1.0);
+          } catch (e) {
+            console.info(`asyncFunctionTest049 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        };
+        const result = await runNestedArrayTasks();
+        expect(result).assertEqual(70);
+      } catch (e) {
+        console.info(`asyncFunctionTest049 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -1532,7 +1827,12 @@ export default function asyncFunctionTest(): void {
         if (shouldThrow) {
           throw new Error('level3 error');
         }
-        return await Promise.resolve(10.0);
+        try {
+          return await Promise.resolve(10.0);
+        } catch (e) {
+          console.info(`asyncFunctionTest050 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       const level2 = async (shouldThrow: boolean): Promise<number> => {
         try {
@@ -1549,48 +1849,74 @@ export default function asyncFunctionTest(): void {
         }
       };
 
-      const result1 = await level1(false);
-      const result2 = await level1(true);
-      expect(result1).assertEqual(10);
-      expect(result2).assertEqual('caught: level2 wrapped: level3 error');
+      try {
+        const result1 = await level1(false);
+        const result2 = await level1(true);
+        expect(result1).assertEqual(10);
+        expect(result2).assertEqual('caught: level2 wrapped: level3 error');
+      } catch (e) {
+        console.info(`asyncFunctionTest050 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest051
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_051
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0051
      * @tc.desc   Async function with nested async that returns another async function (typed)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const getAsyncFunc = async (multiplier: number): Promise<(num: number) => Promise<number>> => {
         const returnedFn: (num: number) => Promise<number> = async (num: number): Promise<number> => {
-          return await Promise.resolve(num * multiplier);
+          try {
+            return await Promise.resolve(num * multiplier);
+          } catch (e) {
+            console.info(`asyncFunctionTest051 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         return returnedFn;
       };
 
       const useNestedFunc = async (): Promise<number> => {
-        const asyncFunc = await getAsyncFunc(4);
-        return await asyncFunc(6);
+        try {
+          const asyncFunc = await getAsyncFunc(4);
+          return await asyncFunc(6);
+        } catch (e) {
+          console.info(`asyncFunctionTest051 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const result = await useNestedFunc();
-      expect(result).assertEqual(24);
+      try {
+        const result = await useNestedFunc();
+        expect(result).assertEqual(24);
+      } catch (e) {
+        console.info(`asyncFunctionTest051 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest052
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_052
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0052
      * @tc.desc   4-level async nested workflow with typed data passing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const processData = async (data: number): Promise<number> => {
-        return await Promise.resolve(data + 10);
+        try {
+          return await Promise.resolve(data + 10);
+        } catch (e) {
+          console.info(`asyncFunctionTest052 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       const transformData = async (data: number): Promise<number> => {
         try {
@@ -1602,8 +1928,13 @@ export default function asyncFunctionTest(): void {
         }
       };
       const fetchData = async (id: number): Promise<number> => {
-        const mockData = await Promise.resolve(id * 5);
-        return await transformData(mockData);
+        try {
+          const mockData = await Promise.resolve(id * 5);
+          return await transformData(mockData);
+        } catch (e) {
+          console.info(`asyncFunctionTest052 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       const startWorkflow = async (id: number): Promise<number> => {
         try {
@@ -1615,21 +1946,33 @@ export default function asyncFunctionTest(): void {
         }
       };
 
-      const result = await startWorkflow(3);
-      expect(result).assertEqual(45);
+      try {
+        const result = await startWorkflow(3);
+        expect(result).assertEqual(45);
+      } catch (e) {
+        console.info(`asyncFunctionTest052 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest053
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_053
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0053
      * @tc.desc   Async function with nested async in typed object properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      const result = await asyncFunctionTest053Fn();
-      expect(result).assertEqual(25);
+    it('asyncFunctionTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        const result = await asyncFunctionTest053Fn();
+        expect(result).assertEqual(25);
+      } catch (e) {
+        console.info(`asyncFunctionTest053 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -1653,42 +1996,68 @@ export default function asyncFunctionTest(): void {
       };
 
       const outerAsync = async (): Promise<string> => {
-        const raceResult = await nestedRace();
-        return `Result: ${raceResult}`;
+        try {
+          const raceResult = await nestedRace();
+          return `Result: ${raceResult}`;
+        } catch (e) {
+          console.info(`asyncFunctionTest054 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const result = await outerAsync();
-      expect(result).assertEqual('Result: winner');
+      try {
+        const result = await outerAsync();
+        expect(result).assertEqual('Result: winner');
+      } catch (e) {
+        console.info(`asyncFunctionTest054 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest055
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_055
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0055
      * @tc.desc   Async function with nested async error recovery (typed fallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const riskyAsync = async (shouldThrow: boolean): Promise<number> => {
         if (shouldThrow) {
           throw new Error('risky failed');
         }
-        return await Promise.resolve(15.0);
+        try {
+          return await Promise.resolve(15.0);
+        } catch (e) {
+          console.info(`asyncFunctionTest055 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const withFallback = async (shouldThrow: boolean): Promise<number> => {
         try {
           return await riskyAsync(shouldThrow);
         } catch (e) {
-          return await Promise.resolve(10.0);
+          try {
+            return await Promise.resolve(10.0);
+          } catch (err) {
+            console.info(`asyncFunctionTest055 catch error: ${JSON.stringify(err)}`);
+            throw err;
+          }
         }
       };
 
-      const result1 = await withFallback(false);
-      const result2 = await withFallback(true);
-      expect(result1).assertEqual(15);
-      expect(result2).assertEqual(10);
+      try {
+        const result1 = await withFallback(false);
+        const result2 = await withFallback(true);
+        expect(result1).assertEqual(15);
+        expect(result2).assertEqual(10);
+      } catch (e) {
+        console.info(`asyncFunctionTest055 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -1699,13 +2068,24 @@ export default function asyncFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const runClassAsync = async (): Promise<number> => {
         const child: Child = new Child();
-        return await child.childMethod(5);
+        try {
+          return await child.childMethod(5);
+        } catch (e) {
+          console.info(`asyncFunctionTest056 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const result = await runClassAsync();
-      expect(result).assertEqual(17);
+      try {
+        const result = await runClassAsync();
+        expect(result).assertEqual(17);
+      } catch (e) {
+        console.info(`asyncFunctionTest056 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -1716,55 +2096,81 @@ export default function asyncFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const getSettled = async (): Promise<PromiseSettledResult<number>[]> => {
         const tasks: Promise<number>[] = [
           Promise.resolve(3 as number),
           Promise.reject(new Error('fail')),
           Promise.resolve(7 as number)
         ];
-        return await Promise.allSettled(tasks);
+        try {
+          return await Promise.allSettled(tasks);
+        } catch (e) {
+          console.info(`asyncFunctionTest057 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processSettled = async (): Promise<number> => {
-        const results: PromiseSettledResult<number>[] = await getSettled();
-        let total: number = 0;
-        results.forEach((res: PromiseSettledResult<number>) => {
-          if (res.status === 'fulfilled') {
-            const fulfilled: PromiseFulfilledResult<number> = res as PromiseFulfilledResult<number>;
-            total += fulfilled.value;
-          }
-        });
-        return total;
+        try {
+          const results: PromiseSettledResult<number>[] = await getSettled();
+          let total: number = 0;
+          results.forEach((res: PromiseSettledResult<number>) => {
+            if (res.status === 'fulfilled') {
+              const fulfilled: PromiseFulfilledResult<number> = res as PromiseFulfilledResult<number>;
+              total += fulfilled.value;
+            }
+          });
+          return total;
+        } catch (e) {
+          console.info(`asyncFunctionTest057 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const result = await processSettled();
-      expect(result).assertEqual(10);
+      try {
+        const result = await processSettled();
+        expect(result).assertEqual(10);
+      } catch (e) {
+        console.info(`asyncFunctionTest057 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest058
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_058
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0058
      * @tc.desc   Async function with nested async in loop (typed dynamic task count)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const createAsyncTask = (num: number): (() => Promise<number>) => {
-        const task: () => Promise<number> = async (): Promise<number> => await Promise.resolve(num * 2);
-        return task;
+        try {
+          const task: () => Promise<number> = async (): Promise<number> => await Promise.resolve(num * 2);
+          return task;
+        } catch (e) {
+          console.info(`asyncFunctionTest058 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const runDynamicTasks = async (taskCount: number): Promise<number[]> => {
-        const tasks: Array<() => Promise<number>> = [];
-        for (let i: number = 0; i < taskCount; i++) {
-          tasks.push(createAsyncTask(i + 1));
+        try {
+          const tasks: Array<() => Promise<number>> = [];
+          for (let i: number = 0; i < taskCount; i++) {
+            tasks.push(createAsyncTask(i + 1));
+          }
+          const results: number[] = [];
+          for (const task of tasks) {
+            results.push(await task());
+          }
+          return results;
+        } catch (e) {
+          console.info(`asyncFunctionTest058 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        const results: number[] = [];
-        for (const task of tasks) {
-          results.push(await task());
-        }
-        return results;
       };
 
       try {
@@ -1773,6 +2179,7 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
@@ -1783,14 +2190,19 @@ export default function asyncFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const getTypedTuple = async (): Promise<DataTuple> => {
-        const nested1 = async (): Promise<string> => await Promise.resolve('test');
-        const nested2 = async (): Promise<number> => await Promise.resolve(42.0);
-        const nested3 = async (): Promise<boolean> => await Promise.resolve(true);
+        try {
+          const nested1 = async (): Promise<string> => await Promise.resolve('test');
+          const nested2 = async (): Promise<number> => await Promise.resolve(42.0);
+          const nested3 = async (): Promise<boolean> => await Promise.resolve(true);
 
-        const tuple: DataTuple = [await nested1(), await nested2(), await nested3()];
-        return tuple;
+          const tuple: DataTuple = [await nested1(), await nested2(), await nested3()];
+          return tuple;
+        } catch (e) {
+          console.info(`asyncFunctionTest059 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const useTypedTuple = async (): Promise<DataTuple> => {
@@ -1801,21 +2213,27 @@ export default function asyncFunctionTest(): void {
           throw err;
         }
       };
-      const res = await useTypedTuple();
-      expect(res[0]).assertEqual('test');
-      expect(res[1]).assertEqual(42);
-      expect(res[2]).assertEqual(true);
+      try {
+        const res = await useTypedTuple();
+        expect(res[0]).assertEqual('test');
+        expect(res[1]).assertEqual(42);
+        expect(res[2]).assertEqual(true);
+      } catch (e) {
+        console.info(`asyncFunctionTest059 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest060
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_060
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0060
      * @tc.desc   Async function with nested async in typed interface implementation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const createProcessor = (): DataProcessor => {
         const processor: DataProcessor = {
           fetch: async (id: number): Promise<string> => {
@@ -1827,7 +2245,12 @@ export default function asyncFunctionTest(): void {
                 throw err;
               }
             };
-            return await mockFetch();
+            try {
+              return await mockFetch();
+            } catch (e) {
+              console.info(`asyncFunctionTest060 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
           },
           transform: async (data: string): Promise<string> => {
             const mockTransform = async (): Promise<string> => {
@@ -1838,11 +2261,21 @@ export default function asyncFunctionTest(): void {
                 throw err;
               }
             };
-            return await mockTransform();
+            try {
+              return await mockTransform();
+            } catch (e) {
+              console.info(`asyncFunctionTest060 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
           },
           save: async (data: string): Promise<boolean> => {
-            const mockSave = async (): Promise<boolean> => await Promise.resolve(true);
-            return await mockSave();
+            try {
+              const mockSave = async (): Promise<boolean> => await Promise.resolve(true);
+              return await mockSave();
+            } catch (e) {
+              console.info(`asyncFunctionTest060 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
           }
         };
         return processor;
@@ -1859,35 +2292,56 @@ export default function asyncFunctionTest(): void {
           throw err;
         }
       };
-      const result = await runProcessor(5);
-      expect(result).assertEqual(true);
+      try {
+        const result = await runProcessor(5);
+        expect(result).assertEqual(true);
+      } catch (e) {
+        console.info(`asyncFunctionTest060 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest061
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_061
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0061
      * @tc.desc   Async function with nested async that handles typed optional values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const getOptionalData = async (hasData: boolean): Promise<number | null> => {
         const nestedGet = async (): Promise<number | null> => {
-          if (hasData) {
-            return await Promise.resolve(100.0);
+          try {
+            if (hasData) {
+              return await Promise.resolve(100.0);
+            }
+            return await Promise.resolve(null);
+          } catch (e) {
+            console.info(`asyncFunctionTest061 catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
-          return await Promise.resolve(null);
         };
-        return await nestedGet();
+        try {
+          return await nestedGet();
+        } catch (e) {
+          console.info(`asyncFunctionTest061 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processOptional = async (hasData: boolean): Promise<number> => {
-        const data = await getOptionalData(hasData);
-        if (data !== null) {
-          return data;
+        try {
+          const data = await getOptionalData(hasData);
+          if (data !== null) {
+            return data;
+          }
+          return 0.0;
+        } catch (e) {
+          console.info(`asyncFunctionTest061 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        return 0.0;
       };
 
       try {
@@ -1898,22 +2352,28 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest062
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_062
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0062
      * @tc.desc   Async function with nested async that uses typed generic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const useGeneric = async (): Promise<type62> => {
-        const strData = await genericFetcher<string>('generic');
-        const numData = await genericFetcher<number>(50);
-        const result: type62 = { str: strData, num: numData };
-        return result;
+        try {
+          const strData = await genericFetcher<string>('generic');
+          const numData = await genericFetcher<number>(50);
+          const result: type62 = { str: strData, num: numData };
+          return result;
+        } catch (e) {
+          console.info(`asyncFunctionTest062 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       try {
         const result = await useGeneric();
@@ -1922,26 +2382,32 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest063
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_063
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0063
      * @tc.desc   Async function with nested async in typed module-like object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('asyncFunctionTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      const result = await asyncFunctionTest063Fn();
-      expect(result.name).assertEqual('test');
-      expect(result.id).assertEqual(1);
+      try {
+        const result = await asyncFunctionTest063Fn();
+        expect(result.name).assertEqual('test');
+        expect(result.id).assertEqual(1);
+      } catch (e) {
+        console.info(`asyncFunctionTest063 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest064
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_064
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0064
      * @tc.desc   Async function with nested async that chains typed transformations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1949,29 +2415,54 @@ export default function asyncFunctionTest(): void {
      */
     it('asyncFunctionTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const transform1 = async (num: number): Promise<number> => {
-        const nested = async (): Promise<number> => await Promise.resolve(num + 5);
-        return await nested();
+        try {
+          const nested = async (): Promise<number> => await Promise.resolve(num + 5);
+          return await nested();
+        } catch (e) {
+          console.info(`asyncFunctionTest064 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       const transform2 = async (num: number): Promise<number> => {
-        const nested = async (): Promise<number> => await Promise.resolve(num * 2);
-        return await nested();
+        try {
+          const nested = async (): Promise<number> => await Promise.resolve(num * 2);
+          return await nested();
+        } catch (e) {
+          console.info(`asyncFunctionTest064 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       const transform3 = async (num: number): Promise<number> => {
-        const nested = async (): Promise<number> => await Promise.resolve(num - 3);
-        return await nested();
+        try {
+          const nested = async (): Promise<number> => await Promise.resolve(num - 3);
+          return await nested();
+        } catch (e) {
+          console.info(`asyncFunctionTest064 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const chainTransforms = async (initial: number): Promise<number> => {
-        return await transform3(await transform2(await transform1(initial)));
+        try {
+          return await transform3(await transform2(await transform1(initial)));
+        } catch (e) {
+          console.info(`asyncFunctionTest064 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const result = await chainTransforms(4);
-      expect(result).assertEqual(15);
+      try {
+        const result = await chainTransforms(4);
+        expect(result).assertEqual(15);
+      } catch (e) {
+        console.info(`asyncFunctionTest064 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest065
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_065
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0065
      * @tc.desc   Async function with nested async that validates typed input
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2030,13 +2521,13 @@ export default function asyncFunctionTest(): void {
 
     /**
      * @tc.name   asyncFunctionTest066
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_066
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0066
      * @tc.desc   Async function with nested async that uses typed enum
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const getStatus = async (isSuccess: boolean): Promise<Status> => {
         const nestedStatus = async (): Promise<Status> => {
           try {
@@ -2058,39 +2549,60 @@ export default function asyncFunctionTest(): void {
       };
 
       const checkStatus = async (isSuccess: boolean): Promise<boolean> => {
-        const status = await getStatus(isSuccess);
-        return status === Status.Success;
+        try {
+          const status = await getStatus(isSuccess);
+          return status === Status.Success;
+        } catch (e) {
+          console.info(`asyncFunctionTest066 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      const result1 = await checkStatus(true);
-      const result2 = await checkStatus(false);
-      expect(result1).assertEqual(true);
-      expect(result2).assertEqual(false);
+      try {
+        const result1 = await checkStatus(true);
+        const result2 = await checkStatus(false);
+        expect(result1).assertEqual(true);
+        expect(result2).assertEqual(false);
+      } catch (e) {
+        console.info(`asyncFunctionTest066 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest067
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_067
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0067
      * @tc.desc   Async function with nested async that returns typed union
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const getUnionData = async (type: 'str' | 'num' | 'bool'): Promise<AsyncFuncUnionType> => {
         const nestedGet = async (): Promise<AsyncFuncUnionType> => {
-          switch (type) {
-            case 'str':
-              return await Promise.resolve('union');
-            case 'num':
-              return await Promise.resolve(10.0);
-            case 'bool':
-              return await Promise.resolve(true);
-            default:
-              return await Promise.resolve('union');
+          try {
+            switch (type) {
+              case 'str':
+                return await Promise.resolve('union');
+              case 'num':
+                return await Promise.resolve(10.0);
+              case 'bool':
+                return await Promise.resolve(true);
+              default:
+                return await Promise.resolve('union');
+            }
+          } catch (e) {
+            console.info(`asyncFunctionTest067 catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
         };
-        return await nestedGet();
+        try {
+          return await nestedGet();
+        } catch (e) {
+          console.info(`asyncFunctionTest067 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processUnion = async (type: 'str' | 'num' | 'bool'): Promise<string> => {
@@ -2103,58 +2615,80 @@ export default function asyncFunctionTest(): void {
         }
       };
 
-      const result1 = await processUnion('str');
-      const result2 = await processUnion('num');
-      const result3 = await processUnion('bool');
-      expect(result1).assertEqual('string');
-      expect(result2).assertEqual('number');
-      expect(result3).assertEqual('boolean');
+      try {
+        const result1 = await processUnion('str');
+        const result2 = await processUnion('num');
+        const result3 = await processUnion('bool');
+        expect(result1).assertEqual('string');
+        expect(result2).assertEqual('number');
+        expect(result3).assertEqual('boolean');
+      } catch (e) {
+        console.info(`asyncFunctionTest067 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest068
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_068
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0068
      * @tc.desc   Async function with nested async that handles typed readonly data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('asyncFunctionTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      const result = await asyncFunctionTest068Fn();
-      expect(result.id).assertEqual(1);
-      expect(result.name).assertEqual('modified');
+      try {
+        const result = await asyncFunctionTest068Fn();
+        expect(result.id).assertEqual(1);
+        expect(result.name).assertEqual('modified');
+      } catch (e) {
+        console.info(`asyncFunctionTest068 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest069
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_069
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0069
      * @tc.desc   Async function with nested async that uses typed function overloads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const useOverload = async (): Promise<[string, string]> => {
-        const strResult = await formatData('test');
-        const numResult = await formatData(5);
-        const tuple: [string, string] = [strResult, numResult];
-        return tuple;
+        try {
+          const strResult = await formatData('test');
+          const numResult = await formatData(5);
+          const tuple: [string, string] = [strResult, numResult];
+          return tuple;
+        } catch (e) {
+          console.info(`asyncFunctionTest069 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const res = await useOverload();
-      expect(res[0]).assertEqual('TEST');
-      expect(res[1]).assertEqual('005');
+      try {
+        const res = await useOverload();
+        expect(res[0]).assertEqual('TEST');
+        expect(res[1]).assertEqual('005');
+      } catch (e) {
+        console.info(`asyncFunctionTest069 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest070
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_070
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0070
      * @tc.desc   Async function with nested async that processes typed array of objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       const initialVal = 28;
@@ -2180,11 +2714,12 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest071
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_071
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0071
      * @tc.desc   Async function with nested async that uses typed WeakMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2195,14 +2730,19 @@ export default function asyncFunctionTest(): void {
         const cache: WeakMap<CacheKey, Promise<string>> = new WeakMap<CacheKey, Promise<string>>();
 
         const getFromCache = async (key: CacheKey): Promise<string> => {
-          if (cache.has(key)) {
-            const cached: Promise<string> = cache.get(key)!;
-            return await cached;
+          try {
+            if (cache.has(key)) {
+              const cached: Promise<string> = cache.get(key)!;
+              return await cached;
+            }
+            const fetchData = async (): Promise<string> => await Promise.resolve(`data_${key.id}`);
+            const data = fetchData();
+            cache.set(key, data);
+            return await data;
+          } catch (e) {
+            console.info(`asyncFunctionTest071 catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
-          const fetchData = async (): Promise<string> => await Promise.resolve(`data_${key.id}`);
-          const data = fetchData();
-          cache.set(key, data);
-          return await data;
         };
 
         const key1: CacheKey = { id: 1 };
@@ -2217,15 +2757,20 @@ export default function asyncFunctionTest(): void {
         }
       };
 
-      const res = await useWeakMapCache();
-      expect(res.firstCall).assertEqual('data_1');
-      expect(res.secondCall).assertEqual('data_1');
+      try {
+        const res = await useWeakMapCache();
+        expect(res.firstCall).assertEqual('data_1');
+        expect(res.secondCall).assertEqual('data_1');
+      } catch (e) {
+        console.info(`asyncFunctionTest071 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest072
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_072
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0072
      * @tc.desc   Async function with nested async that validates typed date
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2234,17 +2779,32 @@ export default function asyncFunctionTest(): void {
     it('asyncFunctionTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const isFutureDate = async (date: Date): Promise<boolean> => {
         const nestedCheck = async (): Promise<boolean> => {
-          const now = await Promise.resolve(new Date());
-          return date.getTime() > now.getTime();
+          try {
+            const now = await Promise.resolve(new Date());
+            return date.getTime() > now.getTime();
+          } catch (e) {
+            console.info(`asyncFunctionTest072 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
-        return await nestedCheck();
+        try {
+          return await nestedCheck();
+        } catch (e) {
+          console.info(`asyncFunctionTest072 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const testDates = async (): Promise<[boolean, boolean]> => {
         const pastDate = new Date('2020-01-01');
         const futureDate = new Date(Date.now() + 86400000);
-        const tuple: [boolean, boolean] = [await isFutureDate(pastDate), await isFutureDate(futureDate)];
-        return tuple;
+        try {
+          const tuple: [boolean, boolean] = [await isFutureDate(pastDate), await isFutureDate(futureDate)];
+          return tuple;
+        } catch (e) {
+          console.info(`asyncFunctionTest072 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -2260,13 +2820,13 @@ export default function asyncFunctionTest(): void {
 
     /**
      * @tc.name   asyncFunctionTest073
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_073
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0073
      * @tc.desc   Async function with nested async that uses typed generator return
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 10;
@@ -2290,20 +2850,26 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest074
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_074
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0074
      * @tc.desc   Async function with nested async that handles typed error objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const throwCustomError = async (): Promise<never> => {
         const nestedThrow = async (): Promise<never> => {
-          throw await Promise.resolve(new CustomError('custom issue', 400));
+          try {
+            throw await Promise.resolve(new CustomError('custom issue', 400));
+          } catch (e) {
+            console.info(`asyncFunctionTest074 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         return nestedThrow();
       };
@@ -2320,13 +2886,19 @@ export default function asyncFunctionTest(): void {
         }
       };
 
-      const errorCode = await catchCustomError();
-      expect(errorCode).assertEqual(400);
+      try {
+        const errorCode = await catchCustomError();
+        expect(errorCode).assertEqual(400);
+      } catch (e) {
+        console.info(`asyncFunctionTest074 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest075
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_075
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0075
      * @tc.desc   Async function with nested async that uses typed Promise.withResolvers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2346,26 +2918,36 @@ export default function asyncFunctionTest(): void {
         });
       };
 
-      const result = await asyncAtomicXor(7);
+      try {
+        const result = await asyncAtomicXor(7);
 
-      expect(result).assertEqual(13);
-      expect(ia[0]).assertEqual(13);
+        expect(result).assertEqual(13);
+        expect(ia[0]).assertEqual(13);
+      } catch (e) {
+        console.info(`asyncFunctionTest075 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest076
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_076
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0076
      * @tc.desc   Async function with nested async that processes typed tuple array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const calculateDistance = async (points: PointTuple[]): Promise<number[]> => {
         const nestedCalculate = async (point: PointTuple): Promise<number> => {
           const distance = Math.sqrt(point[0] ** 2 + point[1] ** 2);
-          return await Promise.resolve(distance);
+          try {
+            return await Promise.resolve(distance);
+          } catch (e) {
+            console.info(`asyncFunctionTest076 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         return Promise.all(points.map((point: PointTuple): Promise<number> => nestedCalculate(point)));
@@ -2383,38 +2965,55 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest077
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_077
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0077
      * @tc.desc   Async function with nested async that uses typed ReadonlyArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sumReadonlyArray = async (arr: number[]): Promise<number> => {
         const nestedSum = async (): Promise<number> => {
-          return await Promise.resolve(arr.reduce((a: number, b: number): number => a + b, 0));
+          try {
+            return await Promise.resolve(arr.reduce((a: number, b: number): number => a + b, 0));
+          } catch (e) {
+            console.info(`asyncFunctionTest077 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
-        return await nestedSum();
+        try {
+          return await nestedSum();
+        } catch (e) {
+          console.info(`asyncFunctionTest077 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const readonlyArr: number[] = [1, 2, 3, 4];
-      const result = await sumReadonlyArray(readonlyArr);
-      expect(result).assertEqual(10);
+      try {
+        const result = await sumReadonlyArray(readonlyArr);
+        expect(result).assertEqual(10);
+      } catch (e) {
+        console.info(`asyncFunctionTest077 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest078
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_078
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0078
      * @tc.desc   Async function with nested async that handles typed nullable properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const getEmail = async (user: User): Promise<string> => {
         const nestedGet = async (): Promise<string> => {
           const email: string | null | undefined = user.email;
@@ -2451,11 +3050,12 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest079
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_079
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0079
      * @tc.desc   Async function with nested async that uses typed Record
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2475,28 +3075,43 @@ export default function asyncFunctionTest(): void {
         });
       };
 
-      const result = await asyncAtomicExchange(99);
+      try {
+        const result = await asyncAtomicExchange(99);
 
-      expect(result).assertEqual(99);
-      expect(ia[0]).assertEqual(99);
+        expect(result).assertEqual(99);
+        expect(ia[0]).assertEqual(99);
+      } catch (e) {
+        console.info(`asyncFunctionTest079 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest080
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_080
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0080
      * @tc.desc   Async function with nested async that chains typed async validations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const validateUsername = async (username: string): Promise<boolean> => {
-        return await Promise.resolve(username.length >= 3);
+        try {
+          return await Promise.resolve(username.length >= 3);
+        } catch (e) {
+          console.info(`asyncFunctionTest080 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const validatePassword = async (password: string): Promise<boolean> => {
-        return await Promise.resolve(password.length >= 6);
+        try {
+          return await Promise.resolve(password.length >= 6);
+        } catch (e) {
+          console.info(`asyncFunctionTest080 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const validateForm = async (form: FormData): Promise<boolean> => {
@@ -2529,6 +3144,7 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
@@ -2545,7 +3161,12 @@ export default function asyncFunctionTest(): void {
           throw new Error(`Fetch failed for id ${id}`);
         }
         const apiResponse: ApiResponse = { data: id * 10 };
-        return await Promise.resolve(apiResponse);
+        try {
+          return await Promise.resolve(apiResponse);
+        } catch (e) {
+          console.info(`asyncFunctionTest081 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const batchFetch = async (ids: number[]): Promise<number[]> => {
@@ -2567,47 +3188,73 @@ export default function asyncFunctionTest(): void {
         }
       };
 
-      const result = await batchFetch([1, 2, 3]);
-      expect(result).assertDeepEquals([10.0, 30.0]);
+      try {
+        const result = await batchFetch([1, 2, 3]);
+        expect(result).assertDeepEquals([10.0, 30.0]);
+      } catch (e) {
+        console.info(`asyncFunctionTest081 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest082
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_082
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0082
      * @tc.desc   Async function with nested async that handles typed bigint values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const processBigInt = async (num: bigint): Promise<bigint> => {
         const nestedProcess = async (): Promise<bigint> => {
-          const doubled = await Promise.resolve(num * 2n);
-          return await Promise.resolve(doubled + 5n);
+          try {
+            const doubled = await Promise.resolve(num * 2n);
+            return await Promise.resolve(doubled + 5n);
+          } catch (e) {
+            console.info(`asyncFunctionTest082 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
-        return await nestedProcess();
+        try {
+          return await nestedProcess();
+        } catch (e) {
+          console.info(`asyncFunctionTest082 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const input = 100n;
-      const result = await processBigInt(input);
-      expect(result).assertEqual(205n);
-      expect(typeof result).assertEqual('bigint');
+      try {
+        const result = await processBigInt(input);
+        expect(result).assertEqual(205n);
+        expect(typeof result).assertEqual('bigint');
+      } catch (e) {
+        console.info(`asyncFunctionTest082 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest083
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_083
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0083
      * @tc.desc   Async function with nested async that uses typed Set operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const processSet = async (nums: number[]): Promise<type83> => {
         const nestedProcess = async (): Promise<UniqueNumbers> => {
           const uniqueSet: UniqueNumbers = new Set<number>(nums);
-          return await Promise.resolve(uniqueSet);
+          try {
+            return await Promise.resolve(uniqueSet);
+          } catch (e) {
+            console.info(`asyncFunctionTest083 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         try {
@@ -2624,9 +3271,15 @@ export default function asyncFunctionTest(): void {
       };
 
       const input: number[] = [1, 2, 2, 3, 5, 5];
-      const result = await processSet(input);
-      expect(result.size).assertEqual(4);
-      expect(result.hasFive).assertEqual(true);
+      try {
+        const result = await processSet(input);
+        expect(result.size).assertEqual(4);
+        expect(result.hasFive).assertEqual(true);
+      } catch (e) {
+        console.info(`asyncFunctionTest083 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -2662,30 +3315,45 @@ export default function asyncFunctionTest(): void {
       const inputMap: StringMap = new Map<string, number>();
       inputMap.set('a', 1);
       inputMap.set('b', 2);
-      const resultMap = await transformMap(inputMap);
+      try {
+        const resultMap = await transformMap(inputMap);
 
-      expect(resultMap.get('a')).assertEqual('1');
-      expect(resultMap.get('b')).assertEqual('2');
-      expect(resultMap.size).assertEqual(2);
+        expect(resultMap.get('a')).assertEqual('1');
+        expect(resultMap.get('b')).assertEqual('2');
+        expect(resultMap.size).assertEqual(2);
+      } catch (e) {
+        console.info(`asyncFunctionTest084 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest085
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_085
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0085
      * @tc.desc   Async function with nested async that validates typed enum values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const isValidMethod = async (method: string): Promise<boolean> => {
         const nestedCheck = async (): Promise<boolean> => {
-          return await Promise.resolve(
-            method === 'GET' || method === 'POST' || method === 'PUT'
-          );
+          try {
+            return await Promise.resolve(
+              method === 'GET' || method === 'POST' || method === 'PUT'
+            );
+          } catch (e) {
+            console.info(`asyncFunctionTest085 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
-        return await nestedCheck();
+        try {
+          return await nestedCheck();
+        } catch (e) {
+          console.info(`asyncFunctionTest085 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -2699,17 +3367,18 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest086
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_086
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0086
      * @tc.desc   Async function with nested async that uses typed Promise.race with timeout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const asyncTask = async (taskId: number, delayMs: int): Promise<type86> => {
         return new Promise<type86>((resolve) => {
           setTimeout(() => {
@@ -2752,25 +3421,31 @@ export default function asyncFunctionTest(): void {
         console.info(`asyncFunctionTest086 catch error: ${JSON.stringify(e)}`);
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest087
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_087
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0087
      * @tc.desc   Async function with nested async that processes typed optional chaining
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('asyncFunctionTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      const res = await asyncFunctionTest087Fn();
-      expect(res).assertEqual(true);
+      try {
+        const res = await asyncFunctionTest087Fn();
+        expect(res).assertEqual(true);
+      } catch (e) {
+        console.info(`asyncFunctionTest087 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest088
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_088
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0088
      * @tc.desc   Async function with nested async that uses typed nullish coalescing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2785,9 +3460,19 @@ export default function asyncFunctionTest(): void {
           } else {
             result = 'default';
           }
-          return await Promise.resolve(result);
+          try {
+            return await Promise.resolve(result);
+          } catch (e) {
+            console.info(`asyncFunctionTest088 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
-        return await nestedGet();
+        try {
+          return await nestedGet();
+        } catch (e) {
+          console.info(`asyncFunctionTest088 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -2815,53 +3500,75 @@ export default function asyncFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      const result = await asyncFunctionTest089Fn();
-      expect(result.length).assertEqual(1);
-      expect(result.item).assertEqual('item1');
+    it('asyncFunctionTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        const result = await asyncFunctionTest089Fn();
+        expect(result.length).assertEqual(1);
+        expect(result.item).assertEqual('item1');
+      } catch (e) {
+        console.info(`asyncFunctionTest089 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest090
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_090
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0090
      * @tc.desc   Async function with nested async that uses typed function composition
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      const result = await asyncFunctionTest090Fn();
-      expect(result).assertEqual(16);
+    it('asyncFunctionTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        const result = await asyncFunctionTest090Fn();
+        expect(result).assertEqual(16);
+      } catch (e) {
+        console.info(`asyncFunctionTest090 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest091
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_091
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0091
      * @tc.desc   Async function with nested async that uses typed generator composition
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('asyncFunctionTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      const result: number[] = await asyncFunctionTest091Fn();
-      expect(result).assertDeepEquals([1.0, 2.0, 3.0, 4.0]);
+      try {
+        const result: number[] = await asyncFunctionTest091Fn();
+        expect(result).assertDeepEquals([1.0, 2.0, 3.0, 4.0]);
+      } catch (e) {
+        console.info(`asyncFunctionTest091 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest092
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_092
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0092
      * @tc.desc   Async function with nested async arrow function and BigInt return
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const calculateBigInt = async (a: bigint, b: bigint): Promise<bigint> => {
         const nestedAdd = async (x: bigint, y: bigint): Promise<bigint> => x + y;
         const nestedXor = async (x: bigint, y: bigint): Promise<bigint> => x ^ y;
-        const sum = await nestedAdd(a, b);
-        return nestedXor(sum, 15n);
+        try {
+          const sum = await nestedAdd(a, b);
+          return nestedXor(sum, 15n);
+        } catch (e) {
+          console.info(`asyncFunctionTest092 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
       try {
         const result = await calculateBigInt(23n, 47n);
@@ -2869,11 +3576,12 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest093
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_093
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0093
      * @tc.desc   Async function handling Promise.allSettled with mixed results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2905,21 +3613,26 @@ export default function asyncFunctionTest(): void {
           throw err;
         }
       };
-      const result = await processTasks();
-      expect(result.success).assertEqual(2);
-      expect(result.failed).assertEqual(2);
+      try {
+        const result = await processTasks();
+        expect(result.success).assertEqual(2);
+        expect(result.failed).assertEqual(2);
+      } catch (e) {
+        console.info(`asyncFunctionTest093 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncFunctionTest094
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_094
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0094
      * @tc.desc   Async function with closure state tracking async calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const createCounter = (): type94 => {
         let callCount = 0;
         const asyncIncrement = async (step: number): Promise<number> => {
@@ -2935,37 +3648,49 @@ export default function asyncFunctionTest(): void {
         return result;
       };
       const res = createCounter();
-      const res1 = await res.asyncIncrement(2);
-      const res2 = await res.asyncIncrement(3);
-      expect(res1).assertEqual(2);
-      expect(res2).assertEqual(6);
-      expect(res.getCount()).assertEqual(2);
+      try {
+        const res1 = await res.asyncIncrement(2);
+        const res2 = await res.asyncIncrement(3);
+        expect(res1).assertEqual(2);
+        expect(res2).assertEqual(6);
+        expect(res.getCount()).assertEqual(2);
+      } catch (e) {
+        console.info(`asyncFunctionTest094 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest095
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_095
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0095
      * @tc.desc   Async function returning Promise.race between value and timeout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      const result1 = await raceTasks<string>('success', 100);
-      const result2 = await raceTasks<string>('late', 100);
-      expect(result1).assertEqual('timeout');
-      expect(result2).assertEqual('timeout');
+    it('asyncFunctionTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        const result1 = await raceTasks<string>('success', 100);
+        const result2 = await raceTasks<string>('late', 100);
+        expect(result1).assertEqual('timeout');
+        expect(result2).assertEqual('timeout');
+      } catch (e) {
+        console.info(`asyncFunctionTest095 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest096
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_096
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0096
      * @tc.desc   Async function with generic type and object transformation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const fetchData = async (delayMs: int, data: number): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
@@ -3001,17 +3726,18 @@ export default function asyncFunctionTest(): void {
       } catch (err) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest097
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_097
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0097
      * @tc.desc   Async function handling error recovery with retry logic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 10;
@@ -3025,21 +3751,27 @@ export default function asyncFunctionTest(): void {
         });
       };
 
-      const result = await asyncAtomicAdd();
+      try {
+        const result = await asyncAtomicAdd();
 
-      expect(result).assertEqual(15);
-      expect(ia[0]).assertEqual(15);
+        expect(result).assertEqual(15);
+        expect(ia[0]).assertEqual(15);
+      } catch (e) {
+        console.info(`asyncFunctionTest097 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest098
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_098
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0098
      * @tc.desc   Async function with nested Promise chain and type coercion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFunctionTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFunctionTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const processValue = async (initial: string): Promise<number> => {
         return Promise.resolve<string>(initial)
           .then((val: string): number => val.length)
@@ -3051,21 +3783,32 @@ export default function asyncFunctionTest(): void {
           }))
           .then((finalNum: number): number => finalNum >>> 0);
       };
-      const result = await processValue('typescript');
-      expect(result).assertEqual((10 * 3) + 7);
+      try {
+        const result = await processValue('typescript');
+        expect(result).assertEqual((10 * 3) + 7);
+      } catch (e) {
+        console.info(`asyncFunctionTest098 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncFunctionTest099
-     * @tc.number SUB_BUILTINS_asyncFunction_TEST_099
+     * @tc.number SUB_BUILTINS_asyncFunction_TEST_0099
      * @tc.desc   Async function returning async generator and consuming with for await...of
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('asyncFunctionTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      const result = await asyncFunctionTest099Fn();
-      expect(result).assertDeepEquals([0.0, 3.0, 6.0, 9.0]);
+      try {
+        const result = await asyncFunctionTest099Fn();
+        expect(result).assertDeepEquals([0.0, 3.0, 6.0, 9.0]);
+      } catch (e) {
+        console.info(`asyncFunctionTest099 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -3086,24 +3829,29 @@ export default function asyncFunctionTest(): void {
             }, 100);
           });
         };
-        const validations = await Promise.all(dataList.map((d: Data): Promise<boolean> => validate(d)));
-        const validData = dataList.filter((d: Data, idx: int): boolean => validations[idx]);
-
-        const processFn = async (data: Data): Promise<string> => {
-          return new Promise<string>((resolve: (value: string) => void) => {
-            setTimeout((): void => {
-              resolve(`${data.id}-${data.value.toUpperCase()}`);
-            }, 100);
-          });
-        };
         try {
-          const processed = await Promise.all(validData.map((d: Data): Promise<string> => processFn(d)));
+          const validations = await Promise.all(dataList.map((d: Data): Promise<boolean> => validate(d)));
+          const validData = dataList.filter((d: Data, idx: int): boolean => validations[idx]);
 
-          const resultObj: type100 = { valid: validData, processed: processed, count: processed.length };
-          return resultObj;
-        } catch (err) {
-          expect().assertFail();
-          throw err;
+          const processFn = async (data: Data): Promise<string> => {
+            return new Promise<string>((resolve: (value: string) => void) => {
+              setTimeout((): void => {
+                resolve(`${data.id}-${data.value.toUpperCase()}`);
+              }, 100);
+            });
+          };
+          try {
+            const processed = await Promise.all(validData.map((d: Data): Promise<string> => processFn(d)));
+
+            const resultObj: type100 = { valid: validData, processed: processed, count: processed.length };
+            return resultObj;
+          } catch (err) {
+            expect().assertFail();
+            throw err;
+          }
+        } catch (e) {
+          console.info(`asyncFunctionTest100 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
       };
 
@@ -3113,11 +3861,16 @@ export default function asyncFunctionTest(): void {
         { id: 3 as number, value: 'demo' },
         { id: 4 as number, value: '' }
       ];
-      const result = await workflow(input);
-      const expectedValid: Data[] = [{ id: 1 as number, value: 'test' }, { id: 3 as number, value: 'demo' }];
-      expect(result.valid).assertDeepEquals(expectedValid);
-      expect(result.processed).assertDeepEquals(['1-TEST', '3-DEMO']);
-      expect(result.count).assertEqual(2);
+      try {
+        const result = await workflow(input);
+        const expectedValid: Data[] = [{ id: 1 as number, value: 'test' }, { id: 3 as number, value: 'demo' }];
+        expect(result.valid).assertDeepEquals(expectedValid);
+        expect(result.processed).assertDeepEquals(['1-TEST', '3-DEMO']);
+        expect(result.count).assertEqual(2);
+      } catch (e) {
+        console.info(`asyncFunctionTest100 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
   });
