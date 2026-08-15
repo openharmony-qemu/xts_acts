@@ -66,6 +66,25 @@ function testTaskPoolSendData(counter: AtomicInt): void {
   }
 }
 
+function testTaskPoolGroupTask(counter: AtomicInt): void {
+  try {
+    for (let j: int = 0; j < 10; j++) {
+      counter.fetchAdd(1);
+    }
+  } catch (e) {
+    console.info(`testTaskPoolGroupTask catch error: ${JSON.stringify(e)}`);
+  }
+}
+
+function testTaskPoolReturnConstant(): int {
+  try {
+    return 42;
+  } catch (e) {
+    console.info(`testTaskPoolReturnConstant catch error: ${JSON.stringify(e)}`);
+    return 0;
+  }
+}
+
 export default function TaskPoolConcurrentTest(): void {
   describe('TaskPoolConcurrentTest', (): void => {
     beforeAll((): void => { });
@@ -215,11 +234,7 @@ export default function TaskPoolConcurrentTest(): void {
       let totalTasks: int = 10;
       let group: taskpool.TaskGroup = new taskpool.TaskGroup('taskGroup');
       for (let i: int = 0; i < totalTasks; i++) {
-        group.addTask((): void => {
-          for (let j: int = 0; j < 10; j++) {
-            counter.fetchAdd(1);
-          }
-        });
+        group.addTask(testTaskPoolGroupTask, counter);
       }
       try {
         await taskpool.execute(group);
@@ -245,7 +260,9 @@ export default function TaskPoolConcurrentTest(): void {
         let receiveCounter: AtomicInt = new AtomicInt(0);
         let task: taskpool.Task = new taskpool.Task(testTaskPoolSendData, counter);
         task.onReceiveData((data: Object): void => {
-          receiveCounter.fetchAdd(1);
+          if (data !== null && data !== undefined) {
+            receiveCounter.fetchAdd(1);
+          }
         });
         try {
           await taskpool.execute(task);
@@ -325,9 +342,7 @@ export default function TaskPoolConcurrentTest(): void {
     it('testTaskPoolCallbackConcurrent0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let result: AtomicInt = new AtomicInt(0);
       try {
-        const value: int = await taskpool.execute((): int => {
-          return 42;
-        }) as int;
+        const value: int = await taskpool.execute(testTaskPoolReturnConstant) as int;
         result.store(value);
         expect(result.load()).assertEqual(42);
       } catch (e) {

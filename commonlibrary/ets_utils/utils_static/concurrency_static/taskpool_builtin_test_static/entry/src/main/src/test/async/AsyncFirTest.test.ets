@@ -1023,19 +1023,39 @@ export default function asyncFirTest(): void {
     it('asyncFirTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       try {
         const result1 = await (async (): Promise<string> => {
-          return await Promise.resolve('iife1');
+          try {
+            return await Promise.resolve('iife1');
+          } catch (e) {
+            console.info(`asyncFirTest0003 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         })();
 
         const result2 = await (async (num: int): Promise<int> => {
-          return await Promise.resolve(num + 10);
+          try {
+            return await Promise.resolve(num + 10);
+          } catch (e) {
+            console.info(`asyncFirTest0003 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         })(5);
 
         const result3 = await (async (data: string[]): Promise<number> => {
           const promises = data.map(async (item: string): Promise<int> => {
-            return await Promise.resolve(item.length);
+            try {
+              return await Promise.resolve(item.length);
+            } catch (e) {
+              console.info(`asyncFirTest0003 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
           });
-          const processed = await Promise.all(promises);
-          return processed.reduce((sum: number, len: int) => sum + len, 0);
+          try {
+            const processed = await Promise.all(promises);
+            return processed.reduce((sum: number, len: int) => sum + len, 0);
+          } catch (e) {
+            console.info(`asyncFirTest0003 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         })(['hello', 'world']);
 
         expect(result1).assertEqual('iife1');
@@ -2735,13 +2755,23 @@ export default function asyncFirTest(): void {
       ): Promise<string[]> => {
         try {
           const processItem = async (item: string): Promise<string> => {
-            const prefixed = await Promise.resolve(config.prefix + item);
-            const repeated = await Promise.resolve(prefixed.repeat(config.multiplier.toInt()));
-            return config.uppercase ? repeated.toUpperCase() : repeated;
+            try {
+              const prefixed = await Promise.resolve(config.prefix + item);
+              const repeated = await Promise.resolve(prefixed.repeat(config.multiplier.toInt()));
+              return config.uppercase ? repeated.toUpperCase() : repeated;
+            } catch (e) {
+              console.info(`asyncFirTest0033 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
           };
 
           const promises = data.map(async (item: string): Promise<string> => {
-            return await processItem(item);
+            try {
+              return await processItem(item);
+            } catch (e) {
+              console.info(`asyncFirTest0033 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
           });
 
           return await Promise.all(promises);
@@ -3130,7 +3160,12 @@ export default function asyncFirTest(): void {
             isValid: errors.length === 0,
             errors: errors
           };
-          return await Promise.resolve(result);
+          try {
+            return await Promise.resolve(result);
+          } catch (e) {
+            console.info(`asyncFirTest0040 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const validProfile: ComplexUserProfile = {
@@ -3212,9 +3247,19 @@ export default function asyncFirTest(): void {
       try {
         const processUserArray = async (users: ComplexUserProfile[]): Promise<string[]> => {
           const promises = users.map(async (user: ComplexUserProfile): Promise<string> => {
-            return await Promise.resolve(`${user.name}:${user.id}`);
+            try {
+              return await Promise.resolve(`${user.name}:${user.id}`);
+            } catch (e) {
+              console.info(`asyncFirTest0042 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
           });
-          return await Promise.all(promises);
+          try {
+            return await Promise.all(promises);
+          } catch (e) {
+            console.info(`asyncFirTest0042 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const users: ComplexUserProfile[] = [
@@ -3310,13 +3355,23 @@ export default function asyncFirTest(): void {
         expect(uppercased).assertDeepEquals(['HELLO', 'WORLD', 'TEST']);
 
         const asyncDoubleCallback = async (num: number): Promise<number> => {
-          return await Promise.resolve(num * 3);
+          try {
+            return await Promise.resolve(num * 3);
+          } catch (e) {
+            console.info(`asyncFirTest0044 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         const tripled = await processWithAsyncCallback0044<number, number>(numbers, asyncDoubleCallback);
         expect(tripled).assertDeepEquals([3.0, 6.0, 9.0, 12.0, 15.0]);
 
         const asyncUpperCallback = async (str: string): Promise<string> => {
-          return await Promise.resolve(str.toLowerCase());
+          try {
+            return await Promise.resolve(str.toLowerCase());
+          } catch (e) {
+            console.info(`asyncFirTest0044 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         const lowercased = await processWithAsyncCallback0044<string, string>(strings, asyncUpperCallback);
         expect(lowercased).assertDeepEquals(['hello', 'world', 'test']);
@@ -3641,7 +3696,12 @@ export default function asyncFirTest(): void {
           }
 
           const result: ConditionalResult = { type, value, length };
-          return await Promise.resolve(result);
+          try {
+            return await Promise.resolve(result);
+          } catch (e) {
+            console.info(`asyncFirTest0052 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const stringCondResult = await processConditionalUnion('test');
@@ -3678,15 +3738,30 @@ export default function asyncFirTest(): void {
     it('asyncFirTest0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       try {
         const returnString = async (): Promise<string> => {
-          return await Promise.resolve('typed_string');
+          try {
+            return await Promise.resolve('typed_string');
+          } catch (e) {
+            console.info(`asyncFirTest0053 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const returnNumber = async (): Promise<int> => {
-          return await Promise.resolve(42);
+          try {
+            return await Promise.resolve(42);
+          } catch (e) {
+            console.info(`asyncFirTest0053 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const returnBoolean = async (): Promise<boolean> => {
-          return await Promise.resolve(true);
+          try {
+            return await Promise.resolve(true);
+          } catch (e) {
+            console.info(`asyncFirTest0053 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const returnUserProfile = async (): Promise<ComplexUserProfile> => {
@@ -3696,12 +3771,22 @@ export default function asyncFirTest(): void {
             email: 'test@example.com',
             age: 25
           };
-          return await Promise.resolve(profile);
+          try {
+            return await Promise.resolve(profile);
+          } catch (e) {
+            console.info(`asyncFirTest0053 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const returnNumberArray = async (): Promise<number[]> => {
           const numbers: number[] = [1, 2, 3, 4, 5];
-          return await Promise.resolve(numbers);
+          try {
+            return await Promise.resolve(numbers);
+          } catch (e) {
+            console.info(`asyncFirTest0053 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const stringResult = await returnString();
@@ -4054,18 +4139,23 @@ export default function asyncFirTest(): void {
           const dataPromise = Promise.resolve('complex_data');
           const timestampPromise = Promise.resolve(Date.now());
 
-          const data = await dataPromise;
-          const timestamp = await timestampPromise;
+          try {
+            const data = await dataPromise;
+            const timestamp = await timestampPromise;
 
-          const result: GenericReturnWrapper<string> = {
-            data: data,
-            meta: {
-              timestamp: timestamp,
-              version: '2.0.0'
-            }
-          };
+            const result: GenericReturnWrapper<string> = {
+              data: data,
+              meta: {
+                timestamp: timestamp,
+                version: '2.0.0'
+              }
+            };
 
-          return Promise.resolve(result);
+            return Promise.resolve(result);
+          } catch (e) {
+            console.info(`asyncFirTest0057 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const unwrappedValue = await returnPromiseValue();
@@ -4361,14 +4451,24 @@ export default function asyncFirTest(): void {
       try {
         const returnEmptyArray = async (): Promise<string[]> => {
           const emptyArray: string[] = [];
-          return await Promise.resolve(emptyArray);
+          try {
+            return await Promise.resolve(emptyArray);
+          } catch (e) {
+            console.info(`asyncFirTest0064 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const returnConditionalArray = async (hasItems: boolean): Promise<int[]> => {
-          if (hasItems) {
-            return await Promise.resolve([1, 2, 3, 4, 5]);
+          try {
+            if (hasItems) {
+              return await Promise.resolve([1, 2, 3, 4, 5]);
+            }
+            return await Promise.resolve([0]);
+          } catch (e) {
+            console.info(`asyncFirTest0064 catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
-          return await Promise.resolve([0]);
         };
 
         const emptyArray = await returnEmptyArray();
@@ -4407,7 +4507,12 @@ export default function asyncFirTest(): void {
           }
           const processed = await Promise.all(
             input.map(async (item: string): Promise<string> => {
-              return await Promise.resolve(item.toUpperCase());
+              try {
+                return await Promise.resolve(item.toUpperCase());
+              } catch (e) {
+                console.info(`asyncFirTest0065 catch error: ${JSON.stringify(e)}`);
+                throw e;
+              }
             })
           );
           return processed;
@@ -4509,7 +4614,12 @@ export default function asyncFirTest(): void {
       try {
         const returnEmptyObject = async (): Promise<Record<string, string>> => {
           const emptyObj: Record<string, string> = {};
-          return await Promise.resolve(emptyObj);
+          try {
+            return await Promise.resolve(emptyObj);
+          } catch (e) {
+            console.info(`asyncFirTest0067 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const returnConditionalObject = async (hasData: boolean): Promise<Record<string, number>> => {
@@ -4681,7 +4791,12 @@ export default function asyncFirTest(): void {
             level1: level1Data,
             status: 'complete'
           };
-          return await Promise.resolve(structure);
+          try {
+            return await Promise.resolve(structure);
+          } catch (e) {
+            console.info(`asyncFirTest0070 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const basicNested = await returnNestedStructure();
@@ -4885,7 +5000,12 @@ export default function asyncFirTest(): void {
             settings: settingsData,
             statistics: statisticsData
           };
-          return await Promise.resolve(structure);
+          try {
+            return await Promise.resolve(structure);
+          } catch (e) {
+            console.info(`asyncFirTest0073 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const complexStructure = await returnComplexStructure();

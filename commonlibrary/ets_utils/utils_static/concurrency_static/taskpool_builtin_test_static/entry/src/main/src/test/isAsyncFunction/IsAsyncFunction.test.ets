@@ -509,6 +509,24 @@ async function asyncArrowForTaskPool(x: number): Promise<number> {
   });
 }
 
+async function isafMapFirst(): Promise<number> {
+  try {
+    return await Promise.resolve(1);
+  } catch (e) {
+    console.info(`testIsAsyncFunctionInMap first catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
+
+async function isafMapSecond(): Promise<number> {
+  try {
+    return await Promise.resolve(2);
+  } catch (e) {
+    console.info(`testIsAsyncFunctionInMap second catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
+
 export default function IsAsyncFunctionTest(): void {
   describe('IsAsyncFunctionTest', (): void => {
     afterEach((): void => { });
@@ -1232,22 +1250,8 @@ export default function IsAsyncFunctionTest(): void {
     it('testIsAsyncFunctionInMap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const type = new util.types();
       const funcMap = new Map<string, () => Promise<number>>();
-      funcMap.set('first', async (): Promise<number> => {
-        try {
-          return await Promise.resolve(1);
-        } catch (e) {
-          console.info(`testIsAsyncFunctionInMap first catch error: ${JSON.stringify(e)}`);
-          throw e;
-        }
-      });
-      funcMap.set('second', async (): Promise<number> => {
-        try {
-          return await Promise.resolve(2);
-        } catch (e) {
-          console.info(`testIsAsyncFunctionInMap second catch error: ${JSON.stringify(e)}`);
-          throw e;
-        }
-      });
+      funcMap.set('first', isafMapFirst);
+      funcMap.set('second', isafMapSecond);
 
       funcMap.forEach((func: () => Promise<number>): void => {
         const result: boolean = type.isAsyncFunction(func);

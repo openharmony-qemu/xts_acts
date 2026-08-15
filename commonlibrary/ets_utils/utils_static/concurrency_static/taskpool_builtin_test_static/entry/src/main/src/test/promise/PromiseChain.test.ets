@@ -2130,7 +2130,7 @@ export default function promiseChainTest(): void {
       try {
         await Promise.resolve<void>(undefined);
         expect(longString.length).assertEqual(10000);
-        expect(longString).assertEqual(longString);
+        expect(longString[0]).assertEqual('a');
         console.info(`${caseName} test end`);
       } catch (e) {
         console.info(`testPromiseChainLongString catch error: ${JSON.stringify(e)}`);

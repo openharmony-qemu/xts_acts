@@ -1963,8 +1963,22 @@ export default function asyncFunctionTest(): void {
      */
     it('asyncFunctionTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        const nestedAsync1 = async (): Promise<number> => await Promise.resolve(5.0);
-        const nestedAsync2 = async (): Promise<number> => await Promise.resolve(8.0);
+        const nestedAsync1 = async (): Promise<number> => {
+          try {
+            return await Promise.resolve(5.0);
+          } catch (e) {
+            console.info(`asyncFunctionTest047 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        };
+        const nestedAsync2 = async (): Promise<number> => {
+          try {
+            return await Promise.resolve(8.0);
+          } catch (e) {
+            console.info(`asyncFunctionTest047 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        };
         const nestedAsync3 = async (): Promise<number> => {
           try {
             return await Promise.resolve(3.0);
@@ -2003,7 +2017,14 @@ export default function asyncFunctionTest(): void {
     it('asyncFunctionTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const branchA = async (num: number): Promise<number> => {
         try {
-          const inner = async (): Promise<number> => await Promise.resolve(num * 3);
+          const inner = async (): Promise<number> => {
+            try {
+              return await Promise.resolve(num * 3);
+            } catch (e) {
+              console.info(`asyncFunctionTest048 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          };
           return await inner();
         } catch (e) {
           console.info(`asyncFunctionTest048 catch error: ${JSON.stringify(e)}`);
@@ -2012,8 +2033,22 @@ export default function asyncFunctionTest(): void {
       };
       const branchB = async (num: number): Promise<number> => {
         try {
-          const inner1 = async (): Promise<number> => await Promise.resolve(num + 2);
-          const inner2 = async (val: number): Promise<number> => await Promise.resolve(val * 4);
+          const inner1 = async (): Promise<number> => {
+            try {
+              return await Promise.resolve(num + 2);
+            } catch (e) {
+              console.info(`asyncFunctionTest048 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          };
+          const inner2 = async (val: number): Promise<number> => {
+            try {
+              return await Promise.resolve(val * 4);
+            } catch (e) {
+              console.info(`asyncFunctionTest048 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          };
           return await inner2(await inner1());
         } catch (e) {
           console.info(`asyncFunctionTest048 catch error: ${JSON.stringify(e)}`);
@@ -2052,9 +2087,30 @@ export default function asyncFunctionTest(): void {
     it('asyncFunctionTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         const asyncTasks: Array<() => Promise<number>> = [
-          async (): Promise<number> => await Promise.resolve(2.0),
-          async (): Promise<number> => await Promise.resolve(5.0),
-          async (): Promise<number> => await Promise.resolve(7.0)
+          async (): Promise<number> => {
+            try {
+              return await Promise.resolve(2.0);
+            } catch (e) {
+              console.info(`asyncFunctionTest049 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          },
+          async (): Promise<number> => {
+            try {
+              return await Promise.resolve(5.0);
+            } catch (e) {
+              console.info(`asyncFunctionTest049 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          },
+          async (): Promise<number> => {
+            try {
+              return await Promise.resolve(7.0);
+            } catch (e) {
+              console.info(`asyncFunctionTest049 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          }
         ];
 
         const runNestedArrayTasks = async (): Promise<number> => {
@@ -2421,7 +2477,14 @@ export default function asyncFunctionTest(): void {
     it('asyncFunctionTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const createAsyncTask = (num: number): (() => Promise<number>) => {
         try {
-          const task: () => Promise<number> = async (): Promise<number> => await Promise.resolve(num * 2);
+          const task: () => Promise<number> = async (): Promise<number> => {
+            try {
+              return await Promise.resolve(num * 2);
+            } catch (e) {
+              console.info(`asyncFunctionTest058 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          };
           return task;
         } catch (e) {
           console.info(`asyncFunctionTest058 catch error: ${JSON.stringify(e)}`);
@@ -2466,9 +2529,30 @@ export default function asyncFunctionTest(): void {
     it('asyncFunctionTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const getTypedTuple = async (): Promise<DataTuple> => {
         try {
-          const nested1 = async (): Promise<string> => await Promise.resolve('test');
-          const nested2 = async (): Promise<number> => await Promise.resolve(42.0);
-          const nested3 = async (): Promise<boolean> => await Promise.resolve(true);
+          const nested1 = async (): Promise<string> => {
+            try {
+              return await Promise.resolve('test');
+            } catch (e) {
+              console.info(`asyncFunctionTest059 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          };
+          const nested2 = async (): Promise<number> => {
+            try {
+              return await Promise.resolve(42.0);
+            } catch (e) {
+              console.info(`asyncFunctionTest059 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          };
+          const nested3 = async (): Promise<boolean> => {
+            try {
+              return await Promise.resolve(true);
+            } catch (e) {
+              console.info(`asyncFunctionTest059 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          };
 
           const tuple: DataTuple = [await nested1(), await nested2(), await nested3()];
           return tuple;
@@ -2543,7 +2627,14 @@ export default function asyncFunctionTest(): void {
           },
           save: async (data: string): Promise<boolean> => {
             try {
-              const mockSave = async (): Promise<boolean> => await Promise.resolve(true);
+              const mockSave = async (): Promise<boolean> => {
+                try {
+                  return await Promise.resolve(true);
+                } catch (e) {
+                  console.info(`asyncFunctionTest060 catch error: ${JSON.stringify(e)}`);
+                  throw e;
+                }
+              };
               return await mockSave();
             } catch (e) {
               console.info(`asyncFunctionTest060 catch error: ${JSON.stringify(e)}`);
@@ -2689,7 +2780,14 @@ export default function asyncFunctionTest(): void {
     it('asyncFunctionTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const transform1 = async (num: number): Promise<number> => {
         try {
-          const nested = async (): Promise<number> => await Promise.resolve(num + 5);
+          const nested = async (): Promise<number> => {
+            try {
+              return await Promise.resolve(num + 5);
+            } catch (e) {
+              console.info(`asyncFunctionTest064 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          };
           return await nested();
         } catch (e) {
           console.info(`asyncFunctionTest064 catch error: ${JSON.stringify(e)}`);
@@ -2698,7 +2796,14 @@ export default function asyncFunctionTest(): void {
       };
       const transform2 = async (num: number): Promise<number> => {
         try {
-          const nested = async (): Promise<number> => await Promise.resolve(num * 2);
+          const nested = async (): Promise<number> => {
+            try {
+              return await Promise.resolve(num * 2);
+            } catch (e) {
+              console.info(`asyncFunctionTest064 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          };
           return await nested();
         } catch (e) {
           console.info(`asyncFunctionTest064 catch error: ${JSON.stringify(e)}`);
@@ -2707,7 +2812,14 @@ export default function asyncFunctionTest(): void {
       };
       const transform3 = async (num: number): Promise<number> => {
         try {
-          const nested = async (): Promise<number> => await Promise.resolve(num - 3);
+          const nested = async (): Promise<number> => {
+            try {
+              return await Promise.resolve(num - 3);
+            } catch (e) {
+              console.info(`asyncFunctionTest064 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          };
           return await nested();
         } catch (e) {
           console.info(`asyncFunctionTest064 catch error: ${JSON.stringify(e)}`);
@@ -3016,7 +3128,14 @@ export default function asyncFunctionTest(): void {
               const cached: Promise<string> = cache.get(key)!;
               return await cached;
             }
-            const fetchData = async (): Promise<string> => await Promise.resolve(`data_${key.id}`);
+            const fetchData = async (): Promise<string> => {
+              try {
+                return await Promise.resolve(`data_${key.id}`);
+              } catch (e) {
+                console.info(`asyncFunctionTest071 catch error: ${JSON.stringify(e)}`);
+                throw e;
+              }
+            };
             const data = fetchData();
             cache.set(key, data);
             return await data;

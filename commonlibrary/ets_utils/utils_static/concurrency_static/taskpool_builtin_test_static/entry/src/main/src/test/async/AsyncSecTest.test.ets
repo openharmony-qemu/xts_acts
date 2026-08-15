@@ -1564,6 +1564,9 @@ export default function asyncSecTest(): void {
           try {
             await sleep(100);
             throw new Error('Query Failed');
+          } catch (e) {
+            console.info(`case catch error: ${JSON.stringify(e)}`);
+            throw e;
           } finally {
             conn.close();
           }
@@ -2734,6 +2737,9 @@ export default function asyncSecTest(): void {
             if (token.isCancelled) {
               throw new CancelError048();
             }
+          } catch (e) {
+            console.info(`case catch error: ${JSON.stringify(e)}`);
+            throw e;
           } finally {
             lock.release();
           }
