@@ -38,20 +38,25 @@ export default function asyncPerformanceTest(): void {
 
     /**
      * @tc.name   asyncPerformanceTest002
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_002
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0002
      * @tc.desc   Test sequential async operations (100 operations)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sequential = async (): Promise<number> => {
-        let sum: number = 0;
-        for (let i: int = 0; i < 100; i++) {
-          const val: number = await Promise.resolve(i);
-          sum += val;
+        try {
+          let sum: number = 0;
+          for (let i: int = 0; i < 100; i++) {
+            const val: number = await Promise.resolve(i);
+            sum += val;
+          }
+          return sum;
+        } catch (e) {
+          console.info(`asyncPerformanceTest002 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        return sum;
       };
 
       try {
@@ -60,11 +65,12 @@ export default function asyncPerformanceTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
      * @tc.name   asyncPerformanceTest003
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_003
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0003
      * @tc.desc   Test memory efficiency with many async operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -91,16 +97,21 @@ export default function asyncPerformanceTest(): void {
         return results;
       };
 
-      const result = await memoryEfficient();
-      expect(result.length).assertEqual(1000);
-      expect(result[0]).assertEqual(0);
-      expect(result[999]).assertEqual(999);
+      try {
+        const result = await memoryEfficient();
+        expect(result.length).assertEqual(1000);
+        expect(result[0]).assertEqual(0);
+        expect(result[999]).assertEqual(999);
+      } catch (e) {
+        console.info(`asyncPerformanceTest003 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncPerformanceTest004
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_004
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0004
      * @tc.desc   Test rapid async function creation and execution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -117,7 +128,12 @@ export default function asyncPerformanceTest(): void {
           promises.push(asyncFn(i));
         }
 
-        return await Promise.all(promises);
+        try {
+          return await Promise.all(promises);
+        } catch (e) {
+          console.info(`asyncPerformanceTest004 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -133,13 +149,13 @@ export default function asyncPerformanceTest(): void {
 
     /**
      * @tc.name   asyncPerformanceTest005
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_005
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0005
      * @tc.desc   Test promise chain performance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const chainPerformance = async (): Promise<int> => {
         let promise = Promise.resolve(0);
 
@@ -155,13 +171,19 @@ export default function asyncPerformanceTest(): void {
         }
       };
 
-      const result = await chainPerformance();
-      expect(result).assertEqual(200);
+      try {
+        const result = await chainPerformance();
+        expect(result).assertEqual(200);
+      } catch (e) {
+        console.info(`asyncPerformanceTest005 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncPerformanceTest007
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_007
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0007
      * @tc.desc   Test async function with complex object processing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -182,22 +204,27 @@ export default function asyncPerformanceTest(): void {
         return objects;
       };
 
-      const result = await objectProcessing();
-      expect(result.length).assertEqual(1000);
-      expect(result[0].id).assertEqual(0);
-      expect(result[999].id).assertEqual(999);
+      try {
+        const result = await objectProcessing();
+        expect(result.length).assertEqual(1000);
+        expect(result[0].id).assertEqual(0);
+        expect(result[999].id).assertEqual(999);
+      } catch (e) {
+        console.info(`asyncPerformanceTest007 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncPerformanceTest008
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_008
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0008
      * @tc.desc   Test concurrent async iterators processing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const iteratorProcessing = async (): Promise<number> => {
         // 不使用生成器函数，返回数组
         const generateNumbers = async (count: number): Promise<number[]> => {
@@ -222,13 +249,19 @@ export default function asyncPerformanceTest(): void {
         }
       };
 
-      const result = await iteratorProcessing();
-      expect(result).assertEqual(4950); // 0+1+...+99
+      try {
+        const result = await iteratorProcessing();
+        expect(result).assertEqual(4950); // 0+1+...+99
+      } catch (e) {
+        console.info(`asyncPerformanceTest008 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncPerformanceTest009
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_009
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0009
      * @tc.desc   Test async function execution order consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -240,38 +273,58 @@ export default function asyncPerformanceTest(): void {
 
         const task1 = async () => {
           order.push(1);
-          await Promise.resolve();
-          order.push(2);
+          try {
+            await Promise.resolve();
+            order.push(2);
+          } catch (e) {
+            console.info(`asyncPerformanceTest009 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const task2 = async () => {
           order.push(3);
-          await Promise.resolve();
-          order.push(4);
+          try {
+            await Promise.resolve();
+            order.push(4);
+          } catch (e) {
+            console.info(`asyncPerformanceTest009 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
-        await Promise.all([task1(), task2()]);
-        return order;
+        try {
+          await Promise.all([task1(), task2()]);
+          return order;
+        } catch (e) {
+          console.info(`asyncPerformanceTest009 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      const result = await executionOrder();
-      expect(result.length).assertEqual(4);
-      expect(result).assertContain(1);
-      expect(result).assertContain(2);
-      expect(result).assertContain(3);
-      expect(result).assertContain(4);
+      try {
+        const result = await executionOrder();
+        expect(result.length).assertEqual(4);
+        expect(result).assertContain(1);
+        expect(result).assertContain(2);
+        expect(result).assertContain(3);
+        expect(result).assertContain(4);
+      } catch (e) {
+        console.info(`asyncPerformanceTest009 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncPerformanceTest010
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_010
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0010
      * @tc.desc   Test async function with error handling overhead
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const errorHandlingOverhead = async (): Promise<number> => {
         let successCount: number = 0;
 
@@ -291,13 +344,19 @@ export default function asyncPerformanceTest(): void {
         return successCount;
       };
 
-      const result = await errorHandlingOverhead();
-      expect(result).assertEqual(50); // Even numbers succeed
+      try {
+        const result = await errorHandlingOverhead();
+        expect(result).assertEqual(50); // Even numbers succeed
+      } catch (e) {
+        console.info(`asyncPerformanceTest010 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncPerformanceTest011
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_011
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0011
      * @tc.desc   Test async function with conditional branching
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -335,41 +394,57 @@ export default function asyncPerformanceTest(): void {
         return results;
       };
 
-      const result = await conditionalBranching();
-      expect(result.length).assertEqual(100);
-      expect(result[0]).assertEqual(0);
-      expect(result[1]).assertEqual(2);
-      expect(result[2]).assertEqual(6);
+      try {
+        const result = await conditionalBranching();
+        expect(result.length).assertEqual(100);
+        expect(result[0]).assertEqual(0);
+        expect(result[1]).assertEqual(2);
+        expect(result[2]).assertEqual(6);
+      } catch (e) {
+        console.info(`asyncPerformanceTest011 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncPerformanceTest012
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_012
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0012
      * @tc.desc   Test async function closure creation overhead
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const closureOverhead = async (): Promise<int[]> => {
-        const results: int[] = [];
+        try {
+          const results: int[] = [];
 
-        for (let i: int = 0; i < 200; i++) {
-          const closure = async (val: int): Promise<int> => {
-            const captured: int = val;
-            return captured * 2;
-          };
-          results.push(await closure(i));
+          for (let i: int = 0; i < 200; i++) {
+            const closure = async (val: int): Promise<int> => {
+              const captured: int = val;
+              return captured * 2;
+            };
+            results.push(await closure(i));
+          }
+
+          return results;
+        } catch (e) {
+          console.info(`asyncPerformanceTest012 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-
-        return results;
       };
 
-      const result = await closureOverhead();
-      expect(result.length).assertEqual(200);
-      expect(result[0]).assertEqual(0);
-      expect(result[199]).assertEqual(398);
+      try {
+        const result = await closureOverhead();
+        expect(result.length).assertEqual(200);
+        expect(result[0]).assertEqual(0);
+        expect(result[199]).assertEqual(398);
+      } catch (e) {
+        console.info(`asyncPerformanceTest012 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -384,25 +459,35 @@ export default function asyncPerformanceTest(): void {
       const promiseRecycling = async (): Promise<int> => {
         const reusablePromise = Promise.resolve(42);
 
-        const results = await Promise.all([
-          reusablePromise,
-          reusablePromise,
-          reusablePromise,
-          reusablePromise,
-          reusablePromise
-        ]);
+        try {
+          const results = await Promise.all([
+            reusablePromise,
+            reusablePromise,
+            reusablePromise,
+            reusablePromise,
+            reusablePromise
+          ]);
 
-        return results.reduce((sum, val) => sum + val, 0);
+          return results.reduce((sum, val) => sum + val, 0);
+        } catch (e) {
+          console.info(`asyncPerformanceTest013 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      const result = await promiseRecycling();
-      expect(result).assertEqual(210); // 42 * 5
+      try {
+        const result = await promiseRecycling();
+        expect(result).assertEqual(210); // 42 * 5
+      } catch (e) {
+        console.info(`asyncPerformanceTest013 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncPerformanceTest014
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_014
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0014
      * @tc.desc   Test async function with nested Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -410,24 +495,34 @@ export default function asyncPerformanceTest(): void {
      */
     it('asyncPerformanceTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const nestedPromiseAll = async (): Promise<int> => {
-        const level1 = await Promise.all([
-          Promise.all([Promise.resolve(1), Promise.resolve(2)]),
-          Promise.all([Promise.resolve(3), Promise.resolve(4)])
-        ]);
+        try {
+          const level1 = await Promise.all([
+            Promise.all([Promise.resolve(1), Promise.resolve(2)]),
+            Promise.all([Promise.resolve(3), Promise.resolve(4)])
+          ]);
 
-        return level1.reduce((sum: int, group) => {
-          return sum + (group as int[]).reduce((s, v) => s + v, 0);
-        }, 0);
+          return level1.reduce((sum: int, group) => {
+            return sum + (group as int[]).reduce((s, v) => s + v, 0);
+          }, 0);
+        } catch (e) {
+          console.info(`asyncPerformanceTest014 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      const result = await nestedPromiseAll();
-      expect(result).assertEqual(10); // 1+2+3+4
+      try {
+        const result = await nestedPromiseAll();
+        expect(result).assertEqual(10); // 1+2+3+4
+      } catch (e) {
+        console.info(`asyncPerformanceTest014 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncPerformanceTest015
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_015
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0015
      * @tc.desc   Test async function state management
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -439,7 +534,12 @@ export default function asyncPerformanceTest(): void {
 
         const updateState = async (newState: string): Promise<void> => {
           state = newState;
-          await Promise.resolve();
+          try {
+            await Promise.resolve();
+          } catch (e) {
+            console.info(`asyncPerformanceTest015 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         try {
@@ -452,20 +552,25 @@ export default function asyncPerformanceTest(): void {
         return state;
       };
 
-      const result = await stateManagement();
-      expect(result).assertEqual('completed');
+      try {
+        const result = await stateManagement();
+        expect(result).assertEqual('completed');
+      } catch (e) {
+        console.info(`asyncPerformanceTest015 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncPerformanceTest016
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_016
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0016
      * @tc.desc   Test async function with array operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const arrayOperations = async (): Promise<int[]> => {
         try {
           const arr = await Promise.resolve([1, 2, 3, 4, 5]);
@@ -485,32 +590,44 @@ export default function asyncPerformanceTest(): void {
         }
       };
 
-      const result = await arrayOperations();
-      expect(result).assertDeepEquals([6, 8, 10]);
+      try {
+        const result = await arrayOperations();
+        expect(result).assertDeepEquals([6, 8, 10]);
+      } catch (e) {
+        console.info(`asyncPerformanceTest016 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncPerformanceTest017
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_017
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0017
      * @tc.desc   Test async function with async recursion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const result = await asyncRecursion(10);
-      expect(result).assertEqual(89); // 10th Fibonacci number
+    it('asyncPerformanceTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const result = await asyncRecursion(10);
+        expect(result).assertEqual(89); // 10th Fibonacci number
+      } catch (e) {
+        console.info(`asyncPerformanceTest017 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncPerformanceTest018
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_018
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0018
      * @tc.desc   Test async function batching
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const batching = async (): Promise<number[]> => {
         const allItems: number[] = [];
         const batchSize: int = 10;
@@ -533,21 +650,27 @@ export default function asyncPerformanceTest(): void {
         return allItems;
       };
 
-      const result = await batching();
-      expect(result.length).assertEqual(100);
-      expect(result[0]).assertEqual(0);
-      expect(result[99]).assertEqual(99);
+      try {
+        const result = await batching();
+        expect(result.length).assertEqual(100);
+        expect(result[0]).assertEqual(0);
+        expect(result[99]).assertEqual(99);
+      } catch (e) {
+        console.info(`asyncPerformanceTest018 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncPerformanceTest020
-     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_020
+     * @tc.number SUB_BUILTINS_asyncPerformance_TEST_0020
      * @tc.desc   Test async function resource cleanup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncPerformanceTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncPerformanceTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const resourceCleanup = async (): Promise<int> => {
         const resources: int[] = [];
 
@@ -562,8 +685,14 @@ export default function asyncPerformanceTest(): void {
         }
       };
 
-      const result = await resourceCleanup();
-      expect(result).assertEqual(100);
+      try {
+        const result = await resourceCleanup();
+        expect(result).assertEqual(100);
+      } catch (e) {
+        console.info(`asyncPerformanceTest020 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
   });
 }

@@ -54,21 +54,27 @@ export default function asyncAdvancedTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncAdvancedTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncAdvancedTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const fetchPartialUser = async (): Promise<User> => {
         const user: User = new User();
         user.name = 'Bob';
         return user;
       };
 
-      const result = await fetchPartialUser();
-      expect(result.name).assertEqual('Bob');
-      expect(result.id).assertEqual(0);
+      try {
+        const result = await fetchPartialUser();
+        expect(result.name).assertEqual('Bob');
+        expect(result.id).assertEqual(0);
+      } catch (e) {
+        console.info(`asyncAdvancedTest004 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncAdvancedTest006
-     * @tc.number SUB_BUILTINS_asyncAdvanced_TEST_006
+     * @tc.number SUB_BUILTINS_asyncAdvanced_TEST_0006
      * @tc.desc   Test async function with promise chaining and error recovery
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -90,8 +96,13 @@ export default function asyncAdvancedTest(): void {
         }
       };
 
-      const result = await chainWithRecovery();
-      expect(result).assertEqual('recovered');
+      try {
+        const result = await chainWithRecovery();
+        expect(result).assertEqual('recovered');
+      } catch (e) {
+        console.info(`asyncAdvancedTest006 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -103,13 +114,19 @@ export default function asyncAdvancedTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncAdvancedTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tree = await buildTree(3);
-      expect(tree.value).assertEqual(3);
-      expect(tree.left !== undefined).assertTrue();
-      expect(tree.right !== undefined).assertTrue();
-      expect(tree.left!.value).assertEqual(2);
-      expect(tree.right!.value).assertEqual(2);
+    it('asyncAdvancedTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tree = await buildTree(3);
+        expect(tree.value).assertEqual(3);
+        expect(tree.left !== undefined).assertTrue();
+        expect(tree.right !== undefined).assertTrue();
+        expect(tree.left!.value).assertEqual(2);
+        expect(tree.right!.value).assertEqual(2);
+      } catch (e) {
+        console.info(`asyncAdvancedTest011 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
   });
 }
