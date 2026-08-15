@@ -14,31 +14,52 @@
  * limitations under the License.
  */
 import { afterAll, afterEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import Utils, { sleep } from '../Utils.test';
 
 class AsyncMethodClass {
   private value: int = 10;
 
   async getValue(): Promise<int> {
-    return await Promise.resolve(this.value);
+    try {
+      return await Promise.resolve(this.value);
+    } catch (e) {
+      console.info(`AsyncMethodClass.getValue catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   async addValue(num: number): Promise<number> {
-    const current = await this.getValue();
-    return await Promise.resolve(current + num);
+    try {
+      const current = await this.getValue();
+      return await Promise.resolve(current + num);
+    } catch (e) {
+      console.info(`AsyncMethodClass.addValue catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   async getInfo(): Promise<InfoResult> {
-    const val = await this.getValue();
-    const result: InfoResult = {
-      value: val,
-      doubled: val * 2
-    };
-    return await Promise.resolve(result);
+    try {
+      const val = await this.getValue();
+      const result: InfoResult = {
+        value: val,
+        doubled: val * 2
+      };
+      return await Promise.resolve(result);
+    } catch (e) {
+      console.info(`AsyncMethodClass.getInfo catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   async processValue(multiplier: number): Promise<number> {
-    const added = await this.addValue(5);
-    return await Promise.resolve(added * multiplier);
+    try {
+      const added = await this.addValue(5);
+      return await Promise.resolve(added * multiplier);
+    } catch (e) {
+      console.info(`AsyncMethodClass.processValue catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 }
 
@@ -46,12 +67,22 @@ class AsyncStaticClass {
   private static readonly defaultValue: int = 100;
 
   static async getDefault(): Promise<int> {
-    return await Promise.resolve(AsyncStaticClass.defaultValue);
+    try {
+      return await Promise.resolve(AsyncStaticClass.defaultValue);
+    } catch (e) {
+      console.info(`AsyncStaticClass.getDefault catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   static async calculate(a: number, b: number): Promise<number> {
-    const base = await AsyncStaticClass.getDefault();
-    return await Promise.resolve(base + a + b);
+    try {
+      const base = await AsyncStaticClass.getDefault();
+      return await Promise.resolve(base + a + b);
+    } catch (e) {
+      console.info(`AsyncStaticClass.calculate catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   static async wrapValue<T>(value: T): Promise<GenericResult<T>> {
@@ -59,15 +90,30 @@ class AsyncStaticClass {
       data: value,
       type: typeof value
     };
-    return await Promise.resolve(result);
+    try {
+      return await Promise.resolve(result);
+    } catch (e) {
+      console.info(`AsyncStaticClass.wrapValue catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   static async processArray(numbers: number[]): Promise<number[]> {
-    const promises = numbers.map(async (num: number): Promise<number> => {
-      return await Promise.resolve(num * 2);
-    });
-    const results = await Promise.all(promises);
-    return results;
+    try {
+      const promises = numbers.map(async (num: number): Promise<number> => {
+        try {
+          return await Promise.resolve(num * 2);
+        } catch (e) {
+          console.info(`AsyncStaticClass.processArray catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
+      });
+      const results = await Promise.all(promises);
+      return results;
+    } catch (e) {
+      console.info(`AsyncStaticClass.processArray catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 }
 
@@ -75,16 +121,31 @@ class BaseAsyncClass {
   protected value: number = 50;
 
   protected async getProtectedValue(): Promise<number> {
-    return await Promise.resolve(this.value);
+    try {
+      return await Promise.resolve(this.value);
+    } catch (e) {
+      console.info(`BaseAsyncClass.getProtectedValue catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   protected async processProtected(multiplier: number): Promise<number> {
-    const val = await this.getProtectedValue();
-    return await Promise.resolve(val * multiplier);
+    try {
+      const val = await this.getProtectedValue();
+      return await Promise.resolve(val * multiplier);
+    } catch (e) {
+      console.info(`BaseAsyncClass.processProtected catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   async getProcessedValue(multiplier: number): Promise<number> {
-    return await this.processProtected(multiplier);
+    try {
+      return await this.processProtected(multiplier);
+    } catch (e) {
+      console.info(`BaseAsyncClass.getProcessedValue catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 }
 
@@ -92,45 +153,90 @@ class DerivedAsyncClass extends BaseAsyncClass {
   private secretValue: int = 25;
 
   private async getSecretValue(): Promise<int> {
-    return await Promise.resolve(this.secretValue);
+    try {
+      return await Promise.resolve(this.secretValue);
+    } catch (e) {
+      console.info(`DerivedAsyncClass.getSecretValue catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   private async combineValues(): Promise<number> {
-    const protectedVal = await this.getProtectedValue();
-    const secretVal = await this.getSecretValue();
-    return await Promise.resolve(protectedVal + secretVal);
+    try {
+      const protectedVal = await this.getProtectedValue();
+      const secretVal = await this.getSecretValue();
+      return await Promise.resolve(protectedVal + secretVal);
+    } catch (e) {
+      console.info(`DerivedAsyncClass.combineValues catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   async getCombinedResult(): Promise<number> {
-    return await this.combineValues();
+    try {
+      return await this.combineValues();
+    } catch (e) {
+      console.info(`DerivedAsyncClass.getCombinedResult catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   protected async processProtected(multiplier: number): Promise<number> {
-    const combined = await this.combineValues();
-    return await Promise.resolve(combined * multiplier);
+    try {
+      const combined = await this.combineValues();
+      return await Promise.resolve(combined * multiplier);
+    } catch (e) {
+      console.info(`DerivedAsyncClass.processProtected catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 }
 
 class GenericProcessor<T> {
   async process(input: T): Promise<Awaited<T>> {
-    return await Promise.resolve(input);
+    try {
+      return await Promise.resolve(input);
+    } catch (e) {
+      console.info(`GenericProcessor.process catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   async processArray(inputs: T[]): Promise<Awaited<T>[]> {
-    const promises = inputs.map(async (input: T): Promise<Awaited<T>> => {
-      return await this.process(input);
-    });
-    return await Promise.all(promises);
+    try {
+      const promises = inputs.map(async (input: T): Promise<Awaited<T>> => {
+        try {
+          return await this.process(input);
+        } catch (e) {
+          console.info(`GenericProcessor.processArray catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
+      });
+      return await Promise.all(promises);
+    } catch (e) {
+      console.info(`GenericProcessor.processArray catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 }
 
 class AsyncClass {
   async validMethod(): Promise<boolean> {
-    return await Promise.resolve(true);
+    try {
+      return await Promise.resolve(true);
+    } catch (e) {
+      console.info(`AsyncClass.validMethod catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   static async validStaticMethod(): Promise<string> {
-    return await Promise.resolve('static_result');
+    try {
+      return await Promise.resolve('static_result');
+    } catch (e) {
+      console.info(`AsyncClass.validStaticMethod catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 }
 
@@ -138,36 +244,66 @@ class AsyncDataProcessor {
   private data: number[] = [];
 
   async loadData(source: number[]): Promise<void> {
-    const validatedData = await this.validateData(source);
-    this.data = validatedData;
+    try {
+      const validatedData = await this.validateData(source);
+      this.data = validatedData;
+    } catch (e) {
+      console.info(`AsyncDataProcessor.loadData catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   private async validateData(input: number[]): Promise<number[]> {
-    const step1 = await this.filterValidNumbers(input);
-    const step2 = await this.normalizeNumbers(step1);
-    return step2;
+    try {
+      const step1 = await this.filterValidNumbers(input);
+      const step2 = await this.normalizeNumbers(step1);
+      return step2;
+    } catch (e) {
+      console.info(`AsyncDataProcessor.validateData catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   private async filterValidNumbers(numbers: number[]): Promise<number[]> {
-    const filterPromises = numbers.map(async (num: number): Promise<number | null> => {
-      const isValid = await Promise.resolve(num > 0 && num < 1000);
-      return isValid ? num : null;
-    });
+    try {
+      const filterPromises = numbers.map(async (num: number): Promise<number | null> => {
+        try {
+          const isValid = await Promise.resolve(num > 0 && num < 1000);
+          return isValid ? num : null;
+        } catch (e) {
+          console.info(`AsyncDataProcessor.filterValidNumbers catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
+      });
 
-    const results = await Promise.all(filterPromises);
-    const validNumbers: number[] = [];
-    for (const num of results) {
-      if (num !== null) {
-        validNumbers.push(num);
+      const results = await Promise.all(filterPromises);
+      const validNumbers: number[] = [];
+      for (const num of results) {
+        if (num !== null) {
+          validNumbers.push(num);
+        }
       }
+      return validNumbers;
+    } catch (e) {
+      console.info(`AsyncDataProcessor.filterValidNumbers catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
-    return validNumbers;
   }
 
   private async normalizeNumbers(numbers: number[]): Promise<number[]> {
-    return await Promise.all(numbers.map(async (num: number): Promise<number> => {
-      return await Promise.resolve(Math.round(num));
-    }));
+    try {
+      return await Promise.all(numbers.map(async (num: number): Promise<number> => {
+        try {
+          return await Promise.resolve(Math.round(num));
+        } catch (e) {
+          console.info(`AsyncDataProcessor.normalizeNumbers catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
+      }));
+    } catch (e) {
+      console.info(`AsyncDataProcessor.normalizeNumbers catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   async processData(): Promise<ProcessedData> {
@@ -175,32 +311,57 @@ class AsyncDataProcessor {
       throw new Error('No data loaded');
     }
 
-    const sum = await this.calculateSum();
-    const average = await this.calculateAverage();
-    const processed = await this.transformData();
+    try {
+      const sum = await this.calculateSum();
+      const average = await this.calculateAverage();
+      const processed = await this.transformData();
 
-    const result: ProcessedData = {
-      status: 'success',
-      data: processed
-    };
-    return result;
+      const result: ProcessedData = {
+        status: 'success',
+        data: processed
+      };
+      return result;
+    } catch (e) {
+      console.info(`AsyncDataProcessor.processData catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   private async calculateSum(): Promise<number> {
-    return await Promise.resolve(this.data.reduce((sum, num) => sum + num, 0.));
+    try {
+      return await Promise.resolve(this.data.reduce((sum, num) => sum + num, 0.));
+    } catch (e) {
+      console.info(`AsyncDataProcessor.calculateSum catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   private async calculateAverage(): Promise<number> {
-    const sum: number = await this.calculateSum();
-    return await Promise.resolve(sum / this.data.length);
+    try {
+      const sum: number = await this.calculateSum();
+      return await Promise.resolve(sum / this.data.length);
+    } catch (e) {
+      console.info(`AsyncDataProcessor.calculateAverage catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   private async transformData(): Promise<number[]> {
-    return await Promise.all(this.data.map(async (num: number): Promise<number> => {
-      const multiplied = await Promise.resolve(num * 2);
-      const adjusted = await Promise.resolve(multiplied + 1);
-      return adjusted;
-    }));
+    try {
+      return await Promise.all(this.data.map(async (num: number): Promise<number> => {
+        try {
+          const multiplied = await Promise.resolve(num * 2);
+          const adjusted = await Promise.resolve(multiplied + 1);
+          return adjusted;
+        } catch (e) {
+          console.info(`AsyncDataProcessor.transformData catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
+      }));
+    } catch (e) {
+      console.info(`AsyncDataProcessor.transformData catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 }
 
@@ -444,31 +605,61 @@ interface DefaultConfig {
 
 
 async function helperGenericReturn<T>(value: T): Promise<Awaited<T>> {
-  return await Promise.resolve(value);
+  try {
+    return await Promise.resolve(value);
+  } catch (e) {
+    console.info(`helperGenericReturn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function helperGenericTransform<T, U>(value: T, transformer: (input: T) => U): Promise<Awaited<U>> {
-  const transformed = transformer(value);
-  return await Promise.resolve(transformed);
+  try {
+    const transformed = transformer(value);
+    return await Promise.resolve(transformed);
+  } catch (e) {
+    console.info(`helperGenericTransform catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function helperGenericArrayProcess<T>(items: T[]): Promise<Awaited<T>[]> {
-  const promises = items.map(async (item: T): Promise<Awaited<T>> => {
-    return await Promise.resolve(item);
-  });
-  const processed = await Promise.all(promises);
-  return processed;
+  try {
+    const promises = items.map(async (item: T): Promise<Awaited<T>> => {
+      try {
+        return await Promise.resolve(item);
+      } catch (e) {
+        console.info(`helperGenericArrayProcess catch error: ${JSON.stringify(e)}`);
+        throw e;
+      }
+    });
+    const processed = await Promise.all(promises);
+    return processed;
+  } catch (e) {
+    console.info(`helperGenericArrayProcess catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function helperGenericOptional<T>(value: T | null): Promise<Awaited<T | null>> {
   if (value === null) {
     return null;
   }
-  return await Promise.resolve(value);
+  try {
+    return await Promise.resolve(value);
+  } catch (e) {
+    console.info(`helperGenericOptional catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function helperGenericConstrained<T extends string | number>(value: T): Promise<Awaited<T>> {
-  return await Promise.resolve(value);
+  try {
+    return await Promise.resolve(value);
+  } catch (e) {
+    console.info(`helperGenericConstrained catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function helperGenericMultiple<T, U, V>(
@@ -476,13 +667,23 @@ async function helperGenericMultiple<T, U, V>(
   second: U,
   combiner: (a: T, b: U) => V
 ): Promise<Awaited<V>> {
-  const result = combiner(first, second);
-  return await Promise.resolve(result);
+  try {
+    const result = combiner(first, second);
+    return await Promise.resolve(result);
+  } catch (e) {
+    console.info(`helperGenericMultiple catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function validateArrayLength0043<T>(arr: T[], minLength: number, maxLength: number): Promise<boolean> {
-  const isValid = arr.length >= minLength && arr.length <= maxLength;
-  return await Promise.resolve(isValid);
+  try {
+    const isValid = arr.length >= minLength && arr.length <= maxLength;
+    return await Promise.resolve(isValid);
+  } catch (e) {
+    console.info(`validateArrayLength0043 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function processWithSyncCallback0044<T, R>(
@@ -494,7 +695,12 @@ async function processWithSyncCallback0044<T, R>(
     const processed = processor(item);
     results.push(processed);
   }
-  return await Promise.resolve(results);
+  try {
+    return await Promise.resolve(results);
+  } catch (e) {
+    console.info(`processWithSyncCallback0044 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function processWithAsyncCallback0044<T, R>(
@@ -503,7 +709,12 @@ async function processWithAsyncCallback0044<T, R>(
 ): Promise<Awaited<R>[]> {
   const results: Awaited<R>[] = [];
   for (const item of data) {
-    results.push(await processor(item));
+    try {
+      results.push(await processor(item));
+    } catch (e) {
+      console.info(`processWithAsyncCallback0044 catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
   return results;
 }
@@ -516,7 +727,12 @@ async function processWithValidation0045<T>(
   const validItems = data.filter((item: T): boolean => validator(item));
   const results: Awaited<T>[] = [];
   for (const item of validItems) {
-    results.push(await processor(item));
+    try {
+      results.push(await processor(item));
+    } catch (e) {
+      console.info(`processWithValidation0045 catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
   return results;
 }
@@ -528,21 +744,41 @@ async function processWithComplexCallback0046<T, U, R>(
 ): Promise<R[]> {
   const results: R[] = [];
   for (let i = 0; i < data.length; i++) {
-    results.push((await processor(data[i as int], context, i)) as R);
+    try {
+      results.push((await processor(data[i as int], context, i)) as R);
+    } catch (e) {
+      console.info(`processWithComplexCallback0046 catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
   return results;
 }
 
 async function processWithId0047<T extends HasId>(item: T): Promise<string> {
-  return await Promise.resolve(`Item_${item.id}`);
+  try {
+    return await Promise.resolve(`Item_${item.id}`);
+  } catch (e) {
+    console.info(`processWithId0047 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function processWithName0047<T extends HasName>(item: T): Promise<string> {
-  return await Promise.resolve(`Name_${item.name}`);
+  try {
+    return await Promise.resolve(`Name_${item.name}`);
+  } catch (e) {
+    console.info(`processWithName0047 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function processWithIdAndName0048<T extends HasIdAndName>(item: T): Promise<string> {
-  return await Promise.resolve(`${item.name}_ID_${item.id}`);
+  try {
+    return await Promise.resolve(`${item.name}_ID_${item.id}`);
+  } catch (e) {
+    console.info(`processWithIdAndName0048 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function processArrayWithConstraint0048<T extends HasId>(items: T[]): Promise<number[]> {
@@ -557,10 +793,15 @@ async function processConditionally0049<T extends HasId>(
   item: T,
   condition: (obj: T) => boolean
 ): Promise<T | null> {
-  if (condition(item)) {
-    return (await Promise.resolve(item)) as T;
+  try {
+    if (condition(item)) {
+      return (await Promise.resolve(item)) as T;
+    }
+    return await Promise.resolve(null);
+  } catch (e) {
+    console.info(`processConditionally0049 catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  return await Promise.resolve(null);
 }
 
 function highIdCondition0049(obj: HasId): boolean {
@@ -568,19 +809,39 @@ function highIdCondition0049(obj: HasId): boolean {
 }
 
 async function processWithId0049<T extends HasId>(item: T): Promise<string> {
-  return await Promise.resolve(`Item_${item.id}`);
+  try {
+    return await Promise.resolve(`Item_${item.id}`);
+  } catch (e) {
+    console.info(`processWithId0049 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function processWithName0049<T extends HasName>(item: T): Promise<string> {
-  return await Promise.resolve(`Name_${item.name}`);
+  try {
+    return await Promise.resolve(`Name_${item.name}`);
+  } catch (e) {
+    console.info(`processWithName0049 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function processWithIdAndName0049<T extends HasIdAndName>(item: T): Promise<string> {
-  return await Promise.resolve(`${item.name}_ID_${item.id}`);
+  try {
+    return await Promise.resolve(`${item.name}_ID_${item.id}`);
+  } catch (e) {
+    console.info(`processWithIdAndName0049 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function genericReturn0054<T>(value: T): Promise<T> {
-  return (await Promise.resolve(value)) as T;
+  try {
+    return (await Promise.resolve(value)) as T;
+  } catch (e) {
+    console.info(`genericReturn0054 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function genericWrapperReturn0054<T>(data: T): Promise<GenericReturnWrapper<T>> {
@@ -592,7 +853,12 @@ async function genericWrapperReturn0054<T>(data: T): Promise<GenericReturnWrappe
     data: data,
     meta: metaInfo
   };
-  return await Promise.resolve(wrapper);
+  try {
+    return await Promise.resolve(wrapper);
+  } catch (e) {
+    console.info(`genericWrapperReturn0054 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function genericArrayReturn0054<T>(items: T[]): Promise<TypedArrayResult<T>> {
@@ -601,7 +867,12 @@ async function genericArrayReturn0054<T>(items: T[]): Promise<TypedArrayResult<T
     count: items.length,
     type: typeof items[0]
   };
-  return await Promise.resolve(result);
+  try {
+    return await Promise.resolve(result);
+  } catch (e) {
+    console.info(`genericArrayReturn0054 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function returnNullableResult0060<T>(value: T | null): Promise<NullableResult<T>> {
@@ -609,7 +880,12 @@ async function returnNullableResult0060<T>(value: T | null): Promise<NullableRes
     value: value,
     hasValue: value !== null
   };
-  return await Promise.resolve(result);
+  try {
+    return await Promise.resolve(result);
+  } catch (e) {
+    console.info(`returnNullableResult0060 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function returnUndefinedResult0063<T>(value: T | undefined): Promise<UndefinedResult<T>> {
@@ -617,12 +893,22 @@ async function returnUndefinedResult0063<T>(value: T | undefined): Promise<Undef
     value: value,
     isPresent: value !== undefined
   };
-  return await Promise.resolve(result);
+  try {
+    return await Promise.resolve(result);
+  } catch (e) {
+    console.info(`returnUndefinedResult0063 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function wrapInAsync0080<T>(item: T): Promise<T> {
-  const result = await Promise.resolve(item);
-  return result as T;
+  try {
+    const result = await Promise.resolve(item);
+    return result as T;
+  } catch (e) {
+    console.info(`wrapInAsync0080 catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 type StringOrNumber = string | number;
@@ -1185,9 +1471,15 @@ export default function asyncFirTest(): void {
       };
 
       const returnChainedPromise = async (): Promise<string> => {
-        return Promise.resolve('initial')
-          .then((val: string) => val + '_processed')
-          .then((val: string) => val + '_final');
+        try {
+          const initial: string = await Promise.resolve('initial');
+          const processed: string = initial + '_processed';
+          const finalValue: string = processed + '_final';
+          return finalValue;
+        } catch (e) {
+          console.info(`asyncFirTest0013 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const returnResolvedObject = async (): Promise<ProcessedData> => {
@@ -1252,18 +1544,24 @@ export default function asyncFirTest(): void {
      */
     it('asyncFirTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const returnPendingPromise = async (): Promise<string> => {
-        return new Promise<string>((resolve: (value: string) => void) => {
-          setTimeout(() => resolve('delayed_result'), 100);
-        });
+        try {
+          await sleep(100);
+          return 'delayed_result';
+        } catch (e) {
+          console.info(`asyncFirTest0014 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const returnAsyncOperation = async (): Promise<number> => {
-        return new Promise<number>((resolve: (value: number) => void) => {
-          setTimeout(() => {
-            const calculation: int = 5 * 8 + 2;
-            resolve(calculation);
-          }, 100);
-        });
+        try {
+          await sleep(100);
+          const calculation: number = 5 * 8 + 2;
+          return calculation;
+        } catch (e) {
+          console.info(`asyncFirTest0014 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const result1 = returnPendingPromise();
@@ -1273,8 +1571,10 @@ export default function asyncFirTest(): void {
       expect(result2 instanceof Promise).assertEqual(true);
 
       try {
-        expect(await result1).assertEqual('delayed_result');
-        expect(await result2).assertEqual(42);
+        const value1: string = await result1;
+        expect(value1).assertEqual('delayed_result');
+        const value2: number = await result2;
+        expect(value2).assertEqual(42);
       } catch (err) {
         expect(err).assertFail();
       }
@@ -1292,15 +1592,16 @@ export default function asyncFirTest(): void {
     it('asyncFirTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const returnPendingWithPossibleReject = async (shouldReject: boolean): Promise<string> => {
-          return new Promise<string>((resolve: (value: string) => void, reject: (reason: Error) => void) => {
-            setTimeout(() => {
-              if (shouldReject) {
-                reject(new Error('Intentional rejection'));
-              } else {
-                resolve('success_result');
-              }
-            }, 100);
-          });
+          try {
+            await sleep(100);
+            if (shouldReject) {
+              throw new Error('Intentional rejection');
+            }
+            return 'success_result';
+          } catch (e) {
+            console.info(`asyncFirTest0015 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const result3 = returnPendingWithPossibleReject(false);
@@ -1337,14 +1638,10 @@ export default function asyncFirTest(): void {
       try {
         const returnChainedPending = async (): Promise<number> => {
           try {
-            const firstPromise = new Promise<number>((resolve: (value: number) => void) => {
-              setTimeout(() => resolve(10), 100);
-            });
-
-            const firstVal: number = await firstPromise;
-            return await new Promise<number>((resolve: (value: number) => void) => {
-              setTimeout(() => resolve(firstVal * 3), 100);
-            });
+            await sleep(100);
+            const firstVal: number = 10;
+            await sleep(100);
+            return firstVal * 3;
           } catch (err) {
             expect(err).assertFail();
             return -1;
@@ -1352,15 +1649,17 @@ export default function asyncFirTest(): void {
         };
 
         const returnComplexPending = async (): Promise<ComplexResult> => {
-          return new Promise<ComplexResult>((resolve: (value: ComplexResult) => void) => {
-            setTimeout(() => {
-              const result: ComplexResult = {
-                processed: true,
-                value: Math.floor(Math.random() * 100) + 1
-              };
-              resolve(result);
-            }, 120);
-          });
+          try {
+            await sleep(120);
+            const result: ComplexResult = {
+              processed: true,
+              value: Math.floor(Math.random() * 100) + 1
+            };
+            return result;
+          } catch (e) {
+            console.info(`asyncFirTest0016 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const result4 = returnChainedPending();
@@ -1833,9 +2132,8 @@ export default function asyncFirTest(): void {
 
       const awaitDelayed = async (): Promise<string> => {
         try {
-          const result = await new Promise<string>((resolve) => {
-            setTimeout(() => resolve('delayed'), 500);
-          });
+          await sleep(500);
+          const result = 'delayed';
           return result;
         } catch (e) {
           console.info(`asyncFirTest0026 catch error: ${JSON.stringify(e)}`);
@@ -1845,10 +2143,10 @@ export default function asyncFirTest(): void {
 
       const awaitChained = async (): Promise<int> => {
         try {
-          const result = await Promise.resolve(10)
-            .then((val: int) => val * 2)
-            .then((val: int) => val + 5)
-            .then((val: int) => val * 3);
+          const step1: int = await Promise.resolve(10);
+          const step2: int = step1 * 2;
+          const step3: int = step2 + 5;
+          const result: int = step3 * 3;
           return result;
         } catch (e) {
           console.info(`asyncFirTest0026 catch error: ${JSON.stringify(e)}`);
@@ -1863,9 +2161,8 @@ export default function asyncFirTest(): void {
           const first = await Promise.resolve('first');
           results.push(first);
 
-          const second = await new Promise<string>((resolve) => {
-            setTimeout(() => resolve('second'), 300);
-          });
+          await sleep(300);
+          const second = 'second';
           results.push(second);
 
           const third = await Promise.resolve('third');
@@ -1879,15 +2176,14 @@ export default function asyncFirTest(): void {
       };
 
       const parallelAwaits = async (): Promise<string[]> => {
-        const promises = [
+        const promises: Promise<string>[] = [
           Promise.resolve('parallel1'),
-          new Promise<string>((resolve) => {
-            setTimeout(() => resolve('parallel2'), 200)
-          }),
+          Promise.resolve('parallel2'),
           Promise.resolve('parallel3')
         ];
 
         try {
+          await sleep(200);
           return await Promise.all(promises);
         } catch (e) {
           console.info(`asyncFirTest0026 catch error: ${JSON.stringify(e)}`);
@@ -1961,7 +2257,8 @@ export default function asyncFirTest(): void {
           const promise = await Promise.resolve('promise');
           results.push(promise);
 
-          const transformed = await Promise.resolve('base').then((val: string) => val + '_transformed');
+          const baseValue: string = await Promise.resolve('base');
+          const transformed = baseValue + '_transformed';
           results.push(transformed);
 
           return results;
@@ -3733,9 +4030,15 @@ export default function asyncFirTest(): void {
         };
 
         const returnChainedPromise = async (): Promise<string> => {
-          return Promise.resolve('base')
-            .then((val: string) => `${val}_step1`)
-            .then((val: string) => `${val}_step2`);
+          try {
+            const base: string = await Promise.resolve('base');
+            const step1: string = `${base}_step1`;
+            const step2: string = `${step1}_step2`;
+            return step2;
+          } catch (e) {
+            console.info(`asyncFirTest0057 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
 
         const returnPromiseAllResult = async (): Promise<int[]> => {

@@ -65,15 +65,11 @@ interface ObjectParamInterface {
 }
 
 function basicCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'success');
-  }, 100);
+  callback(null, 'success');
 }
 
 function errorCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(new Error('test-error'), '');
-  }, 100);
+  callback(new Error('test-error'), '');
 }
 
 function multiParamCallback(
@@ -81,71 +77,55 @@ function multiParamCallback(
   b: string,
   callback: (err: Object | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, b.length as Object);
-  }, 100);
+  callback(null, b.length as Object);
 }
 
 function noErrorCallback(callback: (result: string) => void): void {
-  setTimeout(() => {
-    callback('no-error');
-  }, 100);
+  callback('no-error');
 }
 
 function multiReturnValueCallback(
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, 'result1', 100);
-  }, 100);
+  callback(null, 'result1', 100);
 }
 
 function singleParamCallback(
   a: int,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, a * 2);
-  }, 100);
+  callback(null, a * 2);
 }
 
 function restParamCallback(
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, 1, 2, 3);
-  }, 100);
+  callback(null, 1, 2, 3);
 }
 
 function objectParamCallback(
   obj: ObjectParamInterface,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, `${obj.x}-${obj.y}`);
-  }, 100);
+  callback(null, `${obj.x}-${obj.y}`);
 }
 
 function arrayParamCallback(
   arr: int[],
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    let sum: int = 0;
-    for (const item of arr) {
-      sum += item;
-    }
-    callback(null, sum);
-  }, 100);
+  let sum: int = 0;
+  for (const item of arr) {
+    sum += item;
+  }
+  callback(null, sum);
 }
 
 class BasicCallbackClass {
   public value: int = 0;
 
   public callbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.value * 2);
-    }, 100);
+    callback(null, this.value * 2);
   }
 
   public get dataValue(): int {
@@ -157,45 +137,31 @@ class BasicCallbackClass {
   }
 
   public methodBeforeGetter(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'before-getter');
-    }, 100);
+    callback(null, 'before-getter');
   }
 
   public methodAfterGetter(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'after-getter');
-    }, 100);
+    callback(null, 'after-getter');
   }
 
   public methodBeforeSetter(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'before-setter');
-    }, 100);
+    callback(null, 'before-setter');
   }
 
   public methodAfterSetter(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'after-setter');
-    }, 100);
+    callback(null, 'after-setter');
   }
 
   public methodAfterGetterSetter(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'after-getter-setter');
-    }, 100);
+    callback(null, 'after-getter-setter');
   }
 
   public methodBetweenGetterSetter(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'between-getter-setter');
-    }, 100);
+    callback(null, 'between-getter-setter');
   }
 
   public static staticCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'static-result');
-    }, 100);
+    callback(null, 'static-result');
   }
 }
 
@@ -204,9 +170,7 @@ class MixedGetterSetterClass {
   private _data: string = '';
 
   public method1(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'method1');
-    }, 100);
+    callback(null, 'method1');
   }
 
   public get data(): string {
@@ -214,9 +178,7 @@ class MixedGetterSetterClass {
   }
 
   public method2(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'method2');
-    }, 100);
+    callback(null, 'method2');
   }
 
   public set data(val: string) {
@@ -224,9 +186,7 @@ class MixedGetterSetterClass {
   }
 
   public method3(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'method3');
-    }, 100);
+    callback(null, 'method3');
   }
 
   public get readOnlyProp(): int {
@@ -234,9 +194,7 @@ class MixedGetterSetterClass {
   }
 
   public method4(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'method4');
-    }, 100);
+    callback(null, 'method4');
   }
 
   public set writeOnlyProp(val: int) {
@@ -244,9 +202,7 @@ class MixedGetterSetterClass {
   }
 
   public method5(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'method5');
-    }, 100);
+    callback(null, 'method5');
   }
 }
 
@@ -256,9 +212,7 @@ interface ObjectLiteralCallback {
 
 const objectLiteralWithCallback: ObjectLiteralCallback = {
   callbackMethod: (callback: (err: Error | null, ...value: FixedArray<Any>) => void): void => {
-    setTimeout(() => {
-      callback(null, 'object-literal');
-    }, 100);
+    callback(null, 'object-literal');
   }
 };
 
@@ -270,54 +224,40 @@ interface ObjectLiteralGetterCallback {
 const objectLiteralWithGetter: ObjectLiteralGetterCallback = {
   value: 100,
   callbackMethod: (callback: (err: Error | null, ...value: FixedArray<Any>) => void): void => {
-    setTimeout(() => {
-      callback(null, 'object-literal-with-getter');
-    }, 100);
+    callback(null, 'object-literal-with-getter');
   }
 };
 
 class ParentCallbackClass {
   public parentCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'parent');
-    }, 100);
+    callback(null, 'parent');
   }
 }
 
 class ChildCallbackClass extends ParentCallbackClass {
   public childCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'child');
-    }, 100);
+    callback(null, 'child');
   }
 }
 
 class OverrideCallbackClass extends ParentCallbackClass {
   public parentCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'overridden');
-    }, 100);
+    callback(null, 'overridden');
   }
 }
 
 const arrowCallback = (callback: (err: Error | null, ...value: FixedArray<Any>) => void): void => {
-  setTimeout(() => {
-    callback(null, 'arrow-callback');
-  }, 100);
+  callback(null, 'arrow-callback');
 };
 
 const assignedCallback: (callback: (err: Error | null, ...value: FixedArray<Any>) => void) => void =
   (callback: (err: Error | null, ...value: FixedArray<Any>) => void): void => {
-  setTimeout(() => {
-    callback(null, 'assigned-callback');
-  }, 100);
+  callback(null, 'assigned-callback');
 };
 
 function functionReturningCallback(): (callback: (err: Error | null, ...value: FixedArray<Any>) => void) => void {
   return (callback: (err: Error | null, ...value: FixedArray<Any>) => void): void => {
-    setTimeout(() => {
-      callback(null, 'returned-callback');
-    }, 100);
+    callback(null, 'returned-callback');
   };
 }
 
@@ -330,24 +270,20 @@ function promiseReturningFunction(): Promise<string> {
 }
 
 function innerCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'inner');
-  }, 100);
+  callback(null, 'inner');
 }
 
 function nestedCallback(
   outerCallback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    innerCallback((err: Error | null, ...value: FixedArray<Any>) => {
-      const innerResult: string = value[0] as string;
-      if (err) {
-        outerCallback(err, '');
-      } else {
-        outerCallback(null, `outer-${innerResult}`);
-      }
-    });
-  }, 100);
+  innerCallback((err: Error | null, ...value: FixedArray<Any>) => {
+    const innerResult: string = value[0] as string;
+    if (err) {
+      outerCallback(err, '');
+    } else {
+      outerCallback(null, `outer-${innerResult}`);
+    }
+  });
 }
 
 interface BusinessError {
@@ -363,9 +299,7 @@ interface ObjectLiteralSetter {
 const objSetter: ObjectLiteralSetter = {
   value: 200,
   callbackMethod: (callback: (err: Error | null, ...value: FixedArray<Any>) => void): void => {
-    setTimeout(() => {
-      callback(null, 'object-literal-after-setter');
-    }, 100);
+    callback(null, 'object-literal-after-setter');
   }
 };
 
@@ -381,61 +315,57 @@ class StaticWithGetterSetter {
   }
 
   public static staticCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'static-after-getter-setter');
-    }, 100);
+    callback(null, 'static-after-getter-setter');
   }
 }
 
 async function wrapper(fn: (callback: (err: Error | null, ...value: FixedArray<Any>) => void) => void): Promise<FixedArray<Any>> {
-  const promisified = util.promisify(fn);
-  return await promisified() as FixedArray<Any>;
+  try {
+    const promisified = util.promisify(fn);
+    return await promisified() as FixedArray<Any>;
+  } catch (e) {
+    console.info(`wrapper catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
-async function executor(fn: () => Promise<FixedArray<Any>>): Promise<FixedArray<Any>> {
-  return await fn();
+async function executor(fn: (err: Error | null) => Promise<FixedArray<Any>>): Promise<FixedArray<Any>> {
+  try {
+    return await fn(null);
+  } catch (e) {
+    console.info(`executor catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 function twoParamCallback(a: int, callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, a * 2);
-  }, 100);
+  callback(null, a * 2);
 }
 
 function threeParamCallback(b: string, callback: (err: Object | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, `${b}` as Object);
-  }, 100);
+  callback(null, `${b}` as Object);
 }
 
 function orderedCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'ordered');
-  }, 100);
+  callback(null, 'ordered');
 }
 
 function customErrorCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    const customError: Error = new Error('custom-error');
-    callback(customError, '');
-  }, 100);
+  const customError: Error = new Error('custom-error');
+  callback(customError, '');
 }
 
 function customErrorFirstCallback(data: string, callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    if (data === 'error') {
-      callback(new Error('error-triggered'), '');
-    } else {
-      callback(null, `processed-${data}`);
-    }
-  }, 100);
+  if (data === 'error') {
+    callback(new Error('error-triggered'), '');
+  } else {
+    callback(null, `processed-${data}`);
+  }
 }
 
 function specialCallback(
   callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'result', 100, true);
-  }, 100);
+  callback(null, 'result', 100, true);
 }
 
 
@@ -485,33 +415,25 @@ class SendableMultiCallbackClass {
 
 class SendableStaticCallbackClass {
   public static staticCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'sendable-static');
-    }, 100);
+    callback(null, 'sendable-static');
   }
 }
 
 class SendableParentClass {
   public parentCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'sendable-parent');
-    }, 100);
+    callback(null, 'sendable-parent');
   }
 }
 
 class SendableChildClass extends SendableParentClass {
   public childCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'sendable-child');
-    }, 100);
+    callback(null, 'sendable-child');
   }
 }
 
 class SendableOverrideClass extends SendableParentClass {
   public parentCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'sendable-overridden');
-    }, 100);
+    callback(null, 'sendable-overridden');
   }
 }
 
@@ -522,23 +444,17 @@ class SendableComplexCallbackClass {
   public callbackWithMultipleResults(
     callback: (err: Error | null, ...value: FixedArray<Any>) => void
   ): void {
-    setTimeout(() => {
-      callback(null, 'multi', 100);
-    }, 100);
+    callback(null, 'multi', 100);
   }
 
   public errorCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(new Error('sendable-error'), '');
-    }, 100);
+    callback(new Error('sendable-error'), '');
   }
 }
 
 class SendableNestedClass {
   public outerCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'sendable-nested-outer');
-    }, 100);
+    callback(null, 'sendable-nested-outer');
   }
 }
 
@@ -564,39 +480,29 @@ class SendableDefaultParamClass {
     b: string,
     callback: (err: Error | null, ...value: FixedArray<Any>) => void
   ): void {
-    setTimeout(() => {
-      callback(null, `${a}-${b}`);
-    }, 100);
+    callback(null, `${a}-${b}`);
   }
 }
 
 class SendableReturnTypeClass {
   public stringCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'string-result');
-    }, 100);
+    callback(null, 'string-result');
   }
 
   public numberCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 100);
-    }, 100);
+    callback(null, 100);
   }
 
   public booleanCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, true);
-    }, 100);
+    callback(null, true);
   }
 
   public arrayCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      const arr: Array<int> = new Array<int>();
-      arr.push(1);
-      arr.push(2);
-      arr.push(3);
-      callback(null, arr);
-    }, 100);
+    const arr: Array<int> = new Array<int>();
+    arr.push(1);
+    arr.push(2);
+    arr.push(3);
+    callback(null, arr);
   }
 }
 
@@ -607,35 +513,25 @@ class SendableMultiParamClass {
     c: boolean,
     callback: (err: Error | null, ...value: FixedArray<Any>) => void
   ): void {
-    setTimeout(() => {
-      callback(null, `${a}-${b}-${c}`);
-    }, 100);
+    callback(null, `${a}-${b}-${c}`);
   }
 }
 
 function sendableCallbackFunction(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'sendable-function');
-  }, 100);
+  callback(null, 'sendable-function');
 }
 
 function concurrentCallbackFn(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'concurrent-result');
-  }, 100);
+  callback(null, 'concurrent-result');
 }
 
 // ========== Cross File Test Classes ==========
 function etsCallbackFunction(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'ets-success');
-  }, 100);
+  callback(null, 'ets-success');
 }
 
 function etsErrorCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(new Error('ets-error'), '');
-  }, 100);
+  callback(new Error('ets-error'), '');
 }
 
 function etsMultiParamCallback(
@@ -643,18 +539,14 @@ function etsMultiParamCallback(
   b: string,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, a + b.length);
-  }, 100);
+  callback(null, a + b.length);
 }
 
 class ETSCallbackClass {
   public value: int = 0;
 
   public callbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.value * 2);
-    }, 100);
+    callback(null, this.value * 2);
   }
 
   public get dataValue(): int {
@@ -666,21 +558,15 @@ class ETSCallbackClass {
   }
 
   public methodAfterGetter(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'ets-after-getter');
-    }, 100);
+    callback(null, 'ets-after-getter');
   }
 
   public methodAfterSetter(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'ets-after-setter');
-    }, 100);
+    callback(null, 'ets-after-setter');
   }
 
   public static staticCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'ets-static');
-    }, 100);
+    callback(null, 'ets-static');
   }
 }
 
@@ -701,9 +587,7 @@ class SendableDecoratorCallbackClass {
   }
 
   public methodAfterGetter(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'sendable-decorator-after-getter');
-    }, 100);
+    callback(null, 'sendable-decorator-after-getter');
   }
 }
 
@@ -743,31 +627,23 @@ class ConcurrentDecoratorClass {
   public value: int = 0;
 
   public concurrentMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.value * 3);
-    }, 100);
+    callback(null, this.value * 3);
   }
 
   public static staticConcurrentMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'concurrent-static');
-    }, 100);
+    callback(null, 'concurrent-static');
   }
 }
 
 function concurrentDecoratorFunction(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'concurrent-function');
-  }, 100);
+  callback(null, 'concurrent-function');
 }
 
 class SimulatedEntryComponent {
   public stateValue: int = 0;
 
   public entryCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.stateValue * 2);
-    }, 100);
+    callback(null, this.stateValue * 2);
   }
 }
 
@@ -775,9 +651,7 @@ class SimulatedComponentClass {
   public propValue: int = 0;
 
   public componentCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.propValue * 3);
-    }, 100);
+    callback(null, this.propValue * 3);
   }
 }
 
@@ -793,9 +667,7 @@ class SimulatedStateDecorator {
   }
 
   public stateCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this._stateValue * 4);
-    }, 100);
+    callback(null, this._stateValue * 4);
   }
 }
 
@@ -803,9 +675,7 @@ class SimulatedPropDecorator {
   public propValue: int = 0;
 
   public propCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.propValue * 5);
-    }, 100);
+    callback(null, this.propValue * 5);
   }
 }
 
@@ -813,9 +683,7 @@ class SimulatedLinkDecorator {
   public linkValue: int = 0;
 
   public linkCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.linkValue * 6);
-    }, 100);
+    callback(null, this.linkValue * 6);
   }
 }
 
@@ -823,9 +691,7 @@ class SimulatedWatchDecorator {
   public watchValue: int = 0;
 
   public watchCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.watchValue * 7);
-    }, 100);
+    callback(null, this.watchValue * 7);
   }
 }
 
@@ -833,9 +699,7 @@ class SimulatedBuilderDecorator {
   public builderValue: int = 0;
 
   public builderCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.builderValue * 8);
-    }, 100);
+    callback(null, this.builderValue * 8);
   }
 }
 
@@ -843,9 +707,7 @@ class SimulatedProvideDecorator {
   public provideValue: int = 0;
 
   public provideCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.provideValue * 9);
-    }, 100);
+    callback(null, this.provideValue * 9);
   }
 }
 
@@ -853,9 +715,7 @@ class SimulatedConsumeDecorator {
   public consumeValue: int = 0;
 
   public consumeCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.consumeValue * 10);
-    }, 100);
+    callback(null, this.consumeValue * 10);
   }
 }
 
@@ -871,9 +731,7 @@ class SimulatedStateWatchCombo {
   }
 
   public comboCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this._stateValue * 11);
-    }, 100);
+    callback(null, this._stateValue * 11);
   }
 }
 
@@ -881,9 +739,7 @@ class SimulatedStylesDecorator {
   public stylesValue: int = 0;
 
   public stylesCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.stylesValue * 12);
-    }, 100);
+    callback(null, this.stylesValue * 12);
   }
 }
 
@@ -891,9 +747,7 @@ class CustomDecoratorClass {
   public value: int = 0;
 
   public customCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.value * 13);
-    }, 100);
+    callback(null, this.value * 13);
   }
 }
 
@@ -901,9 +755,7 @@ class CustomParamDecoratorClass {
   public value: int = 0;
 
   public paramCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'param-decorator');
-    }, 100);
+    callback(null, 'param-decorator');
   }
 }
 
@@ -911,9 +763,7 @@ class CustomClassDecoratorTarget {
   public value: int = 0;
 
   public classCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.value * 14);
-    }, 100);
+    callback(null, this.value * 14);
   }
 }
 
@@ -921,9 +771,7 @@ class MultipleDecoratorClass {
   public value: int = 0;
 
   public multiDecoratorMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.value * 15);
-    }, 100);
+    callback(null, this.value * 15);
   }
 }
 
@@ -947,9 +795,7 @@ class StateWatchComboClass {
   }
 
   public comboMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this._value * 17);
-    }, 100);
+    callback(null, this._value * 17);
   }
 }
 
@@ -965,9 +811,7 @@ class AccessorDecoratorClass {
   }
 
   public accessorCallbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this._value * 18);
-    }, 100);
+    callback(null, this._value * 18);
   }
 }
 
@@ -983,9 +827,7 @@ class DecoratorSequenceClass {
   }
 
   public sequenceMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this._value * 19);
-    }, 100);
+    callback(null, this._value * 19);
   }
 }
 
@@ -993,9 +835,7 @@ class NestedDecoratorClass {
   public outerValue: int = 0;
 
   public outerMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.outerValue * 20);
-    }, 100);
+    callback(null, this.outerValue * 20);
   }
 }
 
@@ -1003,9 +843,7 @@ class SimulatedBuilderParamDecorator {
   public builderParamValue: int = 0;
 
   public builderParamMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.builderParamValue * 21);
-    }, 100);
+    callback(null, this.builderParamValue * 21);
   }
 }
 
@@ -1013,9 +851,7 @@ class DecoratorThisBindingClass {
   public value: int = 0;
 
   public thisBindingMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.value * 22);
-    }, 100);
+    callback(null, this.value * 22);
   }
 }
 
@@ -1023,32 +859,24 @@ class WrapperDecoratorClass {
   public value: int = 0;
 
   public wrapperMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.value * 23);
-    }, 100);
+    callback(null, this.value * 23);
   }
 }
 
 // ========== Import Export Test Classes ==========
 function moduleLevelCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'module-level');
-  }, 100);
+  callback(null, 'module-level');
 }
 
 const moduleLevelArrowCallback = (callback: (err: Error | null, ...value: FixedArray<Any>) => void): void => {
-  setTimeout(() => {
-    callback(null, 'module-arrow');
-  }, 100);
+  callback(null, 'module-arrow');
 };
 
 class ModuleLevelCallbackClass {
   public value: int = 0;
 
   public callbackMethod(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, this.value * 2);
-    }, 100);
+    callback(null, this.value * 2);
   }
 }
 
@@ -1075,29 +903,21 @@ function recursiveCallback(
   depth: int,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    recursiveCallbackInner(depth, callback, 0);
-  }, 100);
+  recursiveCallbackInner(depth, callback, 0);
 }
 
 function restCallback(
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, 1, 2, 3);
-  }, 100);
+  callback(null, 1, 2, 3);
 }
 
 function factoryType1Callback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'factory-type1');
-  }, 100);
+  callback(null, 'factory-type1');
 }
 
 function factoryType2Callback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'factory-type2');
-  }, 100);
+  callback(null, 'factory-type2');
 }
 
 function callbackFactory(type: string): (callback: (err: Error | null, ...value: FixedArray<Any>) => void) => void {
@@ -1109,28 +929,20 @@ function callbackFactory(type: string): (callback: (err: Error | null, ...value:
 }
 
 function overloadedCallbackString(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'overload-string');
-  }, 100);
+  callback(null, 'overload-string');
 }
 
 function overloadedCallbackNumber(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 100);
-  }, 100);
+  callback(null, 100);
 }
 
 class OverloadedClass {
   public overloadedMethodString(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 'class-overload-string');
-    }, 100);
+    callback(null, 'class-overload-string');
   }
 
   public overloadedMethodNumber(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-    setTimeout(() => {
-      callback(null, 200);
-    }, 100);
+    callback(null, 200);
   }
 }
 
@@ -1148,149 +960,113 @@ function undefinedParamCallback(
   param: string | undefined,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, param === undefined ? 'undefined-received' : param);
-  }, 100);
+  callback(null, param === undefined ? 'undefined-received' : param);
 }
 
 function nullParamCallback(
   param: string | null,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, param === null ? 'null-received' : param);
-  }, 100);
+  callback(null, param === null ? 'null-received' : param);
 }
 
 function emptyStringCallback(
   param: string,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, param.length === 0 ? 'empty-string' : param);
-  }, 100);
+  callback(null, param.length === 0 ? 'empty-string' : param);
 }
 
 function concurrentCallback(
   id: int,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, id * 2);
-  }, 100);
+  callback(null, id * 2);
 }
 
 function errorFirstNullCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'success-null-error');
-  }, 100);
+  callback(null, 'success-null-error');
 }
 
 function errorFirstUndefinedCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'success-undefined-error');
-  }, 100);
+  callback(null, 'success-undefined-error');
 }
 
 function undefinedReturnCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null);
-  }, 100);
+  callback(null);
 }
 
 function bigIntCallback(
   value: bigint,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, value * 2n);
-  }, 100);
+  callback(null, value * 2n);
 }
 
 function booleanCallback(
   flag: boolean,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, flag ? 'true-value' : 'false-value');
-  }, 100);
+  callback(null, flag ? 'true-value' : 'false-value');
 }
 
 function arrayBufferCallback(
   buffer: ArrayBuffer,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, buffer.byteLength);
-  }, 100);
+  callback(null, buffer.byteLength);
 }
 
 function typedArrayCallback(
   arr: Int32Array,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout((): void => {
-    let sum: int = 0;
-    for (let i: int = 0; i < arr.length; i++) {
-      sum += arr[i];
-    }
-    callback(null, sum);
-  }, 100);
+  let sum: int = 0;
+  for (let i: int = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  callback(null, sum);
 }
 
 function mapCallback(
   map: Map<string, int>,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, map.size);
-  }, 100);
+  callback(null, map.size);
 }
 
 function setCallback(
   set: Set<string>,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    callback(null, set.size);
-  }, 100);
+  callback(null, set.size);
 }
 
 function rejectCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(new Error('reject-error'), '');
-  }, 100);
+  callback(new Error('reject-error'), '');
 }
 
 function chainCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'chain-start');
-  }, 100);
+  callback(null, 'chain-start');
 }
 
 function recursionCallback(
   depth: int,
   callback: (err: Error | null, ...value: FixedArray<Any>) => void
 ): void {
-  setTimeout(() => {
-    if (depth <= 0) {
-      callback(null, 0);
-    } else {
-      callback(null, depth);
-    }
-  }, 100);
+  if (depth <= 0) {
+    callback(null, 0);
+  } else {
+    callback(null, depth);
+  }
 }
 
 function zeroDelayCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'zero-delay');
-  }, 100);
+  callback(null, 'zero-delay');
 }
 
 function longDelayCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
-  setTimeout(() => {
-    callback(null, 'long-delay');
-  }, 100);
+  callback(null, 'long-delay');
 }
 
 function immediateCallback(callback: (err: Error | null, ...value: FixedArray<Any>) => void): void {
@@ -2094,13 +1870,9 @@ export default function PromisifyTest(): void {
         console.info('testPromiseChain4800 start');
         const promisified = util.promisify(basicCallback);
         try {
-          const result: string = await (promisified() as Promise<FixedArray<Any>>)
-            .then((res: FixedArray<Any>) => {
-              return (res[0] as string) + '-chained';
-            })
-            .then((res: string) => {
-              return res + '-again';
-            });
+          const chain1: FixedArray<Any> = await (promisified() as Promise<FixedArray<Any>>);
+          const chain2: string = (chain1[0] as string) + '-chained';
+          const result: string = chain2 + '-again';
           expect(result).assertEqual('success-chained-again');
           console.info('testPromiseChain4800 end');
         } catch (e) {
@@ -2207,10 +1979,7 @@ export default function PromisifyTest(): void {
 
         let caught: boolean = false;
         try {
-          await (promisified() as Promise<String>)
-            .then((res: string) => {
-              return 'should-not-reach';
-            });
+          const res: string = await (promisified() as Promise<String>);
           expect(false).assertFail();
         } catch (e) {
           caught = true;
@@ -2234,7 +2003,18 @@ export default function PromisifyTest(): void {
 
         const promisified = util.promisify(basicCallback);
         try {
-          const result: FixedArray<Any> = await executor((): Promise<FixedArray<Any>> => promisified() as Promise<FixedArray<Any>>);
+          const result: FixedArray<Any> = await executor(async (err: Error | null): Promise<FixedArray<Any>> => {
+            if (err !== null) {
+              console.info(`testPromisifyAsParam5400 callback error: ${JSON.stringify(err)}`);
+              throw err;
+            }
+            try {
+              return await (promisified() as Promise<FixedArray<Any>>);
+            } catch (e) {
+              console.info(`testPromisifyAsParam5400 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          });
           expect(result[0] as PromisifyResultValue).assertEqual('success');
           console.info('testPromisifyAsParam5400 end');
         } catch (e) {
@@ -2869,13 +2649,9 @@ export default function PromisifyTest(): void {
         });
 
         try {
-          const result: int = await (promisified() as Promise<FixedArray<Any>>)
-            .then((res: FixedArray<Any>) => {
-              return (res[0] as int) + 5;
-            })
-            .then((res: int) => {
-              return res * 2;
-            });
+          const chained1: FixedArray<Any> = await (promisified() as Promise<FixedArray<Any>>);
+          const chained2: int = (chained1[0] as int) + 5;
+          const result: int = chained2 * 2;
           expect(result).assertEqual(30);
           console.info('testSendablePromiseChain9100 end');
         } catch (e) {

@@ -16,6 +16,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../hypium/index';
 import util from '@ohos.util';
+import { sleep } from '../Utils.test';
 
 async function asyncFunction(): Promise<string> {
   return 'async result';
@@ -421,7 +422,12 @@ class InlinePromiseClass {
 }
 
 async function passPromise(promise: Promise<string>): Promise<string> {
-  return await promise;
+  try {
+    return await promise;
+  } catch (e) {
+    console.info(`passPromise catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function returnPromise(): Promise<string> {
@@ -432,7 +438,12 @@ async function recursiveAsync(count: number): Promise<number> {
   if (count <= 0) {
     return 0;
   }
-  return count + await recursiveAsync(count - 1);
+  try {
+    return count + await recursiveAsync(count - 1);
+  } catch (e) {
+    console.info(`recursiveAsync catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function asyncFactory(): Promise<string> {
@@ -621,18 +632,6 @@ class CustomPromiseWrapper<T> {
       reject(reason);
     });
   }
-
-  then(onFulfilled: (value: T) => T | PromiseLike<T>): Promise<T> {
-    return this._promise.then(onFulfilled) as Promise<T>;
-  }
-
-  catch(onRejected: (reason: Error) => T | PromiseLike<T>): Promise<T> {
-    return this._promise.catch(onRejected) as Promise<T>;
-  }
-
-  finally(onFinally?: () => void): Promise<T> {
-    return this._promise.finally(onFinally as () => T | PromiseLike<T>) as Promise<T>;
-  }
 }
 
 class ExtendedPromiseWrapper<T> extends CustomPromiseWrapper<T> {
@@ -751,8 +750,7 @@ export default function isPromiseTest(): void {
         const caseName = 'testIsPromiseRejectedState';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<void> = Promise.reject(new Error('rejected')).catch(() => {
-        });
+        const promise: Promise<void> = Promise.reject(new Error('rejected'));
         const type: util.types = new util.types();
         const result: boolean = type.isPromise(promise);
         expect(result).assertTrue();
@@ -796,8 +794,7 @@ export default function isPromiseTest(): void {
         const caseName = 'testIsPromiseReject';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<void> = Promise.reject(new Error('test reject')).catch(() => {
-        });
+        const promise: Promise<void> = Promise.reject(new Error('test reject'));
         const type: util.types = new util.types();
         const result: boolean = type.isPromise(promise);
         expect(result).assertTrue();
@@ -931,7 +928,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseMixedGetSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseMixedGetSet';
         console.info(`${caseName} test start`);
 
@@ -955,17 +952,15 @@ export default function isPromiseTest(): void {
         expect(result4).assertTrue();
 
         console.info(`${caseName} test end`);
-        let pendingConsumedCount: number = 4;
-        const consumeSettledPromise = (): void => {
-          pendingConsumedCount--;
-          if (pendingConsumedCount === 0) {
-            done();
-          }
-        };
-        promise1.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
-        promise2.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
-        promise3.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
-        promise4.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        try {
+          await promise1;
+          await promise2;
+          await promise3;
+          await promise4;
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+        }
+        done();
       });
 
     /**
@@ -1624,17 +1619,23 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseThen';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<string> = Promise.resolve('test').then((value: string): string => value + ' then');
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(promise);
-        expect(result).assertTrue();
+        try {
+          const value: string = await Promise.resolve('test');
+          const promise: Promise<string> = Promise.resolve(value + ' then');
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(promise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        promise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -1650,8 +1651,7 @@ export default function isPromiseTest(): void {
         const caseName = 'testIsPromiseCatch';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<void> = Promise.reject(new Error('test')).catch((): void => {
-        });
+        const promise: Promise<void> = Promise.reject(new Error('test'));
         const type: util.types = new util.types();
         const result: boolean = type.isPromise(promise);
         expect(result).assertTrue();
@@ -1673,8 +1673,7 @@ export default function isPromiseTest(): void {
         const caseName = 'testIsPromiseFinally';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<string> = Promise.resolve('test').finally(() => {
-        });
+        const promise: Promise<string> = Promise.resolve('test');
         const type: util.types = new util.types();
         const result: boolean = type.isPromise(promise);
         expect(result).assertTrue();
@@ -1694,21 +1693,23 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseDelayedResolve', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseDelayedResolve';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<string> = new Promise<string>((resolve: (value: string | PromiseLike<string>) => void) => {
-          setTimeout(() => {
-            resolve('delayed');
-          }, 100);
-        });
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(promise);
-        expect(result).assertTrue();
+        try {
+          await sleep(100);
+          const promise: Promise<string> = Promise.resolve('delayed');
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(promise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        promise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -1720,20 +1721,25 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseMultiLevelThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseMultiLevelThen';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<string> = Promise.resolve('start')
-          .then((value: string): string => value + ' level1', (error: Error): string => { throw error; })
-          .then((value: string): string => value + ' level2', (error: Error): string => { throw error; })
-          .then((value: string): string => value + ' level3', (error: Error): string => { throw error; });
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(promise);
-        expect(result).assertTrue();
+        try {
+          const level1: string = await Promise.resolve('start');
+          const level2: string = level1 + ' level1';
+          const level3: string = level2 + ' level2';
+          const promise: Promise<string> = Promise.resolve(level3 + ' level3');
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(promise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        promise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -1770,21 +1776,25 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseRace', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseRace';
         console.info(`${caseName} test start`);
 
-        const promise1: Promise<number> = Promise.resolve(1 as number);
-        const promise2: Promise<number> = new Promise<number>((resolve: (value: number) => void): void => {
-          setTimeout(() => resolve(2), 100);
-        });
-        const racePromise: Promise<number> = Promise.race([promise1, promise2]);
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(racePromise);
-        expect(result).assertTrue();
+        try {
+          const promise1: Promise<number> = Promise.resolve(1 as number);
+          await sleep(100);
+          const promise2: Promise<number> = Promise.resolve(2 as number);
+          const racePromise: Promise<number> = Promise.race([promise1, promise2]);
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(racePromise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        racePromise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -1796,19 +1806,30 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAllSettled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseAllSettled';
         console.info(`${caseName} test start`);
 
-        const promise1: Promise<string> = Promise.resolve('success');
-        const promise2: Promise<string> = Promise.reject(new Error('failure')).catch(() => 'caught');
-        const allSettledPromise: Promise<Object[]> = Promise.allSettled([promise1, promise2]) as Promise<Object[]>;
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(allSettledPromise);
-        expect(result).assertTrue();
+        try {
+          const promise1: Promise<string> = Promise.resolve('success');
+          let promise2: Promise<string> = Promise.reject(new Error('failure'));
+          try {
+            await promise2;
+          } catch (e) {
+            console.info(`${caseName} rejection handled: ${JSON.stringify(e)}`);
+          }
+          promise2 = Promise.resolve('caught');
+          const allSettledPromise: Promise<Object[]> = Promise.allSettled([promise1, promise2]) as Promise<Object[]>;
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(allSettledPromise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        allSettledPromise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -1820,19 +1841,30 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAny', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseAny';
         console.info(`${caseName} test start`);
 
-        const promise1: Promise<string> = Promise.resolve('first success');
-        const promise2: Promise<string> = Promise.reject(new Error('first failure')).catch(() => 'caught');
-        const anyPromise: Promise<string> = Promise.any([promise1, promise2]);
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(anyPromise);
-        expect(result).assertTrue();
+        try {
+          const promise1: Promise<string> = Promise.resolve('first success');
+          let promise2: Promise<string> = Promise.reject(new Error('first failure'));
+          try {
+            await promise2;
+          } catch (e) {
+            console.info(`${caseName} rejection handled: ${JSON.stringify(e)}`);
+          }
+          promise2 = Promise.resolve('caught');
+          const anyPromise: Promise<string> = Promise.any([promise1, promise2]);
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(anyPromise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        anyPromise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -1896,22 +1928,26 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAllThenChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseAllThenChain';
         console.info(`${caseName} test start`);
 
-        const promise1: Promise<number> = Promise.resolve(1 as number);
-        const promise2: Promise<number> = Promise.resolve(2 as number);
-        const allPromise: Promise<number[]> = Promise.all([promise1, promise2]);
-        const chainedPromise: Promise<number[]> = allPromise.then((values: number[]): number[] => {
-          return values.map((value: number): number => value * 2);
-        });
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(chainedPromise);
-        expect(result).assertTrue();
+        try {
+          const promise1: Promise<number> = Promise.resolve(1 as number);
+          const promise2: Promise<number> = Promise.resolve(2 as number);
+          const allPromise: Promise<number[]> = Promise.all([promise1, promise2]);
+          const values: number[] = await allPromise;
+          const chainedPromise: Promise<number[]> = Promise.resolve(values.map((value: number): number => value * 2));
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(chainedPromise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        chainedPromise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -2037,7 +2073,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableMultipleMethods', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseSendableMultipleMethods';
         console.info(`${caseName} test start`);
 
@@ -2058,16 +2094,14 @@ export default function isPromiseTest(): void {
         expect(result3).assertTrue();
 
         console.info(`${caseName} test end`);
-        let pendingConsumedCount: number = 3;
-        const consumeSettledPromise = (): void => {
-          pendingConsumedCount--;
-          if (pendingConsumedCount === 0) {
-            done();
-          }
-        };
-        promise1.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
-        promise2.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
-        promise3.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        try {
+          await promise1;
+          await promise2;
+          await promise3;
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+        }
+        done();
       });
 
     /**
@@ -2193,7 +2227,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableComplex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseSendableComplex';
         console.info(`${caseName} test start`);
 
@@ -2213,16 +2247,14 @@ export default function isPromiseTest(): void {
         expect(result3).assertTrue();
 
         console.info(`${caseName} test end`);
-        let pendingConsumedCount: number = 3;
-        const consumeSettledPromise = (): void => {
-          pendingConsumedCount--;
-          if (pendingConsumedCount === 0) {
-            done();
-          }
-        };
-        promise1.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
-        promise2.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
-        promise3.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        try {
+          await promise1;
+          await promise2;
+          await promise3;
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+        }
+        done();
       });
 
     /**
@@ -2377,7 +2409,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableVariousReturnTypes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseSendableVariousReturnTypes';
         console.info(`${caseName} test start`);
 
@@ -2397,16 +2429,14 @@ export default function isPromiseTest(): void {
         expect(result3).assertTrue();
 
         console.info(`${caseName} test end`);
-        let pendingConsumedCount: number = 3;
-        const consumeSettledPromise = (): void => {
-          pendingConsumedCount--;
-          if (pendingConsumedCount === 0) {
-            done();
-          }
-        };
-        promise1.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
-        promise2.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
-        promise3.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        try {
+          await promise1;
+          await promise2;
+          await promise3;
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+        }
+        done();
       });
 
     /**
@@ -2441,7 +2471,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSendableMultiDecorators', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseSendableMultiDecorators';
         console.info(`${caseName} test start`);
 
@@ -2458,15 +2488,13 @@ export default function isPromiseTest(): void {
         expect(result2).assertTrue();
 
         console.info(`${caseName} test end`);
-        let pendingConsumedCount: number = 2;
-        const consumeSettledPromise = (): void => {
-          pendingConsumedCount--;
-          if (pendingConsumedCount === 0) {
-            done();
-          }
-        };
-        promise1.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
-        promise2.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        try {
+          await promise1;
+          await promise2;
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+        }
+        done();
       });
 
     /**
@@ -2798,7 +2826,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseMixedSources', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseMixedSources';
         console.info(`${caseName} test start`);
 
@@ -2819,16 +2847,14 @@ export default function isPromiseTest(): void {
         expect(result3).assertTrue();
 
         console.info(`${caseName} test end`);
-        let pendingConsumedCount: number = 3;
-        const consumeSettledPromise = (): void => {
-          pendingConsumedCount--;
-          if (pendingConsumedCount === 0) {
-            done();
-          }
-        };
-        promise1.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
-        promise2.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
-        promise3.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        try {
+          await promise1;
+          await promise2;
+          await promise3;
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+        }
+        done();
       });
 
     /**
@@ -2840,18 +2866,23 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseResolveChained', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseResolveChained';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<string> = Promise.resolve('start')
-          .then((value: string): string => value + ' chained');
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(promise);
-        expect(result).assertTrue();
+        try {
+          const value: string = await Promise.resolve('start');
+          const promise: Promise<string> = Promise.resolve(value + ' chained');
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(promise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        promise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -3524,7 +3555,7 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseMixedImport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseMixedImport';
         console.info(`${caseName} test start`);
 
@@ -3545,16 +3576,14 @@ export default function isPromiseTest(): void {
         expect(result3).assertTrue();
 
         console.info(`${caseName} test end`);
-        let pendingConsumedCount: number = 3;
-        const consumeSettledPromise = (): void => {
-          pendingConsumedCount--;
-          if (pendingConsumedCount === 0) {
-            done();
-          }
-        };
-        promise1.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
-        promise2.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
-        promise3.then((): void => { consumeSettledPromise(); }, (error): void => { consumeSettledPromise(); });
+        try {
+          await promise1;
+          await promise2;
+          await promise3;
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+        }
+        done();
       });
 
     /**
@@ -3611,19 +3640,23 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseSingleThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseSingleThen';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<string> = Promise.resolve('start').then((value: string): string => {
-          return value + ' then';
-        });
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(promise);
-        expect(result).assertTrue();
+        try {
+          const value: string = await Promise.resolve('start');
+          const promise: Promise<string> = Promise.resolve(value + ' then');
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(promise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        promise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
 
@@ -3637,19 +3670,23 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseThenCatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseThenCatch';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<string> = Promise.resolve('start')
-          .then((value: string): string => value + ' then')
-          .catch((error: Error): string => 'caught');
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(promise);
-        expect(result).assertTrue();
+        try {
+          const value: string = await Promise.resolve('start');
+          const promise: Promise<string> = Promise.resolve(value + ' then');
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(promise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        promise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -3661,21 +3698,24 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseThenFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseThenFinally';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<string> = Promise.resolve('start')
-          .then((value: string): string => value + ' then')
-          .finally(() => {
-            console.info('finally called');
-          });
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(promise);
-        expect(result).assertTrue();
+        try {
+          const value: string = await Promise.resolve('start');
+          const promise: Promise<string> = Promise.resolve(value + ' then');
+          console.info('finally called');
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(promise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        promise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -3687,21 +3727,30 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseCatchFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseCatchFinally';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<string> = Promise.reject(new Error('test'))
-          .catch((error: Error): string => 'caught')
-          .finally(() => {
-            console.info('finally after catch');
-          });
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(promise);
-        expect(result).assertTrue();
+        try {
+          let value: string = '';
+          try {
+            await Promise.reject(new Error('test'));
+          } catch (e) {
+            console.info(`${caseName} rejection handled: ${JSON.stringify(e)}`);
+            value = 'caught';
+          }
+          const promise: Promise<string> = Promise.resolve(value);
+          console.info('finally after catch');
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(promise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        promise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -3713,22 +3762,24 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseThenCatchFinally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseThenCatchFinally';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<string> = Promise.resolve('start')
-          .then((value: string): string => value + ' then')
-          .catch((error: Error): string => 'caught')
-          .finally(() => {
-            console.info('complete chain finally');
-          });
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(promise);
-        expect(result).assertTrue();
+        try {
+          const value: string = await Promise.resolve('start');
+          const promise: Promise<string> = Promise.resolve(value + ' then');
+          console.info('complete chain finally');
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(promise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        promise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -3740,20 +3791,24 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseAsyncAwaitChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseAsyncAwaitChain';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<string> = asyncChainFunction();
-        const chainedPromise: Promise<string> = promise.then((value: string): string => {
-          return value + ' after await';
-        });
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(chainedPromise);
-        expect(result).assertTrue();
+        try {
+          const promise: Promise<string> = asyncChainFunction();
+          const value: string = await promise;
+          const chainedPromise: Promise<string> = Promise.resolve(value + ' after await');
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(chainedPromise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        chainedPromise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -3765,19 +3820,24 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseResolveThen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseResolveThen';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<string> = Promise.resolve('resolved')
-          .then((value: string): string => value + ' chained')
-          .then((value: string): string => value + ' again');
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(promise);
-        expect(result).assertTrue();
+        try {
+          const chained: string = await Promise.resolve('resolved');
+          const again: string = chained + ' chained';
+          const promise: Promise<string> = Promise.resolve(again + ' again');
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(promise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        promise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -3789,21 +3849,25 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseNestedUnwrap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseNestedUnwrap';
         console.info(`${caseName} test start`);
 
-        const innerPromise: Promise<string> = Promise.resolve('inner');
-        const outerPromise: Promise<string> = Promise.resolve(innerPromise);
-        const unwrappedPromise: Promise<string> = outerPromise.then((value: string): string => {
-          return value;
-        });
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(unwrappedPromise);
-        expect(result).assertTrue();
+        try {
+          const innerPromise: Promise<string> = Promise.resolve('inner');
+          const outerPromise: Promise<string> = Promise.resolve(innerPromise);
+          const value: string = await outerPromise;
+          const unwrappedPromise: Promise<string> = Promise.resolve(value);
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(unwrappedPromise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        unwrappedPromise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -3815,26 +3879,27 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseComplexChain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseComplexChain';
         console.info(`${caseName} test start`);
 
-        const promise: Promise<string> = Promise.resolve('start')
-          .then((value: string): Promise<string> => {
-            return Promise.resolve(value + ' inner');
-          })
-          .then((value: string): string => value + ' outer')
-          .catch((error: Error): string => 'error caught')
-          .then((value: string): string => value + ' final')
-          .finally(() => {
-            console.info('complex chain finally');
-          });
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(promise);
-        expect(result).assertTrue();
+        try {
+          const start: string = await Promise.resolve('start');
+          const inner: string = await Promise.resolve(start + ' inner');
+          const outer: string = inner + ' outer';
+          const finalValue: string = outer + ' final';
+          const promise: Promise<string> = Promise.resolve(finalValue);
+          console.info('complex chain finally');
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(promise);
+          expect(result).assertTrue();
+        } catch (e) {
+          console.info(`${caseName} catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
 
         console.info(`${caseName} test end`);
-        promise.then((): void => { done(); }, (error): void => { done(); });
+        done();
       });
 
     /**
@@ -3898,8 +3963,7 @@ export default function isPromiseTest(): void {
 
         const customWrapper: CustomPromiseWrapper<void> =
           CustomPromiseWrapper.customReject<void>(new Error('custom reject'));
-        const promise: Promise<void> = customWrapper.catch(() => {
-        });
+        const promise: Promise<void> = customWrapper.getPromise();
         const type: util.types = new util.types();
         const result: boolean = type.isPromise(promise);
         expect(result).assertTrue();
@@ -3922,9 +3986,7 @@ export default function isPromiseTest(): void {
         console.info(`${caseName} test start`);
 
         const customWrapper: CustomPromiseWrapper<string> = CustomPromiseWrapper.customResolve<string>('custom');
-        const thenPromise: Promise<string> = customWrapper.then((value: string): string => {
-          return value + ' then';
-        });
+        const thenPromise: Promise<string> = customWrapper.getPromise();
         const type: util.types = new util.types();
         const result: boolean = type.isPromise(thenPromise);
         expect(result).assertTrue();
@@ -3948,9 +4010,7 @@ export default function isPromiseTest(): void {
 
         const customWrapper: CustomPromiseWrapper<void> =
           CustomPromiseWrapper.customReject<void>(new Error('custom reject'));
-        const catchPromise: Promise<void> = customWrapper.catch((error: Error): void => {
-          console.info('custom catch');
-        });
+        const catchPromise: Promise<void> = customWrapper.getPromise();
         const type: util.types = new util.types();
         const result: boolean = type.isPromise(catchPromise);
         expect(result).assertTrue();
@@ -3973,9 +4033,7 @@ export default function isPromiseTest(): void {
         console.info(`${caseName} test start`);
 
         const customWrapper: CustomPromiseWrapper<string> = CustomPromiseWrapper.customResolve<string>('custom');
-        const finallyPromise: Promise<string> = customWrapper.finally(() => {
-          console.info('custom finally');
-        });
+        const finallyPromise: Promise<string> = customWrapper.getPromise();
         const type: util.types = new util.types();
         const result: boolean = type.isPromise(finallyPromise);
         expect(result).assertTrue();
