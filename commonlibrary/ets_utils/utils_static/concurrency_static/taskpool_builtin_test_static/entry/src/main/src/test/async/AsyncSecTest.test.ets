@@ -1554,6 +1554,9 @@ export default function asyncSecTest(): void {
           try {
             await sleep(100);
             return 'Success';
+          } catch (e) {
+            console.info(`asyncSecTest0024 catch error: ${JSON.stringify(e)}`);
+            throw e;
           } finally {
             conn.close();
           }
