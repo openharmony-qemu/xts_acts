@@ -325,7 +325,11 @@ export default function MessageGetWhatTest(): void {
       let waitCount: int = 0;
       while (counter.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(counter.load()).assertEqual(3);
       expect(results.length).assertEqual(3);
@@ -442,7 +446,11 @@ export default function MessageGetWhatTest(): void {
       let waitCount: int = 0;
       while (counter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(receivedWhat.load()).assertEqual(123);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -523,7 +531,11 @@ export default function MessageGetWhatTest(): void {
       let waitCount: int = 0;
       while (counter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(receivedWhat.load()).assertEqual(123);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -594,7 +606,11 @@ export default function MessageGetWhatTest(): void {
       let waitCount: int = 0;
       while (counter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       let whatAfter: int = msg.getWhat();
       expect(whatAfter).assertEqual(55);

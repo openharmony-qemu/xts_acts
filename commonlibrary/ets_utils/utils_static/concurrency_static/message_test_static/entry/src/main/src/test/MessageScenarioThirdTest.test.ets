@@ -113,7 +113,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -168,7 +172,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -233,7 +241,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -286,7 +298,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -337,7 +353,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -386,7 +406,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -436,7 +460,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -499,7 +527,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -564,7 +596,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -613,7 +649,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -664,7 +704,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -718,7 +762,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -769,7 +817,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -820,7 +872,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -871,7 +927,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -930,7 +990,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -980,7 +1044,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 
@@ -1030,7 +1098,11 @@ export default function MessageScenarioThirdTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
 

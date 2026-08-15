@@ -128,7 +128,11 @@ export default function MessageGetTargetTest(): void {
       let waitCount = 0;
       while (counter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(counter.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -156,7 +160,11 @@ export default function MessageGetTargetTest(): void {
       let waitCount = 0;
       while (handlerCallCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(handlerCallCount.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -234,7 +242,11 @@ export default function MessageGetTargetTest(): void {
       let waitCount = 0;
       while (counter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(counter.load()).assertEqual(1);
       expect(targetHolder === messageHandler).assertTrue();
@@ -266,7 +278,11 @@ export default function MessageGetTargetTest(): void {
       let waitCount = 0;
       while (counter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(counter.load()).assertEqual(1);
       expect(targetHolder === messageHandler).assertTrue();
@@ -321,7 +337,11 @@ export default function MessageGetTargetTest(): void {
       let waitCount = 0;
       while (handlerExecuted.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       let targetAfter: concurrency.MessageHandler = msg.getTarget();
       expect(targetAfter === messageHandler).assertTrue();
@@ -350,7 +370,11 @@ export default function MessageGetTargetTest(): void {
       let waitCount = 0;
       while (counter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(counter.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -383,7 +407,11 @@ export default function MessageGetTargetTest(): void {
       let waitCount = 0;
       while (receivedWhat.load() !== 42 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(receivedWhat.load()).assertEqual(42);
       expect(counter.load()).assertEqual(1);
@@ -478,7 +506,11 @@ export default function MessageGetTargetTest(): void {
       let waitCount = 0;
       while (handlerExecuted.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(handlerExecuted.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -578,7 +610,11 @@ export default function MessageGetTargetTest(): void {
       let waitCount = 0;
       while (callCount.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(callCount.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }

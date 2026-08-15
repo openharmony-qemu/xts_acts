@@ -602,7 +602,11 @@ export default function MessageConstructorWhatObjTest(): void {
       let waitCount = 0;
       while (counter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(counter.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -869,7 +873,11 @@ export default function MessageConstructorWhatObjTest(): void {
       let waitCount = 0;
       while (counter.load() < 3 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(counter.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -900,7 +908,11 @@ export default function MessageConstructorWhatObjTest(): void {
       let waitCount = 0;
       while (nestedCounter.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(nestedCounter.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -932,7 +944,11 @@ export default function MessageConstructorWhatObjTest(): void {
       let waitCount = 0;
       while (secondReceived.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(secondReceived.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -959,7 +975,11 @@ export default function MessageConstructorWhatObjTest(): void {
       let waitCount = 0;
       while (sharedCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(sharedCount.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1069,7 +1089,11 @@ export default function MessageConstructorWhatObjTest(): void {
       let waitCount = 0;
       while (counter.load() < 10 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(counter.load()).assertEqual(10);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1104,7 +1128,11 @@ export default function MessageConstructorWhatObjTest(): void {
       let waitCount = 0;
       while ((typeACount.load() < 1 || typeBCount.load() < 1) && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(typeACount.load()).assertEqual(1);
       expect(typeBCount.load()).assertEqual(1);
@@ -1157,7 +1185,11 @@ export default function MessageConstructorWhatObjTest(): void {
       let waitCount = 0;
       while (step.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(step.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }
@@ -1209,7 +1241,11 @@ export default function MessageConstructorWhatObjTest(): void {
       let waitCount = 0;
       while (processed.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(processed.load()).assertEqual(1);
       expect(receivedWhat.load()).assertEqual(100);
@@ -1240,7 +1276,11 @@ export default function MessageConstructorWhatObjTest(): void {
       let waitCount = 0;
       while (completedCount.load() < totalCount && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(completedCount.load()).assertEqual(totalCount);
       if (eaw.isAlive()) { eaw.quit(); }

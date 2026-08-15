@@ -79,7 +79,11 @@ export default function MessageScenarioSecondTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, eaw);
@@ -89,7 +93,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -126,7 +134,11 @@ export default function MessageScenarioSecondTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, eaw);
@@ -161,7 +173,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -197,7 +213,11 @@ export default function MessageScenarioSecondTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, eaw);
@@ -232,7 +252,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -268,7 +292,11 @@ export default function MessageScenarioSecondTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, eaw);
@@ -279,7 +307,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -315,7 +347,11 @@ export default function MessageScenarioSecondTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, eaw);
@@ -326,7 +362,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -362,7 +402,11 @@ export default function MessageScenarioSecondTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, eaw);
@@ -373,7 +417,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -409,7 +457,11 @@ export default function MessageScenarioSecondTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, eaw);
@@ -423,7 +475,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -460,7 +516,11 @@ export default function MessageScenarioSecondTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, eaw);
@@ -471,7 +531,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -507,7 +571,11 @@ export default function MessageScenarioSecondTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, eaw);
@@ -518,7 +586,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -554,7 +626,11 @@ export default function MessageScenarioSecondTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, eaw);
@@ -565,7 +641,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -601,7 +681,11 @@ export default function MessageScenarioSecondTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, eaw);
@@ -613,7 +697,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -671,7 +759,11 @@ export default function MessageScenarioSecondTest(): void {
             let waitCount: int = 0;
             while (received.load() < before + 1 && waitCount < 50) {
               waitCount++;
-              await Utils.msSleep(100);
+              try {
+                await Utils.msSleep(100);
+              } catch (error) {
+                expect(error).assertFail();
+              }
             }
             expect(received.load()).assertEqual(before + 1);
             expect(lastWhat.load()).assertEqual(expectWhat);
@@ -715,7 +807,11 @@ export default function MessageScenarioSecondTest(): void {
           while (i < 5) {
             handlers.push(new concurrency.MessageHandler((msg: concurrency.Message) => {
               waitForCompletion(async () => {
-                await Sleep(1000);
+                try {
+                  await Sleep(1000);
+                } catch (error) {
+                  expect(error).assertFail();
+                }
                 result.push(msg)
                 flag = true;
               })
@@ -727,7 +823,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitLen: int = 0;
           while (result.length < 5 && waitLen < 500) {
             waitLen++;
-            await Sleep(10);
+            try {
+              await Sleep(10);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(result.length).assertEqual(messages.length);
           for (let mi: int = 0; mi < messages.length; mi++) {
@@ -743,7 +843,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -793,7 +897,11 @@ export default function MessageScenarioSecondTest(): void {
                       console.info(`push msg`);
                     };
                     await lock.lockAsync(lockCallback);
-                    await Sleep(1000);
+                    try {
+                      await Sleep(1000);
+                    } catch (error) {
+                      expect(error).assertFail();
+                    }
                     flag = true;
                   } catch (error) {
                     console.info(`MessageScenarioSecondTest async task error: ${JSON.stringify(error)}`);
@@ -814,14 +922,22 @@ export default function MessageScenarioSecondTest(): void {
           let waitLen30: int = 0;
           while (result.length < 30 && waitLen30 < 500) {
             waitLen30++;
-            await Sleep(10);
+            try {
+              await Sleep(10);
+            } catch (error) {
+              expect(error).assertFail();
+            }
             console.info(`result.length ${result.length}`);
           }
           expect(result.length).assertEqual(30);
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -860,7 +976,11 @@ export default function MessageScenarioSecondTest(): void {
           let result: concurrency.Message[] = [];
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async (): Promise<void> => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               result.push(msg);
               console.info(`push msg`);
               flag = true;
@@ -877,7 +997,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitReady: int = 0;
           while (result.length < 2 && waitReady < 50) {
             waitReady++;
-            await Sleep(200);
+            try {
+              await Sleep(200);
+            } catch (error) {
+              expect(error).assertFail();
+            }
             console.info(`wait ready ${result.length}`);
           }
           expect(result.length >= 2).assertTrue();
@@ -886,14 +1010,22 @@ export default function MessageScenarioSecondTest(): void {
           let waitQuit: int = 0;
           while (eaw.isAlive() && waitQuit < 50) {
             waitQuit++;
-            await Sleep(100);
+            try {
+              await Sleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(eaw.isAlive()).assertFalse();
           expect(result.length >= 2).assertTrue();
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -926,7 +1058,11 @@ export default function MessageScenarioSecondTest(): void {
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             firstStarted = true;
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, eaw);
@@ -936,7 +1072,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitFirst: int = 0;
           while (!firstStarted && waitFirst < 50) {
             waitFirst++;
-            await Utils.msSleep(10);
+            try {
+              await Utils.msSleep(10);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(firstStarted).assertTrue();
           handler.sendMessage(message1);
@@ -953,7 +1093,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -1056,7 +1200,11 @@ export default function MessageScenarioSecondTest(): void {
         try {
           const handler = new concurrency.MessageHandler(() => {
             (async () => {
-              await Sleep(1000)
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               doneFlag = true;
             })()
           }, worker);
@@ -1069,7 +1217,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitDone: int = 0;
           while (!doneFlag && waitDone < 50) {
             waitDone++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(doneFlag).assertTrue();
           console.info(`${TAG} Messages in queue 2: ${handler.hasMessages(1)}`);
@@ -1109,7 +1261,11 @@ export default function MessageScenarioSecondTest(): void {
           const handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
               receivedWhat = msg.getWhat();
-              await Sleep(1000)
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               doneFlag = true;
             })()
           }, worker);
@@ -1120,7 +1276,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitDone: int = 0;
           while (!doneFlag && waitDone < 50) {
             waitDone++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(doneFlag).assertTrue();
           console.info(`${TAG} receivedWhat: ${receivedWhat}`);
@@ -1207,12 +1367,20 @@ export default function MessageScenarioSecondTest(): void {
           }, worker);
           const msg = new concurrency.Message(h);
           expect(h.sendMessage(msg)).assertTrue();
-          await Sleep(100);
+          try {
+            await Sleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
           expect(received).assertTrue();
           let waitRecv: int = 0;
           while (!received && waitRecv < 50) {
             waitRecv++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(received).assertTrue();
         } catch (err) {
@@ -1301,7 +1469,11 @@ export default function MessageScenarioSecondTest(): void {
             received2 = true;
           }, h);
           expect(h.sendMessage(msg)).assertTrue();
-          await Sleep(2000);
+          try {
+            await Sleep(2000);
+          } catch (error) {
+            expect(error).assertFail();
+          }
           console.info(`${TAG} received: ${received}`);
           console.info(`${TAG} received2: ${received2}`);
           expect(received).assertTrue();
@@ -1309,7 +1481,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitRecv: int = 0;
           while (!received && waitRecv < 50) {
             waitRecv++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(received).assertTrue();
         } catch (err) {
@@ -1358,13 +1534,21 @@ export default function MessageScenarioSecondTest(): void {
           let waitExec: int = 0;
           while (!executed && waitExec < 50) {
             waitExec++;
-            await Utils.msSleep(10);
+            try {
+              await Utils.msSleep(10);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(executed).assertTrue();
           let waitRecv: int = 0;
           while (!received && waitRecv < 50) {
             waitRecv++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(received).assertTrue();
         } catch (err) {
@@ -1455,7 +1639,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (err) {
@@ -1550,7 +1738,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (err) {
@@ -1604,7 +1796,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100)
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (err) {
@@ -1687,7 +1883,11 @@ export default function MessageScenarioSecondTest(): void {
           let handler1: concurrency.MessageHandler;
           handler1 = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, worker1);
@@ -1698,7 +1898,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -1734,7 +1938,11 @@ export default function MessageScenarioSecondTest(): void {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, worker)
@@ -1754,7 +1962,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -1790,7 +2002,11 @@ export default function MessageScenarioSecondTest(): void {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, worker)
@@ -1800,7 +2016,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -1843,7 +2063,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (received.load() < 1 && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(received.load()).assertEqual(1);
         } catch (error) {
@@ -1879,7 +2103,11 @@ export default function MessageScenarioSecondTest(): void {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, worker)
@@ -1889,7 +2117,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -1925,7 +2157,11 @@ export default function MessageScenarioSecondTest(): void {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, worker)
@@ -1935,7 +2171,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -1971,7 +2211,11 @@ export default function MessageScenarioSecondTest(): void {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, worker)
@@ -1982,7 +2226,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -2018,7 +2266,11 @@ export default function MessageScenarioSecondTest(): void {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, worker)
@@ -2028,7 +2280,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -2063,7 +2319,11 @@ export default function MessageScenarioSecondTest(): void {
           worker.start();
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, worker)
@@ -2073,7 +2333,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -2108,21 +2372,30 @@ export default function MessageScenarioSecondTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, worker)
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
           for (let i = 0; i < 10; i++) {
-            let handlerValue = handler.post(() => {
-            })
+            let postCb2118 = () => {
+            };
+            let handlerValue = handler.post(postCb2118)
             expect(handlerValue).assertTrue();
           }
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -2158,7 +2431,11 @@ export default function MessageScenarioSecondTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, worker)
@@ -2176,7 +2453,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -2222,7 +2503,11 @@ export default function MessageScenarioSecondTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             waitForCompletion(async () => {
-              await Sleep(1000);
+              try {
+                await Sleep(1000);
+              } catch (error) {
+                expect(error).assertFail();
+              }
               flag = true;
             })
           }, worker)
@@ -2236,7 +2521,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -2270,7 +2559,11 @@ export default function MessageScenarioSecondTest(): void {
         let handlerValue: boolean = false;
         handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
           waitForCompletion(async () => {
-            await Sleep(1000);
+            try {
+              await Sleep(1000);
+            } catch (error) {
+              expect(error).assertFail();
+            }
             flag = true;
           })
         }, worker)
@@ -2296,7 +2589,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -2334,7 +2631,11 @@ export default function MessageScenarioSecondTest(): void {
         }
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
           waitForCompletion(async () => {
-            await Sleep(1000);
+            try {
+              await Sleep(1000);
+            } catch (error) {
+              expect(error).assertFail();
+            }
             flag = true;
           })
         }, worker)
@@ -2355,7 +2656,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -2388,7 +2693,11 @@ export default function MessageScenarioSecondTest(): void {
         let handlerValue: boolean = false;
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
           waitForCompletion(async () => {
-            await Sleep(1000);
+            try {
+              await Sleep(1000);
+            } catch (error) {
+              expect(error).assertFail();
+            }
             flag = true;
           })
         }, worker)
@@ -2419,7 +2728,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -2452,7 +2765,11 @@ export default function MessageScenarioSecondTest(): void {
         let handlerValue: boolean = false;
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
           waitForCompletion(async () => {
-            await Sleep(1000);
+            try {
+              await Sleep(1000);
+            } catch (error) {
+              expect(error).assertFail();
+            }
             flag = true;
           })
         }, worker)
@@ -2478,7 +2795,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -2511,7 +2832,11 @@ export default function MessageScenarioSecondTest(): void {
         let handlerValue: boolean = false;
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
           waitForCompletion(async () => {
-            await Sleep(1000);
+            try {
+              await Sleep(1000);
+            } catch (error) {
+              expect(error).assertFail();
+            }
             flag = true;
           })
         }, worker)
@@ -2531,7 +2856,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -2583,7 +2912,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (!flag && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(flag).assertTrue();
         } catch (error) {
@@ -2624,17 +2957,22 @@ export default function MessageScenarioSecondTest(): void {
             if (cb !== undefined) { cb(); }
           }, worker);
           // post+remove inside post to avoid EAWorker draining before remove
-          handler.post((): void => {
+          let postedCallbackSecond = (): void => {
             handler.post(p);
             if (handler.removeCallbacks(p)) {
               removed.fetchAdd(1);
             }
             doneFlag.fetchAdd(1);
-          });
+          };
+          handler.post(postedCallbackSecond);
           let waitCount: int = 0;
           while (doneFlag.load() < 1 && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(removed.load()).assertEqual(1);
         } catch (error) {
@@ -2674,7 +3012,11 @@ export default function MessageScenarioSecondTest(): void {
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
           handler.post(p);
-          await Utils.msSleep(1300);
+          try {
+            await Utils.msSleep(1300);
+          } catch (error) {
+            expect(error).assertFail();
+          }
           expect(handler.removeCallbacks(p)).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
@@ -2714,18 +3056,23 @@ export default function MessageScenarioSecondTest(): void {
             if (cb !== undefined) { cb(); }
           }, worker);
           // post+remove inside post to avoid EAWorker draining before remove
-          handler.post((): void => {
+          let postedCallbackThird = (): void => {
             handler.post(p);
             handler.post(p);
             if (handler.removeCallbacks(p)) {
               removed.fetchAdd(1);
             }
             doneFlag.fetchAdd(1);
-          });
+          };
+          handler.post(postedCallbackThird);
           let waitCount: int = 0;
           while (doneFlag.load() < 1 && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(removed.load()).assertEqual(1);
         } catch (error) {
@@ -2771,7 +3118,11 @@ export default function MessageScenarioSecondTest(): void {
           }, worker);
           handler.post(p);
           handler.post(p);
-          await Utils.msSleep(1300);
+          try {
+            await Utils.msSleep(1300);
+          } catch (error) {
+            expect(error).assertFail();
+          }
           expect(handler.removeCallbacks(p)).assertEqual(false);
           const end = Date.now() + 1000;
           while (Date.now() < end) {
@@ -2828,7 +3179,11 @@ export default function MessageScenarioSecondTest(): void {
           let waitCount: int = 0;
           while (doneFlag.load() < 1 && waitCount < 50) {
             waitCount++;
-            await Utils.msSleep(100);
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
           }
           expect(removed.load()).assertEqual(1);
         } catch (error) {
@@ -2873,7 +3228,11 @@ export default function MessageScenarioSecondTest(): void {
             })()
           }, worker);
           handler.sendMessage(new concurrency.Message(p, handler));
-          await Utils.msSleep(1300);
+          try {
+            await Utils.msSleep(1300);
+          } catch (error) {
+            expect(error).assertFail();
+          }
           expect(handler.removeCallbacks(p)).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);

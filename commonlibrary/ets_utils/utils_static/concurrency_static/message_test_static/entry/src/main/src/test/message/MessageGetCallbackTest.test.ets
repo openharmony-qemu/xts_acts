@@ -708,7 +708,11 @@ export default function MessageGetCallbackTest(): void {
         let waitCount = 0;
         while (innerCallbackExecuted.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(innerCallbackExecuted.load()).assertEqual(1);
       } finally {
@@ -1216,7 +1220,11 @@ export default function MessageGetCallbackTest(): void {
         let waitCount = 0;
         while (state.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(state.load()).assertEqual(1);
       } finally {
@@ -1257,7 +1265,11 @@ export default function MessageGetCallbackTest(): void {
         let waitCount = 0;
         while (counter.load() < 3 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(counter.load()).assertEqual(3);
       } finally {
@@ -1297,7 +1309,11 @@ export default function MessageGetCallbackTest(): void {
         let waitCount = 0;
         while (counter.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(counter.load()).assertEqual(1);
       } finally {
