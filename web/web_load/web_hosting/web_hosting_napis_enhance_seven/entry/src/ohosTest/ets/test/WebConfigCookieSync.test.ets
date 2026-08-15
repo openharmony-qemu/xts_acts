@@ -1029,7 +1029,12 @@ export default function WebConfigCookieSync() {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       Utils.waitAndClickComponent("ConfigCookieSync",driver)
-      await waitForExist(function (): boolean { return isReturn; }, 'testEtsFetchCookieSyncIncognitoNull014', true,1000);
+      await waitForExist(function (error?: object): boolean {
+        if (error) {
+          console.info('testEtsFetchCookieSyncIncognitoNull014 error: ' + JSON.stringify(error));
+        }
+        return isReturn;
+      }, 'testEtsFetchCookieSyncIncognitoNull014', true,1000);
       done();
     })
 
@@ -1053,7 +1058,12 @@ export default function WebConfigCookieSync() {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       Utils.waitAndClickComponent("ConfigCookieSync",driver)
-      await waitForExist(function (): boolean { return isReturn; }, 'testEtsFetchCookieSyncIncognitoUndefined015', true,1000);
+      await waitForExist(function (error?: object): boolean {
+        if (error) {
+          console.info('testEtsFetchCookieSyncIncognitoUndefined015 error: ' + JSON.stringify(error));
+        }
+        return isReturn;
+      }, 'testEtsFetchCookieSyncIncognitoUndefined015', true,1000);
       done();
     })
 
@@ -1077,7 +1087,12 @@ export default function WebConfigCookieSync() {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       Utils.waitAndClickComponent("ConfigCookieSync",driver)
-      await waitForExist(function (): boolean { return isReturn; }, 'testEtsFetchCookieIncognitoNull016', true,1000);
+      await waitForExist(function (error?: object): boolean {
+        if (error) {
+          console.info('testEtsFetchCookieIncognitoNull016 error: ' + JSON.stringify(error));
+        }
+        return isReturn;
+      }, 'testEtsFetchCookieIncognitoNull016', true,1000);
       done();
     })
 
@@ -1101,7 +1116,12 @@ export default function WebConfigCookieSync() {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       Utils.waitAndClickComponent("ConfigCookieSync",driver)
-      await waitForExist(function (): boolean { return isReturn; }, 'testEtsFetchCookieIncognitoUndefined017', true,1000);
+      await waitForExist(function (error?: object): boolean {
+        if (error) {
+          console.info('testEtsFetchCookieIncognitoUndefined017 error: ' + JSON.stringify(error));
+        }
+        return isReturn;
+      }, 'testEtsFetchCookieIncognitoUndefined017', true,1000);
       done();
     })
 
