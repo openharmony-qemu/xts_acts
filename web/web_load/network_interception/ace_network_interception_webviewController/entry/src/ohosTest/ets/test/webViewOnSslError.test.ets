@@ -105,7 +105,7 @@ export default function webViewOnSslError() {
         isReturn = 1;
       });
       await Utils.waitAndClickComponent(driver, "webViewOnSslError");
-      await Utils.waitForExist(()=>isReturn, "testOnsslerroventreceive_checkReturn", 1, 1000, 60);
+      await Utils.waitForExist((error: BusinessError) => isReturn, "testOnsslerroventreceive_checkReturn", 1, 1000, 60);
       done();
     })
   })

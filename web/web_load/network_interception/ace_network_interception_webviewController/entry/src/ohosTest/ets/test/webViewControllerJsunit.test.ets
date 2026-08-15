@@ -83,7 +83,7 @@ export default function webViewControllerJsunit() {
         isReturn = 1;
       });
       await Utils.waitAndClickComponent(driver, "webcomponent");
-      await Utils.waitForExist(()=>isReturn, "testPageDown_checkReturn", 1, 1000, 60);
+      await Utils.waitForExist((error: BusinessError) => isReturn, "testPageDown_checkReturn", 1, 1000, 60);
       done();
     })
     /**
@@ -105,7 +105,7 @@ export default function webViewControllerJsunit() {
         isReturn = 1;
       });
       await Utils.waitAndClickComponent(driver, "webcomponent");
-      await Utils.waitForExist(()=>isReturn, "testSetNetworkAvailable_checkReturn", 1, 1000, 60);
+      await Utils.waitForExist((error: BusinessError) => isReturn, "testSetNetworkAvailable_checkReturn", 1, 1000, 60);
       done();
     })
     /**
@@ -127,7 +127,7 @@ export default function webViewControllerJsunit() {
         isReturn = 1;
       });
       await Utils.waitAndClickComponent(driver, "webcomponent");
-      await Utils.waitForExist(()=>isReturn, "testSetNetworkAvailableAgain_checkReturn", 1, 1000, 60);
+      await Utils.waitForExist((error: BusinessError) => isReturn, "testSetNetworkAvailableAgain_checkReturn", 1, 1000, 60);
       done();
     })
   })
