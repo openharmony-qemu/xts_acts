@@ -387,10 +387,10 @@ export default function MessageScenarioTest(): void {
             })()
           }, worker);
           let executeResolver: () => void = (): void => {};
-          const executedPromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
-            executeResolver = resolve;
+          const executedPromise: Promise<void> = new Promise<void>((resolve: (value: void) => void, reject: (error: Error) => void): void => {
+            executeResolver = (): void => { resolve(undefined); };
           });
-          const asyncTask = (): void => {
+          const asyncTask = () => {
             setTimeout((): void => {
               executed = true;
               executeResolver();

@@ -16,7 +16,6 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
 import Utils from '../Util.test';
-import { BusinessError } from '@ohos.base';
 
 type CB = () => void
 
@@ -394,7 +393,7 @@ export default function MessageGetWhatTest(): void {
         expect(what).assertEqual(99);
         if (eaw.isAlive()) { eaw.quit(); }
         done();
-      }).catch((error: BusinessError): void => {
+      }).catch((error: Error): void => {
         expect(error).assertFail();
         if (eaw.isAlive()) { eaw.quit(); }
         done();

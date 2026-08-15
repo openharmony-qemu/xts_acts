@@ -16,7 +16,6 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
 import Utils from '../Util.test';
-import { BusinessError } from '@ohos.base';
 
 type CB = () => void
 
@@ -504,7 +503,7 @@ export default function MessageGetCallbackTest(): void {
           p.then((r: string): void => {
             console.info(r);
             done();
-          }).catch((error: BusinessError): void => {
+          }).catch((error: Error): void => {
             expect(error).assertFail();
             done();
           });
