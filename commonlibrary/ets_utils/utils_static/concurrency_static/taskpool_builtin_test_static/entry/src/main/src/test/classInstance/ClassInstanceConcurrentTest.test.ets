@@ -81,21 +81,27 @@ export default function ClassInstanceConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testClassNoLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let count: AtomicInt = new AtomicInt(0);
-      let data: DataClass = new DataClass();
-      let totalTasks: number = 10;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testClassNoLock, data).then((): void => { count.fetchAdd(1); }, (err: Error): void => { expect(err).assertFail(); });
+    it('testClassNoLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let count: AtomicInt = new AtomicInt(0);
+        let data: DataClass = new DataClass();
+        let totalTasks: number = 10;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testClassNoLock, data).then((): void => { count.fetchAdd(1); }, (err: Error): void => { expect(err).assertFail(); });
+        }
+        testClassNoLock(data);
+        count.fetchAdd(1);
+        let waits: number = 0;
+        while (count.load() < totalTasks + 1 && waits < 100) {
+          await Utils.msSleep(100);
+          waits++;
+        }
+        expect(count.load()).assertEqual(totalTasks + 1);
+      } catch (e) {
+        console.info(`testClassNoLockConcurrent0100 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      testClassNoLock(data);
-      count.fetchAdd(1);
-      let waits: number = 0;
-      while (count.load() < totalTasks + 1 && waits < 100) {
-        await Utils.msSleep(100);
-        waits++;
-      }
-      expect(count.load()).assertEqual(totalTasks + 1);
+      done();
     });
 
     /**
@@ -106,21 +112,27 @@ export default function ClassInstanceConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testClassMutexConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let taskCounter: AtomicInt = new AtomicInt(0);
-      let data: DataClass = new DataClass();
-      let mutex: Mutex = new Mutex();
-      let totalTasks: number = 10;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testClassMutex, data, mutex, taskCounter).then((): void => { });
+    it('testClassMutexConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let data: DataClass = new DataClass();
+        let mutex: Mutex = new Mutex();
+        let totalTasks: number = 10;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testClassMutex, data, mutex, taskCounter).then((): void => { });
+        }
+        testClassMutex(data, mutex, taskCounter);
+        let waits: number = 0;
+        while (taskCounter.load() < totalTasks * 10 + 10 && waits < 100) {
+          await Utils.msSleep(100);
+          waits++;
+        }
+        expect(data.value).assertEqual(totalTasks * 10 + 10);
+      } catch (e) {
+        console.info(`testClassMutexConcurrent0200 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      testClassMutex(data, mutex, taskCounter);
-      let waits: number = 0;
-      while (taskCounter.load() < totalTasks * 10 + 10 && waits < 100) {
-        await Utils.msSleep(100);
-        waits++;
-      }
-      expect(data.value).assertEqual(totalTasks * 10 + 10);
+      done();
     });
 
     /**
@@ -131,23 +143,29 @@ export default function ClassInstanceConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testClassWorkerLocalConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let count: AtomicInt = new AtomicInt(0);
-      let failCount: AtomicInt = new AtomicInt(0);
-      let wl: WorkerLocal<DataClass> = new WorkerLocal<DataClass>();
-      let totalTasks: number = 10;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testClassWorkerLocal, wl, failCount).then((): void => { count.fetchAdd(1); });
+    it('testClassWorkerLocalConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let count: AtomicInt = new AtomicInt(0);
+        let failCount: AtomicInt = new AtomicInt(0);
+        let wl: WorkerLocal<DataClass> = new WorkerLocal<DataClass>();
+        let totalTasks: number = 10;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testClassWorkerLocal, wl, failCount).then((): void => { count.fetchAdd(1); });
+        }
+        testClassWorkerLocal(wl, failCount);
+        count.fetchAdd(1);
+        let waits: number = 0;
+        while (count.load() < totalTasks + 1 && waits < 100) {
+          await Utils.msSleep(100);
+          waits++;
+        }
+        expect(count.load()).assertEqual(totalTasks + 1);
+        expect(failCount.load()).assertEqual(0);
+      } catch (e) {
+        console.info(`testClassWorkerLocalConcurrent0300 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      testClassWorkerLocal(wl, failCount);
-      count.fetchAdd(1);
-      let waits: number = 0;
-      while (count.load() < totalTasks + 1 && waits < 100) {
-        await Utils.msSleep(100);
-        waits++;
-      }
-      expect(count.load()).assertEqual(totalTasks + 1);
-      expect(failCount.load()).assertEqual(0);
+      done();
     });
 
     /**
@@ -195,19 +213,24 @@ export default function ClassInstanceConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testClassMutexStressConcurrent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let taskCounter: AtomicInt = new AtomicInt(0);
-      let data: DataClass = new DataClass();
-      let mutex: Mutex = new Mutex();
-      let totalTasks: number = 100;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testClassStress, data, mutex, taskCounter).then((): void => { });
+      try {
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let data: DataClass = new DataClass();
+        let mutex: Mutex = new Mutex();
+        let totalTasks: number = 100;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testClassStress, data, mutex, taskCounter).then((): void => { });
+        }
+        let waits: number = 0;
+        while (taskCounter.load() < totalTasks * 100 && waits < 200) {
+          await Utils.msSleep(100);
+          waits++;
+        }
+        expect(data.value).assertEqual(totalTasks * 100);
+      } catch (e) {
+        console.info(`testClassMutexStressConcurrent0500 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      let waits: number = 0;
-      while (taskCounter.load() < totalTasks * 100 && waits < 200) {
-        await Utils.msSleep(100);
-        waits++;
-      }
-      expect(data.value).assertEqual(totalTasks * 100);
       done();
     });
   });

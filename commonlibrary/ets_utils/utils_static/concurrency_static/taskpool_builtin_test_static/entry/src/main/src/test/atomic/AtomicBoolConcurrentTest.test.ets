@@ -52,18 +52,24 @@ export default function AtomicBoolConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAtomicBoolExchangeConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let flag: AtomicBoolean = new AtomicBoolean(false);
-      let taskCounter: AtomicInt = new AtomicInt(0);
-      let totalTasks: number = 10;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testAtomicBoolExchange, flag, taskCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
+    it('testAtomicBoolExchangeConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let flag: AtomicBoolean = new AtomicBoolean(false);
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let totalTasks: number = 10;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testAtomicBoolExchange, flag, taskCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
+        }
+        testAtomicBoolExchange(flag, taskCounter);
+        while (taskCounter.load() < totalTasks * 10 + 10) {
+          await Utils.msSleep(100);
+        }
+        expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
+      } catch (e) {
+        console.info(`testAtomicBoolExchangeConcurrent0100 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      testAtomicBoolExchange(flag, taskCounter);
-      while (taskCounter.load() < totalTasks * 10 + 10) {
-        await Utils.msSleep(100);
-      }
-      expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
+      done();
     });
 
     /**
@@ -74,20 +80,26 @@ export default function AtomicBoolConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAtomicBoolLoadStoreConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let flag: AtomicBoolean = new AtomicBoolean(false);
-      let taskCounter: AtomicInt = new AtomicInt(0);
-      let totalTasks: number = 5;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testAtomicBoolStore, flag, taskCounter).then((): void => { });
+    it('testAtomicBoolLoadStoreConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let flag: AtomicBoolean = new AtomicBoolean(false);
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let totalTasks: number = 5;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testAtomicBoolStore, flag, taskCounter).then((): void => { });
+        }
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testAtomicBoolLoad, flag, taskCounter).then((): void => { });
+        }
+        while (taskCounter.load() < totalTasks * 10 * 2) {
+          await Utils.msSleep(100);
+        }
+        expect(taskCounter.load()).assertEqual(totalTasks * 10 * 2);
+      } catch (e) {
+        console.info(`testAtomicBoolLoadStoreConcurrent0200 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testAtomicBoolLoad, flag, taskCounter).then((): void => { });
-      }
-      while (taskCounter.load() < totalTasks * 10 * 2) {
-        await Utils.msSleep(100);
-      }
-      expect(taskCounter.load()).assertEqual(totalTasks * 10 * 2);
+      done();
     });
   });
 }

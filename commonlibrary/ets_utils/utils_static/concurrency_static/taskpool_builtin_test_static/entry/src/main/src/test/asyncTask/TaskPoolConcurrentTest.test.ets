@@ -81,7 +81,7 @@ export default function TaskPoolConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolExecuteConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testTaskPoolExecuteConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let taskCounter: AtomicInt = new AtomicInt(0);
       let arr: Array<number> = [];
       let totalTasks: number = 20;
@@ -96,6 +96,7 @@ export default function TaskPoolConcurrentTest(): void {
         console.info(`testTaskPoolExecuteConcurrent0100 catch error: ${JSON.stringify(e)}`);
         expect().assertFail();
       }
+      done();
     });
 
     /**
@@ -106,7 +107,7 @@ export default function TaskPoolConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolAsyncConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testTaskPoolAsyncConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let taskCounter: AtomicInt = new AtomicInt(0);
       let arr: Array<number> = [];
       let totalTasks: number = 10;
@@ -134,6 +135,7 @@ export default function TaskPoolConcurrentTest(): void {
         console.info(`testTaskPoolAsyncConcurrent0200 catch error: ${JSON.stringify(e)}`);
         expect().assertFail();
       }
+      done();
     });
 
     /**
@@ -174,25 +176,31 @@ export default function TaskPoolConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolPeriodicConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let periodicCounter: AtomicInt = new AtomicInt(0);
-      let task: taskpool.Task = new taskpool.Task(testTaskPoolPeriodic, periodicCounter);
-      taskpool.executePeriodically(100, task);
-      let waitCount: number = 0;
-      while (periodicCounter.load() < 10 && waitCount < 100) {
-        await Utils.msSleep(100);
-        waitCount++;
-      }
-      expect(periodicCounter.load() >= 10).assertTrue();
+    it('testTaskPoolPeriodicConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        taskpool.cancel(task);
+        let periodicCounter: AtomicInt = new AtomicInt(0);
+        let task: taskpool.Task = new taskpool.Task(testTaskPoolPeriodic, periodicCounter);
+        taskpool.executePeriodically(100, task);
+        let waitCount: number = 0;
+        while (periodicCounter.load() < 10 && waitCount < 100) {
+          await Utils.msSleep(100);
+          waitCount++;
+        }
+        expect(periodicCounter.load() >= 10).assertTrue();
+        try {
+          taskpool.cancel(task);
+        } catch (e) {
+          expect().assertFail();
+        }
+        await Utils.msSleep(100);
+        let settledCount: number = periodicCounter.load();
+        await Utils.msSleep(300);
+        expect(periodicCounter.load()).assertEqual(settledCount);
       } catch (e) {
+        console.info(`testTaskPoolPeriodicConcurrent0400 catch error: ${JSON.stringify(e)}`);
         expect().assertFail();
       }
-      await Utils.msSleep(100);
-      let settledCount: number = periodicCounter.load();
-      await Utils.msSleep(300);
-      expect(periodicCounter.load()).assertEqual(settledCount);
+      done();
     });
 
     /**
@@ -203,7 +211,7 @@ export default function TaskPoolConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolTaskGroupConcurrent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testTaskPoolTaskGroupConcurrent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let counter: AtomicInt = new AtomicInt(0);
       let totalTasks: int = 10;
       let group: taskpool.TaskGroup = new taskpool.TaskGroup('taskGroup');
@@ -221,6 +229,7 @@ export default function TaskPoolConcurrentTest(): void {
         console.info(`testTaskPoolTaskGroupConcurrent0500 catch error: ${JSON.stringify(e)}`);
         expect().assertFail();
       }
+      done();
     });
 
     /**
@@ -231,25 +240,31 @@ export default function TaskPoolConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolSendDataConcurrent0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let counter: AtomicInt = new AtomicInt(0);
-      let receiveCounter: AtomicInt = new AtomicInt(0);
-      let task: taskpool.Task = new taskpool.Task(testTaskPoolSendData, counter);
-      task.onReceiveData((data: Object): void => {
-        receiveCounter.fetchAdd(1);
-      });
+    it('testTaskPoolSendDataConcurrent0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        await taskpool.execute(task);
-      } catch (err) {
-        expect(err).assertFail();
+        let counter: AtomicInt = new AtomicInt(0);
+        let receiveCounter: AtomicInt = new AtomicInt(0);
+        let task: taskpool.Task = new taskpool.Task(testTaskPoolSendData, counter);
+        task.onReceiveData((data: Object): void => {
+          receiveCounter.fetchAdd(1);
+        });
+        try {
+          await taskpool.execute(task);
+        } catch (err) {
+          expect(err).assertFail();
+        }
+        let waitCount: number = 0;
+        while (receiveCounter.load() < 10 && waitCount < 100) {
+          await Utils.msSleep(100);
+          waitCount++;
+        }
+        expect(counter.load()).assertEqual(10);
+        expect(receiveCounter.load()).assertEqual(10);
+      } catch (e) {
+        console.info(`testTaskPoolSendDataConcurrent0600 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      let waitCount: number = 0;
-      while (receiveCounter.load() < 10 && waitCount < 100) {
-        await Utils.msSleep(100);
-        waitCount++;
-      }
-      expect(counter.load()).assertEqual(10);
-      expect(receiveCounter.load()).assertEqual(10);
+      done();
     });
 
     /**
@@ -280,7 +295,7 @@ export default function TaskPoolConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolCancelConcurrent0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testTaskPoolCancelConcurrent0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let counter: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(testTaskPoolCancel, counter);
       let taskPromise: Promise<Any> = taskpool.executeDelayed(2000, task);
@@ -297,6 +312,7 @@ export default function TaskPoolConcurrentTest(): void {
       }
       expect(canceled).assertTrue();
       expect(counter.load()).assertEqual(0);
+      done();
     });
 
     /**
@@ -307,7 +323,7 @@ export default function TaskPoolConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolCallbackConcurrent0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testTaskPoolCallbackConcurrent0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let result: AtomicInt = new AtomicInt(0);
       try {
         await taskpool.execute((): int => {
@@ -320,6 +336,7 @@ export default function TaskPoolConcurrentTest(): void {
         console.info(`testTaskPoolCallbackConcurrent0900 catch error: ${JSON.stringify(e)}`);
         expect().assertFail();
       }
+      done();
     });
 
     /**

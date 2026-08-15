@@ -36,7 +36,7 @@ export default function LongTaskConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLongTaskExecuteConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testLongTaskExecuteConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let counter: AtomicInt = new AtomicInt(0);
       let task: taskpool.LongTask = new taskpool.LongTask(testLongTask, counter);
       try {
@@ -45,6 +45,7 @@ export default function LongTaskConcurrentTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
   });

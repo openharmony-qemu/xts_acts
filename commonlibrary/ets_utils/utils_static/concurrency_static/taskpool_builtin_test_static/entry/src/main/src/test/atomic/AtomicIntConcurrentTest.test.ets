@@ -72,7 +72,7 @@ export default function AtomicIntConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAtomicIntFetchAddConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAtomicIntFetchAddConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let counter: AtomicInt = new AtomicInt(0);
       let taskCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: number = 10;
@@ -88,6 +88,7 @@ export default function AtomicIntConcurrentTest(): void {
         console.info(`testAtomicIntFetchAddConcurrent0100 catch error: ${JSON.stringify(e)}`);
         expect().assertFail();
       }
+      done();
     });
 
     /**
@@ -98,7 +99,7 @@ export default function AtomicIntConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAtomicIntFetchSubConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAtomicIntFetchSubConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let counter: AtomicInt = new AtomicInt(110);
       let taskCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: number = 10;
@@ -114,6 +115,7 @@ export default function AtomicIntConcurrentTest(): void {
         console.info(`testAtomicIntFetchSubConcurrent0200 catch error: ${JSON.stringify(e)}`);
         expect().assertFail();
       }
+      done();
     });
 
     /**
@@ -124,7 +126,7 @@ export default function AtomicIntConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAtomicIntLoadStoreConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAtomicIntLoadStoreConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let counter: AtomicInt = new AtomicInt(0);
       let taskCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: number = 5;
@@ -142,6 +144,7 @@ export default function AtomicIntConcurrentTest(): void {
         console.info(`testAtomicIntLoadStoreConcurrent0300 catch error: ${JSON.stringify(e)}`);
         expect().assertFail();
       }
+      done();
     });
 
     /**
@@ -152,7 +155,7 @@ export default function AtomicIntConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAtomicIntStressConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAtomicIntStressConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let counter: AtomicInt = new AtomicInt(0);
       let taskCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: number = 100;
@@ -167,6 +170,7 @@ export default function AtomicIntConcurrentTest(): void {
         console.info(`testAtomicIntStressConcurrent0400 catch error: ${JSON.stringify(e)}`);
         expect().assertFail();
       }
+      done();
     });
 
     /**
@@ -177,7 +181,7 @@ export default function AtomicIntConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAtomicIntBigLoopConcurrent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAtomicIntBigLoopConcurrent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let counter: AtomicInt = new AtomicInt(0);
       let taskCounter: AtomicInt = new AtomicInt(0);
       let totalTasks: number = 10;
@@ -193,6 +197,7 @@ export default function AtomicIntConcurrentTest(): void {
         console.info(`testAtomicIntBigLoopConcurrent0500 catch error: ${JSON.stringify(e)}`);
         expect().assertFail();
       }
+      done();
     });
   });
 }
