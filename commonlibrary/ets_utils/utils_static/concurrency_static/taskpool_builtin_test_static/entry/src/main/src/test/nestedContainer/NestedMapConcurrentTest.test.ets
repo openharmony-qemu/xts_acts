@@ -78,7 +78,7 @@ export default function NestedMapConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNestedMapOuterConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testNestedMapOuterConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let taskCounter: AtomicInt = new AtomicInt(0);
       let map: Map<string, Map<string, number>> = new Map<string, Map<string, number>>();
       let totalTasks: number = 10;
@@ -94,6 +94,7 @@ export default function NestedMapConcurrentTest(): void {
         }
       }
       expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
+      done();
     });
 
     /**
@@ -104,21 +105,27 @@ export default function NestedMapConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNestedMapInnerConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let taskCounter: AtomicInt = new AtomicInt(0);
-      let map: Map<string, Map<string, number>> = new Map<string, Map<string, number>>();
-      for (let i: number = 0; i < 10; i++) {
-        map.set('key' + i, new Map<string, number>());
+    it('testNestedMapInnerConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let map: Map<string, Map<string, number>> = new Map<string, Map<string, number>>();
+        for (let i: number = 0; i < 10; i++) {
+          map.set('key' + i, new Map<string, number>());
+        }
+        let totalTasks: number = 10;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testNestedMapInner, map, taskCounter).then((): void => { });
+        }
+        testNestedMapInner(map, taskCounter);
+        while (taskCounter.load() < totalTasks * 10 + 10) {
+          await Utils.msSleep(100);
+        }
+        expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
+      } catch (e) {
+        console.info(`testNestedMapInnerConcurrent0200 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      let totalTasks: number = 10;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testNestedMapInner, map, taskCounter).then((): void => { });
-      }
-      testNestedMapInner(map, taskCounter);
-      while (taskCounter.load() < totalTasks * 10 + 10) {
-        await Utils.msSleep(100);
-      }
-      expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
+      done();
     });
 
     /**
@@ -129,19 +136,25 @@ export default function NestedMapConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNestedMapMutexConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let taskCounter: AtomicInt = new AtomicInt(0);
-      let map: Map<string, Map<string, number>> = new Map<string, Map<string, number>>();
-      let mutex: Mutex = new Mutex();
-      let totalTasks: number = 10;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testNestedMapMutex, map, mutex, taskCounter).then((): void => { });
+    it('testNestedMapMutexConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let map: Map<string, Map<string, number>> = new Map<string, Map<string, number>>();
+        let mutex: Mutex = new Mutex();
+        let totalTasks: number = 10;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testNestedMapMutex, map, mutex, taskCounter).then((): void => { });
+        }
+        testNestedMapMutex(map, mutex, taskCounter);
+        while (taskCounter.load() < totalTasks * 10 + 10) {
+          await Utils.msSleep(100);
+        }
+        expect(map.size).assertEqual(0);
+      } catch (e) {
+        console.info(`testNestedMapMutexConcurrent0300 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      testNestedMapMutex(map, mutex, taskCounter);
-      while (taskCounter.load() < totalTasks * 10 + 10) {
-        await Utils.msSleep(100);
-      }
-      expect(map.size).assertEqual(0);
+      done();
     });
   });
 }

@@ -42,7 +42,7 @@ export default function SetNoLockConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetNoLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSetNoLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let count: AtomicInt = new AtomicInt(0);
       let set: Set<number> = new Set<number>();
       let totalTasks: number = 10;
@@ -60,6 +60,7 @@ export default function SetNoLockConcurrentTest(): void {
       }
       expect(count.load()).assertEqual(totalTasks + 1);
 
+      done();
     });
   });
 }

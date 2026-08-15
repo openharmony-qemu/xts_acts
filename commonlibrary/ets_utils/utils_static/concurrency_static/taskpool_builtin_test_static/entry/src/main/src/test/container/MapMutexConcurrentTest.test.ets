@@ -43,7 +43,7 @@ export default function MapMutexConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMapMutexConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMapMutexConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let count: AtomicInt = new AtomicInt(0);
       let map: Map<string, number> = new Map<string, number>();
       let mutex: Mutex = new Mutex();
@@ -61,6 +61,7 @@ export default function MapMutexConcurrentTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
   });
 }

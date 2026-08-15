@@ -70,15 +70,21 @@ export default function ResizableArrayNoLockConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testResizableArrayNoLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 10; i++) {
-          tasks.push(taskpool.execute(arrayOperations, new Array<number>()));
+      async (done: () => void): Promise<void> => {
+        try {
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 10; i++) {
+            tasks.push(taskpool.execute(arrayOperations, new Array<number>()));
+          }
+          for (let i: int = 0; i < tasks.length; i++) {
+            expect(await tasks[i] as number).assertEqual(0);
+          }
+          expect(arrayOperations(new Array<number>())).assertEqual(0);
+        } catch (e) {
+          console.info(`testResizableArrayNoLockConcurrent0100 catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
         }
-        for (let i: int = 0; i < tasks.length; i++) {
-          expect(await tasks[i] as number).assertEqual(0);
-        }
-        expect(arrayOperations(new Array<number>())).assertEqual(0);
+      done();
       });
 
     /**
@@ -90,17 +96,23 @@ export default function ResizableArrayNoLockConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testResizableArrayTaskPoolConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
-        let sharedArray: Array<number> = [];
-        let counter: AtomicInt = new AtomicInt(0);
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 20; i++) {
-          tasks.push(taskpool.execute(sharedArrayOperations, sharedArray, counter));
+      async (done: () => void): Promise<void> => {
+        try {
+          let sharedArray: Array<number> = [];
+          let counter: AtomicInt = new AtomicInt(0);
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 20; i++) {
+            tasks.push(taskpool.execute(sharedArrayOperations, sharedArray, counter));
+          }
+          for (let i: int = 0; i < tasks.length; i++) {
+            await tasks[i];
+          }
+          expect(counter.load()).assertEqual(200);
+        } catch (e) {
+          console.info(`testResizableArrayTaskPoolConcurrent0200 catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
         }
-        for (let i: int = 0; i < tasks.length; i++) {
-          await tasks[i];
-        }
-        expect(counter.load()).assertEqual(200);
+      done();
       });
 
     /**
@@ -112,19 +124,25 @@ export default function ResizableArrayNoLockConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testResizableArrayAsyncConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
-        let completed: number = 0;
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 10; i++) {
-          tasks.push(taskpool.execute(arrayOperations, new Array<number>()));
-        }
-        for (let i: int = 0; i < tasks.length; i++) {
-          let result: number = await tasks[i] as number;
-          if (result === 0) {
-            completed++;
+      async (done: () => void): Promise<void> => {
+        try {
+          let completed: number = 0;
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 10; i++) {
+            tasks.push(taskpool.execute(arrayOperations, new Array<number>()));
           }
+          for (let i: int = 0; i < tasks.length; i++) {
+            let result: number = await tasks[i] as number;
+            if (result === 0) {
+              completed++;
+            }
+          }
+          expect(completed).assertEqual(10);
+        } catch (e) {
+          console.info(`testResizableArrayAsyncConcurrent0300 catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
         }
-        expect(completed).assertEqual(10);
+      done();
       });
 
     /**
@@ -136,14 +154,20 @@ export default function ResizableArrayNoLockConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testResizableArrayBigLoopConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 5; i++) {
-          tasks.push(taskpool.execute(arrayStressOperations, new Array<number>()));
+      async (done: () => void): Promise<void> => {
+        try {
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 5; i++) {
+            tasks.push(taskpool.execute(arrayStressOperations, new Array<number>()));
+          }
+          for (let i: int = 0; i < tasks.length; i++) {
+            expect(await tasks[i] as number).assertEqual(0);
+          }
+        } catch (e) {
+          console.info(`testResizableArrayBigLoopConcurrent0400 catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
         }
-        for (let i: int = 0; i < tasks.length; i++) {
-          expect(await tasks[i] as number).assertEqual(0);
-        }
+      done();
       });
 
     /**
@@ -155,16 +179,22 @@ export default function ResizableArrayNoLockConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testResizableArrayNestedConcurrent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 5; i++) {
-          tasks.push(taskpool.execute(nestedArrayOperations));
+      async (done: () => void): Promise<void> => {
+        try {
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 5; i++) {
+            tasks.push(taskpool.execute(nestedArrayOperations));
+          }
+          let completed: number = 0;
+          for (let i: int = 0; i < tasks.length; i++) {
+            completed += await tasks[i] as number;
+          }
+          expect(completed).assertEqual(25);
+        } catch (e) {
+          console.info(`testResizableArrayNestedConcurrent0500 catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
         }
-        let completed: number = 0;
-        for (let i: int = 0; i < tasks.length; i++) {
-          completed += await tasks[i] as number;
-        }
-        expect(completed).assertEqual(25);
+      done();
       });
 
     /**

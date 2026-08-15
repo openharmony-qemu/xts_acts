@@ -45,35 +45,40 @@ export default function BlockingQueueStressConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testBlockingQueueStressConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      // TaskPool 50+50 并发压力验证（仅 AtomicInt 共享）
-      // 注：BlockingQueue 非 @Sendable，主线程串行验证队列压力语义
-      let producerCount: AtomicInt = new AtomicInt(0);
-      let consumerCount: AtomicInt = new AtomicInt(0);
-      let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(100);
-      let totalProducers: number = 50;
-      let totalConsumers: number = 50;
-      for (let i: number = 0; i < totalProducers; i++) {
-        taskpool.execute(testBlockingQueueStressProducer, producerCount).then((): void => { });
+      try {
+        // TaskPool 50+50 并发压力验证（仅 AtomicInt 共享）
+        // 注：BlockingQueue 非 @Sendable，主线程串行验证队列压力语义
+        let producerCount: AtomicInt = new AtomicInt(0);
+        let consumerCount: AtomicInt = new AtomicInt(0);
+        let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(100);
+        let totalProducers: number = 50;
+        let totalConsumers: number = 50;
+        for (let i: number = 0; i < totalProducers; i++) {
+          taskpool.execute(testBlockingQueueStressProducer, producerCount).then((): void => { });
+        }
+        for (let i: number = 0; i < totalConsumers; i++) {
+          taskpool.execute(testBlockingQueueStressConsumer, consumerCount).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
+        }
+        let waits: number = 0;
+        while ((producerCount.load() < totalProducers * 50 || consumerCount.load() < totalConsumers * 50) && waits < 200) {
+          await Utils.msSleep(100);
+          waits++;
+        }
+        // 主线程串行验证 BlockingQueue 100 元素生产-消费压力
+        for (let i: number = 0; i < 100; i++) {
+          queue.push(i);
+        }
+        for (let i: number = 0; i < 100; i++) {
+          let item: number = queue.pop();
+          expect(item).assertEqual(i);
+        }
+        expect(queue.size).assertEqual(0);
+        expect(producerCount.load()).assertEqual(totalProducers * 50);
+        expect(consumerCount.load()).assertEqual(totalConsumers * 50);
+      } catch (e) {
+        console.info(`testBlockingQueueStressConcurrent0100 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      for (let i: number = 0; i < totalConsumers; i++) {
-        taskpool.execute(testBlockingQueueStressConsumer, consumerCount).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
-      }
-      let waits: number = 0;
-      while ((producerCount.load() < totalProducers * 50 || consumerCount.load() < totalConsumers * 50) && waits < 200) {
-        await Utils.msSleep(100);
-        waits++;
-      }
-      // 主线程串行验证 BlockingQueue 100 元素生产-消费压力
-      for (let i: number = 0; i < 100; i++) {
-        queue.push(i);
-      }
-      for (let i: number = 0; i < 100; i++) {
-        let item: number = queue.pop();
-        expect(item).assertEqual(i);
-      }
-      expect(queue.size).assertEqual(0);
-      expect(producerCount.load()).assertEqual(totalProducers * 50);
-      expect(consumerCount.load()).assertEqual(totalConsumers * 50);
       done();
     });
   });

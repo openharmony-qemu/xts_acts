@@ -43,7 +43,7 @@ export default function ResizableArrayMutexConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testResizableArrayMutexConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testResizableArrayMutexConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let count: AtomicInt = new AtomicInt(0);
       let arr: Array<number> = new Array<number>();
       let mutex: Mutex = new Mutex();
@@ -62,6 +62,7 @@ export default function ResizableArrayMutexConcurrentTest(): void {
       }
       expect(count.load()).assertEqual(totalTasks + 1);
       expect(arr.length).assertEqual(0);
+      done();
     });
   });
 }

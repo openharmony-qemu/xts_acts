@@ -89,17 +89,22 @@ export default function NestedArrayConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testNestedArrayOuterConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let taskCounter: AtomicInt = new AtomicInt(0);
-      let arr: Array<Array<number>> = new Array<Array<number>>();
-      let totalTasks: number = 10;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testNestedArrayOuter, arr, taskCounter).then((): void => { });
+      try {
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let arr: Array<Array<number>> = new Array<Array<number>>();
+        let totalTasks: number = 10;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testNestedArrayOuter, arr, taskCounter).then((): void => { });
+        }
+        testNestedArrayOuter(arr, taskCounter);
+        while (taskCounter.load() < totalTasks * 10 + 10) {
+          await Utils.msSleep(100);
+        }
+        expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
+      } catch (e) {
+        console.info(`testNestedArrayOuterConcurrent0100 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      testNestedArrayOuter(arr, taskCounter);
-      while (taskCounter.load() < totalTasks * 10 + 10) {
-        await Utils.msSleep(100);
-      }
-      expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
       done();
     });
 
@@ -111,21 +116,27 @@ export default function NestedArrayConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNestedArrayInnerConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let taskCounter: AtomicInt = new AtomicInt(0);
-      let arr: Array<Array<number>> = new Array<Array<number>>();
-      for (let i: number = 0; i < 10; i++) {
-        arr.push(new Array<number>());
+    it('testNestedArrayInnerConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let arr: Array<Array<number>> = new Array<Array<number>>();
+        for (let i: number = 0; i < 10; i++) {
+          arr.push(new Array<number>());
+        }
+        let totalTasks: number = 10;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testNestedArrayInner, arr, taskCounter).then((): void => { });
+        }
+        testNestedArrayInner(arr, taskCounter);
+        while (taskCounter.load() < totalTasks * 10 + 10) {
+          await Utils.msSleep(100);
+        }
+        expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
+      } catch (e) {
+        console.info(`testNestedArrayInnerConcurrent0200 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      let totalTasks: number = 10;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testNestedArrayInner, arr, taskCounter).then((): void => { });
-      }
-      testNestedArrayInner(arr, taskCounter);
-      while (taskCounter.load() < totalTasks * 10 + 10) {
-        await Utils.msSleep(100);
-      }
-      expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
+      done();
     });
 
     /**
@@ -136,19 +147,25 @@ export default function NestedArrayConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNestedArrayMutexConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let taskCounter: AtomicInt = new AtomicInt(0);
-      let arr: Array<Array<number>> = new Array<Array<number>>();
-      let mutex: Mutex = new Mutex();
-      let totalTasks: number = 10;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testNestedArrayMutex, arr, mutex, taskCounter).then((): void => { });
+    it('testNestedArrayMutexConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let arr: Array<Array<number>> = new Array<Array<number>>();
+        let mutex: Mutex = new Mutex();
+        let totalTasks: number = 10;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testNestedArrayMutex, arr, mutex, taskCounter).then((): void => { });
+        }
+        testNestedArrayMutex(arr, mutex, taskCounter);
+        while (taskCounter.load() < totalTasks * 10 + 10) {
+          await Utils.msSleep(100);
+        }
+        expect(arr.length).assertEqual(0);
+      } catch (e) {
+        console.info(`testNestedArrayMutexConcurrent0300 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      testNestedArrayMutex(arr, mutex, taskCounter);
-      while (taskCounter.load() < totalTasks * 10 + 10) {
-        await Utils.msSleep(100);
-      }
-      expect(arr.length).assertEqual(0);
+      done();
     });
 
     /**
@@ -159,20 +176,26 @@ export default function NestedArrayConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNestedArrayStressConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let taskCounter: AtomicInt = new AtomicInt(0);
-      let arr: Array<Array<number>> = new Array<Array<number>>();
-      for (let i: number = 0; i < 50; i++) {
-        arr.push(new Array<number>());
+    it('testNestedArrayStressConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let arr: Array<Array<number>> = new Array<Array<number>>();
+        for (let i: number = 0; i < 50; i++) {
+          arr.push(new Array<number>());
+        }
+        let totalTasks: number = 50;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testNestedArrayStress, arr, taskCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
+        }
+        while (taskCounter.load() < totalTasks * 50) {
+          await Utils.msSleep(100);
+        }
+        expect(taskCounter.load()).assertEqual(totalTasks * 50);
+      } catch (e) {
+        console.info(`testNestedArrayStressConcurrent0400 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      let totalTasks: number = 50;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testNestedArrayStress, arr, taskCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
-      }
-      while (taskCounter.load() < totalTasks * 50) {
-        await Utils.msSleep(100);
-      }
-      expect(taskCounter.load()).assertEqual(totalTasks * 50);
+      done();
     });
   });
 }

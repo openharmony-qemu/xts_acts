@@ -42,7 +42,7 @@ export default function ResizableArrayWorkerLocalConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testResizableArrayWorkerLocalConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testResizableArrayWorkerLocalConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let count: AtomicInt = new AtomicInt(0);
       let wl: WorkerLocal<Array<number>> = new WorkerLocal<Array<number>>(createNumberArray);
       let totalTasks: number = 10;
@@ -58,6 +58,7 @@ export default function ResizableArrayWorkerLocalConcurrentTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
   });
 }

@@ -42,18 +42,24 @@ export default function ResizableArrayStressConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testResizableArrayStressConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let count: AtomicInt = new AtomicInt(0);
-      let totalTasks: number = 100;
-      let waits: number = 0;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testResizableArrayStress, new Array<number>()).then((): void => { count.fetchAdd(1); });
+    it('testResizableArrayStressConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let count: AtomicInt = new AtomicInt(0);
+        let totalTasks: number = 100;
+        let waits: number = 0;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testResizableArrayStress, new Array<number>()).then((): void => { count.fetchAdd(1); });
+        }
+        while (count.load() < totalTasks && waits < 200) {
+          await Utils.msSleep(100);
+          waits++;
+        }
+        expect(count.load()).assertEqual(totalTasks);
+      } catch (e) {
+        console.info(`testResizableArrayStressConcurrent0100 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      while (count.load() < totalTasks && waits < 200) {
-        await Utils.msSleep(100);
-        waits++;
-      }
-      expect(count.load()).assertEqual(totalTasks);
+      done();
     });
   });
 }

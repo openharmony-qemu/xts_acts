@@ -66,27 +66,33 @@ export default function IndustryCacheConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRWLockCacheConcurrent0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let lock: RWLock = new RWLock();
-      let cache: containers.ConcurrentHashMap<string, string> = new containers.ConcurrentHashMap<string, string>();
-      for (let i: number = 0; i < 100; i++) {
-        cache.set('key' + i, 'value' + i);
+    it('testRWLockCacheConcurrent0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let lock: RWLock = new RWLock();
+        let cache: containers.ConcurrentHashMap<string, string> = new containers.ConcurrentHashMap<string, string>();
+        for (let i: number = 0; i < 100; i++) {
+          cache.set('key' + i, 'value' + i);
+        }
+        let readCounter: AtomicInt = new AtomicInt(0);
+        let writeCounter: AtomicInt = new AtomicInt(0);
+        let totalReaders: number = 50;
+        let totalWriters: number = 5;
+        for (let i: number = 0; i < totalReaders; i++) {
+          taskpool.execute(testRWLockCacheReader, cache, lock, readCounter).then((): void => { });
+        }
+        for (let i: number = 0; i < totalWriters; i++) {
+          taskpool.execute(testRWLockCacheWriter, cache, lock, writeCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
+        }
+        while (readCounter.load() < totalReaders * 100 || writeCounter.load() < totalWriters * 100) {
+          await Utils.msSleep(100);
+        }
+        expect(readCounter.load()).assertEqual(totalReaders * 100);
+        expect(writeCounter.load()).assertEqual(totalWriters * 100);
+      } catch (e) {
+        console.info(`testRWLockCacheConcurrent0700 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      let readCounter: AtomicInt = new AtomicInt(0);
-      let writeCounter: AtomicInt = new AtomicInt(0);
-      let totalReaders: number = 50;
-      let totalWriters: number = 5;
-      for (let i: number = 0; i < totalReaders; i++) {
-        taskpool.execute(testRWLockCacheReader, cache, lock, readCounter).then((): void => { });
-      }
-      for (let i: number = 0; i < totalWriters; i++) {
-        taskpool.execute(testRWLockCacheWriter, cache, lock, writeCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
-      }
-      while (readCounter.load() < totalReaders * 100 || writeCounter.load() < totalWriters * 100) {
-        await Utils.msSleep(100);
-      }
-      expect(readCounter.load()).assertEqual(totalReaders * 100);
-      expect(writeCounter.load()).assertEqual(totalWriters * 100);
+      done();
     });
 
     /**
@@ -97,17 +103,23 @@ export default function IndustryCacheConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAtomicIntCounterConcurrent0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let counter: AtomicInt = new AtomicInt(0);
-      let taskCounter: AtomicInt = new AtomicInt(0);
-      let totalTasks: number = 100;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testAtomicIntCounter, counter, taskCounter).then((): void => { });
+    it('testAtomicIntCounterConcurrent0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let counter: AtomicInt = new AtomicInt(0);
+        let taskCounter: AtomicInt = new AtomicInt(0);
+        let totalTasks: number = 100;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testAtomicIntCounter, counter, taskCounter).then((): void => { });
+        }
+        while (taskCounter.load() < totalTasks) {
+          await Utils.msSleep(100);
+        }
+        expect(counter.load()).assertEqual(totalTasks * 100);
+      } catch (e) {
+        console.info(`testAtomicIntCounterConcurrent0800 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      while (taskCounter.load() < totalTasks) {
-        await Utils.msSleep(100);
-      }
-      expect(counter.load()).assertEqual(totalTasks * 100);
+      done();
     });
   });
 }

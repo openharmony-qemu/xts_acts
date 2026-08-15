@@ -60,25 +60,31 @@ export default function ResizableArrayRWLockConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testResizableArrayRWLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
-        let arr: Array<number> = [];
-        for (let i: int = 0; i < 100; i++) {
-          arr.push(i);
+      async (done: () => void): Promise<void> => {
+        try {
+          let arr: Array<number> = [];
+          for (let i: int = 0; i < 100; i++) {
+            arr.push(i);
+          }
+          let lock = new RWLock();
+          let reads = new AtomicInt(0);
+          let writes = new AtomicInt(0);
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 5; i++) {
+            tasks.push(taskpool.execute(readWithRWLock, lock, arr, reads));
+            tasks.push(taskpool.execute(writeWithRWLock, lock, arr, writes));
+          }
+          for (let i: int = 0; i < tasks.length; i++) {
+            await tasks[i];
+          }
+          expect(reads.load()).assertEqual(50);
+          expect(writes.load()).assertEqual(50);
+          expect(arr.length).assertEqual(150);
+        } catch (e) {
+          console.info(`testResizableArrayRWLockConcurrent0100 catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
         }
-        let lock = new RWLock();
-        let reads = new AtomicInt(0);
-        let writes = new AtomicInt(0);
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 5; i++) {
-          tasks.push(taskpool.execute(readWithRWLock, lock, arr, reads));
-          tasks.push(taskpool.execute(writeWithRWLock, lock, arr, writes));
-        }
-        for (let i: int = 0; i < tasks.length; i++) {
-          await tasks[i];
-        }
-        expect(reads.load()).assertEqual(50);
-        expect(writes.load()).assertEqual(50);
-        expect(arr.length).assertEqual(150);
+      done();
       });
   });
 }

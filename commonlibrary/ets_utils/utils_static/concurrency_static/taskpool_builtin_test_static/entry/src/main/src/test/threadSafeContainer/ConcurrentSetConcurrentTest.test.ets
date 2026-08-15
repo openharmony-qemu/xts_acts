@@ -42,21 +42,27 @@ export default function ConcurrentSetConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testConcurrentSetConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
-        let set = new containers.ConcurrentSet<number>();
-        for (let i: int = 0; i < 100; i++) {
-          set.add(i);
+      async (done: () => void): Promise<void> => {
+        try {
+          let set = new containers.ConcurrentSet<number>();
+          for (let i: int = 0; i < 100; i++) {
+            set.add(i);
+          }
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 11; i++) {
+            tasks.push(taskpool.execute(setOperations, set, i));
+          }
+          for (let i: int = 0; i < tasks.length; i++) {
+            expect(await tasks[i] as number).assertEqual(10);
+          }
+          expect(set.size).assertEqual(100);
+          expect(set.has(0)).assertTrue();
+          expect(set.has(99)).assertTrue();
+        } catch (e) {
+          console.info(`testConcurrentSetConcurrent0100 catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
         }
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 11; i++) {
-          tasks.push(taskpool.execute(setOperations, set, i));
-        }
-        for (let i: int = 0; i < tasks.length; i++) {
-          expect(await tasks[i] as number).assertEqual(10);
-        }
-        expect(set.size).assertEqual(100);
-        expect(set.has(0)).assertTrue();
-        expect(set.has(99)).assertTrue();
+      done();
       });
   });
 }

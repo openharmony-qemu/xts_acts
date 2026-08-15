@@ -85,35 +85,41 @@ export default function IndustryBlockingQueueConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testProducerConsumerConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      // TaskPool 并发验证计数器（@Sendable），主线程串行验证 BlockingQueue 生产-消费
-      let producerCount: AtomicInt = new AtomicInt(0);
-      let consumerCount: AtomicInt = new AtomicInt(0);
-      let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(100);
-      let totalProducers: number = 5;
-      let totalConsumers: number = 5;
-      for (let i: number = 0; i < totalProducers; i++) {
-        taskpool.execute(testProducerCounter, producerCount).then((): void => { });
+    it('testProducerConsumerConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        // TaskPool 并发验证计数器（@Sendable），主线程串行验证 BlockingQueue 生产-消费
+        let producerCount: AtomicInt = new AtomicInt(0);
+        let consumerCount: AtomicInt = new AtomicInt(0);
+        let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(100);
+        let totalProducers: number = 5;
+        let totalConsumers: number = 5;
+        for (let i: number = 0; i < totalProducers; i++) {
+          taskpool.execute(testProducerCounter, producerCount).then((): void => { });
+        }
+        for (let i: number = 0; i < totalConsumers; i++) {
+          taskpool.execute(testConsumerCounter, consumerCount).then((): void => { });
+        }
+        // 主线程串行验证 BlockingQueue 生产-消费完整流程
+        for (let i: number = 0; i < 100; i++) {
+          queue.push(i);
+        }
+        for (let i: number = 0; i < 100; i++) {
+          let item: number = queue.pop();
+          expect(item).assertEqual(i);
+        }
+        let waits: number = 0;
+        while ((producerCount.load() < totalProducers * 100 || consumerCount.load() < totalConsumers * 100) && waits < 200) {
+          await Utils.msSleep(100);
+          waits++;
+        }
+        expect(queue.size).assertEqual(0);
+        expect(producerCount.load()).assertEqual(totalProducers * 100);
+        expect(consumerCount.load()).assertEqual(totalConsumers * 100);
+      } catch (e) {
+        console.info(`testProducerConsumerConcurrent0100 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      for (let i: number = 0; i < totalConsumers; i++) {
-        taskpool.execute(testConsumerCounter, consumerCount).then((): void => { });
-      }
-      // 主线程串行验证 BlockingQueue 生产-消费完整流程
-      for (let i: number = 0; i < 100; i++) {
-        queue.push(i);
-      }
-      for (let i: number = 0; i < 100; i++) {
-        let item: number = queue.pop();
-        expect(item).assertEqual(i);
-      }
-      let waits: number = 0;
-      while ((producerCount.load() < totalProducers * 100 || consumerCount.load() < totalConsumers * 100) && waits < 200) {
-        await Utils.msSleep(100);
-        waits++;
-      }
-      expect(queue.size).assertEqual(0);
-      expect(producerCount.load()).assertEqual(totalProducers * 100);
-      expect(consumerCount.load()).assertEqual(totalConsumers * 100);
+      done();
     });
 
     /**
@@ -163,23 +169,29 @@ export default function IndustryBlockingQueueConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRateLimitingConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      // TaskPool 并发验证限流：每个任务独立创建满队列，add 全部返回 false
-      let successCounter: AtomicInt = new AtomicInt(0);
-      let rejectCounter: AtomicInt = new AtomicInt(0);
-      let count: AtomicInt = new AtomicInt(0);
-      let totalTasks: number = 20;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testRateLimitingAdd, successCounter, rejectCounter, count).then((): void => { });
+    it('testRateLimitingConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        // TaskPool 并发验证限流：每个任务独立创建满队列，add 全部返回 false
+        let successCounter: AtomicInt = new AtomicInt(0);
+        let rejectCounter: AtomicInt = new AtomicInt(0);
+        let count: AtomicInt = new AtomicInt(0);
+        let totalTasks: number = 20;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testRateLimitingAdd, successCounter, rejectCounter, count).then((): void => { });
+        }
+        let waits: number = 0;
+        while (count.load() < totalTasks * 10 && waits < 200) {
+          await Utils.msSleep(100);
+          waits++;
+        }
+        expect(count.load()).assertEqual(totalTasks * 10);
+        expect(successCounter.load()).assertEqual(0);
+        expect(rejectCounter.load()).assertEqual(totalTasks * 10);
+      } catch (e) {
+        console.info(`testRateLimitingConcurrent0300 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      let waits: number = 0;
-      while (count.load() < totalTasks * 10 && waits < 200) {
-        await Utils.msSleep(100);
-        waits++;
-      }
-      expect(count.load()).assertEqual(totalTasks * 10);
-      expect(successCounter.load()).assertEqual(0);
-      expect(rejectCounter.load()).assertEqual(totalTasks * 10);
+      done();
     });
 
     /**
@@ -190,23 +202,29 @@ export default function IndustryBlockingQueueConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConnectionPoolConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      // TaskPool 并发验证连接池：每个任务独立创建队列，poll 借用 + push 归还
-      let borrowCounter: AtomicInt = new AtomicInt(0);
-      let returnCounter: AtomicInt = new AtomicInt(0);
-      let count: AtomicInt = new AtomicInt(0);
-      let totalTasks: number = 10;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testConnectionPoolBorrow, borrowCounter, returnCounter, count).then((): void => { });
+    it('testConnectionPoolConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        // TaskPool 并发验证连接池：每个任务独立创建队列，poll 借用 + push 归还
+        let borrowCounter: AtomicInt = new AtomicInt(0);
+        let returnCounter: AtomicInt = new AtomicInt(0);
+        let count: AtomicInt = new AtomicInt(0);
+        let totalTasks: number = 10;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testConnectionPoolBorrow, borrowCounter, returnCounter, count).then((): void => { });
+        }
+        let waits: number = 0;
+        while (count.load() < totalTasks * 10 && waits < 200) {
+          await Utils.msSleep(100);
+          waits++;
+        }
+        expect(count.load()).assertEqual(totalTasks * 10);
+        expect(borrowCounter.load()).assertEqual(returnCounter.load());
+        expect(borrowCounter.load()).assertEqual(totalTasks * 10);
+      } catch (e) {
+        console.info(`testConnectionPoolConcurrent0400 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      let waits: number = 0;
-      while (count.load() < totalTasks * 10 && waits < 200) {
-        await Utils.msSleep(100);
-        waits++;
-      }
-      expect(count.load()).assertEqual(totalTasks * 10);
-      expect(borrowCounter.load()).assertEqual(returnCounter.load());
-      expect(borrowCounter.load()).assertEqual(totalTasks * 10);
+      done();
     });
 
     /**

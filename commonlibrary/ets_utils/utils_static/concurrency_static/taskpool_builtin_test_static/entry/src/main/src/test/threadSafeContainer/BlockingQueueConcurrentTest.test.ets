@@ -110,23 +110,29 @@ export default function BlockingQueueConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBlockingQueueAddFull0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      // TaskPool 并发验证非阻塞 add：每个任务独立创建满队列，add 返回 false
-      let count: AtomicInt = new AtomicInt(0);
-      let failCounter: AtomicInt = new AtomicInt(0);
-      let totalTasks: number = 5;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testBlockingQueueAdd, failCounter, count).then((): void => { });
+    it('testBlockingQueueAddFull0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        // TaskPool 并发验证非阻塞 add：每个任务独立创建满队列，add 返回 false
+        let count: AtomicInt = new AtomicInt(0);
+        let failCounter: AtomicInt = new AtomicInt(0);
+        let totalTasks: number = 5;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testBlockingQueueAdd, failCounter, count).then((): void => { });
+        }
+        // 主线程也执行一次
+        testBlockingQueueAdd(failCounter, count);
+        let waits: number = 0;
+        while (count.load() < totalTasks + 1 && waits < 100) {
+          await Utils.msSleep(100);
+          waits++;
+        }
+        expect(count.load()).assertEqual(totalTasks + 1);
+        expect(failCounter.load()).assertEqual(totalTasks + 1);
+      } catch (e) {
+        console.info(`testBlockingQueueAddFull0300 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      // 主线程也执行一次
-      testBlockingQueueAdd(failCounter, count);
-      let waits: number = 0;
-      while (count.load() < totalTasks + 1 && waits < 100) {
-        await Utils.msSleep(100);
-        waits++;
-      }
-      expect(count.load()).assertEqual(totalTasks + 1);
-      expect(failCounter.load()).assertEqual(totalTasks + 1);
+      done();
     });
 
     /**
@@ -137,23 +143,29 @@ export default function BlockingQueueConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBlockingQueuePollEmpty0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      // TaskPool 并发验证非阻塞 poll：每个任务独立创建空队列，poll 返回 undefined
-      let count: AtomicInt = new AtomicInt(0);
-      let undefCounter: AtomicInt = new AtomicInt(0);
-      let totalTasks: number = 5;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testBlockingQueuePoll, undefCounter, count).then((): void => { });
+    it('testBlockingQueuePollEmpty0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        // TaskPool 并发验证非阻塞 poll：每个任务独立创建空队列，poll 返回 undefined
+        let count: AtomicInt = new AtomicInt(0);
+        let undefCounter: AtomicInt = new AtomicInt(0);
+        let totalTasks: number = 5;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testBlockingQueuePoll, undefCounter, count).then((): void => { });
+        }
+        // 主线程也执行一次
+        testBlockingQueuePoll(undefCounter, count);
+        let waits: number = 0;
+        while (count.load() < totalTasks + 1 && waits < 100) {
+          await Utils.msSleep(100);
+          waits++;
+        }
+        expect(count.load()).assertEqual(totalTasks + 1);
+        expect(undefCounter.load()).assertEqual(totalTasks + 1);
+      } catch (e) {
+        console.info(`testBlockingQueuePollEmpty0400 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      // 主线程也执行一次
-      testBlockingQueuePoll(undefCounter, count);
-      let waits: number = 0;
-      while (count.load() < totalTasks + 1 && waits < 100) {
-        await Utils.msSleep(100);
-        waits++;
-      }
-      expect(count.load()).assertEqual(totalTasks + 1);
-      expect(undefCounter.load()).assertEqual(totalTasks + 1);
+      done();
     });
 
     /**

@@ -81,35 +81,40 @@ export default function ConcurrentHashMapConcurrentTest(): void {
      */
     it('testConcurrentHashMapConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let seed = new Map<string, number>();
-        for (let i: number = 0; i < 100; i++) {
-          seed.set('base_' + i, i);
-        }
-        let map = new containers.ConcurrentHashMap<string, number>(seed);
-        let setTasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 10; i++) {
-          setTasks.push(taskpool.execute(mapSetOperations, map, i));
-        }
-        for (let i: int = 0; i < setTasks.length; i++) {
-          expect(await setTasks[i] as number).assertEqual(10);
-        }
-        for (let taskId: int = 0; taskId < 10; taskId++) {
-          for (let value: int = 0; value < 10; value++) {
-            expect(map.get('task_' + taskId + '_' + value)).assertEqual(value);
+        try {
+          let seed = new Map<string, number>();
+          for (let i: number = 0; i < 100; i++) {
+            seed.set('base_' + i, i);
           }
+          let map = new containers.ConcurrentHashMap<string, number>(seed);
+          let setTasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 10; i++) {
+            setTasks.push(taskpool.execute(mapSetOperations, map, i));
+          }
+          for (let i: int = 0; i < setTasks.length; i++) {
+            expect(await setTasks[i] as number).assertEqual(10);
+          }
+          for (let taskId: int = 0; taskId < 10; taskId++) {
+            for (let value: int = 0; value < 10; value++) {
+              expect(map.get('task_' + taskId + '_' + value)).assertEqual(value);
+            }
+          }
+          let deleteTasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 10; i++) {
+            deleteTasks.push(taskpool.execute(mapDeleteOperations, map, i));
+          }
+          for (let i: int = 0; i < deleteTasks.length; i++) {
+            expect(await deleteTasks[i] as number).assertEqual(10);
+          }
+          expect(map.size).assertEqual(100);
+          expect(map.has('task_0_0')).assertFalse();
+          expect(map.has('task_9_9')).assertFalse();
+          expect(map.get('base_0')).assertEqual(0.0);
+          expect(map.get('base_99')).assertEqual(99.0);
+        } catch (e) {
+          console.info(`testConcurrentHashMapConcurrent0100 catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
         }
-        let deleteTasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 10; i++) {
-          deleteTasks.push(taskpool.execute(mapDeleteOperations, map, i));
-        }
-        for (let i: int = 0; i < deleteTasks.length; i++) {
-          expect(await deleteTasks[i] as number).assertEqual(10);
-        }
-        expect(map.size).assertEqual(100);
-        expect(map.has('task_0_0')).assertFalse();
-        expect(map.has('task_9_9')).assertFalse();
-        expect(map.get('base_0')).assertEqual(0.0);
-        expect(map.get('base_99')).assertEqual(99.0);
         done();
       });
 
@@ -122,7 +127,7 @@ export default function ConcurrentHashMapConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testConcurrentHashMapIterateConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         let map = new containers.ConcurrentHashMap<string, number>();
         for (let i: int = 0; i < 100; i++) {
           map.set('key' + i, i);
@@ -141,6 +146,7 @@ export default function ConcurrentHashMapConcurrentTest(): void {
           expect(map.has('key' + i)).assertFalse();
           expect(map.get('newKey' + i)).assertEqual(i);
         }
+      done();
       });
 
     /**
@@ -152,33 +158,39 @@ export default function ConcurrentHashMapConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testConcurrentHashMapStressConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
-        let seed = new Map<string, number>();
-        for (let i: number = 0; i < 2000; i++) {
-          seed.set('seed_' + i, i);
-        }
-        let map = new containers.ConcurrentHashMap<string, number>(seed);
-        let tasks: Promise<Any>[] = [];
-        for (let i: int = 0; i < 10; i++) {
-          tasks.push(taskpool.execute(mapStressOperations, map, i));
-        }
-        for (let i: int = 0; i < tasks.length; i++) {
-          expect(await tasks[i] as number).assertEqual(100);
-        }
-        let residualKeys: string[] = [];
-        for (let key of map.keys()) {
-          if (key.startsWith('stress_')) {
-            residualKeys.push(key);
+      async (done: () => void): Promise<void> => {
+        try {
+          let seed = new Map<string, number>();
+          for (let i: number = 0; i < 2000; i++) {
+            seed.set('seed_' + i, i);
           }
+          let map = new containers.ConcurrentHashMap<string, number>(seed);
+          let tasks: Promise<Any>[] = [];
+          for (let i: int = 0; i < 10; i++) {
+            tasks.push(taskpool.execute(mapStressOperations, map, i));
+          }
+          for (let i: int = 0; i < tasks.length; i++) {
+            expect(await tasks[i] as number).assertEqual(100);
+          }
+          let residualKeys: string[] = [];
+          for (let key of map.keys()) {
+            if (key.startsWith('stress_')) {
+              residualKeys.push(key);
+            }
+          }
+          let residual: int = residualKeys.length;
+          for (let key of residualKeys) {
+            map.delete(key);
+          }
+          expect(residual >= 0 && residual <= 10).assertTrue();
+          expect(map.size >= 2000 && map.size <= 2010).assertTrue();
+          expect(map.get('seed_0')).assertEqual(0.0);
+          expect(map.get('seed_1999')).assertEqual(1999.0);
+        } catch (e) {
+          console.info(`testConcurrentHashMapStressConcurrent0300 catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
         }
-        let residual: int = residualKeys.length;
-        for (let key of residualKeys) {
-          map.delete(key);
-        }
-        expect(residual >= 0 && residual <= 10).assertTrue();
-        expect(map.size >= 2000 && map.size <= 2010).assertTrue();
-        expect(map.get('seed_0')).assertEqual(0.0);
-        expect(map.get('seed_1999')).assertEqual(1999.0);
+      done();
       });
   });
 }

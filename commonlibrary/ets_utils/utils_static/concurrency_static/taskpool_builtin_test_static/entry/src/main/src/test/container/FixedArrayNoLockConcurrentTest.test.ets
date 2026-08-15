@@ -43,19 +43,25 @@ export default function FixedArrayNoLockConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testFixedArrayNoLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let count: AtomicInt = new AtomicInt(0);
-      let arr: FixedArray<number> = new FixedArray<number>(100);
-      let totalTasks: number = 10;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testFixedArrayIndexRW, new FixedArray<number>(100)).then((): void => { count.fetchAdd(1); });
+    it('testFixedArrayNoLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let count: AtomicInt = new AtomicInt(0);
+        let arr: FixedArray<number> = new FixedArray<number>(100);
+        let totalTasks: number = 10;
+        for (let i: number = 0; i < totalTasks; i++) {
+          taskpool.execute(testFixedArrayIndexRW, new FixedArray<number>(100)).then((): void => { count.fetchAdd(1); });
+        }
+        testFixedArrayIndexRW(arr);
+        count.fetchAdd(1);
+        while (count.load() < totalTasks + 1) {
+          await Utils.msSleep(100);
+        }
+        expect(count.load()).assertEqual(totalTasks + 1);
+      } catch (e) {
+        console.info(`testFixedArrayNoLockConcurrent0100 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      testFixedArrayIndexRW(arr);
-      count.fetchAdd(1);
-      while (count.load() < totalTasks + 1) {
-        await Utils.msSleep(100);
-      }
-      expect(count.load()).assertEqual(totalTasks + 1);
+      done();
     });
   });
 }

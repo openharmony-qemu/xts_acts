@@ -66,40 +66,46 @@ export default function MapRWLockConcurrentTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMapRWLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let sharedMap: Map<string, number> = new Map<string, number>();
-      for (let i: number = 0; i < 200; i++) {
-        sharedMap.set('key_' + i, i);
+    it('testMapRWLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let sharedMap: Map<string, number> = new Map<string, number>();
+        for (let i: number = 0; i < 200; i++) {
+          sharedMap.set('key_' + i, i);
+        }
+        let rwlock: RWLock = new RWLock();
+        let readCount: AtomicInt = new AtomicInt(0);
+        let writeCount: AtomicInt = new AtomicInt(0);
+        let totalReadTasks: number = 5;
+        let totalWriteTasks: number = 5;
+        for (let i: number = 0; i < totalReadTasks; i++) {
+          taskpool.execute(testMapReadRWLock, rwlock, sharedMap).then((): void => {
+            readCount.fetchAdd(1);
+          });
+        }
+        for (let i: number = 0; i < totalWriteTasks; i++) {
+          taskpool.execute(testMapWriteRWLock, rwlock, sharedMap).then((): void => {
+            writeCount.fetchAdd(1);
+          });
+        }
+        testMapReadRWLock(rwlock, sharedMap);
+        readCount.fetchAdd(1);
+        testMapWriteRWLock(rwlock, sharedMap);
+        writeCount.fetchAdd(1);
+        while (readCount.load() < totalReadTasks + 1) {
+          await Utils.msSleep(100);
+        }
+        while (writeCount.load() < totalWriteTasks + 1) {
+          await Utils.msSleep(100);
+        }
+        expect(readCount.load()).assertEqual(totalReadTasks + 1);
+        expect(writeCount.load()).assertEqual(totalWriteTasks + 1);
+        // 写任务每轮 set/delete key_0..9 与 key_100..109，净效果为永久删除这 20 个初始键，终态确定为 180
+        expect(sharedMap.size).assertEqual(180);
+      } catch (e) {
+        console.info(`testMapRWLockConcurrent0100 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      let rwlock: RWLock = new RWLock();
-      let readCount: AtomicInt = new AtomicInt(0);
-      let writeCount: AtomicInt = new AtomicInt(0);
-      let totalReadTasks: number = 5;
-      let totalWriteTasks: number = 5;
-      for (let i: number = 0; i < totalReadTasks; i++) {
-        taskpool.execute(testMapReadRWLock, rwlock, sharedMap).then((): void => {
-          readCount.fetchAdd(1);
-        });
-      }
-      for (let i: number = 0; i < totalWriteTasks; i++) {
-        taskpool.execute(testMapWriteRWLock, rwlock, sharedMap).then((): void => {
-          writeCount.fetchAdd(1);
-        });
-      }
-      testMapReadRWLock(rwlock, sharedMap);
-      readCount.fetchAdd(1);
-      testMapWriteRWLock(rwlock, sharedMap);
-      writeCount.fetchAdd(1);
-      while (readCount.load() < totalReadTasks + 1) {
-        await Utils.msSleep(100);
-      }
-      while (writeCount.load() < totalWriteTasks + 1) {
-        await Utils.msSleep(100);
-      }
-      expect(readCount.load()).assertEqual(totalReadTasks + 1);
-      expect(writeCount.load()).assertEqual(totalWriteTasks + 1);
-      // 写任务每轮 set/delete key_0..9 与 key_100..109，净效果为永久删除这 20 个初始键，终态确定为 180
-      expect(sharedMap.size).assertEqual(180);
+      done();
     });
   });
 }
