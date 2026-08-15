@@ -13914,6 +13914,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100(na
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
     OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_Write(stream, data, wrongDataSize);
     LOG("OH_AudioAccessoryInputStreamManager_Write error frame length mismatch: %{public}d", rets);
+    OH_AudioCapturer_Release(capturer);
     OH_AudioAccessoryManager_Disconnected(manager, accessory);
     OH_AudioAccessoryManager_Destroy(manager, accessory);
     if (rets == AUDIOCOMMON_RESULT_ERROR_FRAME_LENGTH_MISMATCH) {
