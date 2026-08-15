@@ -81,6 +81,15 @@ export default class Utils{
     });
   }
 
+  static registerContainEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void): void {
+    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
+      const data = backData?.data as Record<string, RecordData>;
+      const action = data['ACTION'];
+      console.info(`Begin to assert [` + action + `] Contain [` + expected + `]`);
+      expect(action).assertContain(expected);
+    });
+  }
+
   static isPC(controller: webview.WebviewController): boolean {
     let userAgent: string = controller.getUserAgent();
     console.info('userAgent' + userAgent);

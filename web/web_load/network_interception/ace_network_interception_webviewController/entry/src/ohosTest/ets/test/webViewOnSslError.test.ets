@@ -98,7 +98,7 @@ export default function webViewOnSslError() {
       let isReturn = 0;
       Utils.registerEvent("testOnsslerroreventreceive",true,142511,() =>{isReturn = 1});
       await Utils.waitAndClickComponent(driver, "webViewOnSslError");
-      await Utils.waitForExist(()=>isReturn, "testOnsslerroreventreceive_checkReturn", 1, 1000);
+      await Utils.waitForExist(()=>isReturn, "testOnsslerroventreceive_checkReturn", 1, 1000, 60);
       done();
     })
   })

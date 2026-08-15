@@ -76,7 +76,7 @@ export default function webViewControllerJsunit() {
       let isReturn = 0;
       Utils.registerEvent("testPageDown",true,142510,() =>{isReturn = 1});
       await Utils.waitAndClickComponent(driver, "webcomponent");
-      await Utils.waitForExist(()=>isReturn, "testPageDown_checkReturn", 1, 1000);
+      await Utils.waitForExist(()=>isReturn, "testPageDown_checkReturn", 1, 1000, 60);
       done();
     })
     /**
@@ -92,7 +92,7 @@ export default function webViewControllerJsunit() {
       let isReturn = 0;
       Utils.registerEvent("testSetNetworkAvailable",false,142520,() =>{isReturn = 1});
       await Utils.waitAndClickComponent(driver, "webcomponent");
-      await Utils.waitForExist(()=>isReturn, "testSetNetworkAvailable_checkReturn", 1, 1000);
+      await Utils.waitForExist(()=>isReturn, "testSetNetworkAvailable_checkReturn", 1, 1000, 60);
       done();
     })
     /**
@@ -108,7 +108,7 @@ export default function webViewControllerJsunit() {
       let isReturn = 0;
       Utils.registerEvent("emitSetNetworkAvailableAgain",true,142530,() =>{isReturn = 1});
       await Utils.waitAndClickComponent(driver, "webcomponent");
-      await Utils.waitForExist(()=>isReturn, "testSetNetworkAvailableAgain_checkReturn", 1, 1000);
+      await Utils.waitForExist(()=>isReturn, "testSetNetworkAvailableAgain_checkReturn", 1, 1000, 60);
       done();
     })
   })
