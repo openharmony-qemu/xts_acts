@@ -42,7 +42,7 @@ export default function asyncRealWorldTest(): void {
 
     /**
      * @tc.name   asyncRealWorldTest002
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_002
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0002
      * @tc.desc   Simulate data caching mechanism
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -58,32 +58,42 @@ export default function asyncRealWorldTest(): void {
         }
 
         // Simulate slow data fetch
-        await sleep(1);
-        const data = `data-${key}`;
+        try {
+          await sleep(1);
+          const data = `data-${key}`;
 
-        // Store in cache
-        cache.set(key, data);
-        return data;
+          // Store in cache
+          cache.set(key, data);
+          return data;
+        } catch (e) {
+          console.info(`asyncRealWorldTest002 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      const result1 = await getDataWithCache('user1');
-      const result2 = await getDataWithCache('user1'); // Should return cached
+      try {
+        const result1 = await getDataWithCache('user1');
+        const result2 = await getDataWithCache('user1'); // Should return cached
 
-      expect(result1).assertEqual('data-user1');
-      expect(result2).assertEqual('data-user1');
-      expect(cache.size).assertEqual(1);
+        expect(result1).assertEqual('data-user1');
+        expect(result2).assertEqual('data-user1');
+        expect(cache.size).assertEqual(1);
+      } catch (e) {
+        console.info(`asyncRealWorldTest002 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncRealWorldTest004
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_004
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0004
      * @tc.desc   Simulate data pipeline transformation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncRealWorldTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const fetch = async (): Promise<int[]> => {
         return [1, 2, 3, 4, 5];
       };
@@ -101,23 +111,29 @@ export default function asyncRealWorldTest(): void {
       };
 
       // Pipeline: fetch -> transform -> filter -> sort
-      const rawData = await fetch();
-      const transformed = await transform(rawData);
-      const filtered = await filter(transformed);
-      const sorted = await sort(filtered);
+      try {
+        const rawData = await fetch();
+        const transformed = await transform(rawData);
+        const filtered = await filter(transformed);
+        const sorted = await sort(filtered);
 
-      expect(sorted).assertDeepEquals([6, 8, 10]);
+        expect(sorted).assertDeepEquals([6, 8, 10]);
+      } catch (e) {
+        console.info(`asyncRealWorldTest004 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncRealWorldTest005
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_005
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0005
      * @tc.desc   Simulate batch processing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncRealWorldTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       // 显式类型声明，避免类型推断
       const items: number[] = [];
       for (let i: int = 0; i < 100; i++) {
@@ -130,21 +146,32 @@ export default function asyncRealWorldTest(): void {
       };
 
       const processInBatches = async (): Promise<number[]> => {
-        const results: number[] = [];
+        try {
+          const results: number[] = [];
 
-        for (let i: int = 0; i < items.length; i += batchSize) {
-          const batch = items.slice(i, i + batchSize);
-          const processed = await processBatch(batch);
-          results.push(...processed);
+          for (let i: int = 0; i < items.length; i += batchSize) {
+            const batch = items.slice(i, i + batchSize);
+            const processed = await processBatch(batch);
+            results.push(...processed);
+          }
+
+          return results;
+        } catch (e) {
+          console.info(`asyncRealWorldTest005 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-
-        return results;
       };
 
-      const result = await processInBatches();
-      expect(result.length).assertEqual(100);
-      expect(result[0]).assertEqual(0);
-      expect(result[99]).assertEqual(198);
+      try {
+        const result = await processInBatches();
+        expect(result.length).assertEqual(100);
+        expect(result[0]).assertEqual(0);
+        expect(result[99]).assertEqual(198);
+      } catch (e) {
+        console.info(`asyncRealWorldTest005 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -168,61 +195,72 @@ export default function asyncRealWorldTest(): void {
         return `result-${key}`;
       };
 
-      const result1 = await debouncedRequest('request1');
-      await sleep(60); // Wait for debounce to clear
-      const result2 = await debouncedRequest('request2');
+      try {
+        const result1 = await debouncedRequest('request1');
+        await sleep(60); // Wait for debounce to clear
+        const result2 = await debouncedRequest('request2');
 
-      expect(result1).assertEqual('result-request1');
-      expect(result2).assertEqual('result-request2');
+        expect(result1).assertEqual('result-request1');
+        expect(result2).assertEqual('result-request2');
+      } catch (e) {
+        console.info(`asyncRealWorldTest006 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncRealWorldTest007
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_007
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0007
      * @tc.desc   Simulate rate limiting
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const maxRequestsPerSecond: int = 3;
-      let requestCount: int = 0;
-      let resetTime: number = (Date.now() + 1000).toDouble();
+    it('asyncRealWorldTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const maxRequestsPerSecond: int = 3;
+        let requestCount: int = 0;
+        let resetTime: number = (Date.now() + 1000).toDouble();
 
-      const rateLimitedRequest = async (id: number): Promise<string> => {
-        const now: number = Date.now();
-        if (now > resetTime) {
-          requestCount = 0;
-          resetTime = now + 1000;
+        const rateLimitedRequest = async (id: number): Promise<string> => {
+          const now: number = Date.now();
+          if (now > resetTime) {
+            requestCount = 0;
+            resetTime = now + 1000;
+          }
+
+          if (requestCount >= maxRequestsPerSecond) {
+            throw new Error('rate limit exceeded');
+          }
+
+          requestCount++;
+          return `response-${id}`;
+        };
+
+        const results: string[] = [];
+        for (let i: int = 0; i < 3; i++) {
+          results.push(await rateLimitedRequest(i));
         }
 
-        if (requestCount >= maxRequestsPerSecond) {
-          throw new Error('rate limit exceeded');
-        }
-
-        requestCount++;
-        return `response-${id}`;
-      };
-
-      const results: string[] = [];
-      for (let i: int = 0; i < 3; i++) {
-        results.push(await rateLimitedRequest(i));
+        expect(results.length).assertEqual(3);
+        expect(results[0]).assertEqual('response-0');
+      } catch (e) {
+        console.info(`asyncRealWorldTest007 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-
-      expect(results.length).assertEqual(3);
-      expect(results[0]).assertEqual('response-0');
+      done();
     });
 
     /**
      * @tc.name   asyncRealWorldTest010
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_010
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0010
      * @tc.desc   Simulate async queue processing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncRealWorldTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const queue: number[] = [];
       const results: string[] = [];
 
@@ -231,10 +269,15 @@ export default function asyncRealWorldTest(): void {
       };
 
       const processQueue = async (): Promise<void> => {
-        while (queue.length > 0) {
-          const item = queue.shift()!;
-          results.push(`processed-${item}`);
-          await sleep(1);
+        try {
+          while (queue.length > 0) {
+            const item = queue.shift()!;
+            results.push(`processed-${item}`);
+            await sleep(1);
+          }
+        } catch (e) {
+          console.info(`asyncRealWorldTest010 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
       };
 
@@ -243,56 +286,68 @@ export default function asyncRealWorldTest(): void {
         enqueue(i);
       }
 
-      await processQueue();
+      try {
+        await processQueue();
 
-      expect(results.length).assertEqual(5);
-      expect(results[0]).assertEqual('processed-0');
-      expect(results[4]).assertEqual('processed-4');
+        expect(results.length).assertEqual(5);
+        expect(results[0]).assertEqual('processed-0');
+        expect(results[4]).assertEqual('processed-4');
+      } catch (e) {
+        console.info(`asyncRealWorldTest010 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncRealWorldTest011
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_011
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0011
      * @tc.desc   Simulate conditional async workflow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const fetchUserRole = async (userId: number): Promise<string> => {
-        return userId > 100 ? 'admin' : 'user';
-      };
+    it('asyncRealWorldTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const fetchUserRole = async (userId: number): Promise<string> => {
+          return userId > 100 ? 'admin' : 'user';
+        };
 
-      const fetchAdminData = async (): Promise<string> => {
-        return 'admin-data';
-      };
+        const fetchAdminData = async (): Promise<string> => {
+          return 'admin-data';
+        };
 
-      const fetchUserData = async (): Promise<string> => {
-        return 'user-data';
-      };
+        const fetchUserData = async (): Promise<string> => {
+          return 'user-data';
+        };
 
-      const userId: int = 150;
-      const role = await fetchUserRole(userId);
+        const userId: int = 150;
+        const role = await fetchUserRole(userId);
 
-      let data: string;
-      if (role === 'admin') {
-        data = await fetchAdminData();
-      } else {
-        data = await fetchUserData();
+        let data: string;
+        if (role === 'admin') {
+          data = await fetchAdminData();
+        } else {
+          data = await fetchUserData();
+        }
+
+        expect(data).assertEqual('admin-data');
+      } catch (e) {
+        console.info(`asyncRealWorldTest011 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-
-      expect(data).assertEqual('admin-data');
+      done();
     });
 
     /**
      * @tc.name   asyncRealWorldTest012
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_012
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0012
      * @tc.desc   Simulate async data validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncRealWorldTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const validateEmail = async (email: string): Promise<boolean> => {
         return email.includes('@');
       };
@@ -306,17 +361,28 @@ export default function asyncRealWorldTest(): void {
         phone: string
       ): Promise<boolean> => {
         // 不使用 Promise.all 的泛型，分别处理
-        const isEmailValid = await validateEmail(email);
-        const isPhoneValid = await validatePhone(phone);
+        try {
+          const isEmailValid = await validateEmail(email);
+          const isPhoneValid = await validatePhone(phone);
 
-        return isEmailValid && isPhoneValid;
+          return isEmailValid && isPhoneValid;
+        } catch (e) {
+          console.info(`asyncRealWorldTest012 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      const result1 = await validateUserData('test@example.com', '1234567890');
-      const result2 = await validateUserData('invalid', '123');
+      try {
+        const result1 = await validateUserData('test@example.com', '1234567890');
+        const result2 = await validateUserData('invalid', '123');
 
-      expect(result1).assertEqual(true);
-      expect(result2).assertEqual(false);
+        expect(result1).assertEqual(true);
+        expect(result2).assertEqual(false);
+      } catch (e) {
+        console.info(`asyncRealWorldTest012 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -341,48 +407,69 @@ export default function asyncRealWorldTest(): void {
       };
 
       const fetchAllPages = async (): Promise<number[]> => {
-        const allData: number[] = [];
+        try {
+          const allData: number[] = [];
 
-        for (let page: int = 0; page < totalPages; page++) {
-          const pageData = await fetchPage(page);
-          allData.push(...pageData);
+          for (let page: int = 0; page < totalPages; page++) {
+            const pageData = await fetchPage(page);
+            allData.push(...pageData);
+          }
+
+          return allData;
+        } catch (e) {
+          console.info(`asyncRealWorldTest013 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-
-        return allData;
       };
 
-      const result = await fetchAllPages();
-      expect(result.length).assertEqual(30);
-      expect(result[0]).assertEqual(0);
-      expect(result[29]).assertEqual(29);
+      try {
+        const result = await fetchAllPages();
+        expect(result.length).assertEqual(30);
+        expect(result[0]).assertEqual(0);
+        expect(result[29]).assertEqual(29);
+      } catch (e) {
+        console.info(`asyncRealWorldTest013 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
     /**
      * @tc.name   asyncRealWorldTest014
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_014
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0014
      * @tc.desc   Simulate async event handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncRealWorldTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sequence: string[] = [];
 
       const handleEvent = async (eventName: string, data: string): Promise<void> => {
         sequence.push(`start-${eventName}`);
-        await sleep(1);
-        sequence.push(`process-${data}`);
-        await sleep(1);
-        sequence.push(`end-${eventName}`);
+        try {
+          await sleep(1);
+          sequence.push(`process-${data}`);
+          await sleep(1);
+          sequence.push(`end-${eventName}`);
+        } catch (e) {
+          console.info(`asyncRealWorldTest014 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      await handleEvent('click', 'button1');
-      await handleEvent('submit', 'form1');
+      try {
+        await handleEvent('click', 'button1');
+        await handleEvent('submit', 'form1');
 
-      expect(sequence.length).assertEqual(6);
-      expect(sequence[0]).assertEqual('start-click');
-      expect(sequence[1]).assertEqual('process-button1');
+        expect(sequence.length).assertEqual(6);
+        expect(sequence[0]).assertEqual('start-click');
+        expect(sequence[1]).assertEqual('process-button1');
+      } catch (e) {
+        console.info(`asyncRealWorldTest014 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -398,22 +485,37 @@ export default function asyncRealWorldTest(): void {
       const available: number[] = [1, 2, 3];
 
       const acquireResource = async (): Promise<number> => {
-        while (available.length === 0) {
-          await sleep(1);
+        try {
+          while (available.length === 0) {
+            await sleep(1);
+          }
+          return available.shift()!;
+        } catch (e) {
+          console.info(`asyncRealWorldTest015 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        return available.shift()!;
       };
 
       const releaseResource = async (resource: number): Promise<void> => {
-        await sleep(1);
-        available.push(resource);
+        try {
+          await sleep(1);
+          available.push(resource);
+        } catch (e) {
+          console.info(`asyncRealWorldTest015 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const useResource = async (): Promise<string> => {
-        const resource = await acquireResource();
-        const result = `used-${resource}`;
-        await releaseResource(resource);
-        return result;
+        try {
+          const resource = await acquireResource();
+          const result = `used-${resource}`;
+          await releaseResource(resource);
+          return result;
+        } catch (e) {
+          console.info(`asyncRealWorldTest015 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -450,8 +552,13 @@ export default function asyncRealWorldTest(): void {
         }
 
         const promise = (async () => {
-          await sleep(1);
-          return `data-${key}`;
+          try {
+            await sleep(1);
+            return `data-${key}`;
+          } catch (e) {
+            console.info(`asyncRealWorldTest016 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         })();
 
         pendingRequests.set(key, promise);
@@ -481,18 +588,23 @@ export default function asyncRealWorldTest(): void {
 
     /**
      * @tc.name   asyncRealWorldTest017
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_017
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0017
      * @tc.desc   Simulate async progress tracking
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncRealWorldTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const progressUpdates: number[] = [];
 
       const reportProgress = async (progress: number): Promise<void> => {
         progressUpdates.push(progress);
-        await sleep(1);
+        try {
+          await sleep(1);
+        } catch (e) {
+          console.info(`asyncRealWorldTest017 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const longRunningTask = async (): Promise<string> => {
@@ -509,21 +621,27 @@ export default function asyncRealWorldTest(): void {
         return 'completed';
       };
 
-      const result = await longRunningTask();
-      expect(result).assertEqual('completed');
-      let res: number[] = [20, 40, 60, 80, 100];
-      expect(progressUpdates).assertDeepEquals(res);
+      try {
+        const result = await longRunningTask();
+        expect(result).assertEqual('completed');
+        let res: number[] = [20, 40, 60, 80, 100];
+        expect(progressUpdates).assertDeepEquals(res);
+      } catch (e) {
+        console.info(`asyncRealWorldTest017 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncRealWorldTest018
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_018
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0018
      * @tc.desc   Simulate async data merging
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncRealWorldTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const fetchUsers = async (): Promise<User[]> => {
         const user1: User = { id: 1, name: 'Alice' };
         const user2: User = { id: 2, name: 'Bob' };
@@ -562,58 +680,75 @@ export default function asyncRealWorldTest(): void {
       expect(merged.length).assertEqual(2);
       expect(merged[0].name).assertEqual('Alice');
       expect(merged[0].posts.length).assertEqual(1);
+      done();
     });
 
     /**
      * @tc.name   asyncRealWorldTest019
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_019
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0019
      * @tc.desc   Simulate async state machine
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncRealWorldTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let currentState: State = 'idle';
       const stateHistory: State[] = [];
 
       const transitionTo = async (newState: State): Promise<void> => {
         stateHistory.push(currentState);
         currentState = newState;
-        await sleep(1);
-      };
-
-      const loadData = async (): Promise<string> => {
-        await transitionTo('loading');
-
         try {
-          // Simulate success
-          await transitionTo('success');
-          return 'data-loaded';
-        } catch (err) {
-          await transitionTo('error');
-          // 只能抛出 Error 类型
-          if (err instanceof Error) {
-            throw err;
-          }
-          throw new Error('Unknown error');
+          await sleep(1);
+        } catch (e) {
+          console.info(`asyncRealWorldTest019 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
       };
 
-      const result = await loadData();
-      expect(result).assertEqual('data-loaded');
-      expect(currentState).assertEqual('success');
-      expect(stateHistory).assertDeepEquals(['idle', 'loading']);
+      const loadData = async (): Promise<string> => {
+        try {
+          await transitionTo('loading');
+
+          try {
+            // Simulate success
+            await transitionTo('success');
+            return 'data-loaded';
+          } catch (err) {
+            await transitionTo('error');
+            // 只能抛出 Error 类型
+            if (err instanceof Error) {
+              throw err;
+            }
+            throw new Error('Unknown error');
+          }
+        } catch (e) {
+          console.info(`asyncRealWorldTest019 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
+      };
+
+      try {
+        const result = await loadData();
+        expect(result).assertEqual('data-loaded');
+        expect(currentState).assertEqual('success');
+        expect(stateHistory).assertDeepEquals(['idle', 'loading']);
+      } catch (e) {
+        console.info(`asyncRealWorldTest019 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
      * @tc.name   asyncRealWorldTest020
-     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_020
+     * @tc.number SUB_BUILTINS_asyncRealWorld_TEST_0020
      * @tc.desc   Simulate async data streaming
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncRealWorldTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('asyncRealWorldTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       // 不使用生成器函数，返回数组
       const streamData = async (count: number): Promise<number[]> => {
         const results: number[] = [];
@@ -637,6 +772,7 @@ export default function asyncRealWorldTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
   });
 }

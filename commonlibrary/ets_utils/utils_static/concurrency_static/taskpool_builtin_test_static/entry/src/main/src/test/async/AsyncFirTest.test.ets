@@ -643,20 +643,36 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFirTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('asyncFirTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
       const validAsyncFunction = async (): Promise<int> => {
-        return await Promise.resolve(42);
+        try {
+          return await Promise.resolve(42);
+        } catch (e) {
+          console.info(`asyncFirTest0001 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const validAsyncArrow = async (): Promise<string> => {
-        return await Promise.resolve('test');
+        try {
+          return await Promise.resolve('test');
+        } catch (e) {
+          console.info(`asyncFirTest0001 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      const result1 = await validAsyncFunction();
-      const result2 = await validAsyncArrow();
+      try {
+        const result1 = await validAsyncFunction();
+        const result2 = await validAsyncArrow();
 
-      expect(result1).assertEqual(42);
-      expect(result2).assertEqual('test');
+        expect(result1).assertEqual(42);
+        expect(result2).assertEqual('test');
+      } catch (e) {
+        console.info(`asyncFirTest0001 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -667,26 +683,47 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFirTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('asyncFirTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
       const basicAsyncArrow = async (): Promise<string> => {
-        return await Promise.resolve('basic');
+        try {
+          return await Promise.resolve('basic');
+        } catch (e) {
+          console.info(`asyncFirTest0002 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const paramAsyncArrow = async (value: int): Promise<int> => {
-        return await Promise.resolve(value * 2);
+        try {
+          return await Promise.resolve(value * 2);
+        } catch (e) {
+          console.info(`asyncFirTest0002 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const typedAsyncArrow = async (str: string): Promise<string> => {
-        return await Promise.resolve(str.toUpperCase());
+        try {
+          return await Promise.resolve(str.toUpperCase());
+        } catch (e) {
+          console.info(`asyncFirTest0002 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      const result1 = await basicAsyncArrow();
-      const result2 = await paramAsyncArrow(5);
-      const result3 = await typedAsyncArrow('hello');
+      try {
+        const result1 = await basicAsyncArrow();
+        const result2 = await paramAsyncArrow(5);
+        const result3 = await typedAsyncArrow('hello');
 
-      expect(result1).assertEqual('basic');
-      expect(result2).assertEqual(10);
-      expect(result3).assertEqual('HELLO');
+        expect(result1).assertEqual('basic');
+        expect(result2).assertEqual(10);
+        expect(result3).assertEqual('HELLO');
+      } catch (e) {
+        console.info(`asyncFirTest0002 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -697,7 +734,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       try {
         const result1 = await (async (): Promise<string> => {
           return await Promise.resolve('iife1');
@@ -721,6 +758,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -731,7 +769,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const instance = new AsyncMethodClass();
 
       try {
@@ -748,6 +786,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -758,18 +797,24 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const result1 = await AsyncStaticClass.getDefault();
-      const result2 = await AsyncStaticClass.calculate(10, 20);
-      const result3 = await AsyncStaticClass.wrapValue<string>('test');
-      const result4 = await AsyncStaticClass.processArray([1, 2, 3]);
+    it('asyncFirTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      try {
+        const result1 = await AsyncStaticClass.getDefault();
+        const result2 = await AsyncStaticClass.calculate(10, 20);
+        const result3 = await AsyncStaticClass.wrapValue<string>('test');
+        const result4 = await AsyncStaticClass.processArray([1, 2, 3]);
 
-      expect(result1).assertEqual(100);
-      expect(result2).assertEqual(130);
-      expect(result3.data).assertEqual('test');
-      expect(typeof result3.type).assertEqual('string');
-      let res: number[] = [2, 4, 6]
-      expect(result4).assertDeepEquals(res);
+        expect(result1).assertEqual(100);
+        expect(result2).assertEqual(130);
+        expect(result3.data).assertEqual('test');
+        expect(typeof result3.type).assertEqual('string');
+        let res: number[] = [2, 4, 6]
+        expect(result4).assertDeepEquals(res);
+      } catch (e) {
+        console.info(`asyncFirTest0005 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -924,7 +969,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFirTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('asyncFirTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
       const returnNumber = async (): Promise<number> => {
         return 42.0;
       };
@@ -973,6 +1018,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -983,7 +1029,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFirTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('asyncFirTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
       const returnObject = async (): Promise<UserInfo> => {
         const obj: UserInfo = { name: 'John', age: 30 };
         return obj;
@@ -1037,26 +1083,32 @@ export default function asyncFirTest(): void {
       expect(result5 instanceof Promise).assertEqual(true);
       expect(result6 instanceof Promise).assertEqual(true);
 
-      const obj = await result1;
-      expect(obj.name).assertEqual('John');
-      expect(obj.age).assertEqual(30);
+      try {
+        const obj = await result1;
+        expect(obj.name).assertEqual('John');
+        expect(obj.age).assertEqual(30);
 
-      const arr = await result2;
-      expect(arr).assertDeepEquals([1, 2, 3, 4, 5]);
+        const arr = await result2;
+        expect(arr).assertDeepEquals([1, 2, 3, 4, 5]);
 
-      const nested = await result3;
-      expect(nested.user.profile.name).assertEqual('Alice');
+        const nested = await result3;
+        expect(nested.user.profile.name).assertEqual('Alice');
 
-      const map = await result4;
-      expect(map.get('a')).assertEqual(1);
-      expect(map.get('b')).assertEqual(2);
+        const map = await result4;
+        expect(map.get('a')).assertEqual(1);
+        expect(map.get('b')).assertEqual(2);
 
-      const set = await result5;
-      expect(set.has('x')).assertEqual(true);
-      expect(set.has('y')).assertEqual(true);
+        const set = await result5;
+        expect(set.has('x')).assertEqual(true);
+        expect(set.has('y')).assertEqual(true);
 
-      const date = await result6;
-      expect(date instanceof Date).assertEqual(true);
+        const date = await result6;
+        expect(date instanceof Date).assertEqual(true);
+      } catch (e) {
+        console.info(`asyncFirTest0011 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -1067,7 +1119,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFirTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('asyncFirTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
       const noReturn = async (): Promise<void> => {
         const temp: int = 42;
         const result: int = temp * 2;
@@ -1086,8 +1138,13 @@ export default function asyncFirTest(): void {
       };
 
       const asyncOperationsNoReturn = async (): Promise<void> => {
-        await Promise.resolve(10);
-        await Promise.resolve('test');
+        try {
+          await Promise.resolve(10);
+          await Promise.resolve('test');
+        } catch (e) {
+          console.info(`asyncFirTest0012 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const result1 = noReturn();
@@ -1111,6 +1168,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -1121,7 +1179,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const returnResolvedPromise = async (): Promise<int> => {
         return Promise.resolve(100);
       };
@@ -1146,8 +1204,13 @@ export default function asyncFirTest(): void {
       };
 
       const awaitAndReturnResolved = async (): Promise<boolean> => {
-        const resolved = await Promise.resolve(true);
-        return Promise.resolve(resolved);
+        try {
+          const resolved = await Promise.resolve(true);
+          return Promise.resolve(resolved);
+        } catch (e) {
+          console.info(`asyncFirTest0013 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const result1 = returnResolvedPromise();
@@ -1176,6 +1239,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -1186,7 +1250,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const returnPendingPromise = async (): Promise<string> => {
         return new Promise<string>((resolve: (value: string) => void) => {
           setTimeout(() => resolve('delayed_result'), 100);
@@ -1214,6 +1278,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -1329,13 +1394,19 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      const returnResult = await helperGenericReturn<string>('return-type');
-      const transformResult =
-        await helperGenericTransform<string, boolean>('test', (str: string): boolean => str.length === 4);
+    it('asyncFirTest0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      try {
+        const returnResult = await helperGenericReturn<string>('return-type');
+        const transformResult =
+          await helperGenericTransform<string, boolean>('test', (str: string): boolean => str.length === 4);
 
-      expect(returnResult).assertEqual('return-type');
-      expect(transformResult).assertTrue();
+        expect(returnResult).assertEqual('return-type');
+        expect(transformResult).assertTrue();
+      } catch (e) {
+        console.info(`asyncFirTest0017 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -1346,7 +1417,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       try {
         const arrayResult = await helperGenericArrayProcess<number>([3, 1, 4]);
         const optionalValue = await helperGenericOptional<number>(0);
@@ -1358,6 +1429,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -1398,14 +1470,24 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFirTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('asyncFirTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
       const validAsyncFunction = async (): Promise<string> => {
-        const result = await Promise.resolve('valid_await');
-        return result;
+        try {
+          const result = await Promise.resolve('valid_await');
+          return result;
+        } catch (e) {
+          console.info(`asyncFirTest0020 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const validAsyncArrow = async (): Promise<int> => {
-        return await Promise.resolve(42);
+        try {
+          return await Promise.resolve(42);
+        } catch (e) {
+          console.info(`asyncFirTest0020 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -1423,6 +1505,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -1433,7 +1516,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const level1Async = async (value: int): Promise<int> => {
         try {
           const level2Async = async (innerValue: int): Promise<int> => {
@@ -1519,6 +1602,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -1529,25 +1613,45 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const testData = [1, 2, 3, 4, 5];
 
       const mapWithAsync = async (numbers: int[]): Promise<int[]> => {
         const promises = numbers.map(async (num: int): Promise<int> => {
-          return await Promise.resolve(num * 2);
+          try {
+            return await Promise.resolve(num * 2);
+          } catch (e) {
+            console.info(`asyncFirTest0022 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         });
-        return await Promise.all(promises);
+        try {
+          return await Promise.all(promises);
+        } catch (e) {
+          console.info(`asyncFirTest0022 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const filterWithAsync = async (numbers: int[]): Promise<number[]> => {
         const filterPromises = numbers.map(async (num: int): Promise<FilterResult> => {
-          const shouldKeep = await Promise.resolve(num % 2 === 0);
-          const result: FilterResult = { value: num, keep: shouldKeep };
-          return result;
+          try {
+            const shouldKeep = await Promise.resolve(num % 2 === 0);
+            const result: FilterResult = { value: num, keep: shouldKeep };
+            return result;
+          } catch (e) {
+            console.info(`asyncFirTest0022 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         });
 
-        const filterResults = await Promise.all(filterPromises);
-        return filterResults.filter((result: FilterResult) => result.keep).map((result: FilterResult) => result.value);
+        try {
+          const filterResults = await Promise.all(filterPromises);
+          return filterResults.filter((result: FilterResult) => result.keep).map((result: FilterResult) => result.value);
+        } catch (e) {
+          console.info(`asyncFirTest0022 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -1560,6 +1664,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -1570,7 +1675,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const testData = [1, 2, 3, 4, 5];
 
       const reduceWithAsync = async (numbers: int[]): Promise<int> => {
@@ -1590,18 +1695,34 @@ export default function asyncFirTest(): void {
       const forEachWithAsync = async (numbers: int[]): Promise<int[]> => {
         const results: int[] = [];
         const promises = numbers.map(async (num: int): Promise<void> => {
-          const processed = await Promise.resolve(num + 10);
-          results.push(processed);
+          try {
+            const processed = await Promise.resolve(num + 10);
+            results.push(processed);
+          } catch (e) {
+            console.info(`asyncFirTest0023 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         });
-        await Promise.all(promises);
-        return results.sort((a, b) => a - b);
+        try {
+          await Promise.all(promises);
+          return results.sort((a, b) => a - b);
+        } catch (e) {
+          console.info(`asyncFirTest0023 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      const reduceResult = await reduceWithAsync(testData);
-      expect(reduceResult).assertEqual(45);
+      try {
+        const reduceResult = await reduceWithAsync(testData);
+        expect(reduceResult).assertEqual(45);
 
-      const forEachResult = await forEachWithAsync(testData);
-      expect(forEachResult).assertDeepEquals([11, 12, 13, 14, 15]);
+        const forEachResult = await forEachWithAsync(testData);
+        expect(forEachResult).assertDeepEquals([11, 12, 13, 14, 15]);
+      } catch (e) {
+        console.info(`asyncFirTest0023 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -1612,21 +1733,36 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const nestedArrayAsync = async (matrix: number[][]): Promise<number[]> => {
         const flattenPromises = matrix.map(async (row: number[]): Promise<number[]> => {
-          return await Promise.all(row.map(async (cell: number): Promise<number> => {
-            return await Promise.resolve(cell * cell);
-          }));
-        });
-        const processedMatrix = await Promise.all(flattenPromises);
-        const flatResult: number[] = [];
-        for (const row of processedMatrix) {
-          for (const num of row) {
-            flatResult.push(num);
+          try {
+            return await Promise.all(row.map(async (cell: number): Promise<number> => {
+              try {
+                return await Promise.resolve(cell * cell);
+              } catch (e) {
+                console.info(`asyncFirTest0024 catch error: ${JSON.stringify(e)}`);
+                throw e;
+              }
+            }));
+          } catch (e) {
+            console.info(`asyncFirTest0024 catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
+        });
+        try {
+          const processedMatrix = await Promise.all(flattenPromises);
+          const flatResult: number[] = [];
+          for (const row of processedMatrix) {
+            for (const num of row) {
+              flatResult.push(num);
+            }
+          }
+          return flatResult;
+        } catch (e) {
+          console.info(`asyncFirTest0024 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        return flatResult;
       };
 
       try {
@@ -1636,6 +1772,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -1683,25 +1820,40 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const awaitImmediate = async (): Promise<string> => {
-        const result = await Promise.resolve('immediate');
-        return result;
+        try {
+          const result = await Promise.resolve('immediate');
+          return result;
+        } catch (e) {
+          console.info(`asyncFirTest0026 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const awaitDelayed = async (): Promise<string> => {
-        const result = await new Promise<string>((resolve) => {
-          setTimeout(() => resolve('delayed'), 500);
-        });
-        return result;
+        try {
+          const result = await new Promise<string>((resolve) => {
+            setTimeout(() => resolve('delayed'), 500);
+          });
+          return result;
+        } catch (e) {
+          console.info(`asyncFirTest0026 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const awaitChained = async (): Promise<int> => {
-        const result = await Promise.resolve(10)
-          .then((val: int) => val * 2)
-          .then((val: int) => val + 5)
-          .then((val: int) => val * 3);
-        return result;
+        try {
+          const result = await Promise.resolve(10)
+            .then((val: int) => val * 2)
+            .then((val: int) => val + 5)
+            .then((val: int) => val * 3);
+          return result;
+        } catch (e) {
+          console.info(`asyncFirTest0026 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const multipleAwaits = async (): Promise<string[]> => {
@@ -1735,7 +1887,12 @@ export default function asyncFirTest(): void {
           Promise.resolve('parallel3')
         ];
 
-        return await Promise.all(promises);
+        try {
+          return await Promise.all(promises);
+        } catch (e) {
+          console.info(`asyncFirTest0026 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -1756,6 +1913,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -1766,7 +1924,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const awaitNonPromise = async (): Promise<int> => {
         const result: int = 42;
         return result;
@@ -1799,13 +1957,18 @@ export default function asyncFirTest(): void {
         const nonPromise = 'direct';
         results.push(nonPromise);
 
-        const promise = await Promise.resolve('promise');
-        results.push(promise);
+        try {
+          const promise = await Promise.resolve('promise');
+          results.push(promise);
 
-        const transformed = await Promise.resolve('base').then((val: string) => val + '_transformed');
-        results.push(transformed);
+          const transformed = await Promise.resolve('base').then((val: string) => val + '_transformed');
+          results.push(transformed);
 
-        return results;
+          return results;
+        } catch (e) {
+          console.info(`asyncFirTest0027 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -1830,6 +1993,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -1840,17 +2004,32 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFirTest0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('asyncFirTest0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
       const processString = async (input: string): Promise<string> => {
-        return await Promise.resolve(input.toUpperCase());
+        try {
+          return await Promise.resolve(input.toUpperCase());
+        } catch (e) {
+          console.info(`asyncFirTest0028 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processNumber = async (input: int): Promise<int> => {
-        return await Promise.resolve(input * 2);
+        try {
+          return await Promise.resolve(input * 2);
+        } catch (e) {
+          console.info(`asyncFirTest0028 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processBoolean = async (input: boolean): Promise<string> => {
-        return await Promise.resolve(input ? 'true' : 'false');
+        try {
+          return await Promise.resolve(input ? 'true' : 'false');
+        } catch (e) {
+          console.info(`asyncFirTest0028 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processBigInt = async (input: bigint): Promise<bigint> => {
@@ -1864,7 +2043,12 @@ export default function asyncFirTest(): void {
 
       const processMultiple = async (str: string, num: int, bool: boolean): Promise<string> => {
         const result = `${str}_${num}_${bool}`;
-        return await Promise.resolve(result);
+        try {
+          return await Promise.resolve(result);
+        } catch (e) {
+          console.info(`asyncFirTest0028 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -1888,6 +2072,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -1898,17 +2083,32 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const handleEmptyString = async (input: string): Promise<int> => {
-        return await Promise.resolve(input.length);
+        try {
+          return await Promise.resolve(input.length);
+        } catch (e) {
+          console.info(`asyncFirTest0029 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const handleZero = async (input: int): Promise<boolean> => {
-        return await Promise.resolve(input === 0);
+        try {
+          return await Promise.resolve(input === 0);
+        } catch (e) {
+          console.info(`asyncFirTest0029 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const handleNaN = async (input: number): Promise<boolean> => {
-        return await Promise.resolve(Number.isNaN(input));
+        try {
+          return await Promise.resolve(Number.isNaN(input));
+        } catch (e) {
+          console.info(`asyncFirTest0029 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const handleNull = async (input: string | null): Promise<string> => {
@@ -1921,7 +2121,12 @@ export default function asyncFirTest(): void {
       };
 
       const handleUndefined = async (input: int | undefined): Promise<string> => {
-        return await Promise.resolve(input === undefined ? 'undefined_received' : input.toString());
+        try {
+          return await Promise.resolve(input === undefined ? 'undefined_received' : input.toString());
+        } catch (e) {
+          console.info(`asyncFirTest0029 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const handleExtremeNumbers = async (input: number): Promise<string> => {
@@ -1972,6 +2177,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -1982,15 +2188,25 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const processOptionalString = async (required: string, optional?: string): Promise<string> => {
         const optionalValue = optional || 'default_string';
-        return await Promise.resolve(`${required}_${optionalValue}`);
+        try {
+          return await Promise.resolve(`${required}_${optionalValue}`);
+        } catch (e) {
+          console.info(`asyncFirTest0030 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processOptionalNumber = async (base: int, multiplier?: int): Promise<int> => {
         const mult = multiplier ? multiplier : 1 || 1;
-        return await Promise.resolve(base * mult);
+        try {
+          return await Promise.resolve(base * mult);
+        } catch (e) {
+          console.info(`asyncFirTest0030 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processOptionalBoolean = async (value: string, uppercase?: boolean): Promise<string> => {
@@ -2012,7 +2228,12 @@ export default function asyncFirTest(): void {
         const num = opt1 || 0;
         const bool = opt2 || false;
         const str = opt3 || 'default';
-        return await Promise.resolve(`${required}_${num}_${bool}_${str}`);
+        try {
+          return await Promise.resolve(`${required}_${num}_${bool}_${str}`);
+        } catch (e) {
+          console.info(`asyncFirTest0030 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -2045,6 +2266,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -2055,28 +2277,43 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const processWithDefaults = async (
         name: string,
         count: number = 10,
         enabled: boolean = true,
         factor: number = 1.5
       ): Promise<string> => {
-        return await Promise.resolve(`${name}_${count}_${enabled}_${factor}`);
+        try {
+          return await Promise.resolve(`${name}_${count}_${enabled}_${factor}`);
+        } catch (e) {
+          console.info(`asyncFirTest0031 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processWithDefaultObject = async (
         id: string,
         config: DefaultConfig = { timeout: 5000, retries: 3 }
       ): Promise<string> => {
-        return await Promise.resolve(`${id}_${config.timeout}_${config.retries}`);
+        try {
+          return await Promise.resolve(`${id}_${config.timeout}_${config.retries}`);
+        } catch (e) {
+          console.info(`asyncFirTest0031 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processWithDefaultArray = async (
         prefix: string,
         items: string[] = ['default1', 'default2']
       ): Promise<string> => {
-        return await Promise.resolve(`${prefix}_${items.join('_')}`);
+        try {
+          return await Promise.resolve(`${prefix}_${items.join('_')}`);
+        } catch (e) {
+          console.info(`asyncFirTest0031 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processWithMixedDefaults = async (
@@ -2128,6 +2365,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -2138,14 +2376,24 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       const level3Process = async (value: string, multiplier: int): Promise<string> => {
-        return await Promise.resolve(value.repeat(multiplier));
+        try {
+          return await Promise.resolve(value.repeat(multiplier));
+        } catch (e) {
+          console.info(`asyncFirTest0032 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const level2Process = async (input: string, factor: int, suffix: string): Promise<string> => {
-        const processed = await level3Process(input, factor);
-        return await Promise.resolve(processed + suffix);
+        try {
+          const processed = await level3Process(input, factor);
+          return await Promise.resolve(processed + suffix);
+        } catch (e) {
+          console.info(`asyncFirTest0032 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const level1Process = async (
@@ -2154,8 +2402,13 @@ export default function asyncFirTest(): void {
         append: string,
         transform: boolean
       ): Promise<string> => {
-        const intermediate = await level2Process(base, count, append);
-        return await Promise.resolve(transform ? intermediate.toUpperCase() : intermediate);
+        try {
+          const intermediate = await level2Process(base, count, append);
+          return await Promise.resolve(transform ? intermediate.toUpperCase() : intermediate);
+        } catch (e) {
+          console.info(`asyncFirTest0032 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -2167,6 +2420,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -2177,7 +2431,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       const processWithConfig = async (
         data: string[],
         config: ProcessConfig
@@ -2211,6 +2465,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -2221,7 +2476,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       const validateAndProcess = async (
         input: int,
         validator: (val: int) => boolean,
@@ -2230,29 +2485,50 @@ export default function asyncFirTest(): void {
         if (!validator(input)) {
           return null;
         }
-        return await processor(input);
+        try {
+          return await processor(input);
+        } catch (e) {
+          console.info(`asyncFirTest0034 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const isPositive = (val: int): boolean => val > 0;
       const doubleValue = async (val: int): Promise<int> => {
-        return await Promise.resolve(val * 2);
+        try {
+          return await Promise.resolve(val * 2);
+        } catch (e) {
+          console.info(`asyncFirTest0034 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      const result4 = await validateAndProcess(5, isPositive, doubleValue);
-      expect(result4).assertEqual(10);
+      try {
+        const result4 = await validateAndProcess(5, isPositive, doubleValue);
+        expect(result4).assertEqual(10);
 
-      const result5 = await validateAndProcess(-3, isPositive, doubleValue);
-      expect(result5).assertEqual(null);
+        const result5 = await validateAndProcess(-3, isPositive, doubleValue);
+        expect(result5).assertEqual(null);
 
-      const originalArray = [1, 2, 3];
-      const processArrayImmutable = async (arr: int[]): Promise<int[]> => {
-        const processed = await Promise.resolve(arr.map((val: int) => val * 2));
-        return processed;
-      };
+        const originalArray = [1, 2, 3];
+        const processArrayImmutable = async (arr: int[]): Promise<int[]> => {
+          try {
+            const processed = await Promise.resolve(arr.map((val: int) => val * 2));
+            return processed;
+          } catch (e) {
+            console.info(`asyncFirTest0034 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        };
 
-      const result6 = await processArrayImmutable(originalArray);
-      expect(result6).assertDeepEquals([2, 4, 6]);
-      expect(originalArray).assertDeepEquals([1, 2, 3]);
+        const result6 = await processArrayImmutable(originalArray);
+        expect(result6).assertDeepEquals([2, 4, 6]);
+        expect(originalArray).assertDeepEquals([1, 2, 3]);
+      } catch (e) {
+        console.info(`asyncFirTest0034 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -2263,15 +2539,25 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const processIntegerLike = async (value: number): Promise<number> => {
         const intValue: number = Math.floor(value);
-        return await Promise.resolve(intValue + 1);
+        try {
+          return await Promise.resolve(intValue + 1);
+        } catch (e) {
+          console.info(`asyncFirTest0035 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processFloatLike = async (value: number): Promise<number> => {
         const floatValue: number = Math.round(value * 100) / 100.0;
-        return await Promise.resolve(floatValue * 2);
+        try {
+          return await Promise.resolve(floatValue * 2);
+        } catch (e) {
+          console.info(`asyncFirTest0035 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processDoubleLike = async (value: number): Promise<number> => {
@@ -2295,6 +2581,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -2305,17 +2592,27 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const processCharLike = async (chars: string): Promise<int|number> => {
         if (chars.length !== 1) {
           throw new Error('Expected single character');
         }
-        return await Promise.resolve(chars.charCodeAt(0));
+        try {
+          return await Promise.resolve(chars.charCodeAt(0));
+        } catch (e) {
+          console.info(`asyncFirTest0036 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processByteLike = async (value: number): Promise<boolean> => {
         const isValidByte = value >= 0 && value <= 255 && Number.isInteger(value);
-        return await Promise.resolve(isValidByte);
+        try {
+          return await Promise.resolve(isValidByte);
+        } catch (e) {
+          console.info(`asyncFirTest0036 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -2342,6 +2639,7 @@ export default function asyncFirTest(): void {
         expect(error instanceof Error).assertTrue();
       }
       expect(errorCaught).assertEqual(true);
+      done();
     });
 
     /**
@@ -2352,10 +2650,15 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const processIntegerLike = async (value: number): Promise<number> => {
         const intValue: number = Math.floor(value);
-        return await Promise.resolve(intValue + 1);
+        try {
+          return await Promise.resolve(intValue + 1);
+        } catch (e) {
+          console.info(`asyncFirTest0037 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processFloatLike = async (value: number): Promise<number> => {
@@ -2372,11 +2675,21 @@ export default function asyncFirTest(): void {
         if (chars.length !== 1) {
           throw new Error('Expected single character');
         }
-        return await Promise.resolve(chars.charCodeAt(0));
+        try {
+          return await Promise.resolve(chars.charCodeAt(0));
+        } catch (e) {
+          console.info(`asyncFirTest0037 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processLongLike = async (value: bigint): Promise<bigint> => {
-        return await Promise.resolve(value * 2n + 1n);
+        try {
+          return await Promise.resolve(value * 2n + 1n);
+        } catch (e) {
+          console.info(`asyncFirTest0037 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processMixedTypes = async (
@@ -2409,6 +2722,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -2419,10 +2733,15 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const processUserProfile = async (profile: ComplexUserProfile): Promise<string> => {
         const ageStr = profile?.age?.toString();
-        return await Promise.resolve(`${profile.name}_${profile.email}_${ageStr}`);
+        try {
+          return await Promise.resolve(`${profile.name}_${profile.email}_${ageStr}`);
+        } catch (e) {
+          console.info(`asyncFirTest0038 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const completeProfile: ComplexUserProfile = {
@@ -2447,6 +2766,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -2457,10 +2777,15 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const processProductInfo = async (product: ProductInfo): Promise<string> => {
         const tagsStr = product.tags.join(',');
-        return await Promise.resolve(`${product.name}_${product.category}_${tagsStr}_${product.price}`);
+        try {
+          return await Promise.resolve(`${product.name}_${product.category}_${tagsStr}_${product.price}`);
+        } catch (e) {
+          console.info(`asyncFirTest0039 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const product: ProductInfo = {
@@ -2471,8 +2796,14 @@ export default function asyncFirTest(): void {
         tags: ['computer', 'portable', 'work']
       };
 
-      const result3 = await processProductInfo(product);
-      expect(result3).assertEqual('Laptop_Electronics_computer,portable,work_999.99');
+      try {
+        const result3 = await processProductInfo(product);
+        expect(result3).assertEqual('Laptop_Electronics_computer,portable,work_999.99');
+      } catch (e) {
+        console.info(`asyncFirTest0039 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -2544,13 +2875,18 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const processNumberArray = async (numbers: number[]): Promise<number> => {
-        if (numbers.length === 0) {
-          return await Promise.resolve(0.0);
+        try {
+          if (numbers.length === 0) {
+            return await Promise.resolve(0.0);
+          }
+          const sum: number = numbers.reduce((acc: number, num: number) => acc + num, 0);
+          return await Promise.resolve(sum / numbers.length);
+        } catch (e) {
+          console.info(`asyncFirTest0041 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        const sum: number = numbers.reduce((acc: number, num: number) => acc + num, 0);
-        return await Promise.resolve(sum / numbers.length);
       };
 
       try {
@@ -2564,6 +2900,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -2619,7 +2956,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const processNestedArrays = async (matrix: number[][]): Promise<number[]> => {
         const results: number[] = [];
         for (const row of matrix) {
@@ -2652,6 +2989,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -2662,7 +3000,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       try {
         const numbers: number[] = [1, 2, 3, 4, 5];
         const doubleCallback = (num: number): number => num * 2;
@@ -2688,6 +3026,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -2698,14 +3037,25 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       const numbers: number[] = [1, 2, 3, 4, 5];
       const isEven = (num: number): boolean => num % 2 === 0;
       const asyncSquare = async (num: number): Promise<number> => {
-        return await Promise.resolve(num * num);
+        try {
+          return await Promise.resolve(num * num);
+        } catch (e) {
+          console.info(`asyncFirTest0045 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
-      const evenSquares = await processWithValidation0045<number>(numbers, isEven, asyncSquare);
-      expect(evenSquares).assertDeepEquals([4.0, 16.0]);
+      try {
+        const evenSquares = await processWithValidation0045<number>(numbers, isEven, asyncSquare);
+        expect(evenSquares).assertDeepEquals([4.0, 16.0]);
+      } catch (e) {
+        console.info(`asyncFirTest0045 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -2716,7 +3066,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       const words = ['cat', 'dog', 'bird'];
       const context: ProcessContext = { prefix: 'animal_', suffix: '_pet' };
       const complexProcessor = async (
@@ -2725,15 +3075,26 @@ export default function asyncFirTest(): void {
         index: number
       ): Promise<string> => {
         const result = `${ctx.prefix}${word}${ctx.suffix}_${index}`;
-        return await Promise.resolve(result);
+        try {
+          return await Promise.resolve(result);
+        } catch (e) {
+          console.info(`asyncFirTest0046 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      const processed = await processWithComplexCallback0046<string, ProcessContext, string>(words, context, complexProcessor);
-      expect(processed).assertDeepEquals([
-        'animal_cat_pet_0',
-        'animal_dog_pet_1',
-        'animal_bird_pet_2'
-      ]);
+      try {
+        const processed = await processWithComplexCallback0046<string, ProcessContext, string>(words, context, complexProcessor);
+        expect(processed).assertDeepEquals([
+          'animal_cat_pet_0',
+          'animal_dog_pet_1',
+          'animal_bird_pet_2'
+        ]);
+      } catch (e) {
+        console.info(`asyncFirTest0046 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -2744,7 +3105,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       try {
         const itemWithId: ItemWithId = { id: 100, data: 'test' };
         const result1 = await processWithId0047<ItemWithId>(itemWithId);
@@ -2756,6 +3117,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -2766,18 +3128,24 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       const itemWithBoth: ItemWithBoth = { id: 200, name: 'ComplexItem', extra: true };
-      const result3 = await processWithIdAndName0048<ItemWithBoth>(itemWithBoth);
-      expect(result3).assertEqual('ComplexItem_ID_200');
+      try {
+        const result3 = await processWithIdAndName0048<ItemWithBoth>(itemWithBoth);
+        expect(result3).assertEqual('ComplexItem_ID_200');
 
-      const itemsWithId: TypedItem[] = [
-        { id: 1, type: 'A' },
-        { id: 2, type: 'B' },
-        { id: 3, type: 'C' }
-      ];
-      const doubledIds = await processArrayWithConstraint0048<TypedItem>(itemsWithId);
-      expect(doubledIds).assertDeepEquals([2.0, 4.0, 6.0]);
+        const itemsWithId: TypedItem[] = [
+          { id: 1, type: 'A' },
+          { id: 2, type: 'B' },
+          { id: 3, type: 'C' }
+        ];
+        const doubledIds = await processArrayWithConstraint0048<TypedItem>(itemsWithId);
+        expect(doubledIds).assertDeepEquals([2.0, 4.0, 6.0]);
+      } catch (e) {
+        console.info(`asyncFirTest0048 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -2788,32 +3156,38 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('asyncFirTest0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const highIdItem: StatusItem = { id: 200, status: 'active' };
       const lowIdItem: StatusItem = { id: 50, status: 'inactive' };
 
-      const conditionalResult1 = await processConditionally0049<StatusItem>(highIdItem, highIdCondition0049);
-      const expectedResult1: StatusItem = { id: 200, status: 'active' };
-      expect(conditionalResult1).assertDeepEquals(expectedResult1);
+      try {
+        const conditionalResult1 = await processConditionally0049<StatusItem>(highIdItem, highIdCondition0049);
+        const expectedResult1: StatusItem = { id: 200, status: 'active' };
+        expect(conditionalResult1).assertDeepEquals(expectedResult1);
 
-      const conditionalResult2 = await processConditionally0049<StatusItem>(lowIdItem, highIdCondition0049);
-      expect(conditionalResult2).assertEqual(null);
+        const conditionalResult2 = await processConditionally0049<StatusItem>(lowIdItem, highIdCondition0049);
+        expect(conditionalResult2).assertEqual(null);
 
-      const userProfile: ComplexUserProfile = {
-        id: 300,
-        name: 'Generic User',
-        email: 'generic@test.com',
-        age: 28
-      };
+        const userProfile: ComplexUserProfile = {
+          id: 300,
+          name: 'Generic User',
+          email: 'generic@test.com',
+          age: 28
+        };
 
-      const userResult1 = await processWithId0049<ComplexUserProfile>(userProfile);
-      expect(userResult1).assertEqual('Item_300');
+        const userResult1 = await processWithId0049<ComplexUserProfile>(userProfile);
+        expect(userResult1).assertEqual('Item_300');
 
-      const userResult2 = await processWithName0049<ComplexUserProfile>(userProfile);
-      expect(userResult2).assertEqual('Name_Generic User');
+        const userResult2 = await processWithName0049<ComplexUserProfile>(userProfile);
+        expect(userResult2).assertEqual('Name_Generic User');
 
-      const userResult3 = await processWithIdAndName0049<ComplexUserProfile>(userProfile);
-      expect(userResult3).assertEqual('Generic User_ID_300');
+        const userResult3 = await processWithIdAndName0049<ComplexUserProfile>(userProfile);
+        expect(userResult3).assertEqual('Generic User_ID_300');
+      } catch (e) {
+        console.info(`asyncFirTest0049 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -2824,7 +3198,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       const processStringOrNumber = async (input: StringOrNumber): Promise<string> => {
         try {
           if (typeof input === 'string') {
@@ -2839,15 +3213,20 @@ export default function asyncFirTest(): void {
       };
 
       const processWithMode = async (data: string, mode: ProcessingMode): Promise<string> => {
-        switch (mode) {
-          case 'sync':
-            return await Promise.resolve(`Sync: ${data}`);
-          case 'async':
-            return await Promise.resolve(`Async: ${data}`);
-          case 'batch':
-            return await Promise.resolve(`Batch: ${data}`);
-          default:
-            return await Promise.resolve(`Unknown: ${data}`);
+        try {
+          switch (mode) {
+            case 'sync':
+              return await Promise.resolve(`Sync: ${data}`);
+            case 'async':
+              return await Promise.resolve(`Async: ${data}`);
+            case 'batch':
+              return await Promise.resolve(`Batch: ${data}`);
+            default:
+              return await Promise.resolve(`Unknown: ${data}`);
+          }
+        } catch (e) {
+          console.info(`asyncFirTest0050 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
       };
 
@@ -2869,6 +3248,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -2879,10 +3259,15 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       const processUserWithProfile = async (user: UserWithProfile): Promise<string> => {
         const ageStr = user.age !== undefined ? user.age.toString() : 'unknown';
-        return await Promise.resolve(`${user.name}_${user.email}_${ageStr}_${user.id}`);
+        try {
+          return await Promise.resolve(`${user.name}_${user.email}_${ageStr}_${user.id}`);
+        } catch (e) {
+          console.info(`asyncFirTest0051 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const processUnionArray = async (items: (string | number)[]): Promise<string[]> => {
@@ -2898,7 +3283,12 @@ export default function asyncFirTest(): void {
             return '';
           }
         });
-        return await Promise.all(promises);
+        try {
+          return await Promise.all(promises);
+        } catch (e) {
+          console.info(`asyncFirTest0051 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const userWithProfile: UserWithProfile = {
@@ -2908,12 +3298,18 @@ export default function asyncFirTest(): void {
         email: 'john.inheritance@test.com'
       };
 
-      const inheritanceResult = await processUserWithProfile(userWithProfile);
-      expect(inheritanceResult).assertEqual('John Inheritance_john.inheritance@test.com_35_400');
+      try {
+        const inheritanceResult = await processUserWithProfile(userWithProfile);
+        expect(inheritanceResult).assertEqual('John Inheritance_john.inheritance@test.com_35_400');
 
-      const mixedArray: (string | number)[] = ['hello', 123, 'world', 456];
-      const unionArrayResult = await processUnionArray(mixedArray);
-      expect(unionArrayResult).assertDeepEquals(['STR_hello', 'NUM_123', 'STR_world', 'NUM_456']);
+        const mixedArray: (string | number)[] = ['hello', 123, 'world', 456];
+        const unionArrayResult = await processUnionArray(mixedArray);
+        expect(unionArrayResult).assertDeepEquals(['STR_hello', 'NUM_123', 'STR_world', 'NUM_456']);
+      } catch (e) {
+        console.info(`asyncFirTest0051 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -2982,7 +3378,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       try {
         const returnString = async (): Promise<string> => {
           return await Promise.resolve('typed_string');
@@ -3037,6 +3433,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
 
@@ -3048,7 +3445,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       try {
         const stringGeneric = await genericReturn0054<string>('generic_string');
         expect(typeof stringGeneric).assertEqual('string');
@@ -3084,6 +3481,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -3094,7 +3492,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const returnNestedData = async (): Promise<NestedReturnData> => {
         const userSettings: UserSettings = {
           theme: 'dark',
@@ -3114,7 +3512,12 @@ export default function asyncFirTest(): void {
         const userData: UserDataNested = { profile: userProfile, metadata: userMetadata };
 
         const data: NestedReturnData = { user: userData, permissions: ['read', 'write', 'admin'] };
-        return await Promise.resolve(data);
+        try {
+          return await Promise.resolve(data);
+        } catch (e) {
+          console.info(`asyncFirTest0055 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const buildNestedObject = async (userId: number): Promise<NestedReturnData> => {
@@ -3187,6 +3590,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -3197,7 +3601,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const returnTypedArray = async (): Promise<number[]> => {
         try {
           const numbers: number[] = [10, 20, 30, 40, 50];
@@ -3213,8 +3617,13 @@ export default function asyncFirTest(): void {
         input.forEach((item: string, index: int) => {
           pros.push(Promise.resolve(`${index}_${item}`))
         })
-        const processed = await Promise.all(pros);
-        return processed;
+        try {
+          const processed = await Promise.all(pros);
+          return processed;
+        } catch (e) {
+          console.info(`asyncFirTest0056 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const returnObjectArray = async (): Promise<ComplexUserProfile[]> => {
@@ -3233,7 +3642,12 @@ export default function asyncFirTest(): void {
           },
           { id: 3, name: 'User3', email: 'user3@test.com' }
         ];
-        return await Promise.resolve(users);
+        try {
+          return await Promise.resolve(users);
+        } catch (e) {
+          console.info(`asyncFirTest0056 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const returnArrayWithSummary = async (numbers: number[]): Promise<ArrayReturnResult> => {
@@ -3251,7 +3665,12 @@ export default function asyncFirTest(): void {
             min: min
           }
         };
-        return await Promise.resolve(result);
+        try {
+          return await Promise.resolve(result);
+        } catch (e) {
+          console.info(`asyncFirTest0056 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -3287,6 +3706,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -3385,16 +3805,26 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const returnNullValue = async (): Promise<string | null> => {
-        return await Promise.resolve(null);
+        try {
+          return await Promise.resolve(null);
+        } catch (e) {
+          console.info(`asyncFirTest0058 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const returnNullableString = async (condition: boolean): Promise<string | null> => {
-        if (condition) {
-          return await Promise.resolve('valid_string');
+        try {
+          if (condition) {
+            return await Promise.resolve('valid_string');
+          }
+          return await Promise.resolve(null);
+        } catch (e) {
+          console.info(`asyncFirTest0058 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        return await Promise.resolve(null);
       };
 
       try {
@@ -3409,6 +3839,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -3419,26 +3850,42 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const returnUndefinedValue = async (): Promise<number | undefined> => {
-        return await Promise.resolve(undefined);
+        try {
+          return await Promise.resolve(undefined);
+        } catch (e) {
+          console.info(`asyncFirTest0059 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const returnOptionalNumber = async (hasValue: boolean): Promise<int | undefined> => {
-        if (hasValue) {
-          return await Promise.resolve(42);
+        try {
+          if (hasValue) {
+            return await Promise.resolve(42);
+          }
+          return await Promise.resolve(undefined);
+        } catch (e) {
+          console.info(`asyncFirTest0059 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        return await Promise.resolve(undefined);
       };
 
-      const undefinedResult = await returnUndefinedValue();
-      expect(undefinedResult).assertEqual(undefined);
+      try {
+        const undefinedResult = await returnUndefinedValue();
+        expect(undefinedResult).assertEqual(undefined);
 
-      const validNumberResult = await returnOptionalNumber(true);
-      expect(validNumberResult).assertEqual(42);
+        const validNumberResult = await returnOptionalNumber(true);
+        expect(validNumberResult).assertEqual(42);
 
-      const undefinedNumberResult = await returnOptionalNumber(false);
-      expect(undefinedNumberResult).assertEqual(undefined);
+        const undefinedNumberResult = await returnOptionalNumber(false);
+        expect(undefinedNumberResult).assertEqual(undefined);
+      } catch (e) {
+        console.info(`asyncFirTest0059 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
 
@@ -3450,14 +3897,20 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const nullableWrapper = await returnNullableResult0060<string>('test_value');
-      expect(nullableWrapper.value).assertEqual('test_value');
-      expect(nullableWrapper.hasValue).assertEqual(true);
+    it('asyncFirTest0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      try {
+        const nullableWrapper = await returnNullableResult0060<string>('test_value');
+        expect(nullableWrapper.value).assertEqual('test_value');
+        expect(nullableWrapper.hasValue).assertEqual(true);
 
-      const nullWrapper = await returnNullableResult0060<string>(null);
-      expect(nullWrapper.value).assertEqual(null);
-      expect(nullWrapper.hasValue).assertEqual(false);
+        const nullWrapper = await returnNullableResult0060<string>(null);
+        expect(nullWrapper.value).assertEqual(null);
+        expect(nullWrapper.hasValue).assertEqual(false);
+      } catch (e) {
+        console.info(`asyncFirTest0060 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -3468,27 +3921,38 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const returnNullableUser = async (exists: boolean): Promise<ComplexUserProfile | null> => {
-        if (exists) {
-          const user: ComplexUserProfile = {
-            id: 1,
-            name: 'Test User',
-            email: 'test@example.com',
-            age: 30
-          };
-          return await Promise.resolve(user);
+        try {
+          if (exists) {
+            const user: ComplexUserProfile = {
+              id: 1,
+              name: 'Test User',
+              email: 'test@example.com',
+              age: 30
+            };
+            return await Promise.resolve(user);
+          }
+          return await Promise.resolve(null);
+        } catch (e) {
+          console.info(`asyncFirTest0061 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        return await Promise.resolve(null);
       };
 
-      const existingUser = await returnNullableUser(true);
-      expect(existingUser).not().assertNull();
-      expect(existingUser!.name).assertEqual('Test User');
-      expect(existingUser!.email).assertEqual('test@example.com');
+      try {
+        const existingUser = await returnNullableUser(true);
+        expect(existingUser).not().assertNull();
+        expect(existingUser!.name).assertEqual('Test User');
+        expect(existingUser!.email).assertEqual('test@example.com');
 
-      const nullUser = await returnNullableUser(false);
-      expect(nullUser).assertEqual(null);
+        const nullUser = await returnNullableUser(false);
+        expect(nullUser).assertEqual(null);
+      } catch (e) {
+        console.info(`asyncFirTest0061 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -3499,22 +3963,33 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const returnOptionalArray = async (hasData: boolean): Promise<string[] | undefined> => {
-        if (hasData) {
-          return await Promise.resolve(['item1', 'item2', 'item3']);
+        try {
+          if (hasData) {
+            return await Promise.resolve(['item1', 'item2', 'item3']);
+          }
+          return await Promise.resolve(undefined);
+        } catch (e) {
+          console.info(`asyncFirTest0062 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        return await Promise.resolve(undefined);
       };
 
-      const validArray = await returnOptionalArray(true);
-      expect(validArray!.length).assertEqual(3);
-      expect(validArray![0]).assertEqual('item1');
-      expect(validArray![1]).assertEqual('item2');
-      expect(validArray![2]).assertEqual('item3');
+      try {
+        const validArray = await returnOptionalArray(true);
+        expect(validArray!.length).assertEqual(3);
+        expect(validArray![0]).assertEqual('item1');
+        expect(validArray![1]).assertEqual('item2');
+        expect(validArray![2]).assertEqual('item3');
 
-      const undefinedArray = await returnOptionalArray(false);
-      expect(undefinedArray).assertEqual(undefined);
+        const undefinedArray = await returnOptionalArray(false);
+        expect(undefinedArray).assertEqual(undefined);
+      } catch (e) {
+        console.info(`asyncFirTest0062 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -3621,7 +4096,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const processEmptyArray = async (input: string[]): Promise<string[]> => {
         try {
           if (input.length === 0) {
@@ -3646,7 +4121,12 @@ export default function asyncFirTest(): void {
           metadata: emptyMetadata,
           isEmpty: true
         };
-        return await Promise.resolve(result);
+        try {
+          return await Promise.resolve(result);
+        } catch (e) {
+          console.info(`asyncFirTest0065 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -3664,6 +4144,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -3674,26 +4155,42 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const filterToEmpty = async (numbers: number[]): Promise<Array<Double | null>> => {
-        const filtered = await Promise.all(
-          numbers.map(async (num: number): Promise<number | null> => {
-            if (num > 1000) {
-              return await Promise.resolve(num);
-            }
-            return await Promise.resolve(null);
-          })
-        );
-        return filtered.filter((item: number | null): boolean => item !== null) as Array<Double | null>;
+        try {
+          const filtered = await Promise.all(
+            numbers.map(async (num: number): Promise<number | null> => {
+              try {
+                if (num > 1000) {
+                  return await Promise.resolve(num);
+                }
+                return await Promise.resolve(null);
+              } catch (e) {
+                console.info(`asyncFirTest0066 catch error: ${JSON.stringify(e)}`);
+                throw e;
+              }
+            })
+          );
+          return filtered.filter((item: number | null): boolean => item !== null) as Array<Double | null>;
+        } catch (e) {
+          console.info(`asyncFirTest0066 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      const filteredResult = await filterToEmpty([1, 5, 10, 50, 100]);
-      expect(filteredResult?.length).assertEqual(0);
+      try {
+        const filteredResult = await filterToEmpty([1, 5, 10, 50, 100]);
+        expect(filteredResult?.length).assertEqual(0);
 
-      const filteredWithResults = await filterToEmpty([1, 5, 1500, 2000]);
-      expect(filteredWithResults.length).assertEqual(2);
-      expect(filteredWithResults[0]).assertEqual(1500);
-      expect(filteredWithResults[1]).assertEqual(2000);
+        const filteredWithResults = await filterToEmpty([1, 5, 1500, 2000]);
+        expect(filteredWithResults.length).assertEqual(2);
+        expect(filteredWithResults[0]).assertEqual(1500);
+        expect(filteredWithResults[1]).assertEqual(2000);
+      } catch (e) {
+        console.info(`asyncFirTest0066 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
 
@@ -3759,7 +4256,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const processEmptyObject = async (input: Map<string, string>): Promise<Map<string, string>> => {
         if (input.size === 0) {
           return new Map<string, string>();
@@ -3778,7 +4275,12 @@ export default function asyncFirTest(): void {
           metadata: emptyMetadata,
           isEmpty: true
         };
-        return await Promise.resolve(result);
+        try {
+          return await Promise.resolve(result);
+        } catch (e) {
+          console.info(`asyncFirTest0068 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -3801,6 +4303,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -3811,7 +4314,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncFirTest0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncFirTest0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       const filterObjectToEmpty = async (input: Map<string, number>): Promise<Map<string, number>> => {
         const filtered: Map<string, number> = new Map<string, number>();
         input.forEach((value: number, key: string) => {
@@ -3826,17 +4329,23 @@ export default function asyncFirTest(): void {
       testInput1.set('a', 1);
       testInput1.set('b', 5);
       testInput1.set('c', 10);
-      const filteredEmpty = await filterObjectToEmpty(testInput1);
-      expect(filteredEmpty.size).assertEqual(0);
+      try {
+        const filteredEmpty = await filterObjectToEmpty(testInput1);
+        expect(filteredEmpty.size).assertEqual(0);
 
-      const testInput2: Map<string, number> = new Map<string, number>();
-      testInput2.set('a', 1);
-      testInput2.set('b', 1500);
-      testInput2.set('c', 2000);
-      const filteredWithResults = await filterObjectToEmpty(testInput2);
-      expect(filteredWithResults.size).assertEqual(2);
-      expect(filteredWithResults.get('b')).assertEqual(1500);
-      expect(filteredWithResults.get('c')).assertEqual(2000);
+        const testInput2: Map<string, number> = new Map<string, number>();
+        testInput2.set('a', 1);
+        testInput2.set('b', 1500);
+        testInput2.set('c', 2000);
+        const filteredWithResults = await filterObjectToEmpty(testInput2);
+        expect(filteredWithResults.size).assertEqual(2);
+        expect(filteredWithResults.get('b')).assertEqual(1500);
+        expect(filteredWithResults.get('c')).assertEqual(2000);
+      } catch (e) {
+        console.info(`asyncFirTest0069 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -4104,7 +4613,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       const returnComplexStructure = async (): Promise<ComplexNestedStructure> => {
         const activeUser1: UserInfo = { name: 'Active User 1', age: 25 };
         const activeUser2: UserInfo = { name: 'Active User 2', age: 30 };
@@ -4143,20 +4652,31 @@ export default function asyncFirTest(): void {
           settings: settingsData,
           statistics: statisticsData
         };
-        return await Promise.resolve(structure);
+        try {
+          return await Promise.resolve(structure);
+        } catch (e) {
+          console.info(`asyncFirTest0074 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      const complexStructure = await returnComplexStructure();
+      try {
+        const complexStructure = await returnComplexStructure();
 
-      expect(typeof complexStructure.settings).assertEqual('object');
-      expect(typeof complexStructure.settings.global).assertEqual('object');
-      expect(typeof complexStructure.settings.user).assertEqual('object');
-      expect(complexStructure.settings.global['enableNotifications']).assertEqual(true);
-      expect(complexStructure.settings.user['theme']).assertEqual('light');
+        expect(typeof complexStructure.settings).assertEqual('object');
+        expect(typeof complexStructure.settings.global).assertEqual('object');
+        expect(typeof complexStructure.settings.user).assertEqual('object');
+        expect(complexStructure.settings.global['enableNotifications']).assertEqual(true);
+        expect(complexStructure.settings.user['theme']).assertEqual('light');
 
-      expect(typeof complexStructure.statistics).assertEqual('object');
-      expect(complexStructure.statistics.totalUsers).assertEqual(3);
-      expect(complexStructure.statistics.activeCount).assertEqual(2);
+        expect(typeof complexStructure.statistics).assertEqual('object');
+        expect(complexStructure.statistics.totalUsers).assertEqual(3);
+        expect(complexStructure.statistics.activeCount).assertEqual(2);
+      } catch (e) {
+        console.info(`asyncFirTest0074 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -4167,7 +4687,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       const buildComplexStructure = async (userCount: number): Promise<ComplexNestedStructure> => {
         try {
           const activeUsers: UserInfo[] = [];
@@ -4226,6 +4746,7 @@ export default function asyncFirTest(): void {
       } catch (err) {
         expect(err).assertFail();
       }
+      done();
     });
 
     /**
@@ -4236,7 +4757,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncFirTest0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncFirTest0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
       const returnEmptyComplexStructure = async (): Promise<ComplexNestedStructure> => {
         const emptyUserGroups: UserGroups = { active: [], inactive: [] };
 
@@ -4247,16 +4768,27 @@ export default function asyncFirTest(): void {
         const emptyStatisticsData: StatisticsData = { totalUsers: 0, activeCount: 0, lastUpdate: '1970-01-01T00:00:00Z' };
 
         const structure: ComplexNestedStructure = { users: emptyUserGroups, settings: emptySettingsData, statistics: emptyStatisticsData };
-        return await Promise.resolve(structure);
+        try {
+          return await Promise.resolve(structure);
+        } catch (e) {
+          console.info(`asyncFirTest0076 catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
-      const emptyComplex = await returnEmptyComplexStructure();
-      expect(emptyComplex.users.active.length).assertEqual(0);
-      expect(emptyComplex.users.inactive.length).assertEqual(0);
-      expect(Object.keys(emptyComplex.settings.global).length).assertEqual(0);
-      expect(Object.keys(emptyComplex.settings.user).length).assertEqual(0);
-      expect(emptyComplex.statistics.totalUsers).assertEqual(0);
-      expect(emptyComplex.statistics.activeCount).assertEqual(0);
+      try {
+        const emptyComplex = await returnEmptyComplexStructure();
+        expect(emptyComplex.users.active.length).assertEqual(0);
+        expect(emptyComplex.users.inactive.length).assertEqual(0);
+        expect(Object.keys(emptyComplex.settings.global).length).assertEqual(0);
+        expect(Object.keys(emptyComplex.settings.user).length).assertEqual(0);
+        expect(emptyComplex.statistics.totalUsers).assertEqual(0);
+        expect(emptyComplex.statistics.activeCount).assertEqual(0);
+      } catch (e) {
+        console.info(`asyncFirTest0076 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -4267,7 +4799,7 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFirTest0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('asyncFirTest0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
       let globalState: int = 100;
 
       const calculateAsync = async (input: int): Promise<int> => {
@@ -4287,10 +4819,16 @@ export default function asyncFirTest(): void {
         }
       };
 
-      const result = await calculateAsync(10);
+      try {
+        const result = await calculateAsync(10);
 
-      expect(result).assertEqual(25);
-      expect(globalState).assertEqual(125);
+        expect(result).assertEqual(25);
+        expect(globalState).assertEqual(125);
+      } catch (e) {
+        console.info(`asyncFirTest0077 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -4301,40 +4839,51 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFirTest0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('asyncFirTest0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
       const processCondition = async (type: string): Promise<string> => {
-        let status = 'pending';
+        try {
+          let status = 'pending';
 
-        if (type === 'fast') {
-          status = await Promise.resolve('completed_fast');
-        } else if (type === 'slow') {
-          await Promise.resolve(1);
-          status = 'completed_slow';
-        } else {
-          switch (type) {
-            case 'complex':
-              const part1 = await Promise.resolve('comp');
-              const part2 = await Promise.resolve('lex');
-              status = part1 + part2;
-              break;
-            default:
-              status = 'unknown';
+          if (type === 'fast') {
+            status = await Promise.resolve('completed_fast');
+          } else if (type === 'slow') {
+            await Promise.resolve(1);
+            status = 'completed_slow';
+          } else {
+            switch (type) {
+              case 'complex':
+                const part1 = await Promise.resolve('comp');
+                const part2 = await Promise.resolve('lex');
+                status = part1 + part2;
+                break;
+              default:
+                status = 'unknown';
+            }
           }
+          return status;
+        } catch (e) {
+          console.info(`asyncFirTest0078 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        return status;
       };
 
-      const resFast = await processCondition('fast');
-      expect(resFast).assertEqual('completed_fast');
+      try {
+        const resFast = await processCondition('fast');
+        expect(resFast).assertEqual('completed_fast');
 
-      const resSlow = await processCondition('slow');
-      expect(resSlow).assertEqual('completed_slow');
+        const resSlow = await processCondition('slow');
+        expect(resSlow).assertEqual('completed_slow');
 
-      const resComplex = await processCondition('complex');
-      expect(resComplex).assertEqual('complex');
+        const resComplex = await processCondition('complex');
+        expect(resComplex).assertEqual('complex');
 
-      const resDefault = await processCondition('none');
-      expect(resDefault).assertEqual('unknown');
+        const resDefault = await processCondition('none');
+        expect(resDefault).assertEqual('unknown');
+      } catch (e) {
+        console.info(`asyncFirTest0078 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -4345,38 +4894,54 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFirTest0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('asyncFirTest0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
       const numbers: number[] = [10, 20, 30];
       const accumulator: number[] = [];
 
       const processArray = async (arr: number[]): Promise<number> => {
-        let sum: number = 0;
-        for (const num of arr) {
-          const val: number = await Promise.resolve(num + 1);
-          sum += val;
-          accumulator.push(val);
+        try {
+          let sum: number = 0;
+          for (const num of arr) {
+            const val: number = await Promise.resolve(num + 1);
+            sum += val;
+            accumulator.push(val);
+          }
+          return sum;
+        } catch (e) {
+          console.info(`asyncFirTest0079 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        return sum;
       };
 
       const processLoopIndex = async (): Promise<string> => {
-        let str = '';
-        for (let i: int = 0; i < 3; i++) {
-          const chars = await Promise.resolve(i.toString());
-          str += chars;
+        try {
+          let str = '';
+          for (let i: int = 0; i < 3; i++) {
+            const chars = await Promise.resolve(i.toString());
+            str += chars;
+          }
+          return str;
+        } catch (e) {
+          console.info(`asyncFirTest0079 catch error: ${JSON.stringify(e)}`);
+          throw e;
         }
-        return str;
       };
 
-      const totalSum = await processArray(numbers);
-      expect(totalSum).assertEqual(63);
+      try {
+        const totalSum = await processArray(numbers);
+        expect(totalSum).assertEqual(63);
 
-      expect(accumulator.length).assertEqual(3);
-      expect(accumulator[0]).assertEqual(11);
-      expect(accumulator[2]).assertEqual(31);
+        expect(accumulator.length).assertEqual(3);
+        expect(accumulator[0]).assertEqual(11);
+        expect(accumulator[2]).assertEqual(31);
 
-      const loopStr = await processLoopIndex();
-      expect(loopStr).assertEqual('012');
+        const loopStr = await processLoopIndex();
+        expect(loopStr).assertEqual('012');
+      } catch (e) {
+        console.info(`asyncFirTest0079 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
     /**
@@ -4387,19 +4952,25 @@ export default function asyncFirTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('asyncFirTest0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const numRes = await wrapInAsync0080<number>(12345);
-      expect(numRes).assertEqual(12345);
+    it('asyncFirTest0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      try {
+        const numRes = await wrapInAsync0080<number>(12345);
+        expect(numRes).assertEqual(12345);
 
-      const strRes = await wrapInAsync0080<string>('Generic Test');
-      expect(strRes).assertEqual('Generic Test');
+        const strRes = await wrapInAsync0080<string>('Generic Test');
+        expect(strRes).assertEqual('Generic Test');
 
-      const objInput: TestObj = { id: 1, val: 'obj' };
-      const objRes = await wrapInAsync0080<TestObj>(objInput);
-      expect(objRes.id).assertEqual(1);
-      expect(objRes.val).assertEqual('obj');
+        const objInput: TestObj = { id: 1, val: 'obj' };
+        const objRes = await wrapInAsync0080<TestObj>(objInput);
+        expect(objRes.id).assertEqual(1);
+        expect(objRes.val).assertEqual('obj');
 
-      expect(objRes).assertEqual(objInput);
+        expect(objRes).assertEqual(objInput);
+      } catch (e) {
+        console.info(`asyncFirTest0080 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      done();
     });
 
   })
