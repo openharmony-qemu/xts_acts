@@ -16,6 +16,8 @@ import AsyncLockOptionsParameterizedConstructorTest from './AsyncLockOptionsPara
 import AsyncLockCallbackTest from './AsyncLockCallbackTest.test';
 
 export default function testsuite(): void {
+  // QueryAll must stay first: testAsyncLockQueryAll0100 asserts empty global pool
+  AsyncLockQueryAllTest();
   AbortSignalPropertyTest();
   AsyncLockConstructorTest();
   AsyncLockLockAsyncFirstOverloadTest();
@@ -24,7 +26,6 @@ export default function testsuite(): void {
   AsyncLockLockAsyncSecondOverloadTest();
   AsyncLockOptionsConstructorTest();
   AsyncLockOptionsParameterizedConstructorTest();
-  AsyncLockQueryAllTest();
   AsyncLockLockAsyncThirdOverloadTest();
   AsyncLockInfoTest();
   AsyncLockQueryInstanceTest();

@@ -62,6 +62,7 @@ export default function AsyncLockStatePropertyTest(): void {
       let state = lock.query();
       let held: AsyncLockInfo[] = state.held;
       expect(Array.isArray(held)).assertTrue();
+      expect(held.length).assertEqual(0);
     });
 
     /**
@@ -77,6 +78,7 @@ export default function AsyncLockStatePropertyTest(): void {
       let state = lock.query();
       let pending: AsyncLockInfo[] = state.pending;
       expect(Array.isArray(pending)).assertTrue();
+      expect(pending.length).assertEqual(0);
     });
 
     /**
@@ -92,6 +94,8 @@ export default function AsyncLockStatePropertyTest(): void {
       let state = lock.query();
       expect(Array.isArray(state.held)).assertTrue();
       expect(Array.isArray(state.pending)).assertTrue();
+      expect(state.held.length).assertEqual(0);
+      expect(state.pending.length).assertEqual(0);
     });
 
     /**
@@ -107,6 +111,8 @@ export default function AsyncLockStatePropertyTest(): void {
       let state = lock.query();
       expect(Array.isArray(state.held)).assertTrue();
       expect(Array.isArray(state.pending)).assertTrue();
+      expect(state.held.length).assertEqual(0);
+      expect(state.pending.length).assertEqual(0);
     });
 
     /**
@@ -172,7 +178,7 @@ export default function AsyncLockStatePropertyTest(): void {
     /**
      * @tc.name    testAsyncLockStateProperty1100
      * @tc.number  SUB_ASYNCLOCK_STATE_PROPERTY_TEST_1100
-     * @tc.desc    Verify properties are not undefined
+     * @tc.desc    Verify held and pending are empty arrays for new lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
@@ -180,8 +186,8 @@ export default function AsyncLockStatePropertyTest(): void {
     it('testAsyncLockStateProperty1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let lock = new AsyncLock();
       let state = lock.query();
-      expect(state.held).not().assertUndefined();
-      expect(state.pending).not().assertUndefined();
+      expect(state.held.length).assertEqual(0);
+      expect(state.pending.length).assertEqual(0);
     });
 
     /**
@@ -224,6 +230,7 @@ export default function AsyncLockStatePropertyTest(): void {
       let lock = new AsyncLock();
       let state = lock.query();
       expect(Array.isArray(state.held)).assertTrue();
+      expect(state.held.length).assertEqual(0);
     });
 
     /**
@@ -238,6 +245,7 @@ export default function AsyncLockStatePropertyTest(): void {
       let lock = new AsyncLock();
       let state = lock.query();
       expect(Array.isArray(state.pending)).assertTrue();
+      expect(state.pending.length).assertEqual(0);
     });
 
     /**
@@ -406,8 +414,6 @@ export default function AsyncLockStatePropertyTest(): void {
       await lock.lockAsync<void>(() => {
         let state = lock.query();
         if (state.held.length > 0) {
-          expect(state.held[0].name).not().assertNull();
-          expect(state.held[0].mode).not().assertNull();
           expect(state.held[0].contextId).assertLarger(0);
         }
       });
@@ -417,7 +423,7 @@ export default function AsyncLockStatePropertyTest(): void {
     /**
      * @tc.name    testAsyncLockStateProperty2600
      * @tc.number  SUB_ASYNCLOCK_STATE_PROPERTY_TEST_2600
-     * @tc.desc    Verify held array maximum length
+     * @tc.desc    Verify concurrent SHARED lock requests keep held non-empty
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -437,26 +443,44 @@ export default function AsyncLockStatePropertyTest(): void {
     /**
      * @tc.name    testAsyncLockStateProperty2700
      * @tc.number  SUB_ASYNCLOCK_STATE_PROPERTY_TEST_2700
-     * @tc.desc    Verify pending array length access
+     * @tc.desc    Verify pending array length, element access and traversal
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockStateProperty2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let lock = new AsyncLock();
-      let p1 = lock.lockAsync<void>((): Promise<void> => {
-        return new Promise<void>((resolve): void => {
-          setTimeout((): void => { resolve(undefined); }, 100);
+    it('testAsyncLockStateProperty2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let lock = new AsyncLock();
+        let p1 = lock.lockAsync<void>((): Promise<void> => {
+          return new Promise<void>((resolve): void => {
+            setTimeout((): void => { resolve(undefined); }, 100);
+          });
         });
-      });
-      let p2 = lock.lockAsync<void>(() => {});
-      let state = lock.query();
-      let length = state.pending.length;
-      expect(typeof length).assertEqual("int");
-      expect(length).assertLarger(0);
-      await p1;
-      await p2;
-
+        let p2 = lock.lockAsync<void>(() => {});
+        let state = lock.query();
+        let length = state.pending.length;
+        expect(typeof length).assertEqual("int");
+        expect(length).assertLarger(0);
+        if (state.pending.length > 0) {
+          let firstPending: AsyncLockInfo = state.pending[0];
+          expect(typeof firstPending.name).assertEqual("string");
+          expect(firstPending.mode).assertEqual(AsyncLockMode.EXCLUSIVE);
+          expect(Number.isInteger(firstPending.contextId)).assertTrue();
+          expect(firstPending.contextId).assertLarger(0);
+        }
+        let traversedCount: number = 0;
+        for (let info of state.pending) {
+          traversedCount++;
+        }
+        expect(traversedCount).assertEqual(length);
+        await p1;
+        await p2;
+        done();
+      } catch (error) {
+        console.error('testAsyncLockStateProperty2700 failed: ' + JSON.stringify(error));
+        expect(false).assertFail();
+        done();
+      }
     });
 
     /**
@@ -479,6 +503,8 @@ export default function AsyncLockStatePropertyTest(): void {
       expect(state.pending.length).assertLarger(0);
       await p1;
       await p2;
+      let stateAfter = lock.query();
+      expect(stateAfter.pending.length).assertEqual(0);
 
     });
 
@@ -511,7 +537,7 @@ export default function AsyncLockStatePropertyTest(): void {
     /**
      * @tc.name    testAsyncLockStateProperty3000
      * @tc.number  SUB_ASYNCLOCK_STATE_PROPERTY_TEST_3000
-     * @tc.desc    Verify monitor lock pending state
+     * @tc.desc    Verify pending state is empty before any waiting request
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -544,6 +570,106 @@ export default function AsyncLockStatePropertyTest(): void {
         expect(jsonStr).assertContain('"pending"');
       });
 
+    });
+
+    /**
+     * @tc.name    testAsyncLockStateProperty3200
+     * @tc.number  SUB_ASYNCLOCK_STATE_PROPERTY_TEST_3200
+     * @tc.desc    Verify held array in state snapshot can be modified
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockStateProperty3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let lock = new AsyncLock();
+        await lock.lockAsync<void>(() => {
+          let state = lock.query();
+          expect(state.held.length).assertLarger(0);
+          let info: AsyncLockInfo = state.held[0];
+          let originalLen: number = state.held.length;
+          state.held.push(info);
+          expect(state.held.length).assertEqual(originalLen + 1);
+          expect(state.held[1].name).assertEqual(info.name);
+          let emptyHeld: AsyncLockInfo[] = [];
+          state.held = emptyHeld;
+          expect(state.held.length).assertEqual(0);
+        });
+        done();
+      } catch (error) {
+        console.error('testAsyncLockStateProperty3200 failed: ' + JSON.stringify(error));
+        expect(false).assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testAsyncLockStateProperty3300
+     * @tc.number  SUB_ASYNCLOCK_STATE_PROPERTY_TEST_3300
+     * @tc.desc    Verify pending array in state snapshot can be modified
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockStateProperty3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let lock = new AsyncLock();
+        let p1 = lock.lockAsync<void>((): Promise<void> => {
+          return new Promise<void>((resolve): void => {
+            setTimeout((): void => { resolve(undefined); }, 100);
+          });
+        });
+        let p2 = lock.lockAsync<void>(() => {});
+        let state = lock.query();
+        expect(state.pending.length).assertLarger(0);
+        let info: AsyncLockInfo = state.pending[0];
+        let originalLen: number = state.pending.length;
+        state.pending.push(info);
+        expect(state.pending.length).assertEqual(originalLen + 1);
+        expect(state.pending[1].mode).assertEqual(info.mode);
+        let emptyPending: AsyncLockInfo[] = [];
+        state.pending = emptyPending;
+        expect(state.pending.length).assertEqual(0);
+        await p1;
+        await p2;
+        done();
+      } catch (error) {
+        console.error('testAsyncLockStateProperty3300 failed: ' + JSON.stringify(error));
+        expect(false).assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testAsyncLockStateProperty3400
+     * @tc.number  SUB_ASYNCLOCK_STATE_PROPERTY_TEST_3400
+     * @tc.desc    Verify held and pending can be non-empty at the same time
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockStateProperty3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let lock = new AsyncLock();
+        let p1 = lock.lockAsync<void>((): Promise<void> => {
+          return new Promise<void>((resolve): void => {
+            setTimeout((): void => { resolve(undefined); }, 100);
+          });
+        }, AsyncLockMode.SHARED);
+        let p2 = lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
+        let state = lock.query();
+        expect(state.held.length).assertLarger(0);
+        expect(state.pending.length).assertLarger(0);
+        expect(state.held[0].mode).assertEqual(AsyncLockMode.SHARED);
+        expect(state.pending[0].mode).assertEqual(AsyncLockMode.EXCLUSIVE);
+        await p1;
+        await p2;
+        done();
+      } catch (error) {
+        console.error('testAsyncLockStateProperty3400 failed: ' + JSON.stringify(error));
+        expect(false).assertFail();
+        done();
+      }
     });
 
   });
