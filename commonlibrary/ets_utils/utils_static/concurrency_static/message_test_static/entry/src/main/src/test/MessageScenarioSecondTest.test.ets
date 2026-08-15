@@ -2891,14 +2891,14 @@ export default function MessageScenarioSecondTest(): void {
         const TAG: string = 'MessageTest061';
         let flag: boolean = false;
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-          waitForCompletion(async () => {
+          (async () => {
             try {
               await Sleep(1000);
             } catch (error) {
               expect(error).assertFail();
             }
             flag = true;
-          })
+          })()
         }, worker);
         let p = () => {
           let a = 1;
