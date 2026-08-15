@@ -99,12 +99,15 @@ export default function AsyncLockQueryStaticTest(): void {
      * @tc.level   LEVEL1
      */
     it('testAsyncLockQueryStatic0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let errorCaught = false;
       try {
         AsyncLock.query("notExistLock");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue()
+        errorCaught = true;
+        expect(e instanceof Error).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -116,12 +119,15 @@ export default function AsyncLockQueryStaticTest(): void {
      * @tc.level   LEVEL1
      */
     it('testAsyncLockQueryStatic0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let errorCaught = false;
       try {
-        let state = AsyncLock.query(undefined as string);
+        AsyncLock.query(undefined as string);
         expect().assertFail();
       } catch (error) {
+        errorCaught = true;
         expect(error instanceof Error).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -267,27 +273,12 @@ export default function AsyncLockQueryStaticTest(): void {
     /**
      * @tc.name    testAsyncLockQueryStatic1800
      * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_1800
-     * @tc.desc    Verify query static method returns complete state structure
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('testAsyncLockQueryStatic1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let lock = AsyncLock.request("structureTest");
-      let state = AsyncLock.query("structureTest");
-      expect(state.held.length).assertEqual(0);
-
-    });
-
-    /**
-     * @tc.name    testAsyncLockQueryStatic1900
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_1900
      * @tc.desc    Verify query static method returns empty arrays for unused lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryStatic1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testAsyncLockQueryStatic1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let lock = AsyncLock.request("emptyStateTest");
       let state = AsyncLock.query("emptyStateTest");
       expect(state.held.length).assertEqual(0);
@@ -295,14 +286,14 @@ export default function AsyncLockQueryStaticTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic2000
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2000
+     * @tc.name    testAsyncLockQueryStatic1900
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_1900
      * @tc.desc    Verify query static method returns held data when lock is held
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryStatic2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockQueryStatic1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = AsyncLock.request("heldLock");
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -314,158 +305,107 @@ export default function AsyncLockQueryStaticTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic2100
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2100
-     * @tc.desc    Verify query static method return type is AsyncLockState
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('testAsyncLockQueryStatic2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let lock = AsyncLock.request("typeCheck");
-      let state: AsyncLockState = AsyncLock.query("typeCheck");
-      expect(state.held.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.name    testAsyncLockQueryStatic2200
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2200
-     * @tc.desc    Verify held property is array type
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('testAsyncLockQueryStatic2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let lock = AsyncLock.request("heldType");
-      let state = AsyncLock.query("heldType");
-      expect(Array.isArray(state.held)).assertTrue();
-    });
-
-    /**
-     * @tc.name    testAsyncLockQueryStatic2300
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2300
-     * @tc.desc    Verify pending property is array type
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('testAsyncLockQueryStatic2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let lock = AsyncLock.request("pendingType");
-      let state = AsyncLock.query("pendingType");
-      expect(Array.isArray(state.pending)).assertTrue();
-    });
-
-    /**
-     * @tc.name    testAsyncLockQueryStatic2400
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2400
-     * @tc.desc    Verify query static method returns non-null state
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('testAsyncLockQueryStatic2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let lock = AsyncLock.request("nonNull");
-      let state = AsyncLock.query("nonNull");
-      expect(state.held.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.name    testAsyncLockQueryStatic2500
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2500
+     * @tc.name    testAsyncLockQueryStatic2000
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2000
      * @tc.desc    Verify query static method with multiple shared locks
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockQueryStatic2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let lock = AsyncLock.request("maxHeld");
-      await Promise.all([
-        lock.lockAsync<void>(() => {}, AsyncLockMode.SHARED),
-        lock.lockAsync<void>(() => {}, AsyncLockMode.SHARED)
-      ]);
-      let state = AsyncLock.query("maxHeld");
-      expect(state.held.length).assertEqual(0);
-
-    });
-
-    /**
-     * @tc.name    testAsyncLockQueryStatic2600
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2600
-     * @tc.desc    Verify query static method throws Error for non-existent lock
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('testAsyncLockQueryStatic2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testAsyncLockQueryStatic2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        AsyncLock.query("notExistLock");
-        expect().assertFail();
-      } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        let lock = AsyncLock.request("maxHeld");
+        let p1 = lock.lockAsync<void>((): Promise<void> => {
+          return new Promise<void>((resolve): void => {
+            setTimeout((): void => { resolve(undefined); }, 100);
+          });
+        }, AsyncLockMode.SHARED);
+        let p2 = lock.lockAsync<void>(() => {
+          let state = AsyncLock.query("maxHeld");
+          expect(state.held.length).assertLargerOrEqual(2);
+        }, AsyncLockMode.SHARED);
+        await p1;
+        await p2;
+        let stateAfter = AsyncLock.query("maxHeld");
+        expect(stateAfter.held.length).assertEqual(0);
+        done();
+      } catch (error) {
+        console.error("testAsyncLockQueryStatic2000 failed");
+        expect(false).assertFail();
+        done();
       }
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic2700
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2700
+     * @tc.name    testAsyncLockQueryStatic2100
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2100
      * @tc.desc    Verify query throws Error for non-existent lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryStatic2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testAsyncLockQueryStatic2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let errorCaught = false;
       try {
         AsyncLock.query("nonexistent");
         expect().assertFail();
       } catch (e) {
+        errorCaught = true;
         expect(e instanceof Error).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic2800
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2800
+     * @tc.name    testAsyncLockQueryStatic2200
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2200
      * @tc.desc    Verify query throws error for custom non-existent lock name
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryStatic2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testAsyncLockQueryStatic2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let customName = "customMissingLock";
+      let errorCaught = false;
       try {
         AsyncLock.query(customName);
         expect().assertFail();
       } catch (e) {
+        errorCaught = true;
         expect(e instanceof Error).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic2900
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2900
+     * @tc.name    testAsyncLockQueryStatic2300
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2300
      * @tc.desc    Verify query static method throws error for null parameter
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryStatic2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testAsyncLockQueryStatic2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let errorCaught = false;
       try {
         AsyncLock.query(null as string);
         expect().assertFail();
       } catch (error) {
+        errorCaught = true;
         expect(error instanceof Error).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic3000
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3000
+     * @tc.name    testAsyncLockQueryStatic2400
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2400
      * @tc.desc    Verify try-catch can catch query exceptions
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryStatic3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testAsyncLockQueryStatic2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let lock = AsyncLock.request("tryNormal");
       let state: AsyncLockState;
       try {
@@ -477,92 +417,65 @@ export default function AsyncLockQueryStaticTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic3100
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3100
-     * @tc.desc    Verify catch block catches query error
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('testAsyncLockQueryStatic3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      try {
-        AsyncLock.query("catchTest");
-        expect().assertFail();
-      } catch (e) {
-        expect(e instanceof Error).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.name    testAsyncLockQueryStatic3200
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3200
+     * @tc.name    testAsyncLockQueryStatic2500
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2500
      * @tc.desc    Verify finally block executes after query exception
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryStatic3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let executed = false;
+    it('testAsyncLockQueryStatic2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let errorCaught = false;
+      let finallyExecuted = false;
       try {
         AsyncLock.query("finallyTest");
+        expect().assertFail();
       } catch (e) {
+        errorCaught = true;
       } finally {
-        executed = true;
+        finallyExecuted = true;
       }
-      expect(executed).assertTrue();
+      expect(errorCaught).assertTrue();
+      expect(finallyExecuted).assertTrue();
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic3300
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3300
-     * @tc.desc    Verify static query method can query by lock name
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('testAsyncLockQueryStatic3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let lock = AsyncLock.request("staticQuery");
-      let state = AsyncLock.query("staticQuery");
-      expect(state.held.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.name    testAsyncLockQueryStatic3400
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3400
+     * @tc.name    testAsyncLockQueryStatic2600
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2600
      * @tc.desc    Verify static query differs from instance query
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryStatic3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testAsyncLockQueryStatic2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let lock = AsyncLock.request("staticVsInstance");
       let state = AsyncLock.query("staticVsInstance");
       expect(state.held.length).assertEqual(0);
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic3500
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3500
-     * @tc.desc    Verify instance query method usage
+     * @tc.name    testAsyncLockQueryStatic2700
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2700
+     * @tc.desc    Verify instance query call form via static-requested lock, distinguishing instance call form from static call form
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryStatic3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testAsyncLockQueryStatic2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let lock = AsyncLock.request("instanceQuery");
       let state = lock.query();
       expect(state.held.length).assertEqual(0);
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic3600
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3600
+     * @tc.name    testAsyncLockQueryStatic2800
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2800
      * @tc.desc    Verify static and instance query return same result
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryStatic3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testAsyncLockQueryStatic2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let lock = AsyncLock.request("sameResult");
       let state1 = AsyncLock.query("sameResult");
       let state2 = lock.query();
@@ -571,42 +484,28 @@ export default function AsyncLockQueryStaticTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic3700
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3700
-     * @tc.desc    Verify static query with any lock name
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('testAsyncLockQueryStatic3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let lock = AsyncLock.request("anyLock");
-      let state = AsyncLock.query("anyLock");
-      expect(state.held.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.name    testAsyncLockQueryStatic3800
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3800
+     * @tc.name    testAsyncLockQueryStatic2900
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_2900
      * @tc.desc    Verify instance query for current lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryStatic3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testAsyncLockQueryStatic2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let lock = AsyncLock.request("currentLock");
       let state = lock.query();
       expect(state.held.length).assertEqual(0);
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic3900
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3900
-     * @tc.desc    Verify concurrent static queries return correct results
+     * @tc.name    testAsyncLockQueryStatic3000
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3000
+     * @tc.desc    Verify multiple static query calls return consistent results
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockQueryStatic3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testAsyncLockQueryStatic3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let lock = AsyncLock.request("concurrentQuery");
       let states = await Promise.all([
         Promise.resolve(AsyncLock.query("concurrentQuery")),
@@ -614,18 +513,21 @@ export default function AsyncLockQueryStaticTest(): void {
         Promise.resolve(AsyncLock.query("concurrentQuery"))
       ]);
       expect(states.length).assertEqual(3);
-
+      for (let s of states) {
+        expect(s.held.length).assertEqual(0);
+        expect(s.pending.length).assertEqual(0);
+      }
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic4000
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4000
-     * @tc.desc    Verify concurrent queries on multiple locks
+     * @tc.name    testAsyncLockQueryStatic3100
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3100
+     * @tc.desc    Verify multiple static query calls on different locks return consistent results
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockQueryStatic4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testAsyncLockQueryStatic3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       AsyncLock.request("lock1");
       AsyncLock.request("lock2");
       AsyncLock.request("lock3");
@@ -635,18 +537,21 @@ export default function AsyncLockQueryStaticTest(): void {
         Promise.resolve(AsyncLock.query("lock3"))
       ]);
       expect(states.length).assertEqual(3);
-
+      for (let s of states) {
+        expect(s.held.length).assertEqual(0);
+        expect(s.pending.length).assertEqual(0);
+      }
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic4100
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4100
+     * @tc.name    testAsyncLockQueryStatic3200
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3200
      * @tc.desc    Verify async function calling static query
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockQueryStatic4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testAsyncLockQueryStatic3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let queryState = async (name: string): Promise<AsyncLockState> => {
         return AsyncLock.query(name);
       };
@@ -657,31 +562,37 @@ export default function AsyncLockQueryStaticTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic4200
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4200
+     * @tc.name    testAsyncLockQueryStatic3300
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3300
      * @tc.desc    Verify static query inside lock callback
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockQueryStatic4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let lock = AsyncLock.request("callbackQuery");
-      await lock.lockAsync<void>(() => {
-        let state = lock.query();
-        expect(state.held.length).assertLarger(0);
-      });
-
+    it('testAsyncLockQueryStatic3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let lock = AsyncLock.request("callbackQuery");
+        await lock.lockAsync<void>(() => {
+          let state = AsyncLock.query("callbackQuery");
+          expect(state.held.length).assertLarger(0);
+        });
+        done();
+      } catch (error) {
+        console.error("testAsyncLockQueryStatic3300 failed");
+        expect(false).assertFail();
+        done();
+      }
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic4300
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4300
+     * @tc.name    testAsyncLockQueryStatic3400
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3400
      * @tc.desc    Verify held entry contains name property
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryStatic4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockQueryStatic3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = AsyncLock.request("heldName");
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -694,14 +605,14 @@ export default function AsyncLockQueryStaticTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic4400
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4400
+     * @tc.name    testAsyncLockQueryStatic3500
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3500
      * @tc.desc    Verify held entry contains mode property
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryStatic4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockQueryStatic3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = AsyncLock.request("heldMode");
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -714,14 +625,14 @@ export default function AsyncLockQueryStaticTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic4500
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4500
+     * @tc.name    testAsyncLockQueryStatic3600
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3600
      * @tc.desc    Verify held entry contains contextId property
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryStatic4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockQueryStatic3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = AsyncLock.request("heldContext");
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -733,61 +644,14 @@ export default function AsyncLockQueryStaticTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockQueryStatic4600
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4600
-     * @tc.desc    Verify immediate query after lock request
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('testAsyncLockQueryStatic4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let lock = AsyncLock.request("immediateQuery");
-      let state = AsyncLock.query("immediateQuery");
-      expect(state.held.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.name    testAsyncLockQueryStatic4700
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4700
-     * @tc.desc    Verify query returns complete state after request
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('testAsyncLockQueryStatic4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let lockName = "queryAfterRequest";
-      let lock = AsyncLock.request(lockName);
-      let state = AsyncLock.query(lockName);
-      expect(state.held.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.name    testAsyncLockQueryStatic4800
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4800
-     * @tc.desc    Verify query throws error for unrequested lock
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('testAsyncLockQueryStatic4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      try {
-        AsyncLock.query("notRequestedLock");
-        expect().assertFail();
-      } catch (e) {
-        expect(e instanceof Error).assertTrue()
-      }
-    });
-
-
-    /**
-     * @tc.name    testAsyncLockQueryStatic4900
-     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4900
+     * @tc.name    testAsyncLockQueryStatic3700
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3700
      * @tc.desc    Verify multiple queries return consistent results
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockQueryStatic4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testAsyncLockQueryStatic3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       AsyncLock.request("perf");
       let queryCount: number = 0;
       for (let i = 0; i < 1000; i++) {
@@ -795,6 +659,146 @@ export default function AsyncLockQueryStaticTest(): void {
         queryCount++;
       }
       expect(queryCount).assertEqual(1000);
+    });
+
+    /**
+     * @tc.name    testAsyncLockQueryStatic3800
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3800
+     * @tc.desc    Verify static query pending array not empty when lock is waiting
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockQueryStatic3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let lock = AsyncLock.request("pendingLockStatic");
+        let p1 = lock.lockAsync<void>((): Promise<void> => {
+          return new Promise<void>((resolve): void => {
+            setTimeout((): void => { resolve(undefined); }, 100);
+          });
+        });
+        let p2 = lock.lockAsync<void>(() => {});
+        let state = AsyncLock.query("pendingLockStatic");
+        expect(state.pending.length).assertLarger(0);
+        await p1;
+        await p2;
+        done();
+      } catch (error) {
+        console.error("testAsyncLockQueryStatic3800 failed");
+        expect(false).assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testAsyncLockQueryStatic3900
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_3900
+     * @tc.desc    Verify static query pending array contains multiple waiting elements
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testAsyncLockQueryStatic3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let lock = AsyncLock.request("maxPendingStatic");
+        let p1 = lock.lockAsync<void>((): Promise<void> => {
+          return new Promise<void>((resolve): void => {
+            setTimeout((): void => { resolve(undefined); }, 100);
+          });
+        });
+        let p2 = lock.lockAsync<void>(() => {});
+        let p3 = lock.lockAsync<void>(() => {});
+        let state = AsyncLock.query("maxPendingStatic");
+        expect(state.pending.length).assertLargerOrEqual(2);
+        await p1;
+        await p2;
+        await p3;
+        done();
+      } catch (error) {
+        console.error("testAsyncLockQueryStatic3900 failed");
+        expect(false).assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testAsyncLockQueryStatic4000
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4000
+     * @tc.desc    Verify static query throws not found error for a lock name that is not created
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockQueryStatic4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let errorCaught = false;
+      try {
+        AsyncLock.query("__qs_not_found_case__");
+        expect().assertFail();
+      } catch (e) {
+        errorCaught = true;
+        expect(e instanceof Error).assertTrue();
+      }
+      expect(errorCaught).assertTrue();
+    });
+
+    /**
+     * @tc.name    testAsyncLockQueryStatic4100
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4100
+     * @tc.desc    Verify static query pending element contains lock name
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockQueryStatic4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let lock = AsyncLock.request("pendingNameStatic");
+        let p1 = lock.lockAsync<void>((): Promise<void> => {
+          return new Promise<void>((resolve): void => {
+            setTimeout((): void => { resolve(undefined); }, 100);
+          });
+        });
+        let p2 = lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
+        let state = AsyncLock.query("pendingNameStatic");
+        expect(state.pending.length).assertLarger(0);
+        expect(state.pending[0].name).assertEqual("pendingNameStatic");
+        await p1;
+        await p2;
+        done();
+      } catch (error) {
+        console.error("testAsyncLockQueryStatic4100 failed");
+        expect(false).assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testAsyncLockQueryStatic4200
+     * @tc.number  SUB_ASYNCLOCK_QUERY_STATIC_TEST_4200
+     * @tc.desc    Verify static query pending element contains lock mode
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockQueryStatic4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let lock = AsyncLock.request("pendingModeStatic");
+        let p1 = lock.lockAsync<void>((): Promise<void> => {
+          return new Promise<void>((resolve): void => {
+            setTimeout((): void => { resolve(undefined); }, 100);
+          });
+        }, AsyncLockMode.EXCLUSIVE);
+        let p2 = lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
+        let state = AsyncLock.query("pendingModeStatic");
+        expect(state.pending.length).assertLarger(0);
+        expect(state.pending[0].mode).assertEqual(AsyncLockMode.EXCLUSIVE);
+        await p1;
+        await p2;
+        done();
+      } catch (error) {
+        console.error("testAsyncLockQueryStatic4200 failed");
+        expect(false).assertFail();
+        done();
+      }
     });
   });
 }
