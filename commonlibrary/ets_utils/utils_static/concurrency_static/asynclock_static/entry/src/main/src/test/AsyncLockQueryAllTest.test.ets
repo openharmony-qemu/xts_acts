@@ -121,7 +121,8 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryAll0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockQueryAll0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request('heldLock');
       await lock.lockAsync<void>(() => {
         let states = AsyncLock.queryAll();
@@ -129,6 +130,11 @@ export default function AsyncLockQueryAllTest(): void {
         expect(hasHeld).assertTrue();
       });
 
+      } catch (error) {
+        console.error("testAsyncLockQueryAll0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -413,7 +419,8 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockQueryAll2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testAsyncLockQueryAll2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let states = await Promise.all([
         Promise.resolve(AsyncLock.queryAll()),
         Promise.resolve(AsyncLock.queryAll()),
@@ -424,6 +431,11 @@ export default function AsyncLockQueryAllTest(): void {
         expect(Array.isArray(s)).assertTrue();
       }
 
+      } catch (error) {
+        console.error("testAsyncLockQueryAll2500 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -434,13 +446,19 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockQueryAll2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testAsyncLockQueryAll2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request('duringLock');
       await lock.lockAsync<void>(() => {
         let states = AsyncLock.queryAll();
         expect(Array.isArray(states)).assertTrue();
       });
 
+      } catch (error) {
+        console.error("testAsyncLockQueryAll2600 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -451,13 +469,19 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryAll2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockQueryAll2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let getAllStates: () => Promise<AsyncLockState[]> = async (): Promise<AsyncLockState[]> => {
         return AsyncLock.queryAll();
       };
       let states = await getAllStates();
       expect(Array.isArray(states)).assertTrue();
 
+      } catch (error) {
+        console.error("testAsyncLockQueryAll2700 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -468,13 +492,19 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryAll2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockQueryAll2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request('callbackAll');
       await lock.lockAsync<void>(() => {
         let states = AsyncLock.queryAll();
         expect(Array.isArray(states)).assertTrue();
       });
 
+      } catch (error) {
+        console.error("testAsyncLockQueryAll2800 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -499,7 +529,8 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryAll3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockQueryAll3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request('duringExec');
       await lock.lockAsync<void>(() => {
         let states = AsyncLock.queryAll();
@@ -507,6 +538,11 @@ export default function AsyncLockQueryAllTest(): void {
         expect(hasHeld).assertTrue();
       });
 
+      } catch (error) {
+        console.error("testAsyncLockQueryAll3000 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -517,12 +553,18 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryAll3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockQueryAll3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request('afterExec');
       await lock.lockAsync<void>(() => {});
       let state = lock.query();
       expect(state.held.length).assertEqual(0);
       expect(state.pending.length).assertEqual(0);
+      } catch (error) {
+        console.error("testAsyncLockQueryAll3100 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -533,7 +575,8 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryAll3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockQueryAll3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock1 = AsyncLock.request('monitorLock1');
       let capturedStates: Array<GeneratedTypeLiteralInterface_1> = [];
 
@@ -550,6 +593,11 @@ export default function AsyncLockQueryAllTest(): void {
 
       expect(capturedStates.length).assertLarger(0);
 
+      } catch (error) {
+        console.error("testAsyncLockQueryAll3200 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**

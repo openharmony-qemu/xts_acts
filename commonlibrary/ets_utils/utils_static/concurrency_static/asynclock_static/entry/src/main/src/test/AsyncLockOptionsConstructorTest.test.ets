@@ -45,7 +45,8 @@ export default function AsyncLockOptionsConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockOptionsConstructor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockOptionsConstructor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
       let executed = false;
@@ -56,6 +57,11 @@ export default function AsyncLockOptionsConstructorTest(): void {
 
       expect(executed).assertTrue();
 
+      } catch (error) {
+        console.error("testAsyncLockOptionsConstructor0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -194,7 +200,8 @@ export default function AsyncLockOptionsConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockOptionsConstructor1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockOptionsConstructor1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
       options.isAvailable = true;
@@ -207,6 +214,11 @@ export default function AsyncLockOptionsConstructorTest(): void {
 
       expect(executed).assertTrue();
 
+      } catch (error) {
+        console.error("testAsyncLockOptionsConstructor1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -217,7 +229,8 @@ export default function AsyncLockOptionsConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockOptionsConstructor1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockOptionsConstructor1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
       await expect(Promise.all([
@@ -225,6 +238,11 @@ export default function AsyncLockOptionsConstructorTest(): void {
         lock.lockAsync<void, void>(() => {}, AsyncLockMode.SHARED, options)
       ])).assertPromiseIsResolved();
 
+      } catch (error) {
+        console.error("testAsyncLockOptionsConstructor1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -235,13 +253,19 @@ export default function AsyncLockOptionsConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockOptionsConstructor1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockOptionsConstructor1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       let s: AbortSignal<string> = { aborted: false, reason: "Aborted" };
       let options = new AsyncLockOptions<string>();
       options.signal = s;
       await expect(lock.lockAsync<void, string>(() => {}, AsyncLockMode.EXCLUSIVE, options)).assertPromiseIsResolved();
 
+      } catch (error) {
+        console.error("testAsyncLockOptionsConstructor1300 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -252,7 +276,8 @@ export default function AsyncLockOptionsConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockOptionsConstructor1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockOptionsConstructor1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       // A signal that is already aborted must cause lockAsync to reject.
       let s: AbortSignal<string> = { aborted: true, reason: "Aborted" };
@@ -265,6 +290,11 @@ export default function AsyncLockOptionsConstructorTest(): void {
         rejected = true;
       }
       expect(rejected).assertTrue();
+      } catch (error) {
+        console.error("testAsyncLockOptionsConstructor1400 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
 

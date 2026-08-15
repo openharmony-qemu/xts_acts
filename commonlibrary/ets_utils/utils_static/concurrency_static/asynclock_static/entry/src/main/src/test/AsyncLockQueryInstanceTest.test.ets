@@ -86,13 +86,19 @@ export default function AsyncLockQueryInstanceTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryInstance0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockQueryInstance0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
       });
 
+      } catch (error) {
+        console.error("testAsyncLockQueryInstance0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -103,13 +109,19 @@ export default function AsyncLockQueryInstanceTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryInstance0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockQueryInstance0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {});
       let state = lock.query();
       expect(state.held.length).assertEqual(0);
       expect(state.pending.length).assertEqual(0);
 
+      } catch (error) {
+        console.error("testAsyncLockQueryInstance0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -343,7 +355,8 @@ export default function AsyncLockQueryInstanceTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockQueryInstance1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockQueryInstance1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request("monitorLock");
       let monitor = async (): Promise<void> => {
         let state = lock.query();
@@ -351,6 +364,11 @@ export default function AsyncLockQueryInstanceTest(): void {
       };
       await monitor();
 
+      } catch (error) {
+        console.error("testAsyncLockQueryInstance1900 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**

@@ -271,7 +271,8 @@ export default function AsyncLockNamePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockNameProperty1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testAsyncLockNameProperty1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let getLockName = async (): Promise<string> => {
         let lock = AsyncLock.request('asyncLock');
         return lock.name;
@@ -279,6 +280,11 @@ export default function AsyncLockNamePropertyTest(): void {
       let name = await getLockName();
       expect(name).assertEqual('asyncLock');
 
+      } catch (error) {
+        console.error("testAsyncLockNameProperty1800 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -289,13 +295,19 @@ export default function AsyncLockNamePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockNameProperty1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testAsyncLockNameProperty1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request('callbackLock');
       let result = await lock.lockAsync<string>(() => {
         return lock.name;
       });
       expect(result).assertEqual('callbackLock');
 
+      } catch (error) {
+        console.error("testAsyncLockNameProperty1900 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -447,7 +459,8 @@ export default function AsyncLockNamePropertyTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockNameProperty3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testAsyncLockNameProperty3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let lockNames = ['NameProperty3200_lock1', 'NameProperty3200_lock2', 'NameProperty3200_lock3'];
       let promises = lockNames.map(async (name): Promise<string> => {
         let lock = AsyncLock.request(name);
@@ -458,6 +471,11 @@ export default function AsyncLockNamePropertyTest(): void {
       expect(results[1]).assertEqual('NameProperty3200_lock2');
       expect(results[2]).assertEqual('NameProperty3200_lock3');
 
+      } catch (error) {
+        console.error("testAsyncLockNameProperty3000 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
   });

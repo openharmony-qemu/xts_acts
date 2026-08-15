@@ -27,7 +27,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request("testLock");
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -39,6 +40,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -49,7 +55,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -60,6 +67,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -70,7 +82,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request("testLock");
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -81,6 +94,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -91,7 +109,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -102,6 +121,11 @@ export default function AsyncLockInfoTest(): void {
         }
       }, AsyncLockMode.EXCLUSIVE);
 
+      } catch (error) {
+        console.error("testAsyncLockInfo0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -112,7 +136,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -123,6 +148,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -133,7 +163,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -144,6 +175,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -154,7 +190,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request("namedLock");
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -164,6 +201,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -174,7 +216,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -185,6 +228,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -195,7 +243,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request("lock!@#$");
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -205,6 +254,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -215,7 +269,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request("测试锁");
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -225,6 +280,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -235,7 +295,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -245,6 +306,11 @@ export default function AsyncLockInfoTest(): void {
         }
       }, AsyncLockMode.SHARED);
 
+      } catch (error) {
+        console.error("testAsyncLockInfo1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -255,7 +321,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -265,6 +332,11 @@ export default function AsyncLockInfoTest(): void {
         }
       }, AsyncLockMode.EXCLUSIVE);
 
+      } catch (error) {
+        console.error("testAsyncLockInfo1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -275,7 +347,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -286,6 +359,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo1300 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -296,7 +374,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -308,6 +387,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo1400 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -318,7 +402,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockInfo1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockInfo1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -329,6 +414,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo1500 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -339,7 +429,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -351,6 +442,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo1600 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -361,7 +457,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -372,6 +469,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo1700 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -382,7 +484,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -392,6 +495,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo1800 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -402,7 +510,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockInfo1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockInfo1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -413,6 +522,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo1900 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -423,7 +537,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockInfo2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockInfo2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -434,6 +549,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo2000 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -444,7 +564,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockInfo2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockInfo2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -455,6 +576,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo2100 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -465,7 +591,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request("notOptionalLock");
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -475,6 +602,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo2200 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -485,7 +617,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -495,6 +628,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo2300 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -505,7 +643,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -515,6 +654,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo2400 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -525,7 +669,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -534,6 +679,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo2500 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -544,7 +694,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockInfo2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockInfo2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request("myLock");
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -554,6 +705,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo2600 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -667,7 +823,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockInfo3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockInfo3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -680,6 +837,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo3000 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -690,7 +852,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockInfo3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockInfo3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -702,6 +865,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo3100 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -712,7 +880,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockInfo3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockInfo3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request("monitorLock");
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -722,6 +891,11 @@ export default function AsyncLockInfoTest(): void {
         expect(state.held.length).assertLarger(0);
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo3200 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -732,7 +906,8 @@ export default function AsyncLockInfoTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockInfo3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testAsyncLockInfo3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
         let state = lock.query();
@@ -746,6 +921,11 @@ export default function AsyncLockInfoTest(): void {
         }
       });
 
+      } catch (error) {
+        console.error("testAsyncLockInfo3300 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**

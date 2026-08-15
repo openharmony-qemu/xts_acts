@@ -317,7 +317,8 @@ export default function AsyncLockRequestTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockRequest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockRequest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request("useLock");
       let called = false;
       await lock.lockAsync<void>(() => {
@@ -325,6 +326,11 @@ export default function AsyncLockRequestTest(): void {
       });
       expect(called).assertTrue();
 
+      } catch (error) {
+        console.error("testAsyncLockRequest2200 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -564,7 +570,8 @@ export default function AsyncLockRequestTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockRequest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testAsyncLockRequest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let requestLock = async (): Promise<AsyncLock> => {
         return AsyncLock.request("concurrentLock");
       };
@@ -577,6 +584,11 @@ export default function AsyncLockRequestTest(): void {
         expect(lock === locks[0]).assertTrue();
       }
 
+      } catch (error) {
+        console.error("testAsyncLockRequest3800 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -587,7 +599,8 @@ export default function AsyncLockRequestTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockRequest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testAsyncLockRequest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let locks = await Promise.all([
         AsyncLock.request("lock1"),
         AsyncLock.request("lock2"),
@@ -598,6 +611,11 @@ export default function AsyncLockRequestTest(): void {
       expect(locks[0] === locks[2]).assertFalse();
       expect(locks[1] === locks[2]).assertFalse();
 
+      } catch (error) {
+        console.error("testAsyncLockRequest3900 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -608,13 +626,19 @@ export default function AsyncLockRequestTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockRequest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockRequest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let getLock: () => Promise<AsyncLock> = async (): Promise<AsyncLock> => {
         return AsyncLock.request("asyncLock");
       };
       let lock = await getLock();
       expect(lock instanceof AsyncLock).assertTrue();
 
+      } catch (error) {
+        console.error("testAsyncLockRequest4000 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
@@ -625,13 +649,19 @@ export default function AsyncLockRequestTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockRequest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockRequest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let lock = AsyncLock.request("outerLock");
       let innerLock = await lock.lockAsync<AsyncLock>(() => {
         return AsyncLock.request("innerLock");
       });
       expect(innerLock.name).assertEqual("innerLock");
 
+      } catch (error) {
+        console.error("testAsyncLockRequest4100 failed");
+        expect(false).assertFail();
+      }
+      done();
     });
 
     /**
