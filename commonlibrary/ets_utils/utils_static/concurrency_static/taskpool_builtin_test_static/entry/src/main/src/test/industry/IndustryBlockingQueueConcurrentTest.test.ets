@@ -93,11 +93,13 @@ export default function IndustryBlockingQueueConcurrentTest(): void {
         let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(100);
         let totalProducers: number = 5;
         let totalConsumers: number = 5;
+        let producerTasks: Promise<Any>[] = [];
+        let consumerTasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalProducers; i++) {
-          taskpool.execute(testProducerCounter, producerCount).then((): void => { });
+          producerTasks.push(taskpool.execute(testProducerCounter, producerCount));
         }
         for (let i: number = 0; i < totalConsumers; i++) {
-          taskpool.execute(testConsumerCounter, consumerCount).then((): void => { });
+          consumerTasks.push(taskpool.execute(testConsumerCounter, consumerCount));
         }
         // 主线程串行验证 BlockingQueue 生产-消费完整流程
         for (let i: number = 0; i < 100; i++) {
@@ -107,11 +109,8 @@ export default function IndustryBlockingQueueConcurrentTest(): void {
           let item: number = queue.pop();
           expect(item).assertEqual(i);
         }
-        let waits: number = 0;
-        while ((producerCount.load() < totalProducers * 100 || consumerCount.load() < totalConsumers * 100) && waits < 200) {
-          await Utils.msSleep(100);
-          waits++;
-        }
+        await Promise.all(producerTasks);
+        await Promise.all(consumerTasks);
         expect(queue.size).assertEqual(0);
         expect(producerCount.load()).assertEqual(totalProducers * 100);
         expect(consumerCount.load()).assertEqual(totalConsumers * 100);
@@ -176,14 +175,11 @@ export default function IndustryBlockingQueueConcurrentTest(): void {
         let rejectCounter: AtomicInt = new AtomicInt(0);
         let count: AtomicInt = new AtomicInt(0);
         let totalTasks: number = 20;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testRateLimitingAdd, successCounter, rejectCounter, count).then((): void => { });
+          tasks.push(taskpool.execute(testRateLimitingAdd, successCounter, rejectCounter, count));
         }
-        let waits: number = 0;
-        while (count.load() < totalTasks * 10 && waits < 200) {
-          await Utils.msSleep(100);
-          waits++;
-        }
+        await Promise.all(tasks);
         expect(count.load()).assertEqual(totalTasks * 10);
         expect(successCounter.load()).assertEqual(0);
         expect(rejectCounter.load()).assertEqual(totalTasks * 10);
@@ -209,14 +205,11 @@ export default function IndustryBlockingQueueConcurrentTest(): void {
         let returnCounter: AtomicInt = new AtomicInt(0);
         let count: AtomicInt = new AtomicInt(0);
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testConnectionPoolBorrow, borrowCounter, returnCounter, count).then((): void => { });
+          tasks.push(taskpool.execute(testConnectionPoolBorrow, borrowCounter, returnCounter, count));
         }
-        let waits: number = 0;
-        while (count.load() < totalTasks * 10 && waits < 200) {
-          await Utils.msSleep(100);
-          waits++;
-        }
+        await Promise.all(tasks);
         expect(count.load()).assertEqual(totalTasks * 10);
         expect(borrowCounter.load()).assertEqual(returnCounter.load());
         expect(borrowCounter.load()).assertEqual(totalTasks * 10);

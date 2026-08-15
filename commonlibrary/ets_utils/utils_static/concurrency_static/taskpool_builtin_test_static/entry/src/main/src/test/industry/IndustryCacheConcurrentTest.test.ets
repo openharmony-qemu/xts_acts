@@ -77,15 +77,16 @@ export default function IndustryCacheConcurrentTest(): void {
         let writeCounter: AtomicInt = new AtomicInt(0);
         let totalReaders: number = 50;
         let totalWriters: number = 5;
+        let readerTasks: Promise<Any>[] = [];
+        let writerTasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalReaders; i++) {
-          taskpool.execute(testRWLockCacheReader, cache, lock, readCounter).then((): void => { });
+          readerTasks.push(taskpool.execute(testRWLockCacheReader, cache, lock, readCounter));
         }
         for (let i: number = 0; i < totalWriters; i++) {
-          taskpool.execute(testRWLockCacheWriter, cache, lock, writeCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
+          writerTasks.push(taskpool.execute(testRWLockCacheWriter, cache, lock, writeCounter));
         }
-        while (readCounter.load() < totalReaders * 100 || writeCounter.load() < totalWriters * 100) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(readerTasks);
+        await Promise.all(writerTasks);
         expect(readCounter.load()).assertEqual(totalReaders * 100);
         expect(writeCounter.load()).assertEqual(totalWriters * 100);
       } catch (e) {
@@ -108,12 +109,11 @@ export default function IndustryCacheConcurrentTest(): void {
         let counter: AtomicInt = new AtomicInt(0);
         let taskCounter: AtomicInt = new AtomicInt(0);
         let totalTasks: number = 100;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testAtomicIntCounter, counter, taskCounter).then((): void => { });
+          tasks.push(taskpool.execute(testAtomicIntCounter, counter, taskCounter));
         }
-        while (taskCounter.load() < totalTasks) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
         expect(counter.load()).assertEqual(totalTasks * 100);
       } catch (e) {
         console.info(`testAtomicIntCounterConcurrent0800 catch error: ${JSON.stringify(e)}`);

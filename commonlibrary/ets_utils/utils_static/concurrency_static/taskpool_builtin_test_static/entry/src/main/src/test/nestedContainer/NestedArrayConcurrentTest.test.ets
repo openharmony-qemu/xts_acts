@@ -93,13 +93,12 @@ export default function NestedArrayConcurrentTest(): void {
         let taskCounter: AtomicInt = new AtomicInt(0);
         let arr: Array<Array<number>> = new Array<Array<number>>();
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testNestedArrayOuter, arr, taskCounter).then((): void => { });
+          tasks.push(taskpool.execute(testNestedArrayOuter, arr, taskCounter));
         }
         testNestedArrayOuter(arr, taskCounter);
-        while (taskCounter.load() < totalTasks * 10 + 10) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
         expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
       } catch (e) {
         console.info(`testNestedArrayOuterConcurrent0100 catch error: ${JSON.stringify(e)}`);
@@ -124,13 +123,12 @@ export default function NestedArrayConcurrentTest(): void {
           arr.push(new Array<number>());
         }
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testNestedArrayInner, arr, taskCounter).then((): void => { });
+          tasks.push(taskpool.execute(testNestedArrayInner, arr, taskCounter));
         }
         testNestedArrayInner(arr, taskCounter);
-        while (taskCounter.load() < totalTasks * 10 + 10) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
         expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
       } catch (e) {
         console.info(`testNestedArrayInnerConcurrent0200 catch error: ${JSON.stringify(e)}`);
@@ -153,13 +151,12 @@ export default function NestedArrayConcurrentTest(): void {
         let arr: Array<Array<number>> = new Array<Array<number>>();
         let mutex: Mutex = new Mutex();
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testNestedArrayMutex, arr, mutex, taskCounter).then((): void => { });
+          tasks.push(taskpool.execute(testNestedArrayMutex, arr, mutex, taskCounter));
         }
         testNestedArrayMutex(arr, mutex, taskCounter);
-        while (taskCounter.load() < totalTasks * 10 + 10) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
         expect(arr.length).assertEqual(0);
       } catch (e) {
         console.info(`testNestedArrayMutexConcurrent0300 catch error: ${JSON.stringify(e)}`);
@@ -184,12 +181,11 @@ export default function NestedArrayConcurrentTest(): void {
           arr.push(new Array<number>());
         }
         let totalTasks: number = 50;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testNestedArrayStress, arr, taskCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
+          tasks.push(taskpool.execute(testNestedArrayStress, arr, taskCounter));
         }
-        while (taskCounter.load() < totalTasks * 50) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
         expect(taskCounter.load()).assertEqual(totalTasks * 50);
       } catch (e) {
         console.info(`testNestedArrayStressConcurrent0400 catch error: ${JSON.stringify(e)}`);

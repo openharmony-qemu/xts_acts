@@ -155,14 +155,14 @@ export default function BasicTypeConcurrentTest(): void {
         let count: AtomicInt = new AtomicInt(0);
         let holder: NumberHolder = new NumberHolder();
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testNumberNoLock, holder).then((): void => { count.fetchAdd(1); });
+          tasks.push(taskpool.execute(testNumberNoLock, holder));
         }
         testNumberNoLock(holder);
         count.fetchAdd(1);
-        while (count.load() < totalTasks + 1) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
         expect(count.load()).assertEqual(totalTasks + 1);
       } catch (e) {
         console.info(`testNumberNoLockConcurrent0100 catch error: ${JSON.stringify(e)}`);
@@ -184,13 +184,12 @@ export default function BasicTypeConcurrentTest(): void {
         let counter: AtomicInt = new AtomicInt(0);
         let taskCounter: AtomicInt = new AtomicInt(0);
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testNumberAtomic, counter, taskCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
+          tasks.push(taskpool.execute(testNumberAtomic, counter, taskCounter));
         }
         testNumberAtomic(counter, taskCounter);
-        while (taskCounter.load() < totalTasks * 10 + 10) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
         expect(counter.load()).assertEqual(totalTasks * 10 + 10);
       } catch (e) {
         console.info(`testNumberAtomicConcurrent0200 catch error: ${JSON.stringify(e)}`);
@@ -213,13 +212,12 @@ export default function BasicTypeConcurrentTest(): void {
         let holder: NumberHolder = new NumberHolder();
         let mutex: Mutex = new Mutex();
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testNumberMutex, holder, mutex, taskCounter).then((): void => { });
+          tasks.push(taskpool.execute(testNumberMutex, holder, mutex, taskCounter));
         }
         testNumberMutex(holder, mutex, taskCounter);
-        while (taskCounter.load() < totalTasks * 10 + 10) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
         expect(holder.value).assertEqual(totalTasks * 10 + 10);
       } catch (e) {
         console.info(`testNumberMutexConcurrent0300 catch error: ${JSON.stringify(e)}`);
@@ -241,14 +239,14 @@ export default function BasicTypeConcurrentTest(): void {
         let count: AtomicInt = new AtomicInt(0);
         let holder: StringHolder = new StringHolder();
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testStringNoLock, holder).then((): void => { count.fetchAdd(1); });
+          tasks.push(taskpool.execute(testStringNoLock, holder));
         }
         testStringNoLock(holder);
         count.fetchAdd(1);
-        while (count.load() < totalTasks + 1) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
         expect(count.load()).assertEqual(totalTasks + 1);
       } catch (e) {
         console.info(`testStringNoLockConcurrent0400 catch error: ${JSON.stringify(e)}`);
@@ -271,13 +269,12 @@ export default function BasicTypeConcurrentTest(): void {
         let holder: StringHolder = new StringHolder();
         let mutex: Mutex = new Mutex();
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testStringMutex, holder, mutex, taskCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
+          tasks.push(taskpool.execute(testStringMutex, holder, mutex, taskCounter));
         }
         testStringMutex(holder, mutex, taskCounter);
-        while (taskCounter.load() < totalTasks * 10 + 10) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
         expect(holder.value.length).assertEqual(totalTasks * 10 + 10);
       } catch (e) {
         console.info(`testStringMutexConcurrent0500 catch error: ${JSON.stringify(e)}`);
@@ -299,14 +296,14 @@ export default function BasicTypeConcurrentTest(): void {
         let count: AtomicInt = new AtomicInt(0);
         let holder: BooleanHolder = new BooleanHolder();
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testBooleanNoLock, holder).then((): void => { count.fetchAdd(1); });
+          tasks.push(taskpool.execute(testBooleanNoLock, holder));
         }
         testBooleanNoLock(holder);
         count.fetchAdd(1);
-        while (count.load() < totalTasks + 1) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
         expect(count.load()).assertEqual(totalTasks + 1);
       } catch (e) {
         console.info(`testBooleanNoLockConcurrent0600 catch error: ${JSON.stringify(e)}`);
@@ -328,14 +325,14 @@ export default function BasicTypeConcurrentTest(): void {
         let count: AtomicInt = new AtomicInt(0);
         let flag: AtomicBoolean = new AtomicBoolean(false);
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testBooleanAtomic, flag).then((): void => { count.fetchAdd(1); });
+          tasks.push(taskpool.execute(testBooleanAtomic, flag));
         }
         testBooleanAtomic(flag);
         count.fetchAdd(1);
-        while (count.load() < totalTasks + 1) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
         expect(count.load()).assertEqual(totalTasks + 1);
       } catch (e) {
         console.info(`testBooleanAtomicConcurrent0700 catch error: ${JSON.stringify(e)}`);
@@ -357,14 +354,14 @@ export default function BasicTypeConcurrentTest(): void {
         let count: AtomicInt = new AtomicInt(0);
         let holder: ObjectHolder = new ObjectHolder();
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testObjectNoLock, holder).then((): void => { count.fetchAdd(1); }, (err: Error): void => { expect(err).assertFail(); });
+          tasks.push(taskpool.execute(testObjectNoLock, holder));
         }
         testObjectNoLock(holder);
         count.fetchAdd(1);
-        while (count.load() < totalTasks + 1) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
         expect(count.load()).assertEqual(totalTasks + 1);
       } catch (e) {
         console.info(`testObjectNoLockConcurrent0800 catch error: ${JSON.stringify(e)}`);
@@ -387,13 +384,12 @@ export default function BasicTypeConcurrentTest(): void {
         let holder: ObjectHolder = new ObjectHolder();
         let mutex: Mutex = new Mutex();
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testObjectMutex, holder, mutex, taskCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
+          tasks.push(taskpool.execute(testObjectMutex, holder, mutex, taskCounter));
         }
         testObjectMutex(holder, mutex, taskCounter);
-        while (taskCounter.load() < totalTasks * 10 + 10) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
         expect(holder.value).assertEqual(totalTasks * 10 + 10);
         expect(holder.name.length).assertEqual(totalTasks * 10 + 10);
       } catch (e) {
@@ -416,12 +412,11 @@ export default function BasicTypeConcurrentTest(): void {
         let counter: AtomicInt = new AtomicInt(0);
         let taskCounter: AtomicInt = new AtomicInt(0);
         let totalTasks: number = 100;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testNumberAtomicStress, counter, taskCounter).then((): void => { });
+          tasks.push(taskpool.execute(testNumberAtomicStress, counter, taskCounter));
         }
-        while (taskCounter.load() < totalTasks * 100) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
         expect(counter.load()).assertEqual(totalTasks * 100);
       } catch (e) {
         console.info(`testNumberAtomicStressConcurrent1000 catch error: ${JSON.stringify(e)}`);

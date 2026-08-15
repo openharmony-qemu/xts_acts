@@ -77,26 +77,22 @@ export default function MapRWLockConcurrentTest(): void {
         let writeCount: AtomicInt = new AtomicInt(0);
         let totalReadTasks: number = 5;
         let totalWriteTasks: number = 5;
+        let readTasks: Promise<Any>[] = [];
+        let writeTasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalReadTasks; i++) {
-          taskpool.execute(testMapReadRWLock, rwlock, sharedMap).then((): void => {
-            readCount.fetchAdd(1);
-          });
+          readTasks.push(taskpool.execute(testMapReadRWLock, rwlock, sharedMap));
         }
         for (let i: number = 0; i < totalWriteTasks; i++) {
-          taskpool.execute(testMapWriteRWLock, rwlock, sharedMap).then((): void => {
-            writeCount.fetchAdd(1);
-          });
+          writeTasks.push(taskpool.execute(testMapWriteRWLock, rwlock, sharedMap));
         }
         testMapReadRWLock(rwlock, sharedMap);
         readCount.fetchAdd(1);
         testMapWriteRWLock(rwlock, sharedMap);
         writeCount.fetchAdd(1);
-        while (readCount.load() < totalReadTasks + 1) {
-          await Utils.msSleep(100);
-        }
-        while (writeCount.load() < totalWriteTasks + 1) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(readTasks);
+        readCount.fetchAdd(totalReadTasks.toInt());
+        await Promise.all(writeTasks);
+        writeCount.fetchAdd(totalWriteTasks.toInt());
         expect(readCount.load()).assertEqual(totalReadTasks + 1);
         expect(writeCount.load()).assertEqual(totalWriteTasks + 1);
         // 写任务每轮 set/delete key_0..9 与 key_100..109，净效果为永久删除这 20 个初始键，终态确定为 180

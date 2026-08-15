@@ -86,16 +86,14 @@ export default function ClassInstanceConcurrentTest(): void {
         let count: AtomicInt = new AtomicInt(0);
         let data: DataClass = new DataClass();
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testClassNoLock, data).then((): void => { count.fetchAdd(1); }, (err: Error): void => { expect(err).assertFail(); });
+          tasks.push(taskpool.execute(testClassNoLock, data));
         }
         testClassNoLock(data);
         count.fetchAdd(1);
-        let waits: number = 0;
-        while (count.load() < totalTasks + 1 && waits < 100) {
-          await Utils.msSleep(100);
-          waits++;
-        }
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
         expect(count.load()).assertEqual(totalTasks + 1);
       } catch (e) {
         console.info(`testClassNoLockConcurrent0100 catch error: ${JSON.stringify(e)}`);
@@ -118,15 +116,12 @@ export default function ClassInstanceConcurrentTest(): void {
         let data: DataClass = new DataClass();
         let mutex: Mutex = new Mutex();
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testClassMutex, data, mutex, taskCounter).then((): void => { });
+          tasks.push(taskpool.execute(testClassMutex, data, mutex, taskCounter));
         }
         testClassMutex(data, mutex, taskCounter);
-        let waits: number = 0;
-        while (taskCounter.load() < totalTasks * 10 + 10 && waits < 100) {
-          await Utils.msSleep(100);
-          waits++;
-        }
+        await Promise.all(tasks);
         expect(data.value).assertEqual(totalTasks * 10 + 10);
       } catch (e) {
         console.info(`testClassMutexConcurrent0200 catch error: ${JSON.stringify(e)}`);
@@ -149,16 +144,14 @@ export default function ClassInstanceConcurrentTest(): void {
         let failCount: AtomicInt = new AtomicInt(0);
         let wl: WorkerLocal<DataClass> = new WorkerLocal<DataClass>();
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testClassWorkerLocal, wl, failCount).then((): void => { count.fetchAdd(1); });
+          tasks.push(taskpool.execute(testClassWorkerLocal, wl, failCount));
         }
         testClassWorkerLocal(wl, failCount);
         count.fetchAdd(1);
-        let waits: number = 0;
-        while (count.load() < totalTasks + 1 && waits < 100) {
-          await Utils.msSleep(100);
-          waits++;
-        }
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
         expect(count.load()).assertEqual(totalTasks + 1);
         expect(failCount.load()).assertEqual(0);
       } catch (e) {
@@ -218,14 +211,11 @@ export default function ClassInstanceConcurrentTest(): void {
         let data: DataClass = new DataClass();
         let mutex: Mutex = new Mutex();
         let totalTasks: number = 100;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testClassStress, data, mutex, taskCounter).then((): void => { });
+          tasks.push(taskpool.execute(testClassStress, data, mutex, taskCounter));
         }
-        let waits: number = 0;
-        while (taskCounter.load() < totalTasks * 100 && waits < 200) {
-          await Utils.msSleep(100);
-          waits++;
-        }
+        await Promise.all(tasks);
         expect(data.value).assertEqual(totalTasks * 100);
       } catch (e) {
         console.info(`testClassMutexStressConcurrent0500 catch error: ${JSON.stringify(e)}`);

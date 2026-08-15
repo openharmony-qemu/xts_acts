@@ -384,13 +384,23 @@ async function asyncFuncReturnComplex(): Promise<NestedObject> {
 }
 
 async function asyncFuncDelayResolve(): Promise<string> {
-  await sleep(100);
-  return 'delayed';
+  try {
+    await sleep(100);
+    return 'delayed';
+  } catch (e) {
+    console.info(`asyncFuncDelayResolve catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function asyncFuncDelayReject(): Promise<string> {
-  await sleep(100);
-  throw new Error('delayed error');
+  try {
+    await sleep(100);
+    throw new Error('delayed error');
+  } catch (e) {
+    console.info(`asyncFuncDelayReject catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 interface ThenableObject {
@@ -421,9 +431,14 @@ async function asyncParamFunc(): Promise<string> {
 }
 
 async function asyncIIFEFunc(): Promise<number> {
-  return (await (async (): Promise<number> => {
-    return 999;
-  })());
+  try {
+    return await (async (): Promise<number> => {
+      return 999;
+    })();
+  } catch (e) {
+    console.info(`asyncIIFEFunc catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function asyncOuterFunc(): Promise<string> {
@@ -1342,6 +1357,7 @@ export default function CallbackWrapperTest(): void {
         } catch (e) {
           console.info(`testCallbackWrapperIIFE catch error: ${JSON.stringify(e)}`);
           expect().assertFail();
+          done();
         }
       });
 
@@ -1486,6 +1502,11 @@ export default function CallbackWrapperTest(): void {
         try {
           const callback = util.callbackWrapper(normalFuncTest);
           callback.unsafeCall((err: Error | null, value: string) => {
+            if (err !== null) {
+              console.info(`testCallbackWrapperNormalFunction callback error: ${JSON.stringify(err)}`);
+            } else {
+              console.info(`testCallbackWrapperNormalFunction callback value: ${JSON.stringify(value)}`);
+            }
             console.info('testCallbackWrapperNormalFunction test end');
           });
         } catch (e) {

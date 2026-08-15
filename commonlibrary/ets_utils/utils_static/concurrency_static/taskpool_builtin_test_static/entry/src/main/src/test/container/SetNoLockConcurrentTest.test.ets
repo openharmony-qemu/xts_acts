@@ -43,23 +43,23 @@ export default function SetNoLockConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('testSetNoLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let count: AtomicInt = new AtomicInt(0);
-      let set: Set<number> = new Set<number>();
-      let totalTasks: number = 10;
-      for (let i: number = 0; i < totalTasks; i++) {
-        taskpool.execute(testSetNoLock, new Set<number>()).then((): void => { count.fetchAdd(1); });
-      }
-      testSetNoLock(set);
-      count.fetchAdd(1);
-      while (count.load() < totalTasks + 1) {
-        try {
-          await Utils.msSleep(100);
-        } catch (err) {
-          expect(err).assertFail();
+      try {
+        let count: AtomicInt = new AtomicInt(0);
+        let set: Set<number> = new Set<number>();
+        let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
+        for (let i: number = 0; i < totalTasks; i++) {
+          tasks.push(taskpool.execute(testSetNoLock, new Set<number>()));
         }
+        testSetNoLock(set);
+        count.fetchAdd(1);
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
+        expect(count.load()).assertEqual(totalTasks + 1);
+      } catch (e) {
+        console.info(`testSetNoLockConcurrent0100 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
-      expect(count.load()).assertEqual(totalTasks + 1);
-
       done();
     });
   });

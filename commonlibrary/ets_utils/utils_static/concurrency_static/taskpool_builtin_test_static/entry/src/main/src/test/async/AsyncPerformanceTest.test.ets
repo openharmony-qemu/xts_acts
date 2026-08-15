@@ -25,9 +25,14 @@ async function asyncRecursion(n: int): Promise<int> {
   if (n <= 1) {
     return 1;
   }
-  const prev1: int = await asyncRecursion(n - 1);
-  const prev2: int = await asyncRecursion(n - 2);
-  return prev1 + prev2;
+  try {
+    const prev1: int = await asyncRecursion(n - 1);
+    const prev2: int = await asyncRecursion(n - 2);
+    return prev1 + prev2;
+  } catch (e) {
+    console.info(`asyncRecursion catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 export default function asyncPerformanceTest(): void {
@@ -157,14 +162,12 @@ export default function asyncPerformanceTest(): void {
      */
     it('asyncPerformanceTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const chainPerformance = async (): Promise<int> => {
-        let promise = Promise.resolve(0);
-
-        for (let i: int = 0; i < 200; i++) {
-          promise = promise.then(val => val + 1);
-        }
-
         try {
-          return await promise;
+          let value: int = 0;
+          for (let i: int = 0; i < 200; i++) {
+            value = await Promise.resolve(value + 1);
+          }
+          return value;
         } catch (err) {
           expect(err).assertFail();
           return 0;
@@ -680,6 +683,9 @@ export default function asyncPerformanceTest(): void {
             await Promise.resolve();
           }
           return resources.length;
+        } catch (e) {
+          console.info(`asyncPerformanceTest020 catch error: ${JSON.stringify(e)}`);
+          throw e;
         } finally {
           resources.length = 0; // Cleanup
         }

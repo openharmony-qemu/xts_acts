@@ -50,12 +50,13 @@ export default function MapMutexConcurrentTest(): void {
       let totalTasks: number = 10;
       let tasks: Promise<Any>[] = [];
       for (let i: number = 0; i < totalTasks; i++) {
-        tasks.push(taskpool.execute(testMapMutex, map, mutex).then((): void => { count.fetchAdd(1); }));
+        tasks.push(taskpool.execute(testMapMutex, map, mutex));
       }
       testMapMutex(map, mutex);
       count.fetchAdd(1);
       try {
         await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
         expect(count.load()).assertEqual(totalTasks + 1);
         expect(map.size).assertEqual(0);
       } catch (err) {

@@ -108,7 +108,12 @@ class AsyncCache<K, V> {
 }
 
 async function identity<T>(value: T): Promise<T> {
-  return (await Promise.resolve(value)) as T;
+  try {
+    return (await Promise.resolve(value)) as T;
+  } catch (e) {
+    console.info(`identity catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function identityInferred<T>(value: T): Promise<T> {
@@ -128,7 +133,12 @@ async function first<T>(items: T[]): Promise<T | undefined> {
 }
 
 async function wrapInPromise<T>(value: T): Promise<T> {
-  return (await Promise.resolve(value)) as T;
+  try {
+    return (await Promise.resolve(value)) as T;
+  } catch (e) {
+    console.info(`wrapInPromise catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function withDefault<T = string>(value: T): Promise<T> {
@@ -140,8 +150,13 @@ async function asyncMap<T, U>(
   mapper: (item: T) => Promise<U>
 ): Promise<Awaited<U>[]> {
   const results: Awaited<U>[] = [];
-  for (const item of items) {
-    results.push(await mapper(item));
+  try {
+    for (const item of items) {
+      results.push(await mapper(item));
+    }
+  } catch (e) {
+    console.info(`asyncMap catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
   return results;
 }
@@ -151,10 +166,15 @@ async function asyncFilter<T>(
   predicate: (item: T) => Promise<boolean>
 ): Promise<T[]> {
   const results: T[] = [];
-  for (const item of items) {
-    if (await predicate(item)) {
-      results.push(item);
+  try {
+    for (const item of items) {
+      if (await predicate(item)) {
+        results.push(item);
+      }
     }
+  } catch (e) {
+    console.info(`asyncFilter catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
   return results;
 }
@@ -165,8 +185,13 @@ async function asyncReduce<T, U>(
   reducer: (acc: Awaited<U>, item: T) => Promise<U>
 ): Promise<Awaited<U>> {
   let accumulator: Awaited<U> = initial;
-  for (const item of items) {
-    accumulator = await reducer(accumulator, item);
+  try {
+    for (const item of items) {
+      accumulator = await reducer(accumulator, item);
+    }
+  } catch (e) {
+    console.info(`asyncReduce catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
   return accumulator;
 }
@@ -179,7 +204,12 @@ async function processGeneric<T extends string | number>(value: T): Promise<stri
 }
 
 async function fetchGeneric<T>(url: string, defaultValue: T): Promise<T> {
-  return (await Promise.resolve(defaultValue)) as T;
+  try {
+    return (await Promise.resolve(defaultValue)) as T;
+  } catch (e) {
+    console.info(`fetchGeneric catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 async function makeCopy<T>(obj: T): Promise<T> {
@@ -739,11 +769,16 @@ export default function asyncGenericsTest(): void {
           value: number,
           ...fns: Array<(input: number) => Promise<number | string>>
         ): Promise<number | string> => {
-          let result: number | string = value;
-          for (const fn of fns) {
-            result = await fn(result as number);
+          try {
+            let result: number | string = value;
+            for (const fn of fns) {
+              result = await fn(result as number);
+            }
+            return result;
+          } catch (e) {
+            console.info(`asyncGenericsTest024 pipe catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
-          return result;
         };
 
         const result = await pipe(

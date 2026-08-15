@@ -1189,9 +1189,30 @@ export default function IsAsyncFunctionTest(): void {
     it('testIsAsyncFunctionInArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const type = new util.types();
       const asyncFuncArray: Array<() => Promise<number>> = [
-        async (): Promise<number> => 1,
-        async (): Promise<number> => 2,
-        async (): Promise<number> => 3
+        async (): Promise<number> => {
+          try {
+            return await Promise.resolve(1);
+          } catch (e) {
+            console.info(`testIsAsyncFunctionInArray func1 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        },
+        async (): Promise<number> => {
+          try {
+            return await Promise.resolve(2);
+          } catch (e) {
+            console.info(`testIsAsyncFunctionInArray func2 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        },
+        async (): Promise<number> => {
+          try {
+            return await Promise.resolve(3);
+          } catch (e) {
+            console.info(`testIsAsyncFunctionInArray func3 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        }
       ];
 
       for (const func of asyncFuncArray) {
@@ -1211,8 +1232,22 @@ export default function IsAsyncFunctionTest(): void {
     it('testIsAsyncFunctionInMap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const type = new util.types();
       const funcMap = new Map<string, () => Promise<number>>();
-      funcMap.set('first', async (): Promise<number> => 1);
-      funcMap.set('second', async (): Promise<number> => 2);
+      funcMap.set('first', async (): Promise<number> => {
+        try {
+          return await Promise.resolve(1);
+        } catch (e) {
+          console.info(`testIsAsyncFunctionInMap first catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
+      });
+      funcMap.set('second', async (): Promise<number> => {
+        try {
+          return await Promise.resolve(2);
+        } catch (e) {
+          console.info(`testIsAsyncFunctionInMap second catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
+      });
 
       funcMap.forEach((func: () => Promise<number>): void => {
         const result: boolean = type.isAsyncFunction(func);
@@ -1231,8 +1266,22 @@ export default function IsAsyncFunctionTest(): void {
     it('testIsAsyncFunctionInObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const type = new util.types();
       const obj: AsyncMethodsObject = {
-        method1: async (): Promise<string> => 'first',
-        method2: async (): Promise<string> => 'second'
+        method1: async (): Promise<string> => {
+          try {
+            return await Promise.resolve('first');
+          } catch (e) {
+            console.info(`testIsAsyncFunctionInObject method1 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        },
+        method2: async (): Promise<string> => {
+          try {
+            return await Promise.resolve('second');
+          } catch (e) {
+            console.info(`testIsAsyncFunctionInObject method2 catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        }
       };
       expect(type.isAsyncFunction(obj.method1)).assertTrue();
       expect(type.isAsyncFunction(obj.method2)).assertTrue();

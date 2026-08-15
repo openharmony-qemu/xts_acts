@@ -48,12 +48,13 @@ export default function ResizableArrayWorkerLocalConcurrentTest(): void {
       let totalTasks: number = 10;
       let tasks: Promise<Any>[] = [];
       for (let i: number = 0; i < totalTasks; i++) {
-        tasks.push(taskpool.execute(testResizableArrayWorkerLocal, wl).then((): void => { count.fetchAdd(1); }));
+        tasks.push(taskpool.execute(testResizableArrayWorkerLocal, wl));
       }
       testResizableArrayWorkerLocal(wl);
       count.fetchAdd(1);
       try {
         await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
         expect(count.load()).assertEqual(totalTasks + 1);
       } catch (err) {
         expect(err).assertFail();

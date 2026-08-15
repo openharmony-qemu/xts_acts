@@ -116,16 +116,13 @@ export default function BlockingQueueConcurrentTest(): void {
         let count: AtomicInt = new AtomicInt(0);
         let failCounter: AtomicInt = new AtomicInt(0);
         let totalTasks: number = 5;
+        const addTasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testBlockingQueueAdd, failCounter, count).then((): void => { });
+          addTasks.push(taskpool.execute(testBlockingQueueAdd, failCounter, count));
         }
         // 主线程也执行一次
         testBlockingQueueAdd(failCounter, count);
-        let waits: number = 0;
-        while (count.load() < totalTasks + 1 && waits < 100) {
-          await Utils.msSleep(100);
-          waits++;
-        }
+        await Promise.all(addTasks);
         expect(count.load()).assertEqual(totalTasks + 1);
         expect(failCounter.load()).assertEqual(totalTasks + 1);
       } catch (e) {
@@ -149,16 +146,13 @@ export default function BlockingQueueConcurrentTest(): void {
         let count: AtomicInt = new AtomicInt(0);
         let undefCounter: AtomicInt = new AtomicInt(0);
         let totalTasks: number = 5;
+        const pollTasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testBlockingQueuePoll, undefCounter, count).then((): void => { });
+          pollTasks.push(taskpool.execute(testBlockingQueuePoll, undefCounter, count));
         }
         // 主线程也执行一次
         testBlockingQueuePoll(undefCounter, count);
-        let waits: number = 0;
-        while (count.load() < totalTasks + 1 && waits < 100) {
-          await Utils.msSleep(100);
-          waits++;
-        }
+        await Promise.all(pollTasks);
         expect(count.load()).assertEqual(totalTasks + 1);
         expect(undefCounter.load()).assertEqual(totalTasks + 1);
       } catch (e) {

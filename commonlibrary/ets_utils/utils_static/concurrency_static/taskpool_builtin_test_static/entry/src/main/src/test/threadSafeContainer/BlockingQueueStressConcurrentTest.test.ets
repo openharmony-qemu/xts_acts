@@ -53,17 +53,14 @@ export default function BlockingQueueStressConcurrentTest(): void {
         let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(100);
         let totalProducers: number = 50;
         let totalConsumers: number = 50;
+        const stressTasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalProducers; i++) {
-          taskpool.execute(testBlockingQueueStressProducer, producerCount).then((): void => { });
+          stressTasks.push(taskpool.execute(testBlockingQueueStressProducer, producerCount));
         }
         for (let i: number = 0; i < totalConsumers; i++) {
-          taskpool.execute(testBlockingQueueStressConsumer, consumerCount).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
+          stressTasks.push(taskpool.execute(testBlockingQueueStressConsumer, consumerCount));
         }
-        let waits: number = 0;
-        while ((producerCount.load() < totalProducers * 50 || consumerCount.load() < totalConsumers * 50) && waits < 200) {
-          await Utils.msSleep(100);
-          waits++;
-        }
+        await Promise.all(stressTasks);
         // 主线程串行验证 BlockingQueue 100 元素生产-消费压力
         for (let i: number = 0; i < 100; i++) {
           queue.push(i);

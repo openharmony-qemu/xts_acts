@@ -21,39 +21,59 @@ class NestedObject {
 }
 
 async function level10(depth: int): Promise<number> {
-  if (depth === 0) {
-    return 1.0;
+  try {
+    if (depth === 0) {
+      return 1.0;
+    }
+    const result: number = await level10(depth - 1);
+    return result + 1;
+  } catch (e) {
+    console.info(`asyncBoundaryTest level10 catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  const result: number = await level10(depth - 1);
-  return result + 1;
 }
 
 async function createNested(depth: int): Promise<NestedObject> {
-  if (depth === 0) {
+  try {
+    if (depth === 0) {
+      const obj: NestedObject = new NestedObject();
+      obj.value = depth;
+      return obj;
+    }
+    const nested = await createNested(depth - 1);
     const obj: NestedObject = new NestedObject();
     obj.value = depth;
+    obj.next = nested;
     return obj;
+  } catch (e) {
+    console.info(`asyncBoundaryTest createNested catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  const nested = await createNested(depth - 1);
-  const obj: NestedObject = new NestedObject();
-  obj.value = depth;
-  obj.next = nested;
-  return obj;
 }
 
 async function deepError(depth: int): Promise<number> {
-  if (depth === 5) {
-    throw new Error(`Error at depth ${depth}`);
+  try {
+    if (depth === 5) {
+      throw new Error(`Error at depth ${depth}`);
+    }
+    return await deepError(depth - 1);
+  } catch (e) {
+    console.info(`asyncBoundaryTest deepError catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  return await deepError(depth - 1);
 }
 
 async function recursiveChain(depth: int): Promise<number> {
-  if (depth === 0) {
-    return 0.0;
+  try {
+    if (depth === 0) {
+      return 0.0;
+    }
+    const prev = await Promise.resolve(depth);
+    return prev + await recursiveChain(depth - 1);
+  } catch (e) {
+    console.info(`asyncBoundaryTest recursiveChain catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  const prev = await Promise.resolve(depth);
-  return prev + await recursiveChain(depth - 1);
 }
 
 export default function asyncBoundaryTest(): void {
@@ -339,14 +359,14 @@ export default function asyncBoundaryTest(): void {
      */
     it('asyncBoundaryTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const chainPromise = async (count: number): Promise<int> => {
-        let promise = Promise.resolve(0);
-        for (let i: int = 0; i < count; i++) {
-          promise = promise.then((val: int): int => val + 1, (error: Error): int => { throw error; });
-        }
+        let val: int = 0;
         try {
-          return await promise;
+          for (let i: int = 0; i < count; i++) {
+            val = await Promise.resolve(val + 1);
+          }
+          return val;
         } catch (e) {
-          console.info(`asyncBoundaryTest010 catch error: ${JSON.stringify(e)}`);
+          console.info(`asyncBoundaryTest010 chainPromise catch error: ${JSON.stringify(e)}`);
           throw e;
         }
       };
@@ -495,7 +515,13 @@ export default function asyncBoundaryTest(): void {
      */
     it('asyncBoundaryTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const immediate = async (): Promise<int> => {
-        return Promise.resolve().then(() => 42);
+        try {
+          const val: int = await Promise.resolve(42);
+          return val;
+        } catch (e) {
+          console.info(`asyncBoundaryTest017 immediate catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {

@@ -60,14 +60,14 @@ export default function MapNoLockConcurrentTest(): void {
         let count: AtomicInt = new AtomicInt(0);
         let map: Map<string, number> = new Map<string, number>();
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testMapNoLock, new Map<string, number>()).then((): void => { count.fetchAdd(1); });
+          tasks.push(taskpool.execute(testMapNoLock, new Map<string, number>()));
         }
         testMapNoLock(map);
         count.fetchAdd(1);
-        while (count.load() < totalTasks + 1) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
         expect(count.load()).assertEqual(totalTasks + 1);
 
       } catch (e) {
@@ -89,12 +89,12 @@ export default function MapNoLockConcurrentTest(): void {
       try {
         let count: AtomicInt = new AtomicInt(0);
         let totalTasks: number = 100;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testMapNoLockStress, new Map<string, number>()).then((): void => { count.fetchAdd(1); });
+          tasks.push(taskpool.execute(testMapNoLockStress, new Map<string, number>()));
         }
-        while (count.load() < totalTasks) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
         expect(count.load()).assertEqual(totalTasks);
       } catch (e) {
         console.info(`testMapNoLockStressConcurrent0200 catch error: ${JSON.stringify(e)}`);

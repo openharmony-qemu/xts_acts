@@ -101,31 +101,41 @@ class DelaySeqIter<T> implements SeqAsyncIter<T> {
   }
 
   async next(): Promise<SeqStep<T>> {
-    if (this.index < this.values.length) {
-      if (this.index < this.delays.length) {
-        await sleep(this.delays[this.index]);
+    try {
+      if (this.index < this.values.length) {
+        if (this.index < this.delays.length) {
+          await sleep(this.delays[this.index]);
+        }
+        const value: T = this.values[this.index];
+        this.index = this.index + 1;
+        return { value: value, done: false };
       }
-      const value: T = this.values[this.index];
-      this.index = this.index + 1;
-      return { value: value, done: false };
+      return { value: undefined, done: true };
+    } catch (e) {
+      console.info(`DelaySeqIter.next catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
-    return { value: undefined, done: true };
   }
 }
 
 // Static equivalent of `for await (const v of asyncIter)`: repeatedly calls
 // the explicit next() until done and returns the collected values in order.
 async function collectAll<T>(iter: SeqAsyncIter<T>): Promise<T[]> {
-  const collected: T[] = [];
-  let step: SeqStep<T> = await iter.next();
-  while (!step.done) {
-    const stepValue: T | undefined = step.value;
-    if (stepValue !== undefined) {
-      collected.push(stepValue);
+  try {
+    const collected: T[] = [];
+    let step: SeqStep<T> = await iter.next();
+    while (!step.done) {
+      const stepValue: T | undefined = step.value;
+      if (stepValue !== undefined) {
+        collected.push(stepValue);
+      }
+      step = await iter.next();
     }
-    step = await iter.next();
+    return collected;
+  } catch (e) {
+    console.info(`collectAll catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  return collected;
 }
 
 // Typed value objects yielded by the rewritten object-value tests.
@@ -366,18 +376,23 @@ class StatusIter {
   private step: int = 0;
 
   async next(): Promise<SeqStep<string>> {
-    if (this.step === 0) {
+    try {
+      if (this.step === 0) {
+        this.step = this.step + 1;
+        return { value: 'pending', done: false };
+      }
+      if (this.step === 1) {
+        this.step = this.step + 1;
+        await sleep(10);
+        this.isComplete = true;
+        return { value: this.isComplete ? 'complete' : 'failed', done: false };
+      }
       this.step = this.step + 1;
-      return { value: 'pending', done: false };
+      return { value: undefined, done: true };
+    } catch (e) {
+      console.info(`StatusIter.next catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
-    if (this.step === 1) {
-      this.step = this.step + 1;
-      await sleep(10);
-      this.isComplete = true;
-      return { value: this.isComplete ? 'complete' : 'failed', done: false };
-    }
-    this.step = this.step + 1;
-    return { value: undefined, done: true };
   }
 }
 
@@ -414,26 +429,35 @@ class SyncStateIter {
   private updatePromise: Promise<int>;
 
   constructor() {
-    this.updatePromise = new Promise<int>((resolve: (value: int) => void) => {
-      setTimeout((): void => {
+    this.updatePromise = (async (): Promise<int> => {
+      try {
+        await sleep(100);
         this.syncState = 10;
-        resolve(this.syncState);
-      }, 100);
-    });
+        return this.syncState;
+      } catch (e) {
+        console.info(`SyncStateIter updatePromise catch error: ${JSON.stringify(e)}`);
+        throw e;
+      }
+    })();
   }
 
   async next(): Promise<SeqStep<number>> {
-    if (this.step === 0) {
+    try {
+      if (this.step === 0) {
+        this.step = this.step + 1;
+        return { value: 0, done: false };
+      }
+      if (this.step === 1) {
+        this.step = this.step + 1;
+        await this.updatePromise;
+        return { value: this.syncState, done: false };
+      }
       this.step = this.step + 1;
-      return { value: 0, done: false };
+      return { value: undefined, done: true };
+    } catch (e) {
+      console.info(`SyncStateIter.next catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
-    if (this.step === 1) {
-      this.step = this.step + 1;
-      await this.updatePromise;
-      return { value: this.syncState, done: false };
-    }
-    this.step = this.step + 1;
-    return { value: undefined, done: true };
   }
 }
 
@@ -454,13 +478,18 @@ class SharedIterA {
   }
 
   async next(): Promise<SeqStep<number>> {
-    await sleep(10);
-    if (!this.called) {
-      this.called = true;
-      this.holder.shared = this.holder.shared + 3;
-      return { value: this.holder.shared, done: false };
+    try {
+      await sleep(10);
+      if (!this.called) {
+        this.called = true;
+        this.holder.shared = this.holder.shared + 3;
+        return { value: this.holder.shared, done: false };
+      }
+      return { value: undefined, done: true };
+    } catch (e) {
+      console.info(`SharedIterA.next catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
-    return { value: undefined, done: true };
   }
 }
 
@@ -473,13 +502,18 @@ class SharedIterB {
   }
 
   async next(): Promise<SeqStep<number>> {
-    await sleep(10);
-    if (!this.called) {
-      this.called = true;
-      this.holder.shared = this.holder.shared + 5;
-      return { value: this.holder.shared, done: false };
+    try {
+      await sleep(10);
+      if (!this.called) {
+        this.called = true;
+        this.holder.shared = this.holder.shared + 5;
+        return { value: this.holder.shared, done: false };
+      }
+      return { value: undefined, done: true };
+    } catch (e) {
+      console.info(`SharedIterB.next catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
-    return { value: undefined, done: true };
   }
 }
 
@@ -2032,8 +2066,13 @@ export default function asyncIteratorTest(): void {
     it('AsyncIteratorTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const fetchData = async (val: int): Promise<int> => {
-          await sleep(val % 2 === 0 ? 100 : 200);
-          return val + 10;
+          try {
+            await sleep(val % 2 === 0 ? 100 : 200);
+            return val + 10;
+          } catch (e) {
+            console.info(`AsyncIteratorTest063 fetchData catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         const iter: SeqIter<number> = new SeqIter<number>([await fetchData(5), await fetchData(8)]);
         const res1: SeqStep<number> = await iter.next();
@@ -2151,11 +2190,15 @@ export default function asyncIteratorTest(): void {
       try {
         const promises: Promise<number>[] = [
           Promise.resolve(10 as number),
-          new Promise<number>((resolve: (value: number) => void) => {
-            setTimeout((): void => {
-              resolve(20);
-            }, 100);
-          }),
+          (async (): Promise<number> => {
+            try {
+              await sleep(100);
+              return 20;
+            } catch (e) {
+              console.info(`AsyncIteratorTest068 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          })(),
           Promise.resolve(30 as number)
         ];
         const values: number[] = [];
@@ -2206,16 +2249,24 @@ export default function asyncIteratorTest(): void {
         // static equivalent: no wall-clock threshold assertion, the race between
         // a 100ms and a 200ms timer resolves to the 100ms one (wide margin keeps
         // the outcome stable under device load)
-        const fastDelay: Promise<string> = new Promise<string>((resolve: (value: string) => void) => {
-          setTimeout((): void => {
-            resolve('lose');
-          }, 100);
-        });
-        const slowYield: Promise<string> = new Promise<string>((resolve: (value: string) => void) => {
-          setTimeout((): void => {
-            resolve('win');
-          }, 200);
-        });
+        const fastDelay: Promise<string> = (async (): Promise<string> => {
+          try {
+            await sleep(100);
+            return 'lose';
+          } catch (e) {
+            console.info(`AsyncIteratorTest070 fastDelay catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        })();
+        const slowYield: Promise<string> = (async (): Promise<string> => {
+          try {
+            await sleep(200);
+            return 'win';
+          } catch (e) {
+            console.info(`AsyncIteratorTest070 slowYield catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        })();
         const raced: string = await Promise.race([fastDelay, slowYield]);
         const iter: SeqIter<string> = new SeqIter<string>([raced]);
         const result: SeqStep<string> = await iter.next();
@@ -2304,8 +2355,13 @@ export default function asyncIteratorTest(): void {
     it('AsyncIteratorTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const checkCondition = async (): Promise<boolean> => {
-          await sleep(10);
-          return true;
+          try {
+            await sleep(10);
+            return true;
+          } catch (e) {
+            console.info(`AsyncIteratorTest074 checkCondition catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         const values: string[] = [];
         if (await checkCondition()) {
@@ -2335,9 +2391,14 @@ export default function asyncIteratorTest(): void {
       try {
         let count: int = 0;
          const increment = async (): Promise<int> => {
-          await sleep(10);
-          count = count + 1;
-          return count;
+          try {
+            await sleep(10);
+            count = count + 1;
+            return count;
+          } catch (e) {
+            console.info(`AsyncIteratorTest075 increment catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         const iter: SeqIter<number> = new SeqIter<number>([await increment(), await increment()]);
         const res1: SeqStep<number> = await iter.next();
@@ -2380,13 +2441,15 @@ export default function asyncIteratorTest(): void {
     it('AsyncIteratorTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const chain = async (val: Promise<number>): Promise<number> => {
-          const v1: number = await val;
-          const v2: number = v1 + 5;
-          return await new Promise<number>((resolve: (value: number) => void) => {
-            setTimeout((): void => {
-              resolve(v2 * 2);
-            }, 100);
-          });
+          try {
+            const v1: number = await val;
+            const v2: number = v1 + 5;
+            await sleep(100);
+            return v2 * 2;
+          } catch (e) {
+            console.info(`AsyncIteratorTest077 chain catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         const resultVal: number = await chain(Promise.resolve(3 as number));
         const iter: SeqIter<number> = new SeqIter<number>([resultVal]);
@@ -2451,8 +2514,13 @@ export default function asyncIteratorTest(): void {
         // (duration >= 29 ? 'timed' : 'fast') is removed; the awaited nested
         // delay deterministically produces 'timed'
         const inner = async (): Promise<string> => {
-          await sleep(10);
-          return 'timed';
+          try {
+            await sleep(10);
+            return 'timed';
+          } catch (e) {
+            console.info(`AsyncIteratorTest079 inner catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         const value: string = await inner();
         const iter: SeqIter<string> = new SeqIter<string>([value]);
@@ -2476,15 +2544,17 @@ export default function asyncIteratorTest(): void {
     it('AsyncIteratorTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const processBatch = async (items: number[]): Promise<number[]> => {
-          const results: number[] = [];
-          for (const item of items) {
-            results.push(await new Promise<number>((resolve: (value: number) => void) => {
-              setTimeout((): void => {
-                resolve(item * 3);
-              }, 100);
-            }));
+          try {
+            const results: number[] = [];
+            for (const item of items) {
+              await sleep(100);
+              results.push(item * 3);
+            }
+            return results;
+          } catch (e) {
+            console.info(`AsyncIteratorTest080 processBatch catch error: ${JSON.stringify(e)}`);
+            throw e;
           }
-          return results;
         };
         const batches: number[][] = [[1, 2], [3, 4]];
         const tasks: Promise<number[]>[] = batches.map((batch: number[]): Promise<number[]> => processBatch(batch));
@@ -2622,16 +2692,24 @@ export default function asyncIteratorTest(): void {
     it('AsyncIteratorTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const parallelTasks: Promise<string>[] = [
-          new Promise<string>((resolve: (value: string) => void) => {
-            setTimeout((): void => {
-              resolve('p1');
-            }, 100);
-          }),
-          new Promise<string>((resolve: (value: string) => void) => {
-            setTimeout((): void => {
-              resolve('p2');
-            }, 100);
-          })
+          (async (): Promise<string> => {
+            try {
+              await sleep(100);
+              return 'p1';
+            } catch (e) {
+              console.info(`AsyncIteratorTest086 task1 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          })(),
+          (async (): Promise<string> => {
+            try {
+              await sleep(100);
+              return 'p2';
+            } catch (e) {
+              console.info(`AsyncIteratorTest086 task2 catch error: ${JSON.stringify(e)}`);
+              throw e;
+            }
+          })()
         ];
         const all: string[] = await Promise.all(parallelTasks);
         all.sort();
@@ -2683,11 +2761,15 @@ export default function asyncIteratorTest(): void {
      */
     it('AsyncIteratorTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        const initialized: number = await new Promise<number>((resolve: (value: number) => void) => {
-          setTimeout((): void => {
-            resolve(5 * 2);
-          }, 100);
-        });
+        const initialized: number = await (async (): Promise<number> => {
+          try {
+            await sleep(100);
+            return 5 * 2;
+          } catch (e) {
+            console.info(`AsyncIteratorTest088 initialized catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        })();
         const iter: SeqIter<number> = new SeqIter<number>([initialized]);
         const result: SeqStep<number> = await iter.next();
         expect(result.value).assertEqual(10);
@@ -2708,16 +2790,24 @@ export default function asyncIteratorTest(): void {
      */
     it('AsyncIteratorTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        const initialized: number = await new Promise<number>((resolve: (value: number) => void) => {
-          setTimeout((): void => {
-            resolve(4 * 3);
-          }, 100);
-        });
-        const nestedValue: number = await new Promise<number>((resolve: (value: number) => void) => {
-          setTimeout((): void => {
-            resolve(initialized + 5);
-          }, 100);
-        });
+        const initialized: number = await (async (): Promise<number> => {
+          try {
+            await sleep(100);
+            return 4 * 3;
+          } catch (e) {
+            console.info(`AsyncIteratorTest089 initialized catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        })();
+        const nestedValue: number = await (async (): Promise<number> => {
+          try {
+            await sleep(100);
+            return initialized + 5;
+          } catch (e) {
+            console.info(`AsyncIteratorTest089 nestedValue catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        })();
         const iter: SeqIter<number> = new SeqIter<number>([nestedValue, initialized]);
         const values: number[] = await collectAll<number>(iter);
         expect(JSON.stringify(values)).assertEqual('[17,12]');
@@ -2811,9 +2901,14 @@ export default function asyncIteratorTest(): void {
       try {
         let callCount: int = 0;
         const nestedAsync = async (): Promise<int> => {
-          await sleep(10);
-          callCount = callCount + 1;
-          return callCount;
+          try {
+            await sleep(10);
+            callCount = callCount + 1;
+            return callCount;
+          } catch (e) {
+            console.info(`AsyncIteratorTest093 nestedAsync catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         const iter: SeqIter<number> = new SeqIter<number>([await nestedAsync(), await nestedAsync(), callCount]);
         const values: number[] = await collectAll<number>(iter);
@@ -2854,8 +2949,13 @@ export default function asyncIteratorTest(): void {
     it('AsyncIteratorTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const isEven = async (num: number): Promise<boolean> => {
-          await sleep(10);
-          return num % 2 === 0;
+          try {
+            await sleep(10);
+            return num % 2 === 0;
+          } catch (e) {
+            console.info(`AsyncIteratorTest095 isEven catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         const nums: number[] = [1, 2, 3, 4, 5, 6];
         const values: number[] = [];
@@ -2907,17 +3007,30 @@ export default function asyncIteratorTest(): void {
     it('AsyncIteratorTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const raceTask = async (): Promise<string> => {
-          const taskA: Promise<string> = new Promise<string>((resolve: (value: string) => void) => {
-            setTimeout((): void => {
-              resolve('A');
-            }, 500);
-          });
-          const taskB: Promise<string> = new Promise<string>((resolve: (value: string) => void) => {
-            setTimeout((): void => {
-              resolve('B');
-            }, 100);
-          });
-          return Promise.race([taskA, taskB]);
+          try {
+            const taskA: Promise<string> = (async (): Promise<string> => {
+              try {
+                await sleep(500);
+                return 'A';
+              } catch (e) {
+                console.info(`AsyncIteratorTest097 taskA catch error: ${JSON.stringify(e)}`);
+                throw e;
+              }
+            })();
+            const taskB: Promise<string> = (async (): Promise<string> => {
+              try {
+                await sleep(100);
+                return 'B';
+              } catch (e) {
+                console.info(`AsyncIteratorTest097 taskB catch error: ${JSON.stringify(e)}`);
+                throw e;
+              }
+            })();
+            return Promise.race([taskA, taskB]);
+          } catch (e) {
+            console.info(`AsyncIteratorTest097 raceTask catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         const iter: SeqIter<string> = new SeqIter<string>([await raceTask(), await raceTask()]);
         const res1: SeqStep<string> = await iter.next();
@@ -2973,8 +3086,13 @@ export default function asyncIteratorTest(): void {
     it('AsyncIteratorTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const transform = async (v: string): Promise<string> => {
-          await sleep(10);
-          return v.repeat(2);
+          try {
+            await sleep(10);
+            return v.repeat(2);
+          } catch (e) {
+            console.info(`AsyncIteratorTest099 transform catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
         };
         const innerValue: string = await transform('test');
         const iter: SeqIter<string> = new SeqIter<string>([innerValue]);
@@ -2998,11 +3116,15 @@ export default function asyncIteratorTest(): void {
     it('AsyncIteratorTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const initial: int = 5;
-        const initVal: number = await new Promise<number>((resolve: (value: number) => void) => {
-          setTimeout((): void => {
-            resolve(initial + 10);
-          }, 100);
-        });
+        const initVal: number = await (async (): Promise<number> => {
+          try {
+            await sleep(100);
+            return initial + 10;
+          } catch (e) {
+            console.info(`AsyncIteratorTest100 initVal catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        })();
         let syncVal: number = 0;
         const values: number[] = [];
         const processed: number[] = [initVal * 2, initVal * 3];

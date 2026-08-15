@@ -57,13 +57,12 @@ export default function AtomicBoolConcurrentTest(): void {
         let flag: AtomicBoolean = new AtomicBoolean(false);
         let taskCounter: AtomicInt = new AtomicInt(0);
         let totalTasks: number = 10;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testAtomicBoolExchange, flag, taskCounter).then((): void => { }, (err: Error): void => { expect(err).assertFail(); });
+          tasks.push(taskpool.execute(testAtomicBoolExchange, flag, taskCounter));
         }
         testAtomicBoolExchange(flag, taskCounter);
-        while (taskCounter.load() < totalTasks * 10 + 10) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(tasks);
         expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
       } catch (e) {
         console.info(`testAtomicBoolExchangeConcurrent0100 catch error: ${JSON.stringify(e)}`);
@@ -85,15 +84,16 @@ export default function AtomicBoolConcurrentTest(): void {
         let flag: AtomicBoolean = new AtomicBoolean(false);
         let taskCounter: AtomicInt = new AtomicInt(0);
         let totalTasks: number = 5;
+        let storeTasks: Promise<Any>[] = [];
+        let loadTasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testAtomicBoolStore, flag, taskCounter).then((): void => { });
+          storeTasks.push(taskpool.execute(testAtomicBoolStore, flag, taskCounter));
         }
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testAtomicBoolLoad, flag, taskCounter).then((): void => { });
+          loadTasks.push(taskpool.execute(testAtomicBoolLoad, flag, taskCounter));
         }
-        while (taskCounter.load() < totalTasks * 10 * 2) {
-          await Utils.msSleep(100);
-        }
+        await Promise.all(storeTasks);
+        await Promise.all(loadTasks);
         expect(taskCounter.load()).assertEqual(totalTasks * 10 * 2);
       } catch (e) {
         console.info(`testAtomicBoolLoadStoreConcurrent0200 catch error: ${JSON.stringify(e)}`);

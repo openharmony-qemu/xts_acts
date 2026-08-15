@@ -565,6 +565,9 @@ export default function asyncRealWorldTest(): void {
 
         try {
           return await promise;
+        } catch (e) {
+          console.info(`asyncRealWorldTest016 catch error: ${JSON.stringify(e)}`);
+          throw e;
         } finally {
           pendingRequests.delete(key);
         }

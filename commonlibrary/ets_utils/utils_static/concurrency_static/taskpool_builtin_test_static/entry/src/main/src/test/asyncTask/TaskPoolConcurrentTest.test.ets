@@ -153,12 +153,11 @@ export default function TaskPoolConcurrentTest(): void {
       let tasks: Promise<Any>[] = [];
       for (let i: int = 0; i < totalTasks; i++) {
         let task: taskpool.Task = new taskpool.Task(testTaskPoolDelayed, delayedCounter);
-        tasks.push(taskpool.executeDelayed(100, task).then((): void => {
-          counter.fetchAdd(1);
-        }));
+        tasks.push(taskpool.executeDelayed(100, task));
       }
       try {
         await Promise.all(tasks);
+        counter.fetchAdd(totalTasks.toInt());
         expect(delayedCounter.load()).assertEqual(totalTasks);
         expect(counter.load()).assertEqual(totalTasks);
       } catch (e) {
@@ -326,11 +325,10 @@ export default function TaskPoolConcurrentTest(): void {
     it('testTaskPoolCallbackConcurrent0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let result: AtomicInt = new AtomicInt(0);
       try {
-        await taskpool.execute((): int => {
+        const value: int = await taskpool.execute((): int => {
           return 42;
-        }).then((value: Any): void => {
-          result.store(value as int);
-        });
+        }) as int;
+        result.store(value);
         expect(result.load()).assertEqual(42);
       } catch (e) {
         console.info(`testTaskPoolCallbackConcurrent0900 catch error: ${JSON.stringify(e)}`);

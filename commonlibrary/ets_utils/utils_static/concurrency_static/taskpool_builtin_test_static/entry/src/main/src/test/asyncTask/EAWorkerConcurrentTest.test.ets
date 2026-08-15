@@ -110,7 +110,13 @@ export default function EAWorkerConcurrentTest(): void {
       }
       for (let i: int = 0; i < totalWorkers; i++) {
         for (let j: int = 0; j < 10; j++) {
-          workers[i].postTask((): void => { testEAWorkerPostTask(counter); });
+          workers[i].postTask((): void => {
+            try {
+              testEAWorkerPostTask(counter);
+            } catch (e) {
+              console.info(`testEAWorkerPostTaskConcurrent0300 catch error: ${JSON.stringify(e)}`);
+            }
+          });
         }
       }
       joinWorkers(workers);

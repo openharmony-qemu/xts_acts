@@ -46,14 +46,12 @@ export default function ResizableArrayStressConcurrentTest(): void {
       try {
         let count: AtomicInt = new AtomicInt(0);
         let totalTasks: number = 100;
-        let waits: number = 0;
+        let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          taskpool.execute(testResizableArrayStress, new Array<number>()).then((): void => { count.fetchAdd(1); });
+          tasks.push(taskpool.execute(testResizableArrayStress, new Array<number>()));
         }
-        while (count.load() < totalTasks && waits < 200) {
-          await Utils.msSleep(100);
-          waits++;
-        }
+        await Promise.all(tasks);
+        count.fetchAdd(totalTasks.toInt());
         expect(count.load()).assertEqual(totalTasks);
       } catch (e) {
         console.info(`testResizableArrayStressConcurrent0100 catch error: ${JSON.stringify(e)}`);

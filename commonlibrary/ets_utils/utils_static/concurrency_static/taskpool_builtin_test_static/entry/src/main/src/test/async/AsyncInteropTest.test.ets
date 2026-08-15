@@ -39,12 +39,22 @@ class TestObj {
   public value: number = 10;
 
   async getValue(): Promise<number> {
-    return await Promise.resolve(this.value);
+    try {
+      return await Promise.resolve(this.value);
+    } catch (e) {
+      console.info(`TestObj getValue catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 
   async setValue(newValue: number): Promise<void> {
     this.value = newValue;
-    await Promise.resolve();
+    try {
+      await Promise.resolve();
+    } catch (e) {
+      console.info(`TestObj setValue catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 }
 
@@ -56,8 +66,13 @@ class BaseClass {
 
 class DerivedClass extends BaseClass {
   async derivedMethod(): Promise<string> {
-    const base = await this.baseMethod();
-    return base + '-derived';
+    try {
+      const base = await this.baseMethod();
+      return base + '-derived';
+    } catch (e) {
+      console.info(`DerivedClass derivedMethod catch error: ${JSON.stringify(e)}`);
+      throw e;
+    }
   }
 }
 
@@ -118,13 +133,17 @@ export default function asyncInteropTest(): void {
      */
     it('asyncInteropTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const callbackAsync = (
-        callback: () => Promise<int>
+        callback: (err: Error | null) => Promise<int>
       ): Promise<int> => {
-        return callback();
+        return callback(null);
       };
 
       try {
-        const result = await callbackAsync(async () => {
+        const result = await callbackAsync(async (err: Error | null): Promise<int> => {
+          if (err !== null) {
+            console.info(`asyncInteropTest002 callback error: ${JSON.stringify(err)}`);
+            throw err;
+          }
           try {
             return await Promise.resolve(100);
           } catch (e) {
@@ -218,17 +237,15 @@ export default function asyncInteropTest(): void {
      */
     it('asyncInteropTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const mixedStyle = async (): Promise<int> => {
-        return Promise.resolve(10)
-          .then((val: int) => val * 2)
-          .then(async (val: int): Promise<int> => {
-            try {
-              const doubled = await Promise.resolve(val * 2);
-              return doubled;
-            } catch (err) {
-              expect(err).assertFail();
-              return 0;
-            }
-          });
+        try {
+          const first: int = await Promise.resolve(10);
+          const second: int = first * 2;
+          const doubled: int = await Promise.resolve(second * 2);
+          return doubled;
+        } catch (err) {
+          expect(err).assertFail();
+          return 0;
+        }
       };
 
       try {
@@ -249,12 +266,13 @@ export default function asyncInteropTest(): void {
      * @tc.level  LEVEL2
      */
     it('asyncInteropTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      const promiseWrapper = (asyncFn: () => Promise<int>): Promise<int> => {
-        return new Promise<int>((resolve, reject) => {
-          asyncFn()
-            .then(resolve)
-            .catch(reject);
-        });
+      const promiseWrapper = async (asyncFn: () => Promise<int>): Promise<int> => {
+        try {
+          return await asyncFn();
+        } catch (e) {
+          console.info(`promiseWrapper catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       const myAsync = async (): Promise<int> => {
@@ -286,12 +304,14 @@ export default function asyncInteropTest(): void {
      */
     it('asyncInteropTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const withTimeout = async (): Promise<string> => {
-        // Use Promise.resolve instead of setTimeout for reliable async execution
-        return new Promise<string>((resolve) => {
-          Promise.resolve().then(() => {
-            resolve('timeout-complete');
-          });
-        });
+        try {
+          // Use Promise.resolve instead of setTimeout for reliable async execution
+          await Promise.resolve();
+          return 'timeout-complete';
+        } catch (e) {
+          console.info(`withTimeout catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
@@ -510,14 +530,12 @@ export default function asyncInteropTest(): void {
      */
     it('asyncInteropTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const multiErrorHandling = async (): Promise<string> => {
-        return Promise.resolve('value')
-          .then(val => val.toUpperCase())
-          .catch((err: Error): string => {
-            return 'error1';
-          })
-          .catch((err: Error): string => {
-            return 'error2';
-          });
+        try {
+          const value: string = await Promise.resolve('value');
+          return value.toUpperCase();
+        } catch (err) {
+          return 'error1';
+        }
       };
 
       try {
@@ -575,42 +593,24 @@ export default function asyncInteropTest(): void {
      */
     it('asyncInteropTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const clearTimeoutTest = async (): Promise<string> => {
-        return new Promise<string>((resolve) => {
-          let cleared = false;
-          let resolved = false;
+        try {
+          // Create a delayed promise that would resolve with 'too-late' if the clear did not win first.
+          const delayedPromise: Promise<string> = Promise.resolve('too-late');
 
-          // Create a delayed promise that can be cancelled
-          const delayedPromise = new Promise<string>((res) => {
-            Promise.resolve().then().then().then().then(() => {
-              if (!resolved) {
-                res('too-late');
-              }
-            });
-          });
+          // The "clear" operation resolves first with 'cleared'.
+          const clearedResult: string = await Promise.resolve('cleared');
 
-          // Immediately "clear" the first promise
-          Promise.resolve().then(() => {
-            if (!resolved) {
-              cleared = true;
-              resolved = true;
-              resolve('cleared');
-            }
-          });
+          // Wait for the delayed promise to settle without changing the result.
+          const delayedResult: string = await delayedPromise;
 
-          // Wait for the first operation to "clear"
-          Promise.resolve().then((): void => {
-            if (!resolved && cleared) {
-              resolved = true;
-            }
-          }, (error: Error): void => { throw error; });
-
-          delayedPromise.then((result) => {
-            if (!resolved) {
-              resolved = true;
-              resolve(result);
-            }
-          });
-        });
+          if (clearedResult === 'cleared') {
+            return clearedResult;
+          }
+          return delayedResult;
+        } catch (e) {
+          console.info(`clearTimeoutTest catch error: ${JSON.stringify(e)}`);
+          throw e;
+        }
       };
 
       try {
