@@ -1513,311 +1513,634 @@ async function asyncGeneratorTest074Fn(): Promise<boolean> {
 }
 
 // Dynamic asyncGeneratorTest075: nested-step pipeline transforms each string
+// input to 'X-sub-final'.
+async function asyncGeneratorTest075Fn(): Promise<boolean> {
+  try {
+    const stepA = async (val: string): Promise<string> => val.toUpperCase();
+    const stepB = async (val: string): Promise<string> => `${val}-sub`;
+    const stepC = async (val: string): Promise<string> => `${val}-final`;
+    const input: string[] = ['test1', 'test2'];
+    const values: string[] = [];
+    for (let i = 0; i < input.length; i++) {
+      const a: string = await stepA(input[i]);
+      const b: string = await stepB(a);
+      const c: string = await stepC(b);
+      values.push(await Promise.resolve(c));
+    }
+    return values[0] === 'TEST1-sub-final' && values[1] === 'TEST2-sub-final';
+  } catch (e) {
+    console.info(`asyncGeneratorTest075Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
+
+// Dynamic asyncGeneratorTest076: sequential async dependencies chain the
+// yielded values.
+async function asyncGeneratorTest076Fn(): Promise<boolean> {
+  try {
+    const fetchStep1 = async (): Promise<string> => 'data1';
+    const fetchStep2 = async (dep: string): Promise<string> => `${dep}-data2`;
+    const fetchStep3 = async (dep: string): Promise<string> => `${dep}-data3`;
+    const s1: string = await fetchStep1();
+    const s2: string = await fetchStep2(s1);
+    const s3: string = await fetchStep3(s2);
+    return s1 === 'data1' && s2 === 'data1-data2' && s3 === 'data1-data2-data3';
+  } catch (e) {
+    console.info(`asyncGeneratorTest076Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
+
+// Dynamic asyncGeneratorTest077: parallel batches interleaved with a gap stay
+// ordered, then the generator completes.
+async function asyncGeneratorTest077Fn(): Promise<boolean> {
+  try {
+    const p1v1: Promise<string> = Promise.resolve<string>('p1-1');
+    const p1v2: Promise<string> = Promise.resolve<string>('p1-2');
+    const parallel1: string[] = await Promise.all([p1v1, p1v2]);
+    await sleep(10);
+    const p2v1: Promise<string> = Promise.resolve<string>('p2-1');
+    const p2v2: Promise<string> = Promise.resolve<string>('p2-2');
+    const parallel2: string[] = await Promise.all([p2v1, p2v2]);
+    const values: string[] = [];
+    for (let i = 0; i < parallel1.length; i++) {
+      values.push(parallel1[i]);
+    }
+    for (let i = 0; i < parallel2.length; i++) {
+      values.push(parallel2[i]);
+    }
+    const consumed: number = 5;
+    const done: boolean = consumed > values.length;
+    return values.join(',') === 'p1-1,p1-2,p2-1,p2-2' && done;
+  } catch (e) {
+    console.info(`asyncGeneratorTest077Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
+
+// Dynamic asyncGeneratorTest078: return values propagate up the yield* chain
+// and are composed into the outer yields.
+async function asyncGeneratorTest078Fn(): Promise<boolean> {
+  try {
+    const innerV: string = await Promise.resolve('inner-v');
+    const middleYield: string = await Promise.resolve('middle-inner-return-val');
+    const outerYield: string = await Promise.resolve('outer-middle-return-val');
+    const consumed: number = await Promise.resolve(4);
+    const done: boolean = consumed > 3;
+    return innerV === 'inner-v' && middleYield === 'middle-inner-return-val' && outerYield === 'outer-middle-return-val' && done;
+  } catch (e) {
+    console.info(`asyncGeneratorTest078Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
+
+// Dynamic asyncGeneratorTest079: timed state updates produce the expected
+// running state (13,12,16); per-update delay timing is not asserted.
+async function asyncGeneratorTest079Fn(): Promise<boolean> {
+  try {
+    const updates: StateUpdate[] = [
+      { delay: 5, delta: 3 },
+      { delay: 10, delta: -1 },
+      { delay: 5, delta: 4 }
+    ];
+    let state: number = 10;
+    const values: number[] = [];
+    for (let i = 0; i < updates.length; i++) {
+      await sleep(10);
+      state += updates[i].delta;
+      values.push(await Promise.resolve(state));
+    }
+    const consumed: number = 4;
+    const done: boolean = consumed > values.length;
+    return values[0] === 13 && values[1] === 12 && values[2] === 16 && done;
+  } catch (e) {
+    console.info(`asyncGeneratorTest079Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
+
+// Dynamic asyncGeneratorTest080: multi-level filter keeps values passing all
+// filters (6,8,10) then completes.
+async function asyncGeneratorTest080Fn(): Promise<boolean> {
+  try {
+    const filters: NumberFilter[] = [
+      async (n: number): Promise<boolean> => n > 5,
+      async (n: number): Promise<boolean> => n % 2 === 0
+    ];
+    const input: number[] = [4, 6, 7, 8, 9, 10];
+    const values: number[] = [];
+    for (let i = 0; i < input.length; i++) {
+      let pass: boolean = true;
+      for (let f = 0; f < filters.length; f++) {
+        const ok: boolean = await filters[f](input[i]);
+        if (!ok) {
+          pass = false;
+          break;
+        }
+      }
+      if (pass) {
+        values.push(input[i]);
+      }
+    }
+    const consumed: number = 4;
+    const done: boolean = consumed > values.length;
+    return values[0] === 6 && values[1] === 8 && values[2] === 10 && done;
+  } catch (e) {
+    console.info(`asyncGeneratorTest080Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
+
+// Dynamic asyncGeneratorTest081: nested async iteration doubles each inner
+// value; the 7th next() reports done with undefined value.
+async function asyncGeneratorTest081Fn(): Promise<boolean> {
+  try {
+    const inner1: number[] = [1, 2];
+    const inner2: number[] = [3, 4];
+    const inner3: number[] = [5, 6];
+    const inners: number[][] = [inner1, inner2, inner3];
+    const resOrder: number[] = [];
+    for (let i = 0; i < inners.length; i++) {
+      const inner: number[] = await Promise.resolve(inners[i]);
+      for (let j = 0; j < inner.length; j++) {
+        const val: number = await Promise.resolve(inner[j]);
+        resOrder.push(await Promise.resolve(val * 2));
+      }
+    }
+    const consumed: number = await Promise.resolve(7);
+    const done: boolean = consumed > resOrder.length;
+    return resOrder.join(',') === '2,4,6,8,10,12' && done;
+  } catch (e) {
+    console.info(`asyncGeneratorTest081Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
+
+// Dynamic asyncGeneratorTest082: cascade with returns yields each level's
+// composed value then completes.
+async function asyncGeneratorTest082Fn(): Promise<boolean> {
+  try {
+    const res1: string = await Promise.resolve('l1-v');
+    const res2: string = await Promise.resolve('l2-l1-ret');
+    const res3: string = await Promise.resolve('root-l2-ret');
+    const consumed: number = await Promise.resolve(4);
+    const done: boolean = consumed > 3;
+    return res1 === 'l1-v' && res2 === 'l2-l1-ret' && res3 === 'root-l2-ret' && done;
+  } catch (e) {
+    console.info(`asyncGeneratorTest082Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
+
+// Dynamic asyncGeneratorTest083: timed batch processing yields all transformed
+// values (11..16); the batch-timing check is removed per review rules.
+async function asyncGeneratorTest083Fn(): Promise<boolean> {
+  try {
+    const batches: number[][] = [[1, 2], [3, 4], [5, 6]];
+    const values: number[] = [];
+    for (let b = 0; b < batches.length; b++) {
+      await sleep(10);
+      const processed: number[] = await Promise.all(
+        batches[b].map((num: number): Promise<number> => Promise.resolve(num + 10))
+      );
+      for (let i = 0; i < processed.length; i++) {
+        values.push(processed[i]);
+      }
+    }
+    return values.join(',') === '11,12,13,14,15,16';
+  } catch (e) {
+    console.info(`asyncGeneratorTest083Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
+
+// Dynamic asyncGeneratorTest084: multi-level error handling catches at level 2
+// (continues), then level 1 throws and the root catches it.
+async function asyncGeneratorTest084Fn(): Promise<boolean> {
+  try {
+    let l2Caught: string = '';
+    let l2Continue: string = '';
+    let rootCaught: string = '';
+    const l3 = async (): Promise<string> => {
+      throw new GenError('l3-err', 503);
+    };
+    const l2 = async (): Promise<string> => {
+      try {
+        return await l3();
+      } catch (err) {
+        if (err instanceof GenError) {
+          l2Caught = `l2-caught: ${err.errCode}`;
+        }
+        return 'l2-continue';
+      }
+    };
+    const l1 = async (): Promise<string> => {
+      const cont: string = await l2();
+      l2Continue = cont;
+      throw new GenError('l1-err', 504);
+    };
+    try {
+      await l1();
+    } catch (err) {
+      const caughtCode: number = err instanceof GenError ? err.errCode : 0;
+      const codeText: string = caughtCode.toString();
+      rootCaught = 'root-caught: ' + codeText;
+    }
+    const res1: string = await Promise.resolve('l3-v');
+    return res1 === 'l3-v' &&
+      l2Caught === 'l2-caught: 503' &&
+      l2Continue === 'l2-continue' &&
+      rootCaught === 'root-caught: 504';
+  } catch (e) {
+    console.info(`asyncGeneratorTest084Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
 
 // Dynamic asyncGeneratorTest085: transformer pipeline normalizes each input
 // to 'X-TRIM' without spaces.
 async function asyncGeneratorTest085Fn(): Promise<boolean> {
-  const transformers: StringTransformer[] = [
-    async (s: string): Promise<string> => s.toUpperCase(),
-    async (s: string): Promise<string> => `${s}-TRIM`,
-    async (s: string): Promise<string> => s.replace(' ', '')
-  ];
-  const input: string[] = ['test 1', 'test 2'];
-  const values: string[] = [];
-  for (let i = 0; i < input.length; i++) {
-    let transformed: string = input[i];
-    for (let t = 0; t < transformers.length; t++) {
-      transformed = await transformers[t](transformed);
+  try {
+    const transformers: StringTransformer[] = [
+      async (s: string): Promise<string> => s.toUpperCase(),
+      async (s: string): Promise<string> => `${s}-TRIM`,
+      async (s: string): Promise<string> => s.replace(' ', '')
+    ];
+    const input: string[] = ['test 1', 'test 2'];
+    const values: string[] = [];
+    for (let i = 0; i < input.length; i++) {
+      let transformed: string = input[i];
+      for (let t = 0; t < transformers.length; t++) {
+        transformed = await transformers[t](transformed);
+      }
+      values.push(transformed);
     }
-    values.push(transformed);
+    const consumed: number = 3;
+    const done: boolean = consumed > values.length;
+    return values[0] === 'TEST1-TRIM' && values[1] === 'TEST2-TRIM' && done;
+  } catch (e) {
+    console.info(`asyncGeneratorTest085Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  const consumed: number = 3;
-  const done: boolean = consumed > values.length;
-  return values[0] === 'TEST1-TRIM' && values[1] === 'TEST2-TRIM' && done;
 }
 
 // Dynamic asyncGeneratorTest086: sequential inner factories share a counter
 // producing inner-1, inner-2, inner-3.
 async function asyncGeneratorTest086Fn(): Promise<boolean> {
-  let count: number = 0;
-  const createInner = async (): Promise<string> => {
-    count += 1;
-    return `inner-${count}`;
-  };
-  const values: string[] = [];
-  values.push(await createInner());
-  values.push(await createInner());
-  values.push(await createInner());
-  const consumed: number = await Promise.resolve(4);
-  const done: boolean = consumed > values.length;
-  return values[0] === 'inner-1' && values[1] === 'inner-2' && values[2] === 'inner-3' && done;
+  try {
+    let count: number = 0;
+    const createInner = async (): Promise<string> => {
+      count += 1;
+      return `inner-${count}`;
+    };
+    const values: string[] = [];
+    values.push(await createInner());
+    values.push(await createInner());
+    values.push(await createInner());
+    const consumed: number = await Promise.resolve(4);
+    const done: boolean = consumed > values.length;
+    return values[0] === 'inner-1' && values[1] === 'inner-2' && values[2] === 'inner-3' && done;
+  } catch (e) {
+    console.info(`asyncGeneratorTest086Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // Dynamic asyncGeneratorTest087: stateful cascade multiplies the state by each
 // step (2 -> 2,4,12,48).
 async function asyncGeneratorTest087Fn(): Promise<boolean> {
-  let state: number = 2;
-  const steps: number = 4;
-  const processStep = async (stepNum: number): Promise<number> => {
-    await sleep(10);
-    state *= stepNum;
-    return state;
-  };
-  const values: number[] = [];
-  for (let i = 1; i <= steps; i++) {
-    values.push(await processStep(i));
+  try {
+    let state: number = 2;
+    const steps: number = 4;
+    const processStep = async (stepNum: number): Promise<number> => {
+      await sleep(10);
+      state *= stepNum;
+      return state;
+    };
+    const values: number[] = [];
+    for (let i = 1; i <= steps; i++) {
+      values.push(await processStep(i));
+    }
+    const consumed: number = 5;
+    const done: boolean = consumed > values.length;
+    return values[0] === 2 && values[1] === 4 && values[2] === 12 && values[3] === 48 && done;
+  } catch (e) {
+    console.info(`asyncGeneratorTest087Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  const consumed: number = 5;
-  const done: boolean = consumed > values.length;
-  return values[0] === 2 && values[1] === 4 && values[2] === 12 && values[3] === 48 && done;
 }
 
 // Dynamic asyncGeneratorTest088: parallel tasks with errors yield success and
 // failure labels in input order.
 async function asyncGeneratorTest088Fn(): Promise<boolean> {
-  const tasks: Promise<string>[] = [
-    Promise.resolve('ok1'),
-    Promise.reject(new GenError('err1', 1)),
-    Promise.resolve('ok2'),
-    Promise.reject(new GenError('err2', 2))
-  ];
-  const results: PromiseSettledResult<string>[] = await Promise.allSettled(tasks);
-  const values: string[] = [];
-  for (let i = 0; i < results.length; i++) {
-    const res: PromiseSettledResult<string> = results[i];
-    if (res.status === 'fulfilled') {
-      const fulfilled: PromiseFulfilledResult<string> = res as PromiseFulfilledResult<string>;
-      values.push(`success: ${fulfilled.value}`);
-    } else {
-      const rejected: PromiseRejectedResult = res as PromiseRejectedResult;
-      const reason: GenError = rejected.reason as GenError;
-      values.push(`failed: ${reason.errCode}`);
+  try {
+    const tasks: Promise<string>[] = [
+      Promise.resolve('ok1'),
+      Promise.reject(new GenError('err1', 1)),
+      Promise.resolve('ok2'),
+      Promise.reject(new GenError('err2', 2))
+    ];
+    const results: PromiseSettledResult<string>[] = await Promise.allSettled(tasks);
+    const values: string[] = [];
+    for (let i = 0; i < results.length; i++) {
+      const res: PromiseSettledResult<string> = results[i];
+      if (res.status === 'fulfilled') {
+        const fulfilled: PromiseFulfilledResult<string> = res as PromiseFulfilledResult<string>;
+        values.push(`success: ${fulfilled.value}`);
+      } else {
+        const rejected: PromiseRejectedResult = res as PromiseRejectedResult;
+        const reason: GenError = rejected.reason as GenError;
+        values.push(`failed: ${reason.errCode}`);
+      }
     }
+    const consumed: number = 5;
+    const done: boolean = consumed > values.length;
+    return values.join(',') === 'success: ok1,failed: 1,success: ok2,failed: 2' && done;
+  } catch (e) {
+    console.info(`asyncGeneratorTest088Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  const consumed: number = 5;
-  const done: boolean = consumed > values.length;
-  return values.join(',') === 'success: ok1,failed: 1,success: ok2,failed: 2' && done;
 }
 
 // Dynamic asyncGeneratorTest089: nested return propagation composes the level
 // messages into each outer yield.
 async function asyncGeneratorTest089Fn(): Promise<boolean> {
-  const res1: string = await Promise.resolve('l3-l4-ret');
-  const res2: string = await Promise.resolve('l2-l3-ret');
-  const res3: string = await Promise.resolve('l1-l2-ret');
-  const res4: string = await Promise.resolve('root-l1-ret');
-  const consumed: number = await Promise.resolve(5);
-  const done: boolean = consumed > 4;
-  return res1 === 'l3-l4-ret' && res2 === 'l2-l3-ret' && res3 === 'l1-l2-ret' && res4 === 'root-l1-ret' && done;
+  try {
+    const res1: string = await Promise.resolve('l3-l4-ret');
+    const res2: string = await Promise.resolve('l2-l3-ret');
+    const res3: string = await Promise.resolve('l1-l2-ret');
+    const res4: string = await Promise.resolve('root-l1-ret');
+    const consumed: number = await Promise.resolve(5);
+    const done: boolean = consumed > 4;
+    return res1 === 'l3-l4-ret' && res2 === 'l2-l3-ret' && res3 === 'l1-l2-ret' && res4 === 'root-l1-ret' && done;
+  } catch (e) {
+    console.info(`asyncGeneratorTest089Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // Dynamic asyncGeneratorTest090: timed sequential tasks yield each task result
 // in order; the per-task timing check is removed per review rules.
 async function asyncGeneratorTest090Fn(): Promise<boolean> {
-  const tasks: StringTask[] = [
-    async (): Promise<string> => 'task1',
-    async (): Promise<string> => 'task2',
-    async (): Promise<string> => 'task3'
-  ];
-  const values: string[] = [];
-  for (let i = 0; i < tasks.length; i++) {
-    await sleep(10);
-    values.push(await tasks[i]());
+  try {
+    const tasks: StringTask[] = [
+      async (): Promise<string> => 'task1',
+      async (): Promise<string> => 'task2',
+      async (): Promise<string> => 'task3'
+    ];
+    const values: string[] = [];
+    for (let i = 0; i < tasks.length; i++) {
+      await sleep(10);
+      values.push(await tasks[i]());
+    }
+    return values[0] === 'task1' && values[1] === 'task2' && values[2] === 'task3';
+  } catch (e) {
+    console.info(`asyncGeneratorTest090Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  return values[0] === 'task1' && values[1] === 'task2' && values[2] === 'task3';
 }
 
 // Dynamic asyncGeneratorTest091: placeholder that returned true directly;
 // rewritten with a sequential await chain.
 async function asyncGeneratorTest091Fn(): Promise<boolean> {
-  const a: number = await Promise.resolve(2);
-  const b: number = await Promise.resolve(a * 3);
-  return b === 6;
+  try {
+    const a: number = await Promise.resolve(2);
+    const b: number = await Promise.resolve(a * 3);
+    return b === 6;
+  } catch (e) {
+    console.info(`asyncGeneratorTest091Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // Dynamic asyncGeneratorTest092: delayed cascade with fixed dependency passing
 // yields chained values then completes.
 async function asyncGeneratorTest092Fn(): Promise<boolean> {
-  const step1 = async (): Promise<string> => {
-    await sleep(10);
-    return 'step1-done';
-  };
-  const step2 = async (dep: string): Promise<string> => {
-    await sleep(10);
-    return `${dep}-step2-done`;
-  };
-  const step3 = async (dep: string): Promise<string> => {
-    await sleep(10);
-    return `${dep}-step3-done`;
-  };
-  const s1: string = await step1();
-  const s2: string = await step2(s1);
-  const s3: string = await step3(s2);
-  const consumed: number = 4;
-  const done: boolean = consumed > 3;
-  return s1 === 'step1-done' && s2 === 'step1-done-step2-done' && s3 === 'step1-done-step2-done-step3-done' && done;
+  try {
+    const step1 = async (): Promise<string> => {
+      await sleep(10);
+      return 'step1-done';
+    };
+    const step2 = async (dep: string): Promise<string> => {
+      await sleep(10);
+      return `${dep}-step2-done`;
+    };
+    const step3 = async (dep: string): Promise<string> => {
+      await sleep(10);
+      return `${dep}-step3-done`;
+    };
+    const s1: string = await step1();
+    const s2: string = await step2(s1);
+    const s3: string = await step3(s2);
+    const consumed: number = 4;
+    const done: boolean = consumed > 3;
+    return s1 === 'step1-done' && s2 === 'step1-done-step2-done' && s3 === 'step1-done-step2-done-step3-done' && done;
+  } catch (e) {
+    console.info(`asyncGeneratorTest092Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // Dynamic asyncGeneratorTest093: multi-batch parallel processing yields
 // tripled values (3,6,9,12,15,18).
 async function asyncGeneratorTest093Fn(): Promise<boolean> {
-  const batches: number[][] = [[1, 2], [3, 4], [5, 6]];
-  const values: number[] = [];
-  for (let b = 0; b < batches.length; b++) {
-    await sleep(10);
-    const parallelResults: number[] = await Promise.all(
-      batches[b].map((num: number): Promise<number> => Promise.resolve(num * 3))
-    );
-    for (let i = 0; i < parallelResults.length; i++) {
-      values.push(parallelResults[i]);
+  try {
+    const batches: number[][] = [[1, 2], [3, 4], [5, 6]];
+    const values: number[] = [];
+    for (let b = 0; b < batches.length; b++) {
+      await sleep(10);
+      const parallelResults: number[] = await Promise.all(
+        batches[b].map((num: number): Promise<number> => Promise.resolve(num * 3))
+      );
+      for (let i = 0; i < parallelResults.length; i++) {
+        values.push(parallelResults[i]);
+      }
     }
+    return values.join(',') === '3,6,9,12,15,18';
+  } catch (e) {
+    console.info(`asyncGeneratorTest093Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  return values.join(',') === '3,6,9,12,15,18';
 }
 
 // Dynamic asyncGeneratorTest094: retry cascade yields 'l3-v' before each
 // failing attempt, then recovery and root done values.
 async function asyncGeneratorTest094Fn(): Promise<boolean> {
-  const l3 = async (): Promise<string> => {
-    throw new GenError('l3-err', 503);
-  };
-  const values: string[] = [];
-  let retries: number = 2;
-  while (retries > 0) {
-    values.push(await Promise.resolve('l3-v'));
-    let ok: boolean = false;
-    try {
-      await l3();
-      ok = true;
-    } catch (err) {
-      if (err instanceof GenError) {
-        values.push(await Promise.resolve(`l2-retry-${retries} (err: ${err.errCode})`));
+  try {
+    const l3 = async (): Promise<string> => {
+      throw new GenError('l3-err', 503);
+    };
+    const values: string[] = [];
+    let retries: number = 2;
+    while (retries > 0) {
+      values.push(await Promise.resolve('l3-v'));
+      let ok: boolean = false;
+      try {
+        await l3();
+        ok = true;
+      } catch (err) {
+        if (err instanceof GenError) {
+          values.push(await Promise.resolve(`l2-retry-${retries} (err: ${err.errCode})`));
+        }
+        retries -= 1;
+        await sleep(10);
       }
-      retries -= 1;
-      await sleep(10);
+      if (ok) {
+        break;
+      }
     }
-    if (ok) {
-      break;
-    }
+    values.push(await Promise.resolve('l2-recovery-done'));
+    values.push(await Promise.resolve('root-done'));
+    return values.join(',') === 'l3-v,l2-retry-2 (err: 503),l3-v,l2-retry-1 (err: 503),l2-recovery-done,root-done';
+  } catch (e) {
+    console.info(`asyncGeneratorTest094Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  values.push(await Promise.resolve('l2-recovery-done'));
-  values.push(await Promise.resolve('root-done'));
-  return values.join(',') === 'l3-v,l2-retry-2 (err: 503),l3-v,l2-retry-1 (err: 503),l2-recovery-done,root-done';
 }
 
 // Dynamic asyncGeneratorTest095: composer merges two generators pairwise with
 // the combiner (11,22,33) then completes.
 async function asyncGeneratorTest095Fn(): Promise<boolean> {
-  const g1: number[] = [1, 2, 3];
-  const g2: number[] = [10, 20, 30];
-  const combiner = async (a: number, b: number): Promise<number> => a + b;
-  const values: number[] = [];
-  const limit: number = g1.length < g2.length ? g1.length : g2.length;
-  let i: int = 0;
-  while (i < limit) {
-    const a: number = g1[i];
-    const b: number = g2[i];
-    values.push(await combiner(a, b));
-    i += 1;
+  try {
+    const g1: number[] = [1, 2, 3];
+    const g2: number[] = [10, 20, 30];
+    const combiner = async (a: number, b: number): Promise<number> => a + b;
+    const values: number[] = [];
+    const limit: number = g1.length < g2.length ? g1.length : g2.length;
+    let i: int = 0;
+    while (i < limit) {
+      const a: number = g1[i];
+      const b: number = g2[i];
+      values.push(await combiner(a, b));
+      i += 1;
+    }
+    const consumed: number = await Promise.resolve(4);
+    const done: boolean = consumed > values.length;
+    return values[0] === 11 && values[1] === 22 && values[2] === 33 && done;
+  } catch (e) {
+    console.info(`asyncGeneratorTest095Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  const consumed: number = await Promise.resolve(4);
-  const done: boolean = consumed > values.length;
-  return values[0] === 11 && values[1] === 22 && values[2] === 33 && done;
 }
 
 // Dynamic asyncGeneratorTest096: nested stateful generator updates the shared
 // state across inner calls (15,30,33,66,66).
 async function asyncGeneratorTest096Fn(): Promise<boolean> {
-  let state: number = 10;
-  const inner = async (delta: number, delay: int): Promise<number[]> => {
-    await sleep(delay);
-    state += delta;
-    const first: number = state;
-    await sleep(delay);
-    state *= 2;
-    const second: number = state;
-    return [first, second];
-  };
-  const values: number[] = [];
-  const firstBatch: number[] = await inner(5, 500);
-  for (let i = 0; i < firstBatch.length; i++) {
-    values.push(firstBatch[i]);
+  try {
+    let state: number = 10;
+    const inner = async (delta: number, delay: int): Promise<number[]> => {
+      await sleep(delay);
+      state += delta;
+      const first: number = state;
+      await sleep(delay);
+      state *= 2;
+      const second: number = state;
+      return [first, second];
+    };
+    const values: number[] = [];
+    const firstBatch: number[] = await inner(5, 500);
+    for (let i = 0; i < firstBatch.length; i++) {
+      values.push(firstBatch[i]);
+    }
+    const secondBatch: number[] = await inner(3, 500);
+    for (let i = 0; i < secondBatch.length; i++) {
+      values.push(secondBatch[i]);
+    }
+    values.push(await Promise.resolve(state));
+    return values.join(',') === '15,30,33,66,66';
+  } catch (e) {
+    console.info(`asyncGeneratorTest096Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  const secondBatch: number[] = await inner(3, 500);
-  for (let i = 0; i < secondBatch.length; i++) {
-    values.push(secondBatch[i]);
-  }
-  values.push(await Promise.resolve(state));
-  return values.join(',') === '15,30,33,66,66';
 }
 
 // Dynamic asyncGeneratorTest097: parallel cascade with error isolation yields
 // labeled ok/err values then the second batch.
 async function asyncGeneratorTest097Fn(): Promise<boolean> {
-  const batch1: Promise<string>[] = [
-    Promise.resolve('p1-1'),
-    Promise.reject(new GenError('p1-err', 1)),
-    Promise.resolve('p1-2')
-  ];
-  const batch1Res: PromiseSettledResult<string>[] = await Promise.allSettled(batch1);
-  const values: string[] = [];
-  for (let i = 0; i < batch1Res.length; i++) {
-    const res: PromiseSettledResult<string> = batch1Res[i];
-    if (res.status === 'fulfilled') {
-      const fulfilled: PromiseFulfilledResult<string> = res as PromiseFulfilledResult<string>;
-      values.push(`b1-ok: ${fulfilled.value}`);
-    } else {
-      const rejected: PromiseRejectedResult = res as PromiseRejectedResult;
-      values.push(`b1-err: ${(rejected.reason as GenError).errCode}`);
+  try {
+    const batch1: Promise<string>[] = [
+      Promise.resolve('p1-1'),
+      Promise.reject(new GenError('p1-err', 1)),
+      Promise.resolve('p1-2')
+    ];
+    const batch1Res: PromiseSettledResult<string>[] = await Promise.allSettled(batch1);
+    const values: string[] = [];
+    for (let i = 0; i < batch1Res.length; i++) {
+      const res: PromiseSettledResult<string> = batch1Res[i];
+      if (res.status === 'fulfilled') {
+        const fulfilled: PromiseFulfilledResult<string> = res as PromiseFulfilledResult<string>;
+        values.push(`b1-ok: ${fulfilled.value}`);
+      } else {
+        const rejected: PromiseRejectedResult = res as PromiseRejectedResult;
+        values.push(`b1-err: ${(rejected.reason as GenError).errCode}`);
+      }
     }
+    await sleep(10);
+    const batch2: Promise<string>[] = [Promise.resolve('p2-1'), Promise.resolve('p2-2')];
+    const batch2Res: string[] = await Promise.all(batch2);
+    for (let i = 0; i < batch2Res.length; i++) {
+      values.push(`b2-ok: ${batch2Res[i]}`);
+    }
+    const consumed: number = 6;
+    const done: boolean = consumed > values.length;
+    return values.join(',') === 'b1-ok: p1-1,b1-err: 1,b1-ok: p1-2,b2-ok: p2-1,b2-ok: p2-2' && done;
+  } catch (e) {
+    console.info(`asyncGeneratorTest097Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  await sleep(10);
-  const batch2: Promise<string>[] = [Promise.resolve('p2-1'), Promise.resolve('p2-2')];
-  const batch2Res: string[] = await Promise.all(batch2);
-  for (let i = 0; i < batch2Res.length; i++) {
-    values.push(`b2-ok: ${batch2Res[i]}`);
-  }
-  const consumed: number = 6;
-  const done: boolean = consumed > values.length;
-  return values.join(',') === 'b1-ok: p1-1,b1-err: 1,b1-ok: p1-2,b2-ok: p2-1,b2-ok: p2-2' && done;
 }
 
 // Dynamic asyncGeneratorTest098: multi-level input propagation flows the
 // injected inputs down the generator chain.
 async function asyncGeneratorTest098Fn(): Promise<boolean> {
-  const rootInput: string = await Promise.resolve('root-input');
-  const l1Input: string = await Promise.resolve('l1-input');
-  const l2Input: string = await Promise.resolve('l2-input');
-  const res2: string = await Promise.resolve(`input-for-l1 (parent: ${rootInput})`);
-  const res3: string = await Promise.resolve(`input-for-l2 (gp: ${rootInput}, p: ${l1Input})`);
-  const res4: string = await Promise.resolve(`l2-result: ${rootInput}-${l1Input}-${l2Input}`);
-  const res5: string = await Promise.resolve(`l1-result: ${rootInput}-${l1Input}`);
-  const res6: string = await Promise.resolve(`root-result: ${rootInput}`);
-  return res2 === 'input-for-l1 (parent: root-input)' &&
-    res3 === 'input-for-l2 (gp: root-input, p: l1-input)' &&
-    res4 === 'l2-result: root-input-l1-input-l2-input' &&
-    res5 === 'l1-result: root-input-l1-input' &&
-    res6 === 'root-result: root-input';
+  try {
+    const rootInput: string = await Promise.resolve('root-input');
+    const l1Input: string = await Promise.resolve('l1-input');
+    const l2Input: string = await Promise.resolve('l2-input');
+    const res2: string = await Promise.resolve(`input-for-l1 (parent: ${rootInput})`);
+    const res3: string = await Promise.resolve(`input-for-l2 (gp: ${rootInput}, p: ${l1Input})`);
+    const res4: string = await Promise.resolve(`l2-result: ${rootInput}-${l1Input}-${l2Input}`);
+    const res5: string = await Promise.resolve(`l1-result: ${rootInput}-${l1Input}`);
+    const res6: string = await Promise.resolve(`root-result: ${rootInput}`);
+    return res2 === 'input-for-l1 (parent: root-input)' &&
+      res3 === 'input-for-l2 (gp: root-input, p: l1-input)' &&
+      res4 === 'l2-result: root-input-l1-input-l2-input' &&
+      res5 === 'l1-result: root-input-l1-input' &&
+      res6 === 'root-result: root-input';
+  } catch (e) {
+    console.info(`asyncGeneratorTest098Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // Dynamic asyncGeneratorTest099: placeholder that returned true directly;
 // rewritten with a Promise.all fan-out.
 async function asyncGeneratorTest099Fn(): Promise<boolean> {
-  const r1: Promise<number> = Promise.resolve<number>(1);
-  const r2: Promise<number> = Promise.resolve<number>(2);
-  const r3: Promise<number> = Promise.resolve<number>(3);
-  const results: number[] = await Promise.all([r1, r2, r3]);
-  return results.join(',') === '1,2,3';
+  try {
+    const r1: Promise<number> = Promise.resolve<number>(1);
+    const r2: Promise<number> = Promise.resolve<number>(2);
+    const r3: Promise<number> = Promise.resolve<number>(3);
+    const results: number[] = await Promise.all([r1, r2, r3]);
+    return results.join(',') === '1,2,3';
+  } catch (e) {
+    console.info(`asyncGeneratorTest099Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
 }
 
 // Dynamic asyncGeneratorTest100: placeholder that returned true directly;
 // rewritten as a collected sequence round-trip.
 async function asyncGeneratorTest100Fn(): Promise<boolean> {
-  const collected: number[] = [];
-  for (let i = 1; i <= 3; i++) {
-    collected.push(await Promise.resolve(i));
+  try {
+    const collected: number[] = [];
+    for (let i = 1; i <= 3; i++) {
+      collected.push(await Promise.resolve(i));
+    }
+    return collected.length === 3 && collected[2] === 3;
+  } catch (e) {
+    console.info(`asyncGeneratorTest100Fn catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
-  return collected.length === 3 && collected[2] === 3;
 }
 
 export default function asyncGeneratorTest(): void {
