@@ -7816,6 +7816,7 @@ export default function audioNDK() {
         let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100()
         console.info(`${Tag} Write frame length mismatch result: ${result}`)
         expect(result).assertEqual(test_pass)
+        await sleep(3000)
         done()
     })
 
@@ -7835,6 +7836,7 @@ export default function audioNDK() {
         let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100()
         console.info(`${Tag} Writable illegal state (released) result: ${result}`)
         expect(result).assertEqual(test_pass)
+        await sleep(3000)
         done()
     })
 
@@ -7855,6 +7857,7 @@ export default function audioNDK() {
         let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100()
         console.info(`${Tag} GetWritableSize illegal state (released) result: ${result}`)
         expect(result).assertEqual(test_pass)
+        await sleep(3000)
         done()
     })
 
@@ -7874,6 +7877,7 @@ export default function audioNDK() {
         let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100()
         console.info(`${Tag} RegisterStartCallback illegal state result: ${result}`)
         expect(result).assertEqual(test_pass)
+        await sleep(3000)
         done()
     })
 
@@ -7893,6 +7897,7 @@ export default function audioNDK() {
         let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100()
         console.info(`${Tag} RegisterStopCallback illegal state result: ${result}`)
         expect(result).assertEqual(test_pass)
+        await sleep(3000)
         done()
     })
 
@@ -7912,6 +7917,7 @@ export default function audioNDK() {
         let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100()
         console.info(`${Tag} RegisterReleaseCallback illegal state result: ${result}`)
         expect(result).assertEqual(test_pass)
+        await sleep(3000)
         done()
     })
 
@@ -7931,6 +7937,7 @@ export default function audioNDK() {
         let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100()
         console.info(`${Tag} RegisterLatencyCallback illegal state result: ${result}`)
         expect(result).assertEqual(test_pass)
+        await sleep(3000)
         done()
     })
 
@@ -7950,6 +7957,7 @@ export default function audioNDK() {
         let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100()
         console.info(`${Tag} RegisterFramePositionCallback illegal state result: ${result}`)
         expect(result).assertEqual(test_pass)
+        await sleep(3000)
         done()
     })
 
@@ -8045,6 +8053,7 @@ export default function audioNDK() {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100()
       console.info(`${Tag} Write success result: ${result}`)
       expect(result).assertEqual(test_pass)
+      await sleep(3000)
       done()
     })
 
@@ -8064,6 +8073,7 @@ export default function audioNDK() {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100()
       console.info(`${Tag} GetWritableSize success result: ${result}`)
       expect(result).assertEqual(test_pass)
+      await sleep(3000)
       done()
     })
 
