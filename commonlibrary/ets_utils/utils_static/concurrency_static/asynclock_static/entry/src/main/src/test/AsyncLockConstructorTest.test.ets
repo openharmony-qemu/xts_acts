@@ -183,12 +183,14 @@ export default function AsyncLockConstructorTest(): void {
      */
     it('testAsyncLockConstructor1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let lock = new AsyncLock();
+      let used: boolean = false;
       let useLock: () => Promise<void> = async (): Promise<void> => {
         await lock.lockAsync<void>(() => {
+          used = true;
         });
       };
       await useLock();
-      expect(lock instanceof AsyncLock).assertTrue();
+      expect(used).assertTrue();
     });
 
     /**
@@ -222,7 +224,7 @@ export default function AsyncLockConstructorTest(): void {
     /**
      * @tc.name    testAsyncLockConstructor1400
      * @tc.number  SUB_ASYNCLOCK_CONSTRUCTOR_TEST_1400
-     * @tc.desc    Verify new instance state structure is complete
+     * @tc.desc    Verify new instance held and pending lists are empty
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -231,6 +233,7 @@ export default function AsyncLockConstructorTest(): void {
       let lock = new AsyncLock();
       let state = lock.query();
       expect(state.held.length).assertEqual(0);
+      expect(state.pending.length).assertEqual(0);
     });
 
     /**
@@ -249,7 +252,7 @@ export default function AsyncLockConstructorTest(): void {
     /**
      * @tc.name    testAsyncLockConstructor1600
      * @tc.number  SUB_ASYNCLOCK_CONSTRUCTOR_TEST_1600
-     * @tc.desc    Verify name property has default value
+     * @tc.desc    Verify name property type is string
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
@@ -270,7 +273,6 @@ export default function AsyncLockConstructorTest(): void {
      */
     it('testAsyncLockConstructor1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let lock = AsyncLock.request('namedLock');
-      expect(lock instanceof AsyncLock).assertTrue();
       expect(lock.name).assertEqual('namedLock');
     });
 
@@ -370,29 +372,29 @@ export default function AsyncLockConstructorTest(): void {
     /**
      * @tc.name    testAsyncLockConstructor2400
      * @tc.number  SUB_ASYNCLOCK_CONSTRUCTOR_TEST_2400
-     * @tc.desc    Verify constructor-created lock cannot be found by request (no explicit name)
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
-     */
-    it('testAsyncLockConstructor2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let lock = new AsyncLock();
-      let foundLock = AsyncLock.request(lock.name);
-      expect(foundLock === lock).assertTrue();
-    });
-
-    /**
-     * @tc.name    testAsyncLockConstructor2500
-     * @tc.number  SUB_ASYNCLOCK_CONSTRUCTOR_TEST_2500
      * @tc.desc    Verify request can be used for global shared lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockConstructor2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testAsyncLockConstructor2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let lock1 = AsyncLock.request('globalLock');
       let lock2 = AsyncLock.request('globalLock');
       expect(lock1 === lock2).assertTrue();
+    });
+
+    /**
+     * @tc.name    testAsyncLockConstructor2500
+     * @tc.number  SUB_ASYNCLOCK_CONSTRUCTOR_TEST_2500
+     * @tc.desc    Verify constructor-created lock can be found via request by its name
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockConstructor2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let lock = new AsyncLock();
+      let foundLock = AsyncLock.request(lock.name);
+      expect(foundLock === lock).assertTrue();
     });
 
   })

@@ -359,7 +359,7 @@ export default function AbortSignalPropertyTest(): void {
     /**
      * @tc.name    testAbortSignalProperty2200
      * @tc.number  SUB_ABORT_SIGNAL_PROPERTY_TEST_2200
-     * @tc.desc    Verify aborted property is not null
+     * @tc.desc    Verify aborted stays false
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
@@ -737,7 +737,7 @@ export default function AbortSignalPropertyTest(): void {
     /**
      * @tc.name    testAbortSignalProperty4500
      * @tc.number  SUB_ABORT_SIGNAL_PROPERTY_TEST_4500
-     * @tc.desc    Verify aborted modification speed
+     * @tc.desc    Verify aborted repeated modification keeps final value stable
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
@@ -897,6 +897,239 @@ export default function AbortSignalPropertyTest(): void {
       signal.aborted = false;
       signal.reason = NaN;
       expect(signal.reason).assertNaN();
+    });
+
+    /**
+     * @tc.name    testAbortSignalProperty5500
+     * @tc.number  SUB_ABORT_SIGNAL_PROPERTY_TEST_5500
+     * @tc.desc    Verify reason is null when generic T allows null
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('testAbortSignalProperty5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let signal = new AbortSignal<string | null>();
+      signal.aborted = false;
+      signal.reason = null;
+      expect(signal.reason).assertNull();
+      expect(signal.aborted).assertFalse();
+    });
+
+    /**
+     * @tc.name    testAbortSignalProperty5600
+     * @tc.number  SUB_ABORT_SIGNAL_PROPERTY_TEST_5600
+     * @tc.desc    Verify reason can be set to null from non-null value when generic allows null
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAbortSignalProperty5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let signal = new AbortSignal<string | null>();
+      signal.aborted = false;
+      signal.reason = "test";
+      signal.reason = null;
+      expect(signal.reason).assertNull();
+      expect(signal.aborted).assertFalse();
+    });
+
+    /**
+     * @tc.name    testAbortSignalProperty5700
+     * @tc.number  SUB_ABORT_SIGNAL_PROPERTY_TEST_5700
+     * @tc.desc    Verify lock request cancelled dynamically by setting signal aborted true
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAbortSignalProperty5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let lock = new AsyncLock();
+        let s = new AbortSignal<string>();
+        s.aborted = false;
+        s.reason = "test";
+        let options = new AsyncLockOptions<string>();
+        options.signal = s;
+        let executed: boolean = false;
+        let holder = lock.lockAsync<void>((): Promise<void> => {
+          return new Promise<void>((resolve): void => {
+            setTimeout((): void => {
+              resolve(undefined);
+            }, 200);
+          });
+        });
+        let p = lock.lockAsync<void, string>(() => {
+          executed = true;
+        }, AsyncLockMode.EXCLUSIVE, options);
+        s.aborted = true;
+        s.reason = "User cancelled";
+        let rejected: boolean = false;
+        try {
+          await p;
+        } catch (error) {
+          rejected = true;
+        }
+        expect(rejected).assertTrue();
+        expect(executed).assertFalse();
+        await holder;
+        done();
+      } catch (error) {
+        console.error("testAbortSignalProperty5700 failed");
+        expect(false).assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testAbortSignalProperty5800
+     * @tc.number  SUB_ABORT_SIGNAL_PROPERTY_TEST_5800
+     * @tc.desc    Verify waiting lock request cancelled via AbortSignal and lock still usable
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAbortSignalProperty5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let lock = new AsyncLock();
+        let s = new AbortSignal<string>();
+        s.aborted = false;
+        s.reason = "User cancelled";
+        let options = new AsyncLockOptions<string>();
+        options.signal = s;
+        let holder = lock.lockAsync<void>((): Promise<void> => {
+          return new Promise<void>((resolve): void => {
+            setTimeout((): void => {
+              resolve(undefined);
+            }, 200);
+          });
+        });
+        let p = lock.lockAsync<void, string>(() => {
+        }, AsyncLockMode.EXCLUSIVE, options);
+        let pendingCount: number = lock.query().pending.length;
+        expect(pendingCount).assertLarger(0);
+        s.aborted = true;
+        let rejected: boolean = false;
+        try {
+          await p;
+        } catch (error) {
+          rejected = true;
+        }
+        expect(rejected).assertTrue();
+        await holder;
+        let reacquired: boolean = false;
+        await lock.lockAsync<void>(() => {
+          reacquired = true;
+        });
+        expect(reacquired).assertTrue();
+        done();
+      } catch (error) {
+        console.error("testAbortSignalProperty5800 failed");
+        expect(false).assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testAbortSignalProperty5900
+     * @tc.number  SUB_ABORT_SIGNAL_PROPERTY_TEST_5900
+     * @tc.desc    Verify setting aborted true before cancellation rejects one request only
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAbortSignalProperty5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let lock = new AsyncLock();
+        let s1 = new AbortSignal<string>();
+        s1.aborted = false;
+        s1.reason = "first";
+        let s2 = new AbortSignal<string>();
+        s2.aborted = false;
+        s2.reason = "second";
+        let options1 = new AsyncLockOptions<string>();
+        options1.signal = s1;
+        let options2 = new AsyncLockOptions<string>();
+        options2.signal = s2;
+        let holder = lock.lockAsync<void>((): Promise<void> => {
+          return new Promise<void>((resolve): void => {
+            setTimeout((): void => {
+              resolve(undefined);
+            }, 200);
+          });
+        });
+        let secondExecuted: boolean = false;
+        let p1 = lock.lockAsync<void, string>(() => {
+        }, AsyncLockMode.EXCLUSIVE, options1);
+        let p2 = lock.lockAsync<void, string>(() => {
+          secondExecuted = true;
+        }, AsyncLockMode.EXCLUSIVE, options2);
+        s1.aborted = true;
+        let firstRejected: boolean = false;
+        try {
+          await p1;
+        } catch (error) {
+          firstRejected = true;
+        }
+        expect(firstRejected).assertTrue();
+        expect(secondExecuted).assertFalse();
+        await holder;
+        await p2;
+        expect(secondExecuted).assertTrue();
+        done();
+      } catch (error) {
+        console.error("testAbortSignalProperty5900 failed");
+        expect(false).assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testAbortSignalProperty6000
+     * @tc.number  SUB_ABORT_SIGNAL_PROPERTY_TEST_6000
+     * @tc.desc    Verify timeout auto cancels pending request by setting signal aborted true
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAbortSignalProperty6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let lock = new AsyncLock();
+        let s = new AbortSignal<string>();
+        s.aborted = false;
+        s.reason = "";
+        let options = new AsyncLockOptions<string>();
+        options.signal = s;
+        let holder = lock.lockAsync<void>((): Promise<void> => {
+          return new Promise<void>((resolve): void => {
+            setTimeout((): void => {
+              resolve(undefined);
+            }, 300);
+          });
+        });
+        let p = lock.lockAsync<void, string>(() => {
+        }, AsyncLockMode.EXCLUSIVE, options);
+        let timeoutElapsed = new Promise<void>((resolve): void => {
+          setTimeout((): void => {
+            s.aborted = true;
+            s.reason = "Timeout exceeded";
+            resolve(undefined);
+          }, 100);
+        });
+        await timeoutElapsed;
+        expect(s.aborted).assertTrue();
+        expect(s.reason).assertEqual("Timeout exceeded");
+        let rejected: boolean = false;
+        try {
+          await p;
+        } catch (error) {
+          rejected = true;
+        }
+        expect(rejected).assertTrue();
+        await holder;
+        done();
+      } catch (error) {
+        console.error("testAbortSignalProperty6000 failed");
+        expect(false).assertFail();
+        done();
+      }
     });
 
   });

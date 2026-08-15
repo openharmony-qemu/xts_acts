@@ -166,7 +166,6 @@ export default function AsyncLockCallbackTest(): void {
       };
       const lock = new AsyncLock();
       const result = await lock.lockAsync<OptionalIdResult>(callback);
-      expect(result).not().assertNull();
       expect(result.id).assertUndefined();
     });
 
@@ -598,6 +597,80 @@ export default function AsyncLockCallbackTest(): void {
       const numResult = await lock.lockAsync<string | int>(numCallback);
       expect(typeof strResult).assertEqual("string");
       expect(typeof numResult).assertEqual("int");
+    });
+
+    /**
+     * @tc.name    testAsyncLockCallback3200
+     * @tc.number  SUB_ASYNCLOCK_CALLBACK_TEST_3200
+     * @tc.desc    Verify callback returns void type
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
+     */
+    it('testAsyncLockCallback3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let executed = false;
+        const callback = (): void => {
+          executed = true;
+        };
+        const lock = new AsyncLock();
+        await lock.lockAsync<void>(callback);
+        expect(executed).assertTrue();
+        done();
+      } catch (error) {
+        console.error("testAsyncLockCallback3200 failed");
+        expect(false).assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testAsyncLockCallback3300
+     * @tc.number  SUB_ASYNCLOCK_CALLBACK_TEST_3300
+     * @tc.desc    Verify AsyncLockCallback null generic returns null
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
+     */
+    it('testAsyncLockCallback3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const callback = (): null => {
+          return null;
+        };
+        const lock = new AsyncLock();
+        const result = await lock.lockAsync<null>(callback);
+        expect(result).assertNull();
+        done();
+      } catch (error) {
+        console.error("testAsyncLockCallback3300 failed");
+        expect(false).assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testAsyncLockCallback3400
+     * @tc.number  SUB_ASYNCLOCK_CALLBACK_TEST_3400
+     * @tc.desc    Verify AsyncLockCallback void generic with async callback
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
+     */
+    it('testAsyncLockCallback3400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let executed = false;
+        const callback = async (): Promise<void> => {
+          executed = true;
+        };
+        const lock = new AsyncLock();
+        await lock.lockAsync<void>(callback);
+        expect(executed).assertTrue();
+        done();
+      } catch (error) {
+        console.error("testAsyncLockCallback3400 failed");
+        expect(false).assertFail();
+        done();
+      }
     });
 
   });
