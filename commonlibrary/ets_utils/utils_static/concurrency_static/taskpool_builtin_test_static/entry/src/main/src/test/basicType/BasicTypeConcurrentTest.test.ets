@@ -21,7 +21,7 @@ function testNumberNoLock(holder: NumberHolder): void {
     try {
       holder.value = holder.value + 1;
     } catch (e) {
-      // 竞态容忍
+      console.info(`testNumberNoLock catch race-tolerated error: ${JSON.stringify(e)}`);
     }
   }
 }
@@ -50,7 +50,7 @@ function testStringNoLock(holder: StringHolder): void {
     try {
       holder.value = holder.value + 'a';
     } catch (e) {
-      // 竞态容忍
+      console.info(`testStringNoLock catch race-tolerated error: ${JSON.stringify(e)}`);
     }
   }
 }
@@ -72,7 +72,7 @@ function testBooleanNoLock(holder: BooleanHolder): void {
     try {
       holder.value = !holder.value;
     } catch (e) {
-      // 竞态容忍
+      console.info(`testBooleanNoLock catch race-tolerated error: ${JSON.stringify(e)}`);
     }
   }
 }
@@ -82,7 +82,7 @@ function testBooleanAtomic(flag: AtomicBoolean): void {
     try {
       flag.exchange(!flag.load());
     } catch (e) {
-      // 原子操作容忍
+      console.info(`testBooleanAtomic catch race-tolerated error: ${JSON.stringify(e)}`);
     }
   }
 }
@@ -93,7 +93,7 @@ function testObjectNoLock(holder: ObjectHolder): void {
       holder.value = holder.value + 1;
       holder.name = holder.name + 'a';
     } catch (e) {
-      // 竞态容忍
+      console.info(`testObjectNoLock catch race-tolerated error: ${JSON.stringify(e)}`);
     }
   }
 }

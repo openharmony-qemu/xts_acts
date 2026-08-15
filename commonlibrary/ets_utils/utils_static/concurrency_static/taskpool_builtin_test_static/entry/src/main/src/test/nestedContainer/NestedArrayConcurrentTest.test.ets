@@ -24,7 +24,7 @@ function testNestedArrayOuter(arr: Array<Array<number>>, taskCounter: AtomicInt)
       arr.push(inner);
       arr.pop();
     } catch (e) {
-      // 竞态容忍
+      console.info(`testNestedArrayOuter catch race-tolerated error: ${JSON.stringify(e)}`);
     }
     taskCounter.fetchAdd(1);
   }
@@ -38,7 +38,7 @@ function testNestedArrayInner(arr: Array<Array<number>>, taskCounter: AtomicInt)
       inner.push(i);
       inner.pop();
     } catch (e) {
-      // 竞态容忍
+      console.info(`testNestedArrayInner catch race-tolerated error: ${JSON.stringify(e)}`);
     }
     taskCounter.fetchAdd(1);
   }
@@ -67,7 +67,7 @@ function testNestedArrayStress(arr: Array<Array<number>>, taskCounter: AtomicInt
       inner.push(i);
       inner.pop();
     } catch (e) {
-      // 竞态容忍
+      console.info(`testNestedArrayStress catch race-tolerated error: ${JSON.stringify(e)}`);
     }
     taskCounter.fetchAdd(1);
   }

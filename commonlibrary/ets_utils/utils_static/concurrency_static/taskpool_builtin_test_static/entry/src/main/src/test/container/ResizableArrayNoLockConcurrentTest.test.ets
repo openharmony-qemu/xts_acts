@@ -29,7 +29,7 @@ function sharedArrayOperations(arr: Array<number>, counter: AtomicInt): void {
       arr.push(i);
       arr.pop();
     } catch (e) {
-      // Shared unsynchronized access may race; completion remains observable through counter.
+      console.info(`sharedArrayOperations catch race-tolerated error: ${JSON.stringify(e)}`);
     }
     counter.fetchAdd(1);
   }
@@ -188,7 +188,12 @@ export default function ResizableArrayNoLockConcurrentTest(): void {
           canceled = true;
         }
         expect(canceled).assertTrue();
-        expect(await normalPromise as number).assertEqual(0);
+        try {
+          expect(await normalPromise as number).assertEqual(0);
+        } catch (e) {
+          console.info(`testResizableArrayCancelConcurrent0600 catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
         done();
       });
   });

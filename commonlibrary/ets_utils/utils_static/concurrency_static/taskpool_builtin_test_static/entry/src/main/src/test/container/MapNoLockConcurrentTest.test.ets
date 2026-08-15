@@ -23,7 +23,7 @@ function testMapNoLock(map: Map<string, number>): void {
       map.get('key' + i);
       map.delete('key' + i);
     } catch (e) {
-      // 竞态容忍
+      console.info(`testMapNoLock catch race-tolerated error: ${JSON.stringify(e)}`);
     }
   }
 }
@@ -35,7 +35,7 @@ function testMapNoLockStress(map: Map<string, number>): void {
       map.get('key' + i);
       map.delete('key' + i);
     } catch (e) {
-      // 竞态容忍
+      console.info(`testMapNoLockStress catch race-tolerated error: ${JSON.stringify(e)}`);
     }
   }
 }

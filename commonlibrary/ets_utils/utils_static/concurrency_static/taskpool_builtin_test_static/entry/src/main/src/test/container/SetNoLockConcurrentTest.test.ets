@@ -22,7 +22,7 @@ function testSetNoLock(set: Set<number>): void {
       set.add(i);
       set.delete(i);
     } catch (e) {
-      // 竞态容忍
+      console.info(`testSetNoLock catch race-tolerated error: ${JSON.stringify(e)}`);
     }
   }
 }

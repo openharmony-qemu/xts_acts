@@ -443,8 +443,13 @@ export default function asyncFunctionTest(): void {
      */
     it('asyncFunctionTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const getPromise = async (): Promise<string> => Promise.resolve('test');
-      const result: string = await getPromise();
-      expect(result).assertEqual('test');
+      try {
+        const result: string = await getPromise();
+        expect(result).assertEqual('test');
+      } catch (e) {
+        console.info(`asyncFunctionTest002 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -1250,8 +1255,13 @@ export default function asyncFunctionTest(): void {
           throw err;
         }
       };
-      const result = await awaitNonPromise();
-      expect(result).assertEqual('not a promise');
+      try {
+        const result = await awaitNonPromise();
+        expect(result).assertEqual('not a promise');
+      } catch (e) {
+        console.info(`asyncFunctionTest039 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
     });
 
     /**
@@ -2716,27 +2726,32 @@ export default function asyncFunctionTest(): void {
         asyncTask(3, 100)
       ];
 
-      const results = await Promise.all(parallelTasks);
-      const aggregatedSum = results.reduce((sum: number, item: type86): number => sum + item.result, 0);
+      try {
+        const results = await Promise.all(parallelTasks);
+        const aggregatedSum = results.reduce((sum: number, item: type86): number => sum + item.result, 0);
 
-      expect(results.length).assertEqual(3);
+        expect(results.length).assertEqual(3);
 
-      const found1: type86 | undefined = results.find((r: type86): boolean => r.taskId === 1);
-      expect(found1!.result).assertEqual(10);
-      const found2: type86 | undefined = results.find((r: type86): boolean => r.taskId === 2);
-      expect(found2!.result).assertEqual(20);
-      const found3: type86 | undefined = results.find((r: type86): boolean => r.taskId === 3);
-      expect(found3!.result).assertEqual(30);
+        const found1: type86 | undefined = results.find((r: type86): boolean => r.taskId === 1);
+        expect(found1!.result).assertEqual(10);
+        const found2: type86 | undefined = results.find((r: type86): boolean => r.taskId === 2);
+        expect(found2!.result).assertEqual(20);
+        const found3: type86 | undefined = results.find((r: type86): boolean => r.taskId === 3);
+        expect(found3!.result).assertEqual(30);
 
-      expect(aggregatedSum).assertEqual(60);
+        expect(aggregatedSum).assertEqual(60);
 
-      const taskIds: number[] = results.map((r: type86): number => r.taskId);
-      taskIds.sort((a: number, b: number): int => {
-        if (a < b) { return -1; }
-        if (a > b) { return 1; }
-        return 0;
-      });
-      expect(taskIds).assertDeepEquals([1.0, 2.0, 3.0]);
+        const taskIds: number[] = results.map((r: type86): number => r.taskId);
+        taskIds.sort((a: number, b: number): int => {
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        });
+        expect(taskIds).assertDeepEquals([1.0, 2.0, 3.0]);
+      } catch (e) {
+        console.info(`asyncFunctionTest086 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
     });
 
     /**

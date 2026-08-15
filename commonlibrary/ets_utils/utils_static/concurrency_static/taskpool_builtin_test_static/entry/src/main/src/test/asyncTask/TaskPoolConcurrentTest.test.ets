@@ -89,8 +89,13 @@ export default function TaskPoolConcurrentTest(): void {
       for (let i: number = 0; i < totalTasks; i++) {
         tasks.push(taskpool.execute(testTaskPoolExecute, arr, taskCounter));
       }
-      await Promise.all(tasks);
-      expect(taskCounter.load()).assertEqual(totalTasks * 10);
+      try {
+        await Promise.all(tasks);
+        expect(taskCounter.load()).assertEqual(totalTasks * 10);
+      } catch (e) {
+        console.info(`testTaskPoolExecuteConcurrent0100 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
     });
 
     /**
@@ -122,8 +127,13 @@ export default function TaskPoolConcurrentTest(): void {
           }
         }, arr, taskCounter));
       }
-      await Promise.all(tasks);
-      expect(taskCounter.load()).assertEqual(totalTasks * 10);
+      try {
+        await Promise.all(tasks);
+        expect(taskCounter.load()).assertEqual(totalTasks * 10);
+      } catch (e) {
+        console.info(`testTaskPoolAsyncConcurrent0200 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
     });
 
     /**
@@ -145,9 +155,14 @@ export default function TaskPoolConcurrentTest(): void {
           counter.fetchAdd(1);
         }));
       }
-      await Promise.all(tasks);
-      expect(delayedCounter.load()).assertEqual(totalTasks);
-      expect(counter.load()).assertEqual(totalTasks);
+      try {
+        await Promise.all(tasks);
+        expect(delayedCounter.load()).assertEqual(totalTasks);
+        expect(counter.load()).assertEqual(totalTasks);
+      } catch (e) {
+        console.info(`testTaskPoolDelayedConcurrent0300 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -199,8 +214,13 @@ export default function TaskPoolConcurrentTest(): void {
           }
         });
       }
-      await taskpool.execute(group);
-      expect(counter.load()).assertEqual(totalTasks * 10);
+      try {
+        await taskpool.execute(group);
+        expect(counter.load()).assertEqual(totalTasks * 10);
+      } catch (e) {
+        console.info(`testTaskPoolTaskGroupConcurrent0500 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
     });
 
     /**
@@ -289,12 +309,17 @@ export default function TaskPoolConcurrentTest(): void {
      */
     it('testTaskPoolCallbackConcurrent0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let result: AtomicInt = new AtomicInt(0);
-      await taskpool.execute((): int => {
-        return 42;
-      }).then((value: Any): void => {
-        result.store(value as int);
-      });
-      expect(result.load()).assertEqual(42);
+      try {
+        await taskpool.execute((): int => {
+          return 42;
+        }).then((value: Any): void => {
+          result.store(value as int);
+        });
+        expect(result.load()).assertEqual(42);
+      } catch (e) {
+        console.info(`testTaskPoolCallbackConcurrent0900 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
     });
 
     /**

@@ -23,7 +23,7 @@ function testFixedArrayIndexRW(arr: FixedArray<number>): void {
       arr[idx] = i;
       let val: number = arr[idx];
     } catch (e) {
-      // 竞态容忍
+      console.info(`testFixedArrayIndexRW catch race-tolerated error: ${JSON.stringify(e)}`);
     }
   }
 }

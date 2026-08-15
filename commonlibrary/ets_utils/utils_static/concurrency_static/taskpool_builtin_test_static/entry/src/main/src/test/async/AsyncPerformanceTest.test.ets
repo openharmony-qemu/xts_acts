@@ -284,7 +284,7 @@ export default function asyncPerformanceTest(): void {
               await Promise.reject(new Error('test'));
             }
           } catch (err) {
-            // Expected error for odd numbers
+            console.info(`asyncPerformanceTest010 catch race-tolerated error: ${JSON.stringify(err)}`);
           }
         }
 

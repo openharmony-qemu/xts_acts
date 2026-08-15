@@ -180,16 +180,21 @@ export default function asyncBoundaryTest(): void {
         return counter;
       };
 
-      const results = await Promise.all([
-        rapidCall(),
-        rapidCall(),
-        rapidCall(),
-        rapidCall(),
-        rapidCall()
-      ]);
+      try {
+        const results = await Promise.all([
+          rapidCall(),
+          rapidCall(),
+          rapidCall(),
+          rapidCall(),
+          rapidCall()
+        ]);
 
-      expect(results.length).assertEqual(5);
-      expect(results).assertDeepEquals([5, 5, 5, 5, 5]);
+        expect(results.length).assertEqual(5);
+        expect(results).assertDeepEquals([5, 5, 5, 5, 5]);
+      } catch (e) {
+        console.info(`asyncBoundaryTest006 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
     });
 
     /**
@@ -293,8 +298,13 @@ export default function asyncBoundaryTest(): void {
         return await promise;
       };
 
-      const result = await chainPromise(100);
-      expect(result).assertEqual(100);
+      try {
+        const result = await chainPromise(100);
+        expect(result).assertEqual(100);
+      } catch (e) {
+        console.info(`asyncBoundaryTest010 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
     });
 
     /**

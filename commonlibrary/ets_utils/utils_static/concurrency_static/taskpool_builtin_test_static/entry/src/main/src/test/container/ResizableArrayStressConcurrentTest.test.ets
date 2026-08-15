@@ -22,7 +22,7 @@ function testResizableArrayStress(arr: Array<number>): void {
       arr.push(i);
       arr.pop();
     } catch (e) {
-      // 竞态容忍
+      console.info(`testResizableArrayStress catch race-tolerated error: ${JSON.stringify(e)}`);
     }
   }
 }

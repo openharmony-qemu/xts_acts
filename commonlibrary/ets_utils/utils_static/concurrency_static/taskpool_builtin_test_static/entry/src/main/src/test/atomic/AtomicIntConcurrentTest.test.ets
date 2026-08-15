@@ -81,8 +81,13 @@ export default function AtomicIntConcurrentTest(): void {
         tasks.push(taskpool.execute(testAtomicIntFetchAdd, counter, taskCounter));
       }
       testAtomicIntFetchAdd(counter, taskCounter);
-      await Promise.all(tasks);
-      expect(counter.load()).assertEqual(totalTasks * 10 + 10);
+      try {
+        await Promise.all(tasks);
+        expect(counter.load()).assertEqual(totalTasks * 10 + 10);
+      } catch (e) {
+        console.info(`testAtomicIntFetchAddConcurrent0100 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
     });
 
     /**
@@ -102,8 +107,13 @@ export default function AtomicIntConcurrentTest(): void {
         tasks.push(taskpool.execute(testAtomicIntFetchSub, counter, taskCounter));
       }
       testAtomicIntFetchSub(counter, taskCounter);
-      await Promise.all(tasks);
-      expect(counter.load()).assertEqual(0);
+      try {
+        await Promise.all(tasks);
+        expect(counter.load()).assertEqual(0);
+      } catch (e) {
+        console.info(`testAtomicIntFetchSubConcurrent0200 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
     });
 
     /**
@@ -125,8 +135,13 @@ export default function AtomicIntConcurrentTest(): void {
       for (let i: number = 0; i < totalTasks; i++) {
         tasks.push(taskpool.execute(testAtomicIntLoad, counter, taskCounter));
       }
-      await Promise.all(tasks);
-      expect(taskCounter.load()).assertEqual(totalTasks * 10 * 2);
+      try {
+        await Promise.all(tasks);
+        expect(taskCounter.load()).assertEqual(totalTasks * 10 * 2);
+      } catch (e) {
+        console.info(`testAtomicIntLoadStoreConcurrent0300 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
     });
 
     /**
@@ -145,8 +160,13 @@ export default function AtomicIntConcurrentTest(): void {
       for (let i: number = 0; i < totalTasks; i++) {
         tasks.push(taskpool.execute(testAtomicIntStress, counter, taskCounter));
       }
-      await Promise.all(tasks);
-      expect(counter.load()).assertEqual(totalTasks * 100);
+      try {
+        await Promise.all(tasks);
+        expect(counter.load()).assertEqual(totalTasks * 100);
+      } catch (e) {
+        console.info(`testAtomicIntStressConcurrent0400 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
     });
 
     /**
@@ -166,8 +186,13 @@ export default function AtomicIntConcurrentTest(): void {
         tasks.push(taskpool.execute(testAtomicIntBigLoop, counter, taskCounter));
       }
       testAtomicIntBigLoop(counter, taskCounter);
-      await Promise.all(tasks);
-      expect(counter.load()).assertEqual(totalTasks * 10000 + 10000);
+      try {
+        await Promise.all(tasks);
+        expect(counter.load()).assertEqual(totalTasks * 10000 + 10000);
+      } catch (e) {
+        console.info(`testAtomicIntBigLoopConcurrent0500 catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
     });
   });
 }

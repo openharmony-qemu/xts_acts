@@ -25,7 +25,7 @@ function testNestedMapOuter(map: Map<string, Map<string, number>>, taskCounter: 
       map.get('outerKey' + i);
       map.delete('outerKey' + i);
     } catch (e) {
-      // 竞态容忍
+      console.info(`testNestedMapOuter catch race-tolerated error: ${JSON.stringify(e)}`);
     }
     taskCounter.fetchAdd(1);
   }
@@ -42,7 +42,7 @@ function testNestedMapInner(map: Map<string, Map<string, number>>, taskCounter: 
         inner.delete('innerKey' + i);
       }
     } catch (e) {
-      // 竞态容忍
+      console.info(`testNestedMapInner catch race-tolerated error: ${JSON.stringify(e)}`);
     }
     taskCounter.fetchAdd(1);
   }

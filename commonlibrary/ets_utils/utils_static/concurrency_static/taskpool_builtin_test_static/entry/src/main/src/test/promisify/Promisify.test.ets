@@ -2642,11 +2642,16 @@ export default function PromisifyTest(): void {
           promises.push(promisified() as Promise<FixedArray<Any>>);
         }
 
-        const results: FixedArray<Any>[] = await Promise.all(promises);
-        for (const result of results) {
-          expect(result[0] as PromisifyResultValue).assertEqual(20);
+        try {
+          const results: FixedArray<Any>[] = await Promise.all(promises);
+          for (const result of results) {
+            expect(result[0] as PromisifyResultValue).assertEqual(20);
+          }
+          console.info('testSendableConcurrencySafety9500 end');
+        } catch (e) {
+          console.info(`testSendableConcurrencySafety9500 catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
         }
-        console.info('testSendableConcurrencySafety9500 end');
       });
 
     // ========== Cross File Test Cases (编号10100-12000) ==========
@@ -2987,11 +2992,16 @@ export default function PromisifyTest(): void {
         for (let i: int = 0; i < 10; i++) {
           promises.push(promisified(i) as Promise<FixedArray<Any>>);
         }
-        const results: FixedArray<Any>[] = await Promise.all(promises);
-        for (let i: int = 0; i < 10; i++) {
-          expect(results[i][0] as PromisifyResultValue).assertEqual(i * 2);
+        try {
+          const results: FixedArray<Any>[] = await Promise.all(promises);
+          for (let i: int = 0; i < 10; i++) {
+            expect(results[i][0] as PromisifyResultValue).assertEqual(i * 2);
+          }
+          console.info('testConcurrentCalls19100 end');
+        } catch (e) {
+          console.info(`testConcurrentCalls19100 catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
         }
-        console.info('testConcurrentCalls19100 end');
       });
 
     /**

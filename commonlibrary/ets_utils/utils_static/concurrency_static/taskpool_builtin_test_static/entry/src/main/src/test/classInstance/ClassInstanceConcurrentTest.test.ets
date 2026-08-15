@@ -25,7 +25,7 @@ function testClassNoLock(data: DataClass): void {
     try {
       data.value = data.value + 1;
     } catch (e) {
-      // 竞态容忍
+      console.info(`testClassNoLock catch race-tolerated error: ${JSON.stringify(e)}`);
     }
   }
 }
@@ -174,7 +174,7 @@ export default function ClassInstanceConcurrentTest(): void {
             try {
               d.value = d.value + 1;
             } catch (e) {
-              // 竞态容忍
+              console.info(`testClassEAWorkerConcurrent0400 catch race-tolerated error: ${JSON.stringify(e)}`);
             }
           }
           c.fetchAdd(1);

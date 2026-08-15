@@ -1643,14 +1643,19 @@ export default function IsSharedArrayBufferTest(): void {
         console.info(`${caseName} test start`);
 
         const task: taskpool.Task = new taskpool.Task(taskPoolCreateArrayBuffer, 64);
-        const result: int = await taskpool.execute(task) as int;
-        expect(result).assertEqual(64);
+        try {
+          const result: int = await taskpool.execute(task) as int;
+          expect(result).assertEqual(64);
 
-        const ab: ArrayBuffer = new ArrayBuffer(result);
-        const type: util.types = new util.types();
-        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+          const ab: ArrayBuffer = new ArrayBuffer(result);
+          const type: util.types = new util.types();
+          expect(type.isAnyArrayBuffer(ab)).assertTrue();
 
-        console.info(`${caseName} test end`);
+          console.info(`${caseName} test end`);
+        } catch (e) {
+          console.info(`testTaskPoolPassArrayBufferSize catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
       });
 
     /**
@@ -1672,14 +1677,19 @@ export default function IsSharedArrayBufferTest(): void {
         sizes.push(64);
 
         const task: taskpool.Task = new taskpool.Task(taskPoolSumBufferSizes, sizes);
-        const result: int = await taskpool.execute(task) as int;
-        expect(result).assertEqual(112);
+        try {
+          const result: int = await taskpool.execute(task) as int;
+          expect(result).assertEqual(112);
 
-        const ab: ArrayBuffer = new ArrayBuffer(result);
-        const type: util.types = new util.types();
-        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+          const ab: ArrayBuffer = new ArrayBuffer(result);
+          const type: util.types = new util.types();
+          expect(type.isAnyArrayBuffer(ab)).assertTrue();
 
-        console.info(`${caseName} test end`);
+          console.info(`${caseName} test end`);
+        } catch (e) {
+          console.info(`testTaskPoolSumArrayBufferSizes catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
       });
 
     /**
@@ -1698,21 +1708,26 @@ export default function IsSharedArrayBufferTest(): void {
         const task1: taskpool.Task = new taskpool.Task(taskPoolCreateArrayBuffer, 32);
         const task2: taskpool.Task = new taskpool.Task(taskPoolCreateArrayBuffer, 64);
 
-        const results: int[] = await Promise.all([
-          taskpool.execute(task1) as Promise<int>,
-          taskpool.execute(task2) as Promise<int>
-        ]);
+        try {
+          const results: int[] = await Promise.all([
+            taskpool.execute(task1) as Promise<int>,
+            taskpool.execute(task2) as Promise<int>
+          ]);
 
-        expect(results[0]).assertEqual(32);
-        expect(results[1]).assertEqual(64);
+          expect(results[0]).assertEqual(32);
+          expect(results[1]).assertEqual(64);
 
-        const ab1: ArrayBuffer = new ArrayBuffer(results[0]);
-        const ab2: ArrayBuffer = new ArrayBuffer(results[1]);
-        const type: util.types = new util.types();
-        expect(type.isAnyArrayBuffer(ab1)).assertTrue();
-        expect(type.isAnyArrayBuffer(ab2)).assertTrue();
+          const ab1: ArrayBuffer = new ArrayBuffer(results[0]);
+          const ab2: ArrayBuffer = new ArrayBuffer(results[1]);
+          const type: util.types = new util.types();
+          expect(type.isAnyArrayBuffer(ab1)).assertTrue();
+          expect(type.isAnyArrayBuffer(ab2)).assertTrue();
 
-        console.info(`${caseName} test end`);
+          console.info(`${caseName} test end`);
+        } catch (e) {
+          console.info(`testTaskPoolParallelBufferTasks catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
       });
 
     /**
@@ -1737,10 +1752,15 @@ export default function IsSharedArrayBufferTest(): void {
         expect(Atomics.load(view, 0)).assertEqual(42);
 
         const task: taskpool.Task = new taskpool.Task(taskPoolCreateArrayBuffer, ab.byteLength);
-        const result: int = await taskpool.execute(task) as int;
-        expect(result).assertEqual(128);
+        try {
+          const result: int = await taskpool.execute(task) as int;
+          expect(result).assertEqual(128);
 
-        console.info(`${caseName} test end`);
+          console.info(`${caseName} test end`);
+        } catch (e) {
+          console.info(`testTaskPoolSharedArrayBufferAtomicWrite catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
       });
 
     /**
@@ -1760,10 +1780,15 @@ export default function IsSharedArrayBufferTest(): void {
         const size: int = ab.byteLength;
 
         const task: taskpool.Task = new taskpool.Task(taskPoolCreateArrayBuffer, size);
-        const result: int = await taskpool.execute(task) as int;
-        expect(result).assertEqual(256);
+        try {
+          const result: int = await taskpool.execute(task) as int;
+          expect(result).assertEqual(256);
 
-        console.info(`${caseName} test end`);
+          console.info(`${caseName} test end`);
+        } catch (e) {
+          console.info(`testTaskPoolShareArrayBufferSize catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
       });
 
     /**
@@ -1784,14 +1809,19 @@ export default function IsSharedArrayBufferTest(): void {
         sizes.push(128);
 
         const task: taskpool.Task = new taskpool.Task(taskPoolSumBufferSizes, sizes);
-        const result: int = await taskpool.execute(task) as int;
+        try {
+          const result: int = await taskpool.execute(task) as int;
 
-        const ab: ArrayBuffer = new ArrayBuffer(result);
-        const type: util.types = new util.types();
-        expect(type.isAnyArrayBuffer(ab)).assertTrue();
-        expect(ab.byteLength).assertEqual(192);
+          const ab: ArrayBuffer = new ArrayBuffer(result);
+          const type: util.types = new util.types();
+          expect(type.isAnyArrayBuffer(ab)).assertTrue();
+          expect(ab.byteLength).assertEqual(192);
 
-        console.info(`${caseName} test end`);
+          console.info(`${caseName} test end`);
+        } catch (e) {
+          console.info(`testTaskPoolReturnArrayBufferSize catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
         done();
       });
 
@@ -1866,14 +1896,19 @@ export default function IsSharedArrayBufferTest(): void {
         console.info(`${caseName} test start`);
 
         const task: taskpool.Task = new taskpool.Task(taskPoolCreateArrayBuffer, 512);
-        const result: int = await taskpool.execute(task) as int;
+        try {
+          const result: int = await taskpool.execute(task) as int;
 
-        const ab: ArrayBuffer = new ArrayBuffer(result);
-        const type: util.types = new util.types();
-        expect(type.isAnyArrayBuffer(ab)).assertTrue();
-        expect(ab.byteLength).assertEqual(512);
+          const ab: ArrayBuffer = new ArrayBuffer(result);
+          const type: util.types = new util.types();
+          expect(type.isAnyArrayBuffer(ab)).assertTrue();
+          expect(ab.byteLength).assertEqual(512);
 
-        console.info(`${caseName} test end`);
+          console.info(`${caseName} test end`);
+        } catch (e) {
+          console.info(`testTaskPoolCrossThreadShare catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
       });
 
     /**
@@ -1916,13 +1951,18 @@ export default function IsSharedArrayBufferTest(): void {
         console.info(`${caseName} test start`);
 
         const task: taskpool.Task = new taskpool.Task(taskPoolCreateArrayBuffer, 256);
-        const result: int = await taskpool.execute(task) as int;
+        try {
+          const result: int = await taskpool.execute(task) as int;
 
-        const ab: ArrayBuffer = new ArrayBuffer(result);
-        const type: util.types = new util.types();
-        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+          const ab: ArrayBuffer = new ArrayBuffer(result);
+          const type: util.types = new util.types();
+          expect(type.isAnyArrayBuffer(ab)).assertTrue();
 
-        console.info(`${caseName} test end`);
+          console.info(`${caseName} test end`);
+        } catch (e) {
+          console.info(`testTaskPoolMethodArrayBufferSize catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
       });
 
     /**
@@ -1946,10 +1986,15 @@ export default function IsSharedArrayBufferTest(): void {
         expect(container.getBufferCount()).assertEqual(3);
 
         const task: taskpool.Task = new taskpool.Task(taskPoolSumBufferSizes, container.buffers);
-        const result: int = await taskpool.execute(task) as int;
-        expect(result).assertEqual(112);
+        try {
+          const result: int = await taskpool.execute(task) as int;
+          expect(result).assertEqual(112);
 
-        console.info(`${caseName} test end`);
+          console.info(`${caseName} test end`);
+        } catch (e) {
+          console.info(`testClassBufferCollectionTask catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
       });
 
     /**
@@ -2555,13 +2600,18 @@ export default function IsSharedArrayBufferTest(): void {
         console.info(`${caseName} test start`);
 
         const task: taskpool.Task = new taskpool.Task(concurrentCreateArrayBuffer, 128);
-        const result: int = await taskpool.execute(task) as int;
+        try {
+          const result: int = await taskpool.execute(task) as int;
 
-        const ab: ArrayBuffer = new ArrayBuffer(result);
-        const type: util.types = new util.types();
-        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+          const ab: ArrayBuffer = new ArrayBuffer(result);
+          const type: util.types = new util.types();
+          expect(type.isAnyArrayBuffer(ab)).assertTrue();
 
-        console.info(`${caseName} test end`);
+          console.info(`${caseName} test end`);
+        } catch (e) {
+          console.info(`testConcurrentTaskPoolBufferFunc catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
       });
 
     /**
@@ -2583,13 +2633,18 @@ export default function IsSharedArrayBufferTest(): void {
         sizes.push(64);
 
         const task: taskpool.Task = new taskpool.Task(concurrentSumBufferSizes, sizes);
-        const result: int = await taskpool.execute(task) as int;
+        try {
+          const result: int = await taskpool.execute(task) as int;
 
-        const ab: ArrayBuffer = new ArrayBuffer(result);
-        const type: util.types = new util.types();
-        expect(type.isAnyArrayBuffer(ab)).assertTrue();
+          const ab: ArrayBuffer = new ArrayBuffer(result);
+          const type: util.types = new util.types();
+          expect(type.isAnyArrayBuffer(ab)).assertTrue();
 
-        console.info(`${caseName} test end`);
+          console.info(`${caseName} test end`);
+        } catch (e) {
+          console.info(`testConcurrentTaskPoolSumFunc catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
       });
 
     /**
@@ -2608,19 +2663,24 @@ export default function IsSharedArrayBufferTest(): void {
         const task1: taskpool.Task = new taskpool.Task(concurrentCreateArrayBuffer, 32);
         const task2: taskpool.Task = new taskpool.Task(concurrentCreateArrayBuffer, 64);
 
-        const results: int[] = await Promise.all([
-          taskpool.execute(task1) as Promise<int>,
-          taskpool.execute(task2) as Promise<int>
-        ]);
+        try {
+          const results: int[] = await Promise.all([
+            taskpool.execute(task1) as Promise<int>,
+            taskpool.execute(task2) as Promise<int>
+          ]);
 
-        const ab1: ArrayBuffer = new ArrayBuffer(results[0]);
-        const ab2: ArrayBuffer = new ArrayBuffer(results[1]);
+          const ab1: ArrayBuffer = new ArrayBuffer(results[0]);
+          const ab2: ArrayBuffer = new ArrayBuffer(results[1]);
 
-        const type: util.types = new util.types();
-        expect(type.isAnyArrayBuffer(ab1)).assertTrue();
-        expect(type.isAnyArrayBuffer(ab2)).assertTrue();
+          const type: util.types = new util.types();
+          expect(type.isAnyArrayBuffer(ab1)).assertTrue();
+          expect(type.isAnyArrayBuffer(ab2)).assertTrue();
 
-        console.info(`${caseName} test end`);
+          console.info(`${caseName} test end`);
+        } catch (e) {
+          console.info(`testConcurrentTaskPoolParallel catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
         done();
       });
 

@@ -21,7 +21,7 @@ function testResizableArrayEAWorker(arr: Array<number>, count: AtomicInt): void 
       arr.push(i);
       arr.pop();
     } catch (e) {
-      // 竞态容忍
+      console.info(`testResizableArrayEAWorker catch race-tolerated error: ${JSON.stringify(e)}`);
     }
   }
   count.fetchAdd(1);
