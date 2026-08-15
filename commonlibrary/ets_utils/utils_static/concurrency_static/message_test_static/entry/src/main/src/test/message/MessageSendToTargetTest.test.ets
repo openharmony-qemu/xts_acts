@@ -248,8 +248,8 @@ export default function MessageSendToTargetTest(): void {
       let msg2 = new concurrency.Message(2, messageHandler);
       try {
         msg2.sendToTarget();
-      } catch (e) {
-        // Expected: error after EAWorker quit
+      } catch (error) {
+        console.info(`MessageSendToTargetTest0600 sendToTarget after quit throws as expected: ${JSON.stringify(error)}`);
       }
       await Utils.msSleep(100);
       expect(counter.load()).assertEqual(1);

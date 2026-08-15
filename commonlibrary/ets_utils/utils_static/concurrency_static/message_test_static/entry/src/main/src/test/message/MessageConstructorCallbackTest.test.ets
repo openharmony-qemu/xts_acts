@@ -1117,8 +1117,8 @@ export default function MessageConstructorCallbackTest(): void {
             cb();
           }
           break;
-        } catch (e) {
-          // continue retrying
+        } catch (error) {
+          console.info(`MessageConstructorCallbackTest4200 retry as expected: ${JSON.stringify(error)}`);
         }
       }
       expect(retryCount.load()).assertEqual(3);
