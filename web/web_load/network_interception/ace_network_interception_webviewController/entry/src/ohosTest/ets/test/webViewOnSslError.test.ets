@@ -97,7 +97,13 @@ export default function webViewOnSslError() {
     it('testOnsslerroreventreceive',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
       Utils.emitEvent("testOnsslerroreventreceive", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
-      Utils.registerEvent("testOnsslerroreventreceive",true,142511,(err: BusinessError) =>{isReturn = 1});
+      Utils.registerEvent("testOnsslerroreventreceive",true,142511,(error: BusinessError) => {
+        if (error) {
+          console.error(`testOnsslerroreventreceive registerEvent error: ${error.message}`);
+          return;
+        }
+        isReturn = 1;
+      });
       await Utils.waitAndClickComponent(driver, "webViewOnSslError");
       await Utils.waitForExist(()=>isReturn, "testOnsslerroventreceive_checkReturn", 1, 1000, 60);
       done();
