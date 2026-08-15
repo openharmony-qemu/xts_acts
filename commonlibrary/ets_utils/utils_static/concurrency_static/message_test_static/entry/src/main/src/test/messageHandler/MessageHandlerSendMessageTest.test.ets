@@ -819,7 +819,7 @@ export default function MessageHandlerSendMessageTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(1, handler));
         if (handler.removeMessages(1)) {
           removed.fetchAdd(1);
@@ -828,11 +828,16 @@ export default function MessageHandlerSendMessageTest(): void {
           cleared.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       expect(cleared.load()).assertEqual(1);

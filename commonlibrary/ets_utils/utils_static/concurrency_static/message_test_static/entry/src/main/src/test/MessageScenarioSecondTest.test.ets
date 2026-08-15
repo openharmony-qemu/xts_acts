@@ -787,12 +787,17 @@ export default function MessageScenarioSecondTest(): void {
             while (handlerNum < 2) {
               let handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
                 waitForCompletion(async () => {
-                  await lock.lockAsync(() => {
-                    result.push(msg);
-                    console.info(`push msg`);
-                  })
-                  await Sleep(1000);
-                  flag = true;
+                  try {
+                    let lockCallback = () => {
+                      result.push(msg);
+                      console.info(`push msg`);
+                    };
+                    await lock.lockAsync(lockCallback);
+                    await Sleep(1000);
+                    flag = true;
+                  } catch (error) {
+                    console.info(`MessageScenarioSecondTest async task error: ${JSON.stringify(error)}`);
+                  }
                 })
               }, works[workNum]);
               while (messageNum < 5) {
@@ -985,7 +990,7 @@ export default function MessageScenarioSecondTest(): void {
           }, eaw);
           expect(handler.getWorker()).assertEqual(eaw);
         } catch (error) {
-          console.error(`error.message => ${error.message}`);
+          console.info(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -1019,7 +1024,7 @@ export default function MessageScenarioSecondTest(): void {
           }, eaw1);
           expect(handler.getWorker() === eaw1).assertTrue();
         } catch (error) {
-          console.error(`error.message => ${error.message}`);
+          console.info(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -1167,7 +1172,7 @@ export default function MessageScenarioSecondTest(): void {
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
         } catch (err) {
-          console.error(`${TAG} catch error: code =>  message => ${err.message}`);
+          console.info(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -1258,7 +1263,7 @@ export default function MessageScenarioSecondTest(): void {
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
         } catch (err) {
-          console.error(`${TAG} catch error: code =>  message => ${err.message}`);
+          console.info(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -1408,7 +1413,7 @@ export default function MessageScenarioSecondTest(): void {
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
         } catch (err) {
-          console.error(`${TAG} catch error: code =>  message => ${err.message}`);
+          console.info(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -1501,7 +1506,7 @@ export default function MessageScenarioSecondTest(): void {
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
         } catch (err) {
-          console.error(`${TAG} catch error: code =>  message => ${err.message}`);
+          console.info(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -1649,7 +1654,7 @@ export default function MessageScenarioSecondTest(): void {
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
         } catch (err) {
-          console.error(`${TAG} catch error: code =>  message => ${err.message}`);
+          console.info(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -2160,11 +2165,12 @@ export default function MessageScenarioSecondTest(): void {
           let msg = new concurrency.Message(handler)
           handler.sendMessage(msg);
           for (let i = 0; i < 10; i++) {
-            let handlerValue = handler.post(() => {
+            let postedCallback = (): void => {
               const end = Date.now() + 1000;
               while (Date.now() < end) {
               }
-            })
+            };
+            let handlerValue = handler.post(postedCallback)
             expect(handlerValue).assertTrue();
           }
           let waitCount: int = 0;
@@ -2204,11 +2210,12 @@ export default function MessageScenarioSecondTest(): void {
         let handlerValue: boolean = false;
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
-            handlerValue = handler!.post(() => {
+            let postedCallback = (): void => {
               const end = Date.now() + 1000;
               while (Date.now() < end) {
               }
-            })
+            };
+            handlerValue = handler!.post(postedCallback)
             resolve(1);
           });
         };
@@ -2269,11 +2276,12 @@ export default function MessageScenarioSecondTest(): void {
         }, worker)
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
-            handlerValue = handler.post(() => {
+            let postedCallback = (): void => {
               const end = Date.now() + 1000;
               while (Date.now() < end) {
               }
-            })
+            };
+            handlerValue = handler.post(postedCallback)
             resolve(1);
           });
         };
@@ -2386,11 +2394,12 @@ export default function MessageScenarioSecondTest(): void {
         }, worker)
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
-            handlerValue = handler.post(() => {
+            let postedCallback = (): void => {
               const end = Date.now() + 1000;
               while (Date.now() < end) {
               }
-            })
+            };
+            handlerValue = handler.post(postedCallback)
             resolve(1);
           });
         };
@@ -2449,11 +2458,12 @@ export default function MessageScenarioSecondTest(): void {
         }, worker)
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
-            handlerValue = handler.post(() => {
+            let postedCallback = (): void => {
               const end = Date.now() + 1000;
               while (Date.now() < end) {
               }
-            })
+            };
+            handlerValue = handler.post(postedCallback)
             resolve(1);
           });
         };
@@ -2553,8 +2563,12 @@ export default function MessageScenarioSecondTest(): void {
         let flag: boolean = false;
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
           waitForCompletion(async () => {
-            await Sleep(1000);
-            flag = true;
+            try {
+              await Sleep(1000);
+              flag = true;
+            } catch (error) {
+              console.info(`MessageScenarioSecondTest4900 async task error: ${JSON.stringify(error)}`);
+            }
           })
         }, worker);
         let p = () => {
@@ -2748,7 +2762,11 @@ export default function MessageScenarioSecondTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000)
+              try {
+                await Sleep(1000)
+              } catch (error) {
+                console.info(`MessageScenarioSecondTest5500 sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           handler.post(p);
@@ -2799,13 +2817,14 @@ export default function MessageScenarioSecondTest(): void {
             if (cb !== undefined) { cb(); }
           }, worker);
           // send+remove inside post to avoid EAWorker draining before remove
-          handler.post((): void => {
+          let postedCallback = (): void => {
             handler.sendMessage(new concurrency.Message(p, handler));
             if (handler.removeCallbacks(p)) {
               removed.fetchAdd(1);
             }
             doneFlag.fetchAdd(1);
-          });
+          };
+          handler.post(postedCallback);
           let waitCount: int = 0;
           while (doneFlag.load() < 1 && waitCount < 50) {
             waitCount++;
@@ -2846,7 +2865,11 @@ export default function MessageScenarioSecondTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000)
+              try {
+                await Sleep(1000)
+              } catch (error) {
+                console.info(`MessageScenarioSecondTest5500 sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           handler.sendMessage(new concurrency.Message(p, handler));

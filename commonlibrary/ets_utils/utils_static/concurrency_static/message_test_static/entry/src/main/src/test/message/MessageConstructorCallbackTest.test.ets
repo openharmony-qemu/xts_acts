@@ -1322,7 +1322,11 @@ export default function MessageConstructorCallbackTest(): void {
       let waitCount = 0;
       while (callbackExecuted.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(callbackExecuted.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }

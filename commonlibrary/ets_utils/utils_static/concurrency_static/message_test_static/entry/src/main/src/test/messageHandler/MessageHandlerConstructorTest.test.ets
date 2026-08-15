@@ -319,7 +319,11 @@ export default function MessageHandlerConstructorTest(): void {
       eaw.quit();
       let quitWait = 0;
       while (eaw.isAlive() && quitWait < 20000) {
-        await Utils.msSleep(1);
+        try {
+          await Utils.msSleep(1);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         quitWait++;
       }
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
@@ -480,7 +484,11 @@ export default function MessageHandlerConstructorTest(): void {
         let waitCount: int = 0;
         while (counter.load() < 10 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(counter.load()).assertEqual(10);
       } finally {

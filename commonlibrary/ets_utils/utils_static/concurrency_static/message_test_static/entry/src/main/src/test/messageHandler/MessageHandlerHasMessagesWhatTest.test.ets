@@ -1253,15 +1253,20 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
           doneCount.fetchAdd(1);
         }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendEmptyMessage(1);
         handler.sendEmptyMessage(3);
         handler.sendEmptyMessage(2);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(priorityCount.load()).assertEqual(3);
       if (eaw.isAlive()) {

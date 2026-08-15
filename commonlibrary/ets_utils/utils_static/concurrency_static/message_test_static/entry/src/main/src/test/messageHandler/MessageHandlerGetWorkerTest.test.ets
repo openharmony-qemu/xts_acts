@@ -727,7 +727,11 @@ export default function MessageHandlerGetWorkerTest(): void {
         waitCount = 0;
         while (level3Count.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(level3Count.load()).assertEqual(1);
         expect(level3Match.load()).assertEqual(1);

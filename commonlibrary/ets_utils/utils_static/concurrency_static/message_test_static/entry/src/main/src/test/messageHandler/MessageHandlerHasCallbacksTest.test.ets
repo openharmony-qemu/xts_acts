@@ -209,7 +209,7 @@ export default function MessageHandlerHasCallbacksTest(): void {
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         console.info("message type: ", msg.getWhat());
       }, eaw);
-      let asyncCallback = async (): Promise<void> => { await Utils.msSleep(100); };
+      let asyncCallback = async (): Promise<void> => { try { await Utils.msSleep(100); } catch (error) { expect(error).assertFail(); } };
       let result: boolean = handler.hasCallbacks(asyncCallback as () => void);
       expect(result).assertFalse();
       if (eaw.isAlive()) {
@@ -887,18 +887,23 @@ export default function MessageHandlerHasCallbacksTest(): void {
       let queryResults = new AtomicInt(0);
       let tasksDone = new AtomicInt(0);
       for (let i: int = 0; i < 5; i++) {
-        handler.post((): void => {
+        let postedCallback = (): void => {
           let r: boolean = handler.hasCallbacks(callback);
           if (r) {
             queryResults.fetchAdd(1);
           }
           tasksDone.fetchAdd(1);
-        });
+        };
+        handler.post(postedCallback);
       }
       let waitCount: int = 0;
       while (tasksDone.load() < 5 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(tasksDone.load()).assertEqual(5);
       if (eaw.isAlive()) {

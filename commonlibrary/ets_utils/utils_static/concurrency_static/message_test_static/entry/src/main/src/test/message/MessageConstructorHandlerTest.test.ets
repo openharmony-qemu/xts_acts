@@ -648,7 +648,11 @@ export default function MessageConstructorHandlerTest(): void {
         let waitCount = 0;
         while (counter.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(counter.load()).assertEqual(1);
       } finally {

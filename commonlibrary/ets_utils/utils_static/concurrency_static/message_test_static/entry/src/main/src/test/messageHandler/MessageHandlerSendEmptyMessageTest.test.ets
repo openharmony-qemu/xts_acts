@@ -747,7 +747,7 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
           verified.fetchAdd(1);
         }, eaw);
         // First send+remove must be atomic inside post (main-thread send then remove races EAWorker drain)
-        handler.post((): void => {
+        let postedCallback = (): void => {
           handler.sendEmptyMessage(1);
           if (handler.removeMessages(1)) {
             removedOk.fetchAdd(1);
@@ -756,7 +756,8 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
             removedOk.fetchAdd(1);
           }
           doneCount.fetchAdd(1);
-        });
+        };
+        handler.post(postedCallback);
         let waitCount: int = 0;
         while (doneCount.load() < 1 && waitCount < 50) {
           waitCount++;
@@ -953,7 +954,11 @@ export default function MessageHandlerSendEmptyMessageTest(): void {
         let waitCount: int = 0;
         while (nestedCount.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(nestedCount.load()).assertEqual(1);
       } finally {

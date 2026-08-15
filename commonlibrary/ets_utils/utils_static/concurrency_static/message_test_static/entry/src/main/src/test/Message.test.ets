@@ -1117,13 +1117,14 @@ export default function MessageTest(): void {
             }
             callbackCount.fetchAdd(1);
           }, worker);
-          handler.post((): void => {
+          let postedCallback = (): void => {
             let message = new concurrency.Message(1, handler)
             handler.sendMessage(message);
             if (handler.removeMessages(1)) {
               removed.store(1);
             }
-          });
+          };
+          handler.post(postedCallback);
           let waitCount: number = 0;
           while (removed.load() < 1 && waitCount < 50) {
             waitCount++;

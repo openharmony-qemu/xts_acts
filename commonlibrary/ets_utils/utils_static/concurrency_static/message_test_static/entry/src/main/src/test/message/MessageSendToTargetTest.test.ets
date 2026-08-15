@@ -243,7 +243,11 @@ export default function MessageSendToTargetTest(): void {
       let waitCount2 = 0;
       while (eaw.isAlive() && waitCount2 < 100) {
         waitCount2++;
-        await Utils.msSleep(10);
+        try {
+          await Utils.msSleep(10);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       let msg2 = new concurrency.Message(2, messageHandler);
       try {
@@ -1221,7 +1225,11 @@ export default function MessageSendToTargetTest(): void {
         let waitCount = 0;
         while (counter.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(counter.load()).assertEqual(1);
         expect(msg.getTarget() === messageHandler).assertTrue();

@@ -934,7 +934,7 @@ export default function MessageTest2(): void {
           }, eaw);
           expect(handler.getWorker()).assertEqual(eaw);
         } catch (error) {
-          console.error(`error.message => ${error.message}`);
+          console.info(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -967,7 +967,7 @@ export default function MessageTest2(): void {
           }, eaw1);
           expect(handler.getWorker() != eaw2).assertTrue();
         } catch (error) {
-          console.error(`error.message => ${error.message}`);
+          console.info(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
@@ -2740,7 +2740,7 @@ export default function MessageTest2(): void {
           removeFlag = handler.removeCallbacks(p)
           expect(removeFlag).assertEqual(true);
         } catch (error) {
-          console.error(`${TAG} error.message => ${error.message}`);
+          console.info(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();

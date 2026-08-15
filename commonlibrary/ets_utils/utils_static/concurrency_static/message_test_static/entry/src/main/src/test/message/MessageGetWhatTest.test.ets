@@ -16,6 +16,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
 import Utils from '../Util.test';
+import { BusinessError } from '@ohos.base';
 
 type CB = () => void
 
@@ -383,17 +384,17 @@ export default function MessageGetWhatTest(): void {
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let msg = new concurrency.Message(99, messageHandler);
-      let result: int = 0;
-      try {
-        result = await Promise.resolve().then((): int => {
-          return msg.getWhat();
-        });
-      } catch (error) {
+      Promise.resolve().then((): int => {
+        return msg.getWhat();
+      }).then((what: int): void => {
+        expect(what).assertEqual(99);
+        if (eaw.isAlive()) { eaw.quit(); }
+        done();
+      }).catch((error: BusinessError): void => {
         expect(error).assertFail();
-      }
-      expect(result).assertEqual(99);
-      if (eaw.isAlive()) { eaw.quit(); }
-      done();
+        if (eaw.isAlive()) { eaw.quit(); }
+        done();
+      });
     })
 
     /**
@@ -692,7 +693,11 @@ export default function MessageGetWhatTest(): void {
       let waitCount: int = 0;
       while (nestedWhatMatch.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(nestedWhatMatch.load()).assertEqual(1);
       if (eaw.isAlive()) { eaw.quit(); }

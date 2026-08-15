@@ -16,6 +16,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
 import Utils from '../Util.test';
+import { BusinessError } from '@ohos.base';
 
 type CB = () => void
 
@@ -493,14 +494,20 @@ export default function MessageGetCallbackTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MessageGetCallbackTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('MessageGetCallbackTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let eaw = new EAWorker();
       eaw.start();
       try {
         let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
         let promiseCallback: CB = (): void => {
           let p: Promise<string> = Promise.resolve("result");
-          p.then((r: string): void => { console.info(r); });
+          p.then((r: string): void => {
+            console.info(r);
+            done();
+          }).catch((error: BusinessError): void => {
+            expect(error).assertFail();
+            done();
+          });
         }
         let msg = new concurrency.Message(promiseCallback, messageHandler);
         let cb: CB | undefined = msg.getCallback();
@@ -946,7 +953,11 @@ export default function MessageGetCallbackTest(): void {
         let waitCount = 0;
         while (callbackExecuted.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(callbackExecuted.load()).assertEqual(1);
       } finally {
@@ -1323,7 +1334,11 @@ export default function MessageGetCallbackTest(): void {
         let waitCount = 0;
         while (callbackExecuted.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(callbackExecuted.load()).assertEqual(1);
       } finally {

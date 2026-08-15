@@ -720,7 +720,11 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       done();
@@ -741,7 +745,7 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(1, "valid_obj", handler));
         if (handler.removeMessages(1, "valid_obj")) {
           verified.fetchAdd(1);
@@ -750,7 +754,8 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
           verified.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
@@ -1333,20 +1338,22 @@ export default function MessageHandlerRemoveMessagesWhatObjTest(): void {
           let cb: (() => void) | undefined = msg.getCallback();
           if (cb !== undefined) { cb(); }
         }, eaw2);
-        handler1.post((): void => {
+        let postedCallback = (): void => {
           handler1.sendMessage(new concurrency.Message(1, "data", handler1));
           let r1: boolean = handler1.removeMessages(1, "data");
           if (r1) { verified.fetchAdd(1); }
           let has1: boolean = handler1.hasMessages(1, "data");
           if (!has1) { verified.fetchAdd(1); }
-        });
-        handler2.post((): void => {
+        };
+        handler1.post(postedCallback);
+        let postedCallbackSecond = (): void => {
           handler2.sendMessage(new concurrency.Message(1, "data", handler2));
           let r2: boolean = handler2.removeMessages(1, "data");
           if (r2) { verified.fetchAdd(1); }
           let has2: boolean = handler2.hasMessages(1, "data");
           if (!has2) { verified.fetchAdd(1); }
-        });
+        };
+        handler2.post(postedCallbackSecond);
         let waitCount: int = 0;
         while (verified.load() < 4 && waitCount < 50) {
           waitCount++;

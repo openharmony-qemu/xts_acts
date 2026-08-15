@@ -1093,7 +1093,11 @@ export default function MessageGetObjectTest(): void {
         let waitCount = 0;
         while (callbackCounter.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(callbackCounter.load()).assertEqual(1);
       } finally {

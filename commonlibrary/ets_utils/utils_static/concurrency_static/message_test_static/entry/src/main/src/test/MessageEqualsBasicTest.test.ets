@@ -15,7 +15,6 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
-import { BusinessError } from '@ohos.base';
 
 class CustomData {
     id: int = 0;
@@ -63,9 +62,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertTrue();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -105,9 +102,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertTrue();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -152,9 +147,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertFalse();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -193,9 +186,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertFalse();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -234,9 +225,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertFalse();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -278,9 +267,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertTrue();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -326,9 +313,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertFalse();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -366,9 +351,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertTrue();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -408,9 +391,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertTrue();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -450,9 +431,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertTrue();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -495,9 +474,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertTrue();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -537,9 +514,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertTrue();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -578,9 +553,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertTrue();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -619,9 +592,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertTrue();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -663,9 +634,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertFalse();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -702,9 +671,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg.equals(msg);
                     expect(result).assertTrue();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -744,9 +711,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertTrue();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {
@@ -790,9 +755,7 @@ export default function MessageEqualsBasicTest(): void {
                     const result = msg1.equals(msg2);
                     expect(result).assertTrue();
                 } catch (error) {
-                    console.error(`${TAG} catch error: ${error.message}`);
-                    const bizErr = error as BusinessError;
-                    expect(typeof bizErr.code === 'number').assertTrue();
+                    console.info(`${TAG} catch error: ${error.message}`);
                     expect(false).assertFail();
                 } finally {
                     try {

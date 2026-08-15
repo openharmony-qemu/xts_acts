@@ -2140,15 +2140,20 @@ export default function MessageHandlerHasMessagesWhatObjTest(): void {
           }
         }, eaw);
         eaw.start();
-        handler.post((): void => {
+        let postedCallback = (): void => {
           handler.sendMessage(new concurrency.Message(3, "low", handler));
           handler.sendMessage(new concurrency.Message(1, "high", handler));
           handler.sendMessage(new concurrency.Message(2, "medium", handler));
-        });
+        };
+        handler.post(postedCallback);
         let waitCount: int = 0;
         while (doneCount.load() < 1 && waitCount < 50) {
           waitCount++;
-          await Utils.msSleep(100);
+          try {
+            await Utils.msSleep(100);
+          } catch (error) {
+            expect(error).assertFail();
+          }
         }
         expect(processedOrder.length).assertEqual(3);
       } finally {

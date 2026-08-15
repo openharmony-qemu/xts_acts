@@ -1008,7 +1008,8 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       handler.sendMessage(new concurrency.Message(() => {}, handler));
-      let result: boolean = handler.removeCallbacks(() => {});
+      let removedEmptyCallback = (): void => {};
+      let result: boolean = handler.removeCallbacks(removedEmptyCallback);
       expect(result).assertFalse();
       if (eaw.isAlive()) {
         try {
@@ -1038,17 +1039,22 @@ export default function MessageHandlerRemoveCallbacksTest(): void {
       }, eaw);
       let count: int = 0;
       let callback = (): void => { count = count + 1; };
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(callback, handler));
         if (handler.removeCallbacks(callback)) {
           removed.fetchAdd(1);
         }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(removed.load()).assertEqual(1);
       if (eaw.isAlive()) {

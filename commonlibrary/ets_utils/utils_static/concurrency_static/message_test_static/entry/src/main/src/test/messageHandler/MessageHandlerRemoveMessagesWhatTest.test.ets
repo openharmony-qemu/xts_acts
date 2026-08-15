@@ -808,16 +808,18 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
           let cb: (() => void) | undefined = msg.getCallback();
           if (cb !== undefined) { cb(); }
         }, eaw2);
-        handler1.post((): void => {
+        let postedCallback = (): void => {
           handler1.sendMessage(new concurrency.Message(1, handler1));
           let r1: boolean = handler1.removeMessages(1);
           if (r1) { removed.fetchAdd(1); }
-        });
-        handler2.post((): void => {
+        };
+        handler1.post(postedCallback);
+        let postedCallbackSecond = (): void => {
           handler2.sendMessage(new concurrency.Message(1, handler2));
           let r2: boolean = handler2.removeMessages(1);
           if (r2) { removed.fetchAdd(1); }
-        });
+        };
+        handler2.post(postedCallbackSecond);
         let waitCount: int = 0;
         while (removed.load() < 2 && waitCount < 50) {
           waitCount++;
@@ -849,7 +851,7 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         let cb: (() => void) | undefined = msg.getCallback();
         if (cb !== undefined) { cb(); }
       }, eaw);
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.sendMessage(new concurrency.Message(1, handler));
         handler.sendMessage(new concurrency.Message(2, handler));
         handler.sendMessage(new concurrency.Message(3, handler));
@@ -862,11 +864,16 @@ export default function MessageHandlerRemoveMessagesWhatTest(): void {
         if (r3) { verified.fetchAdd(1); }
         let hasNone: boolean = handler.hasMessages(1);
         if (!hasNone) { verified.fetchAdd(1); }
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (verified.load() < 4 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(verified.load()).assertEqual(4);
       done();

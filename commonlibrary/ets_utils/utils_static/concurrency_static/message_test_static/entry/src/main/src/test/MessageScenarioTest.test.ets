@@ -70,8 +70,12 @@ export default function MessageScenarioTest(): void {
           let handler: concurrency.MessageHandler;
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, handler);
@@ -338,18 +342,19 @@ export default function MessageScenarioTest(): void {
               flag = true;
             })()
           }, worker);
-          const asyncTask = () => {
-            setTimeout(() => {
+          let executeResolver: () => void = (): void => {};
+          const executedPromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
+            executeResolver = resolve;
+          });
+          const asyncTask = (): void => {
+            setTimeout((): void => {
               executed = true;
+              executeResolver();
             }, 1000);
           };
           const msg = new concurrency.Message(asyncTask, m);
           msg.sendToTarget();
-          let waitExecuted: int = 0;
-          while (!executed && waitExecuted < 50) {
-            waitExecuted++;
-            await Utils.msSleep(100);
-          }
+          await executedPromise;
           expect(executed).assertTrue();
           expect(msg.getWhat()).assertEqual(-1000000);
           expect(msg.getObject() as undefined).assertUndefined();
@@ -451,8 +456,12 @@ export default function MessageScenarioTest(): void {
           let handler: concurrency.MessageHandler;
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(handler);
@@ -548,8 +557,12 @@ export default function MessageScenarioTest(): void {
           let handler: concurrency.MessageHandler;
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(0, handler);
@@ -744,8 +757,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let msg = new concurrency.Message(handler)
@@ -798,8 +815,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let msg = new concurrency.Message(handler)
@@ -851,14 +872,18 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let msg = new concurrency.Message(handler)
           expect(handler.hasCallbacks(p)).assertEqual(false);
         } catch (error) {
-          console.error(`${TAG} error.message => ${error.message}`);
+          console.info(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -896,8 +921,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message1 = new concurrency.Message(p, handler)
@@ -950,8 +979,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message1 = new concurrency.Message(p, handler)
@@ -1004,8 +1037,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message1 = new concurrency.Message(p, handler)
@@ -1058,8 +1095,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message1 = new concurrency.Message(p, handler)
@@ -1106,15 +1147,19 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
           expect(handler.removeMessages(0)).assertEqual(false);
           expect(flag).assertEqual(false);
         } catch (error) {
-          console.error(`${TAG} error.message => ${error.message}`);
+          console.info(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -1150,18 +1195,23 @@ export default function MessageScenarioTest(): void {
               return;
             }
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
           let blockEntered = new AtomicInt(0);
           let releaseBlock = new AtomicInt(0);
-          handler.post((): void => {
+          let postedCallback = (): void => {
             blockEntered.fetchAdd(1);
             while (releaseBlock.load() == 0) {
             }
-          });
+          };
+          handler.post(postedCallback);
           try {
             let waitB: int = 0;
             while (blockEntered.load() < 1 && waitB < 500) {
@@ -1207,7 +1257,11 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(2000)
+              try {
+                await Sleep(2000)
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
@@ -1215,7 +1269,7 @@ export default function MessageScenarioTest(): void {
           expect(handler.removeMessages(1)).assertEqual(true);
           expect(handler.removeMessages(1)).assertEqual(false);
         } catch (error) {
-          console.error(`${TAG} error.message => ${error.message}`);
+          console.info(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -1304,7 +1358,11 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(2000)
+              try {
+                await Sleep(2000)
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
@@ -1312,7 +1370,7 @@ export default function MessageScenarioTest(): void {
           handler.removeMessages(1);
           expect(handler.removeMessages(1)).assertEqual(false);
         } catch (error) {
-          console.error(`${TAG} error.message => ${error.message}`);
+          console.info(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -1344,14 +1402,18 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           expect(handler.removeMessages(0)).assertEqual(false);
         } catch (error) {
-          console.error(`${TAG} error.message => ${error.message}`);
+          console.info(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -1396,7 +1458,11 @@ export default function MessageScenarioTest(): void {
                 return;
               }
               if (msg.getWhat() == 1) {
-                await Sleep(2000);
+                try {
+                  await Sleep(2000);
+                } catch (error) {
+                  console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+                }
               }
             })()
           }, worker);
@@ -1411,11 +1477,12 @@ export default function MessageScenarioTest(): void {
           let message = new concurrency.Message(1, messageObject, handler)
           let blockEntered = new AtomicInt(0);
           let releaseBlock = new AtomicInt(0);
-          handler.post((): void => {
+          let postedCallback = (): void => {
             blockEntered.fetchAdd(1);
             while (releaseBlock.load() == 0) {
             }
-          });
+          };
+          handler.post(postedCallback);
           try {
             let waitB: int = 0;
             while (blockEntered.load() < 1 && waitB < 500) {
@@ -1462,8 +1529,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
@@ -1523,7 +1594,11 @@ export default function MessageScenarioTest(): void {
                 return;
               }
               if (msg.getWhat() == 1) {
-                await Sleep(2000);
+                try {
+                  await Sleep(2000);
+                } catch (error) {
+                  console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+                }
               }
             })()
           }, worker);
@@ -1572,8 +1647,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
@@ -1625,14 +1704,18 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
           expect(handler.removeMessages(0)).assertEqual(false);
         } catch (error) {
-          console.error(`${TAG} error.message => ${error.message}`);
+          console.info(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -1664,8 +1747,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
@@ -1711,8 +1798,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
@@ -1759,8 +1850,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
@@ -1806,8 +1901,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
@@ -1854,14 +1953,18 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           expect(handler.removeMessages(1, messageObject)).assertEqual(false);
         } catch (error) {
-          console.error(`${TAG} error.message => ${error.message}`);
+          console.info(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -1923,11 +2026,12 @@ export default function MessageScenarioTest(): void {
           let message = new concurrency.Message(1, messageObject, handler)
           let blockEntered = new AtomicInt(0);
           let releaseBlock = new AtomicInt(0);
-          handler.post((): void => {
+          let postedCallback = (): void => {
             blockEntered.fetchAdd(1);
             while (releaseBlock.load() == 0) {
             }
-          });
+          };
+          handler.post(postedCallback);
           try {
             let waitB: int = 0;
             while (blockEntered.load() < 1 && waitB < 500) {
@@ -1974,7 +2078,11 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(5000)
+              try {
+                await Sleep(5000)
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler);
@@ -1982,7 +2090,7 @@ export default function MessageScenarioTest(): void {
           handler.removeMessages(1, messageObject);
           expect(handler.removeMessages(1, messageObject)).assertEqual(false);
         } catch (error) {
-          console.error(`${TAG} error.message => ${error.message}`);
+          console.info(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -2073,7 +2181,11 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(5000)
+              try {
+                await Sleep(5000)
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler);
@@ -2081,7 +2193,7 @@ export default function MessageScenarioTest(): void {
           handler.removeMessages(1, messageObject);
           expect(handler.removeMessages(1, messageObject)).assertEqual(false);
         } catch (error) {
-          console.error(`${TAG} error.message => ${error.message}`);
+          console.info(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -2112,14 +2224,18 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(handler);
           expect(handler.hasMessages(0)).assertEqual(false);
         } catch (error) {
-          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
+          console.info(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
@@ -2150,8 +2266,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(handler);
@@ -2196,8 +2316,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, handler);
@@ -2247,18 +2371,23 @@ export default function MessageScenarioTest(): void {
               return;
             }
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
           let blockEntered = new AtomicInt(0);
           let releaseBlock = new AtomicInt(0);
-          handler.post((): void => {
+          let postedCallback = (): void => {
             blockEntered.fetchAdd(1);
             while (releaseBlock.load() == 0) {
             }
-          });
+          };
+          handler.post(postedCallback);
           try {
             let waitB: int = 0;
             while (blockEntered.load() < 1 && waitB < 500) {
@@ -2310,8 +2439,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
@@ -2356,8 +2489,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
@@ -2403,8 +2540,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(handler);
@@ -2450,8 +2591,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(handler);
@@ -2497,8 +2642,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
@@ -2549,18 +2698,23 @@ export default function MessageScenarioTest(): void {
               return;
             }
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           let blockEntered = new AtomicInt(0);
           let releaseBlock = new AtomicInt(0);
-          handler.post((): void => {
+          let postedCallback = (): void => {
             blockEntered.fetchAdd(1);
             while (releaseBlock.load() == 0) {
             }
-          });
+          };
+          handler.post(postedCallback);
           try {
             let waitB: int = 0;
             while (blockEntered.load() < 1 && waitB < 500) {
@@ -2613,8 +2767,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
@@ -2660,8 +2818,12 @@ export default function MessageScenarioTest(): void {
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
@@ -2706,8 +2868,12 @@ export default function MessageScenarioTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(handler);
@@ -2750,8 +2916,12 @@ export default function MessageScenarioTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, handler);
@@ -2794,8 +2964,12 @@ export default function MessageScenarioTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(1, 'obj', handler);
@@ -2838,8 +3012,12 @@ export default function MessageScenarioTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, eaw);
           let callback: CB = () => {};
@@ -2883,8 +3061,12 @@ export default function MessageScenarioTest(): void {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
             (async () => {
-              await Sleep(1000);
-              flag = true;
+              try {
+                await Sleep(1000);
+                flag = true;
+              } catch (error) {
+                console.info(`MessageScenarioTest sleep error: ${JSON.stringify(error)}`);
+              }
             })()
           }, eaw);
           let message: concurrency.Message = new concurrency.Message(handler);

@@ -173,13 +173,14 @@ export default function MessageHandlerPostTest(): void {
           throw error;
         }
       }, eaw);
-      let result: boolean = handler.post((): void => {
+      let postedCallback = (): void => {
         try {
           stateValue.store(100);
         } catch (error) {
           console.info(`MessageHandlerPostTest0600 post callback error: ${JSON.stringify(error)}`);
         }
-      });
+      };
+      let result: boolean = handler.post(postedCallback);
       expect(result).assertTrue();
       let waitCount: int = 0;
       while (stateValue.load() !== 100 && waitCount < 50) {
@@ -203,7 +204,8 @@ export default function MessageHandlerPostTest(): void {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let result: boolean = handler.post((): void => { throw new Error("callback error"); });
+      let postedCallback = (): void => { throw new Error("callback error"); };
+      let result: boolean = handler.post(postedCallback);
       expect(result).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
     })
@@ -266,7 +268,7 @@ export default function MessageHandlerPostTest(): void {
       let eaw = new EAWorker();
       eaw.start();
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
-      let asyncCallback = async (): Promise<void> => { await Utils.msSleep(100); };
+      let asyncCallback = async (): Promise<void> => { try { await Utils.msSleep(100); } catch (error) { expect(error).assertFail(); } };
       let result: boolean = handler.post(asyncCallback as () => void);
       expect(result).assertTrue();
       if (eaw.isAlive()) { eaw.quit(); }
@@ -341,7 +343,11 @@ export default function MessageHandlerPostTest(): void {
       eaw.quit();
       let quitWait = 0;
       while (eaw.isAlive() && quitWait < 20000) {
-        await Utils.msSleep(1);
+        try {
+          await Utils.msSleep(1);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         quitWait++;
       }
       let result: boolean = handler.post((): void => {});
@@ -363,7 +369,8 @@ export default function MessageHandlerPostTest(): void {
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let successCount: int = 0;
       for (let i: int = 0; i < 100; i++) {
-        let result: boolean = handler.post((): void => {});
+        let postedCallback = (): void => {};
+        let result: boolean = handler.post(postedCallback);
         if (result) { successCount++; } else { break; }
       }
       expect(successCount).assertEqual(100);
@@ -411,7 +418,8 @@ export default function MessageHandlerPostTest(): void {
           throw error;
         }
       }, eaw);
-      handler.post((): void => { throw new Error("error"); });
+      let postedCallback = (): void => { throw new Error("error"); };
+      handler.post(postedCallback);
       handler.post((): void => { executed.fetchAdd(1); });
       handler.post((): void => { executed.fetchAdd(1); });
       handler.post((): void => { executed.fetchAdd(1); });
@@ -685,7 +693,8 @@ export default function MessageHandlerPostTest(): void {
       let removedCallback = (): void => { console.info("removed"); };
       handler.post(removedCallback);
       handler.removeCallbacks(removedCallback);
-      let result: boolean = handler.post((): void => { executed.fetchAdd(1); });
+      let postedCallback = (): void => { executed.fetchAdd(1); };
+      let result: boolean = handler.post(postedCallback);
       expect(result).assertTrue();
       let waitCount: int = 0;
       while (executed.load() < 1 && waitCount < 50) {
@@ -718,7 +727,8 @@ export default function MessageHandlerPostTest(): void {
           throw error;
         }
       }, eaw);
-      handler.post((): void => { executed.store(1); });
+      let postedCallback = (): void => { executed.store(1); };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (executed.load() < 1 && waitCount < 50) {
         waitCount++;
@@ -819,7 +829,8 @@ export default function MessageHandlerPostTest(): void {
         }
       }, eaw);
       let counter = new AtomicInt(0);
-      let result: boolean = handler.post((): void => { counter.fetchAdd(1); });
+      let postedCallback = (): void => { counter.fetchAdd(1); };
+      let result: boolean = handler.post(postedCallback);
       expect(result).assertTrue();
       let waitCount: int = 0;
       while (counter.load() < 1 && waitCount < 50) {
@@ -856,13 +867,15 @@ export default function MessageHandlerPostTest(): void {
         }
       }, eaw);
       for (let i: int = 0; i < totalTasks; i++) {
-        handler.post(async (): Promise<void> => {
+        let postedCallback = async (): Promise<void> => {
           try {
-            await lock.lockAsync(() => { counter.fetchAdd(1); return Promise.resolve(); });
+            let lockCallback = (): Promise<void> => { counter.fetchAdd(1); return Promise.resolve(); };
+            await lock.lockAsync(lockCallback);
           } catch (error) {
             expect(error).assertFail();
           }
-        } as () => void);
+        };
+        handler.post(postedCallback as () => void);
       }
       let waitCount: int = 0;
       while (counter.load() < totalTasks && waitCount < 100) {
@@ -931,7 +944,8 @@ export default function MessageHandlerPostTest(): void {
         }
       }, eaw);
       handler.post((): void => {
-        handler.post((): void => { innerExecuted.fetchAdd(1); });
+        let postedCallback = (): void => { innerExecuted.fetchAdd(1); };
+        handler.post(postedCallback);
       });
       let waitCount: int = 0;
       while (innerExecuted.load() < 1 && waitCount < 50) {
@@ -968,7 +982,8 @@ export default function MessageHandlerPostTest(): void {
         depth.store(1);
         handler.post((): void => {
           depth.store(2);
-          handler.post((): void => { depth.store(3); });
+          let postedCallback = (): void => { depth.store(3); };
+          handler.post(postedCallback);
         });
       });
       let waitCount: int = 0;
@@ -1044,7 +1059,8 @@ export default function MessageHandlerPostTest(): void {
         }
       }, eaw);
       handler.post((): void => {
-        handler.post((): void => { executed.fetchAdd(1); });
+        let postedCallback = (): void => { executed.fetchAdd(1); };
+        handler.post(postedCallback);
       });
       let waitCount: int = 0;
       while (executed.load() < 1 && waitCount < 50) {
@@ -1080,12 +1096,13 @@ export default function MessageHandlerPostTest(): void {
       }, eaw);
       let callback = (): void => {};
       // Enqueue target + hasCallbacks query atomically so target is still pending
-      handler.post((): void => {
+      let postedCallback = (): void => {
         handler.post(callback);
         let result: boolean = handler.hasCallbacks(callback);
         if (result) { found.fetchAdd(1); }
         doneCount.fetchAdd(1);
-      });
+      };
+      handler.post(postedCallback);
       let waitCount: int = 0;
       while (doneCount.load() < 1 && waitCount < 50) {
         waitCount++;
@@ -1131,8 +1148,10 @@ export default function MessageHandlerPostTest(): void {
         }
       }, eaw2);
       for (let i: int = 0; i < 5; i++) {
-        handler1.post((): void => { counter1.fetchAdd(1); });
-        handler2.post((): void => { counter2.fetchAdd(1); });
+        let postedCallback = (): void => { counter1.fetchAdd(1); };
+        handler1.post(postedCallback);
+        let postedCallbackSecond = (): void => { counter2.fetchAdd(1); };
+        handler2.post(postedCallbackSecond);
       }
       let waitCount: int = 0;
       while ((counter1.load() < 5 || counter2.load() < 5) && waitCount < 50) {
@@ -1168,12 +1187,17 @@ export default function MessageHandlerPostTest(): void {
         }
       }, eaw);
       for (let i: int = 0; i < 5; i++) {
-        handler.post((): void => { counter.fetchAdd(1); });
+        let postedCallback = (): void => { counter.fetchAdd(1); };
+        handler.post(postedCallback);
       }
       let waitCount: int = 0;
       while (counter.load() < 5 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(counter.load()).assertEqual(5);
       if (eaw.isAlive()) { eaw.quit(); }

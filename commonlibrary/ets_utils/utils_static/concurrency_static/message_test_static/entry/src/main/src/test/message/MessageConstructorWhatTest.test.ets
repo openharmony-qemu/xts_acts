@@ -889,7 +889,11 @@ export default function MessageConstructorWhatTest(): void {
       let waitCount = 0;
       while (resultCount.load() < 5 && waitCount < 50) {
         waitCount++;
-        await Utils.msSleep(100);
+        try {
+          await Utils.msSleep(100);
+        } catch (error) {
+          expect(error).assertFail();
+        }
       }
       expect(resultCount.load()).assertEqual(5);
       if (eaw.isAlive()) {
