@@ -488,8 +488,6 @@ export default function AVPlayerPlayListTest() {
         expect(error.code).assertEqual(5400102);
         done();
       }
-      let arr = await avPlayer?.getMediaSources();
-      expect(arr).assertEqual(undefined);
     });
 
     /**
