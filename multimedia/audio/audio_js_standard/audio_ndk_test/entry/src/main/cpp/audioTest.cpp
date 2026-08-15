@@ -14299,7 +14299,6 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100(napi_env 
     g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
-        LOG("GetAccessoryManager failed: %{public}d", ret);
         napi_create_int32(env, TEST_FAIL, &res);
         return res;
     }
