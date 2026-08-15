@@ -1709,7 +1709,7 @@ export default function TextPicker(): void {
      * @tc.type     Function
      * @tc.level    Level0
      */
-    it('SUB_PHOTO_PICKER_TEST_0024', Level.LEVEL0, async (done: () => void): Promise<void> => {	 
+    it('SUB_PHOTO_PICKER_TEST_0024', Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isExecutePicker) {
         done();
         return;
@@ -1719,7 +1719,6 @@ export default function TextPicker(): void {
 
       photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
       photoSelectOptions.maxSelectNumber = 3;
-
 
       const options: router.RouterOptions = {
         url: 'MainAbility/pages/BindSheetPicker',
