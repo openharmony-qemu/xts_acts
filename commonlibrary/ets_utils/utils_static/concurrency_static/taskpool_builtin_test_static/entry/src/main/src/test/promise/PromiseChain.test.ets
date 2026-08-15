@@ -2327,16 +2327,21 @@ export default function promiseChainTest(): void {
       const caseName = 'testPromiseChainAsyncFunctionThen';
       console.info(`${caseName} test start`);
 
-      await asyncFuncNested()
-        .then((value: string): string => {
-          expect(value).assertEqual('async result');
-          return value + ' then';
-        })
-        .then((value: string): void => {
-          expect(value).assertEqual('async result then');
-        });
+      try {
+        await asyncFuncNested()
+          .then((value: string): string => {
+            expect(value).assertEqual('async result');
+            return value + ' then';
+          })
+          .then((value: string): void => {
+            expect(value).assertEqual('async result then');
+          });
 
-      console.info(`${caseName} test end`);
+        console.info(`${caseName} test end`);
+      } catch (e) {
+        console.info(`testPromiseChainAsyncFunctionThen catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -2352,10 +2357,15 @@ export default function promiseChainTest(): void {
       const caseName = 'testPromiseChainAwaitPromiseChain';
       console.info(`${caseName} test start`);
 
-      const result: string = await testChainNested();
-      expect(result).assertEqual('start12');
+      try {
+        const result: string = await testChainNested();
+        expect(result).assertEqual('start12');
 
-      console.info(`${caseName} test end`);
+        console.info(`${caseName} test end`);
+      } catch (e) {
+        console.info(`testPromiseChainAwaitPromiseChain catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -3225,13 +3235,18 @@ export default function promiseChainTest(): void {
       instance.x = 5;
       instance.y = 10;
 
-      const result1: number = await instance.promiseMethod1();
-      expect(result1).assertEqual(10);
+      try {
+        const result1: number = await instance.promiseMethod1();
+        expect(result1).assertEqual(10);
 
-      const result2: number = await instance.promiseMethod2();
-      expect(result2).assertEqual(20);
+        const result2: number = await instance.promiseMethod2();
+        expect(result2).assertEqual(20);
 
-      console.info(`${caseName} test end`);
+        console.info(`${caseName} test end`);
+      } catch (e) {
+        console.info(`testPromiseChainExportedMultiplePromiseClass catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -3473,10 +3488,15 @@ export default function promiseChainTest(): void {
       console.info(`${caseName} test start`);
 
       const task = taskpool.execute(taskPoolPromiseFunc, 10);
-      const result = await task as int;
-      expect(result).assertEqual(20);
+      try {
+        const result = await task as int;
+        expect(result).assertEqual(20);
 
-      console.info(`${caseName} test end`);
+        console.info(`${caseName} test end`);
+      } catch (e) {
+        console.info(`testPromiseChainTaskPoolPromiseFunc catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -3493,10 +3513,15 @@ export default function promiseChainTest(): void {
       console.info(`${caseName} test start`);
 
       const task = taskpool.execute(taskPoolAsyncPromise, 5);
-      const result: int = await task as int;
-      expect(result).assertEqual(15);
+      try {
+        const result: int = await task as int;
+        expect(result).assertEqual(15);
 
-      console.info(`${caseName} test end`);
+        console.info(`${caseName} test end`);
+      } catch (e) {
+        console.info(`testPromiseChainTaskPoolAsyncPromise catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -3513,10 +3538,15 @@ export default function promiseChainTest(): void {
       console.info(`${caseName} test start`);
 
       const task = taskpool.execute(taskPoolPromiseChain, 10, 5);
-      const result: int = await task as int;
-      expect(result).assertEqual(30);
+      try {
+        const result: int = await task as int;
+        expect(result).assertEqual(30);
 
-      console.info(`${caseName} test end`);
+        console.info(`${caseName} test end`);
+      } catch (e) {
+        console.info(`testPromiseChainTaskPoolPromiseChain catch error: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       done();
     });
 

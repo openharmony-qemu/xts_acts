@@ -1225,17 +1225,23 @@ export default function isPromiseTest(): void {
      * @tc.level LEVEL0
      */
     it('testIsPromiseFromFunctionReturn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testIsPromiseFromFunctionReturn';
         console.info(`${caseName} test start`);
 
-        const asyncFunc: () => Promise<string> = await funcReturnAsyncFunc();
-        const promise: Promise<string> = asyncFunc();
-        const type: util.types = new util.types();
-        const result: boolean = type.isPromise(promise);
-        expect(result).assertTrue();
+        try {
+          const asyncFunc: () => Promise<string> = await funcReturnAsyncFunc();
+          const promise: Promise<string> = asyncFunc();
+          const type: util.types = new util.types();
+          const result: boolean = type.isPromise(promise);
+          expect(result).assertTrue();
 
-        console.info(`${caseName} test end`);
+          console.info(`${caseName} test end`);
+        } catch (e) {
+          console.info(`testIsPromiseFromFunctionReturn catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
+      done();
       });
 
     /**

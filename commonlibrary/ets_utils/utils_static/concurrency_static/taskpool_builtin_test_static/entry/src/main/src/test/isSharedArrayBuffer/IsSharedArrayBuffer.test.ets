@@ -1638,7 +1638,7 @@ export default function IsSharedArrayBufferTest(): void {
      * @tc.level LEVEL0
      */
     it('testTaskPoolPassArrayBufferSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testTaskPoolPassArrayBufferSize';
         console.info(`${caseName} test start`);
 
@@ -1656,6 +1656,7 @@ export default function IsSharedArrayBufferTest(): void {
           console.info(`testTaskPoolPassArrayBufferSize catch error: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
+      done();
       });
 
     /**
@@ -1667,7 +1668,7 @@ export default function IsSharedArrayBufferTest(): void {
      * @tc.level LEVEL0
      */
     it('testTaskPoolSumArrayBufferSizes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testTaskPoolSumArrayBufferSizes';
         console.info(`${caseName} test start`);
 
@@ -1690,6 +1691,7 @@ export default function IsSharedArrayBufferTest(): void {
           console.info(`testTaskPoolSumArrayBufferSizes catch error: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
+      done();
       });
 
     /**
@@ -1701,7 +1703,7 @@ export default function IsSharedArrayBufferTest(): void {
      * @tc.level LEVEL0
      */
     it('testTaskPoolParallelBufferTasks', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testTaskPoolParallelBufferTasks';
         console.info(`${caseName} test start`);
 
@@ -1728,6 +1730,7 @@ export default function IsSharedArrayBufferTest(): void {
           console.info(`testTaskPoolParallelBufferTasks catch error: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
+      done();
       });
 
     /**
@@ -1739,7 +1742,7 @@ export default function IsSharedArrayBufferTest(): void {
      * @tc.level LEVEL0
      */
     it('testTaskPoolSharedArrayBufferAtomicWrite', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testTaskPoolSharedArrayBufferAtomicWrite';
         console.info(`${caseName} test start`);
 
@@ -1761,6 +1764,7 @@ export default function IsSharedArrayBufferTest(): void {
           console.info(`testTaskPoolSharedArrayBufferAtomicWrite catch error: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
+      done();
       });
 
     /**
@@ -1772,7 +1776,7 @@ export default function IsSharedArrayBufferTest(): void {
      * @tc.level LEVEL0
      */
     it('testTaskPoolShareArrayBufferSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testTaskPoolShareArrayBufferSize';
         console.info(`${caseName} test start`);
 
@@ -1789,6 +1793,7 @@ export default function IsSharedArrayBufferTest(): void {
           console.info(`testTaskPoolShareArrayBufferSize catch error: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
+      done();
       });
 
     /**
@@ -1891,7 +1896,7 @@ export default function IsSharedArrayBufferTest(): void {
      * @tc.level LEVEL0
      */
     it('testTaskPoolCrossThreadShare', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testTaskPoolCrossThreadShare';
         console.info(`${caseName} test start`);
 
@@ -1909,6 +1914,7 @@ export default function IsSharedArrayBufferTest(): void {
           console.info(`testTaskPoolCrossThreadShare catch error: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
+      done();
       });
 
     /**
@@ -1946,7 +1952,7 @@ export default function IsSharedArrayBufferTest(): void {
      * @tc.level LEVEL0
      */
     it('testTaskPoolMethodArrayBufferSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testTaskPoolMethodArrayBufferSize';
         console.info(`${caseName} test start`);
 
@@ -1963,6 +1969,7 @@ export default function IsSharedArrayBufferTest(): void {
           console.info(`testTaskPoolMethodArrayBufferSize catch error: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
+      done();
       });
 
     /**
@@ -1974,7 +1981,7 @@ export default function IsSharedArrayBufferTest(): void {
      * @tc.level LEVEL0
      */
     it('testClassBufferCollectionTask', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testClassBufferCollectionTask';
         console.info(`${caseName} test start`);
 
@@ -1995,6 +2002,7 @@ export default function IsSharedArrayBufferTest(): void {
           console.info(`testClassBufferCollectionTask catch error: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
+      done();
       });
 
     /**
@@ -2595,7 +2603,7 @@ export default function IsSharedArrayBufferTest(): void {
      * @tc.level LEVEL0
      */
     it('testConcurrentTaskPoolBufferFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testConcurrentTaskPoolBufferFunc';
         console.info(`${caseName} test start`);
 
@@ -2612,6 +2620,7 @@ export default function IsSharedArrayBufferTest(): void {
           console.info(`testConcurrentTaskPoolBufferFunc catch error: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
+      done();
       });
 
     /**
@@ -2623,7 +2632,7 @@ export default function IsSharedArrayBufferTest(): void {
      * @tc.level LEVEL0
      */
     it('testConcurrentTaskPoolSumFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testConcurrentTaskPoolSumFunc';
         console.info(`${caseName} test start`);
 
@@ -2645,6 +2654,7 @@ export default function IsSharedArrayBufferTest(): void {
           console.info(`testConcurrentTaskPoolSumFunc catch error: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
+      done();
       });
 
     /**
@@ -2693,7 +2703,7 @@ export default function IsSharedArrayBufferTest(): void {
      * @tc.level LEVEL0
      */
     it('testClassAndTaskPoolCombination', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const caseName = 'testClassAndTaskPoolCombination';
         console.info(`${caseName} test start`);
 
@@ -2712,6 +2722,7 @@ export default function IsSharedArrayBufferTest(): void {
         }
 
         console.info(`${caseName} test end`);
+      done();
       });
   });
 

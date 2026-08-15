@@ -1325,19 +1325,24 @@ export default function CallbackWrapperTest(): void {
       async (done: () => void): Promise<void> => {
         console.info('testCallbackWrapperIIFE test start');
 
-        const iifeResult = await (async (): Promise<string> => {
-          return 'iife-result';
-        })();
+        try {
+          const iifeResult = await (async (): Promise<string> => {
+            return 'iife-result';
+          })();
 
-        expect(iifeResult).assertEqual('iife-result');
+          expect(iifeResult).assertEqual('iife-result');
 
-        const callback = util.callbackWrapper(asyncIIFEFunc);
-        callback.unsafeCall((err: Error | null, value: number) => {
-          expect(err).assertNull();
-          expect(value).assertEqual(999);
-          console.info('testCallbackWrapperIIFE test end');
-          done();
-        });
+          const callback = util.callbackWrapper(asyncIIFEFunc);
+          callback.unsafeCall((err: Error | null, value: number) => {
+            expect(err).assertNull();
+            expect(value).assertEqual(999);
+            console.info('testCallbackWrapperIIFE test end');
+            done();
+          });
+        } catch (e) {
+          console.info(`testCallbackWrapperIIFE catch error: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        }
       });
 
     /**
