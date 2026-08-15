@@ -240,7 +240,11 @@ export default function MessageConstructorHandlerTest(): void {
         let msg = new concurrency.Message(messageHandler);
         counter.fetchAdd(1);
       };
-      await Promise.all([createAndCount(), createAndCount(), createAndCount()]);
+      try {
+        await Promise.all([createAndCount(), createAndCount(), createAndCount()]);
+      } catch (error) {
+        expect(error).assertFail();
+      }
       expect(counter.load()).assertEqual(3);
       if (eaw.isAlive()) {
         eaw.quit();
@@ -267,7 +271,11 @@ export default function MessageConstructorHandlerTest(): void {
         let msg = new concurrency.Message(messageHandler);
         msg.sendToTarget();
       };
-      await Promise.all([createAndSend(), createAndSend(), createAndSend()]);
+      try {
+        await Promise.all([createAndSend(), createAndSend(), createAndSend()]);
+      } catch (error) {
+        expect(error).assertFail();
+      }
       let waitCount = 0;
       while (handlerCallbackCount.load() < 3 && waitCount < 50) {
         waitCount++;
@@ -513,7 +521,11 @@ export default function MessageConstructorHandlerTest(): void {
       for (let i = 0; i < 10; i++) {
         tasks.push(createAndSend());
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (error) {
+        expect(error).assertFail();
+      }
       let waitCount = 0;
       while (counter.load() < 10 && waitCount < 50) {
         waitCount++;

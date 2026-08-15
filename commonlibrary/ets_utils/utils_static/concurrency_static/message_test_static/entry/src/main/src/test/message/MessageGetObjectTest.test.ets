@@ -1155,20 +1155,24 @@ export default function MessageGetObjectTest(): void {
         data.value = 42;
         let msg = new concurrency.Message(1, data, messageHandler);
         let counter: AtomicInt = new AtomicInt(0);
-        await Promise.all([
-          (async (): Promise<void> => {
-            let obj = msg.getObject() as GetObjectTestData;
-            if (obj.name === "test") {
-              counter.fetchAdd(1);
-            }
-          })(),
-          (async (): Promise<void> => {
-            let obj = msg.getObject() as GetObjectTestData;
-            if (obj.value === 42) {
-              counter.fetchAdd(1);
-            }
-          })()
-        ]);
+        try {
+          await Promise.all([
+            (async (): Promise<void> => {
+              let obj = msg.getObject() as GetObjectTestData;
+              if (obj.name === "test") {
+                counter.fetchAdd(1);
+              }
+            })(),
+            (async (): Promise<void> => {
+              let obj = msg.getObject() as GetObjectTestData;
+              if (obj.value === 42) {
+                counter.fetchAdd(1);
+              }
+            })()
+          ]);
+        } catch (error) {
+          expect(error).assertFail();
+        }
         expect(counter.load()).assertEqual(2);
       } finally {
         try {

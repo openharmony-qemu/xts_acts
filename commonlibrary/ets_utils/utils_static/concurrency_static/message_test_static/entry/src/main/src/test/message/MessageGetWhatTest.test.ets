@@ -316,7 +316,11 @@ export default function MessageGetWhatTest(): void {
         results.push(what);
         counter.fetchAdd(1);
       }
-      await Promise.all([task1(), task2(), task3()]);
+      try {
+        await Promise.all([task1(), task2(), task3()]);
+      } catch (error) {
+        expect(error).assertFail();
+      }
       let waitCount: int = 0;
       while (counter.load() < 3 && waitCount < 50) {
         waitCount++;
@@ -379,9 +383,14 @@ export default function MessageGetWhatTest(): void {
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let msg = new concurrency.Message(99, messageHandler);
-      let result: int = await Promise.resolve().then((): int => {
-        return msg.getWhat();
-      });
+      let result: int = 0;
+      try {
+        result = await Promise.resolve().then((): int => {
+          return msg.getWhat();
+        });
+      } catch (error) {
+        expect(error).assertFail();
+      }
       expect(result).assertEqual(99);
       if (eaw.isAlive()) { eaw.quit(); }
       done();

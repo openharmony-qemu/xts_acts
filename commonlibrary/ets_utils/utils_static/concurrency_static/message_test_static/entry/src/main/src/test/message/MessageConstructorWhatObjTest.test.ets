@@ -1028,7 +1028,11 @@ export default function MessageConstructorWhatObjTest(): void {
         let msg = new concurrency.Message(1, "data", messageHandler);
         counter.fetchAdd(1);
       };
-      await Promise.all([createAndCount(), createAndCount(), createAndCount()]);
+      try {
+        await Promise.all([createAndCount(), createAndCount(), createAndCount()]);
+      } catch (error) {
+        expect(error).assertFail();
+      }
       expect(counter.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
       done();
@@ -1057,7 +1061,11 @@ export default function MessageConstructorWhatObjTest(): void {
       for (let i = 0; i < 10; i++) {
         tasks.push(createAndSend());
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (error) {
+        expect(error).assertFail();
+      }
       let waitCount = 0;
       while (counter.load() < 10 && waitCount < 50) {
         waitCount++;

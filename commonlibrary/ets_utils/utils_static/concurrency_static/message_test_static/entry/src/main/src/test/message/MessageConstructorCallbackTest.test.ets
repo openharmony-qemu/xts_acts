@@ -1010,7 +1010,11 @@ export default function MessageConstructorCallbackTest(): void {
         let msg = new concurrency.Message(callback, messageHandler);
         createdCount.fetchAdd(1);
       };
-      await Promise.all([createAndCount(), createAndCount(), createAndCount()]);
+      try {
+        await Promise.all([createAndCount(), createAndCount(), createAndCount()]);
+      } catch (error) {
+        expect(error).assertFail();
+      }
       expect(createdCount.load()).assertEqual(3);
       if (eaw.isAlive()) { eaw.quit(); }
       done();
@@ -1045,7 +1049,11 @@ export default function MessageConstructorCallbackTest(): void {
       for (let i = 0; i < 10; i++) {
         tasks.push(createAndSend());
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (error) {
+        expect(error).assertFail();
+      }
       let waitCount = 0;
       while (counter.load() < 10 && waitCount < 50) {
         waitCount++;

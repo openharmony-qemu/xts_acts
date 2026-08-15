@@ -657,11 +657,16 @@ export default function MessageHandlerHasMessagesWhatTest(): void {
       handler.sendMessage(msg1);
       handler.sendMessage(msg2);
       handler.sendMessage(msg3);
-      let results: boolean[] = await Promise.all([
-        Promise.resolve(handler.hasMessages(1)),
-        Promise.resolve(handler.hasMessages(2)),
-        Promise.resolve(handler.hasMessages(3))
-      ]);
+      let results: boolean[] = [];
+      try {
+        results = await Promise.all([
+          Promise.resolve(handler.hasMessages(1)),
+          Promise.resolve(handler.hasMessages(2)),
+          Promise.resolve(handler.hasMessages(3))
+        ]);
+      } catch (error) {
+        expect(error).assertFail();
+      }
       expect(results[0]).assertTrue();
       expect(results[1]).assertTrue();
       expect(results[2]).assertTrue();

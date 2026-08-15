@@ -95,7 +95,12 @@ export default function MessageHandlerPostTest(): void {
       let counter = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       let result: boolean = handler.post((): void => {
         for (let i: int = 0; i < 10; i++) { counter.fetchAdd(1); }
@@ -126,7 +131,12 @@ export default function MessageHandlerPostTest(): void {
       let verified = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       let result: boolean = handler.post((): void => {
         if (externalVar === "test") { verified.fetchAdd(1); }
@@ -156,9 +166,20 @@ export default function MessageHandlerPostTest(): void {
       let stateValue = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
-      let result: boolean = handler.post((): void => { stateValue.store(100); });
+      let result: boolean = handler.post((): void => {
+        try {
+          stateValue.store(100);
+        } catch (error) {
+          console.info(`MessageHandlerPostTest0600 post callback error: ${JSON.stringify(error)}`);
+        }
+      });
       expect(result).assertTrue();
       let waitCount: int = 0;
       while (stateValue.load() !== 100 && waitCount < 50) {
@@ -383,7 +404,12 @@ export default function MessageHandlerPostTest(): void {
       let executed = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       handler.post((): void => { throw new Error("error"); });
       handler.post((): void => { executed.fetchAdd(1); });
@@ -413,7 +439,12 @@ export default function MessageHandlerPostTest(): void {
       let executed = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       handler.post((): void => { executed.fetchAdd(1); });
       let waitCount: int = 0;
@@ -440,7 +471,12 @@ export default function MessageHandlerPostTest(): void {
       let counter = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       for (let i: int = 0; i < 5; i++) {
         let result: boolean = handler.post((): void => { counter.fetchAdd(1); });
@@ -470,7 +506,12 @@ export default function MessageHandlerPostTest(): void {
       let received = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       handler.post((): void => {
         console.info("callback executed");
@@ -503,11 +544,21 @@ export default function MessageHandlerPostTest(): void {
       let counter2 = new AtomicInt(0);
       let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw1);
       let handler2 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw2);
       handler1.post((): void => { counter1.fetchAdd(1); });
       handler2.post((): void => { counter2.fetchAdd(1); });
@@ -537,7 +588,12 @@ export default function MessageHandlerPostTest(): void {
       let counter = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       for (let i: int = 0; i < 10; i++) {
         handler.post((): void => { counter.fetchAdd(1); });
@@ -566,7 +622,12 @@ export default function MessageHandlerPostTest(): void {
       let counter = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       for (let i: int = 0; i < 100; i++) {
         handler.post((): void => { counter.fetchAdd(1); });
@@ -614,7 +675,12 @@ export default function MessageHandlerPostTest(): void {
       let executed = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       let removedCallback = (): void => { console.info("removed"); };
       handler.post(removedCallback);
@@ -645,7 +711,12 @@ export default function MessageHandlerPostTest(): void {
       let executed = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       handler.post((): void => { executed.store(1); });
       let waitCount: int = 0;
@@ -673,7 +744,12 @@ export default function MessageHandlerPostTest(): void {
       let totalTasks: int = 10;
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       for (let i: int = 0; i < totalTasks; i++) {
         handler.post((): void => { counter.fetchAdd(1); });
@@ -702,7 +778,12 @@ export default function MessageHandlerPostTest(): void {
       let counter = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       for (let i: int = 0; i < 10; i++) {
         handler.post((): void => { counter.fetchAdd(1); });
@@ -730,7 +811,12 @@ export default function MessageHandlerPostTest(): void {
       eaw.start();
       let handler: concurrency.MessageHandler | null = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       let counter = new AtomicInt(0);
       let result: boolean = handler.post((): void => { counter.fetchAdd(1); });
@@ -762,11 +848,20 @@ export default function MessageHandlerPostTest(): void {
       let totalTasks: int = 100;
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       for (let i: int = 0; i < totalTasks; i++) {
         handler.post(async (): Promise<void> => {
-          await lock.lockAsync(() => { counter.fetchAdd(1); return Promise.resolve(); });
+          try {
+            await lock.lockAsync(() => { counter.fetchAdd(1); return Promise.resolve(); });
+          } catch (error) {
+            expect(error).assertFail();
+          }
         } as () => void);
       }
       let waitCount: int = 0;
@@ -794,7 +889,12 @@ export default function MessageHandlerPostTest(): void {
       let totalTasks: int = 100;
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       for (let i: int = 0; i < totalTasks; i++) {
         handler.post((): void => { counter.fetchAdd(1); });
@@ -823,7 +923,12 @@ export default function MessageHandlerPostTest(): void {
       let innerExecuted = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       handler.post((): void => {
         handler.post((): void => { innerExecuted.fetchAdd(1); });
@@ -852,7 +957,12 @@ export default function MessageHandlerPostTest(): void {
       let depth = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       handler.post((): void => {
         depth.store(1);
@@ -886,7 +996,12 @@ export default function MessageHandlerPostTest(): void {
       let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       let targetCallback = (): void => { console.info("target"); };
       // Query immediately after post so target is still pending (not after it drains)
@@ -921,7 +1036,12 @@ export default function MessageHandlerPostTest(): void {
       let executed = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       handler.post((): void => {
         handler.post((): void => { executed.fetchAdd(1); });
@@ -951,7 +1071,12 @@ export default function MessageHandlerPostTest(): void {
       let doneCount = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       let callback = (): void => {};
       // Enqueue target + hasCallbacks query atomically so target is still pending
@@ -989,11 +1114,21 @@ export default function MessageHandlerPostTest(): void {
       let counter2 = new AtomicInt(0);
       let handler1 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw1);
       let handler2 = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw2);
       for (let i: int = 0; i < 5; i++) {
         handler1.post((): void => { counter1.fetchAdd(1); });
@@ -1025,7 +1160,12 @@ export default function MessageHandlerPostTest(): void {
       let counter = new AtomicInt(0);
       let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
         let cb: (() => void) | undefined = msg.getCallback();
-        if (cb !== undefined) { cb(); }
+        try {
+          if (cb !== undefined) { cb(); }
+        } catch (error) {
+          console.info(`MessageHandlerPostTest dispatch callback error: ${JSON.stringify(error)}`);
+          throw error;
+        }
       }, eaw);
       for (let i: int = 0; i < 5; i++) {
         handler.post((): void => { counter.fetchAdd(1); });
