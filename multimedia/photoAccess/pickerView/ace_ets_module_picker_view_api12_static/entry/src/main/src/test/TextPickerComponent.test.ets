@@ -1710,34 +1710,34 @@ export default function TextPicker(): void {
      * @tc.level    Level0
      */
     it('SUB_PHOTO_PICKER_TEST_0024', Level.LEVEL0, async (done: () => void): Promise<void> => {	 
-      if (!isExecutePicker) {	 
-        done();	 
-        return;	 
-      }	 
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
 
-      const photoSelectOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();	 
+      const photoSelectOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
 
-      photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;	 
-      photoSelectOptions.maxSelectNumber = 3;	 
+      photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+      photoSelectOptions.maxSelectNumber = 3;
 
 
-      const options: router.RouterOptions = {	 
-        url: 'MainAbility/pages/BindSheetPicker',	 
-        params: {	 
-          photoSelectOptions: photoSelectOptions	 
-        } as RouterSelectOptionsParams	 
-      }	 
+      const options: router.RouterOptions = {
+        url: 'MainAbility/pages/BindSheetPicker',
+        params: {
+          photoSelectOptions: photoSelectOptions
+        } as RouterSelectOptionsParams
+      }
 
-      for (let index: int = 0; index < 3; index++) {	 
-        await routeToUrl(options); 
-        await Utils.msSleep(1000); 
-        let ret: boolean = await testCompleteButton(driver, index); 
-        expect(ret).assertTrue(); 
-        await Utils.msSleep(500); 
-        routerInstance.back(); 
-      } 
-      console.info('SUB_PHOTO_PICKER_TEST_0024 finish'); 
-      done();	 
+      for (let index: int = 0; index < 3; index++) {
+        await routeToUrl(options);
+        await Utils.msSleep(1000);
+        let ret: boolean = await testCompleteButton(driver, index);
+        expect(ret).assertTrue();
+        await Utils.msSleep(500);
+        routerInstance.back();
+      }
+      console.info('SUB_PHOTO_PICKER_TEST_0024 finish');
+      done();
     });
 
     /**
