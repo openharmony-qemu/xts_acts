@@ -420,135 +420,12 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     /**
      * @tc.name    testAsyncLockLockAsyncThirdOverload2100
      * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2100
-     * @tc.desc    Verify callback + SHARED + default options
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('testAsyncLockLockAsyncThirdOverload2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let lock = new AsyncLock();
-      let executed = false;
-      let options = new AsyncLockOptions<void>();
-      await lock.lockAsync<void, void>(() => {
-        executed = true;
-      }, AsyncLockMode.SHARED, options);
-      expect(executed).assertTrue();
-
-    });
-
-    /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload2200
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2200
-     * @tc.desc    Verify callback + EXCLUSIVE + timeout options
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('testAsyncLockLockAsyncThirdOverload2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let lock = new AsyncLock();
-      let executed = false;
-      let options = new AsyncLockOptions<void>();
-      options.timeout = 1000;
-      await lock.lockAsync<void, void>(() => {
-        executed = true;
-      }, AsyncLockMode.EXCLUSIVE, options);
-      expect(executed).assertTrue();
-
-    });
-
-    /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload2300
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2300
-     * @tc.desc    Verify callback + EXCLUSIVE + isAvailable options
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('testAsyncLockLockAsyncThirdOverload2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let lock = new AsyncLock();
-      let executed = false;
-      let options = new AsyncLockOptions<void>();
-      options.isAvailable = true;
-      await lock.lockAsync<void, void>(() => {
-        executed = true;
-      }, AsyncLockMode.EXCLUSIVE, options);
-      expect(executed).assertTrue();
-
-    });
-
-    /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload2400
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2400
-     * @tc.desc    Verify callback + EXCLUSIVE + signal options
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('testAsyncLockLockAsyncThirdOverload2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let lock = new AsyncLock();
-      let executed = false;
-      let s: AbortSignal<string> = { aborted: false, reason: "Aborted" };
-      let options = new AsyncLockOptions<string>();
-      options.signal = s;
-      await lock.lockAsync<void, string>(() => {
-        executed = true;
-      }, AsyncLockMode.EXCLUSIVE, options);
-      expect(executed).assertTrue();
-
-    });
-
-    /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload2500
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2500
-     * @tc.desc    Verify callback + EXCLUSIVE + complete options
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('testAsyncLockLockAsyncThirdOverload2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let lock = new AsyncLock();
-      let executed = false;
-      let s: AbortSignal<string> = { aborted: false, reason: "Aborted" };
-      let options = new AsyncLockOptions<string>(true, s, 1000);
-      expect(options.isAvailable).assertEqual(true);
-      expect(options.signal).assertEqual(s);
-      expect(options.timeout).assertEqual(1000);
-      await lock.lockAsync<void, string>(() => {
-        executed = true;
-      }, AsyncLockMode.EXCLUSIVE, options);
-      expect(executed).assertTrue();
-
-    });
-
-    /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload2600
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2600
-     * @tc.desc    Verify lockAsync returns Promise<T>
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('testAsyncLockLockAsyncThirdOverload2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let lock = new AsyncLock();
-      let options = new AsyncLockOptions<void>();
-      let executed = false;
-      let p: Promise<void> = lock.lockAsync<void, void>(() => {
-        executed = true;
-      }, AsyncLockMode.EXCLUSIVE, options);
-      await p;
-      expect(executed).assertTrue();
-
-    });
-
-    /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload2700
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2700
      * @tc.desc    Verify await returns callback result
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockLockAsyncThirdOverload2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
       let result = await lock.lockAsync<string, string>(() => "result", AsyncLockMode.SHARED, options);
@@ -557,14 +434,14 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload2800
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2800
+     * @tc.name    testAsyncLockLockAsyncThirdOverload2200
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2200
      * @tc.desc    Verify lock is automatically released after callback
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockLockAsyncThirdOverload2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
       await lock.lockAsync<void, void>(() => {}, AsyncLockMode.EXCLUSIVE, options);
@@ -574,34 +451,14 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload2900
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2900
-     * @tc.desc    Verify callback returns void
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('testAsyncLockLockAsyncThirdOverload2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let lock = new AsyncLock();
-      let options = new AsyncLockOptions<void>();
-
-      let voidResult: void = await lock.lockAsync<void, void>(() => {
-        return;
-      }, AsyncLockMode.EXCLUSIVE, options);
-
-      expect(voidResult).assertUndefined();
-
-    });
-
-    /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload3000
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3000
+     * @tc.name    testAsyncLockLockAsyncThirdOverload2300
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2300
      * @tc.desc    Verify callback returns empty array
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockLockAsyncThirdOverload3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<number[]>();
       let result = await lock.lockAsync<number[], number[]>(() => [], AsyncLockMode.EXCLUSIVE, options);
@@ -610,31 +467,14 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload3100
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3100
-     * @tc.desc    Verify return value type is Promise<T>
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it('testAsyncLockLockAsyncThirdOverload3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let lock = new AsyncLock();
-      let options = new AsyncLockOptions<number>();
-      let p = lock.lockAsync<number, number>(() => 100, AsyncLockMode.SHARED, options);
-      let result = await p;
-      expect(result).assertEqual(100);
-
-    });
-
-    /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload3200
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3200
+     * @tc.name    testAsyncLockLockAsyncThirdOverload2400
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2400
      * @tc.desc    Verify generic T and U types
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockLockAsyncThirdOverload3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
       let result = await lock.lockAsync<number, string>(() => 1, AsyncLockMode.EXCLUSIVE, options);
@@ -643,14 +483,14 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload3300
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3300
+     * @tc.name    testAsyncLockLockAsyncThirdOverload2500
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2500
      * @tc.desc    Verify callback returns number max value
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockLockAsyncThirdOverload3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<number>();
       let result = await lock.lockAsync<number, number>(() => Number.MAX_VALUE, AsyncLockMode.EXCLUSIVE, options);
@@ -659,82 +499,91 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload3400
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3400
+     * @tc.name    testAsyncLockLockAsyncThirdOverload2600
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2600
      * @tc.desc    Verify callback throws Error
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockLockAsyncThirdOverload3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
+      let errorCaught = false;
       try {
         await lock.lockAsync<void, void>(() => {
           throw new Error("callback error");
         }, AsyncLockMode.EXCLUSIVE, options);
         expect().assertFail();
       } catch (error) {
-        expect(error.message).not().assertNull();
+        errorCaught = true;
+        expect(error.message).assertEqual("callback error");
       }
+      expect(errorCaught).assertTrue();
 
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload3500
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3500
+     * @tc.name    testAsyncLockLockAsyncThirdOverload2700
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2700
      * @tc.desc    Verify callback throws custom Error
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockLockAsyncThirdOverload3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
 
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
+      let errorCaught = false;
       try {
         await lock.lockAsync<void, void>(() => {
           throw new CustomError("custom error");
         }, AsyncLockMode.SHARED, options);
         expect().assertFail();
       } catch (error) {
-        expect(error.message).not().assertNull();
+        errorCaught = true;
+        expect(error.message).assertEqual("custom error");
       }
+      expect(errorCaught).assertTrue();
 
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload3600
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3600
+     * @tc.name    testAsyncLockLockAsyncThirdOverload2800
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2800
      * @tc.desc    Verify callback throws exception causes rejection
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockLockAsyncThirdOverload3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
       let p = lock.lockAsync<void, void>(() => {
         throw new Error("reject");
       }, AsyncLockMode.EXCLUSIVE, options);
+      let errorCaught = false;
       try {
         await p;
         expect().assertFail();
       } catch (error) {
-        expect(error.message).not().assertNull();
+        errorCaught = true;
+        expect(error.message).assertEqual("reject");
       }
+      expect(errorCaught).assertTrue();
 
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload3700
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3700
+     * @tc.name    testAsyncLockLockAsyncThirdOverload2900
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_2900
      * @tc.desc    Verify isAvailable=true lock can be acquired immediately
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockLockAsyncThirdOverload3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
       options.isAvailable = true;
@@ -749,40 +598,51 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload3800
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3800
+     * @tc.name    testAsyncLockLockAsyncThirdOverload3000
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3000
      * @tc.desc    Verify non-blocking mode does not wait
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockLockAsyncThirdOverload3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
-      let firstLock = lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
+      let releaseFirst: () => void = () => {};
+      let firstStartedResolve: () => void = () => {};
+      let firstStartedPromise: Promise<void> = new Promise<void>((resolve): void => {
+        firstStartedResolve = (): void => { resolve(undefined); };
+      });
+      let p1: Promise<void> = lock.lockAsync<void>(async (): Promise<void> => {
+        firstStartedResolve();
+        await new Promise<void>((resolve): void => {
+          releaseFirst = (): void => { resolve(undefined); };
+        });
+      }, AsyncLockMode.EXCLUSIVE);
+      await firstStartedPromise;
       let options = new AsyncLockOptions<void>();
       options.isAvailable = true;
-      let caught = false;
+      let errorCaught = false;
       try {
-        await lock.lockAsync<void, void>(() => {}, AsyncLockMode.EXCLUSIVE, options);
+        await lock.lockAsync<void, void>((): void => {}, AsyncLockMode.EXCLUSIVE, options);
         expect().assertFail();
       } catch (error) {
-        caught = true;
-        expect(error instanceof Error).assertTrue();
+        errorCaught = true;
       }
-      expect(caught).assertTrue();
-      await firstLock;
+      expect(errorCaught).assertTrue();
+      releaseFirst();
+      await p1;
 
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload3900
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3900
+     * @tc.name    testAsyncLockLockAsyncThirdOverload3100
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3100
      * @tc.desc    Verify isAvailable=false blocks waiting for lock
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockLockAsyncThirdOverload3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
       options.isAvailable = false;
@@ -809,14 +669,14 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload4000
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4000
+     * @tc.name    testAsyncLockLockAsyncThirdOverload3200
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3200
      * @tc.desc    Verify timeout>0 enables timeout
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockLockAsyncThirdOverload4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
       options.timeout = 1000;
@@ -830,14 +690,14 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload4100
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4100
+     * @tc.name    testAsyncLockLockAsyncThirdOverload3300
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3300
      * @tc.desc    Verify acquire lock before timeout succeeds
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockLockAsyncThirdOverload4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
       options.timeout = 2000;
@@ -852,14 +712,14 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload4200
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4200
+     * @tc.name    testAsyncLockLockAsyncThirdOverload3400
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3400
      * @tc.desc    Verify signal.aborted=false request continues
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockLockAsyncThirdOverload4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let s: AbortSignal<string> = { aborted: false, reason: "Aborted" };
       let options = new AsyncLockOptions<string>();
@@ -874,58 +734,78 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload4300
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4300
+     * @tc.name    testAsyncLockLockAsyncThirdOverload3500
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3500
      * @tc.desc    Verify signal.aborted=true request cancelled
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockLockAsyncThirdOverload4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let lock = new AsyncLock();
-      let s: AbortSignal<string> = { aborted: true, reason: "User cancelled" };
-      let options = new AsyncLockOptions<string>();
-      options.signal = s;
+    it('testAsyncLockLockAsyncThirdOverload3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        await lock.lockAsync<void, string>(() => {}, AsyncLockMode.EXCLUSIVE, options);
-        expect().assertFail();
+        let lock = new AsyncLock();
+        let s: AbortSignal<string> = { aborted: true, reason: "User cancelled" };
+        let options = new AsyncLockOptions<string>();
+        options.signal = s;
+        let rejected = false;
+        try {
+          await lock.lockAsync<void, string>(() => {}, AsyncLockMode.EXCLUSIVE, options);
+          expect().assertFail();
+        } catch (error) {
+          rejected = true;
+          expect(error instanceof Error).assertTrue();
+          expect(error.message).assertEqual("User cancelled");
+        }
+        expect(rejected).assertTrue();
+        done();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        console.error("testAsyncLockLockAsyncThirdOverload3500 failed");
+        expect(false).assertFail();
+        done();
       }
-
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload4400
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4400
+     * @tc.name    testAsyncLockLockAsyncThirdOverload3600
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3600
      * @tc.desc    Verify reason passed to rejection error
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockLockAsyncThirdOverload4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let lock = new AsyncLock();
-      let s: AbortSignal<string> = { aborted: true, reason: "User cancelled" };
-      let options = new AsyncLockOptions<string>();
-      options.signal = s;
+    it('testAsyncLockLockAsyncThirdOverload3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        await lock.lockAsync<void, string>(() => {}, AsyncLockMode.EXCLUSIVE, options);
-        expect().assertFail();
+        let lock = new AsyncLock();
+        let s: AbortSignal<string> = { aborted: true, reason: "User cancelled" };
+        let options = new AsyncLockOptions<string>();
+        options.signal = s;
+        let rejected = false;
+        try {
+          await lock.lockAsync<void, string>(() => {}, AsyncLockMode.EXCLUSIVE, options);
+          expect().assertFail();
+        } catch (error) {
+          rejected = true;
+          expect(error instanceof Error).assertTrue();
+          expect(error.message).assertEqual("User cancelled");
+        }
+        expect(rejected).assertTrue();
+        done();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        console.error("testAsyncLockLockAsyncThirdOverload3600 failed");
+        expect(false).assertFail();
+        done();
       }
-
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload4500
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4500
+     * @tc.name    testAsyncLockLockAsyncThirdOverload3700
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3700
      * @tc.desc    Verify T and U use same type
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockLockAsyncThirdOverload4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<number>();
       let result = await lock.lockAsync<number, number>(() => 100, AsyncLockMode.EXCLUSIVE, options);
@@ -934,14 +814,14 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload4600
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4600
+     * @tc.name    testAsyncLockLockAsyncThirdOverload3800
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3800
      * @tc.desc    Verify T and U use different types
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockLockAsyncThirdOverload4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
       let result = await lock.lockAsync<number, string>(() => 42, AsyncLockMode.EXCLUSIVE, options);
@@ -950,14 +830,14 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload4700
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4700
+     * @tc.name    testAsyncLockLockAsyncThirdOverload3900
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_3900
      * @tc.desc    Verify T is void U is other type
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockLockAsyncThirdOverload4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
 
@@ -972,14 +852,14 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload4800
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4800
-     * @tc.desc    Verify U type matches signal.reason
+     * @tc.name    testAsyncLockLockAsyncThirdOverload4000
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4000
+     * @tc.desc    Verify signal.aborted=false executes callback normally
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockLockAsyncThirdOverload4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let s: AbortSignal<string> = { aborted: false, reason: "Aborted" };
       let options = new AsyncLockOptions<string>();
@@ -995,14 +875,14 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload4900
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4900
+     * @tc.name    testAsyncLockLockAsyncThirdOverload4100
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4100
      * @tc.desc    Verify await lockAsync with options
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockLockAsyncThirdOverload4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
       let test: () => Promise<string> = async (): Promise<string> => {
@@ -1014,49 +894,63 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload5000
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_5000
+     * @tc.name    testAsyncLockLockAsyncThirdOverload4200
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4200
      * @tc.desc    Verify then chain call
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockLockAsyncThirdOverload5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      let lock = new AsyncLock();
-      let options = new AsyncLockOptions<string>();
-      let result = await lock.lockAsync<string, string>(() => "test", AsyncLockMode.SHARED, options);
-      expect(result).assertEqual("test");
-
+    it('testAsyncLockLockAsyncThirdOverload4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
+      try {
+        let lock = new AsyncLock();
+        let options = new AsyncLockOptions<string>();
+        let p: Promise<string> = lock.lockAsync<string, string>(() => "test", AsyncLockMode.SHARED, options);
+        p.then((result: string): void => {
+          expect(result).assertEqual("test");
+          done();
+        });
+      } catch (error) {
+        console.error("testAsyncLockLockAsyncThirdOverload4200 failed");
+        expect(false).assertFail();
+        done();
+      }
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload5100
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_5100
-     * @tc.desc    Verify catch chain call
+     * @tc.name    testAsyncLockLockAsyncThirdOverload4300
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4300
+     * @tc.desc    Verify lockAsync rejection is handled via catch
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testAsyncLockLockAsyncThirdOverload5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
-      await lock.lockAsync<void, void>(() => {
-        throw new Error("catch");
-      }, AsyncLockMode.EXCLUSIVE, options).catch((error:Error) => {
-        expect(error.message).not().assertNull();
-      });
+      let errorCaught = false;
+      try {
+        await lock.lockAsync<void, void>(() => {
+          throw new Error("catch");
+        }, AsyncLockMode.EXCLUSIVE, options);
+        expect().assertFail();
+      } catch (error) {
+        errorCaught = true;
+        expect(error.message).assertEqual("catch");
+      }
+      expect(errorCaught).assertTrue();
 
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload5200
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_5200
+     * @tc.name    testAsyncLockLockAsyncThirdOverload4400
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4400
      * @tc.desc    Verify multiple concurrent lockAsync with options
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testAsyncLockLockAsyncThirdOverload5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testAsyncLockLockAsyncThirdOverload4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let lock = new AsyncLock();
       let counterLock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
@@ -1085,20 +979,94 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
     });
 
     /**
-     * @tc.name    testAsyncLockLockAsyncThirdOverload5300
-     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_5300
-     * @tc.desc    Verify lockAsync with options executes callback
+     * @tc.name    testAsyncLockLockAsyncThirdOverload4500
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4500
+     * @tc.desc    Verify Promise is rejected when waiting exceeds timeout
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testAsyncLockLockAsyncThirdOverload5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let lock = new AsyncLock();
-      let options = new AsyncLockOptions<void>();
-      let executed = false;
-      await lock.lockAsync<void, void>(() => { executed = true; }, AsyncLockMode.EXCLUSIVE, options);
-      expect(executed).assertTrue();
+    it('testAsyncLockLockAsyncThirdOverload4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let lock = new AsyncLock();
+        let releaseFirst: () => void = () => {};
+        let startedResolve: () => void = () => {};
+        let startedPromise: Promise<void> = new Promise<void>((resolve): void => {
+          startedResolve = (): void => { resolve(undefined); };
+        });
+        let p1: Promise<void> = lock.lockAsync<void>(async (): Promise<void> => {
+          startedResolve();
+          await new Promise<void>((resolve): void => {
+            releaseFirst = (): void => { resolve(undefined); };
+          });
+        }, AsyncLockMode.EXCLUSIVE);
+        await startedPromise;
+        let options = new AsyncLockOptions<void>();
+        options.timeout = 300;
+        let errorCaught = false;
+        try {
+          await lock.lockAsync<void, void>((): void => {}, AsyncLockMode.EXCLUSIVE, options);
+          expect().assertFail();
+        } catch (error) {
+          errorCaught = true;
+        }
+        expect(errorCaught).assertTrue();
+        releaseFirst();
+        await p1;
+        done();
+      } catch (error) {
+        console.error("testAsyncLockLockAsyncThirdOverload4500 failed");
+        expect(false).assertFail();
+        done();
+      }
+    });
 
+    /**
+     * @tc.name    testAsyncLockLockAsyncThirdOverload4600
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_THIRD_OVERLOAD_TEST_4600
+     * @tc.desc    Verify setting aborted=true during waiting cancels the request
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testAsyncLockLockAsyncThirdOverload4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let lock = new AsyncLock();
+        let releaseFirst: () => void = () => {};
+        let startedResolve: () => void = () => {};
+        let startedPromise: Promise<void> = new Promise<void>((resolve): void => {
+          startedResolve = (): void => { resolve(undefined); };
+        });
+        let p1: Promise<void> = lock.lockAsync<void>(async (): Promise<void> => {
+          startedResolve();
+          await new Promise<void>((resolve): void => {
+            releaseFirst = (): void => { resolve(undefined); };
+          });
+        }, AsyncLockMode.EXCLUSIVE);
+        await startedPromise;
+        let s: AbortSignal<string> = { aborted: false, reason: "Aborted" };
+        let options = new AsyncLockOptions<string>();
+        options.signal = s;
+        let p: Promise<void> = lock.lockAsync<void, string>((): void => {}, AsyncLockMode.EXCLUSIVE, options);
+        s.aborted = true;
+        releaseFirst();
+        await p1;
+        let rejected = false;
+        try {
+          await p;
+          expect().assertFail();
+        } catch (error) {
+          rejected = true;
+          expect(error instanceof Error).assertTrue();
+          expect(error.message).assertEqual("Aborted");
+        }
+        expect(rejected).assertTrue();
+        done();
+      } catch (error) {
+        console.error("testAsyncLockLockAsyncThirdOverload4600 failed");
+        expect(false).assertFail();
+        done();
+      }
     });
 
   });
