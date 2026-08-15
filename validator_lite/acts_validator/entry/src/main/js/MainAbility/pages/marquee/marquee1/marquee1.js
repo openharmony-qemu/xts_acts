@@ -18,7 +18,7 @@ import router from '@system.router';
 export default {
   data: {
     itemIndex: -1,
-    text: 'Hello JS, we are friends.',
+    text: 'Hello JS, we are friends. This is a marquee test.',
     speed: 1,
     flag: true,
     str: '',
