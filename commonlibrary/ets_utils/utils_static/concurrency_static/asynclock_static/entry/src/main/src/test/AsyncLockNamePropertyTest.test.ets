@@ -299,7 +299,12 @@ export default function AsyncLockNamePropertyTest(): void {
       try {
       let lock = AsyncLock.request('callbackLock');
       let result = await lock.lockAsync<string>(() => {
-        return lock.name;
+        try {
+          return lock.name;
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
       });
       expect(result).assertEqual('callbackLock');
 

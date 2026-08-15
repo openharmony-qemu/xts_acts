@@ -322,7 +322,12 @@ export default function AsyncLockRequestTest(): void {
       let lock = AsyncLock.request("useLock");
       let called = false;
       await lock.lockAsync<void>(() => {
-        called = true;
+        try {
+          called = true;
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
       });
       expect(called).assertTrue();
 
@@ -653,7 +658,12 @@ export default function AsyncLockRequestTest(): void {
       try {
       let lock = AsyncLock.request("outerLock");
       let innerLock = await lock.lockAsync<AsyncLock>(() => {
-        return AsyncLock.request("innerLock");
+        try {
+          return AsyncLock.request("innerLock");
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
       });
       expect(innerLock.name).assertEqual("innerLock");
 

@@ -539,8 +539,13 @@ export default function AsyncLockCallbackTest(): void {
     it('testAsyncLockCallback2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       const callback = async () => {
-        const value = await Promise.resolve(42);
-        return value;
+        try {
+          const value = await Promise.resolve(42);
+          return value;
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
       };
       const lock = new AsyncLock();
       const result = await lock.lockAsync<int>(callback);
@@ -614,8 +619,13 @@ export default function AsyncLockCallbackTest(): void {
     it('testAsyncLockCallback2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       const callback = async () => {
-        const v = await Promise.resolve(10);
-        return v * 2;
+        try {
+          const v = await Promise.resolve(10);
+          return v * 2;
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
       };
       const lock = new AsyncLock();
       const result = await lock.lockAsync<int>(callback);
@@ -637,9 +647,14 @@ export default function AsyncLockCallbackTest(): void {
      */
     it('testAsyncLockCallback2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-      const callback = () => {
-        return Promise.reject(new Error("fail"))
-          .catch((_e: Error) => 999);
+      const callback = async (): Promise<int> => {
+        try {
+          await Promise.reject(new Error("fail"));
+          expect().assertFail();
+          return 0;
+        } catch (error) {
+          return 999;
+        }
       };
       const lock = new AsyncLock();
       const result = await lock.lockAsync<int>(callback);
@@ -662,9 +677,13 @@ export default function AsyncLockCallbackTest(): void {
     it('testAsyncLockCallback2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let executed = false;
-      const callback = () => {
-        return Promise.resolve(50)
-          .finally(() => { executed = true; });
+      const callback = async (): Promise<int> => {
+        try {
+          await Promise.resolve(50);
+          return 50;
+        } finally {
+          executed = true;
+        }
       };
       const lock = new AsyncLock();
       const result = await lock.lockAsync<int>(callback);

@@ -15,6 +15,7 @@
  */
 
 import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
+import { sleep } from './utils/utils';
 
 interface GeneratedTypeLiteralInterface_1 {
   held: number;
@@ -533,9 +534,14 @@ export default function AsyncLockQueryAllTest(): void {
       try {
       let lock = AsyncLock.request('duringExec');
       await lock.lockAsync<void>(() => {
-        let states = AsyncLock.queryAll();
-        let hasHeld = states.some(s => s.held.length > 0);
-        expect(hasHeld).assertTrue();
+        try {
+          let states = AsyncLock.queryAll();
+          let hasHeld = states.some(s => s.held.length > 0);
+          expect(hasHeld).assertTrue();
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
       });
 
       } catch (error) {
@@ -556,7 +562,13 @@ export default function AsyncLockQueryAllTest(): void {
     it('testAsyncLockQueryAll3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request('afterExec');
-      await lock.lockAsync<void>(() => {});
+      await lock.lockAsync<void>(() => {
+        try {
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
+      });
       let state = lock.query();
       expect(state.held.length).assertEqual(0);
       expect(state.pending.length).assertEqual(0);
@@ -640,11 +652,20 @@ export default function AsyncLockQueryAllTest(): void {
       try {
         let lock = AsyncLock.request('pendingLockAll');
         let p1 = lock.lockAsync<void>((): Promise<void> => {
-          return new Promise<void>((resolve): void => {
-            setTimeout((): void => { resolve(undefined); }, 100);
-          });
+          try {
+            return sleep(100);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         });
-        let p2 = lock.lockAsync<void>(() => {});
+        let p2 = lock.lockAsync<void>(() => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
+        });
         let states = AsyncLock.queryAll();
         let hasPending = states.some(s => s.pending.length > 0);
         expect(hasPending).assertTrue();
@@ -707,9 +728,7 @@ export default function AsyncLockQueryAllTest(): void {
         for (let i = 0; i < 10; i++) {
           let states = AsyncLock.queryAll();
           expect(Array.isArray(states)).assertTrue();
-          await new Promise<void>((resolve): void => {
-            setTimeout((): void => { resolve(undefined); }, 100);
-          });
+          await sleep(100);
         }
         done();
       } catch (error) {

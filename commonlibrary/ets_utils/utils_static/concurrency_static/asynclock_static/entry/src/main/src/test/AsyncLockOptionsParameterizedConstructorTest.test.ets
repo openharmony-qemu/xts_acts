@@ -15,6 +15,7 @@
  */
 
 import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
+import { sleep } from './utils/utils';
 
 interface LockData {
   id: number;
@@ -230,7 +231,12 @@ export default function AsyncLockOptionsParameterizedConstructorTest(): void {
           let options = new AsyncLockOptions<string>(true, s, 1000);
           let executed = false;
           await lock.lockAsync<void, string>(() => {
-            executed = true;
+            try {
+              executed = true;
+            } catch (error) {
+              console.error(`callback failed: ${error}`);
+              throw error;
+            }
           }, AsyncLockMode.EXCLUSIVE, options);
           expect(executed).assertTrue();
           done();
@@ -340,6 +346,11 @@ export default function AsyncLockOptionsParameterizedConstructorTest(): void {
           let lock = new AsyncLock();
           let options = new AsyncLockOptions<void>(true, null, 0);
           let firstLock = lock.lockAsync<void>(() => {
+            try {
+            } catch (error) {
+              console.error(`callback failed: ${error}`);
+              throw error;
+            }
           }, AsyncLockMode.EXCLUSIVE);
           let rejected = false;
           try {
@@ -374,11 +385,21 @@ export default function AsyncLockOptionsParameterizedConstructorTest(): void {
           let executed = false;
           let executionOrder: number[] = [];
           let p1 = lock.lockAsync<void>(() => {
-            executionOrder.push(1);
+            try {
+              executionOrder.push(1);
+            } catch (error) {
+              console.error(`callback failed: ${error}`);
+              throw error;
+            }
           }, AsyncLockMode.EXCLUSIVE);
           let p2 = lock.lockAsync<void, void>(() => {
-            executionOrder.push(2);
-            executed = true;
+            try {
+              executionOrder.push(2);
+              executed = true;
+            } catch (error) {
+              console.error(`callback failed: ${error}`);
+              throw error;
+            }
           }, AsyncLockMode.EXCLUSIVE, options);
           await p1;
           await p2;
@@ -407,15 +428,21 @@ export default function AsyncLockOptionsParameterizedConstructorTest(): void {
           let lock = new AsyncLock();
           let options = new AsyncLockOptions<void>(false, null, 100);
           let holder = lock.lockAsync<void>((): Promise<void> => {
-            return new Promise<void>((resolve): void => {
-              setTimeout((): void => {
-                resolve(undefined);
-              }, 500);
-            });
+            try {
+              return sleep(500);
+            } catch (error) {
+              console.error(`callback failed: ${error}`);
+              throw error;
+            }
           });
           let rejected = false;
           try {
             await lock.lockAsync<void, void>(() => {
+              try {
+              } catch (error) {
+                console.error(`callback failed: ${error}`);
+                throw error;
+              }
             }, AsyncLockMode.EXCLUSIVE, options);
           } catch (error) {
             rejected = true;

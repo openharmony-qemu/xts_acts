@@ -56,7 +56,13 @@ export default function AsyncLockConstructorTest(): void {
     it('testAsyncLockConstructor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await expect(lock.lockAsync<void>(() => {})).assertPromiseIsResolved()
+      await expect(lock.lockAsync<void>(() => {
+        try {
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
+      })).assertPromiseIsResolved()
       } catch (error) {
         console.error("testAsyncLockConstructor0300 failed");
         expect(false).assertFail();
@@ -161,9 +167,27 @@ export default function AsyncLockConstructorTest(): void {
       try {
       let lock = new AsyncLock();
       let promises: Promise<void>[] = [
-        lock.lockAsync<void>(() => {}),
-        lock.lockAsync<void>(() => {}),
-        lock.lockAsync<void>(() => {})
+        lock.lockAsync<void>(() => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
+        }),
+        lock.lockAsync<void>(() => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
+        }),
+        lock.lockAsync<void>(() => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
+        })
       ];
       await Promise.all(promises);
       expect(promises.length).assertEqual(3);
@@ -186,7 +210,14 @@ export default function AsyncLockConstructorTest(): void {
       try {
       let createAndUseLock = async (): Promise<string> => {
         let lock = new AsyncLock();
-        return await lock.lockAsync<string>(() => 'result');
+        return await lock.lockAsync<string>(() => {
+          try {
+            return 'result';
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
+        });
       };
       let result = await createAndUseLock();
       expect(result).assertEqual('result');
@@ -357,8 +388,13 @@ export default function AsyncLockConstructorTest(): void {
       let lock = new AsyncLock();
       let called = false;
       await lock.lockAsync<void>(() => {
-        called = true;
-        return Promise.resolve();
+        try {
+          called = true;
+          return Promise.resolve();
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
       });
       expect(called).assertTrue();
       } catch (error) {

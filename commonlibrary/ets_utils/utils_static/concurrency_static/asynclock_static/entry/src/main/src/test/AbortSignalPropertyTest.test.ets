@@ -15,6 +15,7 @@
  */
 
 import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
+import { sleep } from './utils/utils';
 
 interface CustomObject {
   id: number;
@@ -950,11 +951,12 @@ export default function AbortSignalPropertyTest(): void {
         options.signal = s;
         let executed: boolean = false;
         let holder = lock.lockAsync<void>((): Promise<void> => {
-          return new Promise<void>((resolve): void => {
-            setTimeout((): void => {
-              resolve(undefined);
-            }, 200);
-          });
+          try {
+            return sleep(200);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         });
         let p = lock.lockAsync<void, string>(() => {
           executed = true;
@@ -995,11 +997,12 @@ export default function AbortSignalPropertyTest(): void {
         let options = new AsyncLockOptions<string>();
         options.signal = s;
         let holder = lock.lockAsync<void>((): Promise<void> => {
-          return new Promise<void>((resolve): void => {
-            setTimeout((): void => {
-              resolve(undefined);
-            }, 200);
-          });
+          try {
+            return sleep(200);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         });
         let p = lock.lockAsync<void, string>(() => {
         }, AsyncLockMode.EXCLUSIVE, options);
@@ -1016,7 +1019,12 @@ export default function AbortSignalPropertyTest(): void {
         await holder;
         let reacquired: boolean = false;
         await lock.lockAsync<void>(() => {
-          reacquired = true;
+          try {
+            reacquired = true;
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         });
         expect(reacquired).assertTrue();
         done();
@@ -1049,17 +1057,28 @@ export default function AbortSignalPropertyTest(): void {
         let options2 = new AsyncLockOptions<string>();
         options2.signal = s2;
         let holder = lock.lockAsync<void>((): Promise<void> => {
-          return new Promise<void>((resolve): void => {
-            setTimeout((): void => {
-              resolve(undefined);
-            }, 200);
-          });
+          try {
+            return sleep(200);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         });
         let secondExecuted: boolean = false;
         let p1 = lock.lockAsync<void, string>(() => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         }, AsyncLockMode.EXCLUSIVE, options1);
         let p2 = lock.lockAsync<void, string>(() => {
-          secondExecuted = true;
+          try {
+            secondExecuted = true;
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         }, AsyncLockMode.EXCLUSIVE, options2);
         s1.aborted = true;
         let firstRejected: boolean = false;
@@ -1098,21 +1117,25 @@ export default function AbortSignalPropertyTest(): void {
         let options = new AsyncLockOptions<string>();
         options.signal = s;
         let holder = lock.lockAsync<void>((): Promise<void> => {
-          return new Promise<void>((resolve): void => {
-            setTimeout((): void => {
-              resolve(undefined);
-            }, 300);
-          });
+          try {
+            return sleep(300);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         });
         let p = lock.lockAsync<void, string>(() => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         }, AsyncLockMode.EXCLUSIVE, options);
-        let timeoutElapsed = new Promise<void>((resolve): void => {
-          setTimeout((): void => {
-            s.aborted = true;
-            s.reason = "Timeout exceeded";
-            resolve(undefined);
-          }, 100);
-        });
+        let timeoutElapsed: Promise<void> = (async (): Promise<void> => {
+          await sleep(100);
+          s.aborted = true;
+          s.reason = "Timeout exceeded";
+        })();
         await timeoutElapsed;
         expect(s.aborted).assertTrue();
         expect(s.reason).assertEqual("Timeout exceeded");

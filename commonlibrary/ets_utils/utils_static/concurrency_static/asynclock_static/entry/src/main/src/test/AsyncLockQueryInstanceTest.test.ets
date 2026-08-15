@@ -15,6 +15,7 @@
  */
 
 import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
+import { sleep } from './utils/utils';
 
 export default function AsyncLockQueryInstanceTest(): void {
   describe('AsyncLockQueryInstanceTest', (): void => {
@@ -90,8 +91,13 @@ export default function AsyncLockQueryInstanceTest(): void {
       try {
       let lock = new AsyncLock();
       await lock.lockAsync<void>(() => {
-        let state = lock.query();
-        expect(state.held.length).assertLarger(0);
+        try {
+          let state = lock.query();
+          expect(state.held.length).assertLarger(0);
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
       });
 
       } catch (error) {
@@ -112,7 +118,13 @@ export default function AsyncLockQueryInstanceTest(): void {
     it('testAsyncLockQueryInstance0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {});
+      await lock.lockAsync<void>(() => {
+        try {
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
+      });
       let state = lock.query();
       expect(state.held.length).assertEqual(0);
       expect(state.pending.length).assertEqual(0);
@@ -152,13 +164,21 @@ export default function AsyncLockQueryInstanceTest(): void {
       try {
         let lock = AsyncLock.request("maxHeld");
         let p1 = lock.lockAsync<void>((): Promise<void> => {
-          return new Promise<void>((resolve): void => {
-            setTimeout((): void => { resolve(undefined); }, 100);
-          });
+          try {
+            return sleep(100);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         }, AsyncLockMode.SHARED);
         let p2 = lock.lockAsync<void>(() => {
-          let state = lock.query();
-          expect(state.held.length).assertLargerOrEqual(2);
+          try {
+            let state = lock.query();
+            expect(state.held.length).assertLargerOrEqual(2);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         }, AsyncLockMode.SHARED);
         await p1;
         await p2;
@@ -383,9 +403,12 @@ export default function AsyncLockQueryInstanceTest(): void {
       try {
         let lock = new AsyncLock();
         let p1 = lock.lockAsync<void>((): Promise<void> => {
-          return new Promise<void>((resolve): void => {
-            setTimeout((): void => { resolve(undefined); }, 100);
-          });
+          try {
+            return sleep(100);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         });
         let p2 = lock.lockAsync<void>(() => {});
         let state = lock.query();
@@ -412,12 +435,21 @@ export default function AsyncLockQueryInstanceTest(): void {
       try {
         let lock = new AsyncLock();
         let p1 = lock.lockAsync<void>((): Promise<void> => {
-          return new Promise<void>((resolve): void => {
-            setTimeout((): void => { resolve(undefined); }, 100);
-          });
+          try {
+            return sleep(100);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         });
         let p2 = lock.lockAsync<void>(() => {});
-        let p3 = lock.lockAsync<void>(() => {});
+        let p3 = lock.lockAsync<void>(() => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
+        });
         let state = lock.query();
         expect(state.pending.length).assertLargerOrEqual(2);
         await p1;
@@ -491,9 +523,14 @@ export default function AsyncLockQueryInstanceTest(): void {
       try {
         let lock = new AsyncLock();
         await lock.lockAsync<void>(() => {
-          let state = lock.query();
-          expect(state.held.length).assertLarger(0);
-          expect(state.held[0].contextId).assertLarger(0);
+          try {
+            let state = lock.query();
+            expect(state.held.length).assertLarger(0);
+            expect(state.held[0].contextId).assertLarger(0);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         });
         done();
       } catch (error) {
@@ -515,9 +552,12 @@ export default function AsyncLockQueryInstanceTest(): void {
       try {
         let lock = AsyncLock.request("pendingNameInst");
         let p1 = lock.lockAsync<void>((): Promise<void> => {
-          return new Promise<void>((resolve): void => {
-            setTimeout((): void => { resolve(undefined); }, 100);
-          });
+          try {
+            return sleep(100);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         });
         let p2 = lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
         let state = lock.query();
@@ -545,11 +585,20 @@ export default function AsyncLockQueryInstanceTest(): void {
       try {
         let lock = AsyncLock.request("pendingModeInst");
         let p1 = lock.lockAsync<void>((): Promise<void> => {
-          return new Promise<void>((resolve): void => {
-            setTimeout((): void => { resolve(undefined); }, 100);
-          });
+          try {
+            return sleep(100);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         }, AsyncLockMode.EXCLUSIVE);
-        let p2 = lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
+        let p2 = lock.lockAsync<void>(() => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
+        }, AsyncLockMode.EXCLUSIVE);
         let state = lock.query();
         expect(state.pending.length).assertLarger(0);
         expect(state.pending[0].mode).assertEqual(AsyncLockMode.EXCLUSIVE);
@@ -575,9 +624,12 @@ export default function AsyncLockQueryInstanceTest(): void {
       try {
         let lock = new AsyncLock();
         let p1 = lock.lockAsync<void>((): Promise<void> => {
-          return new Promise<void>((resolve): void => {
-            setTimeout((): void => { resolve(undefined); }, 100);
-          });
+          try {
+            return sleep(100);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         });
         let p2 = lock.lockAsync<void>(() => {});
         let state = lock.query();
@@ -634,11 +686,20 @@ export default function AsyncLockQueryInstanceTest(): void {
       try {
         let lock = new AsyncLock();
         let p1 = lock.lockAsync<void>((): Promise<void> => {
-          return new Promise<void>((resolve): void => {
-            setTimeout((): void => { resolve(undefined); }, 100);
-          });
+          try {
+            return sleep(100);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
         });
-        let p2 = lock.lockAsync<void>(() => {});
+        let p2 = lock.lockAsync<void>(() => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
+        });
         let stateBefore = lock.query();
         expect(stateBefore.pending.length).assertLarger(0);
         await p1;
@@ -669,9 +730,7 @@ export default function AsyncLockQueryInstanceTest(): void {
           let state = lock.query();
           expect(Array.isArray(state.held)).assertTrue();
           expect(Array.isArray(state.pending)).assertTrue();
-          await new Promise<void>((resolve): void => {
-            setTimeout((): void => { resolve(undefined); }, 100);
-          });
+          await sleep(100);
         }
         done();
       } catch (error) {

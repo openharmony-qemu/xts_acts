@@ -15,6 +15,7 @@
  */
 
 import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
+import { sleep } from './utils/utils';
 
 interface LockData {
   id: number;
@@ -209,7 +210,12 @@ export default function AsyncLockOptionsConstructorTest(): void {
       let executed = false;
 
       await lock.lockAsync<void, string>(() => {
-        executed = true;
+        try {
+          executed = true;
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
       }, AsyncLockMode.EXCLUSIVE, options);
 
       expect(executed).assertTrue();
@@ -234,8 +240,20 @@ export default function AsyncLockOptionsConstructorTest(): void {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
       await expect(Promise.all([
-        lock.lockAsync<void, void>(() => {}, AsyncLockMode.SHARED, options),
-        lock.lockAsync<void, void>(() => {}, AsyncLockMode.SHARED, options)
+        lock.lockAsync<void, void>(() => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
+        }, AsyncLockMode.SHARED, options),
+        lock.lockAsync<void, void>(() => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
+        }, AsyncLockMode.SHARED, options)
       ])).assertPromiseIsResolved();
 
       } catch (error) {
@@ -259,7 +277,13 @@ export default function AsyncLockOptionsConstructorTest(): void {
       let s: AbortSignal<string> = { aborted: false, reason: "Aborted" };
       let options = new AsyncLockOptions<string>();
       options.signal = s;
-      await expect(lock.lockAsync<void, string>(() => {}, AsyncLockMode.EXCLUSIVE, options)).assertPromiseIsResolved();
+      await expect(lock.lockAsync<void, string>(() => {
+        try {
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
+      }, AsyncLockMode.EXCLUSIVE, options)).assertPromiseIsResolved();
 
       } catch (error) {
         console.error("testAsyncLockOptionsConstructor1300 failed");
@@ -285,7 +309,13 @@ export default function AsyncLockOptionsConstructorTest(): void {
       options.signal = s;
       let rejected = false;
       try {
-        await lock.lockAsync<void, string>(() => {}, AsyncLockMode.EXCLUSIVE, options);
+        await lock.lockAsync<void, string>(() => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
+        }, AsyncLockMode.EXCLUSIVE, options);
       } catch (error) {
         rejected = true;
       }
@@ -409,23 +439,31 @@ export default function AsyncLockOptionsConstructorTest(): void {
           let options = new AsyncLockOptions<string>();
           options.signal = s;
           let holder = lock.lockAsync<void>((): Promise<void> => {
-            return new Promise<void>((resolve): void => {
-              setTimeout((): void => {
-                resolve(undefined);
-              }, 300);
-            });
+            try {
+              return sleep(300);
+            } catch (error) {
+              console.error(`callback failed: ${error}`);
+              throw error;
+            }
           });
           let p = lock.lockAsync<void, string>(() => {
+            try {
+            } catch (error) {
+              console.error(`callback failed: ${error}`);
+              throw error;
+            }
           }, AsyncLockMode.EXCLUSIVE, options);
-          setTimeout((): void => {
+          let abortAfterDelay: Promise<void> = (async (): Promise<void> => {
+            await sleep(100);
             s.aborted = true;
-          }, 100);
+          })();
           let rejected = false;
           try {
             await p;
           } catch (error) {
             rejected = true;
           }
+          await abortAfterDelay;
           expect(rejected).assertTrue();
           await holder;
           done();
