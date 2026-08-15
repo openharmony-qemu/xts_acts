@@ -2894,10 +2894,10 @@ export default function MessageScenarioSecondTest(): void {
           waitForCompletion(async () => {
             try {
               await Sleep(1000);
-              flag = true;
             } catch (error) {
-              console.info(`MessageScenarioSecondTest4900 async task error: ${JSON.stringify(error)}`);
+              expect(error).assertFail();
             }
+            flag = true;
           })
         }, worker);
         let p = () => {

@@ -386,19 +386,23 @@ export default function MessageScenarioTest(): void {
               flag = true;
             })()
           }, worker);
-          let executeResolver: () => void = (): void => {};
-          const executedPromise: Promise<void> = new Promise<void>((resolve: (value: void) => void, reject: (error: Error) => void): void => {
-            executeResolver = (): void => { resolve(undefined); };
-          });
           const asyncTask = () => {
-            setTimeout((): void => {
-              executed = true;
-              executeResolver();
-            }, 1000);
+            const end: number = Date.now() + 1000;
+            while (Date.now() < end) {
+            }
+            executed = true;
           };
           const msg = new concurrency.Message(asyncTask, m);
           msg.sendToTarget();
-          await executedPromise;
+          let waitExecuted: int = 0;
+          while (!executed && waitExecuted < 50) {
+            waitExecuted++;
+            try {
+              await Utils.msSleep(100);
+            } catch (error) {
+              expect(error).assertFail();
+            }
+          }
           expect(executed).assertTrue();
           expect(msg.getWhat()).assertEqual(-1000000);
           expect(msg.getObject() as undefined).assertUndefined();

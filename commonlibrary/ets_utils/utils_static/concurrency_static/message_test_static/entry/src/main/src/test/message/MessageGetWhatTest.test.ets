@@ -387,9 +387,8 @@ export default function MessageGetWhatTest(): void {
       eaw.start();
       let messageHandler = new concurrency.MessageHandler((msg: concurrency.Message): void => {}, eaw);
       let msg = new concurrency.Message(99, messageHandler);
-      Promise.resolve().then((): int => {
-        return msg.getWhat();
-      }).then((what: int): void => {
+      Promise.resolve().then((): void => {
+        let what: int = msg.getWhat();
         expect(what).assertEqual(99);
         if (eaw.isAlive()) { eaw.quit(); }
         done();
