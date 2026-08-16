@@ -2719,13 +2719,16 @@ export default function MessageTest2(): void {
      * @tc.level Level 1
      */
     it('RemoveCallbacksTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      (): void => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
         let flag: boolean = false;
         let handlerValue: boolean = false;
         let removeFlag: boolean = false;
+        let doneFlag = new AtomicInt(0);
         let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+          let cb: (() => void) | undefined = msg.getCallback();
+          if (cb !== undefined) { cb(); }
           waitForCompletion(async () => {
             await Sleep(1000);
             flag = true;
@@ -2735,12 +2738,23 @@ export default function MessageTest2(): void {
         }
         worker.start();
         try {
-          let headMsg = new concurrency.Message(p, handler)
-          handler.sendMessage(headMsg);
-          removeFlag = handler.removeCallbacks(p)
+          let postedCallback = (): void => {
+            let headMsg = new concurrency.Message(p, handler)
+            handler.sendMessage(headMsg);
+            removeFlag = handler.removeCallbacks(p)
+            doneFlag.fetchAdd(1);
+          };
+          handler.post(postedCallback);
+          let waitCount: int = 0;
+          while (doneFlag.load() < 1 && waitCount < 50) {
+            waitCount++;
+            await Sleep(10);
+          }
+          expect(doneFlag.load()).assertEqual(1);
           expect(removeFlag).assertEqual(true);
         } catch (error) {
           console.info(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
         } finally {
           try {
             worker.quit();
@@ -2748,8 +2762,8 @@ export default function MessageTest2(): void {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
         }
+        done();
       });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0214
      * @tc.name RemoveCallbacksTest008
