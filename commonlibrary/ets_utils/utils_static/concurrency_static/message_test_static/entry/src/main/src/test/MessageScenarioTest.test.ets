@@ -1322,10 +1322,15 @@ export default function MessageScenarioTest(): void {
           let message = new concurrency.Message(1, handler)
           let blockEntered = new AtomicInt(0);
           let releaseBlock = new AtomicInt(0);
+          let removeFlag: boolean = false;
+          let doneFlag = new AtomicInt(0);
           let postedCallback = (): void => {
             blockEntered.fetchAdd(1);
             while (releaseBlock.load() == 0) {
             }
+            handler.sendMessage(message);
+            removeFlag = handler.removeMessages(1);
+            doneFlag.fetchAdd(1);
           };
           handler.post(postedCallback);
           try {
@@ -1339,11 +1344,16 @@ export default function MessageScenarioTest(): void {
               }
             }
             expect(blockEntered.load()).assertEqual(1);
-            handler.sendMessage(message);
-            expect(handler.removeMessages(1)).assertEqual(true);
           } finally {
             releaseBlock.fetchAdd(1);
           }
+          let waitCount: int = 0;
+          while (doneFlag.load() < 1 && waitCount < 500) {
+            waitCount++;
+            await Sleep(10);
+          }
+          expect(doneFlag.load()).assertEqual(1);
+          expect(removeFlag).assertEqual(true);
           expect(flag).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
@@ -1368,7 +1378,7 @@ export default function MessageScenarioTest(): void {
      * @tc.level  LEVEL1
      */
     it('MessageScenarioTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      (): void => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest2300';
         console.info(`${TAG} test start`);
         let handler: concurrency.MessageHandler;
@@ -1376,6 +1386,11 @@ export default function MessageScenarioTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            let cb: (() => void) | undefined = msg.getCallback();
+            if (cb !== undefined) {
+              cb();
+              return;
+            }
             (async () => {
               try {
                 await Sleep(2000)
@@ -1385,9 +1400,24 @@ export default function MessageScenarioTest(): void {
             })()
           }, worker);
           let message = new concurrency.Message(1, handler)
-          handler.sendMessage(message);
-          expect(handler.removeMessages(1)).assertEqual(true);
-          expect(handler.removeMessages(1)).assertEqual(false);
+          let removeFlag: boolean = false;
+          let removeAgainFlag: boolean = false;
+          let doneFlag = new AtomicInt(0);
+          let postedCallback = (): void => {
+            handler.sendMessage(message);
+            removeFlag = handler.removeMessages(1);
+            removeAgainFlag = handler.removeMessages(1);
+            doneFlag.fetchAdd(1);
+          };
+          handler.post(postedCallback);
+          let waitCount: int = 0;
+          while (doneFlag.load() < 1 && waitCount < 500) {
+            waitCount++;
+            await Sleep(10);
+          }
+          expect(doneFlag.load()).assertEqual(1);
+          expect(removeFlag).assertEqual(true);
+          expect(removeAgainFlag).assertEqual(false);
         } catch (error) {
           console.info(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -1399,6 +1429,7 @@ export default function MessageScenarioTest(): void {
           }
           console.info(`${TAG} test end`);
         }
+        done();
       });
 
     /**
@@ -1420,6 +1451,11 @@ export default function MessageScenarioTest(): void {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            let cb: (() => void) | undefined = msg.getCallback();
+            if (cb !== undefined) {
+              cb();
+              return;
+            }
             (async () => {
               if (msg.getWhat() == 0) {
                 blockerStarted.store(1);
@@ -1451,8 +1487,21 @@ export default function MessageScenarioTest(): void {
           }
           expect(blockerStarted.load()).assertEqual(1);
           let message = new concurrency.Message(1, handler)
-          message.sendToTarget();
-          expect(handler.removeMessages(1)).assertEqual(true);
+          let removeFlag: boolean = false;
+          let doneFlag = new AtomicInt(0);
+          let postedCallback = (): void => {
+            message.sendToTarget();
+            removeFlag = handler.removeMessages(1);
+            doneFlag.fetchAdd(1);
+          };
+          handler.post(postedCallback);
+          let waitCount: int = 0;
+          while (doneFlag.load() < 1 && waitCount < 500) {
+            waitCount++;
+            await Sleep(10);
+          }
+          expect(doneFlag.load()).assertEqual(1);
+          expect(removeFlag).assertEqual(true);
           expect(flag).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
@@ -1609,10 +1658,15 @@ export default function MessageScenarioTest(): void {
           let message = new concurrency.Message(1, messageObject, handler)
           let blockEntered = new AtomicInt(0);
           let releaseBlock = new AtomicInt(0);
+          let removeFlag: boolean = false;
+          let doneFlag = new AtomicInt(0);
           let postedCallback = (): void => {
             blockEntered.fetchAdd(1);
             while (releaseBlock.load() == 0) {
             }
+            handler.sendMessage(message);
+            removeFlag = handler.removeMessages(1);
+            doneFlag.fetchAdd(1);
           };
           handler.post(postedCallback);
           try {
@@ -1626,11 +1680,16 @@ export default function MessageScenarioTest(): void {
               }
             }
             expect(blockEntered.load()).assertEqual(1);
-            handler.sendMessage(message);
-            expect(handler.removeMessages(1)).assertEqual(true);
           } finally {
             releaseBlock.fetchAdd(1);
           }
+          let waitCount: int = 0;
+          while (doneFlag.load() < 1 && waitCount < 500) {
+            waitCount++;
+            await Sleep(10);
+          }
+          expect(doneFlag.load()).assertEqual(1);
+          expect(removeFlag).assertEqual(true);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -1729,6 +1788,11 @@ export default function MessageScenarioTest(): void {
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            let cb: (() => void) | undefined = msg.getCallback();
+            if (cb !== undefined) {
+              cb();
+              return;
+            }
             (async () => {
               if (msg.getWhat() == 0) {
                 blockerStarted.store(1);
@@ -1759,8 +1823,21 @@ export default function MessageScenarioTest(): void {
           }
           expect(blockerStarted.load()).assertEqual(1);
           let message = new concurrency.Message(1, messageObject, handler)
-          message.sendToTarget();
-          expect(handler.removeMessages(1)).assertEqual(true);
+          let removeFlag: boolean = false;
+          let doneFlag = new AtomicInt(0);
+          let postedCallback = (): void => {
+            message.sendToTarget();
+            removeFlag = handler.removeMessages(1);
+            doneFlag.fetchAdd(1);
+          };
+          handler.post(postedCallback);
+          let waitCount: int = 0;
+          while (doneFlag.load() < 1 && waitCount < 500) {
+            waitCount++;
+            await Sleep(10);
+          }
+          expect(doneFlag.load()).assertEqual(1);
+          expect(removeFlag).assertEqual(true);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
@@ -2206,10 +2283,15 @@ export default function MessageScenarioTest(): void {
           let message = new concurrency.Message(1, messageObject, handler)
           let blockEntered = new AtomicInt(0);
           let releaseBlock = new AtomicInt(0);
+          let removeFlag: boolean = false;
+          let doneFlag = new AtomicInt(0);
           let postedCallback = (): void => {
             blockEntered.fetchAdd(1);
             while (releaseBlock.load() == 0) {
             }
+            handler.sendMessage(message);
+            removeFlag = handler.removeMessages(1, messageObject);
+            doneFlag.fetchAdd(1);
           };
           handler.post(postedCallback);
           try {
@@ -2223,11 +2305,16 @@ export default function MessageScenarioTest(): void {
               }
             }
             expect(blockEntered.load()).assertEqual(1);
-            handler.sendMessage(message);
-            expect(handler.removeMessages(1, messageObject)).assertEqual(true);
           } finally {
             releaseBlock.fetchAdd(1);
           }
+          let waitCount: int = 0;
+          while (doneFlag.load() < 1 && waitCount < 500) {
+            waitCount++;
+            await Sleep(10);
+          }
+          expect(doneFlag.load()).assertEqual(1);
+          expect(removeFlag).assertEqual(true);
           expect(flag).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
@@ -2306,6 +2393,11 @@ export default function MessageScenarioTest(): void {
         let messageObject = new MessageObject(10);
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            let cb: (() => void) | undefined = msg.getCallback();
+            if (cb !== undefined) {
+              cb();
+              return;
+            }
             (async () => {
               if (msg.getWhat() == 0) {
                 blockerStarted.store(1);
@@ -2337,8 +2429,21 @@ export default function MessageScenarioTest(): void {
           }
           expect(blockerStarted.load()).assertEqual(1);
           let message = new concurrency.Message(1, messageObject, handler);
-          message.sendToTarget();
-          expect(handler.removeMessages(1, messageObject)).assertEqual(true);
+          let removeFlag: boolean = false;
+          let doneFlag = new AtomicInt(0);
+          let postedCallback = (): void => {
+            message.sendToTarget();
+            removeFlag = handler.removeMessages(1, messageObject);
+            doneFlag.fetchAdd(1);
+          };
+          handler.post(postedCallback);
+          let waitCount: int = 0;
+          while (doneFlag.load() < 1 && waitCount < 500) {
+            waitCount++;
+            await Sleep(10);
+          }
+          expect(doneFlag.load()).assertEqual(1);
+          expect(removeFlag).assertEqual(true);
           expect(flag).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
