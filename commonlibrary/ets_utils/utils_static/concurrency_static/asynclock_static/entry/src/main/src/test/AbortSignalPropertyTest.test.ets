@@ -1018,7 +1018,7 @@ export default function AbortSignalPropertyTest(): void {
         expect(rejected).assertTrue();
         await holder;
         let reacquired: boolean = false;
-        let pLock: Promise<void> = lock.lockAsync<void>(() => {
+        await lock.lockAsync<void>(() => {
           try {
             reacquired = true;
           } catch (error) {
@@ -1026,7 +1026,6 @@ export default function AbortSignalPropertyTest(): void {
             throw error;
           }
         });
-        await pLock;
         expect(reacquired).assertTrue();
         done();
       } catch (error) {

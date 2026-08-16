@@ -756,7 +756,7 @@ export default function AsyncLockInfoTest(): void {
         let lock2 = AsyncLock.request("lock2");
         let name1: string = "";
         let name2: string = "";
-        let pLock1: Promise<void> = lock1.lockAsync<void>(() => {
+        await lock1.lockAsync<void>(() => {
           try {
             let state = lock1.query();
             expect(state.held.length).assertLarger(0);
@@ -769,8 +769,7 @@ export default function AsyncLockInfoTest(): void {
             throw error;
           }
         });
-        await pLock1;
-        let pLock2: Promise<void> = lock2.lockAsync<void>(() => {
+        await lock2.lockAsync<void>(() => {
           try {
             let state = lock2.query();
             expect(state.held.length).assertLarger(0);
@@ -783,7 +782,6 @@ export default function AsyncLockInfoTest(): void {
             throw error;
           }
         });
-        await pLock2;
         expect(name1).not().assertEqual(name2);
         done();
       } catch (error) {
@@ -1058,7 +1056,7 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let lock = AsyncLock.request("debugLock");
-        let pDebug: Promise<void> = lock.lockAsync<void>(() => {
+        await lock.lockAsync<void>(() => {
           try {
             let state = lock.query();
             expect(state.held.length).assertLarger(0);
@@ -1076,7 +1074,6 @@ export default function AsyncLockInfoTest(): void {
             throw error;
           }
         });
-        await pDebug;
         done();
       } catch (error) {
         console.error('testAsyncLockInfo3600 failed: ' + JSON.stringify(error));

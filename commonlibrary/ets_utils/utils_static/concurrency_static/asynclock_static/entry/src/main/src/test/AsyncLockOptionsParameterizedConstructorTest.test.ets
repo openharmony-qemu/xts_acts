@@ -230,7 +230,7 @@ export default function AsyncLockOptionsParameterizedConstructorTest(): void {
           let s: AbortSignal<string> = { aborted: false, reason: "test" };
           let options = new AsyncLockOptions<string>(true, s, 1000);
           let executed = false;
-          let pLock: Promise<void> = lock.lockAsync<void, string>(() => {
+          await lock.lockAsync<void, string>(() => {
             try {
               executed = true;
             } catch (error) {
@@ -238,7 +238,6 @@ export default function AsyncLockOptionsParameterizedConstructorTest(): void {
               throw error;
             }
           }, AsyncLockMode.EXCLUSIVE, options);
-          await pLock;
           expect(executed).assertTrue();
           done();
         } catch (error) {
@@ -438,14 +437,13 @@ export default function AsyncLockOptionsParameterizedConstructorTest(): void {
           });
           let rejected = false;
           try {
-            let pLock: Promise<void> = lock.lockAsync<void, void>(() => {
+            await lock.lockAsync<void, void>(() => {
               try {
               } catch (error) {
                 console.error(`callback failed: ${error}`);
                 throw error;
               }
             }, AsyncLockMode.EXCLUSIVE, options);
-            await pLock;
           } catch (error) {
             rejected = true;
           }

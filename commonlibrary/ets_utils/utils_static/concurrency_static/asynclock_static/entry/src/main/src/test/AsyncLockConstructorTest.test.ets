@@ -388,7 +388,7 @@ export default function AsyncLockConstructorTest(): void {
       try {
       let lock = new AsyncLock();
       let called = false;
-      let pLock: Promise<void> = lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(() => {
         try {
           called = true;
           return Promise.resolve();
@@ -397,7 +397,6 @@ export default function AsyncLockConstructorTest(): void {
           throw error;
         }
       });
-      await pLock;
       expect(called).assertTrue();
       } catch (error) {
         console.error("testAsyncLockConstructor2000 failed");

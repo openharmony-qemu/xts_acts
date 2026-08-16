@@ -522,7 +522,7 @@ export default function AsyncLockQueryInstanceTest(): void {
     it('testAsyncLockQueryInstance2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let lock = new AsyncLock();
-        let pLock: Promise<void> = lock.lockAsync<void>(() => {
+        await lock.lockAsync<void>(() => {
           try {
             let state = lock.query();
             expect(state.held.length).assertLarger(0);
@@ -532,7 +532,6 @@ export default function AsyncLockQueryInstanceTest(): void {
             throw error;
           }
         });
-        await pLock;
         done();
       } catch (error) {
         console.error("testAsyncLockQueryInstance2400 failed");
