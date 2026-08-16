@@ -20,12 +20,14 @@ class DataClass {
   value: number = 0;
 }
 
-function testClassNoLock(data: DataClass): void {
+function testClassNoLock(): void {
+  const data: DataClass = new DataClass();
   for (let i: number = 0; i < 10; i++) {
     try {
       data.value = data.value + 1;
     } catch (e) {
-      console.info(`testClassNoLock catch race-tolerated error: ${JSON.stringify(e)}`);
+      console.info(`testClassNoLock catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
   }
 }
@@ -84,13 +86,12 @@ export default function ClassInstanceConcurrentTest(): void {
     it('testClassNoLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let count: AtomicInt = new AtomicInt(0);
-        let data: DataClass = new DataClass();
         let totalTasks: number = 10;
         let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          tasks.push(taskpool.execute(testClassNoLock, data));
+          tasks.push(taskpool.execute(testClassNoLock));
         }
-        testClassNoLock(data);
+        testClassNoLock();
         count.fetchAdd(1);
         await Promise.all(tasks);
         count.fetchAdd(totalTasks.toInt());

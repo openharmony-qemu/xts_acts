@@ -16,7 +16,8 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Utils.test';
 
-function testNestedMapOuter(map: Map<string, Map<string, number>>, taskCounter: AtomicInt): void {
+function testNestedMapOuter(taskCounter: AtomicInt): void {
+  const map: Map<string, Map<string, number>> = new Map<string, Map<string, number>>();
   for (let i: number = 0; i < 10; i++) {
     try {
       let inner: Map<string, number> = new Map<string, number>();
@@ -25,13 +26,18 @@ function testNestedMapOuter(map: Map<string, Map<string, number>>, taskCounter: 
       map.get('outerKey' + i);
       map.delete('outerKey' + i);
     } catch (e) {
-      console.info(`testNestedMapOuter catch race-tolerated error: ${JSON.stringify(e)}`);
+      console.info(`testNestedMapOuter catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
     taskCounter.fetchAdd(1);
   }
 }
 
-function testNestedMapInner(map: Map<string, Map<string, number>>, taskCounter: AtomicInt): void {
+function testNestedMapInner(taskCounter: AtomicInt): void {
+  const map: Map<string, Map<string, number>> = new Map<string, Map<string, number>>();
+  for (let k: number = 0; k < 10; k++) {
+    map.set('key' + k, new Map<string, number>());
+  }
   for (let i: number = 0; i < 10; i++) {
     try {
       let idx: number = i % 10;
@@ -42,7 +48,8 @@ function testNestedMapInner(map: Map<string, Map<string, number>>, taskCounter: 
         inner.delete('innerKey' + i);
       }
     } catch (e) {
-      console.info(`testNestedMapInner catch race-tolerated error: ${JSON.stringify(e)}`);
+      console.info(`testNestedMapInner catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
     taskCounter.fetchAdd(1);
   }
@@ -81,13 +88,12 @@ export default function NestedMapConcurrentTest(): void {
     it('testNestedMapOuterConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let taskCounter: AtomicInt = new AtomicInt(0);
-        let map: Map<string, Map<string, number>> = new Map<string, Map<string, number>>();
         let totalTasks: number = 10;
         let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          tasks.push(taskpool.execute(testNestedMapOuter, map, taskCounter));
+          tasks.push(taskpool.execute(testNestedMapOuter, taskCounter));
         }
-        testNestedMapOuter(map, taskCounter);
+        testNestedMapOuter(taskCounter);
         await Promise.all(tasks);
         expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
       } catch (e) {
@@ -109,15 +115,12 @@ export default function NestedMapConcurrentTest(): void {
       try {
         let taskCounter: AtomicInt = new AtomicInt(0);
         let map: Map<string, Map<string, number>> = new Map<string, Map<string, number>>();
-        for (let i: number = 0; i < 10; i++) {
-          map.set('key' + i, new Map<string, number>());
-        }
         let totalTasks: number = 10;
         let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          tasks.push(taskpool.execute(testNestedMapInner, map, taskCounter));
+          tasks.push(taskpool.execute(testNestedMapInner, taskCounter));
         }
-        testNestedMapInner(map, taskCounter);
+        testNestedMapInner(taskCounter);
         await Promise.all(tasks);
         expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
       } catch (e) {

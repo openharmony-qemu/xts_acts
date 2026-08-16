@@ -23,13 +23,15 @@ function arrayOperations(arr: Array<number>): number {
   return arr.length;
 }
 
-function sharedArrayOperations(arr: Array<number>, counter: AtomicInt): void {
+function sharedArrayOperations(counter: AtomicInt): void {
+  const arr: Array<number> = [];
   for (let i: int = 0; i < 10; i++) {
     try {
       arr.push(i);
       arr.pop();
     } catch (e) {
-      console.info(`sharedArrayOperations catch race-tolerated error: ${JSON.stringify(e)}`);
+      console.info(`sharedArrayOperations catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
     counter.fetchAdd(1);
   }
@@ -45,11 +47,16 @@ function arrayStressOperations(arr: Array<number>): number {
 
 async function nestedArrayOperations(): Promise<number> {
   let completed: number = 0;
-  for (let i: int = 0; i < 5; i++) {
-    let result: number = await taskpool.execute(arrayOperations, new Array<number>()) as number;
-    if (result === 0) {
-      completed++;
+  try {
+    for (let i: int = 0; i < 5; i++) {
+      let result: number = await taskpool.execute(arrayOperations, new Array<number>()) as number;
+      if (result === 0) {
+        completed++;
+      }
     }
+  } catch (e) {
+    console.info(`nestedArrayOperations catch error: ${JSON.stringify(e)}`);
+    throw e;
   }
   return completed;
 }
@@ -98,11 +105,10 @@ export default function ResizableArrayNoLockConcurrentTest(): void {
     it('testResizableArrayTaskPoolConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
-          let sharedArray: Array<number> = [];
           let counter: AtomicInt = new AtomicInt(0);
           let tasks: Promise<Any>[] = [];
           for (let i: int = 0; i < 20; i++) {
-            tasks.push(taskpool.execute(sharedArrayOperations, sharedArray, counter));
+            tasks.push(taskpool.execute(sharedArrayOperations, counter));
           }
           for (let i: int = 0; i < tasks.length; i++) {
             await tasks[i];

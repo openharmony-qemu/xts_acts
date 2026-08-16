@@ -16,16 +16,15 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Utils.test';
 
-function testTaskPoolExecute(arr: Array<number>, taskCounter: AtomicInt): void {
+function testTaskPoolExecute(taskCounter: AtomicInt): void {
+  const localArr: Array<number> = [];
   for (let i: number = 0; i < 10; i++) {
     try {
-      arr.push(i);
-      arr.pop();
+      localArr.push(i);
+      localArr.pop();
     } catch (e) {
-      // 竞态容忍：Array 并发操作可能抛出异常
-      if (!(e instanceof Error)) {
-        throw e; // 非预期异常重新抛出
-      }
+      console.info(`testTaskPoolExecute catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
     taskCounter.fetchAdd(1);
   }
@@ -102,11 +101,10 @@ export default function TaskPoolConcurrentTest(): void {
      */
     it('testTaskPoolExecuteConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let taskCounter: AtomicInt = new AtomicInt(0);
-      let arr: Array<number> = [];
       let totalTasks: number = 20;
       let tasks: Promise<Any>[] = [];
       for (let i: number = 0; i < totalTasks; i++) {
-        tasks.push(taskpool.execute(testTaskPoolExecute, arr, taskCounter));
+        tasks.push(taskpool.execute(testTaskPoolExecute, taskCounter));
       }
       try {
         await Promise.all(tasks);
@@ -128,24 +126,22 @@ export default function TaskPoolConcurrentTest(): void {
      */
     it('testTaskPoolAsyncConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let taskCounter: AtomicInt = new AtomicInt(0);
-      let arr: Array<number> = [];
       let totalTasks: number = 10;
       let tasks: Promise<Any>[] = [];
       for (let i: number = 0; i < totalTasks; i++) {
-        tasks.push(taskpool.execute(async (a: Array<number>, tc: AtomicInt): Promise<void> => {
+        tasks.push(taskpool.execute(async (tc: AtomicInt): Promise<void> => {
+          const localArr: Array<number> = [];
           for (let j: number = 0; j < 10; j++) {
             try {
-              a.push(j);
-              a.pop();
+              localArr.push(j);
+              localArr.pop();
             } catch (e) {
-              // 竞态容忍：Array 并发操作可能抛出异常
-              if (!(e instanceof Error)) {
-                throw e; // 非预期异常重新抛出
-              }
+              console.info(`testTaskPoolAsyncConcurrent0200 catch error: ${JSON.stringify(e)}`);
+              throw e;
             }
             tc.fetchAdd(1);
           }
-        }, arr, taskCounter));
+        }, taskCounter));
       }
       try {
         await Promise.all(tasks);

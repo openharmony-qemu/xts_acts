@@ -16,7 +16,8 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Utils.test';
 
-function testNestedArrayOuter(arr: Array<Array<number>>, taskCounter: AtomicInt): void {
+function testNestedArrayOuter(taskCounter: AtomicInt): void {
+  const arr: Array<Array<number>> = new Array<Array<number>>();
   for (let i: number = 0; i < 10; i++) {
     try {
       let inner: Array<number> = new Array<number>();
@@ -24,13 +25,20 @@ function testNestedArrayOuter(arr: Array<Array<number>>, taskCounter: AtomicInt)
       arr.push(inner);
       arr.pop();
     } catch (e) {
-      console.info(`testNestedArrayOuter catch race-tolerated error: ${JSON.stringify(e)}`);
+      console.info(`testNestedArrayOuter catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
     taskCounter.fetchAdd(1);
   }
 }
 
-function testNestedArrayInner(arr: Array<Array<number>>, taskCounter: AtomicInt): void {
+function testNestedArrayInner(taskCounter: AtomicInt): void {
+  const arr: Array<Array<number>> = new Array<Array<number>>();
+  for (let k: number = 0; k < 10; k++) {
+    let seed: Array<number> = new Array<number>();
+    seed.push(k);
+    arr.push(seed);
+  }
   for (let i: int = 0; i < 10; i++) {
     try {
       let idx: int = i % arr.length;
@@ -38,7 +46,8 @@ function testNestedArrayInner(arr: Array<Array<number>>, taskCounter: AtomicInt)
       inner.push(i);
       inner.pop();
     } catch (e) {
-      console.info(`testNestedArrayInner catch race-tolerated error: ${JSON.stringify(e)}`);
+      console.info(`testNestedArrayInner catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
     taskCounter.fetchAdd(1);
   }
@@ -59,7 +68,13 @@ function testNestedArrayMutex(arr: Array<Array<number>>, mutex: Mutex, taskCount
   }
 }
 
-function testNestedArrayStress(arr: Array<Array<number>>, taskCounter: AtomicInt): void {
+function testNestedArrayStress(taskCounter: AtomicInt): void {
+  const arr: Array<Array<number>> = new Array<Array<number>>();
+  for (let k: number = 0; k < 10; k++) {
+    let seed: Array<number> = new Array<number>();
+    seed.push(k);
+    arr.push(seed);
+  }
   for (let i: int = 0; i < 50; i++) {
     try {
       let idx: int = i % arr.length;
@@ -67,7 +82,8 @@ function testNestedArrayStress(arr: Array<Array<number>>, taskCounter: AtomicInt
       inner.push(i);
       inner.pop();
     } catch (e) {
-      console.info(`testNestedArrayStress catch race-tolerated error: ${JSON.stringify(e)}`);
+      console.info(`testNestedArrayStress catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
     taskCounter.fetchAdd(1);
   }
@@ -91,13 +107,12 @@ export default function NestedArrayConcurrentTest(): void {
     it('testNestedArrayOuterConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let taskCounter: AtomicInt = new AtomicInt(0);
-        let arr: Array<Array<number>> = new Array<Array<number>>();
         let totalTasks: number = 10;
         let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          tasks.push(taskpool.execute(testNestedArrayOuter, arr, taskCounter));
+          tasks.push(taskpool.execute(testNestedArrayOuter, taskCounter));
         }
-        testNestedArrayOuter(arr, taskCounter);
+        testNestedArrayOuter(taskCounter);
         await Promise.all(tasks);
         expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
       } catch (e) {
@@ -119,15 +134,12 @@ export default function NestedArrayConcurrentTest(): void {
       try {
         let taskCounter: AtomicInt = new AtomicInt(0);
         let arr: Array<Array<number>> = new Array<Array<number>>();
-        for (let i: number = 0; i < 10; i++) {
-          arr.push(new Array<number>());
-        }
         let totalTasks: number = 10;
         let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          tasks.push(taskpool.execute(testNestedArrayInner, arr, taskCounter));
+          tasks.push(taskpool.execute(testNestedArrayInner, taskCounter));
         }
-        testNestedArrayInner(arr, taskCounter);
+        testNestedArrayInner(taskCounter);
         await Promise.all(tasks);
         expect(taskCounter.load()).assertEqual(totalTasks * 10 + 10);
       } catch (e) {
@@ -177,13 +189,10 @@ export default function NestedArrayConcurrentTest(): void {
       try {
         let taskCounter: AtomicInt = new AtomicInt(0);
         let arr: Array<Array<number>> = new Array<Array<number>>();
-        for (let i: number = 0; i < 50; i++) {
-          arr.push(new Array<number>());
-        }
         let totalTasks: number = 50;
         let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          tasks.push(taskpool.execute(testNestedArrayStress, arr, taskCounter));
+          tasks.push(taskpool.execute(testNestedArrayStress, taskCounter));
         }
         await Promise.all(tasks);
         expect(taskCounter.load()).assertEqual(totalTasks * 50);

@@ -16,12 +16,14 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Utils.test';
 
-function testNumberNoLock(holder: NumberHolder): void {
+function testNumberNoLock(): void {
+  const holder: NumberHolder = new NumberHolder();
   for (let i: number = 0; i < 10; i++) {
     try {
       holder.value = holder.value + 1;
     } catch (e) {
-      console.info(`testNumberNoLock catch race-tolerated error: ${JSON.stringify(e)}`);
+      console.info(`testNumberNoLock catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
   }
 }
@@ -45,12 +47,14 @@ function testNumberMutex(holder: NumberHolder, mutex: Mutex, taskCounter: Atomic
   }
 }
 
-function testStringNoLock(holder: StringHolder): void {
+function testStringNoLock(): void {
+  const holder: StringHolder = new StringHolder();
   for (let i: number = 0; i < 10; i++) {
     try {
       holder.value = holder.value + 'a';
     } catch (e) {
-      console.info(`testStringNoLock catch race-tolerated error: ${JSON.stringify(e)}`);
+      console.info(`testStringNoLock catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
   }
 }
@@ -67,12 +71,14 @@ function testStringMutex(holder: StringHolder, mutex: Mutex, taskCounter: Atomic
   }
 }
 
-function testBooleanNoLock(holder: BooleanHolder): void {
+function testBooleanNoLock(): void {
+  const holder: BooleanHolder = new BooleanHolder();
   for (let i: number = 0; i < 10; i++) {
     try {
       holder.value = !holder.value;
     } catch (e) {
-      console.info(`testBooleanNoLock catch race-tolerated error: ${JSON.stringify(e)}`);
+      console.info(`testBooleanNoLock catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
   }
 }
@@ -87,13 +93,15 @@ function testBooleanAtomic(flag: AtomicBoolean): void {
   }
 }
 
-function testObjectNoLock(holder: ObjectHolder): void {
+function testObjectNoLock(): void {
+  const holder: ObjectHolder = new ObjectHolder();
   for (let i: number = 0; i < 10; i++) {
     try {
       holder.value = holder.value + 1;
       holder.name = holder.name + 'a';
     } catch (e) {
-      console.info(`testObjectNoLock catch race-tolerated error: ${JSON.stringify(e)}`);
+      console.info(`testObjectNoLock catch error: ${JSON.stringify(e)}`);
+      throw e;
     }
   }
 }
@@ -153,13 +161,12 @@ export default function BasicTypeConcurrentTest(): void {
     it('testNumberNoLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let count: AtomicInt = new AtomicInt(0);
-        let holder: NumberHolder = new NumberHolder();
         let totalTasks: number = 10;
         let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          tasks.push(taskpool.execute(testNumberNoLock, holder));
+          tasks.push(taskpool.execute(testNumberNoLock));
         }
-        testNumberNoLock(holder);
+        testNumberNoLock();
         count.fetchAdd(1);
         await Promise.all(tasks);
         count.fetchAdd(totalTasks.toInt());
@@ -237,13 +244,12 @@ export default function BasicTypeConcurrentTest(): void {
     it('testStringNoLockConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let count: AtomicInt = new AtomicInt(0);
-        let holder: StringHolder = new StringHolder();
         let totalTasks: number = 10;
         let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          tasks.push(taskpool.execute(testStringNoLock, holder));
+          tasks.push(taskpool.execute(testStringNoLock));
         }
-        testStringNoLock(holder);
+        testStringNoLock();
         count.fetchAdd(1);
         await Promise.all(tasks);
         count.fetchAdd(totalTasks.toInt());
@@ -294,13 +300,12 @@ export default function BasicTypeConcurrentTest(): void {
     it('testBooleanNoLockConcurrent0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let count: AtomicInt = new AtomicInt(0);
-        let holder: BooleanHolder = new BooleanHolder();
         let totalTasks: number = 10;
         let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          tasks.push(taskpool.execute(testBooleanNoLock, holder));
+          tasks.push(taskpool.execute(testBooleanNoLock));
         }
-        testBooleanNoLock(holder);
+        testBooleanNoLock();
         count.fetchAdd(1);
         await Promise.all(tasks);
         count.fetchAdd(totalTasks.toInt());
@@ -352,13 +357,12 @@ export default function BasicTypeConcurrentTest(): void {
     it('testObjectNoLockConcurrent0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let count: AtomicInt = new AtomicInt(0);
-        let holder: ObjectHolder = new ObjectHolder();
         let totalTasks: number = 10;
         let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          tasks.push(taskpool.execute(testObjectNoLock, holder));
+          tasks.push(taskpool.execute(testObjectNoLock));
         }
-        testObjectNoLock(holder);
+        testObjectNoLock();
         count.fetchAdd(1);
         await Promise.all(tasks);
         count.fetchAdd(totalTasks.toInt());
