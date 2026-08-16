@@ -56,13 +56,14 @@ export default function AsyncLockConstructorTest(): void {
     it('testAsyncLockConstructor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await expect(lock.lockAsync<void>(() => {
+      let pCheck: Promise<void> = lock.lockAsync<void>(() => {
         try {
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      })).assertPromiseIsResolved()
+      });
+      await expect(pCheck).assertPromiseIsResolved()
       } catch (error) {
         console.error("testAsyncLockConstructor0300 failed");
         expect(false).assertFail();
@@ -387,7 +388,7 @@ export default function AsyncLockConstructorTest(): void {
       try {
       let lock = new AsyncLock();
       let called = false;
-      await lock.lockAsync<void>(() => {
+      let pLock: Promise<void> = lock.lockAsync<void>(() => {
         try {
           called = true;
           return Promise.resolve();
@@ -396,6 +397,7 @@ export default function AsyncLockConstructorTest(): void {
           throw error;
         }
       });
+      await pLock;
       expect(called).assertTrue();
       } catch (error) {
         console.error("testAsyncLockConstructor2000 failed");

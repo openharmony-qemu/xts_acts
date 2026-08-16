@@ -298,7 +298,7 @@ export default function AsyncLockNamePropertyTest(): void {
     it('testAsyncLockNameProperty1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request('callbackLock');
-      let result = await lock.lockAsync<string>(() => {
+      let pResult: Promise<string> = lock.lockAsync<string>(() => {
         try {
           return lock.name;
         } catch (error) {
@@ -306,6 +306,7 @@ export default function AsyncLockNamePropertyTest(): void {
           throw error;
         }
       });
+      let result: string = await pResult;
       expect(result).assertEqual('callbackLock');
 
       } catch (error) {

@@ -680,7 +680,7 @@ export default function AsyncLockQueryStaticTest(): void {
     it('testAsyncLockQueryStatic3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request("heldContext");
-      await lock.lockAsync<void>(() => {
+      let pLock: Promise<void> = lock.lockAsync<void>(() => {
         try {
           let state = lock.query();
           if (state.held.length > 0) {
@@ -691,6 +691,7 @@ export default function AsyncLockQueryStaticTest(): void {
           throw error;
         }
       });
+      await pLock;
 
       } catch (error) {
         console.error("testAsyncLockQueryStatic3600 failed");
@@ -736,7 +737,7 @@ export default function AsyncLockQueryStaticTest(): void {
             throw error;
           }
         });
-        let p2 = lock.lockAsync<void>(() => {});
+        let p2: Promise<void> = lock.lockAsync<void>(() => {});
         let state = AsyncLock.query("pendingLockStatic");
         expect(state.pending.length).assertLarger(0);
         await p1;
@@ -775,7 +776,7 @@ export default function AsyncLockQueryStaticTest(): void {
             throw error;
           }
         });
-        let p3 = lock.lockAsync<void>(() => {
+        let p3: Promise<void> = lock.lockAsync<void>(() => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);
@@ -834,7 +835,7 @@ export default function AsyncLockQueryStaticTest(): void {
             throw error;
           }
         });
-        let p2 = lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
+        let p2: Promise<void> = lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
         let state = AsyncLock.query("pendingNameStatic");
         expect(state.pending.length).assertLarger(0);
         expect(state.pending[0].name).assertEqual("pendingNameStatic");
@@ -859,7 +860,7 @@ export default function AsyncLockQueryStaticTest(): void {
     it('testAsyncLockQueryStatic4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let lock = AsyncLock.request("pendingModeStatic");
-        let p1 = lock.lockAsync<void>((): Promise<void> => {
+        let p1: Promise<void> = lock.lockAsync<void>((): Promise<void> => {
           try {
             return sleep(100);
           } catch (error) {
@@ -867,7 +868,7 @@ export default function AsyncLockQueryStaticTest(): void {
             throw error;
           }
         }, AsyncLockMode.EXCLUSIVE);
-        let p2 = lock.lockAsync<void>(() => {
+        let p2: Promise<void> = lock.lockAsync<void>(() => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);

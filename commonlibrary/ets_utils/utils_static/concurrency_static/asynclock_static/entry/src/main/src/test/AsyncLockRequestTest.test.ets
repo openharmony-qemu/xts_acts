@@ -321,7 +321,7 @@ export default function AsyncLockRequestTest(): void {
       try {
       let lock = AsyncLock.request("useLock");
       let called = false;
-      await lock.lockAsync<void>(() => {
+      let pLock: Promise<void> = lock.lockAsync<void>(() => {
         try {
           called = true;
         } catch (error) {
@@ -329,6 +329,7 @@ export default function AsyncLockRequestTest(): void {
           throw error;
         }
       });
+      await pLock;
       expect(called).assertTrue();
 
       } catch (error) {
@@ -657,7 +658,7 @@ export default function AsyncLockRequestTest(): void {
     it('testAsyncLockRequest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request("outerLock");
-      let innerLock = await lock.lockAsync<AsyncLock>(() => {
+      let pInnerLock: Promise<AsyncLock> = lock.lockAsync<AsyncLock>(() => {
         try {
           return AsyncLock.request("innerLock");
         } catch (error) {
@@ -665,6 +666,7 @@ export default function AsyncLockRequestTest(): void {
           throw error;
         }
       });
+      let innerLock: AsyncLock = await pInnerLock;
       expect(innerLock.name).assertEqual("innerLock");
 
       } catch (error) {

@@ -679,7 +679,12 @@ export default function AsyncLockCallbackTest(): void {
       let executed = false;
       const callback = async (): Promise<int> => {
         try {
-          await Promise.resolve(50);
+          try {
+            await Promise.resolve(50);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
           return 50;
         } finally {
           executed = true;

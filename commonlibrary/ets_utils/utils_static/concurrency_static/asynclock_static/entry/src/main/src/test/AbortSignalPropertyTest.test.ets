@@ -1018,7 +1018,7 @@ export default function AbortSignalPropertyTest(): void {
         expect(rejected).assertTrue();
         await holder;
         let reacquired: boolean = false;
-        await lock.lockAsync<void>(() => {
+        let pLock: Promise<void> = lock.lockAsync<void>(() => {
           try {
             reacquired = true;
           } catch (error) {
@@ -1026,6 +1026,7 @@ export default function AbortSignalPropertyTest(): void {
             throw error;
           }
         });
+        await pLock;
         expect(reacquired).assertTrue();
         done();
       } catch (error) {
@@ -1065,14 +1066,14 @@ export default function AbortSignalPropertyTest(): void {
           }
         });
         let secondExecuted: boolean = false;
-        let p1 = lock.lockAsync<void, string>(() => {
+        let p1: Promise<void> = lock.lockAsync<void, string>(() => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
         }, AsyncLockMode.EXCLUSIVE, options1);
-        let p2 = lock.lockAsync<void, string>(() => {
+        let p2: Promise<void> = lock.lockAsync<void, string>(() => {
           try {
             secondExecuted = true;
           } catch (error) {
@@ -1116,7 +1117,7 @@ export default function AbortSignalPropertyTest(): void {
         s.reason = "";
         let options = new AsyncLockOptions<string>();
         options.signal = s;
-        let holder = lock.lockAsync<void>((): Promise<void> => {
+        let holder: Promise<void> = lock.lockAsync<void>((): Promise<void> => {
           try {
             return sleep(300);
           } catch (error) {
@@ -1124,7 +1125,7 @@ export default function AbortSignalPropertyTest(): void {
             throw error;
           }
         });
-        let p = lock.lockAsync<void, string>(() => {
+        let p: Promise<void> = lock.lockAsync<void, string>(() => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);
@@ -1132,7 +1133,12 @@ export default function AbortSignalPropertyTest(): void {
           }
         }, AsyncLockMode.EXCLUSIVE, options);
         let timeoutElapsed: Promise<void> = (async (): Promise<void> => {
-          await sleep(100);
+          try {
+            await sleep(100);
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
           s.aborted = true;
           s.reason = "Timeout exceeded";
         })();
