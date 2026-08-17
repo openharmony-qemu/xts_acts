@@ -56,14 +56,15 @@ export default function AsyncLockConstructorTest(): void {
     it('testAsyncLockConstructor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let pCheck: Promise<void> = lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback1 = (): void => {
         try {
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let pCheck: Promise<void> = lock.lockAsync<void>(
+        lockAsyncCallback1);
       await expect(pCheck).assertPromiseIsResolved()
       } catch (error) {
         console.error("testAsyncLockConstructor0300 failed");
@@ -168,31 +169,34 @@ export default function AsyncLockConstructorTest(): void {
     it('testAsyncLockConstructor0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
+      const lockAsyncCallback2 = (): void => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
+        };
+      const lockAsyncCallback3 = (): void => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
+        };
+      const lockAsyncCallback4 = (): void => {
+          try {
+          } catch (error) {
+            console.error(`callback failed: ${error}`);
+            throw error;
+          }
+        };
       let promises: Promise<void>[] = [
         lock.lockAsync<void>(
-          () => {
-          try {
-          } catch (error) {
-            console.error(`callback failed: ${error}`);
-            throw error;
-          }
-        }),
+          lockAsyncCallback2),
         lock.lockAsync<void>(
-          () => {
-          try {
-          } catch (error) {
-            console.error(`callback failed: ${error}`);
-            throw error;
-          }
-        }),
+          lockAsyncCallback3),
         lock.lockAsync<void>(
-          () => {
-          try {
-          } catch (error) {
-            console.error(`callback failed: ${error}`);
-            throw error;
-          }
-        })
+          lockAsyncCallback4)
       ];
       await Promise.all(promises);
       expect(promises.length).assertEqual(3);
@@ -215,15 +219,21 @@ export default function AsyncLockConstructorTest(): void {
       try {
       let createAndUseLock = async (): Promise<string> => {
         let lock = new AsyncLock();
-        return await lock.lockAsync<string>(
-          () => {
+        const lockAsyncCallback5 = (): string => {
           try {
             return 'result';
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        });
+        };
+        try {
+          return await lock.lockAsync<string>(
+            lockAsyncCallback5);
+        } catch (error) {
+          console.error(`testAsyncLockConstructor1000 helper failed: ${error}`);
+          throw error;
+        }
       };
       let result = await createAndUseLock();
       expect(result).assertEqual('result');
@@ -247,10 +257,11 @@ export default function AsyncLockConstructorTest(): void {
       let lock = new AsyncLock();
       let used: boolean = false;
       let useLock: () => Promise<void> = async (): Promise<void> => {
-        await lock.lockAsync<void>(
-          () => {
+        const lockAsyncCallback6 = (): void => {
           used = true;
-        });
+        };
+        await lock.lockAsync<void>(
+          lockAsyncCallback6);
       };
       await useLock();
       expect(used).assertTrue();
@@ -370,9 +381,10 @@ export default function AsyncLockConstructorTest(): void {
       try {
       let localOperation: () => Promise<void> = async (): Promise<void> => {
         let lock = new AsyncLock();
+        const lockAsyncCallback7 = (): void => {
+        };
         await lock.lockAsync<void>(
-          () => {
-        });
+          lockAsyncCallback7);
       };
       await localOperation();
       await expect(localOperation()).assertPromiseIsResolved();
@@ -395,8 +407,7 @@ export default function AsyncLockConstructorTest(): void {
       try {
       let lock = new AsyncLock();
       let called = false;
-      await lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback8 = (): Promise<void> => {
         try {
           called = true;
           return Promise.resolve();
@@ -404,7 +415,9 @@ export default function AsyncLockConstructorTest(): void {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      await lock.lockAsync<void>(
+        lockAsyncCallback8);
       expect(called).assertTrue();
       } catch (error) {
         console.error("testAsyncLockConstructor2000 failed");

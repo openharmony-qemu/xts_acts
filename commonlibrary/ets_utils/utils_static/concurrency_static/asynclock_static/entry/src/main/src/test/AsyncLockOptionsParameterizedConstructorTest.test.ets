@@ -230,15 +230,16 @@ export default function AsyncLockOptionsParameterizedConstructorTest(): void {
           let s: AbortSignal<string> = { aborted: false, reason: "test" };
           let options = new AsyncLockOptions<string>(true, s, 1000);
           let executed = false;
-          await lock.lockAsync<void, string>(
-            () => {
+          const lockAsyncCallback1 = (): void => {
             try {
               executed = true;
             } catch (error) {
               console.error(`callback failed: ${error}`);
               throw error;
             }
-          }, AsyncLockMode.EXCLUSIVE, options);
+          };
+          await lock.lockAsync<void, string>(
+            lockAsyncCallback1, AsyncLockMode.EXCLUSIVE, options);
           expect(executed).assertTrue();
           done();
         } catch (error) {
@@ -346,19 +347,21 @@ export default function AsyncLockOptionsParameterizedConstructorTest(): void {
         try {
           let lock = new AsyncLock();
           let options = new AsyncLockOptions<void>(true, null, 0);
-          let firstLock: Promise<void> = lock.lockAsync<void>(
-            () => {
+          const lockAsyncCallback2 = (): void => {
             try {
             } catch (error) {
               console.error(`callback failed: ${error}`);
               throw error;
             }
-          }, AsyncLockMode.EXCLUSIVE);
+          };
+          let firstLock: Promise<void> = lock.lockAsync<void>(
+            lockAsyncCallback2, AsyncLockMode.EXCLUSIVE);
           let rejected = false;
           try {
+            const lockAsyncCallback3 = (): void => {
+            };
             await lock.lockAsync<void, void>(
-              () => {
-            }, AsyncLockMode.EXCLUSIVE, options);
+              lockAsyncCallback3, AsyncLockMode.EXCLUSIVE, options);
           } catch (error) {
             rejected = true;
           }
@@ -387,17 +390,17 @@ export default function AsyncLockOptionsParameterizedConstructorTest(): void {
           let options = new AsyncLockOptions<void>(false, null, 0);
           let executed = false;
           let executionOrder: number[] = [];
-          let p1: Promise<void> = lock.lockAsync<void>(
-            () => {
+          const lockAsyncCallback4 = (): void => {
             try {
               executionOrder.push(1);
             } catch (error) {
               console.error(`callback failed: ${error}`);
               throw error;
             }
-          }, AsyncLockMode.EXCLUSIVE);
-          let p2: Promise<void> = lock.lockAsync<void, void>(
-            () => {
+          };
+          let p1: Promise<void> = lock.lockAsync<void>(
+            lockAsyncCallback4, AsyncLockMode.EXCLUSIVE);
+          const lockAsyncCallback5 = (): void => {
             try {
               executionOrder.push(2);
               executed = true;
@@ -405,7 +408,9 @@ export default function AsyncLockOptionsParameterizedConstructorTest(): void {
               console.error(`callback failed: ${error}`);
               throw error;
             }
-          }, AsyncLockMode.EXCLUSIVE, options);
+          };
+          let p2: Promise<void> = lock.lockAsync<void, void>(
+            lockAsyncCallback5, AsyncLockMode.EXCLUSIVE, options);
           await p1;
           await p2;
           expect(executed).assertTrue();
@@ -432,25 +437,27 @@ export default function AsyncLockOptionsParameterizedConstructorTest(): void {
         try {
           let lock = new AsyncLock();
           let options = new AsyncLockOptions<void>(false, null, 100);
-          let holder: Promise<void> = lock.lockAsync<void>(
-            (): Promise<void> => {
+          const lockAsyncCallback6 = (): Promise<void> => {
             try {
               return sleep(500);
             } catch (error) {
               console.error(`callback failed: ${error}`);
               throw error;
             }
-          });
+          };
+          let holder: Promise<void> = lock.lockAsync<void>(
+            lockAsyncCallback6);
           let rejected = false;
           try {
-            await lock.lockAsync<void, void>(
-              () => {
+            const lockAsyncCallback7 = (): void => {
               try {
               } catch (error) {
                 console.error(`callback failed: ${error}`);
                 throw error;
               }
-            }, AsyncLockMode.EXCLUSIVE, options);
+            };
+            await lock.lockAsync<void, void>(
+              lockAsyncCallback7, AsyncLockMode.EXCLUSIVE, options);
           } catch (error) {
             rejected = true;
           }
