@@ -448,4 +448,40 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0020, Function |
     demoApi->Release((IUnknown *)demoApi);
 }
 
+
+/**
+ * @tc.name   testSendResponse0040
+ * @tc.number DMSLite_SAMGR_SendResponse_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0040, Function | MediumTest | Level2)
+{
+    Response response = {.data = NULL, .len = 0};
+    int32 result = SAMGR_SendResponse(NULL, &response);
+    TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
+    result = SAMGR_SendResponse(NULL, NULL);
+    TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
+}
+
+/**
+ * @tc.name   testSendResponseByIdentity0030
+ * @tc.number DMSLite_SAMGR_SendResponseByIdentity_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0030, Function | MediumTest | Level2)
+{
+    Identity identity = {0, 0, NULL};
+    Response response = {.data = NULL, .len = 0};
+    int32 result = SAMGR_SendResponseByIdentity(NULL, NULL, NULL);
+    TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
+    result = SAMGR_SendResponseByIdentity(&identity, NULL, &response);
+    TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
+}
+
 RUN_TEST_SUITE(SendResponseTestSuite);
