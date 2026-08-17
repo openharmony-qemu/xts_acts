@@ -57,5 +57,7 @@ napi_value VideoDecCapApi0024(napi_env env, napi_callback_info info);
 napi_value VideoDecCapApi0025(napi_env env, napi_callback_info info);
 napi_value VideoDecCapApi0026(napi_env env, napi_callback_info info);
 napi_value VideoDecCapApi0027(napi_env env, napi_callback_info info);
-
+napi_value VideoDecCapApi0028(napi_env env, napi_callback_info info);
+napi_value VideoDecCapApi0029(napi_env env, napi_callback_info info);
+napi_value VideoDecCapApi0030(napi_env env, napi_callback_info info);
 #endif // VIDEO_DECODER_API_TEST_H
