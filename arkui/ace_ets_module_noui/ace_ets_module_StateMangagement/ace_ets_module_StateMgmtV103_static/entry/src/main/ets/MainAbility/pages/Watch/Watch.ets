@@ -75,7 +75,7 @@ struct BasketViewer {
 @Entry
 @Component
 struct WATCHBasketModifier {
-  @State purchaseItem: PurchaseItem[] = new Array<PurchaseItem>();
+  @State purchaseItem: PurchaseItem = new Array<PurchaseItem>();
   aboutToAppear() {
     let uiContext = this.getUIContext();
     try {

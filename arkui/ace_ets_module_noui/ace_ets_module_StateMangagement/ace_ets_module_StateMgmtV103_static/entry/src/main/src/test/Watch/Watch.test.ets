@@ -73,9 +73,9 @@ it('SUB_ARKUI_API_WatchTest_static_0100', Level.LEVEL0, async (done: () => void)
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      let button = await driver.findComponent(ON.id('watchButton'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      let button = driver.findComponent(ON.id('watchButton'));
+      button?.click() as Promise<void>;
+      CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('totalText');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SUB_ARKUI_API_WatchTest_static_0100] component obj is: " + JSON.stringify(obj));
