@@ -18,6 +18,8 @@
 #include "ohos_types.h"
 #include "parameter.h"
 #include "parameter_utils.h"
+#include <stdio.h>
+#include <string.h>
 
 /* param_comm.h 中的 UDID 长度定义（parameter.h 未间接包含该头） */
 #ifndef UDID_LEN
@@ -962,10 +964,16 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetMajorVersion,
   Function | MediumTest | Level1)
 {
-    /* 由 const.ohos.fullname="OpenHarmony-7.0.0.37(Beta)" 解析，实测 M=7 */
+    /* major 随版本迭代（OpenHarmony-7.0.0.x），从 GetOSFullName() 解析第 1 段动态比对 */
+    const char *fullName = GetOSFullName();
+    const char *p = strchr(fullName, '-');
+    int major = 0, minor = 0, patch = 0, build = 0;
+    if (p != NULL) {
+        sscanf(p + 1, "%d.%d.%d.%d", &major, &minor, &patch, &build);
+    }
     int value1 = GetMajorVersion();
-    printf("MajorVersion=%d\n", value1);
-    TEST_ASSERT_EQUAL_INT(7, value1);
+    printf("MajorVersion=%d, fullname=%s\n", value1, fullName);
+    TEST_ASSERT_EQUAL_INT(major, value1);
     int value2 = GetMajorVersion();
     TEST_ASSERT_EQUAL_INT(value1, value2);
 };
@@ -1022,10 +1030,17 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetBuildVersion,
   Function | MediumTest | Level1)
 {
-    /* 由 const.ohos.fullname 解析，实测 B=37 */
+    /* build 号随固件版本迭代（7.0.0.37 → 7.0.0.38），不能写死；
+       从 GetOSFullName() 解析 "OpenHarmony-7.0.0.38(Beta)" 第 4 段动态比对 */
+    const char *fullName = GetOSFullName();
+    const char *p = strchr(fullName, '-');
+    int major = 0, minor = 0, patch = 0, build = 0;
+    if (p != NULL) {
+        sscanf(p + 1, "%d.%d.%d.%d", &major, &minor, &patch, &build);
+    }
     int value1 = GetBuildVersion();
-    printf("BuildVersion=%d\n", value1);
-    TEST_ASSERT_EQUAL_INT(37, value1);
+    printf("BuildVersion=%d, fullname=%s\n", value1, fullName);
+    TEST_ASSERT_EQUAL_INT(build, value1);
     int value2 = GetBuildVersion();
     TEST_ASSERT_EQUAL_INT(value1, value2);
 };
