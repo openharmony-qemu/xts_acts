@@ -242,7 +242,7 @@ export default function LockFactorCallbackTest(): void {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const task = new taskpool.Task(succeededTask, counter);
-      task.onExecutionSucceeded((): void => {
+      const onSuccess: () => void = (): void => {
         try {
           mutex.lock();
           try {
@@ -253,7 +253,8 @@ export default function LockFactorCallbackTest(): void {
         } catch (error) {
           console.error(`onExecutionSucceeded exception: ${error}`);
         }
-      });
+      };
+      task.onExecutionSucceeded(onSuccess);
       await taskpool.execute(task);
       expect(counter.load()).assertEqual(2);
       } catch (error) {
