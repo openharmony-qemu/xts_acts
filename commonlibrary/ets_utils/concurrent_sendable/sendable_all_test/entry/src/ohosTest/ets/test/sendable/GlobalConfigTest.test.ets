@@ -124,10 +124,16 @@ export default function GlobalConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGlobalConfig0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      expect(await configManager.size()).assertEqual(0)
-      expect(await configManager.getVersion()).assertEqual(0)
-      expect(await configManager.getUpdateTime()).assertEqual(0)
+    it('testGlobalConfig0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(await configManager.size()).assertEqual(0)
+        expect(await configManager.getVersion()).assertEqual(0)
+        expect(await configManager.getUpdateTime()).assertEqual(0)
+      } catch (error) {
+        console.error("testGlobalConfig0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -138,13 +144,19 @@ export default function GlobalConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGlobalConfig0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await configManager.loadConfig(
-        ['app.name', 'app.version', 'debug.mode'],
-        ['TestApp', '1.0.0', 'false']
-      )
-      expect(await configManager.size()).assertEqual(3)
-      expect(await configManager.getVersion()).assertEqual(1)
+    it('testGlobalConfig0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await configManager.loadConfig(
+          ['app.name', 'app.version', 'debug.mode'],
+          ['TestApp', '1.0.0', 'false']
+        )
+        expect(await configManager.size()).assertEqual(3)
+        expect(await configManager.getVersion()).assertEqual(1)
+      } catch (error) {
+        console.error("testGlobalConfig0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -155,10 +167,16 @@ export default function GlobalConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGlobalConfig0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await configManager.set('server.host', '192.168.1.100')
-      const value: string | undefined = await configManager.get('server.host')
-      expect(value).assertEqual('192.168.1.100')
+    it('testGlobalConfig0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await configManager.set('server.host', '192.168.1.100')
+        const value: string | undefined = await configManager.get('server.host')
+        expect(value).assertEqual('192.168.1.100')
+      } catch (error) {
+        console.error("testGlobalConfig0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -169,11 +187,17 @@ export default function GlobalConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGlobalConfig0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const oldVersion: number = await configManager.getVersion()
-      await configManager.set('timeout', '5000')
-      const newVersion: number = await configManager.getVersion()
-      expect(newVersion).assertEqual(oldVersion + 1)
+    it('testGlobalConfig0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const oldVersion: number = await configManager.getVersion()
+        await configManager.set('timeout', '5000')
+        const newVersion: number = await configManager.getVersion()
+        expect(newVersion).assertEqual(oldVersion + 1)
+      } catch (error) {
+        console.error("testGlobalConfig0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -184,10 +208,16 @@ export default function GlobalConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGlobalConfig0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await configManager.set('feature.enabled', 'true')
-      expect(await configManager.has('feature.enabled')).assertTrue()
-      expect(await configManager.has('nonexistent')).assertFalse()
+    it('testGlobalConfig0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await configManager.set('feature.enabled', 'true')
+        expect(await configManager.has('feature.enabled')).assertTrue()
+        expect(await configManager.has('nonexistent')).assertFalse()
+      } catch (error) {
+        console.error("testGlobalConfig0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -198,14 +228,20 @@ export default function GlobalConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGlobalConfig0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await configManager.set('temp.key', 'temp_value')
-      const sizeBefore: number = await configManager.size()
-      const deleted: boolean = await configManager.delete('temp.key')
-      expect(deleted).assertTrue()
-      const sizeAfter: number = await configManager.size()
-      expect(sizeAfter).assertEqual(sizeBefore - 1)
-      expect(await configManager.has('temp.key')).assertFalse()
+    it('testGlobalConfig0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await configManager.set('temp.key', 'temp_value')
+        const sizeBefore: number = await configManager.size()
+        const deleted: boolean = await configManager.delete('temp.key')
+        expect(deleted).assertTrue()
+        const sizeAfter: number = await configManager.size()
+        expect(sizeAfter).assertEqual(sizeBefore - 1)
+        expect(await configManager.has('temp.key')).assertFalse()
+      } catch (error) {
+        console.error("testGlobalConfig0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -216,23 +252,29 @@ export default function GlobalConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGlobalConfig0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await configManager.loadConfig(
-        ['key1', 'key2', 'key3', 'key4', 'key5'],
-        ['value1', 'value2', 'value3', 'value4', 'value5']
-      )
-      const tasks: taskpool.Task[] = []
-      for (let i = 1; i <= 5; i++) {
-        tasks.push(new taskpool.Task(readConfigTask, configManager, `key${i}`))
+    it('testGlobalConfig0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await configManager.loadConfig(
+          ['key1', 'key2', 'key3', 'key4', 'key5'],
+          ['value1', 'value2', 'value3', 'value4', 'value5']
+        )
+        const tasks: taskpool.Task[] = []
+        for (let i = 1; i <= 5; i++) {
+          tasks.push(new taskpool.Task(readConfigTask, configManager, `key${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(5)
+        expect(results[0] as string).assertEqual('value1')
+        expect(results[4] as string).assertEqual('value5')
+      } catch (error) {
+        console.error("testGlobalConfig0700 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      expect(results.length).assertEqual(5)
-      expect(results[0] as string).assertEqual('value1')
-      expect(results[4] as string).assertEqual('value5')
+      done();
     })
 
     /**
@@ -243,27 +285,33 @@ export default function GlobalConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGlobalConfig0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const keys: string[] = []
-      const values: string[] = []
-      for (let i = 1; i <= 10; i++) {
-        keys.push(`config${i}`)
-        values.push(`setting${i}`)
+    it('testGlobalConfig0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const keys: string[] = []
+        const values: string[] = []
+        for (let i = 1; i <= 10; i++) {
+          keys.push(`config${i}`)
+          values.push(`setting${i}`)
+        }
+        await configManager.loadConfig(keys, values)
+        const tasks: taskpool.Task[] = []
+        for (let i = 1; i <= 10; i++) {
+          tasks.push(new taskpool.Task(readConfigTask, configManager, `config${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(10)
+        for (let i = 0; i < 10; i++) {
+          expect(results[i] as string).assertEqual(`setting${i + 1}`)
+        }
+      } catch (error) {
+        console.error("testGlobalConfig0800 failed");
+        expect(false).assertFail();
       }
-      await configManager.loadConfig(keys, values)
-      const tasks: taskpool.Task[] = []
-      for (let i = 1; i <= 10; i++) {
-        tasks.push(new taskpool.Task(readConfigTask, configManager, `config${i}`))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      expect(results.length).assertEqual(10)
-      for (let i = 0; i < 10; i++) {
-        expect(results[i] as string).assertEqual(`setting${i + 1}`)
-      }
+      done();
     })
 
     /**
@@ -274,19 +322,25 @@ export default function GlobalConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGlobalConfig0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const initialVersion: number = await configManager.getVersion()
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(writeConfigTask, configManager, `setting${i}`, `val${i}`))
+    it('testGlobalConfig0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const initialVersion: number = await configManager.getVersion()
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(writeConfigTask, configManager, `setting${i}`, `val${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        const finalVersion: number = await configManager.getVersion()
+        expect(finalVersion).assertEqual(initialVersion + 5)
+      } catch (error) {
+        console.error("testGlobalConfig0900 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      const finalVersion: number = await configManager.getVersion()
-      expect(finalVersion).assertEqual(initialVersion + 5)
+      done();
     })
 
     /**
@@ -297,26 +351,32 @@ export default function GlobalConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGlobalConfig1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await configManager.loadConfig(['read1', 'read2'], ['base1', 'base2'])
-      const readTasks: taskpool.Task[] = []
-      const writeTasks: taskpool.Task[] = []
-      for (let i = 1; i <= 2; i++) {
-        readTasks.push(new taskpool.Task(readConfigTask, configManager, `read${i}`))
+    it('testGlobalConfig1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await configManager.loadConfig(['read1', 'read2'], ['base1', 'base2'])
+        const readTasks: taskpool.Task[] = []
+        const writeTasks: taskpool.Task[] = []
+        for (let i = 1; i <= 2; i++) {
+          readTasks.push(new taskpool.Task(readConfigTask, configManager, `read${i}`))
+        }
+        for (let i = 0; i < 3; i++) {
+          writeTasks.push(new taskpool.Task(writeConfigTask, configManager, `write${i}`, `new${i}`))
+        }
+        const readPromises: Promise<Object>[] = []
+        const writePromises: Promise<Object>[] = []
+        for (let i = 0; i < readTasks.length; i++) {
+          readPromises.push(taskpool.execute(readTasks[i]))
+        }
+        for (let i = 0; i < writeTasks.length; i++) {
+          writePromises.push(taskpool.execute(writeTasks[i]))
+        }
+        await Promise.all([...readPromises, ...writePromises])
+        expect(readPromises.length).assertEqual(2)
+      } catch (error) {
+        console.error("testGlobalConfig1000 failed");
+        expect(false).assertFail();
       }
-      for (let i = 0; i < 3; i++) {
-        writeTasks.push(new taskpool.Task(writeConfigTask, configManager, `write${i}`, `new${i}`))
-      }
-      const readPromises: Promise<Object>[] = []
-      const writePromises: Promise<Object>[] = []
-      for (let i = 0; i < readTasks.length; i++) {
-        readPromises.push(taskpool.execute(readTasks[i]))
-      }
-      for (let i = 0; i < writeTasks.length; i++) {
-        writePromises.push(taskpool.execute(writeTasks[i]))
-      }
-      await Promise.all([...readPromises, ...writePromises])
-      expect(readPromises.length).assertEqual(2)
+      done();
     })
 
     /**
@@ -327,15 +387,21 @@ export default function GlobalConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGlobalConfig1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await configManager.loadConfig(['initial'], ['value'])
-      const version1: number = await configManager.getVersion()
-      const time1: number = await configManager.getUpdateTime()
-      await configManager.set('updated', 'new_value')
-      const version2: number = await configManager.getVersion()
-      const time2: number = await configManager.getUpdateTime()
-      expect(version2).assertEqual(version1 + 1)
-      expect(time2 >= time1).assertTrue()
+    it('testGlobalConfig1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await configManager.loadConfig(['initial'], ['value'])
+        const version1: number = await configManager.getVersion()
+        const time1: number = await configManager.getUpdateTime()
+        await configManager.set('updated', 'new_value')
+        const version2: number = await configManager.getVersion()
+        const time2: number = await configManager.getUpdateTime()
+        expect(version2).assertEqual(version1 + 1)
+        expect(time2 >= time1).assertTrue()
+      } catch (error) {
+        console.error("testGlobalConfig1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -346,20 +412,26 @@ export default function GlobalConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGlobalConfig1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await configManager.set('check_key', 'check_value')
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(checkConfigTask, configManager, 'check_key'))
+    it('testGlobalConfig1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await configManager.set('check_key', 'check_value')
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(checkConfigTask, configManager, 'check_key'))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as boolean).assertTrue()
+        }
+      } catch (error) {
+        console.error("testGlobalConfig1200 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as boolean).assertTrue()
-      }
+      done();
     })
   })
 }

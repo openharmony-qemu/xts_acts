@@ -131,11 +131,17 @@ export default function EventPublishTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEventPublish0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await bus.subscribe('click', 'handler_1')
-      const count: number = await bus.publish('click', 'test_data')
-      expect(count).assertEqual(1)
-      expect(await bus.getQueueLength()).assertEqual(1)
+    it('testEventPublish0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await bus.subscribe('click', 'handler_1')
+        const count: number = await bus.publish('click', 'test_data')
+        expect(count).assertEqual(1)
+        expect(await bus.getQueueLength()).assertEqual(1)
+      } catch (error) {
+        console.error("testEventPublish0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -146,11 +152,17 @@ export default function EventPublishTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEventPublish0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await bus.subscribe('click', 'handler_1')
-      await bus.subscribe('click', 'handler_2')
-      const count: number = await bus.publish('click', 'test_data')
-      expect(count).assertEqual(2)
+    it('testEventPublish0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await bus.subscribe('click', 'handler_1')
+        await bus.subscribe('click', 'handler_2')
+        const count: number = await bus.publish('click', 'test_data')
+        expect(count).assertEqual(2)
+      } catch (error) {
+        console.error("testEventPublish0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -161,10 +173,16 @@ export default function EventPublishTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEventPublish0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const count: number = await bus.publish('click', 'test_data')
-      expect(count).assertEqual(0)
-      expect(await bus.getQueueLength()).assertEqual(1)
+    it('testEventPublish0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const count: number = await bus.publish('click', 'test_data')
+        expect(count).assertEqual(0)
+        expect(await bus.getQueueLength()).assertEqual(1)
+      } catch (error) {
+        console.error("testEventPublish0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -175,11 +193,17 @@ export default function EventPublishTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEventPublish0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await bus.publish('click', 'data_1')
-      await bus.publish('click', 'data_2')
-      expect(await bus.getPublishCount()).assertEqual(2)
-      expect(await bus.getQueueLength()).assertEqual(2)
+    it('testEventPublish0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await bus.publish('click', 'data_1')
+        await bus.publish('click', 'data_2')
+        expect(await bus.getPublishCount()).assertEqual(2)
+        expect(await bus.getQueueLength()).assertEqual(2)
+      } catch (error) {
+        console.error("testEventPublish0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -190,13 +214,19 @@ export default function EventPublishTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEventPublish0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await bus.subscribe('click', 'handler_1')
-      await bus.subscribe('hover', 'handler_2')
-      const c1: number = await bus.publish('click', 'data')
-      const c2: number = await bus.publish('hover', 'data')
-      expect(c1).assertEqual(1)
-      expect(c2).assertEqual(1)
+    it('testEventPublish0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await bus.subscribe('click', 'handler_1')
+        await bus.subscribe('hover', 'handler_2')
+        const c1: number = await bus.publish('click', 'data')
+        const c2: number = await bus.publish('hover', 'data')
+        expect(c1).assertEqual(1)
+        expect(c2).assertEqual(1)
+      } catch (error) {
+        console.error("testEventPublish0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -207,14 +237,20 @@ export default function EventPublishTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testEventPublish0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await bus.subscribe('click', 'handler_1')
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(publishTask, bus, 'click', `data_${i}`))
+    it('testEventPublish0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await bus.subscribe('click', 'handler_1')
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(publishTask, bus, 'click', `data_${i}`))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await bus.getPublishCount() >= 10).assertTrue()
+      } catch (error) {
+        console.error("testEventPublish0600 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await bus.getPublishCount() >= 10).assertTrue()
+      done();
     })
 
     /**
@@ -225,15 +261,21 @@ export default function EventPublishTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testEventPublish0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await bus.subscribe('click', 'handler_1')
-      await bus.subscribe('click', 'handler_2')
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(publishTask, bus, 'click', `data_${i}`))
+    it('testEventPublish0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await bus.subscribe('click', 'handler_1')
+        await bus.subscribe('click', 'handler_2')
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(publishTask, bus, 'click', `data_${i}`))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await bus.getPublishCount() >= 5).assertTrue()
+      } catch (error) {
+        console.error("testEventPublish0700 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await bus.getPublishCount() >= 5).assertTrue()
+      done();
     })
 
     /**
@@ -244,12 +286,18 @@ export default function EventPublishTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testEventPublish0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i: number = 0; i < 10; i++) {
-        await bus.publish('click', `data_${i}`)
+    it('testEventPublish0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 10; i++) {
+          await bus.publish('click', `data_${i}`)
+        }
+        expect(await bus.getPublishCount()).assertEqual(10)
+        expect(await bus.getQueueLength()).assertEqual(10)
+      } catch (error) {
+        console.error("testEventPublish0800 failed");
+        expect(false).assertFail();
       }
-      expect(await bus.getPublishCount()).assertEqual(10)
-      expect(await bus.getQueueLength()).assertEqual(10)
+      done();
     })
 
     /**
@@ -260,11 +308,17 @@ export default function EventPublishTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testEventPublish0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await bus.publish('click', 'data')
-      await bus.reset()
-      expect(await bus.getPublishCount()).assertEqual(0)
-      expect(await bus.getQueueLength()).assertEqual(0)
+    it('testEventPublish0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await bus.publish('click', 'data')
+        await bus.reset()
+        expect(await bus.getPublishCount()).assertEqual(0)
+        expect(await bus.getQueueLength()).assertEqual(0)
+      } catch (error) {
+        console.error("testEventPublish0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -275,10 +329,16 @@ export default function EventPublishTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testEventPublish1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await bus.subscribe('click', 'handler_1')
-      await bus.publish('click', '')
-      expect(await bus.getQueueLength()).assertEqual(1)
+    it('testEventPublish1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await bus.subscribe('click', 'handler_1')
+        await bus.publish('click', '')
+        expect(await bus.getQueueLength()).assertEqual(1)
+      } catch (error) {
+        console.error("testEventPublish1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

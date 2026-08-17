@@ -94,11 +94,17 @@ export default function IDGeneratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIDGenerator0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const id: string = await generator.nextId()
+    it('testIDGenerator0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const id: string = await generator.nextId()
 
-      expect(id).assertEqual('test_1')
-      expect(generator.getCounter()).assertEqual(1)
+        expect(id).assertEqual('test_1')
+        expect(generator.getCounter()).assertEqual(1)
+      } catch (error) {
+        console.error("testIDGenerator0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -109,15 +115,21 @@ export default function IDGeneratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIDGenerator0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const id1: string = await generator.nextId()
-      const id2: string = await generator.nextId()
-      const id3: string = await generator.nextId()
+    it('testIDGenerator0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const id1: string = await generator.nextId()
+        const id2: string = await generator.nextId()
+        const id3: string = await generator.nextId()
 
-      expect(id1).assertEqual('test_1')
-      expect(id2).assertEqual('test_2')
-      expect(id3).assertEqual('test_3')
-      expect(generator.getCounter()).assertEqual(3)
+        expect(id1).assertEqual('test_1')
+        expect(id2).assertEqual('test_2')
+        expect(id3).assertEqual('test_3')
+        expect(generator.getCounter()).assertEqual(3)
+      } catch (error) {
+        console.error("testIDGenerator0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -128,13 +140,19 @@ export default function IDGeneratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIDGenerator0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const ids: string[] = await generator.nextBatch(5)
+    it('testIDGenerator0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const ids: string[] = await generator.nextBatch(5)
 
-      expect(ids.length).assertEqual(5)
-      expect(ids[0]).assertEqual('test_1')
-      expect(ids[4]).assertEqual('test_5')
-      expect(generator.getCounter()).assertEqual(5)
+        expect(ids.length).assertEqual(5)
+        expect(ids[0]).assertEqual('test_1')
+        expect(ids[4]).assertEqual('test_5')
+        expect(generator.getCounter()).assertEqual(5)
+      } catch (error) {
+        console.error("testIDGenerator0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -145,14 +163,20 @@ export default function IDGeneratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIDGenerator0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await generator.nextId()
-      await generator.nextId()
+    it('testIDGenerator0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await generator.nextId()
+        await generator.nextId()
 
-      const history: collections.Array<string> = generator.getGeneratedIds()
-      expect(history.length).assertEqual(2)
-      expect(history[0]).assertEqual('test_1')
-      expect(history[1]).assertEqual('test_2')
+        const history: collections.Array<string> = generator.getGeneratedIds()
+        expect(history.length).assertEqual(2)
+        expect(history[0]).assertEqual('test_1')
+        expect(history[1]).assertEqual('test_2')
+      } catch (error) {
+        console.error("testIDGenerator0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -163,15 +187,21 @@ export default function IDGeneratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testIDGenerator0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(generateIdTask, generator))
-      }
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      await Promise.all(promises)
+    it('testIDGenerator0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(generateIdTask, generator))
+        }
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        await Promise.all(promises)
 
-      expect(generator.getCounter()).assertEqual(10)
+        expect(generator.getCounter()).assertEqual(10)
+      } catch (error) {
+        console.error("testIDGenerator0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -182,12 +212,18 @@ export default function IDGeneratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIDGenerator0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      expect(generator.getPrefix()).assertEqual('test')
+    it('testIDGenerator0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(generator.getPrefix()).assertEqual('test')
 
-      const customGenerator: IDGenerator = new IDGenerator('order', new ArkTSUtils.locks.AsyncLock(), new collections.Array<string>())
-      const id: string = await customGenerator.nextId()
-      expect(id).assertEqual('order_1')
+        const customGenerator: IDGenerator = new IDGenerator('order', new ArkTSUtils.locks.AsyncLock(), new collections.Array<string>())
+        const id: string = await customGenerator.nextId()
+        expect(id).assertEqual('order_1')
+      } catch (error) {
+        console.error("testIDGenerator0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -198,15 +234,21 @@ export default function IDGeneratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testIDGenerator0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(generateIdTask, generator))
-      }
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      await Promise.all(promises)
+    it('testIDGenerator0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(generateIdTask, generator))
+        }
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        await Promise.all(promises)
 
-      expect(generator.getCounter()).assertEqual(3)
+        expect(generator.getCounter()).assertEqual(3)
+      } catch (error) {
+        console.error("testIDGenerator0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -217,15 +259,21 @@ export default function IDGeneratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testIDGenerator0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(generateIdTask, generator))
-      }
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      await Promise.all(promises)
+    it('testIDGenerator0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(generateIdTask, generator))
+        }
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        await Promise.all(promises)
 
-      expect(generator.getCounter()).assertEqual(5)
+        expect(generator.getCounter()).assertEqual(5)
+      } catch (error) {
+        console.error("testIDGenerator0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -236,15 +284,21 @@ export default function IDGeneratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testIDGenerator0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(generateIdTask, generator))
-      }
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      await Promise.all(promises)
+    it('testIDGenerator0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(generateIdTask, generator))
+        }
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        await Promise.all(promises)
 
-      expect(generator.getCounter()).assertEqual(10)
+        expect(generator.getCounter()).assertEqual(10)
+      } catch (error) {
+        console.error("testIDGenerator0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -255,14 +309,20 @@ export default function IDGeneratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIDGenerator1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      await generator.nextId()
-      const batch: string[] = await generator.nextBatch(3)
-      await generator.nextId()
+    it('testIDGenerator1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await generator.nextId()
+        const batch: string[] = await generator.nextBatch(3)
+        await generator.nextId()
 
-      expect(generator.getCounter()).assertEqual(5)
-      expect(batch[0]).assertEqual('test_2')
-      expect(batch[2]).assertEqual('test_4')
+        expect(generator.getCounter()).assertEqual(5)
+        expect(batch[0]).assertEqual('test_2')
+        expect(batch[2]).assertEqual('test_4')
+      } catch (error) {
+        console.error("testIDGenerator1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

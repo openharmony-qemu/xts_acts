@@ -138,11 +138,17 @@ export default function HeapIsolationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testHeapIsolation0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const obj: SharedHeapObject = await manager.create('shared', 1)
-      expect(obj.getId()).assertEqual(1)
-      expect(obj.getData()).assertEqual('shared')
-      expect(manager.getSize()).assertEqual(1)
+    it('testHeapIsolation0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const obj: SharedHeapObject = await manager.create('shared', 1)
+        expect(obj.getId()).assertEqual(1)
+        expect(obj.getData()).assertEqual('shared')
+        expect(manager.getSize()).assertEqual(1)
+      } catch (error) {
+        console.error("testHeapIsolation0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -153,12 +159,18 @@ export default function HeapIsolationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHeapIsolation0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const localId: number = 2
-      const localName: string = 'local'
-      const task: taskpool.Task = new taskpool.Task(processLocalDataTask, localId, localName)
-      const result: Object = await taskpool.execute(task)
-      expect(result as string).assertEqual('processed: 2-local')
+    it('testHeapIsolation0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const localId: number = 2
+        const localName: string = 'local'
+        const task: taskpool.Task = new taskpool.Task(processLocalDataTask, localId, localName)
+        const result: Object = await taskpool.execute(task)
+        expect(result as string).assertEqual('processed: 2-local')
+      } catch (error) {
+        console.error("testHeapIsolation0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -169,12 +181,18 @@ export default function HeapIsolationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHeapIsolation0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const container: SharedHeapObject = await manager.create('container', 3)
-      const nested: SharedHeapObject = await manager.create('nested', 30)
-      expect(container.getId()).assertEqual(3)
-      expect(nested.getId()).assertEqual(30)
-      expect(manager.getSize()).assertEqual(2)
+    it('testHeapIsolation0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const container: SharedHeapObject = await manager.create('container', 3)
+        const nested: SharedHeapObject = await manager.create('nested', 30)
+        expect(container.getId()).assertEqual(3)
+        expect(nested.getId()).assertEqual(30)
+        expect(manager.getSize()).assertEqual(2)
+      } catch (error) {
+        console.error("testHeapIsolation0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -185,10 +203,16 @@ export default function HeapIsolationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHeapIsolation0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const sharedObj: SharedHeapObject = await manager.create('local_gc', 4)
-      expect(manager.getSize()).assertEqual(1)
-      expect(sharedObj.getId()).assertEqual(4)
+    it('testHeapIsolation0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const sharedObj: SharedHeapObject = await manager.create('local_gc', 4)
+        expect(manager.getSize()).assertEqual(1)
+        expect(sharedObj.getId()).assertEqual(4)
+      } catch (error) {
+        console.error("testHeapIsolation0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -199,10 +223,16 @@ export default function HeapIsolationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHeapIsolation0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await manager.create('shared_gc', 50)
-      await manager.delete('shared_gc')
-      expect(manager.getSize()).assertEqual(0)
+    it('testHeapIsolation0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await manager.create('shared_gc', 50)
+        await manager.delete('shared_gc')
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testHeapIsolation0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -213,15 +243,21 @@ export default function HeapIsolationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHeapIsolation0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const sharedObj: SharedHeapObject = await manager.create('cross', 6)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(sharedAccessTask, sharedObj))
+    it('testHeapIsolation0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const sharedObj: SharedHeapObject = await manager.create('cross', 6)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(sharedAccessTask, sharedObj))
+        }
+        const results: Object[] = await executeIsolationTasks(tasks)
+        expect(results.length).assertEqual(5)
+        expect(results[0] as number).assertEqual(60)
+      } catch (error) {
+        console.error("testHeapIsolation0600 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await executeIsolationTasks(tasks)
-      expect(results.length).assertEqual(5)
-      expect(results[0] as number).assertEqual(60)
+      done();
     })
 
     /**
@@ -232,11 +268,17 @@ export default function HeapIsolationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHeapIsolation0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const localId: number = 7
-      const task: taskpool.Task = new taskpool.Task(processLocalDataTask, localId, 'test')
-      const result: Object = await taskpool.execute(task)
-      expect(result as string).assertEqual('processed: 7-test')
+    it('testHeapIsolation0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const localId: number = 7
+        const task: taskpool.Task = new taskpool.Task(processLocalDataTask, localId, 'test')
+        const result: Object = await taskpool.execute(task)
+        expect(result as string).assertEqual('processed: 7-test')
+      } catch (error) {
+        console.error("testHeapIsolation0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -247,12 +289,18 @@ export default function HeapIsolationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHeapIsolation0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const sharedObj: SharedHeapObject = await manager.create('mixed', 8)
-      const normalId: number = 80
-      const task: taskpool.Task = new taskpool.Task(mixedParamsTask, sharedObj, normalId)
-      const result: Object = await taskpool.execute(task)
-      expect(result as string).assertEqual('8-80')
+    it('testHeapIsolation0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const sharedObj: SharedHeapObject = await manager.create('mixed', 8)
+        const normalId: number = 80
+        const task: taskpool.Task = new taskpool.Task(mixedParamsTask, sharedObj, normalId)
+        const result: Object = await taskpool.execute(task)
+        expect(result as string).assertEqual('8-80')
+      } catch (error) {
+        console.error("testHeapIsolation0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -263,14 +311,20 @@ export default function HeapIsolationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHeapIsolation0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 10; i++) {
-        await manager.create(`alloc_${i}`, i)
-      }
-      expect(manager.getSize()).assertEqual(10)
+    it('testHeapIsolation0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 10; i++) {
+          await manager.create(`alloc_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(10)
 
-      await manager.clearAll()
-      expect(manager.getSize()).assertEqual(0)
+        await manager.clearAll()
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testHeapIsolation0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -281,16 +335,22 @@ export default function HeapIsolationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHeapIsolation1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const container: SharedHeapObject = await manager.create('iso_container', 10)
-      const nested: SharedHeapObject = await manager.create('iso_nested', 100)
+    it('testHeapIsolation1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const container: SharedHeapObject = await manager.create('iso_container', 10)
+        const nested: SharedHeapObject = await manager.create('iso_nested', 100)
 
-      const task: taskpool.Task = new taskpool.Task(sharedAccessTask, container)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertEqual(100)
+        const task: taskpool.Task = new taskpool.Task(sharedAccessTask, container)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertEqual(100)
 
-      expect(container.getId()).assertEqual(10)
-      expect(nested.getId()).assertEqual(100)
+        expect(container.getId()).assertEqual(10)
+        expect(nested.getId()).assertEqual(100)
+      } catch (error) {
+        console.error("testHeapIsolation1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

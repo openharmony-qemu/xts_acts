@@ -130,10 +130,16 @@ export default function EventQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEventQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const result: boolean = await bus.enqueue('click', 'data', 1)
-      expect(result).assertTrue()
-      expect(await bus.getQueueLength()).assertEqual(1)
+    it('testEventQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await bus.enqueue('click', 'data', 1)
+        expect(result).assertTrue()
+        expect(await bus.getQueueLength()).assertEqual(1)
+      } catch (error) {
+        console.error("testEventQueue0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -144,10 +150,16 @@ export default function EventQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEventQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await bus.enqueue('click', 'data_1', 1)
-      await bus.enqueue('click', 'data_2', 2)
-      expect(await bus.getQueueLength()).assertEqual(2)
+    it('testEventQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await bus.enqueue('click', 'data_1', 1)
+        await bus.enqueue('click', 'data_2', 2)
+        expect(await bus.getQueueLength()).assertEqual(2)
+      } catch (error) {
+        console.error("testEventQueue0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -158,11 +170,17 @@ export default function EventQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEventQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await bus.enqueue('click', 'data', 1)
-      const item: EventQueueItem | null = await bus.dequeue()
-      expect((item as EventQueueItem).data_).assertEqual('data')
-      expect(await bus.getQueueLength()).assertEqual(0)
+    it('testEventQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await bus.enqueue('click', 'data', 1)
+        const item: EventQueueItem | null = await bus.dequeue()
+        expect((item as EventQueueItem).data_).assertEqual('data')
+        expect(await bus.getQueueLength()).assertEqual(0)
+      } catch (error) {
+        console.error("testEventQueue0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -173,9 +191,15 @@ export default function EventQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEventQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const item: EventQueueItem | null = await bus.dequeue()
-      expect(item === null).assertTrue()
+    it('testEventQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const item: EventQueueItem | null = await bus.dequeue()
+        expect(item === null).assertTrue()
+      } catch (error) {
+        console.error("testEventQueue0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -186,10 +210,16 @@ export default function EventQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEventQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await bus.enqueue('click', 'data', 1)
-      const item: EventQueueItem | null = await bus.peek()
-      expect(await bus.getQueueLength()).assertEqual(1)
+    it('testEventQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await bus.enqueue('click', 'data', 1)
+        const item: EventQueueItem | null = await bus.peek()
+        expect(await bus.getQueueLength()).assertEqual(1)
+      } catch (error) {
+        console.error("testEventQueue0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -200,15 +230,21 @@ export default function EventQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testEventQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await bus.setMaxSize(2)
-      const r1: boolean = await bus.enqueue('click', 'data_1', 1)
-      const r2: boolean = await bus.enqueue('click', 'data_2', 2)
-      const r3: boolean = await bus.enqueue('click', 'data_3', 3)
-      expect(r1).assertTrue()
-      expect(r2).assertTrue()
-      expect(r3).assertFalse()
-      expect(await bus.getDroppedCount()).assertEqual(1)
+    it('testEventQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await bus.setMaxSize(2)
+        const r1: boolean = await bus.enqueue('click', 'data_1', 1)
+        const r2: boolean = await bus.enqueue('click', 'data_2', 2)
+        const r3: boolean = await bus.enqueue('click', 'data_3', 3)
+        expect(r1).assertTrue()
+        expect(r2).assertTrue()
+        expect(r3).assertFalse()
+        expect(await bus.getDroppedCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testEventQueue0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -219,13 +255,19 @@ export default function EventQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testEventQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(enqueueTask, bus, 'click', `data_${i}`, 1))
+    it('testEventQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(enqueueTask, bus, 'click', `data_${i}`, 1))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await bus.getQueueLength()).assertEqual(10)
+      } catch (error) {
+        console.error("testEventQueue0700 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await bus.getQueueLength()).assertEqual(10)
+      done();
     })
 
     /**
@@ -236,15 +278,21 @@ export default function EventQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testEventQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await bus.setMaxSize(5)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(enqueueTask, bus, 'click', `data_${i}`, 1))
+    it('testEventQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await bus.setMaxSize(5)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(enqueueTask, bus, 'click', `data_${i}`, 1))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await bus.getQueueLength()).assertEqual(5)
+        expect(await bus.getDroppedCount() >= 5).assertTrue()
+      } catch (error) {
+        console.error("testEventQueue0800 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await bus.getQueueLength()).assertEqual(5)
-      expect(await bus.getDroppedCount() >= 5).assertTrue()
+      done();
     })
 
     /**
@@ -255,12 +303,18 @@ export default function EventQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testEventQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i: number = 0; i < 5; i++) {
-        await bus.enqueue('click', `data_${i}`, 1)
+    it('testEventQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 5; i++) {
+          await bus.enqueue('click', `data_${i}`, 1)
+        }
+        await bus.clear()
+        expect(await bus.getQueueLength()).assertEqual(0)
+      } catch (error) {
+        console.error("testEventQueue0900 failed");
+        expect(false).assertFail();
       }
-      await bus.clear()
-      expect(await bus.getQueueLength()).assertEqual(0)
+      done();
     })
 
     /**
@@ -271,13 +325,19 @@ export default function EventQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testEventQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await bus.enqueue('click', 'data_1', 1)
-      await bus.enqueue('click', 'data_2', 2)
-      const item1: EventQueueItem | null = await bus.dequeue()
-      const item2: EventQueueItem | null = await bus.dequeue()
-      expect((item1 as EventQueueItem).data_).assertEqual('data_1')
-      expect((item2 as EventQueueItem).data_).assertEqual('data_2')
+    it('testEventQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await bus.enqueue('click', 'data_1', 1)
+        await bus.enqueue('click', 'data_2', 2)
+        const item1: EventQueueItem | null = await bus.dequeue()
+        const item2: EventQueueItem | null = await bus.dequeue()
+        expect((item1 as EventQueueItem).data_).assertEqual('data_1')
+        expect((item2 as EventQueueItem).data_).assertEqual('data_2')
+      } catch (error) {
+        console.error("testEventQueue1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -288,11 +348,17 @@ export default function EventQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testEventQueue1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await bus.enqueue('click', 'data', 1)
-      await bus.reset()
-      expect(await bus.getQueueLength()).assertEqual(0)
-      expect(await bus.getDroppedCount()).assertEqual(0)
+    it('testEventQueue1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await bus.enqueue('click', 'data', 1)
+        await bus.reset()
+        expect(await bus.getQueueLength()).assertEqual(0)
+        expect(await bus.getDroppedCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testEventQueue1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -303,16 +369,22 @@ export default function EventQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testEventQueue1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      for (let i: number = 0; i < 20; i++) {
-        await bus.enqueue('click', `data_${i}`, 1)
+    it('testEventQueue1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 20; i++) {
+          await bus.enqueue('click', `data_${i}`, 1)
+        }
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(enqueueTask, bus, 'click', `extra_${i}`, 1))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await bus.getQueueLength()).assertEqual(30)
+      } catch (error) {
+        console.error("testEventQueue1200 failed");
+        expect(false).assertFail();
       }
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(enqueueTask, bus, 'click', `extra_${i}`, 1))
-      }
-      await executeTasksGetObjects(tasks)
-      expect(await bus.getQueueLength()).assertEqual(30)
+      done();
     })
   })
 }
