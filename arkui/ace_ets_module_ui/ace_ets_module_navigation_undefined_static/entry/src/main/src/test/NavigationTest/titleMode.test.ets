@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -83,7 +83,9 @@ export default function titleMode() {
      */
     it('titleMode_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[titleMode_static_0001] START');
-      let driver: Driver = Driver.create();
+      try{
+
+      let driver: Driver = await Driver.create();
 
       let strJson = inspector.getInspectorByKey('Navigation_1');
       console.info("[titleMode_static_0001] titleMode: " +
@@ -107,6 +109,10 @@ export default function titleMode() {
       strJson = inspector.getInspectorByKey('Navigation_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('titleMode'))
         .assertEqual('NavigationTitleMode.Free');
+      }catch (err) {
+        console.error('titleMode_static_0001 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[titleMode_static_0001] END');
       done();
     });
@@ -120,7 +126,9 @@ export default function titleMode() {
      */
     it('toolbar_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[toolbar_static_0002] START');
-      let driver: Driver = Driver.create();
+      try{
+
+      let driver: Driver = await Driver.create();
 
       let textNode = await driver.findComponent(ON.text('toolbar'));
       expect(textNode).assertNull();
@@ -137,6 +145,10 @@ export default function titleMode() {
 
       textNode = await driver.findComponent(ON.text('toolbar'));
       expect(textNode).assertNull();
+      }catch (err) {
+        console.error('toolbar_static_0002 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[toolbar_static_0002] END');
       done();
     });

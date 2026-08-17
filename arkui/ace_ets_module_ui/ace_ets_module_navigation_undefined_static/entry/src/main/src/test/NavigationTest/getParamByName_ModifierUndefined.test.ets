@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -58,11 +58,11 @@ export default function getParamByNameModifierUndefined() {
       console.info("getParamByNameModifierUndefined beforeEach end");
 
     });
-    afterEach(async () => {
+afterEach(async () => {
       console.info("getParamByNameModifierUndefined afterEach start");
       try {
-        let driver: Driver = Driver.create();
-        // 尝试返回到初始页面，清理可能残留的页面跳转状态
+        await CommonFunc.sleep(1000);
+        let driver: Driver = await Driver.create();
         await driver.pressBack();
         await CommonFunc.sleep(500);
       } catch (err) {
@@ -79,10 +79,12 @@ export default function getParamByNameModifierUndefined() {
      */
     it('getParamByNameModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[getParamByNameModifierUndefined_static_0001] START');
-      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 步骤1: 验证初始状态 - modifier.isUndefined = false
       let toggleBtn = await driver.findComponent(ON.id('toggleButton'));
       if (toggleBtn) {
         let toggleText = await toggleBtn.getText();
@@ -90,7 +92,6 @@ export default function getParamByNameModifierUndefined() {
         expect(toggleText.indexOf('false') > -1).assertTrue();
       }
 
-      // 步骤2: 直接点击 getParamByName，此时 PageHome1 还未被 push
       let getParamBtn = await driver.findComponent(ON.id('getParamButton'));
       if (getParamBtn) {
         await getParamBtn.click();
@@ -103,14 +104,12 @@ export default function getParamByNameModifierUndefined() {
       console.info('[getParamByNameModifierUndefined_static_0001] Step2 result text (no page): ' + res);
       expect(res).assertEqual('Result: 0');
 
-      // 步骤3: 点击 pushPathByName 按钮
       let pushBtn = await driver.findComponent(ON.id('pushButton'));
       if (pushBtn) {
         await pushBtn.click();
         await CommonFunc.sleep(1500);
       }
 
-      // 步骤4: 重新查找并点击 getParamByName 按钮
       getParamBtn = await driver.findComponent(ON.id('getParamButton'));
       if (getParamBtn) {
         await getParamBtn.click();
@@ -123,14 +122,12 @@ export default function getParamByNameModifierUndefined() {
       console.info('[getParamByNameModifierUndefined_static_0001] Step4 result text (with param): ' + res);
       expect(res).assertEqual('Result: 1');
 
-      // 步骤5: 点击 Toggle Modifier 按钮，切换 modifier 状态
       toggleBtn = await driver.findComponent(ON.id('toggleButton'));
       if (toggleBtn) {
         await toggleBtn.click();
         await CommonFunc.sleep(1000);
       }
 
-      // 步骤6: 验证切换后状态 - modifier.isUndefined = true
       toggleBtn = await driver.findComponent(ON.id('toggleButton'));
       if (toggleBtn) {
         let toggleText = await toggleBtn.getText();
@@ -138,6 +135,10 @@ export default function getParamByNameModifierUndefined() {
         expect(toggleText.indexOf('true') > -1).assertTrue();
       }
 
+      }catch (err) {
+        console.error('getParamByNameModifierUndefined_static_0001 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[getParamByNameModifierUndefined_static_0001] END');
       done();
     });

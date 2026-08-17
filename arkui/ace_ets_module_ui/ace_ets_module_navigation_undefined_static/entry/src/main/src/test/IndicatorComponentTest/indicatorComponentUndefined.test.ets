@@ -83,6 +83,8 @@ export default function indicatorComponentUndefined() {
      */
     it('indicatorComponentUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[indicatorComponentUndefined_static_0001] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(500);
 
@@ -108,6 +110,10 @@ export default function indicatorComponentUndefined() {
       strJson = inspector.getInspectorByKey('IndicatorComponent_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('initialIndex'))
         .assertEqual(0);
+      }catch (err) {
+        console.error('indicatorComponentUndefined_static_0001 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[indicatorComponentUndefined_static_0001] END');
       done();
     });
@@ -121,6 +127,8 @@ export default function indicatorComponentUndefined() {
      */
     it('indicatorComponentUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[indicatorComponentUndefined_static_0002] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(500);
 
@@ -146,6 +154,10 @@ export default function indicatorComponentUndefined() {
       strJson = inspector.getInspectorByKey('IndicatorComponent_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop'))
         .assertEqual('true');
+      }catch (err) {
+        console.error('indicatorComponentUndefined_static_0002 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[indicatorComponentUndefined_static_0002] END');
       done();
     });
@@ -158,6 +170,8 @@ export default function indicatorComponentUndefined() {
      */
     it('indicatorComponentUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[indicatorComponentUndefined_static_0003] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(500);
       
@@ -183,6 +197,10 @@ export default function indicatorComponentUndefined() {
       strJson = inspector.getInspectorByKey('IndicatorComponent_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('count'))
         .assertEqual(0);
+      }catch (err) {
+        console.error('indicatorComponentUndefined_static_0003 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[indicatorComponentUndefined_static_0003] END');
       done();
     });
@@ -195,6 +213,8 @@ export default function indicatorComponentUndefined() {
      */
     it('indicatorComponentUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[indicatorComponentUndefined_static_0004] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(500);
 
@@ -220,6 +240,10 @@ export default function indicatorComponentUndefined() {
       strJson = inspector.getInspectorByKey('IndicatorComponent_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('vertical'))
         .assertEqual('false');
+      }catch (err) {
+        console.error('indicatorComponentUndefined_static_0004 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[indicatorComponentUndefined_static_0004] END');
       done();
     });
@@ -232,6 +256,8 @@ export default function indicatorComponentUndefined() {
      */
     it('indicatorComponentUndefined_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[indicatorComponentUndefined_static_0005] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(500);
 
@@ -253,6 +279,10 @@ export default function indicatorComponentUndefined() {
       await (nextBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('next:1');
+      }catch (err) {
+        console.error('indicatorComponentUndefined_static_0005 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[indicatorComponentUndefined_static_0005] END');
       done();
     });

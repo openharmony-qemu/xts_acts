@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,6 +48,7 @@ export default function disableSwipeUndefinedTest() {
       } catch (err) {
         console.error('push disableSwipeUndefinedTest page error:' + err);
       }
+
       console.info('disableSwipeUndefinedTest beforeEach end');
     });
 
@@ -67,7 +68,10 @@ export default function disableSwipeUndefinedTest() {
       console.info('Test component obj.disableSwipe is: ' + obj.getElement('$attrs').getString('disableSwipe'));
       expect(obj.getElement('$attrs').getString('disableSwipe')).assertEqual('true');
 
-      let driver = Driver.create();
+      try{
+
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_true?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -78,6 +82,11 @@ export default function disableSwipeUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.disableSwipe is: ' + obj1.getElement('$attrs').getString('disableSwipe'));
       expect(obj1.getElement('$attrs').getString('disableSwipe')).assertEqual('false');
+    }catch (err) {
+        console.error('disableSwipeUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[disableSwipeUndefinedTest_0100] END');
       done();
     });

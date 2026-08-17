@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -69,41 +69,42 @@ export default function onNavigationModeChangeModifierUndefined() {
      */
     it('onNavigationModeChangeModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[onNavigationModeChangeModifierUndefined_static_0001] START');
-      let driver: Driver = Driver.create();
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 点击切换 mode 按钮，应该触发 onNavigationModeChange 回调，changeCount 增加
       let changeModeBtn = await driver.findComponent(ON.id('changeModeButton'));
       if (changeModeBtn) {
         await changeModeBtn.click();
         await CommonFunc.sleep(1000);
       }
 
-      // 检查 changeCount 是否变为 2
       let strJson = inspector.getInspectorByKey('changeCountText');
       console.info('[onNavigationModeChangeModifierUndefined_static_0001] strJson: ' + strJson);
       let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');
       console.info('[onNavigationModeChangeModifierUndefined_static_0001] changeCount after first click: ' + res);
       expect(res).assertEqual('changeCount:2');
 
-      // 点击切换按钮，切换为 undefined
       let toggleBtn = await driver.findComponent(ON.id('toggleButton'));
       console.info('[onNavigationModeChangeModifierUndefined_static_0001] Toggle to undefined');
       await (toggleBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      // 再次点击切换 mode 按钮，onNavigationModeChange 是 undefined，不会触发回调，changeCount 保持不变
       if (changeModeBtn) {
         await changeModeBtn.click();
         await CommonFunc.sleep(1000);
       }
 
-      // 检查 changeCount 仍然是 2（没有增加）
       strJson = inspector.getInspectorByKey('changeCountText');
       res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');
       console.info('[onNavigationModeChangeModifierUndefined_static_0001] changeCount after undefined click: ' + res);
       expect(res).assertEqual('changeCount:2');
 
+      }catch (err) {
+        console.error('onNavigationModeChangeModifierUndefined_static_0001 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[onNavigationModeChangeModifierUndefined_static_0001] END');
       done();
     });

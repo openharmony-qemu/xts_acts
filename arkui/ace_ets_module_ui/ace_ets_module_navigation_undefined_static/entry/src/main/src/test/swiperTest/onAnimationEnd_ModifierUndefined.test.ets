@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -74,15 +74,17 @@ export default function onAnimationEnd_ModifierUndefinedTest() {
       expect(initialContent).assertEqual("0");
 
       console.info('Swiping to trigger onAnimationEnd callback...');
-      let driver = Driver.create();
+      try{
 
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let swiperItem = await driver.findComponent(ON.text('1')) as Component;
       let bounds = await swiperItem.getBounds();
 
       let width = bounds.right - bounds.left;
       let height = bounds.bottom - bounds.top;
 
-      driver.swipe(
+      await driver.swipe(
         (bounds.left + width - 50).toInt(),
         (bounds.top + height / 2).toInt(),
         (bounds.left + 50).toInt(),
@@ -114,7 +116,7 @@ export default function onAnimationEnd_ModifierUndefinedTest() {
       let width2 = bounds2.right - bounds2.left;
       let height2 = bounds2.bottom - bounds2.top;
 
-      driver.swipe(
+      await driver.swipe(
         (bounds2.left + width2 - 50).toInt(),
         (bounds2.top + height2 / 2).toInt(),
         (bounds2.left + 50).toInt(),
@@ -128,6 +130,10 @@ export default function onAnimationEnd_ModifierUndefinedTest() {
       let finalContent = obj4.getElement('$attrs').getString('content');
       console.info('[Final] swiper_onAnimationEnd content: ' + finalContent);
       expect(finalContent).assertEqual("1");
+    }catch (err) {
+        console.error('onAnimationEnd_ModifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
 
       console.info('onAnimationEnd_ModifierUndefinedTest_0100 END');
       done();

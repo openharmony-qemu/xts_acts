@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,6 +48,7 @@ export default function indexUndefinedTest() {
       } catch (err) {
         console.error('push indexUndefinedTest page error:' + err);
       }
+
       console.info('indexUndefinedTest beforeEach end');
     });
 
@@ -67,7 +68,10 @@ export default function indexUndefinedTest() {
       console.info('Test component obj.index is: ' + obj.getElement('$attrs').getString('index'));
       expect(obj.getElement('$attrs').getString('index')).assertEqual('2');
 
-      let driver = Driver.create();
+      try{
+
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_true?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -78,6 +82,11 @@ export default function indexUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.index is: ' + obj1.getElement('$attrs').getString('index'));
       expect(obj1.getElement('$attrs').getString('index')).assertEqual('0');
+    }catch (err) {
+        console.error('indexUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[indexUndefinedTest_0100] END');
       done();
     });

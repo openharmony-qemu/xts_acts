@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -70,7 +70,9 @@ export default function NavigationUndefinedTest() {
      */
     it('NavigationUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavigationUndefinedTest_static_0001] START');
-      let driver: Driver = Driver.create()
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MyNavigation');
       await CommonFunc.sleep(1000);
@@ -94,6 +96,10 @@ export default function NavigationUndefinedTest() {
         .getElement('navBarWidth')))
         .assertEqual('\"240.00vp\"');
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('NavigationUndefinedTest_static_0001 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavigationUndefinedTest_static_0001] END');
       done();
     });
@@ -106,7 +112,9 @@ export default function NavigationUndefinedTest() {
      */
     it('NavigationUndefinedTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavigationUndefinedTest_static_0002] START');
-      let driver: Driver = Driver.create()
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MyNavigation');
       await CommonFunc.sleep(1000);
@@ -130,6 +138,10 @@ export default function NavigationUndefinedTest() {
         .getElement('navBarPosition')))
         .assertEqual('\"NavBarPosition.Start\"');
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('NavigationUndefinedTest_static_0002 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavigationUndefinedTest_static_0002] END');
       done();
     });
@@ -142,7 +154,9 @@ export default function NavigationUndefinedTest() {
      */
     it('NavigationUndefinedTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavigationUndefinedTest_static_0003] START');
-      let driver: Driver = Driver.create()
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MyNavigation');
       await CommonFunc.sleep(1000);
@@ -175,6 +189,10 @@ export default function NavigationUndefinedTest() {
       await CommonFunc.sleep(1000);
       await (changeBtn2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('NavigationUndefinedTest_static_0003 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavigationUndefinedTest_static_0003] END');
       done();
     });
@@ -187,7 +205,9 @@ export default function NavigationUndefinedTest() {
      */
     it('NavigationUndefinedTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavigationUndefinedTest_static_0004] START');
-      let driver: Driver = Driver.create()
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MyNavigation');
       await CommonFunc.sleep(1000);
@@ -214,6 +234,10 @@ export default function NavigationUndefinedTest() {
         .assertEqual('\"\"');
       await (changeBtn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('NavigationUndefinedTest_static_0004 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavigationUndefinedTest_static_0004] END');
       done();
     });
@@ -226,7 +250,9 @@ export default function NavigationUndefinedTest() {
      */
     it('NavigationUndefinedTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavigationUndefinedTest_static_0005] START');
-      let driver: Driver = Driver.create()
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('NavBarStateButton');
       let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('label');
@@ -252,6 +278,10 @@ export default function NavigationUndefinedTest() {
       expect(res).assertEqual('NavBarState:false');
       await (changeBtn2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('NavigationUndefinedTest_static_0005 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavigationUndefinedTest_static_0005] END');
       done();
     });
@@ -264,7 +294,9 @@ export default function NavigationUndefinedTest() {
      */
     it('NavigationUndefinedTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavigationUndefinedTest_static_0006] START');
-      let driver: Driver = Driver.create()
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MyNavigation');
       await CommonFunc.sleep(1000);
@@ -288,6 +320,10 @@ export default function NavigationUndefinedTest() {
         .getElement('hideTitleBar')))
         .assertEqual('false');
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('NavigationUndefinedTest_static_0006 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavigationUndefinedTest_static_0006] END');
       done();
     });
@@ -300,7 +336,9 @@ export default function NavigationUndefinedTest() {
      */
     it('NavigationUndefinedTest_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavigationUndefinedTest_static_0007] START');
-      let driver: Driver = Driver.create()
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MyNavigation');
       await CommonFunc.sleep(1000);
@@ -331,6 +369,10 @@ export default function NavigationUndefinedTest() {
       await CommonFunc.sleep(1000);
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('NavigationUndefinedTest_static_0007 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavigationUndefinedTest_static_0007] END');
       done();
     });
@@ -343,7 +385,9 @@ export default function NavigationUndefinedTest() {
      */
     it('NavigationUndefinedTest_static_0008', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavigationUndefinedTest_static_0008] START');
-      let driver: Driver = Driver.create()
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MyNavigation');
       await CommonFunc.sleep(1000);
@@ -374,6 +418,10 @@ export default function NavigationUndefinedTest() {
       await CommonFunc.sleep(1000);
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('NavigationUndefinedTest_static_0008 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavigationUndefinedTest_static_0008] END');
       done();
     });
@@ -386,7 +434,9 @@ export default function NavigationUndefinedTest() {
      */
     it('NavigationUndefinedTest_static_0009', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavigationUndefinedTest_static_0009] START');
-      let driver: Driver = Driver.create()
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let changeBtn1 = await driver.findComponent(ON.id('hideNavBar'));
       await (changeBtn1?.click() as Promise<void>);
@@ -412,6 +462,10 @@ export default function NavigationUndefinedTest() {
         .getElement('hideNavBar')))
         .assertEqual('false');
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('NavigationUndefinedTest_static_0009 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavigationUndefinedTest_static_0009] END');
       done();
     });
@@ -424,10 +478,11 @@ export default function NavigationUndefinedTest() {
      */
     it('NavigationUndefinedTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavigationUndefinedTest_static_0010] START');
-      let driver: Driver = Driver.create()
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 初始状态：isMinContentWidth=false，minContentWidth=150
       let strJson = inspector.getInspectorByKey('MyNavigation');
       await CommonFunc.sleep(1000);
 
@@ -438,7 +493,6 @@ export default function NavigationUndefinedTest() {
         .getElement('minContentWidth')))
         .assertEqual('\"150.00vp\"');
 
-      // 第一次点击：isMinContentWidth 从 false 变为 true，minContentWidth 变为 undefined (默认值 360)
       let changeBtn = await driver.findComponent(ON.id('Navigation_MinContentWidth'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -450,7 +504,6 @@ export default function NavigationUndefinedTest() {
         .getElement('minContentWidth')))
         .assertEqual('\"360.00vp\"');
 
-      // 第二次点击：isMinContentWidth 从 true 变回 false，minContentWidth 变回 150
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('MyNavigation');
@@ -461,6 +514,10 @@ export default function NavigationUndefinedTest() {
         .assertEqual('\"150.00vp\"');
 
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('NavigationUndefinedTest_static_0010 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavigationUndefinedTest_static_0010] END');
       done();
     });
@@ -473,10 +530,11 @@ export default function NavigationUndefinedTest() {
      */
     it('NavigationUndefinedTest_static_0011', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavigationUndefinedTest_static_0011] START');
-      let driver: Driver = Driver.create()
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 初始状态：isNavBarWidthRange=false，navBarWidthRange=["10vp", "500vp"]
       let strJson = inspector.getInspectorByKey('MyNavigation');
       await CommonFunc.sleep(1000);
 
@@ -487,7 +545,6 @@ export default function NavigationUndefinedTest() {
         .getElement('navBarWidthRange')))
         .assertEqual('\"10.00vp, 500.00vp\"');
 
-      // 第一次点击：isNavBarWidthRange 从 false 变为 true，navBarWidthRange 变为 undefined (默认值 [240, 432])
       let changeBtn = await driver.findComponent(ON.id('Navigation_NavBarWidthRange'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -499,7 +556,6 @@ export default function NavigationUndefinedTest() {
         .getElement('navBarWidthRange')))
         .assertEqual('\"240.00vp, 432.00vp\"');
 
-      // 第二次点击：isNavBarWidthRange 从 true 变回 false，navBarWidthRange 变回 ["10vp", "500vp"]
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('MyNavigation');
@@ -510,6 +566,10 @@ export default function NavigationUndefinedTest() {
         .assertEqual('\"10.00vp, 500.00vp\"');
 
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('NavigationUndefinedTest_static_0011 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavigationUndefinedTest_static_0011] END');
       done();
     });

@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,6 +48,7 @@ export default function itemSpaceUndefinedTest() {
       } catch (err) {
         console.error('push itemSpaceUndefinedTest page error:' + err);
       }
+
       console.info('itemSpaceUndefinedTest beforeEach end');
     });
 
@@ -69,7 +70,11 @@ export default function itemSpaceUndefinedTest() {
       expect(obj.getElement('$attrs').getString('itemSpace')).assertEqual('30.00vp');
 
 
-      let driver = Driver.create();
+      try{
+
+
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_true?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -80,6 +85,11 @@ export default function itemSpaceUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.itemSpace is: ' + obj1.getElement('$attrs').getString('itemSpace'));
       expect(obj1.getElement('$attrs').getString('itemSpace')).assertEqual('0.00px');
+    }catch (err) {
+        console.error('itemSpaceUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[itemSpaceUndefinedTest_0100] END');
       done();
     });

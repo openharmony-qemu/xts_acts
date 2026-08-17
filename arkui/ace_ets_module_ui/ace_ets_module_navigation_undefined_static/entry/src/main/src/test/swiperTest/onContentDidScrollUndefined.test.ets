@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,6 +48,7 @@ export default function onContentDidScrollStartUndefinedTest() {
       } catch (err) {
         console.error('push onContentDidScrollUndefinedTest page error:' + err);
       }
+
       console.info('onContentDidScrollUndefinedTest beforeEach end');
     });
 
@@ -61,34 +62,37 @@ export default function onContentDidScrollStartUndefinedTest() {
       console.info('onContentDidScrollUndefinedTest_0100 START');
       await CommonFunc.sleep(500);
 
-      let driver = Driver.create();
-      //点击跳转索引触发回调
+      try{
+
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let goBtn = await driver.findComponent(ON.id('go2')) as Component;
       await (goBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      //判断回调更新后结果
       let strJson = inspector.getInspectorByKey('testText');
       let obj = JSON.parseJsonElement(strJson);
       let testText = obj.getElement('$attrs').getString('content');
       console.info('[Initial] swiper_onContentDidScroll content: ' + testText);
       expect(testText).assertEqual("swiperIndex2");
 
-      //点击动态改成undefined
       let undefinedBtn = await driver.findComponent(ON.id('undefinedBtn')) as Component;
       await (undefinedBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      //点击跳转索引不触发回调
       await (goBtn.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      //判断回调更新后结果
       let strJson2 = inspector.getInspectorByKey('testText');
       let obj2 = JSON.parseJsonElement(strJson2);
       let testText2 = obj2.getElement('$attrs').getString('content');
       console.info('[Initial] swiper_onContentDidScroll content: ' + testText2);
       expect(testText2).assertEqual("isUndefined");
+    }catch (err) {
+        console.error('onContentDidScrollUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
 
       console.info('onContentDidScrollUndefinedTest_0100 END');
       done();

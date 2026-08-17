@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -58,11 +58,11 @@ export default function getParamByNameUndefined() {
       console.info("getParamByNameUndefined beforeEach end");
 
     });
-    afterEach(async () => {
+afterEach(async () => {
       console.info("getParamByNameUndefined afterEach start");
       try {
-        let driver: Driver = Driver.create();
-        // 尝试返回到初始页面，清理可能残留的页面跳转状态
+        await CommonFunc.sleep(1000);
+        let driver: Driver = await Driver.create();
         await driver.pressBack();
         await CommonFunc.sleep(500);
       } catch (err) {
@@ -79,10 +79,12 @@ export default function getParamByNameUndefined() {
      */
     it('getParamByNameUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[getParamByNameUndefined_static_0001] START');
-      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 步骤1: 直接点击 getParamByName，此时 PageHome1 还未被 push
       let getParamBtn = await driver.findComponent(ON.id('getParamButton'));
       if (getParamBtn) {
         await getParamBtn.click();
@@ -96,21 +98,18 @@ export default function getParamByNameUndefined() {
 
       expect(res).assertEqual('Result: 0');
 
-      // 步骤2: 点击 pushPathByName 按钮，跳转到 PageHome1 页面并传递参数 'testParam'
       let pushBtn = await driver.findComponent(ON.id('pushButton'));
       if (pushBtn) {
         await pushBtn.click();
         await CommonFunc.sleep(1500);
       }
 
-      // 步骤3: 重新查找并点击 getParamByName 按钮
       getParamBtn = await driver.findComponent(ON.id('getParamButton'));
       if (getParamBtn) {
         await getParamBtn.click();
         await CommonFunc.sleep(1000);
       }
 
-      // 验证结果文本显示参数值
       strJson = inspector.getInspectorByKey('resultText');
       console.info('[getParamByNameUndefined_static_0001] Step3 strJson: ' + strJson);
       res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');
@@ -118,6 +117,10 @@ export default function getParamByNameUndefined() {
 
       expect(res).assertEqual('Result: 1');
 
+      }catch (err) {
+        console.error('getParamByNameUndefined_static_0001 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[getParamByNameUndefined_static_0001] END');
       done();
     });

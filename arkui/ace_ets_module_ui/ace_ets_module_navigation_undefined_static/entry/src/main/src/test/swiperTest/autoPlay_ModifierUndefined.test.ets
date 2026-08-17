@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -66,18 +66,24 @@ export default function autoPlay_modifierUndefinedTest() {
       console.info('Test component obj is: ' + obj.getElement('$attrs'));
       console.info('Test component obj.autoPlay is: ' + obj.getElement('$attrs').getString('autoPlay'));
       expect(obj.getElement('$attrs').getString('autoPlay')).assertEqual('true');
+      try {
 
-      let driver = Driver.create();
-      let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
-      await (btn_true?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let driver = await Driver.create();
+        await CommonFunc.sleep(1000);
+        let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+        await (btn_true?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      let strJson1 = inspector.getInspectorByKey('swiper_autoPlay_modifier');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj1.getElement('$attrs'));
-      console.info('Test component obj.autoPlay is: ' + obj1.getElement('$attrs').getString('autoPlay'));
-      expect(obj1.getElement('$attrs').getString('autoPlay')).assertEqual('false');
+        let strJson1 = inspector.getInspectorByKey('swiper_autoPlay_modifier');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj1.getElement('$attrs'));
+        console.info('Test component obj.autoPlay is: ' + obj1.getElement('$attrs').getString('autoPlay'));
+        expect(obj1.getElement('$attrs').getString('autoPlay')).assertEqual('false');
+      }catch(error){
+        console.error('autoPlay_modifierUndefinedTest_0100 error: ' + error);
+        expect(true).assertEqual(false);
+      }
       console.info('[autoPlay_modifierUndefinedTest_0100] END');
       done();
     });
