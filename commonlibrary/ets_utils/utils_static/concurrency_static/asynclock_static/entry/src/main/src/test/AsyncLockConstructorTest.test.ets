@@ -383,8 +383,13 @@ export default function AsyncLockConstructorTest(): void {
         let lock = new AsyncLock();
         const lockAsyncCallback7 = (): void => {
         };
-        await lock.lockAsync<void>(
-          lockAsyncCallback7);
+        try {
+          await lock.lockAsync<void>(
+            lockAsyncCallback7);
+        } catch (error) {
+          console.error(`testAsyncLockConstructor1900 operation failed: ${error}`);
+          throw error;
+        }
       };
       await localOperation();
       await expect(localOperation()).assertPromiseIsResolved();
