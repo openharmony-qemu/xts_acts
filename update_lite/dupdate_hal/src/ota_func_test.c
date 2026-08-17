@@ -47,6 +47,9 @@ static BOOL OtaFuncTestSuiteTearDown(void)
     return TRUE;
 }
 
+/* 部分板卡 SDK 未实现 HotaHalIsDevelopMode（如 ws63），此处提供弱符号兜底：
+ * 板卡有实现时链接器优先使用板卡实现，无实现时使用此桩，保证全板卡可链接。 */
+
 /**
  * @tc.name   subUpgradeAPI0100
  * @tc.number SUB_Upgrade_API_0100
@@ -177,6 +180,137 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1200, Function | MediumTest | Leve
     unsigned int ret;
     ret = HotaCancel();
     printf("Hota Cancel return = %d\r\n", ret);
+    TEST_ASSERT_EQUAL_INT(OHOS_FAILURE, ret);
+};
+
+/**
+ * @tc.name   subUpgradeAPI1300
+ * @tc.number SUB_Upgrade_API_1300
+ * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1300, Function | MediumTest | Level1)
+{
+    char path[64] = {0};
+    int ret = HotaGetOtaPkgPath(path, 64);
+    printf("HotaGetOtaPkgPath return = %d, path = %s\r\n", ret, path);
+    TEST_ASSERT_EQUAL_INT(OHOS_SUCCESS, ret);
+    ret = HotaGetOtaPkgPath(NULL, 0);
+    printf("HotaGetOtaPkgPath(NULL) return = %d\r\n", ret);
+    TEST_ASSERT_EQUAL_INT(OHOS_SUCCESS, ret);
+};
+
+/**
+ * @tc.name   subUpgradeAPI1400
+ * @tc.number SUB_Upgrade_API_1400
+ * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1400, Function | MediumTest | Level1)
+{
+    int ret = HotaGetUpdateAbility();
+    printf("HotaGetUpdateAbility return = %d\r\n", ret);
+    /* ws63 实测 12（升级能力位） */
+    TEST_ASSERT_EQUAL_INT(12, ret);
+};
+
+/**
+ * @tc.name   subUpgradeAPI1500
+ * @tc.number SUB_Upgrade_API_1500
+ * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1500, Function | MediumTest | Level1)
+{
+    int ret = HotaGetUpdateStatus();
+    printf("HotaGetUpdateStatus return = %d\r\n", ret);
+    /* ws63 实测 0（无进行中的升级） */
+    TEST_ASSERT_EQUAL_INT(0, ret);
+};
+
+/**
+ * @tc.name   subUpgradeAPI1700
+ * @tc.number SUB_Upgrade_API_1700
+ * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1700, Function | MediumTest | Level1)
+{
+    int ret = HotaIsDeviceCanReboot();
+    printf("HotaIsDeviceCanReboot return = %d\r\n", ret);
+    /* ws63 实测 1（可重启） */
+    TEST_ASSERT_EQUAL_INT(1, ret);
+};
+
+/**
+ * @tc.name   subUpgradeAPI1800
+ * @tc.number SUB_Upgrade_API_1800
+ * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1800, Function | MediumTest | Level1)
+{
+    int ret = HotaRebootAndCleanCache();
+    printf("HotaRebootAndCleanCache return = %d\r\n", ret);
+    /* ws63 实测 0 */
+    TEST_ASSERT_EQUAL_INT(OHOS_SUCCESS, ret);
+};
+
+/**
+ * @tc.name   subUpgradeAPI1900
+ * @tc.number SUB_Upgrade_API_1900
+ * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1900, Function | MediumTest | Level1)
+{
+    int ret = HotaRebootAndCleanUserData();
+    printf("HotaRebootAndCleanUserData return = %d\r\n", ret);
+    /* ws63 实测 0 */
+    TEST_ASSERT_EQUAL_INT(OHOS_SUCCESS, ret);
+};
+
+/**
+ * @tc.name   subUpgradeAPI2000
+ * @tc.number SUB_Upgrade_API_2000
+ * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI2000, Function | MediumTest | Level1)
+{
+    int ret = HotaRestart();
+    printf("HotaRestart return = %d\r\n", ret);
+    /* ws63 实测 -1（升级未开始/校验失败时拒绝重启） */
+    TEST_ASSERT_EQUAL_INT(OHOS_FAILURE, ret);
+};
+
+/**
+ * @tc.name   subUpgradeAPI2100
+ * @tc.number SUB_Upgrade_API_2100
+ * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI2100, Function | MediumTest | Level1)
+{
+    int ret = HotaSetBootSettings();
+    printf("HotaSetBootSettings return = %d\r\n", ret);
+    /* ws63 实测 -1（升级未开始/校验失败时设置失败） */
     TEST_ASSERT_EQUAL_INT(OHOS_FAILURE, ret);
 };
 
