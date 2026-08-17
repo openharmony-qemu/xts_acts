@@ -521,7 +521,11 @@ export default function ConfigVersionTest(): void {
         const task: taskpool.Task = new taskpool.Task(triggerVersionUpdateTask)
         const nestedPromises: Promise<Object>[] = []
         const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
-          task.onReceiveData((): void => {
+          task.onReceiveData((data: Object): void => {
+            if (data === null || data === undefined) {
+              console.info('onReceiveData received empty data')
+              return
+            }
             const innerTask: taskpool.Task = new taskpool.Task(updateConfigTask, versionManager, 'nested_key', 'nested_value')
             nestedPromises.push(taskpool.execute(innerTask))
             resolve()

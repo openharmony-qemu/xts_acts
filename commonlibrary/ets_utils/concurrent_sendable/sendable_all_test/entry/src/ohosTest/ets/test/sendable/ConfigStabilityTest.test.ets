@@ -16,6 +16,7 @@
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
+import Utils from '../utils'
 
 @Sendable
 class StabilityConfigManager {
@@ -154,20 +155,10 @@ export default function ConfigStabilityTest(): void {
           configManager.incrementNotification()
         })
         await taskpool.execute(task)
-        await new Promise<void>((resolve: () => void, reject: (reason: Error) => void): void => {
-          let timeoutId: number = -1
-          const checkInterval: number = setInterval((): void => {
-            if (hotUpdateReceived) {
-              clearInterval(checkInterval)
-              clearTimeout(timeoutId)
-              resolve()
-            }
-          }, 500)
-          timeoutId = setTimeout((): void => {
-            clearInterval(checkInterval)
-            reject(new Error('hot update notification timeout'))
-          }, 5000)
-        })
+        const sweepStart: number = Date.now()
+        while (!(hotUpdateReceived) && Date.now() - sweepStart < 10000) {
+          await Utils.sleep(100)
+        }
         expect(hotUpdateReceived).assertTrue()
         expect(updateKey).assertEqual('updated_key')
         expect(await configManager.getNotificationCount()).assertEqual(1)

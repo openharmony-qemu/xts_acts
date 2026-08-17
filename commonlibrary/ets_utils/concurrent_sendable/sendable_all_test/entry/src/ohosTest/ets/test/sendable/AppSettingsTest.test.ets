@@ -550,7 +550,7 @@ export default function AppSettingsTest(): void {
         const task: taskpool.Task = new taskpool.Task(triggerSettingsUpdateTask)
         const nestedPromises: Promise<Object>[] = []
         const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
-          task.onReceiveData((): void => {
+          task.onReceiveData((data: Object): void => {
             const innerTask: taskpool.Task = new taskpool.Task(updateSettingTask, settingsManager, 'nested_key', 'nested_value')
             nestedPromises.push(taskpool.execute(innerTask))
             resolve()

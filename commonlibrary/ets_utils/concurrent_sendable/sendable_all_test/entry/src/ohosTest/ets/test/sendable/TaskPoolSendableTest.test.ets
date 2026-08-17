@@ -135,14 +135,10 @@ export default function TaskPoolSendableTest(): void {
           receivedCounter = data
         })
         await taskpool.execute(task)
-        await new Promise<void>((resolve): void => {
-          const checkInterval = setInterval((): void => {
-            if (receivedCounter !== null) {
-              clearInterval(checkInterval)
-              resolve()
-            }
-          }, 10)
-        })
+        const sweepStart: number = Date.now()
+        while (!(receivedCounter !== null) && Date.now() - sweepStart < 10000) {
+          await Utils.sleep(100)
+        }
         expect(receivedCounter!.count_).assertEqual(42)
       } catch (error) {
         console.error("testTaskPoolSendable0400 failed");

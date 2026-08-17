@@ -335,7 +335,11 @@ export default function DataResultCollectTest(): void {
         const nestedPromises: Promise<Object>[] = []
         const task = new taskpool.Task(triggerNestedData)
         const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
-          task.onReceiveData((): void => {
+          task.onReceiveData((data: Object): void => {
+            if (data === null || data === undefined) {
+              console.info('onReceiveData received empty data')
+              return
+            }
             for (let i = 0; i < 3; i++) {
               const nestedTask = new taskpool.Task(processData, i, `nested_${i}`)
               nestedPromises.push(taskpool.execute(nestedTask))
