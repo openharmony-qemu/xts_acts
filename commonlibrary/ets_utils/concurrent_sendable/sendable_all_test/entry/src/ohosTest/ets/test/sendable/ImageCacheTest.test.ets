@@ -115,10 +115,16 @@ export default function ImageCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testImageCache0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.setImage('https://img.example.com/photo1.jpg', 'image_data_1', '1920x1080')
-      let value: string | undefined = await cache.getImage('https://img.example.com/photo1.jpg')
-      expect(value).assertEqual('image_data_1')
+    it('testImageCache0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.setImage('https://img.example.com/photo1.jpg', 'image_data_1', '1920x1080')
+        let value: string | undefined = await cache.getImage('https://img.example.com/photo1.jpg')
+        expect(value).assertEqual('image_data_1')
+      } catch (error) {
+        console.error("testImageCache0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -129,11 +135,17 @@ export default function ImageCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testImageCache0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.setImage('img_1', 'binary_data_1', '800x600')
-      await cache.setImage('img_2', 'binary_data_2', '1024x768')
-      expect(await cache.getImage('img_1')).assertEqual('binary_data_1')
-      expect(await cache.getImage('img_2')).assertEqual('binary_data_2')
+    it('testImageCache0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.setImage('img_1', 'binary_data_1', '800x600')
+        await cache.setImage('img_2', 'binary_data_2', '1024x768')
+        expect(await cache.getImage('img_1')).assertEqual('binary_data_1')
+        expect(await cache.getImage('img_2')).assertEqual('binary_data_2')
+      } catch (error) {
+        console.error("testImageCache0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -144,10 +156,16 @@ export default function ImageCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testImageCache0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.setImage('img_1', 'data_1', '100x100')
-      expect(cache.hasImage('img_1')).assertTrue()
-      expect(cache.hasImage('img_nonexistent')).assertFalse()
+    it('testImageCache0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.setImage('img_1', 'data_1', '100x100')
+        expect(cache.hasImage('img_1')).assertTrue()
+        expect(cache.hasImage('img_nonexistent')).assertFalse()
+      } catch (error) {
+        console.error("testImageCache0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -158,7 +176,7 @@ export default function ImageCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testImageCache0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testImageCache0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       expect(cache.capacity()).assertEqual(50)
     })
 
@@ -170,7 +188,7 @@ export default function ImageCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testImageCache0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testImageCache0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const smallLru: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(3)
       smallLru.put('img_1', 'large_data_1')
       smallLru.put('img_2', 'large_data_2')
@@ -188,14 +206,20 @@ export default function ImageCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testImageCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 20; i++) {
-        await cache.setImage(`preload_${i}`, `data_${i}`, `${i * 10}x${i * 10}`)
+    it('testImageCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 20; i++) {
+          await cache.setImage(`preload_${i}`, `data_${i}`, `${i * 10}x${i * 10}`)
+        }
+        expect(cache.length()).assertEqual(20)
+        for (let i = 0; i < 20; i++) {
+          expect(cache.hasImage(`preload_${i}`)).assertTrue()
+        }
+      } catch (error) {
+        console.error("testImageCache0600 failed");
+        expect(false).assertFail();
       }
-      expect(cache.length()).assertEqual(20)
-      for (let i = 0; i < 20; i++) {
-        expect(cache.hasImage(`preload_${i}`)).assertTrue()
-      }
+      done();
     })
 
     /**
@@ -206,20 +230,26 @@ export default function ImageCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testImageCache0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(concurrentLoadImage, `img_${i}`, `data_${i}`))
+    it('testImageCache0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(concurrentLoadImage, `img_${i}`, `data_${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          await cache.setImage(`img_${i}`, results[i] as string, '100x100')
+        }
+        expect(cache.length()).assertEqual(5)
+      } catch (error) {
+        console.error("testImageCache0700 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        await cache.setImage(`img_${i}`, results[i] as string, '100x100')
-      }
-      expect(cache.length()).assertEqual(5)
+      done();
     })
 
     /**
@@ -230,22 +260,28 @@ export default function ImageCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testImageCache0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(concurrentLoadImage, `concurrent_${i}`, `cdata_${i}`))
+    it('testImageCache0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(concurrentLoadImage, `concurrent_${i}`, `cdata_${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          await cache.setImage(`concurrent_${i}`, results[i] as string, '100x100')
+        }
+        for (let i = 0; i < 10; i++) {
+          expect(cache.hasImage(`concurrent_${i}`)).assertTrue()
+        }
+      } catch (error) {
+        console.error("testImageCache0800 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        await cache.setImage(`concurrent_${i}`, results[i] as string, '100x100')
-      }
-      for (let i = 0; i < 10; i++) {
-        expect(cache.hasImage(`concurrent_${i}`)).assertTrue()
-      }
+      done();
     })
 
     /**
@@ -256,10 +292,16 @@ export default function ImageCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testImageCache0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.setImage('img_1', 'old_data', '100x100')
-      await cache.setImage('img_1', 'new_data', '200x200')
-      expect(await cache.getImage('img_1')).assertEqual('new_data')
+    it('testImageCache0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.setImage('img_1', 'old_data', '100x100')
+        await cache.setImage('img_1', 'new_data', '200x200')
+        expect(await cache.getImage('img_1')).assertEqual('new_data')
+      } catch (error) {
+        console.error("testImageCache0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -270,10 +312,16 @@ export default function ImageCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testImageCache1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await cache.setImage('img_1', 'data_1', '100x100')
-      const sizeInfo: string | undefined = cache.getSizeInfo('img_1')
-      expect(sizeInfo).assertEqual('100x100')
+    it('testImageCache1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await cache.setImage('img_1', 'data_1', '100x100')
+        const sizeInfo: string | undefined = cache.getSizeInfo('img_1')
+        expect(sizeInfo).assertEqual('100x100')
+      } catch (error) {
+        console.error("testImageCache1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -284,11 +332,17 @@ export default function ImageCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testImageCache1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.setImage('img_1', 'data_1', '100x100')
-      await cache.setImage('img_2', 'data_2', '200x200')
-      cache.clear()
-      expect(cache.length()).assertEqual(0)
+    it('testImageCache1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.setImage('img_1', 'data_1', '100x100')
+        await cache.setImage('img_2', 'data_2', '200x200')
+        cache.clear()
+        expect(cache.length()).assertEqual(0)
+      } catch (error) {
+        console.error("testImageCache1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

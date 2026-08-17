@@ -362,17 +362,23 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      await counter.lock_.lockAsync((): void => {
-        counter.count_ = 10
-        counter.threshold_ = 50
-        counter.status_ = 1
-      })
-      const props: number[] = await counter.getIRProperties()
-      expect(props[0]).assertEqual(10)
-      expect(props[1]).assertEqual(50)
-      expect(props[2]).assertEqual(1)
+    it('testIRReinforcement0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        await counter.lock_.lockAsync((): void => {
+          counter.count_ = 10
+          counter.threshold_ = 50
+          counter.status_ = 1
+        })
+        const props: number[] = await counter.getIRProperties()
+        expect(props[0]).assertEqual(10)
+        expect(props[1]).assertEqual(50)
+        expect(props[2]).assertEqual(1)
+      } catch (error) {
+        console.error("testIRReinforcement0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -383,12 +389,18 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 100; i++) {
-        await counter.increment()
+    it('testIRReinforcement0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 100; i++) {
+          await counter.increment()
+        }
+        expect(await counter.getCount()).assertEqual(100)
+      } catch (error) {
+        console.error("testIRReinforcement0200 failed");
+        expect(false).assertFail();
       }
-      expect(await counter.getCount()).assertEqual(100)
+      done();
     })
 
     /**
@@ -399,14 +411,20 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIRReinforcement0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1025; i++) {
-        await counter.addMetric(`metric_${i}`, i)
+    it('testIRReinforcement0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1025; i++) {
+          await counter.addMetric(`metric_${i}`, i)
+        }
+        expect(await counter.getMetricCount()).assertEqual(1025)
+        expect(await counter.getMetric('metric_0')).assertEqual(0)
+        expect(await counter.getMetric('metric_1024')).assertEqual(1024)
+      } catch (error) {
+        console.error("testIRReinforcement0300 failed");
+        expect(false).assertFail();
       }
-      expect(await counter.getMetricCount()).assertEqual(1025)
-      expect(await counter.getMetric('metric_0')).assertEqual(0)
-      expect(await counter.getMetric('metric_1024')).assertEqual(1024)
+      done();
     })
 
     /**
@@ -417,14 +435,20 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIRReinforcement0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      await counter.lock_.lockAsync((): void => { counter.count_ = 50 })
-      for (let i = 0; i < 1025; i++) {
-        await counter.addMetric(`m_${i}`, i)
+    it('testIRReinforcement0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        await counter.lock_.lockAsync((): void => { counter.count_ = 50 })
+        for (let i = 0; i < 1025; i++) {
+          await counter.addMetric(`m_${i}`, i)
+        }
+        expect(await counter.getCount()).assertEqual(50)
+        expect(await counter.getMetric('m_1024')).assertEqual(1024)
+      } catch (error) {
+        console.error("testIRReinforcement0400 failed");
+        expect(false).assertFail();
       }
-      expect(await counter.getCount()).assertEqual(50)
-      expect(await counter.getMetric('m_1024')).assertEqual(1024)
+      done();
     })
 
     /**
@@ -435,12 +459,18 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1024; i++) {
-        await queue.enqueue(i)
+    it('testIRReinforcement0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1024; i++) {
+          await queue.enqueue(i)
+        }
+        expect(await queue.getSize()).assertEqual(1024)
+      } catch (error) {
+        console.error("testIRReinforcement0500 failed");
+        expect(false).assertFail();
       }
-      expect(await queue.getSize()).assertEqual(1024)
+      done();
     })
 
     /**
@@ -451,14 +481,20 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1025; i++) {
-        await queue.enqueue(i)
+    it('testIRReinforcement0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1025; i++) {
+          await queue.enqueue(i)
+        }
+        expect(await queue.getSize()).assertEqual(1025)
+        const val: number | undefined = await queue.dequeue()
+        expect(val).assertEqual(0)
+      } catch (error) {
+        console.error("testIRReinforcement0600 failed");
+        expect(false).assertFail();
       }
-      expect(await queue.getSize()).assertEqual(1025)
-      const val: number | undefined = await queue.dequeue()
-      expect(val).assertEqual(0)
+      done();
     })
 
     /**
@@ -469,18 +505,24 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIRReinforcement0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 100; i++) {
-        tasks.push(new taskpool.Task(produceTask, queue, i))
+    it('testIRReinforcement0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 100; i++) {
+          tasks.push(new taskpool.Task(produceTask, queue, i))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        expect(await queue.getSize()).assertLargerOrEqual(100)
+      } catch (error) {
+        console.error("testIRReinforcement0700 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      expect(await queue.getSize()).assertLargerOrEqual(100)
+      done();
     })
 
     /**
@@ -491,11 +533,17 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let cache: IRLRUCache = new IRLRUCache(new collections.Map<string, string>(), new ArkTSUtils.locks.AsyncLock())
-      const stats: number[] = await cache.getIRStats()
-      expect(stats[0]).assertEqual(1024)
-      expect(stats[1]).assertEqual(0)
+    it('testIRReinforcement0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let cache: IRLRUCache = new IRLRUCache(new collections.Map<string, string>(), new ArkTSUtils.locks.AsyncLock())
+        const stats: number[] = await cache.getIRStats()
+        expect(stats[0]).assertEqual(1024)
+        expect(stats[1]).assertEqual(0)
+      } catch (error) {
+        console.error("testIRReinforcement0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -506,13 +554,19 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let cache: IRLRUCache = new IRLRUCache(new collections.Map<string, string>(), new ArkTSUtils.locks.AsyncLock())
-      await cache.set('key1', 'value1')
-      for (let i = 0; i < 100; i++) {
-        const value: string | undefined = await cache.get('key1')
-        expect(value).assertEqual('value1')
+    it('testIRReinforcement0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let cache: IRLRUCache = new IRLRUCache(new collections.Map<string, string>(), new ArkTSUtils.locks.AsyncLock())
+        await cache.set('key1', 'value1')
+        for (let i = 0; i < 100; i++) {
+          const value: string | undefined = await cache.get('key1')
+          expect(value).assertEqual('value1')
+        }
+      } catch (error) {
+        console.error("testIRReinforcement0900 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -523,13 +577,19 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIRReinforcement1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let cache: IRLRUCache = new IRLRUCache(new collections.Map<string, string>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1025; i++) {
-        await cache.set(`cache_${i}`, `value_${i}`)
+    it('testIRReinforcement1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let cache: IRLRUCache = new IRLRUCache(new collections.Map<string, string>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1025; i++) {
+          await cache.set(`cache_${i}`, `value_${i}`)
+        }
+        const val: string | undefined = await cache.get('cache_1024')
+        expect(val).assertEqual('value_1024')
+      } catch (error) {
+        console.error("testIRReinforcement1000 failed");
+        expect(false).assertFail();
       }
-      const val: string | undefined = await cache.get('cache_1024')
-      expect(val).assertEqual('value_1024')
+      done();
     })
 
     /**
@@ -540,11 +600,17 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const collector: IRResultCollector = new IRResultCollector(new collections.Map<number, string>(), new ArkTSUtils.locks.AsyncLock())
-      await collector.lock_.lockAsync((): void => { collector.total_ = 100 })
-      const stats: number[] = await collector.getIRStats()
-      expect(stats[0]).assertEqual(100)
+    it('testIRReinforcement1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const collector: IRResultCollector = new IRResultCollector(new collections.Map<number, string>(), new ArkTSUtils.locks.AsyncLock())
+        await collector.lock_.lockAsync((): void => { collector.total_ = 100 })
+        const stats: number[] = await collector.getIRStats()
+        expect(stats[0]).assertEqual(100)
+      } catch (error) {
+        console.error("testIRReinforcement1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -555,12 +621,18 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIRReinforcement1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const collector: IRResultCollector = new IRResultCollector(new collections.Map<number, string>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1025; i++) {
-        await collector.lock_.lockAsync((): void => { collector.results.set(i, `result_${i}`) })
+    it('testIRReinforcement1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const collector: IRResultCollector = new IRResultCollector(new collections.Map<number, string>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1025; i++) {
+          await collector.lock_.lockAsync((): void => { collector.results.set(i, `result_${i}`) })
+        }
+        expect(collector.results.size).assertEqual(1025)
+      } catch (error) {
+        console.error("testIRReinforcement1200 failed");
+        expect(false).assertFail();
       }
-      expect(collector.results.size).assertEqual(1025)
+      done();
     })
 
     /**
@@ -571,21 +643,27 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIRReinforcement1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      await counter.lock_.lockAsync((): void => { counter.count_ = 100 })
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readIRCount, counter))
+    it('testIRReinforcement1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        await counter.lock_.lockAsync((): void => { counter.count_ = 100 })
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(readIRCount, counter))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        let results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(100)
+        }
+      } catch (error) {
+        console.error("testIRReinforcement1300 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      let results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(100)
-      }
+      done();
     })
 
     /**
@@ -596,11 +674,17 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
-      const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      await lock.lockAsync((): void => { counter.count_ = 42 })
-      expect(counter.count_).assertEqual(42)
+    it('testIRReinforcement1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+        const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        await lock.lockAsync((): void => { counter.count_ = 42 })
+        expect(counter.count_).assertEqual(42)
+      } catch (error) {
+        console.error("testIRReinforcement1400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -611,13 +695,19 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const cond: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
-      const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
-      await lock.lockAsync(async (): Promise<void> => {
-        cond.notifyOne()
-      })
-      expect(cond !== undefined).assertTrue()
+    it('testIRReinforcement1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const cond: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+        await lock.lockAsync(async (): Promise<void> => {
+          cond.notifyOne()
+        })
+        expect(cond !== undefined).assertTrue()
+      } catch (error) {
+        console.error("testIRReinforcement1500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -628,13 +718,19 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIRReinforcement1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const config: IRConfigManager = new IRConfigManager(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
-      for (let i = 0; i < 1025; i++) {
-        await config.addConfig(`config_${i}`, `value_${i}`)
+    it('testIRReinforcement1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const config: IRConfigManager = new IRConfigManager(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
+        for (let i = 0; i < 1025; i++) {
+          await config.addConfig(`config_${i}`, `value_${i}`)
+        }
+        expect(await config.getConfigCount()).assertEqual(1025)
+        expect(await config.getConfig('config_1024')).assertEqual('value_1024')
+      } catch (error) {
+        console.error("testIRReinforcement1600 failed");
+        expect(false).assertFail();
       }
-      expect(await config.getConfigCount()).assertEqual(1025)
-      expect(await config.getConfig('config_1024')).assertEqual('value_1024')
+      done();
     })
 
     /**
@@ -645,13 +741,19 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const config: IRConfigManager = new IRConfigManager(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
-      await config.addConfig('key1', 'value1')
-      for (let i = 0; i < 100; i++) {
-        const val: string | undefined = await config.getConfig('key1')
-        expect(val).assertEqual('value1')
+    it('testIRReinforcement1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const config: IRConfigManager = new IRConfigManager(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
+        await config.addConfig('key1', 'value1')
+        for (let i = 0; i < 100; i++) {
+          const val: string | undefined = await config.getConfig('key1')
+          expect(val).assertEqual('value1')
+        }
+      } catch (error) {
+        console.error("testIRReinforcement1700 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -662,13 +764,19 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const sm: IRStateMachine = new IRStateMachine(new ArkTSUtils.locks.AsyncLock())
-      await sm.transition(1)
-      await sm.transition(2)
-      await sm.transition(3)
-      expect(await sm.getCurrentState()).assertEqual(3)
-      expect(await sm.getTransitionCount()).assertEqual(3)
+    it('testIRReinforcement1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const sm: IRStateMachine = new IRStateMachine(new ArkTSUtils.locks.AsyncLock())
+        await sm.transition(1)
+        await sm.transition(2)
+        await sm.transition(3)
+        expect(await sm.getCurrentState()).assertEqual(3)
+        expect(await sm.getTransitionCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testIRReinforcement1800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -679,12 +787,18 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const sm: IRStateMachine = new IRStateMachine(new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 50; i++) {
-        await sm.transition(i % 5)
+    it('testIRReinforcement1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const sm: IRStateMachine = new IRStateMachine(new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 50; i++) {
+          await sm.transition(i % 5)
+        }
+        expect(await sm.getTransitionCount()).assertEqual(50)
+      } catch (error) {
+        console.error("testIRReinforcement1900 failed");
+        expect(false).assertFail();
       }
-      expect(await sm.getTransitionCount()).assertEqual(50)
+      done();
     })
 
     /**
@@ -695,15 +809,21 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 10; i++) {
-        await tracker.updateProgress(10)
+    it('testIRReinforcement2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 10; i++) {
+          await tracker.updateProgress(10)
+        }
+        for (let i = 0; i < 100; i++) {
+          const pct: number = await tracker.getPercentage()
+          expect(pct).assertEqual(100)
+        }
+      } catch (error) {
+        console.error("testIRReinforcement2000 failed");
+        expect(false).assertFail();
       }
-      for (let i = 0; i < 100; i++) {
-        const pct: number = await tracker.getPercentage()
-        expect(pct).assertEqual(100)
-      }
+      done();
     })
 
     /**
@@ -714,12 +834,18 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
-      await tracker.updateProgress(25)
-      expect(await tracker.getPercentage()).assertEqual(25)
-      await tracker.updateProgress(25)
-      expect(await tracker.getPercentage()).assertEqual(50)
+    it('testIRReinforcement2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
+        await tracker.updateProgress(25)
+        expect(await tracker.getPercentage()).assertEqual(25)
+        await tracker.updateProgress(25)
+        expect(await tracker.getPercentage()).assertEqual(50)
+      } catch (error) {
+        console.error("testIRReinforcement2100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -730,12 +856,18 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIRReinforcement2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const bus: IREventBus = new IREventBus(new collections.Array<string>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1025; i++) {
-        await bus.publish(`event_${i}`)
+    it('testIRReinforcement2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const bus: IREventBus = new IREventBus(new collections.Array<string>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1025; i++) {
+          await bus.publish(`event_${i}`)
+        }
+        expect(await bus.getEventCount()).assertEqual(1025)
+      } catch (error) {
+        console.error("testIRReinforcement2200 failed");
+        expect(false).assertFail();
       }
-      expect(await bus.getEventCount()).assertEqual(1025)
+      done();
     })
 
     /**
@@ -746,10 +878,16 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const bus: IREventBus = new IREventBus(new collections.Array<string>(), new ArkTSUtils.locks.AsyncLock())
-      await bus.publish('test_event')
-      expect(await bus.getEventCount()).assertEqual(1)
+    it('testIRReinforcement2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const bus: IREventBus = new IREventBus(new collections.Array<string>(), new ArkTSUtils.locks.AsyncLock())
+        await bus.publish('test_event')
+        expect(await bus.getEventCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testIRReinforcement2300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -760,13 +898,19 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const pool: IRConnectionPool = new IRConnectionPool(new ArkTSUtils.locks.AsyncLock())
-      await pool.acquire()
-      await pool.acquire()
-      const stats: number[] = await pool.getPoolStats()
-      expect(stats[1]).assertEqual(2)
-      expect(stats[2]).assertEqual(8)
+    it('testIRReinforcement2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const pool: IRConnectionPool = new IRConnectionPool(new ArkTSUtils.locks.AsyncLock())
+        await pool.acquire()
+        await pool.acquire()
+        const stats: number[] = await pool.getPoolStats()
+        expect(stats[1]).assertEqual(2)
+        expect(stats[2]).assertEqual(8)
+      } catch (error) {
+        console.error("testIRReinforcement2400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -777,17 +921,23 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const pool: IRConnectionPool = new IRConnectionPool(new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 5; i++) {
-        await pool.acquire()
+    it('testIRReinforcement2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const pool: IRConnectionPool = new IRConnectionPool(new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 5; i++) {
+          await pool.acquire()
+        }
+        for (let i = 0; i < 5; i++) {
+          await pool.release()
+        }
+        const stats: number[] = await pool.getPoolStats()
+        expect(stats[1]).assertEqual(0)
+        expect(stats[2]).assertEqual(10)
+      } catch (error) {
+        console.error("testIRReinforcement2500 failed");
+        expect(false).assertFail();
       }
-      for (let i = 0; i < 5; i++) {
-        await pool.release()
-      }
-      const stats: number[] = await pool.getPoolStats()
-      expect(stats[1]).assertEqual(0)
-      expect(stats[2]).assertEqual(10)
+      done();
     })
 
     /**
@@ -798,15 +948,21 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIRReinforcement2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const service1: GlobalService = new GlobalService(new ArkTSUtils.locks.AsyncLock())
-      const service2: GlobalService = new GlobalService(new ArkTSUtils.locks.AsyncLock())
-      let results: Object[] = await Promise.all([
-        taskpool.execute(new taskpool.Task(readGlobalService, service1)),
-        taskpool.execute(new taskpool.Task(readGlobalService, service2))
-      ])
-      expect(results[0] as string).assertEqual('global')
-      expect(results[1] as string).assertEqual('global')
+    it('testIRReinforcement2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const service1: GlobalService = new GlobalService(new ArkTSUtils.locks.AsyncLock())
+        const service2: GlobalService = new GlobalService(new ArkTSUtils.locks.AsyncLock())
+        let results: Object[] = await Promise.all([
+          taskpool.execute(new taskpool.Task(readGlobalService, service1)),
+          taskpool.execute(new taskpool.Task(readGlobalService, service2))
+        ])
+        expect(results[0] as string).assertEqual('global')
+        expect(results[1] as string).assertEqual('global')
+      } catch (error) {
+        console.error("testIRReinforcement2600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -817,13 +973,19 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIRReinforcement2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const collector: MetricsCollector = new MetricsCollector(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      await collector.recordMetric('cpu_usage', 50)
-      for (let i = 0; i < 100; i++) {
-        const val: number | undefined = await collector.getMetric('cpu_usage')
-        expect(val).assertEqual(50)
+    it('testIRReinforcement2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const collector: MetricsCollector = new MetricsCollector(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        await collector.recordMetric('cpu_usage', 50)
+        for (let i = 0; i < 100; i++) {
+          const val: number | undefined = await collector.getMetric('cpu_usage')
+          expect(val).assertEqual(50)
+        }
+      } catch (error) {
+        console.error("testIRReinforcement2700 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -834,16 +996,22 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIRReinforcement2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const obj: IRGCObject = new IRGCObject(new ArkTSUtils.locks.AsyncLock())
-      await obj.setValue(42)
-      const tempObjs: IRGCObject[] = []
-      for (let i = 0; i < 100; i++) {
-        const temp: IRGCObject = new IRGCObject(new ArkTSUtils.locks.AsyncLock())
-        await temp.setValue(i)
-        tempObjs.push(temp)
+    it('testIRReinforcement2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const obj: IRGCObject = new IRGCObject(new ArkTSUtils.locks.AsyncLock())
+        await obj.setValue(42)
+        const tempObjs: IRGCObject[] = []
+        for (let i = 0; i < 100; i++) {
+          const temp: IRGCObject = new IRGCObject(new ArkTSUtils.locks.AsyncLock())
+          await temp.setValue(i)
+          tempObjs.push(temp)
+        }
+        expect(await obj.getValue()).assertEqual(42)
+      } catch (error) {
+        console.error("testIRReinforcement2800 failed");
+        expect(false).assertFail();
       }
-      expect(await obj.getValue()).assertEqual(42)
+      done();
     })
 
     /**
@@ -854,21 +1022,27 @@ export default function IRReinforcementTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIRReinforcement2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const obj: IRGCObject = new IRGCObject(new ArkTSUtils.locks.AsyncLock())
-      await obj.setValue(100)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readGCObjValue, obj))
+    it('testIRReinforcement2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const obj: IRGCObject = new IRGCObject(new ArkTSUtils.locks.AsyncLock())
+        await obj.setValue(100)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(readGCObjValue, obj))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        let results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(100)
+        }
+      } catch (error) {
+        console.error("testIRReinforcement2900 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      let results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(100)
-      }
+      done();
     })
   })
 }

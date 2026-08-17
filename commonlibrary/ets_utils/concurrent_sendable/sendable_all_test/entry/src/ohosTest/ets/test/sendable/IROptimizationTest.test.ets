@@ -173,14 +173,20 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIROptimization0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
-      const firstAccess: number = await testObj.getProp0()
-      expect(firstAccess).assertEqual(0)
-      for (let i = 0; i < 100; i++) {
-        const val: number = await testObj.getProp0()
-        expect(val).assertEqual(0)
+    it('testIROptimization0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
+        const firstAccess: number = await testObj.getProp0()
+        expect(firstAccess).assertEqual(0)
+        for (let i = 0; i < 100; i++) {
+          const val: number = await testObj.getProp0()
+          expect(val).assertEqual(0)
+        }
+      } catch (error) {
+        console.error("testIROptimization0100 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -191,12 +197,18 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIROptimization0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
-      await testObj.getProp0()
-      await testObj.setProp0(100)
-      const result: number = await testObj.getProp0()
-      expect(result).assertEqual(100)
+    it('testIROptimization0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
+        await testObj.getProp0()
+        await testObj.setProp0(100)
+        const result: number = await testObj.getProp0()
+        expect(result).assertEqual(100)
+      } catch (error) {
+        console.error("testIROptimization0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -207,20 +219,26 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIROptimization0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
-      const results: number[] = await Promise.all([
-        testObj.getProp0(),
-        testObj.lock_.lockAsync((): number => testObj.prop1),
-        testObj.lock_.lockAsync((): number => testObj.prop2),
-        testObj.lock_.lockAsync((): number => testObj.prop3),
-        testObj.lock_.lockAsync((): number => testObj.prop4)
-      ])
-      expect(results[0]).assertEqual(0)
-      expect(results[1]).assertEqual(1)
-      expect(results[2]).assertEqual(2)
-      expect(results[3]).assertEqual(3)
-      expect(results[4]).assertEqual(4)
+    it('testIROptimization0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
+        const results: number[] = await Promise.all([
+          testObj.getProp0(),
+          testObj.lock_.lockAsync((): number => testObj.prop1),
+          testObj.lock_.lockAsync((): number => testObj.prop2),
+          testObj.lock_.lockAsync((): number => testObj.prop3),
+          testObj.lock_.lockAsync((): number => testObj.prop4)
+        ])
+        expect(results[0]).assertEqual(0)
+        expect(results[1]).assertEqual(1)
+        expect(results[2]).assertEqual(2)
+        expect(results[3]).assertEqual(3)
+        expect(results[4]).assertEqual(4)
+      } catch (error) {
+        console.error("testIROptimization0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -231,20 +249,26 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIROptimization0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readICTestProp, testObj))
+    it('testIROptimization0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(readICTestProp, testObj))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(0)
+        }
+      } catch (error) {
+        console.error("testIROptimization0400 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(0)
-      }
+      done();
     })
 
     /**
@@ -255,13 +279,19 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testIROptimization0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
-      await testObj.getProp0()
-      for (let i = 0; i < 100; i++) {
+    it('testIROptimization0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
         await testObj.getProp0()
+        for (let i = 0; i < 100; i++) {
+          await testObj.getProp0()
+        }
+        expect(await testObj.getProp0()).assertEqual(0)
+      } catch (error) {
+        console.error("testIROptimization0500 failed");
+        expect(false).assertFail();
       }
-      expect(await testObj.getProp0()).assertEqual(0)
+      done();
     })
 
     /**
@@ -272,29 +302,35 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIROptimization0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const p1: Point = new Point()
-      const p2: Point = new Point()
-      const p3: Point = new Point()
-      p1.x = 10; p1.y = 20
-      p2.x = 30; p2.y = 40
-      p3.x = 50; p3.y = 60
-      expect(p1.x).assertEqual(10)
-      expect(p2.x).assertEqual(30)
-      expect(p3.x).assertEqual(50)
-      const tasks: taskpool.Task[] = [
-        new taskpool.Task(readPoint, p1),
-        new taskpool.Task(readPoint, p2),
-        new taskpool.Task(readPoint, p3)
-      ]
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
+    it('testIROptimization0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const p1: Point = new Point()
+        const p2: Point = new Point()
+        const p3: Point = new Point()
+        p1.x = 10; p1.y = 20
+        p2.x = 30; p2.y = 40
+        p3.x = 50; p3.y = 60
+        expect(p1.x).assertEqual(10)
+        expect(p2.x).assertEqual(30)
+        expect(p3.x).assertEqual(50)
+        const tasks: taskpool.Task[] = [
+          new taskpool.Task(readPoint, p1),
+          new taskpool.Task(readPoint, p2),
+          new taskpool.Task(readPoint, p3)
+        ]
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        expect(results[0] as number).assertEqual(30)
+        expect(results[1] as number).assertEqual(70)
+        expect(results[2] as number).assertEqual(110)
+      } catch (error) {
+        console.error("testIROptimization0600 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await Promise.all(promises)
-      expect(results[0] as number).assertEqual(30)
-      expect(results[1] as number).assertEqual(70)
-      expect(results[2] as number).assertEqual(110)
+      done();
     })
 
     /**
@@ -305,7 +341,7 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIROptimization0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const p2d: Point = new Point()
       const p3d: Point3D = new Point3D()
       p2d.x = 1; p2d.y = 2
@@ -322,18 +358,24 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIROptimization0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const obj1: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      const obj2: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      await obj1.addExtension('a', 1)
-      await obj1.addExtension('b', 2)
-      await obj1.addExtension('c', 3)
-      await obj2.addExtension('a', 1)
-      await obj2.addExtension('b', 2)
-      await obj2.addExtension('c', 3)
-      expect(await obj1.getExtension('a')).assertEqual(await obj2.getExtension('a'))
-      expect(await obj1.getExtension('b')).assertEqual(await obj2.getExtension('b'))
-      expect(await obj1.getExtension('c')).assertEqual(await obj2.getExtension('c'))
+    it('testIROptimization0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const obj1: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        const obj2: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        await obj1.addExtension('a', 1)
+        await obj1.addExtension('b', 2)
+        await obj1.addExtension('c', 3)
+        await obj2.addExtension('a', 1)
+        await obj2.addExtension('b', 2)
+        await obj2.addExtension('c', 3)
+        expect(await obj1.getExtension('a')).assertEqual(await obj2.getExtension('a'))
+        expect(await obj1.getExtension('b')).assertEqual(await obj2.getExtension('b'))
+        expect(await obj1.getExtension('c')).assertEqual(await obj2.getExtension('c'))
+      } catch (error) {
+        console.error("testIROptimization0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -344,25 +386,31 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIROptimization0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const points: Point[] = []
-      for (let i = 0; i < 10; i++) {
-        const p: Point = new Point()
-        points.push(p)
+    it('testIROptimization0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const points: Point[] = []
+        for (let i = 0; i < 10; i++) {
+          const p: Point = new Point()
+          points.push(p)
+        }
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(setPointCoords, points[i], i, i * 2))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        for (let i = 0; i < points.length; i++) {
+          expect(points[i].x >= 0).assertTrue()
+          expect(points[i].y).assertEqual(points[i].x * 2)
+        }
+      } catch (error) {
+        console.error("testIROptimization0900 failed");
+        expect(false).assertFail();
       }
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(setPointCoords, points[i], i, i * 2))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      for (let i = 0; i < points.length; i++) {
-        expect(points[i].x >= 0).assertTrue()
-        expect(points[i].y).assertEqual(points[i].x * 2)
-      }
+      done();
     })
 
     /**
@@ -373,14 +421,20 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIROptimization1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 512; i++) {
-        await obj.addExtension(`prop_${i}`, i)
+    it('testIROptimization1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 512; i++) {
+          await obj.addExtension(`prop_${i}`, i)
+        }
+        expect(await obj.getExtension('prop_0')).assertEqual(0)
+        expect(await obj.getExtension('prop_255')).assertEqual(255)
+        expect(await obj.getExtension('prop_511')).assertEqual(511)
+      } catch (error) {
+        console.error("testIROptimization1000 failed");
+        expect(false).assertFail();
       }
-      expect(await obj.getExtension('prop_0')).assertEqual(0)
-      expect(await obj.getExtension('prop_255')).assertEqual(255)
-      expect(await obj.getExtension('prop_511')).assertEqual(511)
+      done();
     })
 
     /**
@@ -391,7 +445,7 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIROptimization1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const obj: Point = new Point()
       obj.x = 10; obj.y = 20
       expect(obj.x).assertEqual(10)
@@ -406,14 +460,20 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIROptimization1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      obj.id = 100
-      await obj.addExtension('ext1', 10)
-      await obj.addExtension('ext2', 20)
-      expect(obj.id).assertEqual(100)
-      expect(await obj.getExtension('ext1')).assertEqual(10)
-      expect(await obj.getExtension('ext2')).assertEqual(20)
+    it('testIROptimization1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        obj.id = 100
+        await obj.addExtension('ext1', 10)
+        await obj.addExtension('ext2', 20)
+        expect(obj.id).assertEqual(100)
+        expect(await obj.getExtension('ext1')).assertEqual(10)
+        expect(await obj.getExtension('ext2')).assertEqual(20)
+      } catch (error) {
+        console.error("testIROptimization1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -424,13 +484,19 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIROptimization1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1025; i++) {
-        await obj.addExtension(`dyn_${i}`, i)
+    it('testIROptimization1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1025; i++) {
+          await obj.addExtension(`dyn_${i}`, i)
+        }
+        expect(await obj.getExtension('dyn_0')).assertEqual(0)
+        expect(await obj.getExtension('dyn_1024')).assertEqual(1024)
+      } catch (error) {
+        console.error("testIROptimization1300 failed");
+        expect(false).assertFail();
       }
-      expect(await obj.getExtension('dyn_0')).assertEqual(0)
-      expect(await obj.getExtension('dyn_1024')).assertEqual(1024)
+      done();
     })
 
     /**
@@ -441,16 +507,22 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIROptimization1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const obj: HybridObject = new HybridObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1025; i++) {
-        await obj.lock_.lockAsync((): void => { obj.dynamic.set(`d_${i}`, i) })
+    it('testIROptimization1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const obj: HybridObject = new HybridObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1025; i++) {
+          await obj.lock_.lockAsync((): void => { obj.dynamic.set(`d_${i}`, i) })
+        }
+        expect(obj.fixed1).assertEqual(1)
+        expect(obj.fixed2).assertEqual(2)
+        expect(obj.fixed3).assertEqual(3)
+        const val: number | undefined = obj.dynamic.get('d_1024')
+        expect(val !== undefined && val === 1024).assertTrue()
+      } catch (error) {
+        console.error("testIROptimization1400 failed");
+        expect(false).assertFail();
       }
-      expect(obj.fixed1).assertEqual(1)
-      expect(obj.fixed2).assertEqual(2)
-      expect(obj.fixed3).assertEqual(3)
-      const val: number | undefined = obj.dynamic.get('d_1024')
-      expect(val !== undefined && val === 1024).assertTrue()
+      done();
     })
 
     /**
@@ -461,20 +533,26 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIROptimization1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const obj: IRTestClass = new IRTestClass()
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(readIRObject, obj))
+    it('testIROptimization1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const obj: IRTestClass = new IRTestClass()
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(readIRObject, obj))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(60)
+        }
+      } catch (error) {
+        console.error("testIROptimization1500 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(60)
-      }
+      done();
     })
 
     /**
@@ -485,22 +563,28 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIROptimization1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const obj: IRTestClass = new IRTestClass()
-      const modifyTask: taskpool.Task = new taskpool.Task(modifyIRObject, obj, 100)
-      await taskpool.execute(modifyTask)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(readIRObject, obj))
+    it('testIROptimization1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const obj: IRTestClass = new IRTestClass()
+        const modifyTask: taskpool.Task = new taskpool.Task(modifyIRObject, obj, 100)
+        await taskpool.execute(modifyTask)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(readIRObject, obj))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(150)
+        }
+      } catch (error) {
+        console.error("testIROptimization1600 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(150)
-      }
+      done();
     })
 
     /**
@@ -511,24 +595,30 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIROptimization1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const points: Point[] = []
-      for (let i = 0; i < 10; i++) {
-        const p: Point = new Point()
-        points.push(p)
+    it('testIROptimization1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const points: Point[] = []
+        for (let i = 0; i < 10; i++) {
+          const p: Point = new Point()
+          points.push(p)
+        }
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(setPointCoords, points[i], i, i * 2))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        for (let i = 0; i < points.length; i++) {
+          expect(points[i].y).assertEqual(points[i].x * 2)
+        }
+      } catch (error) {
+        console.error("testIROptimization1700 failed");
+        expect(false).assertFail();
       }
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(setPointCoords, points[i], i, i * 2))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      for (let i = 0; i < points.length; i++) {
-        expect(points[i].y).assertEqual(points[i].x * 2)
-      }
+      done();
     })
 
     /**
@@ -539,12 +629,18 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIROptimization1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const obj: IRTestClass = new IRTestClass()
-      obj.prop1 = 1; obj.prop2 = 2; obj.prop3 = 3
-      const task: taskpool.Task = new taskpool.Task(workerReceiveIRTest, obj)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertEqual(6)
+    it('testIROptimization1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const obj: IRTestClass = new IRTestClass()
+        obj.prop1 = 1; obj.prop2 = 2; obj.prop3 = 3
+        const task: taskpool.Task = new taskpool.Task(workerReceiveIRTest, obj)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertEqual(6)
+      } catch (error) {
+        console.error("testIROptimization1800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -555,21 +651,27 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIROptimization1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const obj: StableIRObject = new StableIRObject(new ArkTSUtils.locks.AsyncLock())
-      const batchSize: number = 10
-      for (let batch = 0; batch < 5; batch++) {
-        const tasks: taskpool.Task[] = []
-        for (let i = 0; i < batchSize; i++) {
-          tasks.push(new taskpool.Task(concurrentIncrementObj, obj))
+    it('testIROptimization1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const obj: StableIRObject = new StableIRObject(new ArkTSUtils.locks.AsyncLock())
+        const batchSize: number = 10
+        for (let batch = 0; batch < 5; batch++) {
+          const tasks: taskpool.Task[] = []
+          for (let i = 0; i < batchSize; i++) {
+            tasks.push(new taskpool.Task(concurrentIncrementObj, obj))
+          }
+          const promises: Promise<Object>[] = []
+          for (let i = 0; i < tasks.length; i++) {
+            promises.push(taskpool.execute(tasks[i]))
+          }
+          await Promise.all(promises)
         }
-        const promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        await Promise.all(promises)
+        expect(await obj.getCount()).assertEqual(50)
+      } catch (error) {
+        console.error("testIROptimization1900 failed");
+        expect(false).assertFail();
       }
-      expect(await obj.getCount()).assertEqual(50)
+      done();
     })
 
     /**
@@ -580,7 +682,7 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIROptimization2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arr: collections.Array<number> = new collections.Array<number>()
       for (let i = 0; i < 1024; i++) {
         arr.push(i)
@@ -599,7 +701,7 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIROptimization2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arr: collections.Array<number> = new collections.Array<number>()
       for (let i = 0; i < 1025; i++) {
         arr.push(i)
@@ -617,7 +719,7 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIROptimization2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>()
       for (let i = 0; i < 1024; i++) {
         map.set(`key_${i}`, i)
@@ -635,7 +737,7 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIROptimization2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>()
       for (let i = 0; i < 1025; i++) {
         map.set(`key_${i}`, i)
@@ -652,17 +754,23 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testIROptimization2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 100; i++) {
-        await obj.addExtension(`p_${i}`, i)
-      }
-      for (let round = 0; round < 10; round++) {
+    it('testIROptimization2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
         for (let i = 0; i < 100; i++) {
-          const val: number | undefined = await obj.getExtension(`p_${i}`)
-          expect(val).assertEqual(i)
+          await obj.addExtension(`p_${i}`, i)
         }
+        for (let round = 0; round < 10; round++) {
+          for (let i = 0; i < 100; i++) {
+            const val: number | undefined = await obj.getExtension(`p_${i}`)
+            expect(val).assertEqual(i)
+          }
+        }
+      } catch (error) {
+        console.error("testIROptimization2400 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -673,18 +781,24 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testIROptimization2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1025; i++) {
-        await obj.addExtension(`p_${i}`, i)
-      }
-      for (let round = 0; round < 10; round++) {
-        const samples: number[] = [0, 256, 512, 768, 1024]
-        for (let idx = 0; idx < samples.length; idx++) {
-          const val: number | undefined = await obj.getExtension(`p_${samples[idx]}`)
-          expect(val).assertEqual(samples[idx])
+    it('testIROptimization2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1025; i++) {
+          await obj.addExtension(`p_${i}`, i)
         }
+        for (let round = 0; round < 10; round++) {
+          const samples: number[] = [0, 256, 512, 768, 1024]
+          for (let idx = 0; idx < samples.length; idx++) {
+            const val: number | undefined = await obj.getExtension(`p_${samples[idx]}`)
+            expect(val).assertEqual(samples[idx])
+          }
+        }
+      } catch (error) {
+        console.error("testIROptimization2500 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -695,18 +809,24 @@ export default function IROptimizationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIROptimization2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const irObj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      const dictObj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 100; i++) {
-        await irObj.addExtension(`k_${i}`, i)
+    it('testIROptimization2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const irObj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        const dictObj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 100; i++) {
+          await irObj.addExtension(`k_${i}`, i)
+        }
+        for (let i = 0; i < 1025; i++) {
+          await dictObj.addExtension(`k_${i}`, i)
+        }
+        expect(await irObj.getExtension('k_50')).assertEqual(await dictObj.getExtension('k_50'))
+        expect(await irObj.getExtension('k_99')).assertEqual(99)
+        expect(await dictObj.getExtension('k_1024')).assertEqual(1024)
+      } catch (error) {
+        console.error("testIROptimization2600 failed");
+        expect(false).assertFail();
       }
-      for (let i = 0; i < 1025; i++) {
-        await dictObj.addExtension(`k_${i}`, i)
-      }
-      expect(await irObj.getExtension('k_50')).assertEqual(await dictObj.getExtension('k_50'))
-      expect(await irObj.getExtension('k_99')).assertEqual(99)
-      expect(await dictObj.getExtension('k_1024')).assertEqual(1024)
+      done();
     })
   })
 }

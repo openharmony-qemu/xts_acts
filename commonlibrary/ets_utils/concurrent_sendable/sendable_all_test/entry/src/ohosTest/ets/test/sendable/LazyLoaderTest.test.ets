@@ -88,13 +88,19 @@ export default function LazyLoaderTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLazyLoader0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      expect(loader.isLoaded()).assertFalse()
+    it('testLazyLoader0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(loader.isLoaded()).assertFalse()
 
-      const value: string = await loader.load()
+        const value: string = await loader.load()
 
-      expect(value).assertEqual('loaded_value')
-      expect(loader.isLoaded()).assertTrue()
+        expect(value).assertEqual('loaded_value')
+        expect(loader.isLoaded()).assertTrue()
+      } catch (error) {
+        console.error("testLazyLoader0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -105,13 +111,19 @@ export default function LazyLoaderTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLazyLoader0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const value1: string = await loader.load()
-      const value2: string = await loader.load()
+    it('testLazyLoader0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const value1: string = await loader.load()
+        const value2: string = await loader.load()
 
-      expect(value1).assertEqual('loaded_value')
-      expect(value2).assertEqual('loaded_value')
-      expect(loader.isLoaded()).assertTrue()
+        expect(value1).assertEqual('loaded_value')
+        expect(value2).assertEqual('loaded_value')
+        expect(loader.isLoaded()).assertTrue()
+      } catch (error) {
+        console.error("testLazyLoader0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -122,13 +134,19 @@ export default function LazyLoaderTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLazyLoader0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await loader.load()
-      expect(loader.isLoaded()).assertTrue()
+    it('testLazyLoader0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await loader.load()
+        expect(loader.isLoaded()).assertTrue()
 
-      await loader.reset()
-      expect(loader.isLoaded()).assertFalse()
-      expect(loader.getValue()).assertEqual('')
+        await loader.reset()
+        expect(loader.isLoaded()).assertFalse()
+        expect(loader.getValue()).assertEqual('')
+      } catch (error) {
+        console.error("testLazyLoader0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -139,15 +157,21 @@ export default function LazyLoaderTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLazyLoader0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(lazyLoadTask, loader))
-      }
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      await Promise.all(promises)
+    it('testLazyLoader0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(lazyLoadTask, loader))
+        }
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        await Promise.all(promises)
 
-      expect(loader.isLoaded()).assertTrue()
+        expect(loader.isLoaded()).assertTrue()
+      } catch (error) {
+        console.error("testLazyLoader0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -158,15 +182,21 @@ export default function LazyLoaderTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLazyLoader0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(lazyLoadTask, loader))
-      }
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      await Promise.all(promises)
+    it('testLazyLoader0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(lazyLoadTask, loader))
+        }
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        await Promise.all(promises)
 
-      expect(loader.isLoaded()).assertTrue()
+        expect(loader.isLoaded()).assertTrue()
+      } catch (error) {
+        console.error("testLazyLoader0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -177,15 +207,21 @@ export default function LazyLoaderTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLazyLoader0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(lazyLoadTask, loader))
-      }
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      await Promise.all(promises)
+    it('testLazyLoader0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(lazyLoadTask, loader))
+        }
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        await Promise.all(promises)
 
-      expect(loader.isLoaded()).assertTrue()
+        expect(loader.isLoaded()).assertTrue()
+      } catch (error) {
+        console.error("testLazyLoader0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -196,7 +232,7 @@ export default function LazyLoaderTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLazyLoader0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testLazyLoader0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(loader.getValue()).assertEqual('')
       expect(loader.isLoaded()).assertFalse()
     })
@@ -209,9 +245,15 @@ export default function LazyLoaderTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLazyLoader0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await loader.load()
-      expect(loader.getValue()).assertEqual('loaded_value')
+    it('testLazyLoader0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await loader.load()
+        expect(loader.getValue()).assertEqual('loaded_value')
+      } catch (error) {
+        console.error("testLazyLoader0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -222,15 +264,21 @@ export default function LazyLoaderTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLazyLoader0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await loader.load()
-      await loader.reset()
+    it('testLazyLoader0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await loader.load()
+        await loader.reset()
 
-      expect(loader.isLoaded()).assertFalse()
+        expect(loader.isLoaded()).assertFalse()
 
-      const value: string = await loader.load()
-      expect(value).assertEqual('loaded_value')
-      expect(loader.isLoaded()).assertTrue()
+        const value: string = await loader.load()
+        expect(value).assertEqual('loaded_value')
+        expect(loader.isLoaded()).assertTrue()
+      } catch (error) {
+        console.error("testLazyLoader0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

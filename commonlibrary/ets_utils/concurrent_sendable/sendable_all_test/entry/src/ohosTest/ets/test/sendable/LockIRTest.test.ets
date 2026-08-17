@@ -180,11 +180,17 @@ export default function LockIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLockIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const resource: IRLockResource = new IRLockResource(new ArkTSUtils.locks.AsyncLock())
-      const status: number[] = await resource.getLockStatus()
-      expect(status[0]).assertEqual(0)
-      expect(status[1]).assertEqual(0)
+    it('testLockIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const resource: IRLockResource = new IRLockResource(new ArkTSUtils.locks.AsyncLock())
+        const status: number[] = await resource.getLockStatus()
+        expect(status[0]).assertEqual(0)
+        expect(status[1]).assertEqual(0)
+      } catch (error) {
+        console.error("testLockIR0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -195,12 +201,18 @@ export default function LockIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLockIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const data: ProtectedData = new ProtectedData(new ArkTSUtils.locks.AsyncLock())
-      await data.update(100)
-      const props: number[] = await data.getIRProperties()
-      expect(props[0]).assertEqual(100)
-      expect(props[1]).assertEqual(1)
+    it('testLockIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const data: ProtectedData = new ProtectedData(new ArkTSUtils.locks.AsyncLock())
+        await data.update(100)
+        const props: number[] = await data.getIRProperties()
+        expect(props[0]).assertEqual(100)
+        expect(props[1]).assertEqual(1)
+      } catch (error) {
+        console.error("testLockIR0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -211,10 +223,16 @@ export default function LockIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLockIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const state: ConditionState = new ConditionState(new ArkTSUtils.locks.AsyncLock(), new ArkTSUtils.locks.ConditionVariable())
-      await state.incrementWait()
-      expect(await state.getWaitCount()).assertEqual(1)
+    it('testLockIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const state: ConditionState = new ConditionState(new ArkTSUtils.locks.AsyncLock(), new ArkTSUtils.locks.ConditionVariable())
+        await state.incrementWait()
+        expect(await state.getWaitCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testLockIR0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -225,7 +243,7 @@ export default function LockIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLockIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLockIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const resource1: SharedLockResource = new SharedLockResource(new ArkTSUtils.locks.AsyncLock())
       const resource2: SharedLockResource = new SharedLockResource(new ArkTSUtils.locks.AsyncLock())
       expect(resource1.data_).assertEqual(0)
@@ -240,14 +258,20 @@ export default function LockIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLockIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const data: ConcurrentLockData = new ConcurrentLockData(new ArkTSUtils.locks.AsyncLock())
-      const promises: Promise<number>[] = []
-      for (let i = 0; i < 50; i++) {
-        promises.push(data.increment())
+    it('testLockIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: ConcurrentLockData = new ConcurrentLockData(new ArkTSUtils.locks.AsyncLock())
+        const promises: Promise<number>[] = []
+        for (let i = 0; i < 50; i++) {
+          promises.push(data.increment())
+        }
+        await Promise.all(promises)
+        expect(await data.getCounter()).assertEqual(50)
+      } catch (error) {
+        console.error("testLockIR0500 failed");
+        expect(false).assertFail();
       }
-      await Promise.all(promises)
-      expect(await data.getCounter()).assertEqual(50)
+      done();
     })
 
     /**
@@ -258,12 +282,18 @@ export default function LockIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLockIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const test: LockPerformanceTest = new LockPerformanceTest(new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 100; i++) {
-        const value: number = await test.getValue()
-        expect(value).assertEqual(0)
+    it('testLockIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const test: LockPerformanceTest = new LockPerformanceTest(new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 100; i++) {
+          const value: number = await test.getValue()
+          expect(value).assertEqual(0)
+        }
+      } catch (error) {
+        console.error("testLockIR0600 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -274,12 +304,18 @@ export default function LockIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLockIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const counter: WaitCounter = new WaitCounter(new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 10; i++) {
-        await counter.incrementWaiting()
+    it('testLockIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const counter: WaitCounter = new WaitCounter(new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 10; i++) {
+          await counter.incrementWaiting()
+        }
+        expect(await counter.getWaiting()).assertEqual(10)
+      } catch (error) {
+        console.error("testLockIR0700 failed");
+        expect(false).assertFail();
       }
-      expect(await counter.getWaiting()).assertEqual(10)
+      done();
     })
 
     /**
@@ -290,16 +326,22 @@ export default function LockIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLockIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const lockObj: CrossThreadLock = new CrossThreadLock(new ArkTSUtils.locks.AsyncLock())
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readCrossThreadValue, lockObj))
+    it('testLockIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const lockObj: CrossThreadLock = new CrossThreadLock(new ArkTSUtils.locks.AsyncLock())
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(readCrossThreadValue, lockObj))
+        }
+        const results = await Promise.all(tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t)))
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i]).assertEqual(42)
+        }
+      } catch (error) {
+        console.error("testLockIR0800 failed");
+        expect(false).assertFail();
       }
-      const results = await Promise.all(tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t)))
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i]).assertEqual(42)
-      }
+      done();
     })
   })
 }
