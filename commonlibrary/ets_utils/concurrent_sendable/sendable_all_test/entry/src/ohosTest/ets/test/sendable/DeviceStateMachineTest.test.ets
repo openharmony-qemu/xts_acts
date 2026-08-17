@@ -181,10 +181,16 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDeviceStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
-      expect(await deviceSM.getDeviceId()).assertEqual('device_001')
-      expect(await deviceSM.getHistoryCount()).assertEqual(0)
+    it('testDeviceStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
+        expect(await deviceSM.getDeviceId()).assertEqual('device_001')
+        expect(await deviceSM.getHistoryCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testDeviceStateMachine0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -195,11 +201,17 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDeviceStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      expect(await deviceSM.transition(DeviceState.ONLINE)).assertTrue()
-      expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.ONLINE)
-      expect(await deviceSM.isOnline()).assertTrue()
-      expect(await deviceSM.getHistoryCount()).assertEqual(1)
+    it('testDeviceStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        expect(await deviceSM.transition(DeviceState.ONLINE)).assertTrue()
+        expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.ONLINE)
+        expect(await deviceSM.isOnline()).assertTrue()
+        expect(await deviceSM.getHistoryCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testDeviceStateMachine0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -210,11 +222,17 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDeviceStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await deviceSM.transition(DeviceState.ONLINE)
-      expect(await deviceSM.transition(DeviceState.IDLE)).assertTrue()
-      expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.IDLE)
-      expect(await deviceSM.isOnline()).assertTrue()
+    it('testDeviceStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await deviceSM.transition(DeviceState.ONLINE)
+        expect(await deviceSM.transition(DeviceState.IDLE)).assertTrue()
+        expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.IDLE)
+        expect(await deviceSM.isOnline()).assertTrue()
+      } catch (error) {
+        console.error("testDeviceStateMachine0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -225,11 +243,17 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDeviceStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await deviceSM.transition(DeviceState.ONLINE)
-      await deviceSM.transition(DeviceState.IDLE)
-      expect(await deviceSM.transition(DeviceState.BUSY)).assertTrue()
-      expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.BUSY)
+    it('testDeviceStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await deviceSM.transition(DeviceState.ONLINE)
+        await deviceSM.transition(DeviceState.IDLE)
+        expect(await deviceSM.transition(DeviceState.BUSY)).assertTrue()
+        expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.BUSY)
+      } catch (error) {
+        console.error("testDeviceStateMachine0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -240,12 +264,18 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDeviceStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await deviceSM.transition(DeviceState.ONLINE)
-      await deviceSM.transition(DeviceState.IDLE)
-      await deviceSM.transition(DeviceState.BUSY)
-      expect(await deviceSM.transition(DeviceState.IDLE)).assertTrue()
-      expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.IDLE)
+    it('testDeviceStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await deviceSM.transition(DeviceState.ONLINE)
+        await deviceSM.transition(DeviceState.IDLE)
+        await deviceSM.transition(DeviceState.BUSY)
+        expect(await deviceSM.transition(DeviceState.IDLE)).assertTrue()
+        expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.IDLE)
+      } catch (error) {
+        console.error("testDeviceStateMachine0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -256,11 +286,17 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDeviceStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await deviceSM.transition(DeviceState.ONLINE)
-      expect(await deviceSM.transition(DeviceState.OFFLINE)).assertTrue()
-      expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
-      expect(await deviceSM.isOnline()).assertFalse()
+    it('testDeviceStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await deviceSM.transition(DeviceState.ONLINE)
+        expect(await deviceSM.transition(DeviceState.OFFLINE)).assertTrue()
+        expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
+        expect(await deviceSM.isOnline()).assertFalse()
+      } catch (error) {
+        console.error("testDeviceStateMachine0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -271,11 +307,17 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDeviceStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await deviceSM.transition(DeviceState.ONLINE)
-      await deviceSM.transition(DeviceState.IDLE)
-      expect(await deviceSM.transition(DeviceState.ERROR)).assertTrue()
-      expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.ERROR)
+    it('testDeviceStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await deviceSM.transition(DeviceState.ONLINE)
+        await deviceSM.transition(DeviceState.IDLE)
+        expect(await deviceSM.transition(DeviceState.ERROR)).assertTrue()
+        expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.ERROR)
+      } catch (error) {
+        console.error("testDeviceStateMachine0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -286,11 +328,17 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDeviceStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await deviceSM.transition(DeviceState.ONLINE)
-      await deviceSM.transition(DeviceState.ERROR)
-      expect(await deviceSM.transition(DeviceState.OFFLINE)).assertTrue()
-      expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
+    it('testDeviceStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await deviceSM.transition(DeviceState.ONLINE)
+        await deviceSM.transition(DeviceState.ERROR)
+        expect(await deviceSM.transition(DeviceState.OFFLINE)).assertTrue()
+        expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
+      } catch (error) {
+        console.error("testDeviceStateMachine0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -301,10 +349,16 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDeviceStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      expect(await deviceSM.transition(DeviceState.BUSY)).assertFalse()
-      expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
-      expect(await deviceSM.getHistoryCount()).assertEqual(0)
+    it('testDeviceStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        expect(await deviceSM.transition(DeviceState.BUSY)).assertFalse()
+        expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
+        expect(await deviceSM.getHistoryCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testDeviceStateMachine0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -315,11 +369,17 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDeviceStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await deviceSM.transition(DeviceState.ONLINE)
-      await deviceSM.transition(DeviceState.IDLE)
-      expect(await deviceSM.transition(DeviceState.ONLINE)).assertFalse()
-      expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.IDLE)
+    it('testDeviceStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await deviceSM.transition(DeviceState.ONLINE)
+        await deviceSM.transition(DeviceState.IDLE)
+        expect(await deviceSM.transition(DeviceState.ONLINE)).assertFalse()
+        expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.IDLE)
+      } catch (error) {
+        console.error("testDeviceStateMachine1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -330,21 +390,27 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDeviceStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await deviceSM.transition(DeviceState.ONLINE)
-      await deviceSM.transition(DeviceState.IDLE)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 15; i++) {
-        tasks.push(new taskpool.Task(readDeviceStateTask, deviceSM))
+    it('testDeviceStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await deviceSM.transition(DeviceState.ONLINE)
+        await deviceSM.transition(DeviceState.IDLE)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 15; i++) {
+          tasks.push(new taskpool.Task(readDeviceStateTask, deviceSM))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i: number = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i: number = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(DeviceState.IDLE)
+        }
+      } catch (error) {
+        console.error("testDeviceStateMachine1100 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i: number = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i: number = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(DeviceState.IDLE)
-      }
+      done();
     })
 
     /**
@@ -355,18 +421,24 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDeviceStateMachine1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await deviceSM.transition(DeviceState.ONLINE)
-      await deviceSM.transition(DeviceState.IDLE)
-      await deviceSM.transition(DeviceState.BUSY)
-      expect(await deviceSM.getHistoryCount()).assertEqual(3)
-      const lastTransition: DeviceTransitionRecord | null = await deviceSM.getLastTransition()
-      expect(lastTransition !== null && lastTransition !== undefined).assertTrue()
-      if (lastTransition !== null) {
-        expect(lastTransition.from_).assertEqual(DeviceState.IDLE)
-        expect(lastTransition.to_).assertEqual(DeviceState.BUSY)
-        expect(lastTransition.deviceId_).assertEqual('device_001')
+    it('testDeviceStateMachine1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await deviceSM.transition(DeviceState.ONLINE)
+        await deviceSM.transition(DeviceState.IDLE)
+        await deviceSM.transition(DeviceState.BUSY)
+        expect(await deviceSM.getHistoryCount()).assertEqual(3)
+        const lastTransition: DeviceTransitionRecord | null = await deviceSM.getLastTransition()
+        expect(lastTransition !== null && lastTransition !== undefined).assertTrue()
+        if (lastTransition !== null) {
+          expect(lastTransition.from_).assertEqual(DeviceState.IDLE)
+          expect(lastTransition.to_).assertEqual(DeviceState.BUSY)
+          expect(lastTransition.deviceId_).assertEqual('device_001')
+        }
+      } catch (error) {
+        console.error("testDeviceStateMachine1200 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -377,19 +449,25 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDeviceStateMachine1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const notifications: string[] = []
-      const task: taskpool.Task = new taskpool.Task(deviceOnlineNotifyTask, deviceSM)
-      const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
-        task.onReceiveData((data: string): void => {
-          notifications.push(data)
-          resolve()
+    it('testDeviceStateMachine1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const notifications: string[] = []
+        const task: taskpool.Task = new taskpool.Task(deviceOnlineNotifyTask, deviceSM)
+        const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
+          task.onReceiveData((data: string): void => {
+            notifications.push(data)
+            resolve()
+          })
         })
-      })
-      await taskpool.execute(task)
-      await receivePromise
-      expect(notifications.length).assertLargerOrEqual(1)
-      expect(notifications[0]).assertEqual('online')
+        await taskpool.execute(task)
+        await receivePromise
+        expect(notifications.length).assertLargerOrEqual(1)
+        expect(notifications[0]).assertEqual('online')
+      } catch (error) {
+        console.error("testDeviceStateMachine1300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -400,20 +478,26 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDeviceStateMachine1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const deviceSM1: DeviceStateMachine = new DeviceStateMachine('device_001', new ArkTSUtils.locks.AsyncLock(), new collections.Array<DeviceTransitionRecord>(), new collections.Array<DeviceTransitionRule>())
-      const deviceSM2: DeviceStateMachine = new DeviceStateMachine('device_002', new ArkTSUtils.locks.AsyncLock(), new collections.Array<DeviceTransitionRecord>(), new collections.Array<DeviceTransitionRule>())
-      await deviceSM1.setupRules()
-      await deviceSM2.setupRules()
-      await deviceSM1.transition(DeviceState.ONLINE)
-      await deviceSM1.transition(DeviceState.IDLE)
-      await deviceSM1.transition(DeviceState.BUSY)
-      await deviceSM2.transition(DeviceState.ONLINE)
-      await deviceSM2.transition(DeviceState.OFFLINE)
-      expect(await deviceSM1.getCurrentState()).assertEqual(DeviceState.BUSY)
-      expect(await deviceSM2.getCurrentState()).assertEqual(DeviceState.OFFLINE)
-      await deviceSM1.reset()
-      await deviceSM2.reset()
+    it('testDeviceStateMachine1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const deviceSM1: DeviceStateMachine = new DeviceStateMachine('device_001', new ArkTSUtils.locks.AsyncLock(), new collections.Array<DeviceTransitionRecord>(), new collections.Array<DeviceTransitionRule>())
+        const deviceSM2: DeviceStateMachine = new DeviceStateMachine('device_002', new ArkTSUtils.locks.AsyncLock(), new collections.Array<DeviceTransitionRecord>(), new collections.Array<DeviceTransitionRule>())
+        await deviceSM1.setupRules()
+        await deviceSM2.setupRules()
+        await deviceSM1.transition(DeviceState.ONLINE)
+        await deviceSM1.transition(DeviceState.IDLE)
+        await deviceSM1.transition(DeviceState.BUSY)
+        await deviceSM2.transition(DeviceState.ONLINE)
+        await deviceSM2.transition(DeviceState.OFFLINE)
+        expect(await deviceSM1.getCurrentState()).assertEqual(DeviceState.BUSY)
+        expect(await deviceSM2.getCurrentState()).assertEqual(DeviceState.OFFLINE)
+        await deviceSM1.reset()
+        await deviceSM2.reset()
+      } catch (error) {
+        console.error("testDeviceStateMachine1400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -424,11 +508,17 @@ export default function DeviceStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDeviceStateMachine1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const historyBefore: number = await deviceSM.getHistoryCount()
-      expect(await deviceSM.transition(DeviceState.BUSY)).assertFalse()
-      expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
-      expect(await deviceSM.getHistoryCount()).assertEqual(historyBefore)
+    it('testDeviceStateMachine1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const historyBefore: number = await deviceSM.getHistoryCount()
+        expect(await deviceSM.transition(DeviceState.BUSY)).assertFalse()
+        expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
+        expect(await deviceSM.getHistoryCount()).assertEqual(historyBefore)
+      } catch (error) {
+        console.error("testDeviceStateMachine1500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

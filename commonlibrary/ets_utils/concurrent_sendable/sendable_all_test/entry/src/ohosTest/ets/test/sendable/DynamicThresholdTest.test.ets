@@ -172,11 +172,17 @@ export default function DynamicThresholdTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDynamicThreshold0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('test_threshold', 10, 1, 100)
-      expect(threshold.getCurrentThreshold()).assertEqual(10)
-      expect(threshold.getMinThreshold()).assertEqual(1)
-      expect(threshold.getMaxThreshold()).assertEqual(100)
+    it('testDynamicThreshold0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('test_threshold', 10, 1, 100)
+        expect(threshold.getCurrentThreshold()).assertEqual(10)
+        expect(threshold.getMinThreshold()).assertEqual(1)
+        expect(threshold.getMaxThreshold()).assertEqual(100)
+      } catch (error) {
+        console.error("testDynamicThreshold0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -187,12 +193,18 @@ export default function DynamicThresholdTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDynamicThreshold0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('adjust_test', 50, 10, 100)
+    it('testDynamicThreshold0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('adjust_test', 50, 10, 100)
 
-      const result: boolean = await threshold.adjust(75)
-      expect(result).assertTrue()
-      expect(threshold.getCurrentThreshold()).assertEqual(75)
+        const result: boolean = await threshold.adjust(75)
+        expect(result).assertTrue()
+        expect(threshold.getCurrentThreshold()).assertEqual(75)
+      } catch (error) {
+        console.error("testDynamicThreshold0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -203,12 +215,18 @@ export default function DynamicThresholdTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDynamicThreshold0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('range_test', 50, 10, 100)
+    it('testDynamicThreshold0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('range_test', 50, 10, 100)
 
-      const result: boolean = await threshold.adjust(150)
-      expect(result).assertFalse()
-      expect(threshold.getCurrentThreshold()).assertEqual(50)
+        const result: boolean = await threshold.adjust(150)
+        expect(result).assertFalse()
+        expect(threshold.getCurrentThreshold()).assertEqual(50)
+      } catch (error) {
+        console.error("testDynamicThreshold0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -219,12 +237,18 @@ export default function DynamicThresholdTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDynamicThreshold0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('min_test', 50, 10, 100)
+    it('testDynamicThreshold0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('min_test', 50, 10, 100)
 
-      const result: boolean = await threshold.adjust(5)
-      expect(result).assertFalse()
-      expect(threshold.getCurrentThreshold()).assertEqual(50)
+        const result: boolean = await threshold.adjust(5)
+        expect(result).assertFalse()
+        expect(threshold.getCurrentThreshold()).assertEqual(50)
+      } catch (error) {
+        console.error("testDynamicThreshold0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -235,12 +259,18 @@ export default function DynamicThresholdTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDynamicThreshold0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('increase_test', 50, 10, 100)
+    it('testDynamicThreshold0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('increase_test', 50, 10, 100)
 
-      const result: boolean = await threshold.increase(20)
-      expect(result).assertTrue()
-      expect(threshold.getCurrentThreshold()).assertEqual(70)
+        const result: boolean = await threshold.increase(20)
+        expect(result).assertTrue()
+        expect(threshold.getCurrentThreshold()).assertEqual(70)
+      } catch (error) {
+        console.error("testDynamicThreshold0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -251,12 +281,18 @@ export default function DynamicThresholdTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDynamicThreshold0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('decrease_test', 50, 10, 100)
+    it('testDynamicThreshold0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('decrease_test', 50, 10, 100)
 
-      const result: boolean = await threshold.decrease(20)
-      expect(result).assertTrue()
-      expect(threshold.getCurrentThreshold()).assertEqual(30)
+        const result: boolean = await threshold.decrease(20)
+        expect(result).assertTrue()
+        expect(threshold.getCurrentThreshold()).assertEqual(30)
+      } catch (error) {
+        console.error("testDynamicThreshold0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -267,14 +303,20 @@ export default function DynamicThresholdTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDynamicThreshold0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('count_test', 50, 10, 100)
+    it('testDynamicThreshold0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('count_test', 50, 10, 100)
 
-      await threshold.adjust(60)
-      await threshold.adjust(70)
-      await threshold.adjust(80)
+        await threshold.adjust(60)
+        await threshold.adjust(70)
+        await threshold.adjust(80)
 
-      expect(threshold.getAdjustmentCount()).assertEqual(3)
+        expect(threshold.getAdjustmentCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testDynamicThreshold0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -285,16 +327,22 @@ export default function DynamicThresholdTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDynamicThreshold0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('history_test', 50, 10, 100)
+    it('testDynamicThreshold0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('history_test', 50, 10, 100)
 
-      await threshold.adjust(60)
-      await threshold.adjust(70)
+        await threshold.adjust(60)
+        await threshold.adjust(70)
 
-      const history: collections.Array<number> = threshold.getAdjustmentHistory()
-      expect(history.length).assertEqual(2)
-      expect(history[0]).assertEqual(60)
-      expect(history[1]).assertEqual(70)
+        const history: collections.Array<number> = threshold.getAdjustmentHistory()
+        expect(history.length).assertEqual(2)
+        expect(history[0]).assertEqual(60)
+        expect(history[1]).assertEqual(70)
+      } catch (error) {
+        console.error("testDynamicThreshold0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -305,17 +353,23 @@ export default function DynamicThresholdTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDynamicThreshold0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('concurrent_test', 50, 10, 100)
+    it('testDynamicThreshold0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('concurrent_test', 50, 10, 100)
 
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(adjustThresholdTask, threshold, 50 + i * 10))
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(adjustThresholdTask, threshold, 50 + i * 10))
+        }
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        await Promise.all(promises)
+
+        expect(threshold.getAdjustmentCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testDynamicThreshold0900 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      await Promise.all(promises)
-
-      expect(threshold.getAdjustmentCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -326,18 +380,24 @@ export default function DynamicThresholdTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDynamicThreshold1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('increase_concurrent', 50, 10, 100)
+    it('testDynamicThreshold1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('increase_concurrent', 50, 10, 100)
 
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(increaseThresholdTask, threshold, 10))
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(increaseThresholdTask, threshold, 10))
+        }
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        await Promise.all(promises)
+
+        expect(threshold.getAdjustmentCount()).assertEqual(3)
+        expect(threshold.getCurrentThreshold()).assertEqual(80)
+      } catch (error) {
+        console.error("testDynamicThreshold1000 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      await Promise.all(promises)
-
-      expect(threshold.getAdjustmentCount()).assertEqual(3)
-      expect(threshold.getCurrentThreshold()).assertEqual(80)
+      done();
     })
 
     /**
@@ -348,12 +408,18 @@ export default function DynamicThresholdTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDynamicThreshold1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const t1: DynamicThreshold = await dynamicThresholdManager.createThreshold('idempotent', 50, 10, 100)
-      const t2: DynamicThreshold = await dynamicThresholdManager.createThreshold('idempotent', 60, 20, 200)
+    it('testDynamicThreshold1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const t1: DynamicThreshold = await dynamicThresholdManager.createThreshold('idempotent', 50, 10, 100)
+        const t2: DynamicThreshold = await dynamicThresholdManager.createThreshold('idempotent', 60, 20, 200)
 
-      expect(t1 === t2).assertTrue()
-      expect(t1.getCurrentThreshold()).assertEqual(50)
+        expect(t1 === t2).assertTrue()
+        expect(t1.getCurrentThreshold()).assertEqual(50)
+      } catch (error) {
+        console.error("testDynamicThreshold1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -364,15 +430,21 @@ export default function DynamicThresholdTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDynamicThreshold1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('reset_test', 50, 10, 100)
+    it('testDynamicThreshold1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('reset_test', 50, 10, 100)
 
-      await threshold.adjust(60)
-      await threshold.adjust(70)
-      await threshold.resetToDefault()
+        await threshold.adjust(60)
+        await threshold.adjust(70)
+        await threshold.resetToDefault()
 
-      expect(threshold.getAdjustmentHistory().length).assertEqual(0)
-      expect(threshold.getAdjustmentCount()).assertEqual(0)
+        expect(threshold.getAdjustmentHistory().length).assertEqual(0)
+        expect(threshold.getAdjustmentCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testDynamicThreshold1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -383,18 +455,24 @@ export default function DynamicThresholdTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDynamicThreshold1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await dynamicThresholdManager.createThreshold('threshold1', 10, 1, 100)
-      await dynamicThresholdManager.createThreshold('threshold2', 20, 5, 50)
-      await dynamicThresholdManager.createThreshold('threshold3', 30, 10, 60)
+    it('testDynamicThreshold1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await dynamicThresholdManager.createThreshold('threshold1', 10, 1, 100)
+        await dynamicThresholdManager.createThreshold('threshold2', 20, 5, 50)
+        await dynamicThresholdManager.createThreshold('threshold3', 30, 10, 60)
 
-      const t1: DynamicThreshold | undefined = dynamicThresholdManager.getThreshold('threshold1')
-      const t2: DynamicThreshold | undefined = dynamicThresholdManager.getThreshold('threshold2')
+        const t1: DynamicThreshold | undefined = dynamicThresholdManager.getThreshold('threshold1')
+        const t2: DynamicThreshold | undefined = dynamicThresholdManager.getThreshold('threshold2')
 
-      expect(t1 !== undefined).assertTrue()
-      expect(t2 !== undefined).assertTrue()
-      expect(t1!.getCurrentThreshold()).assertEqual(10)
-      expect(t2!.getCurrentThreshold()).assertEqual(20)
+        expect(t1 !== undefined).assertTrue()
+        expect(t2 !== undefined).assertTrue()
+        expect(t1!.getCurrentThreshold()).assertEqual(10)
+        expect(t2!.getCurrentThreshold()).assertEqual(20)
+      } catch (error) {
+        console.error("testDynamicThreshold1300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 
@@ -484,16 +562,22 @@ function RateLimitMonitorTestInner(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRateLimitMonitor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const promises: Promise<void>[] = []
-      for (let i = 0; i < 10; i++) {
-        promises.push(rateLimitMonitor.recordRequest('batch_monitor_10', i % 3 === 0, i * 2))
-      }
-      await Promise.all(promises)
+    it('testRateLimitMonitor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const promises: Promise<void>[] = []
+        for (let i = 0; i < 10; i++) {
+          promises.push(rateLimitMonitor.recordRequest('batch_monitor_10', i % 3 === 0, i * 2))
+        }
+        await Promise.all(promises)
 
-      const stats: RateLimitStats | undefined = rateLimitMonitor.getStats('batch_monitor_10')
-      expect(stats !== undefined).assertTrue()
-      expect(stats!.totalRequests).assertEqual(10)
+        const stats: RateLimitStats | undefined = rateLimitMonitor.getStats('batch_monitor_10')
+        expect(stats !== undefined).assertTrue()
+        expect(stats!.totalRequests).assertEqual(10)
+      } catch (error) {
+        console.error("testRateLimitMonitor0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -504,14 +588,20 @@ function RateLimitMonitorTestInner(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRateLimitMonitor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await rateLimitMonitor.recordRequest('reset_monitor', true, 0)
-      await rateLimitMonitor.recordRequest('reset_monitor', false, 50)
+    it('testRateLimitMonitor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await rateLimitMonitor.recordRequest('reset_monitor', true, 0)
+        await rateLimitMonitor.recordRequest('reset_monitor', false, 50)
 
-      await rateLimitMonitor.resetStats('reset_monitor')
+        await rateLimitMonitor.resetStats('reset_monitor')
 
-      const stats: RateLimitStats | undefined = rateLimitMonitor.getStats('reset_monitor')
-      expect(stats === undefined).assertTrue()
+        const stats: RateLimitStats | undefined = rateLimitMonitor.getStats('reset_monitor')
+        expect(stats === undefined).assertTrue()
+      } catch (error) {
+        console.error("testRateLimitMonitor0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -522,18 +612,24 @@ function RateLimitMonitorTestInner(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRateLimitMonitor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await rateLimitMonitor.recordRequest('monitor1', true, 0)
-      await rateLimitMonitor.recordRequest('monitor2', true, 0)
-      await rateLimitMonitor.recordRequest('monitor3', true, 0)
+    it('testRateLimitMonitor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await rateLimitMonitor.recordRequest('monitor1', true, 0)
+        await rateLimitMonitor.recordRequest('monitor2', true, 0)
+        await rateLimitMonitor.recordRequest('monitor3', true, 0)
 
-      const stats1: RateLimitStats | undefined = rateLimitMonitor.getStats('monitor1')
-      const stats2: RateLimitStats | undefined = rateLimitMonitor.getStats('monitor2')
+        const stats1: RateLimitStats | undefined = rateLimitMonitor.getStats('monitor1')
+        const stats2: RateLimitStats | undefined = rateLimitMonitor.getStats('monitor2')
 
-      expect(stats1 !== undefined).assertTrue()
-      expect(stats2 !== undefined).assertTrue()
-      expect(stats1!.totalRequests).assertEqual(1)
-      expect(stats2!.totalRequests).assertEqual(1)
+        expect(stats1 !== undefined).assertTrue()
+        expect(stats2 !== undefined).assertTrue()
+        expect(stats1!.totalRequests).assertEqual(1)
+        expect(stats2!.totalRequests).assertEqual(1)
+      } catch (error) {
+        console.error("testRateLimitMonitor0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

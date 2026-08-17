@@ -92,9 +92,15 @@ export default function DataResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDataResultCollect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await collector.addResult(1, 'result_1')
-      expect(collector.getResultCount()).assertEqual(1)
+    it('testDataResultCollect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await collector.addResult(1, 'result_1')
+        expect(collector.getResultCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testDataResultCollect0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -105,10 +111,16 @@ export default function DataResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDataResultCollect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await collector.addResult(1, 'result_1')
-      await collector.addResult(2, 'result_2')
-      expect(collector.getResultCount()).assertEqual(2)
+    it('testDataResultCollect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await collector.addResult(1, 'result_1')
+        await collector.addResult(2, 'result_2')
+        expect(collector.getResultCount()).assertEqual(2)
+      } catch (error) {
+        console.error("testDataResultCollect0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -119,10 +131,16 @@ export default function DataResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDataResultCollect0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await collector.addResult(1, 'test_data')
-      const result: string = collector.getResultByIndex(0)
-      expect(result).assertEqual('test_data')
+    it('testDataResultCollect0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await collector.addResult(1, 'test_data')
+        const result: string = collector.getResultByIndex(0)
+        expect(result).assertEqual('test_data')
+      } catch (error) {
+        console.error("testDataResultCollect0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -133,19 +151,25 @@ export default function DataResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDataResultCollect0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(processData, i, `data_${i}`))
+    it('testDataResultCollect0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(processData, i, `data_${i}`))
+        }
+        const p1 = taskpool.execute(tasks[0])
+        const p2 = taskpool.execute(tasks[1])
+        const p3 = taskpool.execute(tasks[2])
+        const results: Object[] = await Promise.all([p1, p2, p3])
+        for (let i = 0; i < results.length; i++) {
+          await collector.addResult(i, results[i] as string)
+        }
+        expect(collector.getResultCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testDataResultCollect0400 failed");
+        expect(false).assertFail();
       }
-      const p1 = taskpool.execute(tasks[0])
-      const p2 = taskpool.execute(tasks[1])
-      const p3 = taskpool.execute(tasks[2])
-      const results: Object[] = await Promise.all([p1, p2, p3])
-      for (let i = 0; i < results.length; i++) {
-        await collector.addResult(i, results[i] as string)
-      }
-      expect(collector.getResultCount()).assertEqual(3)
+      done();
     })
 
     /**
@@ -156,23 +180,29 @@ export default function DataResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDataResultCollect0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(processData, i, `data_${i}`))
+    it('testDataResultCollect0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(processData, i, `data_${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          await collector.addResult(i, results[i] as string)
+        }
+        const res: collections.Array<string> = collector.getResults()
+        const taskIds: collections.Array<number> = collector.getTaskIds()
+        expect(res.length).assertEqual(10)
+        expect(taskIds.length).assertEqual(10)
+      } catch (error) {
+        console.error("testDataResultCollect0500 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        await collector.addResult(i, results[i] as string)
-      }
-      const res: collections.Array<string> = collector.getResults()
-      const taskIds: collections.Array<number> = collector.getTaskIds()
-      expect(res.length).assertEqual(10)
-      expect(taskIds.length).assertEqual(10)
+      done();
     })
 
     /**
@@ -183,20 +213,26 @@ export default function DataResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDataResultCollect0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(processData, i, `data_${i}`))
+    it('testDataResultCollect0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(processData, i, `data_${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          await collector.addResult(i, results[i] as string)
+        }
+        expect(collector.getResultCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testDataResultCollect0600 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        await collector.addResult(i, results[i] as string)
-      }
-      expect(collector.getResultCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -207,25 +243,31 @@ export default function DataResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDataResultCollect0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 50; i++) {
-        tasks.push(new taskpool.Task(processData, i, `data_${i}`))
-      }
-      const batchSize: number = 25
-      for (let batch = 0; batch < Math.ceil(50 / batchSize); batch++) {
-        const batchTasks: taskpool.Task[] = tasks.slice(batch * batchSize, (batch + 1) * batchSize)
-        const promises: Promise<Object>[] = []
-        for (let i = 0; i < batchTasks.length; i++) {
-          promises.push(taskpool.execute(batchTasks[i]))
+    it('testDataResultCollect0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 50; i++) {
+          tasks.push(new taskpool.Task(processData, i, `data_${i}`))
         }
-        const results: Object[] = await Promise.all(promises)
-        for (let i = 0; i < results.length; i++) {
-          const idx: number = batch * batchSize + i
-          await collector.addResult(idx, results[i] as string)
+        const batchSize: number = 25
+        for (let batch = 0; batch < Math.ceil(50 / batchSize); batch++) {
+          const batchTasks: taskpool.Task[] = tasks.slice(batch * batchSize, (batch + 1) * batchSize)
+          const promises: Promise<Object>[] = []
+          for (let i = 0; i < batchTasks.length; i++) {
+            promises.push(taskpool.execute(batchTasks[i]))
+          }
+          const results: Object[] = await Promise.all(promises)
+          for (let i = 0; i < results.length; i++) {
+            const idx: number = batch * batchSize + i
+            await collector.addResult(idx, results[i] as string)
+          }
         }
+        expect(collector.getResultCount()).assertEqual(50)
+      } catch (error) {
+        console.error("testDataResultCollect0700 failed");
+        expect(false).assertFail();
       }
-      expect(collector.getResultCount()).assertEqual(50)
+      done();
     })
 
     /**
@@ -236,13 +278,19 @@ export default function DataResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDataResultCollect0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const task = new taskpool.Task(processData, 1, 'test')
-      const result: Object = await taskpool.execute(task)
-      await collector.addResult(1, result as string)
-      expect(collector.getResultCount()).assertEqual(1)
-      const res: string = collector.getResultByIndex(0)
-      expect(res).assertContain('processed_test_1')
+    it('testDataResultCollect0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const task = new taskpool.Task(processData, 1, 'test')
+        const result: Object = await taskpool.execute(task)
+        await collector.addResult(1, result as string)
+        expect(collector.getResultCount()).assertEqual(1)
+        const res: string = collector.getResultByIndex(0)
+        expect(res).assertContain('processed_test_1')
+      } catch (error) {
+        console.error("testDataResultCollect0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -253,19 +301,25 @@ export default function DataResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDataResultCollect0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const receivedData: string[] = []
-      const task = new taskpool.Task(triggerNestedData)
-      const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
-        task.onReceiveData((data: string): void => {
-          receivedData.push(data)
-          resolve()
+    it('testDataResultCollect0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const receivedData: string[] = []
+        const task = new taskpool.Task(triggerNestedData)
+        const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
+          task.onReceiveData((data: string): void => {
+            receivedData.push(data)
+            resolve()
+          })
         })
-      })
-      await taskpool.execute(task)
-      await receivePromise
-      expect(receivedData.length).assertEqual(1)
-      expect(receivedData[0]).assertEqual('trigger')
+        await taskpool.execute(task)
+        await receivePromise
+        expect(receivedData.length).assertEqual(1)
+        expect(receivedData[0]).assertEqual('trigger')
+      } catch (error) {
+        console.error("testDataResultCollect0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -276,25 +330,31 @@ export default function DataResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDataResultCollect1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const nestedPromises: Promise<Object>[] = []
-      const task = new taskpool.Task(triggerNestedData)
-      const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
-        task.onReceiveData((): void => {
-          for (let i = 0; i < 3; i++) {
-            const nestedTask = new taskpool.Task(processData, i, `nested_${i}`)
-            nestedPromises.push(taskpool.execute(nestedTask))
-          }
-          resolve()
+    it('testDataResultCollect1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const nestedPromises: Promise<Object>[] = []
+        const task = new taskpool.Task(triggerNestedData)
+        const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
+          task.onReceiveData((): void => {
+            for (let i = 0; i < 3; i++) {
+              const nestedTask = new taskpool.Task(processData, i, `nested_${i}`)
+              nestedPromises.push(taskpool.execute(nestedTask))
+            }
+            resolve()
+          })
         })
-      })
-      await taskpool.execute(task)
-      await receivePromise
-      const nestedResults: Object[] = await Promise.all(nestedPromises)
-      for (let i = 0; i < nestedResults.length; i++) {
-        await collector.addResult(i, nestedResults[i] as string)
+        await taskpool.execute(task)
+        await receivePromise
+        const nestedResults: Object[] = await Promise.all(nestedPromises)
+        for (let i = 0; i < nestedResults.length; i++) {
+          await collector.addResult(i, nestedResults[i] as string)
+        }
+        expect(collector.getResultCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testDataResultCollect1000 failed");
+        expect(false).assertFail();
       }
-      expect(collector.getResultCount()).assertEqual(3)
+      done();
     })
 
     /**
@@ -305,14 +365,20 @@ export default function DataResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDataResultCollect1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 5; i++) {
-        await collector.addResult(i, `sequential_${i}`)
+    it('testDataResultCollect1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 5; i++) {
+          await collector.addResult(i, `sequential_${i}`)
+        }
+        const results: collections.Array<string> = collector.getResults()
+        for (let i = 0; i < 5; i++) {
+          expect(results[i]).assertEqual(`sequential_${i}`)
+        }
+      } catch (error) {
+        console.error("testDataResultCollect1100 failed");
+        expect(false).assertFail();
       }
-      const results: collections.Array<string> = collector.getResults()
-      for (let i = 0; i < 5; i++) {
-        expect(results[i]).assertEqual(`sequential_${i}`)
-      }
+      done();
     })
 
     /**
@@ -323,15 +389,21 @@ export default function DataResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDataResultCollect1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await collector.addResult(1, 'result_1')
-      await collector.addResult(2, 'result_2')
-      await collector.addResult(3, 'result_3')
-      const taskIds: collections.Array<number> = collector.getTaskIds()
-      expect(taskIds.length).assertEqual(3)
-      expect(taskIds[0]).assertEqual(1)
-      expect(taskIds[1]).assertEqual(2)
-      expect(taskIds[2]).assertEqual(3)
+    it('testDataResultCollect1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await collector.addResult(1, 'result_1')
+        await collector.addResult(2, 'result_2')
+        await collector.addResult(3, 'result_3')
+        const taskIds: collections.Array<number> = collector.getTaskIds()
+        expect(taskIds.length).assertEqual(3)
+        expect(taskIds[0]).assertEqual(1)
+        expect(taskIds[1]).assertEqual(2)
+        expect(taskIds[2]).assertEqual(3)
+      } catch (error) {
+        console.error("testDataResultCollect1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

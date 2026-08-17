@@ -112,12 +112,18 @@ export default function DependencyChainTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDependencyChain0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await chain.addDependency('moduleA', ['moduleB'])
+    it('testDependencyChain0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await chain.addDependency('moduleA', ['moduleB'])
 
-      const deps: string[] = await chain.getDependencies('moduleA')
-      expect(deps.length).assertEqual(1)
-      expect(deps[0]).assertEqual('moduleB')
+        const deps: string[] = await chain.getDependencies('moduleA')
+        expect(deps.length).assertEqual(1)
+        expect(deps[0]).assertEqual('moduleB')
+      } catch (error) {
+        console.error("testDependencyChain0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -128,11 +134,17 @@ export default function DependencyChainTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDependencyChain0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await chain.addDependency('moduleA', ['moduleB', 'moduleC', 'moduleD'])
+    it('testDependencyChain0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await chain.addDependency('moduleA', ['moduleB', 'moduleC', 'moduleD'])
 
-      const deps: string[] = await chain.getDependencies('moduleA')
-      expect(deps.length).assertEqual(3)
+        const deps: string[] = await chain.getDependencies('moduleA')
+        expect(deps.length).assertEqual(3)
+      } catch (error) {
+        console.error("testDependencyChain0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -143,14 +155,20 @@ export default function DependencyChainTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDependencyChain0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await chain.addDependency('moduleA', ['moduleB'])
-      await chain.addDependency('moduleB', ['moduleC'])
+    it('testDependencyChain0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await chain.addDependency('moduleA', ['moduleB'])
+        await chain.addDependency('moduleB', ['moduleC'])
 
-      const depChain: string[] = await chain.getDependencyChain('moduleA')
-      expect(depChain.length).assertEqual(2)
-      expect(depChain[0]).assertEqual('moduleC')
-      expect(depChain[1]).assertEqual('moduleB')
+        const depChain: string[] = await chain.getDependencyChain('moduleA')
+        expect(depChain.length).assertEqual(2)
+        expect(depChain[0]).assertEqual('moduleC')
+        expect(depChain[1]).assertEqual('moduleB')
+      } catch (error) {
+        console.error("testDependencyChain0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -161,12 +179,18 @@ export default function DependencyChainTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDependencyChain0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      await chain.addDependency('moduleA', ['moduleB'])
-      await chain.addDependency('moduleB', ['moduleA'])
+    it('testDependencyChain0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await chain.addDependency('moduleA', ['moduleB'])
+        await chain.addDependency('moduleB', ['moduleA'])
 
-      const depChain: string[] = await chain.getDependencyChain('moduleA')
-      expect(depChain.length <= 2).assertTrue()
+        const depChain: string[] = await chain.getDependencyChain('moduleA')
+        expect(depChain.length <= 2).assertTrue()
+      } catch (error) {
+        console.error("testDependencyChain0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -177,9 +201,15 @@ export default function DependencyChainTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDependencyChain0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const deps: string[] = await chain.getDependencies('nonexistent')
-      expect(deps.length).assertEqual(0)
+    it('testDependencyChain0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const deps: string[] = await chain.getDependencies('nonexistent')
+        expect(deps.length).assertEqual(0)
+      } catch (error) {
+        console.error("testDependencyChain0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -190,12 +220,18 @@ export default function DependencyChainTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDependencyChain0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await chain.addDependency('moduleA', ['moduleB'])
-      await chain.addDependency('moduleB', ['moduleC'])
+    it('testDependencyChain0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await chain.addDependency('moduleA', ['moduleB'])
+        await chain.addDependency('moduleB', ['moduleC'])
 
-      const count: number = await chain.getModuleCount()
-      expect(count).assertEqual(2)
+        const count: number = await chain.getModuleCount()
+        expect(count).assertEqual(2)
+      } catch (error) {
+        console.error("testDependencyChain0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -206,12 +242,18 @@ export default function DependencyChainTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDependencyChain0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await chain.addDependency('moduleA', ['moduleB'])
-      await chain.clear()
+    it('testDependencyChain0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await chain.addDependency('moduleA', ['moduleB'])
+        await chain.clear()
 
-      const count: number = await chain.getModuleCount()
-      expect(count).assertEqual(0)
+        const count: number = await chain.getModuleCount()
+        expect(count).assertEqual(0)
+      } catch (error) {
+        console.error("testDependencyChain0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -222,16 +264,22 @@ export default function DependencyChainTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDependencyChain0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const modules: string[][] = [['modA', 'modB'], ['modC', 'modD'], ['modE', 'modF']]
-      const tasks: taskpool.Task[] = modules.map((pair: string[]): taskpool.Task =>
-        new taskpool.Task(addDependencyTask, chain, pair[0], [pair[1]])
-      )
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      await Promise.all(promises)
+    it('testDependencyChain0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const modules: string[][] = [['modA', 'modB'], ['modC', 'modD'], ['modE', 'modF']]
+        const tasks: taskpool.Task[] = modules.map((pair: string[]): taskpool.Task =>
+          new taskpool.Task(addDependencyTask, chain, pair[0], [pair[1]])
+        )
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        await Promise.all(promises)
 
-      const count: number = await chain.getModuleCount()
-      expect(count).assertEqual(3)
+        const count: number = await chain.getModuleCount()
+        expect(count).assertEqual(3)
+      } catch (error) {
+        console.error("testDependencyChain0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -242,13 +290,19 @@ export default function DependencyChainTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDependencyChain0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      await chain.addDependency('A', ['B'])
-      await chain.addDependency('B', ['C'])
-      await chain.addDependency('C', ['D'])
+    it('testDependencyChain0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await chain.addDependency('A', ['B'])
+        await chain.addDependency('B', ['C'])
+        await chain.addDependency('C', ['D'])
 
-      const depChain: string[] = await chain.getDependencyChain('A')
-      expect(depChain.length).assertEqual(3)
+        const depChain: string[] = await chain.getDependencyChain('A')
+        expect(depChain.length).assertEqual(3)
+      } catch (error) {
+        console.error("testDependencyChain0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -259,11 +313,17 @@ export default function DependencyChainTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDependencyChain1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      await chain.addDependency('moduleA', ['moduleB'])
+    it('testDependencyChain1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await chain.addDependency('moduleA', ['moduleB'])
 
-      const depChain: string[] = await chain.getDependencyChain('moduleB')
-      expect(depChain.length).assertEqual(0)
+        const depChain: string[] = await chain.getDependencyChain('moduleB')
+        expect(depChain.length).assertEqual(0)
+      } catch (error) {
+        console.error("testDependencyChain1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

@@ -117,9 +117,15 @@ export default function DbQueryCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDbQueryCache0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.set('query_1', 'result_1')
-      expect(cache.length()).assertEqual(1)
+    it('testDbQueryCache0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.set('query_1', 'result_1')
+        expect(cache.length()).assertEqual(1)
+      } catch (error) {
+        console.error("testDbQueryCache0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -130,10 +136,16 @@ export default function DbQueryCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDbQueryCache0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.set('query_1', 'result_1')
-      let value: string | undefined = await cache.get('query_1')
-      expect(value).assertEqual('result_1')
+    it('testDbQueryCache0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.set('query_1', 'result_1')
+        let value: string | undefined = await cache.get('query_1')
+        expect(value).assertEqual('result_1')
+      } catch (error) {
+        console.error("testDbQueryCache0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -144,10 +156,16 @@ export default function DbQueryCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDbQueryCache0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.set('query_1', 'result_1')
-      expect(cache.has('query_1')).assertTrue()
-      expect(cache.has('query_2')).assertFalse()
+    it('testDbQueryCache0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.set('query_1', 'result_1')
+        expect(cache.has('query_1')).assertTrue()
+        expect(cache.has('query_2')).assertFalse()
+      } catch (error) {
+        console.error("testDbQueryCache0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -158,12 +176,18 @@ export default function DbQueryCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDbQueryCache0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.set('query_1', 'result_1')
-      expect(cache.length()).assertEqual(1)
-      cache.delete('query_1')
-      expect(cache.length()).assertEqual(0)
-      expect(cache.has('query_1')).assertFalse()
+    it('testDbQueryCache0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.set('query_1', 'result_1')
+        expect(cache.length()).assertEqual(1)
+        cache.delete('query_1')
+        expect(cache.length()).assertEqual(0)
+        expect(cache.has('query_1')).assertFalse()
+      } catch (error) {
+        console.error("testDbQueryCache0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -174,11 +198,17 @@ export default function DbQueryCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDbQueryCache0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.set('query_1', 'result_1')
-      await cache.get('query_1')
-      await cache.get('query_1')
-      expect(cache.getHitCount()).assertEqual(2)
+    it('testDbQueryCache0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.set('query_1', 'result_1')
+        await cache.get('query_1')
+        await cache.get('query_1')
+        expect(cache.getHitCount()).assertEqual(2)
+      } catch (error) {
+        console.error("testDbQueryCache0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -189,10 +219,16 @@ export default function DbQueryCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDbQueryCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.get('nonexistent')
-      await cache.get('nonexistent2')
-      expect(cache.getMissCount()).assertEqual(2)
+    it('testDbQueryCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.get('nonexistent')
+        await cache.get('nonexistent2')
+        expect(cache.getMissCount()).assertEqual(2)
+      } catch (error) {
+        console.error("testDbQueryCache0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -203,12 +239,18 @@ export default function DbQueryCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDbQueryCache0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await cache.set('query_1', 'result_1')
-      await cache.get('query_1')
-      await cache.get('query_1')
-      await cache.get('nonexistent')
-      expect(cache.getHitRate() > 0).assertTrue()
+    it('testDbQueryCache0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await cache.set('query_1', 'result_1')
+        await cache.get('query_1')
+        await cache.get('query_1')
+        await cache.get('nonexistent')
+        expect(cache.getHitRate() > 0).assertTrue()
+      } catch (error) {
+        console.error("testDbQueryCache0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -219,7 +261,7 @@ export default function DbQueryCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDbQueryCache0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDbQueryCache0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       expect(cache.capacity()).assertEqual(100)
     })
 
@@ -231,7 +273,7 @@ export default function DbQueryCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDbQueryCache0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDbQueryCache0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const smallLru: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(3)
       smallLru.put('key1', 'value1')
       smallLru.put('key2', 'value2')
@@ -252,7 +294,7 @@ export default function DbQueryCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDbQueryCache1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDbQueryCache1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const lru: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(3)
       lru.put('key1', 'value1')
       lru.put('key2', 'value2')
@@ -273,20 +315,26 @@ export default function DbQueryCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDbQueryCache1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await cache.set('shared_key', 'shared_value')
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(concurrentGetFromCache, 'shared_key'))
+    it('testDbQueryCache1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await cache.set('shared_key', 'shared_value')
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(concurrentGetFromCache, 'shared_key'))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as string).assertEqual('shared_key')
+        }
+      } catch (error) {
+        console.error("testDbQueryCache1100 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as string).assertEqual('shared_key')
-      }
+      done();
     })
 
     /**
@@ -297,21 +345,27 @@ export default function DbQueryCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDbQueryCache1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(concurrentSetToCache, `key_${i}`, `value_${i}`))
+    it('testDbQueryCache1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(concurrentSetToCache, `key_${i}`, `value_${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          const parts: string[] = (results[i] as string).split('=')
+          await cache.set(parts[0], parts[1])
+        }
+        expect(cache.length()).assertEqual(5)
+      } catch (error) {
+        console.error("testDbQueryCache1200 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        const parts: string[] = (results[i] as string).split('=')
-        await cache.set(parts[0], parts[1])
-      }
-      expect(cache.length()).assertEqual(5)
+      done();
     })
 
     /**
@@ -322,14 +376,20 @@ export default function DbQueryCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDbQueryCache1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 20; i++) {
-        await cache.set(`warmup_${i}`, `data_${i}`)
+    it('testDbQueryCache1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 20; i++) {
+          await cache.set(`warmup_${i}`, `data_${i}`)
+        }
+        expect(cache.length()).assertEqual(20)
+        for (let i = 0; i < 20; i++) {
+          expect(cache.has(`warmup_${i}`)).assertTrue()
+        }
+      } catch (error) {
+        console.error("testDbQueryCache1300 failed");
+        expect(false).assertFail();
       }
-      expect(cache.length()).assertEqual(20)
-      for (let i = 0; i < 20; i++) {
-        expect(cache.has(`warmup_${i}`)).assertTrue()
-      }
+      done();
     })
   })
 }

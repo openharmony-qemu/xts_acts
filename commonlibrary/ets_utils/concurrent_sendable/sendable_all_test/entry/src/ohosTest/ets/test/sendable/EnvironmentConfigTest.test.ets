@@ -135,8 +135,14 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEnvironmentConfig0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      expect(await envManager.getCurrentEnvironment()).assertEqual(Environment.DEVELOPMENT)
+    it('testEnvironmentConfig0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(await envManager.getCurrentEnvironment()).assertEqual(Environment.DEVELOPMENT)
+      } catch (error) {
+        console.error("testEnvironmentConfig0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -147,10 +153,16 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEnvironmentConfig0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      expect(await envManager.getEnvConfigSize(Environment.DEVELOPMENT)).assertEqual(0)
-      expect(await envManager.getEnvConfigSize(Environment.TESTING)).assertEqual(0)
-      expect(await envManager.getEnvConfigSize(Environment.PRODUCTION)).assertEqual(0)
+    it('testEnvironmentConfig0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(await envManager.getEnvConfigSize(Environment.DEVELOPMENT)).assertEqual(0)
+        expect(await envManager.getEnvConfigSize(Environment.TESTING)).assertEqual(0)
+        expect(await envManager.getEnvConfigSize(Environment.PRODUCTION)).assertEqual(0)
+      } catch (error) {
+        console.error("testEnvironmentConfig0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -161,12 +173,18 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEnvironmentConfig0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await envManager.setEnvConfig(Environment.DEVELOPMENT, 'debug', 'true')
-      await envManager.setEnvConfig(Environment.DEVELOPMENT, 'log_level', 'verbose')
-      expect(await envManager.getEnvConfig(Environment.DEVELOPMENT, 'debug')).assertEqual('true')
-      expect(await envManager.getEnvConfig(Environment.DEVELOPMENT, 'log_level')).assertEqual('verbose')
-      expect(await envManager.getEnvConfigSize(Environment.DEVELOPMENT)).assertEqual(2)
+    it('testEnvironmentConfig0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await envManager.setEnvConfig(Environment.DEVELOPMENT, 'debug', 'true')
+        await envManager.setEnvConfig(Environment.DEVELOPMENT, 'log_level', 'verbose')
+        expect(await envManager.getEnvConfig(Environment.DEVELOPMENT, 'debug')).assertEqual('true')
+        expect(await envManager.getEnvConfig(Environment.DEVELOPMENT, 'log_level')).assertEqual('verbose')
+        expect(await envManager.getEnvConfigSize(Environment.DEVELOPMENT)).assertEqual(2)
+      } catch (error) {
+        console.error("testEnvironmentConfig0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -177,12 +195,18 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEnvironmentConfig0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await envManager.setEnvConfig(Environment.TESTING, 'mock_api', 'true')
-      await envManager.setEnvConfig(Environment.TESTING, 'test_data', 'sample')
-      expect(await envManager.getEnvConfig(Environment.TESTING, 'mock_api')).assertEqual('true')
-      expect(await envManager.getEnvConfig(Environment.TESTING, 'test_data')).assertEqual('sample')
-      expect(await envManager.getEnvConfigSize(Environment.TESTING)).assertEqual(2)
+    it('testEnvironmentConfig0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await envManager.setEnvConfig(Environment.TESTING, 'mock_api', 'true')
+        await envManager.setEnvConfig(Environment.TESTING, 'test_data', 'sample')
+        expect(await envManager.getEnvConfig(Environment.TESTING, 'mock_api')).assertEqual('true')
+        expect(await envManager.getEnvConfig(Environment.TESTING, 'test_data')).assertEqual('sample')
+        expect(await envManager.getEnvConfigSize(Environment.TESTING)).assertEqual(2)
+      } catch (error) {
+        console.error("testEnvironmentConfig0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -193,12 +217,18 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEnvironmentConfig0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await envManager.setEnvConfig(Environment.PRODUCTION, 'ssl', 'enabled')
-      await envManager.setEnvConfig(Environment.PRODUCTION, 'cache', 'redis')
-      expect(await envManager.getEnvConfig(Environment.PRODUCTION, 'ssl')).assertEqual('enabled')
-      expect(await envManager.getEnvConfig(Environment.PRODUCTION, 'cache')).assertEqual('redis')
-      expect(await envManager.getEnvConfigSize(Environment.PRODUCTION)).assertEqual(2)
+    it('testEnvironmentConfig0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await envManager.setEnvConfig(Environment.PRODUCTION, 'ssl', 'enabled')
+        await envManager.setEnvConfig(Environment.PRODUCTION, 'cache', 'redis')
+        expect(await envManager.getEnvConfig(Environment.PRODUCTION, 'ssl')).assertEqual('enabled')
+        expect(await envManager.getEnvConfig(Environment.PRODUCTION, 'cache')).assertEqual('redis')
+        expect(await envManager.getEnvConfigSize(Environment.PRODUCTION)).assertEqual(2)
+      } catch (error) {
+        console.error("testEnvironmentConfig0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -209,10 +239,16 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEnvironmentConfig0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await envManager.setEnvConfig(Environment.DEVELOPMENT, 'app_name', 'DevApp')
-      const currentConfig: string | undefined = await envManager.getCurrentConfig('app_name')
-      expect(currentConfig).assertEqual('DevApp')
+    it('testEnvironmentConfig0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await envManager.setEnvConfig(Environment.DEVELOPMENT, 'app_name', 'DevApp')
+        const currentConfig: string | undefined = await envManager.getCurrentConfig('app_name')
+        expect(currentConfig).assertEqual('DevApp')
+      } catch (error) {
+        console.error("testEnvironmentConfig0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -223,12 +259,18 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEnvironmentConfig0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await envManager.setEnvConfig(Environment.DEVELOPMENT, 'mode', 'dev')
-      await envManager.setEnvConfig(Environment.TESTING, 'mode', 'test')
-      await envManager.switchEnvironment(Environment.TESTING)
-      expect(await envManager.getCurrentEnvironment()).assertEqual(Environment.TESTING)
-      expect(await envManager.getCurrentConfig('mode')).assertEqual('test')
+    it('testEnvironmentConfig0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await envManager.setEnvConfig(Environment.DEVELOPMENT, 'mode', 'dev')
+        await envManager.setEnvConfig(Environment.TESTING, 'mode', 'test')
+        await envManager.switchEnvironment(Environment.TESTING)
+        expect(await envManager.getCurrentEnvironment()).assertEqual(Environment.TESTING)
+        expect(await envManager.getCurrentConfig('mode')).assertEqual('test')
+      } catch (error) {
+        console.error("testEnvironmentConfig0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -239,11 +281,17 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEnvironmentConfig0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await envManager.setEnvConfig(Environment.PRODUCTION, 'performance', 'optimized')
-      await envManager.switchEnvironment(Environment.PRODUCTION)
-      expect(await envManager.getCurrentEnvironment()).assertEqual(Environment.PRODUCTION)
-      expect(await envManager.getCurrentConfig('performance')).assertEqual('optimized')
+    it('testEnvironmentConfig0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await envManager.setEnvConfig(Environment.PRODUCTION, 'performance', 'optimized')
+        await envManager.switchEnvironment(Environment.PRODUCTION)
+        expect(await envManager.getCurrentEnvironment()).assertEqual(Environment.PRODUCTION)
+        expect(await envManager.getCurrentConfig('performance')).assertEqual('optimized')
+      } catch (error) {
+        console.error("testEnvironmentConfig0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -254,10 +302,16 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEnvironmentConfig0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await envManager.switchEnvironment(Environment.TESTING)
-      await envManager.switchEnvironment(Environment.DEVELOPMENT)
-      expect(await envManager.getCurrentEnvironment()).assertEqual(Environment.DEVELOPMENT)
+    it('testEnvironmentConfig0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await envManager.switchEnvironment(Environment.TESTING)
+        await envManager.switchEnvironment(Environment.DEVELOPMENT)
+        expect(await envManager.getCurrentEnvironment()).assertEqual(Environment.DEVELOPMENT)
+      } catch (error) {
+        console.error("testEnvironmentConfig0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -268,16 +322,22 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEnvironmentConfig1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await envManager.setEnvConfig(Environment.DEVELOPMENT, 'env_specific', 'dev_value')
-      await envManager.setEnvConfig(Environment.TESTING, 'env_specific', 'test_value')
-      await envManager.setEnvConfig(Environment.PRODUCTION, 'env_specific', 'prod_value')
-      await envManager.switchEnvironment(Environment.TESTING)
-      expect(await envManager.getCurrentConfig('env_specific')).assertEqual('test_value')
-      await envManager.switchEnvironment(Environment.PRODUCTION)
-      expect(await envManager.getCurrentConfig('env_specific')).assertEqual('prod_value')
-      await envManager.switchEnvironment(Environment.DEVELOPMENT)
-      expect(await envManager.getCurrentConfig('env_specific')).assertEqual('dev_value')
+    it('testEnvironmentConfig1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await envManager.setEnvConfig(Environment.DEVELOPMENT, 'env_specific', 'dev_value')
+        await envManager.setEnvConfig(Environment.TESTING, 'env_specific', 'test_value')
+        await envManager.setEnvConfig(Environment.PRODUCTION, 'env_specific', 'prod_value')
+        await envManager.switchEnvironment(Environment.TESTING)
+        expect(await envManager.getCurrentConfig('env_specific')).assertEqual('test_value')
+        await envManager.switchEnvironment(Environment.PRODUCTION)
+        expect(await envManager.getCurrentConfig('env_specific')).assertEqual('prod_value')
+        await envManager.switchEnvironment(Environment.DEVELOPMENT)
+        expect(await envManager.getCurrentConfig('env_specific')).assertEqual('dev_value')
+      } catch (error) {
+        console.error("testEnvironmentConfig1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -288,25 +348,31 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testEnvironmentConfig1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await envManager.loadEnvConfigs(
-        Environment.DEVELOPMENT,
-        ['config1', 'config2', 'config3'],
-        ['value1', 'value2', 'value3']
-      )
-      const tasks: taskpool.Task[] = []
-      for (let i = 1; i <= 3; i++) {
-        tasks.push(new taskpool.Task(readEnvConfigTask, envManager, `config${i}`))
+    it('testEnvironmentConfig1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await envManager.loadEnvConfigs(
+          Environment.DEVELOPMENT,
+          ['config1', 'config2', 'config3'],
+          ['value1', 'value2', 'value3']
+        )
+        const tasks: taskpool.Task[] = []
+        for (let i = 1; i <= 3; i++) {
+          tasks.push(new taskpool.Task(readEnvConfigTask, envManager, `config${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(3)
+        expect(results[0] as string).assertEqual('value1')
+        expect(results[1] as string).assertEqual('value2')
+        expect(results[2] as string).assertEqual('value3')
+      } catch (error) {
+        console.error("testEnvironmentConfig1100 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      expect(results.length).assertEqual(3)
-      expect(results[0] as string).assertEqual('value1')
-      expect(results[1] as string).assertEqual('value2')
-      expect(results[2] as string).assertEqual('value3')
+      done();
     })
 
     /**
@@ -317,20 +383,26 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testEnvironmentConfig1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(getCurrentEnvTask, envManager))
+    it('testEnvironmentConfig1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(getCurrentEnvTask, envManager))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(5)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as string).assertEqual(Environment.DEVELOPMENT)
+        }
+      } catch (error) {
+        console.error("testEnvironmentConfig1200 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      expect(results.length).assertEqual(5)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as string).assertEqual(Environment.DEVELOPMENT)
-      }
+      done();
     })
 
     /**
@@ -341,14 +413,20 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEnvironmentConfig1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await envManager.loadEnvConfigs(
-        Environment.DEVELOPMENT,
-        ['api_url', 'timeout', 'retry', 'log_level'],
-        ['http://localhost:8080', '5000', '3', 'debug']
-      )
-      expect(await envManager.getEnvConfigSize(Environment.DEVELOPMENT)).assertEqual(4)
-      expect(await envManager.getCurrentConfig('api_url')).assertEqual('http://localhost:8080')
+    it('testEnvironmentConfig1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await envManager.loadEnvConfigs(
+          Environment.DEVELOPMENT,
+          ['api_url', 'timeout', 'retry', 'log_level'],
+          ['http://localhost:8080', '5000', '3', 'debug']
+        )
+        expect(await envManager.getEnvConfigSize(Environment.DEVELOPMENT)).assertEqual(4)
+        expect(await envManager.getCurrentConfig('api_url')).assertEqual('http://localhost:8080')
+      } catch (error) {
+        console.error("testEnvironmentConfig1300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -359,15 +437,21 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEnvironmentConfig1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await envManager.loadEnvConfigs(
-        Environment.PRODUCTION,
-        ['api_url', 'timeout', 'ssl', 'cache'],
-        ['https://api.example.com', '10000', 'enabled', 'redis']
-      )
-      await envManager.switchEnvironment(Environment.PRODUCTION)
-      expect(await envManager.getEnvConfigSize(Environment.PRODUCTION)).assertEqual(4)
-      expect(await envManager.getCurrentConfig('api_url')).assertEqual('https://api.example.com')
+    it('testEnvironmentConfig1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await envManager.loadEnvConfigs(
+          Environment.PRODUCTION,
+          ['api_url', 'timeout', 'ssl', 'cache'],
+          ['https://api.example.com', '10000', 'enabled', 'redis']
+        )
+        await envManager.switchEnvironment(Environment.PRODUCTION)
+        expect(await envManager.getEnvConfigSize(Environment.PRODUCTION)).assertEqual(4)
+        expect(await envManager.getCurrentConfig('api_url')).assertEqual('https://api.example.com')
+      } catch (error) {
+        console.error("testEnvironmentConfig1400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -378,15 +462,21 @@ export default function EnvironmentConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEnvironmentConfig1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const keys: string[] = ['key1', 'key2', 'key3']
-      const values: string[] = ['val1', 'val2', 'val3']
-      await envManager.loadEnvConfigs(Environment.TESTING, keys, values)
-      await envManager.switchEnvironment(Environment.TESTING)
-      for (let i = 0; i < keys.length; i++) {
-        const value: string | undefined = await envManager.getCurrentConfig(keys[i])
-        expect(value).assertEqual(values[i])
+    it('testEnvironmentConfig1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const keys: string[] = ['key1', 'key2', 'key3']
+        const values: string[] = ['val1', 'val2', 'val3']
+        await envManager.loadEnvConfigs(Environment.TESTING, keys, values)
+        await envManager.switchEnvironment(Environment.TESTING)
+        for (let i = 0; i < keys.length; i++) {
+          const value: string | undefined = await envManager.getCurrentConfig(keys[i])
+          expect(value).assertEqual(values[i])
+        }
+      } catch (error) {
+        console.error("testEnvironmentConfig1500 failed");
+        expect(false).assertFail();
       }
+      done();
     })
   })
 }
