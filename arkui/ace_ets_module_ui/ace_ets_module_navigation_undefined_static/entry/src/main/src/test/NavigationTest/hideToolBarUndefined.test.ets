@@ -70,6 +70,7 @@ export default function NavigationUndefinedTest() {
      */
     it('HideToolBarUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[HideToolBarUndefinedTest_static_0001] START');
+      try{
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MyNavigation1');
@@ -94,6 +95,10 @@ export default function NavigationUndefinedTest() {
         .getElement('hideToolBar')))
         .assertEqual('false');
       await CommonFunc.sleep(1000);
+    }catch (err) {
+        console.error('HideToolBarUndefinedTest_static_0001 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[HideToolBarUndefinedTest_static_0001] END');
       done();
     });

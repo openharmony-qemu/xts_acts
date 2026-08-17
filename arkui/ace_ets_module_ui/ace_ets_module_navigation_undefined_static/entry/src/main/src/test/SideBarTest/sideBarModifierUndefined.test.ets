@@ -83,6 +83,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0001] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SideBarM_1');
@@ -106,6 +108,10 @@ export default function sideBarModifierUndefined() {
       strJson = inspector.getInspectorByKey('SideBarM_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoHide'))
         .assertEqual('true');
+    }catch (err) {
+        console.error('sideBarModifierUndefined_static_0001 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[sideBarModifierUndefined_static_0001] END');
       done();
     });
@@ -118,6 +124,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0002] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SideBarM_2');
@@ -145,6 +153,10 @@ export default function sideBarModifierUndefined() {
       let hasResourceIcon = strJson.indexOf('"shown":"resource') !== -1;
       console.info("[sideBarModifierUndefined_static_0002] After 2nd click hasResourceIcon: " + hasResourceIcon);
       expect(hasResourceIcon).assertEqual(false);
+      }catch (err) {
+        console.error('sideBarModifierUndefined_static_0002 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[sideBarModifierUndefined_static_0002] END');
       done();
     });
@@ -157,6 +169,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0003] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SideBarM_1');
@@ -180,6 +194,10 @@ export default function sideBarModifierUndefined() {
       strJson = inspector.getInspectorByKey('SideBarM_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('maxSideBarWidth'))
         .assertEqual('280.000000');
+      }catch (err) {
+        console.error('sideBarModifierUndefined_static_0003 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[sideBarModifierUndefined_static_0003] END');
       done();
     });
@@ -192,6 +210,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0004] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SideBarM_1');
@@ -215,6 +235,10 @@ export default function sideBarModifierUndefined() {
       strJson = inspector.getInspectorByKey('SideBarM_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minContentWidth'))
         .assertEqual('360.000000');
+      }catch (err) {
+        console.error('sideBarModifierUndefined_static_0004 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[sideBarModifierUndefined_static_0004] END');
       done();
     });
@@ -227,6 +251,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0005] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SideBarM_1');
@@ -250,6 +276,10 @@ export default function sideBarModifierUndefined() {
       strJson = inspector.getInspectorByKey('SideBarM_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSideBarWidth'))
         .assertEqual('240.000000');
+      }catch (err) {
+        console.error('sideBarModifierUndefined_static_0005 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[sideBarModifierUndefined_static_0005] END');
       done();
     });
@@ -262,6 +292,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0006] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000); 
       let strJson = inspector.getInspectorByKey('SideBarM_1');
@@ -285,6 +317,10 @@ export default function sideBarModifierUndefined() {
       strJson = inspector.getInspectorByKey('SideBarM_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('showControlButton'))
         .assertEqual('true');
+      }catch (err) {
+        console.error('sideBarModifierUndefined_static_0006 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[sideBarModifierUndefined_static_0006] END');
       done();
     });
@@ -297,6 +333,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0007] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SideBarM_1');
@@ -320,6 +358,10 @@ export default function sideBarModifierUndefined() {
       strJson = inspector.getInspectorByKey('SideBarM_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('divider'))
         .assertEqual('{"strokeWidth":"1.00vp","startMargin":"0.00vp","endMargin":"0.00vp","color":"#08000000"}');
+      }catch (err) {
+        console.error('sideBarModifierUndefined_static_0007 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[sideBarModifierUndefined_static_0007] END');
       done();
     });
@@ -332,6 +374,8 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0008', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0008] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SideBarM_3');
@@ -355,6 +399,10 @@ export default function sideBarModifierUndefined() {
       strJson = inspector.getInspectorByKey('SideBarM_3');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('divider'))
         .assertEqual('{"strokeWidth":"1.00vp","startMargin":"0.00vp","endMargin":"0.00vp","color":"#08000000"}');
+      }catch (err) {
+        console.error('sideBarModifierUndefined_static_0008 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[sideBarModifierUndefined_static_0008] END');
       done();
     });
@@ -367,17 +415,19 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0009', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0009] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 初始状态：isUndefined9=true，sideBarWidth=undefined，使用默认值 240.000000
+      // 初始状态：isUndefined9=true，sideBarWidth=undefined，使用默认�?240.000000
       let strJson = inspector.getInspectorByKey('SideBarM_4');
       console.info("[sideBarModifierUndefined_static_0009] Initial sideBarWidth: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('sideBarWidth'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sideBarWidth'))
         .assertEqual('240.000000');
 
-      // 第一次点击：isUndefined9 从 true 变为 false，sideBarWidth 变为 150
+      // 第一次点击：isUndefined9 �?true 变为 false，sideBarWidth 变为 150
       let changeBtn = await driver.findComponent(ON.id('SideBarM_btn9'));
       await (changeBtn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
@@ -388,7 +438,7 @@ export default function sideBarModifierUndefined() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sideBarWidth'))
         .assertEqual('150.000000');
 
-      // 第二次点击：isUndefined9 从 false 变回 true，sideBarWidth 变回 undefined (默认值 240)
+      // 第二次点击：isUndefined9 �?false 变回 true，sideBarWidth 变回 undefined (默认�?240)
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -398,6 +448,10 @@ export default function sideBarModifierUndefined() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sideBarWidth'))
         .assertEqual('240.000000');
 
+      }catch (err) {
+        console.error('sideBarModifierUndefined_static_0009 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[sideBarModifierUndefined_static_0009] END');
       done();
     });
@@ -410,17 +464,19 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0010] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 初始状态：isUndefined10=true，showSideBar=undefined，使用默认值 true
+      // 初始状态：isUndefined10=true，showSideBar=undefined，使用默认�?true
       let strJson = inspector.getInspectorByKey('SideBarM_4');
       console.info("[sideBarModifierUndefined_static_0010] Initial showSideBar: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('showSideBar'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('showSideBar'))
         .assertEqual('true');
 
-      // 第一次点击：isUndefined10 从 true 变为 false，showSideBar 变为 false
+      // 第一次点击：isUndefined10 �?true 变为 false，showSideBar 变为 false
       let changeBtn = await driver.findComponent(ON.id('SideBarM_btn10'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -431,7 +487,7 @@ export default function sideBarModifierUndefined() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('showSideBar'))
         .assertEqual('false');
 
-      // 第二次点击：isUndefined10 从 false 变回 true，showSideBar 变回 undefined (默认值 true)
+      // 第二次点击：isUndefined10 �?false 变回 true，showSideBar 变回 undefined (默认�?true)
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -441,6 +497,10 @@ export default function sideBarModifierUndefined() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('showSideBar'))
         .assertEqual('true');
 
+      }catch (err) {
+        console.error('sideBarModifierUndefined_static_0010 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[sideBarModifierUndefined_static_0010] END');
       done();
     });
@@ -453,17 +513,19 @@ export default function sideBarModifierUndefined() {
      */
     it('sideBarModifierUndefined_static_0011', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[sideBarModifierUndefined_static_0011] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 初始状态：isUndefined11=true，sideBarPosition=undefined，使用默认值 SideBarPosition.Start
+      // 初始状态：isUndefined11=true，sideBarPosition=undefined，使用默认�?SideBarPosition.Start
       let strJson = inspector.getInspectorByKey('SideBarM_4');
       console.info("[sideBarModifierUndefined_static_0011] Initial sideBarPosition: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('sideBarPosition'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sideBarPosition'))
         .assertEqual('SideBarPosition.Start');
 
-      // 第一次点击：isUndefined11 从 true 变为 false，sideBarPosition 变为 SideBarPosition.End
+      // 第一次点击：isUndefined11 �?true 变为 false，sideBarPosition 变为 SideBarPosition.End
       let changeBtn = await driver.findComponent(ON.id('SideBarM_btn11'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -474,7 +536,7 @@ export default function sideBarModifierUndefined() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sideBarPosition'))
         .assertEqual('SideBarPosition.End');
 
-      // 第二次点击：isUndefined11 从 false 变回 true，sideBarPosition 变回 undefined (默认值 Start)
+      // 第二次点击：isUndefined11 �?false 变回 true，sideBarPosition 变回 undefined (默认�?Start)
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -484,6 +546,10 @@ export default function sideBarModifierUndefined() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sideBarPosition'))
         .assertEqual('SideBarPosition.Start');
 
+      }catch (err) {
+        console.error('sideBarModifierUndefined_static_0011 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[sideBarModifierUndefined_static_0011] END');
       done();
     });

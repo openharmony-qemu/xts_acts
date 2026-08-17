@@ -48,6 +48,7 @@ export default function onGestureSwipeStartUndefinedTest() {
       } catch (err) {
         console.error('push onGestureSwipeUndefinedTest page error:' + err);
       }
+
       console.info('onGestureSwipeUndefinedTest beforeEach end');
     });
 
@@ -60,6 +61,8 @@ export default function onGestureSwipeStartUndefinedTest() {
     it('onGestureSwipeUndefinedTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('onGestureSwipeUndefinedTest_0100 START');
       await CommonFunc.sleep(500);
+
+      try{
 
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
@@ -77,7 +80,7 @@ export default function onGestureSwipeStartUndefinedTest() {
       );
       await CommonFunc.sleep(1000);
 
-      //判断回调更新后结果
+      //判断回调更新后结�?
       let strJson = inspector.getInspectorByKey('testText');
       let obj = JSON.parseJsonElement(strJson);
       let testText = obj.getElement('$attrs').getString('content');
@@ -89,7 +92,7 @@ export default function onGestureSwipeStartUndefinedTest() {
       await (undefinedBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      //点击跳转索引不触发回调
+      //点击跳转索引不触发回�?
       await driver.swipe(
         (bounds.left + width - 50).toInt(),
         (bounds.top + height / 2).toInt(),
@@ -99,12 +102,17 @@ export default function onGestureSwipeStartUndefinedTest() {
       );
       await CommonFunc.sleep(1000);
 
-      //判断回调更新后结果
+      //判断回调更新后结�?
       let strJson2 = inspector.getInspectorByKey('testText');
       let obj2 = JSON.parseJsonElement(strJson2);
       let testText2 = obj2.getElement('$attrs').getString('content');
       console.info('[Initial] swiper_onGestureSwipe content: ' + testText2);
       expect(testText2).assertEqual("isUndefined");
+    }catch (err) {
+        console.error('onGestureSwipeUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
 
       console.info('onGestureSwipeUndefinedTest_0100 END');
       done();

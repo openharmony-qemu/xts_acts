@@ -58,7 +58,7 @@ export default function getParamByNameUndefined() {
       console.info("getParamByNameUndefined beforeEach end");
 
     });
-    afterEach(async () => {
+afterEach(async () => {
       console.info("getParamByNameUndefined afterEach start");
       try {
         await CommonFunc.sleep(1000);
@@ -81,10 +81,12 @@ export default function getParamByNameUndefined() {
     it('getParamByNameUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[getParamByNameUndefined_static_0001] START');
       await CommonFunc.sleep(1000);
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 步骤1: 直接点击 getParamByName，此时 PageHome1 还未被 push
+      // 步骤1: 直接点击 getParamByName，此�?PageHome1 还未�?push
       let getParamBtn = await driver.findComponent(ON.id('getParamButton'));
       if (getParamBtn) {
         await getParamBtn.click();
@@ -98,21 +100,21 @@ export default function getParamByNameUndefined() {
 
       expect(res).assertEqual('Result: 0');
 
-      // 步骤2: 点击 pushPathByName 按钮，跳转到 PageHome1 页面并传递参数 'testParam'
+      // 步骤2: 点击 pushPathByName 按钮，跳转到 PageHome1 页面并传递参�?'testParam'
       let pushBtn = await driver.findComponent(ON.id('pushButton'));
       if (pushBtn) {
         await pushBtn.click();
         await CommonFunc.sleep(1500);
       }
 
-      // 步骤3: 重新查找并点击 getParamByName 按钮
+      // 步骤3: 重新查找并点�?getParamByName 按钮
       getParamBtn = await driver.findComponent(ON.id('getParamButton'));
       if (getParamBtn) {
         await getParamBtn.click();
         await CommonFunc.sleep(1000);
       }
 
-      // 验证结果文本显示参数值
+      // 验证结果文本显示参数�?
       strJson = inspector.getInspectorByKey('resultText');
       console.info('[getParamByNameUndefined_static_0001] Step3 strJson: ' + strJson);
       res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');
@@ -120,6 +122,10 @@ export default function getParamByNameUndefined() {
 
       expect(res).assertEqual('Result: 1');
 
+      }catch (err) {
+        console.error('getParamByNameUndefined_static_0001 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[getParamByNameUndefined_static_0001] END');
       done();
     });

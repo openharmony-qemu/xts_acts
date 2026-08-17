@@ -46,7 +46,7 @@ export default function onAnimationEndUndefinedTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error('push onAnimationEndUndefinedTest page error:' + err);
+        console.error('onAnimationEndUndefinedTest beforeEach error: ' + err);
       }
       console.info('onAnimationEndUndefinedTest beforeEach end');
     });
@@ -68,6 +68,8 @@ export default function onAnimationEndUndefinedTest() {
       expect(initialContent).assertEqual("0");
 
       console.info('Swiping to trigger onAnimationEnd callback...');
+      try{
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
@@ -123,6 +125,10 @@ export default function onAnimationEndUndefinedTest() {
       let finalContent = obj4.getElement('$attrs').getString('content');
       console.info('[Final] swiper_onAnimationEnd content: ' + finalContent);
       expect(finalContent).assertEqual("1");
+    }catch (err) {
+        console.error('onAnimationEndUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
 
       console.info('onAnimationEndUndefinedTest_0100 END');
       done();

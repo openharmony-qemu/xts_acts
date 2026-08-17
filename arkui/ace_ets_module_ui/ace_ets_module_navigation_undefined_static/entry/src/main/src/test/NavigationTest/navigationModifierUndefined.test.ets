@@ -83,6 +83,8 @@ export default function navigationModifierUndefined() {
      */
     it('navigationModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[navigationModifierUndefined_static_0001] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('NavigationM_1');
@@ -107,6 +109,10 @@ export default function navigationModifierUndefined() {
       strJson = inspector.getInspectorByKey('NavigationM_1');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('titleMode'))
         .assertEqual('NavigationTitleMode.Free');
+      }catch (err) {
+        console.error('navigationModifierUndefined_static_0001 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[navigationModifierUndefined_static_0001] END');
       done();
     });
@@ -120,6 +126,8 @@ export default function navigationModifierUndefined() {
      */
     it('navigationModifierUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[navigationModifierUndefined_static_0002] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let textNode = await driver.findComponent(ON.text('toolbar'));
@@ -137,6 +145,10 @@ export default function navigationModifierUndefined() {
 
       textNode = await driver.findComponent(ON.text('toolbar'));
       expect(textNode).assertNull();
+      }catch (err) {
+        console.error('navigationModifierUndefined_static_0002 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[navigationModifierUndefined_static_0002] END');
       done();
     });
@@ -149,9 +161,11 @@ export default function navigationModifierUndefined() {
      */
     it('navigationModifierUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[navigationModifierUndefined_static_0003] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
-      // 初始状态：isUndefined3=true，minContentWidth=undefined，使用默认值 360
+      // 初始状态：isUndefined3=true，minContentWidth=undefined，使用默认�?360
       let strJson = inspector.getInspectorByKey('NavigationM_1');
       await CommonFunc.sleep(1000);
 
@@ -162,7 +176,7 @@ export default function navigationModifierUndefined() {
         .getElement('minContentWidth')))
         .assertEqual('\"360.00vp\"');
 
-      // 第一次点击：isUndefined3 从 true 变为 false，minContentWidth 变为 150
+      // 第一次点击：isUndefined3 �?true 变为 false，minContentWidth 变为 150
       let changeBtn = await driver.findComponent(ON.id('NavigationM_btn3'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -174,7 +188,7 @@ export default function navigationModifierUndefined() {
         .getElement('minContentWidth')))
         .assertEqual('\"150.00vp\"');
 
-      // 第二次点击：isUndefined3 从 false 变回 true，minContentWidth 变回 undefined (默认值 360)
+      // 第二次点击：isUndefined3 �?false 变回 true，minContentWidth 变回 undefined (默认�?360)
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('NavigationM_1');
@@ -185,6 +199,10 @@ export default function navigationModifierUndefined() {
         .assertEqual('\"360.00vp\"');
 
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('navigationModifierUndefined_static_0003 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[navigationModifierUndefined_static_0003] END');
       done();
     });
@@ -197,10 +215,12 @@ export default function navigationModifierUndefined() {
      */
     it('navigationModifierUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[navigationModifierUndefined_static_0004] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 初始状态：isUndefined4=true，navBarWidthRange=undefined，使用默认值 [240, 432]
+      // 初始状态：isUndefined4=true，navBarWidthRange=undefined，使用默认�?[240, 432]
       let strJson = inspector.getInspectorByKey('NavigationM_1');
       await CommonFunc.sleep(1000);
 
@@ -211,7 +231,7 @@ export default function navigationModifierUndefined() {
         .getElement('navBarWidthRange')))
         .assertEqual('\"240.00vp, 432.00vp\"');
 
-      // 第一次点击：isUndefined4 从 true 变为 false，navBarWidthRange 变为 ["10vp", "500vp"]
+      // 第一次点击：isUndefined4 �?true 变为 false，navBarWidthRange 变为 ["10vp", "500vp"]
       let changeBtn = await driver.findComponent(ON.id('NavigationM_btn4'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -223,7 +243,7 @@ export default function navigationModifierUndefined() {
         .getElement('navBarWidthRange')))
         .assertEqual('\"310.00vp, 500.00vp\"');
 
-      // 第二次点击：isUndefined4 从 false 变回 true，navBarWidthRange 变回 undefined (默认值 [240, 432])
+      // 第二次点击：isUndefined4 �?false 变回 true，navBarWidthRange 变回 undefined (默认�?[240, 432])
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('NavigationM_1');
@@ -234,6 +254,10 @@ export default function navigationModifierUndefined() {
         .assertEqual('\"240.00vp, 432.00vp\"');
 
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('navigationModifierUndefined_static_0004 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[navigationModifierUndefined_static_0004] END');
       done();
     });

@@ -48,6 +48,7 @@ export default function durationUndefinedTest() {
       } catch (err) {
         console.error('push durationUndefinedTest page error:' + err);
       }
+
       console.info('durationUndefinedTest beforeEach end');
     });
 
@@ -67,6 +68,8 @@ export default function durationUndefinedTest() {
       console.info('Test component obj.duration is: ' + obj.getElement('$attrs').getString('duration'));
       expect(obj.getElement('$attrs').getString('duration')).assertEqual('1000');
 
+      try{
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
@@ -79,6 +82,11 @@ export default function durationUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.duration is: ' + obj1.getElement('$attrs').getString('duration'));
       expect(obj1.getElement('$attrs').getString('duration')).assertEqual('400');
+    }catch (err) {
+        console.error('durationUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[durationUndefinedTest_0100] END');
       done();
     });

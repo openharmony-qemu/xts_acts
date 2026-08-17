@@ -53,6 +53,7 @@ export default function interval_ModifierUndefinedTest() {
       } catch (err) {
         console.error('push interval_ModifierUndefinedTest page error:' + err);
       }
+
       console.info('interval_ModifierUndefinedTest beforeEach end');
     });
 
@@ -73,6 +74,8 @@ export default function interval_ModifierUndefinedTest() {
       let intervalValue = obj.getElement('$attrs').getString('interval');
       console.info('[Initial] interval value: ' + intervalValue);
       expect(intervalValue).assertEqual("1000");
+
+      try{
 
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
@@ -98,6 +101,11 @@ export default function interval_ModifierUndefinedTest() {
       let intervalValue2 = obj2.getElement('$attrs').getString('interval');
       console.info('[After 2nd click] interval value: ' + intervalValue2);
       expect(intervalValue2).assertEqual("1000");
+    }catch (err) {
+        console.error('interval_ModifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
 
       console.info('interval_ModifierUndefinedTest_0100 END');
       done();

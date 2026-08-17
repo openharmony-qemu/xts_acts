@@ -74,6 +74,8 @@ export default function onAnimationEnd_ModifierUndefinedTest() {
       expect(initialContent).assertEqual("0");
 
       console.info('Swiping to trigger onAnimationEnd callback...');
+      try{
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let swiperItem = await driver.findComponent(ON.text('1')) as Component;
@@ -128,6 +130,10 @@ export default function onAnimationEnd_ModifierUndefinedTest() {
       let finalContent = obj4.getElement('$attrs').getString('content');
       console.info('[Final] swiper_onAnimationEnd content: ' + finalContent);
       expect(finalContent).assertEqual("1");
+    }catch (err) {
+        console.error('onAnimationEnd_ModifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
 
       console.info('onAnimationEnd_ModifierUndefinedTest_0100 END');
       done();

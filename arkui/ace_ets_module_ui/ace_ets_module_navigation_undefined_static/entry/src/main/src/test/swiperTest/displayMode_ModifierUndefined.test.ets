@@ -48,6 +48,7 @@ export default function displayMode_modifierUndefinedTest() {
       } catch (err) {
         console.error('push displayMode_modifierUndefinedTest page error:' + err);
       }
+
       console.info('displayMode_modifierUndefinedTest beforeEach end');
     });
 
@@ -67,6 +68,8 @@ export default function displayMode_modifierUndefinedTest() {
       console.info('Test component obj.displayMode is: ' + obj.getElement('$attrs').getString('displayMode'));
       expect(obj.getElement('$attrs').getString('displayMode')).assertEqual('SwiperDisplayMode.Stretch');
 
+      try{
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
@@ -79,6 +82,11 @@ export default function displayMode_modifierUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.displayMode is: ' + obj1.getElement('$attrs').getString('displayMode'));
       expect(obj1.getElement('$attrs').getString('displayMode')).assertEqual('SwiperDisplayMode.Stretch');
+    }catch (err) {
+        console.error('displayMode_modifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[displayMode_modifierUndefinedTest_0100] END');
       done();
     });

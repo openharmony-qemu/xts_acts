@@ -83,6 +83,8 @@ export default function naviDestinationUndefined() {
      */
     it('naviDestinationUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[naviDestinationUndefined_static_0001] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let pageOne = await driver.findComponent(ON.id('pageOne'));
@@ -104,6 +106,11 @@ export default function naviDestinationUndefined() {
 
       textNode = await driver.findComponent(ON.id('NaviDestination_menus'));
       expect(textNode).assertNull();
+    }catch (err) {
+        console.error('naviDestinationUndefined_static_0001 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+      console.info('[naviDestinationUndefined_static_0001] END');
       done();
     });
 
@@ -115,6 +122,8 @@ export default function naviDestinationUndefined() {
      */
     it('naviDestinationUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[naviDestinationUndefined_static_0002] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('NaviDestination_1');
@@ -138,6 +147,10 @@ export default function naviDestinationUndefined() {
       strJson = inspector.getInspectorByKey('NaviDestination_1');
       res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('title');
       expect(res).assertEqual('');
+      }catch (err) {
+        console.error('naviDestinationUndefined_static_0002 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[naviDestinationUndefined_static_0002] END');
       done();
     });
@@ -150,6 +163,8 @@ export default function naviDestinationUndefined() {
      */
     it('naviDestinationUndefined_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[naviDestinationUndefined_static_0003] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let textNode = await driver.findComponent(ON.text('toolbar'));
@@ -167,6 +182,10 @@ export default function naviDestinationUndefined() {
 
       textNode = await driver.findComponent(ON.text('toolbar'));
       expect(textNode).assertNull();
+      }catch (err) {
+        console.error('naviDestinationUndefined_static_0003 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[naviDestinationUndefined_static_0003] END');
       done();
     });
@@ -179,6 +198,8 @@ export default function naviDestinationUndefined() {
      */
     it('naviDestinationUndefined_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[naviDestinationUndefined_static_0003] START');
+      try{
+
       let driver: Driver = await Driver.create();;
       await CommonFunc.sleep(1000);
       let back = await driver.findComponent(ON.id('NaviDestination_back1'));
@@ -215,6 +236,10 @@ export default function naviDestinationUndefined() {
       await CommonFunc.sleep(1000);
 
       expect(await (textNode?.getText() as Promise<string>)).assertEqual('show:1,hide:1');
+      }catch (err) {
+        console.error('naviDestinationUndefined_static_0004 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[naviDestinationUndefined_static_0004] END');
       done();
     });

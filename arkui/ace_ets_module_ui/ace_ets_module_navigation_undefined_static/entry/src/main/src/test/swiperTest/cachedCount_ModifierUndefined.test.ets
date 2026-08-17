@@ -66,6 +66,7 @@ export default function cachedCount_modifierUndefinedTest() {
       console.info('Test component obj is: ' + obj.getElement('$attrs'));
       console.info('Test component obj.cachedCount is: ' + obj.getElement('$attrs').getDouble('cachedCount'));
       expect(obj.getElement('$attrs').getDouble('cachedCount')).assertEqual(2);
+      try{
 
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
@@ -79,6 +80,10 @@ export default function cachedCount_modifierUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.cachedCount is: ' + obj1.getElement('$attrs').getDouble('cachedCount'));
       expect(obj1.getElement('$attrs').getDouble('cachedCount')).assertEqual(1);
+    }catch (err) {
+        console.error('cachedCount_modifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[cachedCount_modifierUndefinedTest_0100] END');
       done();
     });

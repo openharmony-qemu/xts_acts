@@ -48,6 +48,7 @@ export default function disableSwipe_modifierUndefinedTest() {
       } catch (err) {
         console.error('push disableSwipe_modifierUndefinedTest page error:' + err);
       }
+
       console.info('disableSwipe_modifierUndefinedTest beforeEach end');
     });
 
@@ -67,6 +68,8 @@ export default function disableSwipe_modifierUndefinedTest() {
       console.info('Test component obj.disableSwipe is: ' + obj.getElement('$attrs').getString('disableSwipe'));
       expect(obj.getElement('$attrs').getString('disableSwipe')).assertEqual('true');
 
+      try{
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
@@ -79,6 +82,11 @@ export default function disableSwipe_modifierUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.disableSwipe is: ' + obj1.getElement('$attrs').getString('disableSwipe'));
       expect(obj1.getElement('$attrs').getString('disableSwipe')).assertEqual('false');
+    }catch (err) {
+        console.error('disableSwipe_modifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[disableSwipe_modifierUndefinedTest_0100] END');
       done();
     });

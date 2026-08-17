@@ -48,6 +48,7 @@ export default function displayArrowUndefinedTest() {
       } catch (err) {
         console.error('push displayArrowUndefinedTest page error:' + err);
       }
+
       console.info('displayArrowUndefinedTest beforeEach end');
     });
 
@@ -67,6 +68,8 @@ export default function displayArrowUndefinedTest() {
       console.info('Test component obj.displayArrow is: ' + obj.getElement('$attrs').getString('displayArrow'));
       expect(obj.getElement('$attrs').getString('displayArrow')).assertEqual('true');
 
+      try{
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
@@ -79,6 +82,11 @@ export default function displayArrowUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.displayArrow is: ' + obj1.getElement('$attrs').getString('displayArrow'));
       expect(obj1.getElement('$attrs').getString('displayArrow')).assertEqual('false');
+    }catch (err) {
+        console.error('displayArrowUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[displayArrowUndefinedTest_0100] END');
       done();
     });

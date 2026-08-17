@@ -48,6 +48,7 @@ export default function intervalUndefinedTest() {
       } catch (err) {
         console.error('push intervalUndefinedTest page error:' + err);
       }
+
       console.info('intervalUndefinedTest beforeEach end');
     });
 
@@ -69,6 +70,9 @@ export default function intervalUndefinedTest() {
       expect(obj.getElement('$attrs').getString('interval')).assertEqual('1000');
 
 
+      try{
+
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
@@ -81,6 +85,11 @@ export default function intervalUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.interval is: ' + obj1.getElement('$attrs').getString('interval'));
       expect(obj1.getElement('$attrs').getString('interval')).assertEqual('3000');
+    }catch (err) {
+        console.error('intervalUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('intervalUndefinedTest_0100 END');
       done();
     });

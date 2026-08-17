@@ -48,6 +48,7 @@ export default function prevMargin_modifierUndefinedTest() {
       } catch (err) {
         console.error('push prevMargin_modifierUndefinedTest page error:' + err);
       }
+
       console.info('prevMargin_modifierUndefinedTest beforeEach end');
     });
 
@@ -67,6 +68,8 @@ export default function prevMargin_modifierUndefinedTest() {
       console.info('Test component obj.prevMargin is: ' + obj.getElement('$attrs').getString('prevMargin'));
       expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('35.00vp');
 
+      try{
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
@@ -83,14 +86,19 @@ export default function prevMargin_modifierUndefinedTest() {
       let prevMarginValue = obj1.getElement('$attrs').getString('prevMargin');
       let prevMarginInVp: number;
       if (prevMarginValue.endsWith('px')) {
-        // 如果是 px，转换为 vp
+        // 如果�?px，转换为 vp
         prevMarginInVp = Math.round(UIContext.resolveUIContext()!.px2vp(parseFloat(prevMarginValue.replace('px', ''))));
       } else {
-        // 如果是 vp，直接取值
+        // 如果�?vp，直接取�?
         prevMarginInVp = Math.round(parseFloat(prevMarginValue.replace('vp', '')));
       }
       console.info('Test component prevMarginInVp is: ' + prevMarginInVp);
       expect(prevMarginInVp).assertEqual(0);
+    }catch (err) {
+        console.error('prevMargin_modifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[prevMargin_modifierUndefinedTest_0100] END');
       done();
     });

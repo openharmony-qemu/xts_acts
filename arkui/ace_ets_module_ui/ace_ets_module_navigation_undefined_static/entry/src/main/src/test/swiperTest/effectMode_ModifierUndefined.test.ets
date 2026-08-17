@@ -48,6 +48,7 @@ export default function effectMode_modifierUndefinedTest() {
       } catch (err) {
         console.error('push effectMode_modifierUndefinedTest page error:' + err);
       }
+
       console.info('effectMode_modifierUndefinedTest beforeEach end');
     });
 
@@ -67,6 +68,8 @@ export default function effectMode_modifierUndefinedTest() {
       console.info('Test component obj.effectMode is: ' + obj.getElement('$attrs').getString('effectMode'));
       expect(obj.getElement('$attrs').getString('effectMode')).assertEqual('EdgeEffect.Fade');
 
+      try{
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
@@ -79,6 +82,11 @@ export default function effectMode_modifierUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.effectMode is: ' + obj1.getElement('$attrs').getString('effectMode'));
       expect(obj1.getElement('$attrs').getString('effectMode')).assertEqual('EdgeEffect.Spring');
+    }catch (err) {
+        console.error('effectMode_modifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[effectMode_modifierUndefinedTest_0100] END');
       done();
     });

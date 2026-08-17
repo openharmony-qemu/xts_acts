@@ -48,6 +48,7 @@ export default function onAnimationStartUndefinedTest() {
       } catch (err) {
         console.error('push onAnimationStartUndefinedTest page error:' + err);
       }
+
       console.info('onAnimationStartUndefinedTest beforeEach end');
     });
 
@@ -68,6 +69,8 @@ export default function onAnimationStartUndefinedTest() {
       expect(initialContent).assertEqual("0");
 
       console.info('Swiping to trigger onAnimationStart callback...');
+      try{
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
@@ -131,6 +134,11 @@ export default function onAnimationStartUndefinedTest() {
       let finalIndex = parseInt(finalContent);
 
       expect(finalIndex).assertEqual(1);
+    }catch (err) {
+        console.error('onAnimationStartUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
 
       console.info('onAnimationStartUndefinedTest_0100 END');
       done();

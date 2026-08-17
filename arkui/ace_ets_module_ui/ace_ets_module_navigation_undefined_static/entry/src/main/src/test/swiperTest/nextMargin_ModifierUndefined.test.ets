@@ -53,6 +53,7 @@ export default function nextMargin_ModifierUndefinedTest() {
       } catch (err) {
         console.error('push nextMargin_ModifierUndefinedTest page error:' + err);
       }
+
       console.info('nextMargin_ModifierUndefinedTest beforeEach end');
     });
 
@@ -73,6 +74,8 @@ export default function nextMargin_ModifierUndefinedTest() {
       let nextMarginValue = obj.getElement('$attrs').getString('nextMargin');
       console.info('[Initial] nextMargin value: ' + nextMarginValue);
       expect(nextMarginValue).assertEqual("50.00vp");
+
+      try{
 
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
@@ -107,6 +110,11 @@ export default function nextMargin_ModifierUndefinedTest() {
       let nextMarginValue2 = obj2.getElement('$attrs').getString('nextMargin');
       console.info('[After 2nd click] nextMargin value: ' + nextMarginValue2);
       expect(nextMarginValue2).assertEqual("50.00vp");
+    }catch (err) {
+        console.error('nextMargin_ModifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
 
       console.info('nextMargin_ModifierUndefinedTest_0100 END');
       done();

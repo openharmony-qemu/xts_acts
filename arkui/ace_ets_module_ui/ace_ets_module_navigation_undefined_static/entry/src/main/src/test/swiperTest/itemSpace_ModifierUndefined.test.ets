@@ -53,6 +53,7 @@ export default function itemSpace_ModifierUndefinedTest() {
       } catch (err) {
         console.error('push itemSpace_ModifierUndefinedTest page error:' + err);
       }
+
       console.info('itemSpace_ModifierUndefinedTest beforeEach end');
     });
 
@@ -73,6 +74,8 @@ export default function itemSpace_ModifierUndefinedTest() {
       let itemSpaceValue = obj.getElement('$attrs').getString('itemSpace');
       console.info('[Initial] itemSpace value: ' + itemSpaceValue);
       expect(itemSpaceValue).assertEqual("30.00vp");
+
+      try{
 
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
@@ -98,6 +101,11 @@ export default function itemSpace_ModifierUndefinedTest() {
       let itemSpaceValue2 = obj2.getElement('$attrs').getString('itemSpace');
       console.info('[After 2nd click] itemSpace value: ' + itemSpaceValue2);
       expect(itemSpaceValue2).assertEqual("30.00vp");
+    }catch (err) {
+        console.error('itemSpace_ModifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
 
       console.info('itemSpace_ModifierUndefinedTest_0100 END');
       done();

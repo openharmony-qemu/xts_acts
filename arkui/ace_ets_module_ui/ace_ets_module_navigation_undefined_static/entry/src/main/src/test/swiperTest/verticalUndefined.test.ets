@@ -48,6 +48,7 @@ export default function verticalUndefinedTest() {
       } catch (err) {
         console.error('push verticalUndefinedTest page error:' + err);
       }
+
       console.info('verticalUndefinedTest beforeEach end');
     });
 
@@ -67,6 +68,8 @@ export default function verticalUndefinedTest() {
       console.info('Test component obj.vertical is: ' + obj.getElement('$attrs').getString('vertical'));
       expect(obj.getElement('$attrs').getString('vertical')).assertEqual('true');
 
+      try{
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
@@ -79,6 +82,11 @@ export default function verticalUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.vertical is: ' + obj1.getElement('$attrs').getString('vertical'));
       expect(obj1.getElement('$attrs').getString('vertical')).assertEqual('false');
+    }catch (err) {
+        console.error('verticalUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[verticalUndefinedTest_0100] END');
       done();
     });

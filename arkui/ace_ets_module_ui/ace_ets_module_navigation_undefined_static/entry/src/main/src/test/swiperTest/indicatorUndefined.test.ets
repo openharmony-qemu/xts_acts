@@ -48,6 +48,7 @@ export default function indicatorUndefinedTest() {
       } catch (err) {
         console.error('push indicatorUndefinedTest page error:' + err);
       }
+
       console.info('indicatorUndefinedTest beforeEach end');
     });
 
@@ -69,6 +70,9 @@ export default function indicatorUndefinedTest() {
       expect(obj.getElement('$attrs').getString('indicator')).assertEqual("false");
 
 
+      try{
+
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
@@ -81,6 +85,11 @@ export default function indicatorUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.indicator is: ' + obj1.getElement('$attrs').getString('indicator'));
       expect(obj1.getElement('$attrs').getString('indicator')).assertEqual("true");
+    }catch (err) {
+        console.error('indicatorUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[indicatorUndefinedTest_0100] END');
       done();
     });

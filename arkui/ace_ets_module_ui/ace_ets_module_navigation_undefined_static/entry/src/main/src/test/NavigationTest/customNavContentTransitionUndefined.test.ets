@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -70,6 +70,7 @@ export default function customNavContentTransitionUndefined() {
     it('customNavContentTransitionUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[customNavContentTransitionUndefined_static_0001] START');
       try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
@@ -98,8 +99,8 @@ export default function customNavContentTransitionUndefined() {
       // 点击返回按钮返回到初始页面
       let backText = await driver.findComponent(ON.id('NavPathStackApi2_text_pageOne'));
       if (backText) {
-      await backText.click();
-      await CommonFunc.sleep(1000)
+        await backText.click();
+        await CommonFunc.sleep(1000);
       }
 
       // 点击切换按钮，切换为 undefined
@@ -132,8 +133,8 @@ export default function customNavContentTransitionUndefined() {
       // 点击返回
       let backText2 = await driver.findComponent(ON.id('NavPathStackApi2_text_pageOne'));
       if (backText2) {
-      await backText2.click();
-      await CommonFunc.sleep(1000);
+        await backText2.click();
+        await CommonFunc.sleep(1000);
       }
     }catch (error) {
       console.error('[getCharacterPositionAtCoordinate_utf16_end_0100] error:' + error);
@@ -141,10 +142,13 @@ export default function customNavContentTransitionUndefined() {
       done();
     }
 
+    }catch (err) {
+        console.error('customNavContentTransitionUndefined_static_0001 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[customNavContentTransitionUndefined_static_0001] END');
       done();
     });
 
   })
 }
-

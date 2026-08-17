@@ -48,6 +48,7 @@ export default function onContentDidScrollStartUndefinedTest() {
       } catch (err) {
         console.error('push onContentDidScrollUndefinedTest page error:' + err);
       }
+
       console.info('onContentDidScrollUndefinedTest beforeEach end');
     });
 
@@ -61,6 +62,8 @@ export default function onContentDidScrollStartUndefinedTest() {
       console.info('onContentDidScrollUndefinedTest_0100 START');
       await CommonFunc.sleep(500);
 
+      try{
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       //点击跳转索引触发回调
@@ -68,7 +71,7 @@ export default function onContentDidScrollStartUndefinedTest() {
       await (goBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      //判断回调更新后结果
+      //判断回调更新后结�?
       let strJson = inspector.getInspectorByKey('testText');
       let obj = JSON.parseJsonElement(strJson);
       let testText = obj.getElement('$attrs').getString('content');
@@ -80,16 +83,21 @@ export default function onContentDidScrollStartUndefinedTest() {
       await (undefinedBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      //点击跳转索引不触发回调
+      //点击跳转索引不触发回�?
       await (goBtn.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      //判断回调更新后结果
+      //判断回调更新后结�?
       let strJson2 = inspector.getInspectorByKey('testText');
       let obj2 = JSON.parseJsonElement(strJson2);
       let testText2 = obj2.getElement('$attrs').getString('content');
       console.info('[Initial] swiper_onContentDidScroll content: ' + testText2);
       expect(testText2).assertEqual("isUndefined");
+    }catch (err) {
+        console.error('onContentDidScrollUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
 
       console.info('onContentDidScrollUndefinedTest_0100 END');
       done();

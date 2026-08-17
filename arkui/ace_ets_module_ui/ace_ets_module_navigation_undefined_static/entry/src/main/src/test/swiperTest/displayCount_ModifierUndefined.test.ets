@@ -48,6 +48,7 @@ export default function displayCount_modifierUndefinedTest() {
       } catch (err) {
         console.error('push displayCount_modifierUndefinedTest page error:' + err);
       }
+
       console.info('displayCount_modifierUndefinedTest beforeEach end');
     });
 
@@ -67,6 +68,8 @@ export default function displayCount_modifierUndefinedTest() {
       console.info('Test component obj.displayCount is: ' + obj.getElement('$attrs').getDouble('displayCount'));
       expect(obj.getElement('$attrs').getDouble('displayCount')).assertEqual(2);
 
+      try{
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
@@ -79,6 +82,11 @@ export default function displayCount_modifierUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.displayCount is: ' + obj1.getElement('$attrs').getDouble('displayCount'));
       expect(obj1.getElement('$attrs').getDouble('displayCount')).assertEqual(1);
+    }catch (err) {
+        console.error('displayCount_modifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[displayCount_modifierUndefinedTest_0100] END');
       done();
     });

@@ -48,6 +48,7 @@ export default function autoPlayWithOptionsUndefinedTest() {
       } catch (err) {
         console.error('push autoPlayWithOptionsUndefinedTest page error:' + err);
       }
+
       console.info('autoPlayWithOptionsUndefinedTest beforeEach end');
     });
 
@@ -67,6 +68,8 @@ export default function autoPlayWithOptionsUndefinedTest() {
       console.info('Test component obj.autoPlayWithOptions is: ' + obj.getElement('$attrs').getString('stopWhenTouched'));
       expect(obj.getElement('$attrs').getString('stopWhenTouched')).assertEqual('false');
 
+      try{
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
@@ -79,6 +82,11 @@ export default function autoPlayWithOptionsUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.autoPlayWithOptions is: ' + obj1.getElement('$attrs').getString('stopWhenTouched'));
       expect(obj1.getElement('$attrs').getString('stopWhenTouched')).assertEqual('true');
+    }catch (err) {
+        console.error('autoPlayWithOptionsUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[autoPlayWithOptionsUndefinedTest_0100] END');
       done();
     });

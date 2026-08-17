@@ -81,6 +81,8 @@ export default function NavDestinationUndefinedTest() {
      */
     it('NavDestinationUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavDestinationUndefinedTest_static_0100] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let Btn_page2 = await driver.findComponent(ON.id('pageTwo'));
@@ -105,6 +107,10 @@ export default function NavDestinationUndefinedTest() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('systemTransition'))
         .assertEqual('NavigationSystemTransitionType.DEFAULT');
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('NavDestinationUndefinedTest_static_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavDestinationUndefinedTest_static_0100] END');
       done();
     });
@@ -117,6 +123,8 @@ export default function NavDestinationUndefinedTest() {
      */
     it('NavDestinationUndefinedTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavDestinationUndefinedTest_static_0200] START');
+      try{
+
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let BtnPop = await driver.findComponent(ON.id('NavDestination2_pop'));
@@ -143,6 +151,10 @@ export default function NavDestinationUndefinedTest() {
       await (BtnPop?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('appear:1 disappear:1');
+      }catch (err) {
+        console.error('NavDestinationUndefinedTest_static_0200 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavDestinationUndefinedTest_static_0200] END');
       done();
     });
@@ -155,6 +167,7 @@ export default function NavDestinationUndefinedTest() {
     */
     it('NavDestinationUndefinedTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavDestinationUndefinedTest_static_0300] START');
+      try{
       let driver: Driver = await Driver.create()
       let Btn_page2 = await driver.findComponent(ON.id('pageTwo'));
       await (Btn_page2?.click() as Promise<void>);
@@ -178,6 +191,10 @@ export default function NavDestinationUndefinedTest() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('mode'))
         .assertEqual('NavDestinationMode::STANDARD');
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('NavDestinationUndefinedTest_static_0300 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavDestinationUndefinedTest_static_0300] END');
       done();
     });
@@ -190,6 +207,7 @@ export default function NavDestinationUndefinedTest() {
      */
     it('NavDestinationUndefinedTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavDestinationUndefinedTest_static_0400] START');
+      try{
       let driver: Driver = await Driver.create()
       let BtnPop = await driver.findComponent(ON.id('NavDestination2_pop'));
       await (BtnPop?.click() as Promise<void>);
@@ -215,6 +233,10 @@ export default function NavDestinationUndefinedTest() {
       await (BtnPop?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('appear:2 disappear:2');
+      }catch (err) {
+        console.error('NavDestinationUndefinedTest_static_0400 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavDestinationUndefinedTest_static_0400] END');
       done();
     });
@@ -228,6 +250,7 @@ export default function NavDestinationUndefinedTest() {
     it('NavDestinationUndefinedTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavDestinationUndefinedTest_static_0500] START');
       await CommonFunc.sleep(500);
+      try{
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(500);
       let BtnPop = await driver.findComponent(ON.id('NavDestination2_pop'));
@@ -259,6 +282,10 @@ export default function NavDestinationUndefinedTest() {
       await CommonFunc.sleep(2000);
       text = await driver.findComponent(ON.id('Navigation_text'));
       expect(await (text?.getText() as Promise<String>)).assertEqual('appear:3 disappear:3');
+      }catch (err) {
+        console.error('NavDestinationUndefinedTest_static_0500 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[NavDestinationUndefinedTest_static_0500] END');
       done();
     });

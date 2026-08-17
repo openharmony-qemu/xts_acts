@@ -48,6 +48,7 @@ export default function indicatorInteractiveUndefinedTest() {
       } catch (err) {
         console.error('push indicatorInteractiveUndefinedTest page error:' + err);
       }
+
       console.info('indicatorInteractiveUndefinedTest beforeEach end');
     });
 
@@ -70,6 +71,8 @@ export default function indicatorInteractiveUndefinedTest() {
 
       expect(initialTextContent).assertEqual("false");
 
+      try{
+
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
@@ -84,6 +87,11 @@ export default function indicatorInteractiveUndefinedTest() {
       console.info('After click swiper_text content is: ' + afterClickTextContent);
 
       expect(afterClickTextContent).assertEqual("true");
+    }catch (err) {
+        console.error('indicatorInteractiveUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('indicatorInteractiveUndefinedTest_0100 END');
 
       done();
