@@ -242,12 +242,16 @@ export default function LockFactorCallbackTest(): void {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const task = new taskpool.Task(succeededTask, counter);
-      task.onExecutionSucceeded(() => {
-        mutex.lock();
+      task.onExecutionSucceeded((): void => {
         try {
-          counter.fetchAdd(1);
-        } finally {
-          mutex.unlock();
+          mutex.lock();
+          try {
+            counter.fetchAdd(1);
+          } finally {
+            mutex.unlock();
+          }
+        } catch (error) {
+          console.error(`onExecutionSucceeded exception: ${error}`);
         }
       });
       await taskpool.execute(task);
