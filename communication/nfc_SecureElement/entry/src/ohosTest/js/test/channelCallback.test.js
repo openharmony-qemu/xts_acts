@@ -15,7 +15,7 @@
 
 
 import secureElement from '@ohos.secureElement';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium';
 
 function sleep(delay) {
     return new Promise(resovle => setTimeout(resovle, delay))
@@ -47,6 +47,7 @@ let aidArray = [160, 0, 0, 1, 81, 0, 0, 0];
 let p2 = 0x00;
 let command = [128, 202, 159, 127, 0];
 let readerIsPresent = null;
+let isSESupported = false;
 
 export default function channelCallbacktest() {
     describe('channelCallbacktest', function () {
@@ -56,6 +57,7 @@ export default function channelCallbacktest() {
                 let seIsConnected = Service.isConnected();
                 console.info("[NFC_test] Logical SEService isConnected The connection status is: " + seIsConnected);
                 if (seIsConnected) {
+                    isSESupported = true;
                     getReader = Service.getReaders();
                     if (getReader.length > 0) {
                         expect(getReader.length > 0).assertTrue();
@@ -87,6 +89,7 @@ export default function channelCallbacktest() {
                 }
             }).catch((err) =>{
                 if (err.code == 801) {
+                    isSESupported = false;
                     expect(801).assertEqual(err.code);
                 }
                 console.info("[NFC_test] getSEService err.code " + err.code + "err.message " + err.message);
@@ -328,6 +331,32 @@ export default function channelCallbacktest() {
             }
             sleep(900);
             done();
+        })
+
+        /**
+         * @tc.name   isBasicChannel801Test
+         * @tc.number channelCallbacktest_0910
+         * @tc.desc   Channel.isBasicChannel 801 test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('isBasicChannel801Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+            if (isSESupported) {
+                console.info("[NFC_test]0910 Device supports SE, skip 801 test");
+                return;
+            }
+            try {
+                let service = secureElement.newSEService();
+                let readers = service.getReaders();
+                let session = readers[0].openSession();
+                let channel = session.openBasicChannel(null);
+                let result = channel.isBasicChannel();
+                expect(typeof result).assertEqual('boolean');
+            } catch (error) {
+                console.info("[NFC_test]0910 isBasicChannel 801 error: " + error.code);
+                expect(error.code).assertEqual(801);
+            }
         })
 
         /**
@@ -769,6 +798,32 @@ export default function channelCallbacktest() {
             }
             sleep(900);
             done();
+        })
+
+        /**
+         * @tc.name   getSelectResponse801Test
+         * @tc.number channelCallbacktest_1110
+         * @tc.desc   Channel.getSelectResponse 801 test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('getSelectResponse801Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+            if (isSESupported) {
+                console.info("[NFC_test]1110 Device supports SE, skip 801 test");
+                return;
+            }
+            try {
+                let service = secureElement.newSEService();
+                let readers = service.getReaders();
+                let session = readers[0].openSession();
+                let channel = session.openBasicChannel(null);
+                let result = channel.getSelectResponse();
+                expect(Array.isArray(result)).assertEqual(true);
+            } catch (error) {
+                console.info("[NFC_test]1110 getSelectResponse 801 error: " + error.code);
+                expect(error.code).assertEqual(801);
+            }
         })
 
         /**
