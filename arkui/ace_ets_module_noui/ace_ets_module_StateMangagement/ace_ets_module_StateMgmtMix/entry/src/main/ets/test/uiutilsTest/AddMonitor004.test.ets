@@ -55,22 +55,22 @@ export default function AddMonitor004() {
      */
     it('SUB_ARKUI_API_AddMonitor004_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ARKUI_API_AddMonitor004_0100] START');
-      await CommonFunc.sleep(2000);
-      let driver: Driver = await Driver.create();
-      let btn: Component = await driver.findComponent(ON.id('changeName_empty01'));
+      CommonFunc.sleep(2000);
+      let driver: Driver = Driver.create();
+      let btn: Component = driver.findComponent(ON.id('changeName_empty01'));
       await CommonFunc.sleep(1000);
       await btn.click();
       await CommonFunc.sleep(1000);
-      let text_1 = await (await driver.findComponent(ON.id('age_empty01'))).getText();
+      let text_1 = (driver.findComponent(ON.id('age_empty01'))).getText();
       console.info("[SUB_ARKUI_API_AddMonitor004_0100] component text_1: " + text_1);
       expect(text_1).assertEqual("1");
-      let btn2: Component = await driver.findComponent(ON.id('clearMonitor_empty01'));
+      let btn2: Component = driver.findComponent(ON.id('clearMonitor_empty01'));
       await CommonFunc.sleep(1000);
-      await btn2.click();
+      btn2.click();
       await CommonFunc.sleep(1000);
-      await btn.click();
-      await CommonFunc.sleep(1000);
-      let text_2 = await (await driver.findComponent(ON.id('age_empty01'))).getText();
+      btn.click();
+      CommonFunc.sleep(1000);
+      let text_2 = (driver.findComponent(ON.id('age_empty01'))).getText();
       console.info("[SUB_ARKUI_API_AddMonitor004_0100] component text_2: " + text_2);
       expect(text_2).assertEqual("2");
       console.info('[SUB_ARKUI_API_AddMonitor004_0100] END');
