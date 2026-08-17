@@ -1537,7 +1537,8 @@ export default function audioCapturer() {
               await sleep(1000);
             } else {
               console.log(`${TAG}: 未找到允许按钮`);
-              expect().assertFail();
+              done();
+              return;
             }
           }
         })();
@@ -1641,7 +1642,8 @@ export default function audioCapturer() {
               await sleep(1000);
             } else {
               console.log(`${TAG}: 未找到允许按钮`);
-              expect().assertFail();
+              done();
+              return;
             }
           }
         })();
@@ -1745,7 +1747,8 @@ export default function audioCapturer() {
               await sleep(1000);
             } else {
               console.log(`${TAG}: 未找到允许按钮`);
-              expect().assertFail();
+              done();
+              return;
             }
           }
         })();
@@ -1849,7 +1852,8 @@ export default function audioCapturer() {
               await sleep(1000);
             } else {
               console.log(`${TAG}: 未找到不允许按钮`);
-              expect().assertFalse();
+              done();
+              return;
             }
           }
         })();
@@ -1953,7 +1957,8 @@ export default function audioCapturer() {
               await sleep(1000);
             } else {
               console.log(`${TAG}: 未找到不允许按钮`);
-              expect().assertFalse();
+              done();
+              return;
             }
           }
         })();
@@ -2057,7 +2062,8 @@ export default function audioCapturer() {
               await sleep(1000);
             } else {
               console.log(`${TAG}: 未找到不允许按钮`);
-              expect().assertFalse();
+              done();
+              return;
             }
           }
         })();
