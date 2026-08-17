@@ -34,7 +34,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_0100
      * @tc.name testTypedUArraysMapTestFileC001
      * @tc.desc Verify Uint8Array map typeof object
      * @tc.size MediumTest
@@ -44,11 +44,11 @@ export default function typedUArraysMapTest03(): void {
     it('testTypedUArraysMapTestFileC001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3])
       let result = arr.map((v) => v * 2)
-      expect(typeof result).assertEqual("object")
+      expect(result.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_0200
      * @tc.name testTypedUArraysMapTestFileC002
      * @tc.desc Verify Uint16Array map typeof object
      * @tc.size MediumTest
@@ -58,11 +58,11 @@ export default function typedUArraysMapTest03(): void {
     it('testTypedUArraysMapTestFileC002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([100, 200, 300])
       let result = arr.map((v) => v + 1)
-      expect(typeof result).assertEqual("object")
+      expect(result.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_0300
      * @tc.name testTypedUArraysMapTestFileC003
      * @tc.desc Verify Uint32Array map typeof object
      * @tc.size MediumTest
@@ -72,11 +72,11 @@ export default function typedUArraysMapTest03(): void {
     it('testTypedUArraysMapTestFileC003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1000, 2000, 3000])
       let result = arr.map((v) => v - 1)
-      expect(typeof result).assertEqual("object")
+      expect(result.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_0400
      * @tc.name testTypedUArraysMapTestFileC004
      * @tc.desc Verify Uint8ClampedArray map typeof object
      * @tc.size MediumTest
@@ -86,11 +86,11 @@ export default function typedUArraysMapTest03(): void {
     it('testTypedUArraysMapTestFileC004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([50, 100, 150])
       let result = arr.map((v) => v / 2)
-      expect(typeof result).assertEqual("object")
+      expect(result.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_0500
      * @tc.name testTypedUArraysMapTestFileC005
      * @tc.desc Verify BigUint64Array map typeof object
      * @tc.size MediumTest
@@ -100,11 +100,11 @@ export default function typedUArraysMapTest03(): void {
     it('testTypedUArraysMapTestFileC005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n])
       let result = arr.map((v) => v * 2n)
-      expect(typeof result).assertEqual("object")
+      expect(result.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_0600
      * @tc.name testTypedUArraysMapTestFileC006
      * @tc.desc Verify Uint8Array map typeof object
      * @tc.size MediumTest
@@ -114,11 +114,11 @@ export default function typedUArraysMapTest03(): void {
     it('testTypedUArraysMapTestFileC006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0)
       let result = arr.map((v) => v)
-      expect(typeof result).assertEqual("object")
+      expect(result.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_0700
      * @tc.name testTypedUArraysMapTestFileC007
      * @tc.desc Verify Uint8Array map typeof object
      * @tc.size MediumTest
@@ -128,11 +128,11 @@ export default function typedUArraysMapTest03(): void {
     it('testTypedUArraysMapTestFileC007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([42])
       let result = arr.map((v) => v * 2)
-      expect(typeof result).assertEqual("object")
+      expect(result.length).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_0800
      * @tc.name testTypedUArraysMapTestFileC008
      * @tc.desc Verify Uint8Array map typeof object
      * @tc.size MediumTest
@@ -142,11 +142,11 @@ export default function typedUArraysMapTest03(): void {
     it('testTypedUArraysMapTestFileC008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(100)
       let result = arr.map((v) => v)
-      expect(typeof result).assertEqual("object")
+      expect(result.length).assertEqual(100);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_0900
      * @tc.name testTypedUArraysMapTestFileC009
      * @tc.desc Verify Uint32Array map instanceof Uint32Array
      * @tc.size MediumTest
@@ -156,11 +156,11 @@ export default function typedUArraysMapTest03(): void {
     it('testTypedUArraysMapTestFileC009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1000, 2000, 3000]);
       let result = arr.map((v) => v - 1);
-      expect(typeof result).assertEqual("object");
+      expect(result.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_1000
      * @tc.name testTypedUArraysMapTestFileC010
      * @tc.desc Verify BigUint64Array map instanceof BigUint64Array
      * @tc.size MediumTest
@@ -170,11 +170,11 @@ export default function typedUArraysMapTest03(): void {
     it('testTypedUArraysMapTestFileC010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       let result = arr.map((v) => v * 2n);
-      expect(typeof result).assertEqual("object");
+      expect(result.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_1100
      * @tc.name testTypedUArraysMapTestFileC011
      * @tc.desc Verify Uint8ClampedArray map instanceof Uint8ClampedArray
      * @tc.size MediumTest
@@ -184,11 +184,11 @@ export default function typedUArraysMapTest03(): void {
     it('testTypedUArraysMapTestFileC011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([50, 100, 150]);
       let result = arr.map((v) => v / 2);
-      expect(typeof result).assertEqual("object");
+      expect(result.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_1200
      * @tc.name testTypedUArraysMapTestFileC012
      * @tc.desc Verify Uint16Array map instanceof Uint32Array false
      * @tc.size MediumTest
@@ -202,7 +202,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_1300
      * @tc.name testTypedUArraysMapTestFileC013
      * @tc.desc Verify Uint32Array map instanceof Uint16Array false
      * @tc.size MediumTest
@@ -216,7 +216,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_1400
      * @tc.name testTypedUArraysMapTestFileC014
      * @tc.desc Verify Uint8Array map instanceof Uint8Array
      * @tc.size MediumTest
@@ -230,7 +230,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_1500
      * @tc.name testTypedUArraysMapTestFileC015
      * @tc.desc Verify BigUint64Array map instanceof BigUint64Array
      * @tc.size MediumTest
@@ -244,7 +244,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_1600
      * @tc.name testTypedUArraysMapTestFileC016
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
@@ -258,7 +258,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_1700
      * @tc.name testTypedUArraysMapTestFileC017
      * @tc.desc Verify Uint16Array map
      * @tc.size MediumTest
@@ -272,7 +272,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_1800
      * @tc.name testTypedUArraysMapTestFileC018
      * @tc.desc Verify Uint32Array map
      * @tc.size MediumTest
@@ -286,7 +286,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_1900
      * @tc.name testTypedUArraysMapTestFileC019
      * @tc.desc Verify BigUint64Array map
      * @tc.size MediumTest
@@ -300,7 +300,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_2000
      * @tc.name testTypedUArraysMapTestFileC020
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
@@ -314,7 +314,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_2100
      * @tc.name testTypedUArraysMapTestFileC021
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
@@ -328,7 +328,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_2200
      * @tc.name testTypedUArraysMapTestFileC022
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
@@ -342,7 +342,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_2300
      * @tc.name testTypedUArraysMapTestFileC023
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
@@ -358,7 +358,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_2400
      * @tc.name testTypedUArraysMapTestFileC024
      * @tc.desc Verify Uint8Array map 1
      * @tc.size MediumTest
@@ -374,7 +374,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_2500
      * @tc.name testTypedUArraysMapTestFileC025
      * @tc.desc Verify Uint16Array map 2
      * @tc.size MediumTest
@@ -390,7 +390,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_2600
      * @tc.name testTypedUArraysMapTestFileC026
      * @tc.desc Verify Uint32Array map 1
      * @tc.size MediumTest
@@ -406,7 +406,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_2700
      * @tc.name testTypedUArraysMapTestFileC027
      * @tc.desc Verify Uint8ClampedArray map 2
      * @tc.size MediumTest
@@ -422,7 +422,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_2800
      * @tc.name testTypedUArraysMapTestFileC028
      * @tc.desc Verify BigUint64Array map 2n
      * @tc.size MediumTest
@@ -438,7 +438,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_2900
      * @tc.name testTypedUArraysMapTestFileC029
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
@@ -456,7 +456,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_3000
      * @tc.name testTypedUArraysMapTestFileC030
      * @tc.desc Verify Uint8Array map 0 0
      * @tc.size MediumTest
@@ -472,7 +472,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_3100
      * @tc.name testTypedUArraysMapTestFileC031
      * @tc.desc Verify Uint8Array map 255 255
      * @tc.size MediumTest
@@ -488,7 +488,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_3200
      * @tc.name testTypedUArraysMapTestFileC032
      * @tc.desc Verify Uint16Array map 65535 65535
      * @tc.size MediumTest
@@ -504,7 +504,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_3300
      * @tc.name testTypedUArraysMapTestFileC033
      * @tc.desc Verify Uint32Array map 4294967295 4294967295
      * @tc.size MediumTest
@@ -520,7 +520,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_3400
      * @tc.name testTypedUArraysMapTestFileC034
      * @tc.desc Verify BigUint64Array map BigInt('18446744073709551615')
      * @tc.size MediumTest
@@ -536,7 +536,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_3500
      * @tc.name testTypedUArraysMapTestFileC035
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
@@ -550,7 +550,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_3600
      * @tc.name testTypedUArraysMapTestFileC036
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
@@ -566,7 +566,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_3700
      * @tc.name testTypedUArraysMapTestFileC037
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
@@ -582,7 +582,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_3800
      * @tc.name testTypedUArraysMapTestFileC038
      * @tc.desc Verify Uint8Array map
      * @tc.size MediumTest
@@ -598,7 +598,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_3900
      * @tc.name testTypedUArraysMapTestFileC039
      * @tc.desc Verify Uint16Array map
      * @tc.size MediumTest
@@ -614,7 +614,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_4000
      * @tc.name testTypedUArraysMapTestFileC040
      * @tc.desc Verify Uint32Array map
      * @tc.size MediumTest
@@ -630,7 +630,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_4100
      * @tc.name testTypedUArraysMapTestFileC041
      * @tc.desc Verify Uint8Array map length length
      * @tc.size MediumTest
@@ -644,7 +644,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_4200
      * @tc.name testTypedUArraysMapTestFileC042
      * @tc.desc Verify Uint16Array map length length
      * @tc.size MediumTest
@@ -658,7 +658,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_4300
      * @tc.name testTypedUArraysMapTestFileC043
      * @tc.desc Verify Uint32Array map length length
      * @tc.size MediumTest
@@ -672,7 +672,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_4400
      * @tc.name testTypedUArraysMapTestFileC044
      * @tc.desc Verify BigUint64Array map length length
      * @tc.size MediumTest
@@ -686,7 +686,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_4500
      * @tc.name testTypedUArraysMapTestFileC045
      * @tc.desc Verify Uint8ClampedArray map length length
      * @tc.size MediumTest
@@ -700,7 +700,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_4600
      * @tc.name testTypedUArraysMapTestFileC046
      * @tc.desc Verify Uint8Array map length 0
      * @tc.size MediumTest
@@ -714,7 +714,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_4700
      * @tc.name testTypedUArraysMapTestFileC047
      * @tc.desc Verify Uint8Array map length 1
      * @tc.size MediumTest
@@ -728,7 +728,7 @@ export default function typedUArraysMapTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART201_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPTEST03_4800
      * @tc.name testTypedUArraysMapTestFileC048
      * @tc.desc Verify Uint16Array map length 10
      * @tc.size MediumTest

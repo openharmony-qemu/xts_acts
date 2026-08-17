@@ -34,7 +34,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_0100
      * @tc.name testTypedUArraysMapPartTestFileB001
      * @tc.desc Verify includes Uint8Array found
      * @tc.size MediumTest
@@ -47,7 +47,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_0200
      * @tc.name testTypedUArraysMapPartTestFileB002
      * @tc.desc Verify includes Uint8Array not found
      * @tc.size MediumTest
@@ -60,7 +60,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_0300
      * @tc.name testTypedUArraysMapPartTestFileB003
      * @tc.desc Verify includes Uint16Array found
      * @tc.size MediumTest
@@ -73,7 +73,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_0400
      * @tc.name testTypedUArraysMapPartTestFileB004
      * @tc.desc Verify includes Uint32Array found
      * @tc.size MediumTest
@@ -86,7 +86,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_0500
      * @tc.name testTypedUArraysMapPartTestFileB005
      * @tc.desc Verify includes BigUint64Array found
      * @tc.size MediumTest
@@ -99,7 +99,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_0600
      * @tc.name testTypedUArraysMapPartTestFileB006
      * @tc.desc Verify includes Uint8ClampedArray found
      * @tc.size MediumTest
@@ -112,7 +112,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_0700
      * @tc.name testTypedUArraysMapPartTestFileB007
      * @tc.desc Verify indexOf Uint8Array found
      * @tc.size MediumTest
@@ -125,7 +125,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_0800
      * @tc.name testTypedUArraysMapPartTestFileB008
      * @tc.desc Verify indexOf Uint8Array not found
      * @tc.size MediumTest
@@ -138,7 +138,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_0900
      * @tc.name testTypedUArraysMapPartTestFileB009
      * @tc.desc Verify indexOf BigUint64Array found
      * @tc.size MediumTest
@@ -151,7 +151,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_1000
      * @tc.name testTypedUArraysMapPartTestFileB010
      * @tc.desc Verify indexOf Uint16Array from index
      * @tc.size MediumTest
@@ -164,7 +164,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_1100
      * @tc.name testTypedUArraysMapPartTestFileB011
      * @tc.desc Verify entries Uint8Array
      * @tc.size MediumTest
@@ -186,7 +186,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_1200
      * @tc.name testTypedUArraysMapPartTestFileB012
      * @tc.desc Verify keys Uint8Array
      * @tc.size MediumTest
@@ -206,7 +206,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_1300
      * @tc.name testTypedUArraysMapPartTestFileB013
      * @tc.desc Verify values Uint8Array
      * @tc.size MediumTest
@@ -226,7 +226,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_1400
      * @tc.name testTypedUArraysMapPartTestFileB014
      * @tc.desc Verify Symbol.iterator Uint8Array
      * @tc.size MediumTest
@@ -246,7 +246,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_1500
      * @tc.name testTypedUArraysMapPartTestFileB015
      * @tc.desc Verify entries BigUint64Array
      * @tc.size MediumTest
@@ -267,7 +267,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_1600
      * @tc.name testTypedUArraysMapPartTestFileB016
      * @tc.desc Verify slice Uint8Array
      * @tc.size MediumTest
@@ -283,7 +283,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_1700
      * @tc.name testTypedUArraysMapPartTestFileB017
      * @tc.desc Verify slice BigUint64Array
      * @tc.size MediumTest
@@ -298,7 +298,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_1800
      * @tc.name testTypedUArraysMapPartTestFileB018
      * @tc.desc Verify subarray BigUint64Array
      * @tc.size MediumTest
@@ -313,7 +313,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_1900
      * @tc.name testTypedUArraysMapPartTestFileB019
      * @tc.desc Verify reverse Uint8Array
      * @tc.size MediumTest
@@ -328,7 +328,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_2000
      * @tc.name testTypedUArraysMapPartTestFileB020
      * @tc.desc Verify reverse BigUint64Array
      * @tc.size MediumTest
@@ -343,7 +343,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_2100
      * @tc.name testTypedUArraysMapPartTestFileB021
      * @tc.desc Verify toReversed Uint8Array
      * @tc.size MediumTest
@@ -358,7 +358,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_2200
      * @tc.name testTypedUArraysMapPartTestFileB022
      * @tc.desc Verify sort Uint8Array
      * @tc.size MediumTest
@@ -374,7 +374,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_2300
      * @tc.name testTypedUArraysMapPartTestFileB023
      * @tc.desc Verify sort BigUint64Array
      * @tc.size MediumTest
@@ -389,7 +389,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_2400
      * @tc.name testTypedUArraysMapPartTestFileB024
      * @tc.desc Verify toSorted Uint8Array
      * @tc.size MediumTest
@@ -404,7 +404,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_2500
      * @tc.name testTypedUArraysMapPartTestFileB025
      * @tc.desc Verify join Uint8Array
      * @tc.size MediumTest
@@ -417,7 +417,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_2600
      * @tc.name testTypedUArraysMapPartTestFileB026
      * @tc.desc Verify join BigUint64Array
      * @tc.size MediumTest
@@ -430,7 +430,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_2700
      * @tc.name testTypedUArraysMapPartTestFileB027
      * @tc.desc Verify toString Uint8Array
      * @tc.size MediumTest
@@ -443,7 +443,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_2800
      * @tc.name testTypedUArraysMapPartTestFileB028
      * @tc.desc Verify toString BigUint64Array
      * @tc.size MediumTest
@@ -456,7 +456,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_2900
      * @tc.name testTypedUArraysMapPartTestFileB029
      * @tc.desc Verify toLocaleString Uint8Array
      * @tc.size MediumTest
@@ -470,7 +470,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_3000
      * @tc.name testTypedUArraysMapPartTestFileB030
      * @tc.desc Verify reduce Uint8Array sum
      * @tc.size MediumTest
@@ -484,7 +484,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_3100
      * @tc.name testTypedUArraysMapPartTestFileB031
      * @tc.desc Verify reduce BigUint64Array sum
      * @tc.size MediumTest
@@ -498,7 +498,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_3200
      * @tc.name testTypedUArraysMapPartTestFileB032
      * @tc.desc Verify valueOf Uint8Array
      * @tc.size MediumTest
@@ -513,7 +513,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_3300
      * @tc.name testTypedUArraysMapPartTestFileB033
      * @tc.desc Verify valueOf BigUint64Array
      * @tc.size MediumTest
@@ -528,7 +528,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_3400
      * @tc.name testTypedUArraysMapPartTestFileB034
      * @tc.desc Verify slice Uint16Array
      * @tc.size MediumTest
@@ -543,7 +543,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_3500
      * @tc.name testTypedUArraysMapPartTestFileB035
      * @tc.desc Verify subarray Uint32Array
      * @tc.size MediumTest
@@ -558,7 +558,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_3600
      * @tc.name testTypedUArraysMapPartTestFileB036
      * @tc.desc Verify reverse Uint16Array
      * @tc.size MediumTest
@@ -572,7 +572,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_3700
      * @tc.name testTypedUArraysMapPartTestFileB037
      * @tc.desc Verify sort Uint32Array
      * @tc.size MediumTest
@@ -587,7 +587,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_3800
      * @tc.name testTypedUArraysMapPartTestFileB038
      * @tc.desc Verify join Uint16Array default
      * @tc.size MediumTest
@@ -600,7 +600,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_3900
      * @tc.name testTypedUArraysMapPartTestFileB039
      * @tc.desc Verify filter Uint8Array empty
      * @tc.size MediumTest
@@ -614,7 +614,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_4000
      * @tc.name testTypedUArraysMapPartTestFileB040
      * @tc.desc Verify map with callback using index Uint8Array
      * @tc.size MediumTest
@@ -630,7 +630,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_4100
      * @tc.name testTypedUArraysMapPartTestFileB041
      * @tc.desc Verify map BigUint64Array
      * @tc.size MediumTest
@@ -644,7 +644,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_4200
      * @tc.name testTypedUArraysMapPartTestFileB042
      * @tc.desc Verify map Uint8ClampedArray
      * @tc.size MediumTest
@@ -658,7 +658,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_4300
      * @tc.name testTypedUArraysMapPartTestFileB043
      * @tc.desc Verify map byteLength Uint8Array
      * @tc.size MediumTest
@@ -672,7 +672,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_4400
      * @tc.name testTypedUArraysMapPartTestFileB044
      * @tc.desc Verify map byteLength Uint16Array
      * @tc.size MediumTest
@@ -686,7 +686,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_4500
      * @tc.name testTypedUArraysMapPartTestFileB045
      * @tc.desc Verify map byteLength Uint32Array
      * @tc.size MediumTest
@@ -700,7 +700,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_4600
      * @tc.name testTypedUArraysMapPartTestFileB046
      * @tc.desc Verify map byteLength BigUint64Array
      * @tc.size MediumTest
@@ -714,7 +714,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_4700
      * @tc.name testTypedUArraysMapPartTestFileB047
      * @tc.desc Verify map byteLength Uint8ClampedArray
      * @tc.size MediumTest
@@ -728,7 +728,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_4800
      * @tc.name testTypedUArraysMapPartTestFileB048
      * @tc.desc Verify map byteOffset Uint8Array
      * @tc.size MediumTest
@@ -742,7 +742,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_4900
      * @tc.name testTypedUArraysMapPartTestFileB049
      * @tc.desc Verify map isView Uint8Array
      * @tc.size MediumTest
@@ -756,7 +756,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_5000
      * @tc.name testTypedUArraysMapPartTestFileB050
      * @tc.desc Verify map buffer Uint8Array
      * @tc.size MediumTest
@@ -773,7 +773,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_5100
      * @tc.name testTypedUArraysMapPartTestFileB051
      * @tc.desc Verify map callback Uint8Array
      * @tc.size MediumTest
@@ -787,7 +787,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_5200
      * @tc.name testTypedUArraysMapPartTestFileB052
      * @tc.desc Verify map callback Uint16Array
      * @tc.size MediumTest
@@ -801,7 +801,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_5300
      * @tc.name testTypedUArraysMapPartTestFileB053
      * @tc.desc Verify map callback Uint32Array
      * @tc.size MediumTest
@@ -815,7 +815,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_5400
      * @tc.name testTypedUArraysMapPartTestFileB054
      * @tc.desc Verify map callback BigUint64Array
      * @tc.size MediumTest
@@ -829,7 +829,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_5500
      * @tc.name testTypedUArraysMapPartTestFileB055
      * @tc.desc Verify map callback Uint8ClampedArray
      * @tc.size MediumTest
@@ -843,7 +843,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_5600
      * @tc.name testTypedUArraysMapPartTestFileB056
      * @tc.desc Verify map callback BigUint64Array
      * @tc.size MediumTest
@@ -857,7 +857,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_5700
      * @tc.name testTypedUArraysMapPartTestFileB057
      * @tc.desc Verify map callback 1e10 Uint32Array
      * @tc.size MediumTest
@@ -872,7 +872,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_5800
      * @tc.name testTypedUArraysMapPartTestFileB058
      * @tc.desc Verify map callback Math.PI Uint8Array
      * @tc.size MediumTest
@@ -887,7 +887,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_5900
      * @tc.name testTypedUArraysMapPartTestFileB059
      * @tc.desc Verify map - callback + thisArg Uint16Array
      * @tc.size MediumTest
@@ -902,7 +902,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_6000
      * @tc.name testTypedUArraysMapPartTestFileB060
      * @tc.desc Verify map - callback + thisArg BigUint64Array
      * @tc.size MediumTest
@@ -917,7 +917,7 @@ export default function typedUArraysMapPartTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAP_PART102_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_MAPPARTTEST02_6100
      * @tc.name testTypedUArraysMapPartTestFileB061
      * @tc.desc Verify map - callback + thisArg Uint8ClampedArray
      * @tc.size MediumTest

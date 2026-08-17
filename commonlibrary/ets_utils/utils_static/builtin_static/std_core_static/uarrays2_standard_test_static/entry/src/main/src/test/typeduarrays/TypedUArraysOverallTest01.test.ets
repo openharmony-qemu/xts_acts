@@ -34,7 +34,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_0100
      * @tc.name testTypedUArraysOverallTestFileA001
      * @tc.desc Verify 0
      * @tc.size MediumTest
@@ -47,7 +47,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_0200
      * @tc.name testTypedUArraysOverallTestFileA002
      * @tc.desc Verify 1 length
      * @tc.size MediumTest
@@ -60,7 +60,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_0300
      * @tc.name testTypedUArraysOverallTestFileA003
      * @tc.desc Verify 1 typedArray
      * @tc.size MediumTest
@@ -74,7 +74,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_0400
      * @tc.name testTypedUArraysOverallTestFileA004
      * @tc.desc Verify 1 array
      * @tc.size MediumTest
@@ -87,7 +87,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_0500
      * @tc.name testTypedUArraysOverallTestFileA005
      * @tc.desc Verify 1 iterable
      * @tc.size MediumTest
@@ -101,7 +101,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_0600
      * @tc.name testTypedUArraysOverallTestFileA006
      * @tc.desc Verify 2 buffer offset
      * @tc.size MediumTest
@@ -115,7 +115,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_0700
      * @tc.name testTypedUArraysOverallTestFileA007
      * @tc.desc Verify 3 buffer offset length
      * @tc.size MediumTest
@@ -129,7 +129,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_0800
      * @tc.name testTypedUArraysOverallTestFileA008
      * @tc.desc Verify length 0
      * @tc.size MediumTest
@@ -142,7 +142,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_0900
      * @tc.name testTypedUArraysOverallTestFileA009
      * @tc.desc Verify length 1
      * @tc.size MediumTest
@@ -155,10 +155,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_1000
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_1000
      * @tc.name testTypedUArraysOverallTestFileA010
      * @tc.desc Verify length 100
      * @tc.size MediumTest
@@ -171,7 +168,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_1100
      * @tc.name testTypedUArraysOverallTestFileA011
      * @tc.desc Verify length 1000
      * @tc.size MediumTest
@@ -184,7 +181,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_1200
      * @tc.name testTypedUArraysOverallTestFileA012
      * @tc.desc Verify length MAX_SAFE_INTEGER
      * @tc.size MediumTest
@@ -201,7 +198,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_1300
      * @tc.name testTypedUArraysOverallTestFileA013
      * @tc.desc Verify length -1
      * @tc.size MediumTest
@@ -218,7 +215,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_1400
      * @tc.name testTypedUArraysOverallTestFileA014
      * @tc.desc Verify length NaN
      * @tc.size MediumTest
@@ -231,7 +228,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_1500
      * @tc.name testTypedUArraysOverallTestFileA015
      * @tc.desc Verify length 0xFF
      * @tc.size MediumTest
@@ -244,7 +241,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_1600
      * @tc.name testTypedUArraysOverallTestFileA016
      * @tc.desc Verify length 0b1111
      * @tc.size MediumTest
@@ -257,7 +254,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_1700
      * @tc.name testTypedUArraysOverallTestFileA017
      * @tc.desc Verify length 83
      * @tc.size MediumTest
@@ -270,7 +267,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_1800
      * @tc.name testTypedUArraysOverallTestFileA018
      * @tc.desc Verify length 256
      * @tc.size MediumTest
@@ -283,7 +280,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_1900
      * @tc.name testTypedUArraysOverallTestFileA019
      * @tc.desc Verify length 65536
      * @tc.size MediumTest
@@ -296,7 +293,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_2000
      * @tc.name testTypedUArraysOverallTestFileA020
      * @tc.desc Verify length 4294967296
      * @tc.size MediumTest
@@ -313,7 +310,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_2100
      * @tc.name testTypedUArraysOverallTestFileA021
      * @tc.desc Verify length 0 BigUint64Array
      * @tc.size MediumTest
@@ -326,7 +323,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_2200
      * @tc.name testTypedUArraysOverallTestFileA022
      * @tc.desc Verify length 1 BigUint64Array
      * @tc.size MediumTest
@@ -339,7 +336,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_2300
      * @tc.name testTypedUArraysOverallTestFileA023
      * @tc.desc Verify length 10 BigUint64Array
      * @tc.size MediumTest
@@ -352,7 +349,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_2400
      * @tc.name testTypedUArraysOverallTestFileA024
      * @tc.desc Verify length MAX_SAFE_INTEGER BigUint64Array
      * @tc.size MediumTest
@@ -369,7 +366,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_2500
      * @tc.name testTypedUArraysOverallTestFileA025
      * @tc.desc Verify typedArray
      * @tc.size MediumTest
@@ -383,7 +380,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_2600
      * @tc.name testTypedUArraysOverallTestFileA026
      * @tc.desc Verify typedArray
      * @tc.size MediumTest
@@ -397,7 +394,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_2700
      * @tc.name testTypedUArraysOverallTestFileA027
      * @tc.desc Verify typedArray
      * @tc.size MediumTest
@@ -411,7 +408,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_2800
      * @tc.name testTypedUArraysOverallTestFileA028
      * @tc.desc Verify typedArray
      * @tc.size MediumTest
@@ -425,7 +422,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_2900
      * @tc.name testTypedUArraysOverallTestFileA029
      * @tc.desc Verify 0typedArray
      * @tc.size MediumTest
@@ -439,7 +436,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_3000
      * @tc.name testTypedUArraysOverallTestFileA030
      * @tc.desc Verify typedArray
      * @tc.size MediumTest
@@ -453,7 +450,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_3100
      * @tc.name testTypedUArraysOverallTestFileA031
      * @tc.desc Verify typedArray
      * @tc.size MediumTest
@@ -467,7 +464,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_3200
      * @tc.name testTypedUArraysOverallTestFileA032
      * @tc.desc Verify typedArray
      * @tc.size MediumTest
@@ -481,7 +478,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_3300
      * @tc.name testTypedUArraysOverallTestFileA033
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -494,7 +491,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_3400
      * @tc.name testTypedUArraysOverallTestFileA034
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -507,7 +504,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_3500
      * @tc.name testTypedUArraysOverallTestFileA035
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -520,7 +517,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_3600
      * @tc.name testTypedUArraysOverallTestFileA036
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -533,7 +530,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_3700
      * @tc.name testTypedUArraysOverallTestFileA037
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -546,7 +543,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_3800
      * @tc.name testTypedUArraysOverallTestFileA038
      * @tc.desc Verify 0
      * @tc.size MediumTest
@@ -559,7 +556,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_3900
      * @tc.name testTypedUArraysOverallTestFileA039
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -572,7 +569,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_4000
      * @tc.name testTypedUArraysOverallTestFileA040
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -585,7 +582,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_4100
      * @tc.name testTypedUArraysOverallTestFileA041
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -598,7 +595,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_4200
      * @tc.name testTypedUArraysOverallTestFileA042
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -611,7 +608,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_4300
      * @tc.name testTypedUArraysOverallTestFileA043
      * @tc.desc Verify 8 buffer
      * @tc.size MediumTest
@@ -625,7 +622,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_4400
      * @tc.name testTypedUArraysOverallTestFileA044
      * @tc.desc Verify 16 buffer
      * @tc.size MediumTest
@@ -639,7 +636,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_4500
      * @tc.name testTypedUArraysOverallTestFileA045
      * @tc.desc Verify 64 buffer
      * @tc.size MediumTest
@@ -653,7 +650,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_4600
      * @tc.name testTypedUArraysOverallTestFileA046
      * @tc.desc Verify 0 buffer
      * @tc.size MediumTest
@@ -667,7 +664,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_4700
      * @tc.name testTypedUArraysOverallTestFileA047
      * @tc.desc Verify buffer Uint16Array
      * @tc.size MediumTest
@@ -681,7 +678,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_4800
      * @tc.name testTypedUArraysOverallTestFileA048
      * @tc.desc Verify buffer
      * @tc.size MediumTest
@@ -695,7 +692,7 @@ export default function typedUArraysOverallTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Overall0101_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OVERALLTEST01_4900
      * @tc.name testTypedUArraysOverallTestFileA049
      * @tc.desc Verify null buffer
      * @tc.size MediumTest

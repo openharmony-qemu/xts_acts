@@ -34,7 +34,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_0100
      * @tc.name testTypedUArraysLastIndexOfFileB001
      * @tc.desc Verify searchElement lastIndexOf Uint8ClampedArray -1
      * @tc.size MediumTest
@@ -47,7 +47,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_0200
      * @tc.name testTypedUArraysLastIndexOfFileB002
      * @tc.desc Verify fromIndex -3 Uint16Array len-3=1
      * @tc.size MediumTest
@@ -60,7 +60,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_0300
      * @tc.name testTypedUArraysLastIndexOfFileB003
      * @tc.desc Verify fromIndex -1 Uint32Array len-1=3 30
      * @tc.size MediumTest
@@ -73,7 +73,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_0400
      * @tc.name testTypedUArraysLastIndexOfFileB004
      * @tc.desc Verify fromIndex -2 BigUint64Array len-2=2
      * @tc.size MediumTest
@@ -86,7 +86,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_0500
      * @tc.name testTypedUArraysLastIndexOfFileB005
      * @tc.desc Verify fromIndex Uint8Array -1
      * @tc.size MediumTest
@@ -99,7 +99,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_0600
      * @tc.name testTypedUArraysLastIndexOfFileB006
      * @tc.desc Verify fromIndex Uint32Array -1
      * @tc.size MediumTest
@@ -112,7 +112,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_0700
      * @tc.name testTypedUArraysLastIndexOfFileB007
      * @tc.desc Verify fromIndex Uint8ClampedArray
      * @tc.size MediumTest
@@ -125,7 +125,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_0800
      * @tc.name testTypedUArraysLastIndexOfFileB008
      * @tc.desc Verify fromIndex Uint16Array
      * @tc.size MediumTest
@@ -138,7 +138,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_0900
      * @tc.name testTypedUArraysLastIndexOfFileB009
      * @tc.desc Verify fromIndex BigUint64Array
      * @tc.size MediumTest
@@ -151,7 +151,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_1000
      * @tc.name testTypedUArraysLastIndexOfFileB010
      * @tc.desc Verify fromIndex NaN Uint8ClampedArray 0 0
      * @tc.size MediumTest
@@ -164,7 +164,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_1100
      * @tc.name testTypedUArraysLastIndexOfFileB011
      * @tc.desc Verify fromIndex NaN Uint32Array 0
      * @tc.size MediumTest
@@ -177,7 +177,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_1200
      * @tc.name testTypedUArraysLastIndexOfFileB012
      * @tc.desc Verify fromIndex NaN BigUint64Array 0
      * @tc.size MediumTest
@@ -190,7 +190,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_1300
      * @tc.name testTypedUArraysLastIndexOfFileB013
      * @tc.desc Verify fromIndex 1.9 Uint8Array 1
      * @tc.size MediumTest
@@ -203,7 +203,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_1400
      * @tc.name testTypedUArraysLastIndexOfFileB014
      * @tc.desc Verify fromIndex "2" Uint16Array 2
      * @tc.size MediumTest
@@ -216,7 +216,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_1500
      * @tc.name testTypedUArraysLastIndexOfFileB015
      * @tc.desc Verify fromIndex null 0 Uint32Array 0
      * @tc.size MediumTest
@@ -229,7 +229,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_1600
      * @tc.name testTypedUArraysLastIndexOfFileB016
      * @tc.desc Verify Uint8ClampedArray
      * @tc.size MediumTest
@@ -242,7 +242,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_1700
      * @tc.name testTypedUArraysLastIndexOfFileB017
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
@@ -255,7 +255,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_1800
      * @tc.name testTypedUArraysLastIndexOfFileB018
      * @tc.desc Verify Uint16Array
      * @tc.size MediumTest
@@ -268,7 +268,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_1900
      * @tc.name testTypedUArraysLastIndexOfFileB019
      * @tc.desc Verify Uint32Array
      * @tc.size MediumTest
@@ -281,7 +281,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_2000
      * @tc.name testTypedUArraysLastIndexOfFileB020
      * @tc.desc Verify BigUint64Array
      * @tc.size MediumTest
@@ -294,7 +294,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_2100
      * @tc.name testTypedUArraysLastIndexOfFileB021
      * @tc.desc Verify -1 Uint8ClampedArray
      * @tc.size MediumTest
@@ -307,7 +307,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_2200
      * @tc.name testTypedUArraysLastIndexOfFileB022
      * @tc.desc Verify -1 Uint8Array
      * @tc.size MediumTest
@@ -320,7 +320,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_2300
      * @tc.name testTypedUArraysLastIndexOfFileB023
      * @tc.desc Verify -1 Uint16Array
      * @tc.size MediumTest
@@ -333,7 +333,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_2400
      * @tc.name testTypedUArraysLastIndexOfFileB024
      * @tc.desc Verify -1 Uint32Array
      * @tc.size MediumTest
@@ -346,7 +346,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_2500
      * @tc.name testTypedUArraysLastIndexOfFileB025
      * @tc.desc Verify -1 BigUint64Array
      * @tc.size MediumTest
@@ -359,7 +359,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_2600
      * @tc.name testTypedUArraysLastIndexOfFileB026
      * @tc.desc Verify Uint8ClampedArray
      * @tc.size MediumTest
@@ -372,7 +372,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_2700
      * @tc.name testTypedUArraysLastIndexOfFileB027
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
@@ -385,7 +385,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_2800
      * @tc.name testTypedUArraysLastIndexOfFileB028
      * @tc.desc Verify Uint16Array
      * @tc.size MediumTest
@@ -398,7 +398,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_2900
      * @tc.name testTypedUArraysLastIndexOfFileB029
      * @tc.desc Verify Uint32Array
      * @tc.size MediumTest
@@ -411,7 +411,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_3000
      * @tc.name testTypedUArraysLastIndexOfFileB030
      * @tc.desc Verify BigUint64Array
      * @tc.size MediumTest
@@ -424,7 +424,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_3100
      * @tc.name testTypedUArraysLastIndexOfFileB031
      * @tc.desc Verify lastIndexOf -1 Uint8ClampedArray
      * @tc.size MediumTest
@@ -437,7 +437,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_3200
      * @tc.name testTypedUArraysLastIndexOfFileB032
      * @tc.desc Verify lastIndexOf -1 Uint8Array
      * @tc.size MediumTest
@@ -450,7 +450,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_3300
      * @tc.name testTypedUArraysLastIndexOfFileB033
      * @tc.desc Verify lastIndexOf -1 Uint16Array
      * @tc.size MediumTest
@@ -463,7 +463,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_3400
      * @tc.name testTypedUArraysLastIndexOfFileB034
      * @tc.desc Verify lastIndexOf -1 Uint32Array
      * @tc.size MediumTest
@@ -476,7 +476,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_3500
      * @tc.name testTypedUArraysLastIndexOfFileB035
      * @tc.desc Verify lastIndexOf -1 BigUint64Array
      * @tc.size MediumTest
@@ -489,7 +489,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_3600
      * @tc.name testTypedUArraysLastIndexOfFileB036
      * @tc.desc Verify Uint8Array 3
      * @tc.size MediumTest
@@ -502,7 +502,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_3700
      * @tc.name testTypedUArraysLastIndexOfFileB037
      * @tc.desc Verify fromIndex undefined Uint8ClampedArray
      * @tc.size MediumTest
@@ -515,7 +515,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_3800
      * @tc.name testTypedUArraysLastIndexOfFileB038
      * @tc.desc Verify fromIndex undefined BigUint64Array
      * @tc.size MediumTest
@@ -528,7 +528,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_3900
      * @tc.name testTypedUArraysLastIndexOfFileB039
      * @tc.desc Verify Uint8Array 0
      * @tc.size MediumTest
@@ -541,7 +541,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_4000
      * @tc.name testTypedUArraysLastIndexOfFileB040
      * @tc.desc Verify Uint16Array -1
      * @tc.size MediumTest
@@ -554,7 +554,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_4100
      * @tc.name testTypedUArraysLastIndexOfFileB041
      * @tc.desc Verify lastIndexOf Uint32Array
      * @tc.size MediumTest
@@ -567,7 +567,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_4200
      * @tc.name testTypedUArraysLastIndexOfFileB042
      * @tc.desc Verify BigUint64Array
      * @tc.size MediumTest
@@ -580,7 +580,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_4300
      * @tc.name testTypedUArraysLastIndexOfFileB043
      * @tc.desc Verify Uint8ClampedArray 0
      * @tc.size MediumTest
@@ -593,7 +593,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_4400
      * @tc.name testTypedUArraysLastIndexOfFileB044
      * @tc.desc Verify Uint16Array len-1
      * @tc.size MediumTest
@@ -606,7 +606,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_4500
      * @tc.name testTypedUArraysLastIndexOfFileB045
      * @tc.desc Verify fromIndex Uint8Array
      * @tc.size MediumTest
@@ -619,7 +619,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_4600
      * @tc.name testTypedUArraysLastIndexOfFileB046
      * @tc.desc Verify fromIndex Uint16Array -1
      * @tc.size MediumTest
@@ -632,7 +632,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_4700
      * @tc.name testTypedUArraysLastIndexOfFileB047
      * @tc.desc Verify BigUint64Array Number -1
      * @tc.size MediumTest
@@ -645,7 +645,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_4800
      * @tc.name testTypedUArraysLastIndexOfFileB048
      * @tc.desc Verify BigUint64Array BigInt
      * @tc.size MediumTest
@@ -658,7 +658,7 @@ export default function typedUArraysLastIndexOf02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_LASTINDEXOF02_4900
      * @tc.name testTypedUArraysLastIndexOfFileB049
      * @tc.desc Verify Uint8ClampedArray 0 255
      * @tc.size MediumTest
