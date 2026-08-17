@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -494,7 +494,7 @@ export default function NavigationUndefinedTest() {
         .getElement('minContentWidth')))
         .assertEqual('\"150.00vp\"');
 
-      // 第一次点击：isMinContentWidth �?false 变为 true，minContentWidth 变为 undefined (默认�?360)
+      // 第一次点击：isMinContentWidth ?false 变为 true，minContentWidth 变为 undefined (默认?360)
       let changeBtn = await driver.findComponent(ON.id('Navigation_MinContentWidth'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -506,7 +506,7 @@ export default function NavigationUndefinedTest() {
         .getElement('minContentWidth')))
         .assertEqual('\"360.00vp\"');
 
-      // 第二次点击：isMinContentWidth �?true 变回 false，minContentWidth 变回 150
+      // 第二次点击：isMinContentWidth ?true 变回 false，minContentWidth 变回 150
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('MyNavigation');
@@ -549,7 +549,7 @@ export default function NavigationUndefinedTest() {
         .getElement('navBarWidthRange')))
         .assertEqual('\"10.00vp, 500.00vp\"');
 
-      // 第一次点击：isNavBarWidthRange �?false 变为 true，navBarWidthRange 变为 undefined (默认�?[240, 432])
+      // 第一次点击：isNavBarWidthRange ?false 变为 true，navBarWidthRange 变为 undefined (默认?[240, 432])
       let changeBtn = await driver.findComponent(ON.id('Navigation_NavBarWidthRange'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -561,7 +561,7 @@ export default function NavigationUndefinedTest() {
         .getElement('navBarWidthRange')))
         .assertEqual('\"240.00vp, 432.00vp\"');
 
-      // 第二次点击：isNavBarWidthRange �?true 变回 false，navBarWidthRange 变回 ["10vp", "500vp"]
+      // 第二次点击：isNavBarWidthRange ?true 变回 false，navBarWidthRange 变回 ["10vp", "500vp"]
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('MyNavigation');

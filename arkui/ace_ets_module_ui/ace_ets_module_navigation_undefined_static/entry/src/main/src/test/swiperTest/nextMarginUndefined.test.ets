@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -94,10 +94,10 @@ export default function nextMarginUndefinedTest() {
       let nextMarginValue = obj1.getElement('$attrs').getString('nextMargin');
       let nextMarginInVp: number;
       if (nextMarginValue.endsWith('px')) {
-        // 如果�?px，转换为 vp
+        // 如果?px，转换为 vp
         nextMarginInVp = Math.round(UIContext.resolveUIContext()!.px2vp(parseFloat(nextMarginValue.replace('px', ''))));
       } else {
-        // 如果�?vp，直接取�?
+        // 如果?vp，直接取?
         nextMarginInVp = Math.round(parseFloat(nextMarginValue.replace('vp', '')));
       }
       console.info('Test component nextMarginInVp is: ' + nextMarginInVp);

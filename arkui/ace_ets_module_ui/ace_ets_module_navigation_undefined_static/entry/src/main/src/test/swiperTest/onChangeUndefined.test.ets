@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -71,7 +71,7 @@ export default function onChangeStartUndefinedTest() {
       await (goBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      //判断回调更新后结�?
+      //判断回调更新后结?
       let strJson = inspector.getInspectorByKey('testText');
       let obj = JSON.parseJsonElement(strJson);
       let testText = obj.getElement('$attrs').getString('content');
@@ -83,11 +83,11 @@ export default function onChangeStartUndefinedTest() {
       await (undefinedBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      //点击跳转索引不触发回�?
+      //点击跳转索引不触发回?
       await (goBtn.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      //判断回调更新后结�?
+      //判断回调更新后结?
       let strJson2 = inspector.getInspectorByKey('testText');
       let obj2 = JSON.parseJsonElement(strJson2);
       let testText2 = obj2.getElement('$attrs').getString('content');

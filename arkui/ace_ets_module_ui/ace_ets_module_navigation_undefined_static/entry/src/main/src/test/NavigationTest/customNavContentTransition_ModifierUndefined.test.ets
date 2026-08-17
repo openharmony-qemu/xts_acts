@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -74,16 +74,16 @@ export default function customNavContentTransitionModifierUndefined() {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
      
-      // 验证初始状态：isUndefined = false（非 undefined�?
+      // 验证初始状态：isUndefined = false（非 undefined?
       let toggleBtn = await driver.findComponent(ON.id('toggleButton'));
       if (toggleBtn) {
         let toggleText = await toggleBtn.getText();
         console.info('[customNavContentTransitionModifierUndefined_static_0001] Initial toggle text: ' + toggleText);
-        // 验证包含 "false" 表示当前是非 undefined 状�?
+        // 验证包含 "false" 表示当前是非 undefined 状?
         expect(toggleText.indexOf('false') > -1).assertTrue();
       }
 
-      // 点击 pushPathByName 按钮触发转场（使用自定义回调，返�?undefined = 默认转场�?
+      // 点击 pushPathByName 按钮触发转场（使用自定义回调，返?undefined = 默认转场?
       let pushBtn = await driver.findComponent(ON.id('pushButton'));
       if (pushBtn) {
         await pushBtn.click();
@@ -96,7 +96,7 @@ export default function customNavContentTransitionModifierUndefined() {
       let testText2 = obj2.getElement('$attrs').getString('content');
       expect(testText2).assertEqual("0");
 
-      // 点击返回按钮返回到初始页�?
+      // 点击返回按钮返回到初始页?
       let backText = await driver.findComponent(ON.id('NavPathStackApi2_text_pageOne'));
       if (backText) {
       await backText.click();
@@ -108,16 +108,16 @@ export default function customNavContentTransitionModifierUndefined() {
         await CommonFunc.sleep(1000);
       }
 
-      // 验证切换后状态：isUndefined = true（undefined�?
+      // 验证切换后状态：isUndefined = true（undefined?
       toggleBtn = await driver.findComponent(ON.id('toggleButton'));
       if (toggleBtn) {
         let toggleText = await toggleBtn.getText();
         console.info('[customNavContentTransitionModifierUndefined_static_0001] After toggle text: ' + toggleText);
-        // 验证包含 "true" 表示当前�?undefined 状�?
+        // 验证包含 "true" 表示当前?undefined 状?
         expect(toggleText.indexOf('true') > -1).assertTrue();
       }
 
-      // 再次点击 pushPathByName 按钮触发转场（回调为 undefined = 默认转场�?
+      // 再次点击 pushPathByName 按钮触发转场（回调为 undefined = 默认转场?
       if (pushBtn) {
         await pushBtn.click();
         await CommonFunc.sleep(1500);

@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -74,14 +74,14 @@ export default function onNavigationModeChangeUndefined() {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 点击切换 mode 按钮，应该触�?onNavigationModeChange 回调，changeCount 增加
+      // 点击切换 mode 按钮，应该触?onNavigationModeChange 回调，changeCount 增加
       let changeModeBtn = await driver.findComponent(ON.id('changeModeButton'));
       if (changeModeBtn) {
         await changeModeBtn.click();
         await CommonFunc.sleep(1000);
       }
 
-      // 检�?changeCount 是否变为 2
+      // 检?changeCount 是否变为 2
       let strJson = inspector.getInspectorByKey('changeCountText');
       console.info('[onNavigationModeChangeUndefined_static_0001] strJson: ' + strJson);
       let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');
@@ -94,13 +94,13 @@ export default function onNavigationModeChangeUndefined() {
       await (toggleBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      // 再次点击切换 mode 按钮，onNavigationModeChange �?undefined，不会触发回调，changeCount 保持不变
+      // 再次点击切换 mode 按钮，onNavigationModeChange ?undefined，不会触发回调，changeCount 保持不变
       if (changeModeBtn) {
         await changeModeBtn.click();
         await CommonFunc.sleep(1000);
       }
 
-      // 检�?changeCount 仍然�?2（没有增加）
+      // 检?changeCount 仍然?2（没有增加）
       strJson = inspector.getInspectorByKey('changeCountText');
       res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');
       console.info('[onNavigationModeChangeUndefined_static_0001] changeCount after undefined click: ' + res);

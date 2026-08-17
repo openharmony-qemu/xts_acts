@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -86,7 +86,7 @@ afterEach(async () => {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 步骤1: 验证初始状�?- modifier.isUndefined = false
+      // 步骤1: 验证初始状?- modifier.isUndefined = false
       let toggleBtn = await driver.findComponent(ON.id('toggleButton'));
       if (toggleBtn) {
         let toggleText = await toggleBtn.getText();
@@ -94,7 +94,7 @@ afterEach(async () => {
         expect(toggleText.indexOf('false') > -1).assertTrue();
       }
 
-      // 步骤2: 直接点击 getParamByName，此�?PageHome1 还未�?push
+      // 步骤2: 直接点击 getParamByName，此?PageHome1 还未?push
       let getParamBtn = await driver.findComponent(ON.id('getParamButton'));
       if (getParamBtn) {
         await getParamBtn.click();
@@ -114,7 +114,7 @@ afterEach(async () => {
         await CommonFunc.sleep(1500);
       }
 
-      // 步骤4: 重新查找并点�?getParamByName 按钮
+      // 步骤4: 重新查找并点?getParamByName 按钮
       getParamBtn = await driver.findComponent(ON.id('getParamButton'));
       if (getParamBtn) {
         await getParamBtn.click();
@@ -127,14 +127,14 @@ afterEach(async () => {
       console.info('[getParamByNameModifierUndefined_static_0001] Step4 result text (with param): ' + res);
       expect(res).assertEqual('Result: 1');
 
-      // 步骤5: 点击 Toggle Modifier 按钮，切�?modifier 状�?
+      // 步骤5: 点击 Toggle Modifier 按钮，切?modifier 状?
       toggleBtn = await driver.findComponent(ON.id('toggleButton'));
       if (toggleBtn) {
         await toggleBtn.click();
         await CommonFunc.sleep(1000);
       }
 
-      // 步骤6: 验证切换后状�?- modifier.isUndefined = true
+      // 步骤6: 验证切换后状?- modifier.isUndefined = true
       toggleBtn = await driver.findComponent(ON.id('toggleButton'));
       if (toggleBtn) {
         let toggleText = await toggleBtn.getText();

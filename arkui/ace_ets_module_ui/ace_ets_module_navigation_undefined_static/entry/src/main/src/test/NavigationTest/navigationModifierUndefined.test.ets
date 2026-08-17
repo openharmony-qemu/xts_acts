@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -165,7 +165,7 @@ export default function navigationModifierUndefined() {
 
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
-      // 初始状态：isUndefined3=true，minContentWidth=undefined，使用默认�?360
+      // 初始状态：isUndefined3=true，minContentWidth=undefined，使用默认?360
       let strJson = inspector.getInspectorByKey('NavigationM_1');
       await CommonFunc.sleep(1000);
 
@@ -176,7 +176,7 @@ export default function navigationModifierUndefined() {
         .getElement('minContentWidth')))
         .assertEqual('\"360.00vp\"');
 
-      // 第一次点击：isUndefined3 �?true 变为 false，minContentWidth 变为 150
+      // 第一次点击：isUndefined3 ?true 变为 false，minContentWidth 变为 150
       let changeBtn = await driver.findComponent(ON.id('NavigationM_btn3'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -188,7 +188,7 @@ export default function navigationModifierUndefined() {
         .getElement('minContentWidth')))
         .assertEqual('\"150.00vp\"');
 
-      // 第二次点击：isUndefined3 �?false 变回 true，minContentWidth 变回 undefined (默认�?360)
+      // 第二次点击：isUndefined3 ?false 变回 true，minContentWidth 变回 undefined (默认?360)
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('NavigationM_1');
@@ -220,7 +220,7 @@ export default function navigationModifierUndefined() {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 初始状态：isUndefined4=true，navBarWidthRange=undefined，使用默认�?[240, 432]
+      // 初始状态：isUndefined4=true，navBarWidthRange=undefined，使用默认?[240, 432]
       let strJson = inspector.getInspectorByKey('NavigationM_1');
       await CommonFunc.sleep(1000);
 
@@ -231,7 +231,7 @@ export default function navigationModifierUndefined() {
         .getElement('navBarWidthRange')))
         .assertEqual('\"240.00vp, 432.00vp\"');
 
-      // 第一次点击：isUndefined4 �?true 变为 false，navBarWidthRange 变为 ["10vp", "500vp"]
+      // 第一次点击：isUndefined4 ?true 变为 false，navBarWidthRange 变为 ["10vp", "500vp"]
       let changeBtn = await driver.findComponent(ON.id('NavigationM_btn4'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -243,7 +243,7 @@ export default function navigationModifierUndefined() {
         .getElement('navBarWidthRange')))
         .assertEqual('\"310.00vp, 500.00vp\"');
 
-      // 第二次点击：isUndefined4 �?false 变回 true，navBarWidthRange 变回 undefined (默认�?[240, 432])
+      // 第二次点击：isUndefined4 ?false 变回 true，navBarWidthRange 变回 undefined (默认?[240, 432])
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('NavigationM_1');
