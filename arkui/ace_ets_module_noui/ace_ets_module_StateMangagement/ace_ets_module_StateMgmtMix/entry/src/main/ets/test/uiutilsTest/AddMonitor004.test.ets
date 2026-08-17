@@ -58,14 +58,14 @@ export default function AddMonitor004() {
       CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
       let btn: Component = driver.findComponent(ON.id('changeName_empty01'));
-      await CommonFunc.sleep(1000);
+      CommonFunc.sleep(1000);
       btn.click();
-      await CommonFunc.sleep(1000);
+      CommonFunc.sleep(1000);
       let text_1 = (driver.findComponent(ON.id('age_empty01'))).getText();
       console.info("[SUB_ARKUI_API_AddMonitor004_0100] component text_1: " + text_1);
       expect(text_1).assertEqual("1");
       let btn2: Component = driver.findComponent(ON.id('clearMonitor_empty01'));
-      await CommonFunc.sleep(1000);
+      CommonFunc.sleep(1000);
       btn2.click();
       CommonFunc.sleep(1000);
       btn.click();
