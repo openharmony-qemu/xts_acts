@@ -137,19 +137,25 @@ export default function composeListItemV2Page03Test() {
      */
     it('ComposeListItemV2Page03Test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[ComposeListItemV2Page03Test_0400] START');
-      let driver = await Driver.create();
-      await driver.delayMs(2000);
+      try {
+        let driver = await Driver.create();
+        await driver.delayMs(2000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        let button = await scrollBar.scrollSearch(ON.text('operate toggle'));
 
-      let toggleText = await driver.findComponent(ON.text('operate toggle'));
-      expect(toggleText !== null).assertTrue();
+        let toggleText = await driver.findComponent(ON.text('operate toggle'));
+        expect(toggleText !== null).assertTrue();
 
-      let radioText = await driver.findComponent(ON.text('operate radio 2'));
-      expect(radioText !== null).assertTrue();
+        let radioText = await driver.findComponent(ON.text('operate radio 2'));
+        expect(radioText !== null).assertTrue();
 
-      console.info('[ComposeListItemV2Page03Test_0400] END');
-      done();
+        console.info('[ComposeListItemV2Page03Test_0400] END');
+        done();
+      } catch (error) {
+        console.error('[ComposeListItemV2Page03Test_0400] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
-
-
   })
 }
