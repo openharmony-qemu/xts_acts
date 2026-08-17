@@ -1048,6 +1048,7 @@ export default function int8ArrayFromPart02Test(): void {
     it('int8ArrayFromPart02Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Iterable<number> = [5, 5, 5];
       let arr: Int8Array = Int8Array.from<number>(src, (v: number, k: number) => {
+        expect(v).assertEqual(5);
         return k;
       });
       expect(arr[0]).assertEqual(0);
@@ -1286,6 +1287,7 @@ export default function int8ArrayFromPart02Test(): void {
       let src: Iterable<number> = [1, 2, 3];
       try {
         Int8Array.from<number>(src, (v: number, k: number) => {
+          expect(v + k).assertEqual(1);
           throw new RangeError('range error');
         });
         expect().assertFail();
@@ -1306,7 +1308,8 @@ export default function int8ArrayFromPart02Test(): void {
     it('int8ArrayFromPart02Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Iterable<number> = [1, 2, 3];
       try {
-        Int8Array.from<number>(src, (_v: number, _k: number) => {
+        Int8Array.from<number>(src, (v: number, k: number) => {
+          expect(v + k).assertEqual(1);
           throw new TypeError('type error');
         });
         expect().assertFail();
@@ -1411,7 +1414,10 @@ export default function int8ArrayFromPart02Test(): void {
      */
     it('int8ArrayFromPart02Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Iterable<number> = [1, 2, 3];
-      let arr: Int8Array = Int8Array.from<number>(src, (_v: number, _k: number) => {
+      let arr: Int8Array = Int8Array.from<number>(src, (v: number, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual(1);
+        }
         return Number.POSITIVE_INFINITY;
       });
       expect(arr[0]).assertEqual(0);

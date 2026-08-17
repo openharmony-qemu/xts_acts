@@ -57,7 +57,9 @@ export default function int8ArrayIteratorPart02Test(): void {
     it('int8ArrayIteratorPart02Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let iter: IterableIterator<Number> = arr.$_iterator();
-      expect(iter).not().assertEqual(undefined);
+      let first = iter.next();
+      expect(first.done).assertFalse();
+      expect(first.value).assertEqual(1);
     });
 
     /**

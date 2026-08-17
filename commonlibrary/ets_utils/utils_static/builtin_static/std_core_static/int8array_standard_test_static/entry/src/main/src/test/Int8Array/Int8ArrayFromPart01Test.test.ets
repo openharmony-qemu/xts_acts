@@ -1058,6 +1058,8 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        expect(v.length).assertEqual(1);
+        expect(k).assertEqual(0);
         return 0.0;
       });
       expect(result.byteOffset).assertEqual(0);
@@ -1138,7 +1140,7 @@ export default function int8ArrayFromPart01Test(): void {
       try {
         Int8Array.from<string>(src, (v: string, k: number) => {
           calls = calls + 1;
-          if (k === 1.0) {
+          if (v.length > 0 && k === 1.0) {
             throw new Error('second');
           }
           return 0.0;
@@ -1163,9 +1165,9 @@ export default function int8ArrayFromPart01Test(): void {
       let calls: number = 0.0;
       const src: Array<string> = ['a', 'b', 'c'];
       try {
-        Int8Array.from<string>(src, (_v: string, k: number) => {
+        Int8Array.from<string>(src, (v: string, k: number) => {
           calls = calls + 1;
-          if (k === 2.0) {
+          if (v.length > 0 && k === 2.0) {
             throw new Error('last');
           }
           return 0.0;
@@ -1188,9 +1190,12 @@ export default function int8ArrayFromPart01Test(): void {
      */
     it('int8ArrayFromPart01Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = [];
-      const result = Int8Array.from<string>(src, (_v: string, _k: number) => {
+      let touched: number = 0.0;
+      const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        touched = touched + v.length + k;
         throw new Error('never');
       });
+      expect(touched).assertEqual(0.0);
       expect(result.length).assertEqual(0);
     });
   });

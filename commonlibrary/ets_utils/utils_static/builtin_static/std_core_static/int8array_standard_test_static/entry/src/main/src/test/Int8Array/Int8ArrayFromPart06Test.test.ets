@@ -594,6 +594,7 @@ export default function int8ArrayFromPart06Test(): void {
       const src: Int8Array = Int8Array.of(1, 2, 3);
       try {
         Int8Array.from(src, (v, k) => {
+          expect(v + k).assertEqual(1);
           throw new Error('custom-msg-xyz');
         });
         expect().assertFail();
@@ -640,7 +641,8 @@ export default function int8ArrayFromPart06Test(): void {
     it('int8ArrayFromPart06Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Int8Array = Int8Array.of(10, 20, 30);
       try {
-        Int8Array.from(src, (_v, _k) => {
+        Int8Array.from(src, (v, k) => {
+          expect(v + k).assertEqual(10);
           throw new TypeError('t');
         });
         expect().assertFail();
