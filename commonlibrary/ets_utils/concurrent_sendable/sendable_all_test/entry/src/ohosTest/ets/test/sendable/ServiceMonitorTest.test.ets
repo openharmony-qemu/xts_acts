@@ -114,12 +114,18 @@ export default function ServiceMonitorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceMonitor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await serviceMonitor.registerHealthCheck('apiService')
+    it('testServiceMonitor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await serviceMonitor.registerHealthCheck('apiService')
 
-      const health: ServiceHealth | undefined = serviceMonitor.getHealth('apiService')
-      expect(health !== undefined).assertTrue()
-      expect(health!.status).assertEqual('unknown')
+        const health: ServiceHealth | undefined = serviceMonitor.getHealth('apiService')
+        expect(health !== undefined).assertTrue()
+        expect(health!.status).assertEqual('unknown')
+      } catch (error) {
+        console.error("testServiceMonitor0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -130,13 +136,19 @@ export default function ServiceMonitorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceMonitor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await serviceMonitor.registerHealthCheck('webService')
-      await serviceMonitor.updateHealth('webService', 'healthy', 50)
+    it('testServiceMonitor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await serviceMonitor.registerHealthCheck('webService')
+        await serviceMonitor.updateHealth('webService', 'healthy', 50)
 
-      const health: ServiceHealth | undefined = serviceMonitor.getHealth('webService')
-      expect(health!.status).assertEqual('healthy')
-      expect(health!.responseTime).assertEqual(50)
+        const health: ServiceHealth | undefined = serviceMonitor.getHealth('webService')
+        expect(health!.status).assertEqual('healthy')
+        expect(health!.responseTime).assertEqual(50)
+      } catch (error) {
+        console.error("testServiceMonitor0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -147,13 +159,19 @@ export default function ServiceMonitorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceMonitor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await serviceMonitor.registerHealthCheck('dbService')
-      await serviceMonitor.updateHealth('dbService', 'unhealthy', 200)
+    it('testServiceMonitor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await serviceMonitor.registerHealthCheck('dbService')
+        await serviceMonitor.updateHealth('dbService', 'unhealthy', 200)
 
-      const health: ServiceHealth | undefined = serviceMonitor.getHealth('dbService')
-      expect(health!.status).assertEqual('unhealthy')
-      expect(health!.errorCount).assertEqual(1)
+        const health: ServiceHealth | undefined = serviceMonitor.getHealth('dbService')
+        expect(health!.status).assertEqual('unhealthy')
+        expect(health!.errorCount).assertEqual(1)
+      } catch (error) {
+        console.error("testServiceMonitor0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -164,12 +182,18 @@ export default function ServiceMonitorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceMonitor0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await serviceMonitor.registerHealthCheck('cacheService')
-      await serviceMonitor.updateHealth('cacheService', 'degraded', 150)
+    it('testServiceMonitor0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await serviceMonitor.registerHealthCheck('cacheService')
+        await serviceMonitor.updateHealth('cacheService', 'degraded', 150)
 
-      const health: ServiceHealth | undefined = serviceMonitor.getHealth('cacheService')
-      expect(health!.status).assertEqual('degraded')
+        const health: ServiceHealth | undefined = serviceMonitor.getHealth('cacheService')
+        expect(health!.status).assertEqual('degraded')
+      } catch (error) {
+        console.error("testServiceMonitor0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -180,15 +204,21 @@ export default function ServiceMonitorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceMonitor0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await serviceMonitor.registerHealthCheck('errorSvc')
+    it('testServiceMonitor0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await serviceMonitor.registerHealthCheck('errorSvc')
 
-      await serviceMonitor.updateHealth('errorSvc', 'unhealthy', 100)
-      await serviceMonitor.updateHealth('errorSvc', 'unhealthy', 100)
-      await serviceMonitor.updateHealth('errorSvc', 'healthy', 30)
+        await serviceMonitor.updateHealth('errorSvc', 'unhealthy', 100)
+        await serviceMonitor.updateHealth('errorSvc', 'unhealthy', 100)
+        await serviceMonitor.updateHealth('errorSvc', 'healthy', 30)
 
-      const health: ServiceHealth | undefined = serviceMonitor.getHealth('errorSvc')
-      expect(health!.errorCount).assertEqual(2)
+        const health: ServiceHealth | undefined = serviceMonitor.getHealth('errorSvc')
+        expect(health!.errorCount).assertEqual(2)
+      } catch (error) {
+        console.error("testServiceMonitor0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -199,12 +229,18 @@ export default function ServiceMonitorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceMonitor0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await serviceMonitor.registerHealthCheck('timeSvc')
-      await serviceMonitor.updateHealth('timeSvc', 'healthy', 75)
+    it('testServiceMonitor0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await serviceMonitor.registerHealthCheck('timeSvc')
+        await serviceMonitor.updateHealth('timeSvc', 'healthy', 75)
 
-      const health: ServiceHealth | undefined = serviceMonitor.getHealth('timeSvc')
-      expect(health!.responseTime).assertEqual(75)
+        const health: ServiceHealth | undefined = serviceMonitor.getHealth('timeSvc')
+        expect(health!.responseTime).assertEqual(75)
+      } catch (error) {
+        console.error("testServiceMonitor0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -215,15 +251,21 @@ export default function ServiceMonitorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceMonitor0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await serviceMonitor.registerHealthCheck('timeCheckSvc')
-      const beforeTime: number = Date.now()
-      await serviceMonitor.updateHealth('timeCheckSvc', 'healthy', 30)
-      const afterTime: number = Date.now()
+    it('testServiceMonitor0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await serviceMonitor.registerHealthCheck('timeCheckSvc')
+        const beforeTime: number = Date.now()
+        await serviceMonitor.updateHealth('timeCheckSvc', 'healthy', 30)
+        const afterTime: number = Date.now()
 
-      const health: ServiceHealth | undefined = serviceMonitor.getHealth('timeCheckSvc')
-      expect(health!.lastCheckTime >= beforeTime).assertTrue()
-      expect(health!.lastCheckTime <= afterTime).assertTrue()
+        const health: ServiceHealth | undefined = serviceMonitor.getHealth('timeCheckSvc')
+        expect(health!.lastCheckTime >= beforeTime).assertTrue()
+        expect(health!.lastCheckTime <= afterTime).assertTrue()
+      } catch (error) {
+        console.error("testServiceMonitor0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -234,16 +276,22 @@ export default function ServiceMonitorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceMonitor0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await serviceMonitor.registerHealthCheck('concurrentSvc')
+    it('testServiceMonitor0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await serviceMonitor.registerHealthCheck('concurrentSvc')
 
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(healthCheckTask, serviceMonitor, 'concurrentSvc', 'healthy'))
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(healthCheckTask, serviceMonitor, 'concurrentSvc', 'healthy'))
+        }
+        await executeTasksGetObjects(tasks)
+
+        expect(serviceMonitor.getCheckCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testServiceMonitor0800 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-
-      expect(serviceMonitor.getCheckCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -254,18 +302,24 @@ export default function ServiceMonitorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceMonitor0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const services: string[] = ['monitor1', 'monitor2', 'monitor3']
-      for (const svc of services) {
-        await serviceMonitor.registerHealthCheck(svc)
+    it('testServiceMonitor0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const services: string[] = ['monitor1', 'monitor2', 'monitor3']
+        for (const svc of services) {
+          await serviceMonitor.registerHealthCheck(svc)
+        }
+
+        const tasks: taskpool.Task[] = services.map((svc: string): taskpool.Task =>
+          new taskpool.Task(healthCheckTask, serviceMonitor, svc, 'healthy')
+        )
+        await executeTasksGetObjects(tasks)
+
+        expect(serviceMonitor.getCheckCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testServiceMonitor0900 failed");
+        expect(false).assertFail();
       }
-
-      const tasks: taskpool.Task[] = services.map((svc: string): taskpool.Task =>
-        new taskpool.Task(healthCheckTask, serviceMonitor, svc, 'healthy')
-      )
-      await executeTasksGetObjects(tasks)
-
-      expect(serviceMonitor.getCheckCount()).assertEqual(3)
+      done();
     })
 
     /**
@@ -276,21 +330,27 @@ export default function ServiceMonitorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceMonitor1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const services: string[] = []
-      for (let i: number = 0; i < 5; i++) {
-        services.push(`monitorSvc${i}`)
-      }
-      for (const svc of services) {
-        await serviceMonitor.registerHealthCheck(svc)
-      }
+    it('testServiceMonitor1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const services: string[] = []
+        for (let i: number = 0; i < 5; i++) {
+          services.push(`monitorSvc${i}`)
+        }
+        for (const svc of services) {
+          await serviceMonitor.registerHealthCheck(svc)
+        }
 
-      const tasks: taskpool.Task[] = services.map((svc: string): taskpool.Task =>
-        new taskpool.Task(healthCheckTask, serviceMonitor, svc, 'healthy')
-      )
-      await executeTasksGetObjects(tasks)
+        const tasks: taskpool.Task[] = services.map((svc: string): taskpool.Task =>
+          new taskpool.Task(healthCheckTask, serviceMonitor, svc, 'healthy')
+        )
+        await executeTasksGetObjects(tasks)
 
-      expect(serviceMonitor.getCheckCount()).assertEqual(5)
+        expect(serviceMonitor.getCheckCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testServiceMonitor1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -301,21 +361,27 @@ export default function ServiceMonitorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceMonitor1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const services: string[] = []
-      for (let i: number = 0; i < 10; i++) {
-        services.push(`monitorSvc${i}`)
-      }
-      for (const svc of services) {
-        await serviceMonitor.registerHealthCheck(svc)
-      }
+    it('testServiceMonitor1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const services: string[] = []
+        for (let i: number = 0; i < 10; i++) {
+          services.push(`monitorSvc${i}`)
+        }
+        for (const svc of services) {
+          await serviceMonitor.registerHealthCheck(svc)
+        }
 
-      const promises: Promise<void>[] = services.map((svc: string): Promise<void> =>
-        serviceMonitor.updateHealth(svc, 'healthy', Math.floor(Math.random() * 100))
-      )
-      await Promise.all(promises)
+        const promises: Promise<void>[] = services.map((svc: string): Promise<void> =>
+          serviceMonitor.updateHealth(svc, 'healthy', Math.floor(Math.random() * 100))
+        )
+        await Promise.all(promises)
 
-      expect(serviceMonitor.getCheckCount()).assertEqual(10)
+        expect(serviceMonitor.getCheckCount()).assertEqual(10)
+      } catch (error) {
+        console.error("testServiceMonitor1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -326,7 +392,7 @@ export default function ServiceMonitorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testServiceMonitor1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testServiceMonitor1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const health: ServiceHealth | undefined = serviceMonitor.getHealth('nonexistent')
       expect(health === undefined).assertTrue()
     })

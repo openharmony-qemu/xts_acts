@@ -119,18 +119,24 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceRegistry0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
-      service.name = 'userService'
-      service.version = '1.0.0'
-      service.endpoints.push('http://localhost:8080')
+    it('testServiceRegistry0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
+        service.name = 'userService'
+        service.version = '1.0.0'
+        service.endpoints.push('http://localhost:8080')
 
-      await registry.register('userService', service)
-      const discovered: ServiceInfo | undefined = registry.discover('userService')
+        await registry.register('userService', service)
+        const discovered: ServiceInfo | undefined = registry.discover('userService')
 
-      expect(discovered !== undefined).assertTrue()
-      expect(discovered!.name).assertEqual('userService')
-      expect(discovered!.version).assertEqual('1.0.0')
+        expect(discovered !== undefined).assertTrue()
+        expect(discovered!.name).assertEqual('userService')
+        expect(discovered!.version).assertEqual('1.0.0')
+      } catch (error) {
+        console.error("testServiceRegistry0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -141,24 +147,30 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceRegistry0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const serviceNames: string[] = ['serviceA', 'serviceB', 'serviceC']
-      const services: ServiceInfo[] = []
-      for (let i = 0; i < serviceNames.length; i++) {
-        const svc: ServiceInfo = new ServiceInfo(new collections.Array<string>())
-        svc.name = serviceNames[i]
-        svc.version = '1.0.0'
-        services.push(svc)
-      }
-      const tasks: taskpool.Task[] = services.map((svc: ServiceInfo): taskpool.Task =>
-        new taskpool.Task(registerServiceTask, registry, svc)
-      )
-      await executeTasksGetObjects(tasks)
+    it('testServiceRegistry0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const serviceNames: string[] = ['serviceA', 'serviceB', 'serviceC']
+        const services: ServiceInfo[] = []
+        for (let i = 0; i < serviceNames.length; i++) {
+          const svc: ServiceInfo = new ServiceInfo(new collections.Array<string>())
+          svc.name = serviceNames[i]
+          svc.version = '1.0.0'
+          services.push(svc)
+        }
+        const tasks: taskpool.Task[] = services.map((svc: ServiceInfo): taskpool.Task =>
+          new taskpool.Task(registerServiceTask, registry, svc)
+        )
+        await executeTasksGetObjects(tasks)
 
-      expect(registry.getRegistrationCount()).assertEqual(3)
-      expect(registry.discover('serviceA') !== undefined).assertTrue()
-      expect(registry.discover('serviceB') !== undefined).assertTrue()
-      expect(registry.discover('serviceC') !== undefined).assertTrue()
+        expect(registry.getRegistrationCount()).assertEqual(3)
+        expect(registry.discover('serviceA') !== undefined).assertTrue()
+        expect(registry.discover('serviceB') !== undefined).assertTrue()
+        expect(registry.discover('serviceC') !== undefined).assertTrue()
+      } catch (error) {
+        console.error("testServiceRegistry0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -169,14 +181,20 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceRegistry0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
-      service.name = 'orderService'
-      await registry.register('orderService', service)
+    it('testServiceRegistry0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
+        service.name = 'orderService'
+        await registry.register('orderService', service)
 
-      const discovered: ServiceInfo | undefined = registry.discover('orderService')
-      expect(discovered !== undefined).assertTrue()
-      expect(discovered!.name).assertEqual('orderService')
+        const discovered: ServiceInfo | undefined = registry.discover('orderService')
+        expect(discovered !== undefined).assertTrue()
+        expect(discovered!.name).assertEqual('orderService')
+      } catch (error) {
+        console.error("testServiceRegistry0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -187,7 +205,7 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testServiceRegistry0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testServiceRegistry0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const discovered: ServiceInfo | undefined = registry.discover('nonexistentService')
       expect(discovered === undefined).assertTrue()
     })
@@ -200,14 +218,20 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceRegistry0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
-      service.name = 'tempService'
-      await registry.register('tempService', service)
+    it('testServiceRegistry0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
+        service.name = 'tempService'
+        await registry.register('tempService', service)
 
-      const result: boolean = await registry.unregister('tempService')
-      expect(result).assertTrue()
-      expect(registry.discover('tempService') === undefined).assertTrue()
+        const result: boolean = await registry.unregister('tempService')
+        expect(result).assertTrue()
+        expect(registry.discover('tempService') === undefined).assertTrue()
+      } catch (error) {
+        console.error("testServiceRegistry0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -218,9 +242,15 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testServiceRegistry0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await registry.unregister('nonexistentService')
-      expect(result).assertFalse()
+    it('testServiceRegistry0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await registry.unregister('nonexistentService')
+        expect(result).assertFalse()
+      } catch (error) {
+        console.error("testServiceRegistry0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -231,18 +261,24 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceRegistry0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
-      service.name = 'paymentService'
-      service.status = 'active'
-      await registry.register('paymentService', service)
+    it('testServiceRegistry0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
+        service.name = 'paymentService'
+        service.status = 'active'
+        await registry.register('paymentService', service)
 
-      const discovered: ServiceInfo | undefined = registry.discover('paymentService')
-      await registry.lock_.lockAsync((): void => {
-        discovered!.status = 'inactive'
-      })
+        const discovered: ServiceInfo | undefined = registry.discover('paymentService')
+        await registry.lock_.lockAsync((): void => {
+          discovered!.status = 'inactive'
+        })
 
-      expect(registry.discover('paymentService')!.status).assertEqual('inactive')
+        expect(registry.discover('paymentService')!.status).assertEqual('inactive')
+      } catch (error) {
+        console.error("testServiceRegistry0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -253,19 +289,25 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceRegistry0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
-      service.name = 'sharedService'
-      await registry.register('sharedService', service)
+    it('testServiceRegistry0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
+        service.name = 'sharedService'
+        await registry.register('sharedService', service)
 
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(queryServiceTask, registry, 'sharedService'))
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(queryServiceTask, registry, 'sharedService'))
+        }
+        const results: Object[] = await executeTasksGetObjects(tasks)
+        const boolResults: boolean[] = results.map((r: Object): boolean => r as boolean)
+
+        expect(boolResults.every((r: boolean): boolean => r === true)).assertTrue()
+      } catch (error) {
+        console.error("testServiceRegistry0800 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await executeTasksGetObjects(tasks)
-      const boolResults: boolean[] = results.map((r: Object): boolean => r as boolean)
-
-      expect(boolResults.every((r: boolean): boolean => r === true)).assertTrue()
+      done();
     })
 
     /**
@@ -276,15 +318,21 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceRegistry0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
-      service.name = 'apiService'
-      service.endpoints.push('http://localhost:8081')
-      service.endpoints.push('http://localhost:8082')
-      await registry.register('apiService', service)
+    it('testServiceRegistry0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
+        service.name = 'apiService'
+        service.endpoints.push('http://localhost:8081')
+        service.endpoints.push('http://localhost:8082')
+        await registry.register('apiService', service)
 
-      const discovered: ServiceInfo | undefined = registry.discover('apiService')
-      expect(discovered!.endpoints.length).assertEqual(2)
+        const discovered: ServiceInfo | undefined = registry.discover('apiService')
+        expect(discovered!.endpoints.length).assertEqual(2)
+      } catch (error) {
+        console.error("testServiceRegistry0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -295,14 +343,20 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceRegistry1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
-      service.name = 'configService'
-      service.version = '2.0.1'
-      await registry.register('configService', service)
+    it('testServiceRegistry1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
+        service.name = 'configService'
+        service.version = '2.0.1'
+        await registry.register('configService', service)
 
-      const discovered: ServiceInfo | undefined = registry.discover('configService')
-      expect(discovered!.version).assertEqual('2.0.1')
+        const discovered: ServiceInfo | undefined = registry.discover('configService')
+        expect(discovered!.version).assertEqual('2.0.1')
+      } catch (error) {
+        console.error("testServiceRegistry1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -313,20 +367,26 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceRegistry1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const serviceNames: string[] = ['svc1', 'svc2', 'svc3']
-      const services: ServiceInfo[] = []
-      for (let i = 0; i < serviceNames.length; i++) {
-        const svc: ServiceInfo = new ServiceInfo(new collections.Array<string>())
-        svc.name = serviceNames[i]
-        services.push(svc)
-      }
-      const tasks: taskpool.Task[] = services.map((svc: ServiceInfo): taskpool.Task =>
-        new taskpool.Task(registerServiceTask, registry, svc)
-      )
-      await executeTasksGetObjects(tasks)
+    it('testServiceRegistry1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const serviceNames: string[] = ['svc1', 'svc2', 'svc3']
+        const services: ServiceInfo[] = []
+        for (let i = 0; i < serviceNames.length; i++) {
+          const svc: ServiceInfo = new ServiceInfo(new collections.Array<string>())
+          svc.name = serviceNames[i]
+          services.push(svc)
+        }
+        const tasks: taskpool.Task[] = services.map((svc: ServiceInfo): taskpool.Task =>
+          new taskpool.Task(registerServiceTask, registry, svc)
+        )
+        await executeTasksGetObjects(tasks)
 
-      expect(registry.getRegistrationCount()).assertEqual(3)
+        expect(registry.getRegistrationCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testServiceRegistry1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -337,20 +397,26 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceRegistry1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const serviceNames: string[] = ['svcA', 'svcB', 'svcC', 'svcD', 'svcE']
-      const services: ServiceInfo[] = []
-      for (let i = 0; i < serviceNames.length; i++) {
-        const svc: ServiceInfo = new ServiceInfo(new collections.Array<string>())
-        svc.name = serviceNames[i]
-        services.push(svc)
-      }
-      const tasks: taskpool.Task[] = services.map((svc: ServiceInfo): taskpool.Task =>
-        new taskpool.Task(registerServiceTask, registry, svc)
-      )
-      await executeTasksGetObjects(tasks)
+    it('testServiceRegistry1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const serviceNames: string[] = ['svcA', 'svcB', 'svcC', 'svcD', 'svcE']
+        const services: ServiceInfo[] = []
+        for (let i = 0; i < serviceNames.length; i++) {
+          const svc: ServiceInfo = new ServiceInfo(new collections.Array<string>())
+          svc.name = serviceNames[i]
+          services.push(svc)
+        }
+        const tasks: taskpool.Task[] = services.map((svc: ServiceInfo): taskpool.Task =>
+          new taskpool.Task(registerServiceTask, registry, svc)
+        )
+        await executeTasksGetObjects(tasks)
 
-      expect(registry.getRegistrationCount()).assertEqual(5)
+        expect(registry.getRegistrationCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testServiceRegistry1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -361,19 +427,25 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceRegistry1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const services: ServiceInfo[] = []
-      for (let i: number = 0; i < 10; i++) {
-        const svc: ServiceInfo = new ServiceInfo(new collections.Array<string>())
-        svc.name = `service${i}`
-        services.push(svc)
-      }
-      const tasks: taskpool.Task[] = services.map((svc: ServiceInfo): taskpool.Task =>
-        new taskpool.Task(registerServiceTask, registry, svc)
-      )
-      await executeTasksGetObjects(tasks)
+    it('testServiceRegistry1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const services: ServiceInfo[] = []
+        for (let i: number = 0; i < 10; i++) {
+          const svc: ServiceInfo = new ServiceInfo(new collections.Array<string>())
+          svc.name = `service${i}`
+          services.push(svc)
+        }
+        const tasks: taskpool.Task[] = services.map((svc: ServiceInfo): taskpool.Task =>
+          new taskpool.Task(registerServiceTask, registry, svc)
+        )
+        await executeTasksGetObjects(tasks)
 
-      expect(registry.getRegistrationCount()).assertEqual(10)
+        expect(registry.getRegistrationCount()).assertEqual(10)
+      } catch (error) {
+        console.error("testServiceRegistry1300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -384,14 +456,20 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceRegistry1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
-      service.name = 'singletonService'
-      await registry.register('singletonService', service)
+    it('testServiceRegistry1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
+        service.name = 'singletonService'
+        await registry.register('singletonService', service)
 
-      const task: taskpool.Task = new taskpool.Task(verifySingletonTask, registry)
-      const result: Object = await taskpool.execute(task)
-      expect(result as boolean).assertTrue()
+        const task: taskpool.Task = new taskpool.Task(verifySingletonTask, registry)
+        const result: Object = await taskpool.execute(task)
+        expect(result as boolean).assertTrue()
+      } catch (error) {
+        console.error("testServiceRegistry1400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -402,21 +480,27 @@ export default function ServiceRegistryTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceRegistry1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
-      service.name = 'lifecycleService'
-      service.status = 'created'
-      await registry.register('lifecycleService', service)
+    it('testServiceRegistry1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
+        service.name = 'lifecycleService'
+        service.status = 'created'
+        await registry.register('lifecycleService', service)
 
-      expect(registry.discover('lifecycleService')!.status).assertEqual('created')
+        expect(registry.discover('lifecycleService')!.status).assertEqual('created')
 
-      await registry.lock_.lockAsync((): void => {
-        registry.discover('lifecycleService')!.status = 'running'
-      })
-      expect(registry.discover('lifecycleService')!.status).assertEqual('running')
+        await registry.lock_.lockAsync((): void => {
+          registry.discover('lifecycleService')!.status = 'running'
+        })
+        expect(registry.discover('lifecycleService')!.status).assertEqual('running')
 
-      await registry.unregister('lifecycleService')
-      expect(registry.discover('lifecycleService') === undefined).assertTrue()
+        await registry.unregister('lifecycleService')
+        expect(registry.discover('lifecycleService') === undefined).assertTrue()
+      } catch (error) {
+        console.error("testServiceRegistry1500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

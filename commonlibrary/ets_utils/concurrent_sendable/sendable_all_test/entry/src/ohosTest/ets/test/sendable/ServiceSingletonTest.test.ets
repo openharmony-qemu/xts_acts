@@ -121,11 +121,17 @@ export default function ServiceSingletonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceSingleton0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const instance1: DatabaseService = await SingletonHolder.getInstance(new ArkTSUtils.locks.AsyncLock())
-      const instance2: DatabaseService = await SingletonHolder.getInstance(new ArkTSUtils.locks.AsyncLock())
+    it('testServiceSingleton0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const instance1: DatabaseService = await SingletonHolder.getInstance(new ArkTSUtils.locks.AsyncLock())
+        const instance2: DatabaseService = await SingletonHolder.getInstance(new ArkTSUtils.locks.AsyncLock())
 
-      expect(instance1 === instance2).assertTrue()
+        expect(instance1 === instance2).assertTrue()
+      } catch (error) {
+        console.error("testServiceSingleton0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -136,12 +142,18 @@ export default function ServiceSingletonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceSingleton0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const task: taskpool.Task = new taskpool.Task(getDbInstanceAndConnectTask, dbService!)
-      const result: Object = await taskpool.execute(task)
-      const taskInstance: DatabaseService = result as DatabaseService
+    it('testServiceSingleton0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const task: taskpool.Task = new taskpool.Task(getDbInstanceAndConnectTask, dbService!)
+        const result: Object = await taskpool.execute(task)
+        const taskInstance: DatabaseService = result as DatabaseService
 
-      expect(taskInstance === dbService).assertTrue()
+        expect(taskInstance === dbService).assertTrue()
+      } catch (error) {
+        console.error("testServiceSingleton0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -152,14 +164,20 @@ export default function ServiceSingletonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceSingleton0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await dbService!.connect()
+    it('testServiceSingleton0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await dbService!.connect()
 
-      const task: taskpool.Task = new taskpool.Task(getDbInstanceAndConnectTask, dbService!)
-      const result: Object = await taskpool.execute(task)
-      const taskInstance: DatabaseService = result as DatabaseService
+        const task: taskpool.Task = new taskpool.Task(getDbInstanceAndConnectTask, dbService!)
+        const result: Object = await taskpool.execute(task)
+        const taskInstance: DatabaseService = result as DatabaseService
 
-      expect(taskInstance.isConnected()).assertTrue()
+        expect(taskInstance.isConnected()).assertTrue()
+      } catch (error) {
+        console.error("testServiceSingleton0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -170,15 +188,21 @@ export default function ServiceSingletonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceSingleton0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(connectTask, dbService!))
-      }
-      await executeTasksGetObjects(tasks)
+    it('testServiceSingleton0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(connectTask, dbService!))
+        }
+        await executeTasksGetObjects(tasks)
 
-      expect(dbService!.getConnectionCount()).assertEqual(5)
-      expect(dbService!.isConnected()).assertTrue()
+        expect(dbService!.getConnectionCount()).assertEqual(5)
+        expect(dbService!.isConnected()).assertTrue()
+      } catch (error) {
+        console.error("testServiceSingleton0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -189,14 +213,20 @@ export default function ServiceSingletonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceSingleton0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      expect(dbService!.isConnected()).assertFalse()
+    it('testServiceSingleton0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(dbService!.isConnected()).assertFalse()
 
-      await dbService!.connect()
-      expect(dbService!.isConnected()).assertTrue()
+        await dbService!.connect()
+        expect(dbService!.isConnected()).assertTrue()
 
-      await dbService!.disconnect()
-      expect(dbService!.isConnected()).assertFalse()
+        await dbService!.disconnect()
+        expect(dbService!.isConnected()).assertFalse()
+      } catch (error) {
+        console.error("testServiceSingleton0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -207,16 +237,22 @@ export default function ServiceSingletonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceSingleton0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const initialCount: number = dbService!.getConnectionCount()
+    it('testServiceSingleton0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const initialCount: number = dbService!.getConnectionCount()
 
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(connectTask, dbService!))
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(connectTask, dbService!))
+        }
+        await executeTasksGetObjects(tasks)
+
+        expect(dbService!.getConnectionCount()).assertEqual(initialCount + 3)
+      } catch (error) {
+        console.error("testServiceSingleton0600 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-
-      expect(dbService!.getConnectionCount()).assertEqual(initialCount + 3)
+      done();
     })
 
     /**
@@ -227,13 +263,19 @@ export default function ServiceSingletonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceSingleton0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(connectTask, dbService!))
+    it('testServiceSingleton0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(connectTask, dbService!))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(dbService!.getConnectionCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testServiceSingleton0700 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(dbService!.getConnectionCount()).assertEqual(3)
+      done();
     })
 
     /**
@@ -244,13 +286,19 @@ export default function ServiceSingletonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceSingleton0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(connectTask, dbService!))
+    it('testServiceSingleton0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(connectTask, dbService!))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(dbService!.getConnectionCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testServiceSingleton0800 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(dbService!.getConnectionCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -261,13 +309,19 @@ export default function ServiceSingletonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceSingleton0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(connectTask, dbService!))
+    it('testServiceSingleton0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(connectTask, dbService!))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(dbService!.getConnectionCount()).assertEqual(10)
+      } catch (error) {
+        console.error("testServiceSingleton0900 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(dbService!.getConnectionCount()).assertEqual(10)
+      done();
     })
 
     /**
@@ -278,11 +332,17 @@ export default function ServiceSingletonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceSingleton1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const task: taskpool.Task = new taskpool.Task(verifySingletonRefTask, dbService!)
-      const result: Object = await taskpool.execute(task)
+    it('testServiceSingleton1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const task: taskpool.Task = new taskpool.Task(verifySingletonRefTask, dbService!)
+        const result: Object = await taskpool.execute(task)
 
-      expect(result as boolean).assertTrue()
+        expect(result as boolean).assertTrue()
+      } catch (error) {
+        console.error("testServiceSingleton1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -293,18 +353,24 @@ export default function ServiceSingletonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceSingleton1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const task1: taskpool.Task = new taskpool.Task(getDbInstanceAndConnectTask, dbService!)
-      const instance1: Object = await taskpool.execute(task1)
-      const dbInst1: DatabaseService = instance1 as DatabaseService
+    it('testServiceSingleton1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const task1: taskpool.Task = new taskpool.Task(getDbInstanceAndConnectTask, dbService!)
+        const instance1: Object = await taskpool.execute(task1)
+        const dbInst1: DatabaseService = instance1 as DatabaseService
 
-      await dbInst1.connect()
+        await dbInst1.connect()
 
-      const task2: taskpool.Task = new taskpool.Task(getDbInstanceAndConnectTask, dbService!)
-      const instance2: Object = await taskpool.execute(task2)
-      const dbInst2: DatabaseService = instance2 as DatabaseService
+        const task2: taskpool.Task = new taskpool.Task(getDbInstanceAndConnectTask, dbService!)
+        const instance2: Object = await taskpool.execute(task2)
+        const dbInst2: DatabaseService = instance2 as DatabaseService
 
-      expect(dbInst2.isConnected()).assertTrue()
+        expect(dbInst2.isConnected()).assertTrue()
+      } catch (error) {
+        console.error("testServiceSingleton1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -315,12 +381,18 @@ export default function ServiceSingletonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceSingleton1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await dbService!.connect()
-      expect(dbService!.isConnected()).assertTrue()
+    it('testServiceSingleton1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await dbService!.connect()
+        expect(dbService!.isConnected()).assertTrue()
 
-      await dbService!.disconnect()
-      expect(dbService!.isConnected()).assertFalse()
+        await dbService!.disconnect()
+        expect(dbService!.isConnected()).assertFalse()
+      } catch (error) {
+        console.error("testServiceSingleton1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -331,16 +403,22 @@ export default function ServiceSingletonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceSingleton1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(collectInstanceTask, dbService!))
-      }
-      const results: Object[] = await executeTasksGetObjects(tasks)
-      const dbResults: DatabaseService[] = results.map((r: Object): DatabaseService => r as DatabaseService)
+    it('testServiceSingleton1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(collectInstanceTask, dbService!))
+        }
+        const results: Object[] = await executeTasksGetObjects(tasks)
+        const dbResults: DatabaseService[] = results.map((r: Object): DatabaseService => r as DatabaseService)
 
-      const allSame: boolean = dbResults.every((inst: DatabaseService): boolean => inst === dbService)
-      expect(allSame).assertTrue()
+        const allSame: boolean = dbResults.every((inst: DatabaseService): boolean => inst === dbService)
+        expect(allSame).assertTrue()
+      } catch (error) {
+        console.error("testServiceSingleton1300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

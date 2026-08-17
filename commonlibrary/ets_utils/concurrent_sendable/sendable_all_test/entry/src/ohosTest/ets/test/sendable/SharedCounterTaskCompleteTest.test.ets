@@ -95,7 +95,7 @@ export default function SharedCounterTaskCompleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterTaskComplete0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterTaskComplete0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       expect(counter.getCompleted()).assertEqual(0)
       expect(counter.getFailed()).assertEqual(0)
       expect(counter.getTotal()).assertEqual(0)
@@ -109,11 +109,17 @@ export default function SharedCounterTaskCompleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterTaskComplete0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      counter.setTotal(1)
-      const task = new taskpool.Task(taskGroupItem, counter)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertLargerOrEqual(1)
+    it('testSharedCounterTaskComplete0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        counter.setTotal(1)
+        const task = new taskpool.Task(taskGroupItem, counter)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertLargerOrEqual(1)
+      } catch (error) {
+        console.error("testSharedCounterTaskComplete0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -124,7 +130,7 @@ export default function SharedCounterTaskCompleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterTaskComplete0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterTaskComplete0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caught: boolean = false
       counter.setTotal(1)
       const task = new taskpool.Task(failedTask, counter)
@@ -132,13 +138,14 @@ export default function SharedCounterTaskCompleteTest(): void {
         await taskpool.execute(task)
       } catch (e) {
         caught = true
-        const err: Error = e as Error
+        const err: Error = e
         expect(err.message).assertContain('task failed')
       }
       expect(caught || counter.getFailed() > 0).assertTrue()
       if (!caught) {
         expect(counter.getFailed()).assertLargerOrEqual(1)
       }
+      done();
     })
 
     /**
@@ -149,18 +156,24 @@ export default function SharedCounterTaskCompleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterTaskComplete0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      counter.setTotal(3)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(successfulTask, counter))
+    it('testSharedCounterTaskComplete0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        counter.setTotal(3)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(successfulTask, counter))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(3)
+      } catch (error) {
+        console.error("testSharedCounterTaskComplete0400 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      expect(results.length).assertEqual(3)
+      done();
     })
 
     /**
@@ -171,18 +184,24 @@ export default function SharedCounterTaskCompleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterTaskComplete0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      counter.setTotal(5)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(successfulTask, counter))
+    it('testSharedCounterTaskComplete0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        counter.setTotal(5)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(successfulTask, counter))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(5)
+      } catch (error) {
+        console.error("testSharedCounterTaskComplete0500 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      expect(results.length).assertEqual(5)
+      done();
     })
 
     /**
@@ -193,18 +212,24 @@ export default function SharedCounterTaskCompleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterTaskComplete0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      counter.setTotal(10)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(successfulTask, counter))
+    it('testSharedCounterTaskComplete0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        counter.setTotal(10)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(successfulTask, counter))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(10)
+      } catch (error) {
+        console.error("testSharedCounterTaskComplete0600 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      expect(results.length).assertEqual(10)
+      done();
     })
 
     /**
@@ -215,18 +240,24 @@ export default function SharedCounterTaskCompleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterTaskComplete0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      counter.setTotal(100)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 100; i++) {
-        tasks.push(new taskpool.Task(successfulTask, counter))
+    it('testSharedCounterTaskComplete0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        counter.setTotal(100)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 100; i++) {
+          tasks.push(new taskpool.Task(successfulTask, counter))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(100)
+      } catch (error) {
+        console.error("testSharedCounterTaskComplete0700 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      expect(results.length).assertEqual(100)
+      done();
     })
 
     /**
@@ -237,31 +268,37 @@ export default function SharedCounterTaskCompleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterTaskComplete0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      counter.setTotal(5)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(successfulTask, counter))
-      }
-      for (let i = 0; i < 2; i++) {
-        tasks.push(new taskpool.Task(failedTask, counter))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]).catch((): Object => 'failed'))
-      }
-      const results: Object[] = await Promise.all(promises)
-      let successCount: number = 0
-      let failCount: number = 0
-      for (let i = 0; i < results.length; i++) {
-        if (results[i] === 'failed') {
-          failCount++
-        } else {
-          successCount++
+    it('testSharedCounterTaskComplete0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        counter.setTotal(5)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(successfulTask, counter))
         }
+        for (let i = 0; i < 2; i++) {
+          tasks.push(new taskpool.Task(failedTask, counter))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]).catch((): Object => 'failed'))
+        }
+        const results: Object[] = await Promise.all(promises)
+        let successCount: number = 0
+        let failCount: number = 0
+        for (let i = 0; i < results.length; i++) {
+          if (results[i] === 'failed') {
+            failCount++
+          } else {
+            successCount++
+          }
+        }
+        expect(successCount).assertEqual(3)
+        expect(failCount).assertEqual(2)
+      } catch (error) {
+        console.error("testSharedCounterTaskComplete0800 failed");
+        expect(false).assertFail();
       }
-      expect(successCount).assertEqual(3)
-      expect(failCount).assertEqual(2)
+      done();
     })
 
     /**
@@ -272,24 +309,32 @@ export default function SharedCounterTaskCompleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterTaskComplete0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      counter.setTotal(1)
-      const task = new taskpool.Task(sendDataCountTask, counter)
-      let receivedCount: number = 0
-      task.onReceiveData((data: Object): void => {
-        receivedCount++
-        counter.markCompleted()
-      })
-      await taskpool.execute(task)
-      await new Promise<void>((resolve: Function): void => {
-        const checkInterval: number = setInterval((): void => {
-          if (counter.getCompleted() >= 1) {
-            clearInterval(checkInterval)
-            resolve()
+    it('testSharedCounterTaskComplete0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        counter.setTotal(1)
+        const task = new taskpool.Task(sendDataCountTask, counter)
+        let receivedCount: number = 0
+        task.onReceiveData((data: Object): void => {
+          if (data !== null && data !== undefined) {
+            receivedCount++
+            counter.markCompleted()
           }
-        }, 100)
-      })
-      expect(counter.getCompleted()).assertEqual(1)
+        })
+        await taskpool.execute(task)
+        await new Promise<void>((resolve: Function): void => {
+          const checkInterval: number = setInterval((): void => {
+            if (counter.getCompleted() >= 1) {
+              clearInterval(checkInterval)
+              resolve()
+            }
+          }, 100)
+        })
+        expect(counter.getCompleted()).assertEqual(1)
+      } catch (error) {
+        console.error("testSharedCounterTaskComplete0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -300,14 +345,20 @@ export default function SharedCounterTaskCompleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterTaskComplete1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      counter.setTotal(5)
-      const group = new taskpool.TaskGroup()
-      for (let i = 0; i < 5; i++) {
-        group.addTask(new taskpool.Task(taskGroupItem, counter))
+    it('testSharedCounterTaskComplete1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        counter.setTotal(5)
+        const group = new taskpool.TaskGroup()
+        for (let i = 0; i < 5; i++) {
+          group.addTask(new taskpool.Task(taskGroupItem, counter))
+        }
+        const results: Object[] = await taskpool.execute(group) as Object[]
+        expect(results.length).assertEqual(5)
+      } catch (error) {
+        console.error("testSharedCounterTaskComplete1000 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await taskpool.execute(group) as Object[]
-      expect(results.length).assertEqual(5)
+      done();
     })
   })
 }

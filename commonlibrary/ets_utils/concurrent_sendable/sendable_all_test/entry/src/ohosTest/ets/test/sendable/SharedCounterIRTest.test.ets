@@ -83,7 +83,7 @@ export default function SharedCounterIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       counter.count_ = 10
       counter.threshold_ = 50
       counter.status_ = 1
@@ -101,7 +101,7 @@ export default function SharedCounterIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       for (let i = 0; i < 100; i++) {
         counter.increment()
       }
@@ -116,7 +116,7 @@ export default function SharedCounterIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const counter1: IRCounter = new IRCounter(new collections.Map<string, number>())
       const counter2: IRCounter = new IRCounter(new collections.Map<string, number>())
       counter1.increment()
@@ -133,20 +133,26 @@ export default function SharedCounterIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      counter.count_ = 100
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readIRCount, counter))
+    it('testSharedCounterIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        counter.count_ = 100
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(readIRCount, counter))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as number).assertLargerOrEqual(0)
+        }
+      } catch (error) {
+        console.error("testSharedCounterIR0400 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as number).assertLargerOrEqual(0)
-      }
+      done();
     })
 
     /**
@@ -157,7 +163,7 @@ export default function SharedCounterIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSharedCounterIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i = 0; i < 1025; i++) {
         counter.addMetric(`metric_${i}`, i)
       }
@@ -174,7 +180,7 @@ export default function SharedCounterIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSharedCounterIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       counter.count_ = 50
       for (let i = 0; i < 1025; i++) {
         counter.addMetric(`m_${i}`, i)
@@ -191,7 +197,7 @@ export default function SharedCounterIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       counter.increment()
       expect(counter.getCount()).assertEqual(1)
       counter.count_ = 999
@@ -206,17 +212,23 @@ export default function SharedCounterIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 100; i++) {
-        tasks.push(new taskpool.Task(incrementIRCount, counter))
+    it('testSharedCounterIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 100; i++) {
+          tasks.push(new taskpool.Task(incrementIRCount, counter))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        expect(counter.getCount()).assertLargerOrEqual(1)
+      } catch (error) {
+        console.error("testSharedCounterIR0800 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      expect(counter.getCount()).assertLargerOrEqual(1)
+      done();
     })
 
     /**
@@ -227,7 +239,7 @@ export default function SharedCounterIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSharedCounterIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const start: number = Date.now()
       for (let i = 0; i < 1000; i++) {
         counter.increment()
@@ -245,7 +257,7 @@ export default function SharedCounterIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const props: number[] = counter.getIRProperties()
       expect(props.length).assertEqual(4)
       for (let i = 0; i < 4; i++) {
@@ -261,7 +273,7 @@ export default function SharedCounterIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterIR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSharedCounterIR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i = 0; i < 1025; i++) {
         counter.addMetric(`perf_${i}`, i)
       }
@@ -279,22 +291,28 @@ export default function SharedCounterIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterIR1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      counter.count_ = 1000
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 1000; i++) {
-        tasks.push(new taskpool.Task(readIRCount, counter))
-      }
-      const batchSize: number = 100
-      for (let batch = 0; batch < 10; batch++) {
-        const batchTasks: taskpool.Task[] = tasks.slice(batch * batchSize, (batch + 1) * batchSize)
-        const promises: Promise<Object>[] = []
-        for (let i = 0; i < batchTasks.length; i++) {
-          promises.push(taskpool.execute(batchTasks[i]))
+    it('testSharedCounterIR1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        counter.count_ = 1000
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 1000; i++) {
+          tasks.push(new taskpool.Task(readIRCount, counter))
         }
-        await Promise.all(promises)
+        const batchSize: number = 100
+        for (let batch = 0; batch < 10; batch++) {
+          const batchTasks: taskpool.Task[] = tasks.slice(batch * batchSize, (batch + 1) * batchSize)
+          const promises: Promise<Object>[] = []
+          for (let i = 0; i < batchTasks.length; i++) {
+            promises.push(taskpool.execute(batchTasks[i]))
+          }
+          await Promise.all(promises)
+        }
+        expect(counter.getCount()).assertLargerOrEqual(1)
+      } catch (error) {
+        console.error("testSharedCounterIR1200 failed");
+        expect(false).assertFail();
       }
-      expect(counter.getCount()).assertLargerOrEqual(1)
+      done();
     })
   })
 }

@@ -167,26 +167,31 @@ export default function SharedCounterInventoryTest(): void {
      */
     it('testSharedCounterInventory0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      inventory.setStock(5)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(purchaseOne, inventory))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      let successCount: number = 0
-      for (let i = 0; i < results.length; i++) {
-        if (results[i] as boolean) {
-          successCount++
+      try {
+        inventory.setStock(5)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(purchaseOne, inventory))
         }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        let successCount: number = 0
+        for (let i = 0; i < results.length; i++) {
+          if (results[i] as boolean) {
+            successCount++
+          }
+        }
+        expect(successCount).assertLargerOrEqual(1)
+        expect(inventory.getStock()).assertLargerOrEqual(0)
+        expect(inventory.getSold()).assertLargerOrEqual(1)
+      } catch (error) {
+        console.error("testSharedCounterInventory0500 failed");
+        expect(false).assertFail();
       }
-      expect(successCount).assertLargerOrEqual(1)
-      expect(inventory.getStock()).assertLargerOrEqual(0)
-      expect(inventory.getSold()).assertLargerOrEqual(1)
-      done()
+      done();
     })
 
     /**
@@ -199,25 +204,30 @@ export default function SharedCounterInventoryTest(): void {
      */
     it('testSharedCounterInventory0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      inventory.setStock(0)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(purchaseOne, inventory))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      let successCount: number = 0
-      for (let i = 0; i < results.length; i++) {
-        if (results[i] as boolean) {
-          successCount++
+      try {
+        inventory.setStock(0)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(purchaseOne, inventory))
         }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        let successCount: number = 0
+        for (let i = 0; i < results.length; i++) {
+          if (results[i] as boolean) {
+            successCount++
+          }
+        }
+        expect(successCount).assertEqual(0)
+        expect(inventory.getStock()).assertEqual(0)
+      } catch (error) {
+        console.error("testSharedCounterInventory0600 failed");
+        expect(false).assertFail();
       }
-      expect(successCount).assertEqual(0)
-      expect(inventory.getStock()).assertEqual(0)
-      done()
+      done();
     })
 
     /**
@@ -230,26 +240,31 @@ export default function SharedCounterInventoryTest(): void {
      */
     it('testSharedCounterInventory0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      inventory.setStock(50)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 100; i++) {
-        tasks.push(new taskpool.Task(purchaseOne, inventory))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      let successCount: number = 0
-      for (let i = 0; i < results.length; i++) {
-        if (results[i] as boolean) {
-          successCount++
+      try {
+        inventory.setStock(50)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 100; i++) {
+          tasks.push(new taskpool.Task(purchaseOne, inventory))
         }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        let successCount: number = 0
+        for (let i = 0; i < results.length; i++) {
+          if (results[i] as boolean) {
+            successCount++
+          }
+        }
+        expect(successCount).assertLargerOrEqual(1)
+        expect(inventory.getStock()).assertLargerOrEqual(0)
+        expect(inventory.getSold()).assertLargerOrEqual(1)
+      } catch (error) {
+        console.error("testSharedCounterInventory0700 failed");
+        expect(false).assertFail();
       }
-      expect(successCount).assertLargerOrEqual(1)
-      expect(inventory.getStock()).assertLargerOrEqual(0)
-      expect(inventory.getSold()).assertLargerOrEqual(1)
-      done()
+      done();
     })
 
     /**
@@ -262,25 +277,30 @@ export default function SharedCounterInventoryTest(): void {
      */
     it('testSharedCounterInventory0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      inventory.setStock(100)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(purchaseQuantity, inventory, 10))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      let successCount: number = 0
-      for (let i = 0; i < results.length; i++) {
-        if (results[i] as boolean) {
-          successCount++
+      try {
+        inventory.setStock(100)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(purchaseQuantity, inventory, 10))
         }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        let successCount: number = 0
+        for (let i = 0; i < results.length; i++) {
+          if (results[i] as boolean) {
+            successCount++
+          }
+        }
+        expect(successCount).assertLargerOrEqual(1)
+        expect(inventory.getStock()).assertLargerOrEqual(0)
+      } catch (error) {
+        console.error("testSharedCounterInventory0800 failed");
+        expect(false).assertFail();
       }
-      expect(successCount).assertLargerOrEqual(1)
-      expect(inventory.getStock()).assertLargerOrEqual(0)
-      done()
+      done();
     })
 
     /**

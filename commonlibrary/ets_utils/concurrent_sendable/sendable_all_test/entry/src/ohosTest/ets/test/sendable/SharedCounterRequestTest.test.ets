@@ -119,7 +119,7 @@ export default function SharedCounterRequestTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterRequest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterRequest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       counter.recordRequest(RequestType.GET, true)
       expect(counter.getTotal()).assertEqual(1)
       expect(counter.getByType(RequestType.GET)).assertEqual(1)
@@ -133,7 +133,7 @@ export default function SharedCounterRequestTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterRequest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterRequest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       counter.recordRequest(RequestType.POST, true)
       expect(counter.getTotal()).assertEqual(1)
       expect(counter.getByType(RequestType.POST)).assertEqual(1)
@@ -147,7 +147,7 @@ export default function SharedCounterRequestTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterRequest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterRequest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       counter.recordRequest(RequestType.GET, false)
       expect(counter.getFailed()).assertEqual(1)
       expect(counter.getSuccess()).assertEqual(0)
@@ -161,24 +161,30 @@ export default function SharedCounterRequestTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterRequest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 20; i++) {
-        if (i % 2 === 0) {
-          tasks.push(new taskpool.Task(simulateGetRequest, counter))
-        } else {
-          tasks.push(new taskpool.Task(simulatePostRequest, counter))
+    it('testSharedCounterRequest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 20; i++) {
+          if (i % 2 === 0) {
+            tasks.push(new taskpool.Task(simulateGetRequest, counter))
+          } else {
+            tasks.push(new taskpool.Task(simulatePostRequest, counter))
+          }
         }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        expect(counter.getTotal()).assertEqual(20)
+        expect(counter.getSuccess()).assertEqual(20)
+        expect(counter.getByType(RequestType.GET)).assertEqual(10)
+        expect(counter.getByType(RequestType.POST)).assertEqual(10)
+      } catch (error) {
+        console.error("testSharedCounterRequest0400 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      expect(counter.getTotal()).assertEqual(20)
-      expect(counter.getSuccess()).assertEqual(20)
-      expect(counter.getByType(RequestType.GET)).assertEqual(10)
-      expect(counter.getByType(RequestType.POST)).assertEqual(10)
+      done();
     })
 
     /**
@@ -189,25 +195,31 @@ export default function SharedCounterRequestTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterRequest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 50; i++) {
-        if (i % 3 === 0) {
-          tasks.push(new taskpool.Task(simulateFailedRequest, counter))
-        } else if (i % 2 === 0) {
-          tasks.push(new taskpool.Task(simulateGetRequest, counter))
-        } else {
-          tasks.push(new taskpool.Task(simulatePostRequest, counter))
+    it('testSharedCounterRequest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 50; i++) {
+          if (i % 3 === 0) {
+            tasks.push(new taskpool.Task(simulateFailedRequest, counter))
+          } else if (i % 2 === 0) {
+            tasks.push(new taskpool.Task(simulateGetRequest, counter))
+          } else {
+            tasks.push(new taskpool.Task(simulatePostRequest, counter))
+          }
         }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        expect(counter.getTotal()).assertEqual(50)
+        expect(counter.getSuccess()).assertEqual(33)
+        expect(counter.getFailed()).assertEqual(17)
+      } catch (error) {
+        console.error("testSharedCounterRequest0500 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      expect(counter.getTotal()).assertEqual(50)
-      expect(counter.getSuccess()).assertEqual(33)
-      expect(counter.getFailed()).assertEqual(17)
+      done();
     })
 
     /**
@@ -218,19 +230,25 @@ export default function SharedCounterRequestTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterRequest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 100; i++) {
-        tasks.push(new taskpool.Task(simulateGetRequest, counter))
+    it('testSharedCounterRequest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 100; i++) {
+          tasks.push(new taskpool.Task(simulateGetRequest, counter))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        expect(counter.getTotal()).assertEqual(100)
+        expect(counter.getSuccess()).assertEqual(100)
+        expect(counter.getByType(RequestType.GET)).assertEqual(100)
+      } catch (error) {
+        console.error("testSharedCounterRequest0600 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      expect(counter.getTotal()).assertEqual(100)
-      expect(counter.getSuccess()).assertEqual(100)
-      expect(counter.getByType(RequestType.GET)).assertEqual(100)
+      done();
     })
 
     /**
@@ -241,7 +259,7 @@ export default function SharedCounterRequestTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterRequest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterRequest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const threshold: number = 10
       for (let i = 0; i < threshold; i++) {
         counter.recordRequest(RequestType.GET, true)
@@ -257,7 +275,7 @@ export default function SharedCounterRequestTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterRequest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterRequest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const threshold: number = 100
       for (let i = 0; i < 10; i++) {
         counter.recordRequest(RequestType.GET, true)
@@ -273,27 +291,33 @@ export default function SharedCounterRequestTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterRequest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 30; i++) {
-        if (i % 4 === 0) {
-          tasks.push(new taskpool.Task(simulateFailedRequest, counter))
-        } else {
-          tasks.push(new taskpool.Task(simulateGetRequest, counter))
+    it('testSharedCounterRequest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 30; i++) {
+          if (i % 4 === 0) {
+            tasks.push(new taskpool.Task(simulateFailedRequest, counter))
+          } else {
+            tasks.push(new taskpool.Task(simulateGetRequest, counter))
+          }
         }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        const total: number = counter.getTotal()
+        const success: number = counter.getSuccess()
+        const failed: number = counter.getFailed()
+        expect(total).assertEqual(30)
+        expect(success).assertEqual(22)
+        expect(failed).assertEqual(8)
+        expect(success + failed).assertEqual(total)
+      } catch (error) {
+        console.error("testSharedCounterRequest0900 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      const total: number = counter.getTotal()
-      const success: number = counter.getSuccess()
-      const failed: number = counter.getFailed()
-      expect(total).assertEqual(30)
-      expect(success).assertEqual(22)
-      expect(failed).assertEqual(8)
-      expect(success + failed).assertEqual(total)
+      done();
     })
 
     /**
@@ -304,7 +328,7 @@ export default function SharedCounterRequestTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterRequest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterRequest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       counter.recordRequest(RequestType.GET, true)
       counter.recordRequest(RequestType.POST, true)
       counter.recordRequest(RequestType.GET, false)
@@ -320,7 +344,7 @@ export default function SharedCounterRequestTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterRequest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterRequest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       counter.recordRequest(RequestType.GET, true)
       counter.recordRequest(RequestType.POST, true)
       counter.recordRequest(RequestType.GET, false)

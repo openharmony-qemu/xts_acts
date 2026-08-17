@@ -166,15 +166,20 @@ export default function SessionCacheTest(): void {
      */
     it('testSessionCache0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const shortTimestamps: collections.Map<string, number> = new collections.Map<string, number>()
-      const shortCacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(200)
-      const shortCache: SessionCacheManager = new SessionCacheManager(shortTimestamps, shortCacheArg)
-      shortCache.ttlMs_ = 100
-      shortCache.createSession('sess_short', '{"userId":1}')
-      expect(shortCache.isExpired('sess_short')).assertFalse()
-      await Utils.sleep(150)
-      expect(shortCache.isExpired('sess_short')).assertTrue()
-      done()
+      try {
+        const shortTimestamps: collections.Map<string, number> = new collections.Map<string, number>()
+        const shortCacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(200)
+        const shortCache: SessionCacheManager = new SessionCacheManager(shortTimestamps, shortCacheArg)
+        shortCache.ttlMs_ = 100
+        shortCache.createSession('sess_short', '{"userId":1}')
+        expect(shortCache.isExpired('sess_short')).assertFalse()
+        await Utils.sleep(150)
+        expect(shortCache.isExpired('sess_short')).assertTrue()
+      } catch (error) {
+        console.error("testSessionCache0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -187,16 +192,21 @@ export default function SessionCacheTest(): void {
      */
     it('testSessionCache0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const renewTimestamps: collections.Map<string, number> = new collections.Map<string, number>()
-      const renewCacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(200)
-      const shortCache: SessionCacheManager = new SessionCacheManager(renewTimestamps, renewCacheArg)
-      shortCache.ttlMs_ = 200
-      shortCache.createSession('sess_renew', '{"userId":1}')
-      await Utils.sleep(100)
-      shortCache.renewSession('sess_renew')
-      await Utils.sleep(100)
-      expect(shortCache.isExpired('sess_renew')).assertFalse()
-      done()
+      try {
+        const renewTimestamps: collections.Map<string, number> = new collections.Map<string, number>()
+        const renewCacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(200)
+        const shortCache: SessionCacheManager = new SessionCacheManager(renewTimestamps, renewCacheArg)
+        shortCache.ttlMs_ = 200
+        shortCache.createSession('sess_renew', '{"userId":1}')
+        await Utils.sleep(100)
+        shortCache.renewSession('sess_renew')
+        await Utils.sleep(100)
+        expect(shortCache.isExpired('sess_renew')).assertFalse()
+      } catch (error) {
+        console.error("testSessionCache0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -209,21 +219,26 @@ export default function SessionCacheTest(): void {
      */
     it('testSessionCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(concurrentCreateSession, `sess_${i}`, `{"userId":${i}}`))
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(concurrentCreateSession, `sess_${i}`, `{"userId":${i}}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          const parts: string[] = (results[i] as string).split('=')
+          cache.createSession(parts[0], parts[1])
+        }
+        expect(cache.length()).assertEqual(5)
+      } catch (error) {
+        console.error("testSessionCache0600 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        const parts: string[] = (results[i] as string).split('=')
-        cache.createSession(parts[0], parts[1])
-      }
-      expect(cache.length()).assertEqual(5)
-      done()
+      done();
     })
 
     /**
@@ -236,24 +251,29 @@ export default function SessionCacheTest(): void {
      */
     it('testSessionCache0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(concurrentCreateSession, `user_sess_${i}`, `{"name":"user_${i}"}`))
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(concurrentCreateSession, `user_sess_${i}`, `{"name":"user_${i}"}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          const parts: string[] = (results[i] as string).split('=')
+          cache.createSession(parts[0], parts[1])
+        }
+        for (let i = 0; i < 10; i++) {
+          const data: string | undefined = cache.getSession(`user_sess_${i}`)
+          expect(data !== undefined).assertTrue()
+        }
+      } catch (error) {
+        console.error("testSessionCache0700 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        const parts: string[] = (results[i] as string).split('=')
-        cache.createSession(parts[0], parts[1])
-      }
-      for (let i = 0; i < 10; i++) {
-        const data: string | undefined = cache.getSession(`user_sess_${i}`)
-        expect(data !== undefined).assertTrue()
-      }
-      done()
+      done();
     })
 
     /**
@@ -266,21 +286,26 @@ export default function SessionCacheTest(): void {
      */
     it('testSessionCache0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 20; i++) {
-        tasks.push(new taskpool.Task(concurrentCreateSession, `tp_sess_${i}`, `{"tpUser":${i}}`))
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 20; i++) {
+          tasks.push(new taskpool.Task(concurrentCreateSession, `tp_sess_${i}`, `{"tpUser":${i}}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          const parts: string[] = (results[i] as string).split('=')
+          cache.createSession(parts[0], parts[1])
+        }
+        expect(cache.length()).assertEqual(20)
+      } catch (error) {
+        console.error("testSessionCache0800 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        const parts: string[] = (results[i] as string).split('=')
-        cache.createSession(parts[0], parts[1])
-      }
-      expect(cache.length()).assertEqual(20)
-      done()
+      done();
     })
 
     /**

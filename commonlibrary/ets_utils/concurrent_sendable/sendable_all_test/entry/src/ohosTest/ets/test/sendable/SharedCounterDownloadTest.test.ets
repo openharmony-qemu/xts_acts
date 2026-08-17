@@ -112,10 +112,16 @@ export default function SharedCounterDownloadTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterDownload0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      progress.setTotalChunks(1)
-      expect(progress.getChunkProgress(0)).assertEqual(0)
-      expect(await progress.getTotalProgress()).assertEqual(0)
+    it('testSharedCounterDownload0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        progress.setTotalChunks(1)
+        expect(progress.getChunkProgress(0)).assertEqual(0)
+        expect(await progress.getTotalProgress()).assertEqual(0)
+      } catch (error) {
+        console.error("testSharedCounterDownload0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -126,11 +132,17 @@ export default function SharedCounterDownloadTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterDownload0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      progress.setTotalChunks(1)
-      await progress.updateChunkProgress(0, 50)
-      expect(progress.getChunkProgress(0)).assertEqual(50)
-      expect(await progress.getTotalProgress()).assertEqual(50)
+    it('testSharedCounterDownload0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        progress.setTotalChunks(1)
+        await progress.updateChunkProgress(0, 50)
+        expect(progress.getChunkProgress(0)).assertEqual(50)
+        expect(await progress.getTotalProgress()).assertEqual(50)
+      } catch (error) {
+        console.error("testSharedCounterDownload0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -141,12 +153,18 @@ export default function SharedCounterDownloadTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterDownload0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      progress.setTotalChunks(1)
-      await progress.updateChunkProgress(0, 100)
-      expect(progress.getChunkProgress(0)).assertEqual(100)
-      expect(await progress.getCompletedChunks()).assertEqual(1)
-      expect(await progress.isCompleted()).assertTrue()
+    it('testSharedCounterDownload0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        progress.setTotalChunks(1)
+        await progress.updateChunkProgress(0, 100)
+        expect(progress.getChunkProgress(0)).assertEqual(100)
+        expect(await progress.getCompletedChunks()).assertEqual(1)
+        expect(await progress.isCompleted()).assertTrue()
+      } catch (error) {
+        console.error("testSharedCounterDownload0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -157,22 +175,28 @@ export default function SharedCounterDownloadTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterDownload0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      progress.setTotalChunks(5)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(downloadChunk, i))
+    it('testSharedCounterDownload0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        progress.setTotalChunks(5)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(downloadChunk, i))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          await progress.updateChunkProgress(i, results[i] as number)
+        }
+        expect(await progress.getCompletedChunks()).assertLargerOrEqual(1)
+        expect(await progress.getTotalProgress()).assertLargerOrEqual(1)
+      } catch (error) {
+        console.error("testSharedCounterDownload0400 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        await progress.updateChunkProgress(i, results[i] as number)
-      }
-      expect(await progress.getCompletedChunks()).assertLargerOrEqual(1)
-      expect(await progress.getTotalProgress()).assertLargerOrEqual(1)
+      done();
     })
 
     /**
@@ -183,13 +207,19 @@ export default function SharedCounterDownloadTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterDownload0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      progress.setTotalChunks(10)
-      for (let i = 0; i < 10; i++) {
-        await progress.updateChunkProgress(i, 100)
+    it('testSharedCounterDownload0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        progress.setTotalChunks(10)
+        for (let i = 0; i < 10; i++) {
+          await progress.updateChunkProgress(i, 100)
+        }
+        expect(await progress.getCompletedChunks()).assertEqual(10)
+        expect(await progress.isCompleted()).assertTrue()
+      } catch (error) {
+        console.error("testSharedCounterDownload0500 failed");
+        expect(false).assertFail();
       }
-      expect(await progress.getCompletedChunks()).assertEqual(10)
-      expect(await progress.isCompleted()).assertTrue()
+      done();
     })
 
     /**
@@ -200,22 +230,28 @@ export default function SharedCounterDownloadTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterDownload0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      progress.setTotalChunks(3)
-      const task0 = new taskpool.Task(downloadChunk, 0)
-      const task1 = new taskpool.Task(downloadChunkFailed, 1)
-      const task2 = new taskpool.Task(downloadChunk, 2)
-      const results: Object[] = await Promise.all([
-        taskpool.execute(task0),
-        taskpool.execute(task1).catch((): Object => 30),
-        taskpool.execute(task2)
-      ])
-      await progress.updateChunkProgress(0, results[0] as number)
-      await progress.updateChunkProgress(1, results[1] as number)
-      await progress.updateChunkProgress(2, results[2] as number)
-      expect(progress.getChunkProgress(0)).assertLargerOrEqual(0)
-      expect(progress.getChunkProgress(2)).assertLargerOrEqual(0)
-      expect(await progress.getCompletedChunks()).assertLargerOrEqual(0)
+    it('testSharedCounterDownload0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        progress.setTotalChunks(3)
+        const task0 = new taskpool.Task(downloadChunk, 0)
+        const task1 = new taskpool.Task(downloadChunkFailed, 1)
+        const task2 = new taskpool.Task(downloadChunk, 2)
+        const results: Object[] = await Promise.all([
+          taskpool.execute(task0),
+          taskpool.execute(task1).catch((): Object => 30),
+          taskpool.execute(task2)
+        ])
+        await progress.updateChunkProgress(0, results[0] as number)
+        await progress.updateChunkProgress(1, results[1] as number)
+        await progress.updateChunkProgress(2, results[2] as number)
+        expect(progress.getChunkProgress(0)).assertLargerOrEqual(0)
+        expect(progress.getChunkProgress(2)).assertLargerOrEqual(0)
+        expect(await progress.getCompletedChunks()).assertLargerOrEqual(0)
+      } catch (error) {
+        console.error("testSharedCounterDownload0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -226,12 +262,18 @@ export default function SharedCounterDownloadTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedCounterDownload0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      progress.setTotalChunks(3)
-      const task = new taskpool.Task(downloadChunk, 0)
-      const result: Object = await taskpool.execute(task)
-      await progress.updateChunkProgress(0, result as number)
-      expect(progress.getChunkProgress(0)).assertLargerOrEqual(0)
+    it('testSharedCounterDownload0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        progress.setTotalChunks(3)
+        const task = new taskpool.Task(downloadChunk, 0)
+        const result: Object = await taskpool.execute(task)
+        await progress.updateChunkProgress(0, result as number)
+        expect(progress.getChunkProgress(0)).assertLargerOrEqual(0)
+      } catch (error) {
+        console.error("testSharedCounterDownload0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -242,14 +284,20 @@ export default function SharedCounterDownloadTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedCounterDownload0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      progress.setTotalChunks(2)
-      await progress.updateChunkProgress(0, 100)
-      await progress.updateChunkProgress(1, 50)
-      expect(await progress.getTotalProgress()).assertEqual(75)
-      await progress.reset()
-      expect(await progress.getTotalProgress()).assertEqual(0)
-      expect(await progress.getCompletedChunks()).assertEqual(0)
+    it('testSharedCounterDownload0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        progress.setTotalChunks(2)
+        await progress.updateChunkProgress(0, 100)
+        await progress.updateChunkProgress(1, 50)
+        expect(await progress.getTotalProgress()).assertEqual(75)
+        await progress.reset()
+        expect(await progress.getTotalProgress()).assertEqual(0)
+        expect(await progress.getCompletedChunks()).assertEqual(0)
+      } catch (error) {
+        console.error("testSharedCounterDownload0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }
