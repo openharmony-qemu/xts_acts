@@ -249,7 +249,7 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([100n, 200n, 50n]);
-      let result = findLastBigUint64ArrayValue(arr, (_value: bigint, _index: number, _array: BigUint64Array): boolean => true);
+      let result = findLastBigUint64ArrayValue(arr, (value: bigint, _index: number, _array: BigUint64Array): boolean => typeof value === 'bigint');
       expect(result).assertEqual(50n);
     });
 
@@ -263,7 +263,7 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([3, 1, 3, 1, 3]);
-      let result = findLastUint8ClampedArrayValue(arr, (_value: number, _index: number, _array: Uint8ClampedArray): boolean => true);
+      let result = findLastUint8ClampedArrayValue(arr, (value: number, _index: number, _array: Uint8ClampedArray): boolean => typeof value === 'number');
       expect(result).assertEqual(3);
     });
 
@@ -277,7 +277,7 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 5, 3, 4, 2]);
-      let result = findLastUint8ArrayValue(arr, (_value: number, _index: number, _array: Uint8Array): boolean => true);
+      let result = findLastUint8ArrayValue(arr, (value: number, _index: number, _array: Uint8Array): boolean => typeof value === 'number');
       expect(result).assertEqual(2);
     });
 
@@ -291,7 +291,7 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4]);
-      let result = findLastUint16ArrayValue(arr, (_value: number, _index: number, _array: Uint16Array): boolean => false);
+      let result = findLastUint16ArrayValue(arr, (value: number, _index: number, _array: Uint16Array): boolean => value < 0);
       expect(result).assertUndefined();
     });
 
@@ -364,7 +364,7 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([5, 15, 25]);
-      let result = findLastUint32ArrayValue(arr, (_value: number, _index: number, _array: Uint32Array): boolean => true);
+      let result = findLastUint32ArrayValue(arr, (value: number, _index: number, _array: Uint32Array): boolean => typeof value === 'number');
       expect(result).assertEqual(25);
     });
 
@@ -396,7 +396,7 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3]);
-      let result = findLastUint16ArrayValue(arr, (_value: number, _index: number, _array: Uint16Array): boolean => true);
+      let result = findLastUint16ArrayValue(arr, (value: number, _index: number, _array: Uint16Array): boolean => typeof value === 'number');
       expect(result).assertEqual(3);
     });
 
@@ -480,7 +480,7 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
-      let result = findLastUint8ClampedArrayValue(arr, (_value: number, _index: number, _array: Uint8ClampedArray): boolean => false);
+      let result = findLastUint8ClampedArrayValue(arr, (value: number, _index: number, _array: Uint8ClampedArray): boolean => value < 0);
       expect(result).assertUndefined();
     });
 

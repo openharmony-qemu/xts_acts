@@ -221,7 +221,7 @@ export default function typedUArraysFindLast02(): void {
      */
     it('testTypedUArraysFindLastFileB010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([0, 32768, 65535]);
-      let result = findLastUint16ArrayValue(arr, (_value: number, _index: number, _array: Uint16Array): boolean => true);
+      let result = findLastUint16ArrayValue(arr, (value: number, _index: number, _array: Uint16Array): boolean => typeof value === 'number');
       expect(result).assertEqual(65535);
     });
 
@@ -385,7 +385,7 @@ export default function typedUArraysFindLast02(): void {
      */
     it('testTypedUArraysFindLastFileB020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3]);
-      let result = findLastUint32ArrayValue(arr, (_value: number, _index: number, _array: Uint32Array): boolean => true);
+      let result = findLastUint32ArrayValue(arr, (value: number, _index: number, _array: Uint32Array): boolean => typeof value === 'number');
       expect(result).assertEqual(3);
     });
 
@@ -500,7 +500,7 @@ export default function typedUArraysFindLast02(): void {
      */
     it('testTypedUArraysFindLastFileB028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray(1);
-      let result = findLastUint8ClampedArrayValue(arr, (_value: number, _index: number, _array: Uint8ClampedArray): boolean => true);
+      let result = findLastUint8ClampedArrayValue(arr, (value: number, _index: number, _array: Uint8ClampedArray): boolean => typeof value === 'number');
       expect(result).assertEqual(0);
     });
 
@@ -528,7 +528,7 @@ export default function typedUArraysFindLast02(): void {
      */
     it('testTypedUArraysFindLastFileB030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([0, 128, 255]);
-      let result = findLastUint8ArrayValue(arr, (_value: number, _index: number, _array: Uint8Array): boolean => true);
+      let result = findLastUint8ArrayValue(arr, (value: number, _index: number, _array: Uint8Array): boolean => typeof value === 'number');
       expect(result).assertEqual(255);
     });
 
