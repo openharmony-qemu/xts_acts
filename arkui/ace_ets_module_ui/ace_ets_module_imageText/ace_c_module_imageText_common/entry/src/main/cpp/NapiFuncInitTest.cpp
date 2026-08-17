@@ -211,6 +211,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GetGlyphRangeForCharacterRangeWithEncodingTest_007", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetGlyphRangeForCharacterRangeWithEncodingTest_008", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetGlyphRangeForCharacterRangeWithEncodingTest_009", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetGlyphRangeForCharacterRangeWithEncodingTest_010", nullptr, GetGlyphRangeForCharacterRangeWithEncodingTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"GetCharacterRangeForGlyphRangeWithEncodingTest_001", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetCharacterRangeForGlyphRangeWithEncodingTest_002", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -221,6 +222,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GetCharacterRangeForGlyphRangeWithEncodingTest_007", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetCharacterRangeForGlyphRangeWithEncodingTest_008", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetCharacterRangeForGlyphRangeWithEncodingTest_009", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCharacterRangeForGlyphRangeWithEncodingTest_010", nullptr, GetCharacterRangeForGlyphRangeWithEncodingTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"GetCharacterPositionAtCoordinateWithEncodingTest_001", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetCharacterPositionAtCoordinateWithEncodingTest_002", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
