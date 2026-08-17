@@ -299,22 +299,30 @@ export default function AVTransCoderNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkPrepareError0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let avFd = await getFileFd(VIDEO_LARAGE_RESOLUTION);
-      let ret: number = avTransCoderNdk.AvTransCoderErrorCode(avFd.fd, 0, 0);
-      console.log('case testOhAvTransCoderNdkPrepareError0006 ret ' + JSON.stringify(ret));
-      await closeFileFd(avFd.fd);
-      let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(7680, 4320);
-      console.info('isSupport:', isSupport)
-      let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(7680, 4320);
-      console.info('isSupportEncoder:', isSupportEncoder)
-      if ((isSupport == -1) || (isSupportEncoder == -1)) {
-        console.info(`AVCapabilityIsVideoSizeSupported or AVCapabilityIsVideoSizeSupportedEncoder Failed`);
-        expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
-      } else {
-        console.info(`AVCapabilityIsVideoSizeSupported and AVCapabilityIsVideoSizeSupportedEncoder Success`);
-        expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+      try {
+        let avFd = await getFileFd(VIDEO_LARAGE_RESOLUTION);
+        let ret: number = avTransCoderNdk.AvTransCoderErrorCode(avFd.fd, 0, 0);
+        console.log('case testOhAvTransCoderNdkPrepareError0006 ret ' + JSON.stringify(ret));
+        await closeFileFd(avFd.fd);
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(7680, 4320);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(7680, 4320);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info(`AVCapabilityIsVideoSizeSupported or AVCapabilityIsVideoSizeSupportedEncoder Failed`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
+        } else {
+          console.info(`AVCapabilityIsVideoSizeSupported and AVCapabilityIsVideoSizeSupportedEncoder Success`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+        }
+        done();
+      } catch (err) {
+        console.error('testOhAvTransCoderNdkPrepareError0006 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+        done();
       }
-      done();
     });
 
     /**
@@ -981,22 +989,30 @@ export default function AVTransCoderNdkTest() {
      */
     it('testOhAvTransCodeConfigSetDstVideoType0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isSupportHEVC) {
-        let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
-        let dstFd = await getFileFd('testOhAvTransCodeConfigSetDstVideoType0002_output_video.mp4');
-        let ret: number = avTransCoderNdk.AvTransCodeConfigSetDstVideoType(avFd.fd, avFd.offset, avFd.length, dstFd.fd, "video/hevc");
-        console.log('case testOhAvTransCodeConfigSetDstVideoType0002 ret ' + ret);
-        await closeRawFd(VIDEO_AVC_AUDIO_AAC);
-        await closeFileFd(dstFd.fd);
-        let isSupport: number = await myavcapability.AVCapabilityIsSupportedHEVC();
-        console.info('isSupport:', isSupport)
-        let isSupportEncoder: number = await myavcapability.AVCapabilityIsSupportedHEVCEncoder();
-        console.info('isSupportEncoder:', isSupportEncoder)
-        if ((isSupport == -1) || (isSupportEncoder == -1)) {
-          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
-        } else {
-          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+        try {
+          let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
+          let dstFd = await getFileFd('testOhAvTransCodeConfigSetDstVideoType0002_output_video.mp4');
+          let ret: number = avTransCoderNdk.AvTransCodeConfigSetDstVideoType(avFd.fd, avFd.offset, avFd.length, dstFd.fd, "video/hevc");
+          console.log('case testOhAvTransCodeConfigSetDstVideoType0002 ret ' + ret);
+          await closeRawFd(VIDEO_AVC_AUDIO_AAC);
+          await closeFileFd(dstFd.fd);
+          let isSupport: number = await myavcapability.AVCapabilityIsSupportedHEVC();
+          console.info('isSupport:', isSupport)
+          let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+          console.info('isSupportHardware:', isSupportHardware)
+          let isSupportEncoder: number = await myavcapability.AVCapabilityIsSupportedHEVCEncoder();
+          console.info('isSupportEncoder:', isSupportEncoder)
+          if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+            expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
+          } else {
+            expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+          }
+          done();
+        } catch (err) {
+          console.error('testOhAvTransCodeConfigSetDstVideoType0002 failed with error:', JSON.stringify(err));
+          expect(false).assertEqual(true);
+          done();
         }
-        done();
       } else {
         expect(isSupportHEVC).assertEqual(false);
         done();
@@ -1774,17 +1790,25 @@ export default function AVTransCoderNdkTest() {
      */
     it('testOhAvTransCoderPlayer0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isSupportHEVC) {
-        let ret = await testOhAvTransCoderAndPlayVideo('testOhAvTransCoderPlayer0005', VIDEO_SOURCE_MP4_HEVC);
-        let isSupport: number = await myavcapability.AVCapabilityIsSupportedHEVC();
-        console.info('isSupport:', isSupport)
-        let isSupportEncoder: number = await myavcapability.AVCapabilityIsSupportedHEVCEncoder();
-        console.info('isSupportEncoder:', isSupportEncoder)
-        if ((isSupport == -1) || (isSupportEncoder == -1)) {
-          expect(ret).assertEqual(FAIL);
-        } else {
-          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+        try {
+          let ret = await testOhAvTransCoderAndPlayVideo('testOhAvTransCoderPlayer0005', VIDEO_SOURCE_MP4_HEVC);
+          let isSupport: number = await myavcapability.AVCapabilityIsSupportedHEVC();
+          console.info('isSupport:', isSupport)
+          let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+          console.info('isSupportHardware:', isSupportHardware)
+          let isSupportEncoder: number = await myavcapability.AVCapabilityIsSupportedHEVCEncoder();
+          console.info('isSupportEncoder:', isSupportEncoder)
+          if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+            expect(ret).assertEqual(FAIL);
+          } else {
+           expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+          }
+          done();
+        } catch (err) {
+          console.error('testOhAvTransCoderPlayer0005 failed with error:', JSON.stringify(err));
+          expect(false).assertEqual(true);
+          done();
         }
-        done();
       } else {
         expect(isSupportHEVC).assertEqual(false);
         done();
