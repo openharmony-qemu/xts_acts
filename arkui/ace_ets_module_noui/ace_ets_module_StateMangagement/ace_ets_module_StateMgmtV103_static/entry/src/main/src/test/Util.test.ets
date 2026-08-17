@@ -36,7 +36,7 @@ class UtilsTest{
         }
         resolve(true)
       } catch(error) {
-        hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${String(error)}`);
+        hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${JSON.stringify(error)}`);
         reject(error)
       }
     })

@@ -70,7 +70,7 @@ export default function WatchTest() {
      */
 it('SUB_ARKUI_API_WatchTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_API_WatchTest_static_0100 START');
-      let driver: Driver = await Driver.create();
+      let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
 
       let button = await driver.findComponent(ON.id('watchButton'));

@@ -75,7 +75,7 @@ struct BasketViewer {
 @Entry
 @Component
 struct WATCHBasketModifier {
-  @State shopBasket: PurchaseItem = new Array<PurchaseItem>();
+  @State purchaseItem: PurchaseItem[] = new Array<PurchaseItem>();
   aboutToAppear() {
     let uiContext = this.getUIContext();
     try {
@@ -89,9 +89,9 @@ struct WATCHBasketModifier {
     Column() {
       Button('Add to basket').height('5%')
         .onClick((e: ClickEvent) => {
-          this.shopBasket.push(new PurchaseItem(17))
+          this.purchaseItem.push(new PurchaseItem(17))
         }).id('watchButton')
-      BasketViewer({ shopBasket: this.shopBasket })
+      BasketViewer({ purchaseItem: this.purchaseItem })
     }
   }
 }
