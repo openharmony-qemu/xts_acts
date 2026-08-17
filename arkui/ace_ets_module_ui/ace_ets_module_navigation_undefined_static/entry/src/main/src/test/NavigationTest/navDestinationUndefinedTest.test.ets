@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -249,8 +249,8 @@ export default function NavDestinationUndefinedTest() {
      */
     it('NavDestinationUndefinedTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[NavDestinationUndefinedTest_static_0500] START');
-      await CommonFunc.sleep(500);
       try{
+      await CommonFunc.sleep(500);
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(500);
       let BtnPop = await driver.findComponent(ON.id('NavDestination2_pop'));
