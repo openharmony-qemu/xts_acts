@@ -1163,7 +1163,7 @@ export default function int8ArrayFromPart01Test(): void {
       let calls: number = 0.0;
       const src: Array<string> = ['a', 'b', 'c'];
       try {
-        Int8Array.from<string>(src, (v: string, k: number) => {
+        Int8Array.from<string>(src, (_v: string, k: number) => {
           calls = calls + 1;
           if (k === 2.0) {
             throw new Error('last');
@@ -1188,7 +1188,7 @@ export default function int8ArrayFromPart01Test(): void {
      */
     it('int8ArrayFromPart01Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = [];
-      const result = Int8Array.from<string>(src, (v: string, k: number) => {
+      const result = Int8Array.from<string>(src, (_v: string, _k: number) => {
         throw new Error('never');
       });
       expect(result.length).assertEqual(0);

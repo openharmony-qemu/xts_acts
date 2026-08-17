@@ -640,7 +640,7 @@ export default function int8ArrayFromPart06Test(): void {
     it('int8ArrayFromPart06Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Int8Array = Int8Array.of(10, 20, 30);
       try {
-        Int8Array.from(src, (v, k) => {
+        Int8Array.from(src, (_v, _k) => {
           throw new TypeError('t');
         });
         expect().assertFail();

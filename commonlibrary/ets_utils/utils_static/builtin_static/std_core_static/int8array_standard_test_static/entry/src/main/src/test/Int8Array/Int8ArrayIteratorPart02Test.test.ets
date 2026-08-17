@@ -182,7 +182,7 @@ export default function int8ArrayIteratorPart02Test(): void {
       let iter: IterableIterator<Number> = arr.$_iterator();
       let r: IteratorResult<Number> = iter.next();
       expect(r.value).assertEqual(1);
-      expect(r).not().assertEqual(undefined);
+      expect(r.done).assertFalse();
     });
 
     /**

@@ -622,7 +622,6 @@ export default function int8ArrayCopyWithinPart02Test(): void {
       let r1: ArrayBuffer = ret.buffer;
       let e1: ArrayBuffer = arr.buffer;
       expect(r1).assertEqual(e1);
-      expect(ret).not().assertEqual(undefined);
     });
 
     /**
