@@ -63,21 +63,28 @@ export default function WorkerConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testWorkerConfig0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
-      workerList.push(workerInstance)
-      const cmd: WorkerConfigData = new WorkerConfigData()
-      cmd.action_ = 'set'
-      cmd.key_ = 'theme'
-      cmd.value_ = 'dark'
-      cmd.config_ = configManager
-      const messagePromise: Promise<WorkerConfigResponse> = waitWorkerMessage<WorkerConfigResponse>(workerInstance)
-      workerInstance.postMessageWithSharedSendable(cmd)
-      const result: WorkerConfigResponse = await messagePromise
-      expect(result.ok_).assertTrue()
-      expect(result.value_).assertEqual('dark')
-      // The main thread observes the mutation on the shared config instance.
-      expect(configManager.get('theme')).assertEqual('dark')
+    it('testWorkerConfig0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      try {
+        const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
+        workerList.push(workerInstance)
+        const cmd: WorkerConfigData = new WorkerConfigData()
+        cmd.action_ = 'set'
+        cmd.key_ = 'theme'
+        cmd.value_ = 'dark'
+        cmd.config_ = configManager
+        const messagePromise: Promise<WorkerConfigResponse> = waitWorkerMessage<WorkerConfigResponse>(workerInstance)
+        workerInstance.postMessageWithSharedSendable(cmd)
+        const result: WorkerConfigResponse = await messagePromise
+        expect(result.ok_).assertTrue()
+        expect(result.value_).assertEqual('dark')
+        // The main thread observes the mutation on the shared config instance.
+        expect(configManager.get('theme')).assertEqual('dark')
+      } catch (error) {
+        console.error("testWorkerConfig0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -88,23 +95,30 @@ export default function WorkerConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testWorkerConfig0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
-      workerList.push(workerInstance)
-      const cmd: WorkerConfigData = new WorkerConfigData()
-      cmd.action_ = 'set'
-      cmd.key_ = 'language'
-      cmd.value_ = 'zh_CN'
-      cmd.config_ = configManager
-      const messagePromise: Promise<WorkerConfigResponse> = waitWorkerMessage<WorkerConfigResponse>(workerInstance)
-      workerInstance.postMessageWithSharedSendable(cmd)
-      const result: WorkerConfigResponse = await messagePromise
-      expect(result.ok_).assertTrue()
-      expect(result.value_).assertEqual('zh_CN')
-      // version_ starts at 1 and is bumped once by the worker's set.
-      expect(result.version_).assertEqual(2)
-      expect(configManager.get('language')).assertEqual('zh_CN')
-      expect(configManager.getVersion()).assertEqual(2)
+    it('testWorkerConfig0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      try {
+        const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
+        workerList.push(workerInstance)
+        const cmd: WorkerConfigData = new WorkerConfigData()
+        cmd.action_ = 'set'
+        cmd.key_ = 'language'
+        cmd.value_ = 'zh_CN'
+        cmd.config_ = configManager
+        const messagePromise: Promise<WorkerConfigResponse> = waitWorkerMessage<WorkerConfigResponse>(workerInstance)
+        workerInstance.postMessageWithSharedSendable(cmd)
+        const result: WorkerConfigResponse = await messagePromise
+        expect(result.ok_).assertTrue()
+        expect(result.value_).assertEqual('zh_CN')
+        // version_ starts at 1 and is bumped once by the worker's set.
+        expect(result.version_).assertEqual(2)
+        expect(configManager.get('language')).assertEqual('zh_CN')
+        expect(configManager.getVersion()).assertEqual(2)
+      } catch (error) {
+        console.error("testWorkerConfig0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -115,31 +129,38 @@ export default function WorkerConfigTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testWorkerConfig0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
-      workerList.push(workerInstance)
-      const setCmd: WorkerConfigData = new WorkerConfigData()
-      setCmd.action_ = 'set'
-      setCmd.key_ = 'font_size'
-      setCmd.value_ = '16'
-      setCmd.config_ = configManager
-      const setPromise: Promise<WorkerConfigResponse> = waitWorkerMessage<WorkerConfigResponse>(workerInstance)
-      workerInstance.postMessageWithSharedSendable(setCmd)
-      const setResult: WorkerConfigResponse = await setPromise
-      expect(setResult.ok_).assertTrue()
-      expect(setResult.value_).assertEqual('16')
-      expect(configManager.get('font_size')).assertEqual('16')
+    it('testWorkerConfig0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      try {
+        const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
+        workerList.push(workerInstance)
+        const setCmd: WorkerConfigData = new WorkerConfigData()
+        setCmd.action_ = 'set'
+        setCmd.key_ = 'font_size'
+        setCmd.value_ = '16'
+        setCmd.config_ = configManager
+        const setPromise: Promise<WorkerConfigResponse> = waitWorkerMessage<WorkerConfigResponse>(workerInstance)
+        workerInstance.postMessageWithSharedSendable(setCmd)
+        const setResult: WorkerConfigResponse = await setPromise
+        expect(setResult.ok_).assertTrue()
+        expect(setResult.value_).assertEqual('16')
+        expect(configManager.get('font_size')).assertEqual('16')
 
-      const getCmd: WorkerConfigData = new WorkerConfigData()
-      getCmd.action_ = 'get'
-      getCmd.key_ = 'nonexistent_key'
-      getCmd.config_ = configManager
-      const getPromise: Promise<WorkerConfigResponse> = waitWorkerMessage<WorkerConfigResponse>(workerInstance)
-      workerInstance.postMessageWithSharedSendable(getCmd)
-      const getResult: WorkerConfigResponse = await getPromise
-      expect(getResult.ok_).assertTrue()
-      expect(getResult.found_).assertFalse()
-      expect(configManager.get('nonexistent_key')).assertEqual(undefined)
+        const getCmd: WorkerConfigData = new WorkerConfigData()
+        getCmd.action_ = 'get'
+        getCmd.key_ = 'nonexistent_key'
+        getCmd.config_ = configManager
+        const getPromise: Promise<WorkerConfigResponse> = waitWorkerMessage<WorkerConfigResponse>(workerInstance)
+        workerInstance.postMessageWithSharedSendable(getCmd)
+        const getResult: WorkerConfigResponse = await getPromise
+        expect(getResult.ok_).assertTrue()
+        expect(getResult.found_).assertFalse()
+        expect(configManager.get('nonexistent_key')).assertEqual(undefined)
+      } catch (error) {
+        console.error("testWorkerConfig0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

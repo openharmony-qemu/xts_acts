@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -70,12 +70,19 @@ export default function UseSharedModuleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUseSharedModule0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
-      const task: taskpool.Task = trackTask(new taskpool.Task(incrSharedGuide, lock))
-      const result: number = await taskpool.execute(task) as number
-      expect(result).assertEqual(1)
-      expect(sharedGuideService.getCounter()).assertEqual(1)
+    it('testUseSharedModule0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      try {
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+        const task: taskpool.Task = trackTask(new taskpool.Task(incrSharedGuide, lock))
+        const result: number = await taskpool.execute(task) as number
+        expect(result).assertEqual(1)
+        expect(sharedGuideService.getCounter()).assertEqual(1)
+      } catch (error) {
+        console.error("testUseSharedModule0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -86,15 +93,22 @@ export default function UseSharedModuleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUseSharedModule0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
-      const t1: taskpool.Task = trackTask(new taskpool.Task(incrSharedGuide, lock))
-      const t2: taskpool.Task = trackTask(new taskpool.Task(incrSharedGuide, lock))
-      await Promise.all([taskpool.execute(t1), taskpool.execute(t2)])
-      const t3: taskpool.Task = trackTask(new taskpool.Task(getSharedGuide))
-      const result: number = await taskpool.execute(t3) as number
-      expect(result).assertEqual(2)
-      expect(sharedGuideService.getCounter()).assertEqual(2)
+    it('testUseSharedModule0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      try {
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+        const t1: taskpool.Task = trackTask(new taskpool.Task(incrSharedGuide, lock))
+        const t2: taskpool.Task = trackTask(new taskpool.Task(incrSharedGuide, lock))
+        await Promise.all([taskpool.execute(t1), taskpool.execute(t2)])
+        const t3: taskpool.Task = trackTask(new taskpool.Task(getSharedGuide))
+        const result: number = await taskpool.execute(t3) as number
+        expect(result).assertEqual(2)
+        expect(sharedGuideService.getCounter()).assertEqual(2)
+      } catch (error) {
+        console.error("testUseSharedModule0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

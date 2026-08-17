@@ -17,6 +17,7 @@ import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } fr
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
+import { GCFull } from '../GCFull'
 
 @Sendable
 class LargeGCData {
@@ -141,12 +142,13 @@ export default function SharedHeapGCTest(): void {
     /**
      * @tc.name   testSharedHeapGC0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0100
-     * @tc.desc   Verify forceFullGC triggers immediate GC
+     * @tc.desc   Verify manager clearAll resets shared object count
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedHeapGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSharedHeapGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
       for (let i: number = 0; i < 5; i++) {
         await manager.create(`obj_${i}`, i)
       }
@@ -154,17 +156,19 @@ export default function SharedHeapGCTest(): void {
 
       await manager.clearAll()
       expect(manager.getSize()).assertEqual(0)
+      done()
     })
 
     /**
      * @tc.name   testSharedHeapGC0200
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0200
-     * @tc.desc   Verify GC before and after memory change
+     * @tc.desc   Verify shared object count changes after create and delete operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedHeapGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSharedHeapGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
       expect(manager.getSize()).assertEqual(0)
 
       await manager.create('data1', 1)
@@ -176,68 +180,76 @@ export default function SharedHeapGCTest(): void {
       await manager.delete('data2')
       await manager.delete('data3')
       expect(manager.getSize()).assertEqual(0)
+      done()
     })
 
     /**
      * @tc.name   testSharedHeapGC0300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0300
-     * @tc.desc   Verify GC trigger does not affect in-use objects
+     * @tc.desc   Verify in-use shared objects stay accessible without GC trigger
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedHeapGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedHeapGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
       const data: LargeGCData = await manager.create('active', 42)
       expect(data.getId()).assertEqual(42)
 
       const retrieved: LargeGCData | undefined = manager.get('active')
       expect(retrieved !== undefined).assertTrue()
       expect(retrieved!.getId()).assertEqual(42)
+      done()
     })
 
     /**
      * @tc.name   testSharedHeapGC0400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0400
-     * @tc.desc   Verify multi-thread concurrent GC trigger
+     * @tc.desc   Verify concurrent taskpool tasks mutate shared manager consistently
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedHeapGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedHeapGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(createGCDataTask, manager, `gc_${i}`, i))
       }
       await executeTasks(tasks)
       expect(manager.getCreateCount()).assertEqual(5)
+      done()
     })
 
     /**
      * @tc.name   testSharedHeapGC0500
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0500
-     * @tc.desc   Verify GC completion time is fast
+     * @tc.desc   Verify manager operations complete within bounded time without GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedHeapGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedHeapGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
       const startTime: number = Date.now()
       for (let i: number = 0; i < 10; i++) {
         await manager.create(`fast_${i}`, i)
       }
       const elapsed: number = Date.now() - startTime
       expect(elapsed < 5000).assertTrue()
+      done()
     })
 
     /**
      * @tc.name   testSharedHeapGC0600
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0600
-     * @tc.desc   Verify object count change before and after GC
+     * @tc.desc   Verify object count consistency between create and delete counters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedHeapGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedHeapGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
       for (let i: number = 0; i < 5; i++) {
         await manager.create(`cnt_${i}`, i)
       }
@@ -248,17 +260,19 @@ export default function SharedHeapGCTest(): void {
       }
       expect(manager.getSize()).assertEqual(0)
       expect(manager.getDeleteCount()).assertEqual(5)
+      done()
     })
 
     /**
      * @tc.name   testSharedHeapGC0700
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0700
-     * @tc.desc   Verify continuous multiple GC calls stability
+     * @tc.desc   Verify repeated create-delete cycles keep manager state stable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedHeapGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedHeapGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
       let totalCreates: number = 0
       for (let round: number = 0; round < 3; round++) {
         for (let i: number = 0; i < 5; i++) {
@@ -269,33 +283,37 @@ export default function SharedHeapGCTest(): void {
       }
       expect(totalCreates).assertEqual(15)
       expect(manager.getSize()).assertEqual(0)
+      done()
     })
 
     /**
      * @tc.name   testSharedHeapGC0800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0800
-     * @tc.desc   Verify GC trigger timing - auto vs forced GC
+     * @tc.desc   Verify persisted shared object survives manager retrieval after operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedHeapGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedHeapGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
       const data: LargeGCData = await manager.create('persist', 100)
       expect(data.getId()).assertEqual(100)
 
       const retrieved: LargeGCData | undefined = manager.get('persist')
       expect(retrieved !== undefined).assertTrue()
+      done()
     })
 
     /**
      * @tc.name   testSharedHeapGC0900
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0900
-     * @tc.desc   Verify shared heap capacity stability after GC
+     * @tc.desc   Verify manager capacity refills after clearAll reset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedHeapGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedHeapGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
       for (let i: number = 0; i < 10; i++) {
         await manager.create(`cap_${i}`, i)
       }
@@ -308,6 +326,94 @@ export default function SharedHeapGCTest(): void {
         await manager.create(`cap2_${i}`, i * 10)
       }
       expect(manager.getSize()).assertEqual(10)
+      done()
+    })
+
+    /**
+     * @tc.name   testSharedHeapGC1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_1000
+     * @tc.desc   Verify ArkTools.forceFullGC returns true and in-use Sendable objects stay valid after full shared heap GC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSharedHeapGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      try {
+        const data: LargeGCData = await manager.create('gc_alive', 777)
+        expect(manager.getSize()).assertEqual(1)
+        const triggered: boolean = GCFull()
+        expect(triggered).assertTrue()
+        expect(data.getId()).assertEqual(777)
+        const retrieved: LargeGCData | undefined = manager.get('gc_alive')
+        expect(retrieved !== undefined).assertTrue()
+        expect(retrieved!.getId()).assertEqual(777)
+        await manager.clearAll()
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testSharedHeapGC1000 failed");
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testSharedHeapGC1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_1100
+     * @tc.desc   Verify forceFullGC stays stable after shared references are dropped and objects become collectable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSharedHeapGC1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 5; i++) {
+          await manager.create(`drop_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(5)
+        await manager.clearAll()
+        expect(manager.getSize()).assertEqual(0)
+        const first: boolean = GCFull()
+        const second: boolean = GCFull()
+        expect(first).assertTrue()
+        expect(second).assertTrue()
+        const fresh: LargeGCData = await manager.create('after_gc', 42)
+        expect(fresh.getId()).assertEqual(42)
+        expect(manager.getSize()).assertEqual(1)
+      } catch (error) {
+        console.error("testSharedHeapGC1100 failed");
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testSharedHeapGC1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_1200
+     * @tc.desc   Verify repeated forceFullGC keeps cross-thread Sendable access consistent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSharedHeapGC1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      try {
+        const data: LargeGCData = await manager.create('cross_gc', 2026)
+        const task: taskpool.Task = new taskpool.Task(accessGCDataTask, data)
+        const before: Object = await taskpool.execute(task)
+        expect(before as number).assertEqual(2026)
+        for (let i: number = 0; i < 3; i++) {
+          expect(GCFull()).assertTrue()
+        }
+        const task2: taskpool.Task = new taskpool.Task(accessGCDataTask, data)
+        const after: Object = await taskpool.execute(task2)
+        expect(after as number).assertEqual(2026)
+      } catch (error) {
+        console.error("testSharedHeapGC1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
   })

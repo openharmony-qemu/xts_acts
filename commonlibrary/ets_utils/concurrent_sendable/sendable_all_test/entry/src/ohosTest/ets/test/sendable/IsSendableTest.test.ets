@@ -83,11 +83,18 @@ export default function IsSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIsSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const counter: SharedCounter = new SharedCounter()
-      const task: taskpool.Task = trackTask(new taskpool.Task(checkIsSendable, counter))
-      const result: boolean = await taskpool.execute(task) as boolean
-      expect(result).assertTrue()
+    it('testIsSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      try {
+        const counter: SharedCounter = new SharedCounter()
+        const task: taskpool.Task = trackTask(new taskpool.Task(checkIsSendable, counter))
+        const result: boolean = await taskpool.execute(task) as boolean
+        expect(result).assertTrue()
+      } catch (error) {
+        console.error("testIsSendable0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

@@ -13,6 +13,10 @@
  * limitations under the License.
  */
 
+import ConnectionWaitRealTest from './sendable/ConnectionWaitRealTest.test';
+import RealErrorPathTest from './sendable/RealErrorPathTest.test';
+import SendableTypedArrayTest from './sendable/SendableTypedArrayTest.test';
+import SerializationBoundaryTest from './sendable/SerializationBoundaryTest.test';
 import SendableBasicTypeTest from './sendable/SendableBasicTypeTest.test';
 import SendableDecoratorTest from './sendable/SendableDecoratorTest.test';
 import SendableFunctionTest from './sendable/SendableFunctionTest.test';
@@ -167,6 +171,10 @@ export default function testsuite(): void {
   ConnectionPoolLockTest()
   LockIRTest()
   DictModeTriggerTest()
+  ConnectionWaitRealTest()
+  RealErrorPathTest()
+  SendableTypedArrayTest()
+  SerializationBoundaryTest()
   IROptimizationTest()
   IRReinforcementTest()
   AppSettingsTest()

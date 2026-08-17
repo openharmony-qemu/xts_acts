@@ -46,19 +46,26 @@ export default function WorkerSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testWorkerSendable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
+    it('testWorkerSendable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
       try {
-        const messagePromise: Promise<string> = waitWorkerMessage<string>(workerInstance)
-        workerInstance.postMessage('hello')
-        const result: string = await messagePromise
-        expect(result).assertEqual('hello')
-      } finally {
+        const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
         try {
-          workerInstance.terminate()
-        } catch (e) {
+          const messagePromise: Promise<string> = waitWorkerMessage<string>(workerInstance)
+          workerInstance.postMessage('hello')
+          const result: string = await messagePromise
+          expect(result).assertEqual('hello')
+        } finally {
+          try {
+            workerInstance.terminate()
+          } catch (e) {
+          }
         }
+      } catch (error) {
+        console.error("testWorkerSendable0100 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -69,19 +76,24 @@ export default function WorkerSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testWorkerSendable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testWorkerSendable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
       const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
       try {
         const messagePromise: Promise<number> = waitWorkerMessage<number>(workerInstance)
         workerInstance.postMessage(42)
         const result: number = await messagePromise
         expect(result).assertEqual(42)
+      } catch (error) {
+        console.info(`worker-catch: ${JSON.stringify(error)}`)
+        expect().assertFail()
       } finally {
         try {
           workerInstance.terminate()
         } catch (e) {
         }
       }
+      done()
     })
 
     /**
@@ -92,23 +104,30 @@ export default function WorkerSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testWorkerSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
+    it('testWorkerSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       try {
-        const counter: SendableCounter = new SendableCounter()
-        const messagePromise: Promise<number> = waitWorkerMessage<number>(workerInstance)
-        workerInstance.postMessageWithSharedSendable(counter)
-        const result: number = await messagePromise
-        // Worker increments the shared instance in place and reports the new count.
-        expect(result).assertEqual(1)
-        // The main thread observes the mutation on the same shared instance.
-        expect(counter.count_).assertEqual(1)
-      } finally {
+        const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
         try {
-          workerInstance.terminate()
-        } catch (e) {
+          const counter: SendableCounter = new SendableCounter()
+          const messagePromise: Promise<number> = waitWorkerMessage<number>(workerInstance)
+          workerInstance.postMessageWithSharedSendable(counter)
+          const result: number = await messagePromise
+          // Worker increments the shared instance in place and reports the new count.
+          expect(result).assertEqual(1)
+          // The main thread observes the mutation on the same shared instance.
+          expect(counter.count_).assertEqual(1)
+        } finally {
+          try {
+            workerInstance.terminate()
+          } catch (e) {
+          }
         }
+      } catch (error) {
+        console.error("testWorkerSendable0300 failed");
+        expect(false).assertFail();
       }
+      done();
     })
   })
 }

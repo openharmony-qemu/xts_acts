@@ -37,11 +37,13 @@ class ConfigVersionManager {
   public configMap_: collections.Map<string, string>
   public versionHistory_: collections.Array<VersionHistoryEntry>
   public lock_: ArkTSUtils.locks.AsyncLock
+  public snapshots_: collections.Array<ConfigSnapshot>
 
   constructor(configMap_: collections.Map<string, string>, versionHistory_: collections.Array<VersionHistoryEntry>, lock_: ArkTSUtils.locks.AsyncLock) {
     this.configMap_ = configMap_
     this.versionHistory_ = versionHistory_
     this.lock_ = lock_
+    this.snapshots_ = new collections.Array<ConfigSnapshot>()
   }
 
   public currentVersion_: number = 0
@@ -103,6 +105,58 @@ class ConfigVersionManager {
       this.currentVersion_ = 0
     })
   }
+
+  async createSnapshot(): Promise<number> {
+    return await this.lock_.lockAsync((): number => {
+      const keys: string[] = []
+      this.configMap_.forEach((value: string, key: string): void => {
+        keys.push(key)
+      })
+      const snapshot: ConfigSnapshot = new ConfigSnapshot(this.currentVersion_, new collections.Map<string, string>())
+      for (let i: number = 0; i < keys.length; i++) {
+        const v: string | undefined = this.configMap_.get(keys[i])
+        snapshot.entries_.set(keys[i], v === undefined ? '' : v)
+      }
+      this.snapshots_.push(snapshot)
+      return this.currentVersion_
+    })
+  }
+
+  async rollbackTo(version: number): Promise<boolean> {
+    return await this.lock_.lockAsync((): boolean => {
+      for (let i: number = 0; i < this.snapshots_.length; i++) {
+        const snap: ConfigSnapshot = this.snapshots_[i]
+        if (snap.version_ === version) {
+          this.configMap_.clear()
+          snap.entries_.forEach((value: string, key: string): void => {
+            this.configMap_.set(key, value)
+          })
+          this.currentVersion_++
+          const entry: VersionHistoryEntry = new VersionHistoryEntry(
+            this.currentVersion_, Date.now(), 1, `rollback_to_${version}`
+          )
+          this.versionHistory_.push(entry)
+          return true
+        }
+      }
+      return false
+    })
+  }
+
+  async getSnapshotCount(): Promise<number> {
+    return await this.lock_.lockAsync((): number => this.snapshots_.length)
+  }
+}
+
+@Sendable
+class ConfigSnapshot {
+  public version_: number = 0
+  public entries_: collections.Map<string, string>
+
+  constructor(version_: number, entries_: collections.Map<string, string>) {
+    this.version_ = version_
+    this.entries_ = entries_
+  }
 }
 
 @Concurrent
@@ -152,9 +206,11 @@ export default function ConfigVersionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConfigVersion0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
       expect(await versionManager.getVersion()).assertEqual(0)
       expect(await versionManager.getChangeCount()).assertEqual(0)
+      done()
     })
 
     /**
@@ -165,11 +221,13 @@ export default function ConfigVersionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConfigVersion0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
       const initialVersion: number = await versionManager.getVersion()
       await versionManager.set('config_key', 'config_value')
       const newVersion: number = await versionManager.getVersion()
       expect(newVersion).assertEqual(initialVersion + 1)
+      done()
     })
 
     /**
@@ -180,11 +238,13 @@ export default function ConfigVersionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConfigVersion0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
       await versionManager.set('key1', 'value1')
       await versionManager.set('key2', 'value2')
       const version: number = await versionManager.getVersion()
       expect(version).assertEqual(2)
+      done()
     })
 
     /**
@@ -195,13 +255,15 @@ export default function ConfigVersionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConfigVersion0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
       await versionManager.set('first', 'value1')
       await versionManager.set('second', 'value2')
       const history: collections.Array<VersionHistoryEntry> = await versionManager.getVersionHistory()
       expect(history.length).assertEqual(2)
       expect(history[0].version_).assertEqual(1)
       expect(history[1].version_).assertEqual(2)
+      done()
     })
 
     /**
@@ -212,7 +274,8 @@ export default function ConfigVersionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConfigVersion0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigVersion0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       await versionManager.set('base', 'base_value')
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
@@ -227,6 +290,7 @@ export default function ConfigVersionTest(): void {
       for (let i = 0; i < results.length; i++) {
         expect(results[i] as number).assertEqual(1)
       }
+      done()
     })
 
     /**
@@ -237,7 +301,8 @@ export default function ConfigVersionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConfigVersion0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigVersion0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       const versionBefore: number = await versionManager.getVersion()
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 3; i++) {
@@ -250,6 +315,7 @@ export default function ConfigVersionTest(): void {
       await Promise.all(promises)
       const versionAfter: number = await versionManager.getVersion()
       expect(versionAfter).assertEqual(versionBefore + 3)
+      done()
     })
 
     /**
@@ -260,7 +326,8 @@ export default function ConfigVersionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConfigVersion0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigVersion0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       await versionManager.batchSet(['batch1', 'batch2'], ['val1', 'val2'])
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
@@ -275,6 +342,7 @@ export default function ConfigVersionTest(): void {
       for (let i = 0; i < results.length; i++) {
         expect(results[i] as number).assertEqual(1)
       }
+      done()
     })
 
     /**
@@ -285,10 +353,12 @@ export default function ConfigVersionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConfigVersion0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
       await versionManager.set('timestamped', 'value')
       const updateTime: number = await versionManager.getLastUpdateTime()
       expect(updateTime > 0).assertTrue()
+      done()
     })
 
     /**
@@ -299,7 +369,8 @@ export default function ConfigVersionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConfigVersion0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
       for (let i = 0; i < 5; i++) {
         await versionManager.set(`update${i}`, `value${i}`)
       }
@@ -309,6 +380,7 @@ export default function ConfigVersionTest(): void {
         expect(history[i].version_).assertEqual(i + 1)
         expect(history[i].changeCount_).assertEqual(1)
       }
+      done()
     })
 
     /**
@@ -319,12 +391,14 @@ export default function ConfigVersionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConfigVersion1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
       await versionManager.batchSet(['batch_key1'], ['batch_val1'])
       await versionManager.set('single_key', 'single_val')
       await versionManager.batchSet(['batch_key2', 'batch_key3'], ['batch_val2', 'batch_val3'])
       const changeCount: number = await versionManager.getChangeCount()
       expect(changeCount).assertEqual(3)
+      done()
     })
 
     /**
@@ -335,7 +409,8 @@ export default function ConfigVersionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConfigVersion1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
       const initialVersion: number = await versionManager.getVersion()
       await versionManager.batchSet(
         ['batch1', 'batch2', 'batch3'],
@@ -346,6 +421,7 @@ export default function ConfigVersionTest(): void {
       const history: collections.Array<VersionHistoryEntry> = await versionManager.getVersionHistory()
       const lastEntry: VersionHistoryEntry = history[history.length - 1]
       expect(lastEntry.changeCount_).assertEqual(3)
+      done()
     })
 
     /**
@@ -356,7 +432,8 @@ export default function ConfigVersionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConfigVersion1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigVersion1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       const task: taskpool.Task = new taskpool.Task(syncConfigNotificationTask)
       const receivePromise: Promise<number> = new Promise<number>((resolve: (value: number) => void): void => {
         task.onReceiveData((data: Object): void => {
@@ -367,6 +444,7 @@ export default function ConfigVersionTest(): void {
       await taskpool.execute(task)
       const syncVersion: number = await receivePromise
       expect(syncVersion).assertEqual(1)
+      done()
     })
 
     /**
@@ -377,7 +455,8 @@ export default function ConfigVersionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConfigVersion1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigVersion1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       const task: taskpool.Task = new taskpool.Task(triggerVersionUpdateTask)
       const nestedPromises: Promise<Object>[] = []
       const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
@@ -392,6 +471,7 @@ export default function ConfigVersionTest(): void {
       await Promise.all(nestedPromises)
       expect(nestedPromises.length).assertEqual(1)
       expect(await versionManager.getVersion()).assertEqual(1)
+      done()
     })
 
     /**
@@ -402,7 +482,8 @@ export default function ConfigVersionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConfigVersion1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigVersion1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       const notifications1: Record<string, Object>[] = []
       const task: taskpool.Task = new taskpool.Task(multiListenerNotifyTask)
       const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
@@ -418,6 +499,99 @@ export default function ConfigVersionTest(): void {
       expect(notifications1.length).assertEqual(2)
       expect(notifications1[0]['version'] as number).assertEqual(10)
       expect(notifications1[1]['version'] as number).assertEqual(11)
+      done()
+    })
+
+    /**
+     * @tc.name   testConfigVersion1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_1500
+     * @tc.desc   Verify config snapshot captures state and rollback restores captured values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testConfigVersion1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      try {
+        const manager: ConfigVersionManager = new ConfigVersionManager(
+          new collections.Map<string, string>(), new collections.Array<VersionHistoryEntry>(), new ArkTSUtils.locks.AsyncLock())
+        await manager.set('theme', 'light')
+        await manager.set('lang', 'en')
+        const snapshotVersion: number = await manager.createSnapshot()
+        expect(snapshotVersion).assertEqual(2)
+        await manager.set('theme', 'dark')
+        expect(await manager.get('theme')).assertEqual('dark')
+        const rolledBack: boolean = await manager.rollbackTo(snapshotVersion)
+        expect(rolledBack).assertTrue()
+        expect(await manager.get('theme')).assertEqual('light')
+        expect(await manager.get('lang')).assertEqual('en')
+        expect(await manager.getVersion()).assertEqual(4)
+      } catch (error) {
+        console.error("testConfigVersion1500 failed");
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testConfigVersion1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_1600
+     * @tc.desc   Verify rollback records history entry and unknown version rollback returns false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testConfigVersion1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      try {
+        const manager: ConfigVersionManager = new ConfigVersionManager(
+          new collections.Map<string, string>(), new collections.Array<VersionHistoryEntry>(), new ArkTSUtils.locks.AsyncLock())
+        await manager.set('k1', 'v1')
+        await manager.createSnapshot()
+        await manager.set('k1', 'v2')
+        const historyCountBefore: number = await manager.getChangeCount()
+        expect(await manager.rollbackTo(1)).assertTrue()
+        expect(await manager.getChangeCount()).assertEqual(historyCountBefore + 1)
+        expect(await manager.get('k1')).assertEqual('v1')
+        const missingRollback: boolean = await manager.rollbackTo(999)
+        expect(missingRollback).assertFalse()
+      } catch (error) {
+        console.error("testConfigVersion1600 failed");
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testConfigVersion1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_1700
+     * @tc.desc   Verify config export string reload keeps values through serialize-deserialize round trip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testConfigVersion1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      try {
+        const manager: ConfigVersionManager = new ConfigVersionManager(
+          new collections.Map<string, string>(), new collections.Array<VersionHistoryEntry>(), new ArkTSUtils.locks.AsyncLock())
+        await manager.set('host', '127.0.0.1')
+        await manager.set('port', '8080')
+        const exported: string = JSON.stringify({ host: await manager.get('host'), port: await manager.get('port') })
+        expect(exported.includes('127.0.0.1')).assertTrue()
+        expect(exported.includes('8080')).assertTrue()
+        const parsed: Record<string, string> = JSON.parse(exported) as Record<string, string>
+        const reloaded: ConfigVersionManager = new ConfigVersionManager(
+          new collections.Map<string, string>(), new collections.Array<VersionHistoryEntry>(), new ArkTSUtils.locks.AsyncLock())
+        await reloaded.set('host', parsed['host'])
+        await reloaded.set('port', parsed['port'])
+        expect(await reloaded.get('host')).assertEqual('127.0.0.1')
+        expect(await reloaded.get('port')).assertEqual('8080')
+      } catch (error) {
+        console.error("testConfigVersion1700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

@@ -64,11 +64,18 @@ export default function WorkerIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testWorkerIntegration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 5; i++) {
-        await sharedData.increment()
+    it('testWorkerIntegration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 5; i++) {
+          await sharedData.increment()
+        }
+        expect(await sharedData.getValue()).assertEqual(5)
+      } catch (error) {
+        console.error("testWorkerIntegration0100 failed");
+        expect(false).assertFail();
       }
-      expect(await sharedData.getValue()).assertEqual(5)
+      done();
     })
 
     /**
@@ -79,12 +86,19 @@ export default function WorkerIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testWorkerIntegration0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      workerInstance = new worker.ThreadWorker(WORKER_PATH)
-      const messagePromise: Promise<string> = waitWorkerMessage<string>(workerInstance)
-      workerInstance.postMessage('ping')
-      const result: string = await messagePromise
-      expect(result).assertEqual('ack_ping')
+    it('testWorkerIntegration0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      try {
+        workerInstance = new worker.ThreadWorker(WORKER_PATH)
+        const messagePromise: Promise<string> = waitWorkerMessage<string>(workerInstance)
+        workerInstance.postMessage('ping')
+        const result: string = await messagePromise
+        expect(result).assertEqual('ack_ping')
+      } catch (error) {
+        console.error("testWorkerIntegration0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -95,14 +109,21 @@ export default function WorkerIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testWorkerIntegration0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      workerInstance = new worker.ThreadWorker(WORKER_PATH)
-      const messagePromise: Promise<number> = waitWorkerMessage<number>(workerInstance)
-      workerInstance.postMessageWithSharedSendable(sharedData)
-      const result: number = await messagePromise
-      expect(result).assertEqual(1)
-      // The main thread observes the worker's mutation on the shared instance.
-      expect(await sharedData.getValue()).assertEqual(1)
+    it('testWorkerIntegration0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      try {
+        workerInstance = new worker.ThreadWorker(WORKER_PATH)
+        const messagePromise: Promise<number> = waitWorkerMessage<number>(workerInstance)
+        workerInstance.postMessageWithSharedSendable(sharedData)
+        const result: number = await messagePromise
+        expect(result).assertEqual(1)
+        // The main thread observes the worker's mutation on the shared instance.
+        expect(await sharedData.getValue()).assertEqual(1)
+      } catch (error) {
+        console.error("testWorkerIntegration0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -113,19 +134,69 @@ export default function WorkerIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testWorkerIntegration0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      workerInstance = new worker.ThreadWorker(WORKER_PATH)
-      const results: string[] = []
-      for (let i: number = 0; i < 3; i++) {
-        const msg: string = `seq_${i}`
-        const messagePromise: Promise<string> = waitWorkerMessage<string>(workerInstance)
-        workerInstance.postMessage(msg)
-        const result: string = await messagePromise
-        results.push(result)
+    it('testWorkerIntegration0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+      try {
+        workerInstance = new worker.ThreadWorker(WORKER_PATH)
+        const results: string[] = []
+        for (let i: number = 0; i < 3; i++) {
+          const msg: string = `seq_${i}`
+          const messagePromise: Promise<string> = waitWorkerMessage<string>(workerInstance)
+          workerInstance.postMessage(msg)
+          const result: string = await messagePromise
+          results.push(result)
+        }
+        expect(results[0]).assertEqual('ack_seq_0')
+        expect(results[1]).assertEqual('ack_seq_1')
+        expect(results[2]).assertEqual('ack_seq_2')
+      } catch (error) {
+        console.error("testWorkerIntegration0400 failed");
+        expect(false).assertFail();
       }
-      expect(results[0]).assertEqual('ack_seq_0')
-      expect(results[1]).assertEqual('ack_seq_1')
-      expect(results[2]).assertEqual('ack_seq_2')
+      done();
+    })
+
+    /**
+     * @tc.name   testWorkerIntegration0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTEGRATION_TEST_0500
+     * @tc.desc   Verify three workers mutate the same shared Sendable under lock and final value equals worker count with in-range observations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWorkerIntegration0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+      try {
+        const sharedData: SharedWorkerData = new SharedWorkerData(new ArkTSUtils.locks.AsyncLock())
+        const workers: worker.ThreadWorker[] = []
+        const acks: number[] = []
+        const workerDone: Promise<void>[] = []
+        for (let i: number = 0; i < 3; i++) {
+          const w: worker.ThreadWorker = new worker.ThreadWorker(WORKER_PATH)
+          workers.push(w)
+          const donePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
+            w.onmessage = (ev: MessageEvents): void => {
+              acks.push(ev.data as number)
+              resolve()
+            }
+          })
+          workerDone.push(donePromise)
+          w.postMessageWithSharedSendable(sharedData)
+        }
+        await Promise.all(workerDone)
+        for (let i: number = 0; i < workers.length; i++) {
+          workers[i].terminate()
+        }
+        expect(acks.length).assertEqual(3)
+        for (let i: number = 0; i < acks.length; i++) {
+          expect(acks[i] >= 1 && acks[i] <= 3).assertTrue()
+        }
+        expect(await sharedData.getValue()).assertEqual(3)
+      } catch (error) {
+        console.error("testWorkerIntegration0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

@@ -80,13 +80,20 @@ export default function FreezeSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testFreezeSendable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const cfg: FreezeConfig = new FreezeConfig()
-      cfg.version_ = 7
-      const frozen: FreezeConfig = freezeSendable<FreezeConfig>(cfg)
-      const task: taskpool.Task = trackTask(new taskpool.Task(readFrozenConfig, frozen))
-      const result: number = await taskpool.execute(task) as number
-      expect(result).assertEqual(7)
+    it('testFreezeSendable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      try {
+        const cfg: FreezeConfig = new FreezeConfig()
+        cfg.version_ = 7
+        const frozen: FreezeConfig = freezeSendable<FreezeConfig>(cfg)
+        const task: taskpool.Task = trackTask(new taskpool.Task(readFrozenConfig, frozen))
+        const result: number = await taskpool.execute(task) as number
+        expect(result).assertEqual(7)
+      } catch (error) {
+        console.error("testFreezeSendable0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -97,14 +104,21 @@ export default function FreezeSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testFreezeSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const counter: SharedCounter = new SharedCounter()
-      counter.count_ = 9
-      const frozen: SharedCounter = freezeSendable<SharedCounter>(counter)
-      const task: taskpool.Task = trackTask(new taskpool.Task(readFrozenCounter, frozen))
-      const result: number = await taskpool.execute(task) as number
-      expect(result).assertEqual(9)
-      expect(isFrozenSendable(frozen)).assertTrue()
+    it('testFreezeSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      try {
+        const counter: SharedCounter = new SharedCounter()
+        counter.count_ = 9
+        const frozen: SharedCounter = freezeSendable<SharedCounter>(counter)
+        const task: taskpool.Task = trackTask(new taskpool.Task(readFrozenCounter, frozen))
+        const result: number = await taskpool.execute(task) as number
+        expect(result).assertEqual(9)
+        expect(isFrozenSendable(frozen)).assertTrue()
+      } catch (error) {
+        console.error("testFreezeSendable0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

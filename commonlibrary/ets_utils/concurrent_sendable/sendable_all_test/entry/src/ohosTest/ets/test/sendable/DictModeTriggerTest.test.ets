@@ -269,15 +269,20 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 100; i++) {
-        await testObj.setProperty(`prop_${i}`, i)
+      try {
+        const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 100; i++) {
+          await testObj.setProperty(`prop_${i}`, i)
+        }
+        expect(await testObj.getPropertyCount()).assertEqual(100)
+        for (let i = 0; i < 100; i += 10) {
+          expect(await testObj.getProperty(`prop_${i}`)).assertEqual(i)
+        }
+      } catch (error) {
+        console.error("testDictModeTrigger0100 failed");
+        expect(false).assertFail();
       }
-      expect(await testObj.getPropertyCount()).assertEqual(100)
-      for (let i = 0; i < 100; i += 10) {
-        expect(await testObj.getProperty(`prop_${i}`)).assertEqual(i)
-      }
-      done()
+      done();
     })
 
     /**
@@ -290,24 +295,29 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 512; i++) {
-        await testObj.setProperty(`prop_${i}`, i)
+      try {
+        const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 512; i++) {
+          await testObj.setProperty(`prop_${i}`, i)
+        }
+        expect(await testObj.getPropertyCount()).assertEqual(512)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(getPropertyTask, testObj, `prop_${i * 50}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < 10; i++) {
+          expect(results[i] as number).assertEqual(i * 50)
+        }
+      } catch (error) {
+        console.error("testDictModeTrigger0200 failed");
+        expect(false).assertFail();
       }
-      expect(await testObj.getPropertyCount()).assertEqual(512)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(getPropertyTask, testObj, `prop_${i * 50}`))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < 10; i++) {
-        expect(results[i] as number).assertEqual(i * 50)
-      }
-      done()
+      done();
     })
 
     /**
@@ -320,14 +330,19 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1024; i++) {
-        await testObj.setProperty(`prop_${i}`, i)
+      try {
+        const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1024; i++) {
+          await testObj.setProperty(`prop_${i}`, i)
+        }
+        expect(await testObj.getPropertyCount()).assertEqual(1024)
+        expect(await testObj.getProperty('prop_1023')).assertEqual(1023)
+        expect(await testObj.getProperty('prop_1022')).assertEqual(1022)
+      } catch (error) {
+        console.error("testDictModeTrigger0300 failed");
+        expect(false).assertFail();
       }
-      expect(await testObj.getPropertyCount()).assertEqual(1024)
-      expect(await testObj.getProperty('prop_1023')).assertEqual(1023)
-      expect(await testObj.getProperty('prop_1022')).assertEqual(1022)
-      done()
+      done();
     })
 
     /**
@@ -340,15 +355,20 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1025; i++) {
-        await testObj.setProperty(`prop_${i}`, i)
+      try {
+        const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1025; i++) {
+          await testObj.setProperty(`prop_${i}`, i)
+        }
+        expect(await testObj.getPropertyCount()).assertEqual(1025)
+        expect(await testObj.getProperty('prop_1024')).assertEqual(1024)
+        expect(await testObj.getProperty('prop_0')).assertEqual(0)
+        expect(await testObj.getProperty('prop_512')).assertEqual(512)
+      } catch (error) {
+        console.error("testDictModeTrigger0400 failed");
+        expect(false).assertFail();
       }
-      expect(await testObj.getPropertyCount()).assertEqual(1025)
-      expect(await testObj.getProperty('prop_1024')).assertEqual(1024)
-      expect(await testObj.getProperty('prop_0')).assertEqual(0)
-      expect(await testObj.getProperty('prop_512')).assertEqual(512)
-      done()
+      done();
     })
 
     /**
@@ -361,22 +381,27 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      const batchSize: number = 256
-      for (let batch = 0; batch < 8; batch++) {
-        const tasks: taskpool.Task[] = []
-        for (let i = batch * batchSize; i < (batch + 1) * batchSize; i++) {
-          tasks.push(new taskpool.Task(setPropertyTask, testObj, `prop_${i}`, i))
+      try {
+        const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        const batchSize: number = 256
+        for (let batch = 0; batch < 8; batch++) {
+          const tasks: taskpool.Task[] = []
+          for (let i = batch * batchSize; i < (batch + 1) * batchSize; i++) {
+            tasks.push(new taskpool.Task(setPropertyTask, testObj, `prop_${i}`, i))
+          }
+          const promises: Promise<Object>[] = []
+          for (let i = 0; i < tasks.length; i++) {
+            promises.push(taskpool.execute(tasks[i]))
+          }
+          await Promise.all(promises)
         }
-        const promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        await Promise.all(promises)
+        expect(await testObj.getPropertyCount()).assertEqual(2048)
+        expect(await testObj.getProperty('prop_2047')).assertEqual(2047)
+      } catch (error) {
+        console.error("testDictModeTrigger0500 failed");
+        expect(false).assertFail();
       }
-      expect(await testObj.getPropertyCount()).assertEqual(2048)
-      expect(await testObj.getProperty('prop_2047')).assertEqual(2047)
-      done()
+      done();
     })
 
     /**
@@ -389,16 +414,21 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 4096; i++) {
-        await testObj.setProperty(`prop_${i}`, i)
+      try {
+        const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 4096; i++) {
+          await testObj.setProperty(`prop_${i}`, i)
+        }
+        expect(await testObj.getPropertyCount()).assertEqual(4096)
+        const samples: number[] = [0, 1024, 2048, 3072, 4095]
+        for (let idx = 0; idx < samples.length; idx++) {
+          expect(await testObj.getProperty(`prop_${samples[idx]}`)).assertEqual(samples[idx])
+        }
+      } catch (error) {
+        console.error("testDictModeTrigger0600 failed");
+        expect(false).assertFail();
       }
-      expect(await testObj.getPropertyCount()).assertEqual(4096)
-      const samples: number[] = [0, 1024, 2048, 3072, 4095]
-      for (let idx = 0; idx < samples.length; idx++) {
-        expect(await testObj.getProperty(`prop_${samples[idx]}`)).assertEqual(samples[idx])
-      }
-      done()
+      done();
     })
 
     /**
@@ -513,26 +543,31 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const obj: HighPropertyObject = new HighPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1025; i++) {
-        await obj.incrementProp(`prop_${i}`)
-      }
-      const tasks: taskpool.Task[] = []
-      for (let round = 0; round < 3; round++) {
-        for (let i = 0; i < 10; i++) {
-          tasks.push(new taskpool.Task(concurrentIncrement, obj, `prop_${i}`))
+      try {
+        const obj: HighPropertyObject = new HighPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1025; i++) {
+          await obj.incrementProp(`prop_${i}`)
         }
+        const tasks: taskpool.Task[] = []
+        for (let round = 0; round < 3; round++) {
+          for (let i = 0; i < 10; i++) {
+            tasks.push(new taskpool.Task(concurrentIncrement, obj, `prop_${i}`))
+          }
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        const samples: number[] = [0, 5, 9]
+        for (let idx = 0; idx < samples.length; idx++) {
+          expect(await obj.getProp(`prop_${samples[idx]}`)).assertEqual(4)
+        }
+      } catch (error) {
+        console.error("testDictModeTrigger1300 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      const samples: number[] = [0, 5, 9]
-      for (let idx = 0; idx < samples.length; idx++) {
-        expect(await obj.getProp(`prop_${samples[idx]}`)).assertEqual(4)
-      }
-      done()
+      done();
     })
 
     /**
@@ -545,15 +580,20 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1025; i++) {
-        await testObj.setProperty(`prop_${i}`, i)
+      try {
+        const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1025; i++) {
+          await testObj.setProperty(`prop_${i}`, i)
+        }
+        expect(await testObj.getProperty('prop_0')).assertEqual(0)
+        expect(await testObj.getProperty('prop_512')).assertEqual(512)
+        expect(await testObj.getProperty('prop_1024')).assertEqual(1024)
+        expect(await testObj.getProperty('nonexistent') === undefined).assertTrue()
+      } catch (error) {
+        console.error("testDictModeTrigger1400 failed");
+        expect(false).assertFail();
       }
-      expect(await testObj.getProperty('prop_0')).assertEqual(0)
-      expect(await testObj.getProperty('prop_512')).assertEqual(512)
-      expect(await testObj.getProperty('prop_1024')).assertEqual(1024)
-      expect(await testObj.getProperty('nonexistent') === undefined).assertTrue()
-      done()
+      done();
     })
 
     /**
@@ -566,12 +606,17 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const obj: TransferableObject = new TransferableObject(new collections.Map<string, number>())
-      obj.setAllProps(1025)
-      const task: taskpool.Task = new taskpool.Task(receiveAndCount, obj)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertEqual(1025)
-      done()
+      try {
+        const obj: TransferableObject = new TransferableObject(new collections.Map<string, number>())
+        obj.setAllProps(1025)
+        const task: taskpool.Task = new taskpool.Task(receiveAndCount, obj)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertEqual(1025)
+      } catch (error) {
+        console.error("testDictModeTrigger1500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -626,14 +671,19 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const arr: collections.Array<number> = new collections.Array<number>()
-      for (let i = 0; i < 2048; i++) {
-        arr.push(i)
+      try {
+        const arr: collections.Array<number> = new collections.Array<number>()
+        for (let i = 0; i < 2048; i++) {
+          arr.push(i)
+        }
+        const task: taskpool.Task = new taskpool.Task(readArrayLength, arr)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertEqual(2048)
+      } catch (error) {
+        console.error("testDictModeTrigger1800 failed");
+        expect(false).assertFail();
       }
-      const task: taskpool.Task = new taskpool.Task(readArrayLength, arr)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertEqual(2048)
-      done()
+      done();
     })
 
     /**
@@ -646,21 +696,26 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      const targets: number[] = [100, 512, 1024, 1025, 2048, 4096]
-      let filled: number = 0
-      for (let t = 0; t < targets.length; t++) {
-        for (let i = filled; i < targets[t]; i++) {
-          await testObj.setProperty(`prop_${i}`, i)
+      try {
+        const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        const targets: number[] = [100, 512, 1024, 1025, 2048, 4096]
+        let filled: number = 0
+        for (let t = 0; t < targets.length; t++) {
+          for (let i = filled; i < targets[t]; i++) {
+            await testObj.setProperty(`prop_${i}`, i)
+          }
+          filled = targets[t]
+          expect(await testObj.getPropertyCount()).assertEqual(targets[t])
         }
-        filled = targets[t]
-        expect(await testObj.getPropertyCount()).assertEqual(targets[t])
+        expect(await testObj.getProperty('prop_0')).assertEqual(0)
+        expect(await testObj.getProperty('prop_1023')).assertEqual(1023)
+        expect(await testObj.getProperty('prop_1024')).assertEqual(1024)
+        expect(await testObj.getProperty('prop_4095')).assertEqual(4095)
+      } catch (error) {
+        console.error("testDictModeTrigger1900 failed");
+        expect(false).assertFail();
       }
-      expect(await testObj.getProperty('prop_0')).assertEqual(0)
-      expect(await testObj.getProperty('prop_1023')).assertEqual(1023)
-      expect(await testObj.getProperty('prop_1024')).assertEqual(1024)
-      expect(await testObj.getProperty('prop_4095')).assertEqual(4095)
-      done()
+      done();
     })
 
     /**
@@ -673,23 +728,28 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 4096; i++) {
-        await testObj.setProperty(`prop_${i}`, i)
-      }
-      const stages: number[] = [3072, 2048, 1025, 1024, 512, 0]
-      let kept: number = 4096
-      for (let s = 0; s < stages.length; s++) {
-        for (let i = kept - 1; i >= stages[s]; i--) {
-          await testObj.deleteProperty(`prop_${i}`)
+      try {
+        const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 4096; i++) {
+          await testObj.setProperty(`prop_${i}`, i)
         }
-        kept = stages[s]
-        expect(await testObj.getPropertyCount()).assertEqual(stages[s])
+        const stages: number[] = [3072, 2048, 1025, 1024, 512, 0]
+        let kept: number = 4096
+        for (let s = 0; s < stages.length; s++) {
+          for (let i = kept - 1; i >= stages[s]; i--) {
+            await testObj.deleteProperty(`prop_${i}`)
+          }
+          kept = stages[s]
+          expect(await testObj.getPropertyCount()).assertEqual(stages[s])
+        }
+        expect(await testObj.getProperty('prop_1024') === undefined).assertTrue()
+        expect(await testObj.getProperty('prop_1023') === undefined).assertTrue()
+        expect(await testObj.getProperty('prop_511') === undefined).assertTrue()
+      } catch (error) {
+        console.error("testDictModeTrigger2000 failed");
+        expect(false).assertFail();
       }
-      expect(await testObj.getProperty('prop_1024') === undefined).assertTrue()
-      expect(await testObj.getProperty('prop_1023') === undefined).assertTrue()
-      expect(await testObj.getProperty('prop_511') === undefined).assertTrue()
-      done()
+      done();
     })
 
     /**
@@ -702,23 +762,28 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1023; i++) {
-        await testObj.setProperty(`prop_${i}`, i)
-      }
-      const rounds: number = 50
-      for (let round = 0; round < rounds; round++) {
-        await testObj.setProperty('prop_1023', 1023)
-        await testObj.setProperty('prop_1024', 1024)
-        expect(await testObj.getPropertyCount()).assertEqual(1025)
-        expect(await testObj.getProperty('prop_1024')).assertEqual(1024)
-        await testObj.deleteProperty('prop_1024')
-        await testObj.deleteProperty('prop_1023')
+      try {
+        const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1023; i++) {
+          await testObj.setProperty(`prop_${i}`, i)
+        }
+        const rounds: number = 50
+        for (let round = 0; round < rounds; round++) {
+          await testObj.setProperty('prop_1023', 1023)
+          await testObj.setProperty('prop_1024', 1024)
+          expect(await testObj.getPropertyCount()).assertEqual(1025)
+          expect(await testObj.getProperty('prop_1024')).assertEqual(1024)
+          await testObj.deleteProperty('prop_1024')
+          await testObj.deleteProperty('prop_1023')
+          expect(await testObj.getPropertyCount()).assertEqual(1023)
+          expect(await testObj.getProperty('prop_1022')).assertEqual(1022)
+        }
         expect(await testObj.getPropertyCount()).assertEqual(1023)
-        expect(await testObj.getProperty('prop_1022')).assertEqual(1022)
+      } catch (error) {
+        console.error("testDictModeTrigger2100 failed");
+        expect(false).assertFail();
       }
-      expect(await testObj.getPropertyCount()).assertEqual(1023)
-      done()
+      done();
     })
 
     /**
@@ -731,15 +796,20 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const counts: number[] = [100, 512, 1024, 1025, 2048]
-      for (let c = 0; c < counts.length; c++) {
-        const obj: TransferableObject = new TransferableObject(new collections.Map<string, number>())
-        obj.setAllProps(counts[c])
-        const task: taskpool.Task = new taskpool.Task(receiveAndCount, obj)
-        const result: Object = await taskpool.execute(task)
-        expect(result as number).assertEqual(counts[c])
+      try {
+        const counts: number[] = [100, 512, 1024, 1025, 2048]
+        for (let c = 0; c < counts.length; c++) {
+          const obj: TransferableObject = new TransferableObject(new collections.Map<string, number>())
+          obj.setAllProps(counts[c])
+          const task: taskpool.Task = new taskpool.Task(receiveAndCount, obj)
+          const result: Object = await taskpool.execute(task)
+          expect(result as number).assertEqual(counts[c])
+        }
+      } catch (error) {
+        console.error("testDictModeTrigger2200 failed");
+        expect(false).assertFail();
       }
-      done()
+      done();
     })
 
     /**
@@ -752,35 +822,40 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const wrapper: SharedArrayWrapper = new SharedArrayWrapper(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      const total: number = 2048
-      const batchSize: number = 256
-      const batches: number = Math.ceil(total / batchSize)
-      for (let batch = 0; batch < batches; batch++) {
-        const tasks: taskpool.Task[] = []
-        for (let i = batch * batchSize; i < (batch + 1) * batchSize && i < total; i++) {
-          tasks.push(new taskpool.Task(pushArrayValueTask, wrapper, i))
+      try {
+        const wrapper: SharedArrayWrapper = new SharedArrayWrapper(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        const total: number = 2048
+        const batchSize: number = 256
+        const batches: number = Math.ceil(total / batchSize)
+        for (let batch = 0; batch < batches; batch++) {
+          const tasks: taskpool.Task[] = []
+          for (let i = batch * batchSize; i < (batch + 1) * batchSize && i < total; i++) {
+            tasks.push(new taskpool.Task(pushArrayValueTask, wrapper, i))
+          }
+          const promises: Promise<Object>[] = []
+          for (let i = 0; i < tasks.length; i++) {
+            promises.push(taskpool.execute(tasks[i]))
+          }
+          await Promise.all(promises)
         }
-        const promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
+        expect(await wrapper.getLength()).assertEqual(2048)
+        const seen: boolean[] = []
+        for (let i = 0; i < total; i++) {
+          seen.push(false)
         }
-        await Promise.all(promises)
+        for (let i = 0; i < total; i++) {
+          const v: number = wrapper.getValue(i)
+          expect(v >= 0 && v < total).assertTrue()
+          seen[v] = true
+        }
+        for (let i = 0; i < total; i++) {
+          expect(seen[i]).assertTrue()
+        }
+      } catch (error) {
+        console.error("testDictModeTrigger2300 failed");
+        expect(false).assertFail();
       }
-      expect(await wrapper.getLength()).assertEqual(2048)
-      const seen: boolean[] = []
-      for (let i = 0; i < total; i++) {
-        seen.push(false)
-      }
-      for (let i = 0; i < total; i++) {
-        const v: number = wrapper.getValue(i)
-        expect(v >= 0 && v < total).assertTrue()
-        seen[v] = true
-      }
-      for (let i = 0; i < total; i++) {
-        expect(seen[i]).assertTrue()
-      }
-      done()
+      done();
     })
 
     /**
@@ -793,37 +868,42 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const wrapper: SharedMapWrapper = new SharedMapWrapper(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      const total: number = 2048
-      const batchSize: number = 256
-      const batches: number = Math.ceil(total / batchSize)
-      for (let batch = 0; batch < batches; batch++) {
-        const tasks: taskpool.Task[] = []
-        for (let i = batch * batchSize; i < (batch + 1) * batchSize && i < total; i++) {
-          tasks.push(new taskpool.Task(setMapValueTask, wrapper, `key_${i}`, i))
+      try {
+        const wrapper: SharedMapWrapper = new SharedMapWrapper(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        const total: number = 2048
+        const batchSize: number = 256
+        const batches: number = Math.ceil(total / batchSize)
+        for (let batch = 0; batch < batches; batch++) {
+          const tasks: taskpool.Task[] = []
+          for (let i = batch * batchSize; i < (batch + 1) * batchSize && i < total; i++) {
+            tasks.push(new taskpool.Task(setMapValueTask, wrapper, `key_${i}`, i))
+          }
+          const promises: Promise<Object>[] = []
+          for (let i = 0; i < tasks.length; i++) {
+            promises.push(taskpool.execute(tasks[i]))
+          }
+          await Promise.all(promises)
+        }
+        expect(await wrapper.getSize()).assertEqual(2048)
+        const readTasks: taskpool.Task[] = []
+        const probeKeys: string[] = ['key_0', 'key_512', 'key_1024', 'key_1536', 'key_2047']
+        const expected: number[] = [0, 512, 1024, 1536, 2047]
+        for (let i = 0; i < probeKeys.length; i++) {
+          readTasks.push(new taskpool.Task(getMapValueTask, wrapper, probeKeys[i]))
         }
         const promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
+        for (let i = 0; i < readTasks.length; i++) {
+          promises.push(taskpool.execute(readTasks[i]))
         }
-        await Promise.all(promises)
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(expected[i])
+        }
+      } catch (error) {
+        console.error("testDictModeTrigger2400 failed");
+        expect(false).assertFail();
       }
-      expect(await wrapper.getSize()).assertEqual(2048)
-      const readTasks: taskpool.Task[] = []
-      const probeKeys: string[] = ['key_0', 'key_512', 'key_1024', 'key_1536', 'key_2047']
-      const expected: number[] = [0, 512, 1024, 1536, 2047]
-      for (let i = 0; i < probeKeys.length; i++) {
-        readTasks.push(new taskpool.Task(getMapValueTask, wrapper, probeKeys[i]))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < readTasks.length; i++) {
-        promises.push(taskpool.execute(readTasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(expected[i])
-      }
-      done()
+      done();
     })
 
     /**
@@ -836,41 +916,46 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const wrapper: SharedSetWrapper = new SharedSetWrapper(new collections.Set<number>(), new ArkTSUtils.locks.AsyncLock())
-      const total: number = 2048
-      const batchSize: number = 256
-      const batches: number = Math.ceil(total / batchSize)
-      for (let batch = 0; batch < batches; batch++) {
-        const tasks: taskpool.Task[] = []
-        for (let i = batch * batchSize; i < (batch + 1) * batchSize && i < total; i++) {
-          tasks.push(new taskpool.Task(setAddValueTask, wrapper, i))
+      try {
+        const wrapper: SharedSetWrapper = new SharedSetWrapper(new collections.Set<number>(), new ArkTSUtils.locks.AsyncLock())
+        const total: number = 2048
+        const batchSize: number = 256
+        const batches: number = Math.ceil(total / batchSize)
+        for (let batch = 0; batch < batches; batch++) {
+          const tasks: taskpool.Task[] = []
+          for (let i = batch * batchSize; i < (batch + 1) * batchSize && i < total; i++) {
+            tasks.push(new taskpool.Task(setAddValueTask, wrapper, i))
+          }
+          const promises: Promise<Object>[] = []
+          for (let i = 0; i < tasks.length; i++) {
+            promises.push(taskpool.execute(tasks[i]))
+          }
+          await Promise.all(promises)
         }
-        const promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
+        expect(await wrapper.getSize()).assertEqual(2048)
+        const removeTotal: number = 1024
+        const removeBatches: number = Math.ceil(removeTotal / batchSize)
+        for (let batch = 0; batch < removeBatches; batch++) {
+          const tasks: taskpool.Task[] = []
+          for (let i = batch * batchSize * 2; i < (batch + 1) * batchSize * 2 && i < total; i += 2) {
+            tasks.push(new taskpool.Task(setRemoveValueTask, wrapper, i))
+          }
+          const promises: Promise<Object>[] = []
+          for (let i = 0; i < tasks.length; i++) {
+            promises.push(taskpool.execute(tasks[i]))
+          }
+          await Promise.all(promises)
         }
-        await Promise.all(promises)
+        expect(await wrapper.getSize()).assertEqual(1024)
+        expect(await wrapper.hasValue(0)).assertFalse()
+        expect(await wrapper.hasValue(2046)).assertFalse()
+        expect(await wrapper.hasValue(1)).assertTrue()
+        expect(await wrapper.hasValue(2047)).assertTrue()
+      } catch (error) {
+        console.error("testDictModeTrigger2500 failed");
+        expect(false).assertFail();
       }
-      expect(await wrapper.getSize()).assertEqual(2048)
-      const removeTotal: number = 1024
-      const removeBatches: number = Math.ceil(removeTotal / batchSize)
-      for (let batch = 0; batch < removeBatches; batch++) {
-        const tasks: taskpool.Task[] = []
-        for (let i = batch * batchSize * 2; i < (batch + 1) * batchSize * 2 && i < total; i += 2) {
-          tasks.push(new taskpool.Task(setRemoveValueTask, wrapper, i))
-        }
-        const promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        await Promise.all(promises)
-      }
-      expect(await wrapper.getSize()).assertEqual(1024)
-      expect(await wrapper.hasValue(0)).assertFalse()
-      expect(await wrapper.hasValue(2046)).assertFalse()
-      expect(await wrapper.hasValue(1)).assertTrue()
-      expect(await wrapper.hasValue(2047)).assertTrue()
-      done()
+      done();
     })
 
     /**
@@ -883,32 +968,37 @@ export default function DictModeTriggerTest(): void {
      */
     it('testDictModeTrigger2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const obj: HighPropertyObject = new HighPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1025; i++) {
-        await obj.incrementProp(`prop_${i}`)
-      }
-      const rounds: number = 10
-      const batchSize: number = 512
-      const taskCount: number = rounds * 1025
-      const batches: number = Math.ceil(taskCount / batchSize)
-      let dispatched: number = 0
-      for (let batch = 0; batch < batches; batch++) {
-        const tasks: taskpool.Task[] = []
-        while (dispatched < taskCount && tasks.length < batchSize) {
-          const propIndex: number = dispatched % 1025
-          tasks.push(new taskpool.Task(concurrentIncrement, obj, `prop_${propIndex}`))
-          dispatched++
+      try {
+        const obj: HighPropertyObject = new HighPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1025; i++) {
+          await obj.incrementProp(`prop_${i}`)
         }
-        const promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
+        const rounds: number = 10
+        const batchSize: number = 512
+        const taskCount: number = rounds * 1025
+        const batches: number = Math.ceil(taskCount / batchSize)
+        let dispatched: number = 0
+        for (let batch = 0; batch < batches; batch++) {
+          const tasks: taskpool.Task[] = []
+          while (dispatched < taskCount && tasks.length < batchSize) {
+            const propIndex: number = dispatched % 1025
+            tasks.push(new taskpool.Task(concurrentIncrement, obj, `prop_${propIndex}`))
+            dispatched++
+          }
+          const promises: Promise<Object>[] = []
+          for (let i = 0; i < tasks.length; i++) {
+            promises.push(taskpool.execute(tasks[i]))
+          }
+          await Promise.all(promises)
         }
-        await Promise.all(promises)
+        for (let i = 0; i < 1025; i++) {
+          expect(await obj.getProp(`prop_${i}`)).assertEqual(11)
+        }
+      } catch (error) {
+        console.error("testDictModeTrigger2600 failed");
+        expect(false).assertFail();
       }
-      for (let i = 0; i < 1025; i++) {
-        expect(await obj.getProp(`prop_${i}`)).assertEqual(11)
-      }
-      done()
+      done();
     })
 
     /**
