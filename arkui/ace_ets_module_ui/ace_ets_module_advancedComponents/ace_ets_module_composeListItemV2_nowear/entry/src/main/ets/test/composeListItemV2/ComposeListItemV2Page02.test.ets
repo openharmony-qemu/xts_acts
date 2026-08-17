@@ -133,16 +133,22 @@ export default function composeListItemV2Page02Test() {
      */
     it('composeListItemV2Page02Test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[composeListItemV2Page02Test_0400] START');
-      let driver = await Driver.create();
-      await driver.delayMs(2000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollBar.scrollSearch(ON.text('operate button'));
-      let symbolStyleText = await driver.findComponent(ON.text('operate symbolStyle'));
-      expect(symbolStyleText !== null).assertTrue();
-      let buttonText = await driver.findComponent(ON.text('operate button'));
-      expect(buttonText !== null).assertTrue();
-      console.info('[composeListItemV2Page02Test_0400] END');
-      done();
+      try {
+        let driver = await Driver.create();
+        await driver.delayMs(2000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        let button = await scrollBar.scrollSearch(ON.text('operate button'));
+        let symbolStyleText = await driver.findComponent(ON.text('operate symbolStyle'));
+        expect(symbolStyleText !== null).assertTrue();
+        let buttonText = await driver.findComponent(ON.text('operate button'));
+        expect(buttonText !== null).assertTrue();
+        console.info('[composeListItemV2Page02Test_0400] END');
+        done();
+      } catch (error) {
+        console.error('[composeListItemV2Page02Test_0400] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
   })
