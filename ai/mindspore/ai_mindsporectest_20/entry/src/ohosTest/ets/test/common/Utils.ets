@@ -77,8 +77,10 @@ export default class Utils {
   static async flingComponent(key: string, isHorizontal: boolean, isForward: boolean) {
     let driver = Driver.create();
     let rect = Utils.getComponentRect(key);
-    let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect))
-    let centerY = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect))
+    let winLeft: number = AppStorage.get<number>('winLeft') ?? 0;
+    let winTop: number = AppStorage.get<number>('winTop') ?? 0;
+    let centerX = Math.round(winLeft + Utils.getRectHorizontalCenterX(rect))
+    let centerY = Math.round(winTop + Utils.getRectVerticalCenterY(rect))
     let X1 =  Math.round(centerX - vp2px(66.67));
     let X2 =  Math.round(centerX + vp2px(66.67));
     let Y1 = Math.round(centerY - vp2px(66.67));
@@ -153,8 +155,10 @@ export default class Utils {
 
   static async fingerZoom(key: string, isOut: boolean) {
     let rect = Utils.getComponentRect(key);
-    let centerX =  Math.round(globalThis.winLeft +  Utils.getRectHorizontalCenterX(rect))
-    let centerY =  Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect))
+    let winLeft: number = AppStorage.get<number>('winLeft') ?? 0;
+    let winTop: number = AppStorage.get<number>('winTop') ?? 0;
+    let centerX = Math.round(winLeft + Utils.getRectHorizontalCenterX(rect))
+    let centerY = Math.round(winTop + Utils.getRectVerticalCenterY(rect))
     let fingerUpCenterY = Math.round(centerY - vp2px(66.67));
     let fingerDownCenterY = Math.round(centerY + vp2px(66.67));
     let driver: Driver = Driver.create();
