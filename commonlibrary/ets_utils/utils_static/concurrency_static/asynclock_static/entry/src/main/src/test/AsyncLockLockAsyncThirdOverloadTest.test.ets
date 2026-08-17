@@ -854,9 +854,14 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       });
       let p1: Promise<void> = lock.lockAsync<void>(async (): Promise<void> => {
         firstStartedResolve();
-        await new Promise<void>((resolve): void => {
-          releaseFirst = (): void => { resolve(undefined); };
-        });
+        try {
+          await new Promise<void>((resolve): void => {
+            releaseFirst = (): void => { resolve(undefined); };
+          });
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
       }, AsyncLockMode.EXCLUSIVE);
       try {
         await firstStartedPromise;

@@ -952,8 +952,13 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
             throw error;
           }
         });
-        let result: string = await pResult;
-        return result;
+        try {
+          let result: string = await pResult;
+          return result;
+        } catch (error) {
+          console.error(`callback failed: ${error}`);
+          throw error;
+        }
       };
       let r: string = "";
       try {
