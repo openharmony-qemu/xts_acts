@@ -141,7 +141,7 @@ export default function TimeoutResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTimeoutResultCollect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testTimeoutResultCollect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       collector.addPendingTask(1, 'task_1')
       expect(collector.getPendingCount()).assertEqual(1)
     })
@@ -154,11 +154,17 @@ export default function TimeoutResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTimeoutResultCollect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      collector.addPendingTask(1, 'task_1')
-      await collector.markCompleted(1, 'result_1')
-      expect(collector.getCompletedCount()).assertEqual(1)
-      expect(collector.getPendingCount()).assertEqual(0)
+    it('testTimeoutResultCollect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        collector.addPendingTask(1, 'task_1')
+        await collector.markCompleted(1, 'result_1')
+        expect(collector.getCompletedCount()).assertEqual(1)
+        expect(collector.getPendingCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testTimeoutResultCollect0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -169,11 +175,17 @@ export default function TimeoutResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTimeoutResultCollect0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      collector.addPendingTask(1, 'task_1')
-      await collector.markTimeout(1)
-      expect(collector.getTimeoutCount()).assertEqual(1)
-      expect(collector.getPendingCount()).assertEqual(0)
+    it('testTimeoutResultCollect0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        collector.addPendingTask(1, 'task_1')
+        await collector.markTimeout(1)
+        expect(collector.getTimeoutCount()).assertEqual(1)
+        expect(collector.getPendingCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testTimeoutResultCollect0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -184,17 +196,23 @@ export default function TimeoutResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTimeoutResultCollect0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      collector.addPendingTask(1, 'task_1')
-      const beforeTimeout: number = Date.now()
-      await collector.markTimeout(1)
-      const afterTimeout: number = Date.now()
-      const timeoutTime: number | undefined = collector.getTimeoutTime(1)
-      expect(timeoutTime !== undefined).assertTrue()
-      if (timeoutTime !== undefined) {
-        expect(timeoutTime >= beforeTimeout).assertTrue()
-        expect(timeoutTime <= afterTimeout).assertTrue()
+    it('testTimeoutResultCollect0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        collector.addPendingTask(1, 'task_1')
+        const beforeTimeout: number = Date.now()
+        await collector.markTimeout(1)
+        const afterTimeout: number = Date.now()
+        const timeoutTime: number | undefined = collector.getTimeoutTime(1)
+        expect(timeoutTime !== undefined).assertTrue()
+        if (timeoutTime !== undefined) {
+          expect(timeoutTime >= beforeTimeout).assertTrue()
+          expect(timeoutTime <= afterTimeout).assertTrue()
+        }
+      } catch (error) {
+        console.error("testTimeoutResultCollect0400 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -205,14 +223,20 @@ export default function TimeoutResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTimeoutResultCollect0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      collector.addPendingTask(1, 'quick_task')
-      const task = new taskpool.Task(quickTask, 1)
-      const result: Object = await taskpool.execute(task)
-      await collector.markCompleted(1, result as string)
-      expect(collector.getCompletedCount()).assertEqual(1)
-      expect(collector.getPendingCount()).assertEqual(0)
-      expect(collector.getCompletedResult(1)).assertEqual('result_1')
+    it('testTimeoutResultCollect0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        collector.addPendingTask(1, 'quick_task')
+        const task = new taskpool.Task(quickTask, 1)
+        const result: Object = await taskpool.execute(task)
+        await collector.markCompleted(1, result as string)
+        expect(collector.getCompletedCount()).assertEqual(1)
+        expect(collector.getPendingCount()).assertEqual(0)
+        expect(collector.getCompletedResult(1)).assertEqual('result_1')
+      } catch (error) {
+        console.error("testTimeoutResultCollect0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -223,20 +247,26 @@ export default function TimeoutResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTimeoutResultCollect0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      collector.addPendingTask(1, 'task_1')
-      const task = new taskpool.Task(quickTask, 1)
-      let timeoutId: number = -1
-      const timeoutPromise: Promise<string> = new Promise<string>((resolve: Function): void => {
-        timeoutId = setTimeout((): void => resolve('timeout'), 5000)
-      })
-      const taskPromise: Promise<Object> = taskpool.execute(task)
+    it('testTimeoutResultCollect0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        const raceResult: string | Object = await Promise.race([taskPromise, timeoutPromise])
-        expect(raceResult).assertEqual('result_1')
-      } finally {
-        clearTimeout(timeoutId)
+        collector.addPendingTask(1, 'task_1')
+        const task = new taskpool.Task(quickTask, 1)
+        let timeoutId: number = -1
+        const timeoutPromise: Promise<string> = new Promise<string>((resolve: Function): void => {
+          timeoutId = setTimeout((): void => resolve('timeout'), 5000)
+        })
+        const taskPromise: Promise<Object> = taskpool.execute(task)
+        try {
+          const raceResult: string | Object = await Promise.race([taskPromise, timeoutPromise])
+          expect(raceResult).assertEqual('result_1')
+        } finally {
+          clearTimeout(timeoutId)
+        }
+      } catch (error) {
+        console.error("testTimeoutResultCollect0600 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -247,26 +277,32 @@ export default function TimeoutResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTimeoutResultCollect0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      for (let i = 0; i < 5; i++) {
-        collector.addPendingTask(i, `task_${i}`)
+    it('testTimeoutResultCollect0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 5; i++) {
+          collector.addPendingTask(i, `task_${i}`)
+        }
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(quickTask, i))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          await collector.markCompleted(i, results[i] as string)
+        }
+        expect(collector.getCompletedCount()).assertEqual(5)
+        const marked: boolean = await collector.markTimeout(99)
+        expect(marked).assertFalse()
+        expect(collector.getTimeoutCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testTimeoutResultCollect0700 failed");
+        expect(false).assertFail();
       }
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(quickTask, i))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        await collector.markCompleted(i, results[i] as string)
-      }
-      expect(collector.getCompletedCount()).assertEqual(5)
-      const marked: boolean = await collector.markTimeout(99)
-      expect(marked).assertFalse()
-      expect(collector.getTimeoutCount()).assertEqual(0)
+      done();
     })
 
     /**
@@ -277,13 +313,19 @@ export default function TimeoutResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTimeoutResultCollect0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      collector.addPendingTask(1, 'task_1')
-      collector.addPendingTask(2, 'task_2')
-      await collector.markTimeout(1)
-      await collector.markTimeout(2)
-      const timeoutIds: number[] = collector.getTimeoutTaskIds()
-      expect(timeoutIds.length).assertEqual(2)
+    it('testTimeoutResultCollect0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        collector.addPendingTask(1, 'task_1')
+        collector.addPendingTask(2, 'task_2')
+        await collector.markTimeout(1)
+        await collector.markTimeout(2)
+        const timeoutIds: number[] = collector.getTimeoutTaskIds()
+        expect(timeoutIds.length).assertEqual(2)
+      } catch (error) {
+        console.error("testTimeoutResultCollect0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -294,13 +336,19 @@ export default function TimeoutResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTimeoutResultCollect0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      collector.addPendingTask(1, 'task_1')
-      collector.addPendingTask(2, 'task_2')
-      await collector.markCompleted(1, 'result_1')
-      await collector.markCompleted(2, 'result_2')
-      const completedIds: number[] = collector.getCompletedTaskIds()
-      expect(completedIds.length).assertEqual(2)
+    it('testTimeoutResultCollect0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        collector.addPendingTask(1, 'task_1')
+        collector.addPendingTask(2, 'task_2')
+        await collector.markCompleted(1, 'result_1')
+        await collector.markCompleted(2, 'result_2')
+        const completedIds: number[] = collector.getCompletedTaskIds()
+        expect(completedIds.length).assertEqual(2)
+      } catch (error) {
+        console.error("testTimeoutResultCollect0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -311,12 +359,18 @@ export default function TimeoutResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTimeoutResultCollect1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      collector.addPendingTask(1, 'task_1')
-      await collector.markTimeout(1)
-      expect(collector.getPendingCount()).assertEqual(0)
-      expect(collector.getTimeoutCount()).assertEqual(1)
-      expect(collector.getCompletedCount()).assertEqual(0)
+    it('testTimeoutResultCollect1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        collector.addPendingTask(1, 'task_1')
+        await collector.markTimeout(1)
+        expect(collector.getPendingCount()).assertEqual(0)
+        expect(collector.getTimeoutCount()).assertEqual(1)
+        expect(collector.getCompletedCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testTimeoutResultCollect1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -327,11 +381,17 @@ export default function TimeoutResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTimeoutResultCollect1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      collector.addPendingTask(1, 'task_1')
-      expect(collector.getPendingCount()).assertEqual(1)
-      await collector.markCompleted(1, 'result_1')
-      expect(collector.getPendingCount()).assertEqual(0)
+    it('testTimeoutResultCollect1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        collector.addPendingTask(1, 'task_1')
+        expect(collector.getPendingCount()).assertEqual(1)
+        await collector.markCompleted(1, 'result_1')
+        expect(collector.getPendingCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testTimeoutResultCollect1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -342,11 +402,17 @@ export default function TimeoutResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTimeoutResultCollect1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      collector.addPendingTask(1, 'task_1')
-      expect(collector.getPendingCount()).assertEqual(1)
-      await collector.markTimeout(1)
-      expect(collector.getPendingCount()).assertEqual(0)
+    it('testTimeoutResultCollect1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        collector.addPendingTask(1, 'task_1')
+        expect(collector.getPendingCount()).assertEqual(1)
+        await collector.markTimeout(1)
+        expect(collector.getPendingCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testTimeoutResultCollect1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -357,28 +423,34 @@ export default function TimeoutResultCollectTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTimeoutResultCollect1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      for (let i = 0; i < 10; i++) {
-        collector.addPendingTask(i, `task_${i}`)
+    it('testTimeoutResultCollect1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 10; i++) {
+          collector.addPendingTask(i, `task_${i}`)
+        }
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(quickTask, i))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          await collector.markCompleted(i, results[i] as string)
+        }
+        collector.addPendingTask(100, 'timeout_task_100')
+        collector.addPendingTask(101, 'timeout_task_101')
+        await collector.markTimeout(100)
+        await collector.markTimeout(101)
+        expect(collector.getCompletedCount()).assertEqual(10)
+        expect(collector.getTimeoutCount()).assertEqual(2)
+      } catch (error) {
+        console.error("testTimeoutResultCollect1300 failed");
+        expect(false).assertFail();
       }
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(quickTask, i))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        await collector.markCompleted(i, results[i] as string)
-      }
-      collector.addPendingTask(100, 'timeout_task_100')
-      collector.addPendingTask(101, 'timeout_task_101')
-      await collector.markTimeout(100)
-      await collector.markTimeout(101)
-      expect(collector.getCompletedCount()).assertEqual(10)
-      expect(collector.getTimeoutCount()).assertEqual(2)
+      done();
     })
   })
 }

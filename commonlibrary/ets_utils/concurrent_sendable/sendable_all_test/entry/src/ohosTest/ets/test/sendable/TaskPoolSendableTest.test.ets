@@ -57,12 +57,18 @@ export default function TaskPoolSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolSendable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const counter = new SharedCounter()
-      const task = new taskpool.Task(modifySharedCounter, counter)
-      const result = await taskpool.execute(task) as number
-      expect(result).assertEqual(1)
-      expect(counter.count_).assertEqual(1)
+    it('testTaskPoolSendable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const counter = new SharedCounter()
+        const task = new taskpool.Task(modifySharedCounter, counter)
+        const result = await taskpool.execute(task) as number
+        expect(result).assertEqual(1)
+        expect(counter.count_).assertEqual(1)
+      } catch (error) {
+        console.error("testTaskPoolSendable0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -73,14 +79,20 @@ export default function TaskPoolSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolSendable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const counter1 = new SharedCounter()
-      const counter2 = new SharedCounter()
-      const task = new taskpool.Task(multiParamSharedFunc, counter1, counter2, 5)
-      const result = await taskpool.execute(task) as number
-      expect(result).assertEqual(10)
-      expect(counter1.count_).assertEqual(5)
-      expect(counter2.count_).assertEqual(5)
+    it('testTaskPoolSendable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const counter1 = new SharedCounter()
+        const counter2 = new SharedCounter()
+        const task = new taskpool.Task(multiParamSharedFunc, counter1, counter2, 5)
+        const result = await taskpool.execute(task) as number
+        expect(result).assertEqual(10)
+        expect(counter1.count_).assertEqual(5)
+        expect(counter2.count_).assertEqual(5)
+      } catch (error) {
+        console.error("testTaskPoolSendable0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -91,12 +103,18 @@ export default function TaskPoolSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const container = new SharedArrayContainer()
-      const task = new taskpool.Task(modifySharedArray, container)
-      const result = await taskpool.execute(task) as number
-      expect(result).assertEqual(1)
-      expect(container.arrayCount_).assertEqual(1)
+    it('testTaskPoolSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const container = new SharedArrayContainer()
+        const task = new taskpool.Task(modifySharedArray, container)
+        const result = await taskpool.execute(task) as number
+        expect(result).assertEqual(1)
+        expect(container.arrayCount_).assertEqual(1)
+      } catch (error) {
+        console.error("testTaskPoolSendable0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -107,24 +125,30 @@ export default function TaskPoolSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolSendable0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const counter = new SharedCounter()
-      counter.count_ = 42
-      const task = new taskpool.Task(sendDataSharedFunc, counter)
-      let receivedCounter: SharedCounter | null = null
-      task.onReceiveData((data: SharedCounter): void => {
-        receivedCounter = data
-      })
-      await taskpool.execute(task)
-      await new Promise<void>((resolve): void => {
-        const checkInterval = setInterval((): void => {
-          if (receivedCounter !== null) {
-            clearInterval(checkInterval)
-            resolve()
-          }
-        }, 10)
-      })
-      expect(receivedCounter!.count_).assertEqual(42)
+    it('testTaskPoolSendable0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const counter = new SharedCounter()
+        counter.count_ = 42
+        const task = new taskpool.Task(sendDataSharedFunc, counter)
+        let receivedCounter: SharedCounter | null = null
+        task.onReceiveData((data: SharedCounter): void => {
+          receivedCounter = data
+        })
+        await taskpool.execute(task)
+        await new Promise<void>((resolve): void => {
+          const checkInterval = setInterval((): void => {
+            if (receivedCounter !== null) {
+              clearInterval(checkInterval)
+              resolve()
+            }
+          }, 10)
+        })
+        expect(receivedCounter!.count_).assertEqual(42)
+      } catch (error) {
+        console.error("testTaskPoolSendable0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -135,13 +159,19 @@ export default function TaskPoolSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskPoolSendable0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const counter = new SharedCounter()
-      for (let i = 0; i < 3; i++) {
-        const task = new taskpool.Task(modifySharedCounter, counter)
-        await taskpool.execute(task)
+    it('testTaskPoolSendable0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const counter = new SharedCounter()
+        for (let i = 0; i < 3; i++) {
+          const task = new taskpool.Task(modifySharedCounter, counter)
+          await taskpool.execute(task)
+        }
+        expect(counter.count_).assertEqual(3)
+      } catch (error) {
+        console.error("testTaskPoolSendable0500 failed");
+        expect(false).assertFail();
       }
-      expect(counter.count_).assertEqual(3)
+      done();
     })
 
     /**
@@ -152,13 +182,19 @@ export default function TaskPoolSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskPoolSendable0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const counter = new SharedCounter()
-      for (let i = 0; i < 5; i++) {
-        const task = new taskpool.Task(modifySharedCounter, counter)
-        await taskpool.execute(task)
+    it('testTaskPoolSendable0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const counter = new SharedCounter()
+        for (let i = 0; i < 5; i++) {
+          const task = new taskpool.Task(modifySharedCounter, counter)
+          await taskpool.execute(task)
+        }
+        expect(counter.count_).assertEqual(5)
+      } catch (error) {
+        console.error("testTaskPoolSendable0600 failed");
+        expect(false).assertFail();
       }
-      expect(counter.count_).assertEqual(5)
+      done();
     })
 
     /**
@@ -169,13 +205,19 @@ export default function TaskPoolSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskPoolSendable0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const counter = new SharedCounter()
-      for (let i = 0; i < 10; i++) {
-        const task = new taskpool.Task(modifySharedCounter, counter)
-        await taskpool.execute(task)
+    it('testTaskPoolSendable0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const counter = new SharedCounter()
+        for (let i = 0; i < 10; i++) {
+          const task = new taskpool.Task(modifySharedCounter, counter)
+          await taskpool.execute(task)
+        }
+        expect(counter.count_).assertEqual(10)
+      } catch (error) {
+        console.error("testTaskPoolSendable0700 failed");
+        expect(false).assertFail();
       }
-      expect(counter.count_).assertEqual(10)
+      done();
     })
 
     /**
@@ -186,16 +228,22 @@ export default function TaskPoolSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolSendable0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const counter = new SharedCounter()
-      counter.count_ = 10
-      const task1 = new taskpool.Task(readSharedCounter, counter)
-      const result1 = await taskpool.execute(task1) as number
-      expect(result1).assertEqual(10)
-      const task2 = new taskpool.Task(modifySharedCounter, counter)
-      const result2 = await taskpool.execute(task2) as number
-      expect(result2).assertEqual(11)
-      expect(counter.count_).assertEqual(11)
+    it('testTaskPoolSendable0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const counter = new SharedCounter()
+        counter.count_ = 10
+        const task1 = new taskpool.Task(readSharedCounter, counter)
+        const result1 = await taskpool.execute(task1) as number
+        expect(result1).assertEqual(10)
+        const task2 = new taskpool.Task(modifySharedCounter, counter)
+        const result2 = await taskpool.execute(task2) as number
+        expect(result2).assertEqual(11)
+        expect(counter.count_).assertEqual(11)
+      } catch (error) {
+        console.error("testTaskPoolSendable0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -206,15 +254,21 @@ export default function TaskPoolSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolSendable0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const counter = new SharedCounter()
-      const task = new taskpool.Task(modifySharedCounter, counter)
-      await taskpool.execute(task)
-      expect(counter.count_).assertEqual(1)
-      counter.count_ = 50
-      const task2 = new taskpool.Task(readSharedCounter, counter)
-      const result = await taskpool.execute(task2) as number
-      expect(result).assertEqual(50)
+    it('testTaskPoolSendable0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const counter = new SharedCounter()
+        const task = new taskpool.Task(modifySharedCounter, counter)
+        await taskpool.execute(task)
+        expect(counter.count_).assertEqual(1)
+        counter.count_ = 50
+        const task2 = new taskpool.Task(readSharedCounter, counter)
+        const result = await taskpool.execute(task2) as number
+        expect(result).assertEqual(50)
+      } catch (error) {
+        console.error("testTaskPoolSendable0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

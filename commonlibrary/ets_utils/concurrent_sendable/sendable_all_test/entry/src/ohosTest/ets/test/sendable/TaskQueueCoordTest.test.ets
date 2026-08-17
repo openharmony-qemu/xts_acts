@@ -174,10 +174,16 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskQueueCoord0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const task: TaskItem = createTask(1, 'task_1', 0)
-      await queue.enqueue(task)
-      expect(await queue.size()).assertEqual(1)
+    it('testTaskQueueCoord0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const task: TaskItem = createTask(1, 'task_1', 0)
+        await queue.enqueue(task)
+        expect(await queue.size()).assertEqual(1)
+      } catch (error) {
+        console.error("testTaskQueueCoord0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -188,12 +194,18 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskQueueCoord0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const task: TaskItem = createTask(1, 'task_1', 0)
-      await queue.enqueue(task)
-      const dequeued: TaskItem = await queue.dequeue()
-      expect(dequeued.id_).assertEqual(1)
-      expect(await queue.size()).assertEqual(0)
+    it('testTaskQueueCoord0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const task: TaskItem = createTask(1, 'task_1', 0)
+        await queue.enqueue(task)
+        const dequeued: TaskItem = await queue.dequeue()
+        expect(dequeued.id_).assertEqual(1)
+        expect(await queue.size()).assertEqual(0)
+      } catch (error) {
+        console.error("testTaskQueueCoord0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -204,11 +216,17 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskQueueCoord0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      for (let i = 0; i < 5; i++) {
-        await queue.enqueue(createTask(i, `task_${i}`, 0))
+    it('testTaskQueueCoord0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 5; i++) {
+          await queue.enqueue(createTask(i, `task_${i}`, 0))
+        }
+        expect(await queue.size()).assertEqual(5)
+      } catch (error) {
+        console.error("testTaskQueueCoord0300 failed");
+        expect(false).assertFail();
       }
-      expect(await queue.size()).assertEqual(5)
+      done();
     })
 
     /**
@@ -219,13 +237,19 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskQueueCoord0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 10; i++) {
-        await queue.enqueue(createTask(i, `task_${i}`, 0))
+    it('testTaskQueueCoord0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 10; i++) {
+          await queue.enqueue(createTask(i, `task_${i}`, 0))
+        }
+        const cleared: number = await queue.clear()
+        expect(cleared).assertEqual(10)
+        expect(await queue.size()).assertEqual(0)
+      } catch (error) {
+        console.error("testTaskQueueCoord0400 failed");
+        expect(false).assertFail();
       }
-      const cleared: number = await queue.clear()
-      expect(cleared).assertEqual(10)
-      expect(await queue.size()).assertEqual(0)
+      done();
     })
 
     /**
@@ -236,17 +260,23 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskQueueCoord0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let dequeueCompleted: boolean = false
-      const dequeuePromise: Promise<TaskItem> = queue.dequeue()
-      dequeuePromise.then((): void => {
-        dequeueCompleted = true
-      })
-      await Utils.sleep(500)
-      expect(dequeueCompleted).assertFalse()
-      await queue.enqueue(createTask(1, 'task_1', 0))
-      await dequeuePromise
-      expect(dequeueCompleted).assertTrue()
+    it('testTaskQueueCoord0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let dequeueCompleted: boolean = false
+        const dequeuePromise: Promise<TaskItem> = queue.dequeue()
+        dequeuePromise.then((): void => {
+          dequeueCompleted = true
+        }).catch((error: Error): void => { console.error("testTaskQueueCoord0500 failed"); expect(false).assertFail(); })
+        await Utils.sleep(500)
+        expect(dequeueCompleted).assertFalse()
+        await queue.enqueue(createTask(1, 'task_1', 0))
+        await dequeuePromise
+        expect(dequeueCompleted).assertTrue()
+      } catch (error) {
+        console.error("testTaskQueueCoord0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -257,21 +287,27 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskQueueCoord0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 20; i++) {
-        await queue.enqueue(createTask(i, `task_${i}`, 0))
+    it('testTaskQueueCoord0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 20; i++) {
+          await queue.enqueue(createTask(i, `task_${i}`, 0))
+        }
+        expect(await queue.isFull()).assertTrue()
+        let enqueueCompleted: boolean = false
+        const enqueuePromise: Promise<void> = queue.enqueue(createTask(999, 'task_999', 0))
+        enqueuePromise.then((): void => {
+          enqueueCompleted = true
+        }).catch((error: Error): void => { console.error("testTaskQueueCoord0600 failed"); expect(false).assertFail(); })
+        await Utils.sleep(500)
+        expect(enqueueCompleted).assertFalse()
+        await queue.dequeue()
+        await enqueuePromise
+        expect(enqueueCompleted).assertTrue()
+      } catch (error) {
+        console.error("testTaskQueueCoord0600 failed");
+        expect(false).assertFail();
       }
-      expect(await queue.isFull()).assertTrue()
-      let enqueueCompleted: boolean = false
-      const enqueuePromise: Promise<void> = queue.enqueue(createTask(999, 'task_999', 0))
-      enqueuePromise.then((): void => {
-        enqueueCompleted = true
-      })
-      await Utils.sleep(500)
-      expect(enqueueCompleted).assertFalse()
-      await queue.dequeue()
-      await enqueuePromise
-      expect(enqueueCompleted).assertTrue()
+      done();
     })
 
     /**
@@ -282,12 +318,18 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskQueueCoord0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const dequeuePromise: Promise<TaskItem> = queue.dequeue()
-      await Utils.sleep(500)
-      await queue.enqueue(createTask(42, 'task_42', 0))
-      const task: TaskItem = await dequeuePromise
-      expect(task.id_).assertEqual(42)
+    it('testTaskQueueCoord0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const dequeuePromise: Promise<TaskItem> = queue.dequeue()
+        await Utils.sleep(500)
+        await queue.enqueue(createTask(42, 'task_42', 0))
+        const task: TaskItem = await dequeuePromise
+        expect(task.id_).assertEqual(42)
+      } catch (error) {
+        console.error("testTaskQueueCoord0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -298,15 +340,21 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskQueueCoord0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 20; i++) {
-        await queue.enqueue(createTask(i, `task_${i}`, 0))
+    it('testTaskQueueCoord0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 20; i++) {
+          await queue.enqueue(createTask(i, `task_${i}`, 0))
+        }
+        const enqueuePromise: Promise<void> = queue.enqueue(createTask(999, 'task_999', 0))
+        await Utils.sleep(500)
+        await queue.dequeue()
+        await enqueuePromise
+        expect(await queue.size()).assertEqual(20)
+      } catch (error) {
+        console.error("testTaskQueueCoord0800 failed");
+        expect(false).assertFail();
       }
-      const enqueuePromise: Promise<void> = queue.enqueue(createTask(999, 'task_999', 0))
-      await Utils.sleep(500)
-      await queue.dequeue()
-      await enqueuePromise
-      expect(await queue.size()).assertEqual(20)
+      done();
     })
 
     /**
@@ -317,10 +365,16 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskQueueCoord0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const result: boolean = await queue.tryEnqueue(createTask(1, 'task_1', 0))
-      expect(result).assertTrue()
-      expect(await queue.size()).assertEqual(1)
+    it('testTaskQueueCoord0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await queue.tryEnqueue(createTask(1, 'task_1', 0))
+        expect(result).assertTrue()
+        expect(await queue.size()).assertEqual(1)
+      } catch (error) {
+        console.error("testTaskQueueCoord0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -331,12 +385,18 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskQueueCoord1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 20; i++) {
-        await queue.enqueue(createTask(i, `task_${i}`, 0))
+    it('testTaskQueueCoord1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 20; i++) {
+          await queue.enqueue(createTask(i, `task_${i}`, 0))
+        }
+        const result: boolean = await queue.tryEnqueue(createTask(999, 'task_999', 0))
+        expect(result).assertFalse()
+      } catch (error) {
+        console.error("testTaskQueueCoord1000 failed");
+        expect(false).assertFail();
       }
-      const result: boolean = await queue.tryEnqueue(createTask(999, 'task_999', 0))
-      expect(result).assertFalse()
+      done();
     })
 
     /**
@@ -347,11 +407,17 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskQueueCoord1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await queue.enqueue(createTask(1, 'task_1', 0))
-      const task: TaskItem | undefined = await queue.tryDequeue()
-      expect(task !== undefined).assertTrue()
-      expect(task!.id_).assertEqual(1)
+    it('testTaskQueueCoord1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await queue.enqueue(createTask(1, 'task_1', 0))
+        const task: TaskItem | undefined = await queue.tryDequeue()
+        expect(task !== undefined).assertTrue()
+        expect(task!.id_).assertEqual(1)
+      } catch (error) {
+        console.error("testTaskQueueCoord1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -362,9 +428,15 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskQueueCoord1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const task: TaskItem | undefined = await queue.tryDequeue()
-      expect(task === undefined).assertTrue()
+    it('testTaskQueueCoord1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const task: TaskItem | undefined = await queue.tryDequeue()
+        expect(task === undefined).assertTrue()
+      } catch (error) {
+        console.error("testTaskQueueCoord1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -375,17 +447,23 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskQueueCoord1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(enqueueValue, i))
+    it('testTaskQueueCoord1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(enqueueValue, i))
+        }
+        const results = await Promise.all(tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t)))
+        for (let i = 0; i < results.length; i++) {
+          const val: number = results[i] as number
+          await queue.enqueue(createTask(val, `task_${val}`, 0))
+        }
+        expect(await queue.getEnqueueCount()).assertEqual(10)
+      } catch (error) {
+        console.error("testTaskQueueCoord1300 failed");
+        expect(false).assertFail();
       }
-      const results = await Promise.all(tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t)))
-      for (let i = 0; i < results.length; i++) {
-        const val: number = results[i] as number
-        await queue.enqueue(createTask(val, `task_${val}`, 0))
-      }
-      expect(await queue.getEnqueueCount()).assertEqual(10)
+      done();
     })
 
     /**
@@ -396,19 +474,25 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskQueueCoord1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      for (let i = 0; i < 15; i++) {
-        await queue.enqueue(createTask(i, `task_${i}`, 0))
+    it('testTaskQueueCoord1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 15; i++) {
+          await queue.enqueue(createTask(i, `task_${i}`, 0))
+        }
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(dequeueValue))
+        }
+        await Promise.all(tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t)))
+        for (let i = 0; i < 5; i++) {
+          await queue.dequeue()
+        }
+        expect(await queue.getDequeueCount()).assertLargerOrEqual(5)
+      } catch (error) {
+        console.error("testTaskQueueCoord1400 failed");
+        expect(false).assertFail();
       }
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(dequeueValue))
-      }
-      await Promise.all(tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t)))
-      for (let i = 0; i < 5; i++) {
-        await queue.dequeue()
-      }
-      expect(await queue.getDequeueCount()).assertLargerOrEqual(5)
+      done();
     })
 
     /**
@@ -419,13 +503,19 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskQueueCoord1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await queue.enqueue(createTask(1, 'task_1', 0))
-      await queue.enqueue(createTask(2, 'task_2', 0))
-      const task: TaskItem | undefined = await queue.peek()
-      expect(task !== undefined).assertTrue()
-      expect(task!.id_).assertEqual(1)
-      expect(await queue.size()).assertEqual(2)
+    it('testTaskQueueCoord1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await queue.enqueue(createTask(1, 'task_1', 0))
+        await queue.enqueue(createTask(2, 'task_2', 0))
+        const task: TaskItem | undefined = await queue.peek()
+        expect(task !== undefined).assertTrue()
+        expect(task!.id_).assertEqual(1)
+        expect(await queue.size()).assertEqual(2)
+      } catch (error) {
+        console.error("testTaskQueueCoord1600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -436,14 +526,20 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskQueueCoord1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      expect(await queue.isEmpty()).assertTrue()
-      expect(await queue.isFull()).assertFalse()
-      for (let i = 0; i < 20; i++) {
-        await queue.enqueue(createTask(i, `task_${i}`, 0))
+    it('testTaskQueueCoord1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(await queue.isEmpty()).assertTrue()
+        expect(await queue.isFull()).assertFalse()
+        for (let i = 0; i < 20; i++) {
+          await queue.enqueue(createTask(i, `task_${i}`, 0))
+        }
+        expect(await queue.isEmpty()).assertFalse()
+        expect(await queue.isFull()).assertTrue()
+      } catch (error) {
+        console.error("testTaskQueueCoord1700 failed");
+        expect(false).assertFail();
       }
-      expect(await queue.isEmpty()).assertFalse()
-      expect(await queue.isFull()).assertTrue()
+      done();
     })
 
     /**
@@ -454,22 +550,28 @@ export default function TaskQueueCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskQueueCoord1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const notifications: Object[] = []
-      const task: taskpool.Task = new taskpool.Task(notifyTask)
-      task.onReceiveData((data: Object): void => {
-        notifications.push(data)
-      })
-      await taskpool.execute(task)
-      await new Promise<void>((resolve: Function): void => {
-        const checkInterval: Object = setInterval((): void => {
-          if (notifications.length >= 3) {
-            clearInterval(checkInterval as number)
-            resolve()
-          }
-        }, 10)
-      })
-      expect(notifications.length).assertEqual(3)
+    it('testTaskQueueCoord1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const notifications: Object[] = []
+        const task: taskpool.Task = new taskpool.Task(notifyTask)
+        task.onReceiveData((data: Object): void => {
+          notifications.push(data)
+        })
+        await taskpool.execute(task)
+        await new Promise<void>((resolve: Function): void => {
+          const checkInterval: Object = setInterval((): void => {
+            if (notifications.length >= 3) {
+              clearInterval(checkInterval as number)
+              resolve()
+            }
+          }, 10)
+        })
+        expect(notifications.length).assertEqual(3)
+      } catch (error) {
+        console.error("testTaskQueueCoord1800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

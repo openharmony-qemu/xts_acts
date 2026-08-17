@@ -144,10 +144,16 @@ export default function UploadProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUploadProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await tracker.setTotalChunks(1)
-      expect(await tracker.getChunkProgress(0)).assertEqual(0)
-      expect(await tracker.getOverallProgress()).assertEqual(0)
+    it('testUploadProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotalChunks(1)
+        expect(await tracker.getChunkProgress(0)).assertEqual(0)
+        expect(await tracker.getOverallProgress()).assertEqual(0)
+      } catch (error) {
+        console.error("testUploadProgress0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -158,11 +164,17 @@ export default function UploadProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUploadProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await tracker.setTotalChunks(1)
-      await tracker.updateChunkProgress(0, 50)
-      expect(await tracker.getChunkProgress(0)).assertEqual(50)
-      expect(await tracker.getOverallProgress()).assertEqual(50)
+    it('testUploadProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotalChunks(1)
+        await tracker.updateChunkProgress(0, 50)
+        expect(await tracker.getChunkProgress(0)).assertEqual(50)
+        expect(await tracker.getOverallProgress()).assertEqual(50)
+      } catch (error) {
+        console.error("testUploadProgress0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -173,13 +185,19 @@ export default function UploadProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUploadProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await tracker.setTotalChunks(1)
-      await tracker.updateChunkProgress(0, 100)
-      await tracker.updateChunkProgress(0, 100)
-      expect(await tracker.getChunkProgress(0)).assertEqual(100)
-      expect(await tracker.getCompletedChunks()).assertEqual(1)
-      expect(await tracker.isCompleted()).assertTrue()
+    it('testUploadProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotalChunks(1)
+        await tracker.updateChunkProgress(0, 100)
+        await tracker.updateChunkProgress(0, 100)
+        expect(await tracker.getChunkProgress(0)).assertEqual(100)
+        expect(await tracker.getCompletedChunks()).assertEqual(1)
+        expect(await tracker.isCompleted()).assertTrue()
+      } catch (error) {
+        console.error("testUploadProgress0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -190,15 +208,21 @@ export default function UploadProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testUploadProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await tracker.setTotalChunks(5)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(uploadChunkTask, tracker, i))
+    it('testUploadProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotalChunks(5)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(uploadChunkTask, tracker, i))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await tracker.getCompletedChunks()).assertEqual(5)
+        expect(await tracker.isCompleted()).assertTrue()
+      } catch (error) {
+        console.error("testUploadProgress0400 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await tracker.getCompletedChunks()).assertEqual(5)
-      expect(await tracker.isCompleted()).assertTrue()
+      done();
     })
 
     /**
@@ -209,12 +233,18 @@ export default function UploadProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testUploadProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await tracker.setTotalChunks(5)
-      for (let i: number = 0; i < 5; i++) {
-        await tracker.updateChunkProgress(i, 50)
+    it('testUploadProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotalChunks(5)
+        for (let i: number = 0; i < 5; i++) {
+          await tracker.updateChunkProgress(i, 50)
+        }
+        expect(await tracker.getOverallProgress()).assertEqual(50)
+      } catch (error) {
+        console.error("testUploadProgress0500 failed");
+        expect(false).assertFail();
       }
-      expect(await tracker.getOverallProgress()).assertEqual(50)
+      done();
     })
 
     /**
@@ -225,14 +255,20 @@ export default function UploadProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testUploadProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await tracker.setTotalChunks(3)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(uploadChunkTask, tracker, i))
+    it('testUploadProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotalChunks(3)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(uploadChunkTask, tracker, i))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await tracker.getOverallProgress()).assertEqual(100)
+      } catch (error) {
+        console.error("testUploadProgress0600 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await tracker.getOverallProgress()).assertEqual(100)
+      done();
     })
 
     /**
@@ -243,12 +279,18 @@ export default function UploadProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUploadProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await tracker.setTotalChunks(3)
-      await tracker.updateChunkProgress(0, 100)
-      await tracker.updateChunkProgress(1, 50)
-      await tracker.updateChunkProgress(2, 0)
-      expect(await tracker.getOverallProgress()).assertEqual(50)
+    it('testUploadProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotalChunks(3)
+        await tracker.updateChunkProgress(0, 100)
+        await tracker.updateChunkProgress(1, 50)
+        await tracker.updateChunkProgress(2, 0)
+        expect(await tracker.getOverallProgress()).assertEqual(50)
+      } catch (error) {
+        console.error("testUploadProgress0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -259,10 +301,16 @@ export default function UploadProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUploadProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await tracker.setTotalChunks(3)
-      await tracker.markChunkFailed(1)
-      expect(await tracker.getFailedChunks()).assertEqual(1)
+    it('testUploadProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotalChunks(3)
+        await tracker.markChunkFailed(1)
+        expect(await tracker.getFailedChunks()).assertEqual(1)
+      } catch (error) {
+        console.error("testUploadProgress0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -273,12 +321,18 @@ export default function UploadProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUploadProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await tracker.setTotalChunks(3)
-      await tracker.updateChunkProgress(0, 100)
-      await tracker.markChunkFailed(1)
-      expect(await tracker.getCompletedChunks()).assertEqual(1)
-      expect(await tracker.getFailedChunks()).assertEqual(1)
+    it('testUploadProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotalChunks(3)
+        await tracker.updateChunkProgress(0, 100)
+        await tracker.markChunkFailed(1)
+        expect(await tracker.getCompletedChunks()).assertEqual(1)
+        expect(await tracker.getFailedChunks()).assertEqual(1)
+      } catch (error) {
+        console.error("testUploadProgress0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -289,11 +343,17 @@ export default function UploadProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUploadProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await tracker.setTotalChunks(2)
-      await tracker.markChunkFailed(0)
-      await tracker.updateChunkProgress(0, 30)
-      expect(await tracker.getChunkProgress(0)).assertEqual(30)
+    it('testUploadProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotalChunks(2)
+        await tracker.markChunkFailed(0)
+        await tracker.updateChunkProgress(0, 30)
+        expect(await tracker.getChunkProgress(0)).assertEqual(30)
+      } catch (error) {
+        console.error("testUploadProgress1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -304,14 +364,20 @@ export default function UploadProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUploadProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await tracker.setTotalChunks(3)
-      await tracker.updateChunkProgress(0, 100)
-      await tracker.updateChunkProgress(1, 100)
-      await tracker.updateChunkProgress(2, 100)
-      expect(await tracker.isCompleted()).assertTrue()
-      await tracker.reset()
-      expect(await tracker.getCompletedChunks()).assertEqual(0)
+    it('testUploadProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotalChunks(3)
+        await tracker.updateChunkProgress(0, 100)
+        await tracker.updateChunkProgress(1, 100)
+        await tracker.updateChunkProgress(2, 100)
+        expect(await tracker.isCompleted()).assertTrue()
+        await tracker.reset()
+        expect(await tracker.getCompletedChunks()).assertEqual(0)
+      } catch (error) {
+        console.error("testUploadProgress1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

@@ -163,10 +163,16 @@ export default function TaskStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      expect(await taskSM.getCurrentState()).assertEqual(TaskState.PENDING)
-      expect(await taskSM.getHistoryCount()).assertEqual(0)
-      expect(await taskSM.getTaskId()).assertEqual('test_task_001')
+    it('testTaskStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        expect(await taskSM.getCurrentState()).assertEqual(TaskState.PENDING)
+        expect(await taskSM.getHistoryCount()).assertEqual(0)
+        expect(await taskSM.getTaskId()).assertEqual('test_task_001')
+      } catch (error) {
+        console.error("testTaskStateMachine0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -177,14 +183,20 @@ export default function TaskStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      expect(await taskSM.transition(TaskState.RUNNING)).assertTrue()
-      expect(await taskSM.getCurrentState()).assertEqual(TaskState.RUNNING)
-      expect(await taskSM.getHistoryCount()).assertEqual(1)
-      expect(await taskSM.transition(TaskState.COMPLETED)).assertTrue()
-      expect(await taskSM.getCurrentState()).assertEqual(TaskState.COMPLETED)
-      expect(await taskSM.getHistoryCount()).assertEqual(2)
-      expect(await taskSM.isFinalState()).assertTrue()
+    it('testTaskStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        expect(await taskSM.transition(TaskState.RUNNING)).assertTrue()
+        expect(await taskSM.getCurrentState()).assertEqual(TaskState.RUNNING)
+        expect(await taskSM.getHistoryCount()).assertEqual(1)
+        expect(await taskSM.transition(TaskState.COMPLETED)).assertTrue()
+        expect(await taskSM.getCurrentState()).assertEqual(TaskState.COMPLETED)
+        expect(await taskSM.getHistoryCount()).assertEqual(2)
+        expect(await taskSM.isFinalState()).assertTrue()
+      } catch (error) {
+        console.error("testTaskStateMachine0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -195,11 +207,17 @@ export default function TaskStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await taskSM.transition(TaskState.RUNNING)
-      expect(await taskSM.transition(TaskState.FAILED)).assertTrue()
-      expect(await taskSM.getCurrentState()).assertEqual(TaskState.FAILED)
-      expect(await taskSM.isFinalState()).assertTrue()
+    it('testTaskStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await taskSM.transition(TaskState.RUNNING)
+        expect(await taskSM.transition(TaskState.FAILED)).assertTrue()
+        expect(await taskSM.getCurrentState()).assertEqual(TaskState.FAILED)
+        expect(await taskSM.isFinalState()).assertTrue()
+      } catch (error) {
+        console.error("testTaskStateMachine0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -210,11 +228,17 @@ export default function TaskStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      expect(await taskSM.transition(TaskState.CANCELLED)).assertTrue()
-      expect(await taskSM.getCurrentState()).assertEqual(TaskState.CANCELLED)
-      expect(await taskSM.getHistoryCount()).assertEqual(1)
-      expect(await taskSM.isFinalState()).assertTrue()
+    it('testTaskStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        expect(await taskSM.transition(TaskState.CANCELLED)).assertTrue()
+        expect(await taskSM.getCurrentState()).assertEqual(TaskState.CANCELLED)
+        expect(await taskSM.getHistoryCount()).assertEqual(1)
+        expect(await taskSM.isFinalState()).assertTrue()
+      } catch (error) {
+        console.error("testTaskStateMachine0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -225,10 +249,16 @@ export default function TaskStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await taskSM.transition(TaskState.RUNNING)
-      expect(await taskSM.transition(TaskState.CANCELLED)).assertTrue()
-      expect(await taskSM.getCurrentState()).assertEqual(TaskState.CANCELLED)
+    it('testTaskStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await taskSM.transition(TaskState.RUNNING)
+        expect(await taskSM.transition(TaskState.CANCELLED)).assertTrue()
+        expect(await taskSM.getCurrentState()).assertEqual(TaskState.CANCELLED)
+      } catch (error) {
+        console.error("testTaskStateMachine0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -239,11 +269,17 @@ export default function TaskStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await taskSM.transition(TaskState.RUNNING)
-      await taskSM.transition(TaskState.COMPLETED)
-      expect(await taskSM.transition(TaskState.RUNNING)).assertFalse()
-      expect(await taskSM.getCurrentState()).assertEqual(TaskState.COMPLETED)
+    it('testTaskStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await taskSM.transition(TaskState.RUNNING)
+        await taskSM.transition(TaskState.COMPLETED)
+        expect(await taskSM.transition(TaskState.RUNNING)).assertFalse()
+        expect(await taskSM.getCurrentState()).assertEqual(TaskState.COMPLETED)
+      } catch (error) {
+        console.error("testTaskStateMachine0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -254,12 +290,18 @@ export default function TaskStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      expect(await taskSM.isInState(TaskState.PENDING)).assertTrue()
-      expect(await taskSM.isInState(TaskState.RUNNING)).assertFalse()
-      await taskSM.transition(TaskState.RUNNING)
-      expect(await taskSM.isInState(TaskState.RUNNING)).assertTrue()
-      expect(await taskSM.isInState(TaskState.PENDING)).assertFalse()
+    it('testTaskStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        expect(await taskSM.isInState(TaskState.PENDING)).assertTrue()
+        expect(await taskSM.isInState(TaskState.RUNNING)).assertFalse()
+        await taskSM.transition(TaskState.RUNNING)
+        expect(await taskSM.isInState(TaskState.RUNNING)).assertTrue()
+        expect(await taskSM.isInState(TaskState.PENDING)).assertFalse()
+      } catch (error) {
+        console.error("testTaskStateMachine0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -270,19 +312,25 @@ export default function TaskStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const stateUpdates: string[] = []
-      const task: taskpool.Task = new taskpool.Task(sendDataRunningTask, taskSM)
-      const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
-        task.onReceiveData((data: string): void => {
-          stateUpdates.push(data)
-          resolve()
+    it('testTaskStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const stateUpdates: string[] = []
+        const task: taskpool.Task = new taskpool.Task(sendDataRunningTask, taskSM)
+        const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
+          task.onReceiveData((data: string): void => {
+            stateUpdates.push(data)
+            resolve()
+          })
         })
-      })
-      await taskpool.execute(task)
-      await receivePromise
-      expect(stateUpdates.length).assertLargerOrEqual(1)
-      expect(stateUpdates[0]).assertEqual('running')
+        await taskpool.execute(task)
+        await receivePromise
+        expect(stateUpdates.length).assertLargerOrEqual(1)
+        expect(stateUpdates[0]).assertEqual('running')
+      } catch (error) {
+        console.error("testTaskStateMachine0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -293,20 +341,26 @@ export default function TaskStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await taskSM.transition(TaskState.RUNNING)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 20; i++) {
-        tasks.push(new taskpool.Task(readTaskStateTask, taskSM))
+    it('testTaskStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await taskSM.transition(TaskState.RUNNING)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 20; i++) {
+          tasks.push(new taskpool.Task(readTaskStateTask, taskSM))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i: number = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i: number = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(TaskState.RUNNING)
+        }
+      } catch (error) {
+        console.error("testTaskStateMachine0900 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i: number = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i: number = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(TaskState.RUNNING)
-      }
+      done();
     })
 
     /**
@@ -317,17 +371,23 @@ export default function TaskStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const taskSM1: TaskStateMachine = new TaskStateMachine('task_001', new ArkTSUtils.locks.AsyncLock(), new collections.Array<TaskTransitionRecord>(), new collections.Array<TaskTransitionRule>())
-      const taskSM2: TaskStateMachine = new TaskStateMachine('task_002', new ArkTSUtils.locks.AsyncLock(), new collections.Array<TaskTransitionRecord>(), new collections.Array<TaskTransitionRule>())
-      await taskSM1.setupRules()
-      await taskSM2.setupRules()
-      await taskSM1.transition(TaskState.RUNNING)
-      await taskSM2.transition(TaskState.CANCELLED)
-      expect(await taskSM1.getCurrentState()).assertEqual(TaskState.RUNNING)
-      expect(await taskSM2.getCurrentState()).assertEqual(TaskState.CANCELLED)
-      await taskSM1.reset()
-      await taskSM2.reset()
+    it('testTaskStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const taskSM1: TaskStateMachine = new TaskStateMachine('task_001', new ArkTSUtils.locks.AsyncLock(), new collections.Array<TaskTransitionRecord>(), new collections.Array<TaskTransitionRule>())
+        const taskSM2: TaskStateMachine = new TaskStateMachine('task_002', new ArkTSUtils.locks.AsyncLock(), new collections.Array<TaskTransitionRecord>(), new collections.Array<TaskTransitionRule>())
+        await taskSM1.setupRules()
+        await taskSM2.setupRules()
+        await taskSM1.transition(TaskState.RUNNING)
+        await taskSM2.transition(TaskState.CANCELLED)
+        expect(await taskSM1.getCurrentState()).assertEqual(TaskState.RUNNING)
+        expect(await taskSM2.getCurrentState()).assertEqual(TaskState.CANCELLED)
+        await taskSM1.reset()
+        await taskSM2.reset()
+      } catch (error) {
+        console.error("testTaskStateMachine1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -338,12 +398,18 @@ export default function TaskStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await taskSM.transition(TaskState.RUNNING)
-      await taskSM.transition(TaskState.FAILED)
-      expect(await taskSM.transition(TaskState.COMPLETED)).assertFalse()
-      expect(await taskSM.transition(TaskState.CANCELLED)).assertFalse()
-      expect(await taskSM.getCurrentState()).assertEqual(TaskState.FAILED)
+    it('testTaskStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await taskSM.transition(TaskState.RUNNING)
+        await taskSM.transition(TaskState.FAILED)
+        expect(await taskSM.transition(TaskState.COMPLETED)).assertFalse()
+        expect(await taskSM.transition(TaskState.CANCELLED)).assertFalse()
+        expect(await taskSM.getCurrentState()).assertEqual(TaskState.FAILED)
+      } catch (error) {
+        console.error("testTaskStateMachine1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

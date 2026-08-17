@@ -144,12 +144,18 @@ export default function WorkerTaskPoolGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testWorkerTaskPoolGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const data: WorkerGCData = await manager.create('tp_release', 1)
-      const task: taskpool.Task = new taskpool.Task(workerGCTask, data)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertEqual(100)
-      expect(manager.getSize()).assertEqual(1)
+    it('testWorkerTaskPoolGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const data: WorkerGCData = await manager.create('tp_release', 1)
+        const task: taskpool.Task = new taskpool.Task(workerGCTask, data)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertEqual(100)
+        expect(manager.getSize()).assertEqual(1)
+      } catch (error) {
+        console.error("testWorkerTaskPoolGC0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -160,17 +166,23 @@ export default function WorkerTaskPoolGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testWorkerTaskPoolGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: WorkerGCData = await manager.create('tp_multi', 2)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(workerGCTask, data))
+    it('testWorkerTaskPoolGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: WorkerGCData = await manager.create('tp_multi', 2)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(workerGCTask, data))
+        }
+        const results: Object[] = await executeWorkerGCTasks(tasks)
+        expect(results.length).assertEqual(5)
+        for (let i: number = 0; i < 5; i++) {
+          expect(results[i] as number).assertEqual(200)
+        }
+      } catch (error) {
+        console.error("testWorkerTaskPoolGC0200 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await executeWorkerGCTasks(tasks)
-      expect(results.length).assertEqual(5)
-      for (let i: number = 0; i < 5; i++) {
-        expect(results[i] as number).assertEqual(200)
-      }
+      done();
     })
 
     /**
@@ -181,11 +193,17 @@ export default function WorkerTaskPoolGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testWorkerTaskPoolGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: WorkerGCData = await manager.create('tp_modify', 3)
-      const task: taskpool.Task = new taskpool.Task(workerGCModifyTask, data, 999)
-      await taskpool.execute(task)
-      expect(data.getValue()).assertEqual(999)
+    it('testWorkerTaskPoolGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: WorkerGCData = await manager.create('tp_modify', 3)
+        const task: taskpool.Task = new taskpool.Task(workerGCModifyTask, data, 999)
+        await taskpool.execute(task)
+        expect(data.getValue()).assertEqual(999)
+      } catch (error) {
+        console.error("testWorkerTaskPoolGC0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -196,16 +214,22 @@ export default function WorkerTaskPoolGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testWorkerTaskPoolGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 5; i++) {
-        await manager.create(`tp_cd_${i}`, i)
-      }
-      expect(manager.getCreateCount()).assertEqual(5)
+    it('testWorkerTaskPoolGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 5; i++) {
+          await manager.create(`tp_cd_${i}`, i)
+        }
+        expect(manager.getCreateCount()).assertEqual(5)
 
-      for (let i: number = 0; i < 5; i++) {
-        await manager.delete(`tp_cd_${i}`)
+        for (let i: number = 0; i < 5; i++) {
+          await manager.delete(`tp_cd_${i}`)
+        }
+        expect(manager.getDeleteCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testWorkerTaskPoolGC0400 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getDeleteCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -216,12 +240,18 @@ export default function WorkerTaskPoolGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testWorkerTaskPoolGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: WorkerGCData = await manager.create('tp_long', 5)
-      const task: taskpool.Task = new taskpool.Task(workerGCTask, data)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertEqual(500)
-      expect(data.getId()).assertEqual(5)
+    it('testWorkerTaskPoolGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: WorkerGCData = await manager.create('tp_long', 5)
+        const task: taskpool.Task = new taskpool.Task(workerGCTask, data)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertEqual(500)
+        expect(data.getId()).assertEqual(5)
+      } catch (error) {
+        console.error("testWorkerTaskPoolGC0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -232,13 +262,19 @@ export default function WorkerTaskPoolGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testWorkerTaskPoolGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: WorkerGCData = await manager.create('tp_exc', 6)
-      expect(manager.getSize()).assertEqual(1)
+    it('testWorkerTaskPoolGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: WorkerGCData = await manager.create('tp_exc', 6)
+        expect(manager.getSize()).assertEqual(1)
 
-      const task: taskpool.Task = new taskpool.Task(workerGCTask, data)
-      await taskpool.execute(task)
-      expect(manager.getSize()).assertEqual(1)
+        const task: taskpool.Task = new taskpool.Task(workerGCTask, data)
+        await taskpool.execute(task)
+        expect(manager.getSize()).assertEqual(1)
+      } catch (error) {
+        console.error("testWorkerTaskPoolGC0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -249,14 +285,20 @@ export default function WorkerTaskPoolGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testWorkerTaskPoolGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: WorkerGCData = await manager.create('tp_main', 7)
-      expect(data.getValue()).assertEqual(700)
+    it('testWorkerTaskPoolGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: WorkerGCData = await manager.create('tp_main', 7)
+        expect(data.getValue()).assertEqual(700)
 
-      const task: taskpool.Task = new taskpool.Task(workerGCTask, data)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertEqual(700)
-      expect(data.getValue()).assertEqual(700)
+        const task: taskpool.Task = new taskpool.Task(workerGCTask, data)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertEqual(700)
+        expect(data.getValue()).assertEqual(700)
+      } catch (error) {
+        console.error("testWorkerTaskPoolGC0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -267,12 +309,18 @@ export default function WorkerTaskPoolGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testWorkerTaskPoolGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: WorkerGCData = await manager.create('tp_cancel', 8)
-      expect(manager.getSize()).assertEqual(1)
+    it('testWorkerTaskPoolGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: WorkerGCData = await manager.create('tp_cancel', 8)
+        expect(manager.getSize()).assertEqual(1)
 
-      await manager.delete('tp_cancel')
-      expect(manager.getSize()).assertEqual(0)
+        await manager.delete('tp_cancel')
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testWorkerTaskPoolGC0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -283,14 +331,20 @@ export default function WorkerTaskPoolGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testWorkerTaskPoolGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: WorkerGCData = await manager.create('tp_send', 9)
-      const task1: taskpool.Task = new taskpool.Task(workerGCTask, data)
-      const task2: taskpool.Task = new taskpool.Task(workerGCTask, data)
-      const results: Object[] = await Promise.all([taskpool.execute(task1), taskpool.execute(task2)])
-      expect(results.length).assertEqual(2)
-      expect(results[0] as number).assertEqual(900)
-      expect(results[1] as number).assertEqual(900)
+    it('testWorkerTaskPoolGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: WorkerGCData = await manager.create('tp_send', 9)
+        const task1: taskpool.Task = new taskpool.Task(workerGCTask, data)
+        const task2: taskpool.Task = new taskpool.Task(workerGCTask, data)
+        const results: Object[] = await Promise.all([taskpool.execute(task1), taskpool.execute(task2)])
+        expect(results.length).assertEqual(2)
+        expect(results[0] as number).assertEqual(900)
+        expect(results[1] as number).assertEqual(900)
+      } catch (error) {
+        console.error("testWorkerTaskPoolGC0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -301,22 +355,28 @@ export default function WorkerTaskPoolGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testWorkerTaskPoolGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 10; i++) {
-        await manager.create(`tp_stable_${i}`, i)
-      }
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        const data: WorkerGCData | undefined = manager.get(`tp_stable_${i}`)
-        if (data !== undefined) {
-          tasks.push(new taskpool.Task(workerGCTask, data))
+    it('testWorkerTaskPoolGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 10; i++) {
+          await manager.create(`tp_stable_${i}`, i)
         }
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          const data: WorkerGCData | undefined = manager.get(`tp_stable_${i}`)
+          if (data !== undefined) {
+            tasks.push(new taskpool.Task(workerGCTask, data))
+          }
+        }
+        const results: Object[] = await executeWorkerGCTasks(tasks)
+        expect(results.length).assertEqual(10)
+        for (let i: number = 0; i < 10; i++) {
+          expect(results[i] as number).assertEqual(i * 100)
+        }
+      } catch (error) {
+        console.error("testWorkerTaskPoolGC1000 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await executeWorkerGCTasks(tasks)
-      expect(results.length).assertEqual(10)
-      for (let i: number = 0; i < 10; i++) {
-        expect(results[i] as number).assertEqual(i * 100)
-      }
+      done();
     })
   })
 }
