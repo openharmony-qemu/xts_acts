@@ -178,11 +178,8 @@ struct ComposeTitleBarV2Example {
         .alignItems(HorizontalAlign.Center)
         .width('100%')
       }
-      .width('100%')
-      .height('100%')
-      .scrollBar(BarState.Auto)
      }
-     .width(1320)
-     .height(2120)
+     .width('100%')
+     .height('100%')
   }
 }
