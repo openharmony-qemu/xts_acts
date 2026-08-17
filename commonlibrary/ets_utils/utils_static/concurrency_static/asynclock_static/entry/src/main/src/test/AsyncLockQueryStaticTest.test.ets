@@ -556,9 +556,9 @@ export default function AsyncLockQueryStaticTest(): void {
      */
     it('testAsyncLockQueryStatic3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-      AsyncLock.request("lock1");
-      AsyncLock.request("lock2");
-      AsyncLock.request("lock3");
+      let lock1 = AsyncLock.request("lock1");
+      let lock2 = AsyncLock.request("lock2");
+      let lock3 = AsyncLock.request("lock3");
       let states = await Promise.all([
         Promise.resolve(AsyncLock.query("lock1")),
         Promise.resolve(AsyncLock.query("lock2")),
@@ -722,7 +722,7 @@ export default function AsyncLockQueryStaticTest(): void {
      * @tc.level   LEVEL2
      */
     it('testAsyncLockQueryStatic3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      AsyncLock.request("perf");
+      let lock = AsyncLock.request("perf");
       let queryCount: number = 0;
       for (let i = 0; i < 1000; i++) {
         AsyncLock.query("perf");

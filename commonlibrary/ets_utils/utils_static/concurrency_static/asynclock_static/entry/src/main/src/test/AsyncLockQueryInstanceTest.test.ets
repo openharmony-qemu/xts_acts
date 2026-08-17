@@ -334,7 +334,7 @@ export default function AsyncLockQueryInstanceTest(): void {
      * @tc.level   LEVEL1
      */
     it('testAsyncLockQueryInstance1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      AsyncLock.request("anyLock");
+      let lock = AsyncLock.request("anyLock");
       let state = AsyncLock.query("anyLock");
       expect(state.held.length).assertEqual(0);
     });

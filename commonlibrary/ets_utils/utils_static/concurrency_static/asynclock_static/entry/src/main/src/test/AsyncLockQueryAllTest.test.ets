@@ -179,7 +179,7 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.level   LEVEL0
      */
     it('testAsyncLockQueryAll1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      AsyncLock.request('notNullCase');
+      let lock = AsyncLock.request('notNullCase');
       let states = AsyncLock.queryAll();
       expect(states.length).assertLarger(0);
     });
@@ -362,8 +362,8 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.level   LEVEL0
      */
     it('testAsyncLockQueryAll2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      AsyncLock.request('lock1');
-      AsyncLock.request('lock2');
+      let lock1 = AsyncLock.request('lock1');
+      let lock2 = AsyncLock.request('lock2');
       let states = AsyncLock.queryAll();
       expect(states.length).assertLarger(0);
     });
@@ -645,7 +645,7 @@ export default function AsyncLockQueryAllTest(): void {
      * @tc.level   LEVEL1
      */
     it('testAsyncLockQueryAll3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      AsyncLock.request('testLock');
+      let lock = AsyncLock.request('testLock');
       let states = AsyncLock.queryAll();
       expect(states.length).assertLarger(0);
     });
