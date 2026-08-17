@@ -911,7 +911,7 @@ struct WebConfigCookieSync {
                   try {
                     web_webview.WebCookieManager.clearAllCookiesSync();
                     web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE, 'incog=null', false);
-                    resultValue = web_webview.WebCookieManager.fetchCookieSync(URL_EXAMPLE, null);
+                    resultValue = web_webview.WebCookieManager.fetchCookieSync(URL_EXAMPLE, null, false);
                     console.log('emitEtsFetchCookieSyncIncognitoNull014 cookie : ' + resultValue);
                   } catch (error) {
                     let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -931,7 +931,7 @@ struct WebConfigCookieSync {
                   try {
                     web_webview.WebCookieManager.clearAllCookiesSync();
                     web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE, 'incog=undefined', false);
-                    resultValue = web_webview.WebCookieManager.fetchCookieSync(URL_EXAMPLE, undefined);
+                    resultValue = web_webview.WebCookieManager.fetchCookieSync(URL_EXAMPLE, undefined, false);
                     console.log('emitEtsFetchCookieSyncIncognitoUndefined015 cookie : ' + resultValue);
                   } catch (error) {
                     let e: business_error.BusinessError = error as business_error.BusinessError;

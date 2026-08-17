@@ -1012,7 +1012,7 @@ export default function WebConfigCookieSync() {
     /**
      * @tc.name   testEtsFetchCookieSyncIncognitoNull014
      * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ERROR_1400
-     * @tc.desc   test fetchCookieSync incognito null (401 or default false)
+     * @tc.desc   test fetchCookieSync incognito null with includePartitionedCookies false (401 or default false)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1045,7 +1045,7 @@ export default function WebConfigCookieSync() {
     /**
      * @tc.name   testEtsFetchCookieSyncIncognitoUndefined015
      * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ERROR_1500
-     * @tc.desc   test fetchCookieSync incognito undefined (401 or default false)
+     * @tc.desc   test fetchCookieSync incognito undefined with includePartitionedCookies false (401 or default false)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1078,7 +1078,7 @@ export default function WebConfigCookieSync() {
     /**
      * @tc.name   testEtsFetchCookieIncognitoNull016
      * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ERROR_1600
-     * @tc.desc   test fetchCookie incognito null (401 or default false)
+     * @tc.desc   test fetchCookie incognito null with includePartitionedCookies false (401 or default false)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1111,7 +1111,7 @@ export default function WebConfigCookieSync() {
     /**
      * @tc.name   testEtsFetchCookieIncognitoUndefined017
      * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ERROR_1700
-     * @tc.desc   test fetchCookie incognito undefined (401 or default false)
+     * @tc.desc   test fetchCookie incognito undefined with includePartitionedCookies false (401 or default false)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
