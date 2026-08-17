@@ -6,6 +6,7 @@
     "MainAbility/pages/UIContext/SetTextSelectionClearPolicy",
     "MainAbility/pages/WithEnv/TextSymbolWithEnvFontScale",
     "MainAbility/pages/TextMenuItemId/TextMenuItemId",
-    "MainAbility/pages/UIContext/DisableMenuItems"
+    "MainAbility/pages/UIContext/DisableMenuItems",
+    "MainAbility/pages/LayoutManager/LayoutManagerEncoding"
   ]
 }
