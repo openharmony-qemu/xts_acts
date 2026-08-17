@@ -97,6 +97,7 @@ export default function displayTest() {
     let isSyscapSessionManagerSupported = false;
     let curWindowBrightness = 0.0;
     let isDeskTop: boolean = false;
+    let capabilityData:string = "";
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -163,7 +164,7 @@ export default function displayTest() {
         console.error(`beforeAll Failed to obtain the window properties. Cause code: ${exception.code}, message: ${exception.message}`);
       }
       try {
-        let capabilityData:string = displayClass.getDisplayCapability();
+        capabilityData = displayClass.getDisplayCapability();
         console.log('jsUnittest beforeAll deviceMessage =' + JSON.stringify(capabilityData));
         let result = display.isFoldable();
         if (!result) {
@@ -3233,6 +3234,8 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         let brightnessChangeCount2 = 0;
         let callback1Triggered = false;
         let callback2Triggered = false;
+        let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+        console.info(caseName +  Succeeded in obtaining fold status. Data: ${curFoldStatus});
 
         if (deviceType !== 'tv' && !isDeskTop) {
           const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
@@ -3240,12 +3243,21 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
             console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
             brightnessChangeCount1 = brightnessChangeCount1 + 1;
             callback1Triggered = true;
-            expect(displayId).assertEqual(0);
-            expect(brightnessInfo.sdrNits).assertLarger(0);
-            expect(brightnessInfo.currentHeadroom).assertLarger(0);
-            expect(brightnessInfo.maxHeadroom).assertLarger(0);
-            expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
-            expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+            if (JSON.parse(capabilityData).foldScreenType.split(',').map(Number)[0] === 5 && curFoldStatus === 3) {
+              expect([0, 999].includes(displayId)).assertTrue();
+              expect(brightnessInfo.sdrNits).assertLarger(0);
+              expect(brightnessInfo.currentHeadroom).assertLarger(0);
+              expect(brightnessInfo.maxHeadroom).assertLarger(0);
+              expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+              expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+            } else {
+              expect(displayId).assertEqual(0);
+              expect(brightnessInfo.sdrNits).assertLarger(0);
+              expect(brightnessInfo.currentHeadroom).assertLarger(0);
+              expect(brightnessInfo.maxHeadroom).assertLarger(0);
+              expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+              expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+            }
             console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
           };
 
@@ -3254,12 +3266,21 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
             console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
             brightnessChangeCount2 = brightnessChangeCount2 + 1;
             callback2Triggered = true;
-            expect(displayId).assertEqual(0);
-            expect(brightnessInfo.sdrNits).assertLarger(0);
-            expect(brightnessInfo.currentHeadroom).assertLarger(0);
-            expect(brightnessInfo.maxHeadroom).assertLarger(0);
-            expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
-            expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+            if (JSON.parse(capabilityData).foldScreenType.split(',').map(Number)[0] === 5 && curFoldStatus === 3) {
+              expect([0, 999].includes(displayId)).assertTrue();
+              expect(brightnessInfo.sdrNits).assertLarger(0);
+              expect(brightnessInfo.currentHeadroom).assertLarger(0);
+              expect(brightnessInfo.maxHeadroom).assertLarger(0);
+              expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+              expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+            } else {
+              expect(displayId).assertEqual(0);
+              expect(brightnessInfo.sdrNits).assertLarger(0);
+              expect(brightnessInfo.currentHeadroom).assertLarger(0);
+              expect(brightnessInfo.maxHeadroom).assertLarger(0);
+              expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+              expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+            }
             console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
           };
           display.on('brightnessInfoChange', callback1);
@@ -3346,6 +3367,8 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         let brightnessChangeCount2 = 0;
         let callback1Triggered = false;
         let callback2Triggered = false;
+        let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+        console.info(caseName +  Succeeded in obtaining fold status. Data: ${curFoldStatus});
 
         if(deviceType !== 'tv' && !isDeskTop) {
           let driver: Driver = Driver.create();
@@ -3355,12 +3378,21 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
             console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
             brightnessChangeCount1 = brightnessChangeCount1 + 1;
             callback1Triggered = true;
-            expect(displayId).assertEqual(0);
-            expect(brightnessInfo.sdrNits).assertLarger(0);
-            expect(brightnessInfo.currentHeadroom).assertLarger(0);
-            expect(brightnessInfo.maxHeadroom).assertLarger(0);
-            expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
-            expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+            if (JSON.parse(capabilityData).foldScreenType.split(',').map(Number)[0] === 5 && curFoldStatus === 3) {
+              expect([0, 999].includes(displayId)).assertTrue();
+              expect(brightnessInfo.sdrNits).assertLarger(0);
+              expect(brightnessInfo.currentHeadroom).assertLarger(0);
+              expect(brightnessInfo.maxHeadroom).assertLarger(0);
+              expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+              expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+            } else {
+              expect(displayId).assertEqual(0);
+              expect(brightnessInfo.sdrNits).assertLarger(0);
+              expect(brightnessInfo.currentHeadroom).assertLarger(0);
+              expect(brightnessInfo.maxHeadroom).assertLarger(0);
+              expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+              expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+            }
             console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
           };
 
@@ -3369,12 +3401,21 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
             console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
             brightnessChangeCount2 = brightnessChangeCount2 + 1;
             callback2Triggered = true;
-            expect(displayId).assertEqual(0);
-            expect(brightnessInfo.sdrNits).assertLarger(0);
-            expect(brightnessInfo.currentHeadroom).assertLarger(0);
-            expect(brightnessInfo.maxHeadroom).assertLarger(0);
-            expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
-            expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+            if (JSON.parse(capabilityData).foldScreenType.split(',').map(Number)[0] === 5 && curFoldStatus === 3) {
+              expect([0, 999].includes(displayId)).assertTrue();
+              expect(brightnessInfo.sdrNits).assertLarger(0);
+              expect(brightnessInfo.currentHeadroom).assertLarger(0);
+              expect(brightnessInfo.maxHeadroom).assertLarger(0);
+              expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+              expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+            } else {
+              expect(displayId).assertEqual(0);
+              expect(brightnessInfo.sdrNits).assertLarger(0);
+              expect(brightnessInfo.currentHeadroom).assertLarger(0);
+              expect(brightnessInfo.maxHeadroom).assertLarger(0);
+              expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+              expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+            }
             console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
           };
           display.on('brightnessInfoChange', callback1);
@@ -3514,18 +3555,29 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         await sleep(100);
         let brightnessChangeCount1 = 0;
         let callback1Triggered = false;
+        let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+        console.info(caseName +  Succeeded in obtaining fold status. Data: ${curFoldStatus});
 
         const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
           console.info(caseName + ' Callback1 triggered');
           console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
           brightnessChangeCount1 = brightnessChangeCount1 + 1;
           callback1Triggered = true;
-          expect(displayId).assertEqual(0);
-          expect(brightnessInfo.sdrNits).assertLarger(0);
-          expect(brightnessInfo.currentHeadroom).assertLarger(0);
-          expect(brightnessInfo.maxHeadroom).assertLarger(0);
-          expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
-          expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+          if (JSON.parse(capabilityData).foldScreenType.split(',').map(Number)[0] === 5 && curFoldStatus === 3) {
+              expect([0, 999].includes(displayId)).assertTrue();
+              expect(brightnessInfo.sdrNits).assertLarger(0);
+              expect(brightnessInfo.currentHeadroom).assertLarger(0);
+              expect(brightnessInfo.maxHeadroom).assertLarger(0);
+              expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+              expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+            } else {
+              expect(displayId).assertEqual(0);
+              expect(brightnessInfo.sdrNits).assertLarger(0);
+              expect(brightnessInfo.currentHeadroom).assertLarger(0);
+              expect(brightnessInfo.maxHeadroom).assertLarger(0);
+              expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+              expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+            }
           console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
         };
 
