@@ -2613,7 +2613,7 @@ export default function LockComboTest(): void {
       let counter: int = 0
       let tickCount: int = 0
       let expectedTicks: int = 5
-      let done: boolean = false
+      let finished: boolean = false
       let timerId: int = 0
       timerId = setInterval((): void => {
         mutex.lock()
@@ -2622,19 +2622,19 @@ export default function LockComboTest(): void {
         mutex.unlock()
         if (tickCount >= expectedTicks) {
           clearInterval(timerId)
-          done = true
+          expect(counter).assertEqual(expectedTicks)
+          finished = true
+          done()
         }
       }, 100)
-      try {
-        let waitTries: int = 0
-        while (!done && waitTries < 60) {
-          await Utils.msSleep(100)
-          waitTries++
-        }
-        expect(done).assertTrue()
-        expect(counter).assertEqual(expectedTicks)
-      } finally {
+      let waitTries: int = 0
+      while (!finished && waitTries < 60) {
+        await Utils.msSleep(100)
+        waitTries++
+      }
+      if (!finished) {
         clearInterval(timerId)
+        expect(false).assertFail()
       }
       } catch (error) {
         console.error(`LockComboTest9000 failed: ${error}`);
