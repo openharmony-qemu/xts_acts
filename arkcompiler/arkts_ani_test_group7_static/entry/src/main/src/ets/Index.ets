@@ -13,6 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
+ function processInTaskPool(resource: NativeResource): NativeResource {
+  resource.value *= 2;
+  return resource;
+}
 
 console.log("TC_LOADLIB_002 before loadLibrary");
 loadLibrary("entry");
@@ -648,4 +653,698 @@ export class Foo {
   native testAniParallelSum(taskCount: int): Object;
   native testAniAsyncCompute(callback: Function): boolean;
   native testAniCachedLookup(): boolean;
+}
+
+// SDK 26 已移除的旧版并发容器/同步原语类型占位 shim，基于内置容器模拟等价语义。
+export class ConcurrentHashMap<K, V> {
+  private data: Map<K, V> = new Map<K, V>();
+  constructor() {}
+  size(): int {
+    return this.data.size;
+  }
+  get(key: K): V | null {
+    let value = this.data.get(key);
+    if (value === undefined) {
+      return null;
+    }
+    return value;
+  }
+  put(key: K, value: V): void {
+    this.data.set(key, value);
+  }
+  remove(key: K): boolean {
+    return this.data.delete(key);
+  }
+  containsKey(key: K): boolean {
+    return this.data.has(key);
+  }
+}
+export class ConcurrentSet<T> {
+  private data: Set<T> = new Set<T>();
+  constructor() {}
+  size(): int {
+    return this.data.size;
+  }
+  add(value: T): void {
+    this.data.add(value);
+  }
+  contains(value: T): boolean {
+    return this.data.has(value);
+  }
+  remove(value: T): boolean {
+    return this.data.delete(value);
+  }
+}
+export class ConcurrentQueue<T> {
+  private data: Array<T> = [];
+  constructor() {}
+  size(): int {
+    return this.data.length;
+  }
+  poll(): T | null {
+    if (this.data.length == 0) {
+      return null;
+    }
+    let value = this.data.shift();
+    if (value === undefined) {
+      return null;
+    }
+    return value;
+  }
+  offer(value: T): void {
+    this.data.push(value);
+  }
+}
+
+
+export class NativeResource {
+  value: int = 0;
+  name: string = "";
+
+  hashCode(): int {
+    return this.value;
+  }
+
+  equals(other: Object | null): boolean {
+    if (other === null || other === undefined) {
+      return false;
+    }
+    if (!(other instanceof NativeResource)) {
+      return false;
+    }
+    let otherRes = other as NativeResource;
+    return this.value === otherRes.value && this.name === otherRes.name;
+  }
+}
+
+export class NativeData {
+  value: int = 0;
+  timestamp: long = 0;
+}
+
+export class NativeObjectHolder {
+  nativeObj: NativeResource | null = null;
+
+  native createAndStoreNativeObject(): NativeResource;
+  native getNativeObjectValue(): int;
+  native setNativeObjectValue(value: int): void;
+
+  constructor() {
+  }
+}
+
+export interface IResource {
+  resource: NativeResource | null;
+}
+
+export class ResourceContainer implements IResource {
+  resource: NativeResource | null = null;
+  private _internalData: int = 0;
+
+  native createResource(): NativeResource;
+  native getResourceData(): int;
+
+  constructor() {
+  }
+}
+
+export class GlobalResourceManager {
+  static sharedResource: NativeResource | null = null;
+
+  native initSharedResource(): void;
+  native getSharedResourceValue(): int;
+  native updateSharedResourceValue(value: int): void;
+
+  constructor() {
+  }
+}
+
+export interface IDataHolder {
+  data: NativeData | null;
+}
+
+export class DataHolderImpl implements IDataHolder {
+  data: NativeData | null = null;
+  extraField: int = 0;
+
+  native createNativeData(): NativeData;
+  native getDataValue(): int;
+
+  constructor() {
+  }
+}
+
+export interface IResourceCollection {
+  resources: NativeResource[];
+}
+
+export class ResourceCollectionImpl implements IResourceCollection {
+  resources: NativeResource[] = [];
+
+  native addResource(resource: NativeResource): void;
+  native getResourceCount(): int;
+  native getResourceAtIndex(index: int): NativeResource | null;
+
+  constructor() {
+  }
+}
+
+export class ResourceMapManager {
+  private resourceMap: Map<string, NativeResource> = new Map<string, NativeResource>();
+
+  native createResourceWithKey(key: string): NativeResource;
+  native addResourceToMap(key: string, resource: NativeResource): void;
+  native getResourceFromMap(key: string): NativeResource | null;
+  native getMapSize(): int;
+  native removeResourceFromMap(key: string): boolean;
+
+  constructor() {
+  }
+}
+
+export class ResourceSetManager {
+  private resourceSet: Set<NativeResource> = new Set<NativeResource>();
+
+  native createUniqueResource(id: int): NativeResource;
+  native addResourceToSet(resource: NativeResource): boolean;
+  native hasResourceInSet(resource: NativeResource): boolean;
+  native getSetSize(): int;
+  native deleteResourceFromSet(resource: NativeResource): boolean;
+
+  constructor() {
+  }
+}
+
+export class DynamicArrayManager {
+  private resourceArray: Array<NativeResource> = [];
+
+  native createNativeResource(): NativeResource;
+  native pushResourceToArray(resource: NativeResource): int;
+  native popResourceFromArray(): NativeResource | null;
+  native getResourceFromArray(index: int): NativeResource | null;
+  native setResourceInArray(index: int, resource: NativeResource): void;
+  native getArrayLength(): int;
+
+  constructor() {
+  }
+}
+
+export class FixedArrayManager {
+  fixedResourceArray: FixedArray<NativeResource> | null = null;
+
+  native createFixedArray(size: int): FixedArray<NativeResource>;
+  native setResourceInFixedArray(index: int, resource: NativeResource): void;
+  native getResourceFromFixedArray(index: int): NativeResource | null;
+  native getFixedArrayLength(): int;
+
+  constructor() {
+  }
+}
+
+export class MixedArrayManager {
+  intFixedArray: FixedArray<int> | null = null;
+  refFixedArray: FixedArray<NativeResource> | null = null;
+
+  native createIntFixedArray(size: int): FixedArray<int>;
+  native createRefFixedArray(size: int): FixedArray<NativeResource>;
+  native setIntValue(index: int, value: int): void;
+  native getIntValue(index: int): int;
+  native setNativeResource(index: int, resource: NativeResource): void;
+  native getNativeResource(index: int): NativeResource | null;
+
+  constructor() {
+  }
+}
+
+export class ThreadSafeResourceManager {
+  native createNativeResourceInMainThread(): NativeResource;
+  native useNativeResourceInWorkerThread(resource: NativeResource): int;
+  native cleanupGlobalReference(): void;
+
+  constructor() {
+  }
+}
+
+export class ConcurrentResourceManager {
+  static sharedNativeResource: NativeResource | null = null;
+
+  native initSharedNativeResource(): void;
+  native incrementResourceValueInWorker(): int;
+  native getResourceValue(): int;
+
+  constructor() {
+  }
+}
+
+export class TaskPoolResourceManager {
+  native initTaskPoolResource(): void;
+  native processResourceInTaskPool(): int;
+  native getTaskPoolResult(): int;
+
+  constructor() {
+  }
+}
+
+export class LocalRefManager {
+  native createManyLocalRefs(count: int): void;
+  native verifyNoRefLeak(): boolean;
+
+  constructor() {
+  }
+}
+
+export class GlobalRefLifecycleManager {
+  native createAndCacheGlobalRef(): NativeResource;
+  native useCachedGlobalRef(): int;
+  native deleteCachedGlobalRef(): void;
+  native verifyGlobalRefDeleted(): boolean;
+
+  constructor() {
+  }
+}
+
+export class LocalScopeManager {
+  native startBackgroundThread(): void;
+  native stopBackgroundThread(): void;
+  native getProcessedCount(): int;
+
+  constructor() {
+  }
+}
+
+export class PrimitiveTypeManager {
+  boxedBoolean: Boolean | null = null;
+  boxedChar: Int | null = null;
+  boxedByte: Int | null = null;
+  boxedShort: Int | null = null;
+  boxedInt: Int | null = null;
+  boxedLong: Long | null = null;
+  boxedFloat: Float | null = null;
+  boxedDouble: Double | null = null;
+
+  native createBoxedBoolean(value: boolean): Boolean;
+  native createBoxedChar(value: int): Int;
+  native createBoxedByte(value: int): Int;
+  native createBoxedShort(value: int): Int;
+  native createBoxedInt(value: int): Int;
+  native createBoxedLong(value: long): Long;
+  native createBoxedFloat(value: float): Float;
+  native createBoxedDouble(value: double): Double;
+  native verifyBoxedBoolean(): boolean;
+  native verifyBoxedChar(): int;
+  native verifyBoxedByte(): int;
+  native verifyBoxedShort(): int;
+  native verifyBoxedInt(): int;
+  native verifyBoxedLong(): long;
+  native verifyBoxedFloat(): float;
+  native verifyBoxedDouble(): double;
+
+  constructor() {
+  }
+}
+
+export class StringObjectManager {
+  strField: string = "";
+
+  native createUtf8String(content: string): string;
+  native getStringLength(): int;
+  native getSubstring(start: int, length: int): string;
+
+  constructor() {
+  }
+}
+
+export class DynamicArrayObjectManager {
+  objArray: Object[] = [];
+
+  native createObjectArray(size: int): Object[];
+  native setArrayElement(index: int, value: Object): void;
+  native getArrayElement(index: int): Object | null;
+  native getArrayLength(): int;
+
+  constructor() {
+  }
+}
+
+export class FixedArrayTypeManager {
+  intFixedArray: FixedArray<int> | null = null;
+  boolFixedArray: FixedArray<boolean> | null = null;
+  charFixedArray: FixedArray<int> | null = null;
+  byteFixedArray: FixedArray<int> | null = null;
+  shortFixedArray: FixedArray<int> | null = null;
+  longFixedArray: FixedArray<long> | null = null;
+  floatFixedArray: FixedArray<float> | null = null;
+  doubleFixedArray: FixedArray<double> | null = null;
+  refFixedArray: FixedArray<Object> | null = null;
+
+  native createIntFixedArray(size: int): FixedArray<int>;
+  native setIntRegion(start: int, count: int, values: int[]): void;
+  native getIntElement(index: int): int;
+  native createBooleanFixedArray(size: int): FixedArray<boolean>;
+  native setBooleanElement(index: int, value: boolean): void;
+  native getBooleanElement(index: int): boolean;
+  native createCharFixedArray(size: int): FixedArray<int>;
+  native setCharElement(index: int, value: int): void;
+  native getCharElement(index: int): int;
+  native createByteFixedArray(size: int): FixedArray<int>;
+  native setByteElement(index: int, value: int): void;
+  native getByteElement(index: int): int;
+  native createShortFixedArray(size: int): FixedArray<int>;
+  native setShortElement(index: int, value: int): void;
+  native getShortElement(index: int): int;
+  native createLongFixedArray(size: int): FixedArray<long>;
+  native setLongElement(index: int, value: long): void;
+  native getLongElement(index: int): long;
+  native createFloatFixedArray(size: int): FixedArray<float>;
+  native setFloatElement(index: int, value: float): void;
+  native getFloatElement(index: int): float;
+  native createDoubleFixedArray(size: int): FixedArray<double>;
+  native setDoubleElement(index: int, value: double): void;
+  native getDoubleElement(index: int): double;
+  native createRefFixedArray(size: int): FixedArray<Object>;
+  native getRefElement(index: int): Object | null;
+
+  constructor() {
+  }
+}
+
+export class ArrayBufferObjectManager {
+  bufferField: ArrayBuffer | null = null;
+
+  native createArrayBuffer(size: int): ArrayBuffer;
+  native getByteLength(): int;
+
+  constructor() {
+  }
+}
+
+export class FunctionObjectManager {
+  native createAndCallFunction(): double;
+  native callWithCallback(callback: (x: int) => int, value: int): int;
+  native storeCallback(callback: () => void): void;
+  native executeStoredCallback(): void;
+
+  constructor() {
+  }
+}
+
+export class ErrorObjectManager {
+  native throwCustomError(message: string): void;
+  native catchAndHandleError(): string | null;
+
+  constructor() {
+  }
+}
+
+export class EnumObjectManager {
+  native getEnumValueByName(enumName: string, itemName: string): int;
+  native getEnumItemCount(enumName: string): int;
+
+  constructor() {
+  }
+}
+
+export class ClassObjectManager {
+  native findClassByName(className: string): Object | null;
+
+  constructor() {
+  }
+}
+
+export class ModuleObjectManager {
+  native getModuleFunction(moduleName: string, funcName: string): int;
+
+  constructor() {
+  }
+}
+
+export class NamespaceObjectManager {
+  native getNamespaceFunction(namespaceName: string, funcName: string, args: Array<int>): int;
+
+  constructor() {
+  }
+}
+
+export enum Color {
+  RED = 1,
+  GREEN = 2,
+  BLUE = 3
+}
+
+export namespace TestModule {
+  export function moduleFunc(): int {
+    return 42;
+  }
+  export function makeFifteen(): number {
+    return 15.0;
+  }
+}
+
+export namespace TestNamespace {
+  export function namespaceFunc(a: int, b: int): int {
+    return a + b;
+  }
+}
+
+export class ConcurrentMapManager {
+  concurrentMap: ConcurrentHashMap<int, NativeResource> = new ConcurrentHashMap<int, NativeResource>();
+
+  native testNativeObjectInConcurrentHashMapNative(): boolean;
+
+  constructor() {
+  }
+}
+
+export class ConcurrentSetManager {
+  concurrentSet: ConcurrentSet<NativeResource> = new ConcurrentSet<NativeResource>();
+
+  native testNativeObjectInConcurrentSetNative(): boolean;
+
+  constructor() {
+  }
+}
+
+export class ConcurrentQueueManager {
+  concurrentQueue: ConcurrentQueue<NativeResource> = new ConcurrentQueue<NativeResource>();
+
+  native testNativeObjectInConcurrentQueueNative(): boolean;
+
+  constructor() {
+  }
+}
+
+export class MutexManager {
+  mutex: Object = new Mutex();
+
+  native testNativeObjectWithMutexNative(): boolean;
+
+  constructor() {
+  }
+}
+
+export class RWLockManager {
+  rwlock: Object = new RWLock();
+
+  native testNativeObjectWithRWLockNative(): boolean;
+
+  constructor() {
+  }
+}
+
+export class WorkerLocalManager {
+  workerLocal: Object = new WorkerLocal<NativeResource>();
+
+  native testNativeObjectInWorkerLocalNative(): boolean;
+
+  constructor() {
+  }
+}
+
+export class EAWorkerMessageManager {
+  eaMessageResource: NativeResource | null = null;
+
+  native testNativeObjectCrossEAWorkerMessageNative(): boolean;
+
+  constructor() {
+  }
+}
+
+export class MultiThreadManager {
+  native testMultiThreadConcurrentAccessNative(): boolean;
+
+  constructor() {
+  }
+}
+
+export class AsyncPromiseManager {
+  asyncPromise: NativeResource | null = null;
+
+  native testNativeObjectAsyncPromiseCreateNative(): boolean;
+  native testNativeObjectAsyncPromiseResolveNative(): boolean;
+
+  constructor() {
+  }
+}
+
+export class MultiInteractionManager {
+  native testNativeETSMultiInteractionNative(): boolean;
+
+  etsCreateResource(): NativeResource {
+    return new NativeResource();
+  }
+
+  etsModifyResource(input: NativeResource): NativeResource {
+    input.value *= 2;
+    return input;
+  }
+
+  etsValidateResource(resource: NativeResource): boolean {
+    return resource.value > 0;
+  }
+
+  constructor() {
+  }
+}
+
+export class NativeKeyMapManager {
+  nativeKeyMap: ConcurrentHashMap<NativeResource, NativeResource> =
+    new ConcurrentHashMap<NativeResource, NativeResource>();
+
+  native testNativeObjectAsMapKeyNative(): boolean;
+  native testNativeKeyMapGetNative(): boolean;
+  native testNativeKeyMapRemoveNative(): boolean;
+
+  constructor() {
+  }
+}
+
+export class NativeKeyBasicMapManager {
+  nativeKeyMapBasic: Map<NativeResource, NativeResource> = new Map<NativeResource, NativeResource>();
+
+  native testNativeKeyBasicMapNative(): boolean;
+
+  constructor() {
+  }
+}
+
+export class ExceptionTestManager {
+  emptyMap: Map<NativeResource, NativeResource> = new Map<NativeResource, NativeResource>();
+  emptyConcurrentMap: ConcurrentHashMap<NativeResource, NativeResource> =
+    new ConcurrentHashMap<NativeResource, NativeResource>();
+  emptyQueue: ConcurrentQueue<NativeResource> = new ConcurrentQueue<NativeResource>();
+  emptyConcurrentSet: ConcurrentSet<NativeResource> = new ConcurrentSet<NativeResource>();
+  outOfBoundsArray: NativeResource[] = [new NativeResource(), new NativeResource()];
+  outOfBoundsFixedArray: FixedArray<NativeResource> | null = null;
+  mutex: Object = new Mutex();
+  rwlock: Object = new RWLock();
+  workerLocal: Object = new WorkerLocal<NativeResource>();
+
+  native testEmptyMapGetExceptionNative(): boolean;
+  native testMapPutNullKeyNative(): boolean;
+  native testMapPutNullValueNative(): boolean;
+  native testEmptyQueuePollExceptionNative(): boolean;
+  native testSetContainsNullNative(): boolean;
+  native testArrayIndexOutOfBoundsNative(): boolean;
+  native testFixedArrayIndexOutOfBoundsNative(): boolean;
+  native testMutexDoubleLockExceptionNative(): boolean;
+  native testRWLockConflictNative(): boolean;
+  native testWorkerLocalNotSetNative(): boolean;
+  native testGlobalRefDeleteNullExceptionNative(): boolean;
+  native testNullObjectPropertyNative(): boolean;
+  native testNullArrayOperationNative(): boolean;
+  native testNullStringOperationNative(): boolean;
+  native testUnboxTypeMismatchNative(): boolean;
+
+  constructor() {
+  }
+}
+
+export class RecursiveInteractionManager {
+  native testNativeETSRecursiveInteractionNative(): boolean;
+
+  etsStartChain(depth: int): NativeResource {
+    let resource = new NativeResource();
+    resource.value = depth * 100;
+
+    if (depth > 1) {
+      let next = this.etsStartChain(depth - 1);
+      resource.value += next.value;
+    }
+
+    return resource;
+  }
+
+  constructor() {
+  }
+}
+
+export class AsyncCallbackChainManager {
+  native testNativeObjectAsyncCallbackChainNative(): boolean;
+
+  chainResource: NativeResource | null = null;
+
+  async etsAsyncStep1(input: NativeResource): Promise<NativeResource> {
+    input.value += 10;
+    return input;
+  }
+
+  async etsAsyncStep2(input: NativeResource): Promise<NativeResource> {
+    input.value += 10;
+    return input;
+  }
+
+  async etsAsyncStep3(input: NativeResource): Promise<NativeResource> {
+    input.value += 10;
+    return input;
+  }
+
+  constructor() {
+  }
+}
+
+// NOTE: SDK 26 (@ohos.worker.d.ets) 在 arkTS 1.2 'use static' 严格模式下，
+// ThreadWorker.postMessage 存在重复声明（overload 冲突），无法直接使用 Worker。
+// 此处以 taskpool 实现「native 对象跨线程异步往返」语义（对应设计 8.13 的
+// 异步往返意图）。待 SDK 修复后可新增带 'use static' 的 Worker 脚本切换回
+// 真正的 Worker 实现。
+export class WorkerAsyncRoundtripManager {
+  native testNativeObjectWorkerAsyncRoundtripNative(): boolean;
+
+  workerResource: NativeResource | null = null;
+
+  workerResponse: NativeResource | null = null;
+
+  etsSendToWorker(resource: NativeResource): void {
+    this.workerResource = resource;
+  }
+
+  async etsGetFromWorker(): Promise<NativeResource | null> {
+    if (this.workerResource === null) {
+      return null;
+    }
+    let task: taskpool.Task = new taskpool.Task(roundtripInTaskPool, this.workerResource);
+    return await taskpool.execute(task) as NativeResource;
+  }
+}
+
+function roundtripInTaskPool(resource: NativeResource): NativeResource {
+  resource.value += 1;
+  return resource;
+}
+
+export class TaskPoolAsyncExecuteManager {
+  native testNativeObjectTaskPoolAsyncExecuteNative(): boolean;
+
+  taskResource: NativeResource | null = null;
+
+  etsCreateTaskPoolTask(inputResource: NativeResource): taskpool.Task {
+    return new taskpool.Task(processInTaskPool, inputResource);
+  }
+
+  async etsExecuteTaskPoolTask(task: taskpool.Task): Promise<NativeResource> {
+    return await taskpool.execute(task) as NativeResource;
+  }
+
+  constructor() {
+  }
 }

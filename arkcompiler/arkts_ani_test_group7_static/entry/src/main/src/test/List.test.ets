@@ -41,6 +41,14 @@ import TcErrorNoLoadLibTest from "./TcErrorNoLoadLibTest.test";
 import TcErrorTest from "./TcErrorTest.test";
 import TcDisasmTest from "./TcDisasmTest.test";
 import aniNativeTest from "./ActsAniNativeTest.test";
+import classStorageTest from './ClassStorageTest.test.ets';
+import containerStorageTest from './ContainerStorageTest.test.ets';
+import threadSafeStorageTest from './ThreadSafeStorageTest.test.ets';
+import aniObjectTypeTest from './AniObjectTypeTest.test.ets';
+import concurrentStorageTest from './ConcurrentStorageTest.test.ets';
+import mapKeyStorageTest from './MapKeyStorageTest.test.ets';
+import exceptionStorageTest from './ExceptionStorageTest.test.ets';
+
 export default function testsuite() :void{
   TcBindTest();
   TcManglingTest();
@@ -70,4 +78,11 @@ export default function testsuite() :void{
   TcErrorTest();
   TcDisasmTest();
   aniNativeTest();
+  classStorageTest();
+  containerStorageTest();
+  threadSafeStorageTest();
+  aniObjectTypeTest();
+  concurrentStorageTest();
+  mapKeyStorageTest();
+  exceptionStorageTest();
 }
