@@ -3235,7 +3235,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         let callback1Triggered = false;
         let callback2Triggered = false;
         let curFoldStatus: display.FoldStatus = display.getFoldStatus();
-        console.info(caseName +  Succeeded in obtaining fold status. Data: ${curFoldStatus});
+        console.info(caseName +  `Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
 
         if (deviceType !== 'tv' && !isDeskTop) {
           const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
@@ -3368,7 +3368,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         let callback1Triggered = false;
         let callback2Triggered = false;
         let curFoldStatus: display.FoldStatus = display.getFoldStatus();
-        console.info(caseName +  Succeeded in obtaining fold status. Data: ${curFoldStatus});
+        console.info(caseName +  `Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
 
         if(deviceType !== 'tv' && !isDeskTop) {
           let driver: Driver = Driver.create();
@@ -3556,7 +3556,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         let brightnessChangeCount1 = 0;
         let callback1Triggered = false;
         let curFoldStatus: display.FoldStatus = display.getFoldStatus();
-        console.info(caseName +  Succeeded in obtaining fold status. Data: ${curFoldStatus});
+        console.info(caseName +  `Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
 
         const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
           console.info(caseName + ' Callback1 triggered');
