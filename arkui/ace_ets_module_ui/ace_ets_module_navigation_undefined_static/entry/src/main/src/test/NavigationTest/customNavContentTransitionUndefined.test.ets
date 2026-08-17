@@ -92,10 +92,17 @@ export default function customNavContentTransitionUndefined() {
       let testText2 = obj2.getElement('$attrs').getString('content');
       expect(testText2).assertEqual("0");
 
+      // 点击返回按钮返回到初始页面
+      let backText = await driver.findComponent(ON.id('NavPathStackApi2_text_pageOne'));
+      if (backText) {
+      await backText.click();
+      await CommonFunc.sleep(1000)
+
       let backText = await driver.findComponent(ON.id('NavPathStackApi2_text_pageOne'));
       if (backText) {
         await backText.click();
         await CommonFunc.sleep(1000);
+
       }
 
       if (toggleBtn) {
@@ -118,8 +125,8 @@ export default function customNavContentTransitionUndefined() {
       let strJson3 = inspector.getInspectorByKey('changeCountText');
       let obj3 = JSON.parseJsonElement(strJson3);
       let testText3 = obj3.getElement('$attrs').getString('content');
-      expect(testText3).assertEqual("-1");
-
+      expect(testText3).assertEqual("-1")
+      // 点击返回
       let backText2 = await driver.findComponent(ON.id('NavPathStackApi2_text_pageOne'));
       if (backText2) {
         await backText2.click();
@@ -130,6 +137,13 @@ export default function customNavContentTransitionUndefined() {
       expect().assertFail();
       done();
     }
+
+      let backText2 = await driver.findComponent(ON.id('NavPathStackApi2_text_pageOne'));
+      if (backText2) {
+        await backText2.click();
+        await CommonFunc.sleep(1000);
+      }
+
 
     }catch (err) {
         console.error('customNavContentTransitionUndefined_static_0001 error: ' + err);
