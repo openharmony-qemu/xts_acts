@@ -34,7 +34,7 @@ export default function typedUArraysFindTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART202_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST04_0100
      * @tc.name testTypedUArraysFindTestFileD001
      * @tc.desc Verify Uint32Array find
      * @tc.size MediumTest
@@ -49,7 +49,7 @@ export default function typedUArraysFindTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART202_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST04_0200
      * @tc.name testTypedUArraysFindTestFileD002
      * @tc.desc Verify BigUint64Array find
      * @tc.size MediumTest
@@ -64,7 +64,7 @@ export default function typedUArraysFindTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART202_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST04_0300
      * @tc.name testTypedUArraysFindTestFileD003
      * @tc.desc Verify Uint8ClampedArray find
      * @tc.size MediumTest
@@ -79,7 +79,7 @@ export default function typedUArraysFindTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART202_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST04_0400
      * @tc.name testTypedUArraysFindTestFileD004
      * @tc.desc Verify Uint8Array find
      * @tc.size MediumTest
@@ -95,7 +95,7 @@ export default function typedUArraysFindTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART202_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST04_0500
      * @tc.name testTypedUArraysFindTestFileD005
      * @tc.desc Verify Uint8Array find 0-255
      * @tc.size MediumTest
@@ -109,7 +109,7 @@ export default function typedUArraysFindTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART202_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST04_0600
      * @tc.name testTypedUArraysFindTestFileD006
      * @tc.desc Verify Uint16Array find 0-65535
      * @tc.size MediumTest
@@ -123,7 +123,7 @@ export default function typedUArraysFindTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART202_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST04_0700
      * @tc.name testTypedUArraysFindTestFileD007
      * @tc.desc Verify Uint32Array find 0-4294967295
      * @tc.size MediumTest
@@ -137,7 +137,7 @@ export default function typedUArraysFindTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART202_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST04_0800
      * @tc.name testTypedUArraysFindTestFileD008
      * @tc.desc Verify BigUint64Array find 0-BigInt('18446744073709551615')
      * @tc.size MediumTest
@@ -151,7 +151,7 @@ export default function typedUArraysFindTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART202_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST04_0900
      * @tc.name testTypedUArraysFindTestFileD009
      * @tc.desc Verify Uint8ClampedArray find 0-255
      * @tc.size MediumTest

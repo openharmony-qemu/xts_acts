@@ -34,7 +34,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_0100
      * @tc.name testTypedUArraysFindTestFileA001
      * @tc.desc Verify find 0 - Uint8Array
      * @tc.size MediumTest
@@ -48,7 +48,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_0200
      * @tc.name testTypedUArraysFindTestFileA002
      * @tc.desc Verify find 0 - BigUint64Array
      * @tc.size MediumTest
@@ -62,7 +62,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_0300
      * @tc.name testTypedUArraysFindTestFileA003
      * @tc.desc Verify find 1 - predicate Uint8Array
      * @tc.size MediumTest
@@ -76,7 +76,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_0400
      * @tc.name testTypedUArraysFindTestFileA004
      * @tc.desc Verify find 2 - predicate + thisArg Uint8Array
      * @tc.size MediumTest
@@ -91,7 +91,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_0500
      * @tc.name testTypedUArraysFindTestFileA005
      * @tc.desc Verify find 1 - predicate Uint16Array
      * @tc.size MediumTest
@@ -105,7 +105,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_0600
      * @tc.name testTypedUArraysFindTestFileA006
      * @tc.desc Verify find 2 - predicate + thisArg Uint32Array
      * @tc.size MediumTest
@@ -120,7 +120,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_0700
      * @tc.name testTypedUArraysFindTestFileA007
      * @tc.desc Verify find 1 - predicate BigUint64Array
      * @tc.size MediumTest
@@ -134,7 +134,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_0800
      * @tc.name testTypedUArraysFindTestFileA008
      * @tc.desc Verify find 2 - predicate + thisArg BigUint64Array
      * @tc.size MediumTest
@@ -149,7 +149,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_0900
      * @tc.name testTypedUArraysFindTestFileA009
      * @tc.desc Verify predicate true Uint8Array
      * @tc.size MediumTest
@@ -163,7 +163,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_1000
      * @tc.name testTypedUArraysFindTestFileA010
      * @tc.desc Verify predicate true Uint8Array
      * @tc.size MediumTest
@@ -177,7 +177,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_1100
      * @tc.name testTypedUArraysFindTestFileA011
      * @tc.desc Verify predicate true Uint8Array
      * @tc.size MediumTest
@@ -191,7 +191,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_1200
      * @tc.name testTypedUArraysFindTestFileA012
      * @tc.desc Verify predicate true Uint8Array
      * @tc.size MediumTest
@@ -205,7 +205,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_1300
      * @tc.name testTypedUArraysFindTestFileA013
      * @tc.desc Verify predicate index Uint8Array
      * @tc.size MediumTest
@@ -219,7 +219,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_1400
      * @tc.name testTypedUArraysFindTestFileA014
      * @tc.desc Verify predicate array Uint8Array
      * @tc.size MediumTest
@@ -233,7 +233,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_1500
      * @tc.name testTypedUArraysFindTestFileA015
      * @tc.desc Verify predicate undefined Uint8Array
      * @tc.size MediumTest
@@ -247,7 +247,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_1600
      * @tc.name testTypedUArraysFindTestFileA016
      * @tc.desc Verify predicate undefined Uint8Array
      * @tc.size MediumTest
@@ -261,7 +261,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_1700
      * @tc.name testTypedUArraysFindTestFileA017
      * @tc.desc Verify predicate undefined Uint8Array
      * @tc.size MediumTest
@@ -275,7 +275,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_1800
      * @tc.name testTypedUArraysFindTestFileA018
      * @tc.desc Verify predicate undefined Uint8Array
      * @tc.size MediumTest
@@ -289,7 +289,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_1900
      * @tc.name testTypedUArraysFindTestFileA019
      * @tc.desc Verify predicate false Uint8Array
      * @tc.size MediumTest
@@ -303,7 +303,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_2000
      * @tc.name testTypedUArraysFindTestFileA020
      * @tc.desc Verify predicate true Uint8Array
      * @tc.size MediumTest
@@ -317,7 +317,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_2100
      * @tc.name testTypedUArraysFindTestFileA021
      * @tc.desc Verify predicate false Uint8Array
      * @tc.size MediumTest
@@ -331,7 +331,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_2200
      * @tc.name testTypedUArraysFindTestFileA022
      * @tc.desc Verify predicate Uint8Array
      * @tc.size MediumTest
@@ -345,7 +345,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_2300
      * @tc.name testTypedUArraysFindTestFileA023
      * @tc.desc Verify predicate Uint8Array
      * @tc.size MediumTest
@@ -359,7 +359,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_2400
      * @tc.name testTypedUArraysFindTestFileA024
      * @tc.desc Verify predicate array Uint8Array
      * @tc.size MediumTest
@@ -373,7 +373,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_2500
      * @tc.name testTypedUArraysFindTestFileA025
      * @tc.desc Verify predicate Uint8Array
      * @tc.size MediumTest
@@ -387,7 +387,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_2600
      * @tc.name testTypedUArraysFindTestFileA026
      * @tc.desc Verify predicate Uint8Array
      * @tc.size MediumTest
@@ -402,7 +402,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_2700
      * @tc.name testTypedUArraysFindTestFileA027
      * @tc.desc Verify predicate Uint8Array
      * @tc.size MediumTest
@@ -416,7 +416,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_2800
      * @tc.name testTypedUArraysFindTestFileA028
      * @tc.desc Verify predicate Uint8ClampedArray
      * @tc.size MediumTest
@@ -430,7 +430,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_2900
      * @tc.name testTypedUArraysFindTestFileA029
      * @tc.desc Verify predicate Uint16Array
      * @tc.size MediumTest
@@ -444,7 +444,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_3000
      * @tc.name testTypedUArraysFindTestFileA030
      * @tc.desc Verify predicate Uint32Array
      * @tc.size MediumTest
@@ -458,7 +458,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_3100
      * @tc.name testTypedUArraysFindTestFileA031
      * @tc.desc Verify thisArg false Uint8Array
      * @tc.size MediumTest
@@ -472,7 +472,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_3200
      * @tc.name testTypedUArraysFindTestFileA032
      * @tc.desc Verify thisArg Uint8Array
      * @tc.size MediumTest
@@ -488,7 +488,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_3300
      * @tc.name testTypedUArraysFindTestFileA033
      * @tc.desc Verify thisArg Uint16Array
      * @tc.size MediumTest
@@ -503,7 +503,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_3400
      * @tc.name testTypedUArraysFindTestFileA034
      * @tc.desc Verify Uint8Array 0 Uint8Array
      * @tc.size MediumTest
@@ -517,7 +517,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_3500
      * @tc.name testTypedUArraysFindTestFileA035
      * @tc.desc Verify Uint8Array undefined
      * @tc.size MediumTest
@@ -531,7 +531,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_3600
      * @tc.name testTypedUArraysFindTestFileA036
      * @tc.desc Verify Uint8Array undefined
      * @tc.size MediumTest
@@ -545,7 +545,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_3700
      * @tc.name testTypedUArraysFindTestFileA037
      * @tc.desc Verify Uint8Array undefined
      * @tc.size MediumTest
@@ -559,7 +559,7 @@ export default function typedUArraysFindTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FIND_PART101_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDTEST01_3800
      * @tc.name testTypedUArraysFindTestFileA038
      * @tc.desc Verify Uint8Array undefined
      * @tc.size MediumTest

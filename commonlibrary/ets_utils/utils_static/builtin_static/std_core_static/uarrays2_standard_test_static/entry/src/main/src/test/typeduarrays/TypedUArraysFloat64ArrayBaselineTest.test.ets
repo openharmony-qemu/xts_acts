@@ -34,7 +34,7 @@ export default function float64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_Baseline_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FLOAT64ARRAYBASELINETEST_0100
      * @tc.name testFloat64ArrayBaseline001
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -49,7 +49,7 @@ export default function float64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_Baseline_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FLOAT64ARRAYBASELINETEST_0200
      * @tc.name testFloat64ArrayBaseline002
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -65,7 +65,7 @@ export default function float64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_Baseline_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FLOAT64ARRAYBASELINETEST_0300
      * @tc.name testFloat64ArrayBaseline003
      * @tc.desc Verify NaN/Infinity
      * @tc.size MediumTest
@@ -83,7 +83,7 @@ export default function float64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_Baseline_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FLOAT64ARRAYBASELINETEST_0400
      * @tc.name testFloat64ArrayBaseline004
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -99,7 +99,7 @@ export default function float64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_Baseline_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FLOAT64ARRAYBASELINETEST_0500
      * @tc.name testFloat64ArrayBaseline005
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -116,7 +116,7 @@ export default function float64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_Baseline_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FLOAT64ARRAYBASELINETEST_0600
      * @tc.name testFloat64ArrayBaseline006
      * @tc.desc Verify at
      * @tc.size MediumTest
@@ -130,7 +130,7 @@ export default function float64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_Baseline_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FLOAT64ARRAYBASELINETEST_0700
      * @tc.name testFloat64ArrayBaseline007
      * @tc.desc Verify entries/keys/values
      * @tc.size MediumTest
@@ -144,7 +144,7 @@ export default function float64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_Baseline_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FLOAT64ARRAYBASELINETEST_0800
      * @tc.name testFloat64ArrayBaseline008
      * @tc.desc Verify every/some/filter/map/reduce
      * @tc.size MediumTest
@@ -160,7 +160,7 @@ export default function float64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_Baseline_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FLOAT64ARRAYBASELINETEST_0900
      * @tc.name testFloat64ArrayBaseline009
      * @tc.desc Verify sort/reverse/fill
      * @tc.size MediumTest
@@ -176,7 +176,7 @@ export default function float64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_Baseline_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FLOAT64ARRAYBASELINETEST_1000
      * @tc.name testFloat64ArrayBaseline010
      * @tc.desc Verify slice/subarray/copyWithin
      * @tc.size MediumTest
@@ -193,7 +193,7 @@ export default function float64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_Baseline_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FLOAT64ARRAYBASELINETEST_1100
      * @tc.name testFloat64ArrayBaseline011
      * @tc.desc Verify from/of
      * @tc.size MediumTest
@@ -206,7 +206,7 @@ export default function float64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_Baseline_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FLOAT64ARRAYBASELINETEST_1200
      * @tc.name testFloat64ArrayBaseline012
      * @tc.desc Verify indexOf/includes/find
      * @tc.size MediumTest
@@ -221,7 +221,7 @@ export default function float64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_Baseline_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FLOAT64ARRAYBASELINETEST_1300
      * @tc.name testFloat64ArrayBaseline013
      * @tc.desc Verify toString/valueOf
      * @tc.size MediumTest

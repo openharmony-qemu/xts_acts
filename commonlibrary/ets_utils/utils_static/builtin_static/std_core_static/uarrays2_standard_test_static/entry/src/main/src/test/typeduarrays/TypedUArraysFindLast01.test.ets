@@ -86,7 +86,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_0100
      * @tc.name testTypedUArraysFindLastFileA001
      * @tc.desc Verify 0 findLast Uint8ClampedArray TypeError
      * @tc.size MediumTest
@@ -100,7 +100,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_0200
      * @tc.name testTypedUArraysFindLastFileA002
      * @tc.desc Verify 0 findLast BigUint64Array TypeError
      * @tc.size MediumTest
@@ -114,7 +114,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_0300
      * @tc.name testTypedUArraysFindLastFileA003
      * @tc.desc Verify predicate Uint8ClampedArray
      * @tc.size MediumTest
@@ -128,7 +128,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_0400
      * @tc.name testTypedUArraysFindLastFileA004
      * @tc.desc Verify predicate Uint8Array
      * @tc.size MediumTest
@@ -142,7 +142,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_0500
      * @tc.name testTypedUArraysFindLastFileA005
      * @tc.desc Verify predicate Uint16Array
      * @tc.size MediumTest
@@ -156,7 +156,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_0600
      * @tc.name testTypedUArraysFindLastFileA006
      * @tc.desc Verify predicate Uint32Array
      * @tc.size MediumTest
@@ -170,7 +170,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_0700
      * @tc.name testTypedUArraysFindLastFileA007
      * @tc.desc Verify predicate BigUint64Array
      * @tc.size MediumTest
@@ -184,7 +184,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_0800
      * @tc.name testTypedUArraysFindLastFileA008
      * @tc.desc Verify predicate Uint8Array TypeError
      * @tc.size MediumTest
@@ -198,7 +198,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_0900
      * @tc.name testTypedUArraysFindLastFileA009
      * @tc.desc Verify predicate Uint32Array TypeError
      * @tc.size MediumTest
@@ -212,7 +212,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_1000
      * @tc.name testTypedUArraysFindLastFileA010
      * @tc.desc Verify predicate value Uint8ClampedArray
      * @tc.size MediumTest
@@ -226,7 +226,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_1100
      * @tc.name testTypedUArraysFindLastFileA011
      * @tc.desc Verify predicate index Uint16Array
      * @tc.size MediumTest
@@ -240,7 +240,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_1200
      * @tc.name testTypedUArraysFindLastFileA012
      * @tc.desc Verify predicate value BigUint64Array BigInt
      * @tc.size MediumTest
@@ -254,7 +254,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_1300
      * @tc.name testTypedUArraysFindLastFileA013
      * @tc.desc Verify predicate Uint8ClampedArray
      * @tc.size MediumTest
@@ -268,7 +268,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_1400
      * @tc.name testTypedUArraysFindLastFileA014
      * @tc.desc Verify predicate Uint8Array
      * @tc.size MediumTest
@@ -282,7 +282,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_1500
      * @tc.name testTypedUArraysFindLastFileA015
      * @tc.desc Verify predicate false Uint16Array undefined
      * @tc.size MediumTest
@@ -296,7 +296,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_1600
      * @tc.name testTypedUArraysFindLastFileA016
      * @tc.desc Verify predicate false Uint32Array undefined
      * @tc.size MediumTest
@@ -310,7 +310,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_1700
      * @tc.name testTypedUArraysFindLastFileA017
      * @tc.desc Verify predicate false BigUint64Array undefined
      * @tc.size MediumTest
@@ -324,7 +324,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_1800
      * @tc.name testTypedUArraysFindLastFileA018
      * @tc.desc Verify predicate Uint8ClampedArray
      * @tc.size MediumTest
@@ -341,7 +341,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_1900
      * @tc.name testTypedUArraysFindLastFileA019
      * @tc.desc Verify predicate this thisArg Uint8Array
      * @tc.size MediumTest
@@ -355,7 +355,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_2000
      * @tc.name testTypedUArraysFindLastFileA020
      * @tc.desc Verify predicate this thisArg Uint32Array
      * @tc.size MediumTest
@@ -369,7 +369,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_2100
      * @tc.name testTypedUArraysFindLastFileA021
      * @tc.desc Verify thisArg predicate this undefined Uint8Array
      * @tc.size MediumTest
@@ -387,7 +387,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_2200
      * @tc.name testTypedUArraysFindLastFileA022
      * @tc.desc Verify thisArg 0 predicate this 0 Uint16Array
      * @tc.size MediumTest
@@ -401,7 +401,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_2300
      * @tc.name testTypedUArraysFindLastFileA023
      * @tc.desc Verify Uint8ClampedArray
      * @tc.size MediumTest
@@ -410,12 +410,12 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([5, 15, 25, 15]);
-      let result = findLastUint8ClampedArrayValue(arr, (_value: number, _index: number, _array: Uint8ClampedArray): boolean => true);
+      let result = findLastUint8ClampedArrayValue(arr, (value: number, _index: number, _array: Uint8ClampedArray): boolean => typeof value === 'number');
       expect(result).assertEqual(15);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_2400
      * @tc.name testTypedUArraysFindLastFileA024
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
@@ -429,7 +429,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_2500
      * @tc.name testTypedUArraysFindLastFileA025
      * @tc.desc Verify Uint16Array
      * @tc.size MediumTest
@@ -443,7 +443,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_2600
      * @tc.name testTypedUArraysFindLastFileA026
      * @tc.desc Verify Uint32Array
      * @tc.size MediumTest
@@ -457,7 +457,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_2700
      * @tc.name testTypedUArraysFindLastFileA027
      * @tc.desc Verify BigUint64Array
      * @tc.size MediumTest
@@ -471,7 +471,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_2800
      * @tc.name testTypedUArraysFindLastFileA028
      * @tc.desc Verify undefined Uint8ClampedArray
      * @tc.size MediumTest
@@ -485,7 +485,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_2900
      * @tc.name testTypedUArraysFindLastFileA029
      * @tc.desc Verify undefined Uint8Array
      * @tc.size MediumTest
@@ -499,7 +499,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_3000
      * @tc.name testTypedUArraysFindLastFileA030
      * @tc.desc Verify undefined Uint16Array
      * @tc.size MediumTest
@@ -513,7 +513,7 @@ export default function typedUArraysFindLast01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_3100
      * @tc.name testTypedUArraysFindLastFileA031
      * @tc.desc Verify undefined Uint32Array
      * @tc.size MediumTest
@@ -522,12 +522,12 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3]);
-      let result = findLastUint32ArrayValue(arr, (_value: number, _index: number, _array: Uint32Array): boolean => false);
+      let result = findLastUint32ArrayValue(arr, (value: number, _index: number, _array: Uint32Array): boolean => typeof value !== 'number');
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_3200
      * @tc.name testTypedUArraysFindLastFileA032
      * @tc.desc Verify undefined BigUint64Array
      * @tc.size MediumTest
@@ -536,12 +536,12 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
-      let result = findLastBigUint64ArrayValue(arr, (_value: bigint, _index: number, _array: BigUint64Array): boolean => false);
+      let result = findLastBigUint64ArrayValue(arr, (value: bigint, _index: number, _array: BigUint64Array): boolean => typeof value !== 'bigint');
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_3300
      * @tc.name testTypedUArraysFindLastFileA033
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
@@ -550,12 +550,12 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([3, 1, 3, 1, 3]);
-      let result = findLastUint8ArrayValue(arr, (_value: number, _index: number, _array: Uint8Array): boolean => true);
+      let result = findLastUint8ArrayValue(arr, (value: number, _index: number, _array: Uint8Array): boolean => typeof value === 'number');
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_3400
      * @tc.name testTypedUArraysFindLastFileA034
      * @tc.desc Verify Uint16Array
      * @tc.size MediumTest
@@ -564,12 +564,12 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([3, 1, 3, 1, 3]);
-      let result = findLastUint16ArrayValue(arr, (_value: number, _index: number, _array: Uint16Array): boolean => true);
+      let result = findLastUint16ArrayValue(arr, (value: number, _index: number, _array: Uint16Array): boolean => typeof value === 'number');
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_3500
      * @tc.name testTypedUArraysFindLastFileA035
      * @tc.desc Verify Uint32Array
      * @tc.size MediumTest
@@ -578,12 +578,12 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([3, 1, 3, 1, 3]);
-      let result = findLastUint32ArrayValue(arr, (_value: number, _index: number, _array: Uint32Array): boolean => true);
+      let result = findLastUint32ArrayValue(arr, (value: number, _index: number, _array: Uint32Array): boolean => typeof value === 'number');
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_3600
      * @tc.name testTypedUArraysFindLastFileA036
      * @tc.desc Verify BigUint64Array
      * @tc.size MediumTest
@@ -592,12 +592,12 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 3n, 1n, 3n]);
-      let result = findLastBigUint64ArrayValue(arr, (_value: bigint, _index: number, _array: BigUint64Array): boolean => true);
+      let result = findLastBigUint64ArrayValue(arr, (value: bigint, _index: number, _array: BigUint64Array): boolean => typeof value === 'bigint');
       expect(result).assertEqual(3n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_3700
      * @tc.name testTypedUArraysFindLastFileA037
      * @tc.desc Verify findLast undefined Uint8ClampedArray
      * @tc.size MediumTest
@@ -606,12 +606,12 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([]);
-      let result = findLastUint8ClampedArrayValue(arr, (_value: number, _index: number, _array: Uint8ClampedArray): boolean => false);
+      let result = findLastUint8ClampedArrayValue(arr, (value: number, _index: number, _array: Uint8ClampedArray): boolean => typeof value !== 'number');
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_3800
      * @tc.name testTypedUArraysFindLastFileA038
      * @tc.desc Verify findLast undefined Uint8Array
      * @tc.size MediumTest
@@ -620,12 +620,12 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([]);
-      let result = findLastUint8ArrayValue(arr, (_value: number, _index: number, _array: Uint8Array): boolean => false);
+      let result = findLastUint8ArrayValue(arr, (value: number, _index: number, _array: Uint8Array): boolean => typeof value !== 'number');
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLAST01_3900
      * @tc.name testTypedUArraysFindLastFileA039
      * @tc.desc Verify findLast undefined Uint16Array
      * @tc.size MediumTest
@@ -634,7 +634,7 @@ export default function typedUArraysFindLast01(): void {
      */
     it('testTypedUArraysFindLastFileA039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([]);
-      let result = findLastUint16ArrayValue(arr, (_value: number, _index: number, _array: Uint16Array): boolean => false);
+      let result = findLastUint16ArrayValue(arr, (value: number, _index: number, _array: Uint16Array): boolean => typeof value !== 'number');
       expect(result).assertUndefined();
     });
   });

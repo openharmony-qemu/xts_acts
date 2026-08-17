@@ -42,7 +42,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_0100
      * @tc.name testTypedUArraysFromTestFileA001
      * @tc.desc Verify from Array<number> 42 Uint8ClampedArray
      * @tc.size MediumTest
@@ -62,7 +62,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_0200
      * @tc.name testTypedUArraysFromTestFileA002
      * @tc.desc Verify from Iterable<bigint> 42n BigUint64Array
      * @tc.size MediumTest
@@ -82,7 +82,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_0300
      * @tc.name testTypedUArraysFromTestFileA003
      * @tc.desc Verify from Array<number> 0xFF Uint8Array
      * @tc.size MediumTest
@@ -97,7 +97,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_0400
      * @tc.name testTypedUArraysFromTestFileA004
      * @tc.desc Verify from Array<number> 0xFFFF Uint16Array
      * @tc.size MediumTest
@@ -112,7 +112,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_0500
      * @tc.name testTypedUArraysFromTestFileA005
      * @tc.desc Verify from Array<number> 0xFFFFFFFF Uint32Array
      * @tc.size MediumTest
@@ -127,7 +127,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_0600
      * @tc.name testTypedUArraysFromTestFileA006
      * @tc.desc Verify from Array<number> 0x80 Uint8Array
      * @tc.size MediumTest
@@ -142,7 +142,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_0700
      * @tc.name testTypedUArraysFromTestFileA007
      * @tc.desc Verify from Array<number> 0x8000 Uint16Array
      * @tc.size MediumTest
@@ -157,7 +157,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_0800
      * @tc.name testTypedUArraysFromTestFileA008
      * @tc.desc Verify from Array<number> 0x80000000 Uint32Array
      * @tc.size MediumTest
@@ -172,7 +172,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_0900
      * @tc.name testTypedUArraysFromTestFileA009
      * @tc.desc Verify from Array<number> 100 Uint8Array
      * @tc.size MediumTest
@@ -193,7 +193,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_1000
      * @tc.name testTypedUArraysFromTestFileA010
      * @tc.desc Verify from Array<number> 100 Uint16Array
      * @tc.size MediumTest
@@ -214,7 +214,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_1100
      * @tc.name testTypedUArraysFromTestFileA011
      * @tc.desc Verify from Array<number> 100 Uint32Array
      * @tc.size MediumTest
@@ -235,7 +235,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_1200
      * @tc.name testTypedUArraysFromTestFileA012
      * @tc.desc Verify from mapfn 1 Uint8Array
      * @tc.size MediumTest
@@ -244,7 +244,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [10, 20, 30];
-      let result = Uint8Array.from(src, () => 1);
+      let result = Uint8Array.from(src, (value: number): number => value === value ? 1 : 1);
       expect(result.length).assertEqual(3);
       const val18 = result[0];
       expect(val18).assertEqual(1);
@@ -255,7 +255,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_1300
      * @tc.name testTypedUArraysFromTestFileA013
      * @tc.desc Verify from mapfn 1 Uint16Array
      * @tc.size MediumTest
@@ -264,7 +264,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [10, 20, 30];
-      let result = Uint16Array.from(src, () => 1);
+      let result = Uint16Array.from(src, (value: number): number => value === value ? 1 : 1);
       expect(result.length).assertEqual(3);
       const val21 = result[0];
       expect(val21).assertEqual(1);
@@ -275,7 +275,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_1400
      * @tc.name testTypedUArraysFromTestFileA014
      * @tc.desc Verify from mapfn 1 Uint32Array
      * @tc.size MediumTest
@@ -284,7 +284,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [10, 20, 30];
-      let result = Uint32Array.from(src, () => 1);
+      let result = Uint32Array.from(src, (value: number): number => value === value ? 1 : 1);
       expect(result.length).assertEqual(3);
       const val24 = result[0];
       expect(val24).assertEqual(1);
@@ -295,7 +295,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_1500
      * @tc.name testTypedUArraysFromTestFileA015
      * @tc.desc Verify from mapfn 1 Uint8ClampedArray
      * @tc.size MediumTest
@@ -304,7 +304,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [10, 20, 30];
-      let result = Uint8ClampedArray.from(src, () => 1);
+      let result = Uint8ClampedArray.from(src, (value: number): number => value === value ? 1 : 1);
       expect(result.length).assertEqual(3);
       const val27 = result[0];
       expect(val27).assertEqual(1);
@@ -315,7 +315,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_1600
      * @tc.name testTypedUArraysFromTestFileA016
      * @tc.desc Verify from mapfn 1n BigUint64Array
      * @tc.size MediumTest
@@ -324,7 +324,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Iterable<bigint> = [10n, 20n, 30n];
-      let result = BigUint64Array.from(src, (): bigint => 1n);
+      let result = BigUint64Array.from(src, (value: bigint): bigint => value === value ? 1n : 1n);
       expect(result.length).assertEqual(3);
       const val30 = result[0];
       expect(val30).assertEqual(1n);
@@ -335,7 +335,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_1700
      * @tc.name testTypedUArraysFromTestFileA017
      * @tc.desc Verify from mapfn k Uint8Array
      * @tc.size MediumTest
@@ -344,7 +344,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [10, 20, 30];
-      let result = Uint8Array.from(src, (v, k) => k);
+      let result = Uint8Array.from(src, (v: number, k: number): number => v === v ? k : k);
       expect(result.length).assertEqual(3);
       const val33 = result[0];
       expect(val33).assertEqual(0);
@@ -355,7 +355,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_1800
      * @tc.name testTypedUArraysFromTestFileA018
      * @tc.desc Verify from mapfn k Uint16Array
      * @tc.size MediumTest
@@ -364,7 +364,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [10, 20, 30];
-      let result = Uint16Array.from(src, (v, k) => k);
+      let result = Uint16Array.from(src, (v: number, k: number): number => v === v ? k : k);
       expect(result.length).assertEqual(3);
       const val36 = result[0];
       expect(val36).assertEqual(0);
@@ -375,7 +375,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_1900
      * @tc.name testTypedUArraysFromTestFileA019
      * @tc.desc Verify from mapfn numberToBigint(k) BigUint64Array
      * @tc.size MediumTest
@@ -384,7 +384,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Iterable<bigint> = [10n, 20n, 30n];
-      let result = BigUint64Array.from(src, (v, k) => numberToBigint(k));
+      let result = BigUint64Array.from(src, (v: bigint, k: number): bigint => v === v ? numberToBigint(k) : numberToBigint(k));
       expect(result.length).assertEqual(3);
       const val39 = result[0];
       expect(val39).assertEqual(0n);
@@ -395,7 +395,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_2000
      * @tc.name testTypedUArraysFromTestFileA020
      * @tc.desc Verify from mapfn v * 2 Uint8Array
      * @tc.size MediumTest
@@ -415,7 +415,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_2100
      * @tc.name testTypedUArraysFromTestFileA021
      * @tc.desc Verify from mapfn v * 2 Uint16Array
      * @tc.size MediumTest
@@ -435,7 +435,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_2200
      * @tc.name testTypedUArraysFromTestFileA022
      * @tc.desc Verify from mapfn v * 2 Uint32Array
      * @tc.size MediumTest
@@ -455,7 +455,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_2300
      * @tc.name testTypedUArraysFromTestFileA023
      * @tc.desc Verify from mapfn v * 2 Uint8ClampedArray
      * @tc.size MediumTest
@@ -475,7 +475,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_2400
      * @tc.name testTypedUArraysFromTestFileA024
      * @tc.desc Verify from mapfn v * 2n BigUint64Array
      * @tc.size MediumTest
@@ -495,7 +495,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_2500
      * @tc.name testTypedUArraysFromTestFileA025
      * @tc.desc Verify from mapfn Uint8Array 255 Uint8Array
      * @tc.size MediumTest
@@ -504,7 +504,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [1, 2, 3];
-      let result = Uint8Array.from(src, () => 255);
+      let result = Uint8Array.from(src, (value: number): number => value === value ? 255 : 255);
       expect(result.length).assertEqual(3);
       const val57 = result[0];
       expect(val57).assertEqual(255);
@@ -515,7 +515,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_2600
      * @tc.name testTypedUArraysFromTestFileA026
      * @tc.desc Verify from mapfn Uint16Array 65535 Uint16Array
      * @tc.size MediumTest
@@ -524,7 +524,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [1, 2, 3];
-      let result = Uint16Array.from(src, () => 65535);
+      let result = Uint16Array.from(src, (value: number): number => value === value ? 65535 : 65535);
       expect(result.length).assertEqual(3);
       const val60 = result[0];
       expect(val60).assertEqual(65535);
@@ -535,7 +535,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_2700
      * @tc.name testTypedUArraysFromTestFileA027
      * @tc.desc Verify from mapfn Uint32Array 4294967295 Uint32Array
      * @tc.size MediumTest
@@ -544,7 +544,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [1, 2, 3];
-      let result = Uint32Array.from(src, () => 4294967295);
+      let result = Uint32Array.from(src, (value: number): number => value === value ? 4294967295 : 4294967295);
       expect(result.length).assertEqual(3);
       const val63 = result[0];
       expect(val63).assertEqual(4294967295);
@@ -555,7 +555,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_2800
      * @tc.name testTypedUArraysFromTestFileA028
      * @tc.desc Verify from mapfn BigUint64Array BigInt('18446744073709551615') BigUint64Array
      * @tc.size MediumTest
@@ -564,7 +564,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Iterable<bigint> = [1n, 2n, 3n];
-      let result = BigUint64Array.from(src, (): bigint => BigInt('18446744073709551615'));
+      let result = BigUint64Array.from(src, (value: bigint): bigint => value === value ? BigInt('18446744073709551615') : BigInt('18446744073709551615'));
       expect(result.length).assertEqual(3);
       const val66 = result[0];
       expect(val66).assertEqual(BigInt('18446744073709551615'));
@@ -575,7 +575,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_2900
      * @tc.name testTypedUArraysFromTestFileA029
      * @tc.desc Verify from mapfn 0 Uint8Array
      * @tc.size MediumTest
@@ -584,7 +584,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [1, 2, 3];
-      let result = Uint8Array.from(src, () => 0);
+      let result = Uint8Array.from(src, (value: number): number => value === value ? 0 : 0);
       expect(result.length).assertEqual(3);
       const val69 = result[0];
       expect(val69).assertEqual(0);
@@ -595,7 +595,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_3000
      * @tc.name testTypedUArraysFromTestFileA030
      * @tc.desc Verify from mapfn 0 Uint16Array
      * @tc.size MediumTest
@@ -604,7 +604,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [1, 2, 3];
-      let result = Uint16Array.from(src, () => 0);
+      let result = Uint16Array.from(src, (value: number): number => value === value ? 0 : 0);
       expect(result.length).assertEqual(3);
       const val72 = result[0];
       expect(val72).assertEqual(0);
@@ -615,7 +615,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_3100
      * @tc.name testTypedUArraysFromTestFileA031
      * @tc.desc Verify from mapfn 0 Uint32Array
      * @tc.size MediumTest
@@ -624,7 +624,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [1, 2, 3];
-      let result = Uint32Array.from(src, () => 0);
+      let result = Uint32Array.from(src, (value: number): number => value === value ? 0 : 0);
       expect(result.length).assertEqual(3);
       const val75 = result[0];
       expect(val75).assertEqual(0);
@@ -635,7 +635,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_3200
      * @tc.name testTypedUArraysFromTestFileA032
      * @tc.desc Verify from mapfn 0n BigUint64Array
      * @tc.size MediumTest
@@ -644,7 +644,7 @@ export default function typedUArraysFromTest01(): void {
      */
     it('testTypedUArraysFromTestFileA032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Iterable<bigint> = [1n, 2n, 3n];
-      let result = BigUint64Array.from(src, (): bigint => 0n);
+      let result = BigUint64Array.from(src, (value: bigint): bigint => value === value ? 0n : 0n);
       expect(result.length).assertEqual(3);
       const val78 = result[0];
       expect(val78).assertEqual(0n);
@@ -655,7 +655,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_3300
      * @tc.name testTypedUArraysFromTestFileA033
      * @tc.desc Verify from mapfn Uint8Array
      * @tc.size MediumTest
@@ -671,7 +671,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_3400
      * @tc.name testTypedUArraysFromTestFileA034
      * @tc.desc Verify from mapfn Uint16Array
      * @tc.size MediumTest
@@ -687,7 +687,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_3500
      * @tc.name testTypedUArraysFromTestFileA035
      * @tc.desc Verify from mapfn Uint32Array
      * @tc.size MediumTest
@@ -703,7 +703,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_3600
      * @tc.name testTypedUArraysFromTestFileA036
      * @tc.desc Verify from mapfn Uint8ClampedArray
      * @tc.size MediumTest
@@ -719,7 +719,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_3700
      * @tc.name testTypedUArraysFromTestFileA037
      * @tc.desc Verify from mapfn BigUint64Array
      * @tc.size MediumTest
@@ -735,7 +735,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_3800
      * @tc.name testTypedUArraysFromTestFileA038
      * @tc.desc Verify from mapfn Uint8Array
      * @tc.size MediumTest
@@ -756,7 +756,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_3900
      * @tc.name testTypedUArraysFromTestFileA039
      * @tc.desc Verify from mapfn Uint16Array
      * @tc.size MediumTest
@@ -777,7 +777,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_4000
      * @tc.name testTypedUArraysFromTestFileA040
      * @tc.desc Verify from mapfn Uint32Array
      * @tc.size MediumTest
@@ -798,7 +798,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_4100
      * @tc.name testTypedUArraysFromTestFileA041
      * @tc.desc Verify from mapfn BigUint64Array
      * @tc.size MediumTest
@@ -819,7 +819,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_4200
      * @tc.name testTypedUArraysFromTestFileA042
      * @tc.desc Verify from mapfn Uint8ClampedArray
      * @tc.size MediumTest
@@ -839,7 +839,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_4300
      * @tc.name testTypedUArraysFromTestFileA043
      * @tc.desc Verify from mapfn throws TypeError Uint8Array
      * @tc.size MediumTest
@@ -849,8 +849,8 @@ export default function typedUArraysFromTest01(): void {
     it('testTypedUArraysFromTestFileA043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [1, 2, 3];
       try {
-        Uint8Array.from(src, (): number => {
-          throw new TypeError('mapfn failed');
+        Uint8Array.from(src, (value: number): number => {
+          throw new TypeError('mapfn failed ' + value.toString());
         });
         expect().assertFail();
       } catch (e) {
@@ -859,7 +859,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_4400
      * @tc.name testTypedUArraysFromTestFileA044
      * @tc.desc Verify from [1,2,3] Uint8Array vs Uint16Array
      * @tc.size MediumTest
@@ -880,7 +880,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_4500
      * @tc.name testTypedUArraysFromTestFileA045
      * @tc.desc Verify from [1,2,3] Uint8Array vs Uint32Array
      * @tc.size MediumTest
@@ -901,7 +901,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_4600
      * @tc.name testTypedUArraysFromTestFileA046
      * @tc.desc Verify from [1,2,3] Uint16Array vs Uint32Array
      * @tc.size MediumTest
@@ -922,7 +922,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_4700
      * @tc.name testTypedUArraysFromTestFileA047
      * @tc.desc Verify from [1,2,3] Uint8ClampedArray vs Uint8Array
      * @tc.size MediumTest
@@ -943,7 +943,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_4800
      * @tc.name testTypedUArraysFromTestFileA048
      * @tc.desc Verify from byteLength Uint8Array vs Uint16Array
      * @tc.size MediumTest
@@ -959,7 +959,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_4900
      * @tc.name testTypedUArraysFromTestFileA049
      * @tc.desc Verify from byteLength Uint8Array vs Uint32Array
      * @tc.size MediumTest
@@ -975,7 +975,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_5000
      * @tc.name testTypedUArraysFromTestFileA050
      * @tc.desc Verify from byteLength Uint16Array vs Uint32Array
      * @tc.size MediumTest
@@ -991,7 +991,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_5100
      * @tc.name testTypedUArraysFromTestFileA051
      * @tc.desc Verify from byteLength Uint8ClampedArray vs Uint16Array
      * @tc.size MediumTest
@@ -1007,7 +1007,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_5200
      * @tc.name testTypedUArraysFromTestFileA052
      * @tc.desc Verify from byteLength BigUint64Array vs Uint32Array
      * @tc.size MediumTest
@@ -1023,7 +1023,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_5300
      * @tc.name testTypedUArraysFromTestFileA053
      * @tc.desc Verify from 300 Uint8Array 44
      * @tc.size MediumTest
@@ -1038,7 +1038,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_5400
      * @tc.name testTypedUArraysFromTestFileA054
      * @tc.desc Verify from 300 Uint8ClampedArray 255
      * @tc.size MediumTest
@@ -1053,7 +1053,7 @@ export default function typedUArraysFromTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROM_PART102_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FROMTEST01_5500
      * @tc.name testTypedUArraysFromTestFileA055
      * @tc.desc Verify from 300 Uint16Array 300
      * @tc.size MediumTest

@@ -18,7 +18,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-
 function findLastIndexBigUint64ArrayValue(source: BigUint64Array, predicate: (value: bigint, index: number, array: BigUint64Array) => boolean): number {
   for (let i: number = source.length - 1; i >= 0; i--) {
     const value: bigint = source[i.toInt()];
@@ -38,7 +37,6 @@ function findLastIndexUint8ClampedArrayValue(source: Uint8ClampedArray, predicat
   }
   return -1;
 }
-
 
 function findLastIndexUint16ArrayValue(source: Uint16Array, predicate: (value: number, index: number, array: Uint16Array) => boolean): number {
   for (let i: number = source.length - 1; i >= 0; i--) {
@@ -70,7 +68,6 @@ function findLastIndexUint8ArrayValue(source: Uint8Array, predicate: (value: num
   return -1;
 }
 
-
 export default function typedUArraysFindLastIndex02(): void {
   describe('TypedUArraysFindLastIndex02', (): void => {
     beforeAll((): void => {
@@ -87,7 +84,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_0100
      * @tc.name testTypedUArraysFindLastIndexFileB001
      * @tc.desc Verify 0 findLastIndex Uint8ClampedArray TypeError
      * @tc.size MediumTest
@@ -101,7 +98,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_0200
      * @tc.name testTypedUArraysFindLastIndexFileB002
      * @tc.desc Verify findLastIndex -1 Uint32Array
      * @tc.size MediumTest
@@ -115,7 +112,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_0300
      * @tc.name testTypedUArraysFindLastIndexFileB003
      * @tc.desc Verify findLastIndex -1 BigUint64Array
      * @tc.size MediumTest
@@ -129,7 +126,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_0400
      * @tc.name testTypedUArraysFindLastIndexFileB004
      * @tc.desc Verify len-1 Uint8ClampedArray
      * @tc.size MediumTest
@@ -143,7 +140,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_0500
      * @tc.name testTypedUArraysFindLastIndexFileB005
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
@@ -157,7 +154,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_0600
      * @tc.name testTypedUArraysFindLastIndexFileB006
      * @tc.desc Verify 0 Uint16Array
      * @tc.size MediumTest
@@ -171,7 +168,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_0700
      * @tc.name testTypedUArraysFindLastIndexFileB007
      * @tc.desc Verify -1 Uint32Array
      * @tc.size MediumTest
@@ -185,7 +182,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_0800
      * @tc.name testTypedUArraysFindLastIndexFileB008
      * @tc.desc Verify Uint8ClampedArray 0 255
      * @tc.size MediumTest
@@ -201,7 +198,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_0900
      * @tc.name testTypedUArraysFindLastIndexFileB009
      * @tc.desc Verify BigUint64Array BigInt('18446744073709551615')
      * @tc.size MediumTest
@@ -215,7 +212,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_1000
      * @tc.name testTypedUArraysFindLastIndexFileB010
      * @tc.desc Verify Uint16Array 65535
      * @tc.size MediumTest
@@ -229,7 +226,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_1100
      * @tc.name testTypedUArraysFindLastIndexFileB011
      * @tc.desc Verify Uint32Array 4294967295
      * @tc.size MediumTest
@@ -243,7 +240,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_1200
      * @tc.name testTypedUArraysFindLastIndexFileB012
      * @tc.desc Verify predicate this thisArg Uint8Array
      * @tc.size MediumTest
@@ -258,7 +255,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_1300
      * @tc.name testTypedUArraysFindLastIndexFileB013
      * @tc.desc Verify predicate findLastIndex Uint32Array
      * @tc.size MediumTest
@@ -272,7 +269,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_1400
      * @tc.name testTypedUArraysFindLastIndexFileB014
      * @tc.desc Verify predicate true Uint8ClampedArray
      * @tc.size MediumTest
@@ -286,7 +283,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_1500
      * @tc.name testTypedUArraysFindLastIndexFileB015
      * @tc.desc Verify predicate Uint8Array
      * @tc.size MediumTest
@@ -304,7 +301,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_1600
      * @tc.name testTypedUArraysFindLastIndexFileB016
      * @tc.desc Verify predicate BigUint64Array
      * @tc.size MediumTest
@@ -322,7 +319,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_1700
      * @tc.name testTypedUArraysFindLastIndexFileB017
      * @tc.desc Verify predicate truthy 2 Uint8ClampedArray
      * @tc.size MediumTest
@@ -331,12 +328,12 @@ export default function typedUArraysFindLastIndex02(): void {
      */
     it('testTypedUArraysFindLastIndexFileB017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
-      let result = findLastIndexUint8ClampedArrayValue(arr, (_v: number, _index: number, _array: Uint8ClampedArray): boolean => true);
+      let result = findLastIndexUint8ClampedArrayValue(arr, (v: number, _index: number, _array: Uint8ClampedArray): boolean => typeof v === 'number');
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_1800
      * @tc.name testTypedUArraysFindLastIndexFileB018
      * @tc.desc Verify predicate 0 falsy Uint8Array
      * @tc.size MediumTest
@@ -346,8 +343,8 @@ export default function typedUArraysFindLastIndex02(): void {
     it('testTypedUArraysFindLastIndexFileB018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       let count = 0;
-      findLastIndexUint8ArrayValue(arr, (_v: number, i: number, _array: Uint8Array): boolean => {
-        if (i >= 0) {
+      findLastIndexUint8ArrayValue(arr, (v: number, i: number, _array: Uint8Array): boolean => {
+        if ((typeof v === 'number') && i >= 0) {
           count++;
         }
         return false;
@@ -356,7 +353,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_1900
      * @tc.name testTypedUArraysFindLastIndexFileB019
      * @tc.desc Verify predicate falsy Uint16Array
      * @tc.size MediumTest
@@ -366,8 +363,8 @@ export default function typedUArraysFindLastIndex02(): void {
     it('testTypedUArraysFindLastIndexFileB019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3]);
       let count = 0;
-      findLastIndexUint16ArrayValue(arr, (_v: number, i: number, _array: Uint16Array): boolean => {
-        if (i >= 0) {
+      findLastIndexUint16ArrayValue(arr, (v: number, i: number, _array: Uint16Array): boolean => {
+        if ((typeof v === 'number') && i >= 0) {
           count++;
         }
         return false;
@@ -376,7 +373,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_2000
      * @tc.name testTypedUArraysFindLastIndexFileB020
      * @tc.desc Verify predicate Uint32Array
      * @tc.size MediumTest
@@ -390,7 +387,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_2100
      * @tc.name testTypedUArraysFindLastIndexFileB021
      * @tc.desc Verify predicate array BigUint64Array
      * @tc.size MediumTest
@@ -407,7 +404,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_2200
      * @tc.name testTypedUArraysFindLastIndexFileB022
      * @tc.desc Verify Uint8ClampedArray
      * @tc.size MediumTest
@@ -422,7 +419,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_2300
      * @tc.name testTypedUArraysFindLastIndexFileB023
      * @tc.desc Verify BigUint64Array predicate BigInt
      * @tc.size MediumTest
@@ -436,7 +433,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_2400
      * @tc.name testTypedUArraysFindLastIndexFileB024
      * @tc.desc Verify Uint8Array
      * @tc.size MediumTest
@@ -450,7 +447,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_2500
      * @tc.name testTypedUArraysFindLastIndexFileB025
      * @tc.desc Verify Uint16Array
      * @tc.size MediumTest
@@ -464,7 +461,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_2600
      * @tc.name testTypedUArraysFindLastIndexFileB026
      * @tc.desc Verify Uint32Array
      * @tc.size MediumTest
@@ -478,7 +475,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_2700
      * @tc.name testTypedUArraysFindLastIndexFileB027
      * @tc.desc Verify BigUint64Array
      * @tc.size MediumTest
@@ -492,7 +489,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_2800
      * @tc.name testTypedUArraysFindLastIndexFileB028
      * @tc.desc Verify Uint8ClampedArray predicate
      * @tc.size MediumTest
@@ -507,7 +504,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_2900
      * @tc.name testTypedUArraysFindLastIndexFileB029
      * @tc.desc Verify Uint8ClampedArray 0 predicate
      * @tc.size MediumTest
@@ -522,7 +519,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_3000
      * @tc.name testTypedUArraysFindLastIndexFileB030
      * @tc.desc Verify Uint8Array 255
      * @tc.size MediumTest
@@ -536,7 +533,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_3100
      * @tc.name testTypedUArraysFindLastIndexFileB031
      * @tc.desc Verify Uint16Array 65535
      * @tc.size MediumTest
@@ -550,7 +547,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_3200
      * @tc.name testTypedUArraysFindLastIndexFileB032
      * @tc.desc Verify Uint32Array 4294967295
      * @tc.size MediumTest
@@ -564,10 +561,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_8200
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_3300
      * @tc.name testTypedUArraysFindLastIndexFileB033
      * @tc.desc Verify Uint8Array of findLastIndex
      * @tc.size MediumTest
@@ -581,7 +575,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_3400
      * @tc.name testTypedUArraysFindLastIndexFileB034
      * @tc.desc Verify Uint32Array slice findLastIndex
      * @tc.size MediumTest
@@ -596,7 +590,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_3500
      * @tc.name testTypedUArraysFindLastIndexFileB035
      * @tc.desc Verify BigUint64Array subarray findLastIndex
      * @tc.size MediumTest
@@ -611,7 +605,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_3600
      * @tc.name testTypedUArraysFindLastIndexFileB036
      * @tc.desc Verify findLastIndex Uint8ClampedArray
      * @tc.size MediumTest
@@ -627,7 +621,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_3700
      * @tc.name testTypedUArraysFindLastIndexFileB037
      * @tc.desc Verify predicate index Uint8Array
      * @tc.size MediumTest
@@ -641,7 +635,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_3800
      * @tc.name testTypedUArraysFindLastIndexFileB038
      * @tc.desc Verify predicate array Uint16Array
      * @tc.size MediumTest
@@ -655,7 +649,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_3900
      * @tc.name testTypedUArraysFindLastIndexFileB039
      * @tc.desc Verify predicate value index Uint32Array
      * @tc.size MediumTest
@@ -669,7 +663,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_4000
      * @tc.name testTypedUArraysFindLastIndexFileB040
      * @tc.desc Verify Uint8ClampedArray
      * @tc.size MediumTest
@@ -683,7 +677,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_4100
      * @tc.name testTypedUArraysFindLastIndexFileB041
      * @tc.desc Verify -1 Uint8Array
      * @tc.size MediumTest
@@ -697,7 +691,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_4200
      * @tc.name testTypedUArraysFindLastIndexFileB042
      * @tc.desc Verify predicate boolean truthy Uint8Array
      * @tc.size MediumTest
@@ -711,7 +705,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_4300
      * @tc.name testTypedUArraysFindLastIndexFileB043
      * @tc.desc Verify BigUint64Array predicate BigInt Number
      * @tc.size MediumTest
@@ -725,7 +719,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_4400
      * @tc.name testTypedUArraysFindLastIndexFileB044
      * @tc.desc Verify BigUint64Array predicate typeof BigInt
      * @tc.size MediumTest
@@ -743,7 +737,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_4500
      * @tc.name testTypedUArraysFindLastIndexFileB045
      * @tc.desc Verify Uint8Array from findLastIndex
      * @tc.size MediumTest
@@ -757,7 +751,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_4600
      * @tc.name testTypedUArraysFindLastIndexFileB046
      * @tc.desc Verify predicate findLastIndex Uint16Array
      * @tc.size MediumTest
@@ -771,7 +765,7 @@ export default function typedUArraysFindLastIndex02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FINDLASTINDEX02_4700
      * @tc.name testTypedUArraysFindLastIndexFileB047
      * @tc.desc Verify predicate findLastIndex Uint8ClampedArray
      * @tc.size MediumTest
@@ -789,4 +783,3 @@ export default function typedUArraysFindLastIndex02(): void {
 
   });
 }
-
