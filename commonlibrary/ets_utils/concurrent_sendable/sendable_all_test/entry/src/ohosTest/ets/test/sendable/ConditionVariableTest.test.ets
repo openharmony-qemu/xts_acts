@@ -241,9 +241,16 @@ export default function ConditionVariableTest(): void {
         expect(size).assertEqual(0)
         let takeResult: number | undefined = undefined
         const takePromise: Promise<number> = buffer.take()
-        takePromise.then((result: number): void => {
-          takeResult = result
-        }).catch((error: Error): void => { console.error("testConditionVariable0100 failed"); expect(false).assertFail(); })
+        const takeWatchFn: () => Promise<void> = async (): Promise<void> => {
+          try {
+            const result: number = await takePromise
+            takeResult = result
+          } catch (error) {
+            console.error("testConditionVariable0100 failed")
+            expect(false).assertFail()
+          }
+        }
+        const takeWatch: Promise<void> = takeWatchFn()
         await Utils.sleep(500)
         expect(takeResult === undefined).assertTrue()
         await buffer.put(100)
@@ -291,9 +298,16 @@ export default function ConditionVariableTest(): void {
         const target: number = 5
         let reached: boolean = false
         const waitPromise: Promise<boolean> = waitCounter.waitForCondition(target)
-        waitPromise.then((result: boolean): void => {
-          reached = result
-        }).catch((error: Error): void => { console.error("testConditionVariable0300 failed"); expect(false).assertFail(); })
+        const waitWatchFn: () => Promise<void> = async (): Promise<void> => {
+          try {
+            const result: boolean = await waitPromise
+            reached = result
+          } catch (error) {
+            console.error("testConditionVariable0300 failed")
+            expect(false).assertFail()
+          }
+        }
+        const waitWatch: Promise<void> = waitWatchFn()
         for (let i = 0; i < target; i++) {
           await waitCounter.increment()
         }
@@ -319,9 +333,36 @@ export default function ConditionVariableTest(): void {
       try {
         let counter: number = 0
         const cond: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
-        const w1: Promise<void> = cond.wait().then((): void => { counter++ }).catch((error: Error): void => { console.error("testConditionVariable0400 failed"); expect(false).assertFail(); })
-        const w2: Promise<void> = cond.wait().then((): void => { counter++ }).catch((error: Error): void => { console.error("testConditionVariable0400 failed"); expect(false).assertFail(); })
-        const w3: Promise<void> = cond.wait().then((): void => { counter++ }).catch((error: Error): void => { console.error("testConditionVariable0400 failed"); expect(false).assertFail(); })
+        const w1Fn: () => Promise<void> = async (): Promise<void> => {
+          try {
+            await cond.wait()
+            counter++
+          } catch (error) {
+            console.error("testConditionVariable0400 failed")
+            expect(false).assertFail()
+          }
+        }
+        const w1: Promise<void> = w1Fn()
+        const w2Fn: () => Promise<void> = async (): Promise<void> => {
+          try {
+            await cond.wait()
+            counter++
+          } catch (error) {
+            console.error("testConditionVariable0400 failed")
+            expect(false).assertFail()
+          }
+        }
+        const w2: Promise<void> = w2Fn()
+        const w3Fn: () => Promise<void> = async (): Promise<void> => {
+          try {
+            await cond.wait()
+            counter++
+          } catch (error) {
+            console.error("testConditionVariable0400 failed")
+            expect(false).assertFail()
+          }
+        }
+        const w3: Promise<void> = w3Fn()
         await Utils.sleep(500)
         expect(counter).assertEqual(0)
         cond.notifyAll()

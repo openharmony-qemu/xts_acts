@@ -236,9 +236,17 @@ export default function SharedCounterDownloadTest(): void {
         const task0 = new taskpool.Task(downloadChunk, 0)
         const task1 = new taskpool.Task(downloadChunkFailed, 1)
         const task2 = new taskpool.Task(downloadChunk, 2)
+        const recoverTask1 = async (): Promise<Object> => {
+          try {
+            return await taskpool.execute(task1)
+          } catch (error) {
+            console.info(`gate-catch: ${JSON.stringify(error)}`)
+            return 30
+          }
+        }
         const results: Object[] = await Promise.all([
           taskpool.execute(task0),
-          taskpool.execute(task1).catch((): Object => 30),
+          recoverTask1(),
           taskpool.execute(task2)
         ])
         await progress.updateChunkProgress(0, results[0] as number)

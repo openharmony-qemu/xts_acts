@@ -260,9 +260,16 @@ export default function ReadWriteLockTest(): void {
         const writePromise: Promise<void> = resource.write(200)
         await writePromise
         const readPromise: Promise<number> = resource.read()
-        readPromise.then((): void => {
-          readCompleted = true
-        }).catch((error: Error): void => { console.error("testReadWriteLock0700 failed"); expect(false).assertFail(); })
+        const readWatchFn: () => Promise<void> = async (): Promise<void> => {
+          try {
+            await readPromise
+            readCompleted = true
+          } catch (error) {
+            console.error("testReadWriteLock0700 failed")
+            expect(false).assertFail()
+          }
+        }
+        const readWatch: Promise<void> = readWatchFn()
         await readPromise
         expect(readCompleted).assertTrue()
       } catch (error) {

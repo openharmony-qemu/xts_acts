@@ -278,9 +278,17 @@ export default function SharedCounterTaskCompleteTest(): void {
         for (let i = 0; i < 2; i++) {
           tasks.push(new taskpool.Task(failedTask, counter))
         }
+        const recoverTask = async (task: taskpool.Task): Promise<Object> => {
+          try {
+            return await taskpool.execute(task)
+          } catch (error) {
+            console.info(`gate-catch: ${JSON.stringify(error)}`)
+            return 'failed'
+          }
+        }
         const promises: Promise<Object>[] = []
         for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]).catch((): Object => 'failed'))
+          promises.push(recoverTask(tasks[i]))
         }
         const results: Object[] = await Promise.all(promises)
         let successCount: number = 0
@@ -321,14 +329,10 @@ export default function SharedCounterTaskCompleteTest(): void {
           }
         })
         await taskpool.execute(task)
-        await new Promise<void>((resolve: Function): void => {
-          const checkInterval: number = setInterval((): void => {
-            if (counter.getCompleted() >= 1) {
-              clearInterval(checkInterval)
-              resolve()
-            }
-          }, 100)
-        })
+        const sweepStart: number = Date.now()
+        while (!(counter.getCompleted() >= 1) && Date.now() - sweepStart < 10000) {
+          await Utils.sleep(100)
+        }
         expect(counter.getCompleted()).assertEqual(1)
       } catch (error) {
         console.error("testSharedCounterTaskComplete0900 failed");

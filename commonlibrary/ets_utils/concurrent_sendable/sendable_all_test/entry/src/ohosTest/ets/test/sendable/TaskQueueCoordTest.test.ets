@@ -264,9 +264,16 @@ export default function TaskQueueCoordTest(): void {
       try {
         let dequeueCompleted: boolean = false
         const dequeuePromise: Promise<TaskItem> = queue.dequeue()
-        dequeuePromise.then((): void => {
-          dequeueCompleted = true
-        }).catch((error: Error): void => { console.error("testTaskQueueCoord0500 failed"); expect(false).assertFail(); })
+        const dequeueWatchFn: () => Promise<void> = async (): Promise<void> => {
+          try {
+            await dequeuePromise
+            dequeueCompleted = true
+          } catch (error) {
+            console.error("testTaskQueueCoord0500 failed")
+            expect(false).assertFail()
+          }
+        }
+        const dequeueWatch: Promise<void> = dequeueWatchFn()
         await Utils.sleep(500)
         expect(dequeueCompleted).assertFalse()
         await queue.enqueue(createTask(1, 'task_1', 0))
@@ -295,9 +302,16 @@ export default function TaskQueueCoordTest(): void {
         expect(await queue.isFull()).assertTrue()
         let enqueueCompleted: boolean = false
         const enqueuePromise: Promise<void> = queue.enqueue(createTask(999, 'task_999', 0))
-        enqueuePromise.then((): void => {
-          enqueueCompleted = true
-        }).catch((error: Error): void => { console.error("testTaskQueueCoord0600 failed"); expect(false).assertFail(); })
+        const enqueueWatchFn: () => Promise<void> = async (): Promise<void> => {
+          try {
+            await enqueuePromise
+            enqueueCompleted = true
+          } catch (error) {
+            console.error("testTaskQueueCoord0600 failed")
+            expect(false).assertFail()
+          }
+        }
+        const enqueueWatch: Promise<void> = enqueueWatchFn()
         await Utils.sleep(500)
         expect(enqueueCompleted).assertFalse()
         await queue.dequeue()
@@ -558,14 +572,10 @@ export default function TaskQueueCoordTest(): void {
           notifications.push(data)
         })
         await taskpool.execute(task)
-        await new Promise<void>((resolve: Function): void => {
-          const checkInterval: Object = setInterval((): void => {
-            if (notifications.length >= 3) {
-              clearInterval(checkInterval as number)
-              resolve()
-            }
-          }, 10)
-        })
+        const sweepStart: number = Date.now()
+        while (!(notifications.length >= 3) && Date.now() - sweepStart < 10000) {
+          await Utils.sleep(100)
+        }
         expect(notifications.length).assertEqual(3)
       } catch (error) {
         console.error("testTaskQueueCoord1800 failed");

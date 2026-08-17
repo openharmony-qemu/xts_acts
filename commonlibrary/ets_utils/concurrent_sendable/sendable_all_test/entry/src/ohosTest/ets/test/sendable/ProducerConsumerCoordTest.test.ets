@@ -216,10 +216,17 @@ export default function ProducerConsumerCoordTest(): void {
         let consumeCompleted: boolean = false
         let consumeResult: number | undefined = undefined
         const consumePromise: Promise<number> = pcb.consume()
-        consumePromise.then((result: number): void => {
-          consumeResult = result
-          consumeCompleted = true
-        }).catch((error: Error): void => { console.error("testProducerConsumerCoord0400 failed"); expect(false).assertFail(); })
+        const consumeWatchFn: () => Promise<void> = async (): Promise<void> => {
+          try {
+            const result: number = await consumePromise
+            consumeResult = result
+            consumeCompleted = true
+          } catch (error) {
+            console.error("testProducerConsumerCoord0400 failed")
+            expect(false).assertFail()
+          }
+        }
+        const consumeWatch: Promise<void> = consumeWatchFn()
         await Utils.sleep(500)
         expect(consumeCompleted).assertFalse()
         await pcb.produce(42)
@@ -359,14 +366,10 @@ export default function ProducerConsumerCoordTest(): void {
           receivedData.push(data as string)
         })
         await taskpool.execute(task)
-        await new Promise<void>((resolve: Function): void => {
-          const checkInterval: Object = setInterval((): void => {
-            if (receivedData.length >= 3) {
-              clearInterval(checkInterval as number)
-              resolve()
-            }
-          }, 10)
-        })
+        const sweepStart: number = Date.now()
+        while (!(receivedData.length >= 3) && Date.now() - sweepStart < 10000) {
+          await Utils.sleep(100)
+        }
         expect(receivedData.length).assertEqual(3)
       } catch (error) {
         console.error("testProducerConsumerCoord1000 failed");

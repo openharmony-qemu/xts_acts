@@ -229,9 +229,16 @@ export default function ConnectionPoolLockTest(): void {
         expect(await pool.getAvailableCount()).assertEqual(0)
         let acquireCompleted: boolean = false
         const acquirePromise: Promise<number> = pool.acquire()
-        acquirePromise.then((): void => {
-          acquireCompleted = true
-        }).catch((error: Error): void => { console.error("testConnectionPoolLock0500 failed"); expect(false).assertFail(); })
+        const acquireWatchFn: () => Promise<void> = async (): Promise<void> => {
+          try {
+            await acquirePromise
+            acquireCompleted = true
+          } catch (error) {
+            console.error("testConnectionPoolLock0500 failed")
+            expect(false).assertFail()
+          }
+        }
+        const acquireWatch: Promise<void> = acquireWatchFn()
         await Utils.sleep(500)
         expect(acquireCompleted).assertFalse()
         await pool.release(connIds[0])
@@ -261,10 +268,17 @@ export default function ConnectionPoolLockTest(): void {
         let acquireCompleted: boolean = false
         let acquiredConnId: number = -1
         const acquirePromise: Promise<number> = pool.acquire()
-        acquirePromise.then((connId: number): void => {
-          acquiredConnId = connId
-          acquireCompleted = true
-        }).catch((error: Error): void => { console.error("testConnectionPoolLock0600 failed"); expect(false).assertFail(); })
+        const acquireWatchFn: () => Promise<void> = async (): Promise<void> => {
+          try {
+            const connId: number = await acquirePromise
+            acquiredConnId = connId
+            acquireCompleted = true
+          } catch (error) {
+            console.error("testConnectionPoolLock0600 failed")
+            expect(false).assertFail()
+          }
+        }
+        const acquireWatch: Promise<void> = acquireWatchFn()
         await Utils.sleep(500)
         expect(acquireCompleted).assertFalse()
         await pool.release(connIds[2])
@@ -425,14 +439,10 @@ export default function ConnectionPoolLockTest(): void {
           notifications.push(data)
         })
         await taskpool.execute(task)
-        await new Promise<void>((resolve: Function): void => {
-          const checkInterval: Object = setInterval((): void => {
-            if (notifications.length >= 3) {
-              clearInterval(checkInterval as number)
-              resolve()
-            }
-          }, 10)
-        })
+        const sweepStart: number = Date.now()
+        while (!(notifications.length >= 3) && Date.now() - sweepStart < 10000) {
+          await Utils.sleep(100)
+        }
         expect(notifications.length).assertEqual(3)
       } catch (error) {
         console.error("testConnectionPoolLock1200 failed");
