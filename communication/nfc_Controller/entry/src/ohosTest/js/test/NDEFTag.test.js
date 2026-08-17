@@ -1113,14 +1113,14 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @tc.name   getNdefTagTypeStringNull801
+         * @tc.name   getNdefTagTypeStringNull401
          * @tc.number nfcNDEFTagTest_1405
          * @tc.desc   getNdefTagTypeString null 801 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('getNdefTagTypeStringNull801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+        it('getNdefTagTypeStringNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
                 let ndefTypeString = NdefTag.getNdefTagTypeString(null);
                 expect().assertFail();
@@ -1130,14 +1130,14 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @tc.name   getNdefTagTypeStringUndefined801
+         * @tc.name   getNdefTagTypeStringUndefined401
          * @tc.number nfcNDEFTagTest_1406
          * @tc.desc   getNdefTagTypeString undefined 801 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('getNdefTagTypeStringUndefined801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+        it('getNdefTagTypeStringUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
                 let ndefTypeString = NdefTag.getNdefTagTypeString(undefined);
                 expect().assertFail();

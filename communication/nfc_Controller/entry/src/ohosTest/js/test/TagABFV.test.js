@@ -15,7 +15,7 @@
 
 
 import tag from '@ohos.nfc.tag';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium'
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
 
 function sleep(delay) {
     return new Promise(resovle => setTimeout(resovle, delay))
@@ -1974,6 +1974,28 @@ export default function nfcTagABFVTest() {
         })
 
         /**
+         * @tc.name   offReaderModeNoCallback
+         * @tc.number nfcTag_2603
+         * @tc.desc   off readerMode without callback parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('offReaderModeNoCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            let elementName = {
+                "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+                "abilityName": "MainAbility",
+                "moduleName": "entry"
+            };
+            try {
+                tag.off('readerMode', elementName);
+            } catch (err) {
+                expect().assertFail();
+            }
+            done();
+        })
+
+        /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_2700
          * @tc.number SUB_Communication_NFC_nfctage_js_2700
          * @tc.desc   This interface getBarcode
@@ -2189,6 +2211,28 @@ export default function nfcTagABFVTest() {
                     expect().assertFail();
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2800 Fail :  ");
                 }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   offReaderModeWithIntervalNoCallback
+         * @tc.number nfcTag_2801
+         * @tc.desc   off readerModeWithInterval without callback parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('offReaderModeWithIntervalNoCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            let elementName = {
+                "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+                "abilityName": "MainAbility",
+                "moduleName": "entry"
+            };
+            try {
+                tag.off('readerModeWithInterval', elementName);
+            } catch (err) {
+                expect().assertFail();
             }
             done();
         })
