@@ -69,6 +69,7 @@ export default function customNavContentTransitionUndefined() {
      */
     it('customNavContentTransitionUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[customNavContentTransitionUndefined_static_0001] START');
+      try{
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
@@ -134,6 +135,11 @@ export default function customNavContentTransitionUndefined() {
       await backText2.click();
       await CommonFunc.sleep(1000);
       }
+    }catch (error) {
+      console.error('[getCharacterPositionAtCoordinate_utf16_end_0100] error:' + error);
+      expect().assertFail();
+      done();
+    }
 
       console.info('[customNavContentTransitionUndefined_static_0001] END');
       done();
