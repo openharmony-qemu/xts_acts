@@ -795,4 +795,233 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
     TEST_ASSERT_EQUAL_STRING(rightVal2, value2);
 };
 
+
+/**
+ * @tc.name   testFindParameter001
+ * @tc.number SUB_UTILS_PARAMETER_5801
+ * @tc.desc   test FindParameter with legal and illegal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(ParameterFuncTestSuite,
+               testFindParameter001,
+               Function | MediumTest | Level1)
+{
+    /* 非法参数：NULL 返回 -1 */
+    uint32_t handle = FindParameter(NULL);
+    TEST_ASSERT_TRUE(handle == (uint32_t)(-1));
+    /* 不存在的参数返回 -1 */
+    handle = FindParameter("rw.sys.xts_notexist_1000");
+    TEST_ASSERT_TRUE(handle == (uint32_t)(-1));
+    /* 设置参数后返回有效句柄 */
+    int ret = SetParameter("rw.sys.xts_findparam", "100");
+    TEST_ASSERT_EQUAL_INT(0, ret);
+    handle = FindParameter("rw.sys.xts_findparam");
+    TEST_ASSERT_TRUE(handle != (uint32_t)(-1));
+    /* 只读系统参数（const 前缀）返回有效句柄 */
+    handle = FindParameter("const.product.model");
+    TEST_ASSERT_TRUE(handle != (uint32_t)(-1));
+};
+
+/**
+ * @tc.name   testGetParameterCommitId001
+ * @tc.number SUB_UTILS_PARAMETER_5802
+ * @tc.desc   test GetParameterCommitId with legal and illegal handles.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(ParameterFuncTestSuite,
+               testGetParameterCommitId001,
+               Function | MediumTest | Level1)
+{
+    /* 非法句柄：0 与 -1 返回 -1 */
+    uint32_t commitId = GetParameterCommitId(0);
+    TEST_ASSERT_TRUE(commitId == (uint32_t)(-1));
+    commitId = GetParameterCommitId((uint32_t)(-1));
+    TEST_ASSERT_TRUE(commitId == (uint32_t)(-1));
+    /* 合法句柄：返回非 -1 的提交号 */
+    int ret = SetParameter("rw.sys.xts_commitid", "1");
+    TEST_ASSERT_EQUAL_INT(0, ret);
+    uint32_t handle = FindParameter("rw.sys.xts_commitid");
+    TEST_ASSERT_TRUE(handle != (uint32_t)(-1));
+    commitId = GetParameterCommitId(handle);
+    TEST_ASSERT_TRUE(commitId != (uint32_t)(-1));
+};
+
+/**
+ * @tc.name   testGetParameterName001
+ * @tc.number SUB_UTILS_PARAMETER_5803
+ * @tc.desc   test GetParameterName with legal and illegal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(ParameterFuncTestSuite,
+               testGetParameterName001,
+               Function | MediumTest | Level1)
+{
+    char name[MAX_LEN] = {0};
+    /* 非法句柄返回负错误码 */
+    int ret = GetParameterName(0, name, sizeof(name));
+    TEST_ASSERT_TRUE(ret < 0);
+    ret = GetParameterName((uint32_t)(-1), name, sizeof(name));
+    TEST_ASSERT_TRUE(ret < 0);
+    /* NULL 缓冲返回 EC_INVALID */
+    ret = GetParameterName(0, NULL, sizeof(name));
+    TEST_ASSERT_EQUAL_INT(EC_INVALID, ret);
+    /* 合法句柄：返回名字长度且内容一致 */
+    ret = SetParameter("rw.sys.xts_getname", "abc");
+    TEST_ASSERT_EQUAL_INT(0, ret);
+    uint32_t handle = FindParameter("rw.sys.xts_getname");
+    TEST_ASSERT_TRUE(handle != (uint32_t)(-1));
+    ret = GetParameterName(handle, name, sizeof(name));
+    TEST_ASSERT_TRUE(ret > 0);
+    TEST_ASSERT_TRUE((uint32_t)ret == strlen(name));
+    TEST_ASSERT_EQUAL_STRING(name, "rw.sys.xts_getname");
+};
+
+/**
+ * @tc.name   testGetParameterValue001
+ * @tc.number SUB_UTILS_PARAMETER_5804
+ * @tc.desc   test GetParameterValue with legal and illegal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(ParameterFuncTestSuite,
+               testGetParameterValue001,
+               Function | MediumTest | Level1)
+{
+    char value[MAX_LEN] = {0};
+    /* 非法句柄返回负错误码 */
+    int ret = GetParameterValue(0, value, sizeof(value));
+    TEST_ASSERT_TRUE(ret < 0);
+    /* NULL 缓冲返回 EC_INVALID */
+    ret = GetParameterValue(0, NULL, sizeof(value));
+    TEST_ASSERT_EQUAL_INT(EC_INVALID, ret);
+    /* 合法句柄：返回值长度且内容一致 */
+    ret = SetParameter("rw.sys.xts_getvalue", "hello");
+    TEST_ASSERT_EQUAL_INT(0, ret);
+    uint32_t handle = FindParameter("rw.sys.xts_getvalue");
+    TEST_ASSERT_TRUE(handle != (uint32_t)(-1));
+    ret = GetParameterValue(handle, value, sizeof(value));
+    TEST_ASSERT_TRUE(ret > 0);
+    TEST_ASSERT_TRUE((uint32_t)ret == strlen(value));
+    TEST_ASSERT_EQUAL_STRING(value, "hello");
+};
+
+/**
+ * @tc.name   testGetSystemCommitId001
+ * @tc.number SUB_UTILS_PARAMETER_5805
+ * @tc.desc   test GetSystemCommitId, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(ParameterFuncTestSuite,
+               testGetSystemCommitId001,
+               Function | MediumTest | Level1)
+{
+    /* 参数工作区已初始化，不应返回 -1（未初始化错误码） */
+    long long commitId = GetSystemCommitId();
+    printf("SystemCommitId=%lld\n", commitId);
+    /* 参数工作区已初始化后返回全局提交号（非负），未初始化才返回 -1 */
+    TEST_ASSERT_TRUE(commitId >= 0);
+    long long commitId2 = GetSystemCommitId();
+    TEST_ASSERT_TRUE(commitId2 >= 0);
+};
+
+/**
+ * @tc.name   testGetIntParameter001
+ * @tc.number SUB_UTILS_PARAMETER_5806
+ * @tc.desc   test GetIntParameter with legal and illegal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(ParameterFuncTestSuite,
+               testGetIntParameter001,
+               Function | MediumTest | Level1)
+{
+    /* 不存在的参数返回默认值 */
+    int32_t ret = GetIntParameter("rw.sys.xts_notexist_int", 1234);
+    TEST_ASSERT_EQUAL_INT(1234, ret);
+    /* NULL key 返回默认值 */
+    ret = GetIntParameter(NULL, 5678);
+    TEST_ASSERT_EQUAL_INT(5678, ret);
+    /* 设置后返回解析值 */
+    int setRet = SetParameter("rw.sys.xts_int", "42");
+    TEST_ASSERT_EQUAL_INT(0, setRet);
+    ret = GetIntParameter("rw.sys.xts_int", -1);
+    TEST_ASSERT_EQUAL_INT(42, ret);
+};
+
+/**
+ * @tc.name   testGetUintParameter001
+ * @tc.number SUB_UTILS_PARAMETER_5807
+ * @tc.desc   test GetUintParameter with legal and illegal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(ParameterFuncTestSuite,
+               testGetUintParameter001,
+               Function | MediumTest | Level1)
+{
+    /* 不存在的参数返回默认值 */
+    uint32_t ret = GetUintParameter("rw.sys.xts_notexist_uint", 8888);
+    TEST_ASSERT_TRUE(ret == 8888);
+    /* NULL key 返回默认值 */
+    ret = GetUintParameter(NULL, 9999);
+    TEST_ASSERT_TRUE(ret == 9999);
+    /* 设置后返回解析值 */
+    int setRet = SetParameter("rw.sys.xts_uint", "77");
+    TEST_ASSERT_EQUAL_INT(0, setRet);
+    ret = GetUintParameter("rw.sys.xts_uint", 0);
+    TEST_ASSERT_TRUE(ret == 77);
+};
+
+/**
+ * @tc.name   testSaveParameters001
+ * @tc.number SUB_UTILS_PARAMETER_5808
+ * @tc.desc   test SaveParameters.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(ParameterFuncTestSuite,
+               testSaveParameters001,
+               Function | MediumTest | Level1)
+{
+    /* 契约：持久化保存成功返回 0（SystemSaveParameters 恒返回 SUCCESS） */
+    int ret = SaveParameters();
+    printf("SaveParameters ret=%d\n", ret);
+    TEST_ASSERT_EQUAL_INT(0, ret);
+};
+
+/**
+ * @tc.name   testWaitParameter001
+ * @tc.number SUB_UTILS_PARAMETER_5809
+ * @tc.desc   test WaitParameter with illegal parameters and timeout.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(ParameterFuncTestSuite,
+               testWaitParameter001,
+               Function | MediumTest | Level1)
+{
+    /* NULL 参数返回 EC_INVALID */
+    int ret = WaitParameter(NULL, "1", 1);
+    TEST_ASSERT_EQUAL_INT(EC_INVALID, ret);
+    ret = WaitParameter("rw.sys.xts_wait", NULL, 1);
+    TEST_ASSERT_EQUAL_INT(EC_INVALID, ret);
+    /* 等待一个不会被设置的值，1 秒超时返回 SYSPARAM_WAIT_TIMEOUT */
+    ret = WaitParameter("rw.sys.xts_never_set", "any", 1);
+    printf("WaitParameter timeout ret=%d\n", ret);
+    TEST_ASSERT_EQUAL_INT(SYSPARAM_WAIT_TIMEOUT, ret);
+};
+
 RUN_TEST_SUITE(ParameterFuncTestSuite);
