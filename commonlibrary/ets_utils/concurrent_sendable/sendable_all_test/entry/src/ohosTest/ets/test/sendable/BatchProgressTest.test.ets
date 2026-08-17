@@ -117,11 +117,17 @@ export default function BatchProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBatchProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await tracker.setTotal(10)
-      expect(await tracker.getPercentage()).assertEqual(0)
-      expect(await tracker.getCurrent()).assertEqual(0)
-      expect(await tracker.getTotal()).assertEqual(10)
+    it('testBatchProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotal(10)
+        expect(await tracker.getPercentage()).assertEqual(0)
+        expect(await tracker.getCurrent()).assertEqual(0)
+        expect(await tracker.getTotal()).assertEqual(10)
+      } catch (error) {
+        console.error("testBatchProgress0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -132,13 +138,19 @@ export default function BatchProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBatchProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await tracker.setTotal(10)
-      const p1: number = await tracker.increment()
-      expect(p1).assertEqual(10)
-      const p2: number = await tracker.increment()
-      expect(p2).assertEqual(20)
-      expect(await tracker.getCurrent()).assertEqual(2)
+    it('testBatchProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotal(10)
+        const p1: number = await tracker.increment()
+        expect(p1).assertEqual(10)
+        const p2: number = await tracker.increment()
+        expect(p2).assertEqual(20)
+        expect(await tracker.getCurrent()).assertEqual(2)
+      } catch (error) {
+        console.error("testBatchProgress0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -149,13 +161,19 @@ export default function BatchProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBatchProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await tracker.setTotal(10)
-      for (let i: number = 0; i < 5; i++) {
-        await tracker.increment()
+    it('testBatchProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotal(10)
+        for (let i: number = 0; i < 5; i++) {
+          await tracker.increment()
+        }
+        expect(await tracker.getPercentage()).assertEqual(50)
+        expect(await tracker.getCurrent()).assertEqual(5)
+      } catch (error) {
+        console.error("testBatchProgress0300 failed");
+        expect(false).assertFail();
       }
-      expect(await tracker.getPercentage()).assertEqual(50)
-      expect(await tracker.getCurrent()).assertEqual(5)
+      done();
     })
 
     /**
@@ -166,13 +184,19 @@ export default function BatchProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBatchProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await tracker.setTotal(5)
-      for (let i: number = 0; i < 5; i++) {
-        await tracker.increment()
+    it('testBatchProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotal(5)
+        for (let i: number = 0; i < 5; i++) {
+          await tracker.increment()
+        }
+        expect(await tracker.getPercentage()).assertEqual(100)
+        expect(await tracker.isCompleted()).assertTrue()
+      } catch (error) {
+        console.error("testBatchProgress0400 failed");
+        expect(false).assertFail();
       }
-      expect(await tracker.getPercentage()).assertEqual(100)
-      expect(await tracker.isCompleted()).assertTrue()
+      done();
     })
 
     /**
@@ -183,13 +207,19 @@ export default function BatchProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testBatchProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await tracker.setTotal(10)
-      for (let i: number = 0; i < 15; i++) {
-        await tracker.increment()
+    it('testBatchProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotal(10)
+        for (let i: number = 0; i < 15; i++) {
+          await tracker.increment()
+        }
+        expect(await tracker.getPercentage()).assertEqual(100)
+        expect(await tracker.getCurrent()).assertEqual(10)
+      } catch (error) {
+        console.error("testBatchProgress0500 failed");
+        expect(false).assertFail();
       }
-      expect(await tracker.getPercentage()).assertEqual(100)
-      expect(await tracker.getCurrent()).assertEqual(10)
+      done();
     })
 
     /**
@@ -200,9 +230,15 @@ export default function BatchProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testBatchProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await tracker.setTotal(0)
-      expect(await tracker.getPercentage()).assertEqual(0)
+    it('testBatchProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotal(0)
+        expect(await tracker.getPercentage()).assertEqual(0)
+      } catch (error) {
+        console.error("testBatchProgress0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -213,12 +249,18 @@ export default function BatchProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBatchProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await tracker.setTotal(1)
-      expect(await tracker.getPercentage()).assertEqual(0)
-      await tracker.increment()
-      expect(await tracker.getPercentage()).assertEqual(100)
-      expect(await tracker.isCompleted()).assertTrue()
+    it('testBatchProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotal(1)
+        expect(await tracker.getPercentage()).assertEqual(0)
+        await tracker.increment()
+        expect(await tracker.getPercentage()).assertEqual(100)
+        expect(await tracker.isCompleted()).assertTrue()
+      } catch (error) {
+        console.error("testBatchProgress0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -229,16 +271,22 @@ export default function BatchProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testBatchProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await tracker.setTotal(5)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(batchIncrementTask, tracker))
+    it('testBatchProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotal(5)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(batchIncrementTask, tracker))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await tracker.getCurrent()).assertEqual(5)
+        expect(await tracker.getPercentage()).assertEqual(100)
+        expect(await tracker.isCompleted()).assertTrue()
+      } catch (error) {
+        console.error("testBatchProgress0800 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await tracker.getCurrent()).assertEqual(5)
-      expect(await tracker.getPercentage()).assertEqual(100)
-      expect(await tracker.isCompleted()).assertTrue()
+      done();
     })
 
     /**
@@ -249,15 +297,21 @@ export default function BatchProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testBatchProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await tracker.setTotal(20)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 20; i++) {
-        tasks.push(new taskpool.Task(batchIncrementTask, tracker))
+    it('testBatchProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotal(20)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 20; i++) {
+          tasks.push(new taskpool.Task(batchIncrementTask, tracker))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await tracker.getCurrent()).assertEqual(20)
+        expect(await tracker.getPercentage()).assertEqual(100)
+      } catch (error) {
+        console.error("testBatchProgress0900 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await tracker.getCurrent()).assertEqual(20)
-      expect(await tracker.getPercentage()).assertEqual(100)
+      done();
     })
 
     /**
@@ -268,20 +322,26 @@ export default function BatchProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testBatchProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await tracker.setTotal(5)
-      for (let i: number = 0; i < 5; i++) {
-        await tracker.increment()
+    it('testBatchProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotal(5)
+        for (let i: number = 0; i < 5; i++) {
+          await tracker.increment()
+        }
+        expect(await tracker.getPercentage()).assertEqual(100)
+        await tracker.reset()
+        expect(await tracker.getPercentage()).assertEqual(0)
+        expect(await tracker.getCurrent()).assertEqual(0)
+        await tracker.setTotal(3)
+        for (let i: number = 0; i < 3; i++) {
+          await tracker.increment()
+        }
+        expect(await tracker.getPercentage()).assertEqual(100)
+      } catch (error) {
+        console.error("testBatchProgress1000 failed");
+        expect(false).assertFail();
       }
-      expect(await tracker.getPercentage()).assertEqual(100)
-      await tracker.reset()
-      expect(await tracker.getPercentage()).assertEqual(0)
-      expect(await tracker.getCurrent()).assertEqual(0)
-      await tracker.setTotal(3)
-      for (let i: number = 0; i < 3; i++) {
-        await tracker.increment()
-      }
-      expect(await tracker.getPercentage()).assertEqual(100)
+      done();
     })
 
     /**
@@ -292,11 +352,17 @@ export default function BatchProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testBatchProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await tracker.reset()
-      expect(await tracker.getPercentage()).assertEqual(0)
-      await tracker.reset()
-      expect(await tracker.getPercentage()).assertEqual(0)
+    it('testBatchProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.reset()
+        expect(await tracker.getPercentage()).assertEqual(0)
+        await tracker.reset()
+        expect(await tracker.getPercentage()).assertEqual(0)
+      } catch (error) {
+        console.error("testBatchProgress1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -307,15 +373,21 @@ export default function BatchProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testBatchProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      await tracker.setTotal(100)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 100; i++) {
-        tasks.push(new taskpool.Task(batchIncrementTask, tracker))
+    it('testBatchProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        await tracker.setTotal(100)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 100; i++) {
+          tasks.push(new taskpool.Task(batchIncrementTask, tracker))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await tracker.getCurrent()).assertEqual(100)
+        expect(await tracker.getPercentage()).assertEqual(100)
+      } catch (error) {
+        console.error("testBatchProgress1200 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await tracker.getCurrent()).assertEqual(100)
-      expect(await tracker.getPercentage()).assertEqual(100)
+      done();
     })
   })
 }

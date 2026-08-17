@@ -66,10 +66,16 @@ export default function AsyncLockBasicTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAsyncLockBasic0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const result: number = await counter.increment()
-      expect(result).assertEqual(1)
-      expect(await counter.getCount()).assertEqual(1)
+    it('testAsyncLockBasic0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const result: number = await counter.increment()
+        expect(result).assertEqual(1)
+        expect(await counter.getCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testAsyncLockBasic0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -80,10 +86,16 @@ export default function AsyncLockBasicTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAsyncLockBasic0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await counter.increment()
-      const result: number = await counter.increment()
-      expect(result).assertEqual(2)
+    it('testAsyncLockBasic0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await counter.increment()
+        const result: number = await counter.increment()
+        expect(result).assertEqual(2)
+      } catch (error) {
+        console.error("testAsyncLockBasic0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -94,11 +106,17 @@ export default function AsyncLockBasicTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAsyncLockBasic0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const result1: number = await counter.increment()
-      const result2: number = await counter.increment()
-      expect(result1).assertEqual(1)
-      expect(result2).assertEqual(2)
+    it('testAsyncLockBasic0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const result1: number = await counter.increment()
+        const result2: number = await counter.increment()
+        expect(result1).assertEqual(1)
+        expect(result2).assertEqual(2)
+      } catch (error) {
+        console.error("testAsyncLockBasic0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -109,12 +127,18 @@ export default function AsyncLockBasicTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testAsyncLockBasic0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const promises: Promise<number>[] = []
-      promises.push(counter.increment())
-      promises.push(counter.increment())
-      await Promise.all(promises)
-      expect(await counter.getCount()).assertEqual(2)
+    it('testAsyncLockBasic0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const promises: Promise<number>[] = []
+        promises.push(counter.increment())
+        promises.push(counter.increment())
+        await Promise.all(promises)
+        expect(await counter.getCount()).assertEqual(2)
+      } catch (error) {
+        console.error("testAsyncLockBasic0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -125,13 +149,19 @@ export default function AsyncLockBasicTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testAsyncLockBasic0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const promises: Promise<number>[] = []
-      for (let i = 0; i < 5; i++) {
-        promises.push(counter.increment())
+    it('testAsyncLockBasic0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const promises: Promise<number>[] = []
+        for (let i = 0; i < 5; i++) {
+          promises.push(counter.increment())
+        }
+        await Promise.all(promises)
+        expect(await counter.getCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testAsyncLockBasic0500 failed");
+        expect(false).assertFail();
       }
-      await Promise.all(promises)
-      expect(await counter.getCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -142,13 +172,19 @@ export default function AsyncLockBasicTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testAsyncLockBasic0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const promises: Promise<number>[] = []
-      for (let i = 0; i < 10; i++) {
-        promises.push(counter.increment())
+    it('testAsyncLockBasic0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const promises: Promise<number>[] = []
+        for (let i = 0; i < 10; i++) {
+          promises.push(counter.increment())
+        }
+        await Promise.all(promises)
+        expect(await counter.getCount()).assertEqual(10)
+      } catch (error) {
+        console.error("testAsyncLockBasic0600 failed");
+        expect(false).assertFail();
       }
-      await Promise.all(promises)
-      expect(await counter.getCount()).assertEqual(10)
+      done();
     })
 
     /**
@@ -159,20 +195,26 @@ export default function AsyncLockBasicTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testAsyncLockBasic0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(returnIdentity, i))
+    it('testAsyncLockBasic0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(returnIdentity, i))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        for (let i = 0; i < 10; i++) {
+          await counter.increment()
+        }
+        expect(await counter.getCount()).assertEqual(10)
+      } catch (error) {
+        console.error("testAsyncLockBasic0700 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      for (let i = 0; i < 10; i++) {
-        await counter.increment()
-      }
-      expect(await counter.getCount()).assertEqual(10)
+      done();
     })
 
     /**
@@ -183,23 +225,29 @@ export default function AsyncLockBasicTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testAsyncLockBasic0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await counter.increment()
-      let caught: boolean = false
+    it('testAsyncLockBasic0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        await counter.lock_.lockAsync((): void => {
-          throw new Error('Test exception in lock')
-        })
-        expect().assertFail()
-      } catch (e) {
-        caught = true
-        expect(e !== null && e !== undefined).assertTrue()
-        const err: Error = e as Error
-        expect(err.message).assertEqual('Test exception in lock')
+        await counter.increment()
+        let caught: boolean = false
+        try {
+          await counter.lock_.lockAsync((): void => {
+            throw new Error('Test exception in lock')
+          })
+          expect().assertFail()
+        } catch (e) {
+          caught = true
+          expect(e !== null && e !== undefined).assertTrue()
+          const err: Error = e
+          expect(err.message).assertEqual('Test exception in lock')
+        }
+        expect(caught).assertTrue()
+        const result: number = await counter.increment()
+        expect(result).assertEqual(2)
+      } catch (error) {
+        console.error("testAsyncLockBasic0800 failed");
+        expect(false).assertFail();
       }
-      expect(caught).assertTrue()
-      const result: number = await counter.increment()
-      expect(result).assertEqual(2)
+      done();
     })
 
     /**
@@ -210,17 +258,23 @@ export default function AsyncLockBasicTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testAsyncLockBasic0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let nestedCount: number = 0
-      const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
-      const innerLock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
-      await lock.lockAsync(async (): Promise<void> => {
-        nestedCount++
-        await innerLock.lockAsync((): void => {
+    it('testAsyncLockBasic0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let nestedCount: number = 0
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+        const innerLock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+        await lock.lockAsync(async (): Promise<void> => {
           nestedCount++
+          await innerLock.lockAsync((): void => {
+            nestedCount++
+          })
         })
-      })
-      expect(nestedCount).assertEqual(2)
+        expect(nestedCount).assertEqual(2)
+      } catch (error) {
+        console.error("testAsyncLockBasic0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -231,15 +285,21 @@ export default function AsyncLockBasicTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testAsyncLockBasic1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
-      let acquired: boolean = false
-      const result: boolean = await lock.lockAsync((): boolean => {
-        acquired = true
-        return true
-      })
-      expect(result).assertTrue()
-      expect(acquired).assertTrue()
+    it('testAsyncLockBasic1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+        let acquired: boolean = false
+        const result: boolean = await lock.lockAsync((): boolean => {
+          acquired = true
+          return true
+        })
+        expect(result).assertTrue()
+        expect(acquired).assertTrue()
+      } catch (error) {
+        console.error("testAsyncLockBasic1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

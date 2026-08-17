@@ -204,11 +204,17 @@ export default function ApprovalStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApprovalStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.DRAFT)
-      expect(await approvalSM.getApprovalId()).assertEqual('approval_001')
-      expect(await approvalSM.getHistoryCount()).assertEqual(0)
-      expect(await approvalSM.getCurrentLevel()).assertEqual(0)
+    it('testApprovalStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.DRAFT)
+        expect(await approvalSM.getApprovalId()).assertEqual('approval_001')
+        expect(await approvalSM.getHistoryCount()).assertEqual(0)
+        expect(await approvalSM.getCurrentLevel()).assertEqual(0)
+      } catch (error) {
+        console.error("testApprovalStateMachine0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -219,10 +225,16 @@ export default function ApprovalStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApprovalStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      expect(await approvalSM.transition(ApprovalState.PENDING, 'submit for approval')).assertTrue()
-      expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.PENDING)
-      expect(await approvalSM.getHistoryCount()).assertEqual(1)
+    it('testApprovalStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        expect(await approvalSM.transition(ApprovalState.PENDING, 'submit for approval')).assertTrue()
+        expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.PENDING)
+        expect(await approvalSM.getHistoryCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testApprovalStateMachine0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -233,10 +245,16 @@ export default function ApprovalStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApprovalStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await approvalSM.transition(ApprovalState.PENDING, 'submit')
-      expect(await approvalSM.transition(ApprovalState.APPROVING, 'start approval process')).assertTrue()
-      expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.APPROVING)
+    it('testApprovalStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await approvalSM.transition(ApprovalState.PENDING, 'submit')
+        expect(await approvalSM.transition(ApprovalState.APPROVING, 'start approval process')).assertTrue()
+        expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.APPROVING)
+      } catch (error) {
+        console.error("testApprovalStateMachine0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -247,12 +265,18 @@ export default function ApprovalStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApprovalStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await approvalSM.transition(ApprovalState.PENDING, 'submit')
-      await approvalSM.transition(ApprovalState.APPROVING, 'start')
-      expect(await approvalSM.transition(ApprovalState.APPROVED, 'all approved')).assertTrue()
-      expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.APPROVED)
-      expect(await approvalSM.isFinalState()).assertTrue()
+    it('testApprovalStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await approvalSM.transition(ApprovalState.PENDING, 'submit')
+        await approvalSM.transition(ApprovalState.APPROVING, 'start')
+        expect(await approvalSM.transition(ApprovalState.APPROVED, 'all approved')).assertTrue()
+        expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.APPROVED)
+        expect(await approvalSM.isFinalState()).assertTrue()
+      } catch (error) {
+        console.error("testApprovalStateMachine0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -263,12 +287,18 @@ export default function ApprovalStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApprovalStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await approvalSM.transition(ApprovalState.PENDING, 'submit')
-      await approvalSM.transition(ApprovalState.APPROVING, 'start')
-      expect(await approvalSM.transition(ApprovalState.REJECTED, 'rejected by manager')).assertTrue()
-      expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.REJECTED)
-      expect(await approvalSM.isFinalState()).assertTrue()
+    it('testApprovalStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await approvalSM.transition(ApprovalState.PENDING, 'submit')
+        await approvalSM.transition(ApprovalState.APPROVING, 'start')
+        expect(await approvalSM.transition(ApprovalState.REJECTED, 'rejected by manager')).assertTrue()
+        expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.REJECTED)
+        expect(await approvalSM.isFinalState()).assertTrue()
+      } catch (error) {
+        console.error("testApprovalStateMachine0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -279,10 +309,16 @@ export default function ApprovalStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApprovalStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await approvalSM.transition(ApprovalState.PENDING, 'submit')
-      expect(await approvalSM.transition(ApprovalState.WITHDRAWN, 'user withdraw')).assertTrue()
-      expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.WITHDRAWN)
+    it('testApprovalStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await approvalSM.transition(ApprovalState.PENDING, 'submit')
+        expect(await approvalSM.transition(ApprovalState.WITHDRAWN, 'user withdraw')).assertTrue()
+        expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.WITHDRAWN)
+      } catch (error) {
+        console.error("testApprovalStateMachine0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -293,11 +329,17 @@ export default function ApprovalStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApprovalStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await approvalSM.transition(ApprovalState.PENDING, 'submit')
-      await approvalSM.transition(ApprovalState.WITHDRAWN, 'withdraw')
-      expect(await approvalSM.transition(ApprovalState.DRAFT, 'back to draft')).assertTrue()
-      expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.DRAFT)
+    it('testApprovalStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await approvalSM.transition(ApprovalState.PENDING, 'submit')
+        await approvalSM.transition(ApprovalState.WITHDRAWN, 'withdraw')
+        expect(await approvalSM.transition(ApprovalState.DRAFT, 'back to draft')).assertTrue()
+        expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.DRAFT)
+      } catch (error) {
+        console.error("testApprovalStateMachine0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -308,20 +350,26 @@ export default function ApprovalStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApprovalStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await approvalSM.transition(ApprovalState.PENDING, 'submit')
-      await approvalSM.transition(ApprovalState.APPROVING, 'start')
-      await approvalSM.addApprovalRecord(0, 'manager1', 'approved')
-      await approvalSM.addApprovalRecord(1, 'manager2', 'approved')
-      await approvalSM.addApprovalRecord(2, 'director', 'approved')
-      expect(await approvalSM.getApprovalRecordCount()).assertEqual(3)
-      expect(await approvalSM.getCurrentLevel()).assertEqual(3)
-      const lastRecord: ApprovalRecord | null = await approvalSM.getLastApprovalRecord()
-      expect(lastRecord !== null && lastRecord !== undefined).assertTrue()
-      if (lastRecord !== null) {
-        expect(lastRecord.approver_).assertEqual('director')
-        expect(lastRecord.result_).assertEqual('approved')
+    it('testApprovalStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await approvalSM.transition(ApprovalState.PENDING, 'submit')
+        await approvalSM.transition(ApprovalState.APPROVING, 'start')
+        await approvalSM.addApprovalRecord(0, 'manager1', 'approved')
+        await approvalSM.addApprovalRecord(1, 'manager2', 'approved')
+        await approvalSM.addApprovalRecord(2, 'director', 'approved')
+        expect(await approvalSM.getApprovalRecordCount()).assertEqual(3)
+        expect(await approvalSM.getCurrentLevel()).assertEqual(3)
+        const lastRecord: ApprovalRecord | null = await approvalSM.getLastApprovalRecord()
+        expect(lastRecord !== null && lastRecord !== undefined).assertTrue()
+        if (lastRecord !== null) {
+          expect(lastRecord.approver_).assertEqual('director')
+          expect(lastRecord.result_).assertEqual('approved')
+        }
+      } catch (error) {
+        console.error("testApprovalStateMachine0800 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -332,9 +380,15 @@ export default function ApprovalStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testApprovalStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      expect(await approvalSM.transition(ApprovalState.APPROVED, 'skip approval')).assertFalse()
-      expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.DRAFT)
+    it('testApprovalStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        expect(await approvalSM.transition(ApprovalState.APPROVED, 'skip approval')).assertFalse()
+        expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.DRAFT)
+      } catch (error) {
+        console.error("testApprovalStateMachine0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -345,12 +399,18 @@ export default function ApprovalStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testApprovalStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await approvalSM.transition(ApprovalState.PENDING, 'submit')
-      await approvalSM.transition(ApprovalState.APPROVING, 'start')
-      await approvalSM.transition(ApprovalState.APPROVED, 'approved')
-      expect(await approvalSM.transition(ApprovalState.PENDING, 'try again')).assertFalse()
-      expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.APPROVED)
+    it('testApprovalStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await approvalSM.transition(ApprovalState.PENDING, 'submit')
+        await approvalSM.transition(ApprovalState.APPROVING, 'start')
+        await approvalSM.transition(ApprovalState.APPROVED, 'approved')
+        expect(await approvalSM.transition(ApprovalState.PENDING, 'try again')).assertFalse()
+        expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.APPROVED)
+      } catch (error) {
+        console.error("testApprovalStateMachine1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -361,21 +421,27 @@ export default function ApprovalStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testApprovalStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await approvalSM.transition(ApprovalState.PENDING, 'submit')
-      await approvalSM.transition(ApprovalState.APPROVING, 'start')
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readApprovalStateTask, approvalSM))
+    it('testApprovalStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await approvalSM.transition(ApprovalState.PENDING, 'submit')
+        await approvalSM.transition(ApprovalState.APPROVING, 'start')
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(readApprovalStateTask, approvalSM))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i: number = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i: number = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(ApprovalState.APPROVING)
+        }
+      } catch (error) {
+        console.error("testApprovalStateMachine1100 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i: number = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i: number = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(ApprovalState.APPROVING)
-      }
+      done();
     })
 
     /**
@@ -386,11 +452,17 @@ export default function ApprovalStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApprovalStateMachine1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await approvalSM.transition(ApprovalState.PENDING, 'submit by user')
-      await approvalSM.transition(ApprovalState.APPROVING, 'start process')
-      await approvalSM.transition(ApprovalState.APPROVED, 'all levels approved')
-      expect(await approvalSM.getHistoryCount()).assertEqual(3)
+    it('testApprovalStateMachine1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await approvalSM.transition(ApprovalState.PENDING, 'submit by user')
+        await approvalSM.transition(ApprovalState.APPROVING, 'start process')
+        await approvalSM.transition(ApprovalState.APPROVED, 'all levels approved')
+        expect(await approvalSM.getHistoryCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testApprovalStateMachine1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -401,21 +473,27 @@ export default function ApprovalStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApprovalStateMachine1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const approvalSM1: ApprovalStateMachine = new ApprovalStateMachine('approval_001', new ArkTSUtils.locks.AsyncLock(), new collections.Array<ApprovalTransitionRecord>(), new collections.Array<ApprovalTransitionRule>(), new collections.Array<ApprovalRecord>())
-      const approvalSM2: ApprovalStateMachine = new ApprovalStateMachine('approval_002', new ArkTSUtils.locks.AsyncLock(), new collections.Array<ApprovalTransitionRecord>(), new collections.Array<ApprovalTransitionRule>(), new collections.Array<ApprovalRecord>())
-      await approvalSM1.setupRules()
-      await approvalSM2.setupRules()
-      await approvalSM1.transition(ApprovalState.PENDING, 'submit')
-      await approvalSM1.transition(ApprovalState.APPROVING, 'start')
-      await approvalSM1.transition(ApprovalState.APPROVED, 'approved')
-      await approvalSM2.transition(ApprovalState.PENDING, 'submit')
-      await approvalSM2.transition(ApprovalState.APPROVING, 'start')
-      await approvalSM2.transition(ApprovalState.REJECTED, 'rejected')
-      expect(await approvalSM1.getCurrentState()).assertEqual(ApprovalState.APPROVED)
-      expect(await approvalSM2.getCurrentState()).assertEqual(ApprovalState.REJECTED)
-      await approvalSM1.reset()
-      await approvalSM2.reset()
+    it('testApprovalStateMachine1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const approvalSM1: ApprovalStateMachine = new ApprovalStateMachine('approval_001', new ArkTSUtils.locks.AsyncLock(), new collections.Array<ApprovalTransitionRecord>(), new collections.Array<ApprovalTransitionRule>(), new collections.Array<ApprovalRecord>())
+        const approvalSM2: ApprovalStateMachine = new ApprovalStateMachine('approval_002', new ArkTSUtils.locks.AsyncLock(), new collections.Array<ApprovalTransitionRecord>(), new collections.Array<ApprovalTransitionRule>(), new collections.Array<ApprovalRecord>())
+        await approvalSM1.setupRules()
+        await approvalSM2.setupRules()
+        await approvalSM1.transition(ApprovalState.PENDING, 'submit')
+        await approvalSM1.transition(ApprovalState.APPROVING, 'start')
+        await approvalSM1.transition(ApprovalState.APPROVED, 'approved')
+        await approvalSM2.transition(ApprovalState.PENDING, 'submit')
+        await approvalSM2.transition(ApprovalState.APPROVING, 'start')
+        await approvalSM2.transition(ApprovalState.REJECTED, 'rejected')
+        expect(await approvalSM1.getCurrentState()).assertEqual(ApprovalState.APPROVED)
+        expect(await approvalSM2.getCurrentState()).assertEqual(ApprovalState.REJECTED)
+        await approvalSM1.reset()
+        await approvalSM2.reset()
+      } catch (error) {
+        console.error("testApprovalStateMachine1300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

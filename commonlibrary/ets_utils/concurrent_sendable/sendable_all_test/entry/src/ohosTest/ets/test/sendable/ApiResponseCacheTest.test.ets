@@ -158,10 +158,16 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testApiResponseCache0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.set('GET_/api/users', '{"users":[]}')
-      const value: string | undefined = await cache.get('GET_/api/users')
-      expect(value).assertEqual('{"users":[]}')
+    it('testApiResponseCache0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.set('GET_/api/users', '{"users":[]}')
+        const value: string | undefined = await cache.get('GET_/api/users')
+        expect(value).assertEqual('{"users":[]}')
+      } catch (error) {
+        console.error("testApiResponseCache0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -172,10 +178,16 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testApiResponseCache0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.set('POST_/api/users', '{"id":1}')
-      const value: string | undefined = await cache.get('POST_/api/users')
-      expect(value).assertEqual('{"id":1}')
+    it('testApiResponseCache0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.set('POST_/api/users', '{"id":1}')
+        const value: string | undefined = await cache.get('POST_/api/users')
+        expect(value).assertEqual('{"id":1}')
+      } catch (error) {
+        console.error("testApiResponseCache0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -186,11 +198,17 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testApiResponseCache0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.set('GET_/api/data', 'get_response')
-      await cache.set('POST_/api/data', 'post_response')
-      expect(await cache.get('GET_/api/data')).assertEqual('get_response')
-      expect(await cache.get('POST_/api/data')).assertEqual('post_response')
+    it('testApiResponseCache0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.set('GET_/api/data', 'get_response')
+        await cache.set('POST_/api/data', 'post_response')
+        expect(await cache.get('GET_/api/data')).assertEqual('get_response')
+        expect(await cache.get('POST_/api/data')).assertEqual('post_response')
+      } catch (error) {
+        console.error("testApiResponseCache0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -201,11 +219,17 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testApiResponseCache0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.set('api_1', 'response_1')
-      await cache.get('api_1')
-      await cache.get('api_1')
-      expect(await cache.getHitCount()).assertEqual(2)
+    it('testApiResponseCache0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.set('api_1', 'response_1')
+        await cache.get('api_1')
+        await cache.get('api_1')
+        expect(await cache.getHitCount()).assertEqual(2)
+      } catch (error) {
+        console.error("testApiResponseCache0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -216,9 +240,15 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testApiResponseCache0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.get('nonexistent_api')
-      expect(await cache.getMissCount()).assertEqual(1)
+    it('testApiResponseCache0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.get('nonexistent_api')
+        expect(await cache.getMissCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testApiResponseCache0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -229,16 +259,22 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const shortTtlTimestamps: collections.Map<string, number> = new collections.Map<string, number>()
-      const shortTtlCacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
-      const shortTtlCache: ApiCacheManager = new ApiCacheManager(shortTtlTimestamps, shortTtlCacheArg, new ArkTSUtils.locks.AsyncLock())
-      shortTtlCache.setTtlForTest(100)
-      await shortTtlCache.set('expiring_key', 'expiring_value')
-      expect(await shortTtlCache.has('expiring_key')).assertTrue()
-      await Utils.sleep(150)
-      const value: string | undefined = await shortTtlCache.get('expiring_key')
-      expect(value === undefined).assertTrue()
+    it('testApiResponseCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const shortTtlTimestamps: collections.Map<string, number> = new collections.Map<string, number>()
+        const shortTtlCacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
+        const shortTtlCache: ApiCacheManager = new ApiCacheManager(shortTtlTimestamps, shortTtlCacheArg, new ArkTSUtils.locks.AsyncLock())
+        shortTtlCache.setTtlForTest(100)
+        await shortTtlCache.set('expiring_key', 'expiring_value')
+        expect(await shortTtlCache.has('expiring_key')).assertTrue()
+        await Utils.sleep(150)
+        const value: string | undefined = await shortTtlCache.get('expiring_key')
+        expect(value === undefined).assertTrue()
+      } catch (error) {
+        console.error("testApiResponseCache0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -249,10 +285,16 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testApiResponseCache0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.set('fresh_key', 'fresh_value')
-      const value: string | undefined = await cache.get('fresh_key')
-      expect(value).assertEqual('fresh_value')
+    it('testApiResponseCache0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.set('fresh_key', 'fresh_value')
+        const value: string | undefined = await cache.get('fresh_key')
+        expect(value).assertEqual('fresh_value')
+      } catch (error) {
+        console.error("testApiResponseCache0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -263,12 +305,18 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testApiResponseCache0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.set('key1', 'value1')
-      await cache.set('key2', 'value2')
-      await cache.delete('key1')
-      expect(await cache.has('key1')).assertFalse()
-      expect(await cache.has('key2')).assertTrue()
+    it('testApiResponseCache0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.set('key1', 'value1')
+        await cache.set('key2', 'value2')
+        await cache.delete('key1')
+        expect(await cache.has('key1')).assertFalse()
+        expect(await cache.has('key2')).assertTrue()
+      } catch (error) {
+        console.error("testApiResponseCache0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -279,20 +327,26 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testApiResponseCache0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(concurrentCacheApiResponse, cache, `api_${i}`, `response_${i}`))
+    it('testApiResponseCache0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(concurrentCacheApiResponse, cache, `api_${i}`, `response_${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        expect(await cache.length()).assertEqual(5)
+        for (let i = 0; i < 5; i++) {
+          expect(await cache.get(`api_${i}`)).assertEqual(`response_${i}`)
+        }
+      } catch (error) {
+        console.error("testApiResponseCache0900 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      expect(await cache.length()).assertEqual(5)
-      for (let i = 0; i < 5; i++) {
-        expect(await cache.get(`api_${i}`)).assertEqual(`response_${i}`)
-      }
+      done();
     })
 
     /**
@@ -303,21 +357,27 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testApiResponseCache1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(concurrentCacheApiResponse, cache, `endpoint_${i}`, `data_${i}`))
+    it('testApiResponseCache1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(concurrentCacheApiResponse, cache, `endpoint_${i}`, `data_${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        expect(await cache.length()).assertEqual(10)
+        for (let i = 0; i < 10; i++) {
+          expect(await cache.has(`endpoint_${i}`)).assertTrue()
+          expect(await cache.get(`endpoint_${i}`)).assertEqual(`data_${i}`)
+        }
+      } catch (error) {
+        console.error("testApiResponseCache1000 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      expect(await cache.length()).assertEqual(10)
-      for (let i = 0; i < 10; i++) {
-        expect(await cache.has(`endpoint_${i}`)).assertTrue()
-        expect(await cache.get(`endpoint_${i}`)).assertEqual(`data_${i}`)
-      }
+      done();
     })
 
     /**
@@ -328,14 +388,20 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      expect(await cache.length()).assertEqual(0)
-      for (let i = 0; i < 10; i++) {
-        await cache.set(`key_${i}`, `value_${i}`)
+    it('testApiResponseCache1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        expect(await cache.length()).assertEqual(0)
+        for (let i = 0; i < 10; i++) {
+          await cache.set(`key_${i}`, `value_${i}`)
+        }
+        expect(await cache.length()).assertEqual(10)
+        await cache.clear()
+        expect(await cache.length()).assertEqual(0)
+      } catch (error) {
+        console.error("testApiResponseCache1100 failed");
+        expect(false).assertFail();
       }
-      expect(await cache.length()).assertEqual(10)
-      await cache.clear()
-      expect(await cache.length()).assertEqual(0)
+      done();
     })
 
     /**
@@ -346,9 +412,15 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testApiResponseCache1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cache.set('https://api.example.com/users', 'users_data')
-      expect(await cache.get('https://api.example.com/users')).assertEqual('users_data')
+    it('testApiResponseCache1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cache.set('https://api.example.com/users', 'users_data')
+        expect(await cache.get('https://api.example.com/users')).assertEqual('users_data')
+      } catch (error) {
+        console.error("testApiResponseCache1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -359,17 +431,18 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApiResponseCache1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caught: boolean = false
       try {
         await cache.set('', 'value')
         expect().assertFail()
       } catch (e) {
         caught = true
-        const err: Error = e as Error
+        const err: Error = e
         expect(err.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
       }
       expect(caught).assertTrue()
+      done();
     })
 
     /**
@@ -380,17 +453,18 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApiResponseCache1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caught: boolean = false
       try {
         await cache.get('')
         expect().assertFail()
       } catch (e) {
         caught = true
-        const err: Error = e as Error
+        const err: Error = e
         expect(err.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
       }
       expect(caught).assertTrue()
+      done();
     })
 
     /**
@@ -401,17 +475,18 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApiResponseCache1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caught: boolean = false
       try {
         await cache.has('')
         expect().assertFail()
       } catch (e) {
         caught = true
-        const err: Error = e as Error
+        const err: Error = e
         expect(err.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
       }
       expect(caught).assertTrue()
+      done();
     })
 
     /**
@@ -422,17 +497,18 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApiResponseCache1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caught: boolean = false
       try {
         await cache.delete('')
         expect().assertFail()
       } catch (e) {
         caught = true
-        const err: Error = e as Error
+        const err: Error = e
         expect(err.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
       }
       expect(caught).assertTrue()
+      done();
     })
 
     /**
@@ -443,17 +519,18 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApiResponseCache1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caught: boolean = false
       try {
         await cache.isExpired('')
         expect().assertFail()
       } catch (e) {
         caught = true
-        const err: Error = e as Error
+        const err: Error = e
         expect(err.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
       }
       expect(caught).assertTrue()
+      done();
     })
 
     /**
@@ -464,21 +541,27 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await cache.set('before_throw', 'v1')
-      let caught: boolean = false
+    it('testApiResponseCache1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        await cache.throwInsideLockForTest()
-        expect().assertFail()
-      } catch (e) {
-        caught = true
-        const err: Error = e as Error
-        expect(err.message).assertEqual(API_CACHE_LOCK_THROW_MSG)
+        await cache.set('before_throw', 'v1')
+        let caught: boolean = false
+        try {
+          await cache.throwInsideLockForTest()
+          expect().assertFail()
+        } catch (e) {
+          caught = true
+          const err: Error = e
+          expect(err.message).assertEqual(API_CACHE_LOCK_THROW_MSG)
+        }
+        expect(caught).assertTrue()
+        await cache.set('after_throw', 'v2')
+        expect(await cache.get('before_throw')).assertEqual('v1')
+        expect(await cache.get('after_throw')).assertEqual('v2')
+      } catch (error) {
+        console.error("testApiResponseCache1800 failed");
+        expect(false).assertFail();
       }
-      expect(caught).assertTrue()
-      await cache.set('after_throw', 'v2')
-      expect(await cache.get('before_throw')).assertEqual('v1')
-      expect(await cache.get('after_throw')).assertEqual('v2')
+      done();
     })
 
     /**
@@ -489,18 +572,24 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const smallTimestamps: collections.Map<string, number> = new collections.Map<string, number>()
-      const smallCacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(2)
-      const smallCache: ApiCacheManager = new ApiCacheManager(smallTimestamps, smallCacheArg, new ArkTSUtils.locks.AsyncLock())
-      await smallCache.set('k1', 'v1')
-      await smallCache.set('k2', 'v2')
-      await smallCache.set('k3', 'v3')
-      expect(await smallCache.length()).assertEqual(2)
-      expect(await smallCache.has('k1')).assertFalse()
-      expect(await smallCache.has('k2')).assertTrue()
-      expect(await smallCache.has('k3')).assertTrue()
-      expect(await smallCache.get('k3')).assertEqual('v3')
+    it('testApiResponseCache1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const smallTimestamps: collections.Map<string, number> = new collections.Map<string, number>()
+        const smallCacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(2)
+        const smallCache: ApiCacheManager = new ApiCacheManager(smallTimestamps, smallCacheArg, new ArkTSUtils.locks.AsyncLock())
+        await smallCache.set('k1', 'v1')
+        await smallCache.set('k2', 'v2')
+        await smallCache.set('k3', 'v3')
+        expect(await smallCache.length()).assertEqual(2)
+        expect(await smallCache.has('k1')).assertFalse()
+        expect(await smallCache.has('k2')).assertTrue()
+        expect(await smallCache.has('k3')).assertTrue()
+        expect(await smallCache.get('k3')).assertEqual('v3')
+      } catch (error) {
+        console.error("testApiResponseCache1900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -511,11 +600,17 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const specialKey: string = 'GET_/api/用户?q=a&b=1#frag%20x'
-      await cache.set(specialKey, '{"ok":true}')
-      expect(await cache.has(specialKey)).assertTrue()
-      expect(await cache.get(specialKey)).assertEqual('{"ok":true}')
+    it('testApiResponseCache2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const specialKey: string = 'GET_/api/用户?q=a&b=1#frag%20x'
+        await cache.set(specialKey, '{"ok":true}')
+        expect(await cache.has(specialKey)).assertTrue()
+        expect(await cache.get(specialKey)).assertEqual('{"ok":true}')
+      } catch (error) {
+        console.error("testApiResponseCache2000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -526,15 +621,21 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let longKey: string = 'https://api.example.com/v1/'
-      for (let i = 0; i < 256; i++) {
-        longKey = `${longKey}path_segment_padding_${i}/`
+    it('testApiResponseCache2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let longKey: string = 'https://api.example.com/v1/'
+        for (let i = 0; i < 256; i++) {
+          longKey = `${longKey}path_segment_padding_${i}/`
+        }
+        expect(longKey.length > 2048).assertTrue()
+        await cache.set(longKey, 'long_key_value')
+        expect(await cache.get(longKey)).assertEqual('long_key_value')
+        expect(await cache.has(longKey)).assertTrue()
+      } catch (error) {
+        console.error("testApiResponseCache2100 failed");
+        expect(false).assertFail();
       }
-      expect(longKey.length > 2048).assertTrue()
-      await cache.set(longKey, 'long_key_value')
-      expect(await cache.get(longKey)).assertEqual('long_key_value')
-      expect(await cache.has(longKey)).assertTrue()
+      done();
     })
 
     /**
@@ -545,16 +646,22 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const timestamps: collections.Map<string, number> = new collections.Map<string, number>()
-      const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(1)
-      const unitCache: ApiCacheManager = new ApiCacheManager(timestamps, cacheArg, new ArkTSUtils.locks.AsyncLock())
-      await unitCache.set('only_old', 'old_value')
-      expect(await unitCache.length()).assertEqual(1)
-      await unitCache.set('only_new', 'new_value')
-      expect(await unitCache.length()).assertEqual(1)
-      expect(await unitCache.has('only_old')).assertFalse()
-      expect(await unitCache.get('only_new')).assertEqual('new_value')
+    it('testApiResponseCache2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const timestamps: collections.Map<string, number> = new collections.Map<string, number>()
+        const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(1)
+        const unitCache: ApiCacheManager = new ApiCacheManager(timestamps, cacheArg, new ArkTSUtils.locks.AsyncLock())
+        await unitCache.set('only_old', 'old_value')
+        expect(await unitCache.length()).assertEqual(1)
+        await unitCache.set('only_new', 'new_value')
+        expect(await unitCache.length()).assertEqual(1)
+        expect(await unitCache.has('only_old')).assertFalse()
+        expect(await unitCache.get('only_new')).assertEqual('new_value')
+      } catch (error) {
+        console.error("testApiResponseCache2200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -565,7 +672,7 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApiResponseCache2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let caught: boolean = false
       let err: BusinessError | null = null
       try {
@@ -573,10 +680,12 @@ export default function ApiResponseCacheTest(): void {
         new ArkTSUtils.SendableLruCache<string, string>(0)
       } catch (e) {
         caught = true
-        err = e as BusinessError
-        expect(err instanceof Error).assertTrue()
-        expect(err.code).assertEqual(401)
-        expect(err.message).assertContain('Parameter error')
+        err = e
+        if (err !== null) {
+          expect(err instanceof Error).assertTrue()
+          expect(err.code).assertEqual(401)
+          expect(err.message).assertContain('Parameter error')
+        }
       }
       expect(caught).assertTrue()
       expect(err !== null).assertTrue()
@@ -590,17 +699,23 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const timestamps: collections.Map<string, number> = new collections.Map<string, number>()
-      const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
-      const ttlCache: ApiCacheManager = new ApiCacheManager(timestamps, cacheArg, new ArkTSUtils.locks.AsyncLock())
-      const ttlMs: number = 1000
-      ttlCache.setTtlForTest(ttlMs)
-      await ttlCache.set('exact_ttl', 'still_valid')
-      // Keep a stable margin under TTL so wall-clock drift cannot cross the '>' boundary.
-      await ttlCache.setTimestampForTest('exact_ttl', Date.now() - ttlMs + 200)
-      expect(await ttlCache.isExpired('exact_ttl')).assertFalse()
-      expect(await ttlCache.get('exact_ttl')).assertEqual('still_valid')
+    it('testApiResponseCache2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const timestamps: collections.Map<string, number> = new collections.Map<string, number>()
+        const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
+        const ttlCache: ApiCacheManager = new ApiCacheManager(timestamps, cacheArg, new ArkTSUtils.locks.AsyncLock())
+        const ttlMs: number = 1000
+        ttlCache.setTtlForTest(ttlMs)
+        await ttlCache.set('exact_ttl', 'still_valid')
+        // Keep a stable margin under TTL so wall-clock drift cannot cross the '>' boundary.
+        await ttlCache.setTimestampForTest('exact_ttl', Date.now() - ttlMs + 200)
+        expect(await ttlCache.isExpired('exact_ttl')).assertFalse()
+        expect(await ttlCache.get('exact_ttl')).assertEqual('still_valid')
+      } catch (error) {
+        console.error("testApiResponseCache2400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -611,17 +726,23 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const timestamps: collections.Map<string, number> = new collections.Map<string, number>()
-      const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
-      const ttlCache: ApiCacheManager = new ApiCacheManager(timestamps, cacheArg, new ArkTSUtils.locks.AsyncLock())
-      const ttlMs: number = 1000
-      ttlCache.setTtlForTest(ttlMs)
-      await ttlCache.set('over_ttl', 'will_expire')
-      await ttlCache.setTimestampForTest('over_ttl', Date.now() - ttlMs - 1)
-      expect(await ttlCache.isExpired('over_ttl')).assertTrue()
-      const value: string | undefined = await ttlCache.get('over_ttl')
-      expect(value === undefined).assertTrue()
+    it('testApiResponseCache2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const timestamps: collections.Map<string, number> = new collections.Map<string, number>()
+        const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
+        const ttlCache: ApiCacheManager = new ApiCacheManager(timestamps, cacheArg, new ArkTSUtils.locks.AsyncLock())
+        const ttlMs: number = 1000
+        ttlCache.setTtlForTest(ttlMs)
+        await ttlCache.set('over_ttl', 'will_expire')
+        await ttlCache.setTimestampForTest('over_ttl', Date.now() - ttlMs - 1)
+        expect(await ttlCache.isExpired('over_ttl')).assertTrue()
+        const value: string | undefined = await ttlCache.get('over_ttl')
+        expect(value === undefined).assertTrue()
+      } catch (error) {
+        console.error("testApiResponseCache2500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -632,16 +753,22 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testApiResponseCache2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const timestamps: collections.Map<string, number> = new collections.Map<string, number>()
-      const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
-      const ttlCache: ApiCacheManager = new ApiCacheManager(timestamps, cacheArg, new ArkTSUtils.locks.AsyncLock())
-      ttlCache.setTtlForTest(0)
-      await ttlCache.set('ttl_zero', 'zero_ttl_value')
-      await Utils.sleep(10)
-      expect(await ttlCache.isExpired('ttl_zero')).assertTrue()
-      const value: string | undefined = await ttlCache.get('ttl_zero')
-      expect(value === undefined).assertTrue()
+    it('testApiResponseCache2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const timestamps: collections.Map<string, number> = new collections.Map<string, number>()
+        const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
+        const ttlCache: ApiCacheManager = new ApiCacheManager(timestamps, cacheArg, new ArkTSUtils.locks.AsyncLock())
+        ttlCache.setTtlForTest(0)
+        await ttlCache.set('ttl_zero', 'zero_ttl_value')
+        await Utils.sleep(10)
+        expect(await ttlCache.isExpired('ttl_zero')).assertTrue()
+        const value: string | undefined = await ttlCache.get('ttl_zero')
+        expect(value === undefined).assertTrue()
+      } catch (error) {
+        console.error("testApiResponseCache2600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -652,21 +779,27 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testApiResponseCache2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const writeCount: number = 50
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < writeCount; i++) {
-        tasks.push(new taskpool.Task(concurrentCacheApiResponse, cache, `contention_${i}`, `payload_${i}`))
+    it('testApiResponseCache2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const writeCount: number = 50
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < writeCount; i++) {
+          tasks.push(new taskpool.Task(concurrentCacheApiResponse, cache, `contention_${i}`, `payload_${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        expect(await cache.length()).assertEqual(writeCount)
+        for (let i = 0; i < writeCount; i++) {
+          expect(await cache.get(`contention_${i}`)).assertEqual(`payload_${i}`)
+        }
+      } catch (error) {
+        console.error("testApiResponseCache2700 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      expect(await cache.length()).assertEqual(writeCount)
-      for (let i = 0; i < writeCount; i++) {
-        expect(await cache.get(`contention_${i}`)).assertEqual(`payload_${i}`)
-      }
+      done();
     })
 
     /**
@@ -677,22 +810,28 @@ export default function ApiResponseCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testApiResponseCache2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const capacity: number = 10
-      const writeCount: number = 30
-      const timestamps: collections.Map<string, number> = new collections.Map<string, number>()
-      const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(capacity)
-      const limitedCache: ApiCacheManager = new ApiCacheManager(timestamps, cacheArg, new ArkTSUtils.locks.AsyncLock())
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < writeCount; i++) {
-        tasks.push(new taskpool.Task(concurrentCacheApiResponse, limitedCache, `overflow_${i}`, `data_${i}`))
+    it('testApiResponseCache2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const capacity: number = 10
+        const writeCount: number = 30
+        const timestamps: collections.Map<string, number> = new collections.Map<string, number>()
+        const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(capacity)
+        const limitedCache: ApiCacheManager = new ApiCacheManager(timestamps, cacheArg, new ArkTSUtils.locks.AsyncLock())
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < writeCount; i++) {
+          tasks.push(new taskpool.Task(concurrentCacheApiResponse, limitedCache, `overflow_${i}`, `data_${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        expect(await limitedCache.length()).assertEqual(capacity)
+      } catch (error) {
+        console.error("testApiResponseCache2800 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      expect(await limitedCache.length()).assertEqual(capacity)
+      done();
     })
   })
 }

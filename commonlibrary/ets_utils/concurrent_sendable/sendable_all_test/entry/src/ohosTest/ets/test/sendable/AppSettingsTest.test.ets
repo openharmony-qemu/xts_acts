@@ -173,14 +173,20 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAppSettings0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await settingsManager.loadDefaults(
-        ['theme', 'language', 'notifications'],
-        ['light', 'en', 'enabled']
-      )
-      expect(await settingsManager.getSetting('theme')).assertEqual('light')
-      expect(await settingsManager.getSetting('language')).assertEqual('en')
-      expect(await settingsManager.getSetting('notifications')).assertEqual('enabled')
+    it('testAppSettings0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await settingsManager.loadDefaults(
+          ['theme', 'language', 'notifications'],
+          ['light', 'en', 'enabled']
+        )
+        expect(await settingsManager.getSetting('theme')).assertEqual('light')
+        expect(await settingsManager.getSetting('language')).assertEqual('en')
+        expect(await settingsManager.getSetting('notifications')).assertEqual('enabled')
+      } catch (error) {
+        console.error("testAppSettings0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -191,10 +197,16 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAppSettings0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await settingsManager.setSetting('user_preference', 'custom_value')
-      const value: string | undefined = await settingsManager.getSetting('user_preference')
-      expect(value).assertEqual('custom_value')
+    it('testAppSettings0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await settingsManager.setSetting('user_preference', 'custom_value')
+        const value: string | undefined = await settingsManager.getSetting('user_preference')
+        expect(value).assertEqual('custom_value')
+      } catch (error) {
+        console.error("testAppSettings0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -205,13 +217,19 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAppSettings0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await settingsManager.loadDefaults(['initial'], ['default'])
-      const oldVersion: number = await settingsManager.getVersion()
-      await settingsManager.setSetting('initial', 'updated')
-      const newVersion: number = await settingsManager.getVersion()
-      expect(newVersion).assertEqual(oldVersion + 1)
-      expect(await settingsManager.getSetting('initial')).assertEqual('updated')
+    it('testAppSettings0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await settingsManager.loadDefaults(['initial'], ['default'])
+        const oldVersion: number = await settingsManager.getVersion()
+        await settingsManager.setSetting('initial', 'updated')
+        const newVersion: number = await settingsManager.getVersion()
+        expect(newVersion).assertEqual(oldVersion + 1)
+        expect(await settingsManager.getSetting('initial')).assertEqual('updated')
+      } catch (error) {
+        console.error("testAppSettings0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -222,11 +240,17 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAppSettings0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await settingsManager.setSetting('temp_setting', 'temp_value')
-      const deleted: boolean = await settingsManager.deleteSetting('temp_setting')
-      expect(deleted).assertTrue()
-      expect(await settingsManager.getSetting('temp_setting') === undefined).assertTrue()
+    it('testAppSettings0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await settingsManager.setSetting('temp_setting', 'temp_value')
+        const deleted: boolean = await settingsManager.deleteSetting('temp_setting')
+        expect(deleted).assertTrue()
+        expect(await settingsManager.getSetting('temp_setting') === undefined).assertTrue()
+      } catch (error) {
+        console.error("testAppSettings0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -237,11 +261,17 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAppSettings0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await settingsManager.loadDefaults(['config'], ['default_config'])
-      await settingsManager.setSetting('config', 'modified_config')
-      await settingsManager.resetToDefault('config')
-      expect(await settingsManager.getSetting('config')).assertEqual('default_config')
+    it('testAppSettings0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await settingsManager.loadDefaults(['config'], ['default_config'])
+        await settingsManager.setSetting('config', 'modified_config')
+        await settingsManager.resetToDefault('config')
+        expect(await settingsManager.getSetting('config')).assertEqual('default_config')
+      } catch (error) {
+        console.error("testAppSettings0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -252,24 +282,30 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testAppSettings0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await settingsManager.loadDefaults(
-        ['setting1', 'setting2', 'setting3', 'setting4', 'setting5'],
-        ['value1', 'value2', 'value3', 'value4', 'value5']
-      )
-      const tasks: taskpool.Task[] = []
-      for (let i = 1; i <= 5; i++) {
-        tasks.push(new taskpool.Task(readSettingTask, settingsManager, `setting${i}`))
+    it('testAppSettings0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await settingsManager.loadDefaults(
+          ['setting1', 'setting2', 'setting3', 'setting4', 'setting5'],
+          ['value1', 'value2', 'value3', 'value4', 'value5']
+        )
+        const tasks: taskpool.Task[] = []
+        for (let i = 1; i <= 5; i++) {
+          tasks.push(new taskpool.Task(readSettingTask, settingsManager, `setting${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(5)
+        for (let i = 0; i < 5; i++) {
+          expect(results[i] as string).assertEqual(`value${i + 1}`)
+        }
+      } catch (error) {
+        console.error("testAppSettings0600 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      expect(results.length).assertEqual(5)
-      for (let i = 0; i < 5; i++) {
-        expect(results[i] as string).assertEqual(`value${i + 1}`)
-      }
+      done();
     })
 
     /**
@@ -280,20 +316,26 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testAppSettings0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await settingsManager.loadDefaults(['base'], ['base_value'])
-      const initialVersion: number = await settingsManager.getVersion()
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(updateSettingTask, settingsManager, `update${i}`, `val${i}`))
+    it('testAppSettings0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await settingsManager.loadDefaults(['base'], ['base_value'])
+        const initialVersion: number = await settingsManager.getVersion()
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(updateSettingTask, settingsManager, `update${i}`, `val${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        const finalVersion: number = await settingsManager.getVersion()
+        expect(finalVersion).assertEqual(initialVersion + 5)
+      } catch (error) {
+        console.error("testAppSettings0700 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      const finalVersion: number = await settingsManager.getVersion()
-      expect(finalVersion).assertEqual(initialVersion + 5)
+      done();
     })
 
     /**
@@ -304,26 +346,32 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testAppSettings0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await settingsManager.loadDefaults(['read1', 'read2'], ['read_val1', 'read_val2'])
-      const readTasks: taskpool.Task[] = []
-      const writeTasks: taskpool.Task[] = []
-      readTasks.push(new taskpool.Task(readSettingTask, settingsManager, 'read1'))
-      readTasks.push(new taskpool.Task(readSettingTask, settingsManager, 'read2'))
-      writeTasks.push(new taskpool.Task(updateSettingTask, settingsManager, 'write1', 'new_val1'))
-      writeTasks.push(new taskpool.Task(updateSettingTask, settingsManager, 'write2', 'new_val2'))
-      const readPromises: Promise<Object>[] = []
-      const writePromises: Promise<Object>[] = []
-      for (let i = 0; i < readTasks.length; i++) {
-        readPromises.push(taskpool.execute(readTasks[i]))
+    it('testAppSettings0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await settingsManager.loadDefaults(['read1', 'read2'], ['read_val1', 'read_val2'])
+        const readTasks: taskpool.Task[] = []
+        const writeTasks: taskpool.Task[] = []
+        readTasks.push(new taskpool.Task(readSettingTask, settingsManager, 'read1'))
+        readTasks.push(new taskpool.Task(readSettingTask, settingsManager, 'read2'))
+        writeTasks.push(new taskpool.Task(updateSettingTask, settingsManager, 'write1', 'new_val1'))
+        writeTasks.push(new taskpool.Task(updateSettingTask, settingsManager, 'write2', 'new_val2'))
+        const readPromises: Promise<Object>[] = []
+        const writePromises: Promise<Object>[] = []
+        for (let i = 0; i < readTasks.length; i++) {
+          readPromises.push(taskpool.execute(readTasks[i]))
+        }
+        for (let i = 0; i < writeTasks.length; i++) {
+          writePromises.push(taskpool.execute(writeTasks[i]))
+        }
+        await Promise.all([...readPromises, ...writePromises])
+        const readResults: Object[] = await Promise.all(readPromises)
+        expect(readResults[0] as string).assertEqual('read_val1')
+        expect(readResults[1] as string).assertEqual('read_val2')
+      } catch (error) {
+        console.error("testAppSettings0800 failed");
+        expect(false).assertFail();
       }
-      for (let i = 0; i < writeTasks.length; i++) {
-        writePromises.push(taskpool.execute(writeTasks[i]))
-      }
-      await Promise.all([...readPromises, ...writePromises])
-      const readResults: Object[] = await Promise.all(readPromises)
-      expect(readResults[0] as string).assertEqual('read_val1')
-      expect(readResults[1] as string).assertEqual('read_val2')
+      done();
     })
 
     /**
@@ -334,12 +382,18 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAppSettings0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await settingsManager.setFeatureFlag('experimental_feature', true)
-      const enabled: boolean = await settingsManager.getFeatureFlag('experimental_feature')
-      expect(enabled).assertTrue()
-      const disabled: boolean = await settingsManager.getFeatureFlag('nonexistent_flag')
-      expect(disabled).assertFalse()
+    it('testAppSettings0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await settingsManager.setFeatureFlag('experimental_feature', true)
+        const enabled: boolean = await settingsManager.getFeatureFlag('experimental_feature')
+        expect(enabled).assertTrue()
+        const disabled: boolean = await settingsManager.getFeatureFlag('nonexistent_flag')
+        expect(disabled).assertFalse()
+      } catch (error) {
+        console.error("testAppSettings0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -350,12 +404,18 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAppSettings1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await settingsManager.setFeatureFlag('beta_feature', false)
-      const newState: boolean = await settingsManager.toggleFeatureFlag('beta_feature')
-      expect(newState).assertTrue()
-      const toggledAgain: boolean = await settingsManager.toggleFeatureFlag('beta_feature')
-      expect(toggledAgain).assertFalse()
+    it('testAppSettings1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await settingsManager.setFeatureFlag('beta_feature', false)
+        const newState: boolean = await settingsManager.toggleFeatureFlag('beta_feature')
+        expect(newState).assertTrue()
+        const toggledAgain: boolean = await settingsManager.toggleFeatureFlag('beta_feature')
+        expect(toggledAgain).assertFalse()
+      } catch (error) {
+        console.error("testAppSettings1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -366,21 +426,27 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testAppSettings1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const flagTasks: taskpool.Task[] = []
-      for (let i = 0; i < 3; i++) {
-        await settingsManager.setFeatureFlag(`flag${i}`, false)
-        flagTasks.push(new taskpool.Task(checkFeatureFlagTask, settingsManager, `flag${i}`))
+    it('testAppSettings1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const flagTasks: taskpool.Task[] = []
+        for (let i = 0; i < 3; i++) {
+          await settingsManager.setFeatureFlag(`flag${i}`, false)
+          flagTasks.push(new taskpool.Task(checkFeatureFlagTask, settingsManager, `flag${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < flagTasks.length; i++) {
+          promises.push(taskpool.execute(flagTasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(3)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as boolean).assertFalse()
+        }
+      } catch (error) {
+        console.error("testAppSettings1100 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < flagTasks.length; i++) {
-        promises.push(taskpool.execute(flagTasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      expect(results.length).assertEqual(3)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as boolean).assertFalse()
-      }
+      done();
     })
 
     /**
@@ -391,21 +457,27 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testAppSettings1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const task: taskpool.Task = new taskpool.Task(notifySettingsChangeTask)
-      const receivePromise: Promise<string> = new Promise<string>((resolve: (value: string) => void): void => {
-        task.onReceiveData((data: Object): void => {
-          if (typeof data === 'string') {
-            const parts: string[] = data.split('|')
-            resolve(parts.length === 2 ? parts[1] : '')
-          } else {
-            resolve('')
-          }
+    it('testAppSettings1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const task: taskpool.Task = new taskpool.Task(notifySettingsChangeTask)
+        const receivePromise: Promise<string> = new Promise<string>((resolve: (value: string) => void): void => {
+          task.onReceiveData((data: Object): void => {
+            if (typeof data === 'string') {
+              const parts: string[] = data.split('|')
+              resolve(parts.length === 2 ? parts[1] : '')
+            } else {
+              resolve('')
+            }
+          })
         })
-      })
-      await taskpool.execute(task)
-      const notificationKey: string = await receivePromise
-      expect(notificationKey).assertEqual('updated_key')
+        await taskpool.execute(task)
+        const notificationKey: string = await receivePromise
+        expect(notificationKey).assertEqual('updated_key')
+      } catch (error) {
+        console.error("testAppSettings1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -416,47 +488,53 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testAppSettings1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const notifications: string[] = []
-      let invalidNotification: boolean = false
-      const task: taskpool.Task = new taskpool.Task(multiNotifySettingsTask)
-      const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
-        task.onReceiveData((data: Object): void => {
-          if (typeof data === 'string') {
-            const parts: string[] = data.split('|')
-            if (parts.length === 2) {
-              notifications.push(parts[1])
+    it('testAppSettings1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const notifications: string[] = []
+        let invalidNotification: boolean = false
+        const task: taskpool.Task = new taskpool.Task(multiNotifySettingsTask)
+        const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
+          task.onReceiveData((data: Object): void => {
+            if (typeof data === 'string') {
+              const parts: string[] = data.split('|')
+              if (parts.length === 2) {
+                notifications.push(parts[1])
+              } else {
+                invalidNotification = true
+                resolve()
+                return
+              }
             } else {
               invalidNotification = true
               resolve()
               return
             }
-          } else {
-            invalidNotification = true
-            resolve()
-            return
-          }
-          if (notifications.length >= 3) {
-            resolve()
-          }
+            if (notifications.length >= 3) {
+              resolve()
+            }
+          })
         })
-      })
-      let timeoutId: number = -1
-      try {
-        await taskpool.execute(task)
-        const timeoutPromise: Promise<void> = new Promise<void>((_: () => void, reject: (reason: Error) => void): void => {
-          timeoutId = setTimeout((): void => {
-            reject(new Error(`onReceiveData timeout, received ${notifications.length}/3`))
-          }, 5000)
-        })
-        await Promise.race([receivePromise, timeoutPromise])
-      } finally {
-        clearTimeout(timeoutId)
+        let timeoutId: number = -1
+        try {
+          await taskpool.execute(task)
+          const timeoutPromise: Promise<void> = new Promise<void>((_: () => void, reject: (reason: Error) => void): void => {
+            timeoutId = setTimeout((): void => {
+              reject(new Error(`onReceiveData timeout, received ${notifications.length}/3`))
+            }, 5000)
+          })
+          await Promise.race([receivePromise, timeoutPromise])
+        } finally {
+          clearTimeout(timeoutId)
+        }
+        expect(invalidNotification).assertFalse()
+        expect(notifications.length).assertEqual(3)
+        expect(notifications[0]).assertEqual('key1')
+        expect(notifications[2]).assertEqual('key3')
+      } catch (error) {
+        console.error("testAppSettings1300 failed");
+        expect(false).assertFail();
       }
-      expect(invalidNotification).assertFalse()
-      expect(notifications.length).assertEqual(3)
-      expect(notifications[0]).assertEqual('key1')
-      expect(notifications[2]).assertEqual('key3')
+      done();
     })
 
     /**
@@ -467,21 +545,27 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testAppSettings1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const task: taskpool.Task = new taskpool.Task(triggerSettingsUpdateTask)
-      const nestedPromises: Promise<Object>[] = []
-      const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
-        task.onReceiveData((): void => {
-          const innerTask: taskpool.Task = new taskpool.Task(updateSettingTask, settingsManager, 'nested_key', 'nested_value')
-          nestedPromises.push(taskpool.execute(innerTask))
-          resolve()
+    it('testAppSettings1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const task: taskpool.Task = new taskpool.Task(triggerSettingsUpdateTask)
+        const nestedPromises: Promise<Object>[] = []
+        const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
+          task.onReceiveData((): void => {
+            const innerTask: taskpool.Task = new taskpool.Task(updateSettingTask, settingsManager, 'nested_key', 'nested_value')
+            nestedPromises.push(taskpool.execute(innerTask))
+            resolve()
+          })
         })
-      })
-      await taskpool.execute(task)
-      await receivePromise
-      await Promise.all(nestedPromises)
-      expect(nestedPromises.length).assertEqual(1)
-      expect(await settingsManager.getSetting('nested_key')).assertEqual('nested_value')
+        await taskpool.execute(task)
+        await receivePromise
+        await Promise.all(nestedPromises)
+        expect(nestedPromises.length).assertEqual(1)
+        expect(await settingsManager.getSetting('nested_key')).assertEqual('nested_value')
+      } catch (error) {
+        console.error("testAppSettings1400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -492,19 +576,25 @@ export default function AppSettingsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAppSettings1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await settingsManager.setSetting('string_setting', 'text_value')
-      await settingsManager.setSetting('numeric_setting', '42')
-      await settingsManager.setSetting('boolean_setting', 'true')
-      const strVal: string | undefined = await settingsManager.getSetting('string_setting')
-      const numVal: string | undefined = await settingsManager.getSetting('numeric_setting')
-      const boolVal: string | undefined = await settingsManager.getSetting('boolean_setting')
-      expect(typeof strVal).assertEqual('string')
-      expect(typeof numVal).assertEqual('string')
-      expect(typeof boolVal).assertEqual('string')
-      expect(strVal).assertEqual('text_value')
-      expect(numVal).assertEqual('42')
-      expect(boolVal).assertEqual('true')
+    it('testAppSettings1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await settingsManager.setSetting('string_setting', 'text_value')
+        await settingsManager.setSetting('numeric_setting', '42')
+        await settingsManager.setSetting('boolean_setting', 'true')
+        const strVal: string | undefined = await settingsManager.getSetting('string_setting')
+        const numVal: string | undefined = await settingsManager.getSetting('numeric_setting')
+        const boolVal: string | undefined = await settingsManager.getSetting('boolean_setting')
+        expect(typeof strVal).assertEqual('string')
+        expect(typeof numVal).assertEqual('string')
+        expect(typeof boolVal).assertEqual('string')
+        expect(strVal).assertEqual('text_value')
+        expect(numVal).assertEqual('42')
+        expect(boolVal).assertEqual('true')
+      } catch (error) {
+        console.error("testAppSettings1500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

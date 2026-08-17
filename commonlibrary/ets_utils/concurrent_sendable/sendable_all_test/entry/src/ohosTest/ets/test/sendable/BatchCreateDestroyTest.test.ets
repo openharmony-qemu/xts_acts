@@ -139,12 +139,18 @@ export default function BatchCreateDestroyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBatchCreateDestroy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      for (let i: number = 0; i < 100; i++) {
-        await manager.create(`batch_${i}`, i)
+    it('testBatchCreateDestroy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 100; i++) {
+          await manager.create(`batch_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(100)
+        expect(manager.getCreateCount()).assertEqual(100)
+      } catch (error) {
+        console.error("testBatchCreateDestroy0100 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getSize()).assertEqual(100)
-      expect(manager.getCreateCount()).assertEqual(100)
+      done();
     })
 
     /**
@@ -155,15 +161,21 @@ export default function BatchCreateDestroyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBatchCreateDestroy0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      for (let i: number = 0; i < 100; i++) {
-        await manager.create(`destroy_${i}`, i)
+    it('testBatchCreateDestroy0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 100; i++) {
+          await manager.create(`destroy_${i}`, i)
+        }
+        for (let i: number = 0; i < 100; i++) {
+          await manager.delete(`destroy_${i}`)
+        }
+        expect(manager.getSize()).assertEqual(0)
+        expect(manager.getDeleteCount()).assertEqual(100)
+      } catch (error) {
+        console.error("testBatchCreateDestroy0200 failed");
+        expect(false).assertFail();
       }
-      for (let i: number = 0; i < 100; i++) {
-        await manager.delete(`destroy_${i}`)
-      }
-      expect(manager.getSize()).assertEqual(0)
-      expect(manager.getDeleteCount()).assertEqual(100)
+      done();
     })
 
     /**
@@ -174,18 +186,24 @@ export default function BatchCreateDestroyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testBatchCreateDestroy0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let cycle: number = 0; cycle < 5; cycle++) {
-        for (let i: number = 0; i < 50; i++) {
-          await manager.create(`cycle_${cycle}_${i}`, cycle * 50 + i)
+    it('testBatchCreateDestroy0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let cycle: number = 0; cycle < 5; cycle++) {
+          for (let i: number = 0; i < 50; i++) {
+            await manager.create(`cycle_${cycle}_${i}`, cycle * 50 + i)
+          }
+          for (let i: number = 0; i < 50; i++) {
+            await manager.delete(`cycle_${cycle}_${i}`)
+          }
         }
-        for (let i: number = 0; i < 50; i++) {
-          await manager.delete(`cycle_${cycle}_${i}`)
-        }
+        expect(manager.getCreateCount()).assertEqual(250)
+        expect(manager.getDeleteCount()).assertEqual(250)
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testBatchCreateDestroy0300 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getCreateCount()).assertEqual(250)
-      expect(manager.getDeleteCount()).assertEqual(250)
-      expect(manager.getSize()).assertEqual(0)
+      done();
     })
 
     /**
@@ -196,17 +214,23 @@ export default function BatchCreateDestroyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testBatchCreateDestroy0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: BatchData = await manager.create('conc_access', 42)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 20; i++) {
-        tasks.push(new taskpool.Task(batchAccessTask, data))
+    it('testBatchCreateDestroy0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: BatchData = await manager.create('conc_access', 42)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 20; i++) {
+          tasks.push(new taskpool.Task(batchAccessTask, data))
+        }
+        const results: Object[] = await executeBatchTasks(tasks)
+        expect(results.length).assertEqual(20)
+        for (let i: number = 0; i < 20; i++) {
+          expect(results[i] as number).assertEqual(420)
+        }
+      } catch (error) {
+        console.error("testBatchCreateDestroy0400 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await executeBatchTasks(tasks)
-      expect(results.length).assertEqual(20)
-      for (let i: number = 0; i < 20; i++) {
-        expect(results[i] as number).assertEqual(420)
-      }
+      done();
     })
 
     /**
@@ -217,17 +241,23 @@ export default function BatchCreateDestroyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testBatchCreateDestroy0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 20; i++) {
-        await manager.create(`seq_del_${i}`, i)
-      }
-      expect(manager.getSize()).assertEqual(20)
+    it('testBatchCreateDestroy0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 20; i++) {
+          await manager.create(`seq_del_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(20)
 
-      for (let i: number = 0; i < 20; i++) {
-        await manager.delete(`seq_del_${i}`)
+        for (let i: number = 0; i < 20; i++) {
+          await manager.delete(`seq_del_${i}`)
+        }
+        expect(manager.getDeleteCount()).assertEqual(20)
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testBatchCreateDestroy0500 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getDeleteCount()).assertEqual(20)
-      expect(manager.getSize()).assertEqual(0)
+      done();
     })
 
     /**
@@ -238,12 +268,18 @@ export default function BatchCreateDestroyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testBatchCreateDestroy0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 50; i++) {
-        const data: BatchData = await manager.create(`large_${i}`, i * 1000)
-        expect(data.getValue()).assertEqual(i * 10000)
+    it('testBatchCreateDestroy0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 50; i++) {
+          const data: BatchData = await manager.create(`large_${i}`, i * 1000)
+          expect(data.getValue()).assertEqual(i * 10000)
+        }
+        expect(manager.getSize()).assertEqual(50)
+      } catch (error) {
+        console.error("testBatchCreateDestroy0600 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getSize()).assertEqual(50)
+      done();
     })
 
     /**
@@ -254,18 +290,24 @@ export default function BatchCreateDestroyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testBatchCreateDestroy0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 10; i++) {
-        await manager.create(`inter_${i}`, i)
-      }
-      const data5: BatchData | undefined = manager.get('inter_5')
-      expect(data5 !== undefined).assertTrue()
-      expect(data5!.getValue()).assertEqual(50)
+    it('testBatchCreateDestroy0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 10; i++) {
+          await manager.create(`inter_${i}`, i)
+        }
+        const data5: BatchData | undefined = manager.get('inter_5')
+        expect(data5 !== undefined).assertTrue()
+        expect(data5!.getValue()).assertEqual(50)
 
-      for (let i: number = 0; i < 5; i++) {
-        await manager.delete(`inter_${i}`)
+        for (let i: number = 0; i < 5; i++) {
+          await manager.delete(`inter_${i}`)
+        }
+        expect(manager.getSize()).assertEqual(5)
+      } catch (error) {
+        console.error("testBatchCreateDestroy0700 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getSize()).assertEqual(5)
+      done();
     })
 
     /**
@@ -276,22 +318,28 @@ export default function BatchCreateDestroyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testBatchCreateDestroy0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const container: collections.Array<BatchData> = new collections.Array<BatchData>()
-      for (let i: number = 0; i < 30; i++) {
-        const data: BatchData = await manager.create(`arr_batch_${i}`, i)
-        container.push(data)
-      }
-      expect(container.length).assertEqual(30)
-      expect(manager.getSize()).assertEqual(30)
+    it('testBatchCreateDestroy0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const container: collections.Array<BatchData> = new collections.Array<BatchData>()
+        for (let i: number = 0; i < 30; i++) {
+          const data: BatchData = await manager.create(`arr_batch_${i}`, i)
+          container.push(data)
+        }
+        expect(container.length).assertEqual(30)
+        expect(manager.getSize()).assertEqual(30)
 
-      while (container.length > 0) {
-        container.pop()
+        while (container.length > 0) {
+          container.pop()
+        }
+        for (let i: number = 0; i < 30; i++) {
+          await manager.delete(`arr_batch_${i}`)
+        }
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testBatchCreateDestroy0800 failed");
+        expect(false).assertFail();
       }
-      for (let i: number = 0; i < 30; i++) {
-        await manager.delete(`arr_batch_${i}`)
-      }
-      expect(manager.getSize()).assertEqual(0)
+      done();
     })
 
     /**
@@ -302,17 +350,23 @@ export default function BatchCreateDestroyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testBatchCreateDestroy0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const startTime: number = Date.now()
-      for (let i: number = 0; i < 200; i++) {
-        await manager.create(`pressure_${i}`, i)
+    it('testBatchCreateDestroy0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const startTime: number = Date.now()
+        for (let i: number = 0; i < 200; i++) {
+          await manager.create(`pressure_${i}`, i)
+        }
+        for (let i: number = 0; i < 200; i++) {
+          await manager.delete(`pressure_${i}`)
+        }
+        const elapsed: number = Date.now() - startTime
+        expect(manager.getSize()).assertEqual(0)
+        expect(elapsed < 30000).assertTrue()
+      } catch (error) {
+        console.error("testBatchCreateDestroy0900 failed");
+        expect(false).assertFail();
       }
-      for (let i: number = 0; i < 200; i++) {
-        await manager.delete(`pressure_${i}`)
-      }
-      const elapsed: number = Date.now() - startTime
-      expect(manager.getSize()).assertEqual(0)
-      expect(elapsed < 30000).assertTrue()
+      done();
     })
 
     /**
@@ -323,23 +377,29 @@ export default function BatchCreateDestroyTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testBatchCreateDestroy1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 10; i++) {
-        await manager.create(`mixed_${i}`, i)
-      }
-      const data: BatchData | undefined = manager.get('mixed_5')
-      expect(data !== undefined).assertTrue()
+    it('testBatchCreateDestroy1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 10; i++) {
+          await manager.create(`mixed_${i}`, i)
+        }
+        const data: BatchData | undefined = manager.get('mixed_5')
+        expect(data !== undefined).assertTrue()
 
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(batchAccessTask, data!))
-      }
-      const results: Object[] = await executeBatchTasks(tasks)
-      expect(results.length).assertEqual(5)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(batchAccessTask, data!))
+        }
+        const results: Object[] = await executeBatchTasks(tasks)
+        expect(results.length).assertEqual(5)
 
-      await manager.delete('mixed_0')
-      await manager.create('mixed_10', 10)
-      expect(manager.getSize()).assertEqual(10)
+        await manager.delete('mixed_0')
+        await manager.create('mixed_10', 10)
+        expect(manager.getSize()).assertEqual(10)
+      } catch (error) {
+        console.error("testBatchCreateDestroy1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }
