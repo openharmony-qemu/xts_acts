@@ -136,9 +136,15 @@ export default function ConnectionPoolLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConnectionPoolLock0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      expect(await pool.getTotalCount()).assertEqual(5)
-      expect(await pool.getAvailableCount()).assertEqual(5)
+    it('testConnectionPoolLock0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(await pool.getTotalCount()).assertEqual(5)
+        expect(await pool.getAvailableCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testConnectionPoolLock0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -149,11 +155,17 @@ export default function ConnectionPoolLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConnectionPoolLock0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const connId: number = await pool.acquire()
-      expect(connId >= 0).assertTrue()
-      expect(await pool.isInUse(connId)).assertTrue()
-      expect(await pool.getAvailableCount()).assertEqual(4)
+    it('testConnectionPoolLock0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const connId: number = await pool.acquire()
+        expect(connId >= 0).assertTrue()
+        expect(await pool.isInUse(connId)).assertTrue()
+        expect(await pool.getAvailableCount()).assertEqual(4)
+      } catch (error) {
+        console.error("testConnectionPoolLock0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -164,12 +176,18 @@ export default function ConnectionPoolLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConnectionPoolLock0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const connId: number = await pool.acquire()
-      expect(await pool.getAvailableCount()).assertEqual(4)
-      await pool.release(connId)
-      expect(await pool.getAvailableCount()).assertEqual(5)
-      expect(await pool.isInUse(connId)).assertFalse()
+    it('testConnectionPoolLock0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const connId: number = await pool.acquire()
+        expect(await pool.getAvailableCount()).assertEqual(4)
+        await pool.release(connId)
+        expect(await pool.getAvailableCount()).assertEqual(5)
+        expect(await pool.isInUse(connId)).assertFalse()
+      } catch (error) {
+        console.error("testConnectionPoolLock0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -180,12 +198,18 @@ export default function ConnectionPoolLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionPoolLock0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const conn1: number = await pool.acquire()
-      const conn2: number = await pool.acquire()
-      expect(await pool.getAvailableCount()).assertEqual(3)
-      await pool.release(conn1)
-      expect(await pool.getAvailableCount()).assertEqual(4)
+    it('testConnectionPoolLock0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const conn1: number = await pool.acquire()
+        const conn2: number = await pool.acquire()
+        expect(await pool.getAvailableCount()).assertEqual(3)
+        await pool.release(conn1)
+        expect(await pool.getAvailableCount()).assertEqual(4)
+      } catch (error) {
+        console.error("testConnectionPoolLock0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -196,22 +220,28 @@ export default function ConnectionPoolLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionPoolLock0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const connIds: number[] = []
-      for (let i = 0; i < 5; i++) {
-        connIds.push(await pool.acquire())
+    it('testConnectionPoolLock0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const connIds: number[] = []
+        for (let i = 0; i < 5; i++) {
+          connIds.push(await pool.acquire())
+        }
+        expect(await pool.getAvailableCount()).assertEqual(0)
+        let acquireCompleted: boolean = false
+        const acquirePromise: Promise<number> = pool.acquire()
+        acquirePromise.then((): void => {
+          acquireCompleted = true
+        }).catch((error: Error): void => { console.error("testConnectionPoolLock0500 failed"); expect(false).assertFail(); })
+        await Utils.sleep(500)
+        expect(acquireCompleted).assertFalse()
+        await pool.release(connIds[0])
+        await acquirePromise
+        expect(acquireCompleted).assertTrue()
+      } catch (error) {
+        console.error("testConnectionPoolLock0500 failed");
+        expect(false).assertFail();
       }
-      expect(await pool.getAvailableCount()).assertEqual(0)
-      let acquireCompleted: boolean = false
-      const acquirePromise: Promise<number> = pool.acquire()
-      acquirePromise.then((): void => {
-        acquireCompleted = true
-      })
-      await Utils.sleep(500)
-      expect(acquireCompleted).assertFalse()
-      await pool.release(connIds[0])
-      await acquirePromise
-      expect(acquireCompleted).assertTrue()
+      done();
     })
 
     /**
@@ -222,24 +252,30 @@ export default function ConnectionPoolLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionPoolLock0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const connIds: number[] = []
-      for (let i = 0; i < 5; i++) {
-        connIds.push(await pool.acquire())
+    it('testConnectionPoolLock0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const connIds: number[] = []
+        for (let i = 0; i < 5; i++) {
+          connIds.push(await pool.acquire())
+        }
+        let acquireCompleted: boolean = false
+        let acquiredConnId: number = -1
+        const acquirePromise: Promise<number> = pool.acquire()
+        acquirePromise.then((connId: number): void => {
+          acquiredConnId = connId
+          acquireCompleted = true
+        }).catch((error: Error): void => { console.error("testConnectionPoolLock0600 failed"); expect(false).assertFail(); })
+        await Utils.sleep(500)
+        expect(acquireCompleted).assertFalse()
+        await pool.release(connIds[2])
+        await acquirePromise
+        expect(acquireCompleted).assertTrue()
+        expect(acquiredConnId >= 0).assertTrue()
+      } catch (error) {
+        console.error("testConnectionPoolLock0600 failed");
+        expect(false).assertFail();
       }
-      let acquireCompleted: boolean = false
-      let acquiredConnId: number = -1
-      const acquirePromise: Promise<number> = pool.acquire()
-      acquirePromise.then((connId: number): void => {
-        acquiredConnId = connId
-        acquireCompleted = true
-      })
-      await Utils.sleep(500)
-      expect(acquireCompleted).assertFalse()
-      await pool.release(connIds[2])
-      await acquirePromise
-      expect(acquireCompleted).assertTrue()
-      expect(acquiredConnId >= 0).assertTrue()
+      done();
     })
 
     /**
@@ -250,18 +286,24 @@ export default function ConnectionPoolLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionPoolLock0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const promises: Promise<number>[] = []
-      for (let i = 0; i < 5; i++) {
-        promises.push(pool.acquire())
+    it('testConnectionPoolLock0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const promises: Promise<number>[] = []
+        for (let i = 0; i < 5; i++) {
+          promises.push(pool.acquire())
+        }
+        const connIds: number[] = await Promise.all(promises)
+        expect(connIds.length).assertEqual(5)
+        expect(await pool.getAvailableCount()).assertEqual(0)
+        for (let i = 0; i < connIds.length; i++) {
+          await pool.release(connIds[i])
+        }
+        expect(await pool.getAvailableCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testConnectionPoolLock0700 failed");
+        expect(false).assertFail();
       }
-      const connIds: number[] = await Promise.all(promises)
-      expect(connIds.length).assertEqual(5)
-      expect(await pool.getAvailableCount()).assertEqual(0)
-      for (let i = 0; i < connIds.length; i++) {
-        await pool.release(connIds[i])
-      }
-      expect(await pool.getAvailableCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -272,13 +314,19 @@ export default function ConnectionPoolLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionPoolLock0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      expect(await pool.getAcquireCount()).assertEqual(0)
-      expect(await pool.getReleaseCount()).assertEqual(0)
-      const connId: number = await pool.acquire()
-      await pool.release(connId)
-      expect(await pool.getAcquireCount()).assertEqual(1)
-      expect(await pool.getReleaseCount()).assertEqual(1)
+    it('testConnectionPoolLock0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        expect(await pool.getAcquireCount()).assertEqual(0)
+        expect(await pool.getReleaseCount()).assertEqual(0)
+        const connId: number = await pool.acquire()
+        await pool.release(connId)
+        expect(await pool.getAcquireCount()).assertEqual(1)
+        expect(await pool.getReleaseCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testConnectionPoolLock0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -289,12 +337,18 @@ export default function ConnectionPoolLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionPoolLock0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const conn1: number = await pool.acquire()
-      await pool.release(conn1)
-      const conn2: number = await pool.acquire()
-      expect(conn1).assertEqual(conn2)
-      expect(await pool.getAvailableCount()).assertEqual(4)
+    it('testConnectionPoolLock0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const conn1: number = await pool.acquire()
+        await pool.release(conn1)
+        const conn2: number = await pool.acquire()
+        expect(conn1).assertEqual(conn2)
+        expect(await pool.getAvailableCount()).assertEqual(4)
+      } catch (error) {
+        console.error("testConnectionPoolLock0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -305,16 +359,22 @@ export default function ConnectionPoolLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConnectionPoolLock1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(acquireConnectionId))
+    it('testConnectionPoolLock1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(acquireConnectionId))
+        }
+        await Promise.all(tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t)))
+        for (let i = 0; i < 3; i++) {
+          await pool.acquire()
+        }
+        expect(await pool.getAcquireCount()).assertLargerOrEqual(3)
+      } catch (error) {
+        console.error("testConnectionPoolLock1000 failed");
+        expect(false).assertFail();
       }
-      await Promise.all(tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t)))
-      for (let i = 0; i < 3; i++) {
-        await pool.acquire()
-      }
-      expect(await pool.getAcquireCount()).assertLargerOrEqual(3)
+      done();
     })
 
     /**
@@ -325,22 +385,28 @@ export default function ConnectionPoolLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConnectionPoolLock1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const connIds: number[] = []
-      for (let round = 0; round < 3; round++) {
-        for (let i = 0; i < 5; i++) {
-          connIds.push(await pool.acquire())
+    it('testConnectionPoolLock1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const connIds: number[] = []
+        for (let round = 0; round < 3; round++) {
+          for (let i = 0; i < 5; i++) {
+            connIds.push(await pool.acquire())
+          }
+          expect(await pool.getAvailableCount()).assertEqual(0)
+          while (connIds.length > 0) {
+            const connId: number = connIds.pop()!
+            await pool.release(connId)
+          }
+          expect(await pool.getAvailableCount()).assertEqual(5)
         }
-        expect(await pool.getAvailableCount()).assertEqual(0)
-        while (connIds.length > 0) {
-          const connId: number = connIds.pop()!
-          await pool.release(connId)
-        }
-        expect(await pool.getAvailableCount()).assertEqual(5)
+        const acquireCount: number = await pool.getAcquireCount()
+        const releaseCount: number = await pool.getReleaseCount()
+        expect(acquireCount).assertEqual(releaseCount)
+      } catch (error) {
+        console.error("testConnectionPoolLock1100 failed");
+        expect(false).assertFail();
       }
-      const acquireCount: number = await pool.getAcquireCount()
-      const releaseCount: number = await pool.getReleaseCount()
-      expect(acquireCount).assertEqual(releaseCount)
+      done();
     })
 
     /**
@@ -351,22 +417,28 @@ export default function ConnectionPoolLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConnectionPoolLock1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const notifications: Object[] = []
-      const task: taskpool.Task = new taskpool.Task(connectionNotifyTask)
-      task.onReceiveData((data: Object): void => {
-        notifications.push(data)
-      })
-      await taskpool.execute(task)
-      await new Promise<void>((resolve: Function): void => {
-        const checkInterval: Object = setInterval((): void => {
-          if (notifications.length >= 3) {
-            clearInterval(checkInterval as number)
-            resolve()
-          }
-        }, 10)
-      })
-      expect(notifications.length).assertEqual(3)
+    it('testConnectionPoolLock1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const notifications: Object[] = []
+        const task: taskpool.Task = new taskpool.Task(connectionNotifyTask)
+        task.onReceiveData((data: Object): void => {
+          notifications.push(data)
+        })
+        await taskpool.execute(task)
+        await new Promise<void>((resolve: Function): void => {
+          const checkInterval: Object = setInterval((): void => {
+            if (notifications.length >= 3) {
+              clearInterval(checkInterval as number)
+              resolve()
+            }
+          }, 10)
+        })
+        expect(notifications.length).assertEqual(3)
+      } catch (error) {
+        console.error("testConnectionPoolLock1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

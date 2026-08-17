@@ -176,9 +176,15 @@ export default function ConnectionTimeoutTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConnectionTimeout0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await pool.initialize(3)
-      expect(await pool.checkLeak()).assertEqual(0)
+    it('testConnectionTimeout0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(3)
+        expect(await pool.checkLeak()).assertEqual(0)
+      } catch (error) {
+        console.error("testConnectionTimeout0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -189,10 +195,16 @@ export default function ConnectionTimeoutTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConnectionTimeout0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await pool.initialize(3)
-      const conn: TimeoutConnection | null = await pool.acquire()
-      expect(await pool.checkLeak()).assertEqual(1)
+    it('testConnectionTimeout0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(3)
+        const conn: TimeoutConnection | null = await pool.acquire()
+        expect(await pool.checkLeak()).assertEqual(1)
+      } catch (error) {
+        console.error("testConnectionTimeout0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -203,11 +215,17 @@ export default function ConnectionTimeoutTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConnectionTimeout0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await pool.initialize(3)
-      const conn: TimeoutConnection | null = await pool.acquire()
-      await pool.release(conn as TimeoutConnection)
-      expect(await pool.checkLeak()).assertEqual(0)
+    it('testConnectionTimeout0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(3)
+        const conn: TimeoutConnection | null = await pool.acquire()
+        await pool.release(conn as TimeoutConnection)
+        expect(await pool.checkLeak()).assertEqual(0)
+      } catch (error) {
+        console.error("testConnectionTimeout0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -218,18 +236,24 @@ export default function ConnectionTimeoutTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionTimeout0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await pool.initialize(3)
-      const conns: TimeoutConnection[] = []
-      for (let i: number = 0; i < 3; i++) {
-        const conn: TimeoutConnection | null = await pool.acquire()
-        conns.push(conn as TimeoutConnection)
+    it('testConnectionTimeout0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(3)
+        const conns: TimeoutConnection[] = []
+        for (let i: number = 0; i < 3; i++) {
+          const conn: TimeoutConnection | null = await pool.acquire()
+          conns.push(conn as TimeoutConnection)
+        }
+        expect(await pool.checkLeak()).assertEqual(3)
+        for (let i: number = 0; i < conns.length; i++) {
+          await pool.release(conns[i])
+        }
+        expect(await pool.checkLeak()).assertEqual(0)
+      } catch (error) {
+        console.error("testConnectionTimeout0400 failed");
+        expect(false).assertFail();
       }
-      expect(await pool.checkLeak()).assertEqual(3)
-      for (let i: number = 0; i < conns.length; i++) {
-        await pool.release(conns[i])
-      }
-      expect(await pool.checkLeak()).assertEqual(0)
+      done();
     })
 
     /**
@@ -240,12 +264,18 @@ export default function ConnectionTimeoutTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionTimeout0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await pool.initialize(3)
-      const conn: TimeoutConnection | null = await pool.acquire()
-      await pool.release(conn as TimeoutConnection)
-      const idle: number = await pool.getIdleConnections(0)
-      expect(idle >= 1).assertTrue()
+    it('testConnectionTimeout0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(3)
+        const conn: TimeoutConnection | null = await pool.acquire()
+        await pool.release(conn as TimeoutConnection)
+        const idle: number = await pool.getIdleConnections(0)
+        expect(idle >= 1).assertTrue()
+      } catch (error) {
+        console.error("testConnectionTimeout0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -256,12 +286,18 @@ export default function ConnectionTimeoutTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionTimeout0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await pool.initialize(3)
-      const conn: TimeoutConnection | null = await pool.acquire()
-      await pool.release(conn as TimeoutConnection)
-      const released: number = await pool.releaseIdleConnections(0)
-      expect(released >= 1).assertTrue()
+    it('testConnectionTimeout0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(3)
+        const conn: TimeoutConnection | null = await pool.acquire()
+        await pool.release(conn as TimeoutConnection)
+        const released: number = await pool.releaseIdleConnections(0)
+        expect(released >= 1).assertTrue()
+      } catch (error) {
+        console.error("testConnectionTimeout0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -272,10 +308,16 @@ export default function ConnectionTimeoutTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionTimeout0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await pool.initialize(3)
-      const released: number = await pool.releaseIdleConnections(0)
-      expect(released).assertEqual(3)
+    it('testConnectionTimeout0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(3)
+        const released: number = await pool.releaseIdleConnections(0)
+        expect(released).assertEqual(3)
+      } catch (error) {
+        console.error("testConnectionTimeout0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -286,10 +328,16 @@ export default function ConnectionTimeoutTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionTimeout0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await pool.initialize(3)
-      const conn: TimeoutConnection | null = await pool.acquire()
-      expect((conn as TimeoutConnection).lastUsedAt_ > 0).assertTrue()
+    it('testConnectionTimeout0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(3)
+        const conn: TimeoutConnection | null = await pool.acquire()
+        expect((conn as TimeoutConnection).lastUsedAt_ > 0).assertTrue()
+      } catch (error) {
+        console.error("testConnectionTimeout0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -300,14 +348,20 @@ export default function ConnectionTimeoutTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionTimeout0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await pool.initialize(3)
-      await pool.acquire()
-      await pool.acquire()
-      await pool.acquire()
-      expect(await pool.getLeakedCount()).assertEqual(0)
-      await pool.checkLeak()
-      expect(await pool.getLeakedCount()).assertEqual(3)
+    it('testConnectionTimeout0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(3)
+        await pool.acquire()
+        await pool.acquire()
+        await pool.acquire()
+        expect(await pool.getLeakedCount()).assertEqual(0)
+        await pool.checkLeak()
+        expect(await pool.getLeakedCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testConnectionTimeout0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -318,13 +372,19 @@ export default function ConnectionTimeoutTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionTimeout1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await pool.initialize(2)
-      const conn1: TimeoutConnection | null = await pool.acquire()
-      const conn2: TimeoutConnection | null = await pool.acquire()
-      await pool.release(conn1 as TimeoutConnection)
-      const released: number = await pool.releaseIdleConnections(0)
-      expect(released >= 1).assertTrue()
+    it('testConnectionTimeout1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(2)
+        const conn1: TimeoutConnection | null = await pool.acquire()
+        const conn2: TimeoutConnection | null = await pool.acquire()
+        await pool.release(conn1 as TimeoutConnection)
+        const released: number = await pool.releaseIdleConnections(0)
+        expect(released >= 1).assertTrue()
+      } catch (error) {
+        console.error("testConnectionTimeout1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -335,12 +395,18 @@ export default function ConnectionTimeoutTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionTimeout1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await pool.initialize(3)
-      const conn: TimeoutConnection | null = await pool.acquire()
-      await pool.release(conn as TimeoutConnection)
-      await pool.shutdown()
-      expect(await pool.checkLeak()).assertEqual(0)
+    it('testConnectionTimeout1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(3)
+        const conn: TimeoutConnection | null = await pool.acquire()
+        await pool.release(conn as TimeoutConnection)
+        await pool.shutdown()
+        expect(await pool.checkLeak()).assertEqual(0)
+      } catch (error) {
+        console.error("testConnectionTimeout1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

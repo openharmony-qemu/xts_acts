@@ -126,10 +126,16 @@ export default function DataProcessProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDataProcessProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await dp.setTotalRows(100)
-      expect(await dp.getPercentage()).assertEqual(0)
-      expect(await dp.getProcessedRows()).assertEqual(0)
+    it('testDataProcessProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await dp.setTotalRows(100)
+        expect(await dp.getPercentage()).assertEqual(0)
+        expect(await dp.getProcessedRows()).assertEqual(0)
+      } catch (error) {
+        console.error("testDataProcessProgress0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -140,11 +146,17 @@ export default function DataProcessProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDataProcessProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await dp.setTotalRows(100)
-      const p: number = await dp.addProcessedRows(50)
-      expect(p).assertEqual(50)
-      expect(await dp.getProcessedRows()).assertEqual(50)
+    it('testDataProcessProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await dp.setTotalRows(100)
+        const p: number = await dp.addProcessedRows(50)
+        expect(p).assertEqual(50)
+        expect(await dp.getProcessedRows()).assertEqual(50)
+      } catch (error) {
+        console.error("testDataProcessProgress0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -155,11 +167,17 @@ export default function DataProcessProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testDataProcessProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await dp.setTotalRows(100)
-      await dp.addProcessedRows(100)
-      expect(await dp.getPercentage()).assertEqual(100)
-      expect(await dp.isCompleted()).assertTrue()
+    it('testDataProcessProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await dp.setTotalRows(100)
+        await dp.addProcessedRows(100)
+        expect(await dp.getPercentage()).assertEqual(100)
+        expect(await dp.isCompleted()).assertTrue()
+      } catch (error) {
+        console.error("testDataProcessProgress0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -170,11 +188,17 @@ export default function DataProcessProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDataProcessProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await dp.setTotalRows(100)
-      await dp.addProcessedRows(150)
-      expect(await dp.getProcessedRows()).assertEqual(100)
-      expect(await dp.getPercentage()).assertEqual(100)
+    it('testDataProcessProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await dp.setTotalRows(100)
+        await dp.addProcessedRows(150)
+        expect(await dp.getProcessedRows()).assertEqual(100)
+        expect(await dp.getPercentage()).assertEqual(100)
+      } catch (error) {
+        console.error("testDataProcessProgress0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -185,12 +209,18 @@ export default function DataProcessProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDataProcessProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await dp.setTotalRows(100)
-      await dp.addProcessedRows(80)
-      await dp.addErrorRows(10)
-      expect(await dp.getSuccessRows()).assertEqual(70)
-      expect(await dp.getErrorRows()).assertEqual(10)
+    it('testDataProcessProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await dp.setTotalRows(100)
+        await dp.addProcessedRows(80)
+        await dp.addErrorRows(10)
+        expect(await dp.getSuccessRows()).assertEqual(70)
+        expect(await dp.getErrorRows()).assertEqual(10)
+      } catch (error) {
+        console.error("testDataProcessProgress0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -201,15 +231,21 @@ export default function DataProcessProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDataProcessProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await dp.setTotalRows(50)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(dataProcessTask, dp, 10))
+    it('testDataProcessProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await dp.setTotalRows(50)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(dataProcessTask, dp, 10))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await dp.getProcessedRows()).assertEqual(50)
+        expect(await dp.getPercentage()).assertEqual(100)
+      } catch (error) {
+        console.error("testDataProcessProgress0600 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await dp.getProcessedRows()).assertEqual(50)
-      expect(await dp.getPercentage()).assertEqual(100)
+      done();
     })
 
     /**
@@ -220,15 +256,21 @@ export default function DataProcessProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testDataProcessProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await dp.setTotalRows(100)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(dataProcessTask, dp, 10))
+    it('testDataProcessProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await dp.setTotalRows(100)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(dataProcessTask, dp, 10))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await dp.getProcessedRows()).assertEqual(100)
+        expect(await dp.isCompleted()).assertTrue()
+      } catch (error) {
+        console.error("testDataProcessProgress0700 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await dp.getProcessedRows()).assertEqual(100)
-      expect(await dp.isCompleted()).assertTrue()
+      done();
     })
 
     /**
@@ -239,13 +281,19 @@ export default function DataProcessProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDataProcessProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await dp.setTotalRows(100)
-      await dp.addProcessedRows(50)
-      await dp.addErrorRows(5)
-      await dp.reset()
-      expect(await dp.getProcessedRows()).assertEqual(0)
-      expect(await dp.getErrorRows()).assertEqual(0)
+    it('testDataProcessProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await dp.setTotalRows(100)
+        await dp.addProcessedRows(50)
+        await dp.addErrorRows(5)
+        await dp.reset()
+        expect(await dp.getProcessedRows()).assertEqual(0)
+        expect(await dp.getErrorRows()).assertEqual(0)
+      } catch (error) {
+        console.error("testDataProcessProgress0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -256,9 +304,15 @@ export default function DataProcessProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDataProcessProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await dp.setTotalRows(0)
-      expect(await dp.getPercentage()).assertEqual(0)
+    it('testDataProcessProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await dp.setTotalRows(0)
+        expect(await dp.getPercentage()).assertEqual(0)
+      } catch (error) {
+        console.error("testDataProcessProgress0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -269,12 +323,18 @@ export default function DataProcessProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDataProcessProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await dp.setTotalRows(100)
-      await dp.addProcessedRows(30)
-      await dp.addErrorRows(3)
-      expect(await dp.getSuccessRows()).assertEqual(27)
-      expect(await dp.getErrorRows()).assertEqual(3)
+    it('testDataProcessProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await dp.setTotalRows(100)
+        await dp.addProcessedRows(30)
+        await dp.addErrorRows(3)
+        expect(await dp.getSuccessRows()).assertEqual(27)
+        expect(await dp.getErrorRows()).assertEqual(3)
+      } catch (error) {
+        console.error("testDataProcessProgress1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -285,14 +345,20 @@ export default function DataProcessProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDataProcessProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      await dp.setTotalRows(100)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 100; i++) {
-        tasks.push(new taskpool.Task(dataProcessTask, dp, 1))
+    it('testDataProcessProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        await dp.setTotalRows(100)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 100; i++) {
+          tasks.push(new taskpool.Task(dataProcessTask, dp, 1))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await dp.getProcessedRows()).assertEqual(100)
+      } catch (error) {
+        console.error("testDataProcessProgress1100 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await dp.getProcessedRows()).assertEqual(100)
+      done();
     })
 
     /**
@@ -303,12 +369,18 @@ export default function DataProcessProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testDataProcessProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await dp.setTotalRows(100)
-      await dp.addProcessedRows(100)
-      await dp.addErrorRows(20)
-      expect(await dp.getSuccessRows()).assertEqual(80)
-      expect(await dp.getErrorRows()).assertEqual(20)
+    it('testDataProcessProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await dp.setTotalRows(100)
+        await dp.addProcessedRows(100)
+        await dp.addErrorRows(20)
+        expect(await dp.getSuccessRows()).assertEqual(80)
+        expect(await dp.getErrorRows()).assertEqual(20)
+      } catch (error) {
+        console.error("testDataProcessProgress1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

@@ -136,10 +136,16 @@ export default function ConnectionPoolInitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConnectionPoolInit0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await pool.initialize(5)
-      expect(await pool.getTotalCount()).assertEqual(5)
-      expect(await pool.getActiveCount()).assertEqual(5)
+    it('testConnectionPoolInit0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(5)
+        expect(await pool.getTotalCount()).assertEqual(5)
+        expect(await pool.getActiveCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testConnectionPoolInit0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -150,10 +156,16 @@ export default function ConnectionPoolInitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConnectionPoolInit0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await pool.initialize(5)
-      const conn: SendableConnection | null = await pool.getConnection()
-      expect(await pool.getActiveCount()).assertEqual(4)
+    it('testConnectionPoolInit0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(5)
+        const conn: SendableConnection | null = await pool.getConnection()
+        expect(await pool.getActiveCount()).assertEqual(4)
+      } catch (error) {
+        console.error("testConnectionPoolInit0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -164,11 +176,17 @@ export default function ConnectionPoolInitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConnectionPoolInit0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await pool.initialize(5)
-      const conn: SendableConnection | null = await pool.getConnection()
-      await pool.releaseConnection(conn as SendableConnection)
-      expect(await pool.getActiveCount()).assertEqual(5)
+    it('testConnectionPoolInit0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(5)
+        const conn: SendableConnection | null = await pool.getConnection()
+        await pool.releaseConnection(conn as SendableConnection)
+        expect(await pool.getActiveCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testConnectionPoolInit0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -179,9 +197,15 @@ export default function ConnectionPoolInitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConnectionPoolInit0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await pool.initialize(1)
-      expect(await pool.getMaxPoolSize()).assertEqual(1)
+    it('testConnectionPoolInit0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(1)
+        expect(await pool.getMaxPoolSize()).assertEqual(1)
+      } catch (error) {
+        console.error("testConnectionPoolInit0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -192,10 +216,16 @@ export default function ConnectionPoolInitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionPoolInit0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await pool.initialize(0)
-      expect(await pool.getTotalCount()).assertEqual(0)
-      expect(await pool.getActiveCount()).assertEqual(0)
+    it('testConnectionPoolInit0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(0)
+        expect(await pool.getTotalCount()).assertEqual(0)
+        expect(await pool.getActiveCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testConnectionPoolInit0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -206,12 +236,18 @@ export default function ConnectionPoolInitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConnectionPoolInit0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await pool.initialize(3)
-      const conn1: SendableConnection | null = await pool.getConnection()
-      const conn2: SendableConnection | null = await pool.getConnection()
-      const conn3: SendableConnection | null = await pool.getConnection()
-      expect(await pool.getActiveCount()).assertEqual(0)
+    it('testConnectionPoolInit0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(3)
+        const conn1: SendableConnection | null = await pool.getConnection()
+        const conn2: SendableConnection | null = await pool.getConnection()
+        const conn3: SendableConnection | null = await pool.getConnection()
+        expect(await pool.getActiveCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testConnectionPoolInit0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -222,12 +258,18 @@ export default function ConnectionPoolInitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionPoolInit0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await pool.initialize(2)
-      const conn1: SendableConnection | null = await pool.getConnection()
-      const conn2: SendableConnection | null = await pool.getConnection()
-      const conn3: SendableConnection | null = await pool.getConnection()
-      expect(conn3).assertEqual(null)
+    it('testConnectionPoolInit0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(2)
+        const conn1: SendableConnection | null = await pool.getConnection()
+        const conn2: SendableConnection | null = await pool.getConnection()
+        const conn3: SendableConnection | null = await pool.getConnection()
+        expect(conn3).assertEqual(null)
+      } catch (error) {
+        console.error("testConnectionPoolInit0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -238,10 +280,16 @@ export default function ConnectionPoolInitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionPoolInit0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await pool.initialize(3)
-      const conn: SendableConnection | null = await pool.getConnection()
-      expect((conn as SendableConnection).id_ >= 0).assertTrue()
+    it('testConnectionPoolInit0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(3)
+        const conn: SendableConnection | null = await pool.getConnection()
+        expect((conn as SendableConnection).id_ >= 0).assertTrue()
+      } catch (error) {
+        console.error("testConnectionPoolInit0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -252,11 +300,17 @@ export default function ConnectionPoolInitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionPoolInit0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await pool.initialize(5)
-      await pool.shutdown()
-      expect(await pool.getTotalCount()).assertEqual(0)
-      expect(await pool.getActiveCount()).assertEqual(0)
+    it('testConnectionPoolInit0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(5)
+        await pool.shutdown()
+        expect(await pool.getTotalCount()).assertEqual(0)
+        expect(await pool.getActiveCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testConnectionPoolInit0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -267,10 +321,16 @@ export default function ConnectionPoolInitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConnectionPoolInit1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await pool.initialize(3)
-      await pool.initialize(5)
-      expect(await pool.getTotalCount()).assertEqual(5)
+    it('testConnectionPoolInit1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await pool.initialize(3)
+        await pool.initialize(5)
+        expect(await pool.getTotalCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testConnectionPoolInit1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }
