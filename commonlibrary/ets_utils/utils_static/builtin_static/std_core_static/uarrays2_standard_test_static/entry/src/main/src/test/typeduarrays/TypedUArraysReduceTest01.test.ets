@@ -34,7 +34,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_0100
      * @tc.name testTypedUArraysReduceTestFileA001
      * @tc.desc Verify reduce 0 TypeError
      * @tc.size MediumTest
@@ -52,10 +52,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0200
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_0200
      * @tc.name testTypedUArraysReduceTestFileA002
      * @tc.desc Verify reduce 2
      * @tc.size MediumTest
@@ -69,7 +66,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_0300
      * @tc.name testTypedUArraysReduceTestFileA003
      * @tc.desc Verify reduce 3
      * @tc.size MediumTest
@@ -83,10 +80,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1300
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_0400
      * @tc.name testTypedUArraysReduceTestFileA004
      * @tc.desc Verify callbackfn
      * @tc.size MediumTest
@@ -100,7 +94,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_0500
      * @tc.name testTypedUArraysReduceTestFileA005
      * @tc.desc Verify callbackfn 1 previousValue
      * @tc.size MediumTest
@@ -114,10 +108,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1600
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_0600
      * @tc.name testTypedUArraysReduceTestFileA006
      * @tc.desc Verify callbackfn 3 currentIndex
      * @tc.size MediumTest
@@ -131,10 +122,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1800
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_0700
      * @tc.name testTypedUArraysReduceTestFileA007
      * @tc.desc Verify callbackfn string U=string
      * @tc.size MediumTest
@@ -148,7 +136,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_0800
      * @tc.name testTypedUArraysReduceTestFileA008
      * @tc.desc Verify callbackfn boolean U=boolean
      * @tc.size MediumTest
@@ -162,7 +150,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_0900
      * @tc.name testTypedUArraysReduceTestFileA009
      * @tc.desc Verify initialValue 1
      * @tc.size MediumTest
@@ -176,7 +164,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_1000
      * @tc.name testTypedUArraysReduceTestFileA010
      * @tc.desc Verify initialValue -1
      * @tc.size MediumTest
@@ -190,7 +178,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_1100
      * @tc.name testTypedUArraysReduceTestFileA011
      * @tc.desc Verify initialValue 255 Uint8
      * @tc.size MediumTest
@@ -204,7 +192,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_1200
      * @tc.name testTypedUArraysReduceTestFileA012
      * @tc.desc Verify initialValue 65535 Uint16
      * @tc.size MediumTest
@@ -218,7 +206,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_1300
      * @tc.name testTypedUArraysReduceTestFileA013
      * @tc.desc Verify initialValue 4294967295 Uint32
      * @tc.size MediumTest
@@ -232,7 +220,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_1400
      * @tc.name testTypedUArraysReduceTestFileA014
      * @tc.desc Verify initialValue 256 Uint8
      * @tc.size MediumTest
@@ -246,7 +234,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_1500
      * @tc.name testTypedUArraysReduceTestFileA015
      * @tc.desc Verify initialValue 65536 Uint16
      * @tc.size MediumTest
@@ -260,7 +248,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_1600
      * @tc.name testTypedUArraysReduceTestFileA016
      * @tc.desc Verify initialValue 4294967296 Uint32
      * @tc.size MediumTest
@@ -274,7 +262,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_1700
      * @tc.name testTypedUArraysReduceTestFileA017
      * @tc.desc Verify initialValue NaN
      * @tc.size MediumTest
@@ -288,7 +276,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_1800
      * @tc.name testTypedUArraysReduceTestFileA018
      * @tc.desc Verify initialValue Infinity
      * @tc.size MediumTest
@@ -302,7 +290,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_1900
      * @tc.name testTypedUArraysReduceTestFileA019
      * @tc.desc Verify initialValue -Infinity
      * @tc.size MediumTest
@@ -316,7 +304,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_2000
      * @tc.name testTypedUArraysReduceTestFileA020
      * @tc.desc Verify initialValue 1.5
      * @tc.size MediumTest
@@ -330,7 +318,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_2100
      * @tc.name testTypedUArraysReduceTestFileA021
      * @tc.desc Verify initialValue -1.5
      * @tc.size MediumTest
@@ -344,7 +332,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_2200
      * @tc.name testTypedUArraysReduceTestFileA022
      * @tc.desc Verify initialValue 0x10 16
      * @tc.size MediumTest
@@ -358,13 +346,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_3900
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4000
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_2300
      * @tc.name testTypedUArraysReduceTestFileA023
      * @tc.desc Verify initialValue 1e2 100
      * @tc.size MediumTest
@@ -378,7 +360,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_2400
      * @tc.name testTypedUArraysReduceTestFileA024
      * @tc.desc Verify initialValue string U=string
      * @tc.size MediumTest
@@ -392,10 +374,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4300
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_2500
      * @tc.name testTypedUArraysReduceTestFileA025
      * @tc.desc Verify initialValue boolean false
      * @tc.size MediumTest
@@ -409,13 +388,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4500
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4600
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_2600
      * @tc.name testTypedUArraysReduceTestFileA026
      * @tc.desc Verify initialValue object
      * @tc.size MediumTest
@@ -429,16 +402,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4800
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4900
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_5000
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_2700
      * @tc.name testTypedUArraysReduceTestFileA027
      * @tc.desc Verify reduceRight with empty array and no initialValue throws TypeError
      * @tc.size MediumTest
@@ -456,7 +420,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_2800
      * @tc.name testTypedUArraysReduceTestFileA028
      * @tc.desc Verify reduceRight with basic callbackfn
      * @tc.size MediumTest
@@ -470,7 +434,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_2900
      * @tc.name testTypedUArraysReduceTestFileA029
      * @tc.desc Verify reduceRight with initialValue
      * @tc.size MediumTest
@@ -484,7 +448,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_3000
      * @tc.name testTypedUArraysReduceTestFileA030
      * @tc.desc Verify reduceRight right-to-left order
      * @tc.size MediumTest
@@ -498,7 +462,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_3100
      * @tc.name testTypedUArraysReduceTestFileA031
      * @tc.desc Verify reduceRight with callbackfn null throws TypeError
      * @tc.size MediumTest
@@ -512,10 +476,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_5600
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_3200
      * @tc.name testTypedUArraysReduceTestFileA032
      * @tc.desc Verify reduceRight with single element and no initialValue
      * @tc.size MediumTest
@@ -529,7 +490,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_3300
      * @tc.name testTypedUArraysReduceTestFileA033
      * @tc.desc Verify reduceRight with callbackfn returning string U=string
      * @tc.size MediumTest
@@ -543,7 +504,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_3400
      * @tc.name testTypedUArraysReduceTestFileA034
      * @tc.desc Verify reduceRight with callbackfn using index
      * @tc.size MediumTest
@@ -565,7 +526,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_3500
      * @tc.name testTypedUArraysReduceTestFileA035
      * @tc.desc Verify reduceRight with NaN as initialValue
      * @tc.size MediumTest
@@ -579,7 +540,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_3600
      * @tc.name testTypedUArraysReduceTestFileA036
      * @tc.desc Verify reduceRight with Infinity as initialValue
      * @tc.size MediumTest
@@ -593,7 +554,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_3700
      * @tc.name testTypedUArraysReduceTestFileA037
      * @tc.desc Verify reduceRight with large array
      * @tc.size MediumTest
@@ -607,7 +568,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_3800
      * @tc.name testTypedUArraysReduceTestFileA038
      * @tc.desc Verify join with default separator
      * @tc.size MediumTest
@@ -621,7 +582,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_3900
      * @tc.name testTypedUArraysReduceTestFileA039
      * @tc.desc Verify join with custom separator
      * @tc.size MediumTest
@@ -635,7 +596,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_4000
      * @tc.name testTypedUArraysReduceTestFileA040
      * @tc.desc Verify join with empty array
      * @tc.size MediumTest
@@ -649,7 +610,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_4100
      * @tc.name testTypedUArraysReduceTestFileA041
      * @tc.desc Verify join with single element
      * @tc.size MediumTest
@@ -663,7 +624,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_4200
      * @tc.name testTypedUArraysReduceTestFileA042
      * @tc.desc Verify toString on Uint8Array
      * @tc.size MediumTest
@@ -677,7 +638,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_4300
      * @tc.name testTypedUArraysReduceTestFileA043
      * @tc.desc Verify toString on empty array
      * @tc.size MediumTest
@@ -691,7 +652,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_4400
      * @tc.name testTypedUArraysReduceTestFileA044
      * @tc.desc Verify toLocaleString on Uint8Array
      * @tc.size MediumTest
@@ -705,13 +666,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_7000
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_7100
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_4500
      * @tc.name testTypedUArraysReduceTestFileA045
      * @tc.desc Verify toString with Uint32Array
      * @tc.size MediumTest
@@ -725,7 +680,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_4600
      * @tc.name testTypedUArraysReduceTestFileA046
      * @tc.desc Verify join with Uint8ClampedArray
      * @tc.size MediumTest
@@ -739,7 +694,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_4700
      * @tc.name testTypedUArraysReduceTestFileA047
      * @tc.desc Verify toString with Uint8ClampedArray
      * @tc.size MediumTest
@@ -753,7 +708,7 @@ export default function typedUArraysReduceTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART101_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST01_4800
      * @tc.name testTypedUArraysReduceTestFileA048
      * @tc.desc Verify toLocaleString with Uint16Array
      * @tc.size MediumTest

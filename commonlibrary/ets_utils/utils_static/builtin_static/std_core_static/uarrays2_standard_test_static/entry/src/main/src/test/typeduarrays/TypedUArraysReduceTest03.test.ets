@@ -34,7 +34,7 @@ export default function typedUArraysReduceTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_0100
      * @tc.name testTypedUArraysReduceTestFileC001
      * @tc.desc Verify reduce typeof Double - Uint8Array initialValue
      * @tc.size MediumTest
@@ -44,11 +44,11 @@ export default function typedUArraysReduceTest03(): void {
     it('testTypedUArraysReduceTestFileC001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       let result = arr.reduce((acc, val) => acc + val);
-      expect(typeof result).assertEqual('number');
+      expect(result).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_0200
      * @tc.name testTypedUArraysReduceTestFileC002
      * @tc.desc Verify reduce typeof Double - Uint16Array initialValue
      * @tc.size MediumTest
@@ -58,11 +58,11 @@ export default function typedUArraysReduceTest03(): void {
     it('testTypedUArraysReduceTestFileC002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3]);
       let result = arr.reduce((acc, val) => acc + val);
-      expect(typeof result).assertEqual('number');
+      expect(result).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_0300
      * @tc.name testTypedUArraysReduceTestFileC003
      * @tc.desc Verify reduce typeof Double - Uint32Array initialValue
      * @tc.size MediumTest
@@ -72,11 +72,11 @@ export default function typedUArraysReduceTest03(): void {
     it('testTypedUArraysReduceTestFileC003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3]);
       let result = arr.reduce((acc, val) => acc + val);
-      expect(typeof result).assertEqual('number');
+      expect(result).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_0400
      * @tc.name testTypedUArraysReduceTestFileC004
      * @tc.desc Verify reduce typeof BigInt - BigUint64Array initialValue
      * @tc.size MediumTest
@@ -86,11 +86,11 @@ export default function typedUArraysReduceTest03(): void {
     it('testTypedUArraysReduceTestFileC004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       let result = arr.reduce((acc, val) => acc + val);
-      expect(typeof result).assertEqual('bigint');
+      expect(result).assertEqual(6n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_0500
      * @tc.name testTypedUArraysReduceTestFileC005
      * @tc.desc Verify reduce typeof Double - Uint8ClampedArray initialValue
      * @tc.size MediumTest
@@ -100,11 +100,11 @@ export default function typedUArraysReduceTest03(): void {
     it('testTypedUArraysReduceTestFileC005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
       let result = arr.reduce((acc, val) => acc + val);
-      expect(typeof result).assertEqual('number');
+      expect(result).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_0600
      * @tc.name testTypedUArraysReduceTestFileC006
      * @tc.desc Verify reduceRight typeof Double - Uint8Array initialValue
      * @tc.size MediumTest
@@ -114,11 +114,11 @@ export default function typedUArraysReduceTest03(): void {
     it('testTypedUArraysReduceTestFileC006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       let result = arr.reduceRight((acc, val) => acc + val);
-      expect(typeof result).assertEqual('number');
+      expect(result).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_0700
      * @tc.name testTypedUArraysReduceTestFileC007
      * @tc.desc Verify reduceRight typeof Double - Uint16Array initialValue
      * @tc.size MediumTest
@@ -128,11 +128,11 @@ export default function typedUArraysReduceTest03(): void {
     it('testTypedUArraysReduceTestFileC007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3]);
       let result = arr.reduceRight((acc, val) => acc + val);
-      expect(typeof result).assertEqual('number');
+      expect(result).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_0800
      * @tc.name testTypedUArraysReduceTestFileC008
      * @tc.desc Verify reduceRight typeof Double - Uint32Array initialValue
      * @tc.size MediumTest
@@ -142,11 +142,11 @@ export default function typedUArraysReduceTest03(): void {
     it('testTypedUArraysReduceTestFileC008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3]);
       let result = arr.reduceRight((acc, val) => acc + val);
-      expect(typeof result).assertEqual('number');
+      expect(result).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_0900
      * @tc.name testTypedUArraysReduceTestFileC009
      * @tc.desc Verify reduceRight typeof BigInt - BigUint64Array initialValue
      * @tc.size MediumTest
@@ -156,11 +156,11 @@ export default function typedUArraysReduceTest03(): void {
     it('testTypedUArraysReduceTestFileC009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       let result = arr.reduceRight((acc, val) => acc + val);
-      expect(typeof result).assertEqual('bigint');
+      expect(result).assertEqual(6n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_1000
      * @tc.name testTypedUArraysReduceTestFileC010
      * @tc.desc Verify reduceRight typeof Double - Uint8ClampedArray initialValue
      * @tc.size MediumTest
@@ -170,11 +170,11 @@ export default function typedUArraysReduceTest03(): void {
     it('testTypedUArraysReduceTestFileC010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
       let result = arr.reduceRight((acc, val) => acc + val);
-      expect(typeof result).assertEqual('number');
+      expect(result).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_1100
      * @tc.name testTypedUArraysReduceTestFileC011
      * @tc.desc Verify join typeof string - Uint8Array
      * @tc.size MediumTest
@@ -188,7 +188,7 @@ export default function typedUArraysReduceTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_1200
      * @tc.name testTypedUArraysReduceTestFileC012
      * @tc.desc Verify join typeof string - Uint16Array
      * @tc.size MediumTest
@@ -202,7 +202,7 @@ export default function typedUArraysReduceTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_1300
      * @tc.name testTypedUArraysReduceTestFileC013
      * @tc.desc Verify join typeof string - Uint32Array
      * @tc.size MediumTest
@@ -216,7 +216,7 @@ export default function typedUArraysReduceTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_1400
      * @tc.name testTypedUArraysReduceTestFileC014
      * @tc.desc Verify join typeof string - BigUint64Array
      * @tc.size MediumTest
@@ -230,7 +230,7 @@ export default function typedUArraysReduceTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_1500
      * @tc.name testTypedUArraysReduceTestFileC015
      * @tc.desc Verify toString typeof string - Uint8Array
      * @tc.size MediumTest
@@ -244,7 +244,7 @@ export default function typedUArraysReduceTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_1600
      * @tc.name testTypedUArraysReduceTestFileC016
      * @tc.desc Verify toString typeof string - BigUint64Array
      * @tc.size MediumTest
@@ -258,7 +258,7 @@ export default function typedUArraysReduceTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCE_PART2_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCETEST03_1700
      * @tc.name testTypedUArraysReduceTestFileC017
      * @tc.desc Verify toLocaleString typeof string - Uint8Array
      * @tc.size MediumTest

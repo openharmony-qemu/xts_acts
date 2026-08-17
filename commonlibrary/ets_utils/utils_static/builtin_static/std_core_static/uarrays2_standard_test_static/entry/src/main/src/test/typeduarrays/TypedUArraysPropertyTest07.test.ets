@@ -36,7 +36,7 @@ export default function typedUArraysPropertyTest07(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_0100
      * @tc.name testTypedUArraysPropertyTestMindMapMerged001
      * @tc.desc Verify Uint16Array.BYTES_PER_ELEMENT 2
      * @tc.size MediumTest
@@ -48,7 +48,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_0200
      * @tc.name testTypedUArraysPropertyTestMindMapMerged002
      * @tc.desc Verify Uint32Array.BYTES_PER_ELEMENT 4
      * @tc.size MediumTest
@@ -61,7 +61,7 @@ export default function typedUArraysPropertyTest07(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_0300
      * @tc.name testTypedUArraysPropertyTestMindMapMerged003
      * @tc.desc Verify buffer ArrayBuffer
      * @tc.size MediumTest
@@ -74,7 +74,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_0400
      * @tc.name testTypedUArraysPropertyTestMindMapMerged004
      * @tc.desc Verify buffer
      * @tc.size MediumTest
@@ -94,7 +94,7 @@ export default function typedUArraysPropertyTest07(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_0500
      * @tc.name testTypedUArraysPropertyTestMindMapMerged005
      * @tc.desc Verify byteOffset 0
      * @tc.size MediumTest
@@ -109,7 +109,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_0600
      * @tc.name testTypedUArraysPropertyTestMindMapMerged006
      * @tc.desc Verify offset byteOffset
      * @tc.size MediumTest
@@ -123,7 +123,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_0700
      * @tc.name testTypedUArraysPropertyTestMindMapMerged007
      * @tc.desc Verify offset
      * @tc.size MediumTest
@@ -141,7 +141,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_0800
      * @tc.name testTypedUArraysPropertyTestMindMapMerged008
      * @tc.desc Verify subarray byteOffset
      * @tc.size MediumTest
@@ -155,7 +155,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_0900
      * @tc.name testTypedUArraysPropertyTestMindMapMerged009
      * @tc.desc Verify byteLength = length BYTES_PER_ELEMENT
      * @tc.size MediumTest
@@ -171,7 +171,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_1000
      * @tc.name testTypedUArraysPropertyTestMindMapMerged010
      * @tc.desc Verify byteLength 0
      * @tc.size MediumTest
@@ -184,7 +184,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_1100
      * @tc.name testTypedUArraysPropertyTestMindMapMerged011
      * @tc.desc Verify offset byteLength
      * @tc.size MediumTest
@@ -198,7 +198,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_1200
      * @tc.name testTypedUArraysPropertyTestMindMapMerged012
      * @tc.desc Verify length
      * @tc.size MediumTest
@@ -214,7 +214,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_1300
      * @tc.name testTypedUArraysPropertyTestMindMapMerged013
      * @tc.desc Verify length
      * @tc.size MediumTest
@@ -227,7 +227,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_1400
      * @tc.name testTypedUArraysPropertyTestMindMapMerged014
      * @tc.desc Verify ArrayBuffer length
      * @tc.size MediumTest
@@ -242,7 +242,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_1500
      * @tc.name testTypedUArraysPropertyTestMindMapMerged015
      * @tc.desc Verify length 0
      * @tc.size MediumTest
@@ -254,7 +254,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_1600
      * @tc.name testTypedUArraysPropertyTestMindMapMerged016
      * @tc.desc Verify name
      * @tc.size MediumTest
@@ -270,7 +270,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_1700
      * @tc.name testTypedUArraysPropertyTestMindMapMerged017
      * @tc.desc Verify name
      * @tc.size MediumTest
@@ -278,14 +278,18 @@ export default function typedUArraysPropertyTest07(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysPropertyTestMindMapMerged017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect('Uint8Array').assertEqual('Uint8Array');
-      expect('Uint16Array').assertEqual('Uint16Array');
-      expect('Uint32Array').assertEqual('Uint32Array');
-      expect('BigUint64Array').assertEqual('BigUint64Array');
+      const uint8 = new Uint8Array(1);
+      const uint16 = new Uint16Array(1);
+      const uint32 = new Uint32Array(1);
+      const bigUint64 = new BigUint64Array(1);
+      expect(uint8.byteLength).assertEqual(1);
+      expect(uint16.byteLength).assertEqual(2);
+      expect(uint32.byteLength).assertEqual(4);
+      expect(bigUint64.byteLength).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_1800
      * @tc.name testTypedUArraysPropertyTestMindMapMerged018
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -301,7 +305,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_1900
      * @tc.name testTypedUArraysPropertyTestMindMapMerged019
      * @tc.desc Verify subarray
      * @tc.size MediumTest
@@ -318,7 +322,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_2000
      * @tc.name testTypedUArraysPropertyTestMindMapMerged020
      * @tc.desc Verify slice
      * @tc.size MediumTest
@@ -335,7 +339,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_2100
      * @tc.name testTypedUArraysPropertyTestMindMapMerged021
      * @tc.desc Verify ArrayBuffer.isView true
      * @tc.size MediumTest
@@ -350,7 +354,7 @@ export default function typedUArraysPropertyTest07(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PropertyTestMindMapMerged_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST07_2200
      * @tc.name testTypedUArraysPropertyTestMindMapMerged022
      * @tc.desc Verify TypedArray Array
      * @tc.size MediumTest

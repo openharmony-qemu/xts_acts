@@ -36,7 +36,7 @@ export default function typedUArraysPropertyTest02(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST02_0100
      * @tc.name testTypedUArraysPropertyTestFileB001
      * @tc.desc Verify Uint16Array.BYTES_PER_ELEMENT typeof Double
      * @tc.size MediumTest
@@ -49,7 +49,7 @@ export default function typedUArraysPropertyTest02(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST02_0200
      * @tc.name testTypedUArraysPropertyTestFileB002
      * @tc.desc Verify BYTES_PER_ELEMENT
      * @tc.size MediumTest
@@ -59,12 +59,12 @@ export default function typedUArraysPropertyTest02(): void {
     it('testTypedUArraysPropertyTestFileB002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Uint16Array(2);
       const b = new Uint16Array(4);
-      expect(Uint16Array.BYTES_PER_ELEMENT).assertEqual(Uint16Array.BYTES_PER_ELEMENT);
-      expect(Uint16Array.BYTES_PER_ELEMENT).assertEqual(Uint16Array.BYTES_PER_ELEMENT);
+      expect(Uint16Array.BYTES_PER_ELEMENT).assertEqual(2);
+      expect(Uint16Array.BYTES_PER_ELEMENT).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST02_0300
      * @tc.name testTypedUArraysPropertyTestFileB003
      * @tc.desc Verify BYTES_PER_ELEMENT
      * @tc.size MediumTest
@@ -73,11 +73,11 @@ export default function typedUArraysPropertyTest02(): void {
      */
     it('testTypedUArraysPropertyTestFileB003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array(1);
-      expect(Uint32Array.BYTES_PER_ELEMENT).assertEqual(Uint32Array.BYTES_PER_ELEMENT);
+      expect(Uint32Array.BYTES_PER_ELEMENT).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST02_0400
      * @tc.name testTypedUArraysPropertyTestFileB004
      * @tc.desc Verify BYTES_PER_ELEMENT
      * @tc.size MediumTest
@@ -88,13 +88,13 @@ export default function typedUArraysPropertyTest02(): void {
       const a = new Uint8Array(3);
       const b = new Uint8Array([1, 2, 3]);
       const c = new Uint8Array(new ArrayBuffer(3));
-      expect(Uint8Array.BYTES_PER_ELEMENT).assertEqual(Uint8Array.BYTES_PER_ELEMENT);
-      expect(Uint8Array.BYTES_PER_ELEMENT).assertEqual(Uint8Array.BYTES_PER_ELEMENT);
+      expect(Uint8Array.BYTES_PER_ELEMENT).assertEqual(1);
+      expect(Uint8Array.BYTES_PER_ELEMENT).assertEqual(1);
     });
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST02_0500
      * @tc.name testTypedUArraysPropertyTestFileB005
      * @tc.desc Verify buffer
      * @tc.size MediumTest
@@ -110,7 +110,7 @@ export default function typedUArraysPropertyTest02(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST02_0600
      * @tc.name testTypedUArraysPropertyTestFileB006
      * @tc.desc Verify ArrayBuffer byteOffset 0
      * @tc.size MediumTest

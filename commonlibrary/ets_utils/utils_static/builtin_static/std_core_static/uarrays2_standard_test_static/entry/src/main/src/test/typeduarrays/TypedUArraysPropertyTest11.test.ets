@@ -35,7 +35,7 @@ export default function typedUArraysPropertyTest11(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST11_0100
      * @tc.name testTypedUArraysPropertyTestFileK001
      * @tc.desc Verify Uint8Array(4) byteLength 4
      * @tc.size MediumTest
@@ -48,7 +48,7 @@ export default function typedUArraysPropertyTest11(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST11_0200
      * @tc.name testTypedUArraysPropertyTestFileK002
      * @tc.desc Verify Uint16Array(4) byteLength 8
      * @tc.size MediumTest
@@ -62,7 +62,7 @@ export default function typedUArraysPropertyTest11(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST11_0300
      * @tc.name testTypedUArraysPropertyTestFileK003
      * @tc.desc Verify Uint32Array(1) byteLength 4
      * @tc.size MediumTest
@@ -75,7 +75,7 @@ export default function typedUArraysPropertyTest11(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST11_0400
      * @tc.name testTypedUArraysPropertyTestFileK004
      * @tc.desc Verify BigUint64Array(1) byteLength 8
      * @tc.size MediumTest
@@ -89,7 +89,7 @@ export default function typedUArraysPropertyTest11(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST11_0500
      * @tc.name testTypedUArraysPropertyTestFileK005
      * @tc.desc Verify Uint8Array byteLength buffer byteLength
      * @tc.size MediumTest
@@ -102,7 +102,7 @@ export default function typedUArraysPropertyTest11(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST11_0600
      * @tc.name testTypedUArraysPropertyTestFileK006
      * @tc.desc Verify Uint16Array byteLength buffer byteLength
      * @tc.size MediumTest
@@ -115,7 +115,7 @@ export default function typedUArraysPropertyTest11(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST11_0700
      * @tc.name testTypedUArraysPropertyTestFileK007
      * @tc.desc Verify Uint32Array byteLength buffer byteLength
      * @tc.size MediumTest
@@ -129,7 +129,7 @@ export default function typedUArraysPropertyTest11(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST11_0800
      * @tc.name testTypedUArraysPropertyTestFileK008
      * @tc.desc Verify name
      * @tc.size MediumTest
@@ -143,7 +143,7 @@ export default function typedUArraysPropertyTest11(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST11_0900
      * @tc.name testTypedUArraysPropertyTestFileK009
      * @tc.desc Verify name
      * @tc.size MediumTest
@@ -157,7 +157,7 @@ export default function typedUArraysPropertyTest11(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST11_1000
      * @tc.name testTypedUArraysPropertyTestFileK010
      * @tc.desc Verify ArrayBuffer name
      * @tc.size MediumTest
@@ -172,7 +172,7 @@ export default function typedUArraysPropertyTest11(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Property0201_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_PROPERTYTEST11_1100
      * @tc.name testTypedUArraysPropertyTestFileK011
      * @tc.desc Verify buffer buffer
      * @tc.size MediumTest

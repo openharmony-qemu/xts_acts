@@ -26,7 +26,7 @@ export default function typedUArraysReduceRightTest01(): void {
     afterAll((): void => {});
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_0100
      * @tc.name testTypedUArraysReduceRightTestFileA001
      * @tc.desc Verify reduceRight throws TypeError for an empty Uint8Array without an initial value
      * @tc.size MediumTest
@@ -40,7 +40,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_0200
      * @tc.name testTypedUArraysReduceRightTestFileA002
      * @tc.desc Verify reduceRight throws TypeError for an empty Uint16Array without an initial value
      * @tc.size MediumTest
@@ -54,7 +54,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_0300
      * @tc.name testTypedUArraysReduceRightTestFileA003
      * @tc.desc Verify reduceRight throws TypeError for an empty Uint32Array without an initial value
      * @tc.size MediumTest
@@ -68,7 +68,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_0400
      * @tc.name testTypedUArraysReduceRightTestFileA004
      * @tc.desc Verify reduceRight throws TypeError for an empty Uint8ClampedArray without an initial value
      * @tc.size MediumTest
@@ -82,7 +82,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_0500
      * @tc.name testTypedUArraysReduceRightTestFileA005
      * @tc.desc Verify reduceRight throws TypeError for an empty BigUint64Array without an initial value
      * @tc.size MediumTest
@@ -96,7 +96,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_0600
      * @tc.name testTypedUArraysReduceRightTestFileA006
      * @tc.desc Verify reduceRight sums Uint8Array elements
      * @tc.size MediumTest
@@ -110,7 +110,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_0700
      * @tc.name testTypedUArraysReduceRightTestFileA007
      * @tc.desc Verify reduceRight sums Uint16Array elements
      * @tc.size MediumTest
@@ -124,7 +124,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_0800
      * @tc.name testTypedUArraysReduceRightTestFileA008
      * @tc.desc Verify reduceRight sums BigUint64Array elements
      * @tc.size MediumTest
@@ -138,7 +138,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_0900
      * @tc.name testTypedUArraysReduceRightTestFileA009
      * @tc.desc Verify arithmetic using a Uint8Array reduceRight result
      * @tc.size MediumTest
@@ -152,7 +152,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_1000
      * @tc.name testTypedUArraysReduceRightTestFileA010
      * @tc.desc Verify bigint arithmetic using a BigUint64Array reduceRight result
      * @tc.size MediumTest
@@ -166,7 +166,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_1100
      * @tc.name testTypedUArraysReduceRightTestFileA011
      * @tc.desc Verify the reduceRight callback receives four arguments
      * @tc.size MediumTest
@@ -181,7 +181,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_1200
      * @tc.name testTypedUArraysReduceRightTestFileA012
      * @tc.desc Verify reduceRight callback indices for Uint8Array
      * @tc.size MediumTest
@@ -198,7 +198,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_1300
      * @tc.name testTypedUArraysReduceRightTestFileA013
      * @tc.desc Verify reduceRight callback indices for BigUint64Array
      * @tc.size MediumTest
@@ -214,7 +214,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_1400
      * @tc.name testTypedUArraysReduceRightTestFileA014
      * @tc.desc Verify reduceRight callback values for Uint8Array
      * @tc.size MediumTest
@@ -231,7 +231,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_1500
      * @tc.name testTypedUArraysReduceRightTestFileA015
      * @tc.desc Verify reduceRight callback values for BigUint64Array
      * @tc.size MediumTest
@@ -247,7 +247,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_1600
      * @tc.name testTypedUArraysReduceRightTestFileA016
      * @tc.desc Verify the first accumulator value for Uint8Array
      * @tc.size MediumTest
@@ -262,7 +262,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_1700
      * @tc.name testTypedUArraysReduceRightTestFileA017
      * @tc.desc Verify the first accumulator value for Uint16Array
      * @tc.size MediumTest
@@ -277,7 +277,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_1800
      * @tc.name testTypedUArraysReduceRightTestFileA018
      * @tc.desc Verify the reduceRight callback receives the source Uint8Array
      * @tc.size MediumTest
@@ -292,7 +292,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_1900
      * @tc.name testTypedUArraysReduceRightTestFileA019
      * @tc.desc Verify arithmetic using a Uint8Array reduceRight sum
      * @tc.size MediumTest
@@ -306,7 +306,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_2000
      * @tc.name testTypedUArraysReduceRightTestFileA020
      * @tc.desc Verify arithmetic using a BigUint64Array reduceRight sum
      * @tc.size MediumTest
@@ -320,7 +320,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_2100
      * @tc.name testTypedUArraysReduceRightTestFileA021
      * @tc.desc Verify reduceRight throws TypeError for an empty Uint8Array without an initial value
      * @tc.size MediumTest
@@ -338,7 +338,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_2200
      * @tc.name testTypedUArraysReduceRightTestFileA022
      * @tc.desc Verify reduceRight throws TypeError for an empty BigUint64Array without an initial value
      * @tc.size MediumTest
@@ -356,7 +356,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_2300
      * @tc.name testTypedUArraysReduceRightTestFileA023
      * @tc.desc Verify reduceRight supports a string initial value
      * @tc.size MediumTest
@@ -370,7 +370,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_2400
      * @tc.name testTypedUArraysReduceRightTestFileA024
      * @tc.desc Verify reduceRight supports an array initial value
      * @tc.size MediumTest
@@ -385,7 +385,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_2500
      * @tc.name testTypedUArraysReduceRightTestFileA025
      * @tc.desc Verify reduceRight sums Uint8Array elements
      * @tc.size MediumTest
@@ -399,7 +399,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_2600
      * @tc.name testTypedUArraysReduceRightTestFileA026
      * @tc.desc Verify reduceRight sums Uint16Array elements
      * @tc.size MediumTest
@@ -413,7 +413,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_2700
      * @tc.name testTypedUArraysReduceRightTestFileA027
      * @tc.desc Verify reduceRight sums Uint32Array elements
      * @tc.size MediumTest
@@ -427,7 +427,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_2800
      * @tc.name testTypedUArraysReduceRightTestFileA028
      * @tc.desc Verify reduceRight sums Uint8ClampedArray elements
      * @tc.size MediumTest
@@ -441,7 +441,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_2900
      * @tc.name testTypedUArraysReduceRightTestFileA029
      * @tc.desc Verify reduceRight sums BigUint64Array elements
      * @tc.size MediumTest
@@ -455,7 +455,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_3000
      * @tc.name testTypedUArraysReduceRightTestFileA030
      * @tc.desc Verify arithmetic using a Uint16Array reduceRight sum
      * @tc.size MediumTest
@@ -469,7 +469,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_3100
      * @tc.name testTypedUArraysReduceRightTestFileA031
      * @tc.desc Verify arithmetic using a Uint32Array reduceRight sum
      * @tc.size MediumTest
@@ -483,7 +483,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_3200
      * @tc.name testTypedUArraysReduceRightTestFileA032
      * @tc.desc Verify arithmetic using a Uint8ClampedArray reduceRight sum
      * @tc.size MediumTest
@@ -497,7 +497,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_3300
      * @tc.name testTypedUArraysReduceRightTestFileA033
      * @tc.desc Verify reduceRight does not invoke the callback for a single-element Uint8Array
      * @tc.size MediumTest
@@ -513,7 +513,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_3400
      * @tc.name testTypedUArraysReduceRightTestFileA034
      * @tc.desc Verify reduceRight does not invoke the callback for a single-element Uint16Array
      * @tc.size MediumTest
@@ -529,7 +529,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_3500
      * @tc.name testTypedUArraysReduceRightTestFileA035
      * @tc.desc Verify reduceRight does not invoke the callback for a single-element Uint32Array
      * @tc.size MediumTest
@@ -545,7 +545,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_3600
      * @tc.name testTypedUArraysReduceRightTestFileA036
      * @tc.desc Verify reduceRight does not invoke the callback for a single-element Uint8ClampedArray
      * @tc.size MediumTest
@@ -561,7 +561,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_3700
      * @tc.name testTypedUArraysReduceRightTestFileA037
      * @tc.desc Verify reduceRight does not invoke the callback for a single-element BigUint64Array
      * @tc.size MediumTest
@@ -577,7 +577,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_3800
      * @tc.name testTypedUArraysReduceRightTestFileA038
      * @tc.desc Verify reduceRight propagates an Error thrown by the callback
      * @tc.size MediumTest
@@ -593,7 +593,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_3900
      * @tc.name testTypedUArraysReduceRightTestFileA039
      * @tc.desc Verify reduceRight subtraction for Uint8Array
      * @tc.size MediumTest
@@ -607,7 +607,7 @@ export default function typedUArraysReduceRightTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHT_PART101_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST01_4000
      * @tc.name testTypedUArraysReduceRightTestFileA040
      * @tc.desc Verify reduceRight subtraction for BigUint64Array
      * @tc.size MediumTest

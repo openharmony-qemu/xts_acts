@@ -30,7 +30,7 @@ export default function typedUArraysReduceRightTest03(): void {
     afterAll((): void => {});
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_0100
      * @tc.name testTypedUArraysReduceRightTestFileC001
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -45,7 +45,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(null);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_0200
      * @tc.name testTypedUArraysReduceRightTestFileC002
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -58,7 +58,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(42);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_0300
      * @tc.name testTypedUArraysReduceRightTestFileC003
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -72,7 +72,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(externalSum).assertEqual(3);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_0400
      * @tc.name testTypedUArraysReduceRightTestFileC004
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -86,7 +86,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(9);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_0500
      * @tc.name testTypedUArraysReduceRightTestFileC005
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -99,7 +99,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(15);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_0600
      * @tc.name testTypedUArraysReduceRightTestFileC006
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -114,7 +114,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(null);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_0700
      * @tc.name testTypedUArraysReduceRightTestFileC007
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -129,7 +129,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertUndefined();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_0800
      * @tc.name testTypedUArraysReduceRightTestFileC008
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -142,7 +142,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result.sum).assertEqual(6);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_0900
      * @tc.name testTypedUArraysReduceRightTestFileC009
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -156,7 +156,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result[0]).assertEqual(3);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_1000
      * @tc.name testTypedUArraysReduceRightTestFileC010
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -169,7 +169,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertTrue();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_1100
      * @tc.name testTypedUArraysReduceRightTestFileC011
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -182,7 +182,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(6);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_1200
      * @tc.name testTypedUArraysReduceRightTestFileC012
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -195,7 +195,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_1300
      * @tc.name testTypedUArraysReduceRightTestFileC013
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -208,7 +208,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(510);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_1400
      * @tc.name testTypedUArraysReduceRightTestFileC014
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -221,7 +221,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(96);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_1500
      * @tc.name testTypedUArraysReduceRightTestFileC015
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -234,7 +234,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(762);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_1600
      * @tc.name testTypedUArraysReduceRightTestFileC016
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -247,7 +247,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(6);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_1700
      * @tc.name testTypedUArraysReduceRightTestFileC017
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -260,7 +260,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(762);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_1800
      * @tc.name testTypedUArraysReduceRightTestFileC018
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -273,7 +273,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertNaN();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_1900
      * @tc.name testTypedUArraysReduceRightTestFileC019
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -286,7 +286,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(Number.POSITIVE_INFINITY);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_2000
      * @tc.name testTypedUArraysReduceRightTestFileC020
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -299,7 +299,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(12884901885);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_2100
      * @tc.name testTypedUArraysReduceRightTestFileC021
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -312,7 +312,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(163838);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_2200
      * @tc.name testTypedUArraysReduceRightTestFileC022
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -325,7 +325,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(Number.MAX_SAFE_INTEGER + 3);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_2300
      * @tc.name testTypedUArraysReduceRightTestFileC023
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -338,7 +338,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(Number.MIN_SAFE_INTEGER + 3);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_2400
      * @tc.name testTypedUArraysReduceRightTestFileC024
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -351,7 +351,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(Number.MAX_VALUE);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_2500
      * @tc.name testTypedUArraysReduceRightTestFileC025
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -364,7 +364,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(3 + Number.MIN_VALUE);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_2600
      * @tc.name testTypedUArraysReduceRightTestFileC026
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -377,7 +377,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(3 + Number.EPSILON);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_2700
      * @tc.name testTypedUArraysReduceRightTestFileC027
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -390,7 +390,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(259);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_2800
      * @tc.name testTypedUArraysReduceRightTestFileC028
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -403,7 +403,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(65538);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_2900
      * @tc.name testTypedUArraysReduceRightTestFileC029
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -416,7 +416,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(4294967298);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_3000
      * @tc.name testTypedUArraysReduceRightTestFileC030
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -429,7 +429,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(10000000003);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_3100
      * @tc.name testTypedUArraysReduceRightTestFileC031
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -442,7 +442,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(18);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_3200
      * @tc.name testTypedUArraysReduceRightTestFileC032
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -457,7 +457,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(order[2]).assertEqual(10);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_3300
      * @tc.name testTypedUArraysReduceRightTestFileC033
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -472,7 +472,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(order[3]).assertEqual(1);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_3400
      * @tc.name testTypedUArraysReduceRightTestFileC034
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -487,7 +487,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(order[8]).assertEqual(1);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_3500
      * @tc.name testTypedUArraysReduceRightTestFileC035
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -501,7 +501,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(callCount).assertEqual(2);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_3600
      * @tc.name testTypedUArraysReduceRightTestFileC036
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -515,7 +515,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(callCount).assertEqual(1);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_3700
      * @tc.name testTypedUArraysReduceRightTestFileC037
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -528,7 +528,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(15);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_3800
      * @tc.name testTypedUArraysReduceRightTestFileC038
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -541,7 +541,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(arr.length).assertEqual(5);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_3900
      * @tc.name testTypedUArraysReduceRightTestFileC039
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -555,7 +555,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(arr.toString).assertEqual(originalToString);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_4000
      * @tc.name testTypedUArraysReduceRightTestFileC040
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -569,7 +569,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(21);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_4100
      * @tc.name testTypedUArraysReduceRightTestFileC041
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -583,7 +583,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(output).assertEqual("large");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_4200
      * @tc.name testTypedUArraysReduceRightTestFileC042
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -597,7 +597,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(output).assertEqual(12);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_4300
      * @tc.name testTypedUArraysReduceRightTestFileC043
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -613,7 +613,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(1540);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_4400
      * @tc.name testTypedUArraysReduceRightTestFileC044
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -630,7 +630,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(view.byteOffset).assertEqual(8);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_4500
      * @tc.name testTypedUArraysReduceRightTestFileC045
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -648,7 +648,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(60);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_4600
      * @tc.name testTypedUArraysReduceRightTestFileC046
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -661,7 +661,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertTrue();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_4700
      * @tc.name testTypedUArraysReduceRightTestFileC047
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -674,7 +674,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertFalse();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_4800
      * @tc.name testTypedUArraysReduceRightTestFileC048
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -687,7 +687,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual("");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_4900
      * @tc.name testTypedUArraysReduceRightTestFileC049
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -700,7 +700,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(12);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_5000
      * @tc.name testTypedUArraysReduceRightTestFileC050
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -713,7 +713,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(6);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_5100
      * @tc.name testTypedUArraysReduceRightTestFileC051
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -726,7 +726,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(61);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_5200
      * @tc.name testTypedUArraysReduceRightTestFileC052
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -739,7 +739,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(255);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_5300
      * @tc.name testTypedUArraysReduceRightTestFileC053
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -752,7 +752,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_5400
      * @tc.name testTypedUArraysReduceRightTestFileC054
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -765,7 +765,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(1020);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_5500
      * @tc.name testTypedUArraysReduceRightTestFileC055
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -778,7 +778,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(9);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_5600
      * @tc.name testTypedUArraysReduceRightTestFileC056
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest
@@ -791,7 +791,7 @@ export default function typedUArraysReduceRightTest03(): void {
       expect(result).assertEqual(10);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYSREDUCERIGHTTEST03_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REDUCERIGHTTEST03_5700
      * @tc.name testTypedUArraysReduceRightTestFileC057
      * @tc.desc Verify TypedArray API behavior for this test scenario
      * @tc.size MediumTest

@@ -34,7 +34,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_0100
      * @tc.name testTypedUArraysReverseTestFileE001
      * @tc.desc Verify Uint16Array reverse preserves byteLength 10
      * @tc.size MediumTest
@@ -48,7 +48,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_0200
      * @tc.name testTypedUArraysReverseTestFileE002
      * @tc.desc Verify Uint32Array reverse preserves byteLength 20
      * @tc.size MediumTest
@@ -62,7 +62,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_0300
      * @tc.name testTypedUArraysReverseTestFileE003
      * @tc.desc Verify Uint8ClampedArray reverse preserves byteLength 5
      * @tc.size MediumTest
@@ -76,7 +76,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_0400
      * @tc.name testTypedUArraysReverseTestFileE004
      * @tc.desc Verify BigUint64Array reverse preserves byteLength 40
      * @tc.size MediumTest
@@ -90,7 +90,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_0500
      * @tc.name testTypedUArraysReverseTestFileE005
      * @tc.desc Verify Uint8Array(0) reverse byteLength remains 0
      * @tc.size MediumTest
@@ -104,7 +104,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_0600
      * @tc.name testTypedUArraysReverseTestFileE006
      * @tc.desc Verify Uint8Array([42]) reverse byteLength remains 1
      * @tc.size MediumTest
@@ -118,7 +118,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_0700
      * @tc.name testTypedUArraysReverseTestFileE007
      * @tc.desc Verify Uint16Array([42]) reverse byteLength remains 2
      * @tc.size MediumTest
@@ -132,7 +132,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_0800
      * @tc.name testTypedUArraysReverseTestFileE008
      * @tc.desc Verify Uint32Array([42]) reverse byteLength remains 4
      * @tc.size MediumTest
@@ -146,7 +146,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_0900
      * @tc.name testTypedUArraysReverseTestFileE009
      * @tc.desc Verify BigUint64Array([42n]) reverse byteLength remains 8
      * @tc.size MediumTest
@@ -160,7 +160,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_1000
      * @tc.name testTypedUArraysReverseTestFileE010
      * @tc.desc Verify Uint8Array reverse preserves byteOffset
      * @tc.size MediumTest
@@ -174,7 +174,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_1100
      * @tc.name testTypedUArraysReverseTestFileE011
      * @tc.desc Verify Uint16Array reverse preserves byteOffset
      * @tc.size MediumTest
@@ -188,7 +188,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_1200
      * @tc.name testTypedUArraysReverseTestFileE012
      * @tc.desc Verify Uint32Array reverse preserves byteOffset
      * @tc.size MediumTest
@@ -202,7 +202,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_1300
      * @tc.name testTypedUArraysReverseTestFileE013
      * @tc.desc Verify Uint8ClampedArray reverse preserves byteOffset
      * @tc.size MediumTest
@@ -216,7 +216,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_1400
      * @tc.name testTypedUArraysReverseTestFileE014
      * @tc.desc Verify BigUint64Array reverse preserves byteOffset
      * @tc.size MediumTest
@@ -230,7 +230,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_1500
      * @tc.name testTypedUArraysReverseTestFileE015
      * @tc.desc Verify Uint8Array buffer view reverse preserves byteOffset
      * @tc.size MediumTest
@@ -245,7 +245,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_1600
      * @tc.name testTypedUArraysReverseTestFileE016
      * @tc.desc Verify Uint16Array buffer view reverse preserves byteOffset
      * @tc.size MediumTest
@@ -260,7 +260,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_1700
      * @tc.name testTypedUArraysReverseTestFileE017
      * @tc.desc Verify Uint32Array buffer view reverse preserves byteOffset
      * @tc.size MediumTest
@@ -275,7 +275,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_1800
      * @tc.name testTypedUArraysReverseTestFileE018
      * @tc.desc Verify Uint8Array reverse preserves buffer reference
      * @tc.size MediumTest
@@ -290,7 +290,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_1900
      * @tc.name testTypedUArraysReverseTestFileE019
      * @tc.desc Verify Uint16Array reverse preserves buffer reference
      * @tc.size MediumTest
@@ -305,7 +305,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_2000
      * @tc.name testTypedUArraysReverseTestFileE020
      * @tc.desc Verify Uint32Array reverse preserves buffer reference
      * @tc.size MediumTest
@@ -320,7 +320,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_2100
      * @tc.name testTypedUArraysReverseTestFileE021
      * @tc.desc Verify Uint8ClampedArray reverse preserves buffer reference
      * @tc.size MediumTest
@@ -335,7 +335,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_2200
      * @tc.name testTypedUArraysReverseTestFileE022
      * @tc.desc Verify BigUint64Array reverse preserves buffer reference
      * @tc.size MediumTest
@@ -350,7 +350,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_2300
      * @tc.name testTypedUArraysReverseTestFileE023
      * @tc.desc Verify Uint8Array buffer view reverse preserves buffer reference
      * @tc.size MediumTest
@@ -365,7 +365,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_2400
      * @tc.name testTypedUArraysReverseTestFileE024
      * @tc.desc Verify Uint16Array buffer view reverse preserves buffer reference
      * @tc.size MediumTest
@@ -380,7 +380,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_2500
      * @tc.name testTypedUArraysReverseTestFileE025
      * @tc.desc Verify Uint32Array buffer view reverse preserves buffer reference
      * @tc.size MediumTest
@@ -395,7 +395,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_2600
      * @tc.name testTypedUArraysReverseTestFileE026
      * @tc.desc Verify Uint8Array reverse returns same reference
      * @tc.size MediumTest
@@ -409,7 +409,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_2700
      * @tc.name testTypedUArraysReverseTestFileE027
      * @tc.desc Verify Uint16Array reverse returns same reference
      * @tc.size MediumTest
@@ -423,7 +423,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_2800
      * @tc.name testTypedUArraysReverseTestFileE028
      * @tc.desc Verify BigUint64Array reverse returns same reference
      * @tc.size MediumTest
@@ -437,7 +437,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_2900
      * @tc.name testTypedUArraysReverseTestFileE029
      * @tc.desc Verify Uint8Array(0) reverse returns same reference
      * @tc.size MediumTest
@@ -451,7 +451,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_3000
      * @tc.name testTypedUArraysReverseTestFileE030
      * @tc.desc Verify Uint8Array([99]) reverse returns same reference
      * @tc.size MediumTest
@@ -465,7 +465,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_3100
      * @tc.name testTypedUArraysReverseTestFileE031
      * @tc.desc Verify Uint8Array reverse modifies element order
      * @tc.size MediumTest
@@ -483,7 +483,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_3200
      * @tc.name testTypedUArraysReverseTestFileE032
      * @tc.desc Verify Uint8Array reverse preserves length
      * @tc.size MediumTest
@@ -497,7 +497,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_3300
      * @tc.name testTypedUArraysReverseTestFileE033
      * @tc.desc Verify Uint8Array reverse preserves byteLength
      * @tc.size MediumTest
@@ -511,13 +511,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3400
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3500
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_3400
      * @tc.name testTypedUArraysReverseTestFileE034
      * @tc.desc Verify Uint16Array reverse preserves BYTES_PER_ELEMENT
      * @tc.size MediumTest
@@ -531,7 +525,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_3500
      * @tc.name testTypedUArraysReverseTestFileE035
      * @tc.desc Verify Uint8Array reverse returns same reference
      * @tc.size MediumTest
@@ -544,7 +538,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_3600
      * @tc.name testTypedUArraysReverseTestFileE036
      * @tc.desc Verify shared buffer child view reverse affects parent
      * @tc.size MediumTest
@@ -564,7 +558,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_3700
      * @tc.name testTypedUArraysReverseTestFileE037
      * @tc.desc Verify shared buffer parent reverse affects child
      * @tc.size MediumTest
@@ -580,7 +574,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_3800
      * @tc.name testTypedUArraysReverseTestFileE038
      * @tc.desc Verify adjacent views on same buffer reverse
      * @tc.size MediumTest
@@ -603,7 +597,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_3900
      * @tc.name testTypedUArraysReverseTestFileE039
      * @tc.desc Verify buffer view reverse with offset
      * @tc.size MediumTest
@@ -622,7 +616,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_4000
      * @tc.name testTypedUArraysReverseTestFileE040
      * @tc.desc Verify same buffer multiple views reverse
      * @tc.size MediumTest
@@ -642,7 +636,7 @@ export default function typedUArraysReverseTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSE_PART301_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_REVERSETEST05_4100
      * @tc.name testTypedUArraysReverseTestFileE041
      * @tc.desc Verify child reverse affects overlapping parent
      * @tc.size MediumTest
