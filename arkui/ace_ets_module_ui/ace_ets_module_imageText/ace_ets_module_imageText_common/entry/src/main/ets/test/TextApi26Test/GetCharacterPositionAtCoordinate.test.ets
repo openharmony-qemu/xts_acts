@@ -48,6 +48,9 @@ export default function GetCharacterPositionAtCoordinateTest() {
       AppStorage.delete('charPos_negative');
       AppStorage.delete('charPos_large');
       AppStorage.delete('charPos_utf16_result');
+      AppStorage.delete('charPos_null_textEncoding');
+      AppStorage.delete('charPos_undfined_textEncoding');
+      AppStorage.delete('charPos_exceeds_textEncoding');
       await CommonFunc.sleep(500);
       console.info('GetCharacterPositionAtCoordinateTest afterEach called');
     });
@@ -261,6 +264,114 @@ export default function GetCharacterPositionAtCoordinateTest() {
         expect(true).assertEqual(false);
       }
       console.info('[GetCharacterPositionAtCoordinateTest_0060] END');
+      done();
+    });
+
+    /**
+     * @tc.name   GetCharacterPositionAtCoordinateTest_0070
+     * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITION_NULL_TEXTENCODING_0070
+     * @tc.desc   Test getCharacterPositionAtCoordinate with null TextEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('GetCharacterPositionAtCoordinateTest_0070', Level.LEVEL2, async (done: Function) => {
+      console.info('[GetCharacterPositionAtCoordinateTest_0070] START');
+      try{
+        await CommonFunc.sleep(500);
+
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
+
+        const result: string | undefined = AppStorage.get<string>('charPos_null_textEncoding');
+        console.info('[GetCharacterPositionAtCoordinateTest_0070] result: ' + result);
+        expect(result).assertContain('position:');
+        expect(result).assertContain('affinity:');
+        expect(result !== 'undefined').assertTrue();
+
+        const parts: string[] = result!.split(',');
+        const positionStr: string = parts[0].split(':')[1];
+        const position: number = parseInt(positionStr, 10);
+        expect(position >= 0 && position <= 11).assertTrue();
+      }catch (err) {
+        console.error('GetCharacterPositionAtCoordinateTest_0070 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+      console.info('[GetCharacterPositionAtCoordinateTest_0070] END');
+      done();
+    });
+
+    /**
+     * @tc.name   GetCharacterPositionAtCoordinateTest_0080
+     * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITION_UNDEFINED_TEXTENCODING_0080
+     * @tc.desc   Test getCharacterPositionAtCoordinate with undefined TextEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('GetCharacterPositionAtCoordinateTest_0080', Level.LEVEL2, async (done: Function) => {
+      console.info('[GetCharacterPositionAtCoordinateTest_0080] START');
+      try{
+        await CommonFunc.sleep(500);
+
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
+
+        const result: string | undefined = AppStorage.get<string>('charPos_undfined_textEncoding');
+        console.info('[GetCharacterPositionAtCoordinateTest_0080] result: ' + result);
+        expect(result).assertContain('position:');
+        expect(result).assertContain('affinity:');
+        expect(result !== 'undefined').assertTrue();
+
+        const parts: string[] = result!.split(',');
+        const positionStr: string = parts[0].split(':')[1];
+        const position: number = parseInt(positionStr, 10);
+        expect(position >= 0 && position <= 11).assertTrue();
+      }catch (err) {
+        console.error('GetCharacterPositionAtCoordinateTest_0080 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+      console.info('[GetCharacterPositionAtCoordinateTest_0080] END');
+      done();
+    });
+
+    /**
+     * @tc.name   GetCharacterPositionAtCoordinateTest_0090
+     * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITION_EXCEEDS_TEXTENCODING_0090
+     * @tc.desc   Test getCharacterPositionAtCoordinate with exceeds TextEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('GetCharacterPositionAtCoordinateTest_0090', Level.LEVEL2, async (done: Function) => {
+      console.info('[GetCharacterPositionAtCoordinateTest_0090] START');
+      try{
+        await CommonFunc.sleep(500);
+
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_char_pos_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
+
+        const result: string | undefined = AppStorage.get<string>('charPos_exceeds_textEncoding');
+        console.info('[GetCharacterPositionAtCoordinateTest_0090] result: ' + result);
+        expect(result).assertContain('position:');
+        expect(result).assertContain('affinity:');
+        expect(result !== 'undefined').assertTrue();
+
+        const parts: string[] = result!.split(',');
+        const positionStr: string = parts[0].split(':')[1];
+        const position: number = parseInt(positionStr, 10);
+        expect(position >= 0 && position <= 11).assertTrue();
+      }catch (err) {
+        console.error('GetCharacterPositionAtCoordinateTest_0090 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+      console.info('[GetCharacterPositionAtCoordinateTest_0090] END');
       done();
     });
   });

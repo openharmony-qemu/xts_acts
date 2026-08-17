@@ -47,6 +47,9 @@ export default function GetCharacterRangeForGlyphRangeTest() {
       AppStorage.delete('charRange_oob_utf8');
       AppStorage.delete('charRange_oob_utf16');
       AppStorage.delete('charRange_undefined_range');
+      AppStorage.delete('charRange_null_textEncoding');
+      AppStorage.delete('charRange_undfined_textEncoding');
+      AppStorage.delete('charRange_exceeds_textEncoding');
       await CommonFunc.sleep(500);
       console.info('GetCharacterRangeForGlyphRangeTest afterEach called');
     });
@@ -271,6 +274,126 @@ export default function GetCharacterRangeForGlyphRangeTest() {
         expect(true).assertEqual(false);
       }
       console.info('[GetCharacterRangeForGlyphRangeTest_0060] END');
+      done();
+    });
+
+    /**
+     * @tc.name   GetCharacterRangeForGlyphRangeTest_0070
+     * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARRANGE_NULL_TEXTENCODING_0070
+     * @tc.desc   Test getCharacterRangeForGlyphRange with null TextEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('GetCharacterRangeForGlyphRangeTest_0070', Level.LEVEL2, async (done: Function) => {
+      console.info('[GetCharacterRangeForGlyphRangeTest_0070] START');
+      try{
+        await CommonFunc.sleep(500);
+
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_char_range_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
+
+        const result: string | undefined = AppStorage.get<string>('charRange_null_textEncoding');
+        console.info('[GetCharacterRangeForGlyphRangeTest_0070] result: ' + result);
+        expect(result !== 'undefined').assertTrue();
+
+        const ranges: string[] = result!.split('],');
+        const firstStart: number = parseInt(ranges[0].split('[')[1].split(',')[0], 10);
+        const firstEnd: number = parseInt(ranges[0].split(',')[1], 10);
+        const secondStart: number = parseInt(ranges[1].split('[')[1].split(',')[0], 10);
+        const secondEnd: number = parseInt(ranges[1].split(',')[1], 10);
+
+        expect(firstStart).assertEqual(0);
+        expect(firstEnd).assertEqual(11);
+        expect(secondStart).assertEqual(0);
+        expect(secondEnd).assertEqual(7);
+      }catch (err) {
+        console.error('GetCharacterRangeForGlyphRangeTest_0070 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+      console.info('[GetCharacterRangeForGlyphRangeTest_0070] END');
+      done();
+    });
+
+    /**
+     * @tc.name   GetCharacterRangeForGlyphRangeTest_0080
+     * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARRANGE_UNDEFINED_TEXTENCODING_0080
+     * @tc.desc   Test getCharacterRangeForGlyphRange with undefined TextEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('GetCharacterRangeForGlyphRangeTest_0080', Level.LEVEL2, async (done: Function) => {
+      console.info('[GetCharacterRangeForGlyphRangeTest_0080] START');
+      try{
+        await CommonFunc.sleep(500);
+
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_char_range_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
+
+        const result: string | undefined = AppStorage.get<string>('charRange_undfined_textEncoding');
+        console.info('[GetCharacterRangeForGlyphRangeTest_0080] result: ' + result);
+        expect(result !== 'undefined').assertTrue();
+
+        const ranges: string[] = result!.split('],');
+        const firstStart: number = parseInt(ranges[0].split('[')[1].split(',')[0], 10);
+        const firstEnd: number = parseInt(ranges[0].split(',')[1], 10);
+        const secondStart: number = parseInt(ranges[1].split('[')[1].split(',')[0], 10);
+        const secondEnd: number = parseInt(ranges[1].split(',')[1], 10);
+
+        expect(firstStart).assertEqual(0);
+        expect(firstEnd).assertEqual(11);
+        expect(secondStart).assertEqual(0);
+        expect(secondEnd).assertEqual(7);
+      }catch (err) {
+        console.error('GetCharacterRangeForGlyphRangeTest_0080 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+      console.info('[GetCharacterRangeForGlyphRangeTest_0080] END');
+      done();
+    });
+
+    /**
+     * @tc.name   GetCharacterRangeForGlyphRangeTest_0090
+     * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARRANGE_EXCEEDS_TEXTENCODING_0090
+     * @tc.desc   Test getCharacterRangeForGlyphRange with exceeds TextEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('GetCharacterRangeForGlyphRangeTest_0090', Level.LEVEL2, async (done: Function) => {
+      console.info('[GetCharacterRangeForGlyphRangeTest_0090] START');
+      try{
+        await CommonFunc.sleep(500);
+
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('btn_char_range_api26'));
+        await button.click();
+        await CommonFunc.sleep(1000);
+
+        const result: string | undefined = AppStorage.get<string>('charRange_exceeds_textEncoding');
+        console.info('[GetCharacterRangeForGlyphRangeTest_0090] result: ' + result);
+        expect(result !== 'undefined').assertTrue();
+
+        const ranges: string[] = result!.split('],');
+        const firstStart: number = parseInt(ranges[0].split('[')[1].split(',')[0], 10);
+        const firstEnd: number = parseInt(ranges[0].split(',')[1], 10);
+        const secondStart: number = parseInt(ranges[1].split('[')[1].split(',')[0], 10);
+        const secondEnd: number = parseInt(ranges[1].split(',')[1], 10);
+
+        expect(firstStart).assertEqual(0);
+        expect(firstEnd).assertEqual(11);
+        expect(secondStart).assertEqual(0);
+        expect(secondEnd).assertEqual(7);
+      }catch (err) {
+        console.error('GetCharacterRangeForGlyphRangeTest_0090 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+      console.info('[GetCharacterRangeForGlyphRangeTest_0090] END');
       done();
     });
   });
