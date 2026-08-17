@@ -443,7 +443,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignAsyncOperationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignAsyncOperationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new AsyncLockData();
       const counter = new AtomicInt(0);
@@ -453,6 +454,11 @@ export default function LockDesignAsyncOperationTest(): void {
       await Promise.all([t1, t2, t3]);
       expect(counter.load()).assertEqual(3);
       expect(data.value).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest0100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -463,7 +469,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignAsyncOperationTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignAsyncOperationTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new AsyncConcurrentData();
       const counter = new AtomicInt(0);
@@ -475,6 +482,11 @@ export default function LockDesignAsyncOperationTest(): void {
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest0200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -485,7 +497,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignAsyncOperationTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignAsyncOperationTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new AsyncErrorData();
       const counter = new AtomicInt(0);
@@ -495,6 +508,11 @@ export default function LockDesignAsyncOperationTest(): void {
       await Promise.all([t1, t2, t3]);
       expect(counter.load()).assertEqual(3);
       expect(data.executed).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest0300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -505,7 +523,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignAsyncOperationTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignAsyncOperationTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new AsyncTimeoutData();
       const counter = new AtomicInt(0);
@@ -515,6 +534,11 @@ export default function LockDesignAsyncOperationTest(): void {
       await Promise.all([t1, t2, t3]);
       expect(counter.load()).assertEqual(3);
       expect(data.completed).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest0400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -525,7 +549,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignAsyncOperationTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignAsyncOperationTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new PromiseLockData();
       const counter = new AtomicInt(0);
@@ -534,6 +559,11 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(counter.load()).assertEqual(1);
       expect(data.value).assertEqual(1);
       expect(data.resolved).assertTrue();
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest0500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -544,7 +574,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignAsyncOperationTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignAsyncOperationTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new PromiseConcurrentData();
       const counter = new AtomicInt(0);
@@ -556,6 +587,11 @@ export default function LockDesignAsyncOperationTest(): void {
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
       expect(data.results.length).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest0600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -566,7 +602,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignAsyncOperationTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignAsyncOperationTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new PromiseChainData();
       const counter = new AtomicInt(0);
@@ -581,6 +618,11 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(data.chain[0]).assertEqual(1);
       expect(data.chain[1]).assertEqual(2);
       expect(data.chain[2]).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest0700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -591,7 +633,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignAsyncOperationTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignAsyncOperationTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new PromiseTimeoutData();
       const counter = new AtomicInt(0);
@@ -601,6 +644,11 @@ export default function LockDesignAsyncOperationTest(): void {
       await Promise.all([t1, t2, t3]);
       expect(counter.load()).assertEqual(3);
       expect(data.completed).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest0800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
     
     /**
@@ -611,7 +659,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignAsyncOperationTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignAsyncOperationTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const pool = new FileDescriptorPool();
       const counter = new AtomicInt(0);
@@ -625,6 +674,11 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(pool.opened).assertEqual(5);
       expect(pool.closed).assertEqual(5);
       expect(pool.descriptors.length).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest0900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
 
@@ -636,7 +690,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignAsyncOperationTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignAsyncOperationTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new FileLockData();
       const counter = new AtomicInt(0);
@@ -650,6 +705,11 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(data.lockCount).assertEqual(5);
       expect(data.unlockCount).assertEqual(5);
       expect(data.locked).assertFalse();
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest1000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -660,7 +720,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignAsyncOperationTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignAsyncOperationTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const data = new LogData();
       const counter = new AtomicInt(0);
@@ -675,6 +736,11 @@ export default function LockDesignAsyncOperationTest(): void {
       await Promise.all([r1, r2, r3, r4, r5]);
       expect(counter.load()).assertEqual(6);
       expect(data.logs.length).assertEqual(1);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest1100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -685,7 +751,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignAsyncOperationTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignAsyncOperationTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const buf = new LogBuffer();
       const counter = new AtomicInt(0);
@@ -698,6 +765,11 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(counter.load()).assertEqual(5);
       expect(buf.buffer.length).assertEqual(5);
       expect(buf.flushed).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest1200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -708,7 +780,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignAsyncOperationTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignAsyncOperationTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new LogRotateData();
       const counter = new AtomicInt(0);
@@ -719,6 +792,11 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(counter.load()).assertEqual(3);
       expect(data.rotated).assertEqual(3);
       expect(data.files.length).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest1300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -729,7 +807,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignAsyncOperationTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignAsyncOperationTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new LogCompressData();
       const counter = new AtomicInt(0);
@@ -740,6 +819,11 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(counter.load()).assertEqual(3);
       expect(data.compressed).assertEqual(3);
       expect(data.totalSize).assertEqual(12);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest1400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -750,7 +834,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignAsyncOperationTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignAsyncOperationTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const data = new StateQueryData();
       const counter = new AtomicInt(0);
@@ -765,6 +850,11 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(counter.load()).assertEqual(6);
       expect(data.updateCount).assertEqual(1);
       expect(data.stateValue).assertEqual(1);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest1500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -775,7 +865,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignAsyncOperationTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignAsyncOperationTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new StateMachineData();
       const counter = new AtomicInt(0);
@@ -787,6 +878,11 @@ export default function LockDesignAsyncOperationTest(): void {
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
       expect(data.transitions).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest1600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -797,7 +893,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignAsyncOperationTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignAsyncOperationTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new StatePersistData();
       const counter = new AtomicInt(0);
@@ -809,6 +906,11 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(data.persisted).assertTrue();
       expect(data.persistCount).assertEqual(3);
       expect(data.value).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest1700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -819,7 +921,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignAsyncOperationTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignAsyncOperationTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new StateRecoveryData();
       const counter = new AtomicInt(0);
@@ -831,6 +934,11 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(data.recovered).assertTrue();
       expect(data.value).assertEqual(100);
       expect(data.recoveryCount).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest1800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -841,7 +949,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignAsyncOperationTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignAsyncOperationTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const data = new FileRWData();
       const counter = new AtomicInt(0);
@@ -860,6 +969,11 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(data.writeCount).assertEqual(2);
       expect(readCounter.load()).assertEqual(5);
       expect(data.content).assertEqual('updated_content');
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest1900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -870,7 +984,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignAsyncOperationTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignAsyncOperationTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const data = new StateVersionData();
       const counter = new AtomicInt(0);
@@ -895,6 +1010,11 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(data.versions[1]).assertEqual(2);
       expect(data.versions[2]).assertEqual(3);
       expect(data.versions[3]).assertEqual(4);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest2000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -905,7 +1025,8 @@ export default function LockDesignAsyncOperationTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignAsyncOperationTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignAsyncOperationTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new FileAccessData();
       const counter = new AtomicInt(0);
@@ -921,6 +1042,11 @@ export default function LockDesignAsyncOperationTest(): void {
       expect(counter.load()).assertEqual(5);
       expect(data.accessCount).assertEqual(5);
       expect(data.lastAccess).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignAsyncOperationTest2100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
   })

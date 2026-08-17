@@ -490,7 +490,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignReadWriteCacheTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignReadWriteCacheTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const cache = new CacheData();
       const readCounter = new AtomicInt(0);
@@ -509,6 +510,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       await Promise.all([r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, w1]);
       expect(readCounter.load()).assertEqual(10);
       expect(writeCounter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest0100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -519,7 +525,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignReadWriteCacheTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignReadWriteCacheTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const cache = new HotCacheData();
       const counter = new AtomicInt(0);
@@ -534,6 +541,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       await Promise.all([r1, r2, r3, r4, r5, w1, w2]);
       expect(counter.load()).assertEqual(7);
       expect(hitCounter.load()).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest0200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -544,7 +556,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignReadWriteCacheTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignReadWriteCacheTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const cache = new AvalancheCacheData();
       const counter = new AtomicInt(0);
@@ -558,6 +571,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       await Promise.all([r1, r2, r3, r4, r5, w1, w2]);
       expect(counter.load()).assertEqual(7);
       expect(cache.refreshCount).assertEqual(2);
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest0300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -568,7 +586,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignReadWriteCacheTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignReadWriteCacheTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const cache = new PenetrateCacheData();
       const counter = new AtomicInt(0);
@@ -581,6 +600,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       await Promise.all([r1, r2, r3, r4, r5, w1]);
       expect(counter.load()).assertEqual(6);
       expect(cache.hasValue).assertTrue();
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest0400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -591,7 +615,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignReadWriteCacheTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignReadWriteCacheTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const cache = new LruCacheData();
       const counter = new AtomicInt(0);
@@ -603,6 +628,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       await Promise.all([r1, r2, r3, w1, w2]);
       expect(counter.load()).assertEqual(5);
       expect(cache.updateCount).assertEqual(2);
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest0500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -613,7 +643,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignReadWriteCacheTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignReadWriteCacheTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const cache = new PreloadCacheData();
       const counter = new AtomicInt(0);
@@ -627,6 +658,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       expect(counter.load()).assertEqual(5);
       expect(cache.loadedCount).assertEqual(10);
       expect(cache.items.length).assertEqual(10);
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest0600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
     
     /**
@@ -637,7 +673,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignReadWriteCacheTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignReadWriteCacheTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const config = new ConfigData();
       const counter = new AtomicInt(0);
@@ -650,6 +687,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       await Promise.all([r1, r2, r3, r4, r5, w1]);
       expect(counter.load()).assertEqual(6);
       expect(config.readCount.load()).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest0700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -660,7 +702,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignReadWriteCacheTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignReadWriteCacheTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const config = new HotUpdateConfig();
       const counter = new AtomicInt(0);
@@ -671,6 +714,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       await Promise.all([r1, r2, r3, u1]);
       expect(counter.load()).assertEqual(4);
       expect(config.version).assertEqual(2);
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest0800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -681,7 +729,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignReadWriteCacheTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignReadWriteCacheTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const config = new VersionConfig();
       const counter = new AtomicInt(0);
@@ -694,6 +743,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       expect(counter.load()).assertEqual(5);
       expect(config.currentVersion).assertEqual(3);
       expect(config.versions.length).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest0900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -704,7 +758,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignReadWriteCacheTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignReadWriteCacheTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const config = new RollbackConfig();
       const counter = new AtomicInt(0);
@@ -715,6 +770,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       expect(config.rollbackCount).assertEqual(2);
       // Two serialized swap-rollbacks restore the original current value.
       expect(config.currentValue).assertEqual('current');
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest1000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -725,7 +785,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignReadWriteCacheTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignReadWriteCacheTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const config = new EncryptConfig();
       const counter = new AtomicInt(0);
@@ -738,6 +799,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       expect(counter.load()).assertEqual(4);
       expect(config.encrypted).assertEqual('enc_secret');
       expect(config.decryptCount.load()).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest1100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -748,7 +814,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignReadWriteCacheTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignReadWriteCacheTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const db = new DatabaseData();
       const counter = new AtomicInt(0);
@@ -764,6 +831,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       expect(counter.load()).assertEqual(6);
       expect(db.queryCount.load()).assertEqual(5);
       expect(db.updateCount.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest1200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -774,7 +846,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignReadWriteCacheTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignReadWriteCacheTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new TransactionData();
       const counter = new AtomicInt(0);
@@ -787,6 +860,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       expect(counter.load()).assertEqual(5);
       expect(data.balance).assertEqual(1000);
       expect(data.committed).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest1300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -797,7 +875,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignReadWriteCacheTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignReadWriteCacheTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const pool = new ConnectionPoolData();
       const counter = new AtomicInt(0);
@@ -811,6 +890,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       expect(pool.acquired).assertEqual(5);
       expect(pool.released).assertEqual(5);
       expect(pool.connections.length).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest1400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -821,7 +905,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignReadWriteCacheTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignReadWriteCacheTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const data = new BatchDbData();
       const counter = new AtomicInt(0);
@@ -838,6 +923,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       expect(data.records.length).assertEqual(10);
       expect(data.readCount.load()).assertEqual(3);
       expect(data.writeCount.load()).assertEqual(2);
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest1500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -848,7 +938,8 @@ export default function LockDesignReadWriteCacheTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignReadWriteCacheTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignReadWriteCacheTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const data = new IndexData();
       const counter = new AtomicInt(0);
@@ -865,6 +956,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       expect(data.queryCount.load()).assertEqual(5);
       expect(data.rebuildCount.load()).assertEqual(1);
       expect(data.index.length).assertEqual(6);
+      } catch (error) {
+        console.error(`LockDesignReadWriteCacheTest1600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

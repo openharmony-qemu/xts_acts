@@ -153,13 +153,19 @@ export default function WriteLockUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('WriteLockUnlockTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('WriteLockUnlockTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const counter = new UnlockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
       let p2 = taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
       let p3 = taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
       await Promise.all([p1, p2, p3]);
       expect(counter.value).assertEqual(3);
+      } catch (error) {
+        console.error(`WriteLockUnlockTest0400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -170,7 +176,8 @@ export default function WriteLockUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('WriteLockUnlockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('WriteLockUnlockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const counter = new UnlockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
       await p1;
@@ -178,6 +185,11 @@ export default function WriteLockUnlockTest(): void {
       let p3 = taskpool.execute(new taskpool.Task(unlockThenWriteTask, counter));
       await Promise.all([p2, p3]);
       expect(counter.value).assertEqual(21);
+      } catch (error) {
+        console.error(`WriteLockUnlockTest0500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // ========== RETURN VALUE TESTS (supplement) ==========
@@ -215,7 +227,8 @@ export default function WriteLockUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('WriteLockUnlockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('WriteLockUnlockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const heldFlag = new AtomicInt(0);
       const holderUnlockOk = new AtomicInt(-1);
       const caughtA = new AtomicInt(-1);
@@ -253,6 +266,11 @@ export default function WriteLockUnlockTest(): void {
       // Non-holder threads cannot release the same write lock: their unlock attempts throw
       expect(caughtA.load()).assertEqual(1);
       expect(caughtB.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`WriteLockUnlockTest0700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

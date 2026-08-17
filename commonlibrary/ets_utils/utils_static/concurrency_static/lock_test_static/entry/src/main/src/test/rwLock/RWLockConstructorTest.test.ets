@@ -141,13 +141,19 @@ export default function RWLockConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('RWLockConstructorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('RWLockConstructorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(rwlockReadUseTask, rwlock, counter));
       let p2 = taskpool.execute(new taskpool.Task(rwlockReadUseTask, rwlock, counter));
       await Promise.all([p1, p2]);
       expect(counter.load()).assertEqual(2);
+      } catch (error) {
+        console.error(`RWLockConstructorTest0200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // ========== ERROR HANDLING TESTS ==========
@@ -206,11 +212,17 @@ export default function RWLockConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('RWLockConstructorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('RWLockConstructorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(taskPoolConstructTask, counter));
       await p1;
       expect(counter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`RWLockConstructorTest0500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -221,7 +233,8 @@ export default function RWLockConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockConstructorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockConstructorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
       let p2 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
@@ -230,6 +243,11 @@ export default function RWLockConstructorTest(): void {
       let p5 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
       await Promise.all([p1, p2, p3, p4, p5]);
       expect(counter.load()).assertEqual(5);
+      } catch (error) {
+        console.error(`RWLockConstructorTest0600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -240,7 +258,8 @@ export default function RWLockConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockConstructorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockConstructorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
       let p2 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
@@ -264,6 +283,11 @@ export default function RWLockConstructorTest(): void {
       let p20 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
       await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20]);
       expect(counter.load()).assertEqual(20);
+      } catch (error) {
+        console.error(`RWLockConstructorTest0700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -274,7 +298,8 @@ export default function RWLockConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockConstructorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockConstructorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const counter = new RWLockCtorSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(rwlockWriteUseTask, rwlock, counter));
@@ -282,6 +307,11 @@ export default function RWLockConstructorTest(): void {
       let p3 = taskpool.execute(new taskpool.Task(rwlockWriteUseTask, rwlock, counter));
       await Promise.all([p1, p2, p3]);
       expect(counter.value).assertEqual(30);
+      } catch (error) {
+        console.error(`RWLockConstructorTest0800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -292,12 +322,18 @@ export default function RWLockConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockConstructorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockConstructorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(rwlockReadUseTask, rwlock, counter));
       await p1;
       expect(counter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`RWLockConstructorTest0900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -308,7 +344,8 @@ export default function RWLockConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockConstructorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockConstructorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
       let p2 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
@@ -317,6 +354,11 @@ export default function RWLockConstructorTest(): void {
       let p5 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
       await Promise.all([p1, p2, p3, p4, p5]);
       expect(counter.load()).assertEqual(5);
+      } catch (error) {
+        console.error(`RWLockConstructorTest1000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -327,13 +369,19 @@ export default function RWLockConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockConstructorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockConstructorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(lifecycleConstructTask, counter));
       let p2 = taskpool.execute(new taskpool.Task(lifecycleConstructTask, counter));
       let p3 = taskpool.execute(new taskpool.Task(lifecycleConstructTask, counter));
       await Promise.all([p1, p2, p3]);
       expect(counter.load()).assertEqual(3);
+      } catch (error) {
+        console.error(`RWLockConstructorTest1100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -344,7 +392,8 @@ export default function RWLockConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockConstructorTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockConstructorTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       const worker = new EAWorker('rwlockCtorWorker1');
       worker.start();
@@ -354,6 +403,11 @@ export default function RWLockConstructorTest(): void {
         worker.quit();
       }
       expect(counter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`RWLockConstructorTest1200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -364,7 +418,8 @@ export default function RWLockConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockConstructorTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockConstructorTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       const worker = new EAWorker('rwlockCtorWorker2');
       worker.start();
@@ -374,6 +429,11 @@ export default function RWLockConstructorTest(): void {
         worker.quit();
       }
       expect(counter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`RWLockConstructorTest1300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // TC-002 (md INPUT-02/INPUT-03/INPUT-04) is skipped: RWLock.constructor accepts no parameters and
@@ -443,7 +503,8 @@ export default function RWLockConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('RWLockConstructorTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('RWLockConstructorTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       // A newly constructed RWLock starts unlocked, so the first acquisitions succeed immediately,
       // including when the first acquirer runs on another thread.
       const rwlock = new RWLock();
@@ -455,6 +516,11 @@ export default function RWLockConstructorTest(): void {
       let p2 = taskpool.execute(new taskpool.Task(rwlockReadUseTask, rwlock, readCounter));
       await p2;
       expect(readCounter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`RWLockConstructorTest1600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -503,7 +569,8 @@ export default function RWLockConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockConstructorTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockConstructorTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(resourcePressureConstructTask, counter));
       let p2 = taskpool.execute(new taskpool.Task(resourcePressureConstructTask, counter));
@@ -512,6 +579,11 @@ export default function RWLockConstructorTest(): void {
       let p5 = taskpool.execute(new taskpool.Task(resourcePressureConstructTask, counter));
       await Promise.all([p1, p2, p3, p4, p5]);
       expect(counter.load()).assertEqual(5);
+      } catch (error) {
+        console.error(`RWLockConstructorTest1800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -522,7 +594,8 @@ export default function RWLockConstructorTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('RWLockConstructorTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('RWLockConstructorTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       // md TC-013 (Worker thread construction) is approximated with EAWorker because a ThreadWorker test
       // would require a separate worker script file, which is outside the allowed modification scope.
       const counter = new AtomicInt(0);
@@ -536,6 +609,11 @@ export default function RWLockConstructorTest(): void {
         worker.quit();
       }
       expect(counter.load()).assertEqual(3);
+      } catch (error) {
+        console.error(`RWLockConstructorTest1900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

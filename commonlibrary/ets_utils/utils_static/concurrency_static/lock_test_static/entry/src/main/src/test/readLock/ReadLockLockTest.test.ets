@@ -224,13 +224,19 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('ReadLockLockTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ReadLockLockTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const counter = new ReadLockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(readLockWriteAdd100Task, counter));
       let p2 = taskpool.execute(new taskpool.Task(readLockSharedIncrementTask, counter));
       await Promise.all([p1, p2]);
       // Read and write lock exclude each other, so both increments are serialized: 100 + 1.
       expect(counter.value).assertEqual(101);
+      } catch (error) {
+        console.error(`ReadLockLockTest0200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // ========== ERROR HANDLING TESTS ==========
@@ -289,7 +295,8 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('ReadLockLockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ReadLockLockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       const worker = new EAWorker('readLockLockEA');
       worker.start();
@@ -305,6 +312,11 @@ export default function ReadLockLockTest(): void {
         worker.quit();
       }
       expect(counter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`ReadLockLockTest0500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // ========== CONCURRENCY TESTS - BASIC ==========
@@ -317,7 +329,8 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('ReadLockLockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ReadLockLockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const atomicCounter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
       let p2 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
@@ -326,6 +339,11 @@ export default function ReadLockLockTest(): void {
       let p5 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
       await Promise.all([p1, p2, p3, p4, p5]);
       expect(atomicCounter.load()).assertEqual(5);
+      } catch (error) {
+        console.error(`ReadLockLockTest0600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -336,13 +354,19 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('ReadLockLockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ReadLockLockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const atomicCounter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
       let p2 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
       let p3 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
       await Promise.all([p1, p2, p3]);
       expect(atomicCounter.load()).assertEqual(3);
+      } catch (error) {
+        console.error(`ReadLockLockTest0700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -353,7 +377,8 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('ReadLockLockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ReadLockLockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const atomicCounter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
       let p2 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
@@ -367,6 +392,11 @@ export default function ReadLockLockTest(): void {
       let p10 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
       await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
       expect(atomicCounter.load()).assertEqual(10);
+      } catch (error) {
+        console.error(`ReadLockLockTest0800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // ========== CONCURRENCY TESTS - READ-WRITE MUTEX ==========
@@ -379,7 +409,8 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('ReadLockLockTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ReadLockLockTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const counter = new ReadLockSharedCounter();
       const holderReady = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(readLockSet100BlockingTask, counter, holderReady));
@@ -394,6 +425,11 @@ export default function ReadLockLockTest(): void {
       await Promise.all([p1, p2]);
       // The writer was blocked until the reader released the read lock: final value is 100 + 100.
       expect(counter.value).assertEqual(200);
+      } catch (error) {
+        console.error(`ReadLockLockTest0900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -404,7 +440,8 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('ReadLockLockTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ReadLockLockTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const counter = new ReadLockSharedCounter();
       await taskpool.execute(new taskpool.Task(readLockWriteAdd100Task, counter)); // value = 100
       const wl = gReadLockLockRWLock.writeLock();
@@ -424,6 +461,11 @@ export default function ReadLockLockTest(): void {
       await p;
       // The reader proceeded only after the write lock was released.
       expect(counter.value).assertEqual(101);
+      } catch (error) {
+        console.error(`ReadLockLockTest1000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -434,13 +476,19 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('ReadLockLockTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ReadLockLockTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const atomicCounter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(readLockDowngradeTask, atomicCounter));
       let p2 = taskpool.execute(new taskpool.Task(readLockDowngradeTask, atomicCounter));
       let p3 = taskpool.execute(new taskpool.Task(readLockDowngradeTask, atomicCounter));
       await Promise.all([p1, p2, p3]);
       expect(atomicCounter.load()).assertEqual(6);
+      } catch (error) {
+        console.error(`ReadLockLockTest1100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // ========== CONCURRENCY TESTS - LOCK RELEASE ==========
@@ -453,11 +501,17 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('ReadLockLockTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ReadLockLockTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const counter = new ReadLockSharedCounter();
       await taskpool.execute(new taskpool.Task(readLockSet100Task, counter));
       await taskpool.execute(new taskpool.Task(readLockWriteAdd100Task, counter));
       expect(counter.value).assertEqual(200);
+      } catch (error) {
+        console.error(`ReadLockLockTest1200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -468,7 +522,8 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('ReadLockLockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ReadLockLockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const counter = new ReadLockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(readLockSharedIncrementTask, counter));
       let p2 = taskpool.execute(new taskpool.Task(readLockSharedIncrementTask, counter));
@@ -480,6 +535,11 @@ export default function ReadLockLockTest(): void {
       // Read locks allow concurrent access, so read-modify-write may lose updates.
       // Write lock adds 100 after all readers finish; at least 1 reader succeeded.
       expect(counter.value).assertLargerOrEqual(101);
+      } catch (error) {
+        console.error(`ReadLockLockTest1300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // ========== CONCURRENCY TESTS - REENTRANT ==========
@@ -492,13 +552,19 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('ReadLockLockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ReadLockLockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const atomicCounter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(readLockReentrantTask, atomicCounter));
       let p2 = taskpool.execute(new taskpool.Task(readLockReentrantTask, atomicCounter));
       let p3 = taskpool.execute(new taskpool.Task(readLockReentrantTask, atomicCounter));
       await Promise.all([p1, p2, p3]);
       expect(atomicCounter.load()).assertEqual(3);
+      } catch (error) {
+        console.error(`ReadLockLockTest1400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // ========== CONCURRENCY TESTS - NESTED AND COMBO ==========
@@ -511,10 +577,16 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('ReadLockLockTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ReadLockLockTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const counter = new ReadLockSharedCounter();
       await taskpool.execute(new taskpool.Task(readLockBasicTask, counter));
       expect(counter.value).assertEqual(1);
+      } catch (error) {
+        console.error(`ReadLockLockTest1500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -525,7 +597,8 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('ReadLockLockTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ReadLockLockTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       const worker = new EAWorker('readLockEAWkr');
       worker.start();
@@ -541,6 +614,11 @@ export default function ReadLockLockTest(): void {
         worker.quit();
       }
       expect(counter.load()).assertEqual(11);
+      } catch (error) {
+        console.error(`ReadLockLockTest1600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -551,13 +629,19 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('ReadLockLockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ReadLockLockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const atomicCounter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(readLockMixedTask, atomicCounter));
       let p2 = taskpool.execute(new taskpool.Task(readLockMixedTask, atomicCounter));
       let p3 = taskpool.execute(new taskpool.Task(readLockMixedTask, atomicCounter));
       await Promise.all([p1, p2, p3]);
       expect(atomicCounter.load()).assertEqual(3);
+      } catch (error) {
+        console.error(`ReadLockLockTest1700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -568,7 +652,8 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('ReadLockLockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ReadLockLockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlockA = new RWLock();
       const rwlockB = new RWLock();
       const atomicA = new AtomicInt(0);
@@ -582,6 +667,11 @@ export default function ReadLockLockTest(): void {
       await Promise.all([p1, p2, p3, p4, p5, p6]);
       expect(atomicA.load()).assertEqual(3);
       expect(atomicB.load()).assertEqual(3);
+      } catch (error) {
+        console.error(`ReadLockLockTest1800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // ========== CONCURRENCY TESTS - PERFORMANCE STRESS ==========
@@ -594,7 +684,8 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('ReadLockLockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ReadLockLockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const atomicCounter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
       let p2 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
@@ -619,6 +710,11 @@ export default function ReadLockLockTest(): void {
       await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10,
         p11, p12, p13, p14, p15, p16, p17, p18, p19, p20]);
       expect(atomicCounter.load()).assertEqual(20);
+      } catch (error) {
+        console.error(`ReadLockLockTest1900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -629,7 +725,8 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('ReadLockLockTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ReadLockLockTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const atomicCounter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter));
       let p2 = taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter));
@@ -643,6 +740,11 @@ export default function ReadLockLockTest(): void {
       let p10 = taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter));
       await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
       expect(atomicCounter.load()).assertEqual(10);
+      } catch (error) {
+        console.error(`ReadLockLockTest2000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // ========== ERROR HANDLING TESTS - EXTENDED ==========
@@ -698,7 +800,8 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('ReadLockLockTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ReadLockLockTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const rl = rwlock.readLock();
       // No destroy API: simulate an abnormal lock state by unlocking an unheld read lock (throws)
@@ -724,6 +827,11 @@ export default function ReadLockLockTest(): void {
         reacquired = false;
       }
       expect(reacquired).assertTrue();
+      } catch (error) {
+        console.error(`ReadLockLockTest2300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // ========== CONCURRENCY TESTS - RELEASE COUNT AND REENTRANCY ==========
@@ -736,7 +844,8 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('ReadLockLockTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ReadLockLockTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const rl = rwlock.readLock();
       const writerStart = new AtomicInt(0);
@@ -761,6 +870,11 @@ export default function ReadLockLockTest(): void {
       rl.unlock();
       await writerP;
       expect(writerAcquired.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`ReadLockLockTest2400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -810,7 +924,8 @@ export default function ReadLockLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('ReadLockLockTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ReadLockLockTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const rl = rwlock.readLock();
       // Outer holder (main thread) keeps the read lock
@@ -821,6 +936,11 @@ export default function ReadLockLockTest(): void {
       await p1;
       expect(counter.load()).assertEqual(1);
       rl.unlock();
+      } catch (error) {
+        console.error(`ReadLockLockTest2600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**

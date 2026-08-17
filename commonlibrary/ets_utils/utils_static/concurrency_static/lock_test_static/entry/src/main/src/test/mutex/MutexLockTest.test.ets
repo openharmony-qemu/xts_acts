@@ -278,11 +278,17 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexLockTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexLockTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(reentrantLockTask, counter));
       await p1;
       expect(counter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`MutexLockTest0100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -293,7 +299,8 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexLockTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexLockTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       let exceptionCaught: boolean = false;
@@ -308,6 +315,11 @@ export default function MutexLockTest(): void {
       const counter2 = new MutexLockSharedCounter();
       await taskpool.execute(new taskpool.Task(multiThreadIncTask, freshMutex, counter2));
       expect(counter2.value).assertEqual(1);
+      } catch (error) {
+        console.error(`MutexLockTest0200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -318,11 +330,17 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('MutexLockTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MutexLockTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(taskPoolLockTask, counter));
       await p1;
       expect(counter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`MutexLockTest0300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -352,7 +370,8 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('MutexLockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MutexLockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new MutexLockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
@@ -362,6 +381,11 @@ export default function MutexLockTest(): void {
       let p5 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
       await Promise.all([p1, p2, p3, p4, p5]);
       expect(counter.value).assertEqual(5);
+      } catch (error) {
+        console.error(`MutexLockTest0500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -372,7 +396,8 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('MutexLockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MutexLockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const flags = new MutexLockSharedFlags();
       mutex.lock(); // main thread holds the lock first
@@ -392,6 +417,11 @@ export default function MutexLockTest(): void {
       // The waiter can only acquire the lock after the holder releases it.
       expect(flags.taskBAcquired).assertTrue();
       expect(flags.taskBCompleted).assertTrue();
+      } catch (error) {
+        console.error(`MutexLockTest0600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -402,7 +432,8 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('MutexLockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MutexLockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new MutexLockSharedCounter();
       await taskpool.execute(new taskpool.Task(seqTaskA, mutex, counter)); // value = 1
@@ -422,6 +453,11 @@ export default function MutexLockTest(): void {
       await p;
       // The blocked task proceeded only after the lock was released.
       expect(counter.value).assertEqual(2);
+      } catch (error) {
+        console.error(`MutexLockTest0700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -432,7 +468,8 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexLockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexLockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex1 = new Mutex();
       const mutex2 = new Mutex();
       const counter1 = new MutexLockSharedCounter();
@@ -446,6 +483,11 @@ export default function MutexLockTest(): void {
       await Promise.all([p1, p2, p3, p4, p5, p6]);
       expect(counter1.value).assertEqual(3);
       expect(counter2.value).assertEqual(3);
+      } catch (error) {
+        console.error(`MutexLockTest0800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -456,7 +498,8 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexLockTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexLockTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new MutexLockFairnessData();
       let p1 = taskpool.execute(new taskpool.Task(fairnessTask, mutex, data, 0));
@@ -473,6 +516,11 @@ export default function MutexLockTest(): void {
         }
       }
       expect(hasAll).assertTrue();
+      } catch (error) {
+        console.error(`MutexLockTest0900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -483,11 +531,17 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexLockTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexLockTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(nestedLockTask, counter));
       await p1;
       expect(counter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`MutexLockTest1000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -530,7 +584,8 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexLockTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexLockTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new MutexLockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
@@ -545,6 +600,11 @@ export default function MutexLockTest(): void {
       let p10 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
       await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
       expect(counter.value).assertEqual(10);
+      } catch (error) {
+        console.error(`MutexLockTest1200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -555,13 +615,19 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('MutexLockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('MutexLockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       await taskpool.execute(new taskpool.Task(longHoldTask, mutex, counter));
       await taskpool.execute(new taskpool.Task(waitAfterLongHoldTask, mutex, counter));
       // The waiting task only completes after the long-held lock is released.
       expect(counter.load()).assertEqual(2);
+      } catch (error) {
+        console.error(`MutexLockTest1300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -572,7 +638,8 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('MutexLockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MutexLockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new MutexLockSharedCounter();
       try {
@@ -584,6 +651,11 @@ export default function MutexLockTest(): void {
       // Verify lock is usable after exception
       await taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
       expect(counter.value).assertEqual(2);
+      } catch (error) {
+        console.error(`MutexLockTest1400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -619,7 +691,8 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexLockTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexLockTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       const worker = new EAWorker('mutexLockEA1');
       worker.start();
@@ -635,6 +708,11 @@ export default function MutexLockTest(): void {
         worker.quit();
       }
       expect(counter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`MutexLockTest1600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -645,7 +723,8 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexLockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexLockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new MutexLockSharedCounter();
       const worker1 = new EAWorker('mutexLockEA2');
@@ -670,6 +749,11 @@ export default function MutexLockTest(): void {
         worker3.quit();
       }
       expect(counter.value).assertEqual(3);
+      } catch (error) {
+        console.error(`MutexLockTest1700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -680,7 +764,8 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('MutexLockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('MutexLockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new MutexLockSharedCounter();
       const worker = new EAWorker('mutexLockEA5');
@@ -701,6 +786,11 @@ export default function MutexLockTest(): void {
         worker.quit();
       }
       expect(counter.value).assertEqual(3);
+      } catch (error) {
+        console.error(`MutexLockTest1800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -732,7 +822,8 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexLockTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexLockTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new MutexLockBlockData();
       mutex.lock(); // main thread holds the lock first
@@ -751,6 +842,11 @@ export default function MutexLockTest(): void {
       await p;
       // The waiter can only enter the critical section after the lock is released.
       expect(data.bAcquired).assertTrue();
+      } catch (error) {
+        console.error(`MutexLockTest2000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -780,7 +876,8 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexLockTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexLockTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const firstLock = new AtomicInt(0);
       const secondLock = new AtomicInt(0);
@@ -808,6 +905,11 @@ export default function MutexLockTest(): void {
       }
       await p;
       expect(secondLock.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`MutexLockTest2200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -818,7 +920,8 @@ export default function MutexLockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('MutexLockTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('MutexLockTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex1 = new Mutex();
       const mutex2 = new Mutex();
       const flags = new MutexLockDeadlockFlags();
@@ -852,6 +955,11 @@ export default function MutexLockTest(): void {
       await Promise.all([pa, pb]);
       // After the deadlock is broken, both tasks complete their critical sections.
       expect(counter.load()).assertEqual(2);
+      } catch (error) {
+        console.error(`MutexLockTest2300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

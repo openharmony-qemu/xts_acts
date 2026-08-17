@@ -254,7 +254,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignDistributedLockProcessTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignDistributedLockProcessTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new SharedLockData();
       const counter = new AtomicInt(0);
@@ -266,6 +267,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
       expect(data.value).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -276,7 +282,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignDistributedLockProcessTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignDistributedLockProcessTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new ContentionData();
       const counter = new AtomicInt(0);
@@ -290,6 +297,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       expect(data.counter).assertEqual(0);
       // Mutual exclusion oracle: maxSeen stays 1 only if the mutex serializes every cycle.
       expect(data.maxSeen).assertEqual(1);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -300,7 +312,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignDistributedLockProcessTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignDistributedLockProcessTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       let t1 = taskpool.execute(new taskpool.Task(lockTimeoutTask, mutex, counter));
@@ -310,6 +323,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       let t5 = taskpool.execute(new taskpool.Task(lockTimeoutTask, mutex, counter));
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -320,7 +338,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignDistributedLockProcessTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignDistributedLockProcessTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new ProcessRetryData();
       const counter = new AtomicInt(0);
@@ -331,6 +350,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       expect(counter.load()).assertEqual(3);
       expect(data.success).assertEqual(3);
       expect(data.attempts).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
     /**
      * @tc.name    LockDesignDistributedLockProcessTest0500
@@ -340,7 +364,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignDistributedLockProcessTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignDistributedLockProcessTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new TimeoutLockData();
       const counter = new AtomicInt(0);
@@ -352,6 +377,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -362,7 +392,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignDistributedLockProcessTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignDistributedLockProcessTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new RetryLockData();
       const counter = new AtomicInt(0);
@@ -375,6 +406,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       expect(counter.load()).assertEqual(5);
       expect(data.success).assertEqual(5);
       expect(data.attempts).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -385,7 +421,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignDistributedLockProcessTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignDistributedLockProcessTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new DynamicTimeoutData();
       const counter = new AtomicInt(0);
@@ -399,6 +436,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       expect(data.completed).assertEqual(5);
       // The 4th and 5th serialized tasks each double the timeout field: 100 -> 200 -> 400.
       expect(data.timeout).assertEqual(400);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -409,7 +451,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignDistributedLockProcessTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignDistributedLockProcessTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new RetryLimitData();
       const counter = new AtomicInt(0);
@@ -423,6 +466,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       // Serialized by the mutex: the first 3 tasks complete, the remaining 2 abort.
       expect(data.completed).assertEqual(3);
       expect(data.aborted).assertEqual(2);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -433,7 +481,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignDistributedLockProcessTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignDistributedLockProcessTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const data = new LockPriorityData();
       const counter = new AtomicInt(0);
@@ -448,6 +497,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       expect(counter.load()).assertEqual(7);
       expect(data.readCount.load()).assertEqual(5);
       expect(data.writeCount).assertEqual(2);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -458,7 +512,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignDistributedLockProcessTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignDistributedLockProcessTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new HighPriorityData();
       const counter = new AtomicInt(0);
@@ -470,6 +525,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest1000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -480,7 +540,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignDistributedLockProcessTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignDistributedLockProcessTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new LowPriorityData();
       const counter = new AtomicInt(0);
@@ -492,6 +553,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest1100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -502,7 +568,8 @@ export default function LockDesignDistributedLockProcessTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignDistributedLockProcessTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignDistributedLockProcessTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new DynamicPriorityData();
       const counter = new AtomicInt(0);
@@ -516,6 +583,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       expect(data.completed).assertEqual(5);
       // The last 2 serialized tasks each increment the priority field: 5 -> 6 -> 7.
       expect(data.priority).assertEqual(7);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest1200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

@@ -14,7 +14,7 @@ export class Event {
     });
   }
 
-  public Fire(val: boolean = true) {
+  public Fire(val: boolean = true): void {
     this.resolveFn!(val);
   }
 

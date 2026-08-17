@@ -377,7 +377,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignSpecialBusinessTransactionTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignSpecialBusinessTransactionTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const state = new TransactionState();
       const counter = new AtomicInt(0);
@@ -388,6 +389,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(counter.load()).assertEqual(3);
       expect(state.balance).assertEqual(1000);
       expect(state.committed).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest0100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -398,7 +404,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignSpecialBusinessTransactionTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignSpecialBusinessTransactionTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const state = new RollbackState();
       const counter = new AtomicInt(0);
@@ -409,6 +416,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(counter.load()).assertEqual(3);
       expect(state.value).assertEqual(100);
       expect(state.rollbackCount).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest0200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -419,7 +431,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignSpecialBusinessTransactionTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignSpecialBusinessTransactionTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const state = new NestedTxState();
       const counter = new AtomicInt(0);
@@ -431,6 +444,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(counter.load()).assertEqual(4);
       expect(state.outerValue).assertEqual(4);
       expect(state.innerValue).assertEqual(4);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest0300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -441,7 +459,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignSpecialBusinessTransactionTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignSpecialBusinessTransactionTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const state = new IsolationState();
       const counter = new AtomicInt(0);
@@ -455,6 +474,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(state.data).assertEqual(5);
       expect(state.dirtyRead).assertFalse();
       expect(state.completed).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest0400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
     /**
      * @tc.name    LockDesignSpecialBusinessTransactionTest0500
@@ -464,7 +488,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignSpecialBusinessTransactionTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignSpecialBusinessTransactionTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new BatchData();
       const counter = new AtomicInt(0);
@@ -474,6 +499,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       await Promise.all([t1, t2, t3]);
       expect(counter.load()).assertEqual(3);
       expect(data.processed).assertEqual(30);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest0500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -484,7 +514,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignSpecialBusinessTransactionTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignSpecialBusinessTransactionTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new BatchSplitData();
       const counter = new AtomicInt(0);
@@ -496,6 +527,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(counter.load()).assertEqual(4);
       expect(data.batches.length).assertEqual(4);
       expect(data.totalProcessed).assertEqual(20);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest0600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -506,7 +542,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignSpecialBusinessTransactionTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignSpecialBusinessTransactionTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new BatchInterruptData();
       const counter = new AtomicInt(0);
@@ -517,6 +554,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(data.processed).assertEqual(4);
       expect(data.interrupted).assertTrue();
       expect(data.resumed).assertTrue();
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest0700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -527,7 +569,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignSpecialBusinessTransactionTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignSpecialBusinessTransactionTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new BatchProgressData();
       const counter = new AtomicInt(0);
@@ -540,6 +583,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
       expect(data.total).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest0800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -550,7 +598,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignSpecialBusinessTransactionTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignSpecialBusinessTransactionTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const data = new StreamData();
       const counter = new AtomicInt(0);
@@ -565,6 +614,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(counter.load()).assertEqual(7);
       expect(data.readCount.load()).assertEqual(5);
       expect(data.writeCount).assertEqual(2);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest0900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -575,7 +629,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignSpecialBusinessTransactionTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignSpecialBusinessTransactionTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const buf = new StreamBuffer();
       const counter = new AtomicInt(0);
@@ -586,6 +641,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(counter.load()).assertEqual(3);
       expect(buf.buffer.length).assertEqual(15);
       expect(buf.flushed).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest1000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -596,7 +656,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignSpecialBusinessTransactionTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignSpecialBusinessTransactionTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const cp = new StreamCheckpoint();
       const counter = new AtomicInt(0);
@@ -607,6 +668,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(counter.load()).assertEqual(3);
       expect(cp.offset).assertEqual(30);
       expect(cp.checkpointCount).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest1100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -617,7 +683,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignSpecialBusinessTransactionTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignSpecialBusinessTransactionTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const data = new StreamMultiData();
       const counter = new AtomicInt(0);
@@ -630,6 +697,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(counter.load()).assertEqual(5);
       expect(data.streams.length).assertEqual(5);
       expect(data.processedCount).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest1200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -640,7 +712,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignSpecialBusinessTransactionTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignSpecialBusinessTransactionTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new ScheduledData();
       const counter = new AtomicInt(0);
@@ -650,6 +723,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       await Promise.all([t1, t2, t3]);
       expect(counter.load()).assertEqual(3);
       expect(data.executed).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest1300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -660,7 +738,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignSpecialBusinessTransactionTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignSpecialBusinessTransactionTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new ConcurrentScheduledData();
       const counter = new AtomicInt(0);
@@ -672,6 +751,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest1400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -682,7 +766,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignSpecialBusinessTransactionTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignSpecialBusinessTransactionTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new CancelData();
       const counter = new AtomicInt(0);
@@ -692,6 +777,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(counter.load()).assertEqual(2);
       expect(data.executed).assertEqual(2);
       expect(data.cancelled).assertTrue();
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest1500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -702,7 +792,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignSpecialBusinessTransactionTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignSpecialBusinessTransactionTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new ErrorScheduledData();
       const counter = new AtomicInt(0);
@@ -713,6 +804,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(counter.load()).assertEqual(3);
       expect(data.executed).assertEqual(3);
       expect(data.errorHandled).assertTrue();
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest1600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -723,7 +819,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignSpecialBusinessTransactionTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignSpecialBusinessTransactionTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new EventData();
       const counter = new AtomicInt(0);
@@ -735,6 +832,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       await Promise.all([t1, t2, t3, t4, t5]);
       expect(counter.load()).assertEqual(5);
       expect(data.triggered).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest1700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -745,7 +847,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignSpecialBusinessTransactionTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignSpecialBusinessTransactionTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new EventQueueData();
       const counter = new AtomicInt(0);
@@ -757,6 +860,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(counter.load()).assertEqual(4);
       expect(data.events.length).assertEqual(4);
       expect(data.processed).assertEqual(4);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest1800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -767,7 +875,8 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignSpecialBusinessTransactionTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignSpecialBusinessTransactionTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new EventPriorityData();
       const counter = new AtomicInt(0);
@@ -780,6 +889,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       expect(counter.load()).assertEqual(5);
       expect(data.highEvents).assertEqual(3);
       expect(data.lowEvents).assertEqual(2);
+      } catch (error) {
+        console.error(`LockDesignSpecialBusinessTransactionTest1900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

@@ -266,7 +266,8 @@ export default function LockDesignProducerConsumerTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignProducerConsumerTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignProducerConsumerTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const queue = new ProducerConsumerQueue();
       const counter = new AtomicInt(0);
@@ -287,6 +288,11 @@ export default function LockDesignProducerConsumerTest(): void {
       expect(queue.produced).assertEqual(5);
       expect(queue.consumed).assertLarger(0);
       expect(queue.items.length + queue.consumed).assertEqual(6);
+      } catch (error) {
+        console.error(`LockDesignProducerConsumerTest0100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -297,7 +303,8 @@ export default function LockDesignProducerConsumerTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignProducerConsumerTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignProducerConsumerTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const rb = new RingBuffer();
       const counter = new AtomicInt(0);
@@ -317,6 +324,11 @@ export default function LockDesignProducerConsumerTest(): void {
       expect(rb.writePos).assertEqual(5);
       expect(rb.readPos).assertEqual(5);
       expect(rb.buffer.length).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignProducerConsumerTest0200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -327,7 +339,8 @@ export default function LockDesignProducerConsumerTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignProducerConsumerTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignProducerConsumerTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new MultiQueueData();
       const counter = new AtomicInt(0);
@@ -341,6 +354,11 @@ export default function LockDesignProducerConsumerTest(): void {
       expect(counter.load()).assertEqual(6);
       expect(data.queueA.length).assertEqual(3);
       expect(data.queueB.length).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignProducerConsumerTest0300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -351,7 +369,8 @@ export default function LockDesignProducerConsumerTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignProducerConsumerTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignProducerConsumerTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new PriorityQueueData();
       const counter = new AtomicInt(0);
@@ -364,6 +383,11 @@ export default function LockDesignProducerConsumerTest(): void {
       expect(counter.load()).assertEqual(5);
       expect(data.highItems.length).assertEqual(3);
       expect(data.lowItems.length).assertEqual(2);
+      } catch (error) {
+        console.error(`LockDesignProducerConsumerTest0400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -374,7 +398,8 @@ export default function LockDesignProducerConsumerTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignProducerConsumerTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignProducerConsumerTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new BlockingQueueData();
       const counter = new AtomicInt(0);
@@ -388,6 +413,11 @@ export default function LockDesignProducerConsumerTest(): void {
       expect(data.produced).assertEqual(5);
       expect(data.consumed).assertEqual(5);
       expect(data.items.length).assertEqual(0);
+      } catch (error) {
+        console.error(`LockDesignProducerConsumerTest0500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -398,7 +428,8 @@ export default function LockDesignProducerConsumerTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignProducerConsumerTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignProducerConsumerTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new LockFreeQueueData();
       const counter = new AtomicInt(0);
@@ -416,6 +447,11 @@ export default function LockDesignProducerConsumerTest(): void {
       expect(counter.load()).assertEqual(10);
       expect(data.items.length).assertEqual(10);
       expect(data.counter).assertEqual(10);
+      } catch (error) {
+        console.error(`LockDesignProducerConsumerTest0600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -426,7 +462,8 @@ export default function LockDesignProducerConsumerTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignProducerConsumerTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignProducerConsumerTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new DynamicQueueData();
       const counter = new AtomicInt(0);
@@ -443,6 +480,11 @@ export default function LockDesignProducerConsumerTest(): void {
       expect(data.items.length).assertEqual(8);
       // Capacity doubles from 5 to 10 exactly once when the 6th item is pushed.
       expect(data.capacity).assertEqual(10);
+      } catch (error) {
+        console.error(`LockDesignProducerConsumerTest0700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -453,7 +495,8 @@ export default function LockDesignProducerConsumerTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignProducerConsumerTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignProducerConsumerTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const data = new PersistQueueData();
       const counter = new AtomicInt(0);
@@ -468,6 +511,11 @@ export default function LockDesignProducerConsumerTest(): void {
       await Promise.all([p1, p2, p3, p4, p5, c1, c2, c3]);
       expect(counter.load()).assertEqual(8);
       expect(data.persisted.length).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignProducerConsumerTest0800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

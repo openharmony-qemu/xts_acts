@@ -243,7 +243,8 @@ export default function MutexUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('MutexUnlockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MutexUnlockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       let exceptionCaught: boolean = false;
@@ -257,6 +258,11 @@ export default function MutexUnlockTest(): void {
       // Verify lock is usable after exception
       mutex.lock();
       mutex.unlock();
+      } catch (error) {
+        console.error(`MutexUnlockTest0500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -267,7 +273,8 @@ export default function MutexUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('MutexUnlockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MutexUnlockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
@@ -277,6 +284,11 @@ export default function MutexUnlockTest(): void {
       let p5 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
       await Promise.all([p1, p2, p3, p4, p5]);
       expect(counter.value).assertEqual(5);
+      } catch (error) {
+        console.error(`MutexUnlockTest0600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -287,7 +299,8 @@ export default function MutexUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexUnlockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
@@ -302,6 +315,11 @@ export default function MutexUnlockTest(): void {
       let p10 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
       await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
       expect(counter.value).assertEqual(10);
+      } catch (error) {
+        console.error(`MutexUnlockTest0700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -312,7 +330,8 @@ export default function MutexUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexUnlockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       const worker = new EAWorker('mutexUnlockEAOne');
       worker.start();
@@ -328,6 +347,11 @@ export default function MutexUnlockTest(): void {
         worker.quit();
       }
       expect(counter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`MutexUnlockTest0800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -338,7 +362,8 @@ export default function MutexUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexUnlockTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       const workerOne = new EAWorker('mutexUnlockEATwo');
@@ -360,6 +385,11 @@ export default function MutexUnlockTest(): void {
         workerThree.quit();
       }
       expect(counter.value).assertEqual(3);
+      } catch (error) {
+        console.error(`MutexUnlockTest0900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -370,7 +400,8 @@ export default function MutexUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('MutexUnlockTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('MutexUnlockTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       const worker = new EAWorker('mutexUnlockEAFive');
@@ -391,6 +422,11 @@ export default function MutexUnlockTest(): void {
         worker.quit();
       }
       expect(counter.value).assertEqual(3);
+      } catch (error) {
+        console.error(`MutexUnlockTest1000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -401,7 +437,8 @@ export default function MutexUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('MutexUnlockTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MutexUnlockTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       mutex.lock(); // main thread holds the lock first
@@ -420,6 +457,11 @@ export default function MutexUnlockTest(): void {
       await p;
       // The waiting task proceeded only after the unlock.
       expect(counter.value).assertEqual(1);
+      } catch (error) {
+        console.error(`MutexUnlockTest1100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -451,11 +493,17 @@ export default function MutexUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexUnlockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(sequentialUnlockTask, counter));
       await p1;
       expect(counter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`MutexUnlockTest1300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -466,7 +514,8 @@ export default function MutexUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexUnlockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       await taskpool.execute(new taskpool.Task(earlyReturnTask, mutex, counter));
@@ -474,6 +523,11 @@ export default function MutexUnlockTest(): void {
       // Verify lock was released by early return's finally block
       mutex.lock();
       mutex.unlock();
+      } catch (error) {
+        console.error(`MutexUnlockTest1400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -484,7 +538,8 @@ export default function MutexUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexUnlockTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
       let batch1P1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
@@ -598,6 +653,11 @@ export default function MutexUnlockTest(): void {
       let batch10P10 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
       await Promise.all([batch10P1, batch10P2, batch10P3, batch10P4, batch10P5, batch10P6, batch10P7, batch10P8, batch10P9, batch10P10]);
       expect(counter.value).assertEqual(100);
+      } catch (error) {
+        console.error(`MutexUnlockTest1500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -630,7 +690,8 @@ export default function MutexUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('MutexUnlockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('MutexUnlockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const holderReady = new AtomicInt(0);
@@ -649,6 +710,11 @@ export default function MutexUnlockTest(): void {
       await Promise.all([holderPromise, waiterPromise]);
       expect(waiterObserved.load()).assertEqual(1);
       expect(counter.load()).assertEqual(2);
+      } catch (error) {
+        console.error(`MutexUnlockTest1700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -659,7 +725,8 @@ export default function MutexUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('MutexUnlockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MutexUnlockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const outcome = new AtomicInt(0);
       mutex.lock();
@@ -671,6 +738,11 @@ export default function MutexUnlockTest(): void {
       // The lock is released; the main thread can re-acquire it (no weak assertion).
       mutex.lock();
       mutex.unlock();
+      } catch (error) {
+        console.error(`MutexUnlockTest1800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -681,7 +753,8 @@ export default function MutexUnlockTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('MutexUnlockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('MutexUnlockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       await taskpool.execute(new taskpool.Task(nestedUnlockLevel1Task, mutex, counter));
@@ -690,6 +763,11 @@ export default function MutexUnlockTest(): void {
       // The outermost unlock released the lock; the main thread can re-acquire it.
       mutex.lock();
       mutex.unlock();
+      } catch (error) {
+        console.error(`MutexUnlockTest1900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

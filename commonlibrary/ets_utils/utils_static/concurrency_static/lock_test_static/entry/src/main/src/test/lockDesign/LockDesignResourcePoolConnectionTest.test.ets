@@ -327,7 +327,8 @@ export default function LockDesignResourcePoolConnectionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignResourcePoolConnectionTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignResourcePoolConnectionTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const pool = new ConnectionPool();
       const counter = new AtomicInt(0);
@@ -345,6 +346,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       expect(counter.load()).assertEqual(10);
       expect(pool.activeCount).assertEqual(0);
       expect(pool.connections.length).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignResourcePoolConnectionTest0100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -355,7 +361,8 @@ export default function LockDesignResourcePoolConnectionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignResourcePoolConnectionTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignResourcePoolConnectionTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const pool = new DynamicPool();
       const counter = new AtomicInt(0);
@@ -368,6 +375,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       expect(pool.connections.length).assertEqual(7);
       // Capacity grows 3 -> 5 -> 7, so expansion happens exactly twice.
       expect(pool.expandCount).assertEqual(2);
+      } catch (error) {
+        console.error(`LockDesignResourcePoolConnectionTest0200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -378,7 +390,8 @@ export default function LockDesignResourcePoolConnectionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignResourcePoolConnectionTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignResourcePoolConnectionTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const pool = new TimeoutPool();
       const counter = new AtomicInt(0);
@@ -391,6 +404,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       expect(counter.load()).assertEqual(5);
       expect(pool.acquired).assertEqual(5);
       expect(pool.recycled).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignResourcePoolConnectionTest0300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -401,7 +419,8 @@ export default function LockDesignResourcePoolConnectionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignResourcePoolConnectionTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignResourcePoolConnectionTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const pool = new HealthCheckPool();
       const counter = new AtomicInt(0);
@@ -412,6 +431,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       expect(counter.load()).assertEqual(3);
       expect(pool.healthyCount).assertEqual(3);
       expect(pool.checkCount).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignResourcePoolConnectionTest0400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
     /**
      * @tc.name    LockDesignResourcePoolConnectionTest0500
@@ -421,7 +445,8 @@ export default function LockDesignResourcePoolConnectionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignResourcePoolConnectionTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignResourcePoolConnectionTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const pool = new MemoryPool();
       const counter = new AtomicInt(0);
@@ -436,6 +461,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       expect(pool.freed).assertEqual(2);
       // 5 initial blocks - 3 allocations + 2 frees.
       expect(pool.blocks.length).assertEqual(4);
+      } catch (error) {
+        console.error(`LockDesignResourcePoolConnectionTest0500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -446,7 +476,8 @@ export default function LockDesignResourcePoolConnectionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignResourcePoolConnectionTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignResourcePoolConnectionTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const pool = new FragmentPool();
       const counter = new AtomicInt(0);
@@ -458,6 +489,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       // Defragmentation compacts the 4 used slots to the front.
       expect(pool.usedSlots[3]).assertTrue();
       expect(pool.usedSlots[4]).assertFalse();
+      } catch (error) {
+        console.error(`LockDesignResourcePoolConnectionTest0600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -468,7 +504,8 @@ export default function LockDesignResourcePoolConnectionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignResourcePoolConnectionTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignResourcePoolConnectionTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const pool = new PreallocPool();
       const counter = new AtomicInt(0);
@@ -481,6 +518,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       expect(counter.load()).assertEqual(5);
       expect(pool.blocks.length).assertEqual(5);
       expect(pool.usedCount).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignResourcePoolConnectionTest0700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -491,7 +533,8 @@ export default function LockDesignResourcePoolConnectionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignResourcePoolConnectionTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignResourcePoolConnectionTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const pool = new MonitorPool();
       const counter = new AtomicInt(0);
@@ -505,6 +548,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       expect(pool.totalAlloc).assertEqual(3);
       expect(pool.totalFree).assertEqual(2);
       expect(pool.currentUsage).assertEqual(1);
+      } catch (error) {
+        console.error(`LockDesignResourcePoolConnectionTest0800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -515,7 +563,8 @@ export default function LockDesignResourcePoolConnectionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockDesignResourcePoolConnectionTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockDesignResourcePoolConnectionTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const queue = new TaskQueue();
       const counter = new AtomicInt(0);
@@ -534,6 +583,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       expect(queue.enqueued).assertEqual(5);
       // Conservation: every dequeued task was enqueued, the rest remain queued.
       expect(queue.dequeued + queue.tasks.length).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignResourcePoolConnectionTest0900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -544,7 +598,8 @@ export default function LockDesignResourcePoolConnectionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockDesignResourcePoolConnectionTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockDesignResourcePoolConnectionTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const queue = new PriorityTaskQueue();
       const counter = new AtomicInt(0);
@@ -558,6 +613,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       expect(queue.highTasks.length).assertEqual(3);
       expect(queue.lowTasks.length).assertEqual(2);
       expect(queue.processed).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignResourcePoolConnectionTest1000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -568,7 +628,8 @@ export default function LockDesignResourcePoolConnectionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignResourcePoolConnectionTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignResourcePoolConnectionTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const queue = new RejectQueue();
       const counter = new AtomicInt(0);
@@ -585,6 +646,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       // Serialized by the mutex: capacity 5 accepts the first 5 tasks and rejects the remaining 3.
       expect(queue.accepted).assertEqual(5);
       expect(queue.rejected).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignResourcePoolConnectionTest1100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -595,7 +661,8 @@ export default function LockDesignResourcePoolConnectionTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockDesignResourcePoolConnectionTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockDesignResourcePoolConnectionTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const queue = new TimeoutTaskQueue();
       const counter = new AtomicInt(0);
@@ -610,6 +677,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       expect(counter.load()).assertEqual(6);
       expect(queue.completed).assertEqual(3);
       expect(queue.timedOut).assertEqual(0);
+      } catch (error) {
+        console.error(`LockDesignResourcePoolConnectionTest1200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }
