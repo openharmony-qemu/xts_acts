@@ -38,8 +38,9 @@ struct ComposeListItemV2Page02 {
   build() {
     Column() {
       Scroll() {
-        Column() {
-          Text('ComposeListItemV2 with Button').fontSize(12).fontWeight(FontWeight.Bold)
+        Column({ space: 12 }) {
+
+          Text('ComposeListItemV2 with Button').fontSize(12).fontWeight(FontWeight.Bold).margin({ top: 5 })
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({
               iconStyle: IconTypeV2.NORMAL_ICON,
@@ -54,7 +55,7 @@ struct ComposeListItemV2Page02 {
             })
           })
 
-          Text('ComposeListItemV2 with Description').fontSize(12).fontWeight(FontWeight.Bold)
+          Text('ComposeListItemV2 with Description').fontSize(12).fontWeight(FontWeight.Bold).margin({ top: 5 })
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({
               iconStyle: IconTypeV2.HEAD_SCULPTURE,
@@ -65,7 +66,7 @@ struct ComposeListItemV2Page02 {
             })
           })
 
-          Text('ComposeListItemV2 Complete Example').fontSize(12).fontWeight(FontWeight.Bold)
+          Text('ComposeListItemV2 Complete Example').fontSize(12).fontWeight(FontWeight.Bold).margin({ top: 5 })
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({
               iconStyle: IconTypeV2.PREVIEW,
@@ -87,7 +88,7 @@ struct ComposeListItemV2Page02 {
             })
           })
 
-          Text('ComposeListItemV2 OperateItemV2 Example').fontSize(12).fontWeight(FontWeight.Bold)
+          Text('ComposeListItemV2 OperateItemV2 Example').fontSize(12).fontWeight(FontWeight.Bold).margin({ top: 5 })
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({
               icon: $r('sys.symbol.phone'),
@@ -126,5 +127,6 @@ struct ComposeListItemV2Page02 {
     }
     .width('100%')
     .height('100%')
+    .scrollBar(BarState.Auto)
   }
 }
