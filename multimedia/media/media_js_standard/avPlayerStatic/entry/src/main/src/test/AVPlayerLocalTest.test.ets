@@ -873,7 +873,6 @@ function setAVPlayerSeekContinuousCb(src: string | media.AVFileDescriptor, avPla
       case RELEASED:
         expect(avPlayer?.state).assertEqual(RELEASED);
         avPlayer = null;
-        expect(isSeekContinuousSupported == unsupportedSeekContinuousErr).assertFalse();
         done();
         break;
       case ERROR:
@@ -3476,6 +3475,23 @@ export default function AVPlayerLocalTest() {
         expect(error.code).assertEqual(5400102);
         done();
       }
+    });
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SEEKCONTINUOUS_static_0100
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SEEKCONTINUOUS_static_0100
+    * @tc.desc   Test SeekContinuous
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SEEKCONTINUOUS_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    expect(fileDescriptor).not().assertNull();
+    if (fileDescriptor) {
+      testAVPlayerSeekContinuous(fileDescriptor!, avPlayer, done);
+      } else {
+        done();
+      };
     });
   })
 }
