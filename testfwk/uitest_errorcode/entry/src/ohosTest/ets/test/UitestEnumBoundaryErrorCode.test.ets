@@ -29,9 +29,13 @@ export default function uitestEnumBoundaryErrorCode() {
   describe('UitestEnumBoundaryErrorCode', () => {
     let driver: Driver;
 
-    beforeAll(async () => {
+    beforeAll(async (done: Function) => {
       driver = Driver.create();
-      await driver.delayMs(1000);
+      try {
+        await driver.delayMs(1000);
+      } catch (error) {
+      }
+      done()
     });
 
     /**
@@ -359,10 +363,10 @@ export default function uitestEnumBoundaryErrorCode() {
     it('testUiWindowResizeDirectionNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testUiWindowResizeDirectionNegative start`);
       let driver = Driver.create()
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(1000)
-      let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'})
       try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(1000)
+        let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'})
         await window.resize(100, 100, -1 as ResizeDirection);
         expect().assertFail();
       } catch (error) {
