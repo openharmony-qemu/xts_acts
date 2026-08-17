@@ -79,5 +79,50 @@ LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog003, Function | MediumTest |
     g_watchDogfunc = IoTWatchDogDisable;
 };
 
+/**
+ * @tc.name   testIotWatchDog004
+ * @tc.number SUB_UTILS_WIFIIOT_API_6300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog004, Function | MediumTest | Level1)
+{
+    void (*watchDogFunc)(void) = IoTWatchDogEnable;
+    TEST_ASSERT_TRUE(watchDogFunc != NULL);
+    watchDogFunc();
+};
+
+/**
+ * @tc.name   testIotWatchDog005
+ * @tc.number SUB_UTILS_WIFIIOT_API_6400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog005, Function | MediumTest | Level1)
+{
+    void (*watchDogFunc)(void) = IoTWatchDogKick;
+    TEST_ASSERT_TRUE(watchDogFunc != NULL);
+    watchDogFunc();
+};
+
+/**
+ * @tc.name   testIotWatchDog006
+ * @tc.number SUB_UTILS_WIFIIOT_API_6500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog006, Function | MediumTest | Level1)
+{
+    void (*watchDogFunc)(void) = IoTWatchDogDisable;
+    TEST_ASSERT_TRUE(watchDogFunc != NULL);
+    watchDogFunc();
+};
+
 RUN_TEST_SUITE(IotWatchDogTestSuite);
 
