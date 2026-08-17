@@ -1,5 +1,9 @@
 {
   "src": [
-    "pages/webViewContJavaScriptError"
+       "pages/WebViewContJavaScriptError",
+ 	     "pages/WebViewContCreatePdfAndOthersError",
+ 	     "pages/WebViewEventResultConstructor",
+ 	     "pages/WebViewTextSelection",
+ 	     "pages/WebViewWebConstructor"
   ]
 }
