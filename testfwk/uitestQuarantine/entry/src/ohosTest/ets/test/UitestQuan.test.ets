@@ -104,7 +104,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDragBetweenDefault
-     * @tc.number uiTest_20002
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_FUNCTION_0001
      * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -131,7 +131,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDragBetweenSpeed
-     * @tc.number uiTest_20003
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_FUNCTION_0002
      * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -158,7 +158,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDragBetweenDuring
-     * @tc.number uiTest_20004
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_FUNCTION_0003
      * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -185,7 +185,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDragBetweenSpeedNull
-     * @tc.number uiTest_20005
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_FUNCTION_0004
      * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -212,7 +212,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDragBetweenSpeedUndefined
-     * @tc.number uiTest_20006
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_FUNCTION_0005
      * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -239,7 +239,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDragBetweenDuringNull
-     * @tc.number uiTest_20007
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_FUNCTION_0006
      * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -266,7 +266,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDragBetweenDuringUndefined
-     * @tc.number uiTest_20008
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_FUNCTION_0007
      * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -293,7 +293,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testNewMouseDragDefault
-     * @tc.number uiTest_20009
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0001
      * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -321,7 +321,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testNewMouseDragSpeed
-     * @tc.number uiTest_20010
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0002
      * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -349,7 +349,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testNewMouseDragSpeed
-     * @tc.number uiTest_20011
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0003
      * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -377,7 +377,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testNewMouseDragSpeedUndefined
-     * @tc.number uiTest_20012
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0004
      * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -405,7 +405,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testNewMouseDragDuring
-     * @tc.number uiTest_20013
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0005
      * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -433,7 +433,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testNewMouseDragDuringNull
-     * @tc.number uiTest_20014
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0006
      * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -461,7 +461,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testNewMouseDragDuringUndefined
-     * @tc.number uiTest_20015
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0007
      * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -489,7 +489,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testPressHomeWithId
-     * @tc.number uiTest_20021
+     * @tc.number SUB_testfwk_UITEST_PRESSHOME_FUNCTION_0001
      * @tc.desc   pressHome test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -525,7 +525,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testScrollSearchHorizontal
-     * @tc.number UiTest_API16_018
+     * @tc.number SUB_testfwk_UITEST_SCROLLSEARCH_FUNCTION_0001
      * @tc.desc   scroll horizontally on this UiComponent to find matched UiComponent.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -587,7 +587,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testMouseDrag
-     * @tc.number uiTest_11003
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0008
      * @tc.desc   drag on the screen between the specified points by mouse.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -614,7 +614,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testMouseDragDefault
-     * @tc.number uiTest_11013
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0009
      * @tc.desc   drag on the screen between the specified points by mouse.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -641,7 +641,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testMouseDragSpeedNull
-     * @tc.number uiTest_11023
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0010
      * @tc.desc   drag on the screen between the specified points by mouse.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -668,7 +668,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testMouseDragSpeedUndefined
-     * @tc.number uiTest_11033
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0011
      * @tc.desc   drag on the screen between the specified points by mouse.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -714,7 +714,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testFling
-     * @tc.number uiTest_10002
+     * @tc.number SUB_testfwk_UITEST_FLING_FUNCTION_0001
      * @tc.desc   inject fling on the device display.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -777,7 +777,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testTriggerCombineKeys
-     * @tc.number uiTest_9023
+     * @tc.number SUB_testfwk_UITEST_TRIGGERCOMBINEKEYS_FUNCTION_0001
      * @tc.desc   press two or three key combinations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -824,7 +824,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDisplayRotation
-     * @tc.number uiTest_9049
+     * @tc.number SUB_testfwk_UITEST_DISPLAYROTATION_FUNCTION_0001
      * @tc.desc   get the rotation of the device display and set it.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -881,7 +881,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testGetDisplayRotationWithId
-     * @tc.number uiTest_9060
+     * @tc.number SUB_testfwk_UITEST_GETDISPLAYROTATION_FUNCTION_0001
      * @tc.desc   getDisplayRotation test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -942,7 +942,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testPressHome
-     * @tc.number uiTest_9052
+     * @tc.number SUB_testfwk_UITEST_PRESSHOME_FUNCTION_0002
      * @tc.desc   press the home key.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -960,7 +960,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDrag
-     * @tc.number uiTest_9054
+     * @tc.number SUB_testfwk_UITEST_DRAG_FUNCTION_0001
      * @tc.desc   drag on the screen between the specified points.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -985,7 +985,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDragSpeed
-     * @tc.number uiTest_9057
+     * @tc.number SUB_testfwk_UITEST_DRAG_FUNCTION_0002
      * @tc.desc   drag on the screen between the specified points.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1010,7 +1010,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDragSpeedNull
-     * @tc.number uiTest_9055
+     * @tc.number SUB_testfwk_UITEST_DRAG_FUNCTION_0003
      * @tc.desc   drag on the screen between the specified points.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1035,7 +1035,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDragSpeedUndefined
-     * @tc.number uiTest_9056
+     * @tc.number SUB_testfwk_UITEST_DRAG_FUNCTION_0004
      * @tc.desc   drag on the screen between the specified points.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1060,7 +1060,7 @@ export default function UiTest() {
 
     /**
      * @tc.name   testDragTo
-     * @tc.number uiTest_9055
+     * @tc.number SUB_testfwk_UITEST_DRAGTO_FUNCTION_0001
      * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

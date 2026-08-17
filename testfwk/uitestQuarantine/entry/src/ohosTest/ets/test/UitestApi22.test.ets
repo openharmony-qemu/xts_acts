@@ -62,7 +62,7 @@ export default function uiTestApi22Test() {
 
     /**
      * @tc.name   tesIsComponentPresentWhenDragTrue
-     * @tc.number UiTest_API22_001
+     * @tc.number UiTest_API22_0001
      * @tc.desc   isComponentPresentWhenDrag test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

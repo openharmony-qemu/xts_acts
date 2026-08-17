@@ -36,7 +36,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testOnTextMatchPatternNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MATCHPATTERN_001
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MATCHPATTERN_0001
      * @tc.desc   ON.text with MatchPattern value -1 (negative) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -56,7 +56,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testOnDescriptionMatchPatternNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MATCHPATTERN_003
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MATCHPATTERN_0003
      * @tc.desc   ON.description with MatchPattern value -1 (negative) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -76,7 +76,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testOnIdMatchPatternNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MATCHPATTERN_005
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MATCHPATTERN_0005
      * @tc.desc   ON.id with MatchPattern value -1 (negative) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -96,7 +96,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testOnTypeMatchPatternNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MATCHPATTERN_007
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MATCHPATTERN_0007
      * @tc.desc   ON.type with MatchPattern value -1 (negative) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -116,7 +116,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testOnHintMatchPatternNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MATCHPATTERN_009
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MATCHPATTERN_0009
      * @tc.desc   ON.hint with MatchPattern value -1 (negative) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -136,7 +136,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testOnOriginalTextMatchPatternNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MATCHPATTERN_011
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MATCHPATTERN_0011
      * @tc.desc   ON.originalText with MatchPattern value -1 (negative) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -156,7 +156,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testDriverSetDisplayRotationNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_DISPROTATION_001
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_DISPROTATION_0001
      * @tc.desc   Driver.setDisplayRotation with value -1 (negative) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -176,7 +176,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testDriverFlingUiDirectionNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_UIDIRECTION_001
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_UIDIRECTION_0001
      * @tc.desc   Driver.fling with UiDirection value -1 (negative) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -196,7 +196,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testDriverTouchPadMultiFingerSwipeDirectionNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_UIDIRECTION_003
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_UIDIRECTION_0003
      * @tc.desc   Driver.touchPadMultiFingerSwipe with UiDirection value -1 (negative) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -216,7 +216,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testDriverTouchPadMultiFingerSwipeDirectionAboveMax
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_UIDIRECTION_004
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_UIDIRECTION_0004
      * @tc.desc   Driver.touchPadMultiFingerSwipe with UiDirection value 4 (above max 3) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -236,7 +236,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testDriverTouchPadTwoFingersScrollDirectionNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_UIDIRECTION_005
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_UIDIRECTION_0005
      * @tc.desc   Driver.touchPadTwoFingersScroll with UiDirection value -1 (negative) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -257,7 +257,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testDriverTouchPadTwoFingersScrollDirectionAboveMax
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_UIDIRECTION_006
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_UIDIRECTION_0006
      * @tc.desc   Driver.touchPadTwoFingersScroll with UiDirection value 4 (above max 3) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -278,7 +278,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testDriverMouseClickButtonNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MOUSEBUTTON_001
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MOUSEBUTTON_0001
      * @tc.desc   Driver.mouseClick with MouseButton value -1 (negative) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -299,7 +299,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testDriverMouseDoubleClickButtonNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MOUSEBUTTON_003
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MOUSEBUTTON_0003
      * @tc.desc   Driver.mouseDoubleClick with MouseButton value -1 (negative) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -320,7 +320,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testDriverMouseLongClickButtonNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MOUSEBUTTON_005
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_MOUSEBUTTON_0005
      * @tc.desc   Driver.mouseLongClick with MouseButton value -1 (negative) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -341,7 +341,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testUiWindowResizeDirectionNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_RESIZEDIR_001
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_RESIZEDIR_0001
      * @tc.desc   UiWindow.resize with ResizeDirection value -1 (negative) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -365,7 +365,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testObserverOnceWindowChangeTypeNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_WINDOWCHANGE_001
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_WINDOWCHANGE_0001
      * @tc.desc   UIEventObserver.once windowChange with WindowChangeType value -1 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -387,7 +387,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testObserverOnceWindowChangeTypeAboveMax
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_WINDOWCHANGE_002
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_WINDOWCHANGE_0002
      * @tc.desc   UIEventObserver.once windowChange with WindowChangeType value 4 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -409,7 +409,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testObserverOnceComponentEventTypeNegative
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_COMPONENTEVENT_001
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_COMPONENTEVENT_0001
      * @tc.desc   UIEventObserver.once componentEventOccur with ComponentEventType value -1 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -431,7 +431,7 @@ export default function uitestEnumBoundaryErrorCode() {
 
     /**
      * @tc.name   testObserverOnceComponentEventTypeAboveMax
-     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_COMPONENTEVENT_002
+     * @tc.number SUB_testfwk_UITEST_ENUMBOUNDARY_COMPONENTEVENT_0002
      * @tc.desc   UIEventObserver.once componentEventOccur with ComponentEventType value 6 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

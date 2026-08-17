@@ -183,7 +183,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testComponentEventOccurOptionsClickMonitor
-         * @tc.number UiTest_API22_001
+         * @tc.number SUB_testfwk_uitest_Api22_0001
          * @tc.desc   monitor component click.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -231,7 +231,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testComponentEventOccurOptionsLongClickMonitor
-         * @tc.number UiTest_API22_002
+         * @tc.number SUB_testfwk_uitest_Api22_0002
          * @tc.desc   monitor component LongClick.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -275,7 +275,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testComponentEventOccurOptionsWithInClickMonitor
-         * @tc.number UiTest_API22_003
+         * @tc.number SUB_testfwk_uitest_Api22_0003
          * @tc.desc   monitor component click.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -319,7 +319,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testComponentEventOccurOptionsScrollStartMonitor
-         * @tc.number UiTest_API22_004
+         * @tc.number SUB_testfwk_uitest_Api22_0004
          * @tc.desc   monitor component Scroll start.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -367,7 +367,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testComponentEventOccurOptionsScrollEndMonitor
-         * @tc.number UiTest_API22_005
+         * @tc.number SUB_testfwk_uitest_Api22_0005
          * @tc.desc   monitor component Scroll end.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -414,7 +414,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testComponentEventOccurOptionsTextContentMonitor
-         * @tc.number UiTest_API22_006
+         * @tc.number SUB_testfwk_uitest_Api22_0006
          * @tc.desc   monitor component text changed.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -478,7 +478,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testComponentEventOccurOptionsTimeOutClickMonitor
-         * @tc.number UiTest_API22_007
+         * @tc.number SUB_testfwk_uitest_Api22_0007
          * @tc.desc   monitor component click.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -524,7 +524,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   tesIsComponentPresentWhenLongClickTrue
-         * @tc.number UiTest_API22_012
+         * @tc.number SUB_testfwk_uitest_Api22_0012
          * @tc.desc   isComponentPresentWhenLongClick test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -559,7 +559,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   tesIsComponentPresentWhenLongClickFalse
-         * @tc.number UiTest_API22_013
+         * @tc.number SUB_testfwk_uitest_Api22_0013
          * @tc.desc   isComponentPresentWhenLongClick test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -600,7 +600,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   tesIsComponentPresentWhenLongClickDuringNull
-         * @tc.number UiTest_API22_032
+         * @tc.number SUB_testfwk_uitest_Api22_0032
          * @tc.desc   isComponentPresentWhenLongClick test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -635,7 +635,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   tesIsComponentPresentWhenLongClickDuringUndefined
-         * @tc.number UiTest_API22_042
+         * @tc.number SUB_testfwk_uitest_Api22_0042
          * @tc.desc   isComponentPresentWhenLongClick test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -670,7 +670,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   tesIsComponentPresentWhenDragFalse
-         * @tc.number UiTest_API22_015
+         * @tc.number SUB_testfwk_uitest_Api22_0015
          * @tc.desc   isComponentPresentWhenDrag test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -715,7 +715,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   tesIsComponentPresentWhenSwipeTrue
-         * @tc.number UiTest_API22_016
+         * @tc.number SUB_testfwk_uitest_Api22_0016
          * @tc.desc   isComponentPresentWhenSwipe test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -742,7 +742,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   tesIsComponentPresentWhenSwipeFalse
-         * @tc.number UiTest_API22_017
+         * @tc.number SUB_testfwk_uitest_Api22_0017
          * @tc.desc   isComponentPresentWhenSwipe test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -770,7 +770,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   tesIsComponentPresentWhenSwipeDuringNull
-         * @tc.number UiTest_API22_0126
+         * @tc.number SUB_testfwk_uitest_Api22_0126
          * @tc.desc   isComponentPresentWhenSwipe test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -796,7 +796,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   tesIsComponentPresentWhenSwipeDuringUndefined
-         * @tc.number UiTest_API22_0136
+         * @tc.number SUB_testfwk_uitest_Api22_0136
          * @tc.desc   isComponentPresentWhenSwipe test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -822,7 +822,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   tesKnuckleKnockSingle
-         * @tc.number UiTest_API22_018
+         * @tc.number SUB_testfwk_uitest_Api22_0018
          * @tc.desc   knuckleKnock test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -855,7 +855,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   tesKnuckleKnockDouble
-         * @tc.number UiTest_API22_019
+         * @tc.number SUB_testfwk_uitest_Api22_0019
          * @tc.desc   knuckleKnock double click test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -889,7 +889,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   tesKnuckleKnockS
-         * @tc.number UiTest_API22_020
+         * @tc.number SUB_testfwk_uitest_Api22_0020
          * @tc.desc   knuckleKnock test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -959,7 +959,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   teTouchPadTwoFingersScrollVer
-         * @tc.number UiTest_API22_022
+         * @tc.number SUB_testfwk_uitest_Api22_0022
          * @tc.desc   touchPadTwoFingersScroll test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -993,7 +993,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   teTouchPadTwoFingersScrollHor
-         * @tc.number UiTest_API22_023
+         * @tc.number SUB_testfwk_uitest_Api22_0023
          * @tc.desc   touchPadTwoFingersScroll test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1052,7 +1052,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testDriverLongClickAt
-         * @tc.number uiTest_20001
+         * @tc.number SUB_testfwk_uitest_Api20_0001
          * @tc.desc   LongClick on the specified location on the screen, the value of duration is 3000.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1076,7 +1076,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testDriverLongClickAtDefault
-         * @tc.number uiTest_20002
+         * @tc.number SUB_testfwk_uitest_Api20_0002
          * @tc.desc   LongClick on the specified location on the screen, the value of duration is 3000.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1100,7 +1100,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testDriverLongClickAtNull
-         * @tc.number uiTest_20003
+         * @tc.number SUB_testfwk_uitest_Api20_0003
          * @tc.desc   LongClick on the specified location on the screen, the value of duration is 3000.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1124,7 +1124,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testDriverLongClickAtUndefined
-         * @tc.number uiTest_20003
+         * @tc.number SUB_testfwk_uitest_Api20_0003
          * @tc.desc   LongClick on the specified location on the screen, the value of duration is 3000.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1148,7 +1148,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testNewMouseLongClick
-         * @tc.number uiTest_20002
+         * @tc.number SUB_testfwk_uitest_Api20_0002
          * @tc.desc   longClick in the specified location on the screen by mouse, the value of speed and duration are 3000.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1170,7 +1170,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testDriverInputText
-         * @tc.number uiTest_20003
+         * @tc.number SUB_testfwk_uitest_Api20_0003
          * @tc.desc   enter '123',the values of both paste and addition are false
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1203,7 +1203,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testDriverInputText1
-         * @tc.number uiTest_20004
+         * @tc.number SUB_testfwk_uitest_Api20_0004
          * @tc.desc   enter '长贵儿',the values of both paste and addition are false
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1236,7 +1236,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testDriverInputText2
-         * @tc.number uiTest_20005
+         * @tc.number SUB_testfwk_uitest_Api20_0005
          * @tc.desc   enter '123',the values of paste is true,the values of addition is false
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1269,7 +1269,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testDriverInputText3
-         * @tc.number uiTest_20006
+         * @tc.number SUB_testfwk_uitest_Api20_0006
          * @tc.desc   enter '123',the values of paste is false,the values of addition is true
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1302,7 +1302,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testDriverInputText4
-         * @tc.number uiTest_20007
+         * @tc.number SUB_testfwk_uitest_Api20_0007
          * @tc.desc   enter '123',the values of paste is true,the values of addition is true
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1335,7 +1335,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testComponentInputText
-         * @tc.number uiTest_20008
+         * @tc.number SUB_testfwk_uitest_Api20_0008
          * @tc.desc   enter '123',the values of both paste and addition are false
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1383,7 +1383,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testComponentInputText1
-         * @tc.number uiTest_20009
+         * @tc.number SUB_testfwk_uitest_Api20_0009
          * @tc.desc   enter '长贵儿',the values of both paste and addition are false
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1415,7 +1415,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testComponentInputText2
-         * @tc.number uiTest_20010
+         * @tc.number SUB_testfwk_uitest_Api20_0010
          * @tc.desc   enter '123',the values of paste is true,the values of addition is false
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1447,7 +1447,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testComponentInputText3
-         * @tc.number uiTest_20011
+         * @tc.number SUB_testfwk_uitest_Api20_0011
          * @tc.desc   enter '123',the values of paste is false,the values of addition is true
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1478,7 +1478,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testComponentInputText4
-         * @tc.number uiTest_20012
+         * @tc.number SUB_testfwk_uitest_Api20_0012
          * @tc.desc   enter '123',the values of paste is true,the values of addition is true
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1509,7 +1509,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testCrownRotate
-         * @tc.number uiTest_20013
+         * @tc.number SUB_testfwk_uitest_Api20_0013
          * @tc.desc   crownRotate test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1549,7 +1549,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testCrownRotateSpeed
-         * @tc.number uiTest_20014
+         * @tc.number SUB_testfwk_uitest_Api20_0014
          * @tc.desc   crownRotate test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1589,7 +1589,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testCrownRotateSpeedNull
-         * @tc.number uiTest_20024
+         * @tc.number SUB_testfwk_uitest_Api20_0024
          * @tc.desc   crownRotate test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1630,7 +1630,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testBelongingDisplay
-         * @tc.number uiTest_20015
+         * @tc.number SUB_testfwk_uitest_Api20_0015
          * @tc.desc   belongingDisplay test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1657,7 +1657,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testGetDisplayId
-         * @tc.number uiTest_20016
+         * @tc.number SUB_testfwk_uitest_Api20_0016
          * @tc.desc   getDisplayId test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1684,7 +1684,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testPressBackWithId
-         * @tc.number uiTest_20017
+         * @tc.number SUB_testfwk_uitest_Api20_0017
          * @tc.desc   pressBack test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1709,7 +1709,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testTriggerKeyWithId
-         * @tc.number uiTest_20018
+         * @tc.number SUB_testfwk_uitest_Api20_0018
          * @tc.desc   triggerKey test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1736,7 +1736,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testScreenCapWithId
-         * @tc.number uiTest_20019
+         * @tc.number SUB_testfwk_uitest_Api20_0019
          * @tc.desc   screenCap test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1758,7 +1758,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testGetDisplaySizeWithId
-         * @tc.number uiTest_20020
+         * @tc.number SUB_testfwk_uitest_Api20_0020
          * @tc.desc   getDisplaySize test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1779,7 +1779,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testGetDisplayDensityWithId
-         * @tc.number uiTest_20021
+         * @tc.number SUB_testfwk_uitest_Api20_0021
          * @tc.desc   getDisplayDensity test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1801,7 +1801,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testClickAt
-         * @tc.number uiTest_20022
+         * @tc.number SUB_testfwk_uitest_Api20_0022
          * @tc.desc   clickAt test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1824,7 +1824,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testDoubleClickAt
-         * @tc.number uiTest_20023
+         * @tc.number SUB_testfwk_uitest_Api20_0023
          * @tc.desc   doubleClickAt test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1852,7 +1852,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   test_swipeBetween
-         * @tc.number uiTest_20024
+         * @tc.number SUB_testfwk_uitest_Api20_0024
          * @tc.desc   swipeBetween test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1881,7 +1881,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   test_swipeBetweenspeednull
-         * @tc.number uiTest_20025
+         * @tc.number SUB_testfwk_uitest_Api20_0025
          * @tc.desc   swipeBetween test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1910,7 +1910,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   test_swipeBetweenspeedundefined
-         * @tc.number uiTest_20026
+         * @tc.number SUB_testfwk_uitest_Api20_0026
          * @tc.desc   swipeBetween test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1939,7 +1939,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   test_swipeBetweenspeed199
-         * @tc.number uiTest_20027
+         * @tc.number SUB_testfwk_uitest_Api20_0027
          * @tc.desc   swipeBetween test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1968,7 +1968,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   test_swipeBetweenspeed40001
-         * @tc.number uiTest_20028
+         * @tc.number SUB_testfwk_uitest_Api20_0028
          * @tc.desc   swipeBetween test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1997,7 +1997,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   test_swipeBetweenspeed1000
-         * @tc.number uiTest_20029
+         * @tc.number SUB_testfwk_uitest_Api20_0029
          * @tc.desc   swipeBetween test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2026,7 +2026,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testFlingWithId
-         * @tc.number uiTest_20030
+         * @tc.number SUB_testfwk_uitest_Api20_0030
          * @tc.desc   fling test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2080,7 +2080,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testTriggerCombineKeysWithId
-         * @tc.number uiTest_20032
+         * @tc.number SUB_testfwk_uitest_Api20_0032
          * @tc.desc   triggerCombineKeys test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2143,7 +2143,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   test_origin
-         * @tc.number uiTest_20033
+         * @tc.number SUB_testfwk_uitest_Api20_0033
          * @tc.desc   specifies the string value match pattern.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2195,7 +2195,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testWindowAttrWithId
-         * @tc.number uiTest_20034
+         * @tc.number SUB_testfwk_uitest_Api20_0034
          * @tc.desc   find window by WindowFilter and get it's active status.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2216,7 +2216,7 @@ export default function UiTest() {
       
         /**
          * @tc.name   testScreenCaptureWithId
-         * @tc.number uiTest_20035
+         * @tc.number SUB_testfwk_uitest_Api20_0035
          * @tc.desc   capture the specified area of current screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2248,7 +2248,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_touchPadMultiFingerSwipe_Up_Down_3
-         * @tc.number UiTest_API16_001
+         * @tc.number SUB_testfwk_uitest_Api16_0001
          * @tc.desc   Swipe UP or Down with three point.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2288,7 +2288,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_touchPadMultiFingerSwipe_Up_Down_Stay_3
-         * @tc.number UiTest_API16_002
+         * @tc.number SUB_testfwk_uitest_Api16_0002
          * @tc.desc   Swipe Up or Down with three point then  in more task statue
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2327,7 +2327,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_touchPadMultiFingerSwipe_other
-         * @tc.number UiTest_API16_003
+         * @tc.number SUB_testfwk_uitest_Api16_0003
          * @tc.desc   Swipe Left, Swipe with four point
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2356,7 +2356,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_touchPadMultiFingerSwipe_fingers_verification_401
-         * @tc.number UiTest_API16_004
+         * @tc.number SUB_testfwk_uitest_Api16_0004
          * @tc.desc   finger params 401 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2404,7 +2404,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_touchPadMultiFingerSwipe_direction_verification_401
-         * @tc.number UiTest_API16_005
+         * @tc.number SUB_testfwk_uitest_Api16_0005
          * @tc.desc   direction param 401 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2452,7 +2452,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_touchPadMultiFingerSwipe_option_verification_Up
-         * @tc.number UiTest_API16_006
+         * @tc.number SUB_testfwk_uitest_Api16_0006
          * @tc.desc   option param test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2589,7 +2589,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_penClick_function
-         * @tc.number UiTest_API16_07
+         * @tc.number SUB_testfwk_uitest_Api16_0007
          * @tc.desc   penClick function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2625,7 +2625,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_penClick_function_401
-         * @tc.number UiTest_API16_08
+         * @tc.number SUB_testfwk_uitest_Api16_0008
          * @tc.desc   penClick param 401 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2670,7 +2670,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_penLongClick_function
-         * @tc.number UiTest_API16_09
+         * @tc.number SUB_testfwk_uitest_Api16_0009
          * @tc.desc   penLongClick function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2701,7 +2701,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testPenLongClickPressure
-         * @tc.number UiTest_API16_19
+         * @tc.number SUB_testfwk_uitest_Api16_0019
          * @tc.desc   penLongClick function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2732,7 +2732,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testPenLongClickPressureNull
-         * @tc.number UiTest_API16_129
+         * @tc.number SUB_testfwk_uitest_Api16_0129
          * @tc.desc   penLongClick function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2763,7 +2763,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testPenLongClickPressureUndefined
-         * @tc.number UiTest_API16_129
+         * @tc.number SUB_testfwk_uitest_Api16_0129
          * @tc.desc   penLongClick function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2794,7 +2794,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_penLongClick_function_401
-         * @tc.number UiTest_API16_010
+         * @tc.number SUB_testfwk_uitest_Api16_0010
          * @tc.desc   penLongClick param 401 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2839,7 +2839,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_penDoubleClick_function
-         * @tc.number UiTest_API16_011
+         * @tc.number SUB_testfwk_uitest_Api16_0011
          * @tc.desc   penDoubleClick function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2875,7 +2875,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_penDoubleClick_function_401
-         * @tc.number UiTest_API16_012
+         * @tc.number SUB_testfwk_uitest_Api16_0012
          * @tc.desc   penLongClick param 401 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2920,7 +2920,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_penSwipe_function
-         * @tc.number UiTest_API16_013
+         * @tc.number SUB_testfwk_uitest_Api16_0013
          * @tc.desc   penSwipe function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2966,7 +2966,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_penSwipe_function_pressure
-         * @tc.number UiTest_API16_013
+         * @tc.number SUB_testfwk_uitest_Api16_0013
          * @tc.desc   penSwipe function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3002,7 +3002,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_penSwipe_function_speed
-         * @tc.number UiTest_API16_013
+         * @tc.number SUB_testfwk_uitest_Api16_0013
          * @tc.desc   penSwipe function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3038,7 +3038,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testPenSwipeSpeedNull
-         * @tc.number UiTest_API16_033
+         * @tc.number SUB_testfwk_uitest_Api16_0033
          * @tc.desc   penSwipe function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3074,7 +3074,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testPenSwipeSpeedUndefined
-         * @tc.number UiTest_API16_043
+         * @tc.number SUB_testfwk_uitest_Api16_0043
          * @tc.desc   penSwipe function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3110,7 +3110,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testPenSwipeSpeedUndefined
-         * @tc.number UiTest_API16_053
+         * @tc.number SUB_testfwk_uitest_Api16_0053
          * @tc.desc   penSwipe function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3146,7 +3146,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testPenSwipePressureUndefined
-         * @tc.number UiTest_API16_063
+         * @tc.number SUB_testfwk_uitest_Api16_0063
          * @tc.desc   penSwipe function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3182,7 +3182,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_penSwipe_function_401
-         * @tc.number UiTest_API16_014
+         * @tc.number SUB_testfwk_uitest_Api16_0014
          * @tc.desc   penSwipe param 401  test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3247,7 +3247,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_injectPenPointAction_function
-         * @tc.number UiTest_API16_015
+         * @tc.number SUB_testfwk_uitest_Api16_0015
          * @tc.desc   injectPenPointAction function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3298,7 +3298,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testInjectPenPointActionDefault
-         * @tc.number UiTest_API16_025
+         * @tc.number SUB_testfwk_uitest_Api16_0025
          * @tc.desc   injectPenPointAction function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3349,7 +3349,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testInjectPenPointActionSpeed
-         * @tc.number UiTest_API16_035
+         * @tc.number SUB_testfwk_uitest_Api16_0035
          * @tc.desc   injectPenPointAction function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3400,7 +3400,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testInjectPenPointActionSpeedNull
-         * @tc.number UiTest_API16_045
+         * @tc.number SUB_testfwk_uitest_Api16_0045
          * @tc.desc   injectPenPointAction function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3451,7 +3451,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testInjectPenPointActionSpeedUndefined
-         * @tc.number UiTest_API16_045
+         * @tc.number SUB_testfwk_uitest_Api16_0045
          * @tc.desc   injectPenPointAction function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3502,7 +3502,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testInjectPenPointActionPressureNull
-         * @tc.number UiTest_API16_055
+         * @tc.number SUB_testfwk_uitest_Api16_0055
          * @tc.desc   injectPenPointAction function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3553,7 +3553,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testInjectPenPointActionPressureUndefined
-         * @tc.number UiTest_API16_065
+         * @tc.number SUB_testfwk_uitest_Api16_0065
          * @tc.desc   injectPenPointAction function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3604,7 +3604,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_injectPenPointAction_function_401
-         * @tc.number UiTest_API16_016
+         * @tc.number SUB_testfwk_uitest_Api16_0016
          * @tc.desc   injectPenPointAction param 401 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3698,7 +3698,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScrollSearchVertical
-         * @tc.number UiTest_API16_017
+         * @tc.number SUB_testfwk_uitest_Api16_0017
          * @tc.desc   scroll vertically on this UiComponent to find matched UiComponent.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3742,7 +3742,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScrollSearchHorizontal_401
-         * @tc.number UiTest_API16_019
+         * @tc.number SUB_testfwk_uitest_Api16_0019
          * @tc.desc   param 401 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3795,7 +3795,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMatchPatternIcase
-         * @tc.number UiTest_API16_020
+         * @tc.number SUB_testfwk_uitest_Api16_0020
          * @tc.desc   find button component by Regular Expression ignore icase，and doubleClick button by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3824,7 +3824,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMatchPatternRegExp
-         * @tc.number UiTest_API16_021
+         * @tc.number SUB_testfwk_uitest_Api16_0021
          * @tc.desc   find button component by Regular Expression, and longClick button by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3853,7 +3853,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testGetHint
-         * @tc.number UiTest_API16_022
+         * @tc.number SUB_testfwk_uitest_Api16_0022
          * @tc.desc   find button component by Regular Expression, and get Hint of the component.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3948,7 +3948,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testGetHint1
-         * @tc.number UiTest_API16_023
+         * @tc.number SUB_testfwk_uitest_Api16_0023
          * @tc.desc   find button component by Hint.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3985,7 +3985,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseDoubleClick
-         * @tc.number uiTest_11001
+         * @tc.number SUB_testfwk_uitest_Api11_0001
          * @tc.desc   doubleClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4009,7 +4009,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseDoubleClick_1
-         * @tc.number uiTest_11001
+         * @tc.number SUB_testfwk_uitest_Api11_0001
          * @tc.desc   doubleClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4033,7 +4033,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseDoubleClick_2
-         * @tc.number uiTest_11001
+         * @tc.number SUB_testfwk_uitest_Api11_0001
          * @tc.desc   doubleClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4057,7 +4057,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseDoubleClickKey1Null
-         * @tc.number uiTest_11011
+         * @tc.number SUB_testfwk_uitest_Api11_0011
          * @tc.desc   doubleClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4081,7 +4081,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseDoubleClickKey1Undefined
-         * @tc.number uiTest_11021
+         * @tc.number SUB_testfwk_uitest_Api11_0021
          * @tc.desc   doubleClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4105,7 +4105,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseDoubleClickKey2Null
-         * @tc.number uiTest_11031
+         * @tc.number SUB_testfwk_uitest_Api11_0031
          * @tc.desc   doubleClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4129,7 +4129,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseDoubleClickKey2Undefined
-         * @tc.number uiTest_11041
+         * @tc.number SUB_testfwk_uitest_Api11_0041
          * @tc.desc   doubleClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4153,7 +4153,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseLongClick
-         * @tc.number uiTest_11002
+         * @tc.number SUB_testfwk_uitest_Api11_0002
          * @tc.desc   longClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4173,7 +4173,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseLongClick_1
-         * @tc.number uiTest_11002
+         * @tc.number SUB_testfwk_uitest_Api11_0002
          * @tc.desc   longClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4193,7 +4193,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseLongClick_2
-         * @tc.number uiTest_11002
+         * @tc.number SUB_testfwk_uitest_Api11_0002
          * @tc.desc   longClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4213,7 +4213,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseLongClickKey1Null
-         * @tc.number uiTest_11012
+         * @tc.number SUB_testfwk_uitest_Api11_0012
          * @tc.desc   longClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4233,7 +4233,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseLongClickKey1Undefined
-         * @tc.number uiTest_11022
+         * @tc.number SUB_testfwk_uitest_Api11_0022
          * @tc.desc   longClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4253,7 +4253,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseLongClickKey2Null
-         * @tc.number uiTest_11032
+         * @tc.number SUB_testfwk_uitest_Api11_0032
          * @tc.desc   longClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4273,7 +4273,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseLongClickKey2Undefined
-         * @tc.number uiTest_11042
+         * @tc.number SUB_testfwk_uitest_Api11_0042
          * @tc.desc   longClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4294,7 +4294,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseLongClickDuringNull
-         * @tc.number uiTest_11052
+         * @tc.number SUB_testfwk_uitest_Api11_0052
          * @tc.desc   longClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4314,7 +4314,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseLongClickDuringUndefined
-         * @tc.number uiTest_11062
+         * @tc.number SUB_testfwk_uitest_Api11_0062
          * @tc.desc   longClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4334,7 +4334,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseMoveWithTrack
-         * @tc.number uiTest_11004
+         * @tc.number SUB_testfwk_uitest_Api11_0004
          * @tc.desc   swipe on the screen between the specified points with mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4367,7 +4367,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseMoveWithTrackDefault
-         * @tc.number uiTest_11014
+         * @tc.number SUB_testfwk_uitest_Api11_0014
          * @tc.desc   swipe on the screen between the specified points with mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4399,7 +4399,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testDriverInputTextAdapt001
-         * @tc.number uiTest_11005
+         * @tc.number SUB_testfwk_uitest_Api11_0005
          * @tc.desc   inject text on the specified location.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4439,7 +4439,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseScroll
-         * @tc.number uiTest_11006
+         * @tc.number SUB_testfwk_uitest_Api11_0006
          * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4480,7 +4480,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testWindowAttr
-         * @tc.number uiTest_11007
+         * @tc.number SUB_testfwk_uitest_Api11_0007
          * @tc.desc   find window by WindowFilter and get it's active status.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4499,7 +4499,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testDescription
-         * @tc.number uiTest_11008
+         * @tc.number SUB_testfwk_uitest_Api11_0008
          * @tc.desc   find UiComponent by description attribute and get it's description attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4559,7 +4559,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testWithIn
-         * @tc.number uiTest_10001
+         * @tc.number SUB_testfwk_uitest_Api10_0001
          * @tc.desc   find UiComponent inside of the given UiComponent.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4582,7 +4582,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScreenCapture
-         * @tc.number uiTest_10003
+         * @tc.number SUB_testfwk_uitest_Api10_0003
          * @tc.desc   capture the specified area of current screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4599,7 +4599,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScreenCaptureRectNull
-         * @tc.number uiTest_10013
+         * @tc.number SUB_testfwk_uitest_Api10_0013
          * @tc.desc   capture the specified area of current screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4616,7 +4616,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScreenCaptureRectUndefined
-         * @tc.number uiTest_10023
+         * @tc.number SUB_testfwk_uitest_Api10_0023
          * @tc.desc   capture the specified area of current screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4633,7 +4633,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScreenCapture_default
-         * @tc.number uiTest_10003
+         * @tc.number SUB_testfwk_uitest_Api10_0003
          * @tc.desc   capture the specified area of current screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4650,7 +4650,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseClick
-         * @tc.number uiTest_10004
+         * @tc.number SUB_testfwk_uitest_Api10_0004
          * @tc.desc   click in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4683,7 +4683,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseClickKey1Null
-         * @tc.number uiTest_10014
+         * @tc.number SUB_testfwk_uitest_Api10_0014
          * @tc.desc   click in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4707,7 +4707,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseClickKey1Undefined
-         * @tc.number uiTest_10024
+         * @tc.number SUB_testfwk_uitest_Api10_0024
          * @tc.desc   click in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4731,7 +4731,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseClickKey2Null
-         * @tc.number uiTest_10034
+         * @tc.number SUB_testfwk_uitest_Api10_0034
          * @tc.desc   click in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4755,7 +4755,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseClickKey2Undefined
-         * @tc.number uiTest_10044
+         * @tc.number SUB_testfwk_uitest_Api10_0044
          * @tc.desc   click in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4779,7 +4779,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseMoveTo
-         * @tc.number uiTest_10005
+         * @tc.number SUB_testfwk_uitest_Api10_0005
          * @tc.desc   move the mouse cursor to the specified location.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4803,7 +4803,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseScrollAdapt001
-         * @tc.number uiTest_10006
+         * @tc.number SUB_testfwk_uitest_Api10_0006
          * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4846,7 +4846,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseScrollAdapt001Key1Null
-         * @tc.number uiTest_10016
+         * @tc.number SUB_testfwk_uitest_Api10_0016
          * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4869,7 +4869,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseScrollAdapt001Key1Undefined
-         * @tc.number uiTest_10026
+         * @tc.number SUB_testfwk_uitest_Api10_0026
          * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4892,7 +4892,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseScrollAdapt001Key2Null
-         * @tc.number uiTest_10036
+         * @tc.number SUB_testfwk_uitest_Api10_0036
          * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4915,7 +4915,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseScrollAdapt001Key2Undefined
-         * @tc.number uiTest_10046
+         * @tc.number SUB_testfwk_uitest_Api10_0046
          * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4938,7 +4938,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseScrollAdapt001SpeedNull
-         * @tc.number uiTest_10056
+         * @tc.number SUB_testfwk_uitest_Api10_0056
          * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4961,7 +4961,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseScrollAdapt001SpeedUndefined
-         * @tc.number uiTest_10066
+         * @tc.number SUB_testfwk_uitest_Api10_0066
          * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4985,7 +4985,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testInWindow
-         * @tc.number uiTest_10007
+         * @tc.number SUB_testfwk_uitest_Api10_0007
          * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5003,7 +5003,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMonitor1
-         * @tc.number uiTest_10008
+         * @tc.number SUB_testfwk_uitest_Api10_0008
          * @tc.desc   monitor toast appearance.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5093,7 +5093,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testInputText
-         * @tc.number uiTest_9001
+         * @tc.number SUB_testfwk_uitest_Api9_0001
          * @tc.desc   inject text to the target UiComponent
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5141,7 +5141,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testClearText
-         * @tc.number uiTest_9002
+         * @tc.number SUB_testfwk_uitest_Api9_0002
          * @tc.desc   clear text of the target UiComponent
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5181,7 +5181,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testCheckable
-         * @tc.number uiTest_9003
+         * @tc.number SUB_testfwk_uitest_Api9_0003
          * @tc.desc   find UiComponent by checkable attribute and get it's checkable attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5213,7 +5213,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testChecked
-         * @tc.number uiTest_9004
+         * @tc.number SUB_testfwk_uitest_Api9_0004
          * @tc.desc   find UiComponent by checked attribute and get it's checked attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5245,7 +5245,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMatchPattern
-         * @tc.number uiTest_9005
+         * @tc.number SUB_testfwk_uitest_Api9_0005
          * @tc.desc   specifies the string value match pattern.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5275,7 +5275,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testDriverClick
-         * @tc.number uiTest_9006
+         * @tc.number SUB_testfwk_uitest_Api9_0006
          * @tc.desc   click in the specified location on the screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5297,7 +5297,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testDriverDoubleClick
-         * @tc.number uiTest_9007
+         * @tc.number SUB_testfwk_uitest_Api9_0007
          * @tc.desc   doubleClick in the specified location on the screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5323,7 +5323,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testDriverLongClick
-         * @tc.number uiTest_9008
+         * @tc.number SUB_testfwk_uitest_Api9_0008
          * @tc.desc   longClick in the specified location on the screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5345,7 +5345,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testUiComponentClick
-         * @tc.number uiTest_9009
+         * @tc.number SUB_testfwk_uitest_Api9_0009
          * @tc.desc   click this UiComponentClick.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5366,7 +5366,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testUiComponentDoubleClick
-         * @tc.number uiTest_9010
+         * @tc.number SUB_testfwk_uitest_Api9_0010
          * @tc.desc   doubleClick this UiComponentClick.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5391,7 +5391,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testUiComponentLongClick
-         * @tc.number uiTest_9011
+         * @tc.number SUB_testfwk_uitest_Api9_0011
          * @tc.desc   longClick this UiComponentClick.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5412,7 +5412,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testKey
-         * @tc.number uiTest_9012
+         * @tc.number SUB_testfwk_uitest_Api9_0012
          * @tc.desc   find UiComponent by key attribute and get it's key attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5462,7 +5462,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testType
-         * @tc.number uiTest_9013
+         * @tc.number SUB_testfwk_uitest_Api9_0013
          * @tc.desc   find UiComponent by type attribute and get it's type attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5512,7 +5512,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testClickable
-         * @tc.number uiTest_9014
+         * @tc.number SUB_testfwk_uitest_Api9_0014
          * @tc.desc   find UiComponent by clickable attribute and get it's clickable attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5541,7 +5541,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testLongClickable
-         * @tc.number uiTest_9015
+         * @tc.number SUB_testfwk_uitest_Api9_0015
          * @tc.desc   find UiComponent by longClickable attribute and get it's longClickable attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5570,7 +5570,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScrollable
-         * @tc.number uiTest_9016
+         * @tc.number SUB_testfwk_uitest_Api9_0016
          * @tc.desc   find UiComponent by scrollable attribute and get it's scrollable attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5604,7 +5604,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testEnabled
-         * @tc.number uiTest_9017
+         * @tc.number SUB_testfwk_uitest_Api9_0017
          * @tc.desc   find UiComponent by enabled attribute and get it's enabled attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5637,7 +5637,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testFocused
-         * @tc.number uiTest_9018
+         * @tc.number SUB_testfwk_uitest_Api9_0018
          * @tc.desc   find UiComponent by focused attribute and get it's focused attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5666,7 +5666,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testSelected
-         * @tc.number uiTest_9019
+         * @tc.number SUB_testfwk_uitest_Api9_0019
          * @tc.desc   find UiComponent by selected attribute and get it's selected attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5697,7 +5697,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testPressBack
-         * @tc.number uiTest_9020
+         * @tc.number SUB_testfwk_uitest_Api9_0020
          * @tc.desc   Press the BACK key.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5718,7 +5718,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testFindComponents
-         * @tc.number uiTest_9021
+         * @tc.number SUB_testfwk_uitest_Api9_0021
          * @tc.desc   find all the matched UiComponents on current UI
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5734,7 +5734,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testTriggerKey
-         * @tc.number uiTest_9022
+         * @tc.number SUB_testfwk_uitest_Api9_0022
          * @tc.desc   press the specified key.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5758,7 +5758,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testGetUiComponentBounds
-         * @tc.number uiTest_9024
+         * @tc.number SUB_testfwk_uitest_Api9_0024
          * @tc.desc   get the bounds of this UiComponent.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5780,7 +5780,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testGetUiComponentBoundsCenter
-         * @tc.number uiTest_9025
+         * @tc.number SUB_testfwk_uitest_Api9_0025
          * @tc.desc   get the boundsCenter of this @link UiComponent.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5799,7 +5799,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testWaitForComponent
-         * @tc.number uiTest_9026
+         * @tc.number SUB_testfwk_uitest_Api9_0026
          * @tc.desc   Find the first matched UiComponent on current UI during the time given.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5815,7 +5815,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScreenCap
-         * @tc.number uiTest_9027
+         * @tc.number SUB_testfwk_uitest_Api9_0027
          * @tc.desc   capture current screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5832,7 +5832,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testAssertComponentExist
-         * @tc.number uiTest_9028
+         * @tc.number SUB_testfwk_uitest_Api9_0028
          * @tc.desc   Assert whether the matched UiComponent exists on current UI;.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5847,7 +5847,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testIsBefore
-         * @tc.number uiTest_9029
+         * @tc.number SUB_testfwk_uitest_Api9_0029
          * @tc.desc   find uiComponent which is before another UiComponent that specified by given.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5863,7 +5863,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testIsAfter
-         * @tc.number uiTest_9030
+         * @tc.number SUB_testfwk_uitest_Api9_0030
          * @tc.desc   find uiComponent which is after another UiComponent that specified by given.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5879,7 +5879,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testSwipe
-         * @tc.number uiTest_9031
+         * @tc.number SUB_testfwk_uitest_Api9_0031
          * @tc.desc   swipe on the screen between the specified points.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5904,7 +5904,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testSwipeSpeed
-         * @tc.number uiTest_9032
+         * @tc.number SUB_testfwk_uitest_Api9_0032
          * @tc.desc   swipe on the screen between the specified points.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5929,7 +5929,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testSwipeSpeedNull
-         * @tc.number uiTest_9042
+         * @tc.number SUB_testfwk_uitest_Api9_0042
          * @tc.desc   swipe on the screen between the specified points.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5954,7 +5954,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testSwipeSpeedUndefined
-         * @tc.number uiTest_9052
+         * @tc.number SUB_testfwk_uitest_Api9_0052
          * @tc.desc   swipe on the screen between the specified points.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -5979,7 +5979,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testFling
-         * @tc.number uiTest_9032
+         * @tc.number SUB_testfwk_uitest_Api9_0032
          * @tc.desc   inject fling on the device display.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6004,7 +6004,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScrollSearch
-         * @tc.number uiTest_9033
+         * @tc.number SUB_testfwk_uitest_Api9_0033
          * @tc.desc   scroll on this UiComponent to find matched UiComponent.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6021,7 +6021,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScrollToBottom
-         * @tc.number uiTest_9034
+         * @tc.number SUB_testfwk_uitest_Api9_0034
          * @tc.desc   scroll on this UiComponent to the bottom.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6041,7 +6041,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScrollToBottom_speed
-         * @tc.number uiTest_9034
+         * @tc.number SUB_testfwk_uitest_Api9_0034
          * @tc.desc   scroll on this UiComponent to the bottom.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6061,7 +6061,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScrollToTop
-         * @tc.number uiTest_9035
+         * @tc.number SUB_testfwk_uitest_Api9_0035
          * @tc.desc   scroll on this UiComponent to the top.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6083,7 +6083,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScrollToTop_speed
-         * @tc.number uiTest_9035
+         * @tc.number SUB_testfwk_uitest_Api9_0035
          * @tc.desc   scroll on this UiComponent to the top.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6106,7 +6106,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testPinch
-         * @tc.number uiTest_9036
+         * @tc.number SUB_testfwk_uitest_Api9_0036
          * @tc.desc   pinch enlarge this UiComponent to the target scale.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6139,7 +6139,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testInjectMultiPointerActionDefault
-         * @tc.number uiTest_9037
+         * @tc.number SUB_testfwk_uitest_Api9_0037
          * @tc.desc   inject multi-pointer action on the device display.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6181,7 +6181,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testInjectMultiPointerAction
-         * @tc.number uiTest_9047
+         * @tc.number SUB_testfwk_uitest_Api9_0047
          * @tc.desc   inject multi-pointer action on the device display.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6222,7 +6222,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testGetDisplaySize
-         * @tc.number uiTest_9047
+         * @tc.number SUB_testfwk_uitest_Api9_0047
          * @tc.desc   get the size of the device display.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6239,7 +6239,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testGetDisplayDensity
-         * @tc.number uiTest_9048
+         * @tc.number SUB_testfwk_uitest_Api9_0048
          * @tc.desc   get the density of the device display.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6256,7 +6256,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testWakeUpDisplay
-         * @tc.number uiTest_9051
+         * @tc.number SUB_testfwk_uitest_Api9_0051
          * @tc.desc   wake up the device display.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6271,7 +6271,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testWaitForIdle
-         * @tc.number uiTest_9053
+         * @tc.number SUB_testfwk_uitest_Api9_0053
          * @tc.desc   wait for the UI become idle.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6287,7 +6287,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testWaitForIdleFalse
-         * @tc.number uiTest_90536
+         * @tc.number SUB_testfwk_uitest_Api90_0536
          * @tc.desc   wait for the UI become idle.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6318,7 +6318,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testInputTextAdapt001
-         * @tc.number uiTest_8001
+         * @tc.number SUB_testfwk_uitest_Api8_0001
          * @tc.desc   inject text to the target UiComponent
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6366,7 +6366,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMatchPatternAdapt001
-         * @tc.number uiTest_8002
+         * @tc.number SUB_testfwk_uitest_Api8_0002
          * @tc.desc   specifies the string value match pattern.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6400,7 +6400,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testUiComponentClickAdapt001
-         * @tc.number uiTest_8003
+         * @tc.number SUB_testfwk_uitest_Api8_0003
          * @tc.desc   click this UiComponentClick.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6421,7 +6421,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testUiComponentDoubleClickAdapt001
-         * @tc.number uiTest_8004
+         * @tc.number SUB_testfwk_uitest_Api8_0004
          * @tc.desc   doubleClick this UiComponentClick.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6446,7 +6446,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testUiComponentLongClickAdapt001
-         * @tc.number uiTest_8005
+         * @tc.number SUB_testfwk_uitest_Api8_0005
          * @tc.desc   longClick this UiComponentClick.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6467,7 +6467,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testKeyAdapt001
-         * @tc.number uiTest_8006
+         * @tc.number SUB_testfwk_uitest_Api8_0006
          * @tc.desc   find UiComponent by key attribute and get it's key attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6488,7 +6488,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testId
-         * @tc.number uiTest_8007
+         * @tc.number SUB_testfwk_uitest_Api8_0007
          * @tc.desc   find UiComponent by id attribute and get it's id attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6506,7 +6506,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testTypeAdapt001
-         * @tc.number uiTest_8008
+         * @tc.number SUB_testfwk_uitest_Api8_0008
          * @tc.desc   find UiComponent by type attribute and get it's type attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6526,7 +6526,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testClickableAdapt001
-         * @tc.number uiTest_8009
+         * @tc.number SUB_testfwk_uitest_Api8_0009
          * @tc.desc   find UiComponent by clickable attribute and get it's clickable attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6549,7 +6549,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScrollableAdapt001
-         * @tc.number uiTest_8010
+         * @tc.number SUB_testfwk_uitest_Api8_0010
          * @tc.desc   find UiComponent by scrollable attribute and get it's scrollable attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6572,7 +6572,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testEnabledAdapt001
-         * @tc.number uiTest_8011
+         * @tc.number SUB_testfwk_uitest_Api8_0011
          * @tc.desc   find UiComponent by enabled attribute and get it's enabled attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6599,7 +6599,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testFocusedAdapt001
-         * @tc.number uiTest_8012
+         * @tc.number SUB_testfwk_uitest_Api8_0012
          * @tc.desc   find UiComponent by focused attribute and get it's focused attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6622,7 +6622,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testSelectedAdapt001
-         * @tc.number uiTest_8013
+         * @tc.number SUB_testfwk_uitest_Api8_0013
          * @tc.desc   find UiComponent by selected attribute and get it's selected attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6649,7 +6649,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testPressBackAdapt001
-         * @tc.number uiTest_8014
+         * @tc.number SUB_testfwk_uitest_Api8_0014
          * @tc.desc   Press the BACK key.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6670,7 +6670,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testFindComponentsAdapt001
-         * @tc.number uiTest_8015
+         * @tc.number SUB_testfwk_uitest_Api8_0015
          * @tc.desc   find all the matched UiComponents on current UI
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6688,7 +6688,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testTriggerKeyAdapt001
-         * @tc.number uiTest_8016
+         * @tc.number SUB_testfwk_uitest_Api8_0016
          * @tc.desc   press the specified key.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6710,7 +6710,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScreenCapAdapt001
-         * @tc.number uiTest_8017
+         * @tc.number SUB_testfwk_uitest_Api8_0017
          * @tc.desc   capture current screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6727,7 +6727,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testAssertComponentExistAdapt001
-         * @tc.number uiTest_8018
+         * @tc.number SUB_testfwk_uitest_Api8_0018
          * @tc.desc   Assert whether the matched UiComponent exists on current UI;.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6742,7 +6742,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testIsBeforeAdapt001
-         * @tc.number uiTest_8019
+         * @tc.number SUB_testfwk_uitest_Api8_0019
          * @tc.desc   find uiComponent which is before another UiComponent that specified by given.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6758,7 +6758,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testIsAfterAdapt001
-         * @tc.number uiTest_8020
+         * @tc.number SUB_testfwk_uitest_Api8_0020
          * @tc.desc   find uiComponent which is after another UiComponent that specified by given.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6774,7 +6774,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testSwipeAdapt001
-         * @tc.number uiTest_8021
+         * @tc.number SUB_testfwk_uitest_Api8_0021
          * @tc.desc   swipe on the screen between the specified points.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6813,7 +6813,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScrollSearchAdapt001
-         * @tc.number uiTest_8022
+         * @tc.number SUB_testfwk_uitest_Api8_0022
          * @tc.desc   scroll on this UiComponent to find matched UiComponent.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6830,7 +6830,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testUiDriverClick
-         * @tc.number uiTest_8023
+         * @tc.number SUB_testfwk_uitest_Api8_0023
          * @tc.desc   click in the specified location on the screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6853,7 +6853,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testUiDriverDoubleClick
-         * @tc.number uiTest_8024
+         * @tc.number SUB_testfwk_uitest_Api8_0024
          * @tc.desc   doubleClick in the specified location on the screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6880,7 +6880,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testUiDriverLongClick
-         * @tc.number uiTest_9008
+         * @tc.number SUB_testfwk_uitest_Api9_0008
          * @tc.desc   longClick in the specified location on the screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
