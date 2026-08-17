@@ -128,15 +128,21 @@ export default function ConcurrentStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readStateConcurrentTask, stateMachine))
+    it('testConcurrentState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(readStateConcurrentTask, stateMachine))
+        }
+        const results: Object[] = await executeTasksGetNumbers(tasks)
+        for (let i: number = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(SimpleState.IDLE)
+        }
+      } catch (error) {
+        console.error("testConcurrentState0100 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await executeTasksGetNumbers(tasks)
-      for (let i: number = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(SimpleState.IDLE)
-      }
+      done();
     })
 
     /**
@@ -147,15 +153,21 @@ export default function ConcurrentStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 50; i++) {
-        tasks.push(new taskpool.Task(readStateConcurrentTask, stateMachine))
+    it('testConcurrentState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 50; i++) {
+          tasks.push(new taskpool.Task(readStateConcurrentTask, stateMachine))
+        }
+        const results: Object[] = await executeTasksGetNumbers(tasks)
+        for (let i: number = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(SimpleState.IDLE)
+        }
+      } catch (error) {
+        console.error("testConcurrentState0200 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await executeTasksGetNumbers(tasks)
-      for (let i: number = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(SimpleState.IDLE)
-      }
+      done();
     })
 
     /**
@@ -166,20 +178,26 @@ export default function ConcurrentStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testConcurrentState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 100; i++) {
-        tasks.push(new taskpool.Task(readStateConcurrentTask, stateMachine))
-      }
-      const results: Object[] = await executeTasksGetNumbers(tasks)
-      let allSame: boolean = true
-      for (let i: number = 0; i < results.length; i++) {
-        if ((results[i] as number) !== SimpleState.IDLE) {
-          allSame = false
-          break
+    it('testConcurrentState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 100; i++) {
+          tasks.push(new taskpool.Task(readStateConcurrentTask, stateMachine))
         }
+        const results: Object[] = await executeTasksGetNumbers(tasks)
+        let allSame: boolean = true
+        for (let i: number = 0; i < results.length; i++) {
+          if ((results[i] as number) !== SimpleState.IDLE) {
+            allSame = false
+            break
+          }
+        }
+        expect(allSame).assertTrue()
+      } catch (error) {
+        console.error("testConcurrentState0300 failed");
+        expect(false).assertFail();
       }
-      expect(allSame).assertTrue()
+      done();
     })
 
     /**
@@ -190,20 +208,26 @@ export default function ConcurrentStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(tryTransitionConcurrentTask, stateMachine, SimpleState.ACTIVE))
-      }
-      const results: Object[] = await executeTasksGetNumbers(tasks)
-      let successCount: number = 0
-      for (let i: number = 0; i < results.length; i++) {
-        if (results[i] as boolean) {
-          successCount++
+    it('testConcurrentState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(tryTransitionConcurrentTask, stateMachine, SimpleState.ACTIVE))
         }
+        const results: Object[] = await executeTasksGetNumbers(tasks)
+        let successCount: number = 0
+        for (let i: number = 0; i < results.length; i++) {
+          if (results[i] as boolean) {
+            successCount++
+          }
+        }
+        expect(successCount).assertEqual(1)
+        expect(await stateMachine.getCurrentState()).assertEqual(SimpleState.ACTIVE)
+      } catch (error) {
+        console.error("testConcurrentState0400 failed");
+        expect(false).assertFail();
       }
-      expect(successCount).assertEqual(1)
-      expect(await stateMachine.getCurrentState()).assertEqual(SimpleState.ACTIVE)
+      done();
     })
 
     /**
@@ -214,14 +238,20 @@ export default function ConcurrentStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConcurrentState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i: number = 0; i < 10; i++) {
-        await stateMachine.transition(SimpleState.ACTIVE)
-        await stateMachine.transition(SimpleState.PAUSED)
-        await stateMachine.transition(SimpleState.IDLE)
+    it('testConcurrentState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 10; i++) {
+          await stateMachine.transition(SimpleState.ACTIVE)
+          await stateMachine.transition(SimpleState.PAUSED)
+          await stateMachine.transition(SimpleState.IDLE)
+        }
+        expect(await stateMachine.getTransitionCount()).assertEqual(30)
+        expect(await stateMachine.getHistoryCount()).assertEqual(30)
+      } catch (error) {
+        console.error("testConcurrentState0500 failed");
+        expect(false).assertFail();
       }
-      expect(await stateMachine.getTransitionCount()).assertEqual(30)
-      expect(await stateMachine.getHistoryCount()).assertEqual(30)
+      done();
     })
 
     /**
@@ -232,23 +262,29 @@ export default function ConcurrentStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentState0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const readTasks: taskpool.Task[] = []
-      const writeTasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 20; i++) {
-        readTasks.push(new taskpool.Task(readStateConcurrentTask, stateMachine))
+    it('testConcurrentState0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const readTasks: taskpool.Task[] = []
+        const writeTasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 20; i++) {
+          readTasks.push(new taskpool.Task(readStateConcurrentTask, stateMachine))
+        }
+        writeTasks.push(new taskpool.Task(tryTransitionConcurrentTask, stateMachine, SimpleState.ACTIVE))
+        const allPromises: Promise<Object>[] = []
+        for (let i: number = 0; i < readTasks.length; i++) {
+          allPromises.push(taskpool.execute(readTasks[i]))
+        }
+        for (let i: number = 0; i < writeTasks.length; i++) {
+          allPromises.push(taskpool.execute(writeTasks[i]))
+        }
+        await Promise.all(allPromises)
+        const finalState: number = await stateMachine.getCurrentState()
+        expect(finalState === SimpleState.IDLE || finalState === SimpleState.ACTIVE).assertTrue()
+      } catch (error) {
+        console.error("testConcurrentState0600 failed");
+        expect(false).assertFail();
       }
-      writeTasks.push(new taskpool.Task(tryTransitionConcurrentTask, stateMachine, SimpleState.ACTIVE))
-      const allPromises: Promise<Object>[] = []
-      for (let i: number = 0; i < readTasks.length; i++) {
-        allPromises.push(taskpool.execute(readTasks[i]))
-      }
-      for (let i: number = 0; i < writeTasks.length; i++) {
-        allPromises.push(taskpool.execute(writeTasks[i]))
-      }
-      await Promise.all(allPromises)
-      const finalState: number = await stateMachine.getCurrentState()
-      expect(finalState === SimpleState.IDLE || finalState === SimpleState.ACTIVE).assertTrue()
+      done();
     })
 
     /**
@@ -259,17 +295,23 @@ export default function ConcurrentStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentState0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await stateMachine.transition(SimpleState.STOPPED)
-      let successCount: number = 0
-      for (let i: number = 0; i < 5; i++) {
-        const result: boolean = await stateMachine.transition(SimpleState.ACTIVE)
-        if (result) {
-          successCount++
+    it('testConcurrentState0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await stateMachine.transition(SimpleState.STOPPED)
+        let successCount: number = 0
+        for (let i: number = 0; i < 5; i++) {
+          const result: boolean = await stateMachine.transition(SimpleState.ACTIVE)
+          if (result) {
+            successCount++
+          }
         }
+        expect(successCount).assertEqual(0)
+        expect(await stateMachine.getCurrentState()).assertEqual(SimpleState.STOPPED)
+      } catch (error) {
+        console.error("testConcurrentState0700 failed");
+        expect(false).assertFail();
       }
-      expect(successCount).assertEqual(0)
-      expect(await stateMachine.getCurrentState()).assertEqual(SimpleState.STOPPED)
+      done();
     })
 
     /**
@@ -280,13 +322,19 @@ export default function ConcurrentStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentState0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      for (let i: number = 0; i < 100; i++) {
-        await stateMachine.transition(SimpleState.ACTIVE)
-        await stateMachine.transition(SimpleState.IDLE)
+    it('testConcurrentState0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 100; i++) {
+          await stateMachine.transition(SimpleState.ACTIVE)
+          await stateMachine.transition(SimpleState.IDLE)
+        }
+        expect(await stateMachine.getTransitionCount()).assertEqual(200)
+        expect(await stateMachine.getHistoryCount()).assertEqual(200)
+      } catch (error) {
+        console.error("testConcurrentState0800 failed");
+        expect(false).assertFail();
       }
-      expect(await stateMachine.getTransitionCount()).assertEqual(200)
-      expect(await stateMachine.getHistoryCount()).assertEqual(200)
+      done();
     })
 
     /**
@@ -297,13 +345,19 @@ export default function ConcurrentStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testConcurrentState0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      for (let i: number = 0; i < 1000; i++) {
-        await stateMachine.transition(SimpleState.ACTIVE)
-        await stateMachine.transition(SimpleState.PAUSED)
-        await stateMachine.transition(SimpleState.IDLE)
+    it('testConcurrentState0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 1000; i++) {
+          await stateMachine.transition(SimpleState.ACTIVE)
+          await stateMachine.transition(SimpleState.PAUSED)
+          await stateMachine.transition(SimpleState.IDLE)
+        }
+        expect(await stateMachine.getTransitionCount()).assertEqual(3000)
+      } catch (error) {
+        console.error("testConcurrentState0900 failed");
+        expect(false).assertFail();
       }
-      expect(await stateMachine.getTransitionCount()).assertEqual(3000)
+      done();
     })
 
     /**
@@ -314,35 +368,41 @@ export default function ConcurrentStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentState1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const sm1: ConcurrentStateMachine = new ConcurrentStateMachine(new ArkTSUtils.locks.AsyncLock(), new collections.Array<number>())
-      const sm2: ConcurrentStateMachine = new ConcurrentStateMachine(new ArkTSUtils.locks.AsyncLock(), new collections.Array<number>())
-      const sm3: ConcurrentStateMachine = new ConcurrentStateMachine(new ArkTSUtils.locks.AsyncLock(), new collections.Array<number>())
-      const tasks1: taskpool.Task[] = []
-      const tasks2: taskpool.Task[] = []
-      const tasks3: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks1.push(new taskpool.Task(tryTransitionConcurrentTask, sm1, SimpleState.ACTIVE))
-        tasks2.push(new taskpool.Task(tryTransitionConcurrentTask, sm2, SimpleState.PAUSED))
-        tasks3.push(new taskpool.Task(tryTransitionConcurrentTask, sm3, SimpleState.ACTIVE))
+    it('testConcurrentState1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const sm1: ConcurrentStateMachine = new ConcurrentStateMachine(new ArkTSUtils.locks.AsyncLock(), new collections.Array<number>())
+        const sm2: ConcurrentStateMachine = new ConcurrentStateMachine(new ArkTSUtils.locks.AsyncLock(), new collections.Array<number>())
+        const sm3: ConcurrentStateMachine = new ConcurrentStateMachine(new ArkTSUtils.locks.AsyncLock(), new collections.Array<number>())
+        const tasks1: taskpool.Task[] = []
+        const tasks2: taskpool.Task[] = []
+        const tasks3: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks1.push(new taskpool.Task(tryTransitionConcurrentTask, sm1, SimpleState.ACTIVE))
+          tasks2.push(new taskpool.Task(tryTransitionConcurrentTask, sm2, SimpleState.PAUSED))
+          tasks3.push(new taskpool.Task(tryTransitionConcurrentTask, sm3, SimpleState.ACTIVE))
+        }
+        const allPromises: Promise<Object>[] = []
+        for (let i: number = 0; i < tasks1.length; i++) {
+          allPromises.push(taskpool.execute(tasks1[i]))
+        }
+        for (let i: number = 0; i < tasks2.length; i++) {
+          allPromises.push(taskpool.execute(tasks2[i]))
+        }
+        for (let i: number = 0; i < tasks3.length; i++) {
+          allPromises.push(taskpool.execute(tasks3[i]))
+        }
+        await Promise.all(allPromises)
+        expect(await sm1.getCurrentState()).assertEqual(SimpleState.ACTIVE)
+        expect(await sm2.getCurrentState()).assertEqual(SimpleState.PAUSED)
+        expect(await sm3.getCurrentState()).assertEqual(SimpleState.ACTIVE)
+        await sm1.reset()
+        await sm2.reset()
+        await sm3.reset()
+      } catch (error) {
+        console.error("testConcurrentState1000 failed");
+        expect(false).assertFail();
       }
-      const allPromises: Promise<Object>[] = []
-      for (let i: number = 0; i < tasks1.length; i++) {
-        allPromises.push(taskpool.execute(tasks1[i]))
-      }
-      for (let i: number = 0; i < tasks2.length; i++) {
-        allPromises.push(taskpool.execute(tasks2[i]))
-      }
-      for (let i: number = 0; i < tasks3.length; i++) {
-        allPromises.push(taskpool.execute(tasks3[i]))
-      }
-      await Promise.all(allPromises)
-      expect(await sm1.getCurrentState()).assertEqual(SimpleState.ACTIVE)
-      expect(await sm2.getCurrentState()).assertEqual(SimpleState.PAUSED)
-      expect(await sm3.getCurrentState()).assertEqual(SimpleState.ACTIVE)
-      await sm1.reset()
-      await sm2.reset()
-      await sm3.reset()
+      done();
     })
 
     /**
@@ -353,14 +413,20 @@ export default function ConcurrentStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentState1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await stateMachine.transition(SimpleState.ACTIVE)
-      await stateMachine.transition(SimpleState.PAUSED)
-      await stateMachine.transition(SimpleState.IDLE)
-      await stateMachine.transition(SimpleState.STOPPED)
-      expect(await stateMachine.getHistoryCount()).assertEqual(4)
-      const transitionCount: number = await stateMachine.getTransitionCount()
-      expect(transitionCount).assertEqual(4)
+    it('testConcurrentState1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await stateMachine.transition(SimpleState.ACTIVE)
+        await stateMachine.transition(SimpleState.PAUSED)
+        await stateMachine.transition(SimpleState.IDLE)
+        await stateMachine.transition(SimpleState.STOPPED)
+        expect(await stateMachine.getHistoryCount()).assertEqual(4)
+        const transitionCount: number = await stateMachine.getTransitionCount()
+        expect(transitionCount).assertEqual(4)
+      } catch (error) {
+        console.error("testConcurrentState1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

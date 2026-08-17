@@ -180,7 +180,7 @@ export default function CacheIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testCacheIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const cache: IRLRUCache = new IRLRUCache(new collections.Map<string, string>())
       const stats: number[] = cache.getIRStats()
       expect(stats[0]).assertEqual(1024)
@@ -195,7 +195,7 @@ export default function CacheIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testCacheIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const cache: ICLRUCache = new ICLRUCache(new collections.Map<string, string>())
       cache.set('key1', 'value1')
       for (let i = 0; i < 100; i++) {
@@ -212,7 +212,7 @@ export default function CacheIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testCacheIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const cache1: StandardLRUCache = new StandardLRUCache(new collections.Map<string, string>())
       const cache2: StandardLRUCache = new StandardLRUCache(new collections.Map<string, string>())
       expect(cache1.capacity_).assertEqual(cache2.capacity_)
@@ -226,7 +226,7 @@ export default function CacheIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testCacheIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const cache: LargeLRUCache = new LargeLRUCache(new collections.Map<string, number>())
       for (let i = 0; i < 1025; i++) {
         cache.cache_.set(`cache_${i}`, i)
@@ -243,23 +243,29 @@ export default function CacheIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testCacheIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const cache: ConcurrentLRUCache = new ConcurrentLRUCache(new collections.Map<string, string>())
-      for (let i = 0; i < 100; i++) {
-        cache.cache_.set(`k_${i}`, `v_${i}`)
+    it('testCacheIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const cache: ConcurrentLRUCache = new ConcurrentLRUCache(new collections.Map<string, string>())
+        for (let i = 0; i < 100; i++) {
+          cache.cache_.set(`k_${i}`, `v_${i}`)
+        }
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 100; i++) {
+          tasks.push(new taskpool.Task(readCacheValue, cache, `k_${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < 100; i++) {
+          expect(results[i] as string).assertEqual(`v_${i}`)
+        }
+      } catch (error) {
+        console.error("testCacheIR0500 failed");
+        expect(false).assertFail();
       }
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 100; i++) {
-        tasks.push(new taskpool.Task(readCacheValue, cache, `k_${i}`))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < 100; i++) {
-        expect(results[i] as string).assertEqual(`v_${i}`)
-      }
+      done();
     })
 
     /**
@@ -270,7 +276,7 @@ export default function CacheIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testCacheIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const cache: CapacityCache = new CapacityCache()
       expect(cache.getCapacity()).assertEqual(500)
     })
@@ -283,7 +289,7 @@ export default function CacheIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testCacheIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const cache: HitRateCache = new HitRateCache()
       for (let i = 0; i < 50; i++) {
         cache.recordHit()
@@ -299,7 +305,7 @@ export default function CacheIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testCacheIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const cache: KeyValueCache = new KeyValueCache(new collections.Map<string, number>())
       cache.entries_.set('key_a', 100)
       cache.entries_.set('key_b', 200)
@@ -315,7 +321,7 @@ export default function CacheIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testCacheIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const cache: EvictionCache = new EvictionCache()
       for (let i = 0; i < 5; i++) {
         cache.incrementEviction()
@@ -331,7 +337,7 @@ export default function CacheIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testCacheIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const cache1: SharedCache = new SharedCache()
       const cache2: SharedCache = new SharedCache()
       const cache3: SharedCache = new SharedCache()
@@ -348,21 +354,27 @@ export default function CacheIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testCacheIR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const cache: CrossThreadCache = new CrossThreadCache(new collections.Map<string, number>())
-      cache.data_.set('shared_key', 42)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readCacheData, cache))
+    it('testCacheIR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const cache: CrossThreadCache = new CrossThreadCache(new collections.Map<string, number>())
+        cache.data_.set('shared_key', 42)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(readCacheData, cache))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(42)
+        }
+      } catch (error) {
+        console.error("testCacheIR1100 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(42)
-      }
+      done();
     })
 
     /**
@@ -373,7 +385,7 @@ export default function CacheIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testCacheIR1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const cache: BoundaryCache = new BoundaryCache(new collections.Map<string, number>())
       for (let i = 0; i < 1024; i++) {
         cache.entries_.set(`entry_${i}`, i)
@@ -389,7 +401,7 @@ export default function CacheIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testCacheIR1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const cache: BoundaryCache = new BoundaryCache(new collections.Map<string, number>())
       for (let i = 0; i < 1025; i++) {
         cache.entries_.set(`entry_${i}`, i)

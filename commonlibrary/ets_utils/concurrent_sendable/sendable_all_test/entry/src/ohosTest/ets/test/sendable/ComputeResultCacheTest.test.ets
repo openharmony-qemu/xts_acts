@@ -125,7 +125,7 @@ export default function ComputeResultCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testComputeResultCache0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testComputeResultCache0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       cache.set('fib_10', fibonacci(10))
       expect(cache.get('fib_10')).assertEqual(55)
     })
@@ -138,7 +138,7 @@ export default function ComputeResultCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testComputeResultCache0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testComputeResultCache0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       cache.set('sum_1_100', 5050)
       cache.set('factorial_5', 120)
       expect(cache.get('sum_1_100')).assertEqual(5050)
@@ -153,7 +153,7 @@ export default function ComputeResultCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testComputeResultCache0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testComputeResultCache0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       cache.set('fib_10', 55)
       const result1: number | undefined = cache.get('fib_10')
       const result2: number | undefined = cache.get('fib_10')
@@ -170,7 +170,7 @@ export default function ComputeResultCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testComputeResultCache0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testComputeResultCache0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const computeFn: (k: string) => number = (_k: string): number => {
         return fibonacci(10)
       }
@@ -188,7 +188,7 @@ export default function ComputeResultCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testComputeResultCache0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testComputeResultCache0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const smallCacheArg: ArkTSUtils.SendableLruCache<string, number> = new ArkTSUtils.SendableLruCache<string, number>(100)
       const smallCache: ComputeResultCache = new ComputeResultCache(smallCacheArg)
       const smallLru: ArkTSUtils.SendableLruCache<string, number> = new ArkTSUtils.SendableLruCache<string, number>(3)
@@ -208,21 +208,27 @@ export default function ComputeResultCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testComputeResultCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(concurrentCompute, `compute_${i}`, i * i))
+    it('testComputeResultCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(concurrentCompute, `compute_${i}`, i * i))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          const parts: string[] = (results[i] as string).split('=')
+          cache.set(parts[0], parseInt(parts[1]))
+        }
+        expect(cache.length()).assertEqual(5)
+      } catch (error) {
+        console.error("testComputeResultCache0600 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        const parts: string[] = (results[i] as string).split('=')
-        cache.set(parts[0], parseInt(parts[1]))
-      }
-      expect(cache.length()).assertEqual(5)
+      done();
     })
 
     /**
@@ -233,7 +239,7 @@ export default function ComputeResultCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testComputeResultCache0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testComputeResultCache0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const computeFn: (k: string) => number = (_k: string): number => {
         return 42
       }
@@ -252,7 +258,7 @@ export default function ComputeResultCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testComputeResultCache0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testComputeResultCache0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       cache.set('key_1', 100)
       cache.get('key_1')
       cache.get('key_1')
@@ -269,7 +275,7 @@ export default function ComputeResultCacheTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testComputeResultCache0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testComputeResultCache0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const computeFn: (k: string) => number = (_k: string): number => {
         return 100
       }

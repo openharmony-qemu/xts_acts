@@ -235,19 +235,25 @@ export default function ConditionVariableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConditionVariable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const size: number = await buffer.size()
-      expect(size).assertEqual(0)
-      let takeResult: number | undefined = undefined
-      const takePromise: Promise<number> = buffer.take()
-      takePromise.then((result: number): void => {
-        takeResult = result
-      })
-      await Utils.sleep(500)
-      expect(takeResult === undefined).assertTrue()
-      await buffer.put(100)
-      await takePromise
-      expect(takeResult).assertEqual(100)
+    it('testConditionVariable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const size: number = await buffer.size()
+        expect(size).assertEqual(0)
+        let takeResult: number | undefined = undefined
+        const takePromise: Promise<number> = buffer.take()
+        takePromise.then((result: number): void => {
+          takeResult = result
+        }).catch((error: Error): void => { console.error("testConditionVariable0100 failed"); expect(false).assertFail(); })
+        await Utils.sleep(500)
+        expect(takeResult === undefined).assertTrue()
+        await buffer.put(100)
+        await takePromise
+        expect(takeResult).assertEqual(100)
+      } catch (error) {
+        console.error("testConditionVariable0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -258,12 +264,18 @@ export default function ConditionVariableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConditionVariable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await buffer.put(50)
-      const takePromise: Promise<number> = buffer.take()
-      await takePromise
-      const sizeAfterTake: number = await buffer.size()
-      expect(sizeAfterTake).assertEqual(0)
+    it('testConditionVariable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await buffer.put(50)
+        const takePromise: Promise<number> = buffer.take()
+        await takePromise
+        const sizeAfterTake: number = await buffer.size()
+        expect(sizeAfterTake).assertEqual(0)
+      } catch (error) {
+        console.error("testConditionVariable0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -274,19 +286,25 @@ export default function ConditionVariableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConditionVariable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const target: number = 5
-      let reached: boolean = false
-      const waitPromise: Promise<boolean> = waitCounter.waitForCondition(target)
-      waitPromise.then((result: boolean): void => {
-        reached = result
-      })
-      for (let i = 0; i < target; i++) {
-        await waitCounter.increment()
+    it('testConditionVariable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const target: number = 5
+        let reached: boolean = false
+        const waitPromise: Promise<boolean> = waitCounter.waitForCondition(target)
+        waitPromise.then((result: boolean): void => {
+          reached = result
+        }).catch((error: Error): void => { console.error("testConditionVariable0300 failed"); expect(false).assertFail(); })
+        for (let i = 0; i < target; i++) {
+          await waitCounter.increment()
+        }
+        await waitPromise
+        expect(reached).assertTrue()
+        expect(await waitCounter.getCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testConditionVariable0300 failed");
+        expect(false).assertFail();
       }
-      await waitPromise
-      expect(reached).assertTrue()
-      expect(await waitCounter.getCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -297,17 +315,23 @@ export default function ConditionVariableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConditionVariable0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let counter: number = 0
-      const cond: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
-      const w1: Promise<void> = cond.wait().then((): void => { counter++ })
-      const w2: Promise<void> = cond.wait().then((): void => { counter++ })
-      const w3: Promise<void> = cond.wait().then((): void => { counter++ })
-      await Utils.sleep(500)
-      expect(counter).assertEqual(0)
-      cond.notifyAll()
-      await Promise.all([w1, w2, w3])
-      expect(counter).assertEqual(3)
+    it('testConditionVariable0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let counter: number = 0
+        const cond: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
+        const w1: Promise<void> = cond.wait().then((): void => { counter++ }).catch((error: Error): void => { console.error("testConditionVariable0400 failed"); expect(false).assertFail(); })
+        const w2: Promise<void> = cond.wait().then((): void => { counter++ }).catch((error: Error): void => { console.error("testConditionVariable0400 failed"); expect(false).assertFail(); })
+        const w3: Promise<void> = cond.wait().then((): void => { counter++ }).catch((error: Error): void => { console.error("testConditionVariable0400 failed"); expect(false).assertFail(); })
+        await Utils.sleep(500)
+        expect(counter).assertEqual(0)
+        cond.notifyAll()
+        await Promise.all([w1, w2, w3])
+        expect(counter).assertEqual(3)
+      } catch (error) {
+        console.error("testConditionVariable0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -318,18 +342,24 @@ export default function ConditionVariableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConditionVariable0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await buffer.put(1)
-      await buffer.put(2)
-      await buffer.put(3)
-      expect(await buffer.size()).assertEqual(3)
-      const item1: number = await buffer.take()
-      const item2: number = await buffer.take()
-      const item3: number = await buffer.take()
-      expect(item1).assertEqual(1)
-      expect(item2).assertEqual(2)
-      expect(item3).assertEqual(3)
-      expect(await buffer.size()).assertEqual(0)
+    it('testConditionVariable0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await buffer.put(1)
+        await buffer.put(2)
+        await buffer.put(3)
+        expect(await buffer.size()).assertEqual(3)
+        const item1: number = await buffer.take()
+        const item2: number = await buffer.take()
+        const item3: number = await buffer.take()
+        expect(item1).assertEqual(1)
+        expect(item2).assertEqual(2)
+        expect(item3).assertEqual(3)
+        expect(await buffer.size()).assertEqual(0)
+      } catch (error) {
+        console.error("testConditionVariable0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -340,16 +370,22 @@ export default function ConditionVariableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConditionVariable0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      for (let i = 0; i < 5; i++) {
-        await buffer.put(i * 10)
+    it('testConditionVariable0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 5; i++) {
+          await buffer.put(i * 10)
+        }
+        const consumeTasks: taskpool.Task[] = []
+        for (let i = 0; i < 3; i++) {
+          consumeTasks.push(new taskpool.Task(consumeFromBuffer, buffer))
+        }
+        await Promise.all(consumeTasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t)))
+        expect(await buffer.getTakeCount()).assertLargerOrEqual(0)
+      } catch (error) {
+        console.error("testConditionVariable0600 failed");
+        expect(false).assertFail();
       }
-      const consumeTasks: taskpool.Task[] = []
-      for (let i = 0; i < 3; i++) {
-        consumeTasks.push(new taskpool.Task(consumeFromBuffer, buffer))
-      }
-      await Promise.all(consumeTasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t)))
-      expect(await buffer.getTakeCount()).assertLargerOrEqual(0)
+      done();
     })
 
     /**
@@ -360,11 +396,17 @@ export default function ConditionVariableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConditionVariable0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await waitCounter.increment()
-      await waitCounter.increment()
-      const result: boolean = await waitCounter.waitForCondition(2)
-      expect(result).assertTrue()
+    it('testConditionVariable0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await waitCounter.increment()
+        await waitCounter.increment()
+        const result: boolean = await waitCounter.waitForCondition(2)
+        expect(result).assertTrue()
+      } catch (error) {
+        console.error("testConditionVariable0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -375,11 +417,17 @@ export default function ConditionVariableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConditionVariable0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      for (let i = 0; i < 10; i++) {
-        await cvManager.addToWaitQueue()
+    it('testConditionVariable0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 10; i++) {
+          await cvManager.addToWaitQueue()
+        }
+        expect(cvManager.getQueueLength()).assertEqual(10)
+      } catch (error) {
+        console.error("testConditionVariable0800 failed");
+        expect(false).assertFail();
       }
-      expect(cvManager.getQueueLength()).assertEqual(10)
+      done();
     })
 
     /**
@@ -390,16 +438,22 @@ export default function ConditionVariableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConditionVariable0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await cvManager.addToWaitQueue()
-      await cvManager.addToWaitQueue()
-      await cvManager.addToWaitQueue()
+    it('testConditionVariable0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await cvManager.addToWaitQueue()
+        await cvManager.addToWaitQueue()
+        await cvManager.addToWaitQueue()
 
-      const items: collections.Array<WaitQueueItem> = cvManager.getQueueItems()
-      expect(items.length).assertEqual(3)
-      expect(items[0].id).assertEqual(0)
-      expect(items[1].id).assertEqual(1)
-      expect(items[2].id).assertEqual(2)
+        const items: collections.Array<WaitQueueItem> = cvManager.getQueueItems()
+        expect(items.length).assertEqual(3)
+        expect(items[0].id).assertEqual(0)
+        expect(items[1].id).assertEqual(1)
+        expect(items[2].id).assertEqual(2)
+      } catch (error) {
+        console.error("testConditionVariable0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -410,22 +464,28 @@ export default function ConditionVariableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConditionVariable1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const promises: Promise<number>[] = []
-      for (let i = 0; i < 10; i++) {
-        promises.push(cvManager.addToWaitQueue())
-      }
-      await Promise.all(promises)
+    it('testConditionVariable1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const promises: Promise<number>[] = []
+        for (let i = 0; i < 10; i++) {
+          promises.push(cvManager.addToWaitQueue())
+        }
+        await Promise.all(promises)
 
-      expect(cvManager.getWaitCount()).assertEqual(10)
-      expect(cvManager.getQueueLength()).assertEqual(10)
+        expect(cvManager.getWaitCount()).assertEqual(10)
+        expect(cvManager.getQueueLength()).assertEqual(10)
 
-      const items: collections.Array<WaitQueueItem> = cvManager.getQueueItems()
-      const ids: Set<number> = new Set<number>()
-      for (let i = 0; i < items.length; i++) {
-        ids.add(items[i].id)
+        const items: collections.Array<WaitQueueItem> = cvManager.getQueueItems()
+        const ids: Set<number> = new Set<number>()
+        for (let i = 0; i < items.length; i++) {
+          ids.add(items[i].id)
+        }
+        expect(ids.size).assertEqual(10)
+      } catch (error) {
+        console.error("testConditionVariable1000 failed");
+        expect(false).assertFail();
       }
-      expect(ids.size).assertEqual(10)
+      done();
     })
   })
 }

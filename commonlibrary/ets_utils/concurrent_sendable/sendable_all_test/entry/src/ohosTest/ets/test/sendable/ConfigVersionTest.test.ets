@@ -208,9 +208,14 @@ export default function ConfigVersionTest(): void {
      */
     it('testConfigVersion0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      expect(await versionManager.getVersion()).assertEqual(0)
-      expect(await versionManager.getChangeCount()).assertEqual(0)
-      done()
+      try {
+        expect(await versionManager.getVersion()).assertEqual(0)
+        expect(await versionManager.getChangeCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testConfigVersion0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -223,11 +228,16 @@ export default function ConfigVersionTest(): void {
      */
     it('testConfigVersion0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      const initialVersion: number = await versionManager.getVersion()
-      await versionManager.set('config_key', 'config_value')
-      const newVersion: number = await versionManager.getVersion()
-      expect(newVersion).assertEqual(initialVersion + 1)
-      done()
+      try {
+        const initialVersion: number = await versionManager.getVersion()
+        await versionManager.set('config_key', 'config_value')
+        const newVersion: number = await versionManager.getVersion()
+        expect(newVersion).assertEqual(initialVersion + 1)
+      } catch (error) {
+        console.error("testConfigVersion0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -240,11 +250,16 @@ export default function ConfigVersionTest(): void {
      */
     it('testConfigVersion0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      await versionManager.set('key1', 'value1')
-      await versionManager.set('key2', 'value2')
-      const version: number = await versionManager.getVersion()
-      expect(version).assertEqual(2)
-      done()
+      try {
+        await versionManager.set('key1', 'value1')
+        await versionManager.set('key2', 'value2')
+        const version: number = await versionManager.getVersion()
+        expect(version).assertEqual(2)
+      } catch (error) {
+        console.error("testConfigVersion0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -257,13 +272,18 @@ export default function ConfigVersionTest(): void {
      */
     it('testConfigVersion0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      await versionManager.set('first', 'value1')
-      await versionManager.set('second', 'value2')
-      const history: collections.Array<VersionHistoryEntry> = await versionManager.getVersionHistory()
-      expect(history.length).assertEqual(2)
-      expect(history[0].version_).assertEqual(1)
-      expect(history[1].version_).assertEqual(2)
-      done()
+      try {
+        await versionManager.set('first', 'value1')
+        await versionManager.set('second', 'value2')
+        const history: collections.Array<VersionHistoryEntry> = await versionManager.getVersionHistory()
+        expect(history.length).assertEqual(2)
+        expect(history[0].version_).assertEqual(1)
+        expect(history[1].version_).assertEqual(2)
+      } catch (error) {
+        console.error("testConfigVersion0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -276,21 +296,26 @@ export default function ConfigVersionTest(): void {
      */
     it('testConfigVersion0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      await versionManager.set('base', 'base_value')
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(getVersionTask, versionManager))
+      try {
+        await versionManager.set('base', 'base_value')
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(getVersionTask, versionManager))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(5)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(1)
+        }
+      } catch (error) {
+        console.error("testConfigVersion0500 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      expect(results.length).assertEqual(5)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(1)
-      }
-      done()
+      done();
     })
 
     /**
@@ -303,19 +328,24 @@ export default function ConfigVersionTest(): void {
      */
     it('testConfigVersion0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const versionBefore: number = await versionManager.getVersion()
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(updateConfigTask, versionManager, `key${i}`, `value${i}`))
+      try {
+        const versionBefore: number = await versionManager.getVersion()
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(updateConfigTask, versionManager, `key${i}`, `value${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        const versionAfter: number = await versionManager.getVersion()
+        expect(versionAfter).assertEqual(versionBefore + 3)
+      } catch (error) {
+        console.error("testConfigVersion0600 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      const versionAfter: number = await versionManager.getVersion()
-      expect(versionAfter).assertEqual(versionBefore + 3)
-      done()
+      done();
     })
 
     /**
@@ -328,21 +358,26 @@ export default function ConfigVersionTest(): void {
      */
     it('testConfigVersion0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      await versionManager.batchSet(['batch1', 'batch2'], ['val1', 'val2'])
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(getVersionTask, versionManager))
+      try {
+        await versionManager.batchSet(['batch1', 'batch2'], ['val1', 'val2'])
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(getVersionTask, versionManager))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(10)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(1)
+        }
+      } catch (error) {
+        console.error("testConfigVersion0700 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      expect(results.length).assertEqual(10)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(1)
-      }
-      done()
+      done();
     })
 
     /**
@@ -355,10 +390,15 @@ export default function ConfigVersionTest(): void {
      */
     it('testConfigVersion0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      await versionManager.set('timestamped', 'value')
-      const updateTime: number = await versionManager.getLastUpdateTime()
-      expect(updateTime > 0).assertTrue()
-      done()
+      try {
+        await versionManager.set('timestamped', 'value')
+        const updateTime: number = await versionManager.getLastUpdateTime()
+        expect(updateTime > 0).assertTrue()
+      } catch (error) {
+        console.error("testConfigVersion0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -371,16 +411,21 @@ export default function ConfigVersionTest(): void {
      */
     it('testConfigVersion0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      for (let i = 0; i < 5; i++) {
-        await versionManager.set(`update${i}`, `value${i}`)
+      try {
+        for (let i = 0; i < 5; i++) {
+          await versionManager.set(`update${i}`, `value${i}`)
+        }
+        const history: collections.Array<VersionHistoryEntry> = await versionManager.getVersionHistory()
+        expect(history.length).assertEqual(5)
+        for (let i = 0; i < 5; i++) {
+          expect(history[i].version_).assertEqual(i + 1)
+          expect(history[i].changeCount_).assertEqual(1)
+        }
+      } catch (error) {
+        console.error("testConfigVersion0900 failed");
+        expect(false).assertFail();
       }
-      const history: collections.Array<VersionHistoryEntry> = await versionManager.getVersionHistory()
-      expect(history.length).assertEqual(5)
-      for (let i = 0; i < 5; i++) {
-        expect(history[i].version_).assertEqual(i + 1)
-        expect(history[i].changeCount_).assertEqual(1)
-      }
-      done()
+      done();
     })
 
     /**
@@ -393,12 +438,17 @@ export default function ConfigVersionTest(): void {
      */
     it('testConfigVersion1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      await versionManager.batchSet(['batch_key1'], ['batch_val1'])
-      await versionManager.set('single_key', 'single_val')
-      await versionManager.batchSet(['batch_key2', 'batch_key3'], ['batch_val2', 'batch_val3'])
-      const changeCount: number = await versionManager.getChangeCount()
-      expect(changeCount).assertEqual(3)
-      done()
+      try {
+        await versionManager.batchSet(['batch_key1'], ['batch_val1'])
+        await versionManager.set('single_key', 'single_val')
+        await versionManager.batchSet(['batch_key2', 'batch_key3'], ['batch_val2', 'batch_val3'])
+        const changeCount: number = await versionManager.getChangeCount()
+        expect(changeCount).assertEqual(3)
+      } catch (error) {
+        console.error("testConfigVersion1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -411,17 +461,22 @@ export default function ConfigVersionTest(): void {
      */
     it('testConfigVersion1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      const initialVersion: number = await versionManager.getVersion()
-      await versionManager.batchSet(
-        ['batch1', 'batch2', 'batch3'],
-        ['value1', 'value2', 'value3']
-      )
-      const newVersion: number = await versionManager.getVersion()
-      expect(newVersion).assertEqual(initialVersion + 1)
-      const history: collections.Array<VersionHistoryEntry> = await versionManager.getVersionHistory()
-      const lastEntry: VersionHistoryEntry = history[history.length - 1]
-      expect(lastEntry.changeCount_).assertEqual(3)
-      done()
+      try {
+        const initialVersion: number = await versionManager.getVersion()
+        await versionManager.batchSet(
+          ['batch1', 'batch2', 'batch3'],
+          ['value1', 'value2', 'value3']
+        )
+        const newVersion: number = await versionManager.getVersion()
+        expect(newVersion).assertEqual(initialVersion + 1)
+        const history: collections.Array<VersionHistoryEntry> = await versionManager.getVersionHistory()
+        const lastEntry: VersionHistoryEntry = history[history.length - 1]
+        expect(lastEntry.changeCount_).assertEqual(3)
+      } catch (error) {
+        console.error("testConfigVersion1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -434,17 +489,22 @@ export default function ConfigVersionTest(): void {
      */
     it('testConfigVersion1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const task: taskpool.Task = new taskpool.Task(syncConfigNotificationTask)
-      const receivePromise: Promise<number> = new Promise<number>((resolve: (value: number) => void): void => {
-        task.onReceiveData((data: Object): void => {
-          const d: Record<string, Object> = data as Record<string, Object>
-          resolve(d['version'] as number)
+      try {
+        const task: taskpool.Task = new taskpool.Task(syncConfigNotificationTask)
+        const receivePromise: Promise<number> = new Promise<number>((resolve: (value: number) => void): void => {
+          task.onReceiveData((data: Object): void => {
+            const d: Record<string, Object> = data as Record<string, Object>
+            resolve(d['version'] as number)
+          })
         })
-      })
-      await taskpool.execute(task)
-      const syncVersion: number = await receivePromise
-      expect(syncVersion).assertEqual(1)
-      done()
+        await taskpool.execute(task)
+        const syncVersion: number = await receivePromise
+        expect(syncVersion).assertEqual(1)
+      } catch (error) {
+        console.error("testConfigVersion1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -457,21 +517,26 @@ export default function ConfigVersionTest(): void {
      */
     it('testConfigVersion1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const task: taskpool.Task = new taskpool.Task(triggerVersionUpdateTask)
-      const nestedPromises: Promise<Object>[] = []
-      const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
-        task.onReceiveData((): void => {
-          const innerTask: taskpool.Task = new taskpool.Task(updateConfigTask, versionManager, 'nested_key', 'nested_value')
-          nestedPromises.push(taskpool.execute(innerTask))
-          resolve()
+      try {
+        const task: taskpool.Task = new taskpool.Task(triggerVersionUpdateTask)
+        const nestedPromises: Promise<Object>[] = []
+        const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
+          task.onReceiveData((): void => {
+            const innerTask: taskpool.Task = new taskpool.Task(updateConfigTask, versionManager, 'nested_key', 'nested_value')
+            nestedPromises.push(taskpool.execute(innerTask))
+            resolve()
+          })
         })
-      })
-      await taskpool.execute(task)
-      await receivePromise
-      await Promise.all(nestedPromises)
-      expect(nestedPromises.length).assertEqual(1)
-      expect(await versionManager.getVersion()).assertEqual(1)
-      done()
+        await taskpool.execute(task)
+        await receivePromise
+        await Promise.all(nestedPromises)
+        expect(nestedPromises.length).assertEqual(1)
+        expect(await versionManager.getVersion()).assertEqual(1)
+      } catch (error) {
+        console.error("testConfigVersion1300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -484,22 +549,27 @@ export default function ConfigVersionTest(): void {
      */
     it('testConfigVersion1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      const notifications1: Record<string, Object>[] = []
-      const task: taskpool.Task = new taskpool.Task(multiListenerNotifyTask)
-      const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
-        task.onReceiveData((data: Object): void => {
-          notifications1.push(data as Record<string, Object>)
-          if (notifications1.length >= 2) {
-            resolve()
-          }
+      try {
+        const notifications1: Record<string, Object>[] = []
+        const task: taskpool.Task = new taskpool.Task(multiListenerNotifyTask)
+        const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
+          task.onReceiveData((data: Object): void => {
+            notifications1.push(data as Record<string, Object>)
+            if (notifications1.length >= 2) {
+              resolve()
+            }
+          })
         })
-      })
-      await taskpool.execute(task)
-      await receivePromise
-      expect(notifications1.length).assertEqual(2)
-      expect(notifications1[0]['version'] as number).assertEqual(10)
-      expect(notifications1[1]['version'] as number).assertEqual(11)
-      done()
+        await taskpool.execute(task)
+        await receivePromise
+        expect(notifications1.length).assertEqual(2)
+        expect(notifications1[0]['version'] as number).assertEqual(10)
+        expect(notifications1[1]['version'] as number).assertEqual(11)
+      } catch (error) {
+        console.error("testConfigVersion1400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**

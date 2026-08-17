@@ -182,7 +182,7 @@ export default function ConfigIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConfigIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const config: IRConfigManager = new IRConfigManager(new collections.Map<string, string>())
       const stats: number[] = config.getIRStats()
       expect(stats[0]).assertEqual(0)
@@ -197,7 +197,7 @@ export default function ConfigIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConfigIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const config: ICConfigManager = new ICConfigManager(new collections.Map<string, string>())
       config.set('key1', 'value1')
       for (let i = 0; i < 100; i++) {
@@ -214,7 +214,7 @@ export default function ConfigIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConfigIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const config1: StandardConfigManager = new StandardConfigManager(new collections.Map<string, string>())
       const config2: StandardConfigManager = new StandardConfigManager(new collections.Map<string, string>())
       expect(config1.capacity_).assertEqual(config2.capacity_)
@@ -228,7 +228,7 @@ export default function ConfigIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConfigIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const config: LargeConfigManager = new LargeConfigManager(new collections.Map<string, number>())
       for (let i = 0; i < 1025; i++) {
         config.configMap_.set(`cfg_${i}`, i)
@@ -245,23 +245,29 @@ export default function ConfigIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConfigIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const config: ConcurrentConfigManager = new ConcurrentConfigManager(new collections.Map<string, string>())
-      for (let i = 0; i < 100; i++) {
-        config.configMap_.set(`k_${i}`, `v_${i}`)
+    it('testConfigIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const config: ConcurrentConfigManager = new ConcurrentConfigManager(new collections.Map<string, string>())
+        for (let i = 0; i < 100; i++) {
+          config.configMap_.set(`k_${i}`, `v_${i}`)
+        }
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 100; i++) {
+          tasks.push(new taskpool.Task(readConfigValue, config, `k_${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < 100; i++) {
+          expect(results[i] as string).assertEqual(`v_${i}`)
+        }
+      } catch (error) {
+        console.error("testConfigIR0500 failed");
+        expect(false).assertFail();
       }
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 100; i++) {
-        tasks.push(new taskpool.Task(readConfigValue, config, `k_${i}`))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < 100; i++) {
-        expect(results[i] as string).assertEqual(`v_${i}`)
-      }
+      done();
     })
 
     /**
@@ -272,7 +278,7 @@ export default function ConfigIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConfigIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const config: ConfigPropertyIR = new ConfigPropertyIR()
       config.markLoaded()
       const status: number[] = config.getIRStatus()
@@ -289,11 +295,17 @@ export default function ConfigIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConfigIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const config: ConfigMethodIR = new ConfigMethodIR(new collections.Map<string, string>(), new ArkTSUtils.locks.AsyncLock())
-      await config.setConfig('method_key', 'method_value')
-      const value: string | undefined = await config.getConfig('method_key')
-      expect(value).assertEqual('method_value')
+    it('testConfigIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const config: ConfigMethodIR = new ConfigMethodIR(new collections.Map<string, string>(), new ArkTSUtils.locks.AsyncLock())
+        await config.setConfig('method_key', 'method_value')
+        const value: string | undefined = await config.getConfig('method_key')
+        expect(value).assertEqual('method_value')
+      } catch (error) {
+        console.error("testConfigIR0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -304,21 +316,27 @@ export default function ConfigIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConfigIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const config: CrossThreadConfig = new CrossThreadConfig(new collections.Map<string, number>())
-      config.configMap_.set('shared_key', 42)
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readCrossThreadConfig, config, 'shared_key'))
+    it('testConfigIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const config: CrossThreadConfig = new CrossThreadConfig(new collections.Map<string, number>())
+        config.configMap_.set('shared_key', 42)
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(readCrossThreadConfig, config, 'shared_key'))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < 10; i++) {
+          expect(results[i] as number).assertEqual(42)
+        }
+      } catch (error) {
+        console.error("testConfigIR0800 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < 10; i++) {
-        expect(results[i] as number).assertEqual(42)
-      }
+      done();
     })
 
     /**
@@ -329,20 +347,26 @@ export default function ConfigIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConfigIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const config: CrossThreadConfig = new CrossThreadConfig(new collections.Map<string, number>())
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readCrossThreadVersion, config))
+    it('testConfigIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const config: CrossThreadConfig = new CrossThreadConfig(new collections.Map<string, number>())
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(readCrossThreadVersion, config))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < 10; i++) {
+          expect(results[i] as number).assertEqual(10)
+        }
+      } catch (error) {
+        console.error("testConfigIR0900 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < 10; i++) {
-        expect(results[i] as number).assertEqual(10)
-      }
+      done();
     })
 
     /**
@@ -353,7 +377,7 @@ export default function ConfigIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testConfigIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const config: BatchConfigManager = new BatchConfigManager(new collections.Map<string, string>())
       const keys: string[] = []
       const values: string[] = []

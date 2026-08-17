@@ -143,14 +143,20 @@ export default function ConcurrentGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConcurrentGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      for (let i: number = 0; i < 5; i++) {
-        await manager.create(`gc_${i}`, i)
-      }
-      expect(manager.getSize()).assertEqual(5)
+    it('testConcurrentGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 5; i++) {
+          await manager.create(`gc_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(5)
 
-      await manager.clearAll()
-      expect(manager.getSize()).assertEqual(0)
+        await manager.clearAll()
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testConcurrentGC0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -161,18 +167,24 @@ export default function ConcurrentGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testConcurrentGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      expect(manager.getSize()).assertEqual(0)
+    it('testConcurrentGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(manager.getSize()).assertEqual(0)
 
-      await manager.create('data1', 1)
-      await manager.create('data2', 2)
-      await manager.create('data3', 3)
-      expect(manager.getSize()).assertEqual(3)
+        await manager.create('data1', 1)
+        await manager.create('data2', 2)
+        await manager.create('data3', 3)
+        expect(manager.getSize()).assertEqual(3)
 
-      await manager.delete('data1')
-      await manager.delete('data2')
-      await manager.delete('data3')
-      expect(manager.getSize()).assertEqual(0)
+        await manager.delete('data1')
+        await manager.delete('data2')
+        await manager.delete('data3')
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testConcurrentGC0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -183,13 +195,19 @@ export default function ConcurrentGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: ConcurrentGCData = await manager.create('active', 42)
-      expect(data.getValue()).assertEqual(420)
+    it('testConcurrentGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: ConcurrentGCData = await manager.create('active', 42)
+        expect(data.getValue()).assertEqual(420)
 
-      const retrieved: ConcurrentGCData | undefined = manager.get('active')
-      expect(retrieved !== undefined).assertTrue()
-      expect(retrieved!.getValue()).assertEqual(420)
+        const retrieved: ConcurrentGCData | undefined = manager.get('active')
+        expect(retrieved !== undefined).assertTrue()
+        expect(retrieved!.getValue()).assertEqual(420)
+      } catch (error) {
+        console.error("testConcurrentGC0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -200,17 +218,23 @@ export default function ConcurrentGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: ConcurrentGCData = await manager.create('concurrent', 5)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(accessConcurrentGCTask, data))
+    it('testConcurrentGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: ConcurrentGCData = await manager.create('concurrent', 5)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(accessConcurrentGCTask, data))
+        }
+        const results: Object[] = await executeConcurrentGCTasks(tasks)
+        expect(results.length).assertEqual(5)
+        for (let i: number = 0; i < 5; i++) {
+          expect(results[i] as number).assertEqual(50)
+        }
+      } catch (error) {
+        console.error("testConcurrentGC0400 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await executeConcurrentGCTasks(tasks)
-      expect(results.length).assertEqual(5)
-      for (let i: number = 0; i < 5; i++) {
-        expect(results[i] as number).assertEqual(50)
-      }
+      done();
     })
 
     /**
@@ -221,13 +245,19 @@ export default function ConcurrentGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const startTime: number = Date.now()
-      for (let i: number = 0; i < 10; i++) {
-        await manager.create(`fast_${i}`, i)
+    it('testConcurrentGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const startTime: number = Date.now()
+        for (let i: number = 0; i < 10; i++) {
+          await manager.create(`fast_${i}`, i)
+        }
+        const elapsed: number = Date.now() - startTime
+        expect(elapsed < 5000).assertTrue()
+      } catch (error) {
+        console.error("testConcurrentGC0500 failed");
+        expect(false).assertFail();
       }
-      const elapsed: number = Date.now() - startTime
-      expect(elapsed < 5000).assertTrue()
+      done();
     })
 
     /**
@@ -238,17 +268,23 @@ export default function ConcurrentGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 5; i++) {
-        await manager.create(`cnt_${i}`, i)
-      }
-      expect(manager.getSize()).assertEqual(5)
+    it('testConcurrentGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 5; i++) {
+          await manager.create(`cnt_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(5)
 
-      for (let i: number = 0; i < 5; i++) {
-        await manager.delete(`cnt_${i}`)
+        for (let i: number = 0; i < 5; i++) {
+          await manager.delete(`cnt_${i}`)
+        }
+        expect(manager.getSize()).assertEqual(0)
+        expect(manager.getDeleteCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testConcurrentGC0600 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getSize()).assertEqual(0)
-      expect(manager.getDeleteCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -259,15 +295,21 @@ export default function ConcurrentGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let round: number = 0; round < 3; round++) {
-        for (let i: number = 0; i < 5; i++) {
-          await manager.create(`round${round}_${i}`, i)
+    it('testConcurrentGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let round: number = 0; round < 3; round++) {
+          for (let i: number = 0; i < 5; i++) {
+            await manager.create(`round${round}_${i}`, i)
+          }
+          expect(manager.getSize()).assertEqual(5)
+          await manager.clearAll()
+          expect(manager.getSize()).assertEqual(0)
         }
-        expect(manager.getSize()).assertEqual(5)
-        await manager.clearAll()
-        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testConcurrentGC0700 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -278,13 +320,19 @@ export default function ConcurrentGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: ConcurrentGCData = await manager.create('persist', 100)
-      expect(data.getValue()).assertEqual(1000)
+    it('testConcurrentGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: ConcurrentGCData = await manager.create('persist', 100)
+        expect(data.getValue()).assertEqual(1000)
 
-      const task: taskpool.Task = new taskpool.Task(accessConcurrentGCTask, data)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertEqual(1000)
+        const task: taskpool.Task = new taskpool.Task(accessConcurrentGCTask, data)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertEqual(1000)
+      } catch (error) {
+        console.error("testConcurrentGC0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -295,19 +343,25 @@ export default function ConcurrentGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 10; i++) {
-        await manager.create(`cap_${i}`, i)
-      }
-      expect(manager.getSize()).assertEqual(10)
+    it('testConcurrentGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 10; i++) {
+          await manager.create(`cap_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(10)
 
-      await manager.clearAll()
-      expect(manager.getSize()).assertEqual(0)
+        await manager.clearAll()
+        expect(manager.getSize()).assertEqual(0)
 
-      for (let i: number = 0; i < 10; i++) {
-        await manager.create(`cap2_${i}`, i * 10)
+        for (let i: number = 0; i < 10; i++) {
+          await manager.create(`cap2_${i}`, i * 10)
+        }
+        expect(manager.getSize()).assertEqual(10)
+      } catch (error) {
+        console.error("testConcurrentGC0900 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getSize()).assertEqual(10)
+      done();
     })
 
     /**
@@ -318,20 +372,26 @@ export default function ConcurrentGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConcurrentGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 5; i++) {
-        await manager.create(`mixed_${i}`, i)
+    it('testConcurrentGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 5; i++) {
+          await manager.create(`mixed_${i}`, i)
+        }
+
+        const data3: ConcurrentGCData | undefined = manager.get('mixed_3')
+        expect(data3 !== undefined).assertTrue()
+        const task: taskpool.Task = new taskpool.Task(accessConcurrentGCTask, data3!)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertEqual(30)
+
+        await manager.delete('mixed_0')
+        await manager.delete('mixed_1')
+        expect(manager.getSize()).assertEqual(3)
+      } catch (error) {
+        console.error("testConcurrentGC1000 failed");
+        expect(false).assertFail();
       }
-
-      const data3: ConcurrentGCData | undefined = manager.get('mixed_3')
-      expect(data3 !== undefined).assertTrue()
-      const task: taskpool.Task = new taskpool.Task(accessConcurrentGCTask, data3!)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertEqual(30)
-
-      await manager.delete('mixed_0')
-      await manager.delete('mixed_1')
-      expect(manager.getSize()).assertEqual(3)
+      done();
     })
   })
 }
