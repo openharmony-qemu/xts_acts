@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,11 +19,40 @@
 namespace vulkan {
 namespace loader {
 
+/**
+ * @brief Load Vulkan base function pointers and create a VkInstance.
+ * @return 0 on completion (success or unsupported).
+ */
 int LoadBaseFuncPtrTest();
+
+/**
+ * @brief Load instance-level function pointers (core, surface, device, debug).
+ * @return 0 on success, -1 on failure or unsupported.
+ */
 int LoadInstanceFuncPtrTest();
+
+/**
+ * @brief Enumerate physical devices and query their properties.
+ * @return 0 on success, -1 on failure or unsupported.
+ */
 int VkEnumeratePhysicalDevicesTest();
+
+/**
+ * @brief Create a logical Vulkan device with graphics queue and swapchain extension.
+ * @return 0 on success, -1 on failure or unsupported.
+ */
 int VkCreateDeviceTest();
+
+/**
+ * @brief Test vkGetNativeBufferPropertiesOHOS for OHOS native buffer interop.
+ * @return 0 on completion, -1 on failure or unsupported.
+ */
 int GetNativeBufferPropertiesOhosTest();
+
+/**
+ * @brief Test vkGetMemoryNativeBufferOHOS for OHOS native buffer memory interop.
+ * @return 0 on completion, -1 on failure or unsupported.
+ */
 int GetMemoryNativeBufferOhosTest();
 
 } // namespace loader

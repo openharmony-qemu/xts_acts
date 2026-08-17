@@ -14,9 +14,11 @@ add_library(graphic_vulkan_napi_test SHARED
     VulkanTest.cpp
     VulkanTestInterfaceTest.cpp)
 
+find_library(hilog-lib hilog_ndk.z)
+
 target_link_libraries(graphic_vulkan_napi_test PUBLIC
     libace_napi.z.so
-    libhilog_ndk.z.so
+    ${hilog-lib}
     libace_ndk.z.so
     libnative_window.so
     libvulkan.so
