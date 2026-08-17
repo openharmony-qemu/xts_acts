@@ -66,28 +66,23 @@ export default function onContentDidScrollStartUndefinedTest() {
 
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
-      //点击跳转索引触发回调
       let goBtn = await driver.findComponent(ON.id('go2')) as Component;
       await (goBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      //判断回调更新后结?
       let strJson = inspector.getInspectorByKey('testText');
       let obj = JSON.parseJsonElement(strJson);
       let testText = obj.getElement('$attrs').getString('content');
       console.info('[Initial] swiper_onContentDidScroll content: ' + testText);
       expect(testText).assertEqual("swiperIndex2");
 
-      //点击动态改成undefined
       let undefinedBtn = await driver.findComponent(ON.id('undefinedBtn')) as Component;
       await (undefinedBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      //点击跳转索引不触发回?
       await (goBtn.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      //判断回调更新后结?
       let strJson2 = inspector.getInspectorByKey('testText');
       let obj2 = JSON.parseJsonElement(strJson2);
       let testText2 = obj2.getElement('$attrs').getString('content');

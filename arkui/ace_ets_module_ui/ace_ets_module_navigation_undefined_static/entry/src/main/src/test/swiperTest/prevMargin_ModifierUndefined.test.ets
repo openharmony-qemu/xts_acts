@@ -82,14 +82,11 @@ export default function prevMargin_modifierUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.prevMargin is: ' + obj1.getElement('$attrs').getString('prevMargin'));
 
-      // 使用 UIContext.resolveUIContext()!.px2vp() 进行转换
       let prevMarginValue = obj1.getElement('$attrs').getString('prevMargin');
       let prevMarginInVp: number;
       if (prevMarginValue.endsWith('px')) {
-        // 如果?px，转换为 vp
         prevMarginInVp = Math.round(UIContext.resolveUIContext()!.px2vp(parseFloat(prevMarginValue.replace('px', ''))));
       } else {
-        // 如果?vp，直接取?
         prevMarginInVp = Math.round(parseFloat(prevMarginValue.replace('vp', '')));
       }
       console.info('Test component prevMarginInVp is: ' + prevMarginInVp);

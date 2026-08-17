@@ -436,14 +436,12 @@ export default function sideBarUndefined() {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 初始状态：isUndefined9=true，sideBarWidth=undefined，使用默认?240.000000
       let strJson = inspector.getInspectorByKey('SideBar_4');
       console.info("[sideBarUndefined_static_0009] Initial sideBarWidth: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('sideBarWidth'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sideBarWidth'))
         .assertEqual('240.000000');
 
-      // 第一次点击：isUndefined9 ?true 变为 false，sideBarWidth 变为 150
       let changeBtn = await driver.findComponent(ON.id('SideBar_btn9'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -454,7 +452,6 @@ export default function sideBarUndefined() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sideBarWidth'))
         .assertEqual('150.000000');
 
-      // 第二次点击：isUndefined9 ?false 变回 true，sideBarWidth 变回 undefined (默认?240)
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -485,14 +482,12 @@ export default function sideBarUndefined() {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 初始状态：isUndefined10=true，showSideBar=undefined，使用默认?true
       let strJson = inspector.getInspectorByKey('SideBar_4');
       console.info("[sideBarUndefined_static_0010] Initial showSideBar: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('showSideBar'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('showSideBar'))
         .assertEqual('true');
 
-      // 第一次点击：isUndefined10 ?true 变为 false，showSideBar 变为 false
       let changeBtn = await driver.findComponent(ON.id('SideBar_btn10'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -503,7 +498,6 @@ export default function sideBarUndefined() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('showSideBar'))
         .assertEqual('false');
 
-      // 第二次点击：isUndefined10 ?false 变回 true，showSideBar 变回 undefined (默认?true)
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -534,14 +528,12 @@ export default function sideBarUndefined() {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 初始状态：isUndefined11=true，sideBarPosition=undefined，使用默认?SideBarPosition.Start
       let strJson = inspector.getInspectorByKey('SideBar_5');
       console.info("[sideBarUndefined_static_0011] Initial sideBarPosition: " +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('sideBarPosition'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sideBarPosition'))
         .assertEqual('SideBarPosition.Start');
 
-      // 第一次点击：isUndefined11 ?true 变为 false，sideBarPosition 变为 SideBarPosition.End
       let changeBtn = await driver.findComponent(ON.id('SideBar_btn11'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -552,7 +544,6 @@ export default function sideBarUndefined() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sideBarPosition'))
         .assertEqual('SideBarPosition.End');
 
-      // 第二次点击：isUndefined11 ?false 变回 true，sideBarPosition 变回 undefined (默认?Start)
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 

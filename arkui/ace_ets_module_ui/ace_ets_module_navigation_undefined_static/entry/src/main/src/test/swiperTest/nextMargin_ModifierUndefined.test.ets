@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -90,7 +90,6 @@ export default function nextMargin_ModifierUndefinedTest() {
       let nextMarginValue1 = obj1.getElement('$attrs').getString('nextMargin');
       console.info('[After 1st click] nextMargin value: ' + nextMarginValue1);
 
-      // 使用 UIContext.resolveUIContext()!.px2vp() 进行转换
       let nextMarginInVp1: number;
       if (nextMarginValue1.endsWith('px')) {
         nextMarginInVp1 = Math.round(UIContext.resolveUIContext()!.px2vp(parseFloat(nextMarginValue1.replace('px', ''))));

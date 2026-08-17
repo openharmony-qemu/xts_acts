@@ -90,14 +90,11 @@ export default function nextMarginUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.nextMargin is: ' + obj1.getElement('$attrs').getString('nextMargin'));
 
-      // 使用 UIContext.resolveUIContext()!.px2vp() 进行转换
       let nextMarginValue = obj1.getElement('$attrs').getString('nextMargin');
       let nextMarginInVp: number;
       if (nextMarginValue.endsWith('px')) {
-        // 如果?px，转换为 vp
         nextMarginInVp = Math.round(UIContext.resolveUIContext()!.px2vp(parseFloat(nextMarginValue.replace('px', ''))));
       } else {
-        // 如果?vp，直接取?
         nextMarginInVp = Math.round(parseFloat(nextMarginValue.replace('vp', '')));
       }
       console.info('Test component nextMarginInVp is: ' + nextMarginInVp);

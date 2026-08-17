@@ -74,33 +74,28 @@ export default function onNavigationModeChangeModifierUndefined() {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 点击切换 mode 按钮，应该触?onNavigationModeChange 回调，changeCount 增加
       let changeModeBtn = await driver.findComponent(ON.id('changeModeButton'));
       if (changeModeBtn) {
         await changeModeBtn.click();
         await CommonFunc.sleep(1000);
       }
 
-      // 检?changeCount 是否变为 2
       let strJson = inspector.getInspectorByKey('changeCountText');
       console.info('[onNavigationModeChangeModifierUndefined_static_0001] strJson: ' + strJson);
       let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');
       console.info('[onNavigationModeChangeModifierUndefined_static_0001] changeCount after first click: ' + res);
       expect(res).assertEqual('changeCount:2');
 
-      // 点击切换按钮，切换为 undefined
       let toggleBtn = await driver.findComponent(ON.id('toggleButton'));
       console.info('[onNavigationModeChangeModifierUndefined_static_0001] Toggle to undefined');
       await (toggleBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      // 再次点击切换 mode 按钮，onNavigationModeChange ?undefined，不会触发回调，changeCount 保持不变
       if (changeModeBtn) {
         await changeModeBtn.click();
         await CommonFunc.sleep(1000);
       }
 
-      // 检?changeCount 仍然?2（没有增加）
       strJson = inspector.getInspectorByKey('changeCountText');
       res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');
       console.info('[onNavigationModeChangeModifierUndefined_static_0001] changeCount after undefined click: ' + res);

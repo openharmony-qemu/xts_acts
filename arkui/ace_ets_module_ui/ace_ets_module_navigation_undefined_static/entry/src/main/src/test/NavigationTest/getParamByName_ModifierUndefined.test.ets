@@ -63,7 +63,6 @@ afterEach(async () => {
       try {
         await CommonFunc.sleep(1000);
         let driver: Driver = await Driver.create();
-        // 尝试返回到初始页面，清理可能残留的页面跳转状态
         await driver.pressBack();
         await CommonFunc.sleep(500);
       } catch (err) {
@@ -86,7 +85,6 @@ afterEach(async () => {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 步骤1: 验证初始状?- modifier.isUndefined = false
       let toggleBtn = await driver.findComponent(ON.id('toggleButton'));
       if (toggleBtn) {
         let toggleText = await toggleBtn.getText();
@@ -94,7 +92,6 @@ afterEach(async () => {
         expect(toggleText.indexOf('false') > -1).assertTrue();
       }
 
-      // 步骤2: 直接点击 getParamByName，此?PageHome1 还未?push
       let getParamBtn = await driver.findComponent(ON.id('getParamButton'));
       if (getParamBtn) {
         await getParamBtn.click();
@@ -107,14 +104,12 @@ afterEach(async () => {
       console.info('[getParamByNameModifierUndefined_static_0001] Step2 result text (no page): ' + res);
       expect(res).assertEqual('Result: 0');
 
-      // 步骤3: 点击 pushPathByName 按钮
       let pushBtn = await driver.findComponent(ON.id('pushButton'));
       if (pushBtn) {
         await pushBtn.click();
         await CommonFunc.sleep(1500);
       }
 
-      // 步骤4: 重新查找并点?getParamByName 按钮
       getParamBtn = await driver.findComponent(ON.id('getParamButton'));
       if (getParamBtn) {
         await getParamBtn.click();
@@ -127,14 +122,12 @@ afterEach(async () => {
       console.info('[getParamByNameModifierUndefined_static_0001] Step4 result text (with param): ' + res);
       expect(res).assertEqual('Result: 1');
 
-      // 步骤5: 点击 Toggle Modifier 按钮，切?modifier 状?
       toggleBtn = await driver.findComponent(ON.id('toggleButton'));
       if (toggleBtn) {
         await toggleBtn.click();
         await CommonFunc.sleep(1000);
       }
 
-      // 步骤6: 验证切换后状?- modifier.isUndefined = true
       toggleBtn = await driver.findComponent(ON.id('toggleButton'));
       if (toggleBtn) {
         let toggleText = await toggleBtn.getText();

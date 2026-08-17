@@ -63,7 +63,6 @@ afterEach(async () => {
       try {
         await CommonFunc.sleep(1000);
         let driver: Driver = await Driver.create();
-        // 尝试返回到初始页面，清理可能残留的页面跳转状态
         await driver.pressBack();
         await CommonFunc.sleep(500);
       } catch (err) {
@@ -86,7 +85,6 @@ afterEach(async () => {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 步骤1: 直接点击 getParamByName，此?PageHome1 还未?push
       let getParamBtn = await driver.findComponent(ON.id('getParamButton'));
       if (getParamBtn) {
         await getParamBtn.click();
@@ -100,21 +98,18 @@ afterEach(async () => {
 
       expect(res).assertEqual('Result: 0');
 
-      // 步骤2: 点击 pushPathByName 按钮，跳转到 PageHome1 页面并传递参?'testParam'
       let pushBtn = await driver.findComponent(ON.id('pushButton'));
       if (pushBtn) {
         await pushBtn.click();
         await CommonFunc.sleep(1500);
       }
 
-      // 步骤3: 重新查找并点?getParamByName 按钮
       getParamBtn = await driver.findComponent(ON.id('getParamButton'));
       if (getParamBtn) {
         await getParamBtn.click();
         await CommonFunc.sleep(1000);
       }
 
-      // 验证结果文本显示参数?
       strJson = inspector.getInspectorByKey('resultText');
       console.info('[getParamByNameUndefined_static_0001] Step3 strJson: ' + strJson);
       res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');

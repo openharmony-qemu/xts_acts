@@ -67,7 +67,6 @@ export default function indicator_ModifierUndefinedTest() {
       console.info('indicator_ModifierUndefinedTest_0100 START');
       await CommonFunc.sleep(2000);
 
-      // 初始状态：isUndefined=false，indicator=false
       let strJson = inspector.getInspectorByKey('swiper_indicator');
       let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
@@ -76,7 +75,6 @@ export default function indicator_ModifierUndefinedTest() {
       console.info('[Initial] indicator value: ' + indicatorValue);
       expect(indicatorValue).assertEqual("false");
 
-      // 第一次点击：isUndefined ?false 变为 true，indicator 变为 undefined
       try{
 
       let driver = await Driver.create();
@@ -89,12 +87,10 @@ export default function indicator_ModifierUndefinedTest() {
       let obj1 = JSON.parseJsonElement(strJson1);
       await CommonFunc.sleep(1000);
 
-      // indicator ?undefined 时，应该使用默认?true
       let indicatorValue1 = obj1.getElement('$attrs').getString('indicator');
       console.info('[After 1st click] indicator value: ' + indicatorValue1);
       expect(indicatorValue1).assertEqual("true");
 
-      // 第二次点击：isUndefined ?true 变回 false，indicator 变回 false
       await (btn_change?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
