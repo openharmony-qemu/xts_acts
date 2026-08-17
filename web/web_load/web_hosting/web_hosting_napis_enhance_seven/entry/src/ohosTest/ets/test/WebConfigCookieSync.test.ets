@@ -1009,5 +1009,137 @@ export default function WebConfigCookieSync() {
       done();
     })
 
+    /**
+     * @tc.name   testEtsFetchCookieSyncIncognitoNull014
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ERROR_1400
+     * @tc.desc   test fetchCookieSync incognito null with includePartitionedCookies false (401 or default false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookieSyncIncognitoNull014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookieSyncIncognitoNull014", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieSyncIncognitoNull014", true, 148043, (error: object): void => {
+        if (error) {
+          console.info('testEtsFetchCookieSyncIncognitoNull014 error: ' + JSON.stringify(error));
+        }
+        isReturn = true;
+      }, (backData: events_emitter.EventData, expected: Object): void => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      try {
+        await waitForExist((error?: object): boolean => {
+          if (error) {
+            console.info('testEtsFetchCookieSyncIncognitoNull014 error: ' + JSON.stringify(error));
+          }
+          return isReturn;
+        }, 'testEtsFetchCookieSyncIncognitoNull014', true,1000);
+      } catch (err) {
+        console.error('testEtsFetchCookieSyncIncognitoNull014 error: ' + JSON.stringify(err));
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookieSyncIncognitoUndefined015
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ERROR_1500
+     * @tc.desc   test fetchCookieSync incognito undefined with includePartitionedCookies false (401 or default false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookieSyncIncognitoUndefined015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookieSyncIncognitoUndefined015", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieSyncIncognitoUndefined015", true, 148044, (error: object): void => {
+        if (error) {
+          console.info('testEtsFetchCookieSyncIncognitoUndefined015 error: ' + JSON.stringify(error));
+        }
+        isReturn = true;
+      }, (backData: events_emitter.EventData, expected: Object): void => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      try {
+        await waitForExist((error?: object): boolean => {
+          if (error) {
+            console.info('testEtsFetchCookieSyncIncognitoUndefined015 error: ' + JSON.stringify(error));
+          }
+          return isReturn;
+        }, 'testEtsFetchCookieSyncIncognitoUndefined015', true,1000);
+      } catch (err) {
+        console.error('testEtsFetchCookieSyncIncognitoUndefined015 error: ' + JSON.stringify(err));
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookieIncognitoNull016
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ERROR_1600
+     * @tc.desc   test fetchCookie incognito null with includePartitionedCookies false (401 or default false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookieIncognitoNull016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookieIncognitoNull016", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieIncognitoNull016", true, 148045, (error: object): void => {
+        if (error) {
+          console.info('testEtsFetchCookieIncognitoNull016 error: ' + JSON.stringify(error));
+        }
+        isReturn = true;
+      }, (backData: events_emitter.EventData, expected: Object): void => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      try {
+        await waitForExist((error?: object): boolean => {
+          if (error) {
+            console.info('testEtsFetchCookieIncognitoNull016 error: ' + JSON.stringify(error));
+          }
+          return isReturn;
+        }, 'testEtsFetchCookieIncognitoNull016', true,1000);
+      } catch (err) {
+        console.error('testEtsFetchCookieIncognitoNull016 error: ' + JSON.stringify(err));
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookieIncognitoUndefined017
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ERROR_1700
+     * @tc.desc   test fetchCookie incognito undefined with includePartitionedCookies false (401 or default false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookieIncognitoUndefined017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookieIncognitoUndefined017", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieIncognitoUndefined017", true, 148046, (error: object): void => {
+        if (error) {
+          console.info('testEtsFetchCookieIncognitoUndefined017 error: ' + JSON.stringify(error));
+        }
+        isReturn = true;
+      }, (backData: events_emitter.EventData, expected: Object): void => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      try {
+        await waitForExist((error?: object): boolean => {
+          if (error) {
+            console.info('testEtsFetchCookieIncognitoUndefined017 error: ' + JSON.stringify(error));
+          }
+          return isReturn;
+        }, 'testEtsFetchCookieIncognitoUndefined017', true,1000);
+      } catch (err) {
+        console.error('testEtsFetchCookieIncognitoUndefined017 error: ' + JSON.stringify(err));
+      }
+      done();
+    })
+
   })
 }
