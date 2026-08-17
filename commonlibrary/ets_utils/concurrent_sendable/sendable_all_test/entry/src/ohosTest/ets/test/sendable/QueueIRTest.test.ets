@@ -155,12 +155,18 @@ export default function QueueIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testQueueIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1024; i++) {
-        await queue.enqueue(i)
+    it('testQueueIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1024; i++) {
+          await queue.enqueue(i)
+        }
+        expect(await queue.getSize()).assertEqual(1024)
+      } catch (error) {
+        console.error("testQueueIR0100 failed");
+        expect(false).assertFail();
       }
-      expect(await queue.getSize()).assertEqual(1024)
+      done();
     })
 
     /**
@@ -171,17 +177,23 @@ export default function QueueIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testQueueIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 1025; i++) {
-        await queue.enqueue(i)
+    it('testQueueIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 1025; i++) {
+          await queue.enqueue(i)
+        }
+        expect(await queue.getSize()).assertEqual(1025)
+        const lastItem: number | undefined = await queue.dequeue()
+        for (let i = 0; i < 1024; i++) {
+          await queue.dequeue()
+        }
+        expect(lastItem).assertEqual(0)
+      } catch (error) {
+        console.error("testQueueIR0200 failed");
+        expect(false).assertFail();
       }
-      expect(await queue.getSize()).assertEqual(1025)
-      const lastItem: number | undefined = await queue.dequeue()
-      for (let i = 0; i < 1024; i++) {
-        await queue.dequeue()
-      }
-      expect(lastItem).assertEqual(0)
+      done();
     })
 
     /**
@@ -192,15 +204,21 @@ export default function QueueIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testQueueIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const pcQueue: ProducerConsumerIRQueue = new ProducerConsumerIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let i = 0; i < 100; i++) {
-        await pcQueue.produce(i)
+    it('testQueueIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const pcQueue: ProducerConsumerIRQueue = new ProducerConsumerIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let i = 0; i < 100; i++) {
+          await pcQueue.produce(i)
+        }
+        for (let i = 0; i < 100; i++) {
+          const item: number | undefined = await pcQueue.consume()
+          expect(item).assertEqual(i)
+        }
+      } catch (error) {
+        console.error("testQueueIR0300 failed");
+        expect(false).assertFail();
       }
-      for (let i = 0; i < 100; i++) {
-        const item: number | undefined = await pcQueue.consume()
-        expect(item).assertEqual(i)
-      }
+      done();
     })
 
     /**
@@ -211,25 +229,31 @@ export default function QueueIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testQueueIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 100; i++) {
-        tasks.push(new taskpool.Task(produceIRTask, i))
-      }
-      const batchSize: number = 50
-      for (let batch = 0; batch < Math.ceil(100 / batchSize); batch++) {
-        const batchTasks: taskpool.Task[] = tasks.slice(batch * batchSize, (batch + 1) * batchSize)
-        const promises: Promise<Object>[] = []
-        for (let i = 0; i < batchTasks.length; i++) {
-          promises.push(taskpool.execute(batchTasks[i]))
+    it('testQueueIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 100; i++) {
+          tasks.push(new taskpool.Task(produceIRTask, i))
         }
-        const results: Object[] = await Promise.all(promises)
-        for (let i = 0; i < results.length; i++) {
-          await queue.enqueue(results[i] as number)
+        const batchSize: number = 50
+        for (let batch = 0; batch < Math.ceil(100 / batchSize); batch++) {
+          const batchTasks: taskpool.Task[] = tasks.slice(batch * batchSize, (batch + 1) * batchSize)
+          const promises: Promise<Object>[] = []
+          for (let i = 0; i < batchTasks.length; i++) {
+            promises.push(taskpool.execute(batchTasks[i]))
+          }
+          const results: Object[] = await Promise.all(promises)
+          for (let i = 0; i < results.length; i++) {
+            await queue.enqueue(results[i] as number)
+          }
         }
+        expect(await queue.getSize()).assertLargerOrEqual(1)
+      } catch (error) {
+        console.error("testQueueIR0400 failed");
+        expect(false).assertFail();
       }
-      expect(await queue.getSize()).assertLargerOrEqual(1)
+      done();
     })
 
     /**
@@ -240,17 +264,23 @@ export default function QueueIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testQueueIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      for (let cycle = 0; cycle < 10; cycle++) {
-        for (let i = 0; i < 100; i++) {
-          await queue.enqueue(i)
+    it('testQueueIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        for (let cycle = 0; cycle < 10; cycle++) {
+          for (let i = 0; i < 100; i++) {
+            await queue.enqueue(i)
+          }
+          for (let i = 0; i < 50; i++) {
+            await queue.dequeue()
+          }
         }
-        for (let i = 0; i < 50; i++) {
-          await queue.dequeue()
-        }
+        expect(await queue.getSize()).assertEqual(500)
+      } catch (error) {
+        console.error("testQueueIR0500 failed");
+        expect(false).assertFail();
       }
-      expect(await queue.getSize()).assertEqual(500)
+      done();
     })
 
     /**
@@ -261,15 +291,21 @@ export default function QueueIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testQueueIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const queue: ElementIRQueue = new ElementIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      await queue.lock_.lockAsync((): void => {
-        for (let i = 0; i < 100; i++) {
-          queue.items_.push(i)
-        }
-      })
-      expect(await queue.getElement(0)).assertEqual(0)
-      expect(await queue.getElement(99)).assertEqual(99)
+    it('testQueueIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const queue: ElementIRQueue = new ElementIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        await queue.lock_.lockAsync((): void => {
+          for (let i = 0; i < 100; i++) {
+            queue.items_.push(i)
+          }
+        })
+        expect(await queue.getElement(0)).assertEqual(0)
+        expect(await queue.getElement(99)).assertEqual(99)
+      } catch (error) {
+        console.error("testQueueIR0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -280,13 +316,19 @@ export default function QueueIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testQueueIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      await queue.enqueue(1)
-      for (let i = 0; i < 50; i++) {
-        const size: number = await queue.getSize()
-        expect(size).assertEqual(1)
+    it('testQueueIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        await queue.enqueue(1)
+        for (let i = 0; i < 50; i++) {
+          const size: number = await queue.getSize()
+          expect(size).assertEqual(1)
+        }
+      } catch (error) {
+        console.error("testQueueIR0700 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -297,15 +339,21 @@ export default function QueueIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testQueueIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const queue: CapacityIRQueue = new CapacityIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      expect(await queue.getCapacity()).assertEqual(1024)
-      await queue.lock_.lockAsync((): void => {
-        for (let i = 0; i < queue.capacity_; i++) {
-          queue.items_.push(i)
-        }
-      })
-      expect(queue.items_.length).assertEqual(1024)
+    it('testQueueIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const queue: CapacityIRQueue = new CapacityIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        expect(await queue.getCapacity()).assertEqual(1024)
+        await queue.lock_.lockAsync((): void => {
+          for (let i = 0; i < queue.capacity_; i++) {
+            queue.items_.push(i)
+          }
+        })
+        expect(queue.items_.length).assertEqual(1024)
+      } catch (error) {
+        console.error("testQueueIR0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -316,13 +364,19 @@ export default function QueueIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testQueueIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const queue1: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      const queue2: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      await queue1.enqueue(1)
-      await queue2.enqueue(2)
-      expect(await queue1.getSize()).assertEqual(1)
-      expect(await queue2.getSize()).assertEqual(1)
+    it('testQueueIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const queue1: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        const queue2: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        await queue1.enqueue(1)
+        await queue2.enqueue(2)
+        expect(await queue1.getSize()).assertEqual(1)
+        expect(await queue2.getSize()).assertEqual(1)
+      } catch (error) {
+        console.error("testQueueIR0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -333,25 +387,31 @@ export default function QueueIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testQueueIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const queue: CrossThreadIRQueue = new CrossThreadIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      await queue.lock_.lockAsync((): void => {
+    it('testQueueIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const queue: CrossThreadIRQueue = new CrossThreadIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        await queue.lock_.lockAsync((): void => {
+          for (let i = 0; i < 10; i++) {
+            queue.items_.push(i)
+          }
+        })
+        const tasks: taskpool.Task[] = []
         for (let i = 0; i < 10; i++) {
-          queue.items_.push(i)
+          tasks.push(new taskpool.Task(readQueueItem, i))
         }
-      })
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readQueueItem, i))
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < 10; i++) {
+          expect(results[i]).assertEqual(i)
+        }
+      } catch (error) {
+        console.error("testQueueIR1000 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < 10; i++) {
-        expect(results[i]).assertEqual(i)
-      }
+      done();
     })
   })
 }

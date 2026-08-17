@@ -162,24 +162,30 @@ export default function PipelineQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testPipelineQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await pipeline.inputStage1(5)
-      expect(await pipeline.getStage1Size()).assertEqual(1)
+    it('testPipelineQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await pipeline.inputStage1(5)
+        expect(await pipeline.getStage1Size()).assertEqual(1)
 
-      await pipeline.processStage1()
-      expect(await pipeline.getStage1Size()).assertEqual(0)
-      expect(await pipeline.getStage2Size()).assertEqual(1)
+        await pipeline.processStage1()
+        expect(await pipeline.getStage1Size()).assertEqual(0)
+        expect(await pipeline.getStage2Size()).assertEqual(1)
 
-      await pipeline.processStage2()
-      expect(await pipeline.getStage2Size()).assertEqual(0)
-      expect(await pipeline.getStage3Size()).assertEqual(1)
+        await pipeline.processStage2()
+        expect(await pipeline.getStage2Size()).assertEqual(0)
+        expect(await pipeline.getStage3Size()).assertEqual(1)
 
-      await pipeline.processStage3()
-      expect(await pipeline.getStage3Size()).assertEqual(0)
-      expect(await pipeline.getOutputSize()).assertEqual(1)
+        await pipeline.processStage3()
+        expect(await pipeline.getStage3Size()).assertEqual(0)
+        expect(await pipeline.getOutputSize()).assertEqual(1)
 
-      const output: number[] = await pipeline.getOutputData()
-      expect(output[0]).assertEqual(20)
+        const output: number[] = await pipeline.getOutputData()
+        expect(output[0]).assertEqual(20)
+      } catch (error) {
+        console.error("testPipelineQueue0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -190,14 +196,20 @@ export default function PipelineQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testPipelineQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await pipeline.inputStage1(10)
-      await pipeline.processStage1()
-      await pipeline.processStage2()
-      await pipeline.processStage3()
+    it('testPipelineQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await pipeline.inputStage1(10)
+        await pipeline.processStage1()
+        await pipeline.processStage2()
+        await pipeline.processStage3()
 
-      const output: number[] = await pipeline.getOutputData()
-      expect(output[0]).assertEqual(30)
+        const output: number[] = await pipeline.getOutputData()
+        expect(output[0]).assertEqual(30)
+      } catch (error) {
+        console.error("testPipelineQueue0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -208,23 +220,29 @@ export default function PipelineQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testPipelineQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const promises: Promise<void>[] = []
-      for (let i = 0; i < 10; i++) {
-        promises.push(pipeline.inputStage1(i))
+    it('testPipelineQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const promises: Promise<void>[] = []
+        for (let i = 0; i < 10; i++) {
+          promises.push(pipeline.inputStage1(i))
+        }
+        await Promise.all(promises)
+
+        expect(await pipeline.getStage1Size()).assertEqual(10)
+
+        await pipeline.processStage1()
+        expect(await pipeline.getStage2Size()).assertEqual(10)
+
+        await pipeline.processStage2()
+        expect(await pipeline.getStage3Size()).assertEqual(10)
+
+        await pipeline.processStage3()
+        expect(await pipeline.getOutputSize()).assertEqual(10)
+      } catch (error) {
+        console.error("testPipelineQueue0300 failed");
+        expect(false).assertFail();
       }
-      await Promise.all(promises)
-
-      expect(await pipeline.getStage1Size()).assertEqual(10)
-
-      await pipeline.processStage1()
-      expect(await pipeline.getStage2Size()).assertEqual(10)
-
-      await pipeline.processStage2()
-      expect(await pipeline.getStage3Size()).assertEqual(10)
-
-      await pipeline.processStage3()
-      expect(await pipeline.getOutputSize()).assertEqual(10)
+      done();
     })
 
     /**
@@ -235,22 +253,28 @@ export default function PipelineQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testPipelineQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      for (let i = 0; i < 5; i++) {
-        await pipeline.inputStage1(i)
+    it('testPipelineQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 5; i++) {
+          await pipeline.inputStage1(i)
+        }
+
+        const task1: taskpool.Task = new taskpool.Task(stage1Processor, pipeline)
+        await taskpool.execute(task1)
+        expect(await pipeline.getStage2Size()).assertEqual(5)
+
+        const task2: taskpool.Task = new taskpool.Task(stage2Processor, pipeline)
+        await taskpool.execute(task2)
+        expect(await pipeline.getStage3Size()).assertEqual(5)
+
+        const task3: taskpool.Task = new taskpool.Task(stage3Processor, pipeline)
+        await taskpool.execute(task3)
+        expect(await pipeline.getOutputSize()).assertEqual(5)
+      } catch (error) {
+        console.error("testPipelineQueue0400 failed");
+        expect(false).assertFail();
       }
-
-      const task1: taskpool.Task = new taskpool.Task(stage1Processor, pipeline)
-      await taskpool.execute(task1)
-      expect(await pipeline.getStage2Size()).assertEqual(5)
-
-      const task2: taskpool.Task = new taskpool.Task(stage2Processor, pipeline)
-      await taskpool.execute(task2)
-      expect(await pipeline.getStage3Size()).assertEqual(5)
-
-      const task3: taskpool.Task = new taskpool.Task(stage3Processor, pipeline)
-      await taskpool.execute(task3)
-      expect(await pipeline.getOutputSize()).assertEqual(5)
+      done();
     })
 
     /**
@@ -261,19 +285,25 @@ export default function PipelineQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testPipelineQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      for (let i = 0; i < 5; i++) {
-        await pipeline.inputStage1(i)
-      }
+    it('testPipelineQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 5; i++) {
+          await pipeline.inputStage1(i)
+        }
 
-      await pipeline.processStage1()
-      await pipeline.processStage2()
-      await pipeline.processStage3()
+        await pipeline.processStage1()
+        await pipeline.processStage2()
+        await pipeline.processStage3()
 
-      const output: number[] = await pipeline.getOutputData()
-      for (let i = 0; i < 5; i++) {
-        expect(output[i]).assertEqual(i * 2 + 10)
+        const output: number[] = await pipeline.getOutputData()
+        for (let i = 0; i < 5; i++) {
+          expect(output[i]).assertEqual(i * 2 + 10)
+        }
+      } catch (error) {
+        console.error("testPipelineQueue0500 failed");
+        expect(false).assertFail();
       }
+      done();
     })
   })
 }

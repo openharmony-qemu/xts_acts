@@ -104,10 +104,16 @@ export default function ReadWriteLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testReadWriteLock0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await resource.write(100)
-      const value: number = await resource.read()
-      expect(value).assertEqual(100)
+    it('testReadWriteLock0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await resource.write(100)
+        const value: number = await resource.read()
+        expect(value).assertEqual(100)
+      } catch (error) {
+        console.error("testReadWriteLock0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -118,13 +124,19 @@ export default function ReadWriteLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testReadWriteLock0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const promises: Promise<void>[] = []
-      for (let i = 0; i < 5; i++) {
-        promises.push(resource.write(i * 10))
+    it('testReadWriteLock0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const promises: Promise<void>[] = []
+        for (let i = 0; i < 5; i++) {
+          promises.push(resource.write(i * 10))
+        }
+        await Promise.all(promises)
+        expect(await resource.getWriteCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testReadWriteLock0200 failed");
+        expect(false).assertFail();
       }
-      await Promise.all(promises)
-      expect(await resource.getWriteCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -135,14 +147,20 @@ export default function ReadWriteLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testReadWriteLock0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const promises: Promise<void>[] = []
-      for (let i = 0; i < 10; i++) {
-        promises.push(resource.write(i))
+    it('testReadWriteLock0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const promises: Promise<void>[] = []
+        for (let i = 0; i < 10; i++) {
+          promises.push(resource.write(i))
+        }
+        await Promise.all(promises)
+        const value: number = await resource.getData()
+        expect(value >= 0 && value < 10).assertTrue()
+      } catch (error) {
+        console.error("testReadWriteLock0300 failed");
+        expect(false).assertFail();
       }
-      await Promise.all(promises)
-      const value: number = await resource.getData()
-      expect(value >= 0 && value < 10).assertTrue()
+      done();
     })
 
     /**
@@ -153,16 +171,22 @@ export default function ReadWriteLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testReadWriteLock0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await resource.write(50)
-      const promises: Promise<number>[] = []
-      for (let i = 0; i < 10; i++) {
-        promises.push(resource.read())
+    it('testReadWriteLock0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await resource.write(50)
+        const promises: Promise<number>[] = []
+        for (let i = 0; i < 10; i++) {
+          promises.push(resource.read())
+        }
+        const results: number[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i]).assertEqual(50)
+        }
+      } catch (error) {
+        console.error("testReadWriteLock0400 failed");
+        expect(false).assertFail();
       }
-      const results: number[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i]).assertEqual(50)
-      }
+      done();
     })
 
     /**
@@ -173,14 +197,20 @@ export default function ReadWriteLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testReadWriteLock0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await resource.write(100)
-      const promises: Promise<number>[] = []
-      for (let i = 0; i < 10; i++) {
-        promises.push(resource.read())
+    it('testReadWriteLock0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await resource.write(100)
+        const promises: Promise<number>[] = []
+        for (let i = 0; i < 10; i++) {
+          promises.push(resource.read())
+        }
+        await Promise.all(promises)
+        expect(await resource.getReadCount()).assertEqual(10)
+      } catch (error) {
+        console.error("testReadWriteLock0500 failed");
+        expect(false).assertFail();
       }
-      await Promise.all(promises)
-      expect(await resource.getReadCount()).assertEqual(10)
+      done();
     })
 
     /**
@@ -191,23 +221,29 @@ export default function ReadWriteLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testReadWriteLock0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await resource.write(0)
-      const readTasks: taskpool.Task[] = []
-      const writeTasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        readTasks.push(new taskpool.Task(readResourceValue, resource))
+    it('testReadWriteLock0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await resource.write(0)
+        const readTasks: taskpool.Task[] = []
+        const writeTasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          readTasks.push(new taskpool.Task(readResourceValue, resource))
+        }
+        for (let i = 0; i < 3; i++) {
+          writeTasks.push(new taskpool.Task(writeResourceValue, resource, i * 100))
+        }
+        const allTasks: taskpool.Task[] = [...readTasks, ...writeTasks]
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < allTasks.length; i++) {
+          promises.push(taskpool.execute(allTasks[i]))
+        }
+        await Promise.all(promises)
+        expect(await resource.getWriteCount()).assertLargerOrEqual(3)
+      } catch (error) {
+        console.error("testReadWriteLock0600 failed");
+        expect(false).assertFail();
       }
-      for (let i = 0; i < 3; i++) {
-        writeTasks.push(new taskpool.Task(writeResourceValue, resource, i * 100))
-      }
-      const allTasks: taskpool.Task[] = [...readTasks, ...writeTasks]
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < allTasks.length; i++) {
-        promises.push(taskpool.execute(allTasks[i]))
-      }
-      await Promise.all(promises)
-      expect(await resource.getWriteCount()).assertLargerOrEqual(3)
+      done();
     })
 
     /**
@@ -218,16 +254,22 @@ export default function ReadWriteLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testReadWriteLock0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let readCompleted: boolean = false
-      const writePromise: Promise<void> = resource.write(200)
-      await writePromise
-      const readPromise: Promise<number> = resource.read()
-      readPromise.then((): void => {
-        readCompleted = true
-      })
-      await readPromise
-      expect(readCompleted).assertTrue()
+    it('testReadWriteLock0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let readCompleted: boolean = false
+        const writePromise: Promise<void> = resource.write(200)
+        await writePromise
+        const readPromise: Promise<number> = resource.read()
+        readPromise.then((): void => {
+          readCompleted = true
+        }).catch((error: Error): void => { console.error("testReadWriteLock0700 failed"); expect(false).assertFail(); })
+        await readPromise
+        expect(readCompleted).assertTrue()
+      } catch (error) {
+        console.error("testReadWriteLock0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -238,14 +280,20 @@ export default function ReadWriteLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testReadWriteLock0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 5; i++) {
-        await resource.write(i * 10)
-        const value: number = await resource.read()
-        expect(value).assertEqual(i * 10)
+    it('testReadWriteLock0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 5; i++) {
+          await resource.write(i * 10)
+          const value: number = await resource.read()
+          expect(value).assertEqual(i * 10)
+        }
+        expect(await resource.getWriteCount()).assertEqual(5)
+        expect(await resource.getReadCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testReadWriteLock0800 failed");
+        expect(false).assertFail();
       }
-      expect(await resource.getWriteCount()).assertEqual(5)
-      expect(await resource.getReadCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -256,19 +304,25 @@ export default function ReadWriteLockTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testReadWriteLock0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const promises: Promise<void | number>[] = []
-      for (let i = 0; i < 20; i++) {
-        if (i % 3 === 0) {
-          promises.push(resource.write(i))
-        } else {
-          promises.push(resource.read())
+    it('testReadWriteLock0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const promises: Promise<void | number>[] = []
+        for (let i = 0; i < 20; i++) {
+          if (i % 3 === 0) {
+            promises.push(resource.write(i))
+          } else {
+            promises.push(resource.read())
+          }
         }
+        await Promise.all(promises)
+        const readCount: number = await resource.getReadCount()
+        const writeCount: number = await resource.getWriteCount()
+        expect(readCount + writeCount).assertEqual(20)
+      } catch (error) {
+        console.error("testReadWriteLock0900 failed");
+        expect(false).assertFail();
       }
-      await Promise.all(promises)
-      const readCount: number = await resource.getReadCount()
-      const writeCount: number = await resource.getWriteCount()
-      expect(readCount + writeCount).assertEqual(20)
+      done();
     })
   })
 }

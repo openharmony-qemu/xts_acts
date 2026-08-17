@@ -150,16 +150,22 @@ export default function PostGCStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testPostGCState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const data: PostGCStateData = await manager.create('integrity', 1)
-      expect(data.getId()).assertEqual(1)
-      expect(data.getName()).assertEqual('integrity')
-      expect(data.getValue()).assertEqual(100)
+    it('testPostGCState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const data: PostGCStateData = await manager.create('integrity', 1)
+        expect(data.getId()).assertEqual(1)
+        expect(data.getName()).assertEqual('integrity')
+        expect(data.getValue()).assertEqual(100)
 
-      const retrieved: PostGCStateData | undefined = manager.get('integrity')
-      expect(retrieved !== undefined).assertTrue()
-      expect(retrieved!.getId()).assertEqual(1)
-      expect(retrieved!.getValue()).assertEqual(100)
+        const retrieved: PostGCStateData | undefined = manager.get('integrity')
+        expect(retrieved !== undefined).assertTrue()
+        expect(retrieved!.getId()).assertEqual(1)
+        expect(retrieved!.getValue()).assertEqual(100)
+      } catch (error) {
+        console.error("testPostGCState0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -170,11 +176,17 @@ export default function PostGCStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testPostGCState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: PostGCStateData = await manager.create('ref_valid', 2)
-      const task: taskpool.Task = new taskpool.Task(readPostGCStateTask, data)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertEqual(200)
+    it('testPostGCState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: PostGCStateData = await manager.create('ref_valid', 2)
+        const task: taskpool.Task = new taskpool.Task(readPostGCStateTask, data)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertEqual(200)
+      } catch (error) {
+        console.error("testPostGCState0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -185,12 +197,18 @@ export default function PostGCStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testPostGCState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: PostGCStateData = await manager.create('method', 3)
-      expect(data.getValue()).assertEqual(300)
+    it('testPostGCState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: PostGCStateData = await manager.create('method', 3)
+        expect(data.getValue()).assertEqual(300)
 
-      await data.setValue(999)
-      expect(data.getValue()).assertEqual(999)
+        await data.setValue(999)
+        expect(data.getValue()).assertEqual(999)
+      } catch (error) {
+        console.error("testPostGCState0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -201,11 +219,17 @@ export default function PostGCStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testPostGCState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: PostGCStateData = await manager.create('type_info', 4)
-      expect(data.getId()).assertEqual(4)
-      expect(data.getName()).assertEqual('type_info')
-      expect(data.getValue()).assertEqual(400)
+    it('testPostGCState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: PostGCStateData = await manager.create('type_info', 4)
+        expect(data.getId()).assertEqual(4)
+        expect(data.getName()).assertEqual('type_info')
+        expect(data.getValue()).assertEqual(400)
+      } catch (error) {
+        console.error("testPostGCState0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -216,15 +240,21 @@ export default function PostGCStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testPostGCState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const container: collections.Array<PostGCStateData> = new collections.Array<PostGCStateData>()
-      for (let i: number = 0; i < 5; i++) {
-        const data: PostGCStateData = await manager.create(`arr_${i}`, i * 10)
-        container.push(data)
+    it('testPostGCState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const container: collections.Array<PostGCStateData> = new collections.Array<PostGCStateData>()
+        for (let i: number = 0; i < 5; i++) {
+          const data: PostGCStateData = await manager.create(`arr_${i}`, i * 10)
+          container.push(data)
+        }
+        expect(container.length).assertEqual(5)
+        expect(container[0].getId()).assertEqual(0)
+        expect(container[4].getId()).assertEqual(40)
+      } catch (error) {
+        console.error("testPostGCState0500 failed");
+        expect(false).assertFail();
       }
-      expect(container.length).assertEqual(5)
-      expect(container[0].getId()).assertEqual(0)
-      expect(container[4].getId()).assertEqual(40)
+      done();
     })
 
     /**
@@ -235,16 +265,22 @@ export default function PostGCStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testPostGCState0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: PostGCStateData = await manager.create('cross_consist', 6)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(readPostGCStateTask, data))
+    it('testPostGCState0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: PostGCStateData = await manager.create('cross_consist', 6)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(readPostGCStateTask, data))
+        }
+        const results: Object[] = await executePostGCStateTasks(tasks)
+        for (let i: number = 0; i < 5; i++) {
+          expect(results[i] as number).assertEqual(600)
+        }
+      } catch (error) {
+        console.error("testPostGCState0600 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await executePostGCStateTasks(tasks)
-      for (let i: number = 0; i < 5; i++) {
-        expect(results[i] as number).assertEqual(600)
-      }
+      done();
     })
 
     /**
@@ -255,13 +291,19 @@ export default function PostGCStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testPostGCState0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: PostGCStateData = await manager.create('update', 7)
-      expect(data.getValue()).assertEqual(700)
+    it('testPostGCState0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: PostGCStateData = await manager.create('update', 7)
+        expect(data.getValue()).assertEqual(700)
 
-      const task: taskpool.Task = new taskpool.Task(modifyPostGCStateTask, data, 777)
-      await taskpool.execute(task)
-      expect(data.getValue()).assertEqual(777)
+        const task: taskpool.Task = new taskpool.Task(modifyPostGCStateTask, data, 777)
+        await taskpool.execute(task)
+        expect(data.getValue()).assertEqual(777)
+      } catch (error) {
+        console.error("testPostGCState0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -272,11 +314,17 @@ export default function PostGCStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testPostGCState0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await manager.create('null_ref', 8)
-      await manager.delete('null_ref')
-      const retrieved: PostGCStateData | undefined = manager.get('null_ref')
-      expect(retrieved === undefined).assertTrue()
+    it('testPostGCState0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await manager.create('null_ref', 8)
+        await manager.delete('null_ref')
+        const retrieved: PostGCStateData | undefined = manager.get('null_ref')
+        expect(retrieved === undefined).assertTrue()
+      } catch (error) {
+        console.error("testPostGCState0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -287,16 +335,22 @@ export default function PostGCStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testPostGCState0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: PostGCStateData = await manager.create('multi_gc', 9)
-      for (let round: number = 0; round < 5; round++) {
-        for (let i: number = 0; i < 5; i++) {
-          await manager.create(`temp_${round}_${i}`, round * 10 + i)
+    it('testPostGCState0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: PostGCStateData = await manager.create('multi_gc', 9)
+        for (let round: number = 0; round < 5; round++) {
+          for (let i: number = 0; i < 5; i++) {
+            await manager.create(`temp_${round}_${i}`, round * 10 + i)
+          }
+          await manager.clearAll()
+          expect(data.getId()).assertEqual(9)
+          expect(data.getValue()).assertEqual(900)
         }
-        await manager.clearAll()
-        expect(data.getId()).assertEqual(9)
-        expect(data.getValue()).assertEqual(900)
+      } catch (error) {
+        console.error("testPostGCState0900 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -307,14 +361,20 @@ export default function PostGCStateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testPostGCState1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: PostGCStateData = await manager.create('concurrent_state', 10)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readPostGCStateTask, data))
+    it('testPostGCState1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: PostGCStateData = await manager.create('concurrent_state', 10)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(readPostGCStateTask, data))
+        }
+        await executePostGCStateTasks(tasks)
+        expect(data.getValue()).assertEqual(1000)
+      } catch (error) {
+        console.error("testPostGCState1000 failed");
+        expect(false).assertFail();
       }
-      await executePostGCStateTasks(tasks)
-      expect(data.getValue()).assertEqual(1000)
+      done();
     })
   })
 }

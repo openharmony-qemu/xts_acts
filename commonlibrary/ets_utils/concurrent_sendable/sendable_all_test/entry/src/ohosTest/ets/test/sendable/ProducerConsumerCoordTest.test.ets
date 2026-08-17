@@ -137,11 +137,17 @@ export default function ProducerConsumerCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testProducerConsumerCoord0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await pcb.produce(100)
-      const item: number = await pcb.consume()
-      expect(item).assertEqual(100)
-      expect(await pcb.size()).assertEqual(0)
+    it('testProducerConsumerCoord0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await pcb.produce(100)
+        const item: number = await pcb.consume()
+        expect(item).assertEqual(100)
+        expect(await pcb.size()).assertEqual(0)
+      } catch (error) {
+        console.error("testProducerConsumerCoord0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -152,16 +158,22 @@ export default function ProducerConsumerCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testProducerConsumerCoord0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 5; i++) {
-        await pcb.produce(i * 10)
+    it('testProducerConsumerCoord0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 5; i++) {
+          await pcb.produce(i * 10)
+        }
+        const items: number[] = []
+        for (let i = 0; i < 5; i++) {
+          items.push(await pcb.consume())
+        }
+        expect(items.length).assertEqual(5)
+        expect(await pcb.size()).assertEqual(0)
+      } catch (error) {
+        console.error("testProducerConsumerCoord0200 failed");
+        expect(false).assertFail();
       }
-      const items: number[] = []
-      for (let i = 0; i < 5; i++) {
-        items.push(await pcb.consume())
-      }
-      expect(items.length).assertEqual(5)
-      expect(await pcb.size()).assertEqual(0)
+      done();
     })
 
     /**
@@ -172,16 +184,22 @@ export default function ProducerConsumerCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testProducerConsumerCoord0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const producePromises: Promise<void>[] = []
-      for (let i = 0; i < 5; i++) {
-        producePromises.push(pcb.produce(i))
+    it('testProducerConsumerCoord0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const producePromises: Promise<void>[] = []
+        for (let i = 0; i < 5; i++) {
+          producePromises.push(pcb.produce(i))
+        }
+        await Promise.all(producePromises)
+        for (let i = 0; i < 5; i++) {
+          await pcb.consume()
+        }
+        expect(await pcb.size()).assertEqual(0)
+      } catch (error) {
+        console.error("testProducerConsumerCoord0300 failed");
+        expect(false).assertFail();
       }
-      await Promise.all(producePromises)
-      for (let i = 0; i < 5; i++) {
-        await pcb.consume()
-      }
-      expect(await pcb.size()).assertEqual(0)
+      done();
     })
 
 
@@ -193,20 +211,26 @@ export default function ProducerConsumerCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testProducerConsumerCoord0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let consumeCompleted: boolean = false
-      let consumeResult: number | undefined = undefined
-      const consumePromise: Promise<number> = pcb.consume()
-      consumePromise.then((result: number): void => {
-        consumeResult = result
-        consumeCompleted = true
-      })
-      await Utils.sleep(500)
-      expect(consumeCompleted).assertFalse()
-      await pcb.produce(42)
-      await consumePromise
-      expect(consumeCompleted).assertTrue()
-      expect(consumeResult).assertEqual(42)
+    it('testProducerConsumerCoord0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let consumeCompleted: boolean = false
+        let consumeResult: number | undefined = undefined
+        const consumePromise: Promise<number> = pcb.consume()
+        consumePromise.then((result: number): void => {
+          consumeResult = result
+          consumeCompleted = true
+        }).catch((error: Error): void => { console.error("testProducerConsumerCoord0400 failed"); expect(false).assertFail(); })
+        await Utils.sleep(500)
+        expect(consumeCompleted).assertFalse()
+        await pcb.produce(42)
+        await consumePromise
+        expect(consumeCompleted).assertTrue()
+        expect(consumeResult).assertEqual(42)
+      } catch (error) {
+        console.error("testProducerConsumerCoord0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -217,10 +241,16 @@ export default function ProducerConsumerCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testProducerConsumerCoord0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const result: boolean = await pcb.tryProduce(100)
-      expect(result).assertTrue()
-      expect(await pcb.size()).assertEqual(1)
+    it('testProducerConsumerCoord0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await pcb.tryProduce(100)
+        expect(result).assertTrue()
+        expect(await pcb.size()).assertEqual(1)
+      } catch (error) {
+        console.error("testProducerConsumerCoord0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -231,13 +261,19 @@ export default function ProducerConsumerCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testProducerConsumerCoord0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 10; i++) {
-        await pcb.produce(i)
+    it('testProducerConsumerCoord0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 10; i++) {
+          await pcb.produce(i)
+        }
+        const result: boolean = await pcb.tryProduce(999)
+        expect(result).assertFalse()
+        expect(await pcb.size()).assertEqual(10)
+      } catch (error) {
+        console.error("testProducerConsumerCoord0600 failed");
+        expect(false).assertFail();
       }
-      const result: boolean = await pcb.tryProduce(999)
-      expect(result).assertFalse()
-      expect(await pcb.size()).assertEqual(10)
+      done();
     })
 
     /**
@@ -248,11 +284,17 @@ export default function ProducerConsumerCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testProducerConsumerCoord0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await pcb.produce(100)
-      const item: number | undefined = await pcb.tryConsume()
-      expect(item === 100).assertTrue()
-      expect(await pcb.size()).assertEqual(0)
+    it('testProducerConsumerCoord0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await pcb.produce(100)
+        const item: number | undefined = await pcb.tryConsume()
+        expect(item === 100).assertTrue()
+        expect(await pcb.size()).assertEqual(0)
+      } catch (error) {
+        console.error("testProducerConsumerCoord0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -263,9 +305,15 @@ export default function ProducerConsumerCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testProducerConsumerCoord0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const item: number | undefined = await pcb.tryConsume()
-      expect(item === undefined).assertTrue()
+    it('testProducerConsumerCoord0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const item: number | undefined = await pcb.tryConsume()
+        expect(item === undefined).assertTrue()
+      } catch (error) {
+        console.error("testProducerConsumerCoord0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -276,17 +324,23 @@ export default function ProducerConsumerCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testProducerConsumerCoord0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(produceValue, i * 10))
+    it('testProducerConsumerCoord0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(produceValue, i * 10))
+        }
+        const results = await Promise.all(tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t)))
+        for (let i = 0; i < results.length; i++) {
+          const val: number = results[i] as number
+          await pcb.produce(val)
+        }
+        expect(await pcb.getProducedTotal()).assertEqual(5)
+      } catch (error) {
+        console.error("testProducerConsumerCoord0900 failed");
+        expect(false).assertFail();
       }
-      const results = await Promise.all(tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t)))
-      for (let i = 0; i < results.length; i++) {
-        const val: number = results[i] as number
-        await pcb.produce(val)
-      }
-      expect(await pcb.getProducedTotal()).assertEqual(5)
+      done();
     })
 
     /**
@@ -297,22 +351,28 @@ export default function ProducerConsumerCoordTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testProducerConsumerCoord1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const receivedData: string[] = []
-      const task: taskpool.Task = new taskpool.Task(notifyProducer)
-      task.onReceiveData((data: Object): void => {
-        receivedData.push(data as string)
-      })
-      await taskpool.execute(task)
-      await new Promise<void>((resolve: Function): void => {
-        const checkInterval: Object = setInterval((): void => {
-          if (receivedData.length >= 3) {
-            clearInterval(checkInterval as number)
-            resolve()
-          }
-        }, 10)
-      })
-      expect(receivedData.length).assertEqual(3)
+    it('testProducerConsumerCoord1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const receivedData: string[] = []
+        const task: taskpool.Task = new taskpool.Task(notifyProducer)
+        task.onReceiveData((data: Object): void => {
+          receivedData.push(data as string)
+        })
+        await taskpool.execute(task)
+        await new Promise<void>((resolve: Function): void => {
+          const checkInterval: Object = setInterval((): void => {
+            if (receivedData.length >= 3) {
+              clearInterval(checkInterval as number)
+              resolve()
+            }
+          }, 10)
+        })
+        expect(receivedData.length).assertEqual(3)
+      } catch (error) {
+        console.error("testProducerConsumerCoord1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
   })

@@ -211,11 +211,17 @@ export default function RateLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRateLimiter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const bucket: TokenBucket = await rateLimiterManager.createLimiter('test_bucket', 10, 2)
-      expect(bucket.getMaxTokens()).assertEqual(10)
-      expect(bucket.getRefillRate()).assertEqual(2)
-      expect(bucket.getAvailableTokens()).assertEqual(10)
+    it('testRateLimiter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const bucket: TokenBucket = await rateLimiterManager.createLimiter('test_bucket', 10, 2)
+        expect(bucket.getMaxTokens()).assertEqual(10)
+        expect(bucket.getRefillRate()).assertEqual(2)
+        expect(bucket.getAvailableTokens()).assertEqual(10)
+      } catch (error) {
+        console.error("testRateLimiter0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -226,16 +232,22 @@ export default function RateLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRateLimiter0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const bucket: TokenBucket = await rateLimiterManager.createLimiter('acquire_test', 5, 1)
+    it('testRateLimiter0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const bucket: TokenBucket = await rateLimiterManager.createLimiter('acquire_test', 5, 1)
 
-      const result1: boolean = await bucket.acquire()
-      expect(result1).assertTrue()
-      expect(bucket.getAvailableTokens()).assertEqual(4)
+        const result1: boolean = await bucket.acquire()
+        expect(result1).assertTrue()
+        expect(bucket.getAvailableTokens()).assertEqual(4)
 
-      const result2: boolean = await bucket.acquire()
-      expect(result2).assertTrue()
-      expect(bucket.getAvailableTokens()).assertEqual(3)
+        const result2: boolean = await bucket.acquire()
+        expect(result2).assertTrue()
+        expect(bucket.getAvailableTokens()).assertEqual(3)
+      } catch (error) {
+        console.error("testRateLimiter0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -246,14 +258,20 @@ export default function RateLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRateLimiter0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const bucket: TokenBucket = await rateLimiterManager.createLimiter('empty_bucket', 2, 0)
+    it('testRateLimiter0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const bucket: TokenBucket = await rateLimiterManager.createLimiter('empty_bucket', 2, 0)
 
-      await bucket.acquire()
-      await bucket.acquire()
+        await bucket.acquire()
+        await bucket.acquire()
 
-      const result: boolean = await bucket.acquire()
-      expect(result).assertFalse()
+        const result: boolean = await bucket.acquire()
+        expect(result).assertFalse()
+      } catch (error) {
+        console.error("testRateLimiter0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -264,18 +282,24 @@ export default function RateLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRateLimiter0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await rateLimiterManager.createLimiter('integrated_test', 3, 0)
+    it('testRateLimiter0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await rateLimiterManager.createLimiter('integrated_test', 3, 0)
 
-      const r1: boolean = await rateLimiterManager.tryAcquire('integrated_test')
-      const r2: boolean = await rateLimiterManager.tryAcquire('integrated_test')
-      const r3: boolean = await rateLimiterManager.tryAcquire('integrated_test')
-      const r4: boolean = await rateLimiterManager.tryAcquire('integrated_test')
+        const r1: boolean = await rateLimiterManager.tryAcquire('integrated_test')
+        const r2: boolean = await rateLimiterManager.tryAcquire('integrated_test')
+        const r3: boolean = await rateLimiterManager.tryAcquire('integrated_test')
+        const r4: boolean = await rateLimiterManager.tryAcquire('integrated_test')
 
-      expect(r1).assertTrue()
-      expect(r2).assertTrue()
-      expect(r3).assertTrue()
-      expect(r4).assertFalse()
+        expect(r1).assertTrue()
+        expect(r2).assertTrue()
+        expect(r3).assertTrue()
+        expect(r4).assertFalse()
+      } catch (error) {
+        console.error("testRateLimiter0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -286,17 +310,23 @@ export default function RateLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRateLimiter0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await rateLimiterManager.createLimiter('concurrent_limit', 5, 0)
+    it('testRateLimiter0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await rateLimiterManager.createLimiter('concurrent_limit', 5, 0)
 
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(acquireTokenTask, rateLimiterManager, 'concurrent_limit'))
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(acquireTokenTask, rateLimiterManager, 'concurrent_limit'))
+        }
+        await executeTasksGetObjects(tasks)
+
+        expect(rateLimiterManager.getRequestCount('concurrent_limit')).assertEqual(10)
+        expect(rateLimiterManager.getRejectedCount('concurrent_limit')).assertEqual(5)
+      } catch (error) {
+        console.error("testRateLimiter0500 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-
-      expect(rateLimiterManager.getRequestCount('concurrent_limit')).assertEqual(10)
-      expect(rateLimiterManager.getRejectedCount('concurrent_limit')).assertEqual(5)
+      done();
     })
 
     /**
@@ -307,15 +337,21 @@ export default function RateLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRateLimiter0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await rateLimiterManager.createLimiter('count_test', 2, 0)
+    it('testRateLimiter0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await rateLimiterManager.createLimiter('count_test', 2, 0)
 
-      await rateLimiterManager.tryAcquire('count_test')
-      await rateLimiterManager.tryAcquire('count_test')
-      await rateLimiterManager.tryAcquire('count_test')
+        await rateLimiterManager.tryAcquire('count_test')
+        await rateLimiterManager.tryAcquire('count_test')
+        await rateLimiterManager.tryAcquire('count_test')
 
-      expect(rateLimiterManager.getRequestCount('count_test')).assertEqual(3)
-      expect(rateLimiterManager.getRejectedCount('count_test')).assertEqual(1)
+        expect(rateLimiterManager.getRequestCount('count_test')).assertEqual(3)
+        expect(rateLimiterManager.getRejectedCount('count_test')).assertEqual(1)
+      } catch (error) {
+        console.error("testRateLimiter0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -326,9 +362,15 @@ export default function RateLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRateLimiter0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await rateLimiterManager.tryAcquire('nonexistent')
-      expect(result).assertFalse()
+    it('testRateLimiter0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await rateLimiterManager.tryAcquire('nonexistent')
+        expect(result).assertFalse()
+      } catch (error) {
+        console.error("testRateLimiter0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -339,16 +381,22 @@ export default function RateLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRateLimiter0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await rateLimiterManager.createLimiter('concurrent3', 3, 0)
+    it('testRateLimiter0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await rateLimiterManager.createLimiter('concurrent3', 3, 0)
 
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(acquireTokenTask, rateLimiterManager, 'concurrent3'))
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(acquireTokenTask, rateLimiterManager, 'concurrent3'))
+        }
+        await executeTasksGetObjects(tasks)
+
+        expect(rateLimiterManager.getRequestCount('concurrent3')).assertEqual(3)
+      } catch (error) {
+        console.error("testRateLimiter0800 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-
-      expect(rateLimiterManager.getRequestCount('concurrent3')).assertEqual(3)
+      done();
     })
 
     /**
@@ -359,16 +407,22 @@ export default function RateLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRateLimiter0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await rateLimiterManager.createLimiter('concurrent5', 5, 0)
+    it('testRateLimiter0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await rateLimiterManager.createLimiter('concurrent5', 5, 0)
 
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(acquireTokenTask, rateLimiterManager, 'concurrent5'))
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(acquireTokenTask, rateLimiterManager, 'concurrent5'))
+        }
+        await executeTasksGetObjects(tasks)
+
+        expect(rateLimiterManager.getRequestCount('concurrent5')).assertEqual(5)
+      } catch (error) {
+        console.error("testRateLimiter0900 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-
-      expect(rateLimiterManager.getRequestCount('concurrent5')).assertEqual(5)
+      done();
     })
 
     /**
@@ -379,17 +433,23 @@ export default function RateLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRateLimiter1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await rateLimiterManager.createLimiter('concurrent10', 5, 0)
+    it('testRateLimiter1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await rateLimiterManager.createLimiter('concurrent10', 5, 0)
 
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(acquireTokenTask, rateLimiterManager, 'concurrent10'))
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(acquireTokenTask, rateLimiterManager, 'concurrent10'))
+        }
+        await executeTasksGetObjects(tasks)
+
+        expect(rateLimiterManager.getRequestCount('concurrent10')).assertEqual(10)
+        expect(rateLimiterManager.getRejectedCount('concurrent10')).assertEqual(5)
+      } catch (error) {
+        console.error("testRateLimiter1000 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-
-      expect(rateLimiterManager.getRequestCount('concurrent10')).assertEqual(10)
-      expect(rateLimiterManager.getRejectedCount('concurrent10')).assertEqual(5)
+      done();
     })
 
     /**
@@ -400,18 +460,24 @@ export default function RateLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRateLimiter1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const bucket1: TokenBucket = await rateLimiterManager.createLimiter('limiter1', 2, 0)
-      const bucket2: TokenBucket = await rateLimiterManager.createLimiter('limiter2', 5, 0)
+    it('testRateLimiter1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const bucket1: TokenBucket = await rateLimiterManager.createLimiter('limiter1', 2, 0)
+        const bucket2: TokenBucket = await rateLimiterManager.createLimiter('limiter2', 5, 0)
 
-      await bucket1.acquire()
-      await bucket1.acquire()
-      const r1: boolean = await bucket1.acquire()
+        await bucket1.acquire()
+        await bucket1.acquire()
+        const r1: boolean = await bucket1.acquire()
 
-      const r2: boolean = await bucket2.acquire()
+        const r2: boolean = await bucket2.acquire()
 
-      expect(r1).assertFalse()
-      expect(r2).assertTrue()
+        expect(r1).assertFalse()
+        expect(r2).assertTrue()
+      } catch (error) {
+        console.error("testRateLimiter1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -422,12 +488,18 @@ export default function RateLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRateLimiter1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const bucket1: TokenBucket = await rateLimiterManager.createLimiter('idempotent', 10, 1)
-      const bucket2: TokenBucket = await rateLimiterManager.createLimiter('idempotent', 20, 2)
+    it('testRateLimiter1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const bucket1: TokenBucket = await rateLimiterManager.createLimiter('idempotent', 10, 1)
+        const bucket2: TokenBucket = await rateLimiterManager.createLimiter('idempotent', 20, 2)
 
-      expect(bucket1 === bucket2).assertTrue()
-      expect(bucket1.getMaxTokens()).assertEqual(10)
+        expect(bucket1 === bucket2).assertTrue()
+        expect(bucket1.getMaxTokens()).assertEqual(10)
+      } catch (error) {
+        console.error("testRateLimiter1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -438,19 +510,25 @@ export default function RateLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRateLimiter1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const concurrentLimiter: ConcurrentRateLimiter = new ConcurrentRateLimiter(100, new ArkTSUtils.locks.AsyncLock())
-      const promises: Promise<boolean>[] = []
-      for (let i = 0; i < 50; i++) {
-        promises.push(concurrentLimiter.acquire())
-      }
-      const results: boolean[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        if (results[i]) {
-          await concurrentLimiter.release()
+    it('testRateLimiter1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const concurrentLimiter: ConcurrentRateLimiter = new ConcurrentRateLimiter(100, new ArkTSUtils.locks.AsyncLock())
+        const promises: Promise<boolean>[] = []
+        for (let i = 0; i < 50; i++) {
+          promises.push(concurrentLimiter.acquire())
         }
+        const results: boolean[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          if (results[i]) {
+            await concurrentLimiter.release()
+          }
+        }
+        expect(concurrentLimiter.getActiveCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testRateLimiter1300 failed");
+        expect(false).assertFail();
       }
-      expect(concurrentLimiter.getActiveCount()).assertEqual(0)
+      done();
     })
   })
 }

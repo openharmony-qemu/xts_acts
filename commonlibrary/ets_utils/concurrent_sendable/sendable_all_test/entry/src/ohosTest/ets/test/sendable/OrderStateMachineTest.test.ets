@@ -151,9 +151,15 @@ export default function OrderStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testOrderStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      expect(await orderSM.getCurrentState()).assertEqual(OrderState.CREATED)
-      expect(await orderSM.getHistoryCount()).assertEqual(0)
+    it('testOrderStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        expect(await orderSM.getCurrentState()).assertEqual(OrderState.CREATED)
+        expect(await orderSM.getHistoryCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testOrderStateMachine0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -164,12 +170,18 @@ export default function OrderStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testOrderStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const result: boolean = await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit order')
-      expect(result).assertTrue()
-      expect(await orderSM.getCurrentState()).assertEqual(OrderState.PENDING_PAYMENT)
-      expect(await orderSM.getPreviousState()).assertEqual(OrderState.CREATED)
-      expect(await orderSM.getHistoryCount()).assertEqual(1)
+    it('testOrderStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit order')
+        expect(result).assertTrue()
+        expect(await orderSM.getCurrentState()).assertEqual(OrderState.PENDING_PAYMENT)
+        expect(await orderSM.getPreviousState()).assertEqual(OrderState.CREATED)
+        expect(await orderSM.getHistoryCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testOrderStateMachine0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -180,13 +192,19 @@ export default function OrderStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testOrderStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      expect(await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')).assertTrue()
-      expect(await orderSM.transition(OrderState.PAID, 'pay')).assertTrue()
-      expect(await orderSM.transition(OrderState.SHIPPED, 'ship')).assertTrue()
-      expect(await orderSM.transition(OrderState.DELIVERED, 'deliver')).assertTrue()
-      expect(await orderSM.getCurrentState()).assertEqual(OrderState.DELIVERED)
-      expect(await orderSM.getHistoryCount()).assertEqual(4)
+    it('testOrderStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        expect(await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')).assertTrue()
+        expect(await orderSM.transition(OrderState.PAID, 'pay')).assertTrue()
+        expect(await orderSM.transition(OrderState.SHIPPED, 'ship')).assertTrue()
+        expect(await orderSM.transition(OrderState.DELIVERED, 'deliver')).assertTrue()
+        expect(await orderSM.getCurrentState()).assertEqual(OrderState.DELIVERED)
+        expect(await orderSM.getHistoryCount()).assertEqual(4)
+      } catch (error) {
+        console.error("testOrderStateMachine0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -197,12 +215,18 @@ export default function OrderStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testOrderStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
-      const result: boolean = await orderSM.transition(OrderState.CANCELLED, 'user cancel')
-      expect(result).assertTrue()
-      expect(await orderSM.getCurrentState()).assertEqual(OrderState.CANCELLED)
-      expect(await orderSM.getHistoryCount()).assertEqual(2)
+    it('testOrderStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
+        const result: boolean = await orderSM.transition(OrderState.CANCELLED, 'user cancel')
+        expect(result).assertTrue()
+        expect(await orderSM.getCurrentState()).assertEqual(OrderState.CANCELLED)
+        expect(await orderSM.getHistoryCount()).assertEqual(2)
+      } catch (error) {
+        console.error("testOrderStateMachine0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -213,12 +237,18 @@ export default function OrderStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testOrderStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
-      await orderSM.transition(OrderState.PAID, 'pay')
-      const result: boolean = await orderSM.transition(OrderState.REFUNDED, 'refund request')
-      expect(result).assertTrue()
-      expect(await orderSM.getCurrentState()).assertEqual(OrderState.REFUNDED)
+    it('testOrderStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
+        await orderSM.transition(OrderState.PAID, 'pay')
+        const result: boolean = await orderSM.transition(OrderState.REFUNDED, 'refund request')
+        expect(result).assertTrue()
+        expect(await orderSM.getCurrentState()).assertEqual(OrderState.REFUNDED)
+      } catch (error) {
+        console.error("testOrderStateMachine0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -229,10 +259,16 @@ export default function OrderStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOrderStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const result: boolean = await orderSM.transition(OrderState.PAID, 'skip payment')
-      expect(result).assertFalse()
-      expect(await orderSM.getCurrentState()).assertEqual(OrderState.CREATED)
+    it('testOrderStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await orderSM.transition(OrderState.PAID, 'skip payment')
+        expect(result).assertFalse()
+        expect(await orderSM.getCurrentState()).assertEqual(OrderState.CREATED)
+      } catch (error) {
+        console.error("testOrderStateMachine0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -243,14 +279,20 @@ export default function OrderStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOrderStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
-      await orderSM.transition(OrderState.PAID, 'pay')
-      await orderSM.transition(OrderState.SHIPPED, 'ship')
-      await orderSM.transition(OrderState.DELIVERED, 'deliver')
-      const result: boolean = await orderSM.transition(OrderState.SHIPPED, 'reverse')
-      expect(result).assertFalse()
-      expect(await orderSM.getCurrentState()).assertEqual(OrderState.DELIVERED)
+    it('testOrderStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
+        await orderSM.transition(OrderState.PAID, 'pay')
+        await orderSM.transition(OrderState.SHIPPED, 'ship')
+        await orderSM.transition(OrderState.DELIVERED, 'deliver')
+        const result: boolean = await orderSM.transition(OrderState.SHIPPED, 'reverse')
+        expect(result).assertFalse()
+        expect(await orderSM.getCurrentState()).assertEqual(OrderState.DELIVERED)
+      } catch (error) {
+        console.error("testOrderStateMachine0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -261,12 +303,18 @@ export default function OrderStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOrderStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
-      await orderSM.transition(OrderState.CANCELLED, 'cancel')
-      const result: boolean = await orderSM.transition(OrderState.PAID, 'try pay')
-      expect(result).assertFalse()
-      expect(await orderSM.getCurrentState()).assertEqual(OrderState.CANCELLED)
+    it('testOrderStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
+        await orderSM.transition(OrderState.CANCELLED, 'cancel')
+        const result: boolean = await orderSM.transition(OrderState.PAID, 'try pay')
+        expect(result).assertFalse()
+        expect(await orderSM.getCurrentState()).assertEqual(OrderState.CANCELLED)
+      } catch (error) {
+        console.error("testOrderStateMachine0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -277,20 +325,26 @@ export default function OrderStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOrderStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readOrderStateTask, orderSM))
+    it('testOrderStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(readOrderStateTask, orderSM))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i: number = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i: number = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(OrderState.PENDING_PAYMENT)
+        }
+      } catch (error) {
+        console.error("testOrderStateMachine0900 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i: number = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i: number = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(OrderState.PENDING_PAYMENT)
-      }
+      done();
     })
 
     /**
@@ -301,17 +355,23 @@ export default function OrderStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testOrderStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await orderSM.transition(OrderState.PENDING_PAYMENT, 'user submit order')
-      await orderSM.transition(OrderState.PAID, 'alipay payment')
-      await orderSM.transition(OrderState.SHIPPED, 'fedex shipping')
-      const lastTransition: OrderTransitionRecord | null = await orderSM.getLastTransition()
-      expect(lastTransition !== null && lastTransition !== undefined).assertTrue()
-      if (lastTransition !== null) {
-        expect(lastTransition.reason_).assertEqual('fedex shipping')
-        expect(lastTransition.from_).assertEqual(OrderState.PAID)
-        expect(lastTransition.to_).assertEqual(OrderState.SHIPPED)
+    it('testOrderStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await orderSM.transition(OrderState.PENDING_PAYMENT, 'user submit order')
+        await orderSM.transition(OrderState.PAID, 'alipay payment')
+        await orderSM.transition(OrderState.SHIPPED, 'fedex shipping')
+        const lastTransition: OrderTransitionRecord | null = await orderSM.getLastTransition()
+        expect(lastTransition !== null && lastTransition !== undefined).assertTrue()
+        if (lastTransition !== null) {
+          expect(lastTransition.reason_).assertEqual('fedex shipping')
+          expect(lastTransition.from_).assertEqual(OrderState.PAID)
+          expect(lastTransition.to_).assertEqual(OrderState.SHIPPED)
+        }
+      } catch (error) {
+        console.error("testOrderStateMachine1000 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -322,12 +382,18 @@ export default function OrderStateMachineTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testOrderStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await orderSM.transition(OrderState.PENDING_PAYMENT, 'step1')
-      await orderSM.transition(OrderState.PAID, 'step2')
-      await orderSM.transition(OrderState.SHIPPED, 'step3')
-      await orderSM.transition(OrderState.DELIVERED, 'step4')
-      expect(await orderSM.getHistoryCount()).assertEqual(4)
+    it('testOrderStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await orderSM.transition(OrderState.PENDING_PAYMENT, 'step1')
+        await orderSM.transition(OrderState.PAID, 'step2')
+        await orderSM.transition(OrderState.SHIPPED, 'step3')
+        await orderSM.transition(OrderState.DELIVERED, 'step4')
+        expect(await orderSM.getHistoryCount()).assertEqual(4)
+      } catch (error) {
+        console.error("testOrderStateMachine1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

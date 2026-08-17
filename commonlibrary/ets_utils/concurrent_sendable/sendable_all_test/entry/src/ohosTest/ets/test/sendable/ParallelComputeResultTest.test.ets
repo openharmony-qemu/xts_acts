@@ -131,7 +131,7 @@ export default function ParallelComputeResultTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testParallelComputeResult0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testParallelComputeResult0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       collector.addValue(10)
       expect(collector.getCount()).assertEqual(1)
     })
@@ -144,7 +144,7 @@ export default function ParallelComputeResultTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testParallelComputeResult0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testParallelComputeResult0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       collector.addValue(10)
       collector.addValue(20)
       collector.addValue(30)
@@ -159,7 +159,7 @@ export default function ParallelComputeResultTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testParallelComputeResult0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testParallelComputeResult0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       collector.addValue(10)
       collector.addValue(20)
       collector.addValue(30)
@@ -174,7 +174,7 @@ export default function ParallelComputeResultTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testParallelComputeResult0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testParallelComputeResult0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       collector.addValue(5)
       collector.addValue(15)
       collector.addValue(10)
@@ -189,7 +189,7 @@ export default function ParallelComputeResultTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testParallelComputeResult0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testParallelComputeResult0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       collector.addValue(5)
       collector.addValue(15)
       collector.addValue(10)
@@ -204,23 +204,29 @@ export default function ParallelComputeResultTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testParallelComputeResult0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const tasks: taskpool.Task[] = []
-      const shardSize: number = 100
-      for (let i = 0; i < 4; i++) {
-        const start: number = i * shardSize
-        const end: number = (i + 1) * shardSize
-        tasks.push(new taskpool.Task(computeShard, start, end))
+    it('testParallelComputeResult0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        const shardSize: number = 100
+        for (let i = 0; i < 4; i++) {
+          const start: number = i * shardSize
+          const end: number = (i + 1) * shardSize
+          tasks.push(new taskpool.Task(computeShard, start, end))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          await collector.addShardResult(`shard_${i}`, results[i] as number)
+        }
+        expect(collector.getCount()).assertEqual(4)
+      } catch (error) {
+        console.error("testParallelComputeResult0600 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        await collector.addShardResult(`shard_${i}`, results[i] as number)
-      }
-      expect(collector.getCount()).assertEqual(4)
+      done();
     })
 
     /**
@@ -231,26 +237,32 @@ export default function ParallelComputeResultTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testParallelComputeResult0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const tasks: taskpool.Task[] = []
-      const shardSize: number = 100
-      for (let i = 0; i < 4; i++) {
-        const start: number = i * shardSize
-        const end: number = (i + 1) * shardSize
-        tasks.push(new taskpool.Task(computeShard, start, end))
+    it('testParallelComputeResult0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        const shardSize: number = 100
+        for (let i = 0; i < 4; i++) {
+          const start: number = i * shardSize
+          const end: number = (i + 1) * shardSize
+          tasks.push(new taskpool.Task(computeShard, start, end))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          await collector.addShardResult(`shard_${i}`, results[i] as number)
+        }
+        const shard0: number | undefined = collector.getShardResult('shard_0')
+        const shard1: number | undefined = collector.getShardResult('shard_1')
+        expect(shard0 !== undefined).assertTrue()
+        expect(shard1 !== undefined).assertTrue()
+      } catch (error) {
+        console.error("testParallelComputeResult0700 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        await collector.addShardResult(`shard_${i}`, results[i] as number)
-      }
-      const shard0: number | undefined = collector.getShardResult('shard_0')
-      const shard1: number | undefined = collector.getShardResult('shard_1')
-      expect(shard0 !== undefined).assertTrue()
-      expect(shard1 !== undefined).assertTrue()
+      done();
     })
 
     /**
@@ -261,7 +273,7 @@ export default function ParallelComputeResultTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testParallelComputeResult0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testParallelComputeResult0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       collector.addValue(10)
       collector.addValue(20)
       collector.addValue(30)
@@ -280,11 +292,17 @@ export default function ParallelComputeResultTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testParallelComputeResult0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await collector.addShardResult('shard_0', 100)
-      await collector.addShardResult('shard_1', 200)
-      expect(collector.getShardResult('shard_0')).assertEqual(100)
-      expect(collector.getShardResult('shard_1')).assertEqual(200)
+    it('testParallelComputeResult0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await collector.addShardResult('shard_0', 100)
+        await collector.addShardResult('shard_1', 200)
+        expect(collector.getShardResult('shard_0')).assertEqual(100)
+        expect(collector.getShardResult('shard_1')).assertEqual(200)
+      } catch (error) {
+        console.error("testParallelComputeResult0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -295,28 +313,34 @@ export default function ParallelComputeResultTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testParallelComputeResult1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      const shardSize: number = 10
-      for (let i = 0; i < 100; i++) {
-        const start: number = i * shardSize
-        const end: number = (i + 1) * shardSize
-        tasks.push(new taskpool.Task(computeShard, start, end))
-      }
-      const batchSize: number = 50
-      for (let batch = 0; batch < Math.ceil(100 / batchSize); batch++) {
-        const batchTasks: taskpool.Task[] = tasks.slice(batch * batchSize, (batch + 1) * batchSize)
-        const promises: Promise<Object>[] = []
-        for (let i = 0; i < batchTasks.length; i++) {
-          promises.push(taskpool.execute(batchTasks[i]))
+    it('testParallelComputeResult1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        const shardSize: number = 10
+        for (let i = 0; i < 100; i++) {
+          const start: number = i * shardSize
+          const end: number = (i + 1) * shardSize
+          tasks.push(new taskpool.Task(computeShard, start, end))
         }
-        const results: Object[] = await Promise.all(promises)
-        for (let i = 0; i < results.length; i++) {
-          const idx: number = batch * batchSize + i
-          await collector.addShardResult(`shard_${idx}`, results[i] as number)
+        const batchSize: number = 50
+        for (let batch = 0; batch < Math.ceil(100 / batchSize); batch++) {
+          const batchTasks: taskpool.Task[] = tasks.slice(batch * batchSize, (batch + 1) * batchSize)
+          const promises: Promise<Object>[] = []
+          for (let i = 0; i < batchTasks.length; i++) {
+            promises.push(taskpool.execute(batchTasks[i]))
+          }
+          const results: Object[] = await Promise.all(promises)
+          for (let i = 0; i < results.length; i++) {
+            const idx: number = batch * batchSize + i
+            await collector.addShardResult(`shard_${idx}`, results[i] as number)
+          }
         }
+        expect(collector.getCount()).assertEqual(100)
+      } catch (error) {
+        console.error("testParallelComputeResult1000 failed");
+        expect(false).assertFail();
       }
-      expect(collector.getCount()).assertEqual(100)
+      done();
     })
 
     /**
@@ -327,12 +351,18 @@ export default function ParallelComputeResultTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testParallelComputeResult1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await collector.addShardResult('shard_0', 100)
-      await collector.addShardResult('shard_1', 200)
-      await collector.addShardResult('shard_2', 300)
-      expect(collector.getSum()).assertEqual(600)
-      expect(collector.getAverage()).assertEqual(200)
+    it('testParallelComputeResult1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await collector.addShardResult('shard_0', 100)
+        await collector.addShardResult('shard_1', 200)
+        await collector.addShardResult('shard_2', 300)
+        expect(collector.getSum()).assertEqual(600)
+        expect(collector.getAverage()).assertEqual(200)
+      } catch (error) {
+        console.error("testParallelComputeResult1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -343,26 +373,32 @@ export default function ParallelComputeResultTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testParallelComputeResult1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        const start: number = i * 200
-        const end: number = (i + 1) * 200
-        tasks.push(new taskpool.Task(computeShard, start, end))
+    it('testParallelComputeResult1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          const start: number = i * 200
+          const end: number = (i + 1) * 200
+          tasks.push(new taskpool.Task(computeShard, start, end))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          await collector.addShardResult(`worker_${i}`, results[i] as number)
+        }
+        expect(collector.getCount()).assertEqual(5)
+        for (let i = 0; i < 5; i++) {
+          const result: number | undefined = collector.getShardResult(`worker_${i}`)
+          expect(result !== undefined).assertTrue()
+        }
+      } catch (error) {
+        console.error("testParallelComputeResult1200 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        await collector.addShardResult(`worker_${i}`, results[i] as number)
-      }
-      expect(collector.getCount()).assertEqual(5)
-      for (let i = 0; i < 5; i++) {
-        const result: number | undefined = collector.getShardResult(`worker_${i}`)
-        expect(result !== undefined).assertTrue()
-      }
+      done();
     })
   })
 }
