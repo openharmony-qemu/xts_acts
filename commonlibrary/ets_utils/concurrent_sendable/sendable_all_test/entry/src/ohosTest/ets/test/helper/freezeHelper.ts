@@ -16,10 +16,10 @@
  * Object.freeze helper for Sendable objects.
  * Must live in .ts — .ets does not support Object.freeze.
  */
-export function freezeSendable<T extends Object>(obj: T): T {
-  return Object.freeze(obj) as T;
+export function freezeSendable<T extends object>(obj: T): T {
+  return Object.freeze(obj);
 }
 
-export function isFrozenSendable<T extends Object>(obj: T): boolean {
+export function isFrozenSendable<T extends object>(obj: T): boolean {
   return Object.isFrozen(obj);
 }

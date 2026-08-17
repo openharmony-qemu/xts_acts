@@ -48,7 +48,12 @@ class TransitionIRStateMachine {
 
 
   async transition(newState: number): Promise<void> {
-    await this.lock_.lockAsync((): void => {
+    await this.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
       this.state_ = newState
       this.count_++
     })
@@ -120,7 +125,12 @@ class StableIRStateMachine {
 
 
   async transition(newState: number): Promise<void> {
-    await this.lock_.lockAsync((): void => {
+    await this.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
       this.state_ = newState
     })
   }
@@ -149,7 +159,12 @@ function readCrossThreadStateTask(sm: CrossThreadStateMachine): number {
 
 @Concurrent
 async function transitionIRTask(sm: StableIRStateMachine, ns: number): Promise<void> {
-  return await sm.lock_.lockAsync((): void => {
+  return await sm.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
     sm.state_ = ns
 
   })
@@ -276,6 +291,10 @@ export default function StateMachineIRTest(): void {
       try {
         const sm: HistoryIRStateMachine = new HistoryIRStateMachine(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
         await sm.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
           sm.history_.push(0)
           sm.history_.push(1)
           sm.history_.push(2)
@@ -308,7 +327,7 @@ export default function StateMachineIRTest(): void {
           promises.push(taskpool.execute(tasks[i]))
         }
         await Promise.all(promises)
-        const finalState: number = await sm.lock_.lockAsync((error?: BusinessError): number => sm.state_)
+        const finalState: number = await sm.lock_.lockAsync((error?: BusinessError): number => error !== undefined ? -1 : sm.state_)
         expect(finalState).assertLargerOrEqual(0)
       } catch (error) {
         console.error("testStateMachineIR0700 failed");

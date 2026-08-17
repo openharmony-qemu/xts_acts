@@ -364,7 +364,7 @@ export default function AppSettingsTest(): void {
         for (let i = 0; i < writeTasks.length; i++) {
           writePromises.push(taskpool.execute(writeTasks[i]))
         }
-        await Promise.all([...readPromises, ...writePromises])
+        await Promise.all(writePromises)
         const readResults: Object[] = await Promise.all(readPromises)
         expect(readResults[0] as string).assertEqual('read_val1')
         expect(readResults[1] as string).assertEqual('read_val2')
@@ -471,8 +471,17 @@ export default function AppSettingsTest(): void {
             }
           })
         })
+        const timeoutFn: () => Promise<string> = async (): Promise<string> => {
+          try {
+            await Utils.sleep(5000)
+          } catch (error) {
+            console.error(`testAppSettings1200 sleep error: ${JSON.stringify(error)}`)
+            expect(false).assertFail();
+          }
+          throw new Error('onReceiveData timeout, no notification received')
+        }
         await taskpool.execute(task)
-        const notificationKey: string = await receivePromise
+        const notificationKey: string = await Promise.race([receivePromise, timeoutFn()])
         expect(notificationKey).assertEqual('updated_key')
       } catch (error) {
         console.error("testAppSettings1200 failed");
@@ -515,12 +524,24 @@ export default function AppSettingsTest(): void {
             }
           })
         })
-        await taskpool.execute(task)
-        const timeoutFn: () => Promise<void> = async (): Promise<void> => {
-          await Utils.sleep(5000)
-          throw new Error(`onReceiveData timeout, received ${notifications.length}/3`)
+        try {
+          await taskpool.execute(task)
+          const timeoutFn: () => Promise<void> = async (): Promise<void> => {
+            try {
+              await Utils.sleep(5000)
+            } catch (error) {
+              console.error(`testAppSettings1300 sleep error: ${JSON.stringify(error)}`)
+              expect(false).assertFail();
+            }
+            throw new Error(`onReceiveData timeout, received ${notifications.length}/3`)
+          }
+          await Promise.race([receivePromise, timeoutFn()])
+        } catch (error) {
+          console.error("testAppSettings1300 failed");
+          expect(false).assertFail();
+          done();
+          return;
         }
-        await Promise.race([receivePromise, timeoutFn()])
         expect(invalidNotification).assertFalse()
         expect(notifications.length).assertEqual(3)
         expect(notifications[0]).assertEqual('key1')
@@ -555,8 +576,17 @@ export default function AppSettingsTest(): void {
             resolve()
           })
         })
+        const timeoutFn: () => Promise<void> = async (): Promise<void> => {
+          try {
+            await Utils.sleep(5000)
+          } catch (error) {
+            console.error(`testAppSettings1400 sleep error: ${JSON.stringify(error)}`)
+            expect(false).assertFail();
+          }
+          throw new Error('onReceiveData timeout, no nested update received')
+        }
         await taskpool.execute(task)
-        await receivePromise
+        await Promise.race([receivePromise, timeoutFn()])
         await Promise.all(nestedPromises)
         expect(nestedPromises.length).assertEqual(1)
         expect(await settingsManager.getSetting('nested_key')).assertEqual('nested_value')

@@ -46,7 +46,12 @@ class GlobalServiceRegistry {
   public registrationCount_: number = 0
 
   async register(name: string, service: ServiceInfo): Promise<void> {
-    await this.lock_.lockAsync((): void => {
+    await this.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
       this.services_.set(name, service)
       this.registrationCount_++
     })
@@ -102,7 +107,12 @@ export default function ServiceRegistryTest(): void {
     const registry: GlobalServiceRegistry = new GlobalServiceRegistry(new collections.Map<string, ServiceInfo>(), new ArkTSUtils.locks.AsyncLock())
 
     beforeEach(async (): Promise<void> => {
-      await registry.lock_.lockAsync((): void => {
+      await registry.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
         registry.getAllServices().clear()
         registry.registrationCount_ = 0
       })
@@ -270,7 +280,12 @@ export default function ServiceRegistryTest(): void {
         await registry.register('paymentService', service)
 
         const discovered: ServiceInfo | undefined = registry.discover('paymentService')
-        await registry.lock_.lockAsync((): void => {
+        await registry.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
           discovered!.status = 'inactive'
         })
 
@@ -491,6 +506,10 @@ export default function ServiceRegistryTest(): void {
         expect(registry.discover('lifecycleService')!.status).assertEqual('created')
 
         await registry.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
           registry.discover('lifecycleService')!.status = 'running'
         })
         expect(registry.discover('lifecycleService')!.status).assertEqual('running')

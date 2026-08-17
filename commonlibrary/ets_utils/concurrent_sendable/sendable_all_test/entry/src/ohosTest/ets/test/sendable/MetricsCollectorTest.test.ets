@@ -73,7 +73,12 @@ class MetricsCollector {
   public recordCount_: number = 0
 
   async record(name: string, value: number): Promise<void> {
-    await this.lock_.lockAsync((): void => {
+    await this.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
       const data: MetricsData = new MetricsData(this.emptyTagKeysPool_.pop()!, this.emptyTagValuesPool_.pop()!)
       data.name = name
       data.value = value
@@ -111,7 +116,12 @@ class MetricsCollector {
   }
 
   async reset(): Promise<void> {
-    await this.lock_.lockAsync((): void => {
+    await this.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
       this.metrics_.clear()
       this.recordCount_ = 0
     })
@@ -313,6 +323,10 @@ export default function MetricsCollectorTest(): void {
 
         const metric: MetricsData | undefined = collector.getMetric('tagged_metric')
         await collector.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
           metric!.setTag('env', 'production')
           metric!.setTag('region', 'us-east')
         })

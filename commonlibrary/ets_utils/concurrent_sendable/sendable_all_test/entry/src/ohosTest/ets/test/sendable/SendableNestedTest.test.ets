@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import { BusinessError } from '@ohos.base';
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils } from '@kit.ArkTS'
@@ -58,7 +59,11 @@ export default function SendableNestedTest(): void {
         const counter = new NestedSharedCounter()
         const task = new taskpool.Task(triggerSendDataTask)
         let nestedResult: number = -1
-        task.onReceiveData((): void => {
+        task.onReceiveData((data: Object): void => {
+          if (data === null || data === undefined) {
+            console.info('onReceiveData received empty data')
+            return
+          }
           const innerTask = new taskpool.Task(nestedIncrementTask, counter, new ArkTSUtils.locks.AsyncLock())
           const nestedExecFn: () => Promise<void> = async (): Promise<void> => {
             try {
@@ -97,7 +102,11 @@ export default function SendableNestedTest(): void {
         const counter = new NestedSharedCounter()
         const task = new taskpool.Task(outerSuccessTask)
         let nestedResult: number = -1
-        task.onExecutionSucceeded((): void => {
+        task.onExecutionSucceeded((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
           const innerTask = new taskpool.Task(nestedIncrementTask, counter, new ArkTSUtils.locks.AsyncLock())
           const nestedExecFn: () => Promise<void> = async (): Promise<void> => {
             try {
@@ -155,6 +164,9 @@ export default function SendableNestedTest(): void {
           await taskpool.execute(task)
         } catch (e) {
           caught = true
+          // Taskpool rejections may arrive without the Error prototype (serialized
+          // delivery on the 1.1 dynamic runtime), so instanceof narrowing is not
+          // valid here; the plain assignment keeps dynamic property access.
           const err: Error = e
           expect(err.message).assertContain('outer error')
         }
@@ -186,7 +198,11 @@ export default function SendableNestedTest(): void {
         const lock = new ArkTSUtils.locks.AsyncLock()
         const task = new taskpool.Task(triggerSendDataTask)
         let completedCount: number = 0
-        task.onReceiveData((): void => {
+        task.onReceiveData((data: Object): void => {
+          if (data === null || data === undefined) {
+            console.info('onReceiveData received empty data')
+            return
+          }
           for (let i = 0; i < 5; i++) {
             const innerTask = new taskpool.Task(nestedIncrementTask, counter, lock)
             const nestedExecFn: () => Promise<void> = async (): Promise<void> => {

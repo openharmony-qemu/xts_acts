@@ -438,8 +438,11 @@ export default function ApiResponseCacheTest(): void {
         expect().assertFail()
       } catch (e) {
         caught = true
-        const err: Error = e
-        expect(err.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
+        if (e instanceof Error) {
+          expect(e.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
+        } else {
+          expect(false).assertFail()
+        }
       }
       expect(caught).assertTrue()
       done();
@@ -460,8 +463,11 @@ export default function ApiResponseCacheTest(): void {
         expect().assertFail()
       } catch (e) {
         caught = true
-        const err: Error = e
-        expect(err.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
+        if (e instanceof Error) {
+          expect(e.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
+        } else {
+          expect(false).assertFail()
+        }
       }
       expect(caught).assertTrue()
       done();
@@ -482,8 +488,11 @@ export default function ApiResponseCacheTest(): void {
         expect().assertFail()
       } catch (e) {
         caught = true
-        const err: Error = e
-        expect(err.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
+        if (e instanceof Error) {
+          expect(e.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
+        } else {
+          expect(false).assertFail()
+        }
       }
       expect(caught).assertTrue()
       done();
@@ -504,8 +513,11 @@ export default function ApiResponseCacheTest(): void {
         expect().assertFail()
       } catch (e) {
         caught = true
-        const err: Error = e
-        expect(err.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
+        if (e instanceof Error) {
+          expect(e.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
+        } else {
+          expect(false).assertFail()
+        }
       }
       expect(caught).assertTrue()
       done();
@@ -526,8 +538,11 @@ export default function ApiResponseCacheTest(): void {
         expect().assertFail()
       } catch (e) {
         caught = true
-        const err: Error = e
-        expect(err.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
+        if (e instanceof Error) {
+          expect(e.message).assertEqual(API_CACHE_EMPTY_KEY_MSG)
+        } else {
+          expect(false).assertFail()
+        }
       }
       expect(caught).assertTrue()
       done();
@@ -550,8 +565,11 @@ export default function ApiResponseCacheTest(): void {
           expect().assertFail()
         } catch (e) {
           caught = true
-          const err: Error = e
-          expect(err.message).assertEqual(API_CACHE_LOCK_THROW_MSG)
+          if (e instanceof Error) {
+            expect(e.message).assertEqual(API_CACHE_LOCK_THROW_MSG)
+          } else {
+            expect(false).assertFail()
+          }
         }
         expect(caught).assertTrue()
         await cache.set('after_throw', 'v2')

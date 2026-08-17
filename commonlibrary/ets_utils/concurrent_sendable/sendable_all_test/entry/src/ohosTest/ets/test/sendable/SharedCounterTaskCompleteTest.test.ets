@@ -138,6 +138,9 @@ export default function SharedCounterTaskCompleteTest(): void {
         await taskpool.execute(task)
       } catch (e) {
         caught = true
+        // Taskpool rejections may arrive without the Error prototype (serialized
+        // delivery on the 1.1 dynamic runtime), so instanceof narrowing is not
+        // valid here; the plain assignment keeps dynamic property access.
         const err: Error = e
         expect(err.message).assertContain('task failed')
       }

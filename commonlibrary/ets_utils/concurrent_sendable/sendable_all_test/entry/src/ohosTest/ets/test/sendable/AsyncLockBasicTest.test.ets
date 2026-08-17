@@ -41,7 +41,12 @@ class LockCounter {
   }
 
   async reset(): Promise<void> {
-    await this.lock_.lockAsync((): void => {
+    await this.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
       this.count_ = 0
     })
   }
@@ -232,14 +237,21 @@ export default function AsyncLockBasicTest(): void {
         let caught: boolean = false
         try {
           await counter.lock_.lockAsync((error?: BusinessError): void => {
+            if (error !== undefined) {
+              console.info(`lock callback error: ${JSON.stringify(error)}`)
+              return
+            }
             throw new Error('Test exception in lock')
           })
           expect().assertFail()
         } catch (e) {
           caught = true
           expect(e !== null && e !== undefined).assertTrue()
-          const err: Error = e
-          expect(err.message).assertEqual('Test exception in lock')
+          if (e instanceof Error) {
+            expect(e.message).assertEqual('Test exception in lock')
+          } else {
+            expect(false).assertFail()
+          }
         }
         expect(caught).assertTrue()
         const result: number = await counter.increment()
@@ -265,10 +277,23 @@ export default function AsyncLockBasicTest(): void {
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
         const innerLock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
         await lock.lockAsync(async (error?: BusinessError): Promise<void> => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
           nestedCount++
-          await innerLock.lockAsync((error?: BusinessError): void => {
-            nestedCount++
-          })
+          try {
+            await innerLock.lockAsync((error?: BusinessError): void => {
+              if (error !== undefined) {
+                console.info(`lock callback error: ${JSON.stringify(error)}`)
+                return
+              }
+              nestedCount++
+            })
+          } catch (error) {
+            console.error(`testAsyncLockBasic0900 inner lock failed: ${JSON.stringify(error)}`)
+            expect(false).assertFail()
+          }
         })
         expect(nestedCount).assertEqual(2)
       } catch (error) {
@@ -291,6 +316,10 @@ export default function AsyncLockBasicTest(): void {
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
         let acquired: boolean = false
         const result: boolean = await lock.lockAsync((error?: BusinessError): boolean => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return false
+          }
           acquired = true
           return true
         })

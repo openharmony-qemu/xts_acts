@@ -32,7 +32,12 @@ class IRQueue {
 
 
   async enqueue(v: number): Promise<void> {
-    await this.lock_.lockAsync((): void => {
+    await this.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
       this.items_.push(v)
     })
   }
@@ -66,7 +71,12 @@ class ProducerConsumerIRQueue {
 
 
   async produce(v: number): Promise<void> {
-    await this.lock_.lockAsync((): void => {
+    await this.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
       this.queue_.push(v)
     })
   }
@@ -295,7 +305,12 @@ export default function QueueIRTest(): void {
     it('testQueueIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const queue: ElementIRQueue = new ElementIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-        await queue.lock_.lockAsync((): void => {
+        await queue.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
           for (let i = 0; i < 100; i++) {
             queue.items_.push(i)
           }
@@ -344,7 +359,12 @@ export default function QueueIRTest(): void {
       try {
         const queue: CapacityIRQueue = new CapacityIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
         expect(await queue.getCapacity()).assertEqual(1024)
-        await queue.lock_.lockAsync((): void => {
+        await queue.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
           for (let i = 0; i < queue.capacity_; i++) {
             queue.items_.push(i)
           }
@@ -392,6 +412,10 @@ export default function QueueIRTest(): void {
       try {
         const queue: CrossThreadIRQueue = new CrossThreadIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
         await queue.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
           for (let i = 0; i < 10; i++) {
             queue.items_.push(i)
           }

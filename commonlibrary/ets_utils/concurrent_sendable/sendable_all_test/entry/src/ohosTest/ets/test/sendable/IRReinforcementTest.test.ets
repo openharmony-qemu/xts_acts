@@ -183,7 +183,12 @@ class IRStateMachine {
 
 
   async transition(newState: number): Promise<void> {
-    await this.lock_.lockAsync((): void => {
+    await this.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
       this.currentState_ = newState
       this.transitionCount_++
     })
@@ -211,7 +216,12 @@ class IRProgressTracker {
 
 
   async updateProgress(increment: number): Promise<void> {
-    await this.lock_.lockAsync((): void => {
+    await this.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
       this.completed_ += increment
       this.percentage_ = this.total_ > 0 ? Math.floor(this.completed_ * 100 / this.total_) : 0
     })
@@ -237,7 +247,12 @@ class IREventBus {
 
 
   async publish(event: string): Promise<void> {
-    await this.lock_.lockAsync((): void => {
+    await this.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
       this.events.push(event)
       this.eventCount_++
     })
@@ -261,14 +276,24 @@ class IRConnectionPool {
 
 
   async acquire(): Promise<void> {
-    await this.lock_.lockAsync((): void => {
+    await this.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
       this.activeCount_++
       this.idleCount_--
     })
   }
 
   async release(): Promise<void> {
-    await this.lock_.lockAsync((): void => {
+    await this.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+
       this.activeCount_--
       this.idleCount_++
     })
@@ -367,6 +392,10 @@ export default function IRReinforcementTest(): void {
       try {
         const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
         await counter.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
           counter.count_ = 10
           counter.threshold_ = 50
           counter.status_ = 1
@@ -439,7 +468,13 @@ export default function IRReinforcementTest(): void {
     it('testIRReinforcement0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-        await counter.lock_.lockAsync((error?: BusinessError): void => { counter.count_ = 50 })
+        await counter.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+          counter.count_ = 50
+        })
         for (let i = 0; i < 1025; i++) {
           await counter.addMetric(`m_${i}`, i)
         }
@@ -604,7 +639,13 @@ export default function IRReinforcementTest(): void {
     it('testIRReinforcement1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         const collector: IRResultCollector = new IRResultCollector(new collections.Map<number, string>(), new ArkTSUtils.locks.AsyncLock())
-        await collector.lock_.lockAsync((error?: BusinessError): void => { collector.total_ = 100 })
+        await collector.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+          collector.total_ = 100
+        })
         const stats: number[] = await collector.getIRStats()
         expect(stats[0]).assertEqual(100)
       } catch (error) {
@@ -626,7 +667,13 @@ export default function IRReinforcementTest(): void {
       try {
         const collector: IRResultCollector = new IRResultCollector(new collections.Map<number, string>(), new ArkTSUtils.locks.AsyncLock())
         for (let i = 0; i < 1025; i++) {
-          await collector.lock_.lockAsync((error?: BusinessError): void => { collector.results.set(i, `result_${i}`) })
+          await collector.lock_.lockAsync((error?: BusinessError): void => {
+            if (error !== undefined) {
+              console.info(`lock callback error: ${JSON.stringify(error)}`)
+              return
+            }
+            collector.results.set(i, `result_${i}`)
+          })
         }
         expect(collector.results.size).assertEqual(1025)
       } catch (error) {
@@ -647,7 +694,13 @@ export default function IRReinforcementTest(): void {
     it('testIRReinforcement1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-        await counter.lock_.lockAsync((error?: BusinessError): void => { counter.count_ = 100 })
+        await counter.lock_.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+          counter.count_ = 100
+        })
         const tasks: taskpool.Task[] = []
         for (let i = 0; i < 10; i++) {
           tasks.push(new taskpool.Task(readIRCount, counter))
@@ -679,7 +732,13 @@ export default function IRReinforcementTest(): void {
       try {
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
         const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
-        await lock.lockAsync((error?: BusinessError): void => { counter.count_ = 42 })
+        await lock.lockAsync((error?: BusinessError): void => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
+          counter.count_ = 42
+        })
         expect(counter.count_).assertEqual(42)
       } catch (error) {
         console.error("testIRReinforcement1400 failed");
@@ -701,6 +760,10 @@ export default function IRReinforcementTest(): void {
         const cond: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
         await lock.lockAsync(async (error?: BusinessError): Promise<void> => {
+          if (error !== undefined) {
+            console.info(`lock callback error: ${JSON.stringify(error)}`)
+            return
+          }
           cond.notifyOne()
         })
         expect(cond !== undefined).assertTrue()
