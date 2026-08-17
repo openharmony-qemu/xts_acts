@@ -6041,7 +6041,7 @@ static napi_value AudioRenderGetAudioTimestampInfoInterval(napi_env env, napi_ca
     uDelay(sleepNum);
 
     napi_value res;
-    float rate = 0.15;
+    float rate = 0.4;
     int counti = 5;
     int64_t framePositionLastDuration = 0;
     int64_t timestampLastDuration = 0;
@@ -13869,6 +13869,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100(na
     uint8_t data[1920] = {0};
     uint32_t wrongDataSize = 1000;
     OH_AudioAccessoryManager *manager = nullptr;
+    g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
         LOG("GetAccessoryManager failed: %{public}d", ret);
@@ -13913,6 +13914,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100(na
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
     OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_Write(stream, data, wrongDataSize);
     LOG("OH_AudioAccessoryInputStreamManager_Write error frame length mismatch: %{public}d", rets);
+    OH_AudioCapturer_Release(capturer);
     OH_AudioAccessoryManager_Disconnected(manager, accessory);
     OH_AudioAccessoryManager_Destroy(manager, accessory);
     if (rets == AUDIOCOMMON_RESULT_ERROR_FRAME_LENGTH_MISMATCH) {
@@ -13929,6 +13931,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100(n
     napi_value res;
     uint8_t data[1920] = {0};
     OH_AudioAccessoryManager *manager = nullptr;
+    g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
         LOG("GetAccessoryManager failed: %{public}d", ret);
@@ -13939,6 +13942,9 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100(n
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
     OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
     OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory);
 
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioCapturer *capturer = nullptr;
@@ -13966,9 +13972,6 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100(n
         return res;
     }
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
-    OH_AudioAccessory *accessory = nullptr;
-    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
-    OH_AudioAccessoryManager_Connected(manager, accessory);
     OH_AudioCapturer_Stop(capturer);
     OH_AudioCapturer_Release(capturer);
     OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_Write(stream, data, 1920);
@@ -13989,6 +13992,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_
     napi_value res;
     uint8_t data[1920] = {0};
     OH_AudioAccessoryManager *manager = nullptr;
+    g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
         LOG("GetAccessoryManager failed: %{public}d", ret);
@@ -13999,6 +14003,9 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
     OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
     OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory);
 
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioCapturer *capturer = nullptr;
@@ -14026,9 +14033,6 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_
         return res;
     }
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
-    OH_AudioAccessory *accessory = nullptr;
-    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
-    OH_AudioAccessoryManager_Connected(manager, accessory);
     OH_AudioCapturer_Stop(capturer);
     OH_AudioCapturer_Release(capturer);
     uint32_t writableSize = 0;
@@ -14049,6 +14053,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_010
 {
     napi_value res;
     OH_AudioAccessoryManager *manager = nullptr;
+    g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
         LOG("GetAccessoryManager failed: %{public}d", ret);
@@ -14058,6 +14063,9 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_010
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
     OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
     OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory);
 
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioCapturer *capturer = nullptr;
@@ -14075,9 +14083,6 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_010
     OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
     OH_AudioCapturer_Start(capturer);
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
-    OH_AudioAccessory *accessory = nullptr;
-    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
-    OH_AudioAccessoryManager_Connected(manager, accessory);
     OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_RegisterStartCallback(stream, AccessoryOnStreamStart);
     LOG("OH_AudioAccessoryInputStreamManager_RegisterStartCallback error illegal state: %{public}d", rets);
     OH_AudioAccessoryManager_Disconnected(manager, accessory);
@@ -14097,6 +14102,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100
 {
     napi_value res;
     OH_AudioAccessoryManager *manager = nullptr;
+    g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
         LOG("GetAccessoryManager failed: %{public}d", ret);
@@ -14106,6 +14112,9 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
     OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
     OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory);
 
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioCapturer *capturer = nullptr;
@@ -14123,9 +14132,6 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100
     OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
     OH_AudioCapturer_Start(capturer);
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
-    OH_AudioAccessory *accessory = nullptr;
-    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
-    OH_AudioAccessoryManager_Connected(manager, accessory);
     OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_RegisterStopCallback(stream, AccessoryOnStreamStop);
     LOG("OH_AudioAccessoryInputStreamManager_RegisterStopCallback error illegal state: %{public}d", rets);
     OH_AudioAccessoryManager_Disconnected(manager, accessory);
@@ -14145,6 +14151,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0
 {
     napi_value res;
     OH_AudioAccessoryManager *manager = nullptr;
+    g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
         LOG("GetAccessoryManager failed: %{public}d", ret);
@@ -14154,6 +14161,9 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
     OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
     OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory);
 
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioCapturer *capturer = nullptr;
@@ -14171,9 +14181,6 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0
     OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
     OH_AudioCapturer_Start(capturer);
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
-    OH_AudioAccessory *accessory = nullptr;
-    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
-    OH_AudioAccessoryManager_Connected(manager, accessory);
     OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_RegisterReleaseCallback(stream, AccessoryOnStreamRelease);
     LOG("OH_AudioAccessoryInputStreamManager_RegisterReleaseCallback error illegal state: %{public}d", rets);
     OH_AudioAccessoryManager_Disconnected(manager, accessory);
@@ -14193,6 +14200,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0
 {
     napi_value res;
     OH_AudioAccessoryManager *manager = nullptr;
+    g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
         LOG("GetAccessoryManager failed: %{public}d", ret);
@@ -14202,6 +14210,9 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
     OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
     OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory);
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioCapturer *capturer = nullptr;
     OH_AudioStream_Result streamResult = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_CAPTURER);
@@ -14218,9 +14229,6 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0
     OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
     OH_AudioCapturer_Start(capturer);
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
-    OH_AudioAccessory *accessory = nullptr;
-    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
-    OH_AudioAccessoryManager_Connected(manager, accessory);
     OH_AudioCapturer_Stop(capturer);
     OH_AudioCapturer_Release(capturer);
     OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_RegisterLatencyCallback(stream, OnGetLatency);
@@ -14240,6 +14248,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_010
 {
     napi_value res;
     OH_AudioAccessoryManager *manager = nullptr;
+    g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
         LOG("GetAccessoryManager failed: %{public}d", ret);
@@ -14249,7 +14258,9 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_010
     OH_AudioStreamInfo streamInfo = CreateAccessoryStreamInfo();
     OH_AudioAccessoryInfo accessoryInfo = CreateAccessoryInfo();
     OH_AudioAccessoryCapabilities capabilities = CreateAccessoryCapabilities(streamInfo);
-
+    OH_AudioAccessory *accessory = nullptr;
+    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
+    OH_AudioAccessoryManager_Connected(manager, accessory);
     OH_AudioStreamBuilder *builder = nullptr;
     OH_AudioCapturer *capturer = nullptr;
     OH_AudioStream_Result streamResult = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_CAPTURER);
@@ -14266,9 +14277,6 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_010
     OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
     OH_AudioCapturer_Start(capturer);
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
-    OH_AudioAccessory *accessory = nullptr;
-    OH_AudioAccessoryManager_CreateInput(manager, &accessoryInfo, &capabilities, OnOpenInputStream, &accessory);
-    OH_AudioAccessoryManager_Connected(manager, accessory);
     OH_AudioCapturer_Stop(capturer);
     OH_AudioCapturer_Release(capturer);
     OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_RegisterFramePositionCallback(stream, OnGetFramePosition);
@@ -14289,9 +14297,9 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100(napi_env 
 {
     napi_value res;
     OH_AudioAccessoryManager *manager = nullptr;
+    g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
-        LOG("GetAccessoryManager failed: %{public}d", ret);
         napi_create_int32(env, TEST_FAIL, &res);
         return res;
     }
@@ -14350,6 +14358,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100(napi_en
 {
     napi_value res;
     OH_AudioAccessoryManager *manager = nullptr;
+    g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
         LOG("GetAccessoryManager failed: %{public}d", ret);
@@ -14403,6 +14412,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100(napi
 {
     napi_value res;
     OH_AudioAccessoryManager *manager = nullptr;
+    g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
         LOG("GetAccessoryManager failed: %{public}d", ret);
@@ -14464,6 +14474,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100(napi_env e
 {
     napi_value res;
     OH_AudioAccessoryManager *manager = nullptr;
+    g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
         LOG("GetAccessoryManager failed: %{public}d", ret);
@@ -14494,6 +14505,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100(napi_env env
     uint8_t data[1920] = {0};
     uint32_t dataSize = 1920;
     OH_AudioAccessoryManager *manager = nullptr;
+    g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
         LOG("GetAccessoryManager failed: %{public}d", ret);
@@ -14553,6 +14565,7 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100(napi_e
     napi_value res;
     uint32_t writableSize = 0;
     OH_AudioAccessoryManager *manager = nullptr;
+    g_stream = nullptr;
     OH_AudioCommon_Result ret = OH_AudioManager_GetAccessoryManager(&manager);
     if (ret != AUDIOCOMMON_RESULT_SUCCESS) {
         LOG("GetAccessoryManager failed: %{public}d", ret);
