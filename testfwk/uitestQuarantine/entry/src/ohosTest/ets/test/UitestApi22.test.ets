@@ -47,28 +47,31 @@ async function stopApplication(bundleName: string) {
 export default function uiTestApi22Test() {
   describe('UiTest_API22', () => {
     let driver: Driver
-    beforeAll(async () => {
+    beforeAll(async (done: Function) => {
       driver = Driver.create();
       await driver.delayMs(1000);
+      done();
     })
 
-    beforeEach(async () => {
+    beforeEach(async (done: Function) => {
       await stopApplication('com.uitestScene.acts');
+      done();
     })
 
-    afterAll(async () => {
+    afterAll(async (done: Function) => {
       await stopApplication('com.uitestScene.acts');
+      done();
     })
 
     /**
      * @tc.name   tesIsComponentPresentWhenDragTrue
-     * @tc.number UiTest_API22_0001
+     * @tc.number UiTest_API22_000  1
      * @tc.desc   isComponentPresentWhenDrag test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('tesIsComponentPresentWhenDragTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('tesIsComponentPresentWhenDragTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver.delayMs(waitUiReadyMs);
@@ -93,6 +96,7 @@ export default function uiTestApi22Test() {
       expect(text != null).assertTrue()
       await stopApplication('com.uitestScene.acts')
       console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue end`);
+      done();
     })
   })
 }

@@ -42,7 +42,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testOnTextMatchPatternNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testOnTextMatchPatternNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.log(`${TestTag}, testOnTextMatchPatternNegative start`);
       try {
         ON.text('test', -1 as MatchPattern);
@@ -62,7 +62,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testOnDescriptionMatchPatternNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testOnDescriptionMatchPatternNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.log(`${TestTag}, testOnDescriptionMatchPatternNegative start`);
       try {
         ON.description('test', -1 as MatchPattern);
@@ -82,7 +82,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testOnIdMatchPatternNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testOnIdMatchPatternNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.log(`${TestTag}, testOnIdMatchPatternNegative start`);
       try {
         ON.id('test', -1 as MatchPattern);
@@ -102,7 +102,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testOnTypeMatchPatternNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testOnTypeMatchPatternNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.log(`${TestTag}, testOnTypeMatchPatternNegative start`);
       try {
         ON.type('test', -1 as MatchPattern);
@@ -122,7 +122,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testOnHintMatchPatternNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testOnHintMatchPatternNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.log(`${TestTag}, testOnHintMatchPatternNegative start`);
       try {
         ON.hint('test', -1 as MatchPattern);
@@ -142,7 +142,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testOnOriginalTextMatchPatternNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testOnOriginalTextMatchPatternNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.log(`${TestTag}, testOnOriginalTextMatchPatternNegative start`);
       try {
         ON.originalText('test', -1 as MatchPattern);
@@ -162,7 +162,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSetDisplayRotationNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testDriverSetDisplayRotationNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testDriverSetDisplayRotationNegative start`);
       try {
         await driver.setDisplayRotation(-1 as DisplayRotation);
@@ -172,6 +172,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ErrorCode401);
       }
       console.log(`${TestTag}, testDriverSetDisplayRotationNegative END`);
+      done()
     });
 
     /**
@@ -182,7 +183,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverFlingUiDirectionNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testDriverFlingUiDirectionNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testDriverFlingUiDirectionNegative start`);
       try {
         await driver.fling(-1 as UiDirection, 600);
@@ -192,6 +193,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ErrorCode401);
       }
       console.log(`${TestTag}, testDriverFlingUiDirectionNegative END`);
+      done()
     });
 
     /**
@@ -202,7 +204,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverTouchPadMultiFingerSwipeDirectionNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testDriverTouchPadMultiFingerSwipeDirectionNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testDriverTouchPadMultiFingerSwipeDirectionNegative start`);
       try {
         await driver.touchPadMultiFingerSwipe(3, -1 as UiDirection);
@@ -212,6 +214,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ErrorCode401);
       }
       console.log(`${TestTag}, testDriverTouchPadMultiFingerSwipeDirectionNegative END`);
+      done()
     });
 
     /**
@@ -222,7 +225,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverTouchPadMultiFingerSwipeDirectionAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testDriverTouchPadMultiFingerSwipeDirectionAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testDriverTouchPadMultiFingerSwipeDirectionAboveMax start`);
       try {
         await driver.touchPadMultiFingerSwipe(3, 4 as UiDirection);
@@ -232,6 +235,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ErrorCode401);
       }
       console.log(`${TestTag}, testDriverTouchPadMultiFingerSwipeDirectionAboveMax END`);
+      done()
     });
 
     /**
@@ -242,7 +246,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverTouchPadTwoFingersScrollDirectionNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testDriverTouchPadTwoFingersScrollDirectionNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testDriverTouchPadTwoFingersScrollDirectionNegative start`);
       const point: Point = { x: 100, y: 100 };
       try {
@@ -253,6 +257,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testDriverTouchPadTwoFingersScrollDirectionNegative END`);
+      done()
     });
 
     /**
@@ -263,7 +268,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverTouchPadTwoFingersScrollDirectionAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testDriverTouchPadTwoFingersScrollDirectionAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testDriverTouchPadTwoFingersScrollDirectionAboveMax start`);
       const point: Point = { x: 100, y: 100 };
       try {
@@ -274,6 +279,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testDriverTouchPadTwoFingersScrollDirectionAboveMax END`);
+      done()
     });
 
     /**
@@ -284,7 +290,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverMouseClickButtonNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testDriverMouseClickButtonNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testDriverMouseClickButtonNegative start`);
       const point: Point = { x: 100, y: 100 };
       try {
@@ -295,6 +301,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ErrorCode401);
       }
       console.log(`${TestTag}, testDriverMouseClickButtonNegative END`);
+      done()
     });
 
     /**
@@ -305,7 +312,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverMouseDoubleClickButtonNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testDriverMouseDoubleClickButtonNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testDriverMouseDoubleClickButtonNegative start`);
       const point: Point = { x: 100, y: 100 };
       try {
@@ -316,6 +323,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ErrorCode401);
       }
       console.log(`${TestTag}, testDriverMouseDoubleClickButtonNegative END`);
+      done()
     });
 
     /**
@@ -326,7 +334,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverMouseLongClickButtonNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testDriverMouseLongClickButtonNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testDriverMouseLongClickButtonNegative start`);
       const point: Point = { x: 100, y: 100 };
       try {
@@ -337,6 +345,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ErrorCode401);
       }
       console.log(`${TestTag}, testDriverMouseLongClickButtonNegative END`);
+      done()
     });
 
     /**
@@ -347,7 +356,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testUiWindowResizeDirectionNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testUiWindowResizeDirectionNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testUiWindowResizeDirectionNegative start`);
       let driver = Driver.create()
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -361,6 +370,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ErrorCode401);
       }
       console.log(`${TestTag}, testUiWindowResizeDirectionNegative END`);
+      done()
     });
 
     /**
@@ -371,7 +381,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testObserverOnceWindowChangeTypeNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testObserverOnceWindowChangeTypeNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testObserverOnceWindowChangeTypeNegative start`);
       const observer: UIEventObserver = driver.createUIEventObserver();
       const options: WindowChangeOptions = { timeout: 5000 };
@@ -383,6 +393,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testObserverOnceWindowChangeTypeNegative END`);
+      done()
     });
 
     /**
@@ -393,7 +404,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testObserverOnceWindowChangeTypeAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testObserverOnceWindowChangeTypeAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testObserverOnceWindowChangeTypeAboveMax start`);
       const observer: UIEventObserver = driver.createUIEventObserver();
       const options: WindowChangeOptions = { timeout: 5000 };
@@ -405,6 +416,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testObserverOnceWindowChangeTypeAboveMax END`);
+      done()
     });
 
     /**
@@ -415,7 +427,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testObserverOnceComponentEventTypeNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testObserverOnceComponentEventTypeNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testObserverOnceComponentEventTypeNegative start`);
       const observer: UIEventObserver = driver.createUIEventObserver();
       const options: ComponentEventOptions = { timeout: 5000 };
@@ -427,6 +439,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testObserverOnceComponentEventTypeNegative END`);
+      done()
     });
 
     /**
@@ -437,7 +450,7 @@ export default function uitestEnumBoundaryErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testObserverOnceComponentEventTypeAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testObserverOnceComponentEventTypeAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testObserverOnceComponentEventTypeAboveMax start`);
       const observer: UIEventObserver = driver.createUIEventObserver();
       const options: ComponentEventOptions = { timeout: 5000 };
@@ -449,6 +462,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testObserverOnceComponentEventTypeAboveMax END`);
+      done()
     });
   });
 }
