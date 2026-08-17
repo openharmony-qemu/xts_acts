@@ -34,7 +34,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_0100
      * @tc.name testTypedUArraysSetTestFileD001
      * @tc.desc Verify set(source) Uint8Array 5
      * @tc.size MediumTest
@@ -52,7 +52,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_0200
      * @tc.name testTypedUArraysSetTestFileD002
      * @tc.desc Verify set(source) Uint16Array 5
      * @tc.size MediumTest
@@ -70,7 +70,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_0300
      * @tc.name testTypedUArraysSetTestFileD003
      * @tc.desc Verify set(source) Uint32Array 5
      * @tc.size MediumTest
@@ -88,7 +88,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_0400
      * @tc.name testTypedUArraysSetTestFileD004
      * @tc.desc Verify set(source) Uint8ClampedArray 5
      * @tc.size MediumTest
@@ -106,7 +106,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_0500
      * @tc.name testTypedUArraysSetTestFileD005
      * @tc.desc Verify set(source) BigUint64Array 5
      * @tc.size MediumTest
@@ -124,7 +124,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_0600
      * @tc.name testTypedUArraysSetTestFileD006
      * @tc.desc Verify set(source, offset) Uint8Array 5
      * @tc.size MediumTest
@@ -144,7 +144,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_0700
      * @tc.name testTypedUArraysSetTestFileD007
      * @tc.desc Verify set(source, offset) Uint16Array 5
      * @tc.size MediumTest
@@ -164,7 +164,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_0800
      * @tc.name testTypedUArraysSetTestFileD008
      * @tc.desc Verify set(source, offset) Uint32Array 5
      * @tc.size MediumTest
@@ -186,7 +186,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_0900
      * @tc.name testTypedUArraysSetTestFileD009
      * @tc.desc Verify set(source, offset) Uint8ClampedArray 5
      * @tc.size MediumTest
@@ -206,7 +206,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_1000
      * @tc.name testTypedUArraysSetTestFileD010
      * @tc.desc Verify set(source, offset) BigUint64Array 5
      * @tc.size MediumTest
@@ -226,7 +226,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_1100
      * @tc.name testTypedUArraysSetTestFileD011
      * @tc.desc Verify set(source) Uint8Array Uint8Array
      * @tc.size MediumTest
@@ -243,7 +243,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_1200
      * @tc.name testTypedUArraysSetTestFileD012
      * @tc.desc Verify set(source) Uint8Array array
      * @tc.size MediumTest
@@ -259,7 +259,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_1300
      * @tc.name testTypedUArraysSetTestFileD013
      * @tc.desc Verify set(source) Uint16Array array
      * @tc.size MediumTest
@@ -275,7 +275,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_1400
      * @tc.name testTypedUArraysSetTestFileD014
      * @tc.desc Verify set(source, offset) Uint8Array offset=0
      * @tc.size MediumTest
@@ -291,7 +291,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_1500
      * @tc.name testTypedUArraysSetTestFileD015
      * @tc.desc Verify set(source, offset) Uint16Array offset=2
      * @tc.size MediumTest
@@ -308,7 +308,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_1600
      * @tc.name testTypedUArraysSetTestFileD016
      * @tc.desc Verify set(source, offset) Uint32Array offset=0
      * @tc.size MediumTest
@@ -324,7 +324,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_1700
      * @tc.name testTypedUArraysSetTestFileD017
      * @tc.desc Verify set(source, offset) Uint8ClampedArray offset=1
      * @tc.size MediumTest
@@ -341,7 +341,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_1800
      * @tc.name testTypedUArraysSetTestFileD018
      * @tc.desc Verify set empty source
      * @tc.size MediumTest
@@ -357,7 +357,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_1900
      * @tc.name testTypedUArraysSetTestFileD019
      * @tc.desc Verify set empty TypedArray source
      * @tc.size MediumTest
@@ -374,7 +374,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_2000
      * @tc.name testTypedUArraysSetTestFileD020
      * @tc.desc Verify set Uint8Array source BigUint64Array
      * @tc.size MediumTest
@@ -390,7 +390,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_2100
      * @tc.name testTypedUArraysSetTestFileD021
      * @tc.desc Verify Uint8ClampedArray saturation behavior
      * @tc.size MediumTest
@@ -406,7 +406,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_2200
      * @tc.name testTypedUArraysSetTestFileD022
      * @tc.desc Verify set Uint8Array boundary values
      * @tc.size MediumTest
@@ -421,7 +421,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_2300
      * @tc.name testTypedUArraysSetTestFileD023
      * @tc.desc Verify set Uint16Array boundary values
      * @tc.size MediumTest
@@ -436,7 +436,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_2400
      * @tc.name testTypedUArraysSetTestFileD024
      * @tc.desc Verify set Uint32Array boundary values
      * @tc.size MediumTest
@@ -451,7 +451,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_2500
      * @tc.name testTypedUArraysSetTestFileD025
      * @tc.desc Verify set BigUint64Array boundary values
      * @tc.size MediumTest
@@ -466,7 +466,7 @@ export default function typedUArraysSetTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET03_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SETTEST04_2600
      * @tc.name testTypedUArraysSetTestFileD026
      * @tc.desc Verify set BigUint64Array overflow behavior
      * @tc.size MediumTest
