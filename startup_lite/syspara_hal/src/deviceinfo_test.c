@@ -19,6 +19,11 @@
 #include "parameter.h"
 #include "parameter_utils.h"
 
+/* param_comm.h 中的 UDID 长度定义（parameter.h 未间接包含该头） */
+#ifndef UDID_LEN
+#define UDID_LEN 65
+#endif
+
 #define QUERY_TIMES 50
 
 LITE_TEST_SUIT(startup, deviceinfo, DeviceInfoTestSuite);
@@ -627,6 +632,401 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
         int value = GetSdkApiVersion();
     }
     int value2 = GetSdkApiVersion();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+
+/**
+ * @tc.name   testGetOsReleaseType
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2501
+ * @tc.desc   test GetOsReleaseType, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetOsReleaseType,
+  Function | MediumTest | Level1)
+{
+    /* ws63 实测 "Beta"（const.build.osreleasetype） */
+    const char *value1 = GetOsReleaseType();
+    printf("OsReleaseType=%s\n", value1);
+    TEST_ASSERT_EQUAL_STRING("Beta", value1);
+    for (int i = 0; i < QUERY_TIMES; i++) {
+        const char *value = GetOsReleaseType();
+        TEST_ASSERT_EQUAL_STRING("Beta", value);
+    }
+    const char *value2 = GetOsReleaseType();
+    TEST_ASSERT_EQUAL_STRING(value1, value2);
+};
+
+/**
+ * @tc.name   testGetDevUdid
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2502
+ * @tc.desc   test GetDevUdid fill udid buffer.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetDevUdid,
+  Function | MediumTest | Level1)
+{
+    /* UDID 为设备唯一标识（每台设备不同，不可写死具体值），断言其契约属性：
+     * 返回 0、长度 64 位十六进制、多次调用一致、非全零 */
+    char udid[UDID_LEN] = {0};
+    int ret = GetDevUdid(udid, UDID_LEN);
+    printf("GetDevUdid ret=%d, udid=%s\n", ret, udid);
+    TEST_ASSERT_EQUAL_INT(0, ret);
+    TEST_ASSERT_TRUE(strlen(udid) == UDID_LEN - 1);
+    /* 字符集校验：全部为十六进制字符（0-9a-fA-F） */
+    for (int i = 0; i < (int)strlen(udid); i++) {
+        char c = udid[i];
+        TEST_ASSERT_TRUE((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F'));
+    }
+    /* 非全零：设备唯一标识不应为空 */
+    int allZero = 1;
+    for (int i = 0; i < (int)strlen(udid); i++) {
+        if (udid[i] != '0') {
+            allZero = 0;
+            break;
+        }
+    }
+    TEST_ASSERT_FALSE(allZero);
+    /* 一致性：同一设备多次调用结果相同（唯一性/稳定性） */
+    char udid2[UDID_LEN] = {0};
+    ret = GetDevUdid(udid2, UDID_LEN);
+    TEST_ASSERT_EQUAL_INT(0, ret);
+    TEST_ASSERT_EQUAL_STRING(udid, udid2);
+    /* 非法参数：NULL 缓冲/长度不足返回非 0 */
+    ret = GetDevUdid(NULL, UDID_LEN);
+    TEST_ASSERT_TRUE(ret != 0);
+    ret = GetDevUdid(udid, 0);
+    TEST_ASSERT_TRUE(ret != 0);
+};
+
+
+/**
+ * @tc.name   testGetChipType
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2503
+ * @tc.desc   test GetChipType, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetChipType,
+  Function | MediumTest | Level1)
+{
+    /* ws63 未设置 ohos.boot.hardware 属性，实测返回 NULL */
+    const char *value1 = GetChipType();
+    printf("ChipType=%s\n", (value1 == NULL) ? "(null)" : value1);
+    TEST_ASSERT_TRUE(value1 == NULL);
+    const char *value2 = GetChipType();
+    TEST_ASSERT_TRUE(value2 == NULL);
+    TEST_ASSERT_TRUE(value1 == value2);
+};
+
+/**
+ * @tc.name   testGetBootCount
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2504
+ * @tc.desc   test GetBootCount, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetBootCount,
+  Function | MediumTest | Level1)
+{
+    /* ws63 mini 系统未维护 persist.startup.bootcount，实测恒为 0 */
+    int value1 = GetBootCount();
+    printf("BootCount=%d\n", value1);
+    TEST_ASSERT_EQUAL_INT(0, value1);
+    int value2 = GetBootCount();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetDeviceColor
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2505
+ * @tc.desc   test GetDeviceColor, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetDeviceColor,
+  Function | MediumTest | Level1)
+{
+    /* ws63 未设置 ohos.boot.backcolor 属性，实测返回空串（EMPTY_STR） */
+    const char *value1 = GetDeviceColor();
+    printf("DeviceColor=%s\n", value1);
+    TEST_ASSERT_TRUE(value1 != NULL);
+    TEST_ASSERT_TRUE(value1[0] == '\0');
+    const char *value2 = GetDeviceColor();
+    TEST_ASSERT_EQUAL_STRING(value1, value2);
+};
+
+/**
+ * @tc.name   testGetDistributionOSApiName
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2506
+ * @tc.desc   test GetDistributionOSApiName, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetDistributionOSApiName,
+  Function | MediumTest | Level1)
+{
+    /* ws63 未设置 const.product.os.dist.apiname，实测返回空串（EMPTY_STR） */
+    const char *value1 = GetDistributionOSApiName();
+    printf("DistributionOSApiName=%s\n", value1);
+    TEST_ASSERT_TRUE(value1 != NULL);
+    TEST_ASSERT_TRUE(value1[0] == '\0');
+    const char *value2 = GetDistributionOSApiName();
+    TEST_ASSERT_EQUAL_STRING(value1, value2);
+};
+
+/**
+ * @tc.name   testGetDistributionOSName
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2507
+ * @tc.desc   test GetDistributionOSName, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetDistributionOSName,
+  Function | MediumTest | Level1)
+{
+    /* ws63 未设置 const.product.os.dist.name，实测返回空串（EMPTY_STR） */
+    const char *value1 = GetDistributionOSName();
+    printf("DistributionOSName=%s\n", value1);
+    TEST_ASSERT_TRUE(value1 != NULL);
+    TEST_ASSERT_TRUE(value1[0] == '\0');
+    const char *value2 = GetDistributionOSName();
+    TEST_ASSERT_EQUAL_STRING(value1, value2);
+};
+
+/**
+ * @tc.name   testGetDistributionOSReleaseType
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2508
+ * @tc.desc   test GetDistributionOSReleaseType, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetDistributionOSReleaseType,
+  Function | MediumTest | Level1)
+{
+    /* ws63 未设置属性时回退到 GetOsReleaseType()，实测 "Beta" */
+    const char *value1 = GetDistributionOSReleaseType();
+    printf("DistributionOSReleaseType=%s\n", value1);
+    TEST_ASSERT_EQUAL_STRING(value1, GetOsReleaseType());
+    const char *value2 = GetDistributionOSReleaseType();
+    TEST_ASSERT_EQUAL_STRING(value1, value2);
+};
+
+/**
+ * @tc.name   testGetDistributionOSVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2509
+ * @tc.desc   test GetDistributionOSVersion, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetDistributionOSVersion,
+  Function | MediumTest | Level1)
+{
+    /* ws63 未设置属性时回退到 GetOSFullName()，实测 "OpenHarmony-7.0.0.37(Beta)" */
+    const char *value1 = GetDistributionOSVersion();
+    printf("DistributionOSVersion=%s\n", value1);
+    TEST_ASSERT_EQUAL_STRING(value1, GetOSFullName());
+    const char *value2 = GetDistributionOSVersion();
+    TEST_ASSERT_EQUAL_STRING(value1, value2);
+};
+
+/**
+ * @tc.name   testGetDistributionOSApiVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2510
+ * @tc.desc   test GetDistributionOSApiVersion > 0, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetDistributionOSApiVersion,
+  Function | MediumTest | Level1)
+{
+    /* ws63 未设置属性时回退到 GetSdkApiVersion()，实测 26 */
+    int value1 = GetDistributionOSApiVersion();
+    printf("DistributionOSApiVersion=%d\n", value1);
+    TEST_ASSERT_EQUAL_INT(value1, GetSdkApiVersion());
+    int value2 = GetDistributionOSApiVersion();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetPerformanceClass
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2511
+ * @tc.desc   test GetPerformanceClass in valid range, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetPerformanceClass,
+  Function | MediumTest | Level1)
+{
+    /* ws63 未设置 const.sys.performance_class，实测返回 0（PERFORMANCE_CLASS_HIGH_LEVEL） */
+    int value1 = GetPerformanceClass();
+    printf("PerformanceClass=%d\n", value1);
+    TEST_ASSERT_EQUAL_INT(PERFORMANCE_CLASS_HIGH_LEVEL, value1);
+    int value2 = GetPerformanceClass();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetProductModelAlias
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2512
+ * @tc.desc   test GetProductModelAlias, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetProductModelAlias,
+  Function | MediumTest | Level1)
+{
+    /* ws63 未设置 const.product.model_alias，实测回退到产品型号 "NearLink_DK_WS63E" */
+    const char *value1 = GetProductModelAlias();
+    printf("ProductModelAlias=%s\n", value1);
+    TEST_ASSERT_EQUAL_STRING(value1, GetProductModel());
+    const char *value2 = GetProductModelAlias();
+    TEST_ASSERT_EQUAL_STRING(value1, value2);
+};
+
+/**
+ * @tc.name   testGetSdkMinorApiVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2513
+ * @tc.desc   test GetSdkMinorApiVersion, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetSdkMinorApiVersion,
+  Function | MediumTest | Level1)
+{
+    /* ws63 未设置 const.ohos.apiminorversion，实测返回 0 */
+    int value1 = GetSdkMinorApiVersion();
+    printf("SdkMinorApiVersion=%d\n", value1);
+    TEST_ASSERT_EQUAL_INT(0, value1);
+    int value2 = GetSdkMinorApiVersion();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetSdkPatchApiVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2514
+ * @tc.desc   test GetSdkPatchApiVersion, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetSdkPatchApiVersion,
+  Function | MediumTest | Level1)
+{
+    /* ws63 未设置 const.ohos.apipatchversion，实测返回 0 */
+    int value1 = GetSdkPatchApiVersion();
+    printf("SdkPatchApiVersion=%d\n", value1);
+    TEST_ASSERT_EQUAL_INT(0, value1);
+    int value2 = GetSdkPatchApiVersion();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetMajorVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2515
+ * @tc.desc   test GetMajorVersion, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetMajorVersion,
+  Function | MediumTest | Level1)
+{
+    /* 由 const.ohos.fullname="OpenHarmony-7.0.0.37(Beta)" 解析，实测 M=7 */
+    int value1 = GetMajorVersion();
+    printf("MajorVersion=%d\n", value1);
+    TEST_ASSERT_EQUAL_INT(7, value1);
+    int value2 = GetMajorVersion();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetSeniorVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2516
+ * @tc.desc   test GetSeniorVersion, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetSeniorVersion,
+  Function | MediumTest | Level1)
+{
+    /* 由 const.ohos.fullname 解析，实测 S=0 */
+    int value1 = GetSeniorVersion();
+    printf("SeniorVersion=%d\n", value1);
+    TEST_ASSERT_EQUAL_INT(0, value1);
+    int value2 = GetSeniorVersion();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetFeatureVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2517
+ * @tc.desc   test GetFeatureVersion, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetFeatureVersion,
+  Function | MediumTest | Level1)
+{
+    /* 由 const.ohos.fullname 解析，实测 F=0 */
+    int value1 = GetFeatureVersion();
+    printf("FeatureVersion=%d\n", value1);
+    TEST_ASSERT_EQUAL_INT(0, value1);
+    int value2 = GetFeatureVersion();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetBuildVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2518
+ * @tc.desc   test GetBuildVersion, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetBuildVersion,
+  Function | MediumTest | Level1)
+{
+    /* 由 const.ohos.fullname 解析，实测 B=37 */
+    int value1 = GetBuildVersion();
+    printf("BuildVersion=%d\n", value1);
+    TEST_ASSERT_EQUAL_INT(37, value1);
+    int value2 = GetBuildVersion();
     TEST_ASSERT_EQUAL_INT(value1, value2);
 };
 
