@@ -3399,7 +3399,7 @@ function withCertificateFile<T>(callback: (fd: number) => T, fileSetup?: (fd: nu
 }
 
 function checkEnterpriseDevice(done: Function): boolean {
-  let isEnterprise: string = systemParameterEnhance.getSync('const.edm.is_enterprise_device', 'false');
+  let isEnterprise: string = systemParameterEnhance.getSync('const.edm.is_enterprise_device_provisioned', 'false');
   if (isEnterprise != 'true') {
     console.log('the device is not enterprise');
     done();
