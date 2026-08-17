@@ -1714,29 +1714,28 @@ export default function TextPicker(): void {
         done();
         return;
       }
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/BindSheetPicker',
-      }
 
       const photoSelectOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+
       photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
       photoSelectOptions.maxSelectNumber = 3;
-      photoSelectOptions.isPhotoTakingSupported = false;
-      const textList = [photoAccessHelper.CompleteButtonText.TEXT_ADD, photoAccessHelper.CompleteButtonText.TEXT_DONE, photoAccessHelper.CompleteButtonText.TEXT_SEND];
-      const photoPicker = new photoAccessHelper.PhotoViewPicker();
-      for (let index = 0; index < 3; index++) {
-        photoSelectOptions.completeButtonText = textList[index];
-        expect(photoSelectOptions.completeButtonText).assertEqual(textList[index]);
-        photoPicker.select(photoSelectOptions)
-          .then((result: photoAccessHelper.PhotoSelectResult) => {
-            console.info('PhotoViewPicker select success, uri: ' + JSON.stringify(result));
-          })
-          .catch((error: Error) => {
-            console.info('PhotoViewPicker select error, uri: ' + JSON.stringify(error));
-          })
+
+      const options: router.RouterOptions = {
+        url: 'MainAbility/pages/BindSheetPicker',
+        params: {
+          photoSelectOptions: photoSelectOptions
+        } as RouterSelectOptionsParams
       }
 
-      console.info("testPicker24 finish");
+      for (let index: int = 0; index < 3; index++) {
+        await routeToUrl(options);
+        await Utils.msSleep(1000);
+        let ret: boolean = await testCompleteButton(driver, index);
+        expect(ret).assertTrue();
+        await Utils.msSleep(500);
+        routerInstance.back();
+      }
+      console.info('SUB_PHOTO_PICKER_TEST_0024 finish');
       done();
     });
 
