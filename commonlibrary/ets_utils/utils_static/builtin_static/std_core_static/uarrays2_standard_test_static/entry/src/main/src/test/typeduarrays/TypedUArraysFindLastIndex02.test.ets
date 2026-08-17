@@ -278,7 +278,7 @@ export default function typedUArraysFindLastIndex02(): void {
      */
     it('testTypedUArraysFindLastIndexFileB014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([5, 10, 15]);
-      let result = findLastIndexUint8ClampedArrayValue(arr, (_v: number, _index: number, _array: Uint8ClampedArray): boolean => true);
+      let result = findLastIndexUint8ClampedArrayValue(arr, (v: number, _index: number, _array: Uint8ClampedArray): boolean => typeof v === 'number');
       expect(result).assertEqual(2);
     });
 
