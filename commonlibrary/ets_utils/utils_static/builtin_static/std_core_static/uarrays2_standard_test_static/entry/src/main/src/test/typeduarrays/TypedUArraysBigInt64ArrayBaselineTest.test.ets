@@ -33,7 +33,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_0100
      * @tc.name testBigInt64ArrayBaseline001
      * @tc.desc Verify BigInt64Array construction with length parameter and static properties
      * @tc.size MediumTest
@@ -48,7 +48,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_0200
      * @tc.name testBigInt64ArrayBaseline002
      * @tc.desc Verify BigInt64Array construction from array and element access
      * @tc.size MediumTest
@@ -66,7 +66,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_0300
      * @tc.name testBigInt64ArrayBaseline003
      * @tc.desc Verify BigInt64Array overflow behavior with out-of-range bigint values
      * @tc.size MediumTest
@@ -79,7 +79,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_0400
      * @tc.name testBigInt64ArrayBaseline004
      * @tc.desc Verify typeof element of BigInt64Array returns bigint
      * @tc.size MediumTest
@@ -91,7 +91,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_0500
      * @tc.name testBigInt64ArrayBaseline005
      * @tc.desc Verify BigInt64Array elements default to 0n
      * @tc.size MediumTest
@@ -110,7 +110,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_0600
      * @tc.name testBigInt64ArrayBaseline006
      * @tc.desc Verify BigInt64Array construction with ArrayBuffer and byteOffset
      * @tc.size MediumTest
@@ -128,7 +128,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_0700
      * @tc.name testBigInt64ArrayBaseline007
      * @tc.desc Verify BigInt64Array element access with bracket notation
      * @tc.size MediumTest
@@ -142,7 +142,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_0800
      * @tc.name testBigInt64ArrayBaseline008
      * @tc.desc Verify BigInt64Array entries iteration
      * @tc.size MediumTest
@@ -159,7 +159,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_0900
      * @tc.name testBigInt64ArrayBaseline009
      * @tc.desc Verify BigInt64Array every, filter and map methods
      * @tc.size MediumTest
@@ -177,7 +177,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_1000
      * @tc.name testBigInt64ArrayBaseline010
      * @tc.desc Verify BigInt64Array reduce method for sum aggregation
      * @tc.size MediumTest
@@ -190,7 +190,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_1100
      * @tc.name testBigInt64ArrayBaseline011
      * @tc.desc Verify BigInt64Array slice method for sub-array extraction
      * @tc.size MediumTest
@@ -205,7 +205,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_1200
      * @tc.name testBigInt64ArrayBaseline012
      * @tc.desc Verify BigInt64Array from and of static methods
      * @tc.size MediumTest
@@ -223,7 +223,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_1300
      * @tc.name testBigInt64ArrayBaseline013
      * @tc.desc Verify BigInt64Array set method for copying elements from another array
      * @tc.size MediumTest
@@ -240,7 +240,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_1400
      * @tc.name testBigInt64ArrayBaseline014
      * @tc.desc Verify BigInt64Array fill method to set all elements to a value
      * @tc.size MediumTest
@@ -256,7 +256,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_1500
      * @tc.name testBigInt64ArrayBaseline015
      * @tc.desc Verify BigInt64Array copyWithin method for copying sequence within array
      * @tc.size MediumTest
@@ -274,7 +274,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_1600
      * @tc.name testBigInt64ArrayBaseline016
      * @tc.desc Verify BigInt64Array includes method for checking element presence
      * @tc.size MediumTest
@@ -288,7 +288,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_1700
      * @tc.name testBigInt64ArrayBaseline017
      * @tc.desc Verify BigInt64Array indexOf and lastIndexOf methods
      * @tc.size MediumTest
@@ -303,7 +303,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_1800
      * @tc.name testBigInt64ArrayBaseline018
      * @tc.desc Verify BigInt64Array find and findIndex methods
      * @tc.size MediumTest
@@ -319,7 +319,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_1900
      * @tc.name testBigInt64ArrayBaseline019
      * @tc.desc Verify BigInt64Array findLast and findLastIndex methods
      * @tc.size MediumTest
@@ -335,7 +335,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_2000
      * @tc.name testBigInt64ArrayBaseline020
      * @tc.desc Verify BigInt64Array some method for conditional element check
      * @tc.size MediumTest
@@ -349,7 +349,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_2100
      * @tc.name testBigInt64ArrayBaseline021
      * @tc.desc Verify BigInt64Array forEach method executes callback for each element
      * @tc.size MediumTest
@@ -366,7 +366,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_2200
      * @tc.name testBigInt64ArrayBaseline022
      * @tc.desc Verify BigInt64Array reverse method reverses the array in place
      * @tc.size MediumTest
@@ -382,7 +382,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_2300
      * @tc.name testBigInt64ArrayBaseline023
      * @tc.desc Verify BigInt64Array sort method sorts elements in ascending order
      * @tc.size MediumTest
@@ -398,7 +398,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_2400
      * @tc.name testBigInt64ArrayBaseline024
      * @tc.desc Verify BigInt64Array reduceRight method for right-to-left aggregation
      * @tc.size MediumTest
@@ -412,7 +412,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_2500
      * @tc.name testBigInt64ArrayBaseline025
      * @tc.desc Verify BigInt64Array join method concatenates elements as comma-separated string
      * @tc.size MediumTest
@@ -426,7 +426,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_2600
      * @tc.name testBigInt64ArrayBaseline026
      * @tc.desc Verify BigInt64Array valueOf method returns the typed array instance
      * @tc.size MediumTest
@@ -442,7 +442,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_2700
      * @tc.name testBigInt64ArrayBaseline027
      * @tc.desc Verify BigInt64Array keys and values methods return iterators
      * @tc.size MediumTest
@@ -463,7 +463,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_2800
      * @tc.name testBigInt64ArrayBaseline028
      * @tc.desc Verify BigInt64Array subarray method creates view of portion of array
      * @tc.size MediumTest
@@ -479,7 +479,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_2900
      * @tc.name testBigInt64ArrayBaseline029
      * @tc.desc Verify BigInt64Array toReversed method returns reversed copy without modifying original
      * @tc.size MediumTest
@@ -496,7 +496,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_3000
      * @tc.name testBigInt64ArrayBaseline030
      * @tc.desc Verify BigInt64Array toSorted method returns sorted copy without modifying original
      * @tc.size MediumTest
@@ -513,7 +513,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_3100
      * @tc.name testBigInt64ArrayBaseline031
      * @tc.desc Verify BigInt64Array toString method returns comma-separated values
      * @tc.size MediumTest
@@ -527,7 +527,7 @@ export default function bigInt64ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT64ARRAY_BASELINE_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_BIGINT64ARRAYBASELINETEST_3200
      * @tc.name testBigInt64ArrayBaseline032
      * @tc.desc Verify BigInt64Array toLocaleString method returns locale-formatted string
      * @tc.size MediumTest

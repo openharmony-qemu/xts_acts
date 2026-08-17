@@ -45,7 +45,7 @@ export default function TypedUArraysEvery02Test(): void {
     afterAll((): void => {
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_0100
      * @tc.name testTypedUArraysEvery02Test001
      * @tc.desc Verify every TypeError
      * @tc.size MediumTest
@@ -61,7 +61,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_0200
      * @tc.name testTypedUArraysEvery02Test002
      * @tc.desc Verify predicate array BigUint64Array
      * @tc.size MediumTest
@@ -77,7 +77,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_0300
      * @tc.name testTypedUArraysEvery02Test003
      * @tc.desc Verify 0 every Uint8Array
      * @tc.size MediumTest
@@ -91,7 +91,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_0400
      * @tc.name testTypedUArraysEvery02Test004
      * @tc.desc Verify 255 every Uint8Array
      * @tc.size MediumTest
@@ -105,7 +105,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_0500
      * @tc.name testTypedUArraysEvery02Test005
      * @tc.desc Verify 65535 every Uint16Array
      * @tc.size MediumTest
@@ -119,7 +119,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_0600
      * @tc.name testTypedUArraysEvery02Test006
      * @tc.desc Verify 4294967295 every Uint32Array
      * @tc.size MediumTest
@@ -133,7 +133,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_0700
      * @tc.name testTypedUArraysEvery02Test007
      * @tc.desc Verify Uint8ClampedArray 255
      * @tc.size MediumTest
@@ -147,7 +147,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_0800
      * @tc.name testTypedUArraysEvery02Test008
      * @tc.desc Verify BigUint64Array
      * @tc.size MediumTest
@@ -161,7 +161,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_0900
      * @tc.name testTypedUArraysEvery02Test009
      * @tc.desc Verify BigUint64Array 0
      * @tc.size MediumTest
@@ -175,7 +175,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_1000
      * @tc.name testTypedUArraysEvery02Test010
      * @tc.desc Verify thisArg predicate Uint32Array
      * @tc.size MediumTest
@@ -193,7 +193,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_1100
      * @tc.name testTypedUArraysEvery02Test011
      * @tc.desc Verify predicate parameter types with Uint16Array
      * @tc.size MediumTest
@@ -211,7 +211,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_1200
      * @tc.name testTypedUArraysEvery02Test012
      * @tc.desc Verify every returns true for single element Uint8Array
      * @tc.size MediumTest
@@ -225,7 +225,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_1300
      * @tc.name testTypedUArraysEvery02Test013
      * @tc.desc Verify every returns false when predicate fails for Uint8Array
      * @tc.size MediumTest
@@ -239,7 +239,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_1400
      * @tc.name testTypedUArraysEvery02Test014
      * @tc.desc Verify every returns true for repeated value Uint16Array
      * @tc.size MediumTest
@@ -253,10 +253,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_5600
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_1500
      * @tc.name testTypedUArraysEvery02Test015
      * @tc.desc Verify every returns true for sequential values Uint32Array
      * @tc.size MediumTest
@@ -270,7 +267,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_1600
      * @tc.name testTypedUArraysEvery02Test016
      * @tc.desc Verify predicate every Uint8Array
      * @tc.size MediumTest
@@ -290,7 +287,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_1700
      * @tc.name testTypedUArraysEvery02Test017
      * @tc.desc Verify predicate every Uint16Array
      * @tc.size MediumTest
@@ -313,7 +310,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_1800
      * @tc.name testTypedUArraysEvery02Test018
      * @tc.desc Verify predicate every BigUint64Array
      * @tc.size MediumTest
@@ -336,7 +333,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_1900
      * @tc.name testTypedUArraysEvery02Test019
      * @tc.desc Verify predicate every Uint8ClampedArray
      * @tc.size MediumTest
@@ -359,7 +356,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_2000
      * @tc.name testTypedUArraysEvery02Test020
      * @tc.desc Verify 0 TypeError Uint8ClampedArray
      * @tc.size MediumTest
@@ -379,7 +376,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_2100
      * @tc.name testTypedUArraysEvery02Test021
      * @tc.desc Verify predicate boolean every Uint8Array
      * @tc.size MediumTest
@@ -393,7 +390,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_2200
      * @tc.name testTypedUArraysEvery02Test022
      * @tc.desc Verify predicate 0/falsy every false Uint8Array
      * @tc.size MediumTest
@@ -407,7 +404,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_2300
      * @tc.name testTypedUArraysEvery02Test023
      * @tc.desc Verify predicate false Uint16Array
      * @tc.size MediumTest
@@ -421,7 +418,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_2400
      * @tc.name testTypedUArraysEvery02Test024
      * @tc.desc Verify Uint8ClampedArray 255
      * @tc.size MediumTest
@@ -435,7 +432,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_2500
      * @tc.name testTypedUArraysEvery02Test025
      * @tc.desc Verify Uint8ClampedArray 0
      * @tc.size MediumTest
@@ -449,7 +446,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_2600
      * @tc.name testTypedUArraysEvery02Test026
      * @tc.desc Verify every returns true for Uint8ClampedArray with boundary values
      * @tc.size MediumTest
@@ -463,7 +460,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_2700
      * @tc.name testTypedUArraysEvery02Test027
      * @tc.desc Verify Uint8Array 0
      * @tc.size MediumTest
@@ -477,7 +474,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_2800
      * @tc.name testTypedUArraysEvery02Test028
      * @tc.desc Verify every returns true for Uint8Array with overflow values
      * @tc.size MediumTest
@@ -491,7 +488,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_2900
      * @tc.name testTypedUArraysEvery02Test029
      * @tc.desc Verify Uint16Array 0
      * @tc.size MediumTest
@@ -505,7 +502,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_3000
      * @tc.name testTypedUArraysEvery02Test030
      * @tc.desc Verify Uint32Array 0
      * @tc.size MediumTest
@@ -519,7 +516,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_3100
      * @tc.name testTypedUArraysEvery02Test031
      * @tc.desc Verify BigUint64Array BigInt
      * @tc.size MediumTest
@@ -533,7 +530,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_3200
      * @tc.name testTypedUArraysEvery02Test032
      * @tc.desc Verify BigUint64Array BigInt
      * @tc.size MediumTest
@@ -547,7 +544,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_3300
      * @tc.name testTypedUArraysEvery02Test033
      * @tc.desc Verify every returns true for Uint8ClampedArray with fractional values
      * @tc.size MediumTest
@@ -561,7 +558,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_3400
      * @tc.name testTypedUArraysEvery02Test034
      * @tc.desc Verify every returns true for Uint8Array with floating point values
      * @tc.size MediumTest
@@ -575,7 +572,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_3500
      * @tc.name testTypedUArraysEvery02Test035
      * @tc.desc Verify every returns true for Uint16Array with fractional values
      * @tc.size MediumTest
@@ -589,7 +586,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_3600
      * @tc.name testTypedUArraysEvery02Test036
      * @tc.desc Verify predicate value types are number with Uint16Array
      * @tc.size MediumTest
@@ -609,7 +606,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_3700
      * @tc.name testTypedUArraysEvery02Test037
      * @tc.desc Verify BigUint64Array value BigInt
      * @tc.size MediumTest
@@ -629,7 +626,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_3800
      * @tc.name testTypedUArraysEvery02Test038
      * @tc.desc Verify Uint8ClampedArray
      * @tc.size MediumTest
@@ -643,10 +640,7 @@ export default function TypedUArraysEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_8100
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_EVERY02_3900
      * @tc.name testTypedUArraysEvery02Test039
      * @tc.desc Verify Uint32Array
      * @tc.size MediumTest
@@ -661,4 +655,3 @@ export default function TypedUArraysEvery02Test(): void {
 
   });
 }
-

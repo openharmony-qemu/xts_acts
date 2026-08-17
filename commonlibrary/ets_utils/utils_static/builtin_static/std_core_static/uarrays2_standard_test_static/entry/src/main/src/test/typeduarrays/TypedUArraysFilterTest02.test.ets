@@ -34,7 +34,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_0100
      * @tc.name testTypedUArraysFilterTestFileB001
      * @tc.desc Verify filter Uint8Array contains 200
      * @tc.size MediumTest
@@ -48,7 +48,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_0200
      * @tc.name testTypedUArraysFilterTestFileB002
      * @tc.desc Verify 100 Uint8Array
      * @tc.size MediumTest
@@ -62,7 +62,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_0300
      * @tc.name testTypedUArraysFilterTestFileB003
      * @tc.desc Verify filter BigUint64Array
      * @tc.size MediumTest
@@ -76,7 +76,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_0400
      * @tc.name testTypedUArraysFilterTestFileB004
      * @tc.desc Verify filter Uint8Array
      * @tc.size MediumTest
@@ -90,7 +90,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_0500
      * @tc.name testTypedUArraysFilterTestFileB005
      * @tc.desc Verify filter Uint8Array
      * @tc.size MediumTest
@@ -104,7 +104,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_0600
      * @tc.name testTypedUArraysFilterTestFileB006
      * @tc.desc Verify filter Uint8Array
      * @tc.size MediumTest
@@ -118,7 +118,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_0700
      * @tc.name testTypedUArraysFilterTestFileB007
      * @tc.desc Verify 255 filter Uint8Array
      * @tc.size MediumTest
@@ -132,7 +132,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_0800
      * @tc.name testTypedUArraysFilterTestFileB008
      * @tc.desc Verify filter Uint8Array
      * @tc.size MediumTest
@@ -146,7 +146,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_0900
      * @tc.name testTypedUArraysFilterTestFileB009
      * @tc.desc Verify filter BigUint64Array
      * @tc.size MediumTest
@@ -160,10 +160,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_1000
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_1000
      * @tc.name testTypedUArraysFilterTestFileB010
      * @tc.desc Verify filter Uint16Array
      * @tc.size MediumTest
@@ -177,7 +174,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_1100
      * @tc.name testTypedUArraysFilterTestFileB011
      * @tc.desc Verify filter Uint32Array
      * @tc.size MediumTest
@@ -191,7 +188,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_1200
      * @tc.name testTypedUArraysFilterTestFileB012
      * @tc.desc Verify filter - Uint8Array
      * @tc.size MediumTest
@@ -205,7 +202,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_1300
      * @tc.name testTypedUArraysFilterTestFileB013
      * @tc.desc Verify filter - Uint8Array
      * @tc.size MediumTest
@@ -219,7 +216,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_1400
      * @tc.name testTypedUArraysFilterTestFileB014
      * @tc.desc Verify filter - Uint8Array
      * @tc.size MediumTest
@@ -233,7 +230,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_1500
      * @tc.name testTypedUArraysFilterTestFileB015
      * @tc.desc Verify filter Uint8Array
      * @tc.size MediumTest
@@ -253,10 +250,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_1700
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_1600
      * @tc.name testTypedUArraysFilterTestFileB016
      * @tc.desc Verify filter buffer Uint8Array
      * @tc.size MediumTest
@@ -270,7 +264,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_1700
      * @tc.name testTypedUArraysFilterTestFileB017
      * @tc.desc Verify filter length 0 Uint8Array
      * @tc.size MediumTest
@@ -284,7 +278,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_1800
      * @tc.name testTypedUArraysFilterTestFileB018
      * @tc.desc Verify filter byteLength 0 Uint8Array
      * @tc.size MediumTest
@@ -298,7 +292,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_1900
      * @tc.name testTypedUArraysFilterTestFileB019
      * @tc.desc Verify filter Uint8Array
      * @tc.size MediumTest
@@ -313,7 +307,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_2000
      * @tc.name testTypedUArraysFilterTestFileB020
      * @tc.desc Verify filter Uint8Array
      * @tc.size MediumTest
@@ -328,7 +322,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_2100
      * @tc.name testTypedUArraysFilterTestFileB021
      * @tc.desc Verify filter byteOffset 0 Uint8Array
      * @tc.size MediumTest
@@ -342,7 +336,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_2200
      * @tc.name testTypedUArraysFilterTestFileB022
      * @tc.desc Verify filter isView true Uint8Array
      * @tc.size MediumTest
@@ -356,7 +350,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_2300
      * @tc.name testTypedUArraysFilterTestFileB023
      * @tc.desc Verify callback Uint8Array
      * @tc.size MediumTest
@@ -370,7 +364,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_2400
      * @tc.name testTypedUArraysFilterTestFileB024
      * @tc.desc Verify filter Uint8Array
      * @tc.size MediumTest
@@ -384,7 +378,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_2500
      * @tc.name testTypedUArraysFilterTestFileB025
      * @tc.desc Verify filter Uint8ClampedArray
      * @tc.size MediumTest
@@ -398,7 +392,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_2600
      * @tc.name testTypedUArraysFilterTestFileB026
      * @tc.desc Verify filter BigUint64Array
      * @tc.size MediumTest
@@ -412,7 +406,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_2700
      * @tc.name testTypedUArraysFilterTestFileB027
      * @tc.desc Verify Uint8ClampedArray filter
      * @tc.size MediumTest
@@ -429,7 +423,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_2800
      * @tc.name testTypedUArraysFilterTestFileB028
      * @tc.desc Verify Uint8Array filter Uint8Array
      * @tc.size MediumTest
@@ -443,7 +437,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_2900
      * @tc.name testTypedUArraysFilterTestFileB029
      * @tc.desc Verify Uint16Array filter Uint16Array
      * @tc.size MediumTest
@@ -457,7 +451,7 @@ export default function typedUArraysFilterTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTER_PART102_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_FILTERTEST02_3000
      * @tc.name testTypedUArraysFilterTestFileB030
      * @tc.desc Verify Uint32Array filter Uint32Array
      * @tc.size MediumTest

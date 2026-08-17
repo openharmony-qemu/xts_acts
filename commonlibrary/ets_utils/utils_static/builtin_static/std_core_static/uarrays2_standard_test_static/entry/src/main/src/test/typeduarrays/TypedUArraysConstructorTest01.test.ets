@@ -46,7 +46,7 @@ export default function typedUArraysConstructorTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTOR_PART101_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTORTEST01_0100
      * @tc.name testTypedUArraysConstructorTestFileA001
      * @tc.desc Verify constructor with length - Uint8Array
      * @tc.size MediumTest
@@ -61,7 +61,7 @@ export default function typedUArraysConstructorTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTOR_PART101_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTORTEST01_0200
      * @tc.name testTypedUArraysConstructorTestFileA002
      * @tc.desc Verify constructor with length - Uint16Array
      * @tc.size MediumTest
@@ -76,7 +76,7 @@ export default function typedUArraysConstructorTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTOR_PART101_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTORTEST01_0300
      * @tc.name testTypedUArraysConstructorTestFileA003
      * @tc.desc Verify constructor with length - Uint32Array
      * @tc.size MediumTest
@@ -91,7 +91,7 @@ export default function typedUArraysConstructorTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTOR_PART101_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTORTEST01_0400
      * @tc.name testTypedUArraysConstructorTestFileA004
      * @tc.desc Verify constructor with length - Uint8ClampedArray
      * @tc.size MediumTest
@@ -106,7 +106,7 @@ export default function typedUArraysConstructorTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTOR_PART101_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTORTEST01_0500
      * @tc.name testTypedUArraysConstructorTestFileA005
      * @tc.desc Verify constructor with length - BigUint64Array
      * @tc.size MediumTest
@@ -121,7 +121,7 @@ export default function typedUArraysConstructorTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTOR_PART101_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTORTEST01_0600
      * @tc.name testTypedUArraysConstructorTestFileA006
      * @tc.desc Verify constructor with typed array - Uint8Array from Uint8Array
      * @tc.size MediumTest
@@ -137,7 +137,7 @@ export default function typedUArraysConstructorTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTOR_PART101_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTORTEST01_0700
      * @tc.name testTypedUArraysConstructorTestFileA007
      * @tc.desc Verify constructor with typed array - Uint16Array from Uint16Array
      * @tc.size MediumTest
@@ -153,7 +153,7 @@ export default function typedUArraysConstructorTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTOR_PART101_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTORTEST01_0800
      * @tc.name testTypedUArraysConstructorTestFileA008
      * @tc.desc Verify constructor with typed array - BigUint64Array from BigUint64Array
      * @tc.size MediumTest
@@ -169,7 +169,7 @@ export default function typedUArraysConstructorTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTOR_PART101_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTORTEST01_0900
      * @tc.name testTypedUArraysConstructorTestFileA009
      * @tc.desc Verify constructor with array - Uint8Array from number array
      * @tc.size MediumTest
@@ -184,7 +184,7 @@ export default function typedUArraysConstructorTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTOR_PART101_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTORTEST01_1000
      * @tc.name testTypedUArraysConstructorTestFileA010
      * @tc.desc Verify constructor with ArrayBuffer - Uint8Array
      * @tc.size MediumTest
@@ -199,7 +199,7 @@ export default function typedUArraysConstructorTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTOR_PART101_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTORTEST01_1100
      * @tc.name testTypedUArraysConstructorTestFileA011
      * @tc.desc Verify constructor with ArrayBuffer offset - Uint16Array
      * @tc.size MediumTest
@@ -214,7 +214,7 @@ export default function typedUArraysConstructorTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTOR_PART101_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTORTEST01_1200
      * @tc.name testTypedUArraysConstructorTestFileA012
      * @tc.desc Verify constructor with ArrayBuffer - Uint32Array
      * @tc.size MediumTest
@@ -229,7 +229,7 @@ export default function typedUArraysConstructorTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTOR_PART101_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_CONSTRUCTORTEST01_1300
      * @tc.name testTypedUArraysConstructorTestFileA013
      * @tc.desc Verify constructor with ArrayBuffer offset length - BigUint64Array
      * @tc.size MediumTest
