@@ -47,15 +47,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let executed = false;
-      let p1: Promise<void> = lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback1 = (): void => {
         try {
           executed = true;
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let p1: Promise<void> = lock.lockAsync<void>(
+        lockAsyncCallback1);
       expect(executed).assertFalse();
       await p1;
       expect(executed).assertTrue();
@@ -78,15 +79,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: number = await lock.lockAsync<number>(
-        () => {
+      const lockAsyncCallback2 = (): number => {
         try {
           return 100;
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: number = await lock.lockAsync<number>(
+        lockAsyncCallback2);
       expect(result).assertEqual(100);
 
       } catch (error) {
@@ -107,15 +109,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: string = await lock.lockAsync<string>(
-        () => {
+      const lockAsyncCallback3 = (): string => {
         try {
           return "test";
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: string = await lock.lockAsync<string>(
+        lockAsyncCallback3);
       expect(result).assertEqual("test");
 
       } catch (error) {
@@ -136,15 +139,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: number = await lock.lockAsync<number>(
-        async () => {
+      const lockAsyncCallback4 = async (): Promise<number> => {
         try {
           return await Promise.resolve(42.0);
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: number = await lock.lockAsync<number>(
+        lockAsyncCallback4);
       expect(result).assertEqual(42.0);
 
       } catch (error) {
@@ -165,15 +169,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: string = await lock.lockAsync<string>(
-        () => {
+      const lockAsyncCallback5 = (): Promise<string> => {
         try {
           return Promise.resolve("async_result");
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: string = await lock.lockAsync<string>(
+        lockAsyncCallback5);
       expect(result).assertEqual("async_result");
 
       } catch (error) {
@@ -195,10 +200,11 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let executed: boolean = false;
-      await lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback6 = (): void => {
         executed = true;
-      });
+      };
+      await lock.lockAsync<void>(
+        lockAsyncCallback6);
       expect(executed).assertTrue();
 
       } catch (error) {
@@ -219,15 +225,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: string | null = await lock.lockAsync<string | null>(
-        () => {
+      const lockAsyncCallback7 = (): string | null => {
         try {
           return null;
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: string | null = await lock.lockAsync<string | null>(
+        lockAsyncCallback7);
       expect(result).assertNull();
 
       } catch (error) {
@@ -248,15 +255,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: string | undefined = await lock.lockAsync<string | undefined>(
-        () => {
+      const lockAsyncCallback8 = (): string | undefined => {
         try {
           return undefined;
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: string | undefined = await lock.lockAsync<string | undefined>(
+        lockAsyncCallback8);
       expect(result).assertUndefined();
 
       } catch (error) {
@@ -277,14 +285,15 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let pCheck: Promise<void> = lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback9 = (): void => {
         try {
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let pCheck: Promise<void> = lock.lockAsync<void>(
+        lockAsyncCallback9);
       await expect(pCheck).assertPromiseIsResolved();
 
       } catch (error) {
@@ -306,10 +315,11 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       try {
-        await lock.lockAsync<void>(
-          () => {
+        const lockAsyncCallback10 = (): void => {
           throw new Error("callback error");
-        });
+        };
+        await lock.lockAsync<void>(
+          lockAsyncCallback10);
         expect().assertFail();
       } catch (error) {
         expect(error instanceof Error).assertTrue();
@@ -318,10 +328,11 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       // Verify the lock is released after the callback exception
       // and can be acquired again.
       let reacquired: boolean = false;
-      await lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback11 = (): void => {
         reacquired = true;
-      });
+      };
+      await lock.lockAsync<void>(
+        lockAsyncCallback11);
       expect(reacquired).assertTrue();
       } catch (error) {
         console.error("testAsyncLockLockAsyncFirstOverload1000 failed");
@@ -341,15 +352,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: ResultType = await lock.lockAsync<ResultType>(
-        () => {
+      const lockAsyncCallback12 = (): ResultType => {
         try {
           return ({ id: 1, name: "test" });
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: ResultType = await lock.lockAsync<ResultType>(
+        lockAsyncCallback12);
       expect(result.id).assertEqual(1);
 
       } catch (error) {
@@ -370,15 +382,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: number[] = await lock.lockAsync<number[]>(
-        () => {
+      const lockAsyncCallback13 = (): number[] => {
         try {
           return [1, 2, 3];
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: number[] = await lock.lockAsync<number[]>(
+        lockAsyncCallback13);
       expect(result.length).assertEqual(3);
 
       } catch (error) {
@@ -400,15 +413,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let executed = false;
-      let p: Promise<void> = lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback14 = (): void => {
         try {
           executed = true;
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let p: Promise<void> = lock.lockAsync<void>(
+        lockAsyncCallback14);
       await p;
       expect(executed).assertTrue();
 
@@ -430,15 +444,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: string = await lock.lockAsync<string>(
-        () => {
+      const lockAsyncCallback15 = (): string => {
         try {
           return "result";
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: string = await lock.lockAsync<string>(
+        lockAsyncCallback15);
       expect(result).assertEqual("result");
 
       } catch (error) {
@@ -459,15 +474,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: number = await lock.lockAsync<number>(
-        () => {
+      const lockAsyncCallback16 = (): number => {
         try {
           return 100;
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: number = await lock.lockAsync<number>(
+        lockAsyncCallback16);
       expect(result).assertEqual(100);
 
       } catch (error) {
@@ -488,14 +504,15 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback17 = (): void => {
         try {
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      await lock.lockAsync<void>(
+        lockAsyncCallback17);
       let state = lock.query();
       expect(state.held.length).assertEqual(0);
 
@@ -517,15 +534,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: number[] = await lock.lockAsync<number[]>(
-        () => {
+      const lockAsyncCallback18 = (): number[] => {
         try {
           return [];
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: number[] = await lock.lockAsync<number[]>(
+        lockAsyncCallback18);
       expect(result.length).assertEqual(0);
 
       } catch (error) {
@@ -546,15 +564,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: object = await lock.lockAsync<object>(
-        () => {
+      const lockAsyncCallback19 = (): object => {
         try {
           return ({});
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: object = await lock.lockAsync<object>(
+        lockAsyncCallback19);
       expect(result).not().assertNull();
 
       } catch (error) {
@@ -575,24 +594,26 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let numResult: number = await lock.lockAsync<number>(
-        () => {
+      const lockAsyncCallback20 = (): number => {
         try {
           return 1;
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
-      let strResult: string = await lock.lockAsync<string>(
-        () => {
+      };
+      let numResult: number = await lock.lockAsync<number>(
+        lockAsyncCallback20);
+      const lockAsyncCallback21 = (): string => {
         try {
           return "s";
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let strResult: string = await lock.lockAsync<string>(
+        lockAsyncCallback21);
       expect(typeof numResult).assertEqual("number");
       expect(typeof strResult).assertEqual("string");
 
@@ -615,15 +636,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let count = 0;
-      let p: Promise<void> = lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback22 = (): void => {
         try {
           count++;
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let p: Promise<void> = lock.lockAsync<void>(
+        lockAsyncCallback22);
       await p;
       expect(count).assertEqual(1);
 
@@ -645,15 +667,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: number = await lock.lockAsync<number>(
-        () => {
+      const lockAsyncCallback23 = (): number => {
         try {
           return Number.MAX_VALUE;
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: number = await lock.lockAsync<number>(
+        lockAsyncCallback23);
       expect(result).assertEqual(Number.MAX_VALUE);
 
       } catch (error) {
@@ -674,15 +697,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result = await lock.lockAsync<string>(
-        () => {
+      const lockAsyncCallback24 = (): string => {
         try {
           return "a".repeat(10000);
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result = await lock.lockAsync<string>(
+        lockAsyncCallback24);
       expect(result.length).assertEqual(10000);
 
       } catch (error) {
@@ -703,8 +727,7 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let pResult: Promise<number[]> = lock.lockAsync<number[]>(
-        () => {
+      const lockAsyncCallback25 = (): number[] => {
         try {
           let arr: number[] = [];
           for (let i = 0; i < 1000; i++) arr.push(i);
@@ -713,7 +736,9 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let pResult: Promise<number[]> = lock.lockAsync<number[]>(
+        lockAsyncCallback25);
       let result: number[] = await pResult;
       expect(result.length).assertEqual(1000);
 
@@ -736,10 +761,11 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       try {
-        await lock.lockAsync<void>(
-          () => {
+        const lockAsyncCallback26 = (): void => {
           throw new Error("callback error");
-        });
+        };
+        await lock.lockAsync<void>(
+          lockAsyncCallback26);
         expect().assertFail();
       } catch (error) {
         expect(error instanceof Error).assertTrue();
@@ -765,10 +791,11 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       try {
-        await lock.lockAsync<void>(
-          () => {
+        const lockAsyncCallback27 = (): void => {
           throw new CustomError("custom error");
-        });
+        };
+        await lock.lockAsync<void>(
+          lockAsyncCallback27);
         expect().assertFail();
       } catch (error) {
         expect(error instanceof CustomError).assertTrue();
@@ -793,15 +820,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let p: Promise<void> = lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback28 = (): void => {
         try {
           throw new Error("reject");
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let p: Promise<void> = lock.lockAsync<void>(
+        lockAsyncCallback28);
       try {
         await p;
         expect().assertFail();
@@ -829,15 +857,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       try {
-        await lock.lockAsync<number>(
-          async () => {
+        const lockAsyncCallback29 = async (): Promise<number> => {
           try {
             return await Promise.reject(new Error("async reject"));
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        });
+        };
+        await lock.lockAsync<number>(
+          lockAsyncCallback29);
         expect().assertFail();
       } catch (error) {
         expect(error instanceof Error).assertTrue();
@@ -863,10 +892,11 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       try {
-        await lock.lockAsync<void>(
-          () => {
+        const lockAsyncCallback30 = (): void => {
           throw new Error("catch test");
-        });
+        };
+        await lock.lockAsync<void>(
+          lockAsyncCallback30);
         expect().assertFail();
       } catch (error) {
         expect(error).not().assertNull();
@@ -890,14 +920,15 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: number = await lock.lockAsync<number>(
-        () => {
+      const lockAsyncCallback31 = (): number => {
         try {
           return 100;
         } catch (e) {
           return -1;
         }
-      });
+      };
+      let result: number = await lock.lockAsync<number>(
+        lockAsyncCallback31);
       expect(result).assertEqual(100);
 
       } catch (error) {
@@ -918,15 +949,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: number = await lock.lockAsync<number>(
-        async (): Promise<number> => {
+      const lockAsyncCallback32 = async (): Promise<number> => {
         try {
           return await Promise.reject(new Error("inner"));
           return 100;
         } catch (e) {
           return -1;
         }
-      });
+      };
+      let result: number = await lock.lockAsync<number>(
+        lockAsyncCallback32);
       expect(result).assertEqual(-1);
 
       } catch (error) {
@@ -948,14 +980,15 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
       let executed: boolean = false;
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback33 = (): void => {
         try {
           return;
         } finally {
           executed = true;
         }
-      });
+      };
+      await lock.lockAsync<void>(
+        lockAsyncCallback33);
       expect(executed).assertTrue();
 
       } catch (error) {
@@ -977,15 +1010,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let test: () => Promise<string> = async (): Promise<string> => {
-        let pResult: Promise<string> = lock.lockAsync<string>(
-          () => {
+        const lockAsyncCallback34 = (): string => {
           try {
             return "test";
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        });
+        };
+        let pResult: Promise<string> = lock.lockAsync<string>(
+          lockAsyncCallback34);
         try {
           let result: string = await pResult;
           return result;
@@ -1023,10 +1057,11 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       let lock = new AsyncLock();
       let test: () => Promise<void> = async (): Promise<void> => {
         try {
-          await lock.lockAsync<void>(
-            () => {
+          const lockAsyncCallback35 = (): void => {
             throw new Error("fail");
-          });
+          };
+          await lock.lockAsync<void>(
+            lockAsyncCallback35);
           expect().assertFail();
         } catch (e) {
           expect(e).not().assertNull();
@@ -1052,15 +1087,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
       try {
         let lock = new AsyncLock();
-        let p: Promise<string> = lock.lockAsync<string>(
-          () => {
+        const lockAsyncCallback36 = (): string => {
           try {
             return "test";
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        });
+        };
+        let p: Promise<string> = lock.lockAsync<string>(
+          lockAsyncCallback36);
         p.then((result: string): void => {
           expect(result).assertEqual("test");
           done();
@@ -1088,34 +1124,37 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
       let order: number[] = [];
       let lock = new AsyncLock();
-      await Promise.all([
-        lock.lockAsync<void>(
-          () => {
+      const lockAsyncCallback37 = (): void => {
           try {
             order.push(1);
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        }),
-        lock.lockAsync<void>(
-          () => {
+        };
+      const lockAsyncCallback38 = (): void => {
           try {
             order.push(2);
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        }),
-        lock.lockAsync<void>(
-          () => {
+        };
+      const lockAsyncCallback39 = (): void => {
           try {
             order.push(3);
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        })
+        };
+      await Promise.all([
+        lock.lockAsync<void>(
+          lockAsyncCallback37),
+        lock.lockAsync<void>(
+          lockAsyncCallback38),
+        lock.lockAsync<void>(
+          lockAsyncCallback39)
       ]);
       expect(order.length).assertEqual(3);
 
@@ -1137,15 +1176,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: string = await lock.lockAsync<string>(
-        () => {
+      const lockAsyncCallback40 = (): string => {
         try {
           return "test";
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: string = await lock.lockAsync<string>(
+        lockAsyncCallback40);
       expect(typeof result).assertEqual("string");
 
       } catch (error) {
@@ -1166,15 +1206,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: boolean = await lock.lockAsync<boolean>(
-        () => {
+      const lockAsyncCallback41 = (): boolean => {
         try {
           return true;
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: boolean = await lock.lockAsync<boolean>(
+        lockAsyncCallback41);
       expect(result).assertTrue();
 
       } catch (error) {
@@ -1195,15 +1236,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: number[] = await lock.lockAsync<number[]>(
-        () => {
+      const lockAsyncCallback42 = (): number[] => {
         try {
           return [1, 2, 3];
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: number[] = await lock.lockAsync<number[]>(
+        lockAsyncCallback42);
       expect(Array.isArray(result)).assertTrue();
 
       } catch (error) {
@@ -1224,15 +1266,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: ResultObj = await lock.lockAsync<ResultObj>(
-        () => {
+      const lockAsyncCallback43 = (): ResultObj => {
         try {
           return ({ id: 1 });
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: ResultObj = await lock.lockAsync<ResultObj>(
+        lockAsyncCallback43);
       expect(result.id).assertEqual(1);
 
       } catch (error) {
@@ -1253,24 +1296,26 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let strResult: string | number = await lock.lockAsync<string | number>(
-        () => {
+      const lockAsyncCallback44 = (): string | number => {
         try {
           return "text";
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
-      let numResult: string | number = await lock.lockAsync<string | number>(
-        () => {
+      };
+      let strResult: string | number = await lock.lockAsync<string | number>(
+        lockAsyncCallback44);
+      const lockAsyncCallback45 = (): string | number => {
         try {
           return 42;
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let numResult: string | number = await lock.lockAsync<string | number>(
+        lockAsyncCallback45);
       expect(typeof strResult).assertEqual("string");
       expect(typeof numResult).assertEqual("number");
       expect(strResult).assertEqual("text");
@@ -1294,15 +1339,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let result: null = await lock.lockAsync<null>(
-        () => {
+      const lockAsyncCallback46 = (): null => {
         try {
           return null;
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      let result: null = await lock.lockAsync<null>(
+        lockAsyncCallback46);
       expect(result).assertNull();
 
       } catch (error) {
@@ -1323,11 +1369,12 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback47 = (): void => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
-      });
+      };
+      await lock.lockAsync<void>(
+        lockAsyncCallback47);
 
       } catch (error) {
         console.error("testAsyncLockLockAsyncFirstOverload4200 failed");
@@ -1352,8 +1399,7 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
         let startedPromise: Promise<void> = new Promise<void>((resolve): void => {
           startedResolve = (): void => { resolve(undefined); };
         });
-        let p1: Promise<void> = lock.lockAsync<void>(
-          async (): Promise<void> => {
+        const lockAsyncCallback48 = async (): Promise<void> => {
           try {
             startedResolve();
             await new Promise<void>((resolve): void => {
@@ -1363,18 +1409,21 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        });
+        };
+        let p1: Promise<void> = lock.lockAsync<void>(
+          lockAsyncCallback48);
         await startedPromise;
         let secondStarted = false;
-        let p2: Promise<void> = lock.lockAsync<void>(
-          (): void => {
+        const lockAsyncCallback49 = (): void => {
           try {
             secondStarted = true;
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        });
+        };
+        let p2: Promise<void> = lock.lockAsync<void>(
+          lockAsyncCallback49);
         let state = lock.query();
         expect(state.pending.length).assertEqual(1);
         expect(secondStarted).assertFalse();
@@ -1402,10 +1451,11 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let callbackExecuted: boolean = false;
-      await lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback50 = (): void => {
         callbackExecuted = true;
-      });
+      };
+      await lock.lockAsync<void>(
+        lockAsyncCallback50);
       expect(callbackExecuted).assertTrue();
 
       } catch (error) {
@@ -1426,8 +1476,7 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request("ctxTest_4500");
-      await lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback51 = (): void => {
         try {
           let state = lock.query();
           expect(state.held.length).assertLarger(0);
@@ -1436,7 +1485,9 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      await lock.lockAsync<void>(
+        lockAsyncCallback51);
 
       } catch (error) {
         console.error("testAsyncLockLockAsyncFirstOverload4500 failed");
@@ -1457,15 +1508,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let executed = false;
-      await lock.lockAsync<void>(
-        () => {
+      const lockAsyncCallback52 = (): void => {
         try {
           executed = true;
         } catch (error) {
           console.error(`callback failed: ${error}`);
           throw error;
         }
-      });
+      };
+      await lock.lockAsync<void>(
+        lockAsyncCallback52);
       expect(executed).assertTrue();
 
       } catch (error) {
@@ -1488,15 +1540,16 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       let lock = new AsyncLock();
       let count = 0;
       for (let i: number = 0; i < 100; i++) {
-        await lock.lockAsync<void>(
-          () => {
+        const lockAsyncCallback53 = (): void => {
           try {
             count++;
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        });
+        };
+        await lock.lockAsync<void>(
+          lockAsyncCallback53);
       }
       expect(count).assertEqual(100);
 
@@ -1518,34 +1571,37 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
     it('testAsyncLockLockAsyncFirstOverload4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let promises: Promise<number>[] = [
-        lock.lockAsync<number>(
-          () => {
+      const lockAsyncCallback54 = (): number => {
           try {
             return 1;
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        }),
-        lock.lockAsync<number>(
-          () => {
+        };
+      const lockAsyncCallback55 = (): number => {
           try {
             return 2;
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        }),
-        lock.lockAsync<number>(
-          () => {
+        };
+      const lockAsyncCallback56 = (): number => {
           try {
             return 3;
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        })
+        };
+      let promises: Promise<number>[] = [
+        lock.lockAsync<number>(
+          lockAsyncCallback54),
+        lock.lockAsync<number>(
+          lockAsyncCallback55),
+        lock.lockAsync<number>(
+          lockAsyncCallback56)
       ];
       let results: number[] = await Promise.all(promises);
       expect(results.length).assertEqual(3);
@@ -1569,14 +1625,15 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
       try {
         let lock = new AsyncLock();
         let finallyExecuted = false;
-        let p: Promise<void> = lock.lockAsync<void>(
-          () => {
+        const lockAsyncCallback57 = (): void => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        });
+        };
+        let p: Promise<void> = lock.lockAsync<void>(
+          lockAsyncCallback57);
         try {
           await p;
         } finally {
@@ -1608,8 +1665,7 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
         let startedPromise: Promise<void> = new Promise<void>((resolve): void => {
           startedResolve = (): void => { resolve(undefined); };
         });
-        let p: Promise<void> = lock.lockAsync<void>(
-          async (): Promise<void> => {
+        const lockAsyncCallback58 = async (): Promise<void> => {
           try {
             startedResolve();
             await new Promise<void>((resolve): void => {
@@ -1619,7 +1675,9 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-        });
+        };
+        let p: Promise<void> = lock.lockAsync<void>(
+          lockAsyncCallback58);
         await startedPromise;
         let stateDuring = lock.query();
         expect(stateDuring.held.length).assertEqual(1);
@@ -1648,8 +1706,7 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
         let lock = new AsyncLock();
         let count = 0;
         for (let i: number = 0; i < 100; i++) {
-          await lock.lockAsync<number>(
-            async (): Promise<number> => {
+          const lockAsyncCallback59 = async (): Promise<number> => {
             try {
               count++;
               return 1;
@@ -1657,7 +1714,9 @@ export default function AsyncLockLockAsyncFirstOverloadTest(): void {
               console.error(`callback failed: ${error}`);
               throw error;
             }
-          });
+          };
+          await lock.lockAsync<number>(
+            lockAsyncCallback59);
         }
         expect(count).assertEqual(100);
         done();
