@@ -60,7 +60,7 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableDecorator0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const instance: EmptySendableClass = new EmptySendableClass()
       expect(ArkTSUtils.isSendable(instance)).assertTrue()
     })
@@ -73,7 +73,7 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableDecorator0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const instance = new SinglePropSendableClass()
       expect(instance.count_).assertEqual(0)
     })
@@ -86,7 +86,7 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableDecorator0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const instance = new MultiPropSendableClass()
       expect(instance.num_).assertEqual(0)
       expect(instance.str_).assertEqual('')
@@ -101,7 +101,7 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableDecorator0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const instance = new NestedSendableClass()
       expect(instance.inner_.count_).assertEqual(0)
     })
@@ -114,7 +114,7 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableDecorator0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const instance = new SinglePropSendableClass()
       instance.count_ = 100
       expect(instance.count_).assertEqual(100)
@@ -128,7 +128,7 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableDecorator0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const instance = new MethodSendableClass()
       instance.setValue(50)
       expect(instance.getValue()).assertEqual(50)
@@ -142,7 +142,7 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableDecorator0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const instance = new MethodSendableClass()
       instance.setValue(0)
       instance.setValue(instance.getValue() + 1)
@@ -157,7 +157,7 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableDecorator0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const instance = new ChildSendableClass()
       expect(instance.baseValue_).assertEqual(10)
       expect(instance.childValue_).assertEqual(20)
@@ -171,7 +171,7 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableDecorator0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const instance = new GrandChildSendableClass()
       expect(instance.baseValue_).assertEqual(10)
       expect(instance.childValue_).assertEqual(20)
@@ -186,10 +186,16 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const task = new taskpool.Task(createSendableClass)
-      const result = await taskpool.execute(task) as SinglePropSendableClass
-      expect(result.count_).assertEqual(0)
+    it('testSendableDecorator1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const task = new taskpool.Task(createSendableClass)
+        const result = await taskpool.execute(task) as SinglePropSendableClass
+        expect(result.count_).assertEqual(0)
+      } catch (error) {
+        console.error("testSendableDecorator1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -200,12 +206,18 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const instance = new SinglePropSendableClass()
-      const task = new taskpool.Task(modifySendableClass, instance)
-      const result = await taskpool.execute(task) as number
-      expect(result).assertEqual(1)
-      expect(instance.count_).assertEqual(1)
+    it('testSendableDecorator1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const instance = new SinglePropSendableClass()
+        const task = new taskpool.Task(modifySendableClass, instance)
+        const result = await taskpool.execute(task) as number
+        expect(result).assertEqual(1)
+        expect(instance.count_).assertEqual(1)
+      } catch (error) {
+        console.error("testSendableDecorator1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -216,10 +228,16 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const task = new taskpool.Task(returnSendableInstance)
-      const result = await taskpool.execute(task) as MethodSendableClass
-      expect(result.getValue()).assertEqual(42)
+    it('testSendableDecorator1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const task = new taskpool.Task(returnSendableInstance)
+        const result = await taskpool.execute(task) as MethodSendableClass
+        expect(result.getValue()).assertEqual(42)
+      } catch (error) {
+        console.error("testSendableDecorator1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -230,12 +248,18 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const instance = new MethodSendableClass()
-      instance.setValue(99)
-      const task = new taskpool.Task(acceptSendableParam, instance)
-      const result = await taskpool.execute(task) as number
-      expect(result).assertEqual(99)
+    it('testSendableDecorator1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const instance = new MethodSendableClass()
+        instance.setValue(99)
+        const task = new taskpool.Task(acceptSendableParam, instance)
+        const result = await taskpool.execute(task) as number
+        expect(result).assertEqual(99)
+      } catch (error) {
+        console.error("testSendableDecorator1300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -246,14 +270,20 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSendableDecorator1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const instance = new SinglePropSendableClass()
-      const iterations: number = 10
-      for (let i = 0; i < iterations; i++) {
-        const task = new taskpool.Task(modifySendableClass, instance)
-        await taskpool.execute(task)
+    it('testSendableDecorator1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const instance = new SinglePropSendableClass()
+        const iterations: number = 10
+        for (let i = 0; i < iterations; i++) {
+          const task = new taskpool.Task(modifySendableClass, instance)
+          await taskpool.execute(task)
+        }
+        expect(instance.count_).assertEqual(iterations)
+      } catch (error) {
+        console.error("testSendableDecorator1400 failed");
+        expect(false).assertFail();
       }
-      expect(instance.count_).assertEqual(iterations)
+      done();
     })
 
     /**
@@ -264,17 +294,23 @@ export default function SendableDecoratorTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const instance = new SinglePropSendableClass()
-      instance.count_ = 5
-      const task1 = new taskpool.Task(modifySendableClass, instance)
-      const result1 = await taskpool.execute(task1) as number
-      expect(result1).assertEqual(6)
-      expect(instance.count_).assertEqual(6)
-      const task2 = new taskpool.Task(modifySendableClass, instance)
-      const result2 = await taskpool.execute(task2) as number
-      expect(result2).assertEqual(7)
-      expect(instance.count_).assertEqual(7)
+    it('testSendableDecorator1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const instance = new SinglePropSendableClass()
+        instance.count_ = 5
+        const task1 = new taskpool.Task(modifySendableClass, instance)
+        const result1 = await taskpool.execute(task1) as number
+        expect(result1).assertEqual(6)
+        expect(instance.count_).assertEqual(6)
+        const task2 = new taskpool.Task(modifySendableClass, instance)
+        const result2 = await taskpool.execute(task2) as number
+        expect(result2).assertEqual(7)
+        expect(instance.count_).assertEqual(7)
+      } catch (error) {
+        console.error("testSendableDecorator1500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

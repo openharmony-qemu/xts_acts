@@ -148,11 +148,17 @@ export default function ServiceLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceLifecycle0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const service: LifecycleManagedService = await manager.create('testService')
-      expect(service.name).assertEqual('testService')
-      expect(service.state_).assertEqual(ServiceState.CREATED)
-      expect(service.createTime_ > 0).assertTrue()
+    it('testServiceLifecycle0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const service: LifecycleManagedService = await manager.create('testService')
+        expect(service.name).assertEqual('testService')
+        expect(service.state_).assertEqual(ServiceState.CREATED)
+        expect(service.createTime_ > 0).assertTrue()
+      } catch (error) {
+        console.error("testServiceLifecycle0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -163,15 +169,21 @@ export default function ServiceLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceLifecycle0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await manager.create('initService')
-      const result: boolean = await manager.initialize('initService')
-      expect(result).assertTrue()
+    it('testServiceLifecycle0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await manager.create('initService')
+        const result: boolean = await manager.initialize('initService')
+        expect(result).assertTrue()
 
-      const service: LifecycleManagedService | undefined = manager.getService('initService')
-      expect(service !== undefined).assertTrue()
-      expect(service!.state_).assertEqual(ServiceState.INITIALIZED)
-      expect(service!.initTime_ > 0).assertTrue()
+        const service: LifecycleManagedService | undefined = manager.getService('initService')
+        expect(service !== undefined).assertTrue()
+        expect(service!.state_).assertEqual(ServiceState.INITIALIZED)
+        expect(service!.initTime_ > 0).assertTrue()
+      } catch (error) {
+        console.error("testServiceLifecycle0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -182,14 +194,20 @@ export default function ServiceLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceLifecycle0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await manager.create('startService')
-      await manager.initialize('startService')
-      const result: boolean = await manager.start('startService')
-      expect(result).assertTrue()
+    it('testServiceLifecycle0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await manager.create('startService')
+        await manager.initialize('startService')
+        const result: boolean = await manager.start('startService')
+        expect(result).assertTrue()
 
-      const service: LifecycleManagedService | undefined = manager.getService('startService')
-      expect(service!.state_).assertEqual(ServiceState.RUNNING)
+        const service: LifecycleManagedService | undefined = manager.getService('startService')
+        expect(service!.state_).assertEqual(ServiceState.RUNNING)
+      } catch (error) {
+        console.error("testServiceLifecycle0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -200,16 +218,22 @@ export default function ServiceLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceLifecycle0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await manager.create('stopService')
-      await manager.initialize('stopService')
-      await manager.start('stopService')
-      const result: boolean = await manager.stop('stopService')
-      expect(result).assertTrue()
+    it('testServiceLifecycle0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await manager.create('stopService')
+        await manager.initialize('stopService')
+        await manager.start('stopService')
+        const result: boolean = await manager.stop('stopService')
+        expect(result).assertTrue()
 
-      const service: LifecycleManagedService | undefined = manager.getService('stopService')
-      expect(service!.state_).assertEqual(ServiceState.STOPPED)
-      expect(service!.stopTime_ > 0).assertTrue()
+        const service: LifecycleManagedService | undefined = manager.getService('stopService')
+        expect(service!.state_).assertEqual(ServiceState.STOPPED)
+        expect(service!.stopTime_ > 0).assertTrue()
+      } catch (error) {
+        console.error("testServiceLifecycle0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -220,14 +244,20 @@ export default function ServiceLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceLifecycle0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await manager.create('fullService')
-      await manager.initialize('fullService')
-      await manager.start('fullService')
-      await manager.stop('fullService')
-      const result: boolean = await manager.destroy('fullService')
-      expect(result).assertTrue()
-      expect(manager.getService('fullService') === undefined).assertTrue()
+    it('testServiceLifecycle0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await manager.create('fullService')
+        await manager.initialize('fullService')
+        await manager.start('fullService')
+        await manager.stop('fullService')
+        const result: boolean = await manager.destroy('fullService')
+        expect(result).assertTrue()
+        expect(manager.getService('fullService') === undefined).assertTrue()
+      } catch (error) {
+        console.error("testServiceLifecycle0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -238,13 +268,19 @@ export default function ServiceLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceLifecycle0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await manager.create('invalidService')
-      const startResult: boolean = await manager.start('invalidService')
-      expect(startResult).assertFalse()
+    it('testServiceLifecycle0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await manager.create('invalidService')
+        const startResult: boolean = await manager.start('invalidService')
+        expect(startResult).assertFalse()
 
-      const stopResult: boolean = await manager.stop('invalidService')
-      expect(stopResult).assertFalse()
+        const stopResult: boolean = await manager.stop('invalidService')
+        expect(stopResult).assertFalse()
+      } catch (error) {
+        console.error("testServiceLifecycle0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -255,13 +291,19 @@ export default function ServiceLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceLifecycle0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(createServiceTask, manager, `svc_${i}`))
+    it('testServiceLifecycle0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(createServiceTask, manager, `svc_${i}`))
+        }
+        await executeTasks(tasks)
+        expect(manager.getServiceCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testServiceLifecycle0700 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(manager.getServiceCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -272,11 +314,17 @@ export default function ServiceLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceLifecycle0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await manager.create('a')
-      await manager.create('b')
-      await manager.create('c')
-      expect(manager.getServiceCount()).assertEqual(3)
+    it('testServiceLifecycle0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await manager.create('a')
+        await manager.create('b')
+        await manager.create('c')
+        expect(manager.getServiceCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testServiceLifecycle0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -287,13 +335,19 @@ export default function ServiceLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceLifecycle0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(createServiceTask, manager, `lc_svc_${i}`))
+    it('testServiceLifecycle0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(createServiceTask, manager, `lc_svc_${i}`))
+        }
+        await executeTasks(tasks)
+        expect(manager.getServiceCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testServiceLifecycle0900 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(manager.getServiceCount()).assertEqual(3)
+      done();
     })
 
     /**
@@ -304,13 +358,19 @@ export default function ServiceLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceLifecycle1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(createServiceTask, manager, `lc_svc5_${i}`))
+    it('testServiceLifecycle1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(createServiceTask, manager, `lc_svc5_${i}`))
+        }
+        await executeTasks(tasks)
+        expect(manager.getServiceCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testServiceLifecycle1000 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(manager.getServiceCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -321,13 +381,19 @@ export default function ServiceLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceLifecycle1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(createServiceTask, manager, `lc_svc10_${i}`))
+    it('testServiceLifecycle1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(createServiceTask, manager, `lc_svc10_${i}`))
+        }
+        await executeTasks(tasks)
+        expect(manager.getServiceCount()).assertEqual(10)
+      } catch (error) {
+        console.error("testServiceLifecycle1100 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(manager.getServiceCount()).assertEqual(10)
+      done();
     })
 
     /**
@@ -338,14 +404,20 @@ export default function ServiceLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceLifecycle1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const service: LifecycleManagedService = await manager.create('tsService')
-      await manager.initialize('tsService')
-      const svc: LifecycleManagedService | undefined = manager.getService('tsService')
-      expect(svc !== undefined).assertTrue()
-      expect(svc!.createTime_ > 0).assertTrue()
-      expect(svc!.initTime_ > 0).assertTrue()
-      expect(svc!.initTime_ >= svc!.createTime_).assertTrue()
+    it('testServiceLifecycle1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const service: LifecycleManagedService = await manager.create('tsService')
+        await manager.initialize('tsService')
+        const svc: LifecycleManagedService | undefined = manager.getService('tsService')
+        expect(svc !== undefined).assertTrue()
+        expect(svc!.createTime_ > 0).assertTrue()
+        expect(svc!.initTime_ > 0).assertTrue()
+        expect(svc!.initTime_ >= svc!.createTime_).assertTrue()
+      } catch (error) {
+        console.error("testServiceLifecycle1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

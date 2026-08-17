@@ -39,7 +39,7 @@ export default function SendableFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableFunction0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableFunction0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const result = sendableNoParamFunc()
       expect(result).assertEqual(42)
     })
@@ -52,7 +52,7 @@ export default function SendableFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableFunction0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableFunction0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const result = sendableSingleParamFunc(5)
       expect(result).assertEqual(10)
     })
@@ -65,7 +65,7 @@ export default function SendableFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableFunction0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableFunction0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const result = sendableMultiParamFunc(10, 'test')
       expect(result).assertEqual('test_10')
     })
@@ -78,7 +78,7 @@ export default function SendableFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableFunction0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableFunction0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const result = sendableReturnClassFunc()
       expect(result.count_).assertEqual(100)
     })
@@ -91,10 +91,16 @@ export default function SendableFunctionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSendableFunction0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const task = new taskpool.Task(callSendableFuncInTaskPool)
-      const result = await taskpool.execute(task) as number
-      expect(result).assertEqual(42)
+    it('testSendableFunction0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const task = new taskpool.Task(callSendableFuncInTaskPool)
+        const result = await taskpool.execute(task) as number
+        expect(result).assertEqual(42)
+      } catch (error) {
+        console.error("testSendableFunction0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

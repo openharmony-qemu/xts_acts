@@ -112,10 +112,16 @@ export default function RequestBufferQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRequestBufferQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const success: boolean = await bufferQueue.bufferRequest(1, 'GET', 'test')
-      expect(success).assertTrue()
-      expect(await bufferQueue.size()).assertEqual(1)
+    it('testRequestBufferQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const success: boolean = await bufferQueue.bufferRequest(1, 'GET', 'test')
+        expect(success).assertTrue()
+        expect(await bufferQueue.size()).assertEqual(1)
+      } catch (error) {
+        console.error("testRequestBufferQueue0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -126,12 +132,18 @@ export default function RequestBufferQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRequestBufferQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await bufferQueue.bufferRequest(1, 'GET', 'test')
-      const batch: Request[] = await bufferQueue.processBatch(1)
-      expect(batch.length).assertEqual(1)
-      expect(batch[0].requestId_).assertEqual(1)
-      expect(await bufferQueue.size()).assertEqual(0)
+    it('testRequestBufferQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await bufferQueue.bufferRequest(1, 'GET', 'test')
+        const batch: Request[] = await bufferQueue.processBatch(1)
+        expect(batch.length).assertEqual(1)
+        expect(batch[0].requestId_).assertEqual(1)
+        expect(await bufferQueue.size()).assertEqual(0)
+      } catch (error) {
+        console.error("testRequestBufferQueue0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -142,8 +154,14 @@ export default function RequestBufferQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRequestBufferQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      expect(await bufferQueue.size()).assertEqual(0)
+    it('testRequestBufferQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        expect(await bufferQueue.size()).assertEqual(0)
+      } catch (error) {
+        console.error("testRequestBufferQueue0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -154,20 +172,26 @@ export default function RequestBufferQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRequestBufferQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const promises: Promise<boolean>[] = []
-      for (let i = 0; i < 100; i++) {
-        promises.push(bufferQueue.bufferRequest(i, 'GET', `payload_${i}`))
-      }
-      const results: boolean[] = await Promise.all(promises)
-      let successCount: number = 0
-      for (let i = 0; i < results.length; i++) {
-        if (results[i]) {
-          successCount++
+    it('testRequestBufferQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const promises: Promise<boolean>[] = []
+        for (let i = 0; i < 100; i++) {
+          promises.push(bufferQueue.bufferRequest(i, 'GET', `payload_${i}`))
         }
+        const results: boolean[] = await Promise.all(promises)
+        let successCount: number = 0
+        for (let i = 0; i < results.length; i++) {
+          if (results[i]) {
+            successCount++
+          }
+        }
+        expect(successCount).assertEqual(100)
+        expect(await bufferQueue.size()).assertEqual(100)
+      } catch (error) {
+        console.error("testRequestBufferQueue0400 failed");
+        expect(false).assertFail();
       }
-      expect(successCount).assertEqual(100)
-      expect(await bufferQueue.size()).assertEqual(100)
+      done();
     })
 
     /**
@@ -178,21 +202,27 @@ export default function RequestBufferQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRequestBufferQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      bufferQueue.capacity_ = 50
-      const promises: Promise<boolean>[] = []
-      for (let i = 0; i < 100; i++) {
-        promises.push(bufferQueue.bufferRequest(i, 'GET', `payload_${i}`))
-      }
-      const results: boolean[] = await Promise.all(promises)
-      let successCount: number = 0
-      for (let i = 0; i < results.length; i++) {
-        if (results[i]) {
-          successCount++
+    it('testRequestBufferQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        bufferQueue.capacity_ = 50
+        const promises: Promise<boolean>[] = []
+        for (let i = 0; i < 100; i++) {
+          promises.push(bufferQueue.bufferRequest(i, 'GET', `payload_${i}`))
         }
+        const results: boolean[] = await Promise.all(promises)
+        let successCount: number = 0
+        for (let i = 0; i < results.length; i++) {
+          if (results[i]) {
+            successCount++
+          }
+        }
+        expect(successCount).assertEqual(50)
+        expect(await bufferQueue.getDroppedCount()).assertEqual(50)
+      } catch (error) {
+        console.error("testRequestBufferQueue0500 failed");
+        expect(false).assertFail();
       }
-      expect(successCount).assertEqual(50)
-      expect(await bufferQueue.getDroppedCount()).assertEqual(50)
+      done();
     })
 
     /**
@@ -203,16 +233,22 @@ export default function RequestBufferQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRequestBufferQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 50; i++) {
-        await bufferQueue.bufferRequest(i, 'GET', `payload_${i}`)
+    it('testRequestBufferQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 50; i++) {
+          await bufferQueue.bufferRequest(i, 'GET', `payload_${i}`)
+        }
+        const batch1: Request[] = await bufferQueue.processBatch(20)
+        expect(batch1.length).assertEqual(20)
+        expect(await bufferQueue.size()).assertEqual(30)
+        const batch2: Request[] = await bufferQueue.processBatch(30)
+        expect(batch2.length).assertEqual(30)
+        expect(await bufferQueue.size()).assertEqual(0)
+      } catch (error) {
+        console.error("testRequestBufferQueue0600 failed");
+        expect(false).assertFail();
       }
-      const batch1: Request[] = await bufferQueue.processBatch(20)
-      expect(batch1.length).assertEqual(20)
-      expect(await bufferQueue.size()).assertEqual(30)
-      const batch2: Request[] = await bufferQueue.processBatch(30)
-      expect(batch2.length).assertEqual(30)
-      expect(await bufferQueue.size()).assertEqual(0)
+      done();
     })
 
     /**
@@ -223,12 +259,18 @@ export default function RequestBufferQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRequestBufferQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 100; i++) {
-        await bufferQueue.bufferRequest(i, 'GET', `payload_${i}`)
+    it('testRequestBufferQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 100; i++) {
+          await bufferQueue.bufferRequest(i, 'GET', `payload_${i}`)
+        }
+        const utilization: number = await bufferQueue.getUtilization()
+        expect(utilization).assertEqual(50)
+      } catch (error) {
+        console.error("testRequestBufferQueue0700 failed");
+        expect(false).assertFail();
       }
-      const utilization: number = await bufferQueue.getUtilization()
-      expect(utilization).assertEqual(50)
+      done();
     })
 
     /**
@@ -239,21 +281,27 @@ export default function RequestBufferQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRequestBufferQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 50; i++) {
-        tasks.push(new taskpool.Task(bufferRequestTask, i, 'GET'))
+    it('testRequestBufferQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 50; i++) {
+          tasks.push(new taskpool.Task(bufferRequestTask, i, 'GET'))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          const parts: string[] = (results[i] as string).split('|')
+          await bufferQueue.bufferRequest(parseInt(parts[0]), parts[1], `payload_${parts[0]}`)
+        }
+        expect(await bufferQueue.size()).assertLargerOrEqual(1)
+      } catch (error) {
+        console.error("testRequestBufferQueue0800 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        const parts: string[] = (results[i] as string).split('|')
-        await bufferQueue.bufferRequest(parseInt(parts[0]), parts[1], `payload_${parts[0]}`)
-      }
-      expect(await bufferQueue.size()).assertLargerOrEqual(1)
+      done();
     })
 
     /**
@@ -264,12 +312,18 @@ export default function RequestBufferQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRequestBufferQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 30; i++) {
-        await bufferQueue.bufferRequest(i, 'GET', `payload_${i}`)
+    it('testRequestBufferQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 30; i++) {
+          await bufferQueue.bufferRequest(i, 'GET', `payload_${i}`)
+        }
+        await bufferQueue.processBatch(30)
+        expect(await bufferQueue.getProcessedCount()).assertEqual(30)
+      } catch (error) {
+        console.error("testRequestBufferQueue0900 failed");
+        expect(false).assertFail();
       }
-      await bufferQueue.processBatch(30)
-      expect(await bufferQueue.getProcessedCount()).assertEqual(30)
+      done();
     })
 
     /**
@@ -280,13 +334,19 @@ export default function RequestBufferQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRequestBufferQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      bufferQueue.capacity_ = 20
-      for (let i = 0; i < 20; i++) {
-        await bufferQueue.bufferRequest(i, 'GET', `payload_${i}`)
+    it('testRequestBufferQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        bufferQueue.capacity_ = 20
+        for (let i = 0; i < 20; i++) {
+          await bufferQueue.bufferRequest(i, 'GET', `payload_${i}`)
+        }
+        expect(await bufferQueue.isFull()).assertTrue()
+        expect(await bufferQueue.getUtilization()).assertEqual(100)
+      } catch (error) {
+        console.error("testRequestBufferQueue1000 failed");
+        expect(false).assertFail();
       }
-      expect(await bufferQueue.isFull()).assertTrue()
-      expect(await bufferQueue.getUtilization()).assertEqual(100)
+      done();
     })
   })
 }

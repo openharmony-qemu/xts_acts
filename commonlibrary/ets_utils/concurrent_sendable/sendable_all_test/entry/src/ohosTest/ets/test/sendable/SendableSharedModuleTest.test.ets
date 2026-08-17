@@ -48,7 +48,7 @@ export default function SendableSharedModuleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableSharedModule0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableSharedModule0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       expect(singleton.getValue()).assertEqual(0)
     })
 
@@ -60,11 +60,17 @@ export default function SendableSharedModuleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableSharedModule0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      singleton.setValue(100)
-      const task = new taskpool.Task(accessSharedSingleton, singleton)
-      const result = await taskpool.execute(task) as number
-      expect(result).assertEqual(100)
+    it('testSendableSharedModule0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        singleton.setValue(100)
+        const task = new taskpool.Task(accessSharedSingleton, singleton)
+        const result = await taskpool.execute(task) as number
+        expect(result).assertEqual(100)
+      } catch (error) {
+        console.error("testSendableSharedModule0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -75,10 +81,16 @@ export default function SendableSharedModuleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableSharedModule0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const task = new taskpool.Task(modifySharedSingleton, singleton, 50)
-      await taskpool.execute(task)
-      expect(singleton.getValue()).assertEqual(50)
+    it('testSendableSharedModule0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const task = new taskpool.Task(modifySharedSingleton, singleton, 50)
+        await taskpool.execute(task)
+        expect(singleton.getValue()).assertEqual(50)
+      } catch (error) {
+        console.error("testSendableSharedModule0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -89,7 +101,7 @@ export default function SendableSharedModuleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableSharedModule0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableSharedModule0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const ref1 = singleton
       const ref2 = singleton
       expect(ref1 === ref2).assertTrue()
@@ -103,12 +115,18 @@ export default function SendableSharedModuleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSendableSharedModule0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      for (let i = 0; i < 5; i++) {
-        const task = new taskpool.Task(incrementSharedSingleton, singleton)
-        await taskpool.execute(task)
+    it('testSendableSharedModule0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 5; i++) {
+          const task = new taskpool.Task(incrementSharedSingleton, singleton)
+          await taskpool.execute(task)
+        }
+        expect(singleton.getValue()).assertEqual(5)
+      } catch (error) {
+        console.error("testSendableSharedModule0500 failed");
+        expect(false).assertFail();
       }
-      expect(singleton.getValue()).assertEqual(5)
+      done();
     })
 
     /**
@@ -119,7 +137,7 @@ export default function SendableSharedModuleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableSharedModule0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableSharedModule0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       singleton.setValue(42)
       expect(singleton.getValue()).assertEqual(42)
       singleton.setValue(0)

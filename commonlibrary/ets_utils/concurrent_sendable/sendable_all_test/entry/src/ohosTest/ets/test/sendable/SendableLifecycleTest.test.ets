@@ -138,11 +138,17 @@ export default function SendableLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableLifecycle0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const data: LifecycleData = await manager.create('create_test', 1)
-      expect(data.getId()).assertEqual(1)
-      expect(data.getName()).assertEqual('create_test')
-      expect(manager.getSize()).assertEqual(1)
+    it('testSendableLifecycle0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const data: LifecycleData = await manager.create('create_test', 1)
+        expect(data.getId()).assertEqual(1)
+        expect(data.getName()).assertEqual('create_test')
+        expect(manager.getSize()).assertEqual(1)
+      } catch (error) {
+        console.error("testSendableLifecycle0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -153,13 +159,19 @@ export default function SendableLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableLifecycle0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const data: LifecycleData = await manager.create('ref_zero', 2)
-      expect(manager.getSize()).assertEqual(1)
+    it('testSendableLifecycle0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const data: LifecycleData = await manager.create('ref_zero', 2)
+        expect(manager.getSize()).assertEqual(1)
 
-      await manager.delete('ref_zero')
-      expect(manager.getSize()).assertEqual(0)
-      expect(manager.getDeleteCount()).assertEqual(1)
+        await manager.delete('ref_zero')
+        expect(manager.getSize()).assertEqual(0)
+        expect(manager.getDeleteCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testSendableLifecycle0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -170,17 +182,23 @@ export default function SendableLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSendableLifecycle0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: LifecycleData = await manager.create('multi_thread', 3)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(lifecycleTask, data))
+    it('testSendableLifecycle0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: LifecycleData = await manager.create('multi_thread', 3)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(lifecycleTask, data))
+        }
+        const results: Object[] = await executeLifecycleTasks(tasks)
+        expect(results.length).assertEqual(3)
+        expect(results[0] as number).assertEqual(6)
+        expect(results[1] as number).assertEqual(6)
+        expect(results[2] as number).assertEqual(6)
+      } catch (error) {
+        console.error("testSendableLifecycle0300 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await executeLifecycleTasks(tasks)
-      expect(results.length).assertEqual(3)
-      expect(results[0] as number).assertEqual(6)
-      expect(results[1] as number).assertEqual(6)
-      expect(results[2] as number).assertEqual(6)
+      done();
     })
 
     /**
@@ -191,17 +209,23 @@ export default function SendableLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSendableLifecycle0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 5; i++) {
-        await manager.create(`temp_${i}`, i)
-      }
-      expect(manager.getSize()).assertEqual(5)
+    it('testSendableLifecycle0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 5; i++) {
+          await manager.create(`temp_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(5)
 
-      for (let i: number = 0; i < 5; i++) {
-        await manager.delete(`temp_${i}`)
+        for (let i: number = 0; i < 5; i++) {
+          await manager.delete(`temp_${i}`)
+        }
+        expect(manager.getSize()).assertEqual(0)
+        expect(manager.getDeleteCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testSendableLifecycle0400 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getSize()).assertEqual(0)
-      expect(manager.getDeleteCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -212,11 +236,17 @@ export default function SendableLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSendableLifecycle0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: LifecycleData = await manager.create('force_gc', 5)
-      expect(data.getId()).assertEqual(5)
-      expect(data.getName()).assertEqual('force_gc')
-      expect(manager.getSize()).assertEqual(1)
+    it('testSendableLifecycle0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: LifecycleData = await manager.create('force_gc', 5)
+        expect(data.getId()).assertEqual(5)
+        expect(data.getName()).assertEqual('force_gc')
+        expect(manager.getSize()).assertEqual(1)
+      } catch (error) {
+        console.error("testSendableLifecycle0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -227,12 +257,18 @@ export default function SendableLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSendableLifecycle0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: LifecycleData = await manager.create('main_tp', 6)
-      const task: taskpool.Task = new taskpool.Task(consumeLifecycleTask, data)
-      const result: Object = await taskpool.execute(task)
-      expect(result as string).assertEqual('consumed: main_tp')
-      expect(data.getId()).assertEqual(6)
+    it('testSendableLifecycle0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: LifecycleData = await manager.create('main_tp', 6)
+        const task: taskpool.Task = new taskpool.Task(consumeLifecycleTask, data)
+        const result: Object = await taskpool.execute(task)
+        expect(result as string).assertEqual('consumed: main_tp')
+        expect(data.getId()).assertEqual(6)
+      } catch (error) {
+        console.error("testSendableLifecycle0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -243,20 +279,26 @@ export default function SendableLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSendableLifecycle0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let round: number = 0; round < 5; round++) {
-        for (let i: number = 0; i < 5; i++) {
-          await manager.create(`cycle_${round}_${i}`, round * 10 + i)
-        }
-        expect(manager.getSize()).assertEqual(5)
+    it('testSendableLifecycle0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let round: number = 0; round < 5; round++) {
+          for (let i: number = 0; i < 5; i++) {
+            await manager.create(`cycle_${round}_${i}`, round * 10 + i)
+          }
+          expect(manager.getSize()).assertEqual(5)
 
-        for (let i: number = 0; i < 5; i++) {
-          await manager.delete(`cycle_${round}_${i}`)
+          for (let i: number = 0; i < 5; i++) {
+            await manager.delete(`cycle_${round}_${i}`)
+          }
+          expect(manager.getSize()).assertEqual(0)
         }
-        expect(manager.getSize()).assertEqual(0)
+        expect(manager.getCreateCount()).assertEqual(25)
+        expect(manager.getDeleteCount()).assertEqual(25)
+      } catch (error) {
+        console.error("testSendableLifecycle0700 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getCreateCount()).assertEqual(25)
-      expect(manager.getDeleteCount()).assertEqual(25)
+      done();
     })
 
     /**
@@ -267,15 +309,21 @@ export default function SendableLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSendableLifecycle0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: LifecycleData = await manager.create('preserve', 100)
-      expect(data.getId()).assertEqual(100)
-      expect(data.getName()).assertEqual('preserve')
+    it('testSendableLifecycle0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: LifecycleData = await manager.create('preserve', 100)
+        expect(data.getId()).assertEqual(100)
+        expect(data.getName()).assertEqual('preserve')
 
-      const retrieved: LifecycleData | undefined = manager.get('preserve')
-      expect(retrieved !== undefined).assertTrue()
-      expect(retrieved!.getId()).assertEqual(100)
-      expect(retrieved!.getName()).assertEqual('preserve')
+        const retrieved: LifecycleData | undefined = manager.get('preserve')
+        expect(retrieved !== undefined).assertTrue()
+        expect(retrieved!.getId()).assertEqual(100)
+        expect(retrieved!.getName()).assertEqual('preserve')
+      } catch (error) {
+        console.error("testSendableLifecycle0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -286,17 +334,23 @@ export default function SendableLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSendableLifecycle0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const parent: LifecycleData = await manager.create('parent', 1)
-      const child: LifecycleData = await manager.create('child', 2)
-      expect(manager.getSize()).assertEqual(2)
+    it('testSendableLifecycle0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const parent: LifecycleData = await manager.create('parent', 1)
+        const child: LifecycleData = await manager.create('child', 2)
+        expect(manager.getSize()).assertEqual(2)
 
-      await manager.delete('child')
-      expect(manager.getSize()).assertEqual(1)
+        await manager.delete('child')
+        expect(manager.getSize()).assertEqual(1)
 
-      const parentData: LifecycleData | undefined = manager.get('parent')
-      expect(parentData !== undefined).assertTrue()
-      expect(parentData!.getId()).assertEqual(1)
+        const parentData: LifecycleData | undefined = manager.get('parent')
+        expect(parentData !== undefined).assertTrue()
+        expect(parentData!.getId()).assertEqual(1)
+      } catch (error) {
+        console.error("testSendableLifecycle0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -307,19 +361,25 @@ export default function SendableLifecycleTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSendableLifecycle1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 10; i++) {
-        await manager.create(`container_${i}`, i)
-      }
-      expect(manager.getSize()).assertEqual(10)
+    it('testSendableLifecycle1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 10; i++) {
+          await manager.create(`container_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(10)
 
-      await manager.clearAll()
-      expect(manager.getCreateCount()).assertEqual(0)
+        await manager.clearAll()
+        expect(manager.getCreateCount()).assertEqual(0)
 
-      for (let i: number = 0; i < 5; i++) {
-        await manager.create(`new_${i}`, i * 10)
+        for (let i: number = 0; i < 5; i++) {
+          await manager.create(`new_${i}`, i * 10)
+        }
+        expect(manager.getSize()).assertEqual(5)
+      } catch (error) {
+        console.error("testSendableLifecycle1000 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getSize()).assertEqual(5)
+      done();
     })
   })
 }

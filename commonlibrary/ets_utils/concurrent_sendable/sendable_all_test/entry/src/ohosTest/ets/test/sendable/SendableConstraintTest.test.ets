@@ -60,12 +60,18 @@ export default function SendableConstraintTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableConstraint0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const instance = new ValidSendableClass()
-      instance.value_ = 100
-      const task = new taskpool.Task(validSendableParamFunc, instance)
-      const result = await taskpool.execute(task) as number
-      expect(result).assertEqual(100)
+    it('testSendableConstraint0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const instance = new ValidSendableClass()
+        instance.value_ = 100
+        const task = new taskpool.Task(validSendableParamFunc, instance)
+        const result = await taskpool.execute(task) as number
+        expect(result).assertEqual(100)
+      } catch (error) {
+        console.error("testSendableConstraint0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -76,13 +82,19 @@ export default function SendableConstraintTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableConstraint0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const instance = new ValidSendableClass()
-      instance.value_ = 0
-      const task = new taskpool.Task(modifyValidSendableFunc, instance)
-      const result = await taskpool.execute(task) as number
-      expect(result).assertEqual(1)
-      expect(instance.value_).assertEqual(1)
+    it('testSendableConstraint0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const instance = new ValidSendableClass()
+        instance.value_ = 0
+        const task = new taskpool.Task(modifyValidSendableFunc, instance)
+        const result = await taskpool.execute(task) as number
+        expect(result).assertEqual(1)
+        expect(instance.value_).assertEqual(1)
+      } catch (error) {
+        console.error("testSendableConstraint0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -93,10 +105,16 @@ export default function SendableConstraintTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableConstraint0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const task = new taskpool.Task(normalDataFunc)
-      const result = await taskpool.execute(task) as string
-      expect(result).assertEqual('normal_size_data')
+    it('testSendableConstraint0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const task = new taskpool.Task(normalDataFunc)
+        const result = await taskpool.execute(task) as string
+        expect(result).assertEqual('normal_size_data')
+      } catch (error) {
+        console.error("testSendableConstraint0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -107,7 +125,7 @@ export default function SendableConstraintTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableConstraint0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableConstraint0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const instance = new ValidSendableClass()
       expect(instance.value_).assertEqual(0)
     })
@@ -120,7 +138,7 @@ export default function SendableConstraintTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableConstraint0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableConstraint0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const instance = new ValidSendableClass()
       instance.value_ = 42
       expect(instance.value_).assertEqual(42)
@@ -136,13 +154,19 @@ export default function SendableConstraintTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSendableConstraint0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const instance = new ValidSendableClass()
-      for (let i = 0; i < 5; i++) {
-        const task = new taskpool.Task(modifyValidSendableFunc, instance)
-        await taskpool.execute(task)
+    it('testSendableConstraint0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const instance = new ValidSendableClass()
+        for (let i = 0; i < 5; i++) {
+          const task = new taskpool.Task(modifyValidSendableFunc, instance)
+          await taskpool.execute(task)
+        }
+        expect(instance.value_).assertEqual(5)
+      } catch (error) {
+        console.error("testSendableConstraint0600 failed");
+        expect(false).assertFail();
       }
-      expect(instance.value_).assertEqual(5)
+      done();
     })
 
     /**
@@ -153,16 +177,22 @@ export default function SendableConstraintTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableConstraint0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const instance = new ValidSendableClass()
-      instance.value_ = 10
-      const task1 = new taskpool.Task(validSendableParamFunc, instance)
-      const result1 = await taskpool.execute(task1) as number
-      expect(result1).assertEqual(10)
-      const task2 = new taskpool.Task(modifyValidSendableFunc, instance)
-      const result2 = await taskpool.execute(task2) as number
-      expect(result2).assertEqual(11)
-      expect(instance.value_).assertEqual(11)
+    it('testSendableConstraint0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const instance = new ValidSendableClass()
+        instance.value_ = 10
+        const task1 = new taskpool.Task(validSendableParamFunc, instance)
+        const result1 = await taskpool.execute(task1) as number
+        expect(result1).assertEqual(10)
+        const task2 = new taskpool.Task(modifyValidSendableFunc, instance)
+        const result2 = await taskpool.execute(task2) as number
+        expect(result2).assertEqual(11)
+        expect(instance.value_).assertEqual(11)
+      } catch (error) {
+        console.error("testSendableConstraint0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -173,16 +203,22 @@ export default function SendableConstraintTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableConstraint0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const arr = new collections.Array<number>()
-      for (let i = 0; i < 1000; i++) {
-        arr.push(i)
+    it('testSendableConstraint0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const arr = new collections.Array<number>()
+        for (let i = 0; i < 1000; i++) {
+          arr.push(i)
+        }
+        const task = new taskpool.Task(modifySendableArrayFunc, arr)
+        const result = await taskpool.execute(task) as number
+        expect(result).assertEqual(499500)
+        expect(arr.length).assertEqual(1001)
+        expect(arr[1000]).assertEqual(499500)
+      } catch (error) {
+        console.error("testSendableConstraint0800 failed");
+        expect(false).assertFail();
       }
-      const task = new taskpool.Task(modifySendableArrayFunc, arr)
-      const result = await taskpool.execute(task) as number
-      expect(result).assertEqual(499500)
-      expect(arr.length).assertEqual(1001)
-      expect(arr[1000]).assertEqual(499500)
+      done();
     })
   })
 }

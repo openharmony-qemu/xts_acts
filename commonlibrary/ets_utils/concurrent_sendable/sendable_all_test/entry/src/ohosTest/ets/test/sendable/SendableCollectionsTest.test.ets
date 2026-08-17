@@ -27,7 +27,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableCollections0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableCollections0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arr = new collections.Array<number>()
       expect(arr.length).assertEqual(0)
     })
@@ -40,7 +40,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableCollections0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableCollections0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arr = new collections.Array<number>()
       arr.push(10)
       arr.push(20)
@@ -56,7 +56,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableCollections0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableCollections0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arr = new collections.Array<number>()
       arr.push(100)
       arr.push(200)
@@ -74,7 +74,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableCollections0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableCollections0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new collections.Map<string, number>()
       expect(map.has('key')).assertFalse()
     })
@@ -87,7 +87,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableCollections0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableCollections0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new collections.Map<string, number>()
       map.set('key1', 100)
       map.set('key2', 200)
@@ -103,7 +103,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableCollections0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableCollections0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new collections.Map<string, number>()
       map.set('key1', 100)
       expect(map.has('key1')).assertTrue()
@@ -119,7 +119,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableCollections0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableCollections0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set = new collections.Set<number>()
       expect(set.has(1)).assertFalse()
     })
@@ -132,7 +132,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableCollections0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableCollections0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set = new collections.Set<number>()
       set.add(10)
       expect(set.has(10)).assertTrue()
@@ -148,7 +148,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableCollections0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableCollections0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const typedArr = new collections.Int32Array(100)
       typedArr[0] = 100
       typedArr[50] = 200
@@ -164,7 +164,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableCollections1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableCollections1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const typedArr = new collections.Int32Array(10)
       expect(typedArr[0]).assertEqual(0)
       expect(typedArr[5]).assertEqual(0)
@@ -178,7 +178,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSendableCollections1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSendableCollections1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new collections.Array<number>()
       const iterations: number = 10
       for (let i = 0; i < iterations; i++) {
@@ -197,7 +197,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSendableCollections1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSendableCollections1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new collections.Map<string, number>()
       const iterations: number = 10
       for (let i = 0; i < iterations; i++) {
@@ -216,7 +216,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableCollections1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableCollections1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const lruCache = new ArkTSUtils.SendableLruCache<number, string>(5)
       expect(lruCache.length).assertEqual(0)
     })
@@ -229,7 +229,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableCollections1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableCollections1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const lruCache = new ArkTSUtils.SendableLruCache<number, string>(5)
       lruCache.put(1, 'value1')
       lruCache.put(2, 'value2')
@@ -246,7 +246,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableCollections1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableCollections1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const lruCache = new ArkTSUtils.SendableLruCache<number, string>(5)
       lruCache.put(1, 'value1')
       expect(lruCache.contains(1)).assertTrue()
@@ -261,7 +261,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableCollections1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableCollections1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const lruCache = new ArkTSUtils.SendableLruCache<number, string>(5)
       lruCache.put(1, 'value1')
       expect(lruCache.contains(1)).assertTrue()
@@ -278,7 +278,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSendableCollections1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testSendableCollections1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const lruCache = new ArkTSUtils.SendableLruCache<number, string>(3)
       lruCache.put(1, 'value1')
       lruCache.put(2, 'value2')
@@ -299,7 +299,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSendableCollections1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testSendableCollections1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const lruCache = new ArkTSUtils.SendableLruCache<number, string>(3)
       lruCache.put(1, 'value1')
       lruCache.put(2, 'value2')
@@ -320,7 +320,7 @@ export default function SendableCollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSendableCollections1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSendableCollections1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const lruCache = new ArkTSUtils.SendableLruCache<number, string>(10)
       for (let i = 0; i < 10; i++) {
         lruCache.put(i, `value_${i}`)

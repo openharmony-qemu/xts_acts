@@ -140,15 +140,21 @@ export default function ServiceHotUpdateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceHotUpdate0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const config: collections.Map<string, string> = new collections.Map<string, string>()
-      config.set('port', '8080')
+    it('testServiceHotUpdate0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const config: collections.Map<string, string> = new collections.Map<string, string>()
+        config.set('port', '8080')
 
-      await hotUpdater.deploy('webApp', '1.0.0', config)
+        await hotUpdater.deploy('webApp', '1.0.0', config)
 
-      const version: ServiceVersion | undefined = hotUpdater.getVersion('webApp')
-      expect(version !== undefined).assertTrue()
-      expect(version!.version).assertEqual('1.0.0')
+        const version: ServiceVersion | undefined = hotUpdater.getVersion('webApp')
+        expect(version !== undefined).assertTrue()
+        expect(version!.version).assertEqual('1.0.0')
+      } catch (error) {
+        console.error("testServiceHotUpdate0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -159,16 +165,22 @@ export default function ServiceHotUpdateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceHotUpdate0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const initialConfig: collections.Map<string, string> = new collections.Map<string, string>()
-      await hotUpdater.deploy('apiApp', '1.0.0', initialConfig)
+    it('testServiceHotUpdate0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const initialConfig: collections.Map<string, string> = new collections.Map<string, string>()
+        await hotUpdater.deploy('apiApp', '1.0.0', initialConfig)
 
-      const newConfig: collections.Map<string, string> = new collections.Map<string, string>()
-      newConfig.set('timeout', '3000')
-      const result: boolean = await hotUpdater.hotUpdate('apiApp', '2.0.0', newConfig)
+        const newConfig: collections.Map<string, string> = new collections.Map<string, string>()
+        newConfig.set('timeout', '3000')
+        const result: boolean = await hotUpdater.hotUpdate('apiApp', '2.0.0', newConfig)
 
-      expect(result).assertTrue()
-      expect(hotUpdater.getVersion('apiApp')!.version).assertEqual('2.0.0')
+        expect(result).assertTrue()
+        expect(hotUpdater.getVersion('apiApp')!.version).assertEqual('2.0.0')
+      } catch (error) {
+        console.error("testServiceHotUpdate0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -179,11 +191,17 @@ export default function ServiceHotUpdateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testServiceHotUpdate0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const config: collections.Map<string, string> = new collections.Map<string, string>()
-      const result: boolean = await hotUpdater.hotUpdate('nonexistent', '2.0.0', config)
+    it('testServiceHotUpdate0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const config: collections.Map<string, string> = new collections.Map<string, string>()
+        const result: boolean = await hotUpdater.hotUpdate('nonexistent', '2.0.0', config)
 
-      expect(result).assertFalse()
+        expect(result).assertFalse()
+      } catch (error) {
+        console.error("testServiceHotUpdate0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -194,15 +212,21 @@ export default function ServiceHotUpdateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceHotUpdate0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const config: collections.Map<string, string> = new collections.Map<string, string>()
-      await hotUpdater.deploy('rollbackApp', '1.0.0', config)
-      await hotUpdater.hotUpdate('rollbackApp', '2.0.0', config)
+    it('testServiceHotUpdate0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const config: collections.Map<string, string> = new collections.Map<string, string>()
+        await hotUpdater.deploy('rollbackApp', '1.0.0', config)
+        await hotUpdater.hotUpdate('rollbackApp', '2.0.0', config)
 
-      const result: boolean = await hotUpdater.rollback('rollbackApp', '1.0.0')
+        const result: boolean = await hotUpdater.rollback('rollbackApp', '1.0.0')
 
-      expect(result).assertTrue()
-      expect(hotUpdater.getVersion('rollbackApp')!.version).assertEqual('1.0.0')
+        expect(result).assertTrue()
+        expect(hotUpdater.getVersion('rollbackApp')!.version).assertEqual('1.0.0')
+      } catch (error) {
+        console.error("testServiceHotUpdate0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -213,14 +237,20 @@ export default function ServiceHotUpdateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceHotUpdate0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const config: collections.Map<string, string> = new collections.Map<string, string>()
-      await hotUpdater.deploy('configApp', '1.0.0', config)
+    it('testServiceHotUpdate0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const config: collections.Map<string, string> = new collections.Map<string, string>()
+        await hotUpdater.deploy('configApp', '1.0.0', config)
 
-      const result: boolean = await hotUpdater.updateConfig('configApp', 'maxConnections', '100')
+        const result: boolean = await hotUpdater.updateConfig('configApp', 'maxConnections', '100')
 
-      expect(result).assertTrue()
-      expect(hotUpdater.getVersion('configApp')!.config.get('maxConnections')).assertEqual('100')
+        expect(result).assertTrue()
+        expect(hotUpdater.getVersion('configApp')!.config.get('maxConnections')).assertEqual('100')
+      } catch (error) {
+        console.error("testServiceHotUpdate0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -231,13 +261,19 @@ export default function ServiceHotUpdateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceHotUpdate0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const config: collections.Map<string, string> = new collections.Map<string, string>()
-      await hotUpdater.deploy('countApp', '1.0.0', config)
-      expect(hotUpdater.getUpdateCount()).assertEqual(1)
+    it('testServiceHotUpdate0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const config: collections.Map<string, string> = new collections.Map<string, string>()
+        await hotUpdater.deploy('countApp', '1.0.0', config)
+        expect(hotUpdater.getUpdateCount()).assertEqual(1)
 
-      await hotUpdater.hotUpdate('countApp', '2.0.0', config)
-      expect(hotUpdater.getUpdateCount()).assertEqual(2)
+        await hotUpdater.hotUpdate('countApp', '2.0.0', config)
+        expect(hotUpdater.getUpdateCount()).assertEqual(2)
+      } catch (error) {
+        console.error("testServiceHotUpdate0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -248,17 +284,23 @@ export default function ServiceHotUpdateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceHotUpdate0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const config: collections.Map<string, string> = new collections.Map<string, string>()
-      await hotUpdater.deploy('concurrentApp', '1.0.0', config)
+    it('testServiceHotUpdate0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const config: collections.Map<string, string> = new collections.Map<string, string>()
+        await hotUpdater.deploy('concurrentApp', '1.0.0', config)
 
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(hotUpdateTask, hotUpdater, 'concurrentApp', `2.${i}.0`))
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(hotUpdateTask, hotUpdater, 'concurrentApp', `2.${i}.0`))
+        }
+        await executeTasksGetObjects(tasks)
+
+        expect(hotUpdater.getUpdateCount() > 1).assertTrue()
+      } catch (error) {
+        console.error("testServiceHotUpdate0700 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-
-      expect(hotUpdater.getUpdateCount() > 1).assertTrue()
+      done();
     })
 
     /**
@@ -269,16 +311,22 @@ export default function ServiceHotUpdateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testServiceHotUpdate0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const config: collections.Map<string, string> = new collections.Map<string, string>()
-      await hotUpdater.deploy('timeApp', '1.0.0', config)
-      const deployTime: number = hotUpdater.getVersion('timeApp')!.updateTime
+    it('testServiceHotUpdate0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const config: collections.Map<string, string> = new collections.Map<string, string>()
+        await hotUpdater.deploy('timeApp', '1.0.0', config)
+        const deployTime: number = hotUpdater.getVersion('timeApp')!.updateTime
 
-      await Utils.sleep(500)
-      await hotUpdater.hotUpdate('timeApp', '2.0.0', config)
-      const updateTime: number = hotUpdater.getVersion('timeApp')!.updateTime
+        await Utils.sleep(500)
+        await hotUpdater.hotUpdate('timeApp', '2.0.0', config)
+        const updateTime: number = hotUpdater.getVersion('timeApp')!.updateTime
 
-      expect(updateTime > deployTime).assertTrue()
+        expect(updateTime > deployTime).assertTrue()
+      } catch (error) {
+        console.error("testServiceHotUpdate0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -289,15 +337,21 @@ export default function ServiceHotUpdateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceHotUpdate0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const config: collections.Map<string, string> = new collections.Map<string, string>()
-      const services: string[] = ['deploy1', 'deploy2', 'deploy3']
+    it('testServiceHotUpdate0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const config: collections.Map<string, string> = new collections.Map<string, string>()
+        const services: string[] = ['deploy1', 'deploy2', 'deploy3']
 
-      for (const svc of services) {
-        await hotUpdater.deploy(svc, '1.0.0', config)
+        for (const svc of services) {
+          await hotUpdater.deploy(svc, '1.0.0', config)
+        }
+
+        expect(hotUpdater.getUpdateCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testServiceHotUpdate0900 failed");
+        expect(false).assertFail();
       }
-
-      expect(hotUpdater.getUpdateCount()).assertEqual(3)
+      done();
     })
 
     /**
@@ -308,18 +362,24 @@ export default function ServiceHotUpdateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceHotUpdate1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const config: collections.Map<string, string> = new collections.Map<string, string>()
-      const services: string[] = []
-      for (let i: number = 0; i < 5; i++) {
-        services.push(`deploySvc${i}`)
-      }
+    it('testServiceHotUpdate1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const config: collections.Map<string, string> = new collections.Map<string, string>()
+        const services: string[] = []
+        for (let i: number = 0; i < 5; i++) {
+          services.push(`deploySvc${i}`)
+        }
 
-      for (const svc of services) {
-        await hotUpdater.deploy(svc, '1.0.0', config)
-      }
+        for (const svc of services) {
+          await hotUpdater.deploy(svc, '1.0.0', config)
+        }
 
-      expect(hotUpdater.getUpdateCount()).assertEqual(5)
+        expect(hotUpdater.getUpdateCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testServiceHotUpdate1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -330,18 +390,24 @@ export default function ServiceHotUpdateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testServiceHotUpdate1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const config: collections.Map<string, string> = new collections.Map<string, string>()
-      const services: string[] = []
-      for (let i: number = 0; i < 10; i++) {
-        services.push(`deploySvc${i}`)
-      }
+    it('testServiceHotUpdate1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const config: collections.Map<string, string> = new collections.Map<string, string>()
+        const services: string[] = []
+        for (let i: number = 0; i < 10; i++) {
+          services.push(`deploySvc${i}`)
+        }
 
-      for (const svc of services) {
-        await hotUpdater.deploy(svc, '1.0.0', config)
-      }
+        for (const svc of services) {
+          await hotUpdater.deploy(svc, '1.0.0', config)
+        }
 
-      expect(hotUpdater.getUpdateCount()).assertEqual(10)
+        expect(hotUpdater.getUpdateCount()).assertEqual(10)
+      } catch (error) {
+        console.error("testServiceHotUpdate1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -352,9 +418,15 @@ export default function ServiceHotUpdateTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testServiceHotUpdate1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await hotUpdater.rollback('nonexistent', '1.0.0')
-      expect(result).assertFalse()
+    it('testServiceHotUpdate1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await hotUpdater.rollback('nonexistent', '1.0.0')
+        expect(result).assertFalse()
+      } catch (error) {
+        console.error("testServiceHotUpdate1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

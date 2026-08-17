@@ -164,7 +164,7 @@ export default function ResultCollectIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testResultCollectIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testResultCollectIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const collector: IRResultCollector = new IRResultCollector(new collections.Map<number, string>())
       collector.total_ = 100
       const stats: number[] = collector.getIRStats()
@@ -179,7 +179,7 @@ export default function ResultCollectIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testResultCollectIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testResultCollectIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const collector: LargeResultCollector = new LargeResultCollector(new collections.Map<number, string>())
       for (let i = 0; i < 1025; i++) {
         collector.results_.set(i, `result_${i}`)
@@ -195,21 +195,27 @@ export default function ResultCollectIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testResultCollectIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const collector: IRConsistentCollector = new IRConsistentCollector(new collections.Map<number, number>(), new ArkTSUtils.locks.AsyncLock())
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 100; i++) {
-        tasks.push(new taskpool.Task(computeResult, i))
+    it('testResultCollectIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const collector: IRConsistentCollector = new IRConsistentCollector(new collections.Map<number, number>(), new ArkTSUtils.locks.AsyncLock())
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 100; i++) {
+          tasks.push(new taskpool.Task(computeResult, i))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          await collector.addResult(results[i] as number)
+        }
+        expect(collector.count_).assertEqual(100)
+      } catch (error) {
+        console.error("testResultCollectIR0300 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        await collector.addResult(results[i] as number)
-      }
-      expect(collector.count_).assertEqual(100)
+      done();
     })
 
     /**
@@ -220,7 +226,7 @@ export default function ResultCollectIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testResultCollectIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testResultCollectIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const collector: StatsCollector = new StatsCollector()
       for (let i = 0; i < 50; i++) {
         collector.incrementSuccess()
@@ -236,7 +242,7 @@ export default function ResultCollectIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testResultCollectIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testResultCollectIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const collector: ArrayResultCollector = new ArrayResultCollector(new collections.Array<number>())
       for (let i = 0; i < 100; i++) {
         collector.results_.push(i)
@@ -252,7 +258,7 @@ export default function ResultCollectIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testResultCollectIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testResultCollectIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const collector1: SharedResultCollector = new SharedResultCollector()
       const collector2: SharedResultCollector = new SharedResultCollector()
       expect(collector1.total_).assertEqual(0)
@@ -268,21 +274,27 @@ export default function ResultCollectIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testResultCollectIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const collector: StableResultCollector = new StableResultCollector(new collections.Map<number, number>(), new ArkTSUtils.locks.AsyncLock())
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 256; i++) {
-        tasks.push(new taskpool.Task(computeResult, i))
+    it('testResultCollectIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const collector: StableResultCollector = new StableResultCollector(new collections.Map<number, number>(), new ArkTSUtils.locks.AsyncLock())
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 256; i++) {
+          tasks.push(new taskpool.Task(computeResult, i))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          await collector.addResult(results[i] as number)
+        }
+        expect(collector.results_.size).assertEqual(256)
+      } catch (error) {
+        console.error("testResultCollectIR0700 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        await collector.addResult(results[i] as number)
-      }
-      expect(collector.results_.size).assertEqual(256)
+      done();
     })
 
     /**
@@ -293,7 +305,7 @@ export default function ResultCollectIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testResultCollectIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testResultCollectIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const collector: BoundaryCollector = new BoundaryCollector(new collections.Map<string, number>())
       for (let i = 0; i < 1024; i++) {
         collector.results_.set(`result_${i}`, i)
@@ -309,7 +321,7 @@ export default function ResultCollectIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testResultCollectIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testResultCollectIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const collector: BoundaryCollector = new BoundaryCollector(new collections.Map<string, number>())
       for (let i = 0; i < 1025; i++) {
         collector.results_.set(`result_${i}`, i)
@@ -327,20 +339,26 @@ export default function ResultCollectIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testResultCollectIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const collector: CrossThreadCollector = new CrossThreadCollector()
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readTotalFromCollector, collector))
+    it('testResultCollectIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const collector: CrossThreadCollector = new CrossThreadCollector()
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(readTotalFromCollector, collector))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(100)
+        }
+      } catch (error) {
+        console.error("testResultCollectIR1000 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(100)
-      }
+      done();
     })
 
     /**
@@ -351,7 +369,7 @@ export default function ResultCollectIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testResultCollectIR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testResultCollectIR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const collector: TimestampCollector = new TimestampCollector()
       const start: number = collector.getStartTime()
       expect(start > 0).assertTrue()

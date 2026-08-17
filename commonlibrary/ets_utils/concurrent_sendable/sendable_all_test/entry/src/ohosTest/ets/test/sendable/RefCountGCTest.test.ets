@@ -151,12 +151,18 @@ export default function RefCountGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRefCountGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const data: RefCountGCData = await manager.create('init', 1)
-      expect(data.getId()).assertEqual(1)
-      expect(data.getData()).assertEqual('data-1')
-      expect(data.getAccessCount()).assertEqual(0)
-      expect(manager.getSize()).assertEqual(1)
+    it('testRefCountGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountGCData = await manager.create('init', 1)
+        expect(data.getId()).assertEqual(1)
+        expect(data.getData()).assertEqual('data-1')
+        expect(data.getAccessCount()).assertEqual(0)
+        expect(manager.getSize()).assertEqual(1)
+      } catch (error) {
+        console.error("testRefCountGC0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -167,14 +173,20 @@ export default function RefCountGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRefCountGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: RefCountGCData = await manager.create('multi_ref', 2)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(accessRefCountTask, data))
+    it('testRefCountGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountGCData = await manager.create('multi_ref', 2)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(accessRefCountTask, data))
+        }
+        await executeRefCountTasks(tasks)
+        expect(data.getAccessCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testRefCountGC0200 failed");
+        expect(false).assertFail();
       }
-      await executeRefCountTasks(tasks)
-      expect(data.getAccessCount()).assertEqual(3)
+      done();
     })
 
     /**
@@ -185,12 +197,18 @@ export default function RefCountGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRefCountGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: RefCountGCData = await manager.create('decrease', 3)
-      expect(manager.getSize()).assertEqual(1)
+    it('testRefCountGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountGCData = await manager.create('decrease', 3)
+        expect(manager.getSize()).assertEqual(1)
 
-      await manager.delete('decrease')
-      expect(manager.getSize()).assertEqual(0)
+        await manager.delete('decrease')
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testRefCountGC0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -201,14 +219,20 @@ export default function RefCountGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRefCountGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 5; i++) {
-        await manager.create(`temp_${i}`, i)
-      }
-      expect(manager.getSize()).assertEqual(5)
+    it('testRefCountGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 5; i++) {
+          await manager.create(`temp_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(5)
 
-      await manager.clearAll()
-      expect(manager.getSize()).assertEqual(0)
+        await manager.clearAll()
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testRefCountGC0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -219,12 +243,18 @@ export default function RefCountGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRefCountGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: RefCountGCData = await manager.create('cross_thread', 5)
-      const task: taskpool.Task = new taskpool.Task(readRefCountTask, data)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertEqual(5)
-      expect(data.getId()).assertEqual(5)
+    it('testRefCountGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountGCData = await manager.create('cross_thread', 5)
+        const task: taskpool.Task = new taskpool.Task(readRefCountTask, data)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertEqual(5)
+        expect(data.getId()).assertEqual(5)
+      } catch (error) {
+        console.error("testRefCountGC0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -235,14 +265,20 @@ export default function RefCountGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRefCountGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: RefCountGCData = await manager.create('concurrent', 7)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(accessRefCountTask, data))
+    it('testRefCountGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountGCData = await manager.create('concurrent', 7)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(accessRefCountTask, data))
+        }
+        await executeRefCountTasks(tasks)
+        expect(data.getAccessCount()).assertEqual(10)
+      } catch (error) {
+        console.error("testRefCountGC0600 failed");
+        expect(false).assertFail();
       }
-      await executeRefCountTasks(tasks)
-      expect(data.getAccessCount()).assertEqual(10)
+      done();
     })
 
     /**
@@ -253,11 +289,17 @@ export default function RefCountGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRefCountGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: RefCountGCData = await manager.create('persist', 8)
-      expect(data.getId()).assertEqual(8)
-      expect(data.getData()).assertEqual('data-8')
-      expect(manager.getSize()).assertEqual(1)
+    it('testRefCountGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountGCData = await manager.create('persist', 8)
+        expect(data.getId()).assertEqual(8)
+        expect(data.getData()).assertEqual('data-8')
+        expect(manager.getSize()).assertEqual(1)
+      } catch (error) {
+        console.error("testRefCountGC0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -268,12 +310,18 @@ export default function RefCountGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRefCountGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 100; i++) {
-        const mgr: RefCountGCManager = new RefCountGCManager(new collections.Map<string, RefCountGCData>(), new ArkTSUtils.locks.AsyncLock())
-        await mgr.create(`batch_${i}`, i)
+    it('testRefCountGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 100; i++) {
+          const mgr: RefCountGCManager = new RefCountGCManager(new collections.Map<string, RefCountGCData>(), new ArkTSUtils.locks.AsyncLock())
+          await mgr.create(`batch_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testRefCountGC0800 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getSize()).assertEqual(0)
+      done();
     })
 
     /**
@@ -284,15 +332,21 @@ export default function RefCountGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRefCountGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const parent: RefCountGCData = await manager.create('parent', 1)
-      const child: RefCountGCData = await manager.create('child', 2)
-      expect(manager.getSize()).assertEqual(2)
+    it('testRefCountGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const parent: RefCountGCData = await manager.create('parent', 1)
+        const child: RefCountGCData = await manager.create('child', 2)
+        expect(manager.getSize()).assertEqual(2)
 
-      await manager.delete('child')
-      expect(manager.getSize()).assertEqual(1)
+        await manager.delete('child')
+        expect(manager.getSize()).assertEqual(1)
 
-      expect(parent.getId()).assertEqual(1)
+        expect(parent.getId()).assertEqual(1)
+      } catch (error) {
+        console.error("testRefCountGC0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -303,11 +357,17 @@ export default function RefCountGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRefCountGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 5; i++) {
-        await manager.create(`small_${i}`, i)
+    it('testRefCountGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 5; i++) {
+          await manager.create(`small_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(5)
+      } catch (error) {
+        console.error("testRefCountGC1000 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getSize()).assertEqual(5)
+      done();
     })
   })
 }

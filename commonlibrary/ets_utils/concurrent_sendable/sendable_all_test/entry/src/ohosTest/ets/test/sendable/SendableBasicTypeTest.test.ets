@@ -218,13 +218,18 @@ export default function SendableBasicTypeTest(): void {
      */
     it('testSendableBasicType1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      const instance = new NumberSendable()
-      instance.numValue_ = 10
-      const task = new taskpool.Task(modifyNumberInTask, instance)
-      const result = await taskpool.execute(task) as number
-      expect(result).assertEqual(11)
-      expect(instance.numValue_).assertEqual(11)
-      done()
+      try {
+        const instance = new NumberSendable()
+        instance.numValue_ = 10
+        const task = new taskpool.Task(modifyNumberInTask, instance)
+        const result = await taskpool.execute(task) as number
+        expect(result).assertEqual(11)
+        expect(instance.numValue_).assertEqual(11)
+      } catch (error) {
+        console.error("testSendableBasicType1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -237,12 +242,17 @@ export default function SendableBasicTypeTest(): void {
      */
     it('testSendableBasicType1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      const instance = new NumberSendable()
-      instance.numValue_ = 42
-      const task = new taskpool.Task(readNumberInTask, instance)
-      const result = await taskpool.execute(task) as number
-      expect(result).assertEqual(42)
-      done()
+      try {
+        const instance = new NumberSendable()
+        instance.numValue_ = 42
+        const task = new taskpool.Task(readNumberInTask, instance)
+        const result = await taskpool.execute(task) as number
+        expect(result).assertEqual(42)
+      } catch (error) {
+        console.error("testSendableBasicType1300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -255,14 +265,19 @@ export default function SendableBasicTypeTest(): void {
      */
     it('testSendableBasicType1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      const instance = new NumberSendable()
-      const iterations: number = 10
-      for (let i = 0; i < iterations; i++) {
-        const task = new taskpool.Task(modifyNumberInTask, instance)
-        await taskpool.execute(task)
+      try {
+        const instance = new NumberSendable()
+        const iterations: number = 10
+        for (let i = 0; i < iterations; i++) {
+          const task = new taskpool.Task(modifyNumberInTask, instance)
+          await taskpool.execute(task)
+        }
+        expect(instance.numValue_).assertEqual(iterations)
+      } catch (error) {
+        console.error("testSendableBasicType1400 failed");
+        expect(false).assertFail();
       }
-      expect(instance.numValue_).assertEqual(iterations)
-      done()
+      done();
     })
 
     /**
