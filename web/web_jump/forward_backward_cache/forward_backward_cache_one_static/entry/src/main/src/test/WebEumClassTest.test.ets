@@ -26,7 +26,7 @@ import emitter from '@ohos.events.emitter';
 let testAbilityContext:common.UIAbilityContext;
 let emitKey = ''
 
-export default function WebEumClassTest() {
+export default function WebEumClassTest(): void {
   describe('WebEumClassTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')

@@ -28,7 +28,7 @@ let emitKey = ''
 
 
 
-export default function OnTitleReceive() {
+export default function OnTitleReceive(): void {
   describe('OnTitleReceive', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')

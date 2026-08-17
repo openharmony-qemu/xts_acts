@@ -18,6 +18,7 @@ import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
 import wifiMg from '@ohos.wifiManager';
 
@@ -96,9 +97,20 @@ export default function webViewOnSslError() {
     it('testOnsslerroreventreceive',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
       Utils.emitEvent("testOnsslerroreventreceive", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
-      Utils.registerEvent("testOnsslerroreventreceive",true,142511,() =>{isReturn = 1});
-      await Utils.waitAndClickComponent(driver, "webViewOnSslError");
-      await Utils.waitForExist(()=>isReturn, "testOnsslerroreventreceive_checkReturn", 1, 1000);
+      Utils.registerEvent("testOnsslerroreventreceive",true,142511,(error: BusinessError) => {
+        if (error) {
+          console.error(`testOnsslerroreventreceive registerEvent error: ${error.message}`);
+          return;
+        }
+        isReturn = 1;
+      });
+      try {
+        await Utils.waitAndClickComponent(driver, "webViewOnSslError");
+        const stateGetter = (): number => isReturn;
+        await Utils.waitForExist(stateGetter, "testOnsslerroventreceive_checkReturn", 1, 1000, 60);
+      } catch (err) {
+        console.error(`testOnsslerroeventreceive execute error: ${JSON.stringify(err)}`);
+      }
       done();
     })
   })

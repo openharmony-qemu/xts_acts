@@ -27,7 +27,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 
 let testAbilityContext:common.UIAbilityContext;
 
-export default function webCookieManagerTest() {
+export default function webCookieManagerTest(): void {
 
   describe('componentLifeCycleTestOne', (): void => {
     beforeAll(async (): Promise<void> => {
