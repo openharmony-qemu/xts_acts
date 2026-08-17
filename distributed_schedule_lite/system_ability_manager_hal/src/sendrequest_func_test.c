@@ -549,4 +549,25 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0090, Function | MediumTest 
     }
 }
 
+
+/**
+ * @tc.name   testSendRequest0100
+ * @tc.number DMSLite_SAMGR_SendRequest_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0100, Function | MediumTest | Level2)
+{
+    Request request = {.msgId = MSG_NO, .msgValue = 0};
+    Identity identity = {0, 0, NULL};
+    int32 result = SAMGR_SendRequest(NULL, &request, NULL);
+    TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
+    result = SAMGR_SendRequest(&identity, NULL, NULL);
+    TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
+    result = SAMGR_SendRequest(NULL, NULL, NULL);
+    TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
+}
+
 RUN_TEST_SUITE(SendRequestTestSuite);
