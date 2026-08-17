@@ -260,8 +260,13 @@ export default function AsyncLockConstructorTest(): void {
         const lockAsyncCallback6 = (): void => {
           used = true;
         };
-        await lock.lockAsync<void>(
-          lockAsyncCallback6);
+        try {
+          await lock.lockAsync<void>(
+            lockAsyncCallback6);
+        } catch (error) {
+          console.error(`testAsyncLockConstructor1100 useLock failed: ${error}`);
+          throw error;
+        }
       };
       await useLock();
       expect(used).assertTrue();
