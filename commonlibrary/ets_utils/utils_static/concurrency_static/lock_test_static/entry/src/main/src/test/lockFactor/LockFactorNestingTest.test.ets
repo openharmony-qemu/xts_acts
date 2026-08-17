@@ -515,7 +515,8 @@ export default function LockFactorNestingTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorNestingTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorNestingTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const worker = new EAWorker('lockFactorNestCT1');
       worker.start();
@@ -535,6 +536,11 @@ export default function LockFactorNestingTest(): void {
       } finally {
         worker.quit();
       }
+      } catch (error) {
+        console.error(`LockFactorNestingTest0800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -545,7 +551,8 @@ export default function LockFactorNestingTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorNestingTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorNestingTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const worker = new EAWorker('lockFactorNest01');
@@ -562,6 +569,11 @@ export default function LockFactorNestingTest(): void {
         mutex.unlock();
       }
       expect(counter.load()).assertEqual(2);
+      } catch (error) {
+        console.error(`LockFactorNestingTest0900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -572,7 +584,8 @@ export default function LockFactorNestingTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorNestingTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorNestingTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const worker1 = new EAWorker('lockFactorNest02');
       const worker2 = new EAWorker('lockFactorNest03');
@@ -587,6 +600,11 @@ export default function LockFactorNestingTest(): void {
         worker1.quit();
         worker2.quit();
       }
+      } catch (error) {
+        console.error(`LockFactorNestingTest1000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -633,11 +651,17 @@ export default function LockFactorNestingTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorNestingTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorNestingTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(nestedCountingTask, counter));
       await p1;
       expect(counter.load()).assertEqual(2);
+      } catch (error) {
+        console.error(`LockFactorNestingTest1200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -687,7 +711,8 @@ export default function LockFactorNestingTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorNestingTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorNestingTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutexA = new Mutex();
       const mutexB = new Mutex();
       const timeData = new NestingTimeData();
@@ -698,6 +723,11 @@ export default function LockFactorNestingTest(): void {
       expect(timeData.innerLockTime).assertLargerOrEqual(timeData.outerLockTime);
       expect(timeData.innerUnlockTime).assertLargerOrEqual(timeData.innerLockTime);
       expect(timeData.outerUnlockTime).assertLargerOrEqual(timeData.innerUnlockTime);
+      } catch (error) {
+        console.error(`LockFactorNestingTest1400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -708,11 +738,17 @@ export default function LockFactorNestingTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorNestingTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorNestingTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(threeLayerMutexTask, counter));
       await p1;
       expect(counter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`LockFactorNestingTest1500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -758,13 +794,19 @@ export default function LockFactorNestingTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorNestingTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorNestingTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(mixedThreeLayerTask, mutex, rwlock, counter));
       await p1;
       expect(counter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`LockFactorNestingTest1700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -775,12 +817,18 @@ export default function LockFactorNestingTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorNestingTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorNestingTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(dynamicNestingTask, counter, 3));
       let p2 = taskpool.execute(new taskpool.Task(dynamicNestingTask, counter, 5));
       await Promise.all([p1, p2]);
       expect(counter.load()).assertEqual(2);
+      } catch (error) {
+        console.error(`LockFactorNestingTest1800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -791,11 +839,17 @@ export default function LockFactorNestingTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('LockFactorNestingTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('LockFactorNestingTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(nestedPerformanceTask, counter));
       await p1;
       expect(counter.load()).assertEqual(100);
+      } catch (error) {
+        console.error(`LockFactorNestingTest1900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -806,11 +860,17 @@ export default function LockFactorNestingTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('LockFactorNestingTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('LockFactorNestingTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(nestedMemoryTask, counter));
       await p1;
       expect(counter.load()).assertEqual(50);
+      } catch (error) {
+        console.error(`LockFactorNestingTest2000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
     /**
      * @tc.name    LockFactorNestingTest2100
@@ -820,7 +880,8 @@ export default function LockFactorNestingTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorNestingTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorNestingTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new NestingSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(nestedTimeoutHolderTask, mutex, counter));
@@ -835,6 +896,11 @@ export default function LockFactorNestingTest(): void {
         mutex.unlock();
       }
       expect(counter.value).assertEqual(3);
+      } catch (error) {
+        console.error(`LockFactorNestingTest2100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

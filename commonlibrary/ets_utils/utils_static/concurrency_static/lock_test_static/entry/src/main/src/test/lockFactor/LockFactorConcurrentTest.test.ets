@@ -196,7 +196,8 @@ export default function LockFactorConcurrentTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockFactorConcurrentTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockFactorConcurrentTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(mutexContentionTask, mutex, counter));
@@ -211,6 +212,11 @@ export default function LockFactorConcurrentTest(): void {
       let p10 = taskpool.execute(new taskpool.Task(mutexContentionTask, mutex, counter));
       await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
       expect(counter.load()).assertEqual(1000);
+      } catch (error) {
+        console.error(`LockFactorConcurrentTest0100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -221,7 +227,8 @@ export default function LockFactorConcurrentTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockFactorConcurrentTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockFactorConcurrentTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(readLockSharingTask, rwlock, counter));
@@ -236,6 +243,11 @@ export default function LockFactorConcurrentTest(): void {
       let p10 = taskpool.execute(new taskpool.Task(readLockSharingTask, rwlock, counter));
       await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
       expect(counter.load()).assertEqual(10);
+      } catch (error) {
+        console.error(`LockFactorConcurrentTest0200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -246,7 +258,8 @@ export default function LockFactorConcurrentTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockFactorConcurrentTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockFactorConcurrentTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(writeLockExclusionTask, rwlock, counter));
@@ -261,6 +274,11 @@ export default function LockFactorConcurrentTest(): void {
       let p10 = taskpool.execute(new taskpool.Task(writeLockExclusionTask, rwlock, counter));
       await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
       expect(counter.load()).assertEqual(10);
+      } catch (error) {
+        console.error(`LockFactorConcurrentTest0300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -271,7 +289,8 @@ export default function LockFactorConcurrentTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorConcurrentTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorConcurrentTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(lockPassingTask, mutex, counter));
@@ -279,6 +298,11 @@ export default function LockFactorConcurrentTest(): void {
       let p3 = taskpool.execute(new taskpool.Task(lockPassingTask, mutex, counter));
       await Promise.all([p1, p2, p3]);
       expect(counter.load()).assertEqual(3);
+      } catch (error) {
+        console.error(`LockFactorConcurrentTest0400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -289,7 +313,8 @@ export default function LockFactorConcurrentTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorConcurrentTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorConcurrentTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const worker = new EAWorker('lockFactorEA01');
       worker.start();
       try {
@@ -298,6 +323,11 @@ export default function LockFactorConcurrentTest(): void {
       } finally {
         worker.quit();
       }
+      } catch (error) {
+        console.error(`LockFactorConcurrentTest0500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -308,7 +338,8 @@ export default function LockFactorConcurrentTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockFactorConcurrentTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockFactorConcurrentTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
@@ -333,6 +364,11 @@ export default function LockFactorConcurrentTest(): void {
       let p20 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
       await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20]);
       expect(counter.load()).assertEqual(20);
+      } catch (error) {
+        console.error(`LockFactorConcurrentTest0600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -343,7 +379,8 @@ export default function LockFactorConcurrentTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('LockFactorConcurrentTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('LockFactorConcurrentTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
@@ -368,6 +405,11 @@ export default function LockFactorConcurrentTest(): void {
       let p20 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
       await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20]);
       expect(counter.load()).assertEqual(20);
+      } catch (error) {
+        console.error(`LockFactorConcurrentTest0700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -378,13 +420,19 @@ export default function LockFactorConcurrentTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorConcurrentTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorConcurrentTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new LockFactorSharedCounter();
       let p1 = taskpool.execute(new taskpool.Task(taskPoolShareTaskA, mutex, counter));
       let p2 = taskpool.execute(new taskpool.Task(taskPoolShareTaskB, mutex, counter));
       await Promise.all([p1, p2]);
       expect(counter.value).assertEqual(2);
+      } catch (error) {
+        console.error(`LockFactorConcurrentTest0800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -395,11 +443,13 @@ export default function LockFactorConcurrentTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorConcurrentTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorConcurrentTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const task = new taskpool.Task(callbackLockTask, mutex, counter);
-      task.onReceiveData(() => {
+      task.onReceiveData((data: string): void => {
+        console.info('received data:', data);
         mutex.lock();
         try {
           counter.fetchAdd(1);
@@ -411,6 +461,11 @@ export default function LockFactorConcurrentTest(): void {
       // The task incremented once under the Mutex; the onReceiveData callback
       // (triggered by sendData) incremented once more under the same Mutex.
       expect(counter.load()).assertEqual(2);
+      } catch (error) {
+        console.error(`LockFactorConcurrentTest0900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -421,7 +476,8 @@ export default function LockFactorConcurrentTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorConcurrentTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorConcurrentTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const stats = new MixedRWStats();
       const counter = new AtomicInt(0);
@@ -443,6 +499,11 @@ export default function LockFactorConcurrentTest(): void {
       expect(stats.readWithWriter.load()).assertEqual(0);
       // Reader/writer exclusion is verified by the zero cross-presence counters above.
       // Reader-reader overlap depends on scheduling and is not asserted deterministically.
+      } catch (error) {
+        console.error(`LockFactorConcurrentTest1000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

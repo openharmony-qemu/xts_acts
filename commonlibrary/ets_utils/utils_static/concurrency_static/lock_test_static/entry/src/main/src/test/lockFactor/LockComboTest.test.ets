@@ -661,7 +661,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let callbackExecuted: boolean = false
       let task: taskpool.Task = new taskpool.Task((): string => {
@@ -676,6 +677,11 @@ export default function LockComboTest(): void {
       }
       expect(result).assertEqual('data')
       expect(callbackExecuted).assertTrue()
+      } catch (error) {
+        console.error(`LockComboTest1900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // === Section 3.1: Same-thread Lock Nesting (2100-2700) ===
@@ -839,7 +845,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let order: string[] = []
       mutex.lock()
@@ -851,6 +858,11 @@ export default function LockComboTest(): void {
       expect(order.length).assertEqual(3)
       expect(order[0]).assertEqual('main_locked')
       expect(order[1]).assertEqual('waited')
+      } catch (error) {
+        console.error(`LockComboTest2600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -861,7 +873,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let taskLocked: boolean = false
       let mainProceeded: boolean = false
@@ -874,6 +887,11 @@ export default function LockComboTest(): void {
       mutex.unlock()
       expect(taskLocked).assertTrue()
       expect(mainProceeded).assertTrue()
+      } catch (error) {
+        console.error(`LockComboTest2700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -1071,7 +1089,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let rwLock: RWLock = new RWLock()
       let callbackDone: boolean = false
       let task: taskpool.Task = new taskpool.Task((): string => {
@@ -1084,6 +1103,11 @@ export default function LockComboTest(): void {
       rl.unlock()
       expect(result).assertEqual('rw_data')
       expect(callbackDone).assertTrue()
+      } catch (error) {
+        console.error(`LockComboTest3500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -1094,7 +1118,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let task: taskpool.Task = new taskpool.Task((): int => {
         return 42
@@ -1109,6 +1134,11 @@ export default function LockComboTest(): void {
       }
       expect(lockDone).assertTrue()
       expect(result).assertEqual(42)
+      } catch (error) {
+        console.error(`LockComboTest3600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -1119,7 +1149,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let task: taskpool.Task = new taskpool.Task((): void => {
         throw new Error('task error')
@@ -1133,6 +1164,11 @@ export default function LockComboTest(): void {
         mutex.unlock()
       }
       expect(failCallbackDone).assertTrue()
+      } catch (error) {
+        console.error(`LockComboTest3700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -1143,7 +1179,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let task: taskpool.Task = new taskpool.Task((): string => {
         return 'outer'
@@ -1156,6 +1193,11 @@ export default function LockComboTest(): void {
       let innerResult: int = await taskpool.execute(innerTask) as int
       mutex.unlock()
       expect(innerResult).assertEqual(42)
+      } catch (error) {
+        console.error(`LockComboTest3800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -1188,7 +1230,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let task: taskpool.Task = new taskpool.Task((): string => {
         return 'protected_data'
@@ -1203,6 +1246,11 @@ export default function LockComboTest(): void {
       }
       expect(lockDone).assertTrue()
       expect(result).assertEqual('protected_data')
+      } catch (error) {
+        console.error(`LockComboTest4000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -1234,7 +1282,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let task: taskpool.Task = new taskpool.Task((): string => {
         return 'first'
@@ -1249,6 +1298,11 @@ export default function LockComboTest(): void {
       }
       expect(result).assertEqual('first')
       expect(nestedReceived).assertTrue()
+      } catch (error) {
+        console.error(`LockComboTest4200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -1259,7 +1313,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let task: taskpool.Task = new taskpool.Task((): string => {
         return 'trigger'
@@ -1274,6 +1329,11 @@ export default function LockComboTest(): void {
       }
       expect(result).assertEqual('trigger')
       expect(triggeredAndLocked).assertTrue()
+      } catch (error) {
+        console.error(`LockComboTest4300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // === Section 4.3: EAWorker Callback Lock Usage (4700-4900) ===
@@ -1286,7 +1346,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       await lockComboSleep(100)
       let lockOk: boolean = false
@@ -1297,6 +1358,11 @@ export default function LockComboTest(): void {
         mutex.unlock()
       }
       expect(lockOk).assertTrue()
+      } catch (error) {
+        console.error(`LockComboTest4400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -1935,7 +2001,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('LockComboTest7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('LockComboTest7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let counter: int = 0
       let taskCount: int = 10
@@ -1950,6 +2017,11 @@ export default function LockComboTest(): void {
         mutex.unlock()
       }
       expect(counter).assertEqual(taskCount)
+      } catch (error) {
+        console.error(`LockComboTest7000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     // === Section 7.1: Exception Recovery Stability (7600-8000) ===
@@ -2246,7 +2318,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       // Same-coroutine read->write upgrade is unsupported: WriteLock waits for all readers, including itself.
       // Cross-coroutine observable behavior: writer stays blocked until the reader releases.
       let rwLock: RWLock = new RWLock()
@@ -2259,6 +2332,11 @@ export default function LockComboTest(): void {
       rl.unlock()
       await p
       expect(done.load()).assertEqual(1)
+      } catch (error) {
+        console.error(`LockComboTest8200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -2269,7 +2347,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       // Same-coroutine write->read downgrade is unsupported: ReadLock.lock() suspends while WriteLock is held by the
       // same coroutine, so WriteLock.unlock() is unreachable. Cross-coroutine handoff is validated instead.
       let rwLock: RWLock = new RWLock()
@@ -2300,6 +2379,11 @@ export default function LockComboTest(): void {
       } finally {
         worker.quit()
       }
+      } catch (error) {
+        console.error(`LockComboTest8300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -2310,7 +2394,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockComboTest8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let mutexA: Mutex = new Mutex()
       let mutexB: Mutex = new Mutex()
       let counter: AtomicInt = new AtomicInt(0)
@@ -2322,6 +2407,11 @@ export default function LockComboTest(): void {
       await Promise.all<Any>(promises)
       // Nested locking keeps the shared counter consistent under concurrency
       expect(counter.load()).assertEqual(taskCount)
+      } catch (error) {
+        console.error(`LockComboTest8400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -2332,7 +2422,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockComboTest8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let rw1: RWLock = new RWLock()
       let rw2: RWLock = new RWLock()
       let counter: AtomicInt = new AtomicInt(0)
@@ -2344,6 +2435,11 @@ export default function LockComboTest(): void {
       await Promise.all<Any>(promises)
       // Nested write locks keep the shared counter consistent under concurrency
       expect(counter.load()).assertEqual(taskCount)
+      } catch (error) {
+        console.error(`LockComboTest8500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -2354,7 +2450,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let done: AtomicInt = new AtomicInt(0)
       mutex.lock()
@@ -2373,6 +2470,11 @@ export default function LockComboTest(): void {
       } finally {
         worker.quit()
       }
+      } catch (error) {
+        console.error(`LockComboTest8600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -2383,7 +2485,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let held: AtomicInt = new AtomicInt(0)
       let release: AtomicInt = new AtomicInt(0)
@@ -2412,6 +2515,11 @@ export default function LockComboTest(): void {
       } finally {
         worker.quit()
       }
+      } catch (error) {
+        console.error(`LockComboTest8700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -2422,7 +2530,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let w1Held: AtomicInt = new AtomicInt(0)
       let releaseW1: AtomicInt = new AtomicInt(0)
@@ -2454,6 +2563,11 @@ export default function LockComboTest(): void {
         w2.quit()
         w1.quit()
       }
+      } catch (error) {
+        console.error(`LockComboTest8800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -2464,11 +2578,13 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockComboTest8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockComboTest8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let callbackCount: AtomicInt = new AtomicInt(0)
       let task: taskpool.Task = new taskpool.Task(lockComboSendDataTask, 1)
-      task.onReceiveData((): void => {
+      task.onReceiveData((data: int): void => {
+        console.info('received data:', data);
         mutex.lock()
         callbackCount.fetchAdd(1)
         mutex.unlock()
@@ -2476,6 +2592,11 @@ export default function LockComboTest(): void {
       let result: int = await taskpool.execute(task) as int
       expect(result).assertEqual(1)
       expect(callbackCount.load()).assertEqual(1)
+      } catch (error) {
+        console.error(`LockComboTest8900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -2486,7 +2607,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockComboTest9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockComboTest9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let counter: int = 0
       let tickCount: int = 0
@@ -2514,6 +2636,11 @@ export default function LockComboTest(): void {
       } finally {
         clearInterval(timerId)
       }
+      } catch (error) {
+        console.error(`LockComboTest9000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -2524,7 +2651,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('LockComboTest9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('LockComboTest9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let counter: AtomicInt = new AtomicInt(0)
       let taskCount: int = 10
@@ -2534,6 +2662,11 @@ export default function LockComboTest(): void {
       }
       await Promise.all<Any>(promises)
       expect(counter.load()).assertEqual(taskCount * 100)
+      } catch (error) {
+        console.error(`LockComboTest9100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -2544,7 +2677,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('LockComboTest9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('LockComboTest9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let payload: string = lockComboBuildPayload(1050)
       let expectedLen: int = payload.length
@@ -2557,6 +2691,11 @@ export default function LockComboTest(): void {
       expect(len.load()).assertEqual(expectedLen)
       expect(sum.load()).assertEqual(expectedSum)
       expect(lockComboChecksum(payload)).assertEqual(expectedSum)
+      } catch (error) {
+        console.error(`LockComboTest9200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -2567,7 +2706,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('LockComboTest9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('LockComboTest9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
       let rwLock: RWLock = new RWLock()
       let data: string[] = [lockComboBuildPayload(525)]
       let chunk: string = lockComboBuildPayload(525)
@@ -2580,6 +2720,11 @@ export default function LockComboTest(): void {
       await taskpool.execute(new taskpool.Task(lockComboReadBigDataTask, rwLock, data, expectedLen, observed))
       expect(observed.load()).assertEqual(expectedLen)
       expect(data[0].length).assertEqual(expectedLen)
+      } catch (error) {
+        console.error(`LockComboTest9300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -2590,7 +2735,8 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('LockComboTest9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('LockComboTest9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
       let taskCount: int = 5
       let mutexes: Mutex[] = []
       let payloads: string[] = []
@@ -2608,6 +2754,11 @@ export default function LockComboTest(): void {
       }
       await Promise.all<Any>(promises)
       expect(ok.load()).assertEqual(taskCount)
+      } catch (error) {
+        console.error(`LockComboTest9400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -2650,13 +2801,15 @@ export default function LockComboTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('LockComboTest9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('LockComboTest9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
       let mutex: Mutex = new Mutex()
       let callbackCount: AtomicInt = new AtomicInt(0)
       let rounds: int = 20
       for (let i: int = 0; i < rounds; i++) {
         let task: taskpool.Task = new taskpool.Task(lockComboSendDataTask, i)
-        task.onReceiveData((): void => {
+        task.onReceiveData((data: int): void => {
+          console.info('received data:', data);
           mutex.lock()
           callbackCount.fetchAdd(1)
           mutex.unlock()
@@ -2664,6 +2817,11 @@ export default function LockComboTest(): void {
         await taskpool.execute(task)
       }
       expect(callbackCount.load()).assertEqual(rounds)
+      } catch (error) {
+        console.error(`LockComboTest9600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

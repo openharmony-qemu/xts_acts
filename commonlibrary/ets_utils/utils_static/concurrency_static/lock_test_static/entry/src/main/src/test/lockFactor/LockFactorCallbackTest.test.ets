@@ -174,11 +174,13 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorCallbackTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorCallbackTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const task = new taskpool.Task(callbackMutexTask, counter);
-      task.onReceiveData(() => {
+      task.onReceiveData((data: string): void => {
+        console.info('received data:', data);
         mutex.lock();
         try {
           counter.fetchAdd(1);
@@ -188,6 +190,11 @@ export default function LockFactorCallbackTest(): void {
       });
       await taskpool.execute(task);
       expect(counter.load()).assertEqual(2);
+      } catch (error) {
+        console.error(`LockFactorCallbackTest0100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -198,11 +205,13 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorCallbackTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorCallbackTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
       const task = new taskpool.Task(callbackRWLockTask, counter);
-      task.onReceiveData(() => {
+      task.onReceiveData((data: string): void => {
+        console.info('received data:', data);
         const readLock = rwlock.readLock();
         readLock.lock();
         try {
@@ -213,6 +222,11 @@ export default function LockFactorCallbackTest(): void {
       });
       await taskpool.execute(task);
       expect(counter.load()).assertEqual(2);
+      } catch (error) {
+        console.error(`LockFactorCallbackTest0200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -223,7 +237,8 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorCallbackTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorCallbackTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const task = new taskpool.Task(succeededTask, counter);
@@ -237,6 +252,11 @@ export default function LockFactorCallbackTest(): void {
       });
       await taskpool.execute(task);
       expect(counter.load()).assertEqual(2);
+      } catch (error) {
+        console.error(`LockFactorCallbackTest0300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -247,11 +267,13 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorCallbackTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorCallbackTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const task = new taskpool.Task(failedTask);
-      task.onExecutionFailed(() => {
+      task.onExecutionFailed((error: Error): void => {
+        console.error(`execution failed: ${error.message}`);
         mutex.lock();
         try {
           counter.fetchAdd(1);
@@ -268,6 +290,11 @@ export default function LockFactorCallbackTest(): void {
       }
       expect(executeFailed).assertTrue();
       expect(counter.load()).assertEqual(1);
+      } catch (error) {
+        console.error(`LockFactorCallbackTest0400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -278,12 +305,14 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorCallbackTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorCallbackTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const holder = new CallbackNestedWorkerHolder();
       const task = new taskpool.Task(callbackNestedOuterTask, counter);
-      task.onReceiveData(() => {
+      task.onReceiveData((data: string): void => {
+        console.info('received data:', data);
         mutex.lock();
         try {
           counter.fetchAdd(1);
@@ -309,6 +338,11 @@ export default function LockFactorCallbackTest(): void {
         }
       }
       expect(counter.load()).assertEqual(3);
+      } catch (error) {
+        console.error(`LockFactorCallbackTest0500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -319,13 +353,15 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorCallbackTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorCallbackTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const task1 = new taskpool.Task(multiCallbackTask, mutex, counter);
       const task2 = new taskpool.Task(multiCallbackTask, mutex, counter);
       const task3 = new taskpool.Task(multiCallbackTask, mutex, counter);
-      task1.onReceiveData(() => {
+      task1.onReceiveData((data: string): void => {
+        console.info('received data:', data);
         mutex.lock();
         try {
           counter.fetchAdd(1);
@@ -333,7 +369,8 @@ export default function LockFactorCallbackTest(): void {
           mutex.unlock();
         }
       });
-      task2.onReceiveData(() => {
+      task2.onReceiveData((data: string): void => {
+        console.info('received data:', data);
         mutex.lock();
         try {
           counter.fetchAdd(1);
@@ -341,7 +378,8 @@ export default function LockFactorCallbackTest(): void {
           mutex.unlock();
         }
       });
-      task3.onReceiveData(() => {
+      task3.onReceiveData((data: string): void => {
+        console.info('received data:', data);
         mutex.lock();
         try {
           counter.fetchAdd(1);
@@ -351,6 +389,11 @@ export default function LockFactorCallbackTest(): void {
       });
       await Promise.all([taskpool.execute(task1), taskpool.execute(task2), taskpool.execute(task3)]);
       expect(counter.load()).assertEqual(6);
+      } catch (error) {
+        console.error(`LockFactorCallbackTest0600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -361,15 +404,22 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorCallbackTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorCallbackTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const task = new taskpool.Task(sendDataMutexTask, mutex, counter);
-      task.onReceiveData(() => {
+      task.onReceiveData((data: string): void => {
+        console.info('received data:', data);
         counter.fetchAdd(1);
       });
       await taskpool.execute(task);
       expect(counter.load()).assertEqual(2);
+      } catch (error) {
+        console.error(`LockFactorCallbackTest0700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -380,19 +430,27 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorCallbackTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorCallbackTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
       const task1 = new taskpool.Task(sendDataRWLockTask, rwlock, counter);
       const task2 = new taskpool.Task(sendDataRWLockTask, rwlock, counter);
-      task1.onReceiveData(() => {
+      task1.onReceiveData((data: string): void => {
+        console.info('received data:', data);
         counter.fetchAdd(1);
       });
-      task2.onReceiveData(() => {
+      task2.onReceiveData((data: string): void => {
+        console.info('received data:', data);
         counter.fetchAdd(1);
       });
       await Promise.all([taskpool.execute(task1), taskpool.execute(task2)]);
       expect(counter.load()).assertEqual(4);
+      } catch (error) {
+        console.error(`LockFactorCallbackTest0800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -403,11 +461,13 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorCallbackTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorCallbackTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
       const task = new taskpool.Task(sendDataTriggerTask, counter);
-      task.onReceiveData(() => {
+      task.onReceiveData((data: string): void => {
+        console.info('received data:', data);
         const readLock = rwlock.readLock();
         readLock.lock();
         try {
@@ -418,6 +478,11 @@ export default function LockFactorCallbackTest(): void {
       });
       await taskpool.execute(task);
       expect(counter.load()).assertEqual(2);
+      } catch (error) {
+        console.error(`LockFactorCallbackTest0900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -428,7 +493,8 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorCallbackTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorCallbackTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const task1 = new taskpool.Task(sendDataConcurrentTask, mutex, counter);
@@ -436,16 +502,21 @@ export default function LockFactorCallbackTest(): void {
       const task3 = new taskpool.Task(sendDataConcurrentTask, mutex, counter);
       const task4 = new taskpool.Task(sendDataConcurrentTask, mutex, counter);
       const task5 = new taskpool.Task(sendDataConcurrentTask, mutex, counter);
-      task1.onReceiveData(() => { counter.fetchAdd(1); });
-      task2.onReceiveData(() => { counter.fetchAdd(1); });
-      task3.onReceiveData(() => { counter.fetchAdd(1); });
-      task4.onReceiveData(() => { counter.fetchAdd(1); });
-      task5.onReceiveData(() => { counter.fetchAdd(1); });
+      task1.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
+      task2.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
+      task3.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
+      task4.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
+      task5.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
       await Promise.all([
         taskpool.execute(task1), taskpool.execute(task2), taskpool.execute(task3),
         taskpool.execute(task4), taskpool.execute(task5)
       ]);
       expect(counter.load()).assertEqual(10);
+      } catch (error) {
+        console.error(`LockFactorCallbackTest1000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -456,11 +527,13 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorCallbackTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorCallbackTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const task = new taskpool.Task(sendDataLockReuseTask, mutex, counter);
-      task.onReceiveData(() => {
+      task.onReceiveData((data: string): void => {
+        console.info('received data:', data);
         counter.fetchAdd(1);
       });
       await taskpool.execute(task);
@@ -473,6 +546,11 @@ export default function LockFactorCallbackTest(): void {
         mutex.unlock();
       }
       expect(counter.load()).assertEqual(3);
+      } catch (error) {
+        console.error(`LockFactorCallbackTest1100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -483,7 +561,8 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('LockFactorCallbackTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('LockFactorCallbackTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const worker = new EAWorker('lockFactorCB01');
       worker.start();
@@ -493,6 +572,11 @@ export default function LockFactorCallbackTest(): void {
       } finally {
         worker.quit();
       }
+      } catch (error) {
+        console.error(`LockFactorCallbackTest1200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -503,7 +587,8 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorCallbackTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorCallbackTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const worker = new EAWorker('lockFactorCB02');
@@ -521,6 +606,11 @@ export default function LockFactorCallbackTest(): void {
       } finally {
         worker.quit();
       }
+      } catch (error) {
+        console.error(`LockFactorCallbackTest1300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -531,7 +621,8 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorCallbackTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorCallbackTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const worker = new EAWorker('lockFactorCB03');
@@ -556,6 +647,11 @@ export default function LockFactorCallbackTest(): void {
       } finally {
         worker.quit();
       }
+      } catch (error) {
+        console.error(`LockFactorCallbackTest1400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -566,7 +662,8 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorCallbackTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorCallbackTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const worker1 = new EAWorker('lockFactorCB04');
       const worker2 = new EAWorker('lockFactorCB05');
@@ -581,6 +678,11 @@ export default function LockFactorCallbackTest(): void {
         worker1.quit();
         worker2.quit();
       }
+      } catch (error) {
+        console.error(`LockFactorCallbackTest1500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -591,7 +693,8 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorCallbackTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorCallbackTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const worker = new EAWorker('lockFactorCB07');
@@ -609,6 +712,11 @@ export default function LockFactorCallbackTest(): void {
       } finally {
         worker.quit();
       }
+      } catch (error) {
+        console.error(`LockFactorCallbackTest1600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -619,7 +727,8 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorCallbackTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorCallbackTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       let p1 = taskpool.execute(new taskpool.Task(multiMessageTask, mutex, counter));
@@ -627,6 +736,11 @@ export default function LockFactorCallbackTest(): void {
       let p3 = taskpool.execute(new taskpool.Task(multiMessageTask, mutex, counter));
       await Promise.all([p1, p2, p3]);
       expect(counter.load()).assertEqual(3);
+      } catch (error) {
+        console.error(`LockFactorCallbackTest1700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -637,7 +751,8 @@ export default function LockFactorCallbackTest(): void {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('LockFactorCallbackTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LockFactorCallbackTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const worker = new EAWorker('lockFactorCB09');
@@ -661,6 +776,11 @@ export default function LockFactorCallbackTest(): void {
       } finally {
         worker.quit();
       }
+      } catch (error) {
+        console.error(`LockFactorCallbackTest1800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }
