@@ -133,12 +133,18 @@ export default function MultiThreadRefGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMultiThreadRefGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const data: RefCountData = await manager.create('ref1', 1)
-      const task: taskpool.Task = new taskpool.Task(accessRefDataTask, data)
-      await taskpool.execute(task)
+    it('testMultiThreadRefGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountData = await manager.create('ref1', 1)
+        const task: taskpool.Task = new taskpool.Task(accessRefDataTask, data)
+        await taskpool.execute(task)
 
-      expect(data.getAccessCount()).assertEqual(1)
+        expect(data.getAccessCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testMultiThreadRefGC0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -149,14 +155,20 @@ export default function MultiThreadRefGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadRefGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: RefCountData = await manager.create('ref_multi', 2)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(accessRefDataTask, data))
+    it('testMultiThreadRefGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountData = await manager.create('ref_multi', 2)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(accessRefDataTask, data))
+        }
+        await executeTasks(tasks)
+        expect(data.getAccessCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testMultiThreadRefGC0200 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(data.getAccessCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -167,13 +179,19 @@ export default function MultiThreadRefGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadRefGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: RefCountData = await manager.create('main_tp', 3)
-      expect(data.getId()).assertEqual(3)
+    it('testMultiThreadRefGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountData = await manager.create('main_tp', 3)
+        expect(data.getId()).assertEqual(3)
 
-      const task: taskpool.Task = new taskpool.Task(readRefDataTask, data)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertEqual(3)
+        const task: taskpool.Task = new taskpool.Task(readRefDataTask, data)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertEqual(3)
+      } catch (error) {
+        console.error("testMultiThreadRefGC0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -184,14 +202,20 @@ export default function MultiThreadRefGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadRefGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: RefCountData = await manager.create('all_release', 4)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(accessRefDataTask, data))
+    it('testMultiThreadRefGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountData = await manager.create('all_release', 4)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(accessRefDataTask, data))
+        }
+        await executeTasks(tasks)
+        expect(data.getAccessCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testMultiThreadRefGC0400 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(data.getAccessCount()).assertEqual(3)
+      done();
     })
 
     /**
@@ -202,13 +226,19 @@ export default function MultiThreadRefGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadRefGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: RefCountData = await manager.create('partial', 5)
-      const task1: taskpool.Task = new taskpool.Task(accessRefDataTask, data)
-      await taskpool.execute(task1)
+    it('testMultiThreadRefGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountData = await manager.create('partial', 5)
+        const task1: taskpool.Task = new taskpool.Task(accessRefDataTask, data)
+        await taskpool.execute(task1)
 
-      expect(manager.get('partial') !== undefined).assertTrue()
-      expect(data.getAccessCount()).assertEqual(1)
+        expect(manager.get('partial') !== undefined).assertTrue()
+        expect(data.getAccessCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testMultiThreadRefGC0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -219,13 +249,19 @@ export default function MultiThreadRefGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadRefGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: RefCountData = await manager.create('sendable', 6)
-      const task: taskpool.Task = new taskpool.Task(accessRefDataTask, data)
-      await taskpool.execute(task)
-      await taskpool.execute(new taskpool.Task(accessRefDataTask, data))
+    it('testMultiThreadRefGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountData = await manager.create('sendable', 6)
+        const task: taskpool.Task = new taskpool.Task(accessRefDataTask, data)
+        await taskpool.execute(task)
+        await taskpool.execute(new taskpool.Task(accessRefDataTask, data))
 
-      expect(data.getAccessCount()).assertEqual(2)
+        expect(data.getAccessCount()).assertEqual(2)
+      } catch (error) {
+        console.error("testMultiThreadRefGC0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -236,17 +272,23 @@ export default function MultiThreadRefGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadRefGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data1: RefCountData = await manager.create('order1', 7)
-      const data2: RefCountData = await manager.create('order2', 8)
+    it('testMultiThreadRefGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data1: RefCountData = await manager.create('order1', 7)
+        const data2: RefCountData = await manager.create('order2', 8)
 
-      const task1: taskpool.Task = new taskpool.Task(accessRefDataTask, data1)
-      const task2: taskpool.Task = new taskpool.Task(accessRefDataTask, data2)
-      await taskpool.execute(task1)
-      await taskpool.execute(task2)
+        const task1: taskpool.Task = new taskpool.Task(accessRefDataTask, data1)
+        const task2: taskpool.Task = new taskpool.Task(accessRefDataTask, data2)
+        await taskpool.execute(task1)
+        await taskpool.execute(task2)
 
-      expect(data1.getAccessCount()).assertEqual(1)
-      expect(data2.getAccessCount()).assertEqual(1)
+        expect(data1.getAccessCount()).assertEqual(1)
+        expect(data2.getAccessCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testMultiThreadRefGC0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -257,10 +299,16 @@ export default function MultiThreadRefGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMultiThreadRefGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const data: RefCountData = await manager.create('init_ref', 9)
-      expect(data.getId()).assertEqual(9)
-      expect(data.getAccessCount()).assertEqual(0)
+    it('testMultiThreadRefGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountData = await manager.create('init_ref', 9)
+        expect(data.getId()).assertEqual(9)
+        expect(data.getAccessCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testMultiThreadRefGC0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -271,14 +319,20 @@ export default function MultiThreadRefGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadRefGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: RefCountData = await manager.create('multi_ref', 10)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(accessRefDataTask, data))
+    it('testMultiThreadRefGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountData = await manager.create('multi_ref', 10)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(accessRefDataTask, data))
+        }
+        await executeTasks(tasks)
+        expect(data.getAccessCount()).assertEqual(10)
+      } catch (error) {
+        console.error("testMultiThreadRefGC0900 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(data.getAccessCount()).assertEqual(10)
+      done();
     })
 
     /**
@@ -289,14 +343,20 @@ export default function MultiThreadRefGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadRefGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: RefCountData = await manager.create('cross_thread', 11)
-      const task: taskpool.Task = new taskpool.Task(readRefDataTask, data)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertEqual(11)
+    it('testMultiThreadRefGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountData = await manager.create('cross_thread', 11)
+        const task: taskpool.Task = new taskpool.Task(readRefDataTask, data)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertEqual(11)
 
-      await data.access()
-      expect(data.getAccessCount()).assertEqual(1)
+        await data.access()
+        expect(data.getAccessCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testMultiThreadRefGC1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -307,13 +367,19 @@ export default function MultiThreadRefGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadRefGC1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(createRefDataTask, manager, `con3_${i}`, i))
+    it('testMultiThreadRefGC1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(createRefDataTask, manager, `con3_${i}`, i))
+        }
+        await executeTasks(tasks)
+        expect(manager.getSize()).assertEqual(3)
+      } catch (error) {
+        console.error("testMultiThreadRefGC1100 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(manager.getSize()).assertEqual(3)
+      done();
     })
 
     /**
@@ -324,13 +390,19 @@ export default function MultiThreadRefGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadRefGC1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(createRefDataTask, manager, `con5_${i}`, i))
+    it('testMultiThreadRefGC1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(createRefDataTask, manager, `con5_${i}`, i))
+        }
+        await executeTasks(tasks)
+        expect(manager.getSize()).assertEqual(5)
+      } catch (error) {
+        console.error("testMultiThreadRefGC1200 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(manager.getSize()).assertEqual(5)
+      done();
     })
 
     /**
@@ -341,16 +413,22 @@ export default function MultiThreadRefGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadRefGC1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: RefCountData = await manager.create('chain', 13)
-      const task1: taskpool.Task = new taskpool.Task(readRefDataTask, data)
-      const r1: Object = await taskpool.execute(task1)
+    it('testMultiThreadRefGC1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: RefCountData = await manager.create('chain', 13)
+        const task1: taskpool.Task = new taskpool.Task(readRefDataTask, data)
+        const r1: Object = await taskpool.execute(task1)
 
-      const task2: taskpool.Task = new taskpool.Task(readRefDataTask, data)
-      const r2: Object = await taskpool.execute(task2)
+        const task2: taskpool.Task = new taskpool.Task(readRefDataTask, data)
+        const r2: Object = await taskpool.execute(task2)
 
-      expect(r1 as number).assertEqual(13)
-      expect(r2 as number).assertEqual(13)
+        expect(r1 as number).assertEqual(13)
+        expect(r2 as number).assertEqual(13)
+      } catch (error) {
+        console.error("testMultiThreadRefGC1300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

@@ -127,12 +127,18 @@ export default function MemoryLeakGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMemoryLeakGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      for (let i: number = 0; i < 100; i++) {
-        await manager.create(`leak_${i}`, i)
+    it('testMemoryLeakGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 100; i++) {
+          await manager.create(`leak_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(100)
+        expect(manager.getCreateCount()).assertEqual(100)
+      } catch (error) {
+        console.error("testMemoryLeakGC0100 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getSize()).assertEqual(100)
-      expect(manager.getCreateCount()).assertEqual(100)
+      done();
     })
 
     /**
@@ -143,16 +149,22 @@ export default function MemoryLeakGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMemoryLeakGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      expect(manager.getSize()).assertEqual(0)
+    it('testMemoryLeakGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        expect(manager.getSize()).assertEqual(0)
 
-      const data1: LeakableData = await manager.create('snap1', 1)
-      const data2: LeakableData = await manager.create('snap2', 2)
-      expect(manager.getSize()).assertEqual(2)
+        const data1: LeakableData = await manager.create('snap1', 1)
+        const data2: LeakableData = await manager.create('snap2', 2)
+        expect(manager.getSize()).assertEqual(2)
 
-      await manager.delete('snap2')
-      expect(manager.getSize()).assertEqual(1)
-      expect(data1.getId()).assertEqual(1)
+        await manager.delete('snap2')
+        expect(manager.getSize()).assertEqual(1)
+        expect(data1.getId()).assertEqual(1)
+      } catch (error) {
+        console.error("testMemoryLeakGC0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -163,14 +175,20 @@ export default function MemoryLeakGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMemoryLeakGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data1: LeakableData = await manager.create('circular_a', 1)
-      const data2: LeakableData = await manager.create('circular_b', 2)
-      expect(manager.getSize()).assertEqual(2)
+    it('testMemoryLeakGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data1: LeakableData = await manager.create('circular_a', 1)
+        const data2: LeakableData = await manager.create('circular_b', 2)
+        expect(manager.getSize()).assertEqual(2)
 
-      await manager.delete('circular_a')
-      await manager.delete('circular_b')
-      expect(manager.getSize()).assertEqual(0)
+        await manager.delete('circular_a')
+        await manager.delete('circular_b')
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testMemoryLeakGC0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -181,18 +199,24 @@ export default function MemoryLeakGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMemoryLeakGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let cycle: number = 0; cycle < 10; cycle++) {
-        for (let i: number = 0; i < 10; i++) {
-          await manager.create(`stable_${cycle}_${i}`, cycle * 10 + i)
+    it('testMemoryLeakGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let cycle: number = 0; cycle < 10; cycle++) {
+          for (let i: number = 0; i < 10; i++) {
+            await manager.create(`stable_${cycle}_${i}`, cycle * 10 + i)
+          }
+          for (let i: number = 0; i < 10; i++) {
+            await manager.delete(`stable_${cycle}_${i}`)
+          }
         }
-        for (let i: number = 0; i < 10; i++) {
-          await manager.delete(`stable_${cycle}_${i}`)
-        }
+        expect(manager.getCreateCount()).assertEqual(100)
+        expect(manager.getDeleteCount()).assertEqual(100)
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testMemoryLeakGC0400 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getCreateCount()).assertEqual(100)
-      expect(manager.getDeleteCount()).assertEqual(100)
-      expect(manager.getSize()).assertEqual(0)
+      done();
     })
 
     /**
@@ -203,14 +227,20 @@ export default function MemoryLeakGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMemoryLeakGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 50; i++) {
-        await manager.create(`threshold_${i}`, i)
-      }
-      expect(manager.getSize()).assertEqual(50)
+    it('testMemoryLeakGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 50; i++) {
+          await manager.create(`threshold_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(50)
 
-      await manager.clearAll()
-      expect(manager.getSize()).assertEqual(0)
+        await manager.clearAll()
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testMemoryLeakGC0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -221,13 +251,19 @@ export default function MemoryLeakGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMemoryLeakGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: LeakableData = await manager.create('task_ref', 100)
-      await manager.create('task_new', 200)
-      const task: taskpool.Task = new taskpool.Task(accessLeakTask, data)
-      const result: Object = await taskpool.execute(task)
-      expect(result as number).assertEqual(100)
-      expect(manager.getSize()).assertEqual(2)
+    it('testMemoryLeakGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: LeakableData = await manager.create('task_ref', 100)
+        await manager.create('task_new', 200)
+        const task: taskpool.Task = new taskpool.Task(accessLeakTask, data)
+        const result: Object = await taskpool.execute(task)
+        expect(result as number).assertEqual(100)
+        expect(manager.getSize()).assertEqual(2)
+      } catch (error) {
+        console.error("testMemoryLeakGC0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -238,14 +274,20 @@ export default function MemoryLeakGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMemoryLeakGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const parent: LeakableData = await manager.create('nested_parent', 1)
-      const child: LeakableData = await manager.create('nested_child', 10)
-      expect(manager.getSize()).assertEqual(2)
+    it('testMemoryLeakGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const parent: LeakableData = await manager.create('nested_parent', 1)
+        const child: LeakableData = await manager.create('nested_child', 10)
+        expect(manager.getSize()).assertEqual(2)
 
-      await manager.delete('nested_child')
-      expect(manager.getSize()).assertEqual(1)
-      expect(parent.getId()).assertEqual(1)
+        await manager.delete('nested_child')
+        expect(manager.getSize()).assertEqual(1)
+        expect(parent.getId()).assertEqual(1)
+      } catch (error) {
+        console.error("testMemoryLeakGC0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -256,24 +298,30 @@ export default function MemoryLeakGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMemoryLeakGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const container: collections.Array<LeakableData> = new collections.Array<LeakableData>()
-      for (let i: number = 0; i < 10; i++) {
-        const data: LeakableData = await manager.create(`container_${i}`, i)
-        container.push(data)
-      }
-      expect(manager.getSize()).assertEqual(10)
-      expect(container.length).assertEqual(10)
+    it('testMemoryLeakGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const container: collections.Array<LeakableData> = new collections.Array<LeakableData>()
+        for (let i: number = 0; i < 10; i++) {
+          const data: LeakableData = await manager.create(`container_${i}`, i)
+          container.push(data)
+        }
+        expect(manager.getSize()).assertEqual(10)
+        expect(container.length).assertEqual(10)
 
-      while (container.length > 0) {
-        container.pop()
-      }
-      expect(container.length).assertEqual(0)
+        while (container.length > 0) {
+          container.pop()
+        }
+        expect(container.length).assertEqual(0)
 
-      for (let i: number = 0; i < 10; i++) {
-        await manager.delete(`container_${i}`)
+        for (let i: number = 0; i < 10; i++) {
+          await manager.delete(`container_${i}`)
+        }
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testMemoryLeakGC0800 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getSize()).assertEqual(0)
+      done();
     })
 
     /**
@@ -284,12 +332,18 @@ export default function MemoryLeakGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMemoryLeakGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: LeakableData = await manager.create('fix_leak', 999)
-      expect(manager.getSize()).assertEqual(1)
+    it('testMemoryLeakGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: LeakableData = await manager.create('fix_leak', 999)
+        expect(manager.getSize()).assertEqual(1)
 
-      await manager.delete('fix_leak')
-      expect(manager.getSize()).assertEqual(0)
+        await manager.delete('fix_leak')
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testMemoryLeakGC0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -300,25 +354,31 @@ export default function MemoryLeakGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMemoryLeakGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 20; i++) {
-        await manager.create(`concurrent_${i}`, i)
-      }
-      expect(manager.getSize()).assertEqual(20)
+    it('testMemoryLeakGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 20; i++) {
+          await manager.create(`concurrent_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(20)
 
-      const data0: LeakableData | undefined = manager.get('concurrent_0')
-      expect(data0 !== undefined).assertTrue()
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(accessLeakTask, data0!))
-      }
-      const results: Object[] = await executeLeakTasks(tasks)
-      expect(results.length).assertEqual(5)
+        const data0: LeakableData | undefined = manager.get('concurrent_0')
+        expect(data0 !== undefined).assertTrue()
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(accessLeakTask, data0!))
+        }
+        const results: Object[] = await executeLeakTasks(tasks)
+        expect(results.length).assertEqual(5)
 
-      for (let i: number = 0; i < 10; i++) {
-        await manager.delete(`concurrent_${i}`)
+        for (let i: number = 0; i < 10; i++) {
+          await manager.delete(`concurrent_${i}`)
+        }
+        expect(manager.getSize()).assertEqual(10)
+      } catch (error) {
+        console.error("testMemoryLeakGC1000 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getSize()).assertEqual(10)
+      done();
     })
   })
 }

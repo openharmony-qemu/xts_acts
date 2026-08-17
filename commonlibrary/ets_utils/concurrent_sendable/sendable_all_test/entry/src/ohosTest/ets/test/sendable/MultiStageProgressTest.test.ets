@@ -123,14 +123,20 @@ export default function MultiStageProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMultiStageProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const stages: collections.Array<string> = new collections.Array<string>()
-      stages.push('init')
-      stages.push('process')
-      stages.push('complete')
-      await progress.setStages(stages)
-      expect(await progress.getCompletedStages()).assertEqual(0)
-      expect(await progress.getCurrentStage()).assertEqual('init')
+    it('testMultiStageProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const stages: collections.Array<string> = new collections.Array<string>()
+        stages.push('init')
+        stages.push('process')
+        stages.push('complete')
+        await progress.setStages(stages)
+        expect(await progress.getCompletedStages()).assertEqual(0)
+        expect(await progress.getCurrentStage()).assertEqual('init')
+      } catch (error) {
+        console.error("testMultiStageProgress0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -141,13 +147,19 @@ export default function MultiStageProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMultiStageProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const stages: collections.Array<string> = new collections.Array<string>()
-      stages.push('init')
-      await progress.setStages(stages)
-      await progress.updateStageProgress('init', 50)
-      expect(await progress.getStageProgress('init')).assertEqual(50)
-      expect(await progress.getTotalProgress()).assertEqual(50)
+    it('testMultiStageProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const stages: collections.Array<string> = new collections.Array<string>()
+        stages.push('init')
+        await progress.setStages(stages)
+        await progress.updateStageProgress('init', 50)
+        expect(await progress.getStageProgress('init')).assertEqual(50)
+        expect(await progress.getTotalProgress()).assertEqual(50)
+      } catch (error) {
+        console.error("testMultiStageProgress0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -158,14 +170,20 @@ export default function MultiStageProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMultiStageProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const stages: collections.Array<string> = new collections.Array<string>()
-      stages.push('init')
-      stages.push('process')
-      await progress.setStages(stages)
-      await progress.completeStage('init')
-      expect(await progress.getStageProgress('init')).assertEqual(100)
-      expect(await progress.getCompletedStages()).assertEqual(1)
+    it('testMultiStageProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const stages: collections.Array<string> = new collections.Array<string>()
+        stages.push('init')
+        stages.push('process')
+        await progress.setStages(stages)
+        await progress.completeStage('init')
+        expect(await progress.getStageProgress('init')).assertEqual(100)
+        expect(await progress.getCompletedStages()).assertEqual(1)
+      } catch (error) {
+        console.error("testMultiStageProgress0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -176,17 +194,23 @@ export default function MultiStageProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMultiStageProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const stages: collections.Array<string> = new collections.Array<string>()
-      stages.push('init')
-      stages.push('process')
-      stages.push('complete')
-      await progress.setStages(stages)
-      await progress.completeStage('init')
-      await progress.completeStage('process')
-      await progress.completeStage('complete')
-      expect(await progress.isAllCompleted()).assertTrue()
-      expect(await progress.getTotalProgress()).assertEqual(100)
+    it('testMultiStageProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const stages: collections.Array<string> = new collections.Array<string>()
+        stages.push('init')
+        stages.push('process')
+        stages.push('complete')
+        await progress.setStages(stages)
+        await progress.completeStage('init')
+        await progress.completeStage('process')
+        await progress.completeStage('complete')
+        expect(await progress.isAllCompleted()).assertTrue()
+        expect(await progress.getTotalProgress()).assertEqual(100)
+      } catch (error) {
+        console.error("testMultiStageProgress0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -197,15 +221,21 @@ export default function MultiStageProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMultiStageProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const stages: collections.Array<string> = new collections.Array<string>()
-      stages.push('init')
-      stages.push('process')
-      stages.push('complete')
-      await progress.setStages(stages)
-      await progress.completeStage('init')
-      await progress.updateStageProgress('process', 50)
-      expect(await progress.getTotalProgress()).assertEqual(50)
+    it('testMultiStageProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const stages: collections.Array<string> = new collections.Array<string>()
+        stages.push('init')
+        stages.push('process')
+        stages.push('complete')
+        await progress.setStages(stages)
+        await progress.completeStage('init')
+        await progress.updateStageProgress('process', 50)
+        expect(await progress.getTotalProgress()).assertEqual(50)
+      } catch (error) {
+        console.error("testMultiStageProgress0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -216,13 +246,19 @@ export default function MultiStageProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMultiStageProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const stages: collections.Array<string> = new collections.Array<string>()
-      stages.push('init')
-      stages.push('process')
-      await progress.setStages(stages)
-      await progress.updateStageProgress('init', 100)
-      expect(await progress.getStageProgress('init')).assertEqual(100)
+    it('testMultiStageProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const stages: collections.Array<string> = new collections.Array<string>()
+        stages.push('init')
+        stages.push('process')
+        await progress.setStages(stages)
+        await progress.updateStageProgress('init', 100)
+        expect(await progress.getStageProgress('init')).assertEqual(100)
+      } catch (error) {
+        console.error("testMultiStageProgress0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -233,13 +269,19 @@ export default function MultiStageProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMultiStageProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const stages: collections.Array<string> = new collections.Array<string>()
-      stages.push('init')
-      stages.push('process')
-      await progress.setStages(stages)
-      await progress.updateStageProgress('unknown', 50)
-      expect(await progress.getStageProgress('unknown')).assertEqual(0)
+    it('testMultiStageProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const stages: collections.Array<string> = new collections.Array<string>()
+        stages.push('init')
+        stages.push('process')
+        await progress.setStages(stages)
+        await progress.updateStageProgress('unknown', 50)
+        expect(await progress.getStageProgress('unknown')).assertEqual(0)
+      } catch (error) {
+        console.error("testMultiStageProgress0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -250,19 +292,25 @@ export default function MultiStageProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiStageProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const stages: collections.Array<string> = new collections.Array<string>()
-      stages.push('init')
-      stages.push('process')
-      stages.push('complete')
-      await progress.setStages(stages)
-      const promises: Promise<void>[] = []
-      promises.push(progress.completeStage('init'))
-      promises.push(progress.completeStage('process'))
-      promises.push(progress.completeStage('complete'))
-      await Promise.all(promises)
-      expect(await progress.getCompletedStages()).assertEqual(3)
-      expect(await progress.isAllCompleted()).assertTrue()
+    it('testMultiStageProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const stages: collections.Array<string> = new collections.Array<string>()
+        stages.push('init')
+        stages.push('process')
+        stages.push('complete')
+        await progress.setStages(stages)
+        const promises: Promise<void>[] = []
+        promises.push(progress.completeStage('init'))
+        promises.push(progress.completeStage('process'))
+        promises.push(progress.completeStage('complete'))
+        await Promise.all(promises)
+        expect(await progress.getCompletedStages()).assertEqual(3)
+        expect(await progress.isAllCompleted()).assertTrue()
+      } catch (error) {
+        console.error("testMultiStageProgress0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -273,16 +321,22 @@ export default function MultiStageProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMultiStageProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const stages: collections.Array<string> = new collections.Array<string>()
-      stages.push('init')
-      stages.push('process')
-      await progress.setStages(stages)
-      await progress.completeStage('init')
-      await progress.completeStage('process')
-      expect(await progress.isAllCompleted()).assertTrue()
-      await progress.reset()
-      expect(await progress.getCompletedStages()).assertEqual(0)
+    it('testMultiStageProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const stages: collections.Array<string> = new collections.Array<string>()
+        stages.push('init')
+        stages.push('process')
+        await progress.setStages(stages)
+        await progress.completeStage('init')
+        await progress.completeStage('process')
+        expect(await progress.isAllCompleted()).assertTrue()
+        await progress.reset()
+        expect(await progress.getCompletedStages()).assertEqual(0)
+      } catch (error) {
+        console.error("testMultiStageProgress0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -293,14 +347,20 @@ export default function MultiStageProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMultiStageProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const stages: collections.Array<string> = new collections.Array<string>()
-      stages.push('init')
-      stages.push('process')
-      await progress.setStages(stages)
-      await progress.completeStage('init')
-      await progress.updateStageProgress('process', 30)
-      expect(await progress.getTotalProgress()).assertEqual(65)
+    it('testMultiStageProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const stages: collections.Array<string> = new collections.Array<string>()
+        stages.push('init')
+        stages.push('process')
+        await progress.setStages(stages)
+        await progress.completeStage('init')
+        await progress.updateStageProgress('process', 30)
+        expect(await progress.getTotalProgress()).assertEqual(65)
+      } catch (error) {
+        console.error("testMultiStageProgress1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -311,12 +371,18 @@ export default function MultiStageProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMultiStageProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const stages: collections.Array<string> = new collections.Array<string>()
-      stages.push('init')
-      await progress.setStages(stages)
-      await progress.updateStageProgress('init', 150)
-      expect(await progress.getStageProgress('init')).assertEqual(150)
+    it('testMultiStageProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const stages: collections.Array<string> = new collections.Array<string>()
+        stages.push('init')
+        await progress.setStages(stages)
+        await progress.updateStageProgress('init', 150)
+        expect(await progress.getStageProgress('init')).assertEqual(150)
+      } catch (error) {
+        console.error("testMultiStageProgress1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -327,11 +393,17 @@ export default function MultiStageProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMultiStageProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const emptyStages: collections.Array<string> = new collections.Array<string>()
-      await progress.setStages(emptyStages)
-      expect(await progress.getTotalProgress()).assertEqual(0)
-      expect(await progress.isAllCompleted()).assertTrue()
+    it('testMultiStageProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const emptyStages: collections.Array<string> = new collections.Array<string>()
+        await progress.setStages(emptyStages)
+        expect(await progress.getTotalProgress()).assertEqual(0)
+        expect(await progress.isAllCompleted()).assertTrue()
+      } catch (error) {
+        console.error("testMultiStageProgress1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

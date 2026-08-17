@@ -112,10 +112,16 @@ export default function LogCollectorQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLogCollectorQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const success: boolean = await logQueue.enqueue(LogLevel.INFO, 'test log', Date.now())
-      expect(success).assertTrue()
-      expect(await logQueue.size()).assertEqual(1)
+    it('testLogCollectorQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const success: boolean = await logQueue.enqueue(LogLevel.INFO, 'test log', Date.now())
+        expect(success).assertTrue()
+        expect(await logQueue.size()).assertEqual(1)
+      } catch (error) {
+        console.error("testLogCollectorQueue0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -126,12 +132,18 @@ export default function LogCollectorQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLogCollectorQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await logQueue.enqueue(LogLevel.DEBUG, 'debug log', Date.now())
-      await logQueue.enqueue(LogLevel.INFO, 'info log', Date.now())
-      await logQueue.enqueue(LogLevel.WARN, 'warn log', Date.now())
-      await logQueue.enqueue(LogLevel.ERROR, 'error log', Date.now())
-      expect(await logQueue.size()).assertEqual(4)
+    it('testLogCollectorQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await logQueue.enqueue(LogLevel.DEBUG, 'debug log', Date.now())
+        await logQueue.enqueue(LogLevel.INFO, 'info log', Date.now())
+        await logQueue.enqueue(LogLevel.WARN, 'warn log', Date.now())
+        await logQueue.enqueue(LogLevel.ERROR, 'error log', Date.now())
+        expect(await logQueue.size()).assertEqual(4)
+      } catch (error) {
+        console.error("testLogCollectorQueue0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -142,13 +154,19 @@ export default function LogCollectorQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLogCollectorQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 10; i++) {
-        await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
+    it('testLogCollectorQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 10; i++) {
+          await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
+        }
+        const batch: LogEntry[] = await logQueue.dequeueBatch(5)
+        expect(batch.length).assertEqual(5)
+        expect(await logQueue.size()).assertEqual(5)
+      } catch (error) {
+        console.error("testLogCollectorQueue0300 failed");
+        expect(false).assertFail();
       }
-      const batch: LogEntry[] = await logQueue.dequeueBatch(5)
-      expect(batch.length).assertEqual(5)
-      expect(await logQueue.size()).assertEqual(5)
+      done();
     })
 
     /**
@@ -159,21 +177,27 @@ export default function LogCollectorQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLogCollectorQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const promises: Promise<boolean>[] = []
-      for (let i = 0; i < 100; i++) {
-        const level: number = i % 4
-        promises.push(logQueue.enqueue(level, `log_${i}`, Date.now()))
-      }
-      const results: boolean[] = await Promise.all(promises)
-      let successCount: number = 0
-      for (let i = 0; i < results.length; i++) {
-        if (results[i]) {
-          successCount++
+    it('testLogCollectorQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const promises: Promise<boolean>[] = []
+        for (let i = 0; i < 100; i++) {
+          const level: number = i % 4
+          promises.push(logQueue.enqueue(level, `log_${i}`, Date.now()))
         }
+        const results: boolean[] = await Promise.all(promises)
+        let successCount: number = 0
+        for (let i = 0; i < results.length; i++) {
+          if (results[i]) {
+            successCount++
+          }
+        }
+        expect(successCount).assertEqual(100)
+        expect(await logQueue.size()).assertEqual(100)
+      } catch (error) {
+        console.error("testLogCollectorQueue0400 failed");
+        expect(false).assertFail();
       }
-      expect(successCount).assertEqual(100)
-      expect(await logQueue.size()).assertEqual(100)
+      done();
     })
 
     /**
@@ -184,22 +208,28 @@ export default function LogCollectorQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLogCollectorQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 20; i++) {
-        const level: number = i % 4
-        tasks.push(new taskpool.Task(enqueueLogTask, level, `log_${i}`))
+    it('testLogCollectorQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 20; i++) {
+          const level: number = i % 4
+          tasks.push(new taskpool.Task(enqueueLogTask, level, `log_${i}`))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i = 0; i < results.length; i++) {
+          const parts: string[] = (results[i] as string).split('|')
+          await logQueue.enqueue(parseInt(parts[0]), parts[1], Date.now())
+        }
+        expect(await logQueue.getTotalEnqueued()).assertLargerOrEqual(1)
+      } catch (error) {
+        console.error("testLogCollectorQueue0500 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i = 0; i < results.length; i++) {
-        const parts: string[] = (results[i] as string).split('|')
-        await logQueue.enqueue(parseInt(parts[0]), parts[1], Date.now())
-      }
-      expect(await logQueue.getTotalEnqueued()).assertLargerOrEqual(1)
+      done();
     })
 
     /**
@@ -210,14 +240,20 @@ export default function LogCollectorQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLogCollectorQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      logQueue.capacity_ = 50
-      for (let i = 0; i < 50; i++) {
-        await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
+    it('testLogCollectorQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        logQueue.capacity_ = 50
+        for (let i = 0; i < 50; i++) {
+          await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
+        }
+        expect(await logQueue.isFull()).assertTrue()
+        const success: boolean = await logQueue.enqueue(LogLevel.INFO, 'overflow log', Date.now())
+        expect(success).assertFalse()
+      } catch (error) {
+        console.error("testLogCollectorQueue0600 failed");
+        expect(false).assertFail();
       }
-      expect(await logQueue.isFull()).assertTrue()
-      const success: boolean = await logQueue.enqueue(LogLevel.INFO, 'overflow log', Date.now())
-      expect(success).assertFalse()
+      done();
     })
 
     /**
@@ -228,15 +264,21 @@ export default function LogCollectorQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLogCollectorQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      logQueue.capacity_ = 10
-      for (let i = 0; i < 10; i++) {
-        await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
+    it('testLogCollectorQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        logQueue.capacity_ = 10
+        for (let i = 0; i < 10; i++) {
+          await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
+        }
+        expect(await logQueue.isFull()).assertTrue()
+        await logQueue.dequeueBatch(5)
+        const success: boolean = await logQueue.enqueue(LogLevel.INFO, 'new log', Date.now())
+        expect(success).assertTrue()
+      } catch (error) {
+        console.error("testLogCollectorQueue0700 failed");
+        expect(false).assertFail();
       }
-      expect(await logQueue.isFull()).assertTrue()
-      await logQueue.dequeueBatch(5)
-      const success: boolean = await logQueue.enqueue(LogLevel.INFO, 'new log', Date.now())
-      expect(success).assertTrue()
+      done();
     })
 
     /**
@@ -247,13 +289,19 @@ export default function LogCollectorQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLogCollectorQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 20; i++) {
-        await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
+    it('testLogCollectorQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 20; i++) {
+          await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
+        }
+        await logQueue.dequeueBatch(10)
+        expect(await logQueue.getTotalEnqueued()).assertEqual(20)
+        expect(await logQueue.getTotalDequeued()).assertEqual(10)
+      } catch (error) {
+        console.error("testLogCollectorQueue0800 failed");
+        expect(false).assertFail();
       }
-      await logQueue.dequeueBatch(10)
-      expect(await logQueue.getTotalEnqueued()).assertEqual(20)
-      expect(await logQueue.getTotalDequeued()).assertEqual(10)
+      done();
     })
 
     /**
@@ -264,13 +312,19 @@ export default function LogCollectorQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLogCollectorQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      for (let i = 0; i < 10; i++) {
-        await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
+    it('testLogCollectorQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 10; i++) {
+          await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
+        }
+        const batch: LogEntry[] = await logQueue.dequeueBatch(10)
+        expect(batch.length).assertEqual(10)
+        expect(await logQueue.isEmpty()).assertTrue()
+      } catch (error) {
+        console.error("testLogCollectorQueue0900 failed");
+        expect(false).assertFail();
       }
-      const batch: LogEntry[] = await logQueue.dequeueBatch(10)
-      expect(batch.length).assertEqual(10)
-      expect(await logQueue.isEmpty()).assertTrue()
+      done();
     })
 
     /**
@@ -281,18 +335,24 @@ export default function LogCollectorQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLogCollectorQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const promises: Promise<boolean>[] = []
-      for (let i = 0; i < 50; i++) {
-        const level: number = i % 4
-        promises.push(logQueue.enqueue(level, `log_${i}`, Date.now()))
+    it('testLogCollectorQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const promises: Promise<boolean>[] = []
+        for (let i = 0; i < 50; i++) {
+          const level: number = i % 4
+          promises.push(logQueue.enqueue(level, `log_${i}`, Date.now()))
+        }
+        await Promise.all(promises)
+        const batch1: LogEntry[] = await logQueue.dequeueBatch(20)
+        expect(batch1.length).assertEqual(20)
+        const batch2: LogEntry[] = await logQueue.dequeueBatch(30)
+        expect(batch2.length).assertEqual(30)
+        expect(await logQueue.isEmpty()).assertTrue()
+      } catch (error) {
+        console.error("testLogCollectorQueue1000 failed");
+        expect(false).assertFail();
       }
-      await Promise.all(promises)
-      const batch1: LogEntry[] = await logQueue.dequeueBatch(20)
-      expect(batch1.length).assertEqual(20)
-      const batch2: LogEntry[] = await logQueue.dequeueBatch(30)
-      expect(batch2.length).assertEqual(30)
-      expect(await logQueue.isEmpty()).assertTrue()
+      done();
     })
   })
 }

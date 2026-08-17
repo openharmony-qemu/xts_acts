@@ -117,13 +117,19 @@ export default function MultiThreadEventTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadEvent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(concurrentSubscribeTask, bus, 'click', `handler_${i}`))
+    it('testMultiThreadEvent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(concurrentSubscribeTask, bus, 'click', `handler_${i}`))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await bus.getSubscriberCount('click')).assertEqual(10)
+      } catch (error) {
+        console.error("testMultiThreadEvent0100 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await bus.getSubscriberCount('click')).assertEqual(10)
+      done();
     })
 
     /**
@@ -134,14 +140,20 @@ export default function MultiThreadEventTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadEvent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await bus.subscribe('click', 'handler_1')
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(concurrentPublishTask, bus, 'click', `data_${i}`))
+    it('testMultiThreadEvent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await bus.subscribe('click', 'handler_1')
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(concurrentPublishTask, bus, 'click', `data_${i}`))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await bus.getPublishCount() >= 10).assertTrue()
+      } catch (error) {
+        console.error("testMultiThreadEvent0200 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await bus.getPublishCount() >= 10).assertTrue()
+      done();
     })
 
     /**
@@ -152,18 +164,24 @@ export default function MultiThreadEventTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadEvent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const subTasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        subTasks.push(new taskpool.Task(concurrentSubscribeTask, bus, 'click', `handler_${i}`))
+    it('testMultiThreadEvent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const subTasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          subTasks.push(new taskpool.Task(concurrentSubscribeTask, bus, 'click', `handler_${i}`))
+        }
+        await executeTasksGetObjects(subTasks)
+        const pubTasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          pubTasks.push(new taskpool.Task(concurrentPublishTask, bus, 'click', `data_${i}`))
+        }
+        await executeTasksGetObjects(pubTasks)
+        expect(await bus.getPublishCount() >= 5).assertTrue()
+      } catch (error) {
+        console.error("testMultiThreadEvent0300 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(subTasks)
-      const pubTasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        pubTasks.push(new taskpool.Task(concurrentPublishTask, bus, 'click', `data_${i}`))
-      }
-      await executeTasksGetObjects(pubTasks)
-      expect(await bus.getPublishCount() >= 5).assertTrue()
+      done();
     })
 
     /**
@@ -174,15 +192,21 @@ export default function MultiThreadEventTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadEvent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const subTasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        subTasks.push(new taskpool.Task(concurrentSubscribeTask, bus, 'click', `handler_${i}`))
-        subTasks.push(new taskpool.Task(concurrentSubscribeTask, bus, 'hover', `handler_${i}`))
+    it('testMultiThreadEvent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const subTasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          subTasks.push(new taskpool.Task(concurrentSubscribeTask, bus, 'click', `handler_${i}`))
+          subTasks.push(new taskpool.Task(concurrentSubscribeTask, bus, 'hover', `handler_${i}`))
+        }
+        await executeTasksGetObjects(subTasks)
+        expect(await bus.getSubscriberCount('click')).assertEqual(5)
+        expect(await bus.getSubscriberCount('hover')).assertEqual(5)
+      } catch (error) {
+        console.error("testMultiThreadEvent0400 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(subTasks)
-      expect(await bus.getSubscriberCount('click')).assertEqual(5)
-      expect(await bus.getSubscriberCount('hover')).assertEqual(5)
+      done();
     })
 
     /**
@@ -193,14 +217,20 @@ export default function MultiThreadEventTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadEvent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 20; i++) {
-        tasks.push(new taskpool.Task(concurrentPublishTask, bus, 'click', `data_${i}`))
+    it('testMultiThreadEvent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 20; i++) {
+          tasks.push(new taskpool.Task(concurrentPublishTask, bus, 'click', `data_${i}`))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await bus.getPublishCount() >= 20).assertTrue()
+        expect(await bus.getQueueLength() >= 20).assertTrue()
+      } catch (error) {
+        console.error("testMultiThreadEvent0500 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await bus.getPublishCount() >= 20).assertTrue()
-      expect(await bus.getQueueLength() >= 20).assertTrue()
+      done();
     })
 
     /**
@@ -211,18 +241,24 @@ export default function MultiThreadEventTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadEvent0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(concurrentSubscribeTask, bus, 'click', `handler_${i}`))
+    it('testMultiThreadEvent0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(concurrentSubscribeTask, bus, 'click', `handler_${i}`))
+        }
+        await executeTasksGetObjects(tasks)
+        const pubTasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 20; i++) {
+          pubTasks.push(new taskpool.Task(concurrentPublishTask, bus, 'click', `data_${i}`))
+        }
+        await executeTasksGetObjects(pubTasks)
+        expect(await bus.getPublishCount() >= 20).assertTrue()
+      } catch (error) {
+        console.error("testMultiThreadEvent0600 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      const pubTasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 20; i++) {
-        pubTasks.push(new taskpool.Task(concurrentPublishTask, bus, 'click', `data_${i}`))
-      }
-      await executeTasksGetObjects(pubTasks)
-      expect(await bus.getPublishCount() >= 20).assertTrue()
+      done();
     })
 
     /**
@@ -233,13 +269,19 @@ export default function MultiThreadEventTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadEvent0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 50; i++) {
-        tasks.push(new taskpool.Task(concurrentSubscribeTask, bus, 'click', `handler_${i}`))
+    it('testMultiThreadEvent0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 50; i++) {
+          tasks.push(new taskpool.Task(concurrentSubscribeTask, bus, 'click', `handler_${i}`))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await bus.getSubscriberCount('click')).assertEqual(50)
+      } catch (error) {
+        console.error("testMultiThreadEvent0700 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await bus.getSubscriberCount('click')).assertEqual(50)
+      done();
     })
 
     /**
@@ -250,15 +292,21 @@ export default function MultiThreadEventTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadEvent0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(concurrentSubscribeTask, bus, `event_${i % 3}`, `handler_${i}`))
+    it('testMultiThreadEvent0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(concurrentSubscribeTask, bus, `event_${i % 3}`, `handler_${i}`))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await bus.getSubscriberCount('event_0') > 0).assertTrue()
+        expect(await bus.getSubscriberCount('event_1') > 0).assertTrue()
+        expect(await bus.getSubscriberCount('event_2') > 0).assertTrue()
+      } catch (error) {
+        console.error("testMultiThreadEvent0800 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await bus.getSubscriberCount('event_0') > 0).assertTrue()
-      expect(await bus.getSubscriberCount('event_1') > 0).assertTrue()
-      expect(await bus.getSubscriberCount('event_2') > 0).assertTrue()
+      done();
     })
 
     /**
@@ -269,13 +317,19 @@ export default function MultiThreadEventTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadEvent0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(concurrentPublishTask, bus, 'click', `data_${i}`))
+    it('testMultiThreadEvent0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(concurrentPublishTask, bus, 'click', `data_${i}`))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await bus.getQueueLength() >= 10).assertTrue()
+      } catch (error) {
+        console.error("testMultiThreadEvent0900 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await bus.getQueueLength() >= 10).assertTrue()
+      done();
     })
 
     /**
@@ -286,15 +340,21 @@ export default function MultiThreadEventTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiThreadEvent1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(concurrentSubscribeTask, bus, 'click', `handler_${i}`))
-        tasks.push(new taskpool.Task(concurrentPublishTask, bus, 'click', `data_${i}`))
+    it('testMultiThreadEvent1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(concurrentSubscribeTask, bus, 'click', `handler_${i}`))
+          tasks.push(new taskpool.Task(concurrentPublishTask, bus, 'click', `data_${i}`))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await bus.getSubscriberCount('click') > 0).assertTrue()
+        expect(await bus.getPublishCount() >= 5).assertTrue()
+      } catch (error) {
+        console.error("testMultiThreadEvent1000 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await bus.getSubscriberCount('click') > 0).assertTrue()
-      expect(await bus.getPublishCount() >= 5).assertTrue()
+      done();
     })
   })
 }

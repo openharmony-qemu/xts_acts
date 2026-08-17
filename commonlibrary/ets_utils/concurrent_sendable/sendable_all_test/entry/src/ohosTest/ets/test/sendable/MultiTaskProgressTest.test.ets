@@ -157,11 +157,17 @@ export default function MultiTaskProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMultiTaskProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await mtp.setTotalTasks(3)
-      await mtp.registerTask('task_1')
-      expect(await mtp.getTaskProgress('task_1')).assertEqual(0)
-      expect(await mtp.getTaskStatus('task_1')).assertEqual('pending')
+    it('testMultiTaskProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await mtp.setTotalTasks(3)
+        await mtp.registerTask('task_1')
+        expect(await mtp.getTaskProgress('task_1')).assertEqual(0)
+        expect(await mtp.getTaskStatus('task_1')).assertEqual('pending')
+      } catch (error) {
+        console.error("testMultiTaskProgress0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -172,12 +178,18 @@ export default function MultiTaskProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMultiTaskProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await mtp.setTotalTasks(3)
-      await mtp.registerTask('task_1')
-      await mtp.updateTaskProgress('task_1', 50)
-      expect(await mtp.getTaskProgress('task_1')).assertEqual(50)
-      expect(await mtp.getTaskStatus('task_1')).assertEqual('running')
+    it('testMultiTaskProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await mtp.setTotalTasks(3)
+        await mtp.registerTask('task_1')
+        await mtp.updateTaskProgress('task_1', 50)
+        expect(await mtp.getTaskProgress('task_1')).assertEqual(50)
+        expect(await mtp.getTaskStatus('task_1')).assertEqual('running')
+      } catch (error) {
+        console.error("testMultiTaskProgress0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -188,12 +200,18 @@ export default function MultiTaskProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMultiTaskProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await mtp.setTotalTasks(3)
-      await mtp.registerTask('task_1')
-      await mtp.updateTaskProgress('task_1', 100)
-      expect(await mtp.getTaskProgress('task_1')).assertEqual(100)
-      expect(await mtp.getTaskStatus('task_1')).assertEqual('completed')
+    it('testMultiTaskProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await mtp.setTotalTasks(3)
+        await mtp.registerTask('task_1')
+        await mtp.updateTaskProgress('task_1', 100)
+        expect(await mtp.getTaskProgress('task_1')).assertEqual(100)
+        expect(await mtp.getTaskStatus('task_1')).assertEqual('completed')
+      } catch (error) {
+        console.error("testMultiTaskProgress0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -204,11 +222,17 @@ export default function MultiTaskProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMultiTaskProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await mtp.setTotalTasks(3)
-      await mtp.registerTask('task_1')
-      await mtp.markTaskFailed('task_1')
-      expect(await mtp.getTaskStatus('task_1')).assertEqual('failed')
+    it('testMultiTaskProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await mtp.setTotalTasks(3)
+        await mtp.registerTask('task_1')
+        await mtp.markTaskFailed('task_1')
+        expect(await mtp.getTaskStatus('task_1')).assertEqual('failed')
+      } catch (error) {
+        console.error("testMultiTaskProgress0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -219,15 +243,21 @@ export default function MultiTaskProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiTaskProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await mtp.setTotalTasks(5)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        await mtp.registerTask(`task_${i}`)
-        tasks.push(new taskpool.Task(taskProgressUpdateTask, mtp, `task_${i}`))
+    it('testMultiTaskProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await mtp.setTotalTasks(5)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          await mtp.registerTask(`task_${i}`)
+          tasks.push(new taskpool.Task(taskProgressUpdateTask, mtp, `task_${i}`))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await mtp.getCompletedCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testMultiTaskProgress0500 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await mtp.getCompletedCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -238,15 +268,21 @@ export default function MultiTaskProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMultiTaskProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await mtp.setTotalTasks(3)
-      await mtp.registerTask('task_0')
-      await mtp.registerTask('task_1')
-      await mtp.registerTask('task_2')
-      await mtp.updateTaskProgress('task_0', 100)
-      await mtp.updateTaskProgress('task_1', 50)
-      await mtp.updateTaskProgress('task_2', 0)
-      expect(await mtp.getOverallProgress()).assertEqual(50)
+    it('testMultiTaskProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await mtp.setTotalTasks(3)
+        await mtp.registerTask('task_0')
+        await mtp.registerTask('task_1')
+        await mtp.registerTask('task_2')
+        await mtp.updateTaskProgress('task_0', 100)
+        await mtp.updateTaskProgress('task_1', 50)
+        await mtp.updateTaskProgress('task_2', 0)
+        expect(await mtp.getOverallProgress()).assertEqual(50)
+      } catch (error) {
+        console.error("testMultiTaskProgress0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -257,16 +293,22 @@ export default function MultiTaskProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMultiTaskProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await mtp.setTotalTasks(3)
-      await mtp.registerTask('task_0')
-      await mtp.registerTask('task_1')
-      await mtp.registerTask('task_2')
-      await mtp.updateTaskProgress('task_0', 100)
-      await mtp.updateTaskProgress('task_1', 100)
-      await mtp.markTaskFailed('task_2')
-      expect(await mtp.getCompletedCount()).assertEqual(2)
-      expect(await mtp.getFailedCount()).assertEqual(1)
+    it('testMultiTaskProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await mtp.setTotalTasks(3)
+        await mtp.registerTask('task_0')
+        await mtp.registerTask('task_1')
+        await mtp.registerTask('task_2')
+        await mtp.updateTaskProgress('task_0', 100)
+        await mtp.updateTaskProgress('task_1', 100)
+        await mtp.markTaskFailed('task_2')
+        expect(await mtp.getCompletedCount()).assertEqual(2)
+        expect(await mtp.getFailedCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testMultiTaskProgress0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -277,12 +319,18 @@ export default function MultiTaskProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMultiTaskProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await mtp.setTotalTasks(2)
-      await mtp.registerTask('task_0')
-      await mtp.registerTask('task_1')
-      await mtp.updateTaskProgress('task_0', 150)
-      expect(await mtp.getTaskProgress('task_0')).assertEqual(100)
+    it('testMultiTaskProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await mtp.setTotalTasks(2)
+        await mtp.registerTask('task_0')
+        await mtp.registerTask('task_1')
+        await mtp.updateTaskProgress('task_0', 150)
+        expect(await mtp.getTaskProgress('task_0')).assertEqual(100)
+      } catch (error) {
+        console.error("testMultiTaskProgress0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -293,9 +341,15 @@ export default function MultiTaskProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMultiTaskProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await mtp.setTotalTasks(0)
-      expect(await mtp.getOverallProgress()).assertEqual(0)
+    it('testMultiTaskProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await mtp.setTotalTasks(0)
+        expect(await mtp.getOverallProgress()).assertEqual(0)
+      } catch (error) {
+        console.error("testMultiTaskProgress0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -306,16 +360,22 @@ export default function MultiTaskProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMultiTaskProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await mtp.setTotalTasks(10)
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        await mtp.registerTask(`task_${i}`)
-        tasks.push(new taskpool.Task(taskProgressUpdateTask, mtp, `task_${i}`))
+    it('testMultiTaskProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await mtp.setTotalTasks(10)
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          await mtp.registerTask(`task_${i}`)
+          tasks.push(new taskpool.Task(taskProgressUpdateTask, mtp, `task_${i}`))
+        }
+        await executeTasksGetObjects(tasks)
+        expect(await mtp.getCompletedCount()).assertEqual(10)
+        expect(await mtp.getOverallProgress()).assertEqual(100)
+      } catch (error) {
+        console.error("testMultiTaskProgress1000 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-      expect(await mtp.getCompletedCount()).assertEqual(10)
-      expect(await mtp.getOverallProgress()).assertEqual(100)
+      done();
     })
 
     /**
@@ -326,12 +386,18 @@ export default function MultiTaskProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMultiTaskProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await mtp.setTotalTasks(2)
-      await mtp.registerTask('task_0')
-      await mtp.updateTaskProgress('task_0', 100)
-      await mtp.reset()
-      expect(await mtp.getOverallProgress()).assertEqual(0)
+    it('testMultiTaskProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await mtp.setTotalTasks(2)
+        await mtp.registerTask('task_0')
+        await mtp.updateTaskProgress('task_0', 100)
+        await mtp.reset()
+        expect(await mtp.getOverallProgress()).assertEqual(0)
+      } catch (error) {
+        console.error("testMultiTaskProgress1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -342,11 +408,17 @@ export default function MultiTaskProgressTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMultiTaskProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await mtp.setTotalTasks(3)
-      await mtp.registerTask('task_0')
-      expect(await mtp.getTaskProgress('unknown')).assertEqual(0)
-      expect(await mtp.getTaskStatus('unknown')).assertEqual('unknown')
+    it('testMultiTaskProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await mtp.setTotalTasks(3)
+        await mtp.registerTask('task_0')
+        expect(await mtp.getTaskProgress('unknown')).assertEqual(0)
+        expect(await mtp.getTaskStatus('unknown')).assertEqual('unknown')
+      } catch (error) {
+        console.error("testMultiTaskProgress1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

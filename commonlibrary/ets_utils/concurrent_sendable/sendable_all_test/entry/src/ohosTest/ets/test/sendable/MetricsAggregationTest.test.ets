@@ -202,13 +202,19 @@ export default function MetricsAggregationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMetricsAggregation0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await aggregator.sendMetric('cpu_usage', 85.5, 'gauge')
-      expect(aggregator.getReportCount()).assertEqual(1)
+    it('testMetricsAggregation0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await aggregator.sendMetric('cpu_usage', 85.5, 'gauge')
+        expect(aggregator.getReportCount()).assertEqual(1)
 
-      const reports: collections.Array<MetricReport> = aggregator.getReports()
-      expect(reports[0].name).assertEqual('cpu_usage')
-      expect(reports[0].value).assertEqual(85.5)
+        const reports: collections.Array<MetricReport> = aggregator.getReports()
+        expect(reports[0].name).assertEqual('cpu_usage')
+        expect(reports[0].value).assertEqual(85.5)
+      } catch (error) {
+        console.error("testMetricsAggregation0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -219,12 +225,18 @@ export default function MetricsAggregationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMetricsAggregation0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await aggregator.sendMetricWithTags('request_count', 100, 'counter')
-      expect(aggregator.getReportCount()).assertEqual(1)
+    it('testMetricsAggregation0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await aggregator.sendMetricWithTags('request_count', 100, 'counter')
+        expect(aggregator.getReportCount()).assertEqual(1)
 
-      const reports: collections.Array<MetricReport> = aggregator.getReports()
-      expect(reports[0].metricType).assertEqual('counter')
+        const reports: collections.Array<MetricReport> = aggregator.getReports()
+        expect(reports[0].metricType).assertEqual('counter')
+      } catch (error) {
+        console.error("testMetricsAggregation0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -235,14 +247,20 @@ export default function MetricsAggregationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMetricsAggregation0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      tasks.push(new taskpool.Task(sendMetricTask, aggregator, 'metric_a', 10, 'counter'))
-      tasks.push(new taskpool.Task(sendMetricTask, aggregator, 'metric_b', 20, 'gauge'))
-      tasks.push(new taskpool.Task(sendMetricTask, aggregator, 'metric_c', 30, 'histogram'))
+    it('testMetricsAggregation0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        tasks.push(new taskpool.Task(sendMetricTask, aggregator, 'metric_a', 10, 'counter'))
+        tasks.push(new taskpool.Task(sendMetricTask, aggregator, 'metric_b', 20, 'gauge'))
+        tasks.push(new taskpool.Task(sendMetricTask, aggregator, 'metric_c', 30, 'histogram'))
 
-      await executeTasks(tasks)
-      expect(aggregator.getReportCount()).assertEqual(3)
+        await executeTasks(tasks)
+        expect(aggregator.getReportCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testMetricsAggregation0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -253,14 +271,20 @@ export default function MetricsAggregationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMetricsAggregation0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const beforeTime: number = Date.now()
-      await aggregator.sendMetric('latency', 50, 'histogram')
-      const afterTime: number = Date.now()
+    it('testMetricsAggregation0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const beforeTime: number = Date.now()
+        await aggregator.sendMetric('latency', 50, 'histogram')
+        const afterTime: number = Date.now()
 
-      const reports: collections.Array<MetricReport> = aggregator.getReports()
-      expect(reports[0].timestamp >= beforeTime).assertTrue()
-      expect(reports[0].timestamp <= afterTime).assertTrue()
+        const reports: collections.Array<MetricReport> = aggregator.getReports()
+        expect(reports[0].timestamp >= beforeTime).assertTrue()
+        expect(reports[0].timestamp <= afterTime).assertTrue()
+      } catch (error) {
+        console.error("testMetricsAggregation0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -271,9 +295,15 @@ export default function MetricsAggregationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMetricsAggregation0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await aggregator.sendMetric('req_rate', 99.9, 'gauge')
-      expect(aggregator.getMetricType(0)).assertEqual('gauge')
+    it('testMetricsAggregation0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await aggregator.sendMetric('req_rate', 99.9, 'gauge')
+        expect(aggregator.getMetricType(0)).assertEqual('gauge')
+      } catch (error) {
+        console.error("testMetricsAggregation0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -284,13 +314,19 @@ export default function MetricsAggregationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMetricsAggregation0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(sendMetricTask, aggregator, `metric_${i}`, i * 10, 'counter'))
+    it('testMetricsAggregation0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(sendMetricTask, aggregator, `metric_${i}`, i * 10, 'counter'))
+        }
+        await executeTasks(tasks)
+        expect(aggregator.getReportCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testMetricsAggregation0600 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(aggregator.getReportCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -301,13 +337,19 @@ export default function MetricsAggregationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMetricsAggregation0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(sendMetricTask, aggregator, `r3_${i}`, i, 'counter'))
+    it('testMetricsAggregation0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(sendMetricTask, aggregator, `r3_${i}`, i, 'counter'))
+        }
+        await executeTasks(tasks)
+        expect(aggregator.getReportCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testMetricsAggregation0700 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(aggregator.getReportCount()).assertEqual(3)
+      done();
     })
 
     /**
@@ -318,13 +360,19 @@ export default function MetricsAggregationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMetricsAggregation0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(sendMetricTask, aggregator, `r5_${i}`, i, 'gauge'))
+    it('testMetricsAggregation0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(sendMetricTask, aggregator, `r5_${i}`, i, 'gauge'))
+        }
+        await executeTasks(tasks)
+        expect(aggregator.getReportCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testMetricsAggregation0800 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(aggregator.getReportCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -335,13 +383,19 @@ export default function MetricsAggregationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMetricsAggregation0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(sendMetricTask, aggregator, `r10_${i}`, i, 'histogram'))
+    it('testMetricsAggregation0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(sendMetricTask, aggregator, `r10_${i}`, i, 'histogram'))
+        }
+        await executeTasks(tasks)
+        expect(aggregator.getReportCount()).assertEqual(10)
+      } catch (error) {
+        console.error("testMetricsAggregation0900 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(aggregator.getReportCount()).assertEqual(10)
+      done();
     })
 
     /**
@@ -352,16 +406,22 @@ export default function MetricsAggregationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testMetricsAggregation1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await aggregator.sendMetric('m1', 1, 'counter')
-      await aggregator.sendMetric('m2', 2, 'gauge')
-      await aggregator.sendMetric('m3', 3, 'histogram')
+    it('testMetricsAggregation1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await aggregator.sendMetric('m1', 1, 'counter')
+        await aggregator.sendMetric('m2', 2, 'gauge')
+        await aggregator.sendMetric('m3', 3, 'histogram')
 
-      const reports: collections.Array<MetricReport> = aggregator.getReports()
-      expect(reports.length).assertEqual(3)
-      expect(reports[0].name).assertEqual('m1')
-      expect(reports[1].name).assertEqual('m2')
-      expect(reports[2].name).assertEqual('m3')
+        const reports: collections.Array<MetricReport> = aggregator.getReports()
+        expect(reports.length).assertEqual(3)
+        expect(reports[0].name).assertEqual('m1')
+        expect(reports[1].name).assertEqual('m2')
+        expect(reports[2].name).assertEqual('m3')
+      } catch (error) {
+        console.error("testMetricsAggregation1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -372,13 +432,19 @@ export default function MetricsAggregationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMetricsAggregation1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await aggregator.sendMetric('temp', 1, 'counter')
-      expect(aggregator.getReportCount()).assertEqual(1)
+    it('testMetricsAggregation1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await aggregator.sendMetric('temp', 1, 'counter')
+        expect(aggregator.getReportCount()).assertEqual(1)
 
-      await aggregator.clearReports()
-      expect(aggregator.getReportCount()).assertEqual(0)
-      expect(aggregator.getReports().length).assertEqual(0)
+        await aggregator.clearReports()
+        expect(aggregator.getReportCount()).assertEqual(0)
+        expect(aggregator.getReports().length).assertEqual(0)
+      } catch (error) {
+        console.error("testMetricsAggregation1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -389,18 +455,24 @@ export default function MetricsAggregationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMetricsAggregation1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const boundaries: number[] = [1, 5, 10, 50, 100, 500]
-      const histogram: Histogram = await histogramManager.createHistogram('multi_bucket', boundaries)
+    it('testMetricsAggregation1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const boundaries: number[] = [1, 5, 10, 50, 100, 500]
+        const histogram: Histogram = await histogramManager.createHistogram('multi_bucket', boundaries)
 
-      expect(histogram.getBucketCount()).assertEqual(6)
-      histogram.observe(3)
-      histogram.observe(25)
-      histogram.observe(200)
+        expect(histogram.getBucketCount()).assertEqual(6)
+        histogram.observe(3)
+        histogram.observe(25)
+        histogram.observe(200)
 
-      expect(histogram.getBucketValue(5)).assertEqual(1)
-      expect(histogram.getBucketValue(50)).assertEqual(2)
-      expect(histogram.getBucketValue(500)).assertEqual(3)
+        expect(histogram.getBucketValue(5)).assertEqual(1)
+        expect(histogram.getBucketValue(50)).assertEqual(2)
+        expect(histogram.getBucketValue(500)).assertEqual(3)
+      } catch (error) {
+        console.error("testMetricsAggregation1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -411,13 +483,19 @@ export default function MetricsAggregationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMetricsAggregation1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await aggregator.sendMetric('clear_test', 100, 'counter')
-      await aggregator.sendMetric('clear_test2', 200, 'gauge')
+    it('testMetricsAggregation1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await aggregator.sendMetric('clear_test', 100, 'counter')
+        await aggregator.sendMetric('clear_test2', 200, 'gauge')
 
-      await aggregator.clearReports()
-      expect(aggregator.getReportCount()).assertEqual(0)
-      expect(aggregator.getReports().length).assertEqual(0)
+        await aggregator.clearReports()
+        expect(aggregator.getReportCount()).assertEqual(0)
+        expect(aggregator.getReports().length).assertEqual(0)
+      } catch (error) {
+        console.error("testMetricsAggregation1300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

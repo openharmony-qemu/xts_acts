@@ -92,7 +92,7 @@ export default function MakeObservedSendableTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMakeObservedSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMakeObservedSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const model: ObservedModel = new ObservedModel()
       model.value_ = 1
       const observed: ObservedModel = UIUtils.makeObserved(model)
@@ -106,6 +106,7 @@ export default function MakeObservedSendableTest(): void {
       }
       expect(caught).assertTrue()
       expect(ArkTSUtils.isSendable(model)).assertTrue()
+      done();
     })
   })
 }
