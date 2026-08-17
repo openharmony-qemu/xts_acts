@@ -34,7 +34,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_0100
      * @tc.name testTypedUArraysJoinTestFileA001
      * @tc.desc Verify - Uint8Array
      * @tc.size MediumTest
@@ -48,7 +48,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_0200
      * @tc.name testTypedUArraysJoinTestFileA002
      * @tc.desc Verify - BigUint64Array
      * @tc.size MediumTest
@@ -62,7 +62,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_0300
      * @tc.name testTypedUArraysJoinTestFileA003
      * @tc.desc Verify - Uint8Array
      * @tc.size MediumTest
@@ -76,16 +76,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0700
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0800
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0900
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_0400
      * @tc.name testTypedUArraysJoinTestFileA004
      * @tc.desc Verify - BigUint64Array
      * @tc.size MediumTest
@@ -99,10 +90,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1100
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_0500
      * @tc.name testTypedUArraysJoinTestFileA005
      * @tc.desc Verify separator
      * @tc.size MediumTest
@@ -116,7 +104,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_0600
      * @tc.name testTypedUArraysJoinTestFileA006
      * @tc.desc Verify separator "-"
      * @tc.size MediumTest
@@ -130,7 +118,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_0700
      * @tc.name testTypedUArraysJoinTestFileA007
      * @tc.desc Verify separator " :: "
      * @tc.size MediumTest
@@ -144,7 +132,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_0800
      * @tc.name testTypedUArraysJoinTestFileA008
      * @tc.desc Verify separator "|"
      * @tc.size MediumTest
@@ -158,7 +146,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_0900
      * @tc.name testTypedUArraysJoinTestFileA009
      * @tc.desc Verify separator "\n"
      * @tc.size MediumTest
@@ -172,13 +160,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1700
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1800
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_1000
      * @tc.name testTypedUArraysJoinTestFileA010
      * @tc.desc Verify separator Unicode " "
      * @tc.size MediumTest
@@ -192,7 +174,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_1100
      * @tc.name testTypedUArraysJoinTestFileA011
      * @tc.desc Verify separator " "
      * @tc.size MediumTest
@@ -206,7 +188,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_1200
      * @tc.name testTypedUArraysJoinTestFileA012
      * @tc.desc Verify separator undefined
      * @tc.size MediumTest
@@ -220,7 +202,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_1300
      * @tc.name testTypedUArraysJoinTestFileA013
      * @tc.desc Verify separator null "null"
      * @tc.size MediumTest
@@ -234,7 +216,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_1400
      * @tc.name testTypedUArraysJoinTestFileA014
      * @tc.desc Verify separator 0 "0"
      * @tc.size MediumTest
@@ -248,7 +230,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_1500
      * @tc.name testTypedUArraysJoinTestFileA015
      * @tc.desc Verify separator -1 "-1"
      * @tc.size MediumTest
@@ -262,7 +244,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_1600
      * @tc.name testTypedUArraysJoinTestFileA016
      * @tc.desc Verify separator true "true"
      * @tc.size MediumTest
@@ -276,7 +258,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_1700
      * @tc.name testTypedUArraysJoinTestFileA017
      * @tc.desc Verify separator false "false"
      * @tc.size MediumTest
@@ -290,7 +272,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_1800
      * @tc.name testTypedUArraysJoinTestFileA018
      * @tc.desc Verify separator "[object Object]"
      * @tc.size MediumTest
@@ -304,7 +286,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_1900
      * @tc.name testTypedUArraysJoinTestFileA019
      * @tc.desc Verify separator "1,2"
      * @tc.size MediumTest
@@ -318,7 +300,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_2000
      * @tc.name testTypedUArraysJoinTestFileA020
      * @tc.desc Verify separator " "
      * @tc.size MediumTest
@@ -332,7 +314,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_2100
      * @tc.name testTypedUArraysJoinTestFileA021
      * @tc.desc Verify separator "."
      * @tc.size MediumTest
@@ -346,7 +328,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_2200
      * @tc.name testTypedUArraysJoinTestFileA022
      * @tc.desc Verify separator ";"
      * @tc.size MediumTest
@@ -360,7 +342,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_2300
      * @tc.name testTypedUArraysJoinTestFileA023
      * @tc.desc Verify separator "+"
      * @tc.size MediumTest
@@ -374,7 +356,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_2400
      * @tc.name testTypedUArraysJoinTestFileA024
      * @tc.desc Verify separator "*"
      * @tc.size MediumTest
@@ -388,7 +370,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_2500
      * @tc.name testTypedUArraysJoinTestFileA025
      * @tc.desc Verify separator "="
      * @tc.size MediumTest
@@ -402,7 +384,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_2600
      * @tc.name testTypedUArraysJoinTestFileA026
      * @tc.desc Verify separator ">"
      * @tc.size MediumTest
@@ -416,7 +398,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_2700
      * @tc.name testTypedUArraysJoinTestFileA027
      * @tc.desc Verify separator "<"
      * @tc.size MediumTest
@@ -430,7 +412,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_2800
      * @tc.name testTypedUArraysJoinTestFileA028
      * @tc.desc Verify separator "%"
      * @tc.size MediumTest
@@ -444,7 +426,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_2900
      * @tc.name testTypedUArraysJoinTestFileA029
      * @tc.desc Verify separator "$"
      * @tc.size MediumTest
@@ -458,7 +440,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_3000
      * @tc.name testTypedUArraysJoinTestFileA030
      * @tc.desc Verify separator "#"
      * @tc.size MediumTest
@@ -472,7 +454,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_3100
      * @tc.name testTypedUArraysJoinTestFileA031
      * @tc.desc Verify separator "~"
      * @tc.size MediumTest
@@ -486,7 +468,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_3200
      * @tc.name testTypedUArraysJoinTestFileA032
      * @tc.desc Verify separator "`"
      * @tc.size MediumTest
@@ -500,7 +482,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_3300
      * @tc.name testTypedUArraysJoinTestFileA033
      * @tc.desc Verify separator "||"
      * @tc.size MediumTest
@@ -510,11 +492,12 @@ export default function typedUArraysJoinTest01(): void {
     it('testTypedUArraysJoinTestFileA033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       let result = arr.join("||");
-      expect(result).assertEqual("1||2||3");
+      const expected = "1" + "||" + "2" + "||" + "3";
+      expect(result).assertEqual(expected);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_3400
      * @tc.name testTypedUArraysJoinTestFileA034
      * @tc.desc Verify separator "->"
      * @tc.size MediumTest
@@ -528,7 +511,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_3500
      * @tc.name testTypedUArraysJoinTestFileA035
      * @tc.desc Verify separator "<-"
      * @tc.size MediumTest
@@ -542,7 +525,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_3600
      * @tc.name testTypedUArraysJoinTestFileA036
      * @tc.desc Verify separator "<=>"
      * @tc.size MediumTest
@@ -556,7 +539,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_3700
      * @tc.name testTypedUArraysJoinTestFileA037
      * @tc.desc Verify separator "_"
      * @tc.size MediumTest
@@ -570,10 +553,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_4700
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_3800
      * @tc.name testTypedUArraysJoinTestFileA038
      * @tc.desc Verify separator ". "
      * @tc.size MediumTest
@@ -587,7 +567,7 @@ export default function typedUArraysJoinTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOIN0101_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_JOINTEST01_3900
      * @tc.name testTypedUArraysJoinTestFileA039
      * @tc.desc Verify separator "++"
      * @tc.size MediumTest

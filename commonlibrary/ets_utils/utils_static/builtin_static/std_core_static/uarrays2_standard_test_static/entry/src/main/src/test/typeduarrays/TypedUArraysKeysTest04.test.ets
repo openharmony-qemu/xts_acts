@@ -46,7 +46,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_0100
      * @tc.name testTypedUArraysKeysTestFileD001
      * @tc.desc Verify BigUint64Array BigInt('18446744073709551615') keys
      * @tc.size MediumTest
@@ -63,7 +63,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_0200
      * @tc.name testTypedUArraysKeysTestFileD002
      * @tc.desc Verify new Uint8Array([1,2,3]) keys
      * @tc.size MediumTest
@@ -80,7 +80,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_0300
      * @tc.name testTypedUArraysKeysTestFileD003
      * @tc.desc Verify new Uint8Array(0) keys
      * @tc.size MediumTest
@@ -94,7 +94,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_0400
      * @tc.name testTypedUArraysKeysTestFileD004
      * @tc.desc Verify new Uint8ClampedArray([1,2,3]) keys
      * @tc.size MediumTest
@@ -110,7 +110,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_0500
      * @tc.name testTypedUArraysKeysTestFileD005
      * @tc.desc Verify new Uint8ClampedArray(0) keys
      * @tc.size MediumTest
@@ -124,7 +124,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_0600
      * @tc.name testTypedUArraysKeysTestFileD006
      * @tc.desc Verify new Uint16Array([1,2,3]) keys
      * @tc.size MediumTest
@@ -140,7 +140,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_0700
      * @tc.name testTypedUArraysKeysTestFileD007
      * @tc.desc Verify new Uint16Array(0) keys
      * @tc.size MediumTest
@@ -154,7 +154,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_0800
      * @tc.name testTypedUArraysKeysTestFileD008
      * @tc.desc Verify new Uint32Array([1,2,3]) keys
      * @tc.size MediumTest
@@ -170,7 +170,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_0900
      * @tc.name testTypedUArraysKeysTestFileD009
      * @tc.desc Verify new Uint32Array(0) keys
      * @tc.size MediumTest
@@ -184,7 +184,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_1000
      * @tc.name testTypedUArraysKeysTestFileD010
      * @tc.desc Verify new BigUint64Array([1n,2n,3n]) keys
      * @tc.size MediumTest
@@ -200,7 +200,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_1100
      * @tc.name testTypedUArraysKeysTestFileD011
      * @tc.desc Verify new BigUint64Array(0) keys
      * @tc.size MediumTest
@@ -214,7 +214,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_1200
      * @tc.name testTypedUArraysKeysTestFileD012
      * @tc.desc Verify new Uint8Array(buffer, offset, length) keys
      * @tc.size MediumTest
@@ -231,7 +231,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_1300
      * @tc.name testTypedUArraysKeysTestFileD013
      * @tc.desc Verify new Uint16Array(buffer, offset, length) keys
      * @tc.size MediumTest
@@ -247,7 +247,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_1400
      * @tc.name testTypedUArraysKeysTestFileD014
      * @tc.desc Verify new Uint32Array(buffer, offset, length) keys
      * @tc.size MediumTest
@@ -263,7 +263,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_1500
      * @tc.name testTypedUArraysKeysTestFileD015
      * @tc.desc Verify new BigUint64Array(buffer, offset, length) keys
      * @tc.size MediumTest
@@ -279,7 +279,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_1600
      * @tc.name testTypedUArraysKeysTestFileD016
      * @tc.desc Verify new Uint8Array(new ArrayBuffer(0)) keys
      * @tc.size MediumTest
@@ -294,7 +294,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_1700
      * @tc.name testTypedUArraysKeysTestFileD017
      * @tc.desc Verify new Uint8Array(new ArrayBuffer(8)) keys
      * @tc.size MediumTest
@@ -312,7 +312,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_1800
      * @tc.name testTypedUArraysKeysTestFileD018
      * @tc.desc Verify new Uint16Array(new ArrayBuffer(8)) keys
      * @tc.size MediumTest
@@ -330,7 +330,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_1900
      * @tc.name testTypedUArraysKeysTestFileD019
      * @tc.desc Verify new Uint32Array(new ArrayBuffer(8)) keys
      * @tc.size MediumTest
@@ -348,7 +348,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_2000
      * @tc.name testTypedUArraysKeysTestFileD020
      * @tc.desc Verify new BigUint64Array(new ArrayBuffer(8)) keys
      * @tc.size MediumTest
@@ -364,7 +364,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_2100
      * @tc.name testTypedUArraysKeysTestFileD021
      * @tc.desc Verify Uint8Array 128 keys
      * @tc.size MediumTest
@@ -381,7 +381,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_2200
      * @tc.name testTypedUArraysKeysTestFileD022
      * @tc.desc Verify Uint16Array 32768 keys
      * @tc.size MediumTest
@@ -398,7 +398,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_2300
      * @tc.name testTypedUArraysKeysTestFileD023
      * @tc.desc Verify Uint32Array 2147483648 keys
      * @tc.size MediumTest
@@ -415,7 +415,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_2400
      * @tc.name testTypedUArraysKeysTestFileD024
      * @tc.desc Verify BigUint64Array 1n keys
      * @tc.size MediumTest
@@ -432,7 +432,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_2500
      * @tc.name testTypedUArraysKeysTestFileD025
      * @tc.desc Verify Uint8ClampedArray 128 keys
      * @tc.size MediumTest
@@ -449,7 +449,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_2600
      * @tc.name testTypedUArraysKeysTestFileD026
      * @tc.desc Verify Uint8Array 0o377 keys
      * @tc.size MediumTest
@@ -465,7 +465,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_2700
      * @tc.name testTypedUArraysKeysTestFileD027
      * @tc.desc Verify Uint8Array 0b11111111 keys
      * @tc.size MediumTest
@@ -481,7 +481,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_2800
      * @tc.name testTypedUArraysKeysTestFileD028
      * @tc.desc Verify Uint16Array 0o177777 keys
      * @tc.size MediumTest
@@ -497,7 +497,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_2900
      * @tc.name testTypedUArraysKeysTestFileD029
      * @tc.desc Verify Uint16Array 0b1111111111111111 keys
      * @tc.size MediumTest
@@ -513,7 +513,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_3000
      * @tc.name testTypedUArraysKeysTestFileD030
      * @tc.desc Verify Uint32Array 0o37777777777 keys
      * @tc.size MediumTest
@@ -529,7 +529,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_3100
      * @tc.name testTypedUArraysKeysTestFileD031
      * @tc.desc Verify Uint32Array 0b11111111111111111111111111111111 keys
      * @tc.size MediumTest
@@ -545,7 +545,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_3200
      * @tc.name testTypedUArraysKeysTestFileD032
      * @tc.desc Verify BigUint64Array 1777777777777777777777n, 8) keys
      * @tc.size MediumTest
@@ -561,7 +561,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_3300
      * @tc.name testTypedUArraysKeysTestFileD033
      * @tc.desc Verify Uint8Array keys 0
      * @tc.size MediumTest
@@ -575,7 +575,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_3400
      * @tc.name testTypedUArraysKeysTestFileD034
      * @tc.desc Verify Uint8Array keys length-1
      * @tc.size MediumTest
@@ -591,7 +591,7 @@ export default function typedUArraysKeysTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART104_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST04_3500
      * @tc.name testTypedUArraysKeysTestFileD035
      * @tc.desc Verify Uint16Array keys 0
      * @tc.size MediumTest

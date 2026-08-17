@@ -34,7 +34,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_0100
      * @tc.name testInt32ArrayBaseline001
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -49,7 +49,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_0200
      * @tc.name testInt32ArrayBaseline002
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -67,7 +67,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_0300
      * @tc.name testInt32ArrayBaseline003
      * @tc.desc Verify (2147483648 -2147483648)
      * @tc.size MediumTest
@@ -80,7 +80,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_0400
      * @tc.name testInt32ArrayBaseline004
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -99,7 +99,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_0500
      * @tc.name testInt32ArrayBaseline005
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -114,7 +114,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_0600
      * @tc.name testInt32ArrayBaseline006
      * @tc.desc Verify map/reduce/filter
      * @tc.size MediumTest
@@ -129,7 +129,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_0700
      * @tc.name testInt32ArrayBaseline007
      * @tc.desc Verify from/of
      * @tc.size MediumTest
@@ -142,7 +142,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_0800
      * @tc.name testInt32ArrayBaseline008
      * @tc.desc Verify ArrayBuffer constructor
      * @tc.size MediumTest
@@ -157,7 +157,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_0900
      * @tc.name testInt32ArrayBaseline009
      * @tc.desc Verify BYTES_PER_ELEMENT is positive
      * @tc.size MediumTest
@@ -169,7 +169,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_1000
      * @tc.name testInt32ArrayBaseline010
      * @tc.desc Verify entries/keys/values
      * @tc.size MediumTest
@@ -189,7 +189,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_1100
      * @tc.name testInt32ArrayBaseline011
      * @tc.desc Verify every/some/filter
      * @tc.size MediumTest
@@ -204,7 +204,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_1200
      * @tc.name testInt32ArrayBaseline012
      * @tc.desc Verify slice/subarray
      * @tc.size MediumTest
@@ -220,7 +220,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_1300
      * @tc.name testInt32ArrayBaseline013
      * @tc.desc Verify sort/reverse/fill
      * @tc.size MediumTest
@@ -236,7 +236,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_1400
      * @tc.name testInt32ArrayBaseline014
      * @tc.desc Verify copyWithin/set
      * @tc.size MediumTest
@@ -254,7 +254,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_1500
      * @tc.name testInt32ArrayBaseline015
      * @tc.desc Verify toString/valueOf/join
      * @tc.size MediumTest
@@ -269,7 +269,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_1600
      * @tc.name testInt32ArrayBaseline016
      * @tc.desc Verify toReversed/toSorted
      * @tc.size MediumTest
@@ -286,7 +286,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_1700
      * @tc.name testInt32ArrayBaseline017
      * @tc.desc Verify reduceRight/toLocaleString
      * @tc.size MediumTest
@@ -300,7 +300,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_1800
      * @tc.name testInt32ArrayBaseline018
      * @tc.desc Verify Symbol.iterator
      * @tc.size MediumTest
@@ -314,7 +314,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_1900
      * @tc.name testInt32ArrayBaseline019
      * @tc.desc Verify byteOffset property
      * @tc.size MediumTest
@@ -330,7 +330,7 @@ export default function int32ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_Baseline_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT32ARRAYBASELINETEST_2000
      * @tc.name testInt32ArrayBaseline020
      * @tc.desc Verify constructor from Int32Array
      * @tc.size MediumTest

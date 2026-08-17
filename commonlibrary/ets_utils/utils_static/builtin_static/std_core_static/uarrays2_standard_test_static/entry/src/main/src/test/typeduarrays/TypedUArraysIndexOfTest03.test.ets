@@ -34,7 +34,7 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOFTEST03_0100
      * @tc.name testTypedUArraysIndexOfTestFileC001
      * @tc.desc Verify indexOf()
      * @tc.size MediumTest
@@ -48,7 +48,7 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOFTEST03_0200
      * @tc.name testTypedUArraysIndexOfTestFileC002
      * @tc.desc Verify indexOf()
      * @tc.size MediumTest
@@ -62,7 +62,7 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOFTEST03_0300
      * @tc.name testTypedUArraysIndexOfTestFileC003
      * @tc.desc Verify indexOf()
      * @tc.size MediumTest
@@ -76,7 +76,7 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOFTEST03_0400
      * @tc.name testTypedUArraysIndexOfTestFileC004
      * @tc.desc Verify indexOf() -1
      * @tc.size MediumTest
@@ -90,7 +90,7 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOFTEST03_0500
      * @tc.name testTypedUArraysIndexOfTestFileC005
      * @tc.desc Verify indexOf()
      * @tc.size MediumTest
@@ -104,7 +104,7 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOFTEST03_0600
      * @tc.name testTypedUArraysIndexOfTestFileC006
      * @tc.desc Verify indexOf()
      * @tc.size MediumTest
@@ -118,7 +118,7 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOFTEST03_0700
      * @tc.name testTypedUArraysIndexOfTestFileC007
      * @tc.desc Verify indexOf()
      * @tc.size MediumTest
@@ -132,7 +132,7 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOFTEST03_0800
      * @tc.name testTypedUArraysIndexOfTestFileC008
      * @tc.desc Verify indexOf() 1
      * @tc.size MediumTest
@@ -146,7 +146,7 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOFTEST03_0900
      * @tc.name testTypedUArraysIndexOfTestFileC009
      * @tc.desc Verify indexOf() 0
      * @tc.size MediumTest
@@ -160,7 +160,7 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOFTEST03_1000
      * @tc.name testTypedUArraysIndexOfTestFileC010
      * @tc.desc Verify indexOf()
      * @tc.size MediumTest
@@ -175,7 +175,7 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOFTEST03_1100
      * @tc.name testTypedUArraysIndexOfTestFileC011
      * @tc.desc Verify indexOf() fromIndex >= fromIndex
      * @tc.size MediumTest
@@ -189,7 +189,7 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOFTEST03_1200
      * @tc.name testTypedUArraysIndexOfTestFileC012
      * @tc.desc Verify indexOf() fromIndex fromIndex
      * @tc.size MediumTest
@@ -203,7 +203,7 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOFTEST03_1300
      * @tc.name testTypedUArraysIndexOfTestFileC013
      * @tc.desc Verify indexOf() -1 [0, length)
      * @tc.size MediumTest
@@ -217,7 +217,7 @@ export default function typedUArraysIndexOfTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOF0202_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INDEXOFTEST03_1400
      * @tc.name testTypedUArraysIndexOfTestFileC014
      * @tc.desc Verify indexOf() -1
      * @tc.size MediumTest

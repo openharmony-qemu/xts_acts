@@ -34,7 +34,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_0100
      * @tc.name testInt8ArrayBaseline001
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -48,7 +48,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_0200
      * @tc.name testInt8ArrayBaseline002
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -68,7 +68,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_0300
      * @tc.name testInt8ArrayBaseline003
      * @tc.desc Verify (129 -127, 256 0)
      * @tc.size MediumTest
@@ -82,7 +82,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_0400
      * @tc.name testInt8ArrayBaseline004
      * @tc.desc Verify ArrayBuffer
      * @tc.size MediumTest
@@ -96,7 +96,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_0500
      * @tc.name testInt8ArrayBaseline005
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -114,7 +114,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_0600
      * @tc.name testInt8ArrayBaseline006
      * @tc.desc Verify out-of-range access throws RangeError
      * @tc.size MediumTest
@@ -138,7 +138,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_0700
      * @tc.name testInt8ArrayBaseline007
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -157,7 +157,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_0800
      * @tc.name testInt8ArrayBaseline008
      * @tc.desc Verify at
      * @tc.size MediumTest
@@ -171,7 +171,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_0900
      * @tc.name testInt8ArrayBaseline009
      * @tc.desc Verify entries
      * @tc.size MediumTest
@@ -188,7 +188,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_1000
      * @tc.name testInt8ArrayBaseline010
      * @tc.desc Verify every/some
      * @tc.size MediumTest
@@ -202,7 +202,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_1100
      * @tc.name testInt8ArrayBaseline011
      * @tc.desc Verify filter/map
      * @tc.size MediumTest
@@ -217,7 +217,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_1200
      * @tc.name testInt8ArrayBaseline012
      * @tc.desc Verify reduce/join
      * @tc.size MediumTest
@@ -231,7 +231,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_1300
      * @tc.name testInt8ArrayBaseline013
      * @tc.desc Verify slice/subarray
      * @tc.size MediumTest
@@ -248,7 +248,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_1400
      * @tc.name testInt8ArrayBaseline014
      * @tc.desc Verify sort/reverse
      * @tc.size MediumTest
@@ -262,7 +262,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_1500
      * @tc.name testInt8ArrayBaseline015
      * @tc.desc Verify fill/copyWithin
      * @tc.size MediumTest
@@ -283,7 +283,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_1600
      * @tc.name testInt8ArrayBaseline016
      * @tc.desc Verify toString/valueOf
      * @tc.size MediumTest
@@ -297,7 +297,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_1700
      * @tc.name testInt8ArrayBaseline017
      * @tc.desc Verify from/of
      * @tc.size MediumTest
@@ -310,7 +310,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_1800
      * @tc.name testInt8ArrayBaseline018
      * @tc.desc Verify indexOf/includes
      * @tc.size MediumTest
@@ -325,7 +325,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_1900
      * @tc.name testInt8ArrayBaseline019
      * @tc.desc Verify find/findIndex
      * @tc.size MediumTest
@@ -339,7 +339,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_2000
      * @tc.name testInt8ArrayBaseline020
      * @tc.desc Verify keys
      * @tc.size MediumTest
@@ -353,7 +353,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_2100
      * @tc.name testInt8ArrayBaseline021
      * @tc.desc Verify values and Symbol.iterator
      * @tc.size MediumTest
@@ -369,7 +369,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_2200
      * @tc.name testInt8ArrayBaseline022
      * @tc.desc Verify BYTES_PER_ELEMENT is positive
      * @tc.size MediumTest
@@ -381,7 +381,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_2300
      * @tc.name testInt8ArrayBaseline023
      * @tc.desc Verify toReversed
      * @tc.size MediumTest
@@ -396,7 +396,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_2400
      * @tc.name testInt8ArrayBaseline024
      * @tc.desc Verify toSorted
      * @tc.size MediumTest
@@ -411,7 +411,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_2500
      * @tc.name testInt8ArrayBaseline025
      * @tc.desc Verify reduceRight
      * @tc.size MediumTest
@@ -424,7 +424,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_2600
      * @tc.name testInt8ArrayBaseline026
      * @tc.desc Verify toLocaleString
      * @tc.size MediumTest
@@ -437,7 +437,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_2700
      * @tc.name testInt8ArrayBaseline027
      * @tc.desc Verify constructor from Int8Array
      * @tc.size MediumTest
@@ -451,7 +451,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_2800
      * @tc.name testInt8ArrayBaseline028
      * @tc.desc Verify set
      * @tc.size MediumTest
@@ -469,7 +469,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_2900
      * @tc.name testInt8ArrayBaseline029
      * @tc.desc Verify set with offset
      * @tc.size MediumTest
@@ -484,7 +484,7 @@ export default function int8ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_Baseline_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT8ARRAYBASELINETEST_3000
      * @tc.name testInt8ArrayBaseline030
      * @tc.desc Verify byteOffset and buffer properties
      * @tc.size MediumTest

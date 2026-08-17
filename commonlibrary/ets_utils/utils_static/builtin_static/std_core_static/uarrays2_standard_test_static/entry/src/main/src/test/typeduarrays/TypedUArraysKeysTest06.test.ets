@@ -46,7 +46,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_0100
      * @tc.name testTypedUArraysKeysTestFileF001
      * @tc.desc Verify keys()
      * @tc.size MediumTest
@@ -64,7 +64,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_0200
      * @tc.name testTypedUArraysKeysTestFileF002
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -82,7 +82,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_0300
      * @tc.name testTypedUArraysKeysTestFileF003
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -100,7 +100,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_0400
      * @tc.name testTypedUArraysKeysTestFileF004
      * @tc.desc Verify keys() done
      * @tc.size MediumTest
@@ -116,7 +116,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_0500
      * @tc.name testTypedUArraysKeysTestFileF005
      * @tc.desc Verify for...of keys()
      * @tc.size MediumTest
@@ -132,7 +132,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_0600
      * @tc.name testTypedUArraysKeysTestFileF006
      * @tc.desc Verify for...of keys()
      * @tc.size MediumTest
@@ -149,7 +149,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_0700
      * @tc.name testTypedUArraysKeysTestFileF007
      * @tc.desc Verify for...of keys() [0]
      * @tc.size MediumTest
@@ -163,7 +163,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_0800
      * @tc.name testTypedUArraysKeysTestFileF008
      * @tc.desc Verify for...of keys()
      * @tc.size MediumTest
@@ -182,7 +182,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_0900
      * @tc.name testTypedUArraysKeysTestFileF009
      * @tc.desc Verify for...of keys()
      * @tc.size MediumTest
@@ -197,7 +197,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_1000
      * @tc.name testTypedUArraysKeysTestFileF010
      * @tc.desc Verify Array.from keys()
      * @tc.size MediumTest
@@ -214,7 +214,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_1100
      * @tc.name testTypedUArraysKeysTestFileF011
      * @tc.desc Verify Array.from keys()
      * @tc.size MediumTest
@@ -228,7 +228,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_1200
      * @tc.name testTypedUArraysKeysTestFileF012
      * @tc.desc Verify Array.from Uint16Array keys()
      * @tc.size MediumTest
@@ -246,7 +246,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_1300
      * @tc.name testTypedUArraysKeysTestFileF013
      * @tc.desc Verify Array.from keys() length
      * @tc.size MediumTest
@@ -260,7 +260,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_1400
      * @tc.name testTypedUArraysKeysTestFileF014
      * @tc.desc Verify keys()
      * @tc.size MediumTest
@@ -275,7 +275,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_1500
      * @tc.name testTypedUArraysKeysTestFileF015
      * @tc.desc Verify keys()
      * @tc.size MediumTest
@@ -292,7 +292,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_1600
      * @tc.name testTypedUArraysKeysTestFileF016
      * @tc.desc Verify Uint8Array Uint16Array keys()
      * @tc.size MediumTest
@@ -310,7 +310,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_1700
      * @tc.name testTypedUArraysKeysTestFileF017
      * @tc.desc Verify Uint32Array BigUint64Array keys()
      * @tc.size MediumTest
@@ -327,7 +327,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_1800
      * @tc.name testTypedUArraysKeysTestFileF018
      * @tc.desc Verify Uint8ClampedArray keys()
      * @tc.size MediumTest
@@ -349,7 +349,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_1900
      * @tc.name testTypedUArraysKeysTestFileF019
      * @tc.desc Verify buffer keys()
      * @tc.size MediumTest
@@ -367,7 +367,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_2000
      * @tc.name testTypedUArraysKeysTestFileF020
      * @tc.desc Verify buffer keys()
      * @tc.size MediumTest
@@ -383,7 +383,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_2100
      * @tc.name testTypedUArraysKeysTestFileF021
      * @tc.desc Verify buffer keys() 0
      * @tc.size MediumTest
@@ -399,7 +399,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_2200
      * @tc.name testTypedUArraysKeysTestFileF022
      * @tc.desc Verify buffer keys() length
      * @tc.size MediumTest
@@ -418,7 +418,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_2300
      * @tc.name testTypedUArraysKeysTestFileF023
      * @tc.desc Verify next() value done
      * @tc.size MediumTest
@@ -434,7 +434,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_2400
      * @tc.name testTypedUArraysKeysTestFileF024
      * @tc.desc Verify next() done true
      * @tc.size MediumTest
@@ -452,7 +452,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_2500
      * @tc.name testTypedUArraysKeysTestFileF025
      * @tc.desc Verify keys() 0
      * @tc.size MediumTest
@@ -467,7 +467,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_2600
      * @tc.name testTypedUArraysKeysTestFileF026
      * @tc.desc Verify keys() length-1
      * @tc.size MediumTest
@@ -481,7 +481,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_2700
      * @tc.name testTypedUArraysKeysTestFileF027
      * @tc.desc Verify keys() 0
      * @tc.size MediumTest
@@ -495,7 +495,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_2800
      * @tc.name testTypedUArraysKeysTestFileF028
      * @tc.desc Verify keys()
      * @tc.size MediumTest
@@ -524,7 +524,7 @@ export default function typedUArraysKeysTest06(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYS_PART106_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_KEYSTEST06_2900
      * @tc.name testTypedUArraysKeysTestFileF029
      * @tc.desc Verify keys()
      * @tc.size MediumTest

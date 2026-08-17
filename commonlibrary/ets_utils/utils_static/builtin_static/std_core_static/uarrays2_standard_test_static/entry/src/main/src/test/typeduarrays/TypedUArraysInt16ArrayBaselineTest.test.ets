@@ -34,7 +34,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_0100
      * @tc.name testInt16ArrayBaseline001
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -49,7 +49,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_0200
      * @tc.name testInt16ArrayBaseline002
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -67,7 +67,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_0300
      * @tc.name testInt16ArrayBaseline003
      * @tc.desc Verify (32768 -32768, 65536 0)
      * @tc.size MediumTest
@@ -81,7 +81,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_0400
      * @tc.name testInt16ArrayBaseline004
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -100,7 +100,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_0500
      * @tc.name testInt16ArrayBaseline005
      * @tc.desc Verify at
      * @tc.size MediumTest
@@ -114,7 +114,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_0600
      * @tc.name testInt16ArrayBaseline006
      * @tc.desc Verify entries/keys/values
      * @tc.size MediumTest
@@ -131,7 +131,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_0700
      * @tc.name testInt16ArrayBaseline007
      * @tc.desc Verify every/some/filter/map
      * @tc.size MediumTest
@@ -147,7 +147,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_0800
      * @tc.name testInt16ArrayBaseline008
      * @tc.desc Verify reduce/reduceRight
      * @tc.size MediumTest
@@ -160,7 +160,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_0900
      * @tc.name testInt16ArrayBaseline009
      * @tc.desc Verify slice/subarray/set
      * @tc.size MediumTest
@@ -178,7 +178,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_1000
      * @tc.name testInt16ArrayBaseline010
      * @tc.desc Verify sort/reverse/fill
      * @tc.size MediumTest
@@ -194,7 +194,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_1100
      * @tc.name testInt16ArrayBaseline011
      * @tc.desc Verify from/of
      * @tc.size MediumTest
@@ -207,7 +207,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_1200
      * @tc.name testInt16ArrayBaseline012
      * @tc.desc Verify ArrayBuffer constructor
      * @tc.size MediumTest
@@ -222,7 +222,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_1300
      * @tc.name testInt16ArrayBaseline013
      * @tc.desc Verify BYTES_PER_ELEMENT is positive
      * @tc.size MediumTest
@@ -234,7 +234,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_1400
      * @tc.name testInt16ArrayBaseline014
      * @tc.desc Verify includes/indexOf/find/findIndex
      * @tc.size MediumTest
@@ -251,7 +251,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_1500
      * @tc.name testInt16ArrayBaseline015
      * @tc.desc Verify toString/valueOf
      * @tc.size MediumTest
@@ -265,7 +265,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_1600
      * @tc.name testInt16ArrayBaseline016
      * @tc.desc Verify copyWithin
      * @tc.size MediumTest
@@ -279,7 +279,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_1700
      * @tc.name testInt16ArrayBaseline017
      * @tc.desc Verify toReversed/toSorted
      * @tc.size MediumTest
@@ -296,7 +296,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_1800
      * @tc.name testInt16ArrayBaseline018
      * @tc.desc Verify join
      * @tc.size MediumTest
@@ -309,7 +309,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_1900
      * @tc.name testInt16ArrayBaseline019
      * @tc.desc Verify slice/subarray
      * @tc.size MediumTest
@@ -325,7 +325,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_2000
      * @tc.name testInt16ArrayBaseline020
      * @tc.desc Verify keys/values/iterator
      * @tc.size MediumTest
@@ -343,7 +343,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_2100
      * @tc.name testInt16ArrayBaseline021
      * @tc.desc Verify set with offset
      * @tc.size MediumTest
@@ -358,7 +358,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_2200
      * @tc.name testInt16ArrayBaseline022
      * @tc.desc Verify byteOffset property
      * @tc.size MediumTest
@@ -373,7 +373,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_2300
      * @tc.name testInt16ArrayBaseline023
      * @tc.desc Verify reduceRight/toLocaleString
      * @tc.size MediumTest
@@ -387,7 +387,7 @@ export default function int16ArrayBaselineTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_Baseline_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_INT16ARRAYBASELINETEST_2400
      * @tc.name testInt16ArrayBaseline024
      * @tc.desc Verify constructor from Int16Array
      * @tc.size MediumTest
