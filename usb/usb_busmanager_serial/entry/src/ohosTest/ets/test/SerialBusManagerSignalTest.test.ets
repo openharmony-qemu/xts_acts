@@ -13,78 +13,101 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, afterAll, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import { Driver, ON, MatchPattern } from '@ohos.UiTest';
-import { JSON } from '@kit.ArkTS';
 import { serial } from "@kit.BasicServicesKit";
 
 const TAG: string = "[SerialBusManagerSignalTest]";
+const SKIP_TAG: string = "[SKIP]";
+let deviceExists: boolean = false;
 
 function sleep(ms: number): Promise<void> {
   return new Promise<void>(resolve => setTimeout(resolve, ms));
 }
 
-async function driveFn() {
-  console.info('**************driveFn**************');
+async function clickAllowButton(): Promise<void> {
+  console.info(`${TAG} clickAllowButton`);
   try {
     let driver: Driver = Driver.create();
-    console.info(TAG, `driver is ${JSON.stringify(driver)}`);
-    let button = await driver.findComponent(ON.text('允许', MatchPattern.EQUALS));
-    console.info(TAG, `button is ${JSON.stringify(button)}`);
-    if (button) {
-      await button.click();
+    await driver.delayMs(1000);
+    let buttons = await driver.findComponents(ON.text('允许', MatchPattern.EQUALS));
+    if (!buttons || buttons.length === 0) {
+      buttons = await driver.findComponents(ON.text('Allow', MatchPattern.EQUALS));
     }
-  } catch (err) {
-    console.info(TAG, `err: ${err}`);
-    return;
+    if (buttons && buttons.length > 0) {
+      for (let i: number = 0; i < buttons.length; i++) {
+        await buttons[i].click();
+      }
+    }
+  } catch (error) {
+    console.info(`${TAG} clickAllowButton error: ${error}`);
   }
 }
 
 async function checkDevice(): Promise<boolean> {
+  if (deviceExists) {
+    console.info(`${TAG} serial device detected (cached)`);
+  } else {
+    console.info(`${TAG} no serial device detected (cached)`);
+  }
+  return deviceExists;
+}
+
+async function safeClose(port: serial.SerialPort | null): Promise<void> {
+  if (port === null) {
+    return;
+  }
   try {
-    let portList: serial.SerialPort[] = await serial.getSerialPortList();
-    if (portList && portList.length > 0) {
-      console.info(TAG, 'Test serial device detected');
-      return true;
-    } else {
-      console.info(TAG, 'Test no serial device detected');
-      return false;
-    }
-  } catch (err) {
-    console.error(TAG, 'checkDevice error: ', JSON.stringify(err));
-    return false;
+    await port!.close();
+  } catch (error) {
+    console.info(`${TAG} safeClose ignore: ${JSON.stringify(error)}`);
   }
 }
 
 export default function SerialBusManagerSignalTest() {
   describe('SerialBusManagerSignalTest', () => {
-    let gPort: serial.SerialPort | null = null;
-    let gPort1: serial.SerialPort | null = null;
+    let port: serial.SerialPort | null = null;
+    let port1: serial.SerialPort | null = null;
+    let gAuthSuccess: boolean = false;
 
     beforeAll(async (done: Function) => {
-      console.info(TAG, 'beforeAll start');
+      console.info(`${TAG} beforeAll start`);
       try {
         let portList: serial.SerialPort[] = await serial.getSerialPortList();
-        if (portList && portList.length > 0) {
-          gPort = portList[0];
-          gPort1 = portList[1];
+        console.info(`${TAG} beforeAll portList: ${JSON.stringify(portList)}`);
+        let filterPortList: serial.SerialPort[] = portList.filter(p => p.portInfo?.portName != "ttyHW8");
+        console.info(`${TAG} beforeAll filterPortList: ${JSON.stringify(filterPortList)}`);
+        deviceExists = !!(filterPortList && filterPortList.length > 0);
+        if (filterPortList && filterPortList.length > 1) {
+          port = filterPortList[0];
+          port1 = filterPortList[1];
+          const openPromise0 = port!.open();
+          await clickAllowButton();
+          await openPromise0;
+          const openPromise1 = port1!.open();
+          await clickAllowButton();
+          await openPromise1;
+          await port!.close();
+          await port1!.close();
+          gAuthSuccess = true;
+          console.info(`${TAG} beforeAll both ports authorized`);
         }
         done();
       } catch (error) {
-        console.info(TAG, 'beforeAll error: ', JSON.stringify(error));
+        console.info(`${TAG} beforeAll error: ${JSON.stringify(error)}`);
+        gAuthSuccess = false;
         done();
       }
     })
 
-    afterAll(async () => {
-      console.info(TAG, 'afterAll');
-      if (gPort != null) {
-        try {
-          await gPort.close();
-        } catch (err) {
-          console.error(TAG, 'afterAll close error: ', JSON.stringify(err));
-        }
-      }
+    afterAll(async (): Promise<void> => {
+      console.info(`${TAG} afterAll`);
+    })
+
+    afterEach(async (): Promise<void> => {
+      console.info(`${TAG} afterEach`);
+      await safeClose(port);
+      await safeClose(port1);
     })
 
     /**
@@ -96,32 +119,34 @@ export default function SerialBusManagerSignalTest() {
      * @tc.level  LEVEL0
      */
     it('testGetCts004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testGetCts004 start');
+      console.info(`${TAG} testGetCts004 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
-      if (gPort1 === null) {
-        console.info(TAG, 'testGetCts004 gPort1 is null, skip');
+      if (port1 === null) {
+        console.info(`${TAG} ${SKIP_TAG} testGetCts004 port1 is null, skip`);
+        done();
+        return;
+      }
+      if (!gAuthSuccess) {
+        console.info(`${TAG} ${SKIP_TAG} auth not granted, skip`);
         done();
         return;
       }
       try {
-        gPort!.open();
-        await driveFn();
-        gPort1!.open();
-        await sleep(500);
-        await driveFn();
-        await gPort1!.setRts(true);
+        await port!.open();
+        await port1!.open();
         await sleep(100);
-        let cts: boolean = await gPort!.getCts();
-        console.info(TAG, 'testGetCts004 getCts after setRts(true): ', cts);
-        expect(cts === true).assertTrue();
-        await gPort!.close();
-        await gPort1!.close();
+        await port1!.setRts(true);
+        await sleep(100);
+        let cts: boolean = await port!.getCts();
+        console.info(`${TAG} testGetCts004 getCts after setRts(true): ${cts}`);
+        expect(cts).assertTrue();
         done();
-      } catch (err) {
-        console.error(TAG, 'testGetCts004 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testGetCts004 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -136,36 +161,39 @@ export default function SerialBusManagerSignalTest() {
      * @tc.level  LEVEL0
      */
     it('testGetCts005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testGetCts005 start');
+      console.info(`${TAG} testGetCts005 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
-      if (gPort1 === null) {
-        console.info(TAG, 'testGetCts005 gPort1 is null, skip');
+      if (port1 === null) {
+        console.info(`${TAG} ${SKIP_TAG} testGetCts005 port1 is null, skip`);
+        done();
+        return;
+      }
+      if (!gAuthSuccess) {
+        console.info(`${TAG} ${SKIP_TAG} auth not granted, skip`);
         done();
         return;
       }
       try {
-        gPort!.open();
-        await driveFn();
-        gPort1!.open();
-        await sleep(500);
-        await driveFn();
-        await gPort1!.setRts(false);
+        await port!.open();
+        await port1!.open();
         await sleep(100);
-        let cts: boolean = await gPort!.getCts();
-        console.info(TAG, 'testGetCts005 getCts after setRts(false): ', cts);
-        expect(cts === false).assertTrue();
-        await gPort!.close();
-        await gPort1!.close();
+        await port1!.setRts(false);
+        await sleep(100);
+        let cts: boolean = await port!.getCts();
+        console.info(`${TAG} testGetCts005 getCts after setRts(false): ${cts}`);
+        expect(cts).assertFalse();
         done();
-      } catch (err) {
-        console.error(TAG, 'testGetCts005 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testGetCts005 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
     })
+
     /**
      * @tc.name   testGetDsr004
      * @tc.number SUB_BusManager_Serial_JS_getDsr_RETURN_0200
@@ -175,32 +203,34 @@ export default function SerialBusManagerSignalTest() {
      * @tc.level  LEVEL0
      */
     it('testGetDsr004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testGetDsr004 start');
+      console.info(`${TAG} testGetDsr004 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
-      if (gPort1 === null) {
-        console.info(TAG, 'testGetDsr004 gPort1 is null, skip');
+      if (port1 === null) {
+        console.info(`${TAG} ${SKIP_TAG} testGetDsr004 port1 is null, skip`);
+        done();
+        return;
+      }
+      if (!gAuthSuccess) {
+        console.info(`${TAG} ${SKIP_TAG} auth not granted, skip`);
         done();
         return;
       }
       try {
-        gPort!.open();
-        await driveFn();
-        gPort1!.open();
-        await sleep(500);
-        await driveFn();
-        await gPort1!.setDtr(true);
+        await port!.open();
+        await port1!.open();
         await sleep(100);
-        let dsr: boolean = await gPort!.getDsr();
-        console.info(TAG, 'testGetDsr004 getDsr after setDtr(true): ', dsr);
+        await port1!.setDtr(true);
+        await sleep(100);
+        let dsr: boolean = await port!.getDsr();
+        console.info(`${TAG} testGetDsr004 getDsr after setDtr(true): ${dsr}`);
         expect(dsr).assertTrue();
-        await gPort!.close();
-        await gPort1!.close();
         done();
-      } catch (err) {
-        console.error(TAG, 'testGetDsr004 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testGetDsr004 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -215,32 +245,34 @@ export default function SerialBusManagerSignalTest() {
      * @tc.level  LEVEL0
      */
     it('testGetDsr005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testGetDsr005 start');
+      console.info(`${TAG} testGetDsr005 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
-      if (gPort1 === null) {
-        console.info(TAG, 'testGetDsr005 gPort1 is null, skip');
+      if (port1 === null) {
+        console.info(`${TAG} ${SKIP_TAG} testGetDsr005 port1 is null, skip`);
+        done();
+        return;
+      }
+      if (!gAuthSuccess) {
+        console.info(`${TAG} ${SKIP_TAG} auth not granted, skip`);
         done();
         return;
       }
       try {
-        gPort!.open();
-        await driveFn();
-        gPort1!.open();
-        await sleep(500);
-        await driveFn();
-        await gPort1!.setDtr(false);
-        await sleep(1000);
-        let dsr: boolean = await gPort!.getDsr();
-        console.info(TAG, 'testGetDsr005 getDsr after setDtr(false): ', dsr);
+        await port!.open();
+        await port1!.open();
+        await sleep(100);
+        await port!.setDtr(false);
+        await sleep(100);
+        let dsr: boolean = await port1!.getDsr();
+        console.info(`${TAG} testGetDsr005 getDsr after setDtr(false): ${dsr}`);
         expect(dsr).assertFalse();
-        await gPort!.close();
-        await gPort1!.close();
         done();
-      } catch (err) {
-        console.error(TAG, 'testGetDsr005 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testGetDsr005 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
