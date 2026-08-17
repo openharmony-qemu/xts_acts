@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import Utils from '../utils'
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
@@ -514,18 +515,12 @@ export default function AppSettingsTest(): void {
             }
           })
         })
-        let timeoutId: number = -1
-        try {
-          await taskpool.execute(task)
-          const timeoutPromise: Promise<void> = new Promise<void>((_: () => void, reject: (reason: Error) => void): void => {
-            timeoutId = setTimeout((): void => {
-              reject(new Error(`onReceiveData timeout, received ${notifications.length}/3`))
-            }, 5000)
-          })
-          await Promise.race([receivePromise, timeoutPromise])
-        } finally {
-          clearTimeout(timeoutId)
+        await taskpool.execute(task)
+        const timeoutFn: () => Promise<void> = async (): Promise<void> => {
+          await Utils.sleep(5000)
+          throw new Error(`onReceiveData timeout, received ${notifications.length}/3`)
         }
+        await Promise.race([receivePromise, timeoutFn()])
         expect(invalidNotification).assertFalse()
         expect(notifications.length).assertEqual(3)
         expect(notifications[0]).assertEqual('key1')
@@ -551,6 +546,10 @@ export default function AppSettingsTest(): void {
         const nestedPromises: Promise<Object>[] = []
         const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
           task.onReceiveData((data: Object): void => {
+            if (data === null || data === undefined) {
+              console.info('onReceiveData received empty data')
+              return
+            }
             const innerTask: taskpool.Task = new taskpool.Task(updateSettingTask, settingsManager, 'nested_key', 'nested_value')
             nestedPromises.push(taskpool.execute(innerTask))
             resolve()

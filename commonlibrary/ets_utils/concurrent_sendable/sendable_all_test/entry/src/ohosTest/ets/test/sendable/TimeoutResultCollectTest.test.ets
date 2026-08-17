@@ -251,16 +251,17 @@ export default function TimeoutResultCollectTest(): void {
       try {
         collector.addPendingTask(1, 'task_1')
         const task = new taskpool.Task(quickTask, 1)
-        let timeoutId: number = -1
-        const timeoutPromise: Promise<string> = new Promise<string>((resolve: Function): void => {
-          timeoutId = setTimeout((): void => resolve('timeout'), 5000)
-        })
+        const timeoutFn: () => Promise<string> = async (): Promise<string> => {
+          await Utils.sleep(5000)
+          return 'timeout'
+        }
+        const timeoutPromise: Promise<string> = timeoutFn()
         const taskPromise: Promise<Object> = taskpool.execute(task)
         try {
           const raceResult: string | Object = await Promise.race([taskPromise, timeoutPromise])
           expect(raceResult).assertEqual('result_1')
         } finally {
-          clearTimeout(timeoutId)
+          // timeout promise retired: sleep-based, no timer id to clean up
         }
       } catch (error) {
         console.error("testTimeoutResultCollect0600 failed");

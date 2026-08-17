@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import { BusinessError } from '@ohos.base';
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
@@ -224,10 +225,10 @@ export default function IROptimizationTest(): void {
         const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
         const results: number[] = await Promise.all([
           testObj.getProp0(),
-          testObj.lock_.lockAsync((): number => testObj.prop1),
-          testObj.lock_.lockAsync((): number => testObj.prop2),
-          testObj.lock_.lockAsync((): number => testObj.prop3),
-          testObj.lock_.lockAsync((): number => testObj.prop4)
+          testObj.lock_.lockAsync((error?: BusinessError): number => testObj.prop1),
+          testObj.lock_.lockAsync((error?: BusinessError): number => testObj.prop2),
+          testObj.lock_.lockAsync((error?: BusinessError): number => testObj.prop3),
+          testObj.lock_.lockAsync((error?: BusinessError): number => testObj.prop4)
         ])
         expect(results[0]).assertEqual(0)
         expect(results[1]).assertEqual(1)
@@ -511,7 +512,7 @@ export default function IROptimizationTest(): void {
       try {
         const obj: HybridObject = new HybridObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
         for (let i = 0; i < 1025; i++) {
-          await obj.lock_.lockAsync((): void => { obj.dynamic.set(`d_${i}`, i) })
+          await obj.lock_.lockAsync((error?: BusinessError): void => { obj.dynamic.set(`d_${i}`, i) })
         }
         expect(obj.fixed1).assertEqual(1)
         expect(obj.fixed2).assertEqual(2)

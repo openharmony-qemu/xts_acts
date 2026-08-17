@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import { BusinessError } from '@ohos.base';
 import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
@@ -489,7 +490,7 @@ export default function ServiceRegistryTest(): void {
 
         expect(registry.discover('lifecycleService')!.status).assertEqual('created')
 
-        await registry.lock_.lockAsync((): void => {
+        await registry.lock_.lockAsync((error?: BusinessError): void => {
           registry.discover('lifecycleService')!.status = 'running'
         })
         expect(registry.discover('lifecycleService')!.status).assertEqual('running')

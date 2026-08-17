@@ -72,14 +72,10 @@ export default function SendableNestedTest(): void {
           nestedExecFn()
         })
         await taskpool.execute(task)
-        await new Promise<void>((resolve): void => {
-          const checkInterval = setInterval((): void => {
-            if (nestedResult >= 1) {
-              clearInterval(checkInterval)
-              resolve()
-            }
-          }, 10)
-        })
+        const nestedStart: number = Date.now()
+        while (nestedResult < 1 && Date.now() - nestedStart < 10000) {
+          await Utils.sleep(10)
+        }
         expect(counter.count_).assertEqual(1)
       } catch (error) {
         console.error("testSendableNested0100 failed");
@@ -115,14 +111,10 @@ export default function SendableNestedTest(): void {
           nestedExecFn()
         })
         await taskpool.execute(task)
-        await new Promise<void>((resolve): void => {
-          const checkInterval = setInterval((): void => {
-            if (nestedResult >= 1) {
-              clearInterval(checkInterval)
-              resolve()
-            }
-          }, 10)
-        })
+        const nestedStart: number = Date.now()
+        while (nestedResult < 1 && Date.now() - nestedStart < 10000) {
+          await Utils.sleep(10)
+        }
         expect(counter.count_).assertEqual(1)
       } catch (error) {
         console.error("testSendableNested0200 failed");
@@ -145,6 +137,7 @@ export default function SendableNestedTest(): void {
         const task = new taskpool.Task(outerErrorTask)
         let nestedResult: number = -1
         task.onExecutionFailed((e: Error): void => {
+          console.info(`parent task failed as expected: ${e.message}`)
           const innerTask = new taskpool.Task(nestedIncrementTask, counter, new ArkTSUtils.locks.AsyncLock())
           const nestedExecFn: () => Promise<void> = async (): Promise<void> => {
             try {
@@ -165,14 +158,10 @@ export default function SendableNestedTest(): void {
           const err: Error = e
           expect(err.message).assertContain('outer error')
         }
-        await new Promise<void>((resolve): void => {
-          const checkInterval = setInterval((): void => {
-            if (nestedResult >= 1) {
-              clearInterval(checkInterval)
-              resolve()
-            }
-          }, 10)
-        })
+        const nestedStart: number = Date.now()
+        while (nestedResult < 1 && Date.now() - nestedStart < 10000) {
+          await Utils.sleep(10)
+        }
         // Failure may arrive via reject and/or onExecutionFailed; nested task proves the error path ran.
         expect(caught || nestedResult >= 1).assertTrue()
         expect(counter.count_).assertEqual(1)
@@ -240,7 +229,11 @@ export default function SendableNestedTest(): void {
         const nestedPromises: Promise<number>[] = []
         const task = new taskpool.Task(triggerSendDataTask)
         const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
-          task.onReceiveData((): void => {
+          task.onReceiveData((data: Object): void => {
+            if (data === null || data === undefined) {
+              console.info('onReceiveData received empty data')
+              return
+            }
             for (let i = 0; i < 3; i++) {
               const innerTask = new taskpool.Task(nestedIncrementTask, counter, lock)
               nestedPromises.push(taskpool.execute(innerTask) as Promise<number>)

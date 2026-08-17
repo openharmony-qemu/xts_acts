@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import { BusinessError } from '@ohos.base';
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
@@ -274,7 +275,7 @@ export default function StateMachineIRTest(): void {
     it('testStateMachineIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const sm: HistoryIRStateMachine = new HistoryIRStateMachine(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-        await sm.lock_.lockAsync((): void => {
+        await sm.lock_.lockAsync((error?: BusinessError): void => {
           sm.history_.push(0)
           sm.history_.push(1)
           sm.history_.push(2)
@@ -307,7 +308,7 @@ export default function StateMachineIRTest(): void {
           promises.push(taskpool.execute(tasks[i]))
         }
         await Promise.all(promises)
-        const finalState: number = await sm.lock_.lockAsync((): number => sm.state_)
+        const finalState: number = await sm.lock_.lockAsync((error?: BusinessError): number => sm.state_)
         expect(finalState).assertLargerOrEqual(0)
       } catch (error) {
         console.error("testStateMachineIR0700 failed");

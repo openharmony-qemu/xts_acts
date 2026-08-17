@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import { BusinessError } from '@ohos.base';
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils } from '@kit.ArkTS'
@@ -230,7 +231,7 @@ export default function AsyncLockBasicTest(): void {
         await counter.increment()
         let caught: boolean = false
         try {
-          await counter.lock_.lockAsync((): void => {
+          await counter.lock_.lockAsync((error?: BusinessError): void => {
             throw new Error('Test exception in lock')
           })
           expect().assertFail()
@@ -263,9 +264,9 @@ export default function AsyncLockBasicTest(): void {
         let nestedCount: number = 0
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
         const innerLock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
-        await lock.lockAsync(async (): Promise<void> => {
+        await lock.lockAsync(async (error?: BusinessError): Promise<void> => {
           nestedCount++
-          await innerLock.lockAsync((): void => {
+          await innerLock.lockAsync((error?: BusinessError): void => {
             nestedCount++
           })
         })
@@ -289,7 +290,7 @@ export default function AsyncLockBasicTest(): void {
       try {
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
         let acquired: boolean = false
-        const result: boolean = await lock.lockAsync((): boolean => {
+        const result: boolean = await lock.lockAsync((error?: BusinessError): boolean => {
           acquired = true
           return true
         })

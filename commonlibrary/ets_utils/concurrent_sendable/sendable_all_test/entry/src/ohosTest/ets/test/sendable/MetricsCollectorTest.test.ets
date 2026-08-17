@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import { BusinessError } from '@ohos.base';
 import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
@@ -311,7 +312,7 @@ export default function MetricsCollectorTest(): void {
         await collector.record('tagged_metric', 88)
 
         const metric: MetricsData | undefined = collector.getMetric('tagged_metric')
-        await collector.lock_.lockAsync((): void => {
+        await collector.lock_.lockAsync((error?: BusinessError): void => {
           metric!.setTag('env', 'production')
           metric!.setTag('region', 'us-east')
         })

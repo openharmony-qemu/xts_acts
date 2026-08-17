@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import { BusinessError } from '@ohos.base';
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
@@ -390,7 +391,7 @@ export default function QueueIRTest(): void {
     it('testQueueIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         const queue: CrossThreadIRQueue = new CrossThreadIRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-        await queue.lock_.lockAsync((): void => {
+        await queue.lock_.lockAsync((error?: BusinessError): void => {
           for (let i = 0; i < 10; i++) {
             queue.items_.push(i)
           }
