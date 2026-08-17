@@ -104,9 +104,15 @@ export default function TaskDispatchQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskDispatchQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await queue.enqueue(1)
-      expect(await queue.getPendingSize()).assertEqual(1)
+    it('testTaskDispatchQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await queue.enqueue(1)
+        expect(await queue.getPendingSize()).assertEqual(1)
+      } catch (error) {
+        console.error("testTaskDispatchQueue0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -117,11 +123,17 @@ export default function TaskDispatchQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskDispatchQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      await queue.enqueue(1)
-      const taskId: number | undefined = await queue.dequeue()
-      expect(taskId).assertEqual(1)
-      expect(await queue.getPendingSize()).assertEqual(0)
+    it('testTaskDispatchQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await queue.enqueue(1)
+        const taskId: number | undefined = await queue.dequeue()
+        expect(taskId).assertEqual(1)
+        expect(await queue.getPendingSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testTaskDispatchQueue0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -132,9 +144,15 @@ export default function TaskDispatchQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskDispatchQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      expect(await queue.isPendingEmpty()).assertTrue()
-      expect(await queue.getPendingSize()).assertEqual(0)
+    it('testTaskDispatchQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        expect(await queue.isPendingEmpty()).assertTrue()
+        expect(await queue.getPendingSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testTaskDispatchQueue0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -145,11 +163,17 @@ export default function TaskDispatchQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskDispatchQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 10; i++) {
-        await queue.enqueue(i)
+    it('testTaskDispatchQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 10; i++) {
+          await queue.enqueue(i)
+        }
+        expect(await queue.getPendingSize()).assertEqual(10)
+      } catch (error) {
+        console.error("testTaskDispatchQueue0400 failed");
+        expect(false).assertFail();
       }
-      expect(await queue.getPendingSize()).assertEqual(10)
+      done();
     })
 
     /**
@@ -160,11 +184,17 @@ export default function TaskDispatchQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskDispatchQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 50; i++) {
-        await queue.enqueue(i)
+    it('testTaskDispatchQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 50; i++) {
+          await queue.enqueue(i)
+        }
+        expect(await queue.getPendingSize()).assertEqual(50)
+      } catch (error) {
+        console.error("testTaskDispatchQueue0500 failed");
+        expect(false).assertFail();
       }
-      expect(await queue.getPendingSize()).assertEqual(50)
+      done();
     })
 
     /**
@@ -175,15 +205,21 @@ export default function TaskDispatchQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTaskDispatchQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      for (let i = 0; i < 10; i++) {
-        await queue.enqueue(i)
+    it('testTaskDispatchQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 10; i++) {
+          await queue.enqueue(i)
+        }
+        for (let i = 0; i < 10; i++) {
+          const taskId: number | undefined = await queue.dequeue()
+          expect(taskId).assertEqual(i)
+        }
+        expect(await queue.isPendingEmpty()).assertTrue()
+      } catch (error) {
+        console.error("testTaskDispatchQueue0600 failed");
+        expect(false).assertFail();
       }
-      for (let i = 0; i < 10; i++) {
-        const taskId: number | undefined = await queue.dequeue()
-        expect(taskId).assertEqual(i)
-      }
-      expect(await queue.isPendingEmpty()).assertTrue()
+      done();
     })
 
     /**
@@ -194,17 +230,23 @@ export default function TaskDispatchQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskDispatchQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 20; i++) {
-        tasks.push(new taskpool.Task(producerEnqueue, queue, i))
+    it('testTaskDispatchQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 20; i++) {
+          tasks.push(new taskpool.Task(producerEnqueue, queue, i))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        expect(await queue.getPendingSize()).assertEqual(20)
+      } catch (error) {
+        console.error("testTaskDispatchQueue0700 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      expect(await queue.getPendingSize()).assertEqual(20)
+      done();
     })
 
     /**
@@ -215,21 +257,27 @@ export default function TaskDispatchQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskDispatchQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      for (let i = 0; i < 10; i++) {
-        await queue.enqueue(i)
+    it('testTaskDispatchQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i = 0; i < 10; i++) {
+          await queue.enqueue(i)
+        }
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(consumerDequeue, queue))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        expect(await queue.isPendingEmpty()).assertTrue()
+        expect(await queue.getProcessedSize()).assertEqual(10)
+      } catch (error) {
+        console.error("testTaskDispatchQueue0800 failed");
+        expect(false).assertFail();
       }
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(consumerDequeue, queue))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      expect(await queue.isPendingEmpty()).assertTrue()
-      expect(await queue.getProcessedSize()).assertEqual(10)
+      done();
     })
 
     /**
@@ -240,25 +288,31 @@ export default function TaskDispatchQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskDispatchQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const producerTasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        producerTasks.push(new taskpool.Task(producerEnqueue, queue, i))
-      }
-      const producerPromises: Promise<Object>[] = []
-      for (let i = 0; i < producerTasks.length; i++) {
-        producerPromises.push(taskpool.execute(producerTasks[i]))
-      }
-      await Promise.all(producerPromises)
-      expect(await queue.getPendingSize()).assertEqual(10)
+    it('testTaskDispatchQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const producerTasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          producerTasks.push(new taskpool.Task(producerEnqueue, queue, i))
+        }
+        const producerPromises: Promise<Object>[] = []
+        for (let i = 0; i < producerTasks.length; i++) {
+          producerPromises.push(taskpool.execute(producerTasks[i]))
+        }
+        await Promise.all(producerPromises)
+        expect(await queue.getPendingSize()).assertEqual(10)
 
-      const consumerPromises: Promise<Object>[] = []
-      for (let i = 0; i < 10; i++) {
-        consumerPromises.push(taskpool.execute(new taskpool.Task(consumerDequeue, queue)))
+        const consumerPromises: Promise<Object>[] = []
+        for (let i = 0; i < 10; i++) {
+          consumerPromises.push(taskpool.execute(new taskpool.Task(consumerDequeue, queue)))
+        }
+        await Promise.all(consumerPromises)
+        expect(await queue.getPendingSize()).assertEqual(0)
+        expect(await queue.getProcessedSize()).assertEqual(10)
+      } catch (error) {
+        console.error("testTaskDispatchQueue0900 failed");
+        expect(false).assertFail();
       }
-      await Promise.all(consumerPromises)
-      expect(await queue.getPendingSize()).assertEqual(0)
-      expect(await queue.getProcessedSize()).assertEqual(10)
+      done();
     })
 
     /**
@@ -269,21 +323,27 @@ export default function TaskDispatchQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskDispatchQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const iterations: number = 100
-      const enqueuePromises: Promise<void>[] = []
-      for (let i = 0; i < iterations; i++) {
-        enqueuePromises.push(queue.enqueue(i))
-      }
-      await Promise.all(enqueuePromises)
-      expect(await queue.getPendingSize()).assertEqual(iterations)
+    it('testTaskDispatchQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const iterations: number = 100
+        const enqueuePromises: Promise<void>[] = []
+        for (let i = 0; i < iterations; i++) {
+          enqueuePromises.push(queue.enqueue(i))
+        }
+        await Promise.all(enqueuePromises)
+        expect(await queue.getPendingSize()).assertEqual(iterations)
 
-      const dequeuePromises: Promise<number | undefined>[] = []
-      for (let i = 0; i < iterations; i++) {
-        dequeuePromises.push(queue.dequeue())
+        const dequeuePromises: Promise<number | undefined>[] = []
+        for (let i = 0; i < iterations; i++) {
+          dequeuePromises.push(queue.dequeue())
+        }
+        await Promise.all(dequeuePromises)
+        expect(await queue.getPendingSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testTaskDispatchQueue1000 failed");
+        expect(false).assertFail();
       }
-      await Promise.all(dequeuePromises)
-      expect(await queue.getPendingSize()).assertEqual(0)
+      done();
     })
 
     /**
@@ -294,17 +354,23 @@ export default function TaskDispatchQueueTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskDispatchQueue1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await queue.enqueue(1)
-      await queue.enqueue(2)
-      await queue.enqueue(3)
-      const first: number | undefined = await queue.dequeue()
-      expect(first).assertEqual(1)
-      const second: number | undefined = await queue.dequeue()
-      expect(second).assertEqual(2)
-      const third: number | undefined = await queue.dequeue()
-      expect(third).assertEqual(3)
-      expect(await queue.isPendingEmpty()).assertTrue()
+    it('testTaskDispatchQueue1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await queue.enqueue(1)
+        await queue.enqueue(2)
+        await queue.enqueue(3)
+        const first: number | undefined = await queue.dequeue()
+        expect(first).assertEqual(1)
+        const second: number | undefined = await queue.dequeue()
+        expect(second).assertEqual(2)
+        const third: number | undefined = await queue.dequeue()
+        expect(third).assertEqual(3)
+        expect(await queue.isPendingEmpty()).assertTrue()
+      } catch (error) {
+        console.error("testTaskDispatchQueue1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

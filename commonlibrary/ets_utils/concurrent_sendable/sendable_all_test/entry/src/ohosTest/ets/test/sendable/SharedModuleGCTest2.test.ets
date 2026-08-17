@@ -133,13 +133,19 @@ export default function SharedModuleGCTest2(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedModuleGC20100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const item: SharedModuleGCItem = await manager.create('mod1', 1, 'module_a')
-      expect(item.getId()).assertEqual(1)
-      expect(item.getModule()).assertEqual('module_a')
+    it('testSharedModuleGC20100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const item: SharedModuleGCItem = await manager.create('mod1', 1, 'module_a')
+        expect(item.getId()).assertEqual(1)
+        expect(item.getModule()).assertEqual('module_a')
 
-      await manager.delete('mod1')
-      expect(manager.getSize()).assertEqual(0)
+        await manager.delete('mod1')
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testSharedModuleGC20100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -150,11 +156,17 @@ export default function SharedModuleGCTest2(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleGC20200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const item: SharedModuleGCItem = await manager.create('cross_mod', 2, 'module_b')
-      const task: taskpool.Task = new taskpool.Task(accessSharedModuleTask, item)
-      const result: Object = await taskpool.execute(task)
-      expect(result as string).assertEqual('2:module_b')
+    it('testSharedModuleGC20200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const item: SharedModuleGCItem = await manager.create('cross_mod', 2, 'module_b')
+        const task: taskpool.Task = new taskpool.Task(accessSharedModuleTask, item)
+        const result: Object = await taskpool.execute(task)
+        expect(result as string).assertEqual('2:module_b')
+      } catch (error) {
+        console.error("testSharedModuleGC20200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -165,14 +177,20 @@ export default function SharedModuleGCTest2(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleGC20300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 5; i++) {
-        await manager.create(`mod_${i}`, i, `module_${i}`)
-      }
-      expect(manager.getSize()).assertEqual(5)
+    it('testSharedModuleGC20300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 5; i++) {
+          await manager.create(`mod_${i}`, i, `module_${i}`)
+        }
+        expect(manager.getSize()).assertEqual(5)
 
-      await manager.clearAll()
-      expect(manager.getSize()).assertEqual(0)
+        await manager.clearAll()
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testSharedModuleGC20300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -183,14 +201,20 @@ export default function SharedModuleGCTest2(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleGC20400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const item1: SharedModuleGCItem = await manager.create('mod_a', 1, 'module_a')
-      const item2: SharedModuleGCItem = await manager.create('mod_b', 2, 'module_b')
+    it('testSharedModuleGC20400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const item1: SharedModuleGCItem = await manager.create('mod_a', 1, 'module_a')
+        const item2: SharedModuleGCItem = await manager.create('mod_b', 2, 'module_b')
 
-      await manager.delete('mod_a')
-      expect(manager.getSize()).assertEqual(1)
-      expect(item2.getId()).assertEqual(2)
-      expect(item2.getModule()).assertEqual('module_b')
+        await manager.delete('mod_a')
+        expect(manager.getSize()).assertEqual(1)
+        expect(item2.getId()).assertEqual(2)
+        expect(item2.getModule()).assertEqual('module_b')
+      } catch (error) {
+        console.error("testSharedModuleGC20400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -201,11 +225,17 @@ export default function SharedModuleGCTest2(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleGC20500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 5; i++) {
-        await manager.create(`conc_${i}`, i, `mod_conc_${i}`)
+    it('testSharedModuleGC20500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 5; i++) {
+          await manager.create(`conc_${i}`, i, `mod_conc_${i}`)
+        }
+        expect(manager.getCreateCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testSharedModuleGC20500 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getCreateCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -216,14 +246,20 @@ export default function SharedModuleGCTest2(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleGC20600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const parent: SharedModuleGCItem = await manager.create('parent_mod', 10, 'parent')
-      const child: SharedModuleGCItem = await manager.create('child_mod', 11, 'child')
-      expect(manager.getSize()).assertEqual(2)
+    it('testSharedModuleGC20600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const parent: SharedModuleGCItem = await manager.create('parent_mod', 10, 'parent')
+        const child: SharedModuleGCItem = await manager.create('child_mod', 11, 'child')
+        expect(manager.getSize()).assertEqual(2)
 
-      await manager.delete('child_mod')
-      expect(manager.getSize()).assertEqual(1)
-      expect(parent.getId()).assertEqual(10)
+        await manager.delete('child_mod')
+        expect(manager.getSize()).assertEqual(1)
+        expect(parent.getId()).assertEqual(10)
+      } catch (error) {
+        console.error("testSharedModuleGC20600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -234,14 +270,20 @@ export default function SharedModuleGCTest2(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleGC20700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const container: collections.Array<SharedModuleGCItem> = new collections.Array<SharedModuleGCItem>()
-      for (let i: number = 0; i < 5; i++) {
-        const item: SharedModuleGCItem = await manager.create(`arr_mod_${i}`, i, `arr_module_${i}`)
-        container.push(item)
+    it('testSharedModuleGC20700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const container: collections.Array<SharedModuleGCItem> = new collections.Array<SharedModuleGCItem>()
+        for (let i: number = 0; i < 5; i++) {
+          const item: SharedModuleGCItem = await manager.create(`arr_mod_${i}`, i, `arr_module_${i}`)
+          container.push(item)
+        }
+        expect(container.length).assertEqual(5)
+        expect(container[0].getModule()).assertEqual('arr_module_0')
+      } catch (error) {
+        console.error("testSharedModuleGC20700 failed");
+        expect(false).assertFail();
       }
-      expect(container.length).assertEqual(5)
-      expect(container[0].getModule()).assertEqual('arr_module_0')
+      done();
     })
 
     /**
@@ -252,12 +294,18 @@ export default function SharedModuleGCTest2(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleGC20800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const item: SharedModuleGCItem = await manager.create('tp_mod', 20, 'tp_module')
-      const task: taskpool.Task = new taskpool.Task(accessSharedModuleTask, item)
-      await taskpool.execute(task)
-      expect(item.getId()).assertEqual(20)
-      expect(manager.getSize()).assertEqual(1)
+    it('testSharedModuleGC20800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const item: SharedModuleGCItem = await manager.create('tp_mod', 20, 'tp_module')
+        const task: taskpool.Task = new taskpool.Task(accessSharedModuleTask, item)
+        await taskpool.execute(task)
+        expect(item.getId()).assertEqual(20)
+        expect(manager.getSize()).assertEqual(1)
+      } catch (error) {
+        console.error("testSharedModuleGC20800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -268,18 +316,24 @@ export default function SharedModuleGCTest2(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleGC20900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let batch: number = 0; batch < 5; batch++) {
-        for (let i: number = 0; i < 10; i++) {
-          await manager.create(`batch_${batch}_${i}`, batch * 10 + i, `batch_mod_${batch}_${i}`)
+    it('testSharedModuleGC20900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let batch: number = 0; batch < 5; batch++) {
+          for (let i: number = 0; i < 10; i++) {
+            await manager.create(`batch_${batch}_${i}`, batch * 10 + i, `batch_mod_${batch}_${i}`)
+          }
+          for (let i: number = 0; i < 10; i++) {
+            await manager.delete(`batch_${batch}_${i}`)
+          }
         }
-        for (let i: number = 0; i < 10; i++) {
-          await manager.delete(`batch_${batch}_${i}`)
-        }
+        expect(manager.getCreateCount()).assertEqual(50)
+        expect(manager.getDeleteCount()).assertEqual(50)
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testSharedModuleGC20900 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getCreateCount()).assertEqual(50)
-      expect(manager.getDeleteCount()).assertEqual(50)
-      expect(manager.getSize()).assertEqual(0)
+      done();
     })
 
     /**
@@ -290,17 +344,23 @@ export default function SharedModuleGCTest2(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleGC21000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const item: SharedModuleGCItem = await manager.create('multi_tp', 30, 'multi_module')
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(accessSharedModuleTask, item))
+    it('testSharedModuleGC21000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const item: SharedModuleGCItem = await manager.create('multi_tp', 30, 'multi_module')
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(accessSharedModuleTask, item))
+        }
+        const results: Object[] = await executeSharedModuleTasks(tasks)
+        expect(results.length).assertEqual(5)
+        for (let i: number = 0; i < 5; i++) {
+          expect(results[i] as string).assertEqual('30:multi_module')
+        }
+      } catch (error) {
+        console.error("testSharedModuleGC21000 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await executeSharedModuleTasks(tasks)
-      expect(results.length).assertEqual(5)
-      for (let i: number = 0; i < 5; i++) {
-        expect(results[i] as string).assertEqual('30:multi_module')
-      }
+      done();
     })
   })
 }

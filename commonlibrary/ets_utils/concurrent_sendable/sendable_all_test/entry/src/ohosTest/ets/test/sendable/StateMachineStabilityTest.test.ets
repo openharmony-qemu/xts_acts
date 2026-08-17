@@ -99,12 +99,18 @@ export default function StateMachineStabilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testStateMachineStability0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      expect(await sm.transition(1, 0)).assertTrue()
-      expect(await sm.getCurrentState()).assertEqual(1)
-      expect(await sm.transition(2, 0)).assertFalse()
-      expect(await sm.getCurrentState()).assertEqual(1)
-      expect(await sm.getInvalidTransitionCount()).assertEqual(1)
+    it('testStateMachineStability0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        expect(await sm.transition(1, 0)).assertTrue()
+        expect(await sm.getCurrentState()).assertEqual(1)
+        expect(await sm.transition(2, 0)).assertFalse()
+        expect(await sm.getCurrentState()).assertEqual(1)
+        expect(await sm.getInvalidTransitionCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testStateMachineStability0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -115,24 +121,30 @@ export default function StateMachineStabilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testStateMachineStability0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(atomicCheckTransitionTask, sm, 1, 0))
-      }
-      const promises: Promise<Object>[] = []
-      for (let i: number = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      let successCount: number = 0
-      for (let i: number = 0; i < results.length; i++) {
-        if (results[i] as boolean) {
-          successCount++
+    it('testStateMachineStability0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(atomicCheckTransitionTask, sm, 1, 0))
         }
+        const promises: Promise<Object>[] = []
+        for (let i: number = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        let successCount: number = 0
+        for (let i: number = 0; i < results.length; i++) {
+          if (results[i] as boolean) {
+            successCount++
+          }
+        }
+        expect(successCount).assertEqual(1)
+        expect(await sm.getCurrentState()).assertEqual(1)
+      } catch (error) {
+        console.error("testStateMachineStability0200 failed");
+        expect(false).assertFail();
       }
-      expect(successCount).assertEqual(1)
-      expect(await sm.getCurrentState()).assertEqual(1)
+      done();
     })
 
     /**
@@ -143,12 +155,18 @@ export default function StateMachineStabilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testStateMachineStability0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      expect(await sm.transition(1, 0)).assertTrue()
-      expect(await sm.transition(2, 1)).assertTrue()
-      expect(await sm.transition(0, 2)).assertTrue()
-      expect(await sm.transition(1, 0)).assertTrue()
-      expect(await sm.getHistoryCount()).assertEqual(4)
+    it('testStateMachineStability0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        expect(await sm.transition(1, 0)).assertTrue()
+        expect(await sm.transition(2, 1)).assertTrue()
+        expect(await sm.transition(0, 2)).assertTrue()
+        expect(await sm.transition(1, 0)).assertTrue()
+        expect(await sm.getHistoryCount()).assertEqual(4)
+      } catch (error) {
+        console.error("testStateMachineStability0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -159,15 +177,21 @@ export default function StateMachineStabilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testStateMachineStability0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      for (let i: number = 0; i < 50; i++) {
-        const result: boolean = await sm.transition(1, 99)
-        if (result) {
-          break
+    it('testStateMachineStability0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 50; i++) {
+          const result: boolean = await sm.transition(1, 99)
+          if (result) {
+            break
+          }
         }
+        expect(await sm.getCurrentState()).assertEqual(0)
+        expect(await sm.getInvalidTransitionCount()).assertEqual(50)
+      } catch (error) {
+        console.error("testStateMachineStability0400 failed");
+        expect(false).assertFail();
       }
-      expect(await sm.getCurrentState()).assertEqual(0)
-      expect(await sm.getInvalidTransitionCount()).assertEqual(50)
+      done();
     })
 
     /**
@@ -178,29 +202,35 @@ export default function StateMachineStabilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testStateMachineStability0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const readTasks: taskpool.Task[] = []
-      const writeTasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        readTasks.push(new taskpool.Task(atomicCheckTransitionTask, sm, 1, 0))
-      }
-      writeTasks.push(new taskpool.Task(atomicCheckTransitionTask, sm, 1, 0))
-      const allPromises: Promise<Object>[] = []
-      for (let i: number = 0; i < readTasks.length; i++) {
-        allPromises.push(taskpool.execute(readTasks[i]))
-      }
-      for (let i: number = 0; i < writeTasks.length; i++) {
-        allPromises.push(taskpool.execute(writeTasks[i]))
-      }
-      const results: Object[] = await Promise.all(allPromises)
-      let successCount: number = 0
-      for (let i: number = 0; i < results.length; i++) {
-        if (results[i] as boolean) {
-          successCount++
+    it('testStateMachineStability0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const readTasks: taskpool.Task[] = []
+        const writeTasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          readTasks.push(new taskpool.Task(atomicCheckTransitionTask, sm, 1, 0))
         }
+        writeTasks.push(new taskpool.Task(atomicCheckTransitionTask, sm, 1, 0))
+        const allPromises: Promise<Object>[] = []
+        for (let i: number = 0; i < readTasks.length; i++) {
+          allPromises.push(taskpool.execute(readTasks[i]))
+        }
+        for (let i: number = 0; i < writeTasks.length; i++) {
+          allPromises.push(taskpool.execute(writeTasks[i]))
+        }
+        const results: Object[] = await Promise.all(allPromises)
+        let successCount: number = 0
+        for (let i: number = 0; i < results.length; i++) {
+          if (results[i] as boolean) {
+            successCount++
+          }
+        }
+        expect(successCount).assertEqual(1)
+        expect(await sm.getCurrentState()).assertEqual(1)
+      } catch (error) {
+        console.error("testStateMachineStability0500 failed");
+        expect(false).assertFail();
       }
-      expect(successCount).assertEqual(1)
-      expect(await sm.getCurrentState()).assertEqual(1)
+      done();
     })
   })
 }

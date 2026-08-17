@@ -206,10 +206,16 @@ export default function SlidingWindowLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSlidingWindowLimiter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const limiter: SlidingWindowLimiter = await manager.createLimiter('test_window', 1000, 5)
-      expect(limiter.getWindowSize()).assertEqual(1000)
-      expect(limiter.getMaxRequests()).assertEqual(5)
+    it('testSlidingWindowLimiter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const limiter: SlidingWindowLimiter = await manager.createLimiter('test_window', 1000, 5)
+        expect(limiter.getWindowSize()).assertEqual(1000)
+        expect(limiter.getMaxRequests()).assertEqual(5)
+      } catch (error) {
+        console.error("testSlidingWindowLimiter0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -220,14 +226,20 @@ export default function SlidingWindowLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSlidingWindowLimiter0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await manager.createLimiter('basic_window', 1000, 3)
+    it('testSlidingWindowLimiter0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await manager.createLimiter('basic_window', 1000, 3)
 
-      const r1: boolean = await manager.request('basic_window')
-      const r2: boolean = await manager.request('basic_window')
+        const r1: boolean = await manager.request('basic_window')
+        const r2: boolean = await manager.request('basic_window')
 
-      expect(r1).assertTrue()
-      expect(r2).assertTrue()
+        expect(r1).assertTrue()
+        expect(r2).assertTrue()
+      } catch (error) {
+        console.error("testSlidingWindowLimiter0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -238,14 +250,20 @@ export default function SlidingWindowLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSlidingWindowLimiter0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await manager.createLimiter('reject_window', 1000, 2)
+    it('testSlidingWindowLimiter0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await manager.createLimiter('reject_window', 1000, 2)
 
-      await manager.request('reject_window')
-      await manager.request('reject_window')
-      const r3: boolean = await manager.request('reject_window')
+        await manager.request('reject_window')
+        await manager.request('reject_window')
+        const r3: boolean = await manager.request('reject_window')
 
-      expect(r3).assertFalse()
+        expect(r3).assertFalse()
+      } catch (error) {
+        console.error("testSlidingWindowLimiter0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -256,15 +274,21 @@ export default function SlidingWindowLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSlidingWindowLimiter0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await manager.createLimiter('count_window', 1000, 2)
+    it('testSlidingWindowLimiter0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await manager.createLimiter('count_window', 1000, 2)
 
-      await manager.request('count_window')
-      await manager.request('count_window')
-      await manager.request('count_window')
+        await manager.request('count_window')
+        await manager.request('count_window')
+        await manager.request('count_window')
 
-      expect(manager.getTotalRequests('count_window')).assertEqual(3)
-      expect(manager.getTotalSuccess('count_window')).assertEqual(2)
+        expect(manager.getTotalRequests('count_window')).assertEqual(3)
+        expect(manager.getTotalSuccess('count_window')).assertEqual(2)
+      } catch (error) {
+        console.error("testSlidingWindowLimiter0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -275,17 +299,23 @@ export default function SlidingWindowLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSlidingWindowLimiter0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await manager.createLimiter('concurrent_window', 1000, 5)
+    it('testSlidingWindowLimiter0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await manager.createLimiter('concurrent_window', 1000, 5)
 
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(slidingWindowRequestTask, manager, 'concurrent_window'))
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(slidingWindowRequestTask, manager, 'concurrent_window'))
+        }
+        await executeTasksGetObjects(tasks)
+
+        expect(manager.getTotalRequests('concurrent_window')).assertEqual(10)
+        expect(manager.getTotalSuccess('concurrent_window')).assertEqual(5)
+      } catch (error) {
+        console.error("testSlidingWindowLimiter0500 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-
-      expect(manager.getTotalRequests('concurrent_window')).assertEqual(10)
-      expect(manager.getTotalSuccess('concurrent_window')).assertEqual(5)
+      done();
     })
 
     /**
@@ -296,9 +326,15 @@ export default function SlidingWindowLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSlidingWindowLimiter0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await manager.request('nonexistent')
-      expect(result).assertFalse()
+    it('testSlidingWindowLimiter0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await manager.request('nonexistent')
+        expect(result).assertFalse()
+      } catch (error) {
+        console.error("testSlidingWindowLimiter0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -309,16 +345,22 @@ export default function SlidingWindowLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSlidingWindowLimiter0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await manager.createLimiter('batch3_window', 1000, 3)
+    it('testSlidingWindowLimiter0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await manager.createLimiter('batch3_window', 1000, 3)
 
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(slidingWindowRequestTask, manager, 'batch3_window'))
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(slidingWindowRequestTask, manager, 'batch3_window'))
+        }
+        await executeTasksGetObjects(tasks)
+
+        expect(manager.getTotalRequests('batch3_window')).assertEqual(3)
+      } catch (error) {
+        console.error("testSlidingWindowLimiter0700 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-
-      expect(manager.getTotalRequests('batch3_window')).assertEqual(3)
+      done();
     })
 
     /**
@@ -329,16 +371,22 @@ export default function SlidingWindowLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSlidingWindowLimiter0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await manager.createLimiter('batch5_window', 1000, 5)
+    it('testSlidingWindowLimiter0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await manager.createLimiter('batch5_window', 1000, 5)
 
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(slidingWindowRequestTask, manager, 'batch5_window'))
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(slidingWindowRequestTask, manager, 'batch5_window'))
+        }
+        await executeTasksGetObjects(tasks)
+
+        expect(manager.getTotalRequests('batch5_window')).assertEqual(5)
+      } catch (error) {
+        console.error("testSlidingWindowLimiter0800 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-
-      expect(manager.getTotalRequests('batch5_window')).assertEqual(5)
+      done();
     })
 
     /**
@@ -349,17 +397,23 @@ export default function SlidingWindowLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSlidingWindowLimiter0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await manager.createLimiter('batch10_window', 1000, 5)
+    it('testSlidingWindowLimiter0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await manager.createLimiter('batch10_window', 1000, 5)
 
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(slidingWindowRequestTask, manager, 'batch10_window'))
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(slidingWindowRequestTask, manager, 'batch10_window'))
+        }
+        await executeTasksGetObjects(tasks)
+
+        expect(manager.getTotalRequests('batch10_window')).assertEqual(10)
+        expect(manager.getTotalSuccess('batch10_window')).assertEqual(5)
+      } catch (error) {
+        console.error("testSlidingWindowLimiter0900 failed");
+        expect(false).assertFail();
       }
-      await executeTasksGetObjects(tasks)
-
-      expect(manager.getTotalRequests('batch10_window')).assertEqual(10)
-      expect(manager.getTotalSuccess('batch10_window')).assertEqual(5)
+      done();
     })
 
     /**
@@ -370,12 +424,18 @@ export default function SlidingWindowLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSlidingWindowLimiter1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const limiter1: SlidingWindowLimiter = await manager.createLimiter('idempotent', 1000, 10)
-      const limiter2: SlidingWindowLimiter = await manager.createLimiter('idempotent', 2000, 20)
+    it('testSlidingWindowLimiter1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const limiter1: SlidingWindowLimiter = await manager.createLimiter('idempotent', 1000, 10)
+        const limiter2: SlidingWindowLimiter = await manager.createLimiter('idempotent', 2000, 20)
 
-      expect(limiter1 === limiter2).assertTrue()
-      expect(limiter1.getMaxRequests()).assertEqual(10)
+        expect(limiter1 === limiter2).assertTrue()
+        expect(limiter1.getMaxRequests()).assertEqual(10)
+      } catch (error) {
+        console.error("testSlidingWindowLimiter1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -386,16 +446,22 @@ export default function SlidingWindowLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSlidingWindowLimiter1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await manager.createLimiter('window1', 500, 10)
-      await manager.createLimiter('window2', 1000, 20)
-      await manager.createLimiter('window3', 2000, 30)
+    it('testSlidingWindowLimiter1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await manager.createLimiter('window1', 500, 10)
+        await manager.createLimiter('window2', 1000, 20)
+        await manager.createLimiter('window3', 2000, 30)
 
-      const limiter1: SlidingWindowLimiter | undefined = manager.getLimiter('window1')
-      const limiter2: SlidingWindowLimiter | undefined = manager.getLimiter('window2')
+        const limiter1: SlidingWindowLimiter | undefined = manager.getLimiter('window1')
+        const limiter2: SlidingWindowLimiter | undefined = manager.getLimiter('window2')
 
-      expect(limiter1!.getWindowSize()).assertEqual(500)
-      expect(limiter2!.getWindowSize()).assertEqual(1000)
+        expect(limiter1!.getWindowSize()).assertEqual(500)
+        expect(limiter2!.getWindowSize()).assertEqual(1000)
+      } catch (error) {
+        console.error("testSlidingWindowLimiter1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -406,15 +472,21 @@ export default function SlidingWindowLimiterTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSlidingWindowLimiter1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const limiter: SlidingWindowLimiter = await manager.createLimiter('time_boundary', 1000, 100)
-      const beforeTime: number = Date.now()
+    it('testSlidingWindowLimiter1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const limiter: SlidingWindowLimiter = await manager.createLimiter('time_boundary', 1000, 100)
+        const beforeTime: number = Date.now()
 
-      await limiter.tryAcquire()
+        await limiter.tryAcquire()
 
-      const record: SlidingWindowRecord | undefined = limiter.getLastRecord()
-      expect(record !== undefined).assertTrue()
-      expect(record!.timestamp >= beforeTime).assertTrue()
+        const record: SlidingWindowRecord | undefined = limiter.getLastRecord()
+        expect(record !== undefined).assertTrue()
+        expect(record!.timestamp >= beforeTime).assertTrue()
+      } catch (error) {
+        console.error("testSlidingWindowLimiter1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

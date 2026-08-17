@@ -78,14 +78,20 @@ export default function SharedModuleNestedTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedModuleNested0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const task1: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
-      await taskpool.execute(task1)
+    it('testSharedModuleNested0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const task1: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
+        await taskpool.execute(task1)
 
-      const task2: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
-      await taskpool.execute(task2)
+        const task2: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
+        await taskpool.execute(task2)
 
-      expect(counter.getCount()).assertEqual(2)
+        expect(counter.getCount()).assertEqual(2)
+      } catch (error) {
+        console.error("testSharedModuleNested0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -96,11 +102,17 @@ export default function SharedModuleNestedTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleNested0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const task: taskpool.Task = new taskpool.Task(nestedCallbackTask, counter)
-      await taskpool.execute(task)
+    it('testSharedModuleNested0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const task: taskpool.Task = new taskpool.Task(nestedCallbackTask, counter)
+        await taskpool.execute(task)
 
-      expect(counter.getCount()).assertEqual(1)
+        expect(counter.getCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testSharedModuleNested0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -111,13 +123,19 @@ export default function SharedModuleNestedTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleNested0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(nestedIncrementTask, counter))
+    it('testSharedModuleNested0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(nestedIncrementTask, counter))
+        }
+        await executeTasks(tasks)
+        expect(counter.getCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testSharedModuleNested0300 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(counter.getCount()).assertEqual(3)
+      done();
     })
 
     /**
@@ -128,13 +146,19 @@ export default function SharedModuleNestedTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleNested0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(nestedIncrementTask, counter))
+    it('testSharedModuleNested0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(nestedIncrementTask, counter))
+        }
+        await executeTasks(tasks)
+        expect(counter.getCount()).assertEqual(10)
+      } catch (error) {
+        console.error("testSharedModuleNested0400 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(counter.getCount()).assertEqual(10)
+      done();
     })
 
     /**
@@ -145,13 +169,19 @@ export default function SharedModuleNestedTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleNested0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(nestedIncrementTask, counter))
+    it('testSharedModuleNested0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(nestedIncrementTask, counter))
+        }
+        await executeTasks(tasks)
+        expect(counter.getCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testSharedModuleNested0500 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(counter.getCount()).assertEqual(5)
+      done();
     })
 
     /**
@@ -162,11 +192,17 @@ export default function SharedModuleNestedTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleNested0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const task: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
-      await taskpool.execute(task)
-      await taskpool.execute(new taskpool.Task(nestedIncrementTask, counter))
-      expect(counter.getCount()).assertEqual(2)
+    it('testSharedModuleNested0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const task: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
+        await taskpool.execute(task)
+        await taskpool.execute(new taskpool.Task(nestedIncrementTask, counter))
+        expect(counter.getCount()).assertEqual(2)
+      } catch (error) {
+        console.error("testSharedModuleNested0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -177,12 +213,18 @@ export default function SharedModuleNestedTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleNested0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 3; i++) {
-        const task: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
-        await taskpool.execute(task)
+    it('testSharedModuleNested0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 3; i++) {
+          const task: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
+          await taskpool.execute(task)
+        }
+        expect(counter.getCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testSharedModuleNested0700 failed");
+        expect(false).assertFail();
       }
-      expect(counter.getCount()).assertEqual(3)
+      done();
     })
 
     /**
@@ -193,18 +235,24 @@ export default function SharedModuleNestedTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleNested0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const task: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
-      const executePromise: Promise<Object> = taskpool.execute(task)
-      taskpool.cancel(task)
+    it('testSharedModuleNested0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        await executePromise
-      } catch (e) {
-        expect(e instanceof Error).assertTrue()
-      }
+        const task: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
+        const executePromise: Promise<Object> = taskpool.execute(task)
+        taskpool.cancel(task)
+        try {
+          await executePromise
+        } catch (e) {
+          expect(e instanceof Error).assertTrue()
+        }
 
-      await Utils.sleep(200)
-      expect(counter.getCount() >= 0).assertTrue()
+        await Utils.sleep(200)
+        expect(counter.getCount() >= 0).assertTrue()
+      } catch (error) {
+        console.error("testSharedModuleNested0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

@@ -124,12 +124,18 @@ export default function SharedModuleGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedModuleGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const data: SharedGCData = await gcManager.create('test1', 42)
+    it('testSharedModuleGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const data: SharedGCData = await gcManager.create('test1', 42)
 
-      expect(data.value).assertEqual(42)
-      expect(data.label).assertEqual('test1')
-      expect(gcManager.getCreateCount()).assertEqual(1)
+        expect(data.value).assertEqual(42)
+        expect(data.label).assertEqual('test1')
+        expect(gcManager.getCreateCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testSharedModuleGC0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -140,13 +146,19 @@ export default function SharedModuleGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedModuleGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await gcManager.create('test2', 100)
+    it('testSharedModuleGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await gcManager.create('test2', 100)
 
-      const result: boolean = await gcManager.delete('test2')
-      expect(result).assertTrue()
-      expect(gcManager.get('test2') === undefined).assertTrue()
-      expect(gcManager.getDeleteCount()).assertEqual(1)
+        const result: boolean = await gcManager.delete('test2')
+        expect(result).assertTrue()
+        expect(gcManager.get('test2') === undefined).assertTrue()
+        expect(gcManager.getDeleteCount()).assertEqual(1)
+      } catch (error) {
+        console.error("testSharedModuleGC0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -157,9 +169,15 @@ export default function SharedModuleGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSharedModuleGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const result: boolean = await gcManager.delete('nonexistent')
-      expect(result).assertFalse()
+    it('testSharedModuleGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const result: boolean = await gcManager.delete('nonexistent')
+        expect(result).assertFalse()
+      } catch (error) {
+        console.error("testSharedModuleGC0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -170,16 +188,22 @@ export default function SharedModuleGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const keys: string[] = ['obj1', 'obj2', 'obj3']
-      const tasks: taskpool.Task[] = keys.map((key: string, i: number): taskpool.Task =>
-        new taskpool.Task(createGCDataTask, gcManager, key, i * 10)
-      )
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      await Promise.all(promises)
+    it('testSharedModuleGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const keys: string[] = ['obj1', 'obj2', 'obj3']
+        const tasks: taskpool.Task[] = keys.map((key: string, i: number): taskpool.Task =>
+          new taskpool.Task(createGCDataTask, gcManager, key, i * 10)
+        )
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        await Promise.all(promises)
 
-      expect(gcManager.getCreateCount()).assertEqual(3)
-      expect(gcManager.getSize()).assertEqual(3)
+        expect(gcManager.getCreateCount()).assertEqual(3)
+        expect(gcManager.getSize()).assertEqual(3)
+      } catch (error) {
+        console.error("testSharedModuleGC0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -190,20 +214,26 @@ export default function SharedModuleGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await gcManager.create('del1', 1)
-      await gcManager.create('del2', 2)
-      await gcManager.create('del3', 3)
+    it('testSharedModuleGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await gcManager.create('del1', 1)
+        await gcManager.create('del2', 2)
+        await gcManager.create('del3', 3)
 
-      const keys: string[] = ['del1', 'del2', 'del3']
-      const tasks: taskpool.Task[] = keys.map((key: string): taskpool.Task =>
-        new taskpool.Task(deleteGCDataTask, gcManager, key)
-      )
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      await Promise.all(promises)
+        const keys: string[] = ['del1', 'del2', 'del3']
+        const tasks: taskpool.Task[] = keys.map((key: string): taskpool.Task =>
+          new taskpool.Task(deleteGCDataTask, gcManager, key)
+        )
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        await Promise.all(promises)
 
-      expect(gcManager.getDeleteCount()).assertEqual(3)
-      expect(gcManager.getSize()).assertEqual(0)
+        expect(gcManager.getDeleteCount()).assertEqual(3)
+        expect(gcManager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testSharedModuleGC0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -214,16 +244,22 @@ export default function SharedModuleGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedModuleGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const data: SharedGCData = await gcManager.create('lifecycle', 99)
-      expect(data.value).assertEqual(99)
+    it('testSharedModuleGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const data: SharedGCData = await gcManager.create('lifecycle', 99)
+        expect(data.value).assertEqual(99)
 
-      const retrieved: SharedGCData | undefined = gcManager.get('lifecycle')
-      expect(retrieved !== undefined).assertTrue()
-      expect(retrieved!.value).assertEqual(99)
+        const retrieved: SharedGCData | undefined = gcManager.get('lifecycle')
+        expect(retrieved !== undefined).assertTrue()
+        expect(retrieved!.value).assertEqual(99)
 
-      await gcManager.delete('lifecycle')
-      expect(gcManager.get('lifecycle') === undefined).assertTrue()
+        await gcManager.delete('lifecycle')
+        expect(gcManager.get('lifecycle') === undefined).assertTrue()
+      } catch (error) {
+        console.error("testSharedModuleGC0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -234,16 +270,22 @@ export default function SharedModuleGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedModuleGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await gcManager.create('a', 1)
-      await gcManager.create('b', 2)
-      expect(gcManager.getSize()).assertEqual(2)
+    it('testSharedModuleGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await gcManager.create('a', 1)
+        await gcManager.create('b', 2)
+        expect(gcManager.getSize()).assertEqual(2)
 
-      await gcManager.delete('a')
-      expect(gcManager.getSize()).assertEqual(1)
+        await gcManager.delete('a')
+        expect(gcManager.getSize()).assertEqual(1)
 
-      await gcManager.delete('b')
-      expect(gcManager.getSize()).assertEqual(0)
+        await gcManager.delete('b')
+        expect(gcManager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testSharedModuleGC0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -254,16 +296,22 @@ export default function SharedModuleGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedModuleGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await gcManager.create('x', 1)
-      await gcManager.create('y', 2)
-      await gcManager.create('z', 3)
+    it('testSharedModuleGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await gcManager.create('x', 1)
+        await gcManager.create('y', 2)
+        await gcManager.create('z', 3)
 
-      await gcManager.clear()
+        await gcManager.clear()
 
-      expect(gcManager.getSize()).assertEqual(0)
-      expect(gcManager.getCreateCount()).assertEqual(0)
-      expect(gcManager.getDeleteCount()).assertEqual(0)
+        expect(gcManager.getSize()).assertEqual(0)
+        expect(gcManager.getCreateCount()).assertEqual(0)
+        expect(gcManager.getDeleteCount()).assertEqual(0)
+      } catch (error) {
+        console.error("testSharedModuleGC0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -274,16 +322,22 @@ export default function SharedModuleGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(createGCDataTask, gcManager, `obj_${i}`, i))
-      }
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      await Promise.all(promises)
+    it('testSharedModuleGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(createGCDataTask, gcManager, `obj_${i}`, i))
+        }
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        await Promise.all(promises)
 
-      expect(gcManager.getCreateCount()).assertEqual(5)
-      expect(gcManager.getSize()).assertEqual(5)
+        expect(gcManager.getCreateCount()).assertEqual(5)
+        expect(gcManager.getSize()).assertEqual(5)
+      } catch (error) {
+        console.error("testSharedModuleGC0900 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -294,16 +348,22 @@ export default function SharedModuleGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(createGCDataTask, gcManager, `obj_${i}`, i))
-      }
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      await Promise.all(promises)
+    it('testSharedModuleGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(createGCDataTask, gcManager, `obj_${i}`, i))
+        }
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        await Promise.all(promises)
 
-      expect(gcManager.getCreateCount()).assertEqual(10)
-      expect(gcManager.getSize()).assertEqual(10)
+        expect(gcManager.getCreateCount()).assertEqual(10)
+        expect(gcManager.getSize()).assertEqual(10)
+      } catch (error) {
+        console.error("testSharedModuleGC1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -314,24 +374,30 @@ export default function SharedModuleGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleGC1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const data: SharedGCData = await gcManager.create('ref_test', 42)
+    it('testSharedModuleGC1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const data: SharedGCData = await gcManager.create('ref_test', 42)
 
-      const tasks: taskpool.Task[] = []
-      for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(accessGCDataTask, data))
-      }
-      const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
-      const results: Object[] = await Promise.all(promises)
-      const values: number[] = results.map((r: Object): number => r as number)
-
-      let allEqual: boolean = true
-      for (let i = 0; i < values.length; i++) {
-        if (values[i] !== 42) {
-          allEqual = false
+        const tasks: taskpool.Task[] = []
+        for (let i = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(accessGCDataTask, data))
         }
+        const promises: Promise<Object>[] = tasks.map((t: taskpool.Task): Promise<Object> => taskpool.execute(t))
+        const results: Object[] = await Promise.all(promises)
+        const values: number[] = results.map((r: Object): number => r as number)
+
+        let allEqual: boolean = true
+        for (let i = 0; i < values.length; i++) {
+          if (values[i] !== 42) {
+            allEqual = false
+          }
+        }
+        expect(allEqual).assertTrue()
+      } catch (error) {
+        console.error("testSharedModuleGC1100 failed");
+        expect(false).assertFail();
       }
-      expect(allEqual).assertTrue()
+      done();
     })
 
     /**
@@ -342,14 +408,20 @@ export default function SharedModuleGCTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedModuleGC1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      await gcManager.create('c1', 1)
-      await gcManager.create('c2', 2)
-      await gcManager.delete('c1')
+    it('testSharedModuleGC1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await gcManager.create('c1', 1)
+        await gcManager.create('c2', 2)
+        await gcManager.delete('c1')
 
-      expect(gcManager.getCreateCount()).assertEqual(2)
-      expect(gcManager.getDeleteCount()).assertEqual(1)
-      expect(gcManager.getSize()).assertEqual(1)
+        expect(gcManager.getCreateCount()).assertEqual(2)
+        expect(gcManager.getDeleteCount()).assertEqual(1)
+        expect(gcManager.getSize()).assertEqual(1)
+      } catch (error) {
+        console.error("testSharedModuleGC1200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

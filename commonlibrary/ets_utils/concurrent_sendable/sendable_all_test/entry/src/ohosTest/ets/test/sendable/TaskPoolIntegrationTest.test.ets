@@ -93,13 +93,19 @@ export default function TaskPoolIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTaskPoolIntegration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      sharedData.setName('single_task')
-      const task: taskpool.Task = new taskpool.Task(readSharedDataTask, sharedData)
-      const result: Object = await taskpool.execute(task)
+    it('testTaskPoolIntegration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        sharedData.setName('single_task')
+        const task: taskpool.Task = new taskpool.Task(readSharedDataTask, sharedData)
+        const result: Object = await taskpool.execute(task)
 
-      expect(result as number).assertEqual(0)
-      expect(sharedData.getName()).assertEqual('single_task')
+        expect(result as number).assertEqual(0)
+        expect(sharedData.getName()).assertEqual('single_task')
+      } catch (error) {
+        console.error("testTaskPoolIntegration0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -110,13 +116,19 @@ export default function TaskPoolIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskPoolIntegration0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(incrementSharedDataTask, sharedData))
+    it('testTaskPoolIntegration0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(incrementSharedDataTask, sharedData))
+        }
+        await executeTasks(tasks)
+        expect(sharedData.getCounter()).assertEqual(3)
+      } catch (error) {
+        console.error("testTaskPoolIntegration0200 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(sharedData.getCounter()).assertEqual(3)
+      done();
     })
 
     /**
@@ -127,13 +139,19 @@ export default function TaskPoolIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskPoolIntegration0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(incrementSharedDataTask, sharedData))
+    it('testTaskPoolIntegration0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(incrementSharedDataTask, sharedData))
+        }
+        await executeTasks(tasks)
+        expect(sharedData.getCounter()).assertEqual(10)
+      } catch (error) {
+        console.error("testTaskPoolIntegration0300 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(sharedData.getCounter()).assertEqual(10)
+      done();
     })
 
     /**
@@ -144,16 +162,22 @@ export default function TaskPoolIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskPoolIntegration0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(incrementSharedDataTask, sharedData))
+    it('testTaskPoolIntegration0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(incrementSharedDataTask, sharedData))
+        }
+        for (let i: number = 0; i < 2; i++) {
+          tasks.push(new taskpool.Task(readSharedDataTask, sharedData))
+        }
+        await executeTasks(tasks)
+        expect(sharedData.getCounter()).assertEqual(3)
+      } catch (error) {
+        console.error("testTaskPoolIntegration0400 failed");
+        expect(false).assertFail();
       }
-      for (let i: number = 0; i < 2; i++) {
-        tasks.push(new taskpool.Task(readSharedDataTask, sharedData))
-      }
-      await executeTasks(tasks)
-      expect(sharedData.getCounter()).assertEqual(3)
+      done();
     })
 
     /**
@@ -164,12 +188,18 @@ export default function TaskPoolIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskPoolIntegration0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const task: taskpool.Task = new taskpool.Task(accessAndIncrementTask, sharedData)
-      const result: Object = await taskpool.execute(task)
+    it('testTaskPoolIntegration0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const task: taskpool.Task = new taskpool.Task(accessAndIncrementTask, sharedData)
+        const result: Object = await taskpool.execute(task)
 
-      expect(result as number).assertEqual(1)
-      expect(sharedData.getCounter()).assertEqual(1)
+        expect(result as number).assertEqual(1)
+        expect(sharedData.getCounter()).assertEqual(1)
+      } catch (error) {
+        console.error("testTaskPoolIntegration0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -180,17 +210,23 @@ export default function TaskPoolIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskPoolIntegration0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const task: taskpool.Task = new taskpool.Task(accessAndIncrementTask, sharedData)
-      const result: Object = await taskpool.execute(task)
-      const count: number = result as number
+    it('testTaskPoolIntegration0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const task: taskpool.Task = new taskpool.Task(accessAndIncrementTask, sharedData)
+        const result: Object = await taskpool.execute(task)
+        const count: number = result as number
 
-      const task2: taskpool.Task = new taskpool.Task(accessAndIncrementTask, sharedData)
-      const result2: Object = await taskpool.execute(task2)
-      const count2: number = result2 as number
+        const task2: taskpool.Task = new taskpool.Task(accessAndIncrementTask, sharedData)
+        const result2: Object = await taskpool.execute(task2)
+        const count2: number = result2 as number
 
-      expect(count).assertEqual(1)
-      expect(count2).assertEqual(2)
+        expect(count).assertEqual(1)
+        expect(count2).assertEqual(2)
+      } catch (error) {
+        console.error("testTaskPoolIntegration0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -201,13 +237,19 @@ export default function TaskPoolIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskPoolIntegration0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(accessAndIncrementTask, sharedData))
+    it('testTaskPoolIntegration0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(accessAndIncrementTask, sharedData))
+        }
+        const results: Object[] = await executeTasks(tasks)
+        expect(sharedData.getCounter()).assertEqual(3)
+      } catch (error) {
+        console.error("testTaskPoolIntegration0700 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await executeTasks(tasks)
-      expect(sharedData.getCounter()).assertEqual(3)
+      done();
     })
 
     /**
@@ -218,13 +260,19 @@ export default function TaskPoolIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskPoolIntegration0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(accessAndIncrementTask, sharedData))
+    it('testTaskPoolIntegration0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(accessAndIncrementTask, sharedData))
+        }
+        await executeTasks(tasks)
+        expect(sharedData.getCounter()).assertEqual(5)
+      } catch (error) {
+        console.error("testTaskPoolIntegration0800 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(sharedData.getCounter()).assertEqual(5)
+      done();
     })
 
     /**
@@ -235,12 +283,18 @@ export default function TaskPoolIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskPoolIntegration0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      for (let i: number = 0; i < 3; i++) {
-        const task: taskpool.Task = new taskpool.Task(incrementSharedDataTask, sharedData)
-        await taskpool.execute(task)
+    it('testTaskPoolIntegration0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        for (let i: number = 0; i < 3; i++) {
+          const task: taskpool.Task = new taskpool.Task(incrementSharedDataTask, sharedData)
+          await taskpool.execute(task)
+        }
+        expect(sharedData.getCounter()).assertEqual(3)
+      } catch (error) {
+        console.error("testTaskPoolIntegration0900 failed");
+        expect(false).assertFail();
       }
-      expect(sharedData.getCounter()).assertEqual(3)
+      done();
     })
 
     /**
@@ -251,10 +305,16 @@ export default function TaskPoolIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskPoolIntegration1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const task: taskpool.Task = new taskpool.Task(incrementSharedDataTask, sharedData)
-      await taskpool.execute(task)
-      expect(sharedData.getCounter()).assertEqual(1)
+    it('testTaskPoolIntegration1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const task: taskpool.Task = new taskpool.Task(incrementSharedDataTask, sharedData)
+        await taskpool.execute(task)
+        expect(sharedData.getCounter()).assertEqual(1)
+      } catch (error) {
+        console.error("testTaskPoolIntegration1000 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -265,18 +325,24 @@ export default function TaskPoolIntegrationTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTaskPoolIntegration1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const task: taskpool.Task = new taskpool.Task(incrementSharedDataTask, sharedData)
-      const executePromise: Promise<Object> = taskpool.execute(task)
-      taskpool.cancel(task)
+    it('testTaskPoolIntegration1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        await executePromise
-      } catch (e) {
-        expect(e instanceof Error).assertTrue()
-      }
+        const task: taskpool.Task = new taskpool.Task(incrementSharedDataTask, sharedData)
+        const executePromise: Promise<Object> = taskpool.execute(task)
+        taskpool.cancel(task)
+        try {
+          await executePromise
+        } catch (e) {
+          expect(e instanceof Error).assertTrue()
+        }
 
-      await Utils.sleep(200)
-      expect(sharedData.getCounter() >= 0).assertTrue()
+        await Utils.sleep(200)
+        expect(sharedData.getCounter() >= 0).assertTrue()
+      } catch (error) {
+        console.error("testTaskPoolIntegration1100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

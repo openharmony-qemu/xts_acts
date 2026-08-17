@@ -73,13 +73,19 @@ export default function SharedModuleStabilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSharedModuleStability0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(stabilityIncrementTask, counter))
+    it('testSharedModuleStability0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(stabilityIncrementTask, counter))
+        }
+        await executeTasks(tasks)
+        expect(counter.getCount()).assertEqual(10)
+      } catch (error) {
+        console.error("testSharedModuleStability0100 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(counter.getCount()).assertEqual(10)
+      done();
     })
 
     /**
@@ -90,11 +96,17 @@ export default function SharedModuleStabilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleStability0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await counter.increment()
-      await counter.increment()
-      const count: number = counter.getCount()
-      expect(count).assertEqual(2)
+    it('testSharedModuleStability0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await counter.increment()
+        await counter.increment()
+        const count: number = counter.getCount()
+        expect(count).assertEqual(2)
+      } catch (error) {
+        console.error("testSharedModuleStability0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -105,15 +117,21 @@ export default function SharedModuleStabilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleStability0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(stabilityIncrementTask, counter))
-      }
-      await executeTasks(tasks)
+    it('testSharedModuleStability0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(stabilityIncrementTask, counter))
+        }
+        await executeTasks(tasks)
 
-      await Utils.sleep(500)
-      expect(counter.getCount()).assertEqual(5)
+        await Utils.sleep(500)
+        expect(counter.getCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testSharedModuleStability0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -124,11 +142,17 @@ export default function SharedModuleStabilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleStability0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const startTime: number = Date.now()
-      await counter.increment()
-      const elapsed: number = Date.now() - startTime
-      expect(elapsed < 100).assertTrue()
+    it('testSharedModuleStability0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const startTime: number = Date.now()
+        await counter.increment()
+        const elapsed: number = Date.now() - startTime
+        expect(elapsed < 100).assertTrue()
+      } catch (error) {
+        console.error("testSharedModuleStability0400 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -139,17 +163,23 @@ export default function SharedModuleStabilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleStability0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const task1: taskpool.Task = new taskpool.Task(stabilityIncrementTask, counter)
-      await taskpool.execute(task1)
+    it('testSharedModuleStability0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const task1: taskpool.Task = new taskpool.Task(stabilityIncrementTask, counter)
+        await taskpool.execute(task1)
 
-      const task2: taskpool.Task = new taskpool.Task(stabilityIncrementTask, counter)
-      await taskpool.execute(task2)
+        const task2: taskpool.Task = new taskpool.Task(stabilityIncrementTask, counter)
+        await taskpool.execute(task2)
 
-      const task3: taskpool.Task = new taskpool.Task(stabilityIncrementTask, counter)
-      await taskpool.execute(task3)
+        const task3: taskpool.Task = new taskpool.Task(stabilityIncrementTask, counter)
+        await taskpool.execute(task3)
 
-      expect(counter.getCount()).assertEqual(3)
+        expect(counter.getCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testSharedModuleStability0500 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -160,14 +190,20 @@ export default function SharedModuleStabilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleStability0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 3; i++) {
-        tasks.push(new taskpool.Task(stabilityIncrementTask, counter))
+    it('testSharedModuleStability0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 3; i++) {
+          tasks.push(new taskpool.Task(stabilityIncrementTask, counter))
+        }
+        const results: Object[] = await executeTasks(tasks)
+        expect(results.length).assertEqual(3)
+        expect(counter.getCount()).assertEqual(3)
+      } catch (error) {
+        console.error("testSharedModuleStability0600 failed");
+        expect(false).assertFail();
       }
-      const results: Object[] = await executeTasks(tasks)
-      expect(results.length).assertEqual(3)
-      expect(counter.getCount()).assertEqual(3)
+      done();
     })
 
     /**
@@ -178,15 +214,21 @@ export default function SharedModuleStabilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSharedModuleStability0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(stabilityIncrementTask, counter))
-      }
-      await executeTasks(tasks)
+    it('testSharedModuleStability0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(stabilityIncrementTask, counter))
+        }
+        await executeTasks(tasks)
 
-      const finalCount: number = counter.getCount()
-      expect(finalCount).assertEqual(5)
+        const finalCount: number = counter.getCount()
+        expect(finalCount).assertEqual(5)
+      } catch (error) {
+        console.error("testSharedModuleStability0700 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

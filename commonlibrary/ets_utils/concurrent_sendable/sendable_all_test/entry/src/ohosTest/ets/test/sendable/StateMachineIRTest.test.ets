@@ -164,11 +164,17 @@ export default function StateMachineIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testStateMachineIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const sm: IRStateMachine = new IRStateMachine(new ArkTSUtils.locks.AsyncLock())
-      const states: number[] = await sm.getIRStates()
-      expect(states[0]).assertEqual(0)
-      expect(states[1]).assertEqual(-1)
+    it('testStateMachineIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const sm: IRStateMachine = new IRStateMachine(new ArkTSUtils.locks.AsyncLock())
+        const states: number[] = await sm.getIRStates()
+        expect(states[0]).assertEqual(0)
+        expect(states[1]).assertEqual(-1)
+      } catch (error) {
+        console.error("testStateMachineIR0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -179,10 +185,16 @@ export default function StateMachineIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testStateMachineIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const sm: TransitionIRStateMachine = new TransitionIRStateMachine(new ArkTSUtils.locks.AsyncLock())
-      await sm.transition(1)
-      expect(await sm.getState()).assertEqual(1)
+    it('testStateMachineIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const sm: TransitionIRStateMachine = new TransitionIRStateMachine(new ArkTSUtils.locks.AsyncLock())
+        await sm.transition(1)
+        expect(await sm.getState()).assertEqual(1)
+      } catch (error) {
+        console.error("testStateMachineIR0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -193,7 +205,7 @@ export default function StateMachineIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testStateMachineIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testStateMachineIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const sm1: SharedHiddenClassStateMachine = new SharedHiddenClassStateMachine(new ArkTSUtils.locks.AsyncLock())
       const sm2: SharedHiddenClassStateMachine = new SharedHiddenClassStateMachine(new ArkTSUtils.locks.AsyncLock())
       expect(sm1.state_).assertEqual(0)
@@ -208,11 +220,17 @@ export default function StateMachineIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testStateMachineIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const sm: ICStateMachine = new ICStateMachine(new ArkTSUtils.locks.AsyncLock())
-      for (let i: number = 0; i < 50; i++) {
-        expect(await sm.getState()).assertEqual(1)
+    it('testStateMachineIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const sm: ICStateMachine = new ICStateMachine(new ArkTSUtils.locks.AsyncLock())
+        for (let i: number = 0; i < 50; i++) {
+          expect(await sm.getState()).assertEqual(1)
+        }
+      } catch (error) {
+        console.error("testStateMachineIR0400 failed");
+        expect(false).assertFail();
       }
+      done();
     })
 
     /**
@@ -223,20 +241,26 @@ export default function StateMachineIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testStateMachineIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const sm: CrossThreadStateMachine = new CrossThreadStateMachine(new ArkTSUtils.locks.AsyncLock())
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(readCrossThreadStateTask, sm))
+    it('testStateMachineIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const sm: CrossThreadStateMachine = new CrossThreadStateMachine(new ArkTSUtils.locks.AsyncLock())
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(readCrossThreadStateTask, sm))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i: number = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        const results: Object[] = await Promise.all(promises)
+        for (let i: number = 0; i < results.length; i++) {
+          expect(results[i] as number).assertEqual(5)
+        }
+      } catch (error) {
+        console.error("testStateMachineIR0500 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i: number = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      const results: Object[] = await Promise.all(promises)
-      for (let i: number = 0; i < results.length; i++) {
-        expect(results[i] as number).assertEqual(5)
-      }
+      done();
     })
 
     /**
@@ -247,14 +271,20 @@ export default function StateMachineIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testStateMachineIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const sm: HistoryIRStateMachine = new HistoryIRStateMachine(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
-      await sm.lock_.lockAsync((): void => {
-        sm.history_.push(0)
-        sm.history_.push(1)
-        sm.history_.push(2)
-      })
-      expect(sm.history_.length).assertEqual(3)
+    it('testStateMachineIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const sm: HistoryIRStateMachine = new HistoryIRStateMachine(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+        await sm.lock_.lockAsync((): void => {
+          sm.history_.push(0)
+          sm.history_.push(1)
+          sm.history_.push(2)
+        })
+        expect(sm.history_.length).assertEqual(3)
+      } catch (error) {
+        console.error("testStateMachineIR0600 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -265,19 +295,25 @@ export default function StateMachineIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testStateMachineIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const sm: StableIRStateMachine = new StableIRStateMachine(new ArkTSUtils.locks.AsyncLock())
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 100; i++) {
-        tasks.push(new taskpool.Task(transitionIRTask, sm, i))
+    it('testStateMachineIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const sm: StableIRStateMachine = new StableIRStateMachine(new ArkTSUtils.locks.AsyncLock())
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 100; i++) {
+          tasks.push(new taskpool.Task(transitionIRTask, sm, i))
+        }
+        const promises: Promise<Object>[] = []
+        for (let i: number = 0; i < tasks.length; i++) {
+          promises.push(taskpool.execute(tasks[i]))
+        }
+        await Promise.all(promises)
+        const finalState: number = await sm.lock_.lockAsync((): number => sm.state_)
+        expect(finalState).assertLargerOrEqual(0)
+      } catch (error) {
+        console.error("testStateMachineIR0700 failed");
+        expect(false).assertFail();
       }
-      const promises: Promise<Object>[] = []
-      for (let i: number = 0; i < tasks.length; i++) {
-        promises.push(taskpool.execute(tasks[i]))
-      }
-      await Promise.all(promises)
-      const finalState: number = await sm.lock_.lockAsync((): number => sm.state_)
-      expect(finalState).assertLargerOrEqual(0)
+      done();
     })
 
     /**
@@ -288,11 +324,17 @@ export default function StateMachineIRTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testStateMachineIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const sm: BoundaryStateMachine = new BoundaryStateMachine(new ArkTSUtils.locks.AsyncLock())
-      const props: number[] = await sm.getIRProperties()
-      expect(props.length).assertEqual(2)
-      expect(props[1]).assertEqual(100)
+    it('testStateMachineIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const sm: BoundaryStateMachine = new BoundaryStateMachine(new ArkTSUtils.locks.AsyncLock())
+        const props: number[] = await sm.getIRProperties()
+        expect(props.length).assertEqual(2)
+        expect(props[1]).assertEqual(100)
+      } catch (error) {
+        console.error("testStateMachineIR0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
   })
 }

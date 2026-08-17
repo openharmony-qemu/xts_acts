@@ -149,14 +149,19 @@ export default function SharedHeapGCTest(): void {
      */
     it('testSharedHeapGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      for (let i: number = 0; i < 5; i++) {
-        await manager.create(`obj_${i}`, i)
-      }
-      expect(manager.getSize()).assertEqual(5)
+      try {
+        for (let i: number = 0; i < 5; i++) {
+          await manager.create(`obj_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(5)
 
-      await manager.clearAll()
-      expect(manager.getSize()).assertEqual(0)
-      done()
+        await manager.clearAll()
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testSharedHeapGC0100 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -169,18 +174,23 @@ export default function SharedHeapGCTest(): void {
      */
     it('testSharedHeapGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      expect(manager.getSize()).assertEqual(0)
+      try {
+        expect(manager.getSize()).assertEqual(0)
 
-      await manager.create('data1', 1)
-      await manager.create('data2', 2)
-      await manager.create('data3', 3)
-      expect(manager.getSize()).assertEqual(3)
+        await manager.create('data1', 1)
+        await manager.create('data2', 2)
+        await manager.create('data3', 3)
+        expect(manager.getSize()).assertEqual(3)
 
-      await manager.delete('data1')
-      await manager.delete('data2')
-      await manager.delete('data3')
-      expect(manager.getSize()).assertEqual(0)
-      done()
+        await manager.delete('data1')
+        await manager.delete('data2')
+        await manager.delete('data3')
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testSharedHeapGC0200 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -193,13 +203,18 @@ export default function SharedHeapGCTest(): void {
      */
     it('testSharedHeapGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      const data: LargeGCData = await manager.create('active', 42)
-      expect(data.getId()).assertEqual(42)
+      try {
+        const data: LargeGCData = await manager.create('active', 42)
+        expect(data.getId()).assertEqual(42)
 
-      const retrieved: LargeGCData | undefined = manager.get('active')
-      expect(retrieved !== undefined).assertTrue()
-      expect(retrieved!.getId()).assertEqual(42)
-      done()
+        const retrieved: LargeGCData | undefined = manager.get('active')
+        expect(retrieved !== undefined).assertTrue()
+        expect(retrieved!.getId()).assertEqual(42)
+      } catch (error) {
+        console.error("testSharedHeapGC0300 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -212,13 +227,18 @@ export default function SharedHeapGCTest(): void {
      */
     it('testSharedHeapGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      const tasks: taskpool.Task[] = []
-      for (let i: number = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(createGCDataTask, manager, `gc_${i}`, i))
+      try {
+        const tasks: taskpool.Task[] = []
+        for (let i: number = 0; i < 5; i++) {
+          tasks.push(new taskpool.Task(createGCDataTask, manager, `gc_${i}`, i))
+        }
+        await executeTasks(tasks)
+        expect(manager.getCreateCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testSharedHeapGC0400 failed");
+        expect(false).assertFail();
       }
-      await executeTasks(tasks)
-      expect(manager.getCreateCount()).assertEqual(5)
-      done()
+      done();
     })
 
     /**
@@ -231,13 +251,18 @@ export default function SharedHeapGCTest(): void {
      */
     it('testSharedHeapGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      const startTime: number = Date.now()
-      for (let i: number = 0; i < 10; i++) {
-        await manager.create(`fast_${i}`, i)
+      try {
+        const startTime: number = Date.now()
+        for (let i: number = 0; i < 10; i++) {
+          await manager.create(`fast_${i}`, i)
+        }
+        const elapsed: number = Date.now() - startTime
+        expect(elapsed < 5000).assertTrue()
+      } catch (error) {
+        console.error("testSharedHeapGC0500 failed");
+        expect(false).assertFail();
       }
-      const elapsed: number = Date.now() - startTime
-      expect(elapsed < 5000).assertTrue()
-      done()
+      done();
     })
 
     /**
@@ -250,17 +275,22 @@ export default function SharedHeapGCTest(): void {
      */
     it('testSharedHeapGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      for (let i: number = 0; i < 5; i++) {
-        await manager.create(`cnt_${i}`, i)
-      }
-      expect(manager.getSize()).assertEqual(5)
+      try {
+        for (let i: number = 0; i < 5; i++) {
+          await manager.create(`cnt_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(5)
 
-      for (let i: number = 0; i < 5; i++) {
-        await manager.delete(`cnt_${i}`)
+        for (let i: number = 0; i < 5; i++) {
+          await manager.delete(`cnt_${i}`)
+        }
+        expect(manager.getSize()).assertEqual(0)
+        expect(manager.getDeleteCount()).assertEqual(5)
+      } catch (error) {
+        console.error("testSharedHeapGC0600 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getSize()).assertEqual(0)
-      expect(manager.getDeleteCount()).assertEqual(5)
-      done()
+      done();
     })
 
     /**
@@ -273,17 +303,22 @@ export default function SharedHeapGCTest(): void {
      */
     it('testSharedHeapGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      let totalCreates: number = 0
-      for (let round: number = 0; round < 3; round++) {
-        for (let i: number = 0; i < 5; i++) {
-          await manager.create(`round${round}_${i}`, i)
-          totalCreates++
+      try {
+        let totalCreates: number = 0
+        for (let round: number = 0; round < 3; round++) {
+          for (let i: number = 0; i < 5; i++) {
+            await manager.create(`round${round}_${i}`, i)
+            totalCreates++
+          }
+          await manager.clearAll()
         }
-        await manager.clearAll()
+        expect(totalCreates).assertEqual(15)
+        expect(manager.getSize()).assertEqual(0)
+      } catch (error) {
+        console.error("testSharedHeapGC0700 failed");
+        expect(false).assertFail();
       }
-      expect(totalCreates).assertEqual(15)
-      expect(manager.getSize()).assertEqual(0)
-      done()
+      done();
     })
 
     /**
@@ -296,12 +331,17 @@ export default function SharedHeapGCTest(): void {
      */
     it('testSharedHeapGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      const data: LargeGCData = await manager.create('persist', 100)
-      expect(data.getId()).assertEqual(100)
+      try {
+        const data: LargeGCData = await manager.create('persist', 100)
+        expect(data.getId()).assertEqual(100)
 
-      const retrieved: LargeGCData | undefined = manager.get('persist')
-      expect(retrieved !== undefined).assertTrue()
-      done()
+        const retrieved: LargeGCData | undefined = manager.get('persist')
+        expect(retrieved !== undefined).assertTrue()
+      } catch (error) {
+        console.error("testSharedHeapGC0800 failed");
+        expect(false).assertFail();
+      }
+      done();
     })
 
     /**
@@ -314,19 +354,24 @@ export default function SharedHeapGCTest(): void {
      */
     it('testSharedHeapGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      for (let i: number = 0; i < 10; i++) {
-        await manager.create(`cap_${i}`, i)
-      }
-      expect(manager.getSize()).assertEqual(10)
+      try {
+        for (let i: number = 0; i < 10; i++) {
+          await manager.create(`cap_${i}`, i)
+        }
+        expect(manager.getSize()).assertEqual(10)
 
-      await manager.clearAll()
-      expect(manager.getSize()).assertEqual(0)
+        await manager.clearAll()
+        expect(manager.getSize()).assertEqual(0)
 
-      for (let i: number = 0; i < 10; i++) {
-        await manager.create(`cap2_${i}`, i * 10)
+        for (let i: number = 0; i < 10; i++) {
+          await manager.create(`cap2_${i}`, i * 10)
+        }
+        expect(manager.getSize()).assertEqual(10)
+      } catch (error) {
+        console.error("testSharedHeapGC0900 failed");
+        expect(false).assertFail();
       }
-      expect(manager.getSize()).assertEqual(10)
-      done()
+      done();
     })
 
     /**
