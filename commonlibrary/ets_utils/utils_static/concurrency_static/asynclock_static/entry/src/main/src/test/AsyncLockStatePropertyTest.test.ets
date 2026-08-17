@@ -170,7 +170,8 @@ export default function AsyncLockStatePropertyTest(): void {
     it('testAsyncLockStateProperty1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
       }, AsyncLockMode.EXCLUSIVE);
@@ -280,7 +281,8 @@ export default function AsyncLockStatePropertyTest(): void {
     it('testAsyncLockStateProperty1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {});
+      await lock.lockAsync<void>(
+        () => {});
       let state = lock.query();
       expect(state.held.length).assertEqual(0);
       expect(state.pending.length).assertEqual(0);
@@ -337,7 +339,8 @@ export default function AsyncLockStatePropertyTest(): void {
       let lock = new AsyncLock();
       let stateBefore = lock.query();
       expect(stateBefore.held.length).assertEqual(0);
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let stateDuring = lock.query();
         expect(stateDuring.held.length).assertLarger(0);
       });
@@ -360,7 +363,8 @@ export default function AsyncLockStatePropertyTest(): void {
     it('testAsyncLockStateProperty2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         try {
         } catch (error) {
           console.error(`callback failed: ${error}`);
@@ -424,7 +428,8 @@ export default function AsyncLockStatePropertyTest(): void {
     it('testAsyncLockStateProperty2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         let heldCount: number = 0;
         for (let info of state.held) { heldCount++ }
@@ -449,7 +454,8 @@ export default function AsyncLockStatePropertyTest(): void {
     it('testAsyncLockStateProperty2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request("heldInfo");
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         if (state.held.length > 0) {
           expect(state.held[0].contextId).assertLarger(0);
@@ -475,14 +481,16 @@ export default function AsyncLockStatePropertyTest(): void {
       try {
       let lock = new AsyncLock();
       await Promise.all([
-        lock.lockAsync<void>(() => {
+        lock.lockAsync<void>(
+          () => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
         }, AsyncLockMode.SHARED),
-        lock.lockAsync<void>(() => {
+        lock.lockAsync<void>(
+          () => {
           try {
             let state = lock.query();
             expect(state.held.length > 0).assertTrue();
@@ -511,7 +519,8 @@ export default function AsyncLockStatePropertyTest(): void {
     it('testAsyncLockStateProperty2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let lock = new AsyncLock();
-        let p1 = lock.lockAsync<void>((): Promise<void> => {
+        let p1 = lock.lockAsync<void>(
+          (): Promise<void> => {
           try {
             return sleep(100);
           } catch (error) {
@@ -519,7 +528,8 @@ export default function AsyncLockStatePropertyTest(): void {
             throw error;
           }
         });
-        let p2 = lock.lockAsync<void>(() => {});
+        let p2 = lock.lockAsync<void>(
+          () => {});
         let state = lock.query();
         let length = state.pending.length;
         expect(typeof length).assertEqual("int");
@@ -557,7 +567,8 @@ export default function AsyncLockStatePropertyTest(): void {
     it('testAsyncLockStateProperty2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      let p1 = lock.lockAsync<void>((): Promise<void> => {
+      let p1 = lock.lockAsync<void>(
+        (): Promise<void> => {
         try {
           return sleep(100);
         } catch (error) {
@@ -565,7 +576,8 @@ export default function AsyncLockStatePropertyTest(): void {
           throw error;
         }
       });
-      let p2: Promise<void> = lock.lockAsync<void>(() => {});
+      let p2: Promise<void> = lock.lockAsync<void>(
+        () => {});
       let state = lock.query();
       expect(state.pending.length).assertLarger(0);
       await p1;
@@ -598,7 +610,8 @@ export default function AsyncLockStatePropertyTest(): void {
 
       let heldCountBefore = await monitorHeld();
       expect(heldCountBefore).assertEqual(0);
-      await lock.lockAsync<void>(async () => {
+      await lock.lockAsync<void>(
+        async () => {
         try {
           let heldCountDuring = await monitorHeld();
           expect(heldCountDuring).assertEqual(1);
@@ -653,7 +666,8 @@ export default function AsyncLockStatePropertyTest(): void {
     it('testAsyncLockStateProperty3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         let jsonStr = JSON.stringify(state);
         expect(jsonStr).assertContain('"held"');
@@ -678,7 +692,8 @@ export default function AsyncLockStatePropertyTest(): void {
     it('testAsyncLockStateProperty3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let lock = new AsyncLock();
-        await lock.lockAsync<void>(() => {
+        await lock.lockAsync<void>(
+          () => {
           try {
             let state = lock.query();
             expect(state.held.length).assertLarger(0);
@@ -714,7 +729,8 @@ export default function AsyncLockStatePropertyTest(): void {
     it('testAsyncLockStateProperty3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let lock = new AsyncLock();
-        let p1 = lock.lockAsync<void>((): Promise<void> => {
+        let p1 = lock.lockAsync<void>(
+          (): Promise<void> => {
           try {
             return sleep(100);
           } catch (error) {
@@ -722,7 +738,8 @@ export default function AsyncLockStatePropertyTest(): void {
             throw error;
           }
         });
-        let p2 = lock.lockAsync<void>(() => {
+        let p2 = lock.lockAsync<void>(
+          () => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);
@@ -760,7 +777,8 @@ export default function AsyncLockStatePropertyTest(): void {
     it('testAsyncLockStateProperty3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let lock = new AsyncLock();
-        let p1: Promise<void> = lock.lockAsync<void>((): Promise<void> => {
+        let p1: Promise<void> = lock.lockAsync<void>(
+          (): Promise<void> => {
           try {
             return sleep(100);
           } catch (error) {
@@ -768,7 +786,8 @@ export default function AsyncLockStatePropertyTest(): void {
             throw error;
           }
         }, AsyncLockMode.SHARED);
-        let p2: Promise<void> = lock.lockAsync<void>(() => {
+        let p2: Promise<void> = lock.lockAsync<void>(
+          () => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);

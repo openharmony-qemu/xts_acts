@@ -52,7 +52,8 @@ export default function AsyncLockOptionsConstructorTest(): void {
       let options = new AsyncLockOptions<string>();
       let executed = false;
 
-      await lock.lockAsync<void, string>(() => {
+      await lock.lockAsync<void, string>(
+        () => {
         executed = true;
       }, AsyncLockMode.EXCLUSIVE, options);
 
@@ -209,7 +210,8 @@ export default function AsyncLockOptionsConstructorTest(): void {
       options.timeout = 1000;
       let executed = false;
 
-      await lock.lockAsync<void, string>(() => {
+      await lock.lockAsync<void, string>(
+        () => {
         try {
           executed = true;
         } catch (error) {
@@ -240,14 +242,16 @@ export default function AsyncLockOptionsConstructorTest(): void {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
       await expect(Promise.all([
-        lock.lockAsync<void, void>(() => {
+        lock.lockAsync<void, void>(
+          () => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
         }, AsyncLockMode.SHARED, options),
-        lock.lockAsync<void, void>(() => {
+        lock.lockAsync<void, void>(
+          () => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);
@@ -277,7 +281,8 @@ export default function AsyncLockOptionsConstructorTest(): void {
       let s: AbortSignal<string> = { aborted: false, reason: "Aborted" };
       let options = new AsyncLockOptions<string>();
       options.signal = s;
-      let pCheck: Promise<void> = lock.lockAsync<void, string>(() => {
+      let pCheck: Promise<void> = lock.lockAsync<void, string>(
+        () => {
         try {
         } catch (error) {
           console.error(`callback failed: ${error}`);
@@ -309,7 +314,8 @@ export default function AsyncLockOptionsConstructorTest(): void {
       let options = new AsyncLockOptions<string>();
       options.signal = s;
       let rejected = false;
-      let pReject: Promise<void> = lock.lockAsync<void, string>(() => {
+      let pReject: Promise<void> = lock.lockAsync<void, string>(
+        () => {
         try {
         } catch (error) {
           console.error(`callback failed: ${error}`);
@@ -440,7 +446,8 @@ export default function AsyncLockOptionsConstructorTest(): void {
           let s: AbortSignal<string> = { aborted: false, reason: "Aborted" };
           let options = new AsyncLockOptions<string>();
           options.signal = s;
-          let holder: Promise<void> = lock.lockAsync<void>((): Promise<void> => {
+          let holder: Promise<void> = lock.lockAsync<void>(
+            (): Promise<void> => {
             try {
               return sleep(300);
             } catch (error) {
@@ -448,7 +455,8 @@ export default function AsyncLockOptionsConstructorTest(): void {
               throw error;
             }
           });
-          let p: Promise<void> = lock.lockAsync<void, string>(() => {
+          let p: Promise<void> = lock.lockAsync<void, string>(
+            () => {
             try {
             } catch (error) {
               console.error(`callback failed: ${error}`);

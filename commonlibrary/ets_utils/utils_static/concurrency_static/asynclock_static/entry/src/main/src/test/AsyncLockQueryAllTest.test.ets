@@ -125,7 +125,8 @@ export default function AsyncLockQueryAllTest(): void {
     it('testAsyncLockQueryAll0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request('heldLock');
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let states = AsyncLock.queryAll();
         let hasHeld = states.some(s => s.held.length > 0);
         expect(hasHeld).assertTrue();
@@ -450,7 +451,8 @@ export default function AsyncLockQueryAllTest(): void {
     it('testAsyncLockQueryAll2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request('duringLock');
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let states = AsyncLock.queryAll();
         expect(Array.isArray(states)).assertTrue();
       });
@@ -496,7 +498,8 @@ export default function AsyncLockQueryAllTest(): void {
     it('testAsyncLockQueryAll2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request('callbackAll');
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let states = AsyncLock.queryAll();
         expect(Array.isArray(states)).assertTrue();
       });
@@ -533,7 +536,8 @@ export default function AsyncLockQueryAllTest(): void {
     it('testAsyncLockQueryAll3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request('duringExec');
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         try {
           let states = AsyncLock.queryAll();
           let hasHeld = states.some(s => s.held.length > 0);
@@ -562,7 +566,8 @@ export default function AsyncLockQueryAllTest(): void {
     it('testAsyncLockQueryAll3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request('afterExec');
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         try {
         } catch (error) {
           console.error(`callback failed: ${error}`);
@@ -651,7 +656,8 @@ export default function AsyncLockQueryAllTest(): void {
     it('testAsyncLockQueryAll3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let lock = AsyncLock.request('pendingLockAll');
-        let p1: Promise<void> = lock.lockAsync<void>((): Promise<void> => {
+        let p1: Promise<void> = lock.lockAsync<void>(
+          (): Promise<void> => {
           try {
             return sleep(100);
           } catch (error) {
@@ -659,7 +665,8 @@ export default function AsyncLockQueryAllTest(): void {
             throw error;
           }
         });
-        let p2: Promise<void> = lock.lockAsync<void>(() => {
+        let p2: Promise<void> = lock.lockAsync<void>(
+          () => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);

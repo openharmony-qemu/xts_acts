@@ -31,7 +31,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request("testLock");
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -59,7 +60,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -86,7 +88,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request("testLock");
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -113,7 +116,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -140,7 +144,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -167,7 +172,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -194,7 +200,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request("namedLock");
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -220,7 +227,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -247,7 +255,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request("lock!@#$");
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -273,7 +282,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request("测试锁");
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -299,7 +309,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -325,7 +336,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -351,7 +363,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -378,7 +391,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -406,7 +420,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -433,7 +448,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -461,7 +477,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -488,7 +505,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -514,7 +532,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -541,7 +560,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -568,7 +588,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -595,7 +616,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request("notOptionalLock");
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -621,7 +643,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -647,7 +670,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -673,7 +697,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         for (let info of state.held) {
           expect(info.contextId).assertLarger(0);
@@ -698,7 +723,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request("myLock");
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -724,7 +750,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let lock = AsyncLock.request("combinationLock");
-        await lock.lockAsync<void>(() => {
+        await lock.lockAsync<void>(
+          () => {
           let state = lock.query();
           expect(state.held.length).assertLarger(0);
           if (state.held.length > 0) {
@@ -756,7 +783,8 @@ export default function AsyncLockInfoTest(): void {
         let lock2 = AsyncLock.request("lock2");
         let name1: string = "";
         let name2: string = "";
-        await lock1.lockAsync<void>(() => {
+        await lock1.lockAsync<void>(
+          () => {
           try {
             let state = lock1.query();
             expect(state.held.length).assertLarger(0);
@@ -769,7 +797,8 @@ export default function AsyncLockInfoTest(): void {
             throw error;
           }
         });
-        await lock2.lockAsync<void>(() => {
+        await lock2.lockAsync<void>(
+          () => {
           try {
             let state = lock2.query();
             expect(state.held.length).assertLarger(0);
@@ -802,7 +831,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let lock = new AsyncLock();
-        let p1 = lock.lockAsync<void>((): Promise<void> => {
+        let p1 = lock.lockAsync<void>(
+          (): Promise<void> => {
           try {
             return sleep(100);
           } catch (error) {
@@ -810,7 +840,8 @@ export default function AsyncLockInfoTest(): void {
             throw error;
           }
         }, AsyncLockMode.SHARED);
-        let p2: Promise<void> = lock.lockAsync<void>(() => {}, AsyncLockMode.EXCLUSIVE);
+        let p2: Promise<void> = lock.lockAsync<void>(
+          () => {}, AsyncLockMode.EXCLUSIVE);
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         expect(state.pending.length).assertLarger(0);
@@ -840,7 +871,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -869,7 +901,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -897,7 +930,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       let lock = AsyncLock.request("monitorLock");
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         for (let info of state.held) {
           expect(typeof info.name).assertEqual("string");
@@ -923,7 +957,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       let lock = new AsyncLock();
-      await lock.lockAsync<void>(() => {
+      await lock.lockAsync<void>(
+        () => {
         let state = lock.query();
         expect(state.held.length).assertLarger(0);
         if (state.held.length > 0) {
@@ -953,7 +988,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let lock = AsyncLock.request("pendingInfo");
-        let p1 = lock.lockAsync<void>((): Promise<void> => {
+        let p1 = lock.lockAsync<void>(
+          (): Promise<void> => {
           try {
             return sleep(100);
           } catch (error) {
@@ -961,7 +997,8 @@ export default function AsyncLockInfoTest(): void {
             throw error;
           }
         });
-        let p2: Promise<void> = lock.lockAsync<void>(() => {
+        let p2: Promise<void> = lock.lockAsync<void>(
+          () => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);
@@ -998,7 +1035,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let lock = new AsyncLock();
-        let p1 = lock.lockAsync<void>((): Promise<void> => {
+        let p1 = lock.lockAsync<void>(
+          (): Promise<void> => {
           try {
             return sleep(300);
           } catch (error) {
@@ -1014,7 +1052,8 @@ export default function AsyncLockInfoTest(): void {
             console.error(`callback failed: ${error}`);
             throw error;
           }
-          p2 = lock.lockAsync<void>(() => {
+          p2 = lock.lockAsync<void>(
+            () => {
             try {
             } catch (error) {
               console.error(`callback failed: ${error}`);
@@ -1056,7 +1095,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let lock = AsyncLock.request("debugLock");
-        await lock.lockAsync<void>(() => {
+        await lock.lockAsync<void>(
+          () => {
           try {
             let state = lock.query();
             expect(state.held.length).assertLarger(0);
@@ -1093,7 +1133,8 @@ export default function AsyncLockInfoTest(): void {
     it('testAsyncLockInfo3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let lock = new AsyncLock();
-        let p1: Promise<void> = lock.lockAsync<void>((): Promise<void> => {
+        let p1: Promise<void> = lock.lockAsync<void>(
+          (): Promise<void> => {
           try {
             return sleep(100);
           } catch (error) {
@@ -1103,7 +1144,8 @@ export default function AsyncLockInfoTest(): void {
         });
         let queued: Promise<void>[] = [];
         for (let i = 0; i < 10; i++) {
-          queued.push(lock.lockAsync<void>(() => {
+          queued.push(lock.lockAsync<void>(
+            () => {
             try {
             } catch (error) {
               console.error(`callback failed: ${error}`);

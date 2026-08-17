@@ -72,7 +72,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
-      let p: Promise<void> = lock.lockAsync<void, void>(() => {}, AsyncLockMode.EXCLUSIVE, options);
+      let p: Promise<void> = lock.lockAsync<void, void>(
+        () => {}, AsyncLockMode.EXCLUSIVE, options);
       expect(p instanceof Promise).assertTrue();
       await p;
 
@@ -95,7 +96,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<number>();
-      let result = await lock.lockAsync<number, number>(() => {
+      let result = await lock.lockAsync<number, number>(
+        () => {
         try {
           return 100;
         } catch (error) {
@@ -124,7 +126,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
-      let result = await lock.lockAsync<string, string>(() => {
+      let result = await lock.lockAsync<string, string>(
+        () => {
         try {
           return "test";
         } catch (error) {
@@ -153,7 +156,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<int>();
-      let result: int = await lock.lockAsync<int, int>(async () => {
+      let result: int = await lock.lockAsync<int, int>(
+        async () => {
         try {
           return await Promise.resolve(42);
         } catch (error) {
@@ -183,7 +187,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
 
-      let result: void = await lock.lockAsync<void, void>(() => {
+      let result: void = await lock.lockAsync<void, void>(
+        () => {
         try {
         } catch (error) {
           console.error(`callback failed: ${error}`);
@@ -212,7 +217,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
-      let result: string | null = await lock.lockAsync<string | null, string>(() => {
+      let result: string | null = await lock.lockAsync<string | null, string>(
+        () => {
         try {
           return null;
         } catch (error) {
@@ -243,7 +249,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let options = new AsyncLockOptions<void>();
       let heldMode: AsyncLockMode | undefined = undefined;
 
-      await lock.lockAsync<void, void>(() => {
+      await lock.lockAsync<void, void>(
+        () => {
         let state = lock.query();
         if (state.held.length > 0) {
           heldMode = state.held[0].mode;
@@ -271,7 +278,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
       let exclusiveModeAccepted = false;
-      await lock.lockAsync<void, void>(() => {
+      await lock.lockAsync<void, void>(
+        () => {
         let state = lock.query();
         if (state.held.length > 0) {
           exclusiveModeAccepted = (state.held[0].mode === AsyncLockMode.EXCLUSIVE);
@@ -312,7 +320,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let options = new AsyncLockOptions<void>();
       let executed = false;
 
-      await lock.lockAsync<void, void>(() => {
+      await lock.lockAsync<void, void>(
+        () => {
         executed = true;
         let state = lock.query();
         expect(state.held.length > 0).assertTrue();
@@ -340,7 +349,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
       options.timeout = 1000;
-      let p = lock.lockAsync<void, void>(() => {
+      let p = lock.lockAsync<void, void>(
+        () => {
         try {
         } catch (error) {
           console.error(`callback failed: ${error}`);
@@ -371,7 +381,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let options = new AsyncLockOptions<void>();
       options.isAvailable = true;
       let executed = false;
-      await lock.lockAsync<void, void>(() => {
+      await lock.lockAsync<void, void>(
+        () => {
         executed = true;
       }, AsyncLockMode.EXCLUSIVE, options);
       expect(executed).assertTrue();
@@ -398,7 +409,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let options = new AsyncLockOptions<string>();
       options.signal = s;
       let executed = false;
-      await lock.lockAsync<void, string>(() => {
+      await lock.lockAsync<void, string>(
+        () => {
         executed = true;
       }, AsyncLockMode.EXCLUSIVE, options);
       expect(executed).assertTrue();
@@ -427,7 +439,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       expect(options.isAvailable).assertEqual(false);
       expect(options.signal).assertEqual(s);
       expect(options.timeout).assertEqual(3000);
-      await lock.lockAsync<void, string>(() => {
+      await lock.lockAsync<void, string>(
+        () => {
         executed = true;
       }, AsyncLockMode.EXCLUSIVE, options);
       expect(executed).assertTrue();
@@ -453,7 +466,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let executed = false;
       let options = new AsyncLockOptions<void>();
       options.timeout = 0;
-      await lock.lockAsync<void, void>(() => {
+      await lock.lockAsync<void, void>(
+        () => {
         executed = true;
       }, AsyncLockMode.EXCLUSIVE, options);
       expect(executed).assertTrue();
@@ -479,7 +493,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let executed = false;
       let options = new AsyncLockOptions<void>();
       options.timeout = 1;
-      await lock.lockAsync<void, void>(() => {
+      await lock.lockAsync<void, void>(
+        () => {
         executed = true;
       }, AsyncLockMode.EXCLUSIVE, options);
       expect(executed).assertTrue();
@@ -505,7 +520,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let executed = false;
       let options = new AsyncLockOptions<void>();
       options.timeout = 60000;
-      await lock.lockAsync<void, void>(() => {
+      await lock.lockAsync<void, void>(
+        () => {
         executed = true;
       }, AsyncLockMode.EXCLUSIVE, options);
       expect(executed).assertTrue();
@@ -531,7 +547,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let executed = false;
       let options = new AsyncLockOptions<void>();
       options.isAvailable = false;
-      await lock.lockAsync<void, void>(() => {
+      await lock.lockAsync<void, void>(
+        () => {
         executed = true;
       }, AsyncLockMode.EXCLUSIVE, options);
       expect(executed).assertTrue();
@@ -558,7 +575,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let options = new AsyncLockOptions<void>();
       options.signal = null;
       expect(options.signal).assertNull();
-      await lock.lockAsync<void, void>(() => {
+      await lock.lockAsync<void, void>(
+        () => {
         executed = true;
       }, AsyncLockMode.EXCLUSIVE, options);
       expect(executed).assertTrue();
@@ -582,7 +600,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
-      let result: string = await lock.lockAsync<string, string>(() => {
+      let result: string = await lock.lockAsync<string, string>(
+        () => {
         try {
           return "result";
         } catch (error) {
@@ -611,7 +630,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
-      await lock.lockAsync<void, void>(() => {
+      await lock.lockAsync<void, void>(
+        () => {
         try {
         } catch (error) {
           console.error(`callback failed: ${error}`);
@@ -640,7 +660,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<number[]>();
-      let result: number[] = await lock.lockAsync<number[], number[]>(() => {
+      let result: number[] = await lock.lockAsync<number[], number[]>(
+        () => {
         try {
           return [];
         } catch (error) {
@@ -669,7 +690,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
-      let result = await lock.lockAsync<number, string>(() => {
+      let result = await lock.lockAsync<number, string>(
+        () => {
         try {
           return 1;
         } catch (error) {
@@ -698,7 +720,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<number>();
-      let result = await lock.lockAsync<number, number>(() => {
+      let result = await lock.lockAsync<number, number>(
+        () => {
         try {
           return Number.MAX_VALUE;
         } catch (error) {
@@ -729,7 +752,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let options = new AsyncLockOptions<void>();
       let errorCaught = false;
       try {
-        await lock.lockAsync<void, void>(() => {
+        await lock.lockAsync<void, void>(
+          () => {
           throw new Error("callback error");
         }, AsyncLockMode.EXCLUSIVE, options);
         expect().assertFail();
@@ -761,7 +785,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let options = new AsyncLockOptions<void>();
       let errorCaught = false;
       try {
-        await lock.lockAsync<void, void>(() => {
+        await lock.lockAsync<void, void>(
+          () => {
           throw new CustomError("custom error");
         }, AsyncLockMode.SHARED, options);
         expect().assertFail();
@@ -790,7 +815,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<void>();
-      let p = lock.lockAsync<void, void>((): Promise<void> => Promise.reject(new Error("reject")), AsyncLockMode.EXCLUSIVE, options);
+      let p = lock.lockAsync<void, void>(
+        (): Promise<void> => Promise.reject(new Error("reject")), AsyncLockMode.EXCLUSIVE, options);
       let errorCaught = false;
       try {
         await p;
@@ -823,7 +849,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       options.isAvailable = true;
       let executed = false;
 
-      await lock.lockAsync<void, void>(() => {
+      await lock.lockAsync<void, void>(
+        () => {
         executed = true;
       }, AsyncLockMode.EXCLUSIVE, options);
 
@@ -852,7 +879,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let firstStartedPromise: Promise<void> = new Promise<void>((resolve): void => {
         firstStartedResolve = (): void => { resolve(undefined); };
       });
-      let p1: Promise<void> = lock.lockAsync<void>(async (): Promise<void> => {
+      let p1: Promise<void> = lock.lockAsync<void>(
+        async (): Promise<void> => {
         firstStartedResolve();
         try {
           await new Promise<void>((resolve): void => {
@@ -873,7 +901,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       options.isAvailable = true;
       let errorCaught = false;
       try {
-        await lock.lockAsync<void, void>((): void => {}, AsyncLockMode.EXCLUSIVE, options);
+        await lock.lockAsync<void, void>(
+          (): void => {}, AsyncLockMode.EXCLUSIVE, options);
         expect().assertFail();
       } catch (error) {
         errorCaught = true;
@@ -906,7 +935,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let executed = false;
       let executionOrder: number[] = [];
 
-      let p1: Promise<void> = lock.lockAsync<void, void>(() => {
+      let p1: Promise<void> = lock.lockAsync<void, void>(
+        () => {
         try {
           executionOrder.push(1);
         } catch (error) {
@@ -915,7 +945,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
         }
       }, AsyncLockMode.EXCLUSIVE, options);
 
-      let p2: Promise<void> = lock.lockAsync<void, void>(() => {
+      let p2: Promise<void> = lock.lockAsync<void, void>(
+        () => {
         try {
           executionOrder.push(2);
           executed = true;
@@ -953,7 +984,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let options = new AsyncLockOptions<void>();
       options.timeout = 1000;
       let executed = false;
-      await lock.lockAsync<void, void>(() => {
+      await lock.lockAsync<void, void>(
+        () => {
         executed = true;
       }, AsyncLockMode.EXCLUSIVE, options);
 
@@ -981,7 +1013,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       options.timeout = 2000;
 
       let executed = false;
-      await lock.lockAsync<void, void>(() => {
+      await lock.lockAsync<void, void>(
+        () => {
         executed = true;
       }, AsyncLockMode.EXCLUSIVE, options);
 
@@ -1009,7 +1042,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let options = new AsyncLockOptions<string>();
       options.signal = s;
       let executed = false;
-      await lock.lockAsync<void, string>(() => {
+      await lock.lockAsync<void, string>(
+        () => {
         executed = true;
       }, AsyncLockMode.EXCLUSIVE, options);
 
@@ -1038,7 +1072,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
         options.signal = s;
         let rejected = false;
         try {
-          await lock.lockAsync<void, string>(() => {}, AsyncLockMode.EXCLUSIVE, options);
+          await lock.lockAsync<void, string>(
+            () => {}, AsyncLockMode.EXCLUSIVE, options);
           expect().assertFail();
         } catch (error) {
           rejected = true;
@@ -1070,7 +1105,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
         options.signal = s;
         let rejected = false;
         try {
-          await lock.lockAsync<void, string>(() => {
+          await lock.lockAsync<void, string>(
+            () => {
             try {
             } catch (error) {
               console.error(`callback failed: ${error}`);
@@ -1104,7 +1140,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<number>();
-      let result: number = await lock.lockAsync<number, number>(() => {
+      let result: number = await lock.lockAsync<number, number>(
+        () => {
         try {
           return 100;
         } catch (error) {
@@ -1133,7 +1170,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       try {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
-      let result: number = await lock.lockAsync<number, string>(() => {
+      let result: number = await lock.lockAsync<number, string>(
+        () => {
         try {
           return 42;
         } catch (error) {
@@ -1164,7 +1202,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let options = new AsyncLockOptions<string>();
 
       let executed = false;
-      let result: void = await lock.lockAsync<void, string>(() => {
+      let result: void = await lock.lockAsync<void, string>(
+        () => {
         try {
           executed = true;
         } catch (error) {
@@ -1199,7 +1238,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       options.signal = s;
 
       let executed = false;
-      await lock.lockAsync<void, string>(() => {
+      await lock.lockAsync<void, string>(
+        () => {
         try {
           executed = true;
         } catch (error) {
@@ -1230,7 +1270,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let lock = new AsyncLock();
       let options = new AsyncLockOptions<string>();
       let test: () => Promise<string> = async (): Promise<string> => {
-        return await lock.lockAsync<string, string>(() => {
+        return await lock.lockAsync<string, string>(
+          () => {
           try {
             return "test";
           } catch (error) {
@@ -1261,7 +1302,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       try {
         let lock = new AsyncLock();
         let options = new AsyncLockOptions<string>();
-        let p: Promise<string> = lock.lockAsync<string, string>(() => {
+        let p: Promise<string> = lock.lockAsync<string, string>(
+          () => {
           try {
             return "test";
           } catch (error) {
@@ -1298,7 +1340,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let options = new AsyncLockOptions<void>();
       let errorCaught = false;
       try {
-        await lock.lockAsync<void, void>((): Promise<void> => Promise.reject(new Error("catch")), AsyncLockMode.EXCLUSIVE, options);
+        await lock.lockAsync<void, void>(
+          (): Promise<void> => Promise.reject(new Error("catch")), AsyncLockMode.EXCLUSIVE, options);
         expect().assertFail();
       } catch (error) {
         errorCaught = true;
@@ -1329,9 +1372,11 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
       let executedCount = 0;
 
       await Promise.all([
-        lock.lockAsync<void, void>(async () => {
+        lock.lockAsync<void, void>(
+          async () => {
           try {
-            await counterLock.lockAsync<void, void>(() => {
+            await counterLock.lockAsync<void, void>(
+              () => {
               try {
                 executedCount++;
               } catch (error) {
@@ -1344,9 +1389,11 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
             throw error;
           }
         }, AsyncLockMode.SHARED, options),
-        lock.lockAsync<void, void>(async () => {
+        lock.lockAsync<void, void>(
+          async () => {
           try {
-            await counterLock.lockAsync<void, void>(() => {
+            await counterLock.lockAsync<void, void>(
+              () => {
               try {
                 executedCount++;
               } catch (error) {
@@ -1359,9 +1406,11 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
             throw error;
           }
         }, AsyncLockMode.SHARED, options),
-        lock.lockAsync<void, void>(async () => {
+        lock.lockAsync<void, void>(
+          async () => {
           try {
-            await counterLock.lockAsync<void, void>(() => {
+            await counterLock.lockAsync<void, void>(
+              () => {
               try {
                 executedCount++;
               } catch (error) {
@@ -1401,7 +1450,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
         let startedPromise: Promise<void> = new Promise<void>((resolve): void => {
           startedResolve = (): void => { resolve(undefined); };
         });
-        let p1: Promise<void> = lock.lockAsync<void>(async (): Promise<void> => {
+        let p1: Promise<void> = lock.lockAsync<void>(
+          async (): Promise<void> => {
           startedResolve();
           try {
             await new Promise<void>((resolve): void => {
@@ -1417,7 +1467,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
         options.timeout = 300;
         let errorCaught = false;
         try {
-          await lock.lockAsync<void, void>((): void => {
+          await lock.lockAsync<void, void>(
+            (): void => {
             try {
             } catch (error) {
               console.error(`callback failed: ${error}`);
@@ -1455,7 +1506,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
         let startedPromise: Promise<void> = new Promise<void>((resolve): void => {
           startedResolve = (): void => { resolve(undefined); };
         });
-        let p1: Promise<void> = lock.lockAsync<void>(async (): Promise<void> => {
+        let p1: Promise<void> = lock.lockAsync<void>(
+          async (): Promise<void> => {
           try {
             startedResolve();
             await new Promise<void>((resolve): void => {
@@ -1470,7 +1522,8 @@ export default function AsyncLockLockAsyncThirdOverloadTest(): void {
         let s: AbortSignal<string> = { aborted: false, reason: "Aborted" };
         let options = new AsyncLockOptions<string>();
         options.signal = s;
-        let p: Promise<void> = lock.lockAsync<void, string>((): void => {
+        let p: Promise<void> = lock.lockAsync<void, string>(
+          (): void => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);

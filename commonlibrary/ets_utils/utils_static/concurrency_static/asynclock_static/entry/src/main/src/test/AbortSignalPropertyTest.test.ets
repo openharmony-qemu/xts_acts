@@ -950,7 +950,8 @@ export default function AbortSignalPropertyTest(): void {
         let options = new AsyncLockOptions<string>();
         options.signal = s;
         let executed: boolean = false;
-        let holder = lock.lockAsync<void>((): Promise<void> => {
+        let holder = lock.lockAsync<void>(
+          (): Promise<void> => {
           try {
             return sleep(200);
           } catch (error) {
@@ -958,7 +959,8 @@ export default function AbortSignalPropertyTest(): void {
             throw error;
           }
         });
-        let p = lock.lockAsync<void, string>(() => {
+        let p = lock.lockAsync<void, string>(
+          () => {
           executed = true;
         }, AsyncLockMode.EXCLUSIVE, options);
         s.aborted = true;
@@ -996,7 +998,8 @@ export default function AbortSignalPropertyTest(): void {
         s.reason = "User cancelled";
         let options = new AsyncLockOptions<string>();
         options.signal = s;
-        let holder = lock.lockAsync<void>((): Promise<void> => {
+        let holder = lock.lockAsync<void>(
+          (): Promise<void> => {
           try {
             return sleep(200);
           } catch (error) {
@@ -1004,7 +1007,8 @@ export default function AbortSignalPropertyTest(): void {
             throw error;
           }
         });
-        let p = lock.lockAsync<void, string>(() => {
+        let p = lock.lockAsync<void, string>(
+          () => {
         }, AsyncLockMode.EXCLUSIVE, options);
         let pendingCount: number = lock.query().pending.length;
         expect(pendingCount).assertLarger(0);
@@ -1018,7 +1022,8 @@ export default function AbortSignalPropertyTest(): void {
         expect(rejected).assertTrue();
         await holder;
         let reacquired: boolean = false;
-        await lock.lockAsync<void>(() => {
+        await lock.lockAsync<void>(
+          () => {
           try {
             reacquired = true;
           } catch (error) {
@@ -1056,7 +1061,8 @@ export default function AbortSignalPropertyTest(): void {
         options1.signal = s1;
         let options2 = new AsyncLockOptions<string>();
         options2.signal = s2;
-        let holder = lock.lockAsync<void>((): Promise<void> => {
+        let holder = lock.lockAsync<void>(
+          (): Promise<void> => {
           try {
             return sleep(200);
           } catch (error) {
@@ -1065,14 +1071,16 @@ export default function AbortSignalPropertyTest(): void {
           }
         });
         let secondExecuted: boolean = false;
-        let p1: Promise<void> = lock.lockAsync<void, string>(() => {
+        let p1: Promise<void> = lock.lockAsync<void, string>(
+          () => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);
             throw error;
           }
         }, AsyncLockMode.EXCLUSIVE, options1);
-        let p2: Promise<void> = lock.lockAsync<void, string>(() => {
+        let p2: Promise<void> = lock.lockAsync<void, string>(
+          () => {
           try {
             secondExecuted = true;
           } catch (error) {
@@ -1116,7 +1124,8 @@ export default function AbortSignalPropertyTest(): void {
         s.reason = "";
         let options = new AsyncLockOptions<string>();
         options.signal = s;
-        let holder: Promise<void> = lock.lockAsync<void>((): Promise<void> => {
+        let holder: Promise<void> = lock.lockAsync<void>(
+          (): Promise<void> => {
           try {
             return sleep(300);
           } catch (error) {
@@ -1124,7 +1133,8 @@ export default function AbortSignalPropertyTest(): void {
             throw error;
           }
         });
-        let p: Promise<void> = lock.lockAsync<void, string>(() => {
+        let p: Promise<void> = lock.lockAsync<void, string>(
+          () => {
           try {
           } catch (error) {
             console.error(`callback failed: ${error}`);
