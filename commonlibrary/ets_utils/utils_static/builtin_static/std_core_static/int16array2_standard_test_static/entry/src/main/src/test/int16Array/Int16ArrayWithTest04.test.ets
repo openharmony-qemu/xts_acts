@@ -994,7 +994,8 @@ export default function int16ArrayWithTestFourTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_5200
      * @tc.name testInt16ArrayWithTestFour052
-     * @tc.desc Verify with(arr.length + 2, sv), with(arr.length + 2, 99) via short overload and number overload preserves length/values
+     * @tc.desc Verify with(arr.length + 2, sv), with(arr.length + 2, 99) via short overload and number
+     * overload preserves length/values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1334,7 +1335,8 @@ export default function int16ArrayWithTestFourTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_7100
      * @tc.name testInt16ArrayWithTestFour071
-     * @tc.desc Verify with(2, sv) via short overload and number overload with MAX_SHORT,MIN_SHORT,overflow stores expected value
+     * @tc.desc Verify with(2, sv) via short overload and number overload with MAX_SHORT,MIN_SHORT,overflow
+     * stores expected value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
