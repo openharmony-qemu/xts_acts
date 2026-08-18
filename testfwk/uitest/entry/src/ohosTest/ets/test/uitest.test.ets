@@ -4040,7 +4040,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseDoubleClick
-         * @tc.number SUB_testfwk_uitest_Api11_0032
+         * @tc.number SUB_testfwk_uitest_Api11_0082
          * @tc.desc   doubleClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
