@@ -209,19 +209,12 @@ export default function windowKeyBorad() {
       try {
           mainWindow.off('keyboardWillShow');
           await sleep(500);
-          if(deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1'){
-            console.info(`${caseName}  off keyboardWillShow success: `);
-            done()
-          }
+          console.info(`${caseName}  off keyboardWillShow success: `);
+          done()
         } catch (err) {
           console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
-          if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !=='2in1') {
-            expect(err.code).assertEqual(801)
-            done();
-          } else {
-            expect().assertFail()
-            done();
-          }
+          expect().assertFail()
+          done();
         }
     });
 
@@ -385,19 +378,12 @@ export default function windowKeyBorad() {
       try {
           mainWindow.off('keyboardWillHide');
           await sleep(500);
-          if(deviceType === 'phone' || deviceType === 'tablet' || deviceType ==='2in1'){
-            console.info(`${caseName}  off keyboardWillHide success: `);
-            done()
-          }
+          console.info(`${caseName}  off keyboardWillHide success: `);
+          done()
         } catch (err) {
           console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
-          if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !=='2in1') {
-            expect(err.code).assertEqual(801)
-            done();
-          } else {
-            expect().assertFail()
-            done();
-          }
+          expect().assertFail()
+          done();
         }
     });
 
