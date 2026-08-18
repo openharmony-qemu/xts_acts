@@ -3028,7 +3028,7 @@ export default function asyncSecTest(): void {
             try {
               const currentStock = globalInventory.stock;
 
-              await sleep(100);
+              await sleep(2);
 
               if (currentStock >= qty) {
                 globalInventory.stock = currentStock - qty;
