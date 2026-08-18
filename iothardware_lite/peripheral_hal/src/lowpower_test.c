@@ -76,7 +76,7 @@ LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower002, Function | MediumTest |
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower003, Function | MediumTest | Level1)
+LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower003, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
 {
     unsigned int ret = LpcInit();
     printf("LpcInit return = %d\r\n", ret);
@@ -92,7 +92,7 @@ LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower003, Function | MediumTest |
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower004, Function | MediumTest | Level1)
+LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower004, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
 {
     unsigned int ret = LpcSetType(NO_SLEEP);
     printf("LpcSetType(NO_SLEEP) return = %d\r\n", ret);

@@ -28,6 +28,20 @@
 
 #define QUERY_TIMES 50
 
+/* 从 fullname 版本段解析数字；不安全函数 sscanf 被 codecheck 禁止，改为逐字符解析 */
+static int ParseVersionNumber(const char **pp)
+{
+    int num = 0;
+    const char *p = *pp;
+    while ((*p >= '0') && (*p <= '9')) {
+        num = num * 10 + (*p - '0');
+        p++;
+    }
+    *pp = p;
+    return num;
+}
+
+
 LITE_TEST_SUIT(startup, deviceinfo, DeviceInfoTestSuite);
 
 /**
@@ -844,7 +858,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSVersion,
   Function | MediumTest | Level1)
 {
-    /* ws63 未设置属性时回退到 GetOSFullName()，实测 "OpenHarmony-7.0.0.37(Beta)" */
+    /* ws63 未设置属性时回退到 GetOSFullName() */
     const char *value1 = GetDistributionOSVersion();
     printf("DistributionOSVersion=%s\n", value1);
     TEST_ASSERT_EQUAL_STRING(value1, GetOSFullName());
@@ -964,12 +978,19 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetMajorVersion,
   Function | MediumTest | Level1)
 {
-    /* major 随版本迭代（OpenHarmony-7.0.0.x），从 GetOSFullName() 解析第 1 段动态比对 */
+    /* major 随版本迭代，从 GetOSFullName() 解析第 1 段动态比对 */
     const char *fullName = GetOSFullName();
     const char *p = strchr(fullName, '-');
     int major = 0, minor = 0, patch = 0, build = 0;
     if (p != NULL) {
-        sscanf(p + 1, "%d.%d.%d.%d", &major, &minor, &patch, &build);
+        p++;
+        major = ParseVersionNumber(&p);
+        if (*p == '.') { p++; }
+        minor = ParseVersionNumber(&p);
+        if (*p == '.') { p++; }
+        patch = ParseVersionNumber(&p);
+        if (*p == '.') { p++; }
+        build = ParseVersionNumber(&p);
     }
     int value1 = GetMajorVersion();
     printf("MajorVersion=%d, fullname=%s\n", value1, fullName);
@@ -1030,13 +1051,20 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetBuildVersion,
   Function | MediumTest | Level1)
 {
-    /* build 号随固件版本迭代（7.0.0.37 → 7.0.0.38），不能写死；
-       从 GetOSFullName() 解析 "OpenHarmony-7.0.0.38(Beta)" 第 4 段动态比对 */
+    /* build 号随固件版本迭代，不能写死；
+       从 GetOSFullName() 解析第 4 段动态比对 */
     const char *fullName = GetOSFullName();
     const char *p = strchr(fullName, '-');
     int major = 0, minor = 0, patch = 0, build = 0;
     if (p != NULL) {
-        sscanf(p + 1, "%d.%d.%d.%d", &major, &minor, &patch, &build);
+        p++;
+        major = ParseVersionNumber(&p);
+        if (*p == '.') { p++; }
+        minor = ParseVersionNumber(&p);
+        if (*p == '.') { p++; }
+        patch = ParseVersionNumber(&p);
+        if (*p == '.') { p++; }
+        build = ParseVersionNumber(&p);
     }
     int value1 = GetBuildVersion();
     printf("BuildVersion=%d, fullname=%s\n", value1, fullName);
