@@ -106,10 +106,10 @@ export default function webResourceError() {
           await Utils.msSleep(2000);
           inspector.sendEventByKey('WebResourceErrorButton', 10, '');
           await Utils.msSleep(2000);
-          done();
         } catch(err) {
           console.log('testOnSwitchNextPageResourceError' + err)
         }
+        done();
       })
   })
 }
