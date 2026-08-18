@@ -606,31 +606,36 @@ export default function UiTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('tesIsComponentPresentWhenLongClickDuringNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            console.log(`${TestTag}, tesIsComponentPresentWhenLongClickDuringNull start`);
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-            await driver.delayMs(waitUiReadyMs);
-            let to5Btn = await driver.findComponent(ON.id('to5'));
-            if (to5Btn == null) {
-                let scroll = await driver.findComponent(ON.type('Scroll'))
-                to5Btn = await scroll.scrollSearch(ON.id('to5'))
+        it('tesIsComponentPresentWhenLongClickDuringNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            try {
+                console.log(`${TestTag}, tesIsComponentPresentWhenLongClickDuringNull start`);
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+                await driver.delayMs(waitUiReadyMs);
+                let to5Btn = await driver.findComponent(ON.id('to5'));
+                if (to5Btn == null) {
+                    let scroll = await driver.findComponent(ON.type('Scroll'))
+                    to5Btn = await scroll.scrollSearch(ON.id('to5'))
 
+                }
+                await to5Btn.click();
+                await driver.delayMs(waitUiReadyMs);
+                let longClickBtn = await driver.findComponent(ON.id('longClickBtn'));
+                await driver.delayMs(waitUiReadyMs);
+                let center = await longClickBtn.getBoundsCenter();
+                await driver.delayMs(waitUiReadyMs);
+                let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center, null)
+                expect(result).assertTrue();
+                await driver.delayMs(waitUiReadyMs);
+                let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
+                let longClickText = await longClickTextResultBtn.getText();
+                expect(longClickText == 'longClickEvent').assertTrue();
+                await driver.delayMs(waitUiReadyMs);
+                await stopApplication('com.uitestScene.acts')
+                console.log(`${TestTag}, tesIsComponentPresentWhenLongClickDuringNull end`);
+            } catch (error) {
+                expect().assertFail()
             }
-            await to5Btn.click();
-            await driver.delayMs(waitUiReadyMs);
-            let longClickBtn = await driver.findComponent(ON.id('longClickBtn'));
-            await driver.delayMs(waitUiReadyMs);
-            let center = await longClickBtn.getBoundsCenter();
-            await driver.delayMs(waitUiReadyMs);
-            let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center, null)
-            expect(result).assertTrue();
-            await driver.delayMs(waitUiReadyMs);
-            let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
-            let longClickText = await longClickTextResultBtn.getText();
-            expect(longClickText == 'longClickEvent').assertTrue();
-            await driver.delayMs(waitUiReadyMs);
-            await stopApplication('com.uitestScene.acts')
-            console.log(`${TestTag}, tesIsComponentPresentWhenLongClickDuringNull end`);
+            done()
         })
 
         /**
@@ -808,22 +813,27 @@ export default function UiTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('tesIsComponentPresentWhenSwipeDuringUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringUndefined start`);
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-            await driver.delayMs(waitUiReadyMs)
-            let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
-            let rect = await scrollBar.getBounds()
-            let center = await scrollBar.getBoundsCenter()
-            let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
-                { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
-                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) }, undefined)
-            console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringUndefined result, ${JSON.stringify(result)}`);
-            expect(result).assertTrue();
-            let text = await driver.findComponent(ON.text('toast'))
-            expect(text == null).assertTrue()
-            await stopApplication('com.uitestScene.acts')
-            console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringUndefined end`);
+        it('tesIsComponentPresentWhenSwipeDuringUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            try {
+                console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringUndefined start`);
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+                await driver.delayMs(waitUiReadyMs)
+                let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
+                let rect = await scrollBar.getBounds()
+                let center = await scrollBar.getBoundsCenter()
+                let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
+                    { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
+                    { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) }, undefined)
+                console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringUndefined result, ${JSON.stringify(result)}`);
+                expect(result).assertTrue();
+                let text = await driver.findComponent(ON.text('toast'))
+                expect(text == null).assertTrue()
+                await stopApplication('com.uitestScene.acts')
+                console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringUndefined end`);
+            } catch (error) {
+                expect().assertFail();
+            }
+            done()
         })
 
         /**
@@ -1082,13 +1092,13 @@ export default function UiTest() {
 
         /**
          * @tc.name   testDriverLongClickAtDefault
-         * @tc.number SUB_testfwk_uitest_Api20_0002
+         * @tc.number SUB_testfwk_uitest_Api20_0062
          * @tc.desc   LongClick on the specified location on the screen, the value of duration is 3000.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testDriverLongClickAtDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testDriverLongClickAtDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             try {
                 console.log(`${TestTag}, testDriverLongClickAtDefault start`);
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -1106,35 +1116,41 @@ export default function UiTest() {
             } catch (error) {
                 expect().assertFail();
             }
+            done()
         })
 
         /**
          * @tc.name   testDriverLongClickAtNull
-         * @tc.number SUB_testfwk_uitest_Api20_0003
+         * @tc.number SUB_testfwk_uitest_Api20_0063
          * @tc.desc   LongClick on the specified location on the screen, the value of duration is 3000.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testDriverLongClickAtNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            console.log(`${TestTag}, testDriverLongClickAtNull start`);
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let Button = await driver.findComponent(ON.text('next page'))
-            let center = await Button.getBoundsCenter()
-            await driver.longClickAt(center, null)
-            await driver.delayMs(waitUiReadyMs)
-            let newButton = await driver.findComponent(ON.text('longClick'))
-            let text = await newButton.getText()
-            expect(text == 'longClick').assertTrue()
-            await newButton.click()
-            await stopApplication('com.uitestScene.acts')
-            console.log(`${TestTag}, testDriverLongClickAtNull end`);
+        it('testDriverLongClickAtNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            try {
+                console.log(`${TestTag}, testDriverLongClickAtNull start`);
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let Button = await driver.findComponent(ON.text('next page'))
+                let center = await Button.getBoundsCenter()
+                await driver.longClickAt(center, null)
+                await driver.delayMs(waitUiReadyMs)
+                let newButton = await driver.findComponent(ON.text('longClick'))
+                let text = await newButton.getText()
+                expect(text == 'longClick').assertTrue()
+                await newButton.click()
+                await stopApplication('com.uitestScene.acts')
+                console.log(`${TestTag}, testDriverLongClickAtNull end`);
+            } catch (error) {
+                expect().assertFail();
+            }
+            done()
         })
 
         /**
          * @tc.name   testDriverLongClickAtUndefined
-         * @tc.number SUB_testfwk_uitest_Api20_0003
+         * @tc.number SUB_testfwk_uitest_Api20_0083
          * @tc.desc   LongClick on the specified location on the screen, the value of duration is 3000.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1604,25 +1620,25 @@ export default function UiTest() {
 
         /**
          * @tc.name   testCrownRotateSpeedNull
-         * @tc.number SUB_testfwk_uitest_Api20_0024
+         * @tc.number SUB_testfwk_uitest_Api20_0064
          * @tc.desc   crownRotate test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testCrownRotateSpeedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testCrownRotateSpeedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             console.log(TestTag, 'testCrownRotateSpeed start');
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(1000)
-            let button = await driver.findComponent(ON.text('wearList'))
-            if (button == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                button = await scorll.scrollSearch(ON.text('wearList'))
-            }
-            await driver.delayMs(waitUiReadyMs)
-            await button.click()
-            await driver.delayMs(waitUiReadyMs)
             try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(1000)
+                let button = await driver.findComponent(ON.text('wearList'))
+                if (button == null) {
+                    let scorll = await driver.findComponent(ON.type('Scroll'))
+                    button = await scorll.scrollSearch(ON.text('wearList'))
+                }
+                await driver.delayMs(waitUiReadyMs)
+                await button.click()
+                await driver.delayMs(waitUiReadyMs)
                 await driver.crownRotate(250, null);
                 await driver.delayMs(1000);
                 let toastBtn = await driver.findComponent(ON.text('1'));
@@ -1640,6 +1656,7 @@ export default function UiTest() {
             }
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testCrownRotateSpeed over');
+            done()
         })
 
 
@@ -2753,7 +2770,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testPenLongClickPressureNull
-         * @tc.number SUB_testfwk_uitest_Api16_0129
+         * @tc.number SUB_testfwk_uitest_Api16_0229
          * @tc.desc   penLongClick function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2791,7 +2808,7 @@ export default function UiTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testPenLongClickPressureUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testPenLongClickPressureUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             console.log(TestTag, 'testPenLongClickPressureUndefined start');
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
@@ -2812,6 +2829,7 @@ export default function UiTest() {
                 await stopApplication('com.uitestScene.acts');
             }
             console.log(TestTag, 'testPenLongClickPressureUndefined end');
+            done()
         })
 
         /**
@@ -2988,7 +3006,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_penSwipe_function_pressure
-         * @tc.number SUB_testfwk_uitest_Api16_0013
+         * @tc.number SUB_testfwk_uitest_Api16_0044
          * @tc.desc   penSwipe function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3024,7 +3042,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   test_penSwipe_function_speed
-         * @tc.number SUB_testfwk_uitest_Api16_0013
+         * @tc.number SUB_testfwk_uitest_Api16_0058
          * @tc.desc   penSwipe function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -3133,7 +3151,7 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testPenSwipeSpeedUndefined
+         * @tc.name   testPenSwipePressureNull
          * @tc.number SUB_testfwk_uitest_Api16_0053
          * @tc.desc   penSwipe function test
          * @tc.type   FUNCTION
@@ -3177,12 +3195,12 @@ export default function UiTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testPenSwipePressureUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            console.log(TestTag, 'testPenSwipePressureUndefined start');
-            await driver.delayMs(waitUiReadyMs);
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs);
+        it('testPenSwipePressureUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             try {
+                console.log(TestTag, 'testPenSwipePressureUndefined start');
+                await driver.delayMs(waitUiReadyMs);
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs);
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
@@ -3203,6 +3221,7 @@ export default function UiTest() {
                 await stopApplication('com.uitestScene.acts');
             }
             console.log(TestTag, 'testPenSwipePressureUndefined end');
+            done()
         })
 
         /**
@@ -3329,25 +3348,25 @@ export default function UiTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testInjectPenPointActionDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testInjectPenPointActionDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             console.log(TestTag, `test_injectPenPointAction_function start`);
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-            await driver.delayMs(waitUiReadyMs)
-            let scroll = await driver.findComponent(ON.type('Scroll'))
-            let scrollRect = await scroll.getBounds()
-            let screenWidth = scrollRect.right - scrollRect.left;
-            let screenHeight = scrollRect.bottom - scrollRect.top;
-            console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-            let pointer = PointerMatrix.create(1, 8);
-            let stepLength = Math.floor((screenHeight / 4) * 2 / 8);
-            console.log(TestTag, `stepLength is, ${stepLength}`);
-            let startX = Math.floor(screenWidth / 2);
-            for (let step = 0; step < 8; step++) {
-                let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
-                console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
-                pointer.setPoint(0, step, { x: startX, y: startY });
-            }
             try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+                await driver.delayMs(waitUiReadyMs)
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                let scrollRect = await scroll.getBounds()
+                let screenWidth = scrollRect.right - scrollRect.left;
+                let screenHeight = scrollRect.bottom - scrollRect.top;
+                console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
+                let pointer = PointerMatrix.create(1, 8);
+                let stepLength = Math.floor((screenHeight / 4) * 2 / 8);
+                console.log(TestTag, `stepLength is, ${stepLength}`);
+                let startX = Math.floor(screenWidth / 2);
+                for (let step = 0; step < 8; step++) {
+                    let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
+                    console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
+                    pointer.setPoint(0, step, { x: startX, y: startY });
+                }
                 await driver.injectPenPointerAction(pointer);
                 await driver.delayMs(waitUiReadyMs * 2);
                 let text = await driver.findComponent(ON.text('toast'));
@@ -3370,6 +3389,7 @@ export default function UiTest() {
                 await stopApplication('com.uitestScene.acts')
             }
             console.log(TestTag, `test_injectPenPointAction_function end`);
+            done()
         })
 
         /**
@@ -3380,25 +3400,25 @@ export default function UiTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testInjectPenPointActionSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            console.log(TestTag, `testInjectPenPointActionSpeed start`);
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-            await driver.delayMs(waitUiReadyMs)
-            let scroll = await driver.findComponent(ON.type('Scroll'))
-            let scrollRect = await scroll.getBounds()
-            let screenWidth = scrollRect.right - scrollRect.left;
-            let screenHeight = scrollRect.bottom - scrollRect.top;
-            console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-            let pointer = PointerMatrix.create(1, 8);
-            let stepLength = Math.floor((screenHeight / 4) * 2 / 8);
-            console.log(TestTag, `stepLength is, ${stepLength}`);
-            let startX = Math.floor(screenWidth / 2);
-            for (let step = 0; step < 8; step++) {
-                let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
-                console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
-                pointer.setPoint(0, step, { x: startX, y: startY });
-            }
+        it('testInjectPenPointActionSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             try {
+                console.log(TestTag, `testInjectPenPointActionSpeed start`);
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+                await driver.delayMs(waitUiReadyMs)
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                let scrollRect = await scroll.getBounds()
+                let screenWidth = scrollRect.right - scrollRect.left;
+                let screenHeight = scrollRect.bottom - scrollRect.top;
+                console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
+                let pointer = PointerMatrix.create(1, 8);
+                let stepLength = Math.floor((screenHeight / 4) * 2 / 8);
+                console.log(TestTag, `stepLength is, ${stepLength}`);
+                let startX = Math.floor(screenWidth / 2);
+                for (let step = 0; step < 8; step++) {
+                    let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
+                    console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
+                    pointer.setPoint(0, step, { x: startX, y: startY });
+                }
                 await driver.injectPenPointerAction(pointer, 800);
                 await driver.delayMs(waitUiReadyMs * 2);
                 let text = await driver.findComponent(ON.text('toast'));
@@ -3421,6 +3441,7 @@ export default function UiTest() {
                 await stopApplication('com.uitestScene.acts')
             }
             console.log(TestTag, `testInjectPenPointActionSpeed end`);
+            done()
         })
 
         /**
@@ -3483,25 +3504,25 @@ export default function UiTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testInjectPenPointActionSpeedUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            console.log(TestTag, `testInjectPenPointActionSpeedUndefined start`);
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-            await driver.delayMs(waitUiReadyMs)
-            let scroll = await driver.findComponent(ON.type('Scroll'))
-            let scrollRect = await scroll.getBounds()
-            let screenWidth = scrollRect.right - scrollRect.left;
-            let screenHeight = scrollRect.bottom - scrollRect.top;
-            console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-            let pointer = PointerMatrix.create(1, 8);
-            let stepLength = Math.floor((screenHeight / 4) * 2 / 8);
-            console.log(TestTag, `stepLength is, ${stepLength}`);
-            let startX = Math.floor(screenWidth / 2);
-            for (let step = 0; step < 8; step++) {
-                let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
-                console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
-                pointer.setPoint(0, step, { x: startX, y: startY });
-            }
+        it('testInjectPenPointActionSpeedUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             try {
+                console.log(TestTag, `testInjectPenPointActionSpeedUndefined start`);
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+                await driver.delayMs(waitUiReadyMs)
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                let scrollRect = await scroll.getBounds()
+                let screenWidth = scrollRect.right - scrollRect.left;
+                let screenHeight = scrollRect.bottom - scrollRect.top;
+                console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
+                let pointer = PointerMatrix.create(1, 8);
+                let stepLength = Math.floor((screenHeight / 4) * 2 / 8);
+                console.log(TestTag, `stepLength is, ${stepLength}`);
+                let startX = Math.floor(screenWidth / 2);
+                for (let step = 0; step < 8; step++) {
+                    let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
+                    console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
+                    pointer.setPoint(0, step, { x: startX, y: startY });
+                }
                 await driver.injectPenPointerAction(pointer, undefined);
                 await driver.delayMs(waitUiReadyMs * 2);
                 let text = await driver.findComponent(ON.text('toast'));
@@ -3524,6 +3545,7 @@ export default function UiTest() {
                 await stopApplication('com.uitestScene.acts')
             }
             console.log(TestTag, `testInjectPenPointActionSpeedUndefined end`);
+            done()
         })
 
         /**
@@ -3586,7 +3608,7 @@ export default function UiTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testInjectPenPointActionPressureUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testInjectPenPointActionPressureUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             console.log(TestTag, `testInjectPenPointActionPressureUndefined start`);
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs)
@@ -3627,6 +3649,7 @@ export default function UiTest() {
                 await stopApplication('com.uitestScene.acts')
             }
             console.log(TestTag, `testInjectPenPointActionPressureUndefined end`);
+            done()
         })
 
         /**
@@ -4017,7 +4040,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseDoubleClick
-         * @tc.number SUB_testfwk_uitest_Api11_0001
+         * @tc.number SUB_testfwk_uitest_Api11_0032
          * @tc.desc   doubleClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4041,7 +4064,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testMouseDoubleClick_1
-         * @tc.number SUB_testfwk_uitest_Api11_0001
+         * @tc.number SUB_testfwk_uitest_Api11_0019
          * @tc.desc   doubleClick in the specified location on the screen by mouse.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4373,15 +4396,19 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testMouseLongClickDuringNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let Button = await driver.findComponent(ON.text('next page'))
-            let center = await Button.getBoundsCenter()
-            await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 0, null)
-            await driver.delayMs(waitUiReadyMs)
-            let newButton = await driver.findComponent(ON.text('longClick'))
-            let text = await newButton.getText()
-            expect(text == 'longClick').assertTrue()
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let Button = await driver.findComponent(ON.text('next page'))
+                let center = await Button.getBoundsCenter()
+                await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 0, null)
+                await driver.delayMs(waitUiReadyMs)
+                let newButton = await driver.findComponent(ON.text('longClick'))
+                let text = await newButton.getText()
+                expect(text == 'longClick').assertTrue()
+            } catch (error) {
+                expect().assertFail();
+            }
             done()
         })
 
@@ -4394,15 +4421,19 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testMouseLongClickDuringUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let Button = await driver.findComponent(ON.text('next page'))
-            let center = await Button.getBoundsCenter()
-            await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 0, undefined)
-            await driver.delayMs(waitUiReadyMs)
-            let newButton = await driver.findComponent(ON.text('longClick'))
-            let text = await newButton.getText()
-            expect(text == 'longClick').assertTrue()
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let Button = await driver.findComponent(ON.text('next page'))
+                let center = await Button.getBoundsCenter()
+                await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 0, undefined)
+                await driver.delayMs(waitUiReadyMs)
+                let newButton = await driver.findComponent(ON.text('longClick'))
+                let text = await newButton.getText()
+                expect(text == 'longClick').assertTrue()
+            } catch (error) {
+                expect().assertFail()
+            }
             done()
         })
 
@@ -4700,7 +4731,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScreenCapture
-         * @tc.number SUB_testfwk_uitest_Api10_0003
+         * @tc.number SUB_testfwk_uitest_Api10_0063
          * @tc.desc   capture the specified area of current screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4746,12 +4777,16 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testScreenCaptureRectUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let savePath = '/data/storage/el2/base/cache/1.png'
-            let success = await driver.screenCapture(savePath, undefined)
-            expect(success == true).assertTrue()
-            await stopApplication('com.uitestScene.acts')
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let savePath = '/data/storage/el2/base/cache/1.png'
+                let success = await driver.screenCapture(savePath, undefined)
+                expect(success == true).assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            } catch (error) {
+                expect().assertFail();
+            }
             done()
         })
 
@@ -4780,29 +4815,34 @@ export default function UiTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testMouseClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let Button = await driver.findComponent(ON.id('jump'))
-            if (Button == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                Button = await scorll.scrollSearch(ON.id('jump'))
+        it('testMouseClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let Button = await driver.findComponent(ON.id('jump'))
+                if (Button == null) {
+                    let scorll = await driver.findComponent(ON.type('Scroll'))
+                    Button = await scorll.scrollSearch(ON.id('jump'))
+                }
+                let center = await Button.getBoundsCenter()
+                await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT)
+                await driver.delayMs(waitUiReadyMs)
+                let Button1 = await driver.findComponent(ON.text('right'))
+                expect(Button1 != null).assertTrue()
+                await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_MIDDLE, 2072, 2045)
+                await driver.delayMs(waitUiReadyMs)
+                let Button2 = await driver.findComponent(ON.text('middle'))
+                expect(Button2 != null).assertTrue()
+                await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_LEFT, 0)
+                await driver.delayMs(waitUiReadyMs)
+                let Button3 = await driver.findComponent(ON.id('jump'))
+                expect(Button3 == null).assertTrue()
+                await driver.click(center.x, center.y)
+                await stopApplication('com.uitestScene.acts')
+            } catch (error) {
+                expect().assertFail();
             }
-            let center = await Button.getBoundsCenter()
-            await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT)
-            await driver.delayMs(waitUiReadyMs)
-            let Button1 = await driver.findComponent(ON.text('right'))
-            expect(Button1 != null).assertTrue()
-            await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_MIDDLE, 2072, 2045)
-            await driver.delayMs(waitUiReadyMs)
-            let Button2 = await driver.findComponent(ON.text('middle'))
-            expect(Button2 != null).assertTrue()
-            await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_LEFT, 0)
-            await driver.delayMs(waitUiReadyMs)
-            let Button3 = await driver.findComponent(ON.id('jump'))
-            expect(Button3 == null).assertTrue()
-            await driver.click(center.x, center.y)
-            await stopApplication('com.uitestScene.acts')
+            done()
         })
 
         /**
@@ -4814,19 +4854,23 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testMouseClickKey1Null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let Button = await driver.findComponent(ON.id('jump'))
-            if (Button == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                Button = await scorll.scrollSearch(ON.id('jump'))
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let Button = await driver.findComponent(ON.id('jump'))
+                if (Button == null) {
+                    let scorll = await driver.findComponent(ON.type('Scroll'))
+                    Button = await scorll.scrollSearch(ON.id('jump'))
+                }
+                let center = await Button.getBoundsCenter()
+                await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT, null)
+                await driver.delayMs(waitUiReadyMs)
+                let Button1 = await driver.findComponent(ON.text('right'))
+                expect(Button1 != null).assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            } catch (error) {
+                expect().assertFail()
             }
-            let center = await Button.getBoundsCenter()
-            await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT, null)
-            await driver.delayMs(waitUiReadyMs)
-            let Button1 = await driver.findComponent(ON.text('right'))
-            expect(Button1 != null).assertTrue()
-            await stopApplication('com.uitestScene.acts')
             done()
         })
 
@@ -4839,19 +4883,23 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testMouseClickKey1Undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let Button = await driver.findComponent(ON.id('jump'))
-            if (Button == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                Button = await scorll.scrollSearch(ON.id('jump'))
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let Button = await driver.findComponent(ON.id('jump'))
+                if (Button == null) {
+                    let scorll = await driver.findComponent(ON.type('Scroll'))
+                    Button = await scorll.scrollSearch(ON.id('jump'))
+                }
+                let center = await Button.getBoundsCenter()
+                await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT, undefined)
+                await driver.delayMs(waitUiReadyMs)
+                let Button1 = await driver.findComponent(ON.text('right'))
+                expect(Button1 != null).assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            } catch (error) {
+                expect().assertFail()
             }
-            let center = await Button.getBoundsCenter()
-            await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT, undefined)
-            await driver.delayMs(waitUiReadyMs)
-            let Button1 = await driver.findComponent(ON.text('right'))
-            expect(Button1 != null).assertTrue()
-            await stopApplication('com.uitestScene.acts')
             done()
         })
 
@@ -4864,19 +4912,23 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testMouseClickKey2Null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let Button = await driver.findComponent(ON.id('jump'))
-            if (Button == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                Button = await scorll.scrollSearch(ON.id('jump'))
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let Button = await driver.findComponent(ON.id('jump'))
+                if (Button == null) {
+                    let scorll = await driver.findComponent(ON.type('Scroll'))
+                    Button = await scorll.scrollSearch(ON.id('jump'))
+                }
+                let center = await Button.getBoundsCenter()
+                await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT, 0, null)
+                await driver.delayMs(waitUiReadyMs)
+                let Button1 = await driver.findComponent(ON.text('right'))
+                expect(Button1 != null).assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            } catch (error) {
+                expect().assertFail()
             }
-            let center = await Button.getBoundsCenter()
-            await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT, 0, null)
-            await driver.delayMs(waitUiReadyMs)
-            let Button1 = await driver.findComponent(ON.text('right'))
-            expect(Button1 != null).assertTrue()
-            await stopApplication('com.uitestScene.acts')
             done()
         })
 
@@ -4889,19 +4941,23 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testMouseClickKey2Undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let Button = await driver.findComponent(ON.id('jump'))
-            if (Button == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                Button = await scorll.scrollSearch(ON.id('jump'))
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let Button = await driver.findComponent(ON.id('jump'))
+                if (Button == null) {
+                    let scorll = await driver.findComponent(ON.type('Scroll'))
+                    Button = await scorll.scrollSearch(ON.id('jump'))
+                }
+                let center = await Button.getBoundsCenter()
+                await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT, 0, undefined)
+                await driver.delayMs(waitUiReadyMs)
+                let Button1 = await driver.findComponent(ON.text('right'))
+                expect(Button1 != null).assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            } catch (error) {
+                expect().assertFail();
             }
-            let center = await Button.getBoundsCenter()
-            await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT, 0, undefined)
-            await driver.delayMs(waitUiReadyMs)
-            let Button1 = await driver.findComponent(ON.text('right'))
-            expect(Button1 != null).assertTrue()
-            await stopApplication('com.uitestScene.acts')
             done()
         })
 
@@ -4981,18 +5037,22 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testMouseScrollAdapt001Key1Null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let btn2 = await driver.findComponent(ON.text('1'))
-            if (btn2 == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                btn2 = await scorll.scrollSearch(ON.text('1'))
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let btn2 = await driver.findComponent(ON.text('1'))
+                if (btn2 == null) {
+                    let scorll = await driver.findComponent(ON.type('Scroll'))
+                    btn2 = await scorll.scrollSearch(ON.text('1'))
+                }
+                let center = await btn2.getBoundsCenter()
+                await driver.mouseScroll(center, true, 30, null)
+                await driver.delayMs(waitUiReadyMs)
+                let button1 = await driver.findComponent(ON.text('next page'))
+                expect(button1 == null).assertTrue()
+            } catch (error) {
+                expect().assertFail();
             }
-            let center = await btn2.getBoundsCenter()
-            await driver.mouseScroll(center, true, 30, null)
-            await driver.delayMs(waitUiReadyMs)
-            let button1 = await driver.findComponent(ON.text('next page'))
-            expect(button1 == null).assertTrue()
             done()
         })
 
@@ -5033,18 +5093,22 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testMouseScrollAdapt001Key2Null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let btn2 = await driver.findComponent(ON.text('1'))
-            if (btn2 == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                btn2 = await scorll.scrollSearch(ON.text('1'))
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let btn2 = await driver.findComponent(ON.text('1'))
+                if (btn2 == null) {
+                    let scorll = await driver.findComponent(ON.type('Scroll'))
+                    btn2 = await scorll.scrollSearch(ON.text('1'))
+                }
+                let center = await btn2.getBoundsCenter()
+                await driver.mouseScroll(center, true, 30, 0, null)
+                await driver.delayMs(waitUiReadyMs)
+                let button1 = await driver.findComponent(ON.text('next page'))
+                expect(button1 == null).assertTrue()
+            } catch (error) {
+                expect().assertFail();
             }
-            let center = await btn2.getBoundsCenter()
-            await driver.mouseScroll(center, true, 30, 0, null)
-            await driver.delayMs(waitUiReadyMs)
-            let button1 = await driver.findComponent(ON.text('next page'))
-            expect(button1 == null).assertTrue()
             done()
         })
 
@@ -5488,7 +5552,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testDriverLongClick
-         * @tc.number SUB_testfwk_uitest_Api9_0008
+         * @tc.number SUB_testfwk_uitest_Api9_0088
          * @tc.desc   longClick in the specified location on the screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6109,27 +6173,32 @@ export default function UiTest() {
 
         /**
          * @tc.name   testSwipeSpeed
-         * @tc.number SUB_testfwk_uitest_Api9_0032
+         * @tc.number SUB_testfwk_uitest_Api9_0039
          * @tc.desc   swipe on the screen between the specified points.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSwipeSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs);
-            let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
-            await driver.delayMs(waitUiReadyMs);
-            await maxUiWindow(driver, window);
-            let scoll = await driver.findComponent(ON.type('Scroll'))
-            let rect = await scoll.getBounds()
-            let center = await scoll.getBoundsCenter()
-            await driver.swipe(center.x, Math.floor(center.y + (rect.bottom - rect.top) / 4),
-                center.x, Math.floor(center.y - (rect.bottom - rect.top) / 4), 600)
-            await driver.delayMs(waitUiReadyMs)
-            let text = await driver.findComponent(ON.text('toast'))
-            expect(text == null).assertTrue()
-            await stopApplication('com.uitestScene.acts')
+        it('testSwipeSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs);
+                let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+                await driver.delayMs(waitUiReadyMs);
+                await maxUiWindow(driver, window);
+                let scoll = await driver.findComponent(ON.type('Scroll'))
+                let rect = await scoll.getBounds()
+                let center = await scoll.getBoundsCenter()
+                await driver.swipe(center.x, Math.floor(center.y + (rect.bottom - rect.top) / 4),
+                    center.x, Math.floor(center.y - (rect.bottom - rect.top) / 4), 600)
+                await driver.delayMs(waitUiReadyMs)
+                let text = await driver.findComponent(ON.text('toast'))
+                expect(text == null).assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            } catch (error) {
+                expect().assertFail();
+            }
+            done()
         })
 
         /**
@@ -6228,7 +6297,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScrollToBottom
-         * @tc.number SUB_testfwk_uitest_Api9_0034
+         * @tc.number SUB_testfwk_uitest_Api9_0134
          * @tc.desc   scroll on this UiComponent to the bottom.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6268,7 +6337,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testScrollToTop
-         * @tc.number SUB_testfwk_uitest_Api9_0035
+         * @tc.number SUB_testfwk_uitest_Api9_0095
          * @tc.desc   scroll on this UiComponent to the top.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6353,36 +6422,40 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testInjectMultiPointerActionDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let button = await driver.findComponent(ON.id('jump'))
-            if (button == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                button = await scorll.scrollSearch(ON.id('jump'))
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let button = await driver.findComponent(ON.id('jump'))
+                if (button == null) {
+                    let scorll = await driver.findComponent(ON.type('Scroll'))
+                    button = await scorll.scrollSearch(ON.id('jump'))
+                }
+                await button.click()
+                await driver.delayMs(waitUiReadyMs)
+                let image1 = await driver.findComponent(ON.id('test_pict'))
+                let bounds1 = await image1.getBounds()
+                let left = bounds1.left
+                let right = bounds1.right
+                let width = (bounds1.right - bounds1.left) * 0.8
+                let centerY = Math.floor((bounds1.top + bounds1.bottom) / 2)
+                let pointer = PointerMatrix.create(2, 11)
+                await driver.delayMs(300)
+                for (let step = 0; step < 11; step++) {
+                    pointer.setPoint(0, step, { x: Math.floor(left + width - (step + 1) * (width / 10)), y: centerY })
+                }
+                for (let step = 0; step < 11; step++) {
+                    pointer.setPoint(1, step, { x: Math.floor(right - width + (step + 1) * (width / 10)), y: centerY })
+                }
+                let result = await driver.injectMultiPointerAction(pointer)
+                await driver.delayMs(3000)
+                let image2 = await driver.findComponent(ON.id('test_pict'))
+                let bounds2 = await image2.getBounds()
+                expect(bounds2 != bounds1).assertTrue()
+                expect(result).assertTrue();
+                await stopApplication('com.uitestScene.acts')
+            } catch (error) {
+                expect().assertFail()
             }
-            await button.click()
-            await driver.delayMs(waitUiReadyMs)
-            let image1 = await driver.findComponent(ON.id('test_pict'))
-            let bounds1 = await image1.getBounds()
-            let left = bounds1.left
-            let right = bounds1.right
-            let width = (bounds1.right - bounds1.left) * 0.8
-            let centerY = Math.floor((bounds1.top + bounds1.bottom) / 2)
-            let pointer = PointerMatrix.create(2, 11)
-            await driver.delayMs(300)
-            for (let step = 0; step < 11; step++) {
-                pointer.setPoint(0, step, { x: Math.floor(left + width - (step + 1) * (width / 10)), y: centerY })
-            }
-            for (let step = 0; step < 11; step++) {
-                pointer.setPoint(1, step, { x: Math.floor(right - width + (step + 1) * (width / 10)), y: centerY })
-            }
-            let result = await driver.injectMultiPointerAction(pointer)
-            await driver.delayMs(3000)
-            let image2 = await driver.findComponent(ON.id('test_pict'))
-            let bounds2 = await image2.getBounds()
-            expect(bounds2 != bounds1).assertTrue()
-            expect(result).assertTrue();
-            await stopApplication('com.uitestScene.acts')
             done()
         })
 
