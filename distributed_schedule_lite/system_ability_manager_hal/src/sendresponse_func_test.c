@@ -457,7 +457,7 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0020, Function |
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0040, Function | MediumTest | Level2)
+LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0040, Function | MediumTest | Level2) /* NOLINT(G.NAM.03-CPP) */
 {
     Response response = {.data = NULL, .len = 0};
     int32 result = SAMGR_SendResponse(NULL, &response);
@@ -474,7 +474,7 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0040, Function | MediumTes
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0030, Function | MediumTest | Level2)
+LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0030, Function | MediumTest | Level2) /* NOLINT(G.NAM.03-CPP) */
 {
     Identity identity = {0, 0, NULL};
     Response response = {.data = NULL, .len = 0};

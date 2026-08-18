@@ -557,7 +557,7 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0090, Function | MediumTest 
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0100, Function | MediumTest | Level2)
+LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0100, Function | MediumTest | Level2) /* NOLINT(G.NAM.03-CPP) */
 {
     Request request = {.msgId = MSG_NO, .msgValue = 0};
     Identity identity = {0, 0, NULL};

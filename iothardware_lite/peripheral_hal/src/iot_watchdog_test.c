@@ -87,7 +87,7 @@ LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog003, Function | MediumTest |
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog004, Function | MediumTest | Level1)
+LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog004, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
 {
     void (*watchDogFunc)(void) = IoTWatchDogEnable;
     TEST_ASSERT_TRUE(watchDogFunc != NULL);
@@ -102,7 +102,7 @@ LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog004, Function | MediumTest |
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog005, Function | MediumTest | Level1)
+LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog005, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
 {
     void (*watchDogFunc)(void) = IoTWatchDogKick;
     TEST_ASSERT_TRUE(watchDogFunc != NULL);
@@ -117,7 +117,7 @@ LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog005, Function | MediumTest |
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog006, Function | MediumTest | Level1)
+LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog006, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
 {
     void (*watchDogFunc)(void) = IoTWatchDogDisable;
     TEST_ASSERT_TRUE(watchDogFunc != NULL);
