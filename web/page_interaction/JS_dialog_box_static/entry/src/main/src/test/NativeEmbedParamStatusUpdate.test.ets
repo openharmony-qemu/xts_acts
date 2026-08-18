@@ -72,10 +72,10 @@ export default function WebOnNativeEmbedObjectParamChange() {
         await Utils.msSleep(1000);
         inspector.sendEventByKey('updateButton', 10, '');
         await Utils.msSleep(4000)
-        done()
         } catch(err) {
          console.log('testSwitchNextPageStatic06' + err)
         }
+        done()
       })
             
             
