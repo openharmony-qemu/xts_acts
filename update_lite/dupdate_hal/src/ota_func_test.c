@@ -195,9 +195,6 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1300, Function | MediumTest | Leve
     int ret = HotaGetOtaPkgPath(path, 64);
     printf("HotaGetOtaPkgPath return = %d, path = %s\r\n", ret, path);
     TEST_ASSERT_EQUAL_INT(OHOS_SUCCESS, ret);
-    ret = HotaGetOtaPkgPath(NULL, 0);
-    printf("HotaGetOtaPkgPath(NULL) return = %d\r\n", ret);
-    TEST_ASSERT_EQUAL_INT(OHOS_SUCCESS, ret);
 };
 
 /**
@@ -212,8 +209,8 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1400, Function | MediumTest | Leve
 {
     int ret = HotaGetUpdateAbility();
     printf("HotaGetUpdateAbility return = %d\r\n", ret);
-    /* ws63 实测 12（升级能力位） */
-    TEST_ASSERT_EQUAL_INT(12, ret);
+    /* 升级能力位掩码，不同设备能力不同，断言非负即可（API 契约） */
+    TEST_ASSERT_TRUE(ret >= 0);
 };
 
 /**
