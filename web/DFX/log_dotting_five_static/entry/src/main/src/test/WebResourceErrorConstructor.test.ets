@@ -55,10 +55,10 @@ export default function webResourceErrorConstructor():void {
           await Utils.msSleep(2000);
           inspector.sendEventByKey('WebResourceErrorConstructorButton', 10, '');
           await Utils.msSleep(3000);
-          done();
         } catch (err) {
           console.log('testWebResourceErrorConstructorStatic001' + err)
         }
+        done();
       })
 
     /**
@@ -81,10 +81,10 @@ export default function webResourceErrorConstructor():void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebResourceErrorConstructorButton', 10, '');
         await Utils.msSleep(3000);
-        done();
       } catch(err) {
         console.log('testWebResourceErrorConstructorStatic002' + err)
         }
+        done();
       })
 
     /**
@@ -107,10 +107,10 @@ export default function webResourceErrorConstructor():void {
           await Utils.msSleep(2000);
           inspector.sendEventByKey('WebResourceErrorConstructorButton', 10, '');
           await Utils.msSleep(3000);
-          done();
         } catch(err) {
           console.log('testWebResourceErrorConstructorStatic003' + err)
         }
+        done();
       })
 
     /**
@@ -133,10 +133,10 @@ export default function webResourceErrorConstructor():void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebResourceErrorConstructorButton', 10, '');
         await Utils.msSleep(3000);
-        done();
         } catch(err) {
           console.log('testWebResourceErrorConstructorStatic004' + err)
         }
+        done();
       })
 
 
