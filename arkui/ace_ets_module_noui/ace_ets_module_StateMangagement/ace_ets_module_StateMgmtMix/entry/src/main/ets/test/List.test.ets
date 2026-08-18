@@ -16,6 +16,7 @@ import AddMonitor001 from './uiutilsTest/AddMonitor001.test';
 import AddMonitor002 from './uiutilsTest/AddMonitor002.test';
 import MakeBinding001 from './uiutilsTest/MakeBinding001.test';
 import AddMonitor003 from './uiutilsTest/AddMonitor003.test';
+import AddMonitor004 from './uiutilsTest/AddMonitor004.test';
 import AddMonitorErrorCode001 from './uiutilsTest/AddMonitorErrorCode001.test';
 import ApplySync001 from './uiutilsTest/ApplySync001.test';
 import FlushUpdates001 from './uiutilsTest/FlushUpdates001.test';
@@ -152,4 +153,5 @@ export default function testsuite() {
     persistStorageATest();
     Enum001();
     DecoratorInfoTest();
+    AddMonitor004();
 }
