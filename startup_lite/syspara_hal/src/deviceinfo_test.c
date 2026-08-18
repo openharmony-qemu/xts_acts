@@ -665,7 +665,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetOsReleaseType,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* ws63 实测 "Beta"（const.build.osreleasetype） */
     const char *value1 = GetOsReleaseType();
@@ -689,7 +689,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDevUdid,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* UDID 为设备唯一标识（每台设备不同，不可写死具体值），断言其契约属性：
      * 返回 0、长度 64 位十六进制、多次调用一致、非全零 */
@@ -735,7 +735,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetChipType,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* ws63 未设置 ohos.boot.hardware 属性，实测返回 NULL */
     const char *value1 = GetChipType();
@@ -756,7 +756,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetBootCount,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* ws63 mini 系统未维护 persist.startup.bootcount，实测恒为 0 */
     int value1 = GetBootCount();
@@ -776,7 +776,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDeviceColor,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* ws63 未设置 ohos.boot.backcolor 属性，实测返回空串（EMPTY_STR） */
     const char *value1 = GetDeviceColor();
@@ -797,7 +797,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSApiName,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* ws63 未设置 const.product.os.dist.apiname，实测返回空串（EMPTY_STR） */
     const char *value1 = GetDistributionOSApiName();
@@ -818,7 +818,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSName,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* ws63 未设置 const.product.os.dist.name，实测返回空串（EMPTY_STR） */
     const char *value1 = GetDistributionOSName();
@@ -839,7 +839,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSReleaseType,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* ws63 未设置属性时回退到 GetOsReleaseType()，实测 "Beta" */
     const char *value1 = GetDistributionOSReleaseType();
@@ -859,7 +859,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSVersion,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* ws63 未设置属性时回退到 GetOSFullName() */
     const char *value1 = GetDistributionOSVersion();
@@ -879,7 +879,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSApiVersion,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* ws63 未设置属性时回退到 GetSdkApiVersion()，实测 26 */
     int value1 = GetDistributionOSApiVersion();
@@ -899,7 +899,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetPerformanceClass,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* ws63 未设置 const.sys.performance_class，实测返回 0（PERFORMANCE_CLASS_HIGH_LEVEL） */
     int value1 = GetPerformanceClass();
@@ -919,7 +919,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetProductModelAlias,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* ws63 未设置 const.product.model_alias，实测回退到产品型号 "NearLink_DK_WS63E" */
     const char *value1 = GetProductModelAlias();
@@ -939,7 +939,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetSdkMinorApiVersion,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* ws63 未设置 const.ohos.apiminorversion，实测返回 0 */
     int value1 = GetSdkMinorApiVersion();
@@ -959,7 +959,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetSdkPatchApiVersion,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* ws63 未设置 const.ohos.apipatchversion，实测返回 0 */
     int value1 = GetSdkPatchApiVersion();
@@ -979,7 +979,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetMajorVersion,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* major 随版本迭代，从 GetOSFullName() 解析第 1 段动态比对 */
     const char *fullName = GetOSFullName();
@@ -1012,7 +1012,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetSeniorVersion,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* 由 const.ohos.fullname 解析，实测 S=0 */
     int value1 = GetSeniorVersion();
@@ -1032,7 +1032,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetFeatureVersion,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* 由 const.ohos.fullname 解析，实测 F=0 */
     int value1 = GetFeatureVersion();
@@ -1052,7 +1052,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
  */
 LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetBuildVersion,
-  Function | MediumTest | Level1)
+               Function | MediumTest | Level1)
 {
     /* build 号随固件版本迭代，不能写死；
        从 GetOSFullName() 解析第 4 段动态比对 */
