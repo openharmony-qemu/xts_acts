@@ -377,7 +377,7 @@ export default function uint32ArrayPropertyOneTest(): void {
         new Uint32Array(-1);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -394,7 +394,7 @@ export default function uint32ArrayPropertyOneTest(): void {
         new Uint32Array(2147483647);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -579,7 +579,7 @@ export default function uint32ArrayPropertyOneTest(): void {
         new Uint32Array(buf, 1);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -597,7 +597,7 @@ export default function uint32ArrayPropertyOneTest(): void {
         new Uint32Array(buf, -1);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -629,7 +629,7 @@ export default function uint32ArrayPropertyOneTest(): void {
         new Uint32Array(buf, 16, 2);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -675,7 +675,7 @@ export default function uint32ArrayPropertyOneTest(): void {
         new Uint32Array(buf, 24);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -721,7 +721,7 @@ export default function uint32ArrayPropertyOneTest(): void {
         new Uint32Array(buf);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

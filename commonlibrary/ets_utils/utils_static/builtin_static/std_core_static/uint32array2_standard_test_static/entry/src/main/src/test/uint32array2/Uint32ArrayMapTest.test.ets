@@ -876,7 +876,7 @@ export default function uint32ArrayMapOneTest(): void {
           throw new Error('boom at 0');
         });
       } catch (e) {
-        expect((e as Error).name).assertEqual("Error");
+        expect(e.name).assertEqual("Error");
         caught = true;
       }
       expect(caught).assertTrue();
@@ -899,7 +899,7 @@ export default function uint32ArrayMapOneTest(): void {
           return v;
         });
       } catch (e) {
-        expect((e as Error).name).assertEqual("Error");
+        expect(e.name).assertEqual("Error");
         caught = true;
       }
       expect(caught).assertTrue();
@@ -922,7 +922,7 @@ export default function uint32ArrayMapOneTest(): void {
           return v;
         });
       } catch (e) {
-        expect((e as Error).name).assertEqual("Error");
+        expect(e.name).assertEqual("Error");
         caught = true;
       }
       expect(caught).assertTrue();
@@ -944,7 +944,7 @@ export default function uint32ArrayMapOneTest(): void {
           throw new Error('single');
         });
       } catch (e) {
-        expect((e as Error).name).assertEqual("Error");
+        expect(e.name).assertEqual("Error");
         caught = true;
       }
       expect(caught).assertTrue();
@@ -966,7 +966,7 @@ export default function uint32ArrayMapOneTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -986,8 +986,8 @@ export default function uint32ArrayMapOneTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).message).assertEqual('specific-message');
-        expect((e as Error).name).assertEqual('Error');
+        expect(e.message).assertEqual('specific-message');
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -1008,7 +1008,7 @@ export default function uint32ArrayMapOneTest(): void {
           throw new Error('after-mutate');
         });
       } catch (e) {
-        expect((e as Error).name).assertEqual("Error");
+        expect(e.name).assertEqual("Error");
         caught = true;
       }
       expect(caught).assertTrue();
@@ -1263,7 +1263,7 @@ export default function uint32ArrayMapOneTest(): void {
           return v;
         });
       } catch (e) {
-        expect((e as Error).name).assertEqual('Error');
+        expect(e.name).assertEqual('Error');
         caught = true;
       }
       expect(caught).assertTrue();

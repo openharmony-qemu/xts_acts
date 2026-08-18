@@ -443,8 +443,9 @@ export default function uint32ArraySetTwoTest(): void {
      */
     it('testUint32ArraySetTwo028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint32Array = Uint32Array.of(0, 0);
-      let r: void = arr.set(0, 5);
-      expect(r).assertUndefined();
+      let src: FixedArray<number> = [5];
+      arr.set(src, 0);
+      expect(arr.$_get(0)).assertEqual(5);
     });
 
     /**
@@ -1102,8 +1103,9 @@ export default function uint32ArraySetTwoTest(): void {
     it('testUint32ArraySetTwo067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint32Array = Uint32Array.of(0, 0);
       let src: Uint32Array = Uint32Array.of(1, 2);
-      let r: void = arr.set(src, 0);
-      expect(r).assertUndefined();
+      arr.set(src, 0);
+      expect(arr.$_get(0)).assertEqual(1);
+      expect(arr.$_get(1)).assertEqual(2);
     });
 
     /**

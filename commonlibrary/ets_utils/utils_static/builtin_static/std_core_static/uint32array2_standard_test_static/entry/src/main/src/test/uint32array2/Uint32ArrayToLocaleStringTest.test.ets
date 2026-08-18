@@ -406,7 +406,7 @@ export default function uint32ArrayToLocaleStringOneTest(): void {
      */
     it('testUint32ArrayToLocaleStringOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = Uint32Array.of(0b11111111);
-      const s = values.toLocaleString(undefined);
+      const s = values.toLocaleString();
       expect(s).assertEqual("255");
     });
 
@@ -435,7 +435,7 @@ export default function uint32ArrayToLocaleStringOneTest(): void {
      */
     it('testUint32ArrayToLocaleStringOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = Uint32Array.of(1e6);
-      const s = values.toLocaleString(undefined);
+      const s = values.toLocaleString();
       expect(s.length).assertEqual(9);
       expect(s).assertEqual("1,000,000");
     });

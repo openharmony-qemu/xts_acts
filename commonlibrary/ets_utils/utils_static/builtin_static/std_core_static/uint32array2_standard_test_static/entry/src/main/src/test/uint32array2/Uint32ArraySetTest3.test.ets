@@ -514,7 +514,7 @@ export default function uint32ArraySetThreeTest(): void {
         values.set(src, 4);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -533,7 +533,7 @@ export default function uint32ArraySetThreeTest(): void {
         values.set(src, 2);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -599,7 +599,7 @@ export default function uint32ArraySetThreeTest(): void {
         values.set(src, 3);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -618,7 +618,7 @@ export default function uint32ArraySetThreeTest(): void {
         values.set(src, 4);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -637,7 +637,7 @@ export default function uint32ArraySetThreeTest(): void {
         values.set(src, 2);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -903,8 +903,9 @@ export default function uint32ArraySetThreeTest(): void {
     it('testUint32ArraySetThree054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = new Uint32Array(2);
       const src: FixedArray<number> = [1, 2];
-      const ret = values.set(src);
-      expect(ret).assertUndefined();
+      values.set(src);
+      expect(values.$_get(0)).assertEqual(1);
+      expect(values.$_get(1)).assertEqual(2);
     });
 
     /**
@@ -918,8 +919,9 @@ export default function uint32ArraySetThreeTest(): void {
     it('testUint32ArraySetThree055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = new Uint32Array(2);
       const src: Array<number> = [1.0, 2.0];
-      const ret = values.set(src, 0);
-      expect(ret).assertUndefined();
+      values.set(src, 0);
+      expect(values.$_get(0)).assertEqual(1);
+      expect(values.$_get(1)).assertEqual(2);
     });
 
     /**
@@ -1070,7 +1072,7 @@ export default function uint32ArraySetThreeTest(): void {
         values.set(src, 0);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1089,7 +1091,7 @@ export default function uint32ArraySetThreeTest(): void {
         values.set(src, 0);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1263,7 +1265,7 @@ export default function uint32ArraySetThreeTest(): void {
         arr.set(src, -1);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

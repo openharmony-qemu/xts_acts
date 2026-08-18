@@ -1329,7 +1329,12 @@ export default function uint32ArrayOverallThreeTest(): void {
     it('testUint32ArrayOverallThree080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const items: number[] = [1, 2];
-        Uint32Array.from(items, (value: number, index: number): number => { throw new Error('from-cb-throw'); });
+        Uint32Array.from(items, (value: number, index: number): number => {
+          if (value < 0) {
+            return value;
+          }
+          throw new Error('from-cb-throw');
+        });
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');

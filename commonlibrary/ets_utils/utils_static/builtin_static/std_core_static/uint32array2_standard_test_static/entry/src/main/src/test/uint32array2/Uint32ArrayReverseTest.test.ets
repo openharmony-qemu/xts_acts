@@ -786,7 +786,7 @@ export default function uint32ArrayReverseOneTest(): void {
         arr.$_set(100, 4294967295);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
       expect(arr.$_get(0)).assertEqual(3);
       expect(arr.length).assertEqual(3);
@@ -807,7 +807,7 @@ export default function uint32ArrayReverseOneTest(): void {
         arr.$_get(100);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

@@ -119,7 +119,7 @@ export default function uint32ArraySetOneTest(): void {
         values.set(2147483647, v);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -138,7 +138,7 @@ export default function uint32ArraySetOneTest(): void {
         values.set(-2147483648, v);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -690,7 +690,7 @@ export default function uint32ArraySetOneTest(): void {
         values.set(src, 3);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -709,7 +709,7 @@ export default function uint32ArraySetOneTest(): void {
         values.set(src, 3);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -743,7 +743,7 @@ export default function uint32ArraySetOneTest(): void {
         values.set(src, 3);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -762,7 +762,7 @@ export default function uint32ArraySetOneTest(): void {
         values.set(src, 0);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -968,7 +968,7 @@ export default function uint32ArraySetOneTest(): void {
         values.set(Uint32Array.of(1, 2, 3, 4, 5, 6));
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -1248,7 +1248,7 @@ export default function uint32ArraySetOneTest(): void {
         arr.set(Uint32Array.of(1, 2), -1);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

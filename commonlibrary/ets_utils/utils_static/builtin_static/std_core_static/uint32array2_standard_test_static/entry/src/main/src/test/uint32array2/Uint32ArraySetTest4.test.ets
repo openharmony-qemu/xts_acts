@@ -362,8 +362,9 @@ export default function uint32ArraySetFourTest(): void {
     it('testUint32ArraySetFour018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint32Array = Uint32Array.of(0, 0);
       const v: byte = 5;
-      let r: void = arr.set(0, v);
-      expect(r).assertUndefined();
+      let src: FixedArray<number> = [v];
+      arr.set(src, 0);
+      expect(arr.$_get(0)).assertEqual(5);
     });
 
     /**

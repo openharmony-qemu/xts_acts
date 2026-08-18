@@ -342,9 +342,9 @@ export default function uint32ArrayOverallFourTest(): void {
      */
     it('testUint32ArrayOverallFour021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source: Array<number> = [1.0, 2.0];
-      const values = Uint32Array.from<number>(source, (v, k) => -1);
+      const values = Uint32Array.from<number>(source, (v, k) => 0 - v);
       expect(values.$_get(0)).assertEqual(4294967295);
-      expect(values.$_get(1)).assertEqual(4294967295);
+      expect(values.$_get(1)).assertEqual(4294967294);
     });
 
     /**

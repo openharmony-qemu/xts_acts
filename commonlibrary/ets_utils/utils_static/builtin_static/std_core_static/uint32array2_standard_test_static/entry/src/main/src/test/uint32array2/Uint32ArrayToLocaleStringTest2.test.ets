@@ -81,7 +81,7 @@ export default function uint32ArrayToLocaleStringTwoTest(): void {
      */
     it('testUint32ArrayToLocaleStringTwo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Uint32Array.of(5);
-      const r = arr.toLocaleString(undefined);
+      const r = arr.toLocaleString();
       expect(r).assertEqual('5');
     });
 
