@@ -56,7 +56,7 @@ export struct displayRepeat {
           })
           .template('change', (r) => {
             ListItem() {
-              Text((r.index! + ':' + r.item + 'ReuseChange' + (this.temporaryValue = 666)).toString())
+              Text((r.index! + ':' + r.item + 'ReuseChange' + this.temporaryValue).toString())
                 .id(`textNo${r.index}`)
             }
           }, { cachedCount: 4 })
