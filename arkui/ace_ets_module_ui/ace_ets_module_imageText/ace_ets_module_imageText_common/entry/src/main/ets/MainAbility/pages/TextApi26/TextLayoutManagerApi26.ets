@@ -153,17 +153,17 @@ struct TextLayoutManagerApi26 {
       layoutManager.getGlyphRangeForCharacterRange(undefinedRange, TextEncoding.TEXT_ENCODING_UTF8);
     AppStorage.setOrCreate('glyphRange_undefined_range', this.formatRangeArray(result6));
 
-    let result7: PositionWithAffinity | undefined =
+    let result7: Array<TextRange> | undefined =
       layoutManager.getGlyphRangeForCharacterRange({ start: 0, end: 100 }, null);
-    AppStorage.setOrCreate('glyphRange_null_textEncoding', this.formatPosition(result7));
+    AppStorage.setOrCreate('glyphRange_null_textEncoding', this.formatRangeArray(result7));
 
-    let result8: PositionWithAffinity | undefined =
+    let result8: Array<TextRange> | undefined =
       layoutManager.getGlyphRangeForCharacterRange({ start: 0, end: 100 }, undefined);
-    AppStorage.setOrCreate('glyphRange_undfined_textEncoding', this.formatPosition(result8));
+    AppStorage.setOrCreate('glyphRange_undfined_textEncoding', this.formatRangeArray(result8));
 
-    let result9: PositionWithAffinity | undefined =
+    let result9: Array<TextRange> | undefined =
       layoutManager.getGlyphRangeForCharacterRange({ start: 0, end: 100 }, 3 as TextEncoding);
-    AppStorage.setOrCreate('glyphRange_exceeds_textEncoding', this.formatPosition(result9));
+    AppStorage.setOrCreate('glyphRange_exceeds_textEncoding', this.formatRangeArray(result9));
 
     this.statusInfo = 'getGlyphRangeForCharacterRange computed (9 cases)';
   }
@@ -200,17 +200,17 @@ struct TextLayoutManagerApi26 {
       layoutManager.getCharacterRangeForGlyphRange(undefinedRange, TextEncoding.TEXT_ENCODING_UTF8);
     AppStorage.setOrCreate('charRange_undefined_range', this.formatRangeArray(result6));
 
-    let result7: PositionWithAffinity | undefined =
+    let result7: Array<TextRange> | undefined =
       layoutManager.getCharacterRangeForGlyphRange({ start: 0, end: 11 }, null);
-    AppStorage.setOrCreate('charRange_null_textEncoding', this.formatPosition(result7));
+    AppStorage.setOrCreate('charRange_null_textEncoding', this.formatRangeArray(result7));
 
-    let result8: PositionWithAffinity | undefined =
+    let result8: Array<TextRange> | undefined =
       layoutManager.getCharacterRangeForGlyphRange({ start: 0, end: 11 }, undefined);
-    AppStorage.setOrCreate('charRange_undfined_textEncoding', this.formatPosition(result8));
+    AppStorage.setOrCreate('charRange_undfined_textEncoding', this.formatRangeArray(result8));
 
-    let result9: PositionWithAffinity | undefined =
+    let result9: Array<TextRange> | undefined =
       layoutManager.getCharacterRangeForGlyphRange({ start: 0, end: 11 }, 3 as TextEncoding);
-    AppStorage.setOrCreate('charRange_exceeds_textEncoding', this.formatPosition(result9));
+    AppStorage.setOrCreate('charRange_exceeds_textEncoding', this.formatRangeArray(result9));
 
     this.statusInfo = 'getCharacterRangeForGlyphRange computed (9 cases)';
   }
