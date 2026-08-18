@@ -37,7 +37,7 @@ export default function webContextMenuResultConstructor():void {
 
     /**
      * @tc.name   testWebContextMenuResultConstructorStatic001
-     * @tc.number SUB_WEB_WEBCONTEXTMENURESULT_CONSTRUCTOR_RETURN_001
+     * @tc.number SUB_WEB_CONSTRUCTOR_RETURN_001
      * @tc.desc   WebContextMenuResult constructor return value test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -63,7 +63,7 @@ export default function webContextMenuResultConstructor():void {
 
     /**
      * @tc.name   testWebContextMenuResultConstructorStatic002
-     * @tc.number SUB_WEB_WEBCONTEXTMENURESULT_CONSTRUCTOR_PARAM_001
+     * @tc.number SUB_WEB_CONSTRUCTOR_PARAM_001
      * @tc.desc   WebContextMenuResult constructor invocation test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function webContextMenuResultConstructor():void {
 
     /**
      * @tc.name   testWebContextMenuResultConstructorStatic003
-     * @tc.number SUB_WEB_WEBCONTEXTMENURESULT_CONSTRUCTOR_RETURN_002
+     * @tc.number SUB_WEB_CONSTRUCTOR_RETURN_002
      * @tc.desc   WebContextMenuResult closeContextMenu method test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -115,7 +115,7 @@ export default function webContextMenuResultConstructor():void {
 
     /**
      * @tc.name   testWebContextMenuResultConstructorStatic004
-     * @tc.number SUB_WEB_WEBCONTEXTMENURESULT_CONSTRUCTOR_RETURN_003
+     * @tc.number SUB_WEB_CONSTRUCTOR_RETURN_003
      * @tc.desc   WebContextMenuResult copyImage method test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -141,7 +141,7 @@ export default function webContextMenuResultConstructor():void {
 
     /**
      * @tc.name   testWebContextMenuResultConstructorStatic005
-     * @tc.number SUB_WEB_WEBCONTEXTMENURESULT_CONSTRUCTOR_RETURN_004
+     * @tc.number SUB_WEB_CONSTRUCTOR_RETURN_004
      * @tc.desc   WebContextMenuResult copy method test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -167,7 +167,7 @@ export default function webContextMenuResultConstructor():void {
 
     /**
      * @tc.name   testWebContextMenuResultConstructorStatic006
-     * @tc.number SUB_WEB_WEBCONTEXTMENURESULT_CONSTRUCTOR_RETURN_005
+     * @tc.number SUB_WEB_CONSTRUCTOR_RETURN_005
      * @tc.desc   WebContextMenuResult cut method test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -193,7 +193,7 @@ export default function webContextMenuResultConstructor():void {
 
     /**
      * @tc.name   testWebContextMenuResultConstructorStatic007
-     * @tc.number SUB_WEB_WEBCONTEXTMENURESULT_CONSTRUCTOR_RETURN_006
+     * @tc.number SUB_WEB_CONSTRUCTOR_RETURN_006
      * @tc.desc   WebContextMenuResult selectAll method test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
