@@ -18,7 +18,7 @@ import { BusinessError } from '@ohos.base';
 import { describe, expect, it, Level } from '../../../../hypium/index';
 import {
   Binding, CustomComponentContext, DecoratorInfo, ElementInfo, IMonitor,
-  IReusePool, MonitorBaseOptions, MonitorOptions, MonitorValueInfo,
+  IReusePool, MonitorBaseOptions, MonitorCallback, MonitorOptions, MonitorValueInfo,
   MutableBinding, ObservedArray, ObservedDate, ObservedMap, ObservedResult,
   ObservedSet, UIUtils
 } from '@kit.ArkUI';
@@ -197,13 +197,13 @@ export default function StaticCoverageUtilsTest(): void {
         console.info('[ARKUI_NEW] static coverage execute');
         let value: int = 1;
         const monitor = UIUtils.addMonitor(
-          (): int => value, (result: IMonitor, error: BusinessError | undefined = undefined): void => {
+          (): int => value, ((error: BusinessError | null, result: IMonitor | undefined): void => {
             if (error) {
               console.info(`[ARKUI_NEW] addMonitor failed: ${error.code} ${error.message}`);
               return;
             }
-            console.info(`[ARKUI_NEW] monitor dirty path count: ${result.dirty.length}`);
-          },
+            console.info(`[ARKUI_NEW] monitor dirty path count: ${result?.dirty.length}`);
+          }) as object as MonitorCallback,
           { path: 'value', isSynchronous: true });
         expect(monitor.path.length === 1).assertTrue();
         UIUtils.clearMonitor(monitor);
@@ -227,13 +227,13 @@ export default function StaticCoverageUtilsTest(): void {
           valueCallback: (): int => value, path: 'value.*', observeProps: true
         };
         const monitor = UIUtils.addMonitor(
-          info, (result: IMonitor, error: BusinessError | undefined = undefined): void => {
+          info, ((error: BusinessError | null, result: IMonitor | undefined): void => {
             if (error) {
               console.info(`[ARKUI_NEW] addMonitor failed: ${error.code} ${error.message}`);
               return;
             }
-            console.info(`[ARKUI_NEW] monitor dirty path count: ${result.dirty.length}`);
-          }, { isSynchronous: false });
+            console.info(`[ARKUI_NEW] monitor dirty path count: ${result?.dirty.length}`);
+          }) as object as MonitorCallback, { isSynchronous: false });
         expect(monitor.path.length === 1).assertTrue();
         UIUtils.clearMonitor(monitor);
       }
@@ -253,13 +253,13 @@ export default function StaticCoverageUtilsTest(): void {
         console.info('[ARKUI_NEW] static coverage execute');
         let value: int = 1;
         const monitor = UIUtils.addMonitor(
-          (): int => value, (result: IMonitor, error: BusinessError | undefined = undefined): void => {
+          (): int => value, ((error: BusinessError | null, result: IMonitor | undefined): void => {
             if (error) {
               console.info(`[ARKUI_NEW] addMonitor failed: ${error.code} ${error.message}`);
               return;
             }
-            console.info(`[ARKUI_NEW] monitor dirty path count: ${result.dirty.length}`);
-          }, { path: 'value' });
+            console.info(`[ARKUI_NEW] monitor dirty path count: ${result?.dirty.length}`);
+          }) as object as MonitorCallback, { path: 'value' });
         UIUtils.clearMonitor(monitor);
         expect(monitor.path.length === 1).assertTrue();
       }
