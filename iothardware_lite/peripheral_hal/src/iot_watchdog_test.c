@@ -90,9 +90,8 @@ LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog003, Function | MediumTest |
  */
 LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog004, Function | MediumTest | Level1)
 {
-    void (*watchDogFunc)(void) = IoTWatchDogEnable;
-    TEST_ASSERT_TRUE(watchDogFunc != NULL);
-    watchDogFunc();
+    /* 直接调用 API 验证行为，不做函数指针恒真断言 */
+    IoTWatchDogEnable();
 };
 
 /**
@@ -105,9 +104,8 @@ LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog004, Function | MediumTest |
  */
 LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog005, Function | MediumTest | Level1)
 {
-    void (*watchDogFunc)(void) = IoTWatchDogKick;
-    TEST_ASSERT_TRUE(watchDogFunc != NULL);
-    watchDogFunc();
+    /* 直接调用 API 验证行为，不做函数指针恒真断言 */
+    IoTWatchDogKick();
 };
 
 /**
@@ -120,9 +118,8 @@ LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog005, Function | MediumTest |
  */
 LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog006, Function | MediumTest | Level1)
 {
-    void (*watchDogFunc)(void) = IoTWatchDogDisable;
-    TEST_ASSERT_TRUE(watchDogFunc != NULL);
-    watchDogFunc();
+    /* 直接调用 API 验证行为，不做函数指针恒真断言 */
+    IoTWatchDogDisable();
 };
 
 RUN_TEST_SUITE(IotWatchDogTestSuite);

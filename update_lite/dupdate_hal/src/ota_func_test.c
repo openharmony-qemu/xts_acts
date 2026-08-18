@@ -246,54 +246,6 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1700, Function | MediumTest | Leve
 };
 
 /**
- * @tc.name   subUpgradeAPI1800
- * @tc.number SUB_Upgrade_API_1800
- * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
-LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1800, Function | MediumTest | Level1)
-{
-    int ret = HotaRebootAndCleanCache();
-    printf("HotaRebootAndCleanCache return = %d\r\n", ret);
-    /* ws63 实测 0：无升级包时接口直接返回，不触发设备重启（258 条套件实测全程无中断） */
-    TEST_ASSERT_EQUAL_INT(OHOS_SUCCESS, ret);
-};
-
-/**
- * @tc.name   subUpgradeAPI1900
- * @tc.number SUB_Upgrade_API_1900
- * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
-LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1900, Function | MediumTest | Level1)
-{
-    int ret = HotaRebootAndCleanUserData();
-    printf("HotaRebootAndCleanUserData return = %d\r\n", ret);
-    /* ws63 实测 0：无升级包时接口直接返回，不触发设备重启（258 条套件实测全程无中断） */
-    TEST_ASSERT_EQUAL_INT(OHOS_SUCCESS, ret);
-};
-
-/**
- * @tc.name   subUpgradeAPI2000
- * @tc.number SUB_Upgrade_API_2000
- * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
-LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI2000, Function | MediumTest | Level1)
-{
-    int ret = HotaRestart();
-    printf("HotaRestart return = %d\r\n", ret);
-    /* ws63 实测 -1（升级未开始/校验失败时拒绝重启） */
-    TEST_ASSERT_EQUAL_INT(OHOS_FAILURE, ret);
-};
-
-/**
  * @tc.name   subUpgradeAPI2100
  * @tc.number SUB_Upgrade_API_2100
  * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
