@@ -37,7 +37,7 @@ export default function webResourceErrorConstructor():void {
 
     /**
      * @tc.name   testWebResourceErrorConstructorStatic001
-     * @tc.number SUB_WEB_CONSTRUCTOR_RETURN_001
+     * @tc.number SUB_WEB_CONSTRUCTOR_RETURN_0100
      * @tc.desc   WebResourceError constructor return value test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -63,7 +63,7 @@ export default function webResourceErrorConstructor():void {
 
     /**
      * @tc.name   testWebResourceErrorConstructorStatic002
-     * @tc.number SUB_WEB_CONSTRUCTOR_PARAM_001
+     * @tc.number SUB_WEB_CONSTRUCTOR_RETURN_0200
      * @tc.desc   WebResourceError constructor invocation test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
