@@ -18,10 +18,24 @@ import {
   BaseConnectOptions, BaseCustomDialog, ConnectOptions, CustomBuilder,
   CustomComponent, CustomComponentContext, CustomComponentLifecycle,
   CustomComponentLifecycleObserver, CustomComponentLifecycleState,
-  CustomComponentV2, IDecoratedVariable, IMonitor, IReusePool, IReusableInfo,
-  IVariableOwner, PageLifeCycle, PersistPropsOptions, ReadableState,
-  StateContext, StorageDefaultSubCreators, WrappedBuilder
+  CustomComponentV2, EntryPoint, ExtendableComponent, IDecoratedVariable,
+  IMonitor, IObservedObject, IReusePool, IReusableInfo, IVariableOwner,
+  LayoutCallbacks, LifeCycle, LinkSourceType, PageLifeCycle,
+  PersistPropsOptions, ReadableState, StateContext, StorageDefaultSubCreators,
+  WrappedBuilder
 } from '@kit.ArkUI';
+
+export function referenceCoverageTypes(): boolean {
+  const lifecycle: LifeCycle | undefined = undefined;
+  const extendable: ExtendableComponent | undefined = undefined;
+  const entryPoint: EntryPoint | undefined = undefined;
+  const callbacks: LayoutCallbacks | undefined = undefined;
+  const source: LinkSourceType<int> | undefined = undefined;
+  const observed: IObservedObject | undefined = undefined;
+  return lifecycle === undefined && extendable === undefined &&
+    entryPoint === undefined && callbacks === undefined &&
+    source === undefined && observed === undefined;
+}
 
 export class CoverageRecord {
   public value: int = 7;

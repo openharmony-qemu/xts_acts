@@ -489,8 +489,8 @@ export default function StaticCoverageDecoratorTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        let monitor: IMonitor | undefined = undefined;
-        expect(monitor === undefined).assertTrue();
+        const readMonitor = (monitor: IMonitor): boolean => monitor !== undefined;
+        expect(readMonitor !== undefined).assertTrue();
       }
     );
     /**
@@ -685,8 +685,8 @@ export default function StaticCoverageDecoratorTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        let source: LinkSourceType<int> | undefined = undefined;
-        expect(source === undefined).assertTrue();
+        const readSource = (source: LinkSourceType<int>): boolean => source !== undefined;
+        expect(readSource !== undefined).assertTrue();
       }
     );
     /**
@@ -735,8 +735,8 @@ export default function StaticCoverageDecoratorTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        let observed: IObservedObject | undefined = undefined;
-        expect(observed === undefined).assertTrue();
+        const readObserved = (observed: IObservedObject): boolean => observed !== undefined;
+        expect(readObserved !== undefined).assertTrue();
       }
     );
     /**
@@ -818,7 +818,9 @@ export default function StaticCoverageDecoratorTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        const callback: MonitorCallback = (_monitor: IMonitor): void => {};
+        const callback: MonitorCallback = (_monitor: IMonitor): void => {
+          console.info(`[ARKUI_NEW] monitor dirty: ${_monitor.dirty.length}`);
+        };
         expect(callback !== undefined).assertTrue();
       }
     );
@@ -961,7 +963,9 @@ export default function StaticCoverageDecoratorTest(): void {
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
         const options: CustomEnvOptions<int> = {
-          watchFunc: (_propertyName: string): void => {}
+          watchFunc: (_propertyName: string): void => {
+            console.info(`[ARKUI_NEW] watch: ${_propertyName}`);
+          }
         };
         expect(options.watchFunc !== undefined).assertTrue();
       }
