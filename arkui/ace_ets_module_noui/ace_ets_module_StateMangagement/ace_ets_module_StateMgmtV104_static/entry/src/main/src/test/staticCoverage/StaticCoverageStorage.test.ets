@@ -709,7 +709,8 @@ export default function StaticCoverageStorageTest(): void {
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
         PersistenceV2.remove('static_coverage_missing_key');
-        expect(true).assertTrue();
+        expect(contains(
+          PersistenceV2.keys(), 'static_coverage_missing_key')).assertFalse();
       }
     );
     /**
