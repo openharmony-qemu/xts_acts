@@ -185,6 +185,7 @@ export const GetGlyphRangeForCharacterRangeWithEncodingTest_006: () => number;
 export const GetGlyphRangeForCharacterRangeWithEncodingTest_007: () => number;
 export const GetGlyphRangeForCharacterRangeWithEncodingTest_008: () => number;
 export const GetGlyphRangeForCharacterRangeWithEncodingTest_009: () => number;
+export const GetGlyphRangeForCharacterRangeWithEncodingTest_010: () => number;
 
 export const GetCharacterRangeForGlyphRangeWithEncodingTest_001: () => number;
 export const GetCharacterRangeForGlyphRangeWithEncodingTest_002: () => number;
@@ -195,6 +196,7 @@ export const GetCharacterRangeForGlyphRangeWithEncodingTest_006: () => number;
 export const GetCharacterRangeForGlyphRangeWithEncodingTest_007: () => number;
 export const GetCharacterRangeForGlyphRangeWithEncodingTest_008: () => number;
 export const GetCharacterRangeForGlyphRangeWithEncodingTest_009: () => number;
+export const GetCharacterRangeForGlyphRangeWithEncodingTest_010: () => number;
 
 export const GetCharacterPositionAtCoordinateWithEncodingTest_001: () => number;
 export const GetCharacterPositionAtCoordinateWithEncodingTest_002: () => number;
