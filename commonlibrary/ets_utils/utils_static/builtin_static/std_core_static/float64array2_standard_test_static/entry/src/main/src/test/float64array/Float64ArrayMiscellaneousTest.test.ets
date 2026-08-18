@@ -681,30 +681,12 @@ export default function Float64ArrayMiscellaneousTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_3600
      * @tc.name testFloat64ArrayMiscellaneous036
-     * @tc.desc Verify from with mapFn returning constant
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayMiscellaneous036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Float64Array = Float64Array.from([1.0, 2.0, 3.0], (): number => 7.0);
-      const actualElement0 = arr.$_get(0);
-      const expectedElement0: number = 7.0;
-      expect(actualElement0).assertEqual(expectedElement0);
-      const actualElement2 = arr.$_get(2);
-      const expectedElement2: number = 7.0;
-      expect(actualElement2).assertEqual(expectedElement2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_3700
-     * @tc.name testFloat64ArrayMiscellaneous037
      * @tc.desc Verify from array with NaN/Infinity elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = Float64Array.from([NaN, Infinity]);
       expect(arr.$_get(0)).assertNaN();
       const actualElement1 = arr.$_get(1);
@@ -713,14 +695,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_3800
-     * @tc.name testFloat64ArrayMiscellaneous038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_3700
+     * @tc.name testFloat64ArrayMiscellaneous037
      * @tc.desc Verify reduce callback array parameter byteLength equals 24 for 3-element Float64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([1.0, 2.0, 3.0]);
       let capturedByteLen: number = 0;
       arr.reduce((sum: number, val: number, idx: int, ary: Float64Array): number => {
@@ -733,14 +715,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_3900
-     * @tc.name testFloat64ArrayMiscellaneous039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_3800
+     * @tc.name testFloat64ArrayMiscellaneous038
      * @tc.desc Verify reduce callback throw does not change array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fourValue: number = 4;
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       try {
@@ -761,14 +743,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4000
-     * @tc.name testFloat64ArrayMiscellaneous040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_3900
+     * @tc.name testFloat64ArrayMiscellaneous039
      * @tc.desc Verify reduceRight callback array parameter byteLength equals 24 for 3-element Float64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([1.0, 2.0, 3.0]);
       let capturedByteLen: number = 0;
       arr.reduceRight((prev: number, curr: number, idx: int, ary: Float64Array): number => {
@@ -781,14 +763,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4100
-     * @tc.name testFloat64ArrayMiscellaneous041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4000
+     * @tc.name testFloat64ArrayMiscellaneous040
      * @tc.desc Verify reduceRight callback throw does not change array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fourValue: number = 4;
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       try {
@@ -809,14 +791,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4200
-     * @tc.name testFloat64ArrayMiscellaneous042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4100
+     * @tc.name testFloat64ArrayMiscellaneous041
      * @tc.desc Verify Float64Array join returns comma-separated values by default
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       const actualString = arr.join();
       const expectedString: string = '1,2,3';
@@ -824,14 +806,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4300
-     * @tc.name testFloat64ArrayMiscellaneous043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4200
+     * @tc.name testFloat64ArrayMiscellaneous042
      * @tc.desc Verify Float64Array join uses the provided separator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       const actualString = arr.join('-');
       const expectedString: string = '1-2-3';
@@ -839,14 +821,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4400
-     * @tc.name testFloat64ArrayMiscellaneous044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4300
+     * @tc.name testFloat64ArrayMiscellaneous043
      * @tc.desc Verify Float64Array toString returns comma-separated values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0]);
       const actualString = arr.toString();
       const expectedString: string = '1,2';
@@ -854,14 +836,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4500
-     * @tc.name testFloat64ArrayMiscellaneous045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4400
+     * @tc.name testFloat64ArrayMiscellaneous044
      * @tc.desc Verify Float64Array toString returns a single value for a single-element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([5.0]);
       const actualString = arr.toString();
       const expectedString: string = '5';
@@ -869,14 +851,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4600
-     * @tc.name testFloat64ArrayMiscellaneous046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4500
+     * @tc.name testFloat64ArrayMiscellaneous045
      * @tc.desc Verify Float64Array valueOf returns the same mutable object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       const r: Float64Array = arr.valueOf();
       r.$_set(0, 99.0);
@@ -886,14 +868,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4700
-     * @tc.name testFloat64ArrayMiscellaneous047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4600
+     * @tc.name testFloat64ArrayMiscellaneous046
      * @tc.desc Verify Float64Array every visits positive elements with index callback input
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let sumIndex: number = 0;
       const r: boolean = arr.every((v: number, i: int): boolean => {
@@ -907,28 +889,28 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4800
-     * @tc.name testFloat64ArrayMiscellaneous048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4700
+     * @tc.name testFloat64ArrayMiscellaneous047
      * @tc.desc Verify Float64Array some returns true when a later element matches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([5.0, 6.0, 7.0]);
       const r: boolean = arr.some((v: number): boolean => v > 6);
       expect(r).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4900
-     * @tc.name testFloat64ArrayMiscellaneous049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4800
+     * @tc.name testFloat64ArrayMiscellaneous048
      * @tc.desc Verify Float64Array forEach visits each value for accumulation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let sum: number = 0;
       arr.forEach((v: number): void => {
@@ -940,14 +922,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5000
-     * @tc.name testFloat64ArrayMiscellaneous050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_4900
+     * @tc.name testFloat64ArrayMiscellaneous049
      * @tc.desc Verify Float64Array map returns constant values for all elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const r: Float64Array = arr.map((v: number): number => 5.0);
       const actualLength = r.length;
@@ -962,14 +944,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5100
-     * @tc.name testFloat64ArrayMiscellaneous051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5000
+     * @tc.name testFloat64ArrayMiscellaneous050
      * @tc.desc Verify Float64Array map preserves NaN callback results and default byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0]);
       const r: Float64Array = arr.map((v: number): number => NaN);
       expect(r.$_get(0)).assertNaN();
@@ -979,14 +961,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5200
-     * @tc.name testFloat64ArrayMiscellaneous052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5100
+     * @tc.name testFloat64ArrayMiscellaneous051
      * @tc.desc Verify Float64Array filter returns all elements when callback is always true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const r: Float64Array = arr.filter((v: number): boolean => true);
       const actualLength = r.length;
@@ -995,14 +977,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5300
-     * @tc.name testFloat64ArrayMiscellaneous053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5200
+     * @tc.name testFloat64ArrayMiscellaneous052
      * @tc.desc Verify Float64Array filter returns an empty typed array when callback is always false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const r: Float64Array = arr.filter((v: number): boolean => false);
       const actualLength = r.length;
@@ -1014,14 +996,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5400
-     * @tc.name testFloat64ArrayMiscellaneous054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5300
+     * @tc.name testFloat64ArrayMiscellaneous053
      * @tc.desc Verify Float64Array filter can select even index positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0]);
       const r: Float64Array = arr.filter((v: number, i: int): boolean => i % 2 === 0);
       const actualLength = r.length;
@@ -1036,14 +1018,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5500
-     * @tc.name testFloat64ArrayMiscellaneous055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5400
+     * @tc.name testFloat64ArrayMiscellaneous054
      * @tc.desc Verify Float64Array reduce accumulates all values with an initial value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0, 3.0]);
       let calls: number = 0;
       const r: number = arr.reduce((acc: number, v: number): number => {
@@ -1059,14 +1041,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5600
-     * @tc.name testFloat64ArrayMiscellaneous056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5500
+     * @tc.name testFloat64ArrayMiscellaneous055
      * @tc.desc Verify repeated Float64Array $_set calls keep the latest value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array(1);
       arr.$_set(0, 1.0);
       arr.$_set(0, 2.0);
@@ -1077,14 +1059,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5700
-     * @tc.name testFloat64ArrayMiscellaneous057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5600
+     * @tc.name testFloat64ArrayMiscellaneous056
      * @tc.desc Verify Float64Array toLocaleString returns exact numeric string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.0, 2.0]);
       const r: string = arr.toLocaleString('en-US');
       const actualResult = r;
@@ -1093,14 +1075,14 @@ export default function Float64ArrayMiscellaneousTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5800
-     * @tc.name testFloat64ArrayMiscellaneous058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MISCELLANEOUS_5700
+     * @tc.name testFloat64ArrayMiscellaneous057
      * @tc.desc Verify business pipeline call order handles critical static values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayMiscellaneous058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayMiscellaneous057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const metrics: Float64Array = new Float64Array(0x4);
       metrics.$_set(0, 1e-308);
       metrics.$_set(0b1, 3.0);
