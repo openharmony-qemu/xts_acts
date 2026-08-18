@@ -166,6 +166,11 @@
 			 it("testGetOAIDByCallback_17300001", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
 				 try {
 					 oaid.getOAID((error, result) => {
+						 if (error.message) {
+							hilog.error(Domain, TAG, 'Callback GetOAID error, error code is %{public}d, error message is %{public}s.', error.code, error.message);
+							expect().assertFail();
+							done();
+						}
 						 expect(result.length > 0).assertEqual(true);
 						 done();
 					 });
