@@ -3,7 +3,7 @@
         "general": [],
         "custom": [
             {
-                "xts": "SystemCapability.ArkUI.ArkUI.Full"
+                "xts": ["SystemCapability.ArkUI.ArkUI.Full"]
     
             }
         ]
