@@ -327,9 +327,9 @@ export default function wifiManagerTest() {
         expect(typeof data.networkId === 'number').assertTrue();
         console.log(`${caseName} get result data.frequency is`, typeof data.frequency);
         expect(typeof data.frequency === 'number').assertTrue();
-        // console.log(`${caseName} get result data.clientDevices is`, typeof data.clientDevices);
-        // console.log(`${caseName} get result data.clientDevices is`, data.clientDevices);
-        // expect(Array.isArray(data.clientDevices)).assertTrue();
+        console.log(`${caseName} get result data.clientDevices is`, typeof data.clientDevices);
+        console.log(`${caseName} get result data.clientDevices is`, data.clientDevices);
+        expect(Array.isArray(data.clientDevices)).assertTrue();
         console.log(`${caseName} get result data.goIpAddress is`, typeof data.goIpAddress);
         expect(typeof data.goIpAddress === 'string').assertTrue();
         // console.log(`${caseName} get result data.gcIpAddress is`, typeof data.gcIpAddress);
