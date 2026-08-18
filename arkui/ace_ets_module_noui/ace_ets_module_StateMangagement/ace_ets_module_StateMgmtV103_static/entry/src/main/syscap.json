@@ -4,7 +4,9 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.ArkUI.ArkUI.Full"
+                    "SystemCapability.ArkUI.ArkUI.Full",
+                    "SystemCapability.ArkUI.ArkUI.Lite",
+                    "SystemCapability.ArkUI.ArkUI.Circle"
                 ]
             }
         ]
