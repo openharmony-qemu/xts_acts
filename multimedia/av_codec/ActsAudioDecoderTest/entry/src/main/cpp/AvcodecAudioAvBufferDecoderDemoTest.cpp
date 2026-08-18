@@ -21,7 +21,7 @@
 #include <iostream>
 #include <multimedia/player_framework/native_avcodec_audiocodec.h>
 #include <multimedia/player_framework/native_avdemuxer.h>
-#include <sys/stat.h>gi
+#include <sys/stat.h>
 #include <unistd.h>
 #include "include/CommonToolTest.h"
 #include "include/avcodec_codec_name.h"
