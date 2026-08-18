@@ -97,9 +97,9 @@ it('SelectJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
         expect(obj.getElement('$attrs').getString('selectedOptionBgColor')).assertEqual('#FF808080');
         expect(obj.getElement('$attrs').getString('selectedOptionFont')).assertEqual('{"size":"16.00fp","weight":"400","family":"","style":"FontStyle.Normal"}');
         expect(obj.getElement('$attrs').getString('selectedOptionFontColor')).assertEqual('#FFFF0000');
-        expect(obj.getElement('$attrs').getString('optionBgColor')).assertEqual('#FF808080');
+        expect(obj.getElement('$attrs').getString('optionBgColor')).assertEqual('#FFFFFFFF');
         expect(obj.getElement('$attrs').getString('optionFont')).assertEqual('{"size":"16.00fp","weight":"400","family":"","style":"FontStyle.Normal"}');
-        expect(obj.getElement('$attrs').getString('optionFontColor')).assertEqual('#FFFF0000');
+        expect(obj.getElement('$attrs').getString('optionFontColor')).assertEqual('#FF008000');
         expect(obj1.getElement('$attrs').getString('content')).assertEqual('indexValue:0');
 
       console.info('[SelectJsunit_0100] END');
@@ -253,9 +253,9 @@ it('SelectJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
         expect(obj.getElement('$attrs').getString('selectedOptionBgColor')).assertEqual('#33007DFF');
         expect(obj.getElement('$attrs').getString('selectedOptionFont')).assertEqual('{"size":"16.00fp","weight":"500","family":"","style":"FontStyle.Normal"}');
         expect(obj.getElement('$attrs').getString('selectedOptionFontColor')).assertEqual('#FF007DFF');
-        expect(obj.getElement('$attrs').getString('optionBgColor')).assertEqual('#33007DFF');
+        expect(obj.getElement('$attrs').getString('optionBgColor')).assertEqual('#FFFFFFFF');
         expect(obj.getElement('$attrs').getString('optionFont')).assertEqual('{"size":"16.00fp","weight":"500","family":"","style":"FontStyle.Normal"}');
-        expect(obj.getElement('$attrs').getString('optionFontColor')).assertEqual('#FF007DFF');
+        expect(obj.getElement('$attrs').getString('optionFontColor')).assertEqual('#FF00007B');
         expect(obj1.getElement('$attrs').getString('content')).assertEqual('indexValue:1');
 
       console.info('[SelectJsunit_0400] END');
