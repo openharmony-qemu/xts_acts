@@ -16,10 +16,6 @@
  */
 
 import {
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll,
   describe,
   expect,
   it,
@@ -27,20 +23,9 @@ import {
   Size,
   TestType,
 } from '../../../../hypium/index';
-import Utils from '../Util.test';
 
 export default function int16ArrayFillTestTwoTest(): void {
   describe('Int16ArrayFillTestTwoTest', (): void => {
-    beforeAll((): void => {});
-
-    beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(30);
-    });
-
-    afterEach((): void => {});
-
-    afterAll((): void => {});
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_0100
      * @tc.name testInt16ArrayFillTestTwo001
@@ -835,29 +820,12 @@ export default function int16ArrayFillTestTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_4500
      * @tc.name testInt16ArrayFillTestTwo045
-     * @tc.desc Verify fill(99, -10) negative index; start range; expect 99
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFillTestTwo045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3);
-      arr.fill(99, -10);
-      let actual1: number = arr.$_get(0);
-      expect(actual1).assertEqual(99);
-      let actual2: number = arr.$_get(2);
-      expect(actual2).assertEqual(99);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_4600
-     * @tc.name testInt16ArrayFillTestTwo046
      * @tc.desc Verify fill(88, 0) chained fill; start range; expect arr2.$_get(0)/arr2.$_get(2)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1: Int16Array = Int16Array.of(1, 2, 3);
       let arr2: Int16Array = Int16Array.of(1, 2, 3);
       arr1.fill(88, 0);
@@ -871,14 +839,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_4700
-     * @tc.name testInt16ArrayFillTestTwo047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_4600
+     * @tc.name testInt16ArrayFillTestTwo046
      * @tc.desc Verify fill(99, 0, 1) start/end range; expect 99/2/3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, 0, 1);
       let actual1: number = arr.$_get(0);
@@ -890,14 +858,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_4800
-     * @tc.name testInt16ArrayFillTestTwo048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_4700
+     * @tc.name testInt16ArrayFillTestTwo047
      * @tc.desc Verify fill(99, 0, 4) start/end range; expect 99/5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, 0, 4);
       let actual1: number = arr.$_get(0);
@@ -909,14 +877,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_4900
-     * @tc.name testInt16ArrayFillTestTwo049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_4800
+     * @tc.name testInt16ArrayFillTestTwo048
      * @tc.desc Verify fill(99, 0, 5) start/end range; expect 99
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, 0, 5);
       let actual1: number = arr.$_get(0);
@@ -926,14 +894,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5000
-     * @tc.name testInt16ArrayFillTestTwo050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_4900
+     * @tc.name testInt16ArrayFillTestTwo049
      * @tc.desc Verify fill(77, 1, e) start/end range; expect 1/77/4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       let e: int = 3;
       arr.fill(77, 1, e);
@@ -948,14 +916,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5100
-     * @tc.name testInt16ArrayFillTestTwo051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5000
+     * @tc.name testInt16ArrayFillTestTwo050
      * @tc.desc Verify fill(99, 0, -1) negative index; start/end range; expect 99/5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, 0, -1);
       let actual1: number = arr.$_get(0);
@@ -967,14 +935,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5200
-     * @tc.name testInt16ArrayFillTestTwo052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5100
+     * @tc.name testInt16ArrayFillTestTwo051
      * @tc.desc Verify fill(99, 0, -2) negative index; start/end range; expect 99/4/5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, 0, -2);
       let actual1: number = arr.$_get(0);
@@ -988,14 +956,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5300
-     * @tc.name testInt16ArrayFillTestTwo053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5200
+     * @tc.name testInt16ArrayFillTestTwo052
      * @tc.desc Verify fill(99, 1, -5) negative index; start/end range; expect 1/2/5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, 1, -5);
       let actual1: number = arr.$_get(0);
@@ -1007,14 +975,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5400
-     * @tc.name testInt16ArrayFillTestTwo054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5300
+     * @tc.name testInt16ArrayFillTestTwo053
      * @tc.desc Verify fill(99, 2, 6) start/end range; expect 1/2/99
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, 2, 6);
       let actual1: number = arr.$_get(0);
@@ -1028,14 +996,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5500
-     * @tc.name testInt16ArrayFillTestTwo055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5400
+     * @tc.name testInt16ArrayFillTestTwo054
      * @tc.desc Verify fill(99, 1, 100) start/end range; expect 1/99
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, 1, 100);
       let actual1: number = arr.$_get(0);
@@ -1047,14 +1015,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5600
-     * @tc.name testInt16ArrayFillTestTwo056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5500
+     * @tc.name testInt16ArrayFillTestTwo055
      * @tc.desc Verify fill(99, 0, -6) negative index; start/end range; expect 1/2/5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, 0, -6);
       let actual1: number = arr.$_get(0);
@@ -1066,14 +1034,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5700
-     * @tc.name testInt16ArrayFillTestTwo057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5600
+     * @tc.name testInt16ArrayFillTestTwo056
      * @tc.desc Verify fill(99, 2, 2) start/end range; expect 1/3/5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, 2, 2);
       let actual1: number = arr.$_get(0);
@@ -1085,14 +1053,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5800
-     * @tc.name testInt16ArrayFillTestTwo058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5700
+     * @tc.name testInt16ArrayFillTestTwo057
      * @tc.desc Verify fill(99, 3, 1) start/end range; expect 1/4/5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, 3, 1);
       let actual1: number = arr.$_get(0);
@@ -1104,14 +1072,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5900
-     * @tc.name testInt16ArrayFillTestTwo059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5800
+     * @tc.name testInt16ArrayFillTestTwo058
      * @tc.desc Verify fill(99, -1, -2) negative index; start/end range; expect 1/4/5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, -1, -2);
       let actual1: number = arr.$_get(0);
@@ -1123,14 +1091,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6000
-     * @tc.name testInt16ArrayFillTestTwo060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_5900
+     * @tc.name testInt16ArrayFillTestTwo059
      * @tc.desc Verify fill(99, 0, 0) start/end range; expect 1/5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, 0, 0);
       let actual1: number = arr.$_get(0);
@@ -1140,14 +1108,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6100
-     * @tc.name testInt16ArrayFillTestTwo061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6000
+     * @tc.name testInt16ArrayFillTestTwo060
      * @tc.desc Verify fill(99, -1, 0) negative index; start/end range; expect 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, -1, 0);
       let actual1: number = arr.$_get(4);
@@ -1155,14 +1123,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6200
-     * @tc.name testInt16ArrayFillTestTwo062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6100
+     * @tc.name testInt16ArrayFillTestTwo061
      * @tc.desc Verify fill(99, -4, -2) negative index; start/end range; expect 1/2/99
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5, 6);
       arr.fill(99, -4, -2);
       let actual1: number = arr.$_get(0);
@@ -1178,35 +1146,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6300
-     * @tc.name testInt16ArrayFillTestTwo063
-     * @tc.desc Verify fill(99, -3, -1) negative index; start/end range; expect 3/99/6
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFillTestTwo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5, 6);
-      arr.fill(99, -3, -1);
-      let actual1: number = arr.$_get(2);
-      expect(actual1).assertEqual(3);
-      let actual2: number = arr.$_get(3);
-      expect(actual2).assertEqual(99);
-      let actual3: number = arr.$_get(4);
-      expect(actual3).assertEqual(99);
-      let actual4: number = arr.$_get(5);
-      expect(actual4).assertEqual(6);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6400
-     * @tc.name testInt16ArrayFillTestTwo064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6200
+     * @tc.name testInt16ArrayFillTestTwo062
      * @tc.desc Verify fill(99, 0) empty array; start range; expect 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array();
       arr.fill(99, 0);
       let actual1: int = arr.length;
@@ -1214,14 +1161,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6500
-     * @tc.name testInt16ArrayFillTestTwo065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6300
+     * @tc.name testInt16ArrayFillTestTwo063
      * @tc.desc Verify fill(99, 0, 1) start/end range; expect 99
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(42);
       arr.fill(99, 0, 1);
       let actual1: number = arr.$_get(0);
@@ -1229,14 +1176,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6600
-     * @tc.name testInt16ArrayFillTestTwo066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6400
+     * @tc.name testInt16ArrayFillTestTwo064
      * @tc.desc Verify fill(99, 0, 0) start/end range; expect 42
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(42);
       arr.fill(99, 0, 0);
       let actual1: number = arr.$_get(0);
@@ -1244,14 +1191,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6700
-     * @tc.name testInt16ArrayFillTestTwo067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6500
+     * @tc.name testInt16ArrayFillTestTwo065
      * @tc.desc Verify fill(99, -1) negative index; start range; expect 99
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(42);
       arr.fill(99, -1);
       let actual1: number = arr.$_get(0);
@@ -1259,14 +1206,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6800
-     * @tc.name testInt16ArrayFillTestTwo068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6600
+     * @tc.name testInt16ArrayFillTestTwo066
      * @tc.desc Verify fill(99) returns this
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3);
       let result: Int16Array = arr.fill(99);
       let actual1: boolean = result === arr;
@@ -1274,14 +1221,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6900
-     * @tc.name testInt16ArrayFillTestTwo069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6700
+     * @tc.name testInt16ArrayFillTestTwo067
      * @tc.desc Verify fill(88, 0, 2) start/end range; expect 77
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3);
       let returned: Int16Array = arr.fill(88, 0, 2);
       returned.$_set(0, 77);
@@ -1290,14 +1237,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7000
-     * @tc.name testInt16ArrayFillTestTwo070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6800
+     * @tc.name testInt16ArrayFillTestTwo068
      * @tc.desc Verify fill(99, 0, 2).reverse() chain reverse; start/end range; expect 4/3/99
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4);
       arr.fill(99, 0, 2).reverse();
       let actual1: number = arr.$_get(0);
@@ -1311,14 +1258,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7100
-     * @tc.name testInt16ArrayFillTestTwo071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_6900
+     * @tc.name testInt16ArrayFillTestTwo069
      * @tc.desc Verify fill(1, 0, 2).fill(2, 3, 5) chained fill; start/end range; expect 1/0/2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(0, 0, 0, 0, 0);
       arr.fill(1, 0, 2).fill(2, 3, 5);
       let actual1: number = arr.$_get(0);
@@ -1334,14 +1281,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7200
-     * @tc.name testInt16ArrayFillTestTwo072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7000
+     * @tc.name testInt16ArrayFillTestTwo070
      * @tc.desc Verify fill(0, 1, 4) start/end range; expect 1/0/5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       let ret: Int16Array = arr.fill(0, 1, 4);
       let actual1: number = ret.$_get(0);
@@ -1355,14 +1302,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7300
-     * @tc.name testInt16ArrayFillTestTwo073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7100
+     * @tc.name testInt16ArrayFillTestTwo071
      * @tc.desc Verify fill(10, 0, 1) chained fill; returns this; start/end range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3);
       let ret1: Int16Array = arr.fill(10, 0, 1);
       let ret2: Int16Array = ret1.fill(20, 1, 2);
@@ -1372,14 +1319,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7400
-     * @tc.name testInt16ArrayFillTestTwo074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7200
+     * @tc.name testInt16ArrayFillTestTwo072
      * @tc.desc Verify fill(32768) int16 wrap/overflow; buffer shared view; expect -32768
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(4);
       let arr: Int16Array = new Int16Array(buf);
       arr.fill(32768);
@@ -1390,14 +1337,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7500
-     * @tc.name testInt16ArrayFillTestTwo075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7300
+     * @tc.name testInt16ArrayFillTestTwo073
      * @tc.desc Verify fill(32768, 1, 3) int16 wrap/overflow; start/end range; expect 10/-32768/40
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(10, 20, 30, 40);
       arr.fill(32768, 1, 3);
       let actual1: number = arr.$_get(0);
@@ -1411,14 +1358,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7600
-     * @tc.name testInt16ArrayFillTestTwo076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7400
+     * @tc.name testInt16ArrayFillTestTwo074
      * @tc.desc Verify fill(Number.NaN, 1, 2) NaN truncates to 0; start/end range; expect 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 1, 1);
       arr.fill(Number.NaN, 1, 2);
       let actual1: number = arr.$_get(1);
@@ -1426,14 +1373,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7700
-     * @tc.name testInt16ArrayFillTestTwo077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7500
+     * @tc.name testInt16ArrayFillTestTwo075
      * @tc.desc Verify fill(Number.POSITIVE_INFINITY, 0, 1) Infinity truncates to 0; start/end range; expect 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 1, 1);
       arr.fill(Number.POSITIVE_INFINITY, 0, 1);
       let actual1: number = arr.$_get(0);
@@ -1441,14 +1388,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7800
-     * @tc.name testInt16ArrayFillTestTwo078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7600
+     * @tc.name testInt16ArrayFillTestTwo076
      * @tc.desc Verify fill(3.7) float truncation; chained fill; expect arr2.$_get(0)/arr2.$_get(1)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1: Int16Array = Int16Array.of(0, 0);
       let arr2: Int16Array = Int16Array.of(0, 0);
       arr1.fill(3.7);
@@ -1462,14 +1409,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7900
-     * @tc.name testInt16ArrayFillTestTwo079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7700
+     * @tc.name testInt16ArrayFillTestTwo077
      * @tc.desc Verify fill(16, 1, 4) start/end range; expect 16
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(0, 0, 0, 0, 0);
       arr.fill(16, 1, 4);
       let sliced: Int16Array = arr.slice(1, 4);
@@ -1480,14 +1427,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_8000
-     * @tc.name testInt16ArrayFillTestTwo080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7800
+     * @tc.name testInt16ArrayFillTestTwo078
      * @tc.desc Verify fill(25, 1, 3) then sort(); expect sorted 20/25/25/40/50
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(50, 10, 30, 20, 40);
       arr.fill(25, 1, 3);
       arr.sort();
@@ -1504,14 +1451,14 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_8100
-     * @tc.name testInt16ArrayFillTestTwo081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_7900
+     * @tc.name testInt16ArrayFillTestTwo079
      * @tc.desc Verify fill(99, 2, 4) start/end range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFillTestTwo081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFillTestTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       arr.fill(99, 2, 4);
       let count: int = 0;
