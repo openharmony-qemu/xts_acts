@@ -206,10 +206,9 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1100, LEVEL0)
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1200, LEVEL0)
 {
-    void (*flushFunc)(boolean) = HiLogFlush;
-    TEST_ASSERT_TRUE(flushFunc != NULL);
-    flushFunc(TRUE);
-    flushFunc(FALSE);
+    /* 直接调用 API 验证行为，不做函数指针恒真断言 */
+    HiLogFlush(TRUE);
+    HiLogFlush(FALSE);
 };
 
 /**
@@ -291,10 +290,9 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1600, LEVEL0)
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1700, LEVEL0)
 {
-    void (*removeWatcherFunc)(FileProc) = HiLogFileRemoveWatcher;
-    TEST_ASSERT_TRUE(removeWatcherFunc != NULL);
-    removeWatcherFunc(HilogFileWatcher);
-    removeWatcherFunc(NULL);
+    /* 直接调用 API 验证行为，不做函数指针恒真断言 */
+    HiLogFileRemoveWatcher(HilogFileWatcher);
+    HiLogFileRemoveWatcher(NULL);
 };
 
 /**
@@ -326,9 +324,8 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1800, LEVEL0)
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1900, LEVEL0)
 {
-    void (*lockFunc)(void) = HiLogOutputFileLock;
-    TEST_ASSERT_TRUE(lockFunc != NULL);
-    lockFunc();
+    /* 直接调用 API 验证行为，不做函数指针恒真断言 */
+    HiLogOutputFileLock();
     HiLogOutputFileUnLock();
 };
 
@@ -342,11 +339,9 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1900, LEVEL0)
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2000, LEVEL0)
 {
-    void (*unlockFunc)(void) = HiLogOutputFileUnLock;
-    TEST_ASSERT_TRUE(unlockFunc != NULL);
-    unlockFunc();
+    /* 直接调用 API 验证行为，不做函数指针恒真断言 */
+    HiLogOutputFileUnLock();
     HiLogOutputFileLock();
-    unlockFunc();
 };
 
 /**

@@ -751,10 +751,10 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetBootCount,
                Function | MediumTest | Level1)
 {
-    /* ws63 mini 系统未维护 persist.startup.bootcount，实测恒为 0 */
+    /* 启动次数与板卡维护状态相关，不写死具体值，断言非负即可（API 契约） */
     int value1 = GetBootCount();
     printf("BootCount=%d\n", value1);
-    TEST_ASSERT_EQUAL_INT(0, value1);
+    TEST_ASSERT_TRUE(value1 >= 0);
     int value2 = GetBootCount();
     TEST_ASSERT_EQUAL_INT(value1, value2);
 };
