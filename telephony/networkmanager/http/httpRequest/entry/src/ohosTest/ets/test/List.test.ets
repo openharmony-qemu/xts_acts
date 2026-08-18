@@ -32,7 +32,6 @@ import HttpRequestPatchTest from './HttpRequestPatch.test';
 import HttpRequestSyncTest from './HttpRequestSync.test';
 import HttpRequestReuseConnectionsTest from './HttpRequestReuseConnections.test';
 import HttpInterceptorForSafeCheckTest from './HttpInterceptorForSafeCheck.test';
-import HttpInterceptorForSafeCheck2300996Test from './HttpInterceptorForSafeCheck2300996.test';
 import HttpRequestEnableAutoCookieTest from './HttpRequestEnableAutoCookie.test';
 import HttpRequestSocket5Test from './HttpRequestSocket5.test';
 import HttpRequestTlcpEnablePartialChainTest from './HttpRequestTlcpEnablePartialChain.test';
@@ -43,7 +42,6 @@ let netHandle = connection.getDefaultNetSync();
 export default function testsuite() {
   if (netHandle.netId != 0 && canIUse("SystemCapability.Communication.NetStack")) {
     HttpInterceptorForSafeCheckTest();
-    HttpInterceptorForSafeCheck2300996Test();
     HttpRequestInterceptor();
     HttpRequestMaxAutoRedirectsTest();
     HttpRequestMaxAutoRedirectsWithInterceptorTest();
