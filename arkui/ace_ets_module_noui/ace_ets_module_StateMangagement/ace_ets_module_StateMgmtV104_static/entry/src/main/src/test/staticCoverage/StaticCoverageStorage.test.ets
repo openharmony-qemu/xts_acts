@@ -674,8 +674,14 @@ export default function StaticCoverageStorageTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        PersistenceV2.save('static_coverage_missing_key');
-        expect(true).assertTrue();
+        let saved: boolean = false;
+        try {
+          PersistenceV2.save('static_coverage_missing_key');
+          saved = true;
+        } catch (_error) {
+          saved = false;
+        }
+        expect(saved).assertTrue();
       }
     );
     /**
@@ -692,7 +698,8 @@ export default function StaticCoverageStorageTest(): void {
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
         PersistenceV2.notifyOnError(undefined);
-        expect(true).assertTrue();
+        expect(!contains(
+          PersistenceV2.keys(), 'static_coverage_missing_key')).assertTrue();
       }
     );
     /**
