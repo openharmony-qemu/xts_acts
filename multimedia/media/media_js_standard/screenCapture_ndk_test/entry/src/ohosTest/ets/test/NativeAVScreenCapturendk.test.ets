@@ -1553,5 +1553,26 @@ export default function nativeAVScreenCaptureNdkTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_VIRTUAL_EXTENDED_SCREEN_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_VIRTUAL_EXTENDED_SCREEN_0100
+     * @tc.desc   OH_AVScreenCapture_StartScreenRecording with OH_CAPTURE_VIRTUAL_EXTENDED_SCREEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_VIRTUAL_EXTENDED_SCREEN_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(Tag + "virtualExtendedScreenRecordTest-------------before click:");
+      let result: number = myScreenCaptureNdk.virtualExtendedScreenRecordTest();
+      console.info(Tag + "virtualExtendedScreenRecordTest-------------result:" + result);
+      expect(result).assertEqual(0);
+      let isShowDialog: number = await Utils.btnTextScreenCapture();
+      let resultStop: number = myScreenCaptureNdk.virtualExtendedScreenRecordTestStop();
+      console.info(Tag + "virtualExtendedScreenRecordTestStop-------------resultStop:" + resultStop);
+      expect(resultStop).assertEqual(0);
+      expect(isShowDialog).assertEqual(0);
+      done();
+    });
   })
 }
