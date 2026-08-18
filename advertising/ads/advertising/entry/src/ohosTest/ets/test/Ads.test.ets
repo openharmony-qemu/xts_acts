@@ -21,6 +21,7 @@ import advertising from '@ohos.advertising';
 import webview from '@ohos.web.webview';
 import MyController from './MyController'
 import Utils from './Utils';
+import { RespCallback } from '@kit.AdsKit';
 
 const TAG: string = 'AdTestTag';
 const Domain: number = 0x0000;
@@ -325,9 +326,17 @@ export default function adsTest() {
       }
       let adInteractionListener: advertising.AdInteractionListener = {
         onStatusChanged: (status: string, ad: advertising.Advertisement, data: string) => {
-          hilog.debug(Domain, TAG, `get the status is ${status}, ad is : ${ad}, data is : ${data}`);
-        }
-      };
+          hilog.info(Domain, TAG, `get the status is ${status}, ad is : ${ad}, data is : ${data}`);
+          if (status == '1'){
+            expect(ad == null).assertEqual(true);
+          }else{
+            expect(status.startsWith('on')).assertEqual(true);
+            expect(ad != null).assertEqual(true);
+            expect(ad != undefined).assertEqual(true);
+          }
+          expect(data == 'dataInfo').assertEqual(true);
+          }
+        };
 
       commonEventManager.createSubscriber(subscribeInfo, (err, data) => {
         if (err) {
@@ -674,6 +683,46 @@ export default function adsTest() {
         done();
       } catch (e) {
         hilog.error(Domain, TAG, 'tesRegisterWebAdInterface_three_param deleteWebAdInterface error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
+        expect(e.code).assertLarger(0);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name tesRegisterWebAdInterface_three_param_null
+     * @tc.number SUB_CLOUD_AD_REGISTER_WEB_INTERFACE_1820
+     * @tc.desc tesRegisterWebAdInterface_three_param_null.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("tesRegisterWebAdInterface_three_param_null", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let webController: webview.WebviewController = new webview.WebviewController();
+        advertising.registerWebAdInterface(webController, uiContext, null);
+        done();
+      } catch (e) {
+        hilog.error(Domain, TAG, 'tesRegisterWebAdInterface_three_param_null deleteWebAdInterface error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
+        expect(e.code).assertLarger(0);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name tesRegisterWebAdInterface_three_param_undefined
+     * @tc.number SUB_CLOUD_AD_REGISTER_WEB_INTERFACE_1840
+     * @tc.desc tesRegisterWebAdInterface_three_param_undefined.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("tesRegisterWebAdInterface_three_param_undefined", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let webController: webview.WebviewController = new webview.WebviewController();
+        advertising.registerWebAdInterface(webController, uiContext, undefined);
+        done();
+      } catch (e) {
+        hilog.error(Domain, TAG, 'tesRegisterWebAdInterface_three_param_undefined deleteWebAdInterface error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
         expect(e.code).assertLarger(0);
         done();
       }
@@ -1303,6 +1352,122 @@ export default function adsTest() {
       } catch (e) {
         hilog.error(Domain, TAG, 'testDeleteWebAdInterfaceErrorParam deleteWebAdInterface error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
         expect(e.code).assertLarger(0);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name testDeleteWebAdInterfaceSecondParamNull
+     * @tc.number SUB_CLOUD_AD_DELETE_WEB_INTERFACE_4100
+     * @tc.desc testDeleteWebAdInterfaceSecondParamNull
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testDeleteWebAdInterfaceSecondParamNull", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (done: Function) => {
+      try {
+        hilog.info(Domain, TAG, 'enter testDeleteWebAdInterfaceSecondParamNull');
+        let webController: webview.WebviewController = new webview.WebviewController();
+        advertising.deleteWebAdInterface(webController, null);
+        done();
+      } catch (e) {
+        hilog.error(Domain, TAG, 'testDeleteWebAdInterfaceSecondParamNull deleteWebAdInterface error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
+        expect(e.code).assertLarger(0);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name testDeleteWebAdInterfaceSecondParamUndefined
+     * @tc.number SUB_CLOUD_AD_DELETE_WEB_INTERFACE_4200
+     * @tc.desc testDeleteWebAdInterfaceSecondParamUndefined
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testDeleteWebAdInterfaceSecondParamUndefined", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (done: Function) => {
+      try {
+        hilog.info(Domain, TAG, 'enter testDeleteWebAdInterfaceSecondParamUndefined');
+        let webController: webview.WebviewController = new webview.WebviewController();
+        advertising.deleteWebAdInterface(webController, undefined);
+        done();
+      } catch (e) {
+        hilog.error(Domain, TAG, 'testDeleteWebAdInterfaceSecondParamUndefined deleteWebAdInterface error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
+        expect(e.code).assertLarger(0);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name testRespCallback
+     * @tc.number SUB_CLOUD_AD_RESP_CALLBACK_INTERFACE_4300
+     * @tc.desc testRespCallback
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testRespCallback", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (done: Function) => {
+      try {
+        hilog.info(Domain, TAG, 'enter testRespCallback');
+        let respCallback: RespCallback = (data: Map<string, Array<advertising.Advertisement>>) => {
+          hilog.info(Domain, TAG, `RespCallback called with data: ${data}`);
+          expect(data != null).assertEqual(true);
+        };
+        const respData: Map<string, Array<advertising.Advertisement>> = new Map();
+        respData.set('testAd', [advertisement]);
+        respCallback(respData);
+        done();
+      } catch (e) {
+        hilog.error(Domain, TAG, 'testRespCallback RespCallback error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name testRespCallbackNullParam
+     * @tc.number SUB_CLOUD_AD_RESP_CALLBACK_INTERFACE_4400
+     * @tc.desc testRespCallback
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testRespCallbackNullParam", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (done: Function) => {
+      try {
+        hilog.info(Domain, TAG, 'enter testRespCallbackNullParam');
+        let respCallback: RespCallback = (data: Map<string, Array<advertising.Advertisement>>) => {
+          hilog.info(Domain, TAG, `RespCallback called with data: ${data}`);
+          expect(`${data}` == 'null').assertEqual(true);
+        };
+        respCallback(null);
+        done();
+      } catch (e) {
+        hilog.error(Domain, TAG, 'testRespCallbackNullParam RespCallback error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name testRespCallbackUndefinedParam
+     * @tc.number SUB_CLOUD_AD_RESP_CALLBACK_INTERFACE_4500
+     * @tc.desc testRespCallbackUndefinedParam
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testRespCallbackUndefinedParam", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (done: Function) => {
+      try {
+        hilog.info(Domain, TAG, 'enter testRespCallbackUndefinedParam');
+        let respCallback: RespCallback = (data: Map<string, Array<advertising.Advertisement>>) => {
+          hilog.info(Domain, TAG, `RespCallback called with data: ${data}`);
+          expect(`${data}` == 'undefined').assertEqual(true);
+        };
+        respCallback(undefined);
+        done();
+      } catch (e) {
+        hilog.error(Domain, TAG, 'testRespCallbackUndefinedParam RespCallback error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
+        expect().assertFail();
         done();
       }
     })

@@ -135,6 +135,51 @@
  	         expect(e != null).assertEqual(true);
  	       }
  	     })
- 	  
+
+			 /**
+				* @tc.name   testGetOAIDByPromise_17300001
+				* @tc.number SUB_CLOUD_OAID_GETOAID_0500
+				* @tc.desc   Get oaid by promise 17300001.
+				* @tc.type   FUNCTION
+				* @tc.size   LARGETEST
+				* @tc.level  LEVEL0
+				*/
+			 it("testGetOAIDByPromise_17300001", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
+				 let oaidResult: string = '';
+				 try {
+					 oaidResult = await oaid.getOAID();
+				 } catch (e) {
+					 hilog.error(Domain, TAG, 'Promise GetOAID error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
+					 expect(e.code).assertEqual(17300001);
+				 }
+				 expect(oaidResult.length > 0).assertEqual(true);
+				 done();
+			 })
+
+			 /**
+				* @tc.name   testGetOAIDByCallback_17300001
+				* @tc.number SUB_CLOUD_OAID_GETOAID_0600
+				* @tc.desc   Get oaid by callback 17300001.
+				* @tc.type   FUNCTION
+				* @tc.size   LARGETEST
+				* @tc.level  LEVEL0
+				*/
+			 it("testGetOAIDByCallback_17300001", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
+				 try {
+					 oaid.getOAID((error, result) => {
+						 if (error.message) {
+							hilog.error(Domain, TAG, 'Callback GetOAID error, error code is %{public}d, error message is %{public}s.', error.code, error.message);
+							expect().assertFail();
+							done();
+						}
+						 expect(result.length > 0).assertEqual(true);
+						 done();
+					 });
+				 } catch (e) {
+					 hilog.error(Domain, TAG, 'Callback GetOAID error, error code is %{public}d, error message is %{public}s.', e.code, e.message);
+					 expect(e.code).assertEqual(17300001);
+					 done();
+				 }
+			 })
  	   })
  	 }
