@@ -830,7 +830,8 @@ export default function StaticCoverageStorageTest(): void {
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
         PersistentStorage.deleteProp('static_coverage_missing_key');
-        expect(true).assertTrue();
+        expect(contains(
+          PersistentStorage.keys(), 'static_coverage_missing_key')).assertFalse();
       }
     );
     /**
