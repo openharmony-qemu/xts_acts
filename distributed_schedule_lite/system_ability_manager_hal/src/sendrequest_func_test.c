@@ -559,7 +559,7 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0100, Function | MediumTest 
 {
     Request request = {.msgId = MSG_NO, .msgValue = 0};
     Identity identity = {0, 0, NULL};
-    int32 result = SAMGR_SendRequest(NULL, &request, NULL);
+    int32_t result = SAMGR_SendRequest(NULL, &request, NULL);
     TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
     result = SAMGR_SendRequest(&identity, NULL, NULL);
     TEST_ASSERT_EQUAL_INT(EC_INVALID, result);

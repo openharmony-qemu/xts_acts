@@ -331,7 +331,7 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedRequest0050, Function |
 LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedDirectRequest0040, Function | MediumTest | Level2)
 {
     uint32 *ref = NULL;
-    int32 result = SAMGR_SendSharedDirectRequest(NULL, NULL, NULL, NULL, NULL);
+    int32_t result = SAMGR_SendSharedDirectRequest(NULL, NULL, NULL, NULL, NULL);
     TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
     result = SAMGR_SendSharedDirectRequest(NULL, NULL, NULL, &ref, NULL);
     TEST_ASSERT_EQUAL_INT(EC_INVALID, result);

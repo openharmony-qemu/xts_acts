@@ -458,7 +458,7 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0020, Function |
 LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0040, Function | MediumTest | Level2)
 {
     Response response = {.data = NULL, .len = 0};
-    int32 result = SAMGR_SendResponse(NULL, &response);
+    int32_t result = SAMGR_SendResponse(NULL, &response);
     TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
     result = SAMGR_SendResponse(NULL, NULL);
     TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
@@ -476,7 +476,7 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0030, Function |
 {
     Identity identity = {0, 0, NULL};
     Response response = {.data = NULL, .len = 0};
-    int32 result = SAMGR_SendResponseByIdentity(NULL, NULL, NULL);
+    int32_t result = SAMGR_SendResponseByIdentity(NULL, NULL, NULL);
     TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
     result = SAMGR_SendResponseByIdentity(&identity, NULL, &response);
     TEST_ASSERT_EQUAL_INT(EC_INVALID, result);

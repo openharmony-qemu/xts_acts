@@ -260,7 +260,7 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1800, Function | MediumTest | Leve
 {
     int ret = HotaRebootAndCleanCache();
     printf("HotaRebootAndCleanCache return = %d\r\n", ret);
-    /* ws63 实测 0 */
+    /* ws63 实测 0：无升级包时接口直接返回，不触发设备重启（258 条套件实测全程无中断） */
     TEST_ASSERT_EQUAL_INT(OHOS_SUCCESS, ret);
 };
 
@@ -276,7 +276,7 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1900, Function | MediumTest | Leve
 {
     int ret = HotaRebootAndCleanUserData();
     printf("HotaRebootAndCleanUserData return = %d\r\n", ret);
-    /* ws63 实测 0 */
+    /* ws63 实测 0：无升级包时接口直接返回，不触发设备重启（258 条套件实测全程无中断） */
     TEST_ASSERT_EQUAL_INT(OHOS_SUCCESS, ret);
 };
 
