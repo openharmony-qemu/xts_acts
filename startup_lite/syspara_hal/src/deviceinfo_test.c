@@ -28,13 +28,16 @@
 
 #define QUERY_TIMES 50
 
+/* 十进制基数（codecheck G.CNS.02 禁止魔数） */
+#define DECIMAL_BASE 10
+
 /* 从 fullname 版本段解析数字；不安全函数 sscanf 被 codecheck 禁止，改为逐字符解析 */
 static int ParseVersionNumber(const char **pp)
 {
     int num = 0;
     const char *p = *pp;
     while ((*p >= '0') && (*p <= '9')) {
-        num = num * 10 + (*p - '0');
+        num = num * DECIMAL_BASE + (*p - '0');
         p++;
     }
     *pp = p;
