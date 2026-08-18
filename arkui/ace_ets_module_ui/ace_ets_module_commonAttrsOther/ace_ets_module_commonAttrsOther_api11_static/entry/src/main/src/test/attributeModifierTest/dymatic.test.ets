@@ -45,7 +45,7 @@ let domain: number = 0x0000;
 let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-export default function dymaticTest() {
+export default function dymaticTest(): void {
   describe('dymaticTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("dymaticTest beforeAll start");

@@ -46,7 +46,7 @@ let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 
-export default function AttributeModifierDemoAPI01Jsunit() {
+export default function AttributeModifierDemoAPI01Jsunit(): void {
   describe('AttributeModifierDemoAPI01Jsunit', () => {
     beforeAll(async (): Promise<void> => {
       console.info("AttributeModifierDemoAPI01Jsunit beforeAll start");

@@ -49,7 +49,7 @@ let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 
-export default function OverlayUIJsunit() {
+export default function OverlayUIJsunit(): void {
   describe('OverlayUIJsunit', () => {
     beforeAll(async (): Promise<void> => {
       console.info("overLayJsunit beforeAll start");

@@ -46,7 +46,7 @@ let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 const uiContext = new UIContext();
 
-export default function outlineTest() {
+export default function outlineTest(): void {
   describe('outlineTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("outlineTest beforeAll start");

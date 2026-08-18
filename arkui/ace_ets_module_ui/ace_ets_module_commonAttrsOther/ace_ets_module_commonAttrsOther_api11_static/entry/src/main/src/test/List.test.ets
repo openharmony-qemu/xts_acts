@@ -29,8 +29,9 @@ import HoverJsunit17 from './HoverTest/HoverJsunit17.test';
 import HoverJsunit23 from './HoverTest/HoverJsunit23.test';
 import HoverJsunit25 from './HoverTest/HoverJsunit25.test';
 import OverlayUIJsunit from './overlayTest/OverlayUIJsunit.test';
+import onBackPress from './overlayTest/OnBackPress.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   noBarrierComponentsTest();
   noBarriersGroupTest();
   overLayJsunit();
@@ -47,4 +48,5 @@ export default function testsuite() {
   HoverJsunit25();
   OverlayUIJsunit();
   HoverJsunit5();
+  onBackPress();
 }

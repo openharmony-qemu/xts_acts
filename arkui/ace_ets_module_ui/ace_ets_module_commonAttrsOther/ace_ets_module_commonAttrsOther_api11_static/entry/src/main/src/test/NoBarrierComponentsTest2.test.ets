@@ -49,7 +49,7 @@ let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 const uiContext = new UIContext();
 
-export default function noBarrierComponentsTest() {
+export default function noBarrierComponentsTest(): void {
   describe('noBarrierComponentsTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("noBarrierComponentsTest beforeAll start");

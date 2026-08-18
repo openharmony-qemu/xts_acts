@@ -45,7 +45,7 @@ let domain: number = 0x0000;
 let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-export default function AttributeModifierDemoAPI03Jsunit() {
+export default function AttributeModifierDemoAPI03Jsunit(): void {
   describe('AttributeModifierDemoAPI03Jsunit', () => {
     beforeAll(async (): Promise<void> => {
       console.info("AttributeModifierDemoAPI03Jsunit beforeAll start");

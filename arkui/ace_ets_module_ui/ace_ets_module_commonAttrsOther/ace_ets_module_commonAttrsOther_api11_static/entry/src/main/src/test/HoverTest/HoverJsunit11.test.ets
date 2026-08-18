@@ -45,7 +45,7 @@ let domain: number = 0x0000;
 let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-export default function HoverJsunit11() {
+export default function HoverJsunit11(): void {
 
   describe('HoverJsunit11', () => {
     beforeAll(async (): Promise<void> => {

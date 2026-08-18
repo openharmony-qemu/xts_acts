@@ -34,7 +34,7 @@ export default class Utils {
     })
   }
 
-  static sendEvent(message: String, eventId: number) {
+  static sendEvent(message: String, eventId: number): void {
     // let eventData: emitter.EventData = {
     //   data: {
     //     "msg": message
@@ -48,7 +48,7 @@ export default class Utils {
   }
 
   //获取组件所占矩形区域坐标
-  static getComponentRect(key: String) {
+  static getComponentRect(key: String): RectValue {
     let strJson: String = inspector.getInspectorByKey(key);
     let obj: Record<String, undefined | null | Object> =
       JSON.parse<Object>(strJson, Class.from<String>()) as Record<String, undefined | null | Object>;
@@ -56,10 +56,10 @@ export default class Utils {
     let rectInfo: Array<Array<number>> =
       JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    Utils.rect_left = Number(rectInfo[0][0] ?? 0);
-    Utils.rect_top = Number(rectInfo[0][1] ?? 0);
-    Utils.rect_right = Number(rectInfo[1][0] ?? 0);
-    Utils.rect_bottom = Number(rectInfo[1][1] ?? 0);
+    Utils.rect_left = Number(rectInfo[0][0] );
+    Utils.rect_top = Number(rectInfo[0][1] );
+    Utils.rect_right = Number(rectInfo[1][0] );
+    Utils.rect_bottom = Number(rectInfo[1][1] );
     return Utils.rect_value = {
       left: Utils.rect_left,
       top: Utils.rect_top,

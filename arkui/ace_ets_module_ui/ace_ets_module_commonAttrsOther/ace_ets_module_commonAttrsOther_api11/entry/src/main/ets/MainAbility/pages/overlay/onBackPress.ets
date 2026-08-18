@@ -9,6 +9,7 @@
  */
 
 import { ComponentContent, OverlayManagerOptions } from '@kit.ArkUI'
+import { NodeIdentity } from '@ohos.arkui.UIContext'
 
 // ── 浮层参数 ──
 
@@ -57,8 +58,15 @@ struct OverlayBackPressSimpleDemo {
   @State showStatus: string = '无浮层'
   @State logText: string = ''
   @State stateNumber: number = 0
+  @State s1: NodeIdentity = '111'
+  @State s2: NodeIdentity = 3333
   private floatContent: ComponentContent<FloatParams> | null = null
   private optionsSet: boolean = false
+
+  onPageShow(): void {
+    AppStorage.setOrCreate<string>('NodeIdentity_sring', typeof this.s1)
+    AppStorage.setOrCreate<string>('NodeIdentity_number', typeof this.s2)
+  }
 
   addLog(msg: string): void {
     let now = new Date()
