@@ -37,8 +37,12 @@ export default class MainAbility extends UIAbility {
     console.log(`${TAG} MainAbility onWindowStageCreate windowStage=` + windowStage);
     AppStorage.setOrCreate('windowStage', windowStage);
     AppStorage.setOrCreate('context', this.context);
-    let legacyStage: ESObject = windowStage as ESObject;
-    legacyStage.setUIContent(this.context, 'MainAbility/pages/XTSIndex', null);
+    windowStage.loadContent('MainAbility/pages/XTSIndex', (err: BusinessError) => {
+      if (err.code) {
+        console.error('Failed to load the content. Cause: ' + JSON.stringify(err));
+        return;
+      }
+    });
     let windowClass: window.Window | undefined = undefined;
     windowStage.getMainWindow((err: BusinessError, data: window.Window) => {
       if (err.code) {
