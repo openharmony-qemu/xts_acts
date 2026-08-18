@@ -877,9 +877,6 @@ export default function int16ArraySubarrayTestFiveTest(): void {
       let actual1: int = sub.length;
       let expectedR1: int = 0;
       expect(actual1).assertEqual(expectedR1);
-      let actual2: int = sub.length;
-      let expectedR2: int = sub.length;
-      expect(actual2).assertEqual(expectedR2);
     });
 
     /**
@@ -896,9 +893,6 @@ export default function int16ArraySubarrayTestFiveTest(): void {
       let actual1: int = sub.length;
       let expectedR1: int = 0;
       expect(actual1).assertEqual(expectedR1);
-      let actual2: int = sub.length;
-      let expectedR2: int = sub.length;
-      expect(actual2).assertEqual(expectedR2);
     });
 
     /**
@@ -915,9 +909,6 @@ export default function int16ArraySubarrayTestFiveTest(): void {
       let actual1: int = sub.length;
       let expectedR1: int = 3;
       expect(actual1).assertEqual(expectedR1);
-      let actual2: int = sub.length;
-      let expectedR2: int = sub.length;
-      expect(actual2).assertEqual(expectedR2);
     });
 
     /**
@@ -934,9 +925,6 @@ export default function int16ArraySubarrayTestFiveTest(): void {
       let actual1: int = sub.length;
       let expectedR1: int = 0;
       expect(actual1).assertEqual(expectedR1);
-      let actual2: int = sub.length;
-      let expectedR2: int = sub.length;
-      expect(actual2).assertEqual(expectedR2);
     });
 
     /**
@@ -953,9 +941,6 @@ export default function int16ArraySubarrayTestFiveTest(): void {
       let actual1: int = sub.length;
       let expectedR1: int = 0;
       expect(actual1).assertEqual(expectedR1);
-      let actual2: int = sub.length;
-      let expectedR2: int = sub.length;
-      expect(actual2).assertEqual(expectedR2);
     });
 
     /**
@@ -973,9 +958,6 @@ export default function int16ArraySubarrayTestFiveTest(): void {
       let actual1: int = sub.length;
       let expectedR1: int = 0;
       expect(actual1).assertEqual(expectedR1);
-      let actual2: int = sub.length;
-      let expectedR2: int = sub.length;
-      expect(actual2).assertEqual(expectedR2);
     });
 
     /**
