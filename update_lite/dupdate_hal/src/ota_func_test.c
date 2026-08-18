@@ -15,8 +15,6 @@
 
 #include "hctest.h"
 #include "hota_updater.h"
-/* G.NAM.03 要求参数 camelBack 命名；hctest 框架枚举 Function 为 PascalCase，定义同值小写别名 */
-#define function Function
 
 
 #define ERRORCALLBACK    0
@@ -191,7 +189,9 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1200, Function | MediumTest | Leve
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1300, function | MediumTest | Level1)
+LITE_TEST_CASE(OtaFuncTestSuite,
+               subUpgradeAPI1300,
+               Function | MediumTest | Level1)
 {
     char path[64] = {0};
     int ret = HotaGetOtaPkgPath(path, 64);
@@ -210,7 +210,9 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1300, function | MediumTest | Leve
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1400, function | MediumTest | Level1)
+LITE_TEST_CASE(OtaFuncTestSuite,
+               subUpgradeAPI1400,
+               Function | MediumTest | Level1)
 {
     int ret = HotaGetUpdateAbility();
     printf("HotaGetUpdateAbility return = %d\r\n", ret);
@@ -226,7 +228,9 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1400, function | MediumTest | Leve
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1500, function | MediumTest | Level1)
+LITE_TEST_CASE(OtaFuncTestSuite,
+               subUpgradeAPI1500,
+               Function | MediumTest | Level1)
 {
     int ret = HotaGetUpdateStatus();
     printf("HotaGetUpdateStatus return = %d\r\n", ret);
@@ -242,7 +246,9 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1500, function | MediumTest | Leve
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1700, function | MediumTest | Level1)
+LITE_TEST_CASE(OtaFuncTestSuite,
+               subUpgradeAPI1700,
+               Function | MediumTest | Level1)
 {
     int ret = HotaIsDeviceCanReboot();
     printf("HotaIsDeviceCanReboot return = %d\r\n", ret);
@@ -258,7 +264,9 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1700, function | MediumTest | Leve
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1800, function | MediumTest | Level1)
+LITE_TEST_CASE(OtaFuncTestSuite,
+               subUpgradeAPI1800,
+               Function | MediumTest | Level1)
 {
     int ret = HotaRebootAndCleanCache();
     printf("HotaRebootAndCleanCache return = %d\r\n", ret);
@@ -274,7 +282,9 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1800, function | MediumTest | Leve
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1900, function | MediumTest | Level1)
+LITE_TEST_CASE(OtaFuncTestSuite,
+               subUpgradeAPI1900,
+               Function | MediumTest | Level1)
 {
     int ret = HotaRebootAndCleanUserData();
     printf("HotaRebootAndCleanUserData return = %d\r\n", ret);
@@ -290,7 +300,9 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1900, function | MediumTest | Leve
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI2000, function | MediumTest | Level1)
+LITE_TEST_CASE(OtaFuncTestSuite,
+               subUpgradeAPI2000,
+               Function | MediumTest | Level1)
 {
     int ret = HotaRestart();
     printf("HotaRestart return = %d\r\n", ret);
@@ -306,7 +318,9 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI2000, function | MediumTest | Leve
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI2100, function | MediumTest | Level1)
+LITE_TEST_CASE(OtaFuncTestSuite,
+               subUpgradeAPI2100,
+               Function | MediumTest | Level1)
 {
     int ret = HotaSetBootSettings();
     printf("HotaSetBootSettings return = %d\r\n", ret);
@@ -315,6 +329,3 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI2100, function | MediumTest | Leve
 };
 
 RUN_TEST_SUITE(OtaFuncTestSuite);
-
-/* 释放别名，避免影响后续代码 */
-#undef function

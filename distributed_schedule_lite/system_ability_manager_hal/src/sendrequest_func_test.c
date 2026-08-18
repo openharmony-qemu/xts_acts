@@ -20,8 +20,6 @@
 #include "hctest.h"
 #include "samgr_lite.h"
 #include "samgr_maintenance.h"
-/* G.NAM.03 要求参数 camelBack 命名；hctest 框架枚举 Function 为 PascalCase，定义同值小写别名 */
-#define function Function
 
 
 
@@ -560,7 +558,9 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0090, Function | MediumTest 
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0100, function | MediumTest | Level2)
+LITE_TEST_CASE(SendRequestTestSuite,
+               testSendRequest0100,
+               Function | MediumTest | Level2)
 {
     Request request = {.msgId = MSG_NO, .msgValue = 0};
     Identity identity = {0, 0, NULL};
@@ -573,6 +573,3 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0100, function | MediumTest 
 }
 
 RUN_TEST_SUITE(SendRequestTestSuite);
-
-/* 释放别名，避免影响后续代码 */
-#undef function

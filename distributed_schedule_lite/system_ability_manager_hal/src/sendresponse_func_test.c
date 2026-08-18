@@ -20,8 +20,6 @@
 #include "hctest.h"
 #include "samgr_lite.h"
 #include "samgr_maintenance.h"
-/* G.NAM.03 要求参数 camelBack 命名；hctest 框架枚举 Function 为 PascalCase，定义同值小写别名 */
-#define function Function
 
 
 
@@ -460,7 +458,9 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0020, Function |
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0040, function | MediumTest | Level2)
+LITE_TEST_CASE(SendResponseTestSuite,
+               testSendResponse0040,
+               Function | MediumTest | Level2)
 {
     Response response = {.data = NULL, .len = 0};
     int32 result = SAMGR_SendResponse(NULL, &response);
@@ -477,7 +477,9 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0040, function | MediumTes
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0030, function | MediumTest | Level2)
+LITE_TEST_CASE(SendResponseTestSuite,
+               testSendResponseByIdentity0030,
+               Function | MediumTest | Level2)
 {
     Identity identity = {0, 0, NULL};
     Response response = {.data = NULL, .len = 0};
@@ -488,6 +490,3 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0030, function |
 }
 
 RUN_TEST_SUITE(SendResponseTestSuite);
-
-/* 释放别名，避免影响后续代码 */
-#undef function
