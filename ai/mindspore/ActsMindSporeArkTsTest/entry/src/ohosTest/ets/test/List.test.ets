@@ -15,11 +15,15 @@
 import EmptyTest from './Empty.test';
 import abilityTest from './Ability.test'
 import coverageSupplementTest from './CoverageSupplement.test';
+import resizeTest from './Resize.test'
+import supplementTest from './Supplement.test';
 
 export default function testsuite() {
   if (canIUse("SystemCapability.AI.MindSporeLite")){
     abilityTest();
     coverageSupplementTest();
+    resizeTest();
+    supplementTest();
   }else{
     EmptyTest()
   }
