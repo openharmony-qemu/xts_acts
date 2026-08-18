@@ -55,10 +55,10 @@ export default function screenCaptureHandlerConstructor():void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('ScreenCaptureHandlerConstructorButton', 10, '');
         await Utils.msSleep(3000);
-        done();
       } catch(err) {
          console.log('testScreenCaptureHandlerConstructorStatic001' + err)
         }
+        done();
       })
 
     /**
@@ -81,10 +81,10 @@ export default function screenCaptureHandlerConstructor():void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('ScreenCaptureHandlerConstructorButton', 10, '');
         await Utils.msSleep(3000);
-        done();
       } catch(err) {
         console.log('testScreenCaptureHandlerConstructorStatic002' + err)
       }
+      done();
       })
 
     /**
@@ -107,10 +107,10 @@ export default function screenCaptureHandlerConstructor():void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('ScreenCaptureHandlerConstructorButton', 10, '');
         await Utils.msSleep(3000);
-        done();
         } catch(err) {
           console.log('testScreenCaptureHandlerConstructorStatic003' + err)
         }
+        done();
       })
 
     /**
@@ -133,10 +133,10 @@ export default function screenCaptureHandlerConstructor():void {
           await Utils.msSleep(2000);
           inspector.sendEventByKey('ScreenCaptureHandlerConstructorButton', 10, '');
           await Utils.msSleep(3000);
-          done();
         } catch(err) {
           console.log('testScreenCaptureHandlerConstructorStatic004' + err)
         }
+        done();
       })
 
 
@@ -157,10 +157,10 @@ export default function screenCaptureHandlerConstructor():void {
           await Utils.msSleep(1000);
           inspector.sendEventByKey('ScreenCaptureHandlerConstructorButton', 10, '');
           await Utils.msSleep(4000)
-          done()
         } catch(err) {
           console.log('testSwitchNextPageStatic07' + err)
         }
+        done()
       })
 
   })
