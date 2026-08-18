@@ -693,99 +693,114 @@ static napi_value OHDrawingSetTypographyVerticalAlignment(napi_env env, napi_cal
 // OHDrawingTypographyTest helper functions
 static int ExecuteOHDrawingTypographyTestCasePart1(int32_t caseNum)
 {
-    static constexpr std::array<NapiFn, 30> handlers = {
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest001,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest002,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest003,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest004,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest005,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest006,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest007,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest008,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest009,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest010,
-        nullptr,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest012,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest013,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest014,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest015,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest016,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest017,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest018,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest019,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest020,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest021,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest022,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest023,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest024,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest025,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest026,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest027,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest028,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest029,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest030,
-    };
-    return DispatchByCaseNum(caseNum, handlers);
+    switch (caseNum) {
+        case 0: return OHOS::Rosen::Drawing::OHDrawingTypographyTest001();
+        case 1: return OHOS::Rosen::Drawing::OHDrawingTypographyTest002();
+        case 2: return OHOS::Rosen::Drawing::OHDrawingTypographyTest003();
+        case 3: return OHOS::Rosen::Drawing::OHDrawingTypographyTest004();
+        case 4: return OHOS::Rosen::Drawing::OHDrawingTypographyTest005();
+        case 5: return OHOS::Rosen::Drawing::OHDrawingTypographyTest006();
+        case 6: return OHOS::Rosen::Drawing::OHDrawingTypographyTest007();
+        case 7: return OHOS::Rosen::Drawing::OHDrawingTypographyTest008();
+        case 8: return OHOS::Rosen::Drawing::OHDrawingTypographyTest009();
+        case 9: return OHOS::Rosen::Drawing::OHDrawingTypographyTest010();
+        case 10: return RESULT_ERROR;
+        case 11: return OHOS::Rosen::Drawing::OHDrawingTypographyTest012();
+        case 12: return OHOS::Rosen::Drawing::OHDrawingTypographyTest013();
+        case 13: return OHOS::Rosen::Drawing::OHDrawingTypographyTest014();
+        case 14: return OHOS::Rosen::Drawing::OHDrawingTypographyTest015();
+        case 15: return OHOS::Rosen::Drawing::OHDrawingTypographyTest016();
+        case 16: return OHOS::Rosen::Drawing::OHDrawingTypographyTest017();
+        case 17: return OHOS::Rosen::Drawing::OHDrawingTypographyTest018();
+        case 18: return OHOS::Rosen::Drawing::OHDrawingTypographyTest019();
+        case 19: return OHOS::Rosen::Drawing::OHDrawingTypographyTest020();
+        case 20: return OHOS::Rosen::Drawing::OHDrawingTypographyTest021();
+        case 21: return OHOS::Rosen::Drawing::OHDrawingTypographyTest022();
+        case 22: return OHOS::Rosen::Drawing::OHDrawingTypographyTest023();
+        case 23: return OHOS::Rosen::Drawing::OHDrawingTypographyTest024();
+        case 24: return OHOS::Rosen::Drawing::OHDrawingTypographyTest025();
+        case 25: return OHOS::Rosen::Drawing::OHDrawingTypographyTest026();
+        case 26: return OHOS::Rosen::Drawing::OHDrawingTypographyTest027();
+        case 27: return OHOS::Rosen::Drawing::OHDrawingTypographyTest028();
+        case 28: return OHOS::Rosen::Drawing::OHDrawingTypographyTest029();
+        case 29: return OHOS::Rosen::Drawing::OHDrawingTypographyTest030();
+        default: return RESULT_ERROR;
+    }
 }
 
 static int ExecuteOHDrawingTypographyTestCasePart2(int32_t caseNum)
 {
-    static constexpr std::array<NapiFn, 30> handlers = {
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest031, OHOS::Rosen::Drawing::OHDrawingTypographyTest032,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest033, OHOS::Rosen::Drawing::OHDrawingTypographyTest034,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest035, OHOS::Rosen::Drawing::OHDrawingTypographyTest036,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest037, OHOS::Rosen::Drawing::OHDrawingTypographyTest038,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest039, OHOS::Rosen::Drawing::OHDrawingTypographyTest040,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest041, OHOS::Rosen::Drawing::OHDrawingTypographyTest042,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest043, OHOS::Rosen::Drawing::OHDrawingTypographyTest044,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest045, OHOS::Rosen::Drawing::OHDrawingTypographyTest046,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest047, OHOS::Rosen::Drawing::OHDrawingTypographyTest048,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest049, OHOS::Rosen::Drawing::OHDrawingTypographyTest050,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest051, nullptr,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest053, OHOS::Rosen::Drawing::OHDrawingTypographyTest054,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest055, OHOS::Rosen::Drawing::OHDrawingTypographyTest056,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest057, OHOS::Rosen::Drawing::OHDrawingTypographyTest058,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest059, OHOS::Rosen::Drawing::OHDrawingTypographyTest060,
-    };
-    return DispatchByCaseNum(caseNum - CASE_NUM_30, handlers);
+    switch (caseNum - CASE_NUM_30) {
+        case 0: return OHOS::Rosen::Drawing::OHDrawingTypographyTest031();
+        case 1: return OHOS::Rosen::Drawing::OHDrawingTypographyTest032();
+        case 2: return OHOS::Rosen::Drawing::OHDrawingTypographyTest033();
+        case 3: return OHOS::Rosen::Drawing::OHDrawingTypographyTest034();
+        case 4: return OHOS::Rosen::Drawing::OHDrawingTypographyTest035();
+        case 5: return OHOS::Rosen::Drawing::OHDrawingTypographyTest036();
+        case 6: return OHOS::Rosen::Drawing::OHDrawingTypographyTest037();
+        case 7: return OHOS::Rosen::Drawing::OHDrawingTypographyTest038();
+        case 8: return OHOS::Rosen::Drawing::OHDrawingTypographyTest039();
+        case 9: return OHOS::Rosen::Drawing::OHDrawingTypographyTest040();
+        case 10: return OHOS::Rosen::Drawing::OHDrawingTypographyTest041();
+        case 11: return OHOS::Rosen::Drawing::OHDrawingTypographyTest042();
+        case 12: return OHOS::Rosen::Drawing::OHDrawingTypographyTest043();
+        case 13: return OHOS::Rosen::Drawing::OHDrawingTypographyTest044();
+        case 14: return OHOS::Rosen::Drawing::OHDrawingTypographyTest045();
+        case 15: return OHOS::Rosen::Drawing::OHDrawingTypographyTest046();
+        case 16: return OHOS::Rosen::Drawing::OHDrawingTypographyTest047();
+        case 17: return OHOS::Rosen::Drawing::OHDrawingTypographyTest048();
+        case 18: return OHOS::Rosen::Drawing::OHDrawingTypographyTest049();
+        case 19: return OHOS::Rosen::Drawing::OHDrawingTypographyTest050();
+        case 20: return OHOS::Rosen::Drawing::OHDrawingTypographyTest051();
+        case 21: return RESULT_ERROR;
+        case 22: return OHOS::Rosen::Drawing::OHDrawingTypographyTest053();
+        case 23: return OHOS::Rosen::Drawing::OHDrawingTypographyTest054();
+        case 24: return OHOS::Rosen::Drawing::OHDrawingTypographyTest055();
+        case 25: return OHOS::Rosen::Drawing::OHDrawingTypographyTest056();
+        case 26: return OHOS::Rosen::Drawing::OHDrawingTypographyTest057();
+        case 27: return OHOS::Rosen::Drawing::OHDrawingTypographyTest058();
+        case 28: return OHOS::Rosen::Drawing::OHDrawingTypographyTest059();
+        case 29: return OHOS::Rosen::Drawing::OHDrawingTypographyTest060();
+        default: return RESULT_ERROR;
+    }
 }
 
 static int ExecuteOHDrawingTypographyTestCasePart3(int32_t caseNum)
 {
-    static constexpr std::array<NapiFn, 31> handlers = {
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest061,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest062,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest063,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest064,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest065,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest066,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest067,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest068,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest069,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest070,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest071,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest072,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest073,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest074,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest075,
-        nullptr,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest077,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest078,
-        nullptr,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest080,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest081,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest082,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest083,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest084,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest085,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest086,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest102,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest103,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest104,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTest105,
-        OHOS::Rosen::Drawing::OHDrawingTypographyTestWithIndent,
-    };
-    return DispatchByCaseNum(caseNum - CASE_NUM_60, handlers);
+    switch (caseNum - CASE_NUM_60) {
+        case 0: return OHOS::Rosen::Drawing::OHDrawingTypographyTest061();
+        case 1: return OHOS::Rosen::Drawing::OHDrawingTypographyTest062();
+        case 2: return OHOS::Rosen::Drawing::OHDrawingTypographyTest063();
+        case 3: return OHOS::Rosen::Drawing::OHDrawingTypographyTest064();
+        case 4: return OHOS::Rosen::Drawing::OHDrawingTypographyTest065();
+        case 5: return OHOS::Rosen::Drawing::OHDrawingTypographyTest066();
+        case 6: return OHOS::Rosen::Drawing::OHDrawingTypographyTest067();
+        case 7: return OHOS::Rosen::Drawing::OHDrawingTypographyTest068();
+        case 8: return OHOS::Rosen::Drawing::OHDrawingTypographyTest069();
+        case 9: return OHOS::Rosen::Drawing::OHDrawingTypographyTest070();
+        case 10: return OHOS::Rosen::Drawing::OHDrawingTypographyTest071();
+        case 11: return OHOS::Rosen::Drawing::OHDrawingTypographyTest072();
+        case 12: return OHOS::Rosen::Drawing::OHDrawingTypographyTest073();
+        case 13: return OHOS::Rosen::Drawing::OHDrawingTypographyTest074();
+        case 14: return OHOS::Rosen::Drawing::OHDrawingTypographyTest075();
+        case 15: return RESULT_ERROR;
+        case 16: return OHOS::Rosen::Drawing::OHDrawingTypographyTest077();
+        case 17: return OHOS::Rosen::Drawing::OHDrawingTypographyTest078();
+        case 18: return RESULT_ERROR;
+        case 19: return OHOS::Rosen::Drawing::OHDrawingTypographyTest080();
+        case 20: return OHOS::Rosen::Drawing::OHDrawingTypographyTest081();
+        case 21: return OHOS::Rosen::Drawing::OHDrawingTypographyTest082();
+        case 22: return OHOS::Rosen::Drawing::OHDrawingTypographyTest083();
+        case 23: return OHOS::Rosen::Drawing::OHDrawingTypographyTest084();
+        case 24: return OHOS::Rosen::Drawing::OHDrawingTypographyTest085();
+        case 25: return OHOS::Rosen::Drawing::OHDrawingTypographyTest086();
+        case 26: return OHOS::Rosen::Drawing::OHDrawingTypographyTest102();
+        case 27: return OHOS::Rosen::Drawing::OHDrawingTypographyTest103();
+        case 28: return OHOS::Rosen::Drawing::OHDrawingTypographyTest104();
+        case 29: return OHOS::Rosen::Drawing::OHDrawingTypographyTest105();
+        case 30: return OHOS::Rosen::Drawing::OHDrawingTypographyTestWithIndent();
+        default: return RESULT_ERROR;
+    }
 }
 
 static int ExecuteOHDrawingTypographyTestCase(int32_t caseNum)
