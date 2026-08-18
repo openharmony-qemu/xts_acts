@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import { BusinessError } from '@ohos.base';
 import { describe, expect, it, Level } from '../../../../hypium/index';
 import {
   Binding, CustomComponentContext, DecoratorInfo, ElementInfo, IMonitor,
@@ -196,15 +195,12 @@ export default function StaticCoverageUtilsTest(): void {
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
         let value: int = 1;
+        const valueCallback: () => int = (): int => value;
+        const monitorCallback: MonitorCallback = (result: IMonitor): void => {
+          console.info(`[ARKUI_NEW] monitor dirty path count: ${result.dirty.length}`);
+        };
         const monitor = UIUtils.addMonitor(
-          (): int => value, ((error: BusinessError | null, result: IMonitor | undefined): void => {
-            if (error) {
-              console.info(`[ARKUI_NEW] addMonitor failed: ${error.code} ${error.message}`);
-              return;
-            }
-            console.info(`[ARKUI_NEW] monitor dirty path count: ${result?.dirty.length}`);
-          }) as object as MonitorCallback,
-          { path: 'value', isSynchronous: true });
+          valueCallback, monitorCallback, { path: 'value', isSynchronous: true });
         expect(monitor.path.length === 1).assertTrue();
         UIUtils.clearMonitor(monitor);
       }
@@ -226,14 +222,11 @@ export default function StaticCoverageUtilsTest(): void {
         const info: MonitorValueInfo = {
           valueCallback: (): int => value, path: 'value.*', observeProps: true
         };
+        const monitorCallback: MonitorCallback = (result: IMonitor): void => {
+          console.info(`[ARKUI_NEW] monitor dirty path count: ${result.dirty.length}`);
+        };
         const monitor = UIUtils.addMonitor(
-          info, ((error: BusinessError | null, result: IMonitor | undefined): void => {
-            if (error) {
-              console.info(`[ARKUI_NEW] addMonitor failed: ${error.code} ${error.message}`);
-              return;
-            }
-            console.info(`[ARKUI_NEW] monitor dirty path count: ${result?.dirty.length}`);
-          }) as object as MonitorCallback, { isSynchronous: false });
+          info, monitorCallback, { isSynchronous: false });
         expect(monitor.path.length === 1).assertTrue();
         UIUtils.clearMonitor(monitor);
       }
