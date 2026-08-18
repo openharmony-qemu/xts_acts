@@ -296,7 +296,7 @@ export default function ActsHiDebugHiProfilerTest() {
     it('testHidebugHiprofilerInterface12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1200 start");
       try {
-        let res = testNapi.startProfiler(5, 30, 1, 30, 1, 384);
+        let res = testNapi.startProfiler(25, 30, 1, 30, 1, 384);
         expect(res == 11400416).assertTrue();
         console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1200 success");
         done();
