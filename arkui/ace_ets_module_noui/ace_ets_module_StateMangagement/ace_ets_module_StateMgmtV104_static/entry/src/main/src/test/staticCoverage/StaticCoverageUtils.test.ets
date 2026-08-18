@@ -154,7 +154,8 @@ export default function StaticCoverageUtilsTest(): void {
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
         let value: int = 20;
-        const binding: Binding<int> = UIUtils.makeBinding<int>((): int => value);
+        const getter: () => int = (): int => value;
+        const binding: Binding<int> = UIUtils.makeBinding<int>(getter);
         expect(binding.value === 20).assertTrue();
       }
     );
@@ -172,8 +173,10 @@ export default function StaticCoverageUtilsTest(): void {
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
         let value: int = 20;
+        const getter: () => int = (): int => value;
+        const setter: (newValue: int) => void = (newValue: int): void => { value = newValue; };
         const binding: MutableBinding<int> = UIUtils.makeBinding<int>(
-          (): int => value, (newValue: int): void => { value = newValue; });
+          getter, setter);
         binding.value = 21;
         expect(binding.value === 21 && value === 21).assertTrue();
       }
@@ -193,7 +196,9 @@ export default function StaticCoverageUtilsTest(): void {
         console.info('[ARKUI_NEW] static coverage execute');
         let value: int = 1;
         const monitor = UIUtils.addMonitor(
-          (): int => value, (_result: IMonitor): void => {},
+          (): int => value, (result: IMonitor): void => {
+            console.info(`[ARKUI_NEW] monitor dirty path count: ${result.dirty.length}`);
+          },
           { path: 'value', isSynchronous: true });
         expect(monitor.path.length === 1).assertTrue();
         UIUtils.clearMonitor(monitor);
@@ -217,7 +222,9 @@ export default function StaticCoverageUtilsTest(): void {
           valueCallback: (): int => value, path: 'value.*', observeProps: true
         };
         const monitor = UIUtils.addMonitor(
-          info, (_result: IMonitor): void => {}, { isSynchronous: false });
+          info, (result: IMonitor): void => {
+            console.info(`[ARKUI_NEW] monitor dirty path count: ${result.dirty.length}`);
+          }, { isSynchronous: false });
         expect(monitor.path.length === 1).assertTrue();
         UIUtils.clearMonitor(monitor);
       }
@@ -237,7 +244,9 @@ export default function StaticCoverageUtilsTest(): void {
         console.info('[ARKUI_NEW] static coverage execute');
         let value: int = 1;
         const monitor = UIUtils.addMonitor(
-          (): int => value, (_result: IMonitor): void => {}, { path: 'value' });
+          (): int => value, (result: IMonitor): void => {
+            console.info(`[ARKUI_NEW] monitor dirty path count: ${result.dirty.length}`);
+          }, { path: 'value' });
         UIUtils.clearMonitor(monitor);
         expect(monitor.path.length === 1).assertTrue();
       }

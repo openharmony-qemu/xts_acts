@@ -135,9 +135,12 @@ export default function StaticCoverageComponentTest(): void {
         console.info('[ARKUI_NEW] static coverage execute');
         const source: CoverageRecord = new CoverageRecord();
         const getters = new Map<string, BuilderParameterCallback>();
-        getters.set('value', (): int => 27);
+        const valueGetter: BuilderParameterCallback = (): int => 27;
+        getters.set('value', valueGetter);
+        const initializer: (value: CoverageRecord) => void =
+          (value: CoverageRecord): void => { value.value = 28; };
         const proxy: CoverageRecord = makeBuilderParameterProxy<CoverageRecord>(
-          source, getters, (value: CoverageRecord): void => { value.value = 28; });
+          source, getters, initializer);
         expect(proxy !== undefined).assertTrue();
       }
     );
@@ -156,7 +159,8 @@ export default function StaticCoverageComponentTest(): void {
         console.info('[ARKUI_NEW] static coverage execute');
         const source: CoverageRecord = new CoverageRecord();
         const getters = new Map<string, BuilderParameterCallback>();
-        getters.set('value', (): int => 29);
+        const valueGetter: BuilderParameterCallback = (): int => 29;
+        getters.set('value', valueGetter);
         const proxy: CoverageRecord = makeBuilderParameterProxy<CoverageRecord>(
           source, getters, undefined);
         expect(proxy !== undefined).assertTrue();

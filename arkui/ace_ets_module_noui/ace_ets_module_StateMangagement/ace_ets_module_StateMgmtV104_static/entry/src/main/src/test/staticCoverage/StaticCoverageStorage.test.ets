@@ -1005,7 +1005,9 @@ export default function StaticCoverageStorageTest(): void {
         const storage: LocalStorage = new LocalStorage();
         const property: AbstractProperty<int> = storage.setAndRef<int>('property', 11);
         let changed: boolean = false;
-        property.onChange((_name: string, value: int): void => { changed = value === 12; });
+        property.onChange((name: string, value: int): void => {
+          changed = name === 'property' && value === 12;
+        });
         property.set(12);
         property.onChange(undefined);
         expect(changed).assertTrue();
@@ -1140,7 +1142,7 @@ export default function StaticCoverageStorageTest(): void {
         const property: SubscribedAbstractProperty<int> =
           storage.setAndLink<int>('subscribed', 14);
         property.aboutToBeDeleted();
-        expect(true).assertTrue();
+        expect(storage.get<int>('subscribed') === 14).assertTrue();
       }
     );
     /**
