@@ -859,7 +859,7 @@ napi_value VideoDecCapApi0028(napi_env env, napi_callback_info info)
     OH_AVCapability **capabilityList = nullptr;
     OH_AVCodecType invalidCodecType = static_cast<OH_AVCodecType>(4);
     capabilityList = OH_AVCodec_GetCapabilityList(invalidCodecType, &count);
-    if (capabilityList == nullptr ) {
+    if (capabilityList == nullptr) {
         return CreateIntInt32Result(env, 0);
     } else {
         return CreateIntInt32Result(env, -1);
@@ -872,7 +872,7 @@ napi_value VideoDecCapApi0029(napi_env env, napi_callback_info info)
     OH_AVCapability **capabilityList = nullptr;
     OH_AVCodecType invalidCodecType = static_cast<OH_AVCodecType>(-1);
     capabilityList = OH_AVCodec_GetCapabilityList(invalidCodecType, &count);
-    if (capabilityList == nullptr ) {
+    if (capabilityList == nullptr) {
         return CreateIntInt32Result(env, 0);
     } else {
         return CreateIntInt32Result(env, -1);
@@ -886,7 +886,7 @@ napi_value VideoDecCapApi0030(napi_env env, napi_callback_info info)
     const char *codecNameType = nullptr;
     const char *codecNameMimeType = nullptr;
     capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_VIDEO_DECODER, nullptr);
-    if (capabilityList == nullptr ) {
+    if (capabilityList == nullptr) {
         return CreateIntInt32Result(env, 0);
     } else {
         return CreateIntInt32Result(env, -1);

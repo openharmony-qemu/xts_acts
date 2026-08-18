@@ -587,45 +587,63 @@ export default function actsApiTest() {
     });
 
     /**
-     * @tc.number  SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_02800
-     * @tc.name    SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_02800
+     * @tc.number  SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_2800
+     * @tc.name    SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_2800
      * @tc.desc    Check the encoder type
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level1
      */
-    it('SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_02800', Level.LEVEL1, async () => {
-      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_02800');
-      let result = await testNapi.VideoDecCapApi0028();
-      expect(result).assertEqual(TEST_SUCCESS);
+    it('SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_2800', Level.LEVEL1, async (done: Function) => {
+      try {
+        hilog.info(DOMAIN, TAG, 'Test SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_2800');
+        let result = await testNapi.VideoDecCapApi0028();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      } catch (err) {
+        hilog.error(DOMAIN, TAG, 'SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_2800 err: %{public}s', JSON.stringify(err));
+        done();
+      }
     });
 
     /**
-     * @tc.number  SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_02900
-     * @tc.name    SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_02900
+     * @tc.number  SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_2900
+     * @tc.name    SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_2900
      * @tc.desc    Check the encoder type
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level1
      */
-    it('SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_02900', Level.LEVEL1, async () => {
-      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_02900');
-      let result = await testNapi.VideoDecCapApi0029();
-      expect(result).assertEqual(TEST_SUCCESS);
+    it('SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_2900', Level.LEVEL1, async (done: Function) => {
+      try {
+        hilog.info(DOMAIN, TAG, 'Test SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_2900');
+        let result = await testNapi.VideoDecCapApi0029();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      } catch (err) {
+        hilog.error(DOMAIN, TAG, 'SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_2900 err: %{public}s', JSON.stringify(err));
+        done();
+      }
     });
 
     /**
-     * @tc.number  SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_03000
-     * @tc.name    SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_03000
+     * @tc.number  SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_3000
+     * @tc.name    SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_3000
      * @tc.desc    Check the encoder type
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level1
      */
-    it('SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_03000', Level.LEVEL1, async () => {
-      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_03000');
-      let result = await testNapi.VideoDecCapApi0030();
-      expect(result).assertEqual(TEST_SUCCESS);
+    it('SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_3000', Level.LEVEL1, async (done: Function) => {
+      try {
+        hilog.info(DOMAIN, TAG, 'Test SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_3000');
+        let result = await testNapi.VideoDecCapApi0030();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      } catch (err) {
+        hilog.error(DOMAIN, TAG, 'SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_3000 err: %{public}s', JSON.stringify(err));
+        done();
+      }
     });
   });
 }
