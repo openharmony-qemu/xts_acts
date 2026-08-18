@@ -18,7 +18,8 @@ import repeatReusableFalse from './ReusableTest/repeatReusableFalse.test';
 import repeatReusableTrue from './ReusableTest/repeatReusableTrue.test';
 import SVDeepListenMakeObservedTest from './stateVariableDeepListen/SVDeepListenMakeObservedTest.test';
 import SVDeepListenMakeObservedFalseTest from './stateVariableDeepListen/SVDeepListenMakeObservedFalseTest.test';
-import SVDeepListenObservedAndObjectlinkTest from './stateVariableDeepListen/SVDeepListenObservedAndObjectlinkTest.test';
+import SVDeepListenObservedAndObjectlinkTest
+  from './stateVariableDeepListen/SVDeepListenObservedAndObjectlinkTest.test';
 import SVDeepListenObservedBuiltInTest from './stateVariableDeepListen/SVDeepListenObservedBuiltInTest.test';
 import GlobalReusePoolTest from './uiutilsTest/GlobalReusePool.test';
 import GlobalReusePool002Test from './uiutilsTest/GlobalReusePool002.test';

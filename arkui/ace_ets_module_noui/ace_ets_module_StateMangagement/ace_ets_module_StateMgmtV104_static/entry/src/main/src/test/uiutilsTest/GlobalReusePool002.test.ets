@@ -13,9 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size, afterAll } from "../../../../hypium/index"
+import {
+  describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size, afterAll
+} from "../../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import {
+  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector'
@@ -80,7 +84,8 @@ export default function GlobalReusePool002Test(): void {
     it('SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0100 START');
       let driver = await Driver.create();
-      let globalReuse002: boolean | undefined = AppStorage.get<boolean | undefined>('GlobalReuse002') as boolean | undefined;
+      let globalReuse002: boolean | undefined =
+        AppStorage.get<boolean | undefined>('GlobalReuse002') as boolean | undefined;
       expect(globalReuse002).assertUndefined();
       let button = await driver.findComponent(ON.id('GlobalReuse002Change'));
       button?.click();

@@ -29,7 +29,6 @@ import router from '@ohos.router';
 import {
   Component,
   Driver,
-  Component,
   UiWindow,
   ON,
   MatchPattern,
@@ -92,15 +91,15 @@ export default function GlobalReusePool004Test(): void {
 
 
     /**
-     * @tc.name   SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0100
-     * @tc.number SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0100
+     * @tc.name   SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0200
+     * @tc.number SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0200
      * @tc.desc   Test getReusePool API returns valid pool when configured
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0100 START');
+    it('SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0200 START');
       let driver = await Driver.create();
       let globalReuse004: boolean | undefined =
         AppStorage.get<boolean | undefined>('GlobalReuse004') as boolean | undefined;
@@ -131,7 +130,9 @@ export default function GlobalReusePool004Test(): void {
       let strJsonNew2 = inspector.getInspectorByKey('SubChildGlobalV1_001');
       await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJsonNew2).getElement('$attrs').getString('content'))
-        .assertEqual('SubChildGlobalV1  @Consume: 11,@Link: 110,@LocalStoragePropRef: 10,@Provide: 11,@State: 0,@PropRef: 0,@StoragePropRef: 10,@ObjectLink: 100');
+        .assertEqual('SubChildGlobalV1  @Consume: 11,@Link: 110,' +
+          '@LocalStoragePropRef: 10,@Provide: 11,@State: 0,@PropRef: 0,' +
+          '@StoragePropRef: 10,@ObjectLink: 100');
 
       let button2 = await driver.findComponent(ON.id('ChildGlobal001_005'));
       button2?.click();
@@ -149,7 +150,9 @@ export default function GlobalReusePool004Test(): void {
       strJsonNew2 = inspector.getInspectorByKey('SubChildGlobalV1_001');
       await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJsonNew2).getElement('$attrs').getString('content'))
-        .assertEqual('SubChildGlobalV1  @Consume: 11,@Link: 120,@LocalStoragePropRef: 10,@Provide: 11,@State: 0,@PropRef: 0,@StoragePropRef: 10,@ObjectLink: 100');
+        .assertEqual('SubChildGlobalV1  @Consume: 11,@Link: 120,' +
+          '@LocalStoragePropRef: 10,@Provide: 11,@State: 0,@PropRef: 0,' +
+          '@StoragePropRef: 10,@ObjectLink: 100');
 
       let button3 = await driver.findComponent(ON.id('SubChildGlobalV1_002'));
       button3?.click();
@@ -167,8 +170,10 @@ export default function GlobalReusePool004Test(): void {
       strJsonNew2 = inspector.getInspectorByKey('SubChildGlobalV1_001');
       await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJsonNew2).getElement('$attrs').getString('content'))
-        .assertEqual('SubChildGlobalV1  @Consume: 12,@Link: 121,@LocalStoragePropRef: 10,@Provide: 12,@State: 1,@PropRef: 1,@StoragePropRef: 10,@ObjectLink: 101');
-      console.info('SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0100 END');
+        .assertEqual('SubChildGlobalV1  @Consume: 12,@Link: 121,' +
+          '@LocalStoragePropRef: 10,@Provide: 12,@State: 1,@PropRef: 1,' +
+          '@StoragePropRef: 10,@ObjectLink: 101');
+      console.info('SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0200 END');
       done();
     });
   })
