@@ -307,9 +307,7 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedDirectRequest0010, Func
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(SendSharedRequestTestSuite,
-               testSendSharedRequest0050,
-               Function | MediumTest | Level2)
+LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedRequest0050, Function | MediumTest | Level2)
 {
     Request request = {.msgId = MSG_NO, .msgValue = 0};
     Identity identity = {0, 0, NULL};
@@ -330,9 +328,7 @@ LITE_TEST_CASE(SendSharedRequestTestSuite,
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(SendSharedRequestTestSuite,
-               testSendSharedDirectRequest0040,
-               Function | MediumTest | Level2)
+LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedDirectRequest0040, Function | MediumTest | Level2)
 {
     uint32 *ref = NULL;
     int32 result = SAMGR_SendSharedDirectRequest(NULL, NULL, NULL, NULL, NULL);
