@@ -90,7 +90,7 @@ export default function webResourceError() {
 
       })
 
-      /*
+       /**
       * @tc.number     SUB_WEB_NEXT_PAGE_0100
       * @tc.name       testOnSwitchNextPageResourceError
       * @tc.desc       test testOnSwitchNextPageResourceError
