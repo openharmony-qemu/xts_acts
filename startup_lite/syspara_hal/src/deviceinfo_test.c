@@ -667,13 +667,15 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetOsReleaseType,
                Function | MediumTest | Level1)
 {
-    /* ws63 实测 "Beta"（const.build.osreleasetype） */
+    /* 板卡特定值（ws63 实测 "Beta"）不硬编码，断言非空即可 */
     const char *value1 = GetOsReleaseType();
     printf("OsReleaseType=%s\n", value1);
-    TEST_ASSERT_EQUAL_STRING("Beta", value1);
+    TEST_ASSERT_TRUE(value1 != NULL);
+    TEST_ASSERT_TRUE(value1[0] != '\0');
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetOsReleaseType();
-        TEST_ASSERT_EQUAL_STRING("Beta", value);
+        TEST_ASSERT_TRUE(value != NULL);
+        TEST_ASSERT_TRUE(value[0] != '\0');
     }
     const char *value2 = GetOsReleaseType();
     TEST_ASSERT_EQUAL_STRING(value1, value2);
@@ -983,7 +985,8 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
 {
     /* major 随版本迭代，从 GetOSFullName() 解析第 1 段动态比对 */
     const char *fullName = GetOSFullName();
-    const char *p = strchr(fullName, '-');
+    TEST_ASSERT_TRUE(fullName != NULL);
+    const char *p = (fullName == NULL) ? NULL : strchr(fullName, '-');
     int major = 0, minor = 0, patch = 0, build = 0;
     if (p != NULL) {
         p++;
@@ -1057,7 +1060,8 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
     /* build 号随固件版本迭代，不能写死；
        从 GetOSFullName() 解析第 4 段动态比对 */
     const char *fullName = GetOSFullName();
-    const char *p = strchr(fullName, '-');
+    TEST_ASSERT_TRUE(fullName != NULL);
+    const char *p = (fullName == NULL) ? NULL : strchr(fullName, '-');
     int major = 0, minor = 0, patch = 0, build = 0;
     if (p != NULL) {
         p++;
