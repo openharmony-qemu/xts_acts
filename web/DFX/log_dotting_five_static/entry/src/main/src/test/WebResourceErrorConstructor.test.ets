@@ -89,7 +89,7 @@ export default function webResourceErrorConstructor():void {
 
     /**
      * @tc.name   testWebResourceErrorConstructorStatic003
-     * @tc.number SUB_WEB_CONSTRUCTOR_RETURN_0300
+     * @tc.number SUB_WEB_CONSTRUCTOR_RESOURCE_0300
      * @tc.desc   WebResourceError getErrorInfo method test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
