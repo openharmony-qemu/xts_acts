@@ -18,8 +18,6 @@
 #include "hctest.h"
 #include "samgr_lite.h"
 #include "samgr_maintenance.h"
-/* G.NAM.03 要求参数 camelBack 命名；hctest 框架枚举 Function 为 PascalCase，定义同值小写别名 */
-#define function Function
 
 
 
@@ -180,7 +178,9 @@ LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0030, Function | MediumTest 
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(IUnknownTestSuite, testAddRef0020, function | MediumTest | Level2)
+LITE_TEST_CASE(IUnknownTestSuite,
+               testAddRef0020,
+               Function | MediumTest | Level2)
 {
     IUnknown *iUnknown = GET_IUNKNOWN(g_feature);
     int resultAdd = IUNKNOWN_AddRef(iUnknown);
@@ -195,7 +195,9 @@ LITE_TEST_CASE(IUnknownTestSuite, testAddRef0020, function | MediumTest | Level2
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0040, function | MediumTest | Level2)
+LITE_TEST_CASE(IUnknownTestSuite,
+               testQueryInterface0040,
+               Function | MediumTest | Level2)
 {
     IUnknown *iUnknown = GET_IUNKNOWN(g_feature);
     SamgrTestApi *demoApi = NULL;
@@ -216,7 +218,9 @@ LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0040, function | MediumTest 
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(IUnknownTestSuite, testRelease0020, function | MediumTest | Level2)
+LITE_TEST_CASE(IUnknownTestSuite,
+               testRelease0020,
+               Function | MediumTest | Level2)
 {
     IUnknown *iUnknown = GET_IUNKNOWN(g_feature);
     int resultRelease = IUNKNOWN_Release(iUnknown);
@@ -226,6 +230,3 @@ LITE_TEST_CASE(IUnknownTestSuite, testRelease0020, function | MediumTest | Level
 }
 
 RUN_TEST_SUITE(IUnknownTestSuite);
-
-/* 释放别名，避免影响后续代码 */
-#undef function
