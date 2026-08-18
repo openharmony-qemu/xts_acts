@@ -87,16 +87,16 @@ export default function SingleKvStoreReturnValue(){
       await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(async () => {
         console.info('afterEach closeKVStore success');
         await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-            console.info('afterEach deleteKVStore success');
-            kvStore = null;
-            done();
+          console.info('afterEach deleteKVStore success');
+          kvStore = null;
+          done();
         }).catch((err: BusinessError) => {
-            console.info('afterEach deleteKVStore err ' + err);
-            done();
+          console.info('afterEach deleteKVStore err ' + err);
+          done();
         });
       }).catch((err: BusinessError) => {
-          console.info('afterEach closeKVStore err ' + err);
-          done();
+        console.info('afterEach closeKVStore err ' + err);
+        done();
       });
 
 
@@ -1425,9 +1425,15 @@ export default function SingleKvStoreReturnValue(){
 
       try {
         kvManager!.getKVStore(TEST_STORE_S1_ID, optionsS1, (err: BusinessError, store: factory.SingleKVStore) => {
-          console.info(TAG + "success getKVStore callback" + store);
-          expect(null).assertFail();
-          done();
+          if (err) {
+            console.error(`Failed to get KVStore. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+            done();
+          } else {
+            console.info(TAG + "success getKVStore callback" + store);
+            expect(null).assertFail();
+            done();
+          }
         });
       } catch (e) {
         console.error(TAG + ' catch getKVStore callback, e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1535,8 +1541,35 @@ export default function SingleKvStoreReturnValue(){
       };
       const TEST_STORE_S1_ID = 'kvS1Id0400';
       try {
-        await kvManager!.getKVStore(TEST_STORE_S1_ID, options).then((store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore(TEST_STORE_S1_ID, options).then(async(store: factory.SingleKVStore) => {
           console.info(TAG + "success getKVStore promise " + store);
+          try {
+            await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, optionsS1).then(async() => {
+              console.info(TAG + "success closeKVStore promise ");
+              try {
+                await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, optionsS1).then(async() => {
+                  console.info(TAG + "success deleteKVStore promise ");
+                  done();
+                }).catch((err: BusinessError) => {
+                  console.error(TAG +`catch deleteKVStore promise. err.code is ${err.code},message is ${err.message}`);
+                  expect(null).assertFail();
+                  done();
+                });
+              } catch (e) {
+                console.error(TAG + ' catch deleteKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
+                expect(null).assertFail();
+                done();
+              }
+            }).catch((err: BusinessError) => {
+              console.error(TAG +`catch closeKVStore promise. err.code is ${err.code},message is ${err.message}`);
+              expect(null).assertFail();
+              done();
+            });
+          } catch (e) {
+            console.error(TAG + ' catch closeKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
+            expect(null).assertFail();
+            done();
+          }
         }).catch((err: BusinessError) => {
           console.error(TAG +`catch getKVStore promise. err.code is ${err.code},message is ${err.message}`);
           expect(null).assertFail();
@@ -1547,36 +1580,6 @@ export default function SingleKvStoreReturnValue(){
         expect(null).assertFail();
         done();
       }
-
-      try {
-        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, optionsS1).then(async() => {
-          console.info(TAG + "success closeKVStore promise ");
-        }).catch((err: BusinessError) => {
-          console.error(TAG +`catch closeKVStore promise. err.code is ${err.code},message is ${err.message}`);
-          expect(null).assertFail();
-          done();
-        });
-      } catch (e) {
-        console.error(TAG + ' catch closeKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(null).assertFail();
-        done();
-      }
-
-      try {
-        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, optionsS1).then(async() => {
-          console.info(TAG + "success deleteKVStore promise ");
-          done();
-        }).catch((err: BusinessError) => {
-          console.error(TAG +`catch deleteKVStore promise. err.code is ${err.code},message is ${err.message}`);
-          expect(null).assertFail();
-          done();
-        });
-      } catch (e) {
-        console.error(TAG + ' catch deleteKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(null).assertFail();
-        done();
-      }
-
     })
 
     /**
@@ -1608,8 +1611,35 @@ export default function SingleKvStoreReturnValue(){
       };
       const TEST_STORE_S1_ID = 'kvS1Id0401';
       try {
-        await kvManager!.getKVStore(TEST_STORE_S1_ID, options).then((store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore(TEST_STORE_S1_ID, options).then(async(store: factory.SingleKVStore) => {
           console.info(TAG + "success getKVStore promise " + store);
+          try {
+            await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, optionsS1).then(async() => {
+              console.info(TAG + "success closeKVStore promise ");
+              try {
+                await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, optionsS1).then(async() => {
+                  console.info(TAG + "success deleteKVStore promise ");
+                  done();
+                }).catch((err: BusinessError) => {
+                  console.error(TAG +`catch deleteKVStore promise. err.code is ${err.code},message is ${err.message}`);
+                  expect(null).assertFail();
+                  done();
+                });
+              } catch (e) {
+                console.error(TAG + ' catch deleteKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
+                expect(null).assertFail();
+                done();
+              }
+            }).catch((err: BusinessError) => {
+              console.error(TAG +`catch closeKVStore promise. err.code is ${err.code},message is ${err.message}`);
+              expect(null).assertFail();
+              done();
+            });
+          } catch (e) {
+            console.error(TAG + ' catch closeKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
+            expect(null).assertFail();
+            done();
+          }
         }).catch((err: BusinessError) => {
           console.error(TAG +`catch getKVStore promise. err.code is ${err.code},message is ${err.message}`);
           expect(null).assertFail();
@@ -1620,36 +1650,6 @@ export default function SingleKvStoreReturnValue(){
         expect(null).assertFail();
         done();
       }
-
-      try {
-        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, optionsS1).then(async() => {
-          console.info(TAG + "success closeKVStore promise ");
-        }).catch((err: BusinessError) => {
-          console.error(TAG +`catch closeKVStore promise. err.code is ${err.code},message is ${err.message}`);
-          expect(null).assertFail();
-          done();
-        });
-      } catch (e) {
-        console.error(TAG + ' catch closeKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(null).assertFail();
-        done();
-      }
-
-      try {
-        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, optionsS1).then(async() => {
-          console.info(TAG + "success deleteKVStore promise ");
-          done();
-        }).catch((err: BusinessError) => {
-          console.error(TAG +`catch deleteKVStore promise. err.code is ${err.code},message is ${err.message}`);
-          expect(null).assertFail();
-          done();
-        });
-      } catch (e) {
-        console.error(TAG + ' catch deleteKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(null).assertFail();
-        done();
-      }
-
     })
 
     /**
@@ -1663,7 +1663,7 @@ export default function SingleKvStoreReturnValue(){
     it('SUB_DDM_SKV_ReturnValue_enableSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_enableSync_0100 begin---------  ');
       try {
-         kvStore!.enableSync(null, (err: BusinessError) => {
+        kvStore!.enableSync(null, (err: BusinessError) => {
           if (err) {
             console.error(TAG + `Failed to enableSync. Code: ${err.code}, message: ${err.message}`);
             expect(null).assertFail();
