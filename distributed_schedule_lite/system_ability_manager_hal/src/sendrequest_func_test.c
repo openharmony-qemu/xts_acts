@@ -21,8 +21,6 @@
 #include "samgr_lite.h"
 #include "samgr_maintenance.h"
 
-
-
 #define OPER_INTERVAL 200    // 200 ms
 #define PRESSURE_BASE 10
 
@@ -548,7 +546,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0090, Function | MediumTest 
         demoApi->Release((IUnknown *)demoApi);
     }
 }
-
 
 /**
  * @tc.name   testSendRequest0100
