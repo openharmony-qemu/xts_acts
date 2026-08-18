@@ -317,6 +317,67 @@ export default function RequestDownloadJSUnitStatic() {
       }
     });
 
+    /**
+     * @tc.name   SUB_Misc_REQUEST_Agent_GetTask_Static_0010
+     * @tc.number SUB_Misc_REQUEST_Agent_GetTask_Static_0010
+     * @tc.desc   Test request.agent.getTask return value coverage - undefined not in interface declaration.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Misc_REQUEST_Agent_GetTask_Static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "====>------SUB_Misc_REQUEST_Agent_GetTask_Static_0010 is starting---------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        saveas: './SUB_Misc_REQUEST_Agent_GetTask_Static_0010.txt',
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
+        hilog.info(domain, tag, '%{public}s', "====>SUB_Misc_REQUEST_Agent_GetTask_Static_0010 create success, tid: " + task.tid);
+        let getTaskResult: request.agent.Task = await request.agent.getTask(baseContext!, task.tid);
+        hilog.info(domain, tag, '%{public}s', "====>SUB_Misc_REQUEST_Agent_GetTask_Static_0010 getTask result: " + JSON.stringify(getTaskResult));
+        expect(getTaskResult != undefined).assertTrue();
+        expect(getTaskResult.tid).assertEqual(task.tid);
+        done();
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', "====>SUB_Misc_REQUEST_Agent_GetTask_Static_0010 catch error: " + err.code + JSON.stringify(err));
+        expect(err.code).assertEqual(201);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Misc_REQUEST_Agent_GetTask_Static_0020
+     * @tc.number SUB_Misc_REQUEST_Agent_GetTask_Static_0020
+     * @tc.desc   Test request.agent.getTask with token parameter - return value not undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Misc_REQUEST_Agent_GetTask_Static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "====>------SUB_Misc_REQUEST_Agent_GetTask_Static_0020 is starting---------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        saveas: './SUB_Misc_REQUEST_Agent_GetTask_Static_0020.txt',
+        token: 'testToken001',
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
+        hilog.info(domain, tag, '%{public}s', "====>SUB_Misc_REQUEST_Agent_GetTask_Static_0020 create success, tid: " + task.tid);
+        let getTaskResult: request.agent.Task = await request.agent.getTask(baseContext!, task.tid, 'testToken001');
+        hilog.info(domain, tag, '%{public}s', "====>SUB_Misc_REQUEST_Agent_GetTask_Static_0020 getTask result: " + JSON.stringify(getTaskResult));
+        expect(getTaskResult != undefined).assertTrue();
+        expect(getTaskResult.tid).assertEqual(task.tid);
+        done();
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', "====>SUB_Misc_REQUEST_Agent_GetTask_Static_0020 catch error: " + err.code + JSON.stringify(err));
+        expect(err.code).assertEqual(201);
+        done();
+      }
+    });
+
   })
 
 }

@@ -226,7 +226,7 @@ export default function systemDateTimeSyncJsunit() {
       try {
         let status: boolean = systemDateTime.getAutoTimeStatus();
         console.info(`====>SUB_systemDateTime_getAutoTimeStatus_sync_0100 status:${status}`);
-        expect(status == true || status == false).assertTrue();
+        expect(status === true || status === false).assertTrue();
         done(); 
       } catch (err){
         console.info(`====>SUB_systemDateTime_getAutoTimeStatus_sync_0100 err.code:${err.code}, err.message:${err.message}`);
@@ -234,5 +234,126 @@ export default function systemDateTimeSyncJsunit() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getTime_sync_0100
+     * @tc.number SUB_systemDateTime_getTime_sync_0100
+     * @tc.desc   Test getTime with isNanoseconds null, expect success (null coerced to false).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getTime_sync_0100", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getTime_sync_0100 start----------------");
+      try {
+        let isNanoseconds: boolean | null = null;
+        let time = systemDateTime.getTime(isNanoseconds);
+        console.info("====>SUB_systemDateTime_getTime_sync_0100 time: " + JSON.stringify(time));
+        expect(typeof(time) === 'number').assertEqual(true);
+        done();
+      } catch (err) {
+        expect().assertFail();
+        console.info(`====>SUB_systemDateTime_getTime_sync_0100 err.code:${err.code}, err.message:${err.message}`);
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getTime_sync_0100 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getTime_sync_0200
+     * @tc.number SUB_systemDateTime_getTime_sync_0200
+     * @tc.desc   Test getTime with isNanoseconds undefined, expect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getTime_sync_0200", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getTime_sync_0200 start----------------");
+      try {
+        let isNanoseconds: boolean | undefined = undefined;
+        let time = systemDateTime.getTime(isNanoseconds);
+        console.info("====>SUB_systemDateTime_getTime_sync_0200 time: " + JSON.stringify(time));
+        expect(typeof(time) === 'number').assertEqual(true);
+        done();
+      } catch (err) {
+        expect().assertFail();
+        console.info(`====>SUB_systemDateTime_getTime_sync_0200 err.code:${err.code}, err.message:${err.message}`);
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getTime_sync_0200 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getUptime_sync_0200
+     * @tc.number SUB_systemDateTime_getUptime_sync_0200
+     * @tc.desc   Test getUptime with timeType null, expect error 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getUptime_sync_0200", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getUptime_sync_0200 start----------------");
+      try {
+        let timeType: systemDateTime.TimeType | null = null;
+        let time = systemDateTime.getUptime(timeType, true);
+        console.info("====>SUB_systemDateTime_getUptime_sync_0200 time: " + JSON.stringify(time));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+        console.info(`====>SUB_systemDateTime_getUptime_sync_0200 err.code:${err.code}, err.message:${err.message}`);
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getUptime_sync_0200 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getUptime_sync_0300
+     * @tc.number SUB_systemDateTime_getUptime_sync_0300
+     * @tc.desc   Test getUptime with isNanoseconds null, expect success (null coerced to false).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getUptime_sync_0300", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getUptime_sync_0300 start----------------");
+      try {
+        let isNanoseconds: boolean | null = null;
+        let time = systemDateTime.getUptime(systemDateTime.TimeType.ACTIVE, isNanoseconds);
+        console.info("====>SUB_systemDateTime_getUptime_sync_0300 time: " + JSON.stringify(time));
+        expect(typeof(time) === 'number').assertEqual(true);
+        done();
+      } catch (err) {
+        expect().assertFail();
+        console.info(`====>SUB_systemDateTime_getUptime_sync_0300 err.code:${err.code}, err.message:${err.message}`);
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getUptime_sync_0300 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getUptime_sync_0400
+     * @tc.number SUB_systemDateTime_getUptime_sync_0400
+     * @tc.desc   Test getUptime with isNanoseconds undefined, expect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getUptime_sync_0400", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getUptime_sync_0400 start----------------");
+      try {
+        let isNanoseconds: boolean | undefined = undefined;
+        let time = systemDateTime.getUptime(systemDateTime.TimeType.ACTIVE, isNanoseconds);
+        console.info("====>SUB_systemDateTime_getUptime_sync_0400 time: " + JSON.stringify(time));
+        expect(typeof(time) === 'number').assertEqual(true);
+        done();
+      } catch (err) {
+        expect().assertFail();
+        console.info(`====>SUB_systemDateTime_getUptime_sync_0400 err.code:${err.code}, err.message:${err.message}`);
+        done();
+      }
+      console.info("====>----------SUB_systemDateTime_getUptime_sync_0400 end-----------------");
+    });
+
   });
 };
