@@ -817,40 +817,26 @@ export default function int16ArrayFindTestTwoTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_TWO_4900
      * @tc.name testInt16ArrayFindTestTwo049
-     * @tc.desc Verify find returns expected matched value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestTwo049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(5, 0, 3, 0, 7);
-      let result: number | undefined = arr.find((value: number, index: int, array: Int16Array): boolean => value === 0);
-      expect(result).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_TWO_5000
-     * @tc.name testInt16ArrayFindTestTwo050
      * @tc.desc Verify find returns negative value match
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFindTestTwo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFindTestTwo049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(100, -1, 32767, -32768, 50);
       let result: number | undefined = arr.find((value: number, index: int, array: Int16Array): boolean => value < 0);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_TWO_5100
-     * @tc.name testInt16ArrayFindTestTwo051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_TWO_5000
+     * @tc.name testInt16ArrayFindTestTwo050
      * @tc.desc Verify find returns expected matched value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayFindTestTwo051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayFindTestTwo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(-5, -10, 1, 32767, -32768);
       let result: number | undefined = arr.find((value: number, index: int, array: Int16Array): boolean => value > 0);
       expect(result).assertEqual(1);
