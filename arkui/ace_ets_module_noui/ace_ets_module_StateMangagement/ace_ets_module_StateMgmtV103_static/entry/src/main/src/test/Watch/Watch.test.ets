@@ -70,20 +70,24 @@ export default function WatchTest() {
      */
 it('SUB_ARKUI_API_WatchTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_API_WatchTest_static_0100 START');
-      let driver: Driver = Driver.create();
-      CommonFunc.sleep(1000);
-
-      let button = driver.findComponent(ON.id('watchButton'));
-      button?.click() as Promise<void>;
-      CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('totalText');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[SUB_ARKUI_API_WatchTest_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Total: 17.00 €');
-      strJson = inspector.getInspectorByKey('priceText');
-      obj = JSON.parseJsonElement(strJson);
-      console.info("[SUB_ARKUI_API_WatchTest_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Price: 17.00 €');
+      try{
+        let driver: Driver = await Driver.create();
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('watchButton'));
+        button?.click() as Promise<void>;
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('totalText');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[SUB_ARKUI_API_WatchTest_static_0100] component obj is: " + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('Total: 17.00 €');
+        strJson = inspector.getInspectorByKey('priceText');
+        obj = JSON.parseJsonElement(strJson);
+        console.info("[SUB_ARKUI_API_WatchTest_static_0100] component obj is: " + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('Price: 17.00 €');
+      } catch (err) {
+        console.error('SUB_ARKUI_API_WatchTest_static_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[SUB_ARKUI_API_WatchTest_static_0100] END');
       done();
     });
