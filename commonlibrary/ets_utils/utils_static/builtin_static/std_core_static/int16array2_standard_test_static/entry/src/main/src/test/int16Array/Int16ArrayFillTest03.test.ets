@@ -1979,3 +1979,68 @@ export default function int16ArrayFillTestThreeTest(): void {
       let expected2: number = arr2.$_get(2);
       expect(actual2).assertEqual(expected2);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_THREE_8900
+     * @tc.name testInt16ArrayFillTestThree089
+     * @tc.desc Verify fill(nanVal) NaN to 0; multi fill
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestThree089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr1 = Int16Array.of(1 as short, 1 as short, 1 as short);
+      let arr2 = Int16Array.of(1 as short, 1 as short, 1 as short);
+      let nanVal: number = Number.NaN;
+      let zeroVal: short = 0 as short;
+      arr1.fill(nanVal);
+      arr2.fill(zeroVal);
+      let actual1: number = arr1.$_get(0);
+      let expected1: number = arr2.$_get(0);
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = arr1.$_get(2);
+      let expected2: number = arr2.$_get(2);
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_THREE_9000
+     * @tc.name testInt16ArrayFillTestThree090
+     * @tc.desc Verify fill(infVal) Infinity to 0; multi fill
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestThree090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr1 = Int16Array.of(99 as short, 99 as short, 99 as short);
+      let arr2 = Int16Array.of(99 as short, 99 as short, 99 as short);
+      let infVal: number = Number.POSITIVE_INFINITY;
+      let zero2: short = 0 as short;
+      arr1.fill(infVal);
+      arr2.fill(zero2);
+      let actual1: number = arr1.$_get(1);
+      let expected1: number = arr2.$_get(1);
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_THREE_9100
+     * @tc.name testInt16ArrayFillTestThree091
+     * @tc.desc Verify fill(nInfVal) Infinity to 0; multi fill
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayFillTestThree091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr1 = Int16Array.of(1 as short, 1 as short);
+      let arr2 = Int16Array.of(1 as short, 1 as short);
+      let nInfVal: number = -Number.POSITIVE_INFINITY;
+      let nZeroVal: short = -0 as short;
+      arr1.fill(nInfVal);
+      arr2.fill(nZeroVal);
+      let actual1: number = arr1.$_get(0);
+      let expected1: number = arr2.$_get(0);
+      expect(actual1).assertEqual(expected1);
+    });
+  });
+}
