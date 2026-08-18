@@ -20,17 +20,17 @@ import httpResponseJsunit from './HttpResponseJsunit.test';
 import HttpRequestOptionsJsunit from './HttpRequestOptionsJsunit.test';
 import httpRequestJsunit from './HttpRequestJsunit.test';
 import NetworkManagerHttpEnhanceTest from './NetworkManagerHttpEnhance.test';
-import NetworkManagerMulticastHTTP1Test from './NetworkManagerMulticastHTTP1.test';
-import NetworkManagerMulticastHTTP2Test from './NetworkManagerMulticastHTTP2.test';
-import NetworkManagerHTTP_Multicast1Test from './NetworkManagerHTTP_Multicast1.test';
-import NetworkManagerHTTP_Multicast2Test from './NetworkManagerHTTP_Multicast2.test';
 import EmptyTestCheckCard from './EmptyTestCheckCard.test';
 import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
 import sim from '@ohos.telephony.sim';
 import connection from '@ohos.net.connection';
- 	  	 
+import NetworkManagerMulticast1HTTP2Test from './NetworkManagerMulticastHTTP1.test';
+import NetworkManagerMulticast2HTTP2Test from './NetworkManagerMulticastHTTP2.test';
+import NetworkManagerMulticastHTTP1Test from './NetworkManagerHTTP_Multicast1.test';
+import NetworkManagerMulticastHTTP2Test from './NetworkManagerHTTP_Multicast2.test';
+
 let netHandle = connection.getDefaultNetSync();
- 	 
+
 export default function testsuite() {
   if (sim.getMaxSimCount()>1){
     if(netHandle.netId != 0){
@@ -43,8 +43,8 @@ export default function testsuite() {
       NetworkManagerHttpEnhanceTest();
       NetworkManagerMulticastHTTP1Test();
       NetworkManagerMulticastHTTP2Test();
-      NetworkManagerHTTP_Multicast1Test();
-      NetworkManagerHTTP_Multicast2Test();
+      NetworkManagerMulticast1HTTP2Test();
+      NetworkManagerMulticast2HTTP2Test();
     } else {
       EmptyTestCheckNetwork();
     }
