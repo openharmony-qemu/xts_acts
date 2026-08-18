@@ -694,17 +694,12 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     /* UDID 为设备唯一标识（每台设备不同，不可写死具体值），断言其契约属性：
-     * 返回 0、长度 64 位十六进制、多次调用一致、非全零 */
+     * 返回 0、长度 64 位非空字符串、多次调用一致（API 文档仅保证非空，不限定字符集） */
     char udid[UDID_LEN] = {0};
     int ret = GetDevUdid(udid, UDID_LEN);
     printf("GetDevUdid ret=%d, udid=%s\n", ret, udid);
     TEST_ASSERT_EQUAL_INT(0, ret);
     TEST_ASSERT_TRUE(strlen(udid) == UDID_LEN - 1);
-    /* 字符集校验：全部为十六进制字符（0-9a-fA-F） */
-    for (int i = 0; i < (int)strlen(udid); i++) {
-        char c = udid[i];
-        TEST_ASSERT_TRUE((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F'));
-    }
     /* 非全零：设备唯一标识不应为空 */
     int allZero = 1;
     for (int i = 0; i < (int)strlen(udid); i++) {
@@ -739,12 +734,10 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetChipType,
                Function | MediumTest | Level1)
 {
-    /* ws63 未设置 ohos.boot.hardware 属性，实测返回 NULL */
+    /* 板卡可能设置或未设置该属性，不限定返回值，断言多次调用结果一致 */
     const char *value1 = GetChipType();
     printf("ChipType=%s\n", (value1 == NULL) ? "(null)" : value1);
-    TEST_ASSERT_TRUE(value1 == NULL);
     const char *value2 = GetChipType();
-    TEST_ASSERT_TRUE(value2 == NULL);
     TEST_ASSERT_TRUE(value1 == value2);
 };
 

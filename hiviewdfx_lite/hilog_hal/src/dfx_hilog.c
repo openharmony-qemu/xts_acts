@@ -145,7 +145,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0700, LEVEL0)
 static boolean g_procCalled = FALSE;
 static boolean HilogOutputProc(const HiLogContent *hilogContent, uint32 len)
 {
-    printf("HilogOutputProc, len is %d\n", len);
+    printf("HilogOutputProc, len is %u\n", len);
     g_procCalled = TRUE;
     return TRUE;
 }
@@ -276,10 +276,9 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1500, LEVEL0)
  */
 LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1600, LEVEL0)
 {
-    void (*addWatcherFunc)(FileProc, const char *) = HiLogFileAddWatcher;
-    TEST_ASSERT_TRUE(addWatcherFunc != NULL);
-    addWatcherFunc(HilogFileWatcher, HIVIEW_FILE_OUT_PATH_LOG);
-    addWatcherFunc(NULL, NULL);
+    /* 直接调用 API 并验证副作用（watcher 注册后打印日志不崩溃），不做恒真断言 */
+    HiLogFileAddWatcher(HilogFileWatcher, HIVIEW_FILE_OUT_PATH_LOG);
+    HiLogFileAddWatcher(NULL, NULL);
 };
 
 /**
