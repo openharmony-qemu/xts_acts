@@ -37,7 +37,7 @@ export default function screenCaptureHandlerConstructor():void {
 
     /**
      * @tc.name   testScreenCaptureHandlerConstructorStatic001
-     * @tc.number SUB_WEB_SCREENCAPTUREHANDLER_CONSTRUCTOR_RETURN_001
+     * @tc.number SUB_WEB_CONSTRUCTOR_RETURN_001
      * @tc.desc   ScreenCaptureHandler constructor return value test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -63,7 +63,7 @@ export default function screenCaptureHandlerConstructor():void {
 
     /**
      * @tc.name   testScreenCaptureHandlerConstructorStatic002
-     * @tc.number SUB_WEB_SCREENCAPTUREHANDLER_CONSTRUCTOR_PARAM_001
+     * @tc.number SUB_WEB_CONSTRUCTOR_PARAM_001
      * @tc.desc   ScreenCaptureHandler constructor invocation test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function screenCaptureHandlerConstructor():void {
 
     /**
      * @tc.name   testScreenCaptureHandlerConstructorStatic003
-     * @tc.number SUB_WEB_SCREENCAPTUREHANDLER_CONSTRUCTOR_RETURN_002
+     * @tc.number SUB_WEB_CONSTRUCTOR_RETURN_002
      * @tc.desc   ScreenCaptureHandler getOrigin method test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -115,7 +115,7 @@ export default function screenCaptureHandlerConstructor():void {
 
     /**
      * @tc.name   testScreenCaptureHandlerConstructorStatic004
-     * @tc.number SUB_WEB_SCREENCAPTUREHANDLER_CONSTRUCTOR_RETURN_003
+     * @tc.number SUB_WEB_CONSTRUCTOR_RETURN_003
      * @tc.desc   ScreenCaptureHandler deny method test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
