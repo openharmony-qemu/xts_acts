@@ -182,6 +182,7 @@ export default function AsyncLockQueryAllTest(): void {
       let lock = AsyncLock.request('notNullCase');
       let states = AsyncLock.queryAll();
       expect(states.length).assertLarger(0);
+      expect(lock.name).assertEqual('notNullCase');
     });
 
     /**
@@ -366,6 +367,8 @@ export default function AsyncLockQueryAllTest(): void {
       let lock2 = AsyncLock.request('lock2');
       let states = AsyncLock.queryAll();
       expect(states.length).assertLarger(0);
+      expect(lock1.name).assertEqual('lock1');
+      expect(lock2.name).assertEqual('lock2');
     });
 
     /**
@@ -648,6 +651,7 @@ export default function AsyncLockQueryAllTest(): void {
       let lock = AsyncLock.request('testLock');
       let states = AsyncLock.queryAll();
       expect(states.length).assertLarger(0);
+      expect(lock.name).assertEqual('testLock');
     });
 
     /**

@@ -337,6 +337,7 @@ export default function AsyncLockQueryInstanceTest(): void {
       let lock = AsyncLock.request("anyLock");
       let state = AsyncLock.query("anyLock");
       expect(state.held.length).assertEqual(0);
+      expect(lock.name).assertEqual("anyLock");
     });
 
     /**

@@ -565,6 +565,9 @@ export default function AsyncLockQueryStaticTest(): void {
         Promise.resolve(AsyncLock.query("lock3"))
       ]);
       expect(states.length).assertEqual(3);
+      expect(lock1.name).assertEqual("lock1");
+      expect(lock2.name).assertEqual("lock2");
+      expect(lock3.name).assertEqual("lock3");
       for (let s of states) {
         expect(s.held.length).assertEqual(0);
         expect(s.pending.length).assertEqual(0);
@@ -728,6 +731,7 @@ export default function AsyncLockQueryStaticTest(): void {
         AsyncLock.query("perf");
         queryCount++;
       }
+      expect(lock.name).assertEqual("perf");
       expect(queryCount).assertEqual(1000);
     });
 
