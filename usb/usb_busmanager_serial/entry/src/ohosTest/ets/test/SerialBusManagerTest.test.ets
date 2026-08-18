@@ -13,98 +13,109 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, afterAll, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import { Driver, ON, MatchPattern } from '@ohos.UiTest';
-import { JSON } from '@kit.ArkTS';
 import { bundleManager } from "@kit.AbilityKit";
 import { buffer } from '@kit.ArkTS';
-import { serial } from "@kit.BasicServicesKit";
+import { serial, BusinessError } from "@kit.BasicServicesKit";
 
 const TAG: string = "[SerialBusManagerTest]";
+const SKIP_TAG: string = "[SKIP]";
+let deviceExists: boolean = false;
 
 function sleep(ms: number): Promise<void> {
   return new Promise<void>(resolve => setTimeout(resolve, ms));
 }
 
-async function driveFn() {
-  console.info('**************driveFn**************');
-  try {
-    let driver: Driver = Driver.create();
-    console.info(TAG, `driver is ${JSON.stringify(driver)}`);
-    let button = await driver.findComponent(ON.text('允许', MatchPattern.EQUALS));
-    console.info(TAG, `button is ${JSON.stringify(button)}`);
-    if (button) {
-      await button.click();
-    }
-  } catch (err) {
-    console.info(TAG, `err: ${err}`);
+async function safeClose(port: serial.SerialPort | null): Promise<void> {
+  if (port === null) {
     return;
+  }
+  try {
+    await port!.close();
+  } catch (error) {
+    console.info(`${TAG} safeClose ignore: ${JSON.stringify(error)}`);
   }
 }
 
-async function driveFnReject(): Promise<void> {
-  console.info(TAG, '**************driveFnReject**************');
+async function clickAllowButton(): Promise<void> {
+  console.info(`${TAG} clickAllowButton`);
   try {
     let driver: Driver = Driver.create();
     await driver.delayMs(1000);
-    console.info(TAG, `driver is ${JSON.stringify(driver)}`);
+    let buttons = await driver.findComponents(ON.text('允许', MatchPattern.EQUALS));
+    if (!buttons || buttons.length === 0) {
+      buttons = await driver.findComponents(ON.text('Allow', MatchPattern.EQUALS));
+    }
+    if (buttons && buttons.length > 0) {
+      for (let i: number = 0; i < buttons.length; i++) {
+        await buttons[i].click();
+      }
+    }
+  } catch (error) {
+    console.info(`${TAG} clickAllowButton error: ${error}`);
+  }
+}
+
+async function clickRejectButton(): Promise<void> {
+  console.info(`${TAG} clickRejectButton`);
+  try {
+    let driver: Driver = Driver.create();
+    await driver.delayMs(1000);
     let buttons = await driver.findComponents(ON.text('不允许', MatchPattern.EQUALS));
-    console.info(TAG, `buttons is ${JSON.stringify(buttons)}`);
+    if (!buttons || buttons.length === 0) {
+      buttons = await driver.findComponents(ON.text('Disallow', MatchPattern.EQUALS));
+    }
     if (buttons && buttons.length > 0) {
       await buttons[0].click();
     }
   } catch (error) {
-    console.info(TAG, 'driveFnReject error: ' + error);
+    console.info(`${TAG} clickRejectButton error: ${error}`);
   }
 }
 
 async function checkDevice(): Promise<boolean> {
-  try {
-    let portList: serial.SerialPort[] = await serial.getSerialPortList();
-    if (portList && portList.length > 0) {
-      console.info(TAG, 'Test serial device detected');
-      return true;
-    } else {
-      console.info(TAG, 'Test no serial device detected');
-      return false;
-    }
-  } catch (err) {
-    console.error(TAG, 'checkDevice error: ', JSON.stringify(err));
-    return false;
+  if (deviceExists) {
+    console.info(`${TAG} serial device detected (cached)`);
+  } else {
+    console.info(`${TAG} no serial device detected (cached)`);
   }
+  return deviceExists;
 }
 
 export default function SerialBusManagerTest() {
   describe('SerialBusManagerTest', () => {
-    let gPort: serial.SerialPort | null = null;
-    let gPortInfo: serial.SerialPortInfo | null = null;
-    let gPort1: serial.SerialPort | null = null;
+    let port: serial.SerialPort | null = null;
+    let portInfo: serial.SerialPortInfo | null = null;
+    let port1: serial.SerialPort | null = null;
 
     beforeAll(async (done: Function) => {
-      console.info(TAG, 'beforeAll start');
+      console.info(`${TAG} beforeAll start`);
       try {
         let portList: serial.SerialPort[] = await serial.getSerialPortList();
+        deviceExists = !!(portList && portList.length > 0);
         if (portList && portList.length > 0) {
-          gPort = portList[0];
-          gPortInfo = portList[0].portInfo;
-          gPort1 = portList[1];
+          port = portList[0];
+          portInfo = portList[0].portInfo;
+          if (portList.length > 1) {
+            port1 = portList[1];
+          }
         }
         done();
       } catch (error) {
-        console.info(TAG, 'beforeAll error: ', JSON.stringify(error));
+        console.info(`${TAG} beforeAll error: ${JSON.stringify(error)}`);
         done();
       }
     })
 
-    afterAll(async () => {
-      console.info(TAG, 'afterAll');
-      if (gPort != null) {
-        try {
-          await gPort.close();
-        } catch (err) {
-          console.error(TAG, 'afterAll close error: ', JSON.stringify(err));
-        }
-      }
+    afterAll(async (): Promise<void> => {
+      console.info(`${TAG} afterAll`);
+    })
+
+    afterEach(async (): Promise<void> => {
+      console.info(`${TAG} afterEach`);
+      await safeClose(port);
+      await safeClose(port1);
     })
 
     /**
@@ -116,21 +127,21 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testOpen023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      console.info(TAG, 'testOpen023 start');
+      console.info(`${TAG} testOpen023 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
-        return Promise.resolve();
+        return;
       }
-      gPort!.open().then(async () => {
-        await driveFnReject();
+      try {
+        await Promise.all([port!.open(), clickRejectButton()]);
         expect().assertFail();
-        done();
-      }).catch((error: BusinessError) => {
-        console.error(TAG, 'testOpen023 catch err code: ', error.code, ', message: ', error.message);
+      } catch (error) {
+        console.error(`${TAG} testOpen023 catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(35700007);
+      } finally {
         done();
-      })
-      await driveFnReject();
+      }
     })
 
     /**
@@ -142,19 +153,19 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testGetSerialPortList001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testGetSerialPortList001 start');
+      console.info(`${TAG} testGetSerialPortList001 start`);
       try {
         let portList: serial.SerialPort[] = await serial.getSerialPortList();
-        console.info(TAG, 'testGetSerialPortList001 portList length: ', portList.length);
+        console.info(`${TAG} testGetSerialPortList001 portList length: ${portList.length}`);
         if (portList.length > 0) {
           let portInfo: serial.SerialPortInfo = portList[0].portInfo;
-          console.info(TAG, 'testGetSerialPortList001 portName: ', portInfo.portName);
-          expect(portInfo.portName != null && portInfo.portName != undefined).assertTrue();
+          console.info(`${TAG} testGetSerialPortList001 portName: ${portInfo.portName}`);
+          expect(portInfo.portName).not().assertNull();
         }
         expect(portList.length >= 0).assertTrue();
         done();
-      } catch (err) {
-        console.error(TAG, 'testGetSerialPortList001 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testGetSerialPortList001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -169,8 +180,9 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testSerialPortInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testSerialPortInfo001 start');
+      console.info(`${TAG} testSerialPortInfo001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
@@ -178,12 +190,12 @@ export default function SerialBusManagerTest() {
         let portList: serial.SerialPort[] = await serial.getSerialPortList();
         if (portList.length > 0) {
           let portInfo: serial.SerialPortInfo = portList[0].portInfo;
-          console.info(TAG, 'testSerialPortInfo001 portName: ', portInfo.portName);
+          console.info(`${TAG} testSerialPortInfo001 portName: ${portInfo.portName}`);
           expect(portInfo.portName.length > 0).assertTrue();
         }
         done();
-      } catch (err) {
-        console.error(TAG, 'testSerialPortInfo001 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testSerialPortInfo001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -198,21 +210,26 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen001 start');
+      console.info(`${TAG} testOpen001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await sleep(500);
-        await driveFn();
-        console.info(TAG, 'testOpen001 open success');
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testOpen001 catch err: ', JSON.stringify(err));
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen001 open success`);
+      } catch (error) {
+        console.error(`${TAG} testOpen001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -226,25 +243,26 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testOpen002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen002 start');
+      console.info(`${TAG} testOpen002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        baudRate: 115200,
+        dataBits: serial.DataBits.EIGHT,
+        stopBits: serial.StopBits.ONE,
+        parity: serial.Parity.NONE
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          baudRate: 115200,
-          dataBits: serial.DataBits.EIGHT,
-          stopBits: serial.StopBits.ONE,
-          parity: serial.Parity.NONE
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen002 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen002 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen002 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -259,8 +277,9 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testOpen003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testOpen003 start');
+      console.info(`${TAG} testOpen003 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
@@ -268,12 +287,12 @@ export default function SerialBusManagerTest() {
         let config: serial.SerialConfigs = {
           baudRate: -1
         };
-        gPort!.open(config);
-        await driveFn();
+        await port!.open(config);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testOpen003 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700002);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testOpen003 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700002);
         done();
       }
     })
@@ -287,8 +306,9 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testOpen004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testOpen004 start');
+      console.info(`${TAG} testOpen004 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
@@ -296,12 +316,12 @@ export default function SerialBusManagerTest() {
         let config: serial.SerialConfigs = {
           baudRate: 0
         };
-        gPort!.open(config);
-        await driveFn();
+        await port!.open(config);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testOpen004 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700002);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testOpen004 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700002);
         done();
       }
     })
@@ -315,23 +335,28 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testOpen005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testOpen005 start');
+      console.info(`${TAG} testOpen005 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         await sleep(500);
-        await gPort!.open();
-        await driveFn();
-        await sleep(500);
+        await port!.open();
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testOpen005 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700004);
-        await gPort!.close();
+      } catch (error) {
+        console.error(`${TAG} testOpen005 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700004);
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -345,22 +370,23 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testOpen006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen006 start');
+      console.info(`${TAG} testOpen006 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        baudRate: 9600
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          baudRate: 9600
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen006 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen006 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen006 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen006 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -368,29 +394,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen007
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_0600
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_0300
      * @tc.desc   open with DataBits.FIVE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen007 start');
+      console.info(`${TAG} testOpen007 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        dataBits: serial.DataBits.FIVE
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          dataBits: serial.DataBits.FIVE
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen007 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen007 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen007 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen007 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -398,29 +425,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen008
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_0700
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_0400
      * @tc.desc   open with DataBits.SIX.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen008 start');
+      console.info(`${TAG} testOpen008 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        dataBits: serial.DataBits.SIX
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          dataBits: serial.DataBits.SIX
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen008 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen008 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen008 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen008 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -428,29 +456,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen009
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_0800
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_0500
      * @tc.desc   open with DataBits.SEVEN.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen009 start');
+      console.info(`${TAG} testOpen009 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        dataBits: serial.DataBits.SEVEN
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          dataBits: serial.DataBits.SEVEN
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen009 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen009 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen009 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen009 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -458,29 +487,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen010
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_0900
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_0600
      * @tc.desc   open with StopBits.ONE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen010 start');
+      console.info(`${TAG} testOpen010 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        stopBits: serial.StopBits.ONE
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          stopBits: serial.StopBits.ONE
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen010 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen010 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen010 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen010 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -488,29 +518,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen011
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_1000
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_0700
      * @tc.desc   open with StopBits.TWO.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen011 start');
+      console.info(`${TAG} testOpen011 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        stopBits: serial.StopBits.TWO
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          stopBits: serial.StopBits.TWO
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen011 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen011 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen011 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen011 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -518,29 +549,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen012
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_1100
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_0800
      * @tc.desc   open with Parity.NONE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen012 start');
+      console.info(`${TAG} testOpen012 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        parity: serial.Parity.NONE
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          parity: serial.Parity.NONE
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen012 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen012 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen012 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen012 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -548,29 +580,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen013
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_1200
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_0900
      * @tc.desc   open with Parity.EVEN.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen013 start');
+      console.info(`${TAG} testOpen013 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        parity: serial.Parity.EVEN
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          parity: serial.Parity.EVEN
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen013 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen013 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen013 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen013 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -578,29 +611,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen014
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_1300
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_1000
      * @tc.desc   open with Parity.ODD.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen014 start');
+      console.info(`${TAG} testOpen014 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        parity: serial.Parity.ODD
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          parity: serial.Parity.ODD
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen014 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen014 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen014 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen014 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -608,29 +642,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen015
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_1400
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_1100
      * @tc.desc   open with Parity.MARK.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen015 start');
+      console.info(`${TAG} testOpen015 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        parity: serial.Parity.MARK
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          parity: serial.Parity.MARK
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen015 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen015 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen015 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen015 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -638,30 +673,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen016
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_1500
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_1200
      * @tc.desc   open with Parity.SPACE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen016 start');
+      console.info(`${TAG} testOpen016 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        parity: serial.Parity.SPACE
+      };
+      const openPromise = port!.open(config);
       try {
-
-        let config: serial.SerialConfigs = {
-          parity: serial.Parity.SPACE
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen016 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen016 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen016 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen016 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -669,29 +704,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen017
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_1600
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_1300
      * @tc.desc   open with rtscts true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen017 start');
+      console.info(`${TAG} testOpen017 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        rtscts: true
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          rtscts: true
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen017 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen017 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen017 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen017 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -699,29 +735,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen018
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_1700
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_1400
      * @tc.desc   open with rtscts false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen018 start');
+      console.info(`${TAG} testOpen018 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        rtscts: false
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          rtscts: false
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen018 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen018 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen018 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen018 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -729,30 +766,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen019
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_1800
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_1500
      * @tc.desc   open with xon true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen019 start');
+      console.info(`${TAG} testOpen019 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        xon: true
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          xon: true
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen019 open success');
-        expect().assertEqual(undefined);
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen019 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen019 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen019 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -760,29 +797,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen020
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_1900
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_1600
      * @tc.desc   open with xoff true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen020 start');
+      console.info(`${TAG} testOpen020 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        xoff: true
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          xoff: true
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen020 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen020 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen020 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen020 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -790,29 +828,30 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testOpen021
-     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_2000
+     * @tc.number SUB_BusManager_Serial_JS_open_Func_1700
      * @tc.desc   open with xany true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testOpen021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen021 start');
+      console.info(`${TAG} testOpen021 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        xany: true
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          xany: true
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen021 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen021 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen021 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen021 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -827,19 +866,21 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testClose001 start');
+      console.info(`${TAG} testClose001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        await gPort!.close();
-        console.info(TAG, 'testClose001 close success');
+        await clickAllowButton();
+        await openPromise;
+        await port!.close();
+        console.info(`${TAG} testClose001 close success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testClose001 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testClose001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -854,17 +895,19 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testClose002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testClose002 start');
+      console.info(`${TAG} testClose002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
-        await gPort!.close();
+        await port!.close();
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testClose002 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700005);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testClose002 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700005);
         done();
       }
     })
@@ -878,20 +921,23 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testClose003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testClose003 start');
+      console.info(`${TAG} testClose003 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        await gPort!.close();
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        await port!.close();
+        await port!.close();
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testClose003 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700005);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testClose003 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700005);
         done();
       }
     })
@@ -905,23 +951,29 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testWrite001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testWrite001 start');
+      console.info(`${TAG} testWrite001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer);
-        let writeLen: number = await gPort!.write(writeData, 2000);
-        console.info(TAG, 'testWrite001 writeLen: ', writeLen);
-        expect(writeLen >= 0).assertTrue();
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testWrite001 catch err: ', JSON.stringify(err));
+        let writeLength: number = await port!.write(writeData, 2000);
+        console.info(`${TAG} testWrite001 writeLength: ${writeLength}`);
+        expect(writeLength).assertEqual(11);
+      } catch (error) {
+        console.error(`${TAG} testWrite001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -935,18 +987,20 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testWrite002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testWrite002 start');
+      console.info(`${TAG} testWrite002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        await gPort!.write(writeData, 1000);
+        await port!.write(writeData, 1000);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testWrite002 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700005);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testWrite002 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700005);
         done();
       }
     })
@@ -960,21 +1014,28 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testWrite003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testWrite003 start');
+      console.info(`${TAG} testWrite003 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         let emptyData: Uint8Array = new Uint8Array(0);
-        await gPort!.write(emptyData, 1000);
+        await port!.write(emptyData, 1000);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testWrite003 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700002);
-        await gPort!.close();
+      } catch (error) {
+        console.error(`${TAG} testWrite003 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700002);
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -988,21 +1049,28 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testWrite004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testWrite004 start');
+      console.info(`${TAG} testWrite004 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         let largeData: Uint8Array = new Uint8Array(4097);
-        await gPort!.write(largeData, 1000);
+        await port!.write(largeData, 1000);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testWrite004 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700002);
-        await gPort!.close();
+      } catch (error) {
+        console.error(`${TAG} testWrite004 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700002);
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1016,21 +1084,28 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testWrite005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testWrite005 start');
+      console.info(`${TAG} testWrite005 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        await gPort!.write(writeData, -1);
+        await port!.write(writeData, -1);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testWrite005 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700002);
-        await gPort!.close();
+      } catch (error) {
+        console.error(`${TAG} testWrite005 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700002);
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1044,116 +1119,146 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testWrite006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testWrite006 start');
+      console.info(`${TAG} testWrite006 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        await gPort!.write(writeData, 300001);
+        await port!.write(writeData, 300001);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testWrite006 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700002);
-        await gPort!.close();
+      } catch (error) {
+        console.error(`${TAG} testWrite006 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700002);
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
 
     /**
      * @tc.name   testWrite007
-     * @tc.number SUB_BusManager_Serial_JS_write_ErrCode_0600
+     * @tc.number SUB_BusManager_Serial_JS_write_Func_0200
      * @tc.desc   write with timeout 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testWrite007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testWrite007 start');
+      console.info(`${TAG} testWrite007 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        let writeLen: number = await gPort!.write(writeData, 0);
-        console.info(TAG, 'testWrite007 writeLen: ', writeLen);
-        expect(writeLen >= 0).assertTrue();
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testWrite007 catch err: ', JSON.stringify(err));
+        let writeLength: number = await port!.write(writeData, 0);
+        console.info(`${TAG} testWrite007 writeLength: ${writeLength}`);
+        expect(writeLength).assertEqual(5);
+      } catch (error) {
+        console.error(`${TAG} testWrite007 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
 
     /**
      * @tc.name   testWrite008
-     * @tc.number SUB_BusManager_Serial_JS_write_ErrCode_0700
+     * @tc.number SUB_BusManager_Serial_JS_write_Func_0300
      * @tc.desc   write with timeout boundary 300000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testWrite008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testWrite008 start');
+      console.info(`${TAG} testWrite008 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         await sleep(500);
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        let writeLen: number = await gPort!.write(writeData, 300000);
-        console.info(TAG, 'testWrite008 writeLen: ', writeLen);
-        expect(writeLen >= 0).assertTrue();
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testWrite008 catch err: ', JSON.stringify(err));
+        let writeLength: number = await port!.write(writeData, 300000);
+        console.info(`${TAG} testWrite008 writeLength: ${writeLength}`);
+        expect(writeLength).assertEqual(5);
+      } catch (error) {
+        console.error(`${TAG} testWrite008 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
 
     /**
      * @tc.name   testWrite009
-     * @tc.number SUB_BusManager_Serial_JS_write_ErrCode_0800
+     * @tc.number SUB_BusManager_Serial_JS_write_Func_0400
      * @tc.desc   write with data length 4096 boundary.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testWrite009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testWrite009 start');
+      console.info(`${TAG} testWrite009 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      if (port1 === null) {
+        console.info(`${TAG} ${SKIP_TAG} testWrite009 port1 is null, skip`);
+        done();
+        return;
+      }
+      const openPromise = port1!.open();
       try {
-        gPort1!.open();
+        await clickAllowButton();
+        await openPromise;
         await sleep(500);
-        await driveFn();
         let writeData: Uint8Array = new Uint8Array(4096);
         for (let i = 0; i < 4096; i++) {
           writeData[i] = i % 256;
         }
-        let writeLen: number = await gPort1!.write(writeData, 5000);
-        console.info(TAG, 'testWrite009 writeLen: ', writeLen);
-        expect(writeLen >= 0).assertTrue();
-        await gPort1!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testWrite009 catch err: ', JSON.stringify(err));
+        let writeLength: number = await port1!.write(writeData, 10000);
+        console.info(`${TAG} testWrite009 writeLength: ${writeLength}`);
+        expect(writeLength).assertEqual(4096);
+      } catch (error) {
+        console.error(`${TAG} testWrite009 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port1);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1167,27 +1272,38 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testOnDataRead001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOnDataRead001 start');
+      console.info(`${TAG} testOnDataRead001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
-      try {
-        gPort1!.open();
-        await driveFn();
-        await sleep(500);
-        gPort1!.onDataRead((data: Uint8Array) => {
-          console.info(TAG, 'testOnDataRead001 received data length: ', data.length);
-        });
-        console.info(TAG, 'testOnDataRead001 register success');
-        let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        await gPort1!.write(writeData);
-        gPort1!.offDataRead();
-        await gPort1!.close();
+      if (port1 === null) {
+        console.info(`${TAG} ${SKIP_TAG} testOnDataRead001 port1 is null, skip`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOnDataRead001 catch err: ', JSON.stringify(err));
+        return;
+      }
+      const openPromise = port1!.open();
+      try {
+        await clickAllowButton();
+        await openPromise;
+        await sleep(500);
+        port1!.onDataRead((data: Uint8Array) => {
+          console.info(`${TAG} testOnDataRead001 received data length: ${data.length}`);
+        });
+        console.info(`${TAG} testOnDataRead001 register success`);
+        let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
+        await port1!.write(writeData);
+        port1!.offDataRead();
+      } catch (error) {
+        console.error(`${TAG} testOnDataRead001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port1);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1201,19 +1317,21 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testOnDataRead002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testOnDataRead002 start');
+      console.info(`${TAG} testOnDataRead002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
-        gPort!.onDataRead((data: Uint8Array) => {
-          console.info(TAG, 'testOnDataRead002 received data length: ', data.length);
+        port!.onDataRead((data: Uint8Array) => {
+          console.info(`${TAG} testOnDataRead002 received data length: ${data.length}`);
         });
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testOnDataRead002 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700005);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testOnDataRead002 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700005);
         done();
       }
     })
@@ -1227,28 +1345,34 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testOffDataRead001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOffDataRead001 start');
+      console.info(`${TAG} testOffDataRead001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         await sleep(500);
-        gPort!.onDataRead((data: Uint8Array) => {
-          console.info(TAG, 'testOffDataRead001 received data length: ', data.length);
+        port!.onDataRead((data: Uint8Array) => {
+          console.info(`${TAG} testOffDataRead001 received data length: ${data.length}`);
         });
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        await gPort!.write(writeData);
+        await port!.write(writeData);
         await sleep(500);
-        gPort!.offDataRead();
-        console.info(TAG, 'testOffDataRead001 unregister success');
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testOffDataRead001 catch err: ', JSON.stringify(err));
+        port!.offDataRead();
+        console.info(`${TAG} testOffDataRead001 unregister success`);
+      } catch (error) {
+        console.error(`${TAG} testOffDataRead001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1262,26 +1386,32 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testOffDataRead002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOffDataRead002 start');
+      console.info(`${TAG} testOffDataRead002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         await sleep(500);
         let callback = (data: Uint8Array) => {
-          console.info(TAG, 'testOffDataRead002 received data length: ', data.length);
+          console.info(`${TAG} testOffDataRead002 received data length: ${data.length}`);
         };
-        gPort!.onDataRead(callback);
-        gPort!.offDataRead(callback);
-        console.info(TAG, 'testOffDataRead002 unregister specific callback success');
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testOffDataRead002 catch err: ', JSON.stringify(err));
+        port!.onDataRead(callback);
+        port!.offDataRead(callback);
+        console.info(`${TAG} testOffDataRead002 unregister specific callback success`);
+      } catch (error) {
+        console.error(`${TAG} testOffDataRead002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1295,17 +1425,19 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testOffDataRead003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testOffDataRead003 start');
+      console.info(`${TAG} testOffDataRead003 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
-        gPort!.offDataRead();
+        port!.offDataRead();
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testOffDataRead003 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700005);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testOffDataRead003 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700005);
         done();
       }
     })
@@ -1319,21 +1451,27 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testFlush001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testFlush001 start');
+      console.info(`${TAG} testFlush001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        await gPort!.flush();
-        console.info(TAG, 'testFlush001 flush success');
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testFlush001 catch err: ', JSON.stringify(err));
+        await clickAllowButton();
+        await openPromise;
+        await port!.flush();
+        console.info(`${TAG} testFlush001 flush success`);
+      } catch (error) {
+        console.error(`${TAG} testFlush001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1347,17 +1485,19 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testFlush002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testFlush002 start');
+      console.info(`${TAG} testFlush002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
-        await gPort!.flush();
+        await port!.flush();
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testFlush002 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700005);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testFlush002 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700005);
         done();
       }
     })
@@ -1371,23 +1511,29 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testDrain001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testDrain001 start');
+      console.info(`${TAG} testDrain001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        await gPort!.write(writeData, 1000);
-        await gPort!.drain();
-        console.info(TAG, 'testDrain001 drain success');
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testDrain001 catch err: ', JSON.stringify(err));
+        await port!.write(writeData, 1000);
+        await port!.drain();
+        console.info(`${TAG} testDrain001 drain success`);
+      } catch (error) {
+        console.error(`${TAG} testDrain001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1401,17 +1547,19 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testDrain002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testDrain002 start');
+      console.info(`${TAG} testDrain002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
-        await gPort!.drain();
+        await port!.drain();
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testDrain002 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700005);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testDrain002 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700005);
         done();
       }
     })
@@ -1425,21 +1573,27 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testSetRts001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testSetRts001 start');
+      console.info(`${TAG} testSetRts001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        await gPort!.setRts(false);
-        console.info(TAG, 'testSetRts001 setRts true success');
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testSetRts001 catch err: ', JSON.stringify(err));
+        await clickAllowButton();
+        await openPromise;
+        await port!.setRts(true);
+        console.info(`${TAG} testSetRts001 setRts true success`);
+      } catch (error) {
+        console.error(`${TAG} testSetRts001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1453,21 +1607,27 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testSetRts002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testSetRts002 start');
+      console.info(`${TAG} testSetRts002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        await gPort!.setRts(false);
-        console.info(TAG, 'testSetRts002 setRts false success');
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testSetRts002 catch err: ', JSON.stringify(err));
+        await clickAllowButton();
+        await openPromise;
+        await port!.setRts(false);
+        console.info(`${TAG} testSetRts002 setRts false success`);
+      } catch (error) {
+        console.error(`${TAG} testSetRts002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1481,17 +1641,19 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testSetRts003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testSetRts003 start');
+      console.info(`${TAG} testSetRts003 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
-        await gPort!.setRts(true);
+        await port!.setRts(true);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testSetRts003 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700005);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testSetRts003 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700005);
         done();
       }
     })
@@ -1505,20 +1667,27 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testSetRts004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testSetRts004 start');
+      console.info(`${TAG} testSetRts004 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        await gPort!.setRts(null);
+        await clickAllowButton();
+        await openPromise;
+        await port!.setRts(null);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testSetRts004 catch err code: ', err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(401);
-        await gPort!.close();
+      } catch (error) {
+        console.error(`${TAG} testSetRts004 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1532,20 +1701,27 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testSetRts005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testSetRts005 start');
+      console.info(`${TAG} testSetRts005 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        await gPort!.setRts(undefined);
+        await clickAllowButton();
+        await openPromise;
+        await port!.setRts(undefined);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testSetRts005 catch err code: ', err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(401);
-        await gPort!.close();
+      } catch (error) {
+        console.error(`${TAG} testSetRts005 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1556,25 +1732,31 @@ export default function SerialBusManagerTest() {
      * @tc.desc   getCts successfully.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testGetCts001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testGetCts001 start');
+    it('testGetCts001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info(`${TAG} testGetCts001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        await driveFn();
-        await gPort!.open();
-        let cts: boolean = await gPort!.getCts();
-        console.info(TAG, 'testGetCts001 getCts: ', cts);
-        expect(cts === true || cts === false).assertTrue();
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testGetCts001 catch err: ', JSON.stringify(err));
+        await clickAllowButton();
+        await openPromise;
+        let cts: boolean = await port!.getCts();
+        console.info(`${TAG} testGetCts001 getCts: ${cts}`);
+        expect(typeof cts).assertEqual('boolean');
+      } catch (error) {
+        console.error(`${TAG} testGetCts001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1588,17 +1770,19 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testGetCts002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testGetCts002 start');
+      console.info(`${TAG} testGetCts002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
-        await gPort!.getCts();
+        await port!.getCts();
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testGetCts002 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700005);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testGetCts002 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700005);
         done();
       }
     })
@@ -1612,21 +1796,27 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testSendBrk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testSendBrk001 start');
+      console.info(`${TAG} testSendBrk001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        await gPort!.sendBrk();
-        console.info(TAG, 'testSendBrk001 sendBrk success');
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testSendBrk001 catch err: ', JSON.stringify(err));
+        await clickAllowButton();
+        await openPromise;
+        await port!.sendBrk();
+        console.info(`${TAG} testSendBrk001 sendBrk success`);
+      } catch (error) {
+        console.error(`${TAG} testSendBrk001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1640,17 +1830,19 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testSendBrk002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testSendBrk002 start');
+      console.info(`${TAG} testSendBrk002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
-        await gPort!.sendBrk();
+        await port!.sendBrk();
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testSendBrk002 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700005);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testSendBrk002 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700005);
         done();
       }
     })
@@ -1664,8 +1856,9 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testAddPortAuthorization001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testAddPortAuthorization001 start');
+      console.info(`${TAG} testAddPortAuthorization001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
@@ -1673,12 +1866,13 @@ export default function SerialBusManagerTest() {
         let bundleFlags: number = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
         let bundleInfo: bundleManager.BundleInfo = await bundleManager.getBundleInfoForSelf(bundleFlags);
         let tokenId: string = String(bundleInfo.appInfo.accessTokenId);
-        let deviceId: string = gPortInfo!.portName;
+        let deviceId: string = portInfo!.portName;
         await serial.addPortAuthorization(tokenId, deviceId);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testAddPortAuthorization001 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(202);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testAddPortAuthorization001 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(202);
         done();
       }
     })
@@ -1692,19 +1886,21 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testAddPortAuthorization002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testAddPortAuthorization002 start');
+      console.info(`${TAG} testAddPortAuthorization002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
         let tokenId: string = '';
-        let deviceId: string = gPortInfo!.portName;
+        let deviceId: string = portInfo!.portName;
         await serial.addPortAuthorization(tokenId, deviceId);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testAddPortAuthorization002 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700002);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testAddPortAuthorization002 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700002);
         done();
       }
     })
@@ -1718,8 +1914,9 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testAddPortAuthorization003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testAddPortAuthorization003 start');
+      console.info(`${TAG} testAddPortAuthorization003 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
@@ -1730,9 +1927,10 @@ export default function SerialBusManagerTest() {
         let deviceId: string = '';
         await serial.addPortAuthorization(tokenId, deviceId);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testAddPortAuthorization003 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700002);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testAddPortAuthorization003 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700002);
         done();
       }
     })
@@ -1746,29 +1944,30 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testConfigCombination001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testConfigCombination001 start');
+      console.info(`${TAG} testConfigCombination001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        baudRate: 9600,
+        dataBits: serial.DataBits.EIGHT,
+        stopBits: serial.StopBits.ONE,
+        parity: serial.Parity.NONE,
+        rtscts: false,
+        xon: false,
+        xoff: false,
+        xany: false
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          baudRate: 9600,
-          dataBits: serial.DataBits.EIGHT,
-          stopBits: serial.StopBits.ONE,
-          parity: serial.Parity.NONE,
-          rtscts: false,
-          xon: false,
-          xoff: false,
-          xany: false
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testConfigCombination001 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testConfigCombination001 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testConfigCombination001 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testConfigCombination001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -1783,25 +1982,25 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testConfigCombination002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testConfigCombination002 start');
+      console.info(`${TAG} testConfigCombination002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        baudRate: 115200,
+        rtscts: true,
+        xon: true
+      };
+      const openPromise = port!.open(config);
       try {
-
-        let config: serial.SerialConfigs = {
-          baudRate: 115200,
-          rtscts: true,
-          xon: true
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testConfigCombination002 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testConfigCombination002 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testConfigCombination002 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testConfigCombination002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -1816,27 +2015,39 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testWriteTimeout001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testWriteTimeout001 start');
+      console.info(`${TAG} testWriteTimeout001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      if (port1 === null) {
+        console.info(`${TAG} ${SKIP_TAG} testWriteTimeout001 port1 is null, skip`);
+        done();
+        return;
+      }
+      const openPromise = port1!.open();
       try {
-        gPort1!.open();
+        await clickAllowButton();
+        await openPromise;
         await sleep(500);
-        await driveFn();
         let largeData: Uint8Array = new Uint8Array(4096);
         for (let i = 0; i < 4096; i++) {
           largeData[i] = i % 256;
         }
         for (let index = 0; index < 100; index++) {
-          await gPort1!.write(largeData, 1);
+          await port1!.write(largeData, 1);
         }
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testWriteTimeout001 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700006);
-        await gPort1!.close();
+      } catch (error) {
+        console.error(`${TAG} testWriteTimeout001 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700006);
+      } finally {
+        try {
+          await safeClose(port1);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1850,24 +2061,32 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testOnDisconnect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOnDisconnect001 start');
+      console.info(`${TAG} testOnDisconnect001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         await sleep(500);
-        gPort!.onDisconnect(() => {
-          console.info(TAG, 'testOnDisconnect001 disconnect callback triggered');
-        });
-        console.info(TAG, 'testOnDisconnect001 register success');
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testOnDisconnect001 catch err: ', JSON.stringify(err));
+        let callback: () => void;
+        callback = () => {
+          console.info(`${TAG} testOnDisconnect001 disconnect callback triggered`);
+        };
+        port!.onDisconnect(callback);
+        console.info(`${TAG} testOnDisconnect001 register success`);
+      } catch (error) {
+        console.error(`${TAG} testOnDisconnect001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1881,19 +2100,23 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testOnDisconnect002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testOnDisconnect002 start');
+      console.info(`${TAG} testOnDisconnect002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
-        gPort!.onDisconnect(() => {
-          console.info(TAG, 'testOnDisconnect002 disconnect callback');
-        });
+        let callback: () => void;
+        callback = () => {
+          console.info(`${TAG} testOnDisconnect002 disconnect callback`);
+        };
+        port!.onDisconnect(callback);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testOnDisconnect002 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700005);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testOnDisconnect002 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700005);
         done();
       }
     })
@@ -1907,25 +2130,33 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testOffDisconnect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOffDisconnect001 start');
+      console.info(`${TAG} testOffDisconnect001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         await sleep(500);
-        gPort!.onDisconnect(() => {
-          console.info(TAG, 'testOffDisconnect001 disconnect callback');
-        });
-        gPort!.offDisconnect();
-        console.info(TAG, 'testOffDisconnect001 unregister all success');
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testOffDisconnect001 catch err: ', JSON.stringify(err));
+        let callback: () => void;
+        callback = () => {
+          console.info(`${TAG} testOffDisconnect001 disconnect callback`);
+        };
+        port!.onDisconnect(callback);
+        port!.offDisconnect();
+        console.info(`${TAG} testOffDisconnect001 unregister all success`);
+      } catch (error) {
+        console.error(`${TAG} testOffDisconnect001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1939,27 +2170,33 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testOffDisconnect002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOffDisconnect002 start');
+      console.info(`${TAG} testOffDisconnect002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         await sleep(500);
         let callback: () => void;
         callback = () => {
-          console.info(TAG, 'testOffDisconnect002 disconnect callback');
+          console.info(`${TAG} testOffDisconnect002 disconnect callback`);
         };
-        gPort!.onDisconnect(callback);
-        gPort!.offDisconnect(callback);
-        console.info(TAG, 'testOffDisconnect002 unregister specific callback success');
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testOffDisconnect002 catch err: ', JSON.stringify(err));
+        port!.onDisconnect(callback);
+        port!.offDisconnect(callback);
+        console.info(`${TAG} testOffDisconnect002 unregister specific callback success`);
+      } catch (error) {
+        console.error(`${TAG} testOffDisconnect002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -1973,17 +2210,19 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testOffDisconnect003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testOffDisconnect003 start');
+      console.info(`${TAG} testOffDisconnect003 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
-        gPort!.offDisconnect();
+        port!.offDisconnect();
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testOffDisconnect003 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700005);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testOffDisconnect003 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700005);
         done();
       }
     })
@@ -1997,21 +2236,27 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testSetDtr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testSetDtr001 start');
+      console.info(`${TAG} testSetDtr001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        await gPort!.setDtr(true);
-        console.info(TAG, 'testSetDtr001 setDtr true success');
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testSetDtr001 catch err: ', JSON.stringify(err));
+        await clickAllowButton();
+        await openPromise;
+        await port!.setDtr(true);
+        console.info(`${TAG} testSetDtr001 setDtr true success`);
+      } catch (error) {
+        console.error(`${TAG} testSetDtr001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -2025,21 +2270,27 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testSetDtr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testSetDtr002 start');
+      console.info(`${TAG} testSetDtr002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        await gPort!.setDtr(false);
-        console.info(TAG, 'testSetDtr002 setDtr false success');
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testSetDtr002 catch err: ', JSON.stringify(err));
+        await clickAllowButton();
+        await openPromise;
+        await port!.setDtr(false);
+        console.info(`${TAG} testSetDtr002 setDtr false success`);
+      } catch (error) {
+        console.error(`${TAG} testSetDtr002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -2053,17 +2304,19 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testSetDtr003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testSetDtr003 start');
+      console.info(`${TAG} testSetDtr003 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
-        await gPort!.setDtr(true);
+        await port!.setDtr(true);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testSetDtr003 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700005);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testSetDtr003 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700005);
         done();
       }
     })
@@ -2077,20 +2330,27 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testSetDtr004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testSetDtr004 start');
+      console.info(`${TAG} testSetDtr004 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        await gPort!.setDtr(null);
+        await clickAllowButton();
+        await openPromise;
+        await port!.setDtr(null);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testSetDtr004 catch err code: ', err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(401);
-        await gPort!.close();
+      } catch (error) {
+        console.error(`${TAG} testSetDtr004 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -2104,20 +2364,27 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testSetDtr005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testSetDtr005 start');
+      console.info(`${TAG} testSetDtr005 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        await gPort!.setDtr(undefined);
+        await clickAllowButton();
+        await openPromise;
+        await port!.setDtr(undefined);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testSetDtr005 catch err code: ', err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(401);
-        await gPort!.close();
+      } catch (error) {
+        console.error(`${TAG} testSetDtr005 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -2128,25 +2395,31 @@ export default function SerialBusManagerTest() {
      * @tc.desc   getDsr successfully.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testGetDsr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testGetDsr001 start');
+    it('testGetDsr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info(`${TAG} testGetDsr001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        let dsr: boolean = await gPort!.getDsr();
-        console.info(TAG, 'testGetDsr001 getDsr: ', dsr);
+        await clickAllowButton();
+        await openPromise;
+        let dsr: boolean = await port!.getDsr();
+        console.info(`${TAG} testGetDsr001 getDsr: ${dsr}`);
         expect(typeof dsr).assertEqual('boolean');
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testGetDsr001 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testGetDsr001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -2160,17 +2433,19 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testGetDsr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testGetDsr002 start');
+      console.info(`${TAG} testGetDsr002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
-        await gPort!.getDsr();
+        await port!.getDsr();
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testGetDsr002 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700005);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testGetDsr002 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700005);
         done();
       }
     })
@@ -2184,8 +2459,9 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testSerialPortInfo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testSerialPortInfo002 start');
+      console.info(`${TAG} testSerialPortInfo002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
@@ -2193,11 +2469,11 @@ export default function SerialBusManagerTest() {
         let portList: serial.SerialPort[] = await serial.getSerialPortList();
         if (portList.length > 0) {
           let portInfo: serial.SerialPortInfo = portList[0].portInfo;
-          console.info(TAG, 'testSerialPortInfo002 portName: ', portInfo.portName);
-          console.info(TAG, 'testSerialPortInfo002 vendorId: ', portInfo.vendorId);
-          console.info(TAG, 'testSerialPortInfo002 productId: ', portInfo.productId);
-          console.info(TAG, 'testSerialPortInfo002 manufacturer: ', portInfo.manufacturer);
-          expect(portInfo.portName !== null && portInfo.portName !== undefined).assertTrue();
+          console.info(`${TAG} testSerialPortInfo002 portName: ${portInfo.portName}`);
+          console.info(`${TAG} testSerialPortInfo002 vendorId: ${portInfo.vendorId}`);
+          console.info(`${TAG} testSerialPortInfo002 productId: ${portInfo.productId}`);
+          console.info(`${TAG} testSerialPortInfo002 manufacturer: ${portInfo.manufacturer}`);
+          expect(portInfo.portName).not().assertNull();
           if (portInfo.vendorId !== undefined) {
             expect(typeof portInfo.vendorId).assertEqual('number');
           }
@@ -2214,13 +2490,13 @@ export default function SerialBusManagerTest() {
           stopBits: serial.StopBits.ONE,
           parity: serial.Parity.NONE
         };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testSerialPortInfo002 open success');
-        await gPort!.close();
+        const openPromise = port!.open(config);
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testSerialPortInfo002 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testSerialPortInfo002 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testSerialPortInfo002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -2235,8 +2511,9 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testDataBitsEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testDataBitsEnum001 start');
+      console.info(`${TAG} testDataBitsEnum001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
@@ -2248,13 +2525,13 @@ export default function SerialBusManagerTest() {
           stopBits: serial.StopBits.ONE,
           parity: serial.Parity.NONE
         };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testDataBitsEnum001 open success');
-        await gPort!.close();
+        const openPromise = port!.open(config);
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testDataBitsEnum001 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testDataBitsEnum001 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testDataBitsEnum001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -2269,8 +2546,9 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testDataBitsEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testDataBitsEnum002 start');
+      console.info(`${TAG} testDataBitsEnum002 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
@@ -2282,13 +2560,13 @@ export default function SerialBusManagerTest() {
           stopBits: serial.StopBits.ONE,
           parity: serial.Parity.EVEN
         };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testDataBitsEnum002 open success');
-        await gPort!.close();
+        const openPromise = port!.open(config);
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testDataBitsEnum002 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testDataBitsEnum002 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testDataBitsEnum002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -2303,8 +2581,9 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testDataBitsEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testDataBitsEnum003 start');
+      console.info(`${TAG} testDataBitsEnum003 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
@@ -2316,13 +2595,13 @@ export default function SerialBusManagerTest() {
           stopBits: serial.StopBits.ONE,
           parity: serial.Parity.ODD
         };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testDataBitsEnum003 open success');
-        await gPort!.close();
+        const openPromise = port!.open(config);
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testDataBitsEnum003 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testDataBitsEnum003 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testDataBitsEnum003 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -2337,8 +2616,9 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testDataBitsEnum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testDataBitsEnum004 start');
+      console.info(`${TAG} testDataBitsEnum004 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
@@ -2350,13 +2630,13 @@ export default function SerialBusManagerTest() {
           stopBits: serial.StopBits.ONE,
           parity: serial.Parity.MARK
         };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testDataBitsEnum004 open success');
-        await gPort!.close();
+        const openPromise = port!.open(config);
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testDataBitsEnum004 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testDataBitsEnum004 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testDataBitsEnum004 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -2371,8 +2651,9 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testStopBitsEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testStopBitsEnum001 start');
+      console.info(`${TAG} testStopBitsEnum001 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
@@ -2385,13 +2666,13 @@ export default function SerialBusManagerTest() {
           stopBits: serial.StopBits.TWO,
           parity: serial.Parity.SPACE
         };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testStopBitsEnum001 open success');
-        await gPort!.close();
+        const openPromise = port!.open(config);
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testStopBitsEnum001 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testStopBitsEnum001 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testStopBitsEnum001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -2406,22 +2687,23 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testOpen022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOpen022 start');
+      console.info(`${TAG} testOpen022 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      let config: serial.SerialConfigs = {
+        dataBits: serial.DataBits.EIGHT
+      };
+      const openPromise = port!.open(config);
       try {
-        let config: serial.SerialConfigs = {
-          dataBits: serial.DataBits.EIGHT
-        };
-        gPort!.open(config);
-        await driveFn();
-        console.info(TAG, 'testOpen022 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen022 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen022 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen022 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -2436,17 +2718,19 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testOpen024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testOpen024 start');
+      console.info(`${TAG} testOpen024 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
-        gPort!.open(null);
+        await port!.open(null);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testOpen024 catch err code: ', err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(401);
+        done();
+      } catch (error) {
+        console.error(`${TAG} testOpen024 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
         done();
       }
     })
@@ -2460,19 +2744,20 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testOpen025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testOpen025 start');
+      console.info(`${TAG} testOpen025 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open(undefined);
       try {
-        gPort!.open(undefined);
-        await driveFn();
-        console.info(TAG, 'testOpen025 open success');
-        await gPort!.close();
+        await clickAllowButton();
+        await openPromise;
+        console.info(`${TAG} testOpen025 open success`);
         done();
-      } catch (err) {
-        console.error(TAG, 'testOpen025 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testOpen025 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -2480,30 +2765,36 @@ export default function SerialBusManagerTest() {
 
     /**
      * @tc.name   testWrite010
-     * @tc.number SUB_BusManager_Serial_JS_write_Func_0200
+     * @tc.number SUB_BusManager_Serial_JS_write_Func_0700
      * @tc.desc   write with no timeout parameter (default).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testWrite010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testWrite010 start');
+      console.info(`${TAG} testWrite010 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        let writeLen: number = await gPort!.write(writeData);
-        console.info(TAG, 'testWrite010 writeLen: ', writeLen);
-        expect(writeLen == 5).assertTrue();
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testWrite010 catch err: ', JSON.stringify(err));
+        let writeLength: number = await port!.write(writeData);
+        console.info(`${TAG} testWrite010 writeLength: ${writeLength}`);
+        expect(writeLength).assertEqual(5);
+      } catch (error) {
+        console.error(`${TAG} testWrite010 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -2517,24 +2808,30 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testWrite011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testWrite011 start');
+      console.info(`${TAG} testWrite011 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer);
-        let writeLen: number = await gPort!.write(writeData, 2000);
-        console.info(TAG, 'testWrite011 writeLen: ', writeLen);
-        expect(typeof writeLen === 'number').assertTrue();
-        expect(writeLen > 0).assertTrue();
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testWrite011 catch err: ', JSON.stringify(err));
+        let writeLength: number = await port!.write(writeData, 2000);
+        console.info(`${TAG} testWrite011 writeLength: ${writeLength}`);
+        expect(typeof writeLength).assertEqual('number');
+        expect(writeLength).assertEqual(11);
+      } catch (error) {
+        console.error(`${TAG} testWrite011 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -2542,26 +2839,33 @@ export default function SerialBusManagerTest() {
     /**
      * @tc.name   testWrite012
      * @tc.number SUB_BusManager_Serial_JS_write_ErrCode_0900
-     * @tc.desc   write with null data - 35700002.
+     * @tc.desc   write with null data - 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testWrite012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testWrite012 start');
+      console.info(`${TAG} testWrite012 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        await gPort!.write(null, 1000);
+        await clickAllowButton();
+        await openPromise;
+        await port!.write(null, 1000);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testWrite012 catch err code: ', err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(401);
-        await gPort!.close();
+      } catch (error) {
+        console.error(`${TAG} testWrite012 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -2569,26 +2873,33 @@ export default function SerialBusManagerTest() {
     /**
      * @tc.name   testWrite013
      * @tc.number SUB_BusManager_Serial_JS_write_ErrCode_1000
-     * @tc.desc   write with undefined data - 35700002.
+     * @tc.desc   write with undefined data - 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testWrite013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testWrite013 start');
+      console.info(`${TAG} testWrite013 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
-        await gPort!.write(undefined, 1000);
+        await clickAllowButton();
+        await openPromise;
+        await port!.write(undefined, 1000);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testWrite013 catch err code: ', err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(401);
-        await gPort!.close();
+      } catch (error) {
+        console.error(`${TAG} testWrite013 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -2602,21 +2913,28 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testWrite014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testWrite014 start');
+      console.info(`${TAG} testWrite014 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        await gPort!.write(writeData, null);
+        await port!.write(writeData, null);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testWrite014 catch err code: ', err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(401);
-        await gPort!.close();
+      } catch (error) {
+        console.error(`${TAG} testWrite014 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -2627,85 +2945,104 @@ export default function SerialBusManagerTest() {
      * @tc.desc   write with timeout 1 (min positive integer).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testWrite015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testWrite015 start');
+    it('testWrite015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG} testWrite015 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        let writeLen: number = await gPort!.write(writeData, 1);
-        console.info(TAG, 'testWrite015 writeLen: ', writeLen);
-        expect(writeLen >= 0).assertTrue();
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testWrite015 catch err: ', JSON.stringify(err));
+        let writeLength: number = await port!.write(writeData, 1);
+        console.info(`${TAG} testWrite015 writeLength: ${writeLength}`);
+        expect(writeLength).assertEqual(5);
+      } catch (error) {
+        console.error(`${TAG} testWrite015 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
 
     /**
      * @tc.name   testWrite016
-     * @tc.number SUB_BusManager_Serial_JS_write_ErrCode_1300
+     * @tc.number SUB_BusManager_Serial_JS_write_Func_0500
      * @tc.desc   write with timeout 299999 (upper bound minus 1).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testWrite016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testWrite016 start');
+    it('testWrite016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG} testWrite016 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         await sleep(500);
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        let writeLen: number = await gPort!.write(writeData, 299999);
-        console.info(TAG, 'testWrite016 writeLen: ', writeLen);
-        expect(writeLen >= 0).assertTrue();
-        await gPort!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testWrite016 catch err: ', JSON.stringify(err));
+        let writeLength: number = await port!.write(writeData, 299999);
+        console.info(`${TAG} testWrite016 writeLength: ${writeLength}`);
+        expect(writeLength).assertEqual(5);
+      } catch (error) {
+        console.error(`${TAG} testWrite016 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
 
     /**
      * @tc.name   testWrite017
-     * @tc.number SUB_BusManager_Serial_JS_write_ErrCode_1400
-     * @tc.desc   write with float timeout 1.5 - 401.
+     * @tc.number SUB_BusManager_Serial_JS_write_Func_0600
+     * @tc.desc   write with float timeout 1.5 - 35700002.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testWrite017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testWrite017 start');
+      console.info(`${TAG} testWrite017 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        await gPort!.write(writeData, 1.5);
+        await port!.write(writeData, 1.5);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testWrite017 catch err code: ', err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(35700002);
-        await gPort!.close();
+      } catch (error) {
+        console.error(`${TAG} testWrite017 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(35700002);
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -2719,21 +3056,28 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL3
      */
     it('testWrite018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(TAG, 'testWrite018 start');
+      console.info(`${TAG} testWrite018 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
+      const openPromise = port!.open();
       try {
-        gPort!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        await gPort!.write(writeData, undefined);
+        await port!.write(writeData, undefined);
         expect().assertFail();
-      } catch (err) {
-        console.error(TAG, 'testWrite018 catch err code: ', err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(401);
-        await gPort!.close();
+      } catch (error) {
+        console.error(`${TAG} testWrite018 catch err: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        try {
+          await safeClose(port);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -2749,21 +3093,22 @@ export default function SerialBusManagerTest() {
     it('testOnDataRead003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG} testOnDataRead003 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
-      if (gPort1 === null) {
-        console.info(`${TAG} testOnDataRead003 gPort1 is null, skip`);
+      if (port1 === null) {
+        console.info(`${TAG} ${SKIP_TAG} testOnDataRead003 port1 is null, skip`);
         done();
         return;
       }
-      const openPromise = gPort1!.open();
-      await driveFn();
+      const openPromise = port1!.open();
       try {
+        await clickAllowButton();
         await openPromise;
         await sleep(500);
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        gPort1!.onDataRead((data: Uint8Array): void => {
+        port1!.onDataRead((data: Uint8Array): void => {
           let dataStr = buffer.from(data.buffer).toString('utf-8');
           console.info(`${TAG} testOnDataRead003 received dataStr: ${dataStr}`);
           console.info(`${TAG} testOnDataRead003 received data length: ${data.length}`);
@@ -2771,14 +3116,18 @@ export default function SerialBusManagerTest() {
           expect(dataStr).assertEqual('Hello');
         });
         console.info(`${TAG} testOnDataRead003 onDataRead register success`);
-        await gPort1!.write(writeData);
+        await port1!.write(writeData);
         await sleep(500);
-        gPort1!.offDataRead();
-        await gPort1!.close();
-        done();
+        port1!.offDataRead();
       } catch (error) {
-        console.error(`${TAG} testOnDataRead003 catch err: ${error}`);
+        console.error(`${TAG} testOnDataRead003 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port1);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
@@ -2792,42 +3141,47 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testOnDataRead004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testOnDataRead004 start');
+      console.info(`${TAG} testOnDataRead004 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
-      if (gPort1 === null) {
-        console.info(TAG, 'testOnDataRead004 gPort1 is null, skip');
+      if (port1 === null) {
+        console.info(`${TAG} ${SKIP_TAG} testOnDataRead004 port1 is null, skip`);
         done();
         return;
       }
+      const openPromise = port1!.open();
       try {
-        gPort1!.open();
-        await driveFn();
+        await clickAllowButton();
+        await openPromise;
         await sleep(500);
         let callbackCalled = false;
-        gPort1!.onDataRead((data: Uint8Array): void => {
+        port1!.onDataRead((data: Uint8Array): void => {
           callbackCalled = true;
-          console.info(TAG, 'testOnDataRead004 callback triggered, data length: ', data.length);
+          console.info(`${TAG} testOnDataRead004 callback triggered, data length: ${data.length}`);
           expect(data instanceof Uint8Array).assertTrue();
           expect(data.length).assertEqual(5);
         });
-        console.info(TAG, 'testOnDataRead004 onDataRead register success');
+        console.info(`${TAG} testOnDataRead004 onDataRead register success`);
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        await gPort1!.write(writeData, 0);
+        await port1!.write(writeData, 0);
         await sleep(1000);
         expect(callbackCalled).assertTrue();
-        gPort1!.offDataRead();
-        await gPort1!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testOnDataRead004 catch err: ', JSON.stringify(err));
+        port1!.offDataRead();
+      } catch (error) {
+        console.error(`${TAG} testOnDataRead004 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
+      } finally {
+        try {
+          await safeClose(port1);
+        } catch (error) {
+          console.info(`${TAG} safeClose error: ${JSON.stringify(error)}`);
+        }
         done();
       }
     })
-
 
     /**
      * @tc.name   testGetSerialPortList003
@@ -2838,22 +3192,22 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testGetSerialPortList003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testGetSerialPortList003 start');
+      console.info(`${TAG} testGetSerialPortList003 start`);
       try {
         const portList: serial.SerialPort[] = await serial.getSerialPortList();
-        console.info(TAG, 'testGetSerialPortList003 portList length: ', portList.length);
+        console.info(`${TAG} testGetSerialPortList003 portList length: ${portList.length}`);
         expect(portList instanceof Array).assertTrue();
-        expect(typeof portList.length === 'number').assertTrue();
+        expect(typeof portList.length).assertEqual('number');
         expect(portList.length >= 0).assertTrue();
         if (portList.length === 0) {
           expect(portList.length).assertEqual(0);
-          console.info(TAG, 'testGetSerialPortList003 empty array coverage success');
+          console.info(`${TAG} testGetSerialPortList003 empty array coverage success`);
         } else {
-          console.info(TAG, 'testGetSerialPortList003 device detected, cannot test empty case');
+          console.info(`${TAG} testGetSerialPortList003 device detected, cannot test empty case`);
         }
         done();
-      } catch (err) {
-        console.error(TAG, 'testGetSerialPortList003 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testGetSerialPortList003 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
@@ -2868,28 +3222,28 @@ export default function SerialBusManagerTest() {
      * @tc.level  LEVEL0
      */
     it('testGetSerialPortList004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testGetSerialPortList004 start');
+      console.info(`${TAG} testGetSerialPortList004 start`);
       if (await checkDevice() === false) {
+        console.info(`${TAG} ${SKIP_TAG} no serial device, skip`);
         done();
         return;
       }
       try {
         const portList: serial.SerialPort[] = await serial.getSerialPortList();
-        console.info(TAG, 'testGetSerialPortList004 portList length: ', portList.length);
+        console.info(`${TAG} testGetSerialPortList004 portList length: ${portList.length}`);
         expect(portList instanceof Array).assertTrue();
         expect(portList.length > 0).assertTrue();
         for (let i = 0; i < portList.length; i++) {
           let port: serial.SerialPort = portList[i];
-          expect(port.portInfo != null).assertTrue();
-          expect(port.portInfo != undefined).assertTrue();
+          expect(port.portInfo).not().assertNull();
           let portInfo: serial.SerialPortInfo = port.portInfo;
-          expect(typeof portInfo.portName === 'string').assertTrue();
+          expect(typeof portInfo.portName).assertEqual('string');
           expect(portInfo.portName.length > 0).assertTrue();
-          console.info(TAG, 'testGetSerialPortList004 port[', i, '] portName: ', portInfo.portName);
+          console.info(`${TAG} testGetSerialPortList004 port[${i}] portName: ${portInfo.portName}`);
         }
         done();
-      } catch (err) {
-        console.error(TAG, 'testGetSerialPortList004 catch err: ', JSON.stringify(err));
+      } catch (error) {
+        console.error(`${TAG} testGetSerialPortList004 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
         done();
       }
