@@ -164,7 +164,7 @@ static void HilogFileWatcher(const char *path, uint8 type, uint8 event)
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1000, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1000, Level0)
 {
     HiLogRegisterProc(HilogOutputProc);
     g_procCalled = FALSE;
@@ -184,7 +184,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1000, LEVEL0) /* NOLINT(G.NAM.03-
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1100, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1100, Level0)
 {
     HiLogRegisterProc(HilogOutputProc);
     g_procCalled = FALSE;
@@ -204,7 +204,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1100, LEVEL0) /* NOLINT(G.NAM.03-
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1200, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1200, Level0)
 {
     void (*flushFunc)(boolean) = HiLogFlush;
     TEST_ASSERT_TRUE(flushFunc != NULL);
@@ -220,7 +220,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1200, LEVEL0) /* NOLINT(G.NAM.03-
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1300, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1300, Level0)
 {
     HiLogRegisterProc(HilogOutputProc);
     g_procCalled = FALSE;
@@ -240,7 +240,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1300, LEVEL0) /* NOLINT(G.NAM.03-
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1400, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1400, Level0)
 {
     HiLogRegisterProc(HilogOutputProc);
     HiLogUnRegisterProc(HilogOutputProc);
@@ -258,7 +258,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1400, LEVEL0) /* NOLINT(G.NAM.03-
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1500, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1500, Level0)
 {
     uint32 ret = HiLogGetConfigOption();
     printf("HiLogGetConfigOption ret=%u\n", ret);
@@ -274,7 +274,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1500, LEVEL0) /* NOLINT(G.NAM.03-
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1600, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1600, Level0)
 {
     void (*addWatcherFunc)(FileProc, const char *) = HiLogFileAddWatcher;
     TEST_ASSERT_TRUE(addWatcherFunc != NULL);
@@ -290,7 +290,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1600, LEVEL0) /* NOLINT(G.NAM.03-
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1700, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1700, Level0)
 {
     void (*removeWatcherFunc)(FileProc) = HiLogFileRemoveWatcher;
     TEST_ASSERT_TRUE(removeWatcherFunc != NULL);
@@ -306,7 +306,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1700, LEVEL0) /* NOLINT(G.NAM.03-
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1800, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1800, Level0)
 {
     int ret = HiLogFileProc(HIVIEW_FILE_OUT_PATH_LOG, 0);
     printf("HiLogFileProc mode=0 ret=%d\n", ret);
@@ -325,7 +325,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1800, LEVEL0) /* NOLINT(G.NAM.03-
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1900, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1900, Level0)
 {
     void (*lockFunc)(void) = HiLogOutputFileLock;
     TEST_ASSERT_TRUE(lockFunc != NULL);
@@ -341,7 +341,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1900, LEVEL0) /* NOLINT(G.NAM.03-
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2000, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2000, Level0)
 {
     void (*unlockFunc)(void) = HiLogOutputFileUnLock;
     TEST_ASSERT_TRUE(unlockFunc != NULL);
@@ -358,7 +358,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2000, LEVEL0) /* NOLINT(G.NAM.03-
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2100, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2100, Level0)
 {
     uint32 oldLevel = HiLogGetLogLevel();
     BOOL ret = HiLogSetLogLevel(HILOG_LV_DEBUG);
@@ -379,7 +379,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2100, LEVEL0) /* NOLINT(G.NAM.03-
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2200, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2200, Level0)
 {
     uint32 oldLevel = HiLogGetLogLevel();
     TEST_ASSERT_TRUE(oldLevel >= HILOG_LV_DEBUG);

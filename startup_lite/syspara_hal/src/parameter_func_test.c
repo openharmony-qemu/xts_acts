@@ -19,6 +19,9 @@
 #include "parameter.h"
 #include "parameter_utils.h"
 #include "sysparam_errno.h"
+/* G.NAM.03 要求参数 camelBack 命名；hctest 框架枚举 Function 为 PascalCase，定义同值小写别名 */
+#define function Function
+
 
 #define MAX_LEN 128
 #define INVALID_LEN 2
@@ -806,7 +809,7 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testFindParameter001,
-               Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+               function | MediumTest | Level1)
 {
     /* 非法参数：NULL 返回 -1 */
     uint32_t handle = FindParameter(NULL);
@@ -834,7 +837,7 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameterCommitId001,
-               Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+               function | MediumTest | Level1)
 {
     /* 非法句柄：0 与 -1 返回 -1 */
     uint32_t commitId = GetParameterCommitId(0);
@@ -860,7 +863,7 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameterName001,
-               Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+               function | MediumTest | Level1)
 {
     char name[MAX_LEN] = {0};
     /* 非法句柄返回负错误码 */
@@ -892,7 +895,7 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameterValue001,
-               Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+               function | MediumTest | Level1)
 {
     char value[MAX_LEN] = {0};
     /* 非法句柄返回负错误码 */
@@ -922,7 +925,7 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetSystemCommitId001,
-               Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+               function | MediumTest | Level1)
 {
     /* 参数工作区已初始化，不应返回 -1（未初始化错误码） */
     long long commitId = GetSystemCommitId();
@@ -943,7 +946,7 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetIntParameter001,
-               Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+               function | MediumTest | Level1)
 {
     /* 不存在的参数返回默认值 */
     int32_t ret = GetIntParameter("rw.sys.xts_notexist_int", 1234);
@@ -968,7 +971,7 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetUintParameter001,
-               Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+               function | MediumTest | Level1)
 {
     /* 不存在的参数返回默认值 */
     uint32_t ret = GetUintParameter("rw.sys.xts_notexist_uint", 8888);
@@ -993,7 +996,7 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSaveParameters001,
-               Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+               function | MediumTest | Level1)
 {
     /* 契约：持久化保存成功返回 0（SystemSaveParameters 恒返回 SUCCESS） */
     int ret = SaveParameters();
@@ -1011,7 +1014,7 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testWaitParameter001,
-               Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+               function | MediumTest | Level1)
 {
     /* NULL 参数返回 EC_INVALID */
     int ret = WaitParameter(NULL, "1", 1);
@@ -1025,3 +1028,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 RUN_TEST_SUITE(ParameterFuncTestSuite);
+
+/* 释放别名，避免影响后续代码 */
+#undef function

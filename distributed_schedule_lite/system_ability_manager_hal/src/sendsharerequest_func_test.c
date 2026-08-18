@@ -20,6 +20,9 @@
 #include "hctest.h"
 #include "samgr_lite.h"
 #include "samgr_maintenance.h"
+/* G.NAM.03 要求参数 camelBack 命名；hctest 框架枚举 Function 为 PascalCase，定义同值小写别名 */
+#define function Function
+
 
 
 #define OPER_INTERVAL 200    // 200 ms
@@ -309,7 +312,7 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedDirectRequest0010, Func
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedRequest0050, Function | MediumTest | Level2) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedRequest0050, function | MediumTest | Level2)
 {
     Request request = {.msgId = MSG_NO, .msgValue = 0};
     Identity identity = {0, 0, NULL};
@@ -330,7 +333,7 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedRequest0050, Function |
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedDirectRequest0040, Function | MediumTest | Level2) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedDirectRequest0040, function | MediumTest | Level2)
 {
     uint32 *ref = NULL;
     int32 result = SAMGR_SendSharedDirectRequest(NULL, NULL, NULL, NULL, NULL);
@@ -342,3 +345,6 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedDirectRequest0040, Func
 }
 
 RUN_TEST_SUITE(SendSharedRequestTestSuite);
+
+/* 释放别名，避免影响后续代码 */
+#undef function
