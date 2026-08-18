@@ -125,7 +125,7 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash005, Function | MediumTest | Level
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotFlashTestSuite, testIotFlash006, Function | MediumTest | Level1)
+LITE_TEST_CASE(IotFlashTestSuite, testIotFlash006, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
 {
     unsigned int ret = IoTFlashInit();
     printf("IoTFlashInit return = %d\r\n", ret);
@@ -140,7 +140,7 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash006, Function | MediumTest | Level
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotFlashTestSuite, testIotFlash007, Function | MediumTest | Level1)
+LITE_TEST_CASE(IotFlashTestSuite, testIotFlash007, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
 {
     unsigned char ramData[TEST_FLASH_SIZE] = {0};
     unsigned int ret = IoTFlashWrite(TEST_FLASH_OFFSET, TEST_FLASH_SIZE, ramData, 0);
@@ -162,7 +162,7 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash007, Function | MediumTest | Level
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotFlashTestSuite, testIotFlash008, Function | MediumTest | Level1)
+LITE_TEST_CASE(IotFlashTestSuite, testIotFlash008, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
 {
     unsigned char ramData[TEST_FLASH_SIZE] = {0};
     unsigned int ret = IoTFlashRead(TEST_FLASH_OFFSET, TEST_FLASH_SIZE, ramData);
@@ -184,7 +184,7 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash008, Function | MediumTest | Level
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotFlashTestSuite, testIotFlash009, Function | MediumTest | Level1)
+LITE_TEST_CASE(IotFlashTestSuite, testIotFlash009, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
 {
     unsigned int ret = IoTFlashErase(TEST_FLASH_OFFSET, TEST_FLASH_SIZE_4K);
     printf("IoTFlashErase return = %d\r\n", ret);
@@ -201,7 +201,7 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash009, Function | MediumTest | Level
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotFlashTestSuite, testIotFlash010, Function | MediumTest | Level1)
+LITE_TEST_CASE(IotFlashTestSuite, testIotFlash010, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
 {
     unsigned int ret = IoTFlashDeinit();
     printf("IoTFlashDeinit return = %d\r\n", ret);

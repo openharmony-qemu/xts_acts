@@ -22,6 +22,9 @@
 #include "log.h"
 #include "hctest.h"
 
+/* hilog 打印测试值（codecheck G.CNS.02 禁止魔数） */
+#define TEST_LOG_VALUE 100
+
 LITE_TEST_SUIT(dfx, dfxlite, DfxFuncTestSuite);
 
 /**
@@ -161,11 +164,11 @@ static void HilogFileWatcher(const char *path, uint8 type, uint8 event)
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1000, LEVEL0)
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1000, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
 {
     HiLogRegisterProc(HilogOutputProc);
     g_procCalled = FALSE;
-    HiLogPrintf(HILOG_MODULE_HIVIEW, HILOG_LV_INFO, FUN_ARG_NUM(1), "hilog printf test %d", 100);
+    HiLogPrintf(HILOG_MODULE_HIVIEW, HILOG_LV_INFO, FUN_ARG_NUM(1), "hilog printf test %d", TEST_LOG_VALUE);
     TEST_ASSERT_TRUE(g_procCalled);
     g_procCalled = FALSE;
     HiLogPrintf(HILOG_MODULE_HIVIEW, HILOG_LV_ERROR, FUN_ARG_NUM(0), "hilog printf no para");
@@ -181,11 +184,11 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1000, LEVEL0)
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1100, LEVEL0)
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1100, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
 {
     HiLogRegisterProc(HilogOutputProc);
     g_procCalled = FALSE;
-    HILOG_HashPrintf(HILOG_MODULE_HIVIEW, HILOG_LV_INFO, FUN_ARG_NUM(1), 0x12345678, 100);
+    HILOG_HashPrintf(HILOG_MODULE_HIVIEW, HILOG_LV_INFO, FUN_ARG_NUM(1), 0x12345678, TEST_LOG_VALUE);
     TEST_ASSERT_TRUE(g_procCalled);
     g_procCalled = FALSE;
     HILOG_HashPrintf(HILOG_MODULE_HIVIEW, HILOG_LV_ERROR, FUN_ARG_NUM(0), 0x87654321);
@@ -201,7 +204,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1100, LEVEL0)
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1200, LEVEL0)
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1200, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
 {
     void (*flushFunc)(boolean) = HiLogFlush;
     TEST_ASSERT_TRUE(flushFunc != NULL);
@@ -217,15 +220,15 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1200, LEVEL0)
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1300, LEVEL0)
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1300, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
 {
     HiLogRegisterProc(HilogOutputProc);
     g_procCalled = FALSE;
-    HiLogPrintf(HILOG_MODULE_HIVIEW, HILOG_LV_INFO, FUN_ARG_NUM(1), "hilog register proc test %d", 100);
+    HiLogPrintf(HILOG_MODULE_HIVIEW, HILOG_LV_INFO, FUN_ARG_NUM(1), "hilog register proc test %d", TEST_LOG_VALUE);
     TEST_ASSERT_TRUE(g_procCalled);
     HiLogRegisterProc(NULL);
     g_procCalled = FALSE;
-    HiLogPrintf(HILOG_MODULE_HIVIEW, HILOG_LV_INFO, FUN_ARG_NUM(1), "hilog after unregister proc %d", 100);
+    HiLogPrintf(HILOG_MODULE_HIVIEW, HILOG_LV_INFO, FUN_ARG_NUM(1), "hilog after unregister proc %d", TEST_LOG_VALUE);
     TEST_ASSERT_FALSE(g_procCalled);
 };
 
@@ -237,12 +240,12 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1300, LEVEL0)
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1400, LEVEL0)
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1400, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
 {
     HiLogRegisterProc(HilogOutputProc);
     HiLogUnRegisterProc(HilogOutputProc);
     g_procCalled = FALSE;
-    HiLogPrintf(HILOG_MODULE_HIVIEW, HILOG_LV_INFO, FUN_ARG_NUM(1), "hilog unregister proc test %d", 100);
+    HiLogPrintf(HILOG_MODULE_HIVIEW, HILOG_LV_INFO, FUN_ARG_NUM(1), "hilog unregister proc test %d", TEST_LOG_VALUE);
     TEST_ASSERT_FALSE(g_procCalled);
     HiLogUnRegisterProc(NULL);
 };
@@ -255,7 +258,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1400, LEVEL0)
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1500, LEVEL0)
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1500, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
 {
     uint32 ret = HiLogGetConfigOption();
     printf("HiLogGetConfigOption ret=%u\n", ret);
@@ -271,7 +274,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1500, LEVEL0)
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1600, LEVEL0)
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1600, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
 {
     void (*addWatcherFunc)(FileProc, const char *) = HiLogFileAddWatcher;
     TEST_ASSERT_TRUE(addWatcherFunc != NULL);
@@ -287,7 +290,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1600, LEVEL0)
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1700, LEVEL0)
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1700, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
 {
     void (*removeWatcherFunc)(FileProc) = HiLogFileRemoveWatcher;
     TEST_ASSERT_TRUE(removeWatcherFunc != NULL);
@@ -303,7 +306,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1700, LEVEL0)
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1800, LEVEL0)
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1800, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
 {
     int ret = HiLogFileProc(HIVIEW_FILE_OUT_PATH_LOG, 0);
     printf("HiLogFileProc mode=0 ret=%d\n", ret);
@@ -322,7 +325,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1800, LEVEL0)
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1900, LEVEL0)
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1900, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
 {
     void (*lockFunc)(void) = HiLogOutputFileLock;
     TEST_ASSERT_TRUE(lockFunc != NULL);
@@ -338,7 +341,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1900, LEVEL0)
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2000, LEVEL0)
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2000, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
 {
     void (*unlockFunc)(void) = HiLogOutputFileUnLock;
     TEST_ASSERT_TRUE(unlockFunc != NULL);
@@ -355,7 +358,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2000, LEVEL0)
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2100, LEVEL0)
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2100, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
 {
     uint32 oldLevel = HiLogGetLogLevel();
     BOOL ret = HiLogSetLogLevel(HILOG_LV_DEBUG);
@@ -376,7 +379,7 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2100, LEVEL0)
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2200, LEVEL0)
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2200, LEVEL0) /* NOLINT(G.NAM.03-CPP) */
 {
     uint32 oldLevel = HiLogGetLogLevel();
     TEST_ASSERT_TRUE(oldLevel >= HILOG_LV_DEBUG);

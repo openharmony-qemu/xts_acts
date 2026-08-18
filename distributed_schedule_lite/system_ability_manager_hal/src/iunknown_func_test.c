@@ -177,7 +177,7 @@ LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0030, Function | MediumTest 
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(IUnknownTestSuite, testAddRef0020, Function | MediumTest | Level2)
+LITE_TEST_CASE(IUnknownTestSuite, testAddRef0020, Function | MediumTest | Level2) /* NOLINT(G.NAM.03-CPP) */
 {
     IUnknown *iUnknown = GET_IUNKNOWN(g_feature);
     int resultAdd = IUNKNOWN_AddRef(iUnknown);
@@ -192,7 +192,7 @@ LITE_TEST_CASE(IUnknownTestSuite, testAddRef0020, Function | MediumTest | Level2
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0040, Function | MediumTest | Level2)
+LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0040, Function | MediumTest | Level2) /* NOLINT(G.NAM.03-CPP) */
 {
     IUnknown *iUnknown = GET_IUNKNOWN(g_feature);
     SamgrTestApi *demoApi = NULL;
@@ -213,7 +213,7 @@ LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0040, Function | MediumTest 
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(IUnknownTestSuite, testRelease0020, Function | MediumTest | Level2)
+LITE_TEST_CASE(IUnknownTestSuite, testRelease0020, Function | MediumTest | Level2) /* NOLINT(G.NAM.03-CPP) */
 {
     IUnknown *iUnknown = GET_IUNKNOWN(g_feature);
     int resultRelease = IUNKNOWN_Release(iUnknown);
