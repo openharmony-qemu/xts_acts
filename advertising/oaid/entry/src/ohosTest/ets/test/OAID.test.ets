@@ -144,7 +144,7 @@
 				* @tc.size   LARGETEST
 				* @tc.level  LEVEL0
 				*/
-			 it("testGetOAIDByPromise_17300001", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async () => {
+			 it("testGetOAIDByPromise_17300001", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
 				 let oaidResult: string = '';
 				 try {
 					 oaidResult = await oaid.getOAID();
@@ -153,6 +153,7 @@
 					 expect(e.code).assertEqual(17300001);
 				 }
 				 expect(oaidResult.length > 0).assertEqual(true);
+				 done();
 			 })
 
 			 /**
