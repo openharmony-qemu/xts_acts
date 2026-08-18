@@ -16,6 +16,9 @@
 #include "hctest.h"
 #include "iot_errno.h"
 #include "lowpower.h"
+/* G.NAM.03 要求参数 camelBack 命名；hctest 框架枚举 Function 为 PascalCase，定义同值小写别名 */
+#define function Function
+
 
 unsigned int (*g_lpcInit)(void);
 unsigned int (*g_lpcSetType)(LpcType type);
@@ -76,7 +79,7 @@ LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower002, Function | MediumTest |
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower003, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower003, function | MediumTest | Level1)
 {
     unsigned int ret = LpcInit();
     printf("LpcInit return = %d\r\n", ret);
@@ -92,7 +95,7 @@ LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower003, Function | MediumTest |
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower004, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower004, function | MediumTest | Level1)
 {
     unsigned int ret = LpcSetType(NO_SLEEP);
     printf("LpcSetType(NO_SLEEP) return = %d\r\n", ret);
@@ -105,3 +108,5 @@ LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower004, Function | MediumTest |
 
 RUN_TEST_SUITE(IotLowPowerTestSuite);
 
+/* 释放别名，避免影响后续代码 */
+#undef function

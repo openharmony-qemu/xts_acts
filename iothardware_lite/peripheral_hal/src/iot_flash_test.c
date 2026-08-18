@@ -16,6 +16,9 @@
 #include "hctest.h"
 #include "iot_errno.h"
 #include "iot_flash.h"
+/* G.NAM.03 要求参数 camelBack 命名；hctest 框架枚举 Function 为 PascalCase，定义同值小写别名 */
+#define function Function
+
 
 #define TEST_FLASH_SIZE 8
 #define TEST_FLASH_SIZE_4K 4096
@@ -125,7 +128,7 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash005, Function | MediumTest | Level
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotFlashTestSuite, testIotFlash006, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(IotFlashTestSuite, testIotFlash006, function | MediumTest | Level1)
 {
     unsigned int ret = IoTFlashInit();
     printf("IoTFlashInit return = %d\r\n", ret);
@@ -140,7 +143,7 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash006, Function | MediumTest | Level
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotFlashTestSuite, testIotFlash007, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(IotFlashTestSuite, testIotFlash007, function | MediumTest | Level1)
 {
     unsigned char ramData[TEST_FLASH_SIZE] = {0};
     unsigned int ret = IoTFlashWrite(TEST_FLASH_OFFSET, TEST_FLASH_SIZE, ramData, 0);
@@ -162,7 +165,7 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash007, Function | MediumTest | Level
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotFlashTestSuite, testIotFlash008, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(IotFlashTestSuite, testIotFlash008, function | MediumTest | Level1)
 {
     unsigned char ramData[TEST_FLASH_SIZE] = {0};
     unsigned int ret = IoTFlashRead(TEST_FLASH_OFFSET, TEST_FLASH_SIZE, ramData);
@@ -184,7 +187,7 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash008, Function | MediumTest | Level
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotFlashTestSuite, testIotFlash009, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(IotFlashTestSuite, testIotFlash009, function | MediumTest | Level1)
 {
     unsigned int ret = IoTFlashErase(TEST_FLASH_OFFSET, TEST_FLASH_SIZE_4K);
     printf("IoTFlashErase return = %d\r\n", ret);
@@ -201,7 +204,7 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash009, Function | MediumTest | Level
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotFlashTestSuite, testIotFlash010, Function | MediumTest | Level1) /* NOLINT(G.NAM.03-CPP) */
+LITE_TEST_CASE(IotFlashTestSuite, testIotFlash010, function | MediumTest | Level1)
 {
     unsigned int ret = IoTFlashDeinit();
     printf("IoTFlashDeinit return = %d\r\n", ret);
@@ -209,3 +212,6 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash010, Function | MediumTest | Level
 };
 
 RUN_TEST_SUITE(IotFlashTestSuite);
+
+/* 释放别名，避免影响后续代码 */
+#undef function
