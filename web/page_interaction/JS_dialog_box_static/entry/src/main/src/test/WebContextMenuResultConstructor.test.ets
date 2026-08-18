@@ -55,10 +55,10 @@ export default function webContextMenuResultConstructor():void {
           await Utils.msSleep(2000);
           inspector.sendEventByKey('WebContextMenuResultConstructorButton', 10, '');
           await Utils.msSleep(3000);
-          done();
         } catch(err) {
           console.log('testWebContextMenuResultConstructorStatic001' + err)
         }
+        done();
       })
 
     /**
@@ -81,10 +81,10 @@ export default function webContextMenuResultConstructor():void {
           await Utils.msSleep(2000);
           inspector.sendEventByKey('WebContextMenuResultConstructorButton', 10, '');
           await Utils.msSleep(3000);
-          done();
         } catch(err) {
           console.log('testWebContextMenuResultConstructorStatic002' + err)
         }
+        done();
       })
 
     /**
@@ -107,10 +107,10 @@ export default function webContextMenuResultConstructor():void {
           await Utils.msSleep(2000);
           inspector.sendEventByKey('WebContextMenuResultConstructorButton', 10, '');
           await Utils.msSleep(3000);
-          done();
         } catch(err) {
           console.log('testWebContextMenuResultConstructorStatic003' + err)
         }
+        done();
       })
 
     /**
@@ -133,10 +133,10 @@ export default function webContextMenuResultConstructor():void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebContextMenuResultConstructorButton', 10, '');
         await Utils.msSleep(3000);
-        done();
         } catch(err) {
           console.log('testWebContextMenuResultConstructorStatic004' + err)
         }
+        done();
       })
 
     /**
@@ -159,10 +159,10 @@ export default function webContextMenuResultConstructor():void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebContextMenuResultConstructorButton', 10, '');
         await Utils.msSleep(3000);
-        done();
         } catch(err) {
           console.log('testWebContextMenuResultConstructorStatic005' + err)
         }
+        done();
       })
 
     /**
@@ -185,10 +185,10 @@ export default function webContextMenuResultConstructor():void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebContextMenuResultConstructorButton', 10, '');
         await Utils.msSleep(3000);
-        done();
         } catch(err) {
           console.log('testWebContextMenuResultConstructorStatic006' + err)
         }
+        done();
       })
 
     /**
@@ -211,10 +211,10 @@ export default function webContextMenuResultConstructor():void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebContextMenuResultConstructorButton', 10, '');
         await Utils.msSleep(3000);
-        done();
         } catch(err) {
           console.log('testWebContextMenuResultConstructorStatic007' + err)
         }
+        done();
       })
   })
 }
