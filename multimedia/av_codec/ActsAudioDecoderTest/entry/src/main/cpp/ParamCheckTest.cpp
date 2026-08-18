@@ -16,6 +16,7 @@
 #include <atomic>
 #include <fstream>
 #include <iostream>
+#include <multimedia/player_framework/native_avcapability.h>
 #include <multimedia/player_framework/native_avcodec_audiocodec.h>
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <queue>
@@ -966,9 +967,14 @@ int PARAM_CHECK_026()
     ASSERT_EQ(result0, AV_ERR_OK);
 
     codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_EAC3);
-    ASSERT_EQ(codec, nullptr);
-    result0 = aDecBufferDemo->Destroy(codec);
-    ASSERT_NE(result0, AV_ERR_OK);
+    OH_AVCapability* capability = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_AUDIO_EAC3, false);
+    if (capability == nullptr) {
+        ASSERT_EQ(codec, nullptr);
+    } else {
+        ASSERT_NE(codec, nullptr);
+        result0 = aDecBufferDemo->Destroy(codec);
+        ASSERT_EQ(result0, AV_ERR_OK);
+    }
 
     codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AC3);
     ASSERT_NE(codec, nullptr);
@@ -1095,33 +1101,36 @@ int PARAM_CHECK_028()
  */
 int PARAM_CHECK_029()
 {
-    OH_AVCodec* codec = nullptr;
-    OH_AVErrCode result0;
-    OH_AVFormat* format = OH_AVFormat_Create();
-    int32_t channel = CHANNEL_COUNT_1;
-    int32_t sampleRate = SAMPLE_RATE_8000;
-    ADecBufferDemo* aDecBufferDemo = new ADecBufferDemo();
-    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_TRUEHD);
-    ASSERT_NE(codec, nullptr);
+    OH_AVCapability* capability = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_AUDIO_TRUEHD, false);
+    if (capability != nullptr) {
+        OH_AVCodec* codec = nullptr;
+        OH_AVErrCode result0;
+        OH_AVFormat* format = OH_AVFormat_Create();
+        int32_t channel = CHANNEL_COUNT_1;
+        int32_t sampleRate = SAMPLE_RATE_8000;
+        ADecBufferDemo* aDecBufferDemo = new ADecBufferDemo();
+        codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_TRUEHD);
+        ASSERT_NE(codec, nullptr);
 
-    channel = CHANNEL_COUNT_0;
-    result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
-    ASSERT_EQ(result0, AV_ERR_INVALID_VAL);
-    aDecBufferDemo->Reset(codec);
+        channel = CHANNEL_COUNT_0;
+        result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
+        ASSERT_EQ(result0, AV_ERR_INVALID_VAL);
+        aDecBufferDemo->Reset(codec);
 
-    sampleRate = SAMPLE_RATE_0;
-    result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
-    ASSERT_EQ(result0, AV_ERR_INVALID_VAL);
-    aDecBufferDemo->Reset(codec);
+        sampleRate = SAMPLE_RATE_0;
+        result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
+        ASSERT_EQ(result0, AV_ERR_INVALID_VAL);
+        aDecBufferDemo->Reset(codec);
 
-    channel = CHANNEL_COUNT_2;
-    sampleRate = SAMPLE_RATE_48000;
-    result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
-    ASSERT_EQ(result0, AV_ERR_OK);
+        channel = CHANNEL_COUNT_2;
+        sampleRate = SAMPLE_RATE_48000;
+        result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
+        ASSERT_EQ(result0, AV_ERR_OK);
 
-    result0 = aDecBufferDemo->Destroy(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    delete aDecBufferDemo;
+        result0 = aDecBufferDemo->Destroy(codec);
+        ASSERT_EQ(result0, AV_ERR_OK);
+        delete aDecBufferDemo;
+    }
     return AV_ERR_OK;
 }
 
@@ -1218,33 +1227,36 @@ int PARAM_CHECK_031()
  */
 int PARAM_CHECK_032()
 {
-    OH_AVCodec* codec = nullptr;
-    OH_AVErrCode result0;
-    OH_AVFormat* format = OH_AVFormat_Create();
-    int32_t channel = CHANNEL_COUNT_1;
-    int32_t sampleRate = SAMPLE_RATE_8000;
-    ADecBufferDemo* aDecBufferDemo = new ADecBufferDemo();
-    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_DTS);
-    ASSERT_NE(codec, nullptr);
+    OH_AVCapability* capability = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_AUDIO_DTS, false);
+    if (capability != nullptr) {
+        OH_AVCodec* codec = nullptr;
+        OH_AVErrCode result0;
+        OH_AVFormat* format = OH_AVFormat_Create();
+        int32_t channel = CHANNEL_COUNT_1;
+        int32_t sampleRate = SAMPLE_RATE_8000;
+        ADecBufferDemo* aDecBufferDemo = new ADecBufferDemo();
+        codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_DTS);
+        ASSERT_NE(codec, nullptr);
 
-    channel = CHANNEL_COUNT_0;
-    result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
-    ASSERT_EQ(result0, AV_ERR_INVALID_VAL);
-    aDecBufferDemo->Reset(codec);
+        channel = CHANNEL_COUNT_0;
+        result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
+        ASSERT_EQ(result0, AV_ERR_INVALID_VAL);
+        aDecBufferDemo->Reset(codec);
 
-    sampleRate = SAMPLE_RATE_0;
-    result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
-    ASSERT_EQ(result0, AV_ERR_INVALID_VAL);
-    aDecBufferDemo->Reset(codec);
+        sampleRate = SAMPLE_RATE_0;
+        result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
+        ASSERT_EQ(result0, AV_ERR_INVALID_VAL);
+        aDecBufferDemo->Reset(codec);
 
-    channel = CHANNEL_COUNT_2;
-    sampleRate = SAMPLE_RATE_48000;
-    result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
-    ASSERT_EQ(result0, AV_ERR_OK);
+        channel = CHANNEL_COUNT_2;
+        sampleRate = SAMPLE_RATE_48000;
+        result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
+        ASSERT_EQ(result0, AV_ERR_OK);
 
-    result0 = aDecBufferDemo->Destroy(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    delete aDecBufferDemo;
+        result0 = aDecBufferDemo->Destroy(codec);
+        ASSERT_EQ(result0, AV_ERR_OK);
+        delete aDecBufferDemo;
+    }
     return AV_ERR_OK;
 }
 
