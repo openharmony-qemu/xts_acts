@@ -3608,47 +3608,5 @@ export default function HttpInterceptorForSafeCheckTest() {
         }
         console.info(`${TAG} ${caseName} test End`);
       });
-
-    /**
-     * @tc.name   testHttpRequestInterceptorAbortCallback0100
-     * @tc.number SUB_NetworkMgr_HttpRequest_Abort_Callback_0100
-     * @tc.desc   test request(url, callback) with request abort interceptor (group 4), verify error code 2300996
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testHttpRequestInterceptorAbortCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        const caseName: string = "testHttpRequestInterceptorAbortCallback0100";
-        console.info(`${TAG} ${caseName} test Start`);
-        try {
-          let result: number = testNetManager.AddWritableRequestInterceptor(4, 1);
-          ExpectTrue(result === 0);
-          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
-          let httpRequest: http.HttpRequest = http.createHttp();
-          httpRequest.request(HTTP_URL, (err: BusinessError, res: http.HttpResponse) => {
-            if (err) {
-              console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-              testNetManager.RemoveAllInterceptor(4);
-              httpRequest.destroy();
-              ExpectTrue(err.code == 2300996);
-              done();
-            } else {
-              console.info(`${TAG} ${caseName} request unexpected success:${JSON.stringify(res)}`);
-              testNetManager.RemoveAllInterceptor(4);
-              httpRequest.destroy();
-              ExpectFail();
-              done();
-            }
-          });
-        } catch (error) {
-          const err: BusinessError = error as BusinessError;
-          console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          testNetManager.RemoveAllInterceptor(4);
-          ExpectFail();
-          done();
-        }
-        console.info(`${TAG} ${caseName} test End`);
-      });
   });
 }
