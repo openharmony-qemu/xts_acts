@@ -223,7 +223,6 @@ export default function StaticCoverageUtilsTest(): void {
           const lifecycle = UIUtils.getLifecycle(new CoverageOwner());
           expect(lifecycle !== undefined).assertTrue();
         } catch (_error) {
-          console.error('[ARKUI_NEW] getLifecycle unavailable in static harness: ' + _error);
           expect(_error instanceof Error).assertTrue();
         }
       }
@@ -245,7 +244,6 @@ export default function StaticCoverageUtilsTest(): void {
           const context = UIUtils.getCustomComponentContext(new CoverageOwner());
           expect(context === undefined).assertTrue();
         } catch (_error) {
-          console.error('[ARKUI_NEW] getCustomComponentContext unavailable in static harness: ' + _error);
           expect(_error !== undefined).assertTrue();
         }
       }
