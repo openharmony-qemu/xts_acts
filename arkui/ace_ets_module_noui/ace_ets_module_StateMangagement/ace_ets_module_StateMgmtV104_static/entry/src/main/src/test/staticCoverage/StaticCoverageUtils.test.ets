@@ -23,7 +23,7 @@ import {
 } from '@kit.ArkUI';
 import {
   CoverageComponentContext, CoverageOwner, CoverageRecord, CoverageReusePool
-} from './StaticCoverageSupport';
+} from '../../../ets/staticCoverage/StaticCoverageSupport';
 
 export default function StaticCoverageUtilsTest(): void {
   describe('StaticCoverageUtilsTest', (): void => {

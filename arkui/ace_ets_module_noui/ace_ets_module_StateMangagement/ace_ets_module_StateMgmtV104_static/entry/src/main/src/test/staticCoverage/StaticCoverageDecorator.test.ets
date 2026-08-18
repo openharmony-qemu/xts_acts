@@ -21,10 +21,10 @@ import {
   ReadonlyEnvKey, RenderIdType, STATE_MGMT_FACTORY, WatchFuncType, WatchIdType,
   WritableEnvKey
 } from '@kit.ArkUI';
-import { staticCoverageFixtureReady } from './StaticCoverageFixture';
+import { staticCoverageFixtureReady } from '../../../ets/staticCoverage/StaticCoverageFixture';
 import {
   CoverageDecoratedVariable, CoverageOwner
-} from './StaticCoverageSupport';
+} from '../../../ets/staticCoverage/StaticCoverageSupport';
 
 export default function StaticCoverageDecoratorTest(): void {
   describe('StaticCoverageDecoratorTest', (): void => {

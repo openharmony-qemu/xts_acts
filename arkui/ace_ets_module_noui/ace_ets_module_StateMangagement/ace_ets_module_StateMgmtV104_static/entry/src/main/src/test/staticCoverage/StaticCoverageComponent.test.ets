@@ -27,12 +27,12 @@ import {
 } from '@kit.ArkUI';
 import {
   staticCoverageBuilder, staticCoverageFixtureReady
-} from './StaticCoverageFixture';
+} from '../../../ets/staticCoverage/StaticCoverageFixture';
 import {
   BaseCustomDialogStub, CoverageLifecycle, CoverageLifecycleObserver,
   CoveragePageLifeCycle, CoverageReadableState, CoverageRecord,
   CoverageStateContext, CustomComponentStub, CustomComponentV2Stub
-} from './StaticCoverageSupport';
+} from '../../../ets/staticCoverage/StaticCoverageSupport';
 
 export default function StaticCoverageComponentTest(): void {
   describe('StaticCoverageComponentTest', (): void => {
