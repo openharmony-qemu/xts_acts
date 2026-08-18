@@ -22,6 +22,8 @@ import webAttributeTest from './WebAttributeTest.test'
 import WebViewEnumAndFontLibrary from './WebViewEnumAndFontLibrary.test'
 import WebKeyboardAvoidMode from './WebEmulateTouchFromMouseEvent.test'
 import SaveImageMenu from './SaveImageMenu.test'
+import WebContextMenuResultConstructor from './WebContextMenuResultConstructor.test'
+import ScreenCaptureHandlerConstructor from './ScreenCaptureHandlerConstructor.test'
 
 
 export default function testsuite() {
@@ -33,4 +35,6 @@ export default function testsuite() {
     NativeEmbedParamStatusUpdate();
     WebKeyboardAvoidMode();
 	SaveImageMenu()
+    WebContextMenuResultConstructor()
+    ScreenCaptureHandlerConstructor()
 }

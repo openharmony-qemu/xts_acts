@@ -55,5 +55,31 @@ export default function WebOnNativeEmbedObjectParamChange() {
         await Utils.msSleep(3000);
         done()
       })
+
+    /**
+     * @tc.name   testSwitchNextPageStatic06
+     * @tc.number SUB_WEB_NEXT_PAGE_0200
+     * @tc.desc   switchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSwitchNextPageStatic06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+      try {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitSwitchNextPageStatic06', 10)
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('updateButton', 10, '');
+        await Utils.msSleep(4000)
+        done()
+        } catch(err) {
+         console.log('testSwitchNextPageStatic06' + err)
+        }
+      })
+            
+            
+
+
   })
 }
