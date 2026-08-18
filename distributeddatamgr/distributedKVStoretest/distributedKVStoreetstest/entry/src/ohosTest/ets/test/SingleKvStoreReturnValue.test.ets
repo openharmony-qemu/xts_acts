@@ -1473,9 +1473,15 @@ export default function SingleKvStoreReturnValue(){
 
       try {
         kvManager!.getKVStore(TEST_STORE_S1_ID, optionsS1, (err: BusinessError, store: factory.SingleKVStore) => {
-          console.info(TAG + "success getKVStore callback" + store);
-          expect(null).assertFail();
-          done();
+          if (err) {
+            console.error(`Failed to get KVStore. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+            done();
+          } else {
+            console.info(TAG + "success getKVStore callback" + store);
+            expect(null).assertFail();
+            done();
+          }
         });
       } catch (e) {
         console.error(TAG + ' catch getKVStore callback, e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1658,8 +1664,15 @@ export default function SingleKvStoreReturnValue(){
       console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_enableSync_0100 begin---------  ');
       try {
          kvStore!.enableSync(null, (err: BusinessError) => {
-           expect(null).assertFail();
-           done();
+          if (err) {
+            console.error(TAG + `Failed to enableSync. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+            done();
+          } else {
+            console.info(TAG + "success enableSync callback");
+            expect(null).assertFail();
+            done();
+          }
         });
       }catch(e) {
         console.error(TAG + '1- catch e, enableSync(null) ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1668,8 +1681,15 @@ export default function SingleKvStoreReturnValue(){
 
       try {
         kvStore!.enableSync(undefined, (err: BusinessError) => {
-          expect(null).assertFail();
-          done();
+          if (err) {
+            console.error(TAG + `Failed to enableSync. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+            done();
+          } else {
+            console.info(TAG + "success enableSync callback");
+            expect(null).assertFail();
+            done();
+          }
         });
       }catch(e) {
         console.error(TAG + '2- catch e, enableSync(undefined) ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1761,7 +1781,7 @@ export default function SingleKvStoreReturnValue(){
 
     /**
      * @tc.name   SUB_DDM_SKV_ReturnValue_sync_0200
-     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_sync_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_sync_0200
      * @tc.desc   sync(deviceIds: string[], query: Query, mode: SyncMode, delayMs?: number): void;
      * 第2个参数枚举类型缺少 null、undefined 覆盖，;
      * @tc.type   FUNCTION
