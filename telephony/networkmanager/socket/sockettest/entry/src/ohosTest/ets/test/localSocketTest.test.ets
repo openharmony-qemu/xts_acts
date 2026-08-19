@@ -793,6 +793,17 @@ export default function LocalSocketTest() {
           server!.on('connect', (connection: socket.LocalSocketConnection) => {
             connection.send(sendOpt).catch((err: BusinessError) => {
               console.info(`${caseName} fail to send ${err.code.toString()}`);
+              if (!testCompleted) {
+                testCompleted = true;
+                if (server) {
+                  server.off('connect');
+                }
+                if (client) {
+                  client.close();
+                }
+                console.info(`${caseName} test end`);
+                done();
+              }
             });
           });
 
@@ -843,9 +854,31 @@ export default function LocalSocketTest() {
           client!.connect(connectOpt).then(() => {
             console.log(`${caseName} connect success`);
             client!.on('message', callback);
+            if (!testCompleted) {
+              testCompleted = true;
+              if (server) {
+                server.off('connect');
+              }
+              if (client) {
+                client.close();
+              }
+              console.info(`${caseName} test end`);
+              done();
+            }
           }).catch((err: BusinessError) => {
             console.info(`${caseName} connect error: ${JSON.stringify(err)}`);
             client!.on('message', callback);
+            if (!testCompleted) {
+              testCompleted = true;
+              if (server) {
+                server.off('connect');
+              }
+              if (client) {
+                client.close();
+              }
+              console.info(`${caseName} test end`);
+              done();
+            }
           });
 
           setTimeout(() => {
