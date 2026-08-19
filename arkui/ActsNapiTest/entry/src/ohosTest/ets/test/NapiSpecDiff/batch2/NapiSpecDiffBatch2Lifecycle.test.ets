@@ -15,7 +15,6 @@
 
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import napispecdiffbatch2ndktest from 'libnapispecdiffbatch2ndktest.so';
-import Utils from '../../Utils';
 
 function forceFullGC(): void {
   globalThis.ArkTools.forceFullGC();
@@ -33,13 +32,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteReferenceTriggersFinalizer0001',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteReferenceTriggersFinalizer0001';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.deleteReferenceTriggersFinalizer()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -51,13 +51,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testRemoveWrapCallsFinalizerBeforeRemoving0002',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testRemoveWrapCallsFinalizerBeforeRemoving0002';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.removeWrapCallsFinalizerBeforeRemoving()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -69,13 +70,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testAddFinalizerResultReferenceIsStrong0003',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testAddFinalizerResultReferenceIsStrong0003';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.addFinalizerResultReferenceIsStrong()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -87,13 +89,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateStrongReferenceKeepsValue0004',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testCreateStrongReferenceKeepsValue0004';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.createStrongReferenceKeepsValue()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -105,13 +108,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteStrongReferenceOnceWorks0005',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteStrongReferenceOnceWorks0005';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.deleteStrongReferenceOnceWorks()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -123,13 +127,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetStrongReferenceValueWorksBeforeDelete0006',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetStrongReferenceValueWorksBeforeDelete0006';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getStrongReferenceValueWorksBeforeDelete()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -141,13 +146,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testWrapEnhanceSyncAndAsyncFinalizerCanBeCreated0007',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testWrapEnhanceSyncAndAsyncFinalizerCanBeCreated0007';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.wrapEnhanceSyncAndAsyncFinalizerCanBeCreated()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -159,14 +165,15 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testRemoveWrapSendableReturnsNativePointerWithoutImmediateFinalizer0008',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testRemoveWrapSendableReturnsNativePointerWithoutImmediateFinalizer0008';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.removeWrapSendableReturnsNativePointerWithoutImmediateFinalizer()).
       assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -178,13 +185,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testStrongSendableReferenceNormalPath0009',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testStrongSendableReferenceNormalPath0009';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.strongSendableReferenceNormalPath()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== 第一轮补充测试 ==========
@@ -198,13 +206,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testAddFinalizerNullObjectReturnsInvalidArg0010',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testAddFinalizerNullObjectReturnsInvalidArg0010';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.addFinalizerNullObjectReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -216,13 +225,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testAddFinalizerNullCallbackReturnsInvalidArg0011',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testAddFinalizerNullCallbackReturnsInvalidArg0011';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.addFinalizerNullCallbackReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // SDK限制，add_finalizer对相同external数据添加finalizer失败
@@ -239,13 +249,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testRemoveWrapReturnsOkAndCorrectPointer0012',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testRemoveWrapReturnsOkAndCorrectPointer0012';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.removeWrapReturnsOkAndCorrectPointer()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -257,13 +268,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testRemoveWrapNoWrappedObjectReturnsError0013',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testRemoveWrapNoWrappedObjectReturnsError0013';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.removeWrapNoWrappedObjectReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -275,13 +287,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testRemoveWrapTwiceReturnsError0014',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testRemoveWrapTwiceReturnsError0014';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.removeWrapTwiceReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -293,13 +306,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testRemoveWrapResourceCleanupFlow0015',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testRemoveWrapResourceCleanupFlow0015';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.removeWrapResourceCleanupFlow()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -311,13 +325,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testRemoveWrapWhenPendingReturnsPendingException0016',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testRemoveWrapWhenPendingReturnsPendingException0016';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.removeWrapWhenPendingReturnsPendingException()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -329,13 +344,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testWrapEnhanceNonObjectReturnsObjectExpected0017',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testWrapEnhanceNonObjectReturnsObjectExpected0017';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.wrapEnhanceNonObjectReturnsObjectExpected()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -347,13 +363,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateStrongReferenceWhenPendingReturnsPendingException0018',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testCreateStrongReferenceWhenPendingReturnsPendingException0018';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.createStrongReferenceWhenPendingReturnsPendingException()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -365,13 +382,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateStrongReferencePrimitiveValue0019',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testCreateStrongReferencePrimitiveValue0019';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.createStrongReferencePrimitiveValue()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -383,13 +401,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteStrongReferenceNullRefReturnsInvalidArg0020',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteStrongReferenceNullRefReturnsInvalidArg0020';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.deleteStrongReferenceNullRefReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -401,13 +420,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteStrongReferenceTwiceReturnsError0021',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteStrongReferenceTwiceReturnsError0021';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.deleteStrongReferenceTwiceReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -419,13 +439,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteStrongReferenceVerifyInvalidAfterDelete0022',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteStrongReferenceVerifyInvalidAfterDelete0022';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.deleteStrongReferenceVerifyInvalidAfterDelete()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -437,13 +458,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteStrongReferenceComboWithWeakRef0023',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteStrongReferenceComboWithWeakRef0023';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.deleteStrongReferenceComboWithWeakRef()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -455,13 +477,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetStrongReferenceValueWhenPendingReturnsPendingException0024',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetStrongReferenceValueWhenPendingReturnsPendingException0024';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getStrongReferenceValueWhenPendingReturnsPendingException()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -473,13 +496,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetStrongReferenceValueAfterDeleteReturnsError0025',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetStrongReferenceValueAfterDeleteReturnsError0025';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getStrongReferenceValueAfterDeleteReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -491,13 +515,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateStrongSendableRefNullValueReturnsInvalidArg0026',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testCreateStrongSendableRefNullValueReturnsInvalidArg0026';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.createStrongSendableRefNullValueReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -509,13 +534,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateStrongSendableRefNullRefReturnsInvalidArg0027',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testCreateStrongSendableRefNullRefReturnsInvalidArg0027';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.createStrongSendableRefNullRefReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -527,13 +553,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteStrongSendableRefNullRefReturnsInvalidArg0028',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteStrongSendableRefNullRefReturnsInvalidArg0028';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.deleteStrongSendableRefNullRefReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -545,13 +572,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteStrongSendableRefVerifyInvalidAfterDelete0029',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteStrongSendableRefVerifyInvalidAfterDelete0029';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.deleteStrongSendableRefVerifyInvalidAfterDelete()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -564,13 +592,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteStrongSendableRefWhenPendingReturnsPendingException0030',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteStrongSendableRefWhenPendingReturnsPendingException0030';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.deleteStrongSendableRefWhenPendingReturnsPendingException()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -582,13 +611,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testRemoveWrapSendableNullObjectReturnsInvalidArg0031',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testRemoveWrapSendableNullObjectReturnsInvalidArg0031';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.removeWrapSendableNullObjectReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
 
@@ -603,13 +633,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateExternalComboWithGetValueExternal0033',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testCreateExternalComboWithGetValueExternal0033';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.createExternalComboWithGetValueExternal()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -621,13 +652,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testWrapSendableNullObjectReturnsInvalidArg0034',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testWrapSendableNullObjectReturnsInvalidArg0034';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.wrapSendableNullObjectReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -639,13 +671,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testWrapSendableUnwrapReturnsCorrectPointer0035',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testWrapSendableUnwrapReturnsCorrectPointer0035';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.wrapSendableUnwrapReturnsCorrectPointer()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -657,13 +690,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetStrongSendableRefValueComboWithCreateAndDelete0036',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetStrongSendableRefValueComboWithCreateAndDelete0036';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getStrongSendableRefValueComboWithCreateAndDelete()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== 第四轮补充测试 ==========
@@ -677,13 +711,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueExternalNullValueReturnsInvalidArg0037',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueExternalNullValueReturnsInvalidArg0037';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueExternalNullValueReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -695,13 +730,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueExternalNonExternalReturnsError0038',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueExternalNonExternalReturnsError0038';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueExternalNonExternalReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -713,13 +749,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueExternalReturnsCorrectPointer0039',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueExternalReturnsCorrectPointer0039';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueExternalReturnsCorrectPointer()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
 
@@ -732,13 +769,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testUnwrapSendableNonSendableReturnsError0041',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testUnwrapSendableNonSendableReturnsError0041';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.unwrapSendableNonSendableReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -750,13 +788,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testUnwrapSendableReturnsCorrectPointer0042',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testUnwrapSendableReturnsCorrectPointer0042';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.unwrapSendableReturnsCorrectPointer()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -768,13 +807,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateStrongSendableRefComboWithCrossThreadArray0043',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testCreateStrongSendableRefComboWithCrossThreadArray0043';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.createStrongSendableRefComboWithCrossThreadArray()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== 第五轮补充测试 ==========
@@ -788,13 +828,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteStrongSendableRefComboWithWeakRef0044',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteStrongSendableRefComboWithWeakRef0044';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.deleteStrongSendableRefComboWithWeakRef()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -806,13 +847,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetStrongReferenceValueComboWithRefUnref0045',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetStrongReferenceValueComboWithRefUnref0045';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getStrongReferenceValueComboWithRefUnref()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== 第六轮补充测试 (napi_get_value_external 完整覆盖) ==========
@@ -826,13 +868,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueExternalNullEnvReturnsInvalidArg0046',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueExternalNullEnvReturnsInvalidArg0046';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueExternalNullEnvReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -844,13 +887,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueExternalNullResultReturnsInvalidArg0047',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueExternalNullResultReturnsInvalidArg0047';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueExternalNullResultReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -862,13 +906,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueExternalStringReturnsError0048',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueExternalStringReturnsError0048';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueExternalStringReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -880,13 +925,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueExternalNumberReturnsError0049',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueExternalNumberReturnsError0049';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueExternalNumberReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -898,13 +944,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueExternalAfterModification0050',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueExternalAfterModification0050';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueExternalAfterModification()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -916,10 +963,12 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueExternalAfterFinalizeReturnsError0051',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueExternalAfterFinalizeReturnsError0051';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       let extObj: object | null = napispecdiffbatch2ndktest.createExternalForFinalizeTest() as object | null;
       expect(extObj !== null && extObj !== undefined).assertTrue();
       if (globalThis.forceFullGC) {
@@ -929,7 +978,6 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
       expect(result).assertEqual(1);
       napispecdiffbatch2ndktest.cleanupExternalForFinalizeTest(extObj);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -941,13 +989,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueExternalBooleanReturnsError0052',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueExternalBooleanReturnsError0052';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueExternalBooleanReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // SDK偏差：SDK返回napi_ok而非napi_invalid_arg，对napi_null类型不做类型校验
@@ -964,13 +1013,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueExternalMultipleGetsConsistency0053',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueExternalMultipleGetsConsistency0053';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueExternalMultipleGetsConsistency()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== napi_get_value_external 第三轮补充测试 ==========
@@ -984,13 +1034,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testRejectDeferredWithNonErrorValue0054',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testRejectDeferredWithNonErrorValue0054';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.rejectDeferredWithNonErrorValue()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1002,13 +1053,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetPropertyNullEnvReturnsInvalidArg0055',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetPropertyNullEnvReturnsInvalidArg0055';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getPropertyNullEnvReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1020,13 +1072,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetPropertyNullObjectReturnsInvalidArg0056',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetPropertyNullObjectReturnsInvalidArg0056';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getPropertyNullObjectReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1038,13 +1091,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetPropertyNullKeyReturnsInvalidArg0057',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetPropertyNullKeyReturnsInvalidArg0057';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getPropertyNullKeyReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== 第七轮补充测试 (napi_reject_deferred 完整覆盖) ==========
@@ -1058,13 +1112,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetPropertyNullResultReturnsInvalidArg0058',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetPropertyNullResultReturnsInvalidArg0058';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getPropertyNullResultReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1076,13 +1131,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetPropertyStringReturnsObjectExpected0059',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetPropertyStringReturnsObjectExpected0059';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getPropertyStringReturnsObjectExpected()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1094,13 +1150,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetPropertyNumberReturnsObjectExpected0060',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetPropertyNumberReturnsObjectExpected0060';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getPropertyNumberReturnsObjectExpected()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== 第七轮补充测试 (napi_get_property 异常参数覆盖) ==========
@@ -1114,13 +1171,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetPropertyNullReturnsObjectExpected0061',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetPropertyNullReturnsObjectExpected0061';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getPropertyNullReturnsObjectExpected()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1132,13 +1190,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateStrongSendableRefNonSendableReturnsError0062',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testCreateStrongSendableRefNonSendableReturnsError0062';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.createStrongSendableRefNonSendableReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1150,13 +1209,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateStrongSendableRefNullEnvReturnsInvalidArg0063',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testCreateStrongSendableRefNullEnvReturnsInvalidArg0063';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.createStrongSendableRefNullEnvReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1168,13 +1228,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteStrongSendableRefNullEnvReturnsInvalidArg0064',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteStrongSendableRefNullEnvReturnsInvalidArg0064';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.deleteStrongSendableRefNullEnvReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1186,13 +1247,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testRejectDeferredAfterPromiseGC0065',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testRejectDeferredAfterPromiseGC0065';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.rejectDeferredAfterPromiseGC()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1204,13 +1266,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteStrongSendableRefCrossThreadRelease0066',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteStrongSendableRefCrossThreadRelease0066';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.deleteStrongSendableRefCrossThreadRelease()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== 第七轮补充测试 (napi_create_strong_sendable_reference 完整覆盖) ==========
@@ -1224,13 +1287,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteStrongSendableRefLifecycleManagement0067',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteStrongSendableRefLifecycleManagement0067';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.deleteStrongSendableRefLifecycleManagement()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== 第七轮补充测试 (napi_delete_strong_sendable_reference 完整覆盖) ==========
@@ -1244,13 +1308,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testWrapSendableWithSizeZeroReturnsInvalidArg0068',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testWrapSendableWithSizeZeroReturnsInvalidArg0068';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.wrapSendableWithSizeZeroReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1262,13 +1327,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testWrapSendableWithSizeVerifyDataIntegrity0069',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testWrapSendableWithSizeVerifyDataIntegrity0069';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.wrapSendableWithSizeVerifyDataIntegrity()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1280,13 +1346,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetStrongSendableRefValueWhenPendingReturnsPendingException0070',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetStrongSendableRefValueWhenPendingReturnsPendingException0070';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getStrongSendableRefValueWhenPendingReturnsPendingException()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1298,13 +1365,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetStrongSendableRefValueCrossThreadConsistency0071',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetStrongSendableRefValueCrossThreadConsistency0071';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getStrongSendableRefValueCrossThreadConsistency()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== napi_wrap_sendable_with_size 补充用例 ==========
@@ -1318,13 +1386,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueStringLatin1WhenPending0072',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueStringLatin1WhenPending0072';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueStringLatin1WhenPending()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1336,13 +1405,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueStringLatin1NonLatin0073',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueStringLatin1NonLatin0073';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueStringLatin1NonLatin1()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1354,13 +1424,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueStringLatin1BufsizeSmaller0074',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueStringLatin1BufsizeSmaller0074';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueStringLatin1BufsizeSmaller()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== napi_get_strong_sendable_reference_value 补充用例 ==========
@@ -1374,13 +1445,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueStringLatin1Number0075',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueStringLatin1Number0075';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueStringLatin1Number()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1392,13 +1464,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueUint32Roundtrip0076',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueUint32Roundtrip0076';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getValueUint32Roundtrip()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== napi_add_finalizer 补充用例（0093-0097）==========
@@ -1413,13 +1486,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testAddFinalizerNonObjectReturnsObjectExpected0077',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testAddFinalizerNonObjectReturnsObjectExpected0077';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.addFinalizerNonObjectReturnsObjectExpected()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1431,10 +1505,12 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testAddFinalizerWhenPendingReturnsPendingException0078',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testAddFinalizerWhenPendingReturnsPendingException0078';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       try {
         napispecdiffbatch2ndktest.addFinalizerWhenPendingReturnsPendingException();
         expect(false).assertTrue();
@@ -1442,7 +1518,6 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
         expect(true).assertTrue();
       }
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1454,13 +1529,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testAddFinalizerMultipleTypesReturnsObjectExpected0079',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testAddFinalizerMultipleTypesReturnsObjectExpected0079';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.addFinalizerMultipleTypesReturnsObjectExpected()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1472,13 +1548,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testAddFinalizerNullDataReturnsOk0080',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testAddFinalizerNullDataReturnsOk0080';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.addFinalizerNullDataReturnsOk()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1490,13 +1567,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testAddFinalizerNullResultReturnsOk0081',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testAddFinalizerNullResultReturnsOk0081';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.addFinalizerNullResultReturnsOk()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== napi_remove_wrap_sendable 补充用例 (0098-0099) ==========
@@ -1510,13 +1588,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testRemoveWrapSendableNonSendableReturnsError0082',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testRemoveWrapSendableNonSendableReturnsError0082';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.removeWrapSendableNonSendableReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1528,13 +1607,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testRemoveWrapSendableNonWrappedReturnsError0083',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testRemoveWrapSendableNonWrappedReturnsError0083';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.removeWrapSendableNonWrappedReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== napi_create_strong_reference 异常参数补充 ==========
@@ -1548,13 +1628,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateStrongReferenceNullEnvReturnsInvalidArg0084',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testCreateStrongReferenceNullEnvReturnsInvalidArg0084';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.createStrongReferenceNullEnvReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1566,13 +1647,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateStrongReferenceNullObjectReturnsInvalidArg0085',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testCreateStrongReferenceNullObjectReturnsInvalidArg0085';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.createStrongReferenceNullObjectReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1584,13 +1666,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateStrongReferenceNullRefReturnsInvalidArg0086',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testCreateStrongReferenceNullRefReturnsInvalidArg0086';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.createStrongReferenceNullRefReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1602,13 +1685,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateStrongReferenceNumberReturnsError0087',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testCreateStrongReferenceNumberReturnsError0087';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.createStrongReferenceNumberReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1620,13 +1704,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateStrongReferenceStringReturnsError0088',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testCreateStrongReferenceStringReturnsError0088';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.createStrongReferenceStringReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== napi_delete_strong_reference 异常参数+异常场景补充 ==========
@@ -1640,13 +1725,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteStrongReferenceNullEnvReturnsInvalidArg0089',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteStrongReferenceNullEnvReturnsInvalidArg0089';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.deleteStrongReferenceNullEnvReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1658,10 +1744,12 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testDeleteStrongReferenceWhenPendingReturnsPendingException0090',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testDeleteStrongReferenceWhenPendingReturnsPendingException0090';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       try {
         napispecdiffbatch2ndktest.deleteStrongReferenceWhenPendingReturnsPendingException();
         expect(false).assertTrue();
@@ -1669,7 +1757,6 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
         expect(true).assertTrue();
       }
       console.info(caseName + ' end');
-      done();
     });
 
     // ========== napi_get_reference_value 异常参数补充 ==========
@@ -1683,13 +1770,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetStrongReferenceValueNullEnvReturnsInvalidArg0091',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetStrongReferenceValueNullEnvReturnsInvalidArg0091';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getStrongReferenceValueNullEnvReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1701,13 +1789,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetStrongReferenceValueNullRefReturnsInvalidArg0092',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetStrongReferenceValueNullRefReturnsInvalidArg0092';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getStrongReferenceValueNullRefReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
     /**
@@ -1719,13 +1808,14 @@ export default function NapiSpecDiffBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetStrongReferenceValueNullResultReturnsInvalidArg0093',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetStrongReferenceValueNullResultReturnsInvalidArg0093';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
+      await new Promise<void>((resolve: () => void): void => {
+        setTimeout((): void => { resolve(); }, 20);
+      });
       expect(napispecdiffbatch2ndktest.getStrongReferenceValueNullResultReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
-      done();
     });
 
   });
