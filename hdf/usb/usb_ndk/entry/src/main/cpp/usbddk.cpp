@@ -57,6 +57,10 @@ static uint64_t interfaceHandle = 0;
 static uint8_t settingIndex = 0;
 static uint32_t timeout = 1000;
 constexpr size_t MAX_USB_DEVICE_NUM = 128;
+constexpr size_t ENDPOINT_INFO_FOUND = 0;
+constexpr size_t ENDPOINT_INFO_INTERFACE = 1;
+constexpr size_t ENDPOINT_INFO_ADDRESS = 2;
+constexpr size_t ENDPOINT_INFO_MAX_PACKET_SIZE = 3;
 constexpr size_t DEVICE_MEM_MAP_SIZE = 10 * 1024; // 10K
 constexpr size_t DEVICE_MEM_MAP_SIZE_50K = 50 * 1024; // 50K
 constexpr size_t DEVICE_MEM_MAP_SIZE_128M = 128 * 1024 * 1024; // 128M
@@ -265,8 +269,8 @@ static napi_value UsbHasTransferEndpoint(napi_env env, napi_callback_info info)
         if (ret == PARAM_0) {
             auto source = GetEndpointInfo(config);
             OH_Usb_FreeConfigDescriptor(config);
-            if (std::get<0>(source)) {
-                endpointType = ((std::get<2>(source) & USB_DDK_ENDPOINT_DIR_MASK) == USB_DDK_DIR_IN)
+            if (std::get<ENDPOINT_INFO_FOUND>(source)) {
+                endpointType = ((std::get<ENDPOINT_INFO_ADDRESS>(source) & USB_DDK_ENDPOINT_DIR_MASK) == USB_DDK_DIR_IN)
                     ? USB_DDK_ENDPOINT_TYPE_IN_ONLY : USB_DDK_ENDPOINT_TYPE_HAS_OUT;
             }
         }
