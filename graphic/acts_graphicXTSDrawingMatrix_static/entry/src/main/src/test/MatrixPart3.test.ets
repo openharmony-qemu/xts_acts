@@ -620,6 +620,24 @@ export default function drawingTsMatrixPart3Test(): void {
         console.info(msg + ` errorCode is: ${e.code}, errorMsg is: ${e.message}`);
         expect().assertFail();
       }
+      try {
+        let matrix = new drawing.Matrix();
+        let radius = matrix.mapRadius(Number.MAX_VALUE);
+        console.info(msg + ' max radius: ' + radius);
+        expect(radius === Infinity || Number.isNaN(radius)).assertTrue();
+      } catch (e) {
+        console.info(msg + ` errorCode is: ${e.code}, errorMsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let matrix = new drawing.Matrix();
+        let radius = matrix.mapRadius(Number.MIN_VALUE);
+        console.info(msg + ' min radius: ' + radius);
+        expect(radius).assertEqual(0);
+      } catch (e) {
+        console.info(msg + ` errorCode is: ${e.code}, errorMsg is: ${e.message}`);
+        expect().assertFail();
+      }
     })
     /**
      * @tc.name   testMatrixCombinedOperationsNormalStatic
