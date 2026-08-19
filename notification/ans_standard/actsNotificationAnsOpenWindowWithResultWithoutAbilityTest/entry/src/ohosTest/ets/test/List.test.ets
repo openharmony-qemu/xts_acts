@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 import ActsNotificationAnsOpenWindowWithResultWithoutAbilityTest
-  from "./ActsNotificationAnsOpenWindowWithResultWithoutAbilityTest.test";
+  from './ActsNotificationAnsOpenWindowWithResultWithoutAbilityTest.test';
 
 export default function testsuite() {
   ActsNotificationAnsOpenWindowWithResultWithoutAbilityTest();

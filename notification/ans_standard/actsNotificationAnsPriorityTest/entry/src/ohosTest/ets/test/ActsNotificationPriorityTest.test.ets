@@ -14,7 +14,7 @@ export default function actsNotificationPriorityTest() {
   describe('actsNotificationPriorityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
-      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       notificationManager.requestEnableNotification(context).then(() => {
         console.info(`requestEnableNotification succeeded`);
       }).catch((err: BusinessError) => {
@@ -48,7 +48,7 @@ export default function actsNotificationPriorityTest() {
      * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Priority_Notification_0100', Level.LEVEL2, async  (done : Function) => {
-      let TAG = "Sub_Notification_Ans_Priority_Notification_0100"
+      let TAG = 'Sub_Notification_Ans_Priority_Notification_0100'
       const color = new ArrayBuffer(96);
       let opts: image.InitializationOptions = {
         editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {
@@ -63,8 +63,8 @@ export default function actsNotificationPriorityTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "test",
-            text: "test",
+            title: 'test',
+            text: 'test',
           }
         },
         notificationSlotType: notificationManager.SlotType.SERVICE_INFORMATION
@@ -80,7 +80,7 @@ export default function actsNotificationPriorityTest() {
       await notificationManager.getActiveNotifications()
         .then((data: Array<notificationManager.NotificationRequest>) => {
           console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-          expect(data[0].priorityNotificationType).assertEqual("OTHER")
+          expect(data[0].priorityNotificationType).assertEqual('OTHER')
           done()
         })
         .catch((err: BusinessError): void => {

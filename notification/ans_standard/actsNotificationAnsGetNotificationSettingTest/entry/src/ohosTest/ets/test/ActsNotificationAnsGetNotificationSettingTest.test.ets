@@ -26,7 +26,7 @@ let ctx = getContext(this) as common.UIAbilityContext;
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok");
+      resolve('ok');
     }, time)
   });
 }
@@ -51,23 +51,12 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
       let deviceTypeInfo: string = deviceInfo.deviceType;
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        notificationManager.openNotificationSettingsWithResult(context).then((data) => {
-          hilog.info(0x0000, 'testTag',
-            `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data.bannerEnabled).assertEqual(false)
-          expect(data.notificationEnabled).assertEqual(false)
-        }).catch((e: Error) => {
-          let err :BusinessError = e as BusinessError
-          hilog.error(0x0000, 'testTag',
-            `${testNum} openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          if (err.code === 801) {
-            expect(err.code).assertEqual(801);
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        });
+        let data = await notificationManager.openNotificationSettingsWithResult(context);
+        hilog.info(0x0000, 'testTag',
+          `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
+        expect(data.bannerEnabled).assertEqual(false)
+        expect(data.notificationEnabled).assertEqual(false)
+        // 设置页打开成功后执行 UI 流程
         await sleep(500)
         let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
         console.info(testNum + `button is ${JSON.stringify(button)}`);
@@ -132,7 +121,15 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
           }
         });
       } catch (err) {
-        console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
+        let e: BusinessError = err as BusinessError
+        hilog.error(0x0000, 'testTag',
+          `${testNum} openNotificationSettingsWithResult failed, code is ${e.code}, message is ${e.message}`);
+        // 无权限打开设置页（801，普通三方应用）→ 接受错误码结束用例，不再执行 UI 流程
+        if (e.code === 801) {
+          expect(e.code).assertEqual(801);
+          done();
+          return
+        }
         expect(false).assertTrue();
         done()
       }
