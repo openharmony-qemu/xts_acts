@@ -29,7 +29,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level  LEVEL3
      */
     it('testSetElementHugeIndexDoesNotMutateObject0001',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testSetElementHugeIndexDoesNotMutateObject0001';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -38,6 +38,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       // OH-NAPI-DIFF-022
       expect(napiSpecDiffBatch4.setElementHugeIndexDoesNotMutateObject()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -49,7 +50,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level  LEVEL3
      */
     it('testFatalExceptionRejectsNonError0002',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testFatalExceptionRejectsNonError0002';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -58,6 +59,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       // OH-NAPI-DIFF-060
       expect(napiSpecDiffBatch4.fatalExceptionRejectsNonError()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -69,7 +71,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level  LEVEL3
      */
     it('testExternalStringUtf16AndAsciiCreate0003',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testExternalStringUtf16AndAsciiCreate0003';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -78,6 +80,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       // OH-NAPI-EXT-036 OH-NAPI-EXT-037 OH-NAPI-EXT-038
       expect(napiSpecDiffBatch4.externalStringUtf16AndAsciiCreate()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -89,7 +92,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateDateExtremeReturnsStatus0004',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateDateExtremeReturnsStatus0004';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -98,6 +101,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       // OH-NAPI-DIFF-047
       expect(napiSpecDiffBatch4.createDateExtremeReturnsStatus()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -109,7 +113,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level  LEVEL3
      */
     it('testCallFunctionNullRecvIsolatedProbe0005',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCallFunctionNullRecvIsolatedProbe0005';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -118,6 +122,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       // OH-NAPI-DIFF-026
       expect(napiSpecDiffBatch4.callFunctionNullRecvIsolatedProbe()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -129,7 +134,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level  LEVEL3
      */
     it('testTsfnDestroyRuntimeWithoutExplicitCleanupProbe0006',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         const caseName = 'testTsfnDestroyRuntimeWithoutExplicitCleanupProbe0006';
         console.info(caseName + ' start');
         await new Promise<void>((resolve: () => void): void => {
@@ -138,6 +143,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
         // OH-NAPI-DIFF-042
         expect(napiSpecDiffBatch4.tsfnDestroyRuntimeWithoutExplicitCleanupProbe()).assertEqual(1);
         console.info(caseName + ' end');
+        done();
       });
 
 
@@ -150,7 +156,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateBigintHugeWordsProbe0008',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateBigintHugeWordsProbe0008';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -159,6 +165,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       // OH-NAPI-DIFF-048
       expect(napiSpecDiffBatch4.createBigintHugeWordsProbe()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
 
@@ -172,7 +179,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateArrayWithHugeLengthProbe0011',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateArrayWithHugeLengthProbe0011';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -181,6 +188,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       // OH-NAPI-DIFF-062
       expect(napiSpecDiffBatch4.createArrayWithHugeLengthProbe()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -192,7 +200,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level  LEVEL3
      */
     it('testCreateArrayBufferWithHugeLengthProbe0012',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateArrayBufferWithHugeLengthProbe0012';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -201,6 +209,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       // OH-NAPI-DIFF-063
       expect(napiSpecDiffBatch4.createArrayBufferWithHugeLengthProbe()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_has_element 测试 =====
@@ -214,7 +223,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testHasElementAbnormalParams0013',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testHasElementAbnormalParams0013';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -222,6 +231,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testHasElementAbnormalParams()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -233,7 +243,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testHasElementReturnValue0014',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testHasElementReturnValue0014';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -241,6 +251,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testHasElementReturnValue()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_fatal_exception 测试 =====
@@ -277,7 +288,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testExternalStringUtf16ReturnValue0016',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testExternalStringUtf16ReturnValue0016';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -285,6 +296,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testExternalStringUtf16ReturnValue()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -296,7 +308,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testExternalStringUtf16NormalScene0017',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testExternalStringUtf16NormalScene0017';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -304,6 +316,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testExternalStringUtf16NormalScene()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -315,7 +328,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testExternalStringUtf16AbnormalScene0018',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testExternalStringUtf16AbnormalScene0018';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -323,6 +336,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testExternalStringUtf16AbnormalScene()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -334,7 +348,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testExternalStringUtf16Combination0019',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testExternalStringUtf16Combination0019';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -342,6 +356,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testExternalStringUtf16Combination()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_create_external_string_ascii 测试 =====
@@ -355,7 +370,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testExternalStringAsciiNullParam0020',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testExternalStringAsciiNullParam0020';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -363,6 +378,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testExternalStringAsciiNullParam()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -374,7 +390,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testExternalStringAsciiReturnValue0021',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testExternalStringAsciiReturnValue0021';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -382,6 +398,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testExternalStringAsciiReturnValue()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -393,7 +410,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testExternalStringAsciiNormalScene0022',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testExternalStringAsciiNormalScene0022';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -401,6 +418,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testExternalStringAsciiNormalScene()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -412,7 +430,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testExternalStringAsciiNonAscii0023',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testExternalStringAsciiNonAscii0023';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -420,6 +438,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testExternalStringAsciiNonAscii()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -431,7 +450,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testExternalStringAsciiCombination0024',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testExternalStringAsciiCombination0024';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -439,6 +458,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testExternalStringAsciiCombination()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_create_date 测试 =====
@@ -452,7 +472,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testCreateDateNanScene0025',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateDateNanScene0025';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -460,6 +480,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testCreateDateNanScene()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -471,7 +492,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testCreateDateCombination0026',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateDateCombination0026';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -479,6 +500,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testCreateDateCombination()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_create_threadsafe_function 测试 =====
@@ -492,7 +514,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testCreateThreadsafeFunctionAbnormalParams0027',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateThreadsafeFunctionAbnormalParams0027';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -500,6 +522,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testCreateThreadsafeFunctionAbnormalParams()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_call_threadsafe_function 测试 =====
@@ -513,7 +536,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testCallThreadsafeFunctionAbnormalParams0028',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCallThreadsafeFunctionAbnormalParams0028';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -521,6 +544,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testCallThreadsafeFunctionAbnormalParams()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_create_bigint_words 测试 =====
@@ -534,7 +558,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testCreateBigintWordsCombination0029',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateBigintWordsCombination0029';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -542,6 +566,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testCreateBigintWordsCombination()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_add_finalizer 测试 =====
@@ -555,7 +580,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testAddFinalizerAbnormalParams0030',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testAddFinalizerAbnormalParams0030';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -563,6 +588,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testAddFinalizerAbnormalParams()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -574,7 +600,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testAddFinalizerReturnValue0031',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testAddFinalizerReturnValue0031';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -582,6 +608,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testAddFinalizerReturnValue()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -593,7 +620,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testAddFinalizerCombination0032',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testAddFinalizerCombination0032';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -601,6 +628,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testAddFinalizerCombination()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_get_uv_event_loop 测试 =====
@@ -614,7 +642,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testGetUvEventLoopAbnormalParams0033',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testGetUvEventLoopAbnormalParams0033';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -622,6 +650,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testGetUvEventLoopAbnormalParams()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -633,7 +662,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testGetUvEventLoopAbnormalScene0034',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testGetUvEventLoopAbnormalScene0034';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -641,6 +670,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testGetUvEventLoopAbnormalScene()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -652,7 +682,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testGetUvEventLoopCombination0035',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testGetUvEventLoopCombination0035';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -660,6 +690,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testGetUvEventLoopCombination()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_create_array_with_length 测试 =====
@@ -673,7 +704,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testCreateArrayWithLengthAbnormalParams0036',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateArrayWithLengthAbnormalParams0036';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -681,6 +712,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testCreateArrayWithLengthAbnormalParams()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -692,7 +724,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testCreateArrayWithLengthReturnValue0037',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateArrayWithLengthReturnValue0037';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -700,6 +732,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testCreateArrayWithLengthReturnValue()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     //===== napi_create_arraybuffer 测试 =====
@@ -713,7 +746,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testCreateArraybufferZeroLengthScene0038',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateArraybufferZeroLengthScene0038';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -721,6 +754,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testCreateArraybufferZeroLengthScene()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_open_critical_scope 测试 =====
@@ -734,7 +768,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testOpenCriticalScopeNormalParams0039',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testOpenCriticalScopeNormalParams0039';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -742,6 +776,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testOpenCriticalScopeNormalParams()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -753,7 +788,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testOpenCriticalScopeReturnValue0040',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testOpenCriticalScopeReturnValue0040';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -761,6 +796,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testOpenCriticalScopeReturnValue()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -772,7 +808,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testOpenCriticalScopeAbnormalParams0041',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testOpenCriticalScopeAbnormalParams0041';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -780,6 +816,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testOpenCriticalScopeAbnormalParams()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_close_critical_scope 测试 =====
@@ -793,7 +830,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testCloseCriticalScopeAbnormalParams0042',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCloseCriticalScopeAbnormalParams0042';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -801,6 +838,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testCloseCriticalScopeAbnormalParams()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -812,7 +850,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testCloseCriticalScopeReturnValue0043',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCloseCriticalScopeReturnValue0043';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -820,6 +858,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testCloseCriticalScopeReturnValue()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -831,7 +870,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testCloseCriticalScopeAbnormalScene0044',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCloseCriticalScopeAbnormalScene0044';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -839,6 +878,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testCloseCriticalScopeAbnormalScene()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_create_ark_runtime 测试 =====
@@ -852,7 +892,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testCreateArkRuntimeCombination0045',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateArkRuntimeCombination0045';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -860,6 +900,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testCreateArkRuntimeCombination()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_is_exception_pending 测试 =====
@@ -873,7 +914,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testIsExceptionPendingAbnormalScene0046',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testIsExceptionPendingAbnormalScene0046';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -881,6 +922,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testIsExceptionPendingAbnormalScene()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -892,7 +934,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testIsExceptionPendingCombination0047',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testIsExceptionPendingCombination0047';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -900,6 +942,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testIsExceptionPendingCombination()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_get_undefined 测试 =====
@@ -913,7 +956,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testGetUndefinedAbnormalParams0048',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testGetUndefinedAbnormalParams0048';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -921,6 +964,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testGetUndefinedAbnormalParams()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -932,7 +976,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testGetUndefinedNormalScene0049',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testGetUndefinedNormalScene0049';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -940,6 +984,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testGetUndefinedNormalScene()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_create_int32 测试 =====
@@ -953,7 +998,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testCreateInt32AbnormalScene0050',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateInt32AbnormalScene0050';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -961,6 +1006,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testCreateInt32AbnormalScene()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== napi_set_element 补充用例 =====
@@ -974,7 +1020,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testSetElementNonObjectReturnsObjectExpected0051',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testSetElementNonObjectReturnsObjectExpected0051';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -982,6 +1028,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.setElementNonObjectReturnsObjectExpected()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== 0052-0053: napi_get_uv_event_loop 补充测试 =====
@@ -995,7 +1042,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testGetUvEventLoopNonMainThread0052',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testGetUvEventLoopNonMainThread0052';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -1003,6 +1050,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testGetUvEventLoopNonMainThread()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     /**
@@ -1014,7 +1062,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
      * @tc.level LEVEL3
      */
     it('testGetUvEventLoopWithThreadsafeFunction0053',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testGetUvEventLoopWithThreadsafeFunction0053';
       console.info(caseName + ' start');
       await new Promise<void>((resolve: () => void): void => {
@@ -1022,6 +1070,7 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       });
       expect(napiSpecDiffBatch4.testGetUvEventLoopWithThreadsafeFunction()).assertEqual(1);
       console.info(caseName + ' end');
+      done();
     });
 
     // ===== 0058: criticalScopeForbiddenNapiCrashProbe — 已注释 =====
