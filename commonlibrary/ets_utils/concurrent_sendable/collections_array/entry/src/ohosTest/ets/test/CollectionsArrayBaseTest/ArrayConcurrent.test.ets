@@ -16,53 +16,60 @@
 
 
 import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
-import { collections} from '@kit.ArkTS';
-import { taskpool } from '@kit.ArkTS';
+import { collections, taskpool, ArkTSUtils } from '@kit.ArkTS';
 import { NumberWrapper } from './test_data/TestDataFactory';
 
 @Concurrent
-function processArraySum(arr: collections.Array<number>): number {
-  let sum: number = 0;
-  let length: number = arr.length;
-  for (let i: number = 0; i < length; i++) {
-    let val: number = arr[i];
-    sum = sum + val;
-  }
-  return sum;
-}
-
-@Concurrent
-function processArrayCount(arr: collections.Array<NumberWrapper>): number {
-  let count: number = 0;
-  let length: number = arr.length;
-  for (let i: number = 0; i < length; i++) {
-    count = count + 1;
-  }
-  return count;
-}
-
-@Concurrent
-function processArrayMap(arr: collections.Array<number>): collections.Array<number> {
-  let result: collections.Array<number> = new collections.Array<number>();
-  let length: number = arr.length;
-  for (let i: number = 0; i < length; i++) {
-    let val: number = arr[i];
-    result.push(val * 2);
-  }
-  return result;
-}
-
-@Concurrent
-function processArrayFilter(arr: collections.Array<number>): collections.Array<number> {
-  let result: collections.Array<number> = new collections.Array<number>();
-  let length: number = arr.length;
-  for (let i: number = 0; i < length; i++) {
-    let val: number = arr[i];
-    if (val > 3) {
-      result.push(val);
+async function processArraySum(arr: collections.Array<number>, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    let sum: number = 0;
+    let length: number = arr.length;
+    for (let i: number = 0; i < length; i++) {
+      let val: number = arr[i];
+      sum = sum + val;
     }
-  }
-  return result;
+    return sum;
+  });
+}
+
+@Concurrent
+async function processArrayCount(arr: collections.Array<NumberWrapper>, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    let count: number = 0;
+    let length: number = arr.length;
+    for (let i: number = 0; i < length; i++) {
+      count = count + 1;
+    }
+    return count;
+  });
+}
+
+@Concurrent
+async function processArrayMap(arr: collections.Array<number>, lock: ArkTSUtils.locks.AsyncLock): Promise<collections.Array<number>> {
+  return await lock.lockAsync(async (): Promise<collections.Array<number>> => {
+    let result: collections.Array<number> = new collections.Array<number>();
+    let length: number = arr.length;
+    for (let i: number = 0; i < length; i++) {
+      let val: number = arr[i];
+      result.push(val * 2);
+    }
+    return result;
+  });
+}
+
+@Concurrent
+async function processArrayFilter(arr: collections.Array<number>, lock: ArkTSUtils.locks.AsyncLock): Promise<collections.Array<number>> {
+  return await lock.lockAsync(async (): Promise<collections.Array<number>> => {
+    let result: collections.Array<number> = new collections.Array<number>();
+    let length: number = arr.length;
+    for (let i: number = 0; i < length; i++) {
+      let val: number = arr[i];
+      if (val > 3) {
+        result.push(val);
+      }
+    }
+    return result;
+  });
 }
 
 export default function suite() {
@@ -87,8 +94,8 @@ export default function suite() {
       console.info(`${caseName}, test start`);
 
       let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
-      let task: taskpool.Task = new taskpool.Task(processArraySum, arr);
-      let result: number = await taskpool.execute(task) as number;
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
+      let result: number = await taskpool.execute(processArraySum, arr, lock) as number;
       expect(result).assertEqual(15);
 
       console.info(`${caseName}, test end`);
@@ -109,8 +116,8 @@ export default function suite() {
       console.info(`${caseName}, test start`);
 
       let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3);
-      let task: taskpool.Task = new taskpool.Task(processArrayMap, arr);
-      let result: collections.Array<number> = await taskpool.execute(task) as collections.Array<number>;
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
+      let result: collections.Array<number> = await taskpool.execute(processArrayMap, arr, lock) as collections.Array<number>;
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(2);
       expect(result[1]).assertEqual(4);
@@ -134,8 +141,8 @@ export default function suite() {
       console.info(`${caseName}, test start`);
 
       let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
-      let task: taskpool.Task = new taskpool.Task(processArrayFilter, arr);
-      let result: collections.Array<number> = await taskpool.execute(task) as collections.Array<number>;
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
+      let result: collections.Array<number> = await taskpool.execute(processArrayFilter, arr, lock) as collections.Array<number>;
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(4);
       expect(result[1]).assertEqual(5);
@@ -163,8 +170,8 @@ export default function suite() {
       arr.push(new NumberWrapper(3));
       arr.push(new NumberWrapper(4));
       arr.push(new NumberWrapper(5));
-      let task: taskpool.Task = new taskpool.Task(processArrayCount, arr);
-      let result: number = await taskpool.execute(task) as number;
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
+      let result: number = await taskpool.execute(processArrayCount, arr, lock) as number;
       expect(result).assertEqual(5);
 
       console.info(`${caseName}, test end`);

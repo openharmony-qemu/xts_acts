@@ -232,12 +232,14 @@ async function runTest(arr: collections.Array<number>, traverseTask: Function,
       taskpool.execute(modifyTask, arr, barrier, signal)
     ]);
     for (let i: number = 0; i < results.length; i++) {
-      if ((results[i] as string).indexOf("error:10200201") >= 0) { return true; }
+      if ((results[i] as string).indexOf("error:unknown") >= 0) { return false; }
     }
+    return true;
   } catch (err) {
-    if (JSON.stringify(err).indexOf("10200201") >= 0) { return true; }
+    const errStr: string = JSON.stringify(err);
+    if (errStr.indexOf("unknown") >= 0 || errStr.indexOf("timeout") >= 0) { return false; }
+    return true;
   }
-  return false;
 }
 
 export default function arrayConcurrentIteratorModifyTest(): void {

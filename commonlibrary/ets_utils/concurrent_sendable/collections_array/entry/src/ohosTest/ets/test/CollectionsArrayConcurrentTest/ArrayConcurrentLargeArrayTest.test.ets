@@ -17,31 +17,40 @@ import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/h
 import { collections, taskpool, ArkTSUtils } from "@kit.ArkTS";
 
 @Concurrent
-async function largeForEachTask(arr: collections.Array<number>): Promise<number> {
-  const startTime: number = Date.now();
-  let count: number = 0;
-  arr.forEach((value: number): void => { count++; });
-  return Date.now() - startTime;
+async function largeForEachTask(arr: collections.Array<number>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    const startTime: number = Date.now();
+    let count: number = 0;
+    arr.forEach((value: number): void => { count++; });
+    return Date.now() - startTime;
+  });
 }
 
 @Concurrent
-async function largeEntriesTask(arr: collections.Array<number>): Promise<number> {
-  const startTime: number = Date.now();
-  let count: number = 0;
-  const iterator: IterableIterator<[number, number]> = arr.entries();
-  let entry: IteratorResult<[number, number]> = iterator.next();
-  while (!entry.done) { count++; entry = iterator.next(); }
-  return Date.now() - startTime;
+async function largeEntriesTask(arr: collections.Array<number>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    const startTime: number = Date.now();
+    let count: number = 0;
+    const iterator: IterableIterator<[number, number]> = arr.entries();
+    let entry: IteratorResult<[number, number]> = iterator.next();
+    while (!entry.done) { count++; entry = iterator.next(); }
+    return Date.now() - startTime;
+  });
 }
 
 @Concurrent
-async function largeValuesTask(arr: collections.Array<number>): Promise<number> {
-  const startTime: number = Date.now();
-  let count: number = 0;
-  const iterator: IterableIterator<number> = arr.values();
-  let val: IteratorResult<number> = iterator.next();
-  while (!val.done) { count++; val = iterator.next(); }
-  return Date.now() - startTime;
+async function largeValuesTask(arr: collections.Array<number>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    const startTime: number = Date.now();
+    let count: number = 0;
+    const iterator: IterableIterator<number> = arr.values();
+    let val: IteratorResult<number> = iterator.next();
+    while (!val.done) { count++; val = iterator.next(); }
+    return Date.now() - startTime;
+  });
 }
 
 @Concurrent
@@ -98,8 +107,9 @@ export default function arrayConcurrentLargeArrayTest(): void {
         const arr: collections.Array<number> = new collections.Array<number>();
         for (let i: number = 0; i < 10000; i++) { arr.push(i); }
         const tasks: Promise<Object>[] = [];
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         for (let i: number = 0; i < 8; i++) {
-          tasks.push(taskpool.execute(largeForEachTask, arr));
+          tasks.push(taskpool.execute(largeForEachTask, arr, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {
@@ -127,8 +137,9 @@ export default function arrayConcurrentLargeArrayTest(): void {
         const arr: collections.Array<number> = new collections.Array<number>();
         for (let i: number = 0; i < 50000; i++) { arr.push(i); }
         const tasks: Promise<Object>[] = [];
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         for (let i: number = 0; i < 16; i++) {
-          tasks.push(taskpool.execute(largeForEachTask, arr));
+          tasks.push(taskpool.execute(largeForEachTask, arr, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {
@@ -156,8 +167,9 @@ export default function arrayConcurrentLargeArrayTest(): void {
         const arr: collections.Array<number> = new collections.Array<number>();
         for (let i: number = 0; i < 10000; i++) { arr.push(i); }
         const tasks: Promise<Object>[] = [];
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         for (let i: number = 0; i < 8; i++) {
-          tasks.push(taskpool.execute(largeEntriesTask, arr));
+          tasks.push(taskpool.execute(largeEntriesTask, arr, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {
@@ -185,8 +197,9 @@ export default function arrayConcurrentLargeArrayTest(): void {
         const arr: collections.Array<number> = new collections.Array<number>();
         for (let i: number = 0; i < 10000; i++) { arr.push(i); }
         const tasks: Promise<Object>[] = [];
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         for (let i: number = 0; i < 8; i++) {
-          tasks.push(taskpool.execute(largeValuesTask, arr));
+          tasks.push(taskpool.execute(largeValuesTask, arr, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {
@@ -212,6 +225,7 @@ export default function arrayConcurrentLargeArrayTest(): void {
         const TAG: string = "testArrayConcurrentLargeArrayPush0001";
         console.log(TAG + " start");
         const arr: collections.Array<number> = new collections.Array<number>();
+        // 对齐设计文档 Section 3.2.2: 初始length=10000, 8并发push*500
         for (let i: number = 0; i < 10000; i++) { arr.push(i); }
         const tasks: Promise<Object>[] = [];
         const lockPush: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
@@ -225,6 +239,7 @@ export default function arrayConcurrentLargeArrayTest(): void {
           expect(elapsed >= 0).assertTrue();
           expect(elapsed < 2000).assertTrue();
         }
+        // 最终长度: 10000 + 500 × 8 = 14000
         expect(arr.length).assertEqual(14000);
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
@@ -243,6 +258,7 @@ export default function arrayConcurrentLargeArrayTest(): void {
         const TAG: string = "testArrayConcurrentLargeArrayPop0001";
         console.log(TAG + " start");
         const arr: collections.Array<number> = new collections.Array<number>();
+        // 对齐设计文档 Section 3.2.2: 初始length=10000, 8并发pop*500
         for (let i: number = 0; i < 10000; i++) { arr.push(i); }
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         const tasks: Promise<Object>[] = [];
@@ -256,6 +272,7 @@ export default function arrayConcurrentLargeArrayTest(): void {
           expect(elapsed >= 0).assertTrue();
           expect(elapsed < 2000).assertTrue();
         }
+        // 最终长度: 10000 - 500 × 8 = 6000
         expect(arr.length).assertEqual(6000);
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
@@ -274,6 +291,7 @@ export default function arrayConcurrentLargeArrayTest(): void {
         const TAG: string = "testArrayConcurrentLargeArraySplice0001";
         console.log(TAG + " start");
         const arr: collections.Array<number> = new collections.Array<number>();
+        // 对齐设计文档 Section 3.2.2: 初始length=10000, 8并发splice*50
         for (let i: number = 0; i < 10000; i++) { arr.push(i); }
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         const tasks: Promise<Object>[] = [];
@@ -287,6 +305,7 @@ export default function arrayConcurrentLargeArrayTest(): void {
           expect(elapsed >= 0).assertTrue();
           expect(elapsed < 3000).assertTrue();
         }
+        // 最终长度: 10000 - 8 × 50 = 9600
         expect(arr.length).assertEqual(9600);
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
@@ -307,8 +326,9 @@ export default function arrayConcurrentLargeArrayTest(): void {
         const arr: collections.Array<number> = new collections.Array<number>();
         for (let i: number = 0; i < 100000; i++) { arr.push(i); }
         const tasks: Promise<Object>[] = [];
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         for (let i: number = 0; i < 8; i++) {
-          tasks.push(taskpool.execute(largeForEachTask, arr));
+          tasks.push(taskpool.execute(largeForEachTask, arr, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {

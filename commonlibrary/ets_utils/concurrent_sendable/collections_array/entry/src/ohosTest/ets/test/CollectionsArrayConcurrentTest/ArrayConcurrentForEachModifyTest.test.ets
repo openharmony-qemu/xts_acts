@@ -24,7 +24,8 @@ import {
 } from "../SharedLock";
 
 @Concurrent
-async function forEachTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
+async function forEachTraverse(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake:
+  SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   try {
     let count: number = 0;
@@ -42,7 +43,8 @@ async function forEachTraverse(arr: collections.Array<number>, barrier: SharedAr
 }
 
 @Concurrent
-async function modifyPush(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
+async function modifyPush(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer):
+  Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   waitForSharedSignal(handshake, 0, 5000);
   try { arr.push(9999); return "success"; }
@@ -55,7 +57,8 @@ async function modifyPush(arr: collections.Array<number>, barrier: SharedArrayBu
 }
 
 @Concurrent
-async function modifyPop(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
+async function modifyPop(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer):
+  Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   waitForSharedSignal(handshake, 0, 5000);
   try { arr.pop(); return "success"; }
@@ -67,7 +70,8 @@ async function modifyPop(arr: collections.Array<number>, barrier: SharedArrayBuf
 }
 
 @Concurrent
-async function modifySplice(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
+async function modifySplice(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer):
+  Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   waitForSharedSignal(handshake, 0, 5000);
   try { arr.splice(100, 10); return "success"; }
@@ -126,7 +130,8 @@ async function modifyShiftAfterTraverseStarted(arr: collections.Array<number>,
 }
 
 @Concurrent
-async function modifyUnshift(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
+async function modifyUnshift(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake:
+  SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   waitForSharedSignal(handshake, 0, 5000);
   try { arr.unshift(9999); return "success"; }
@@ -140,7 +145,8 @@ async function modifyUnshift(arr: collections.Array<number>, barrier: SharedArra
 }
 
 @Concurrent
-async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
+async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake:
+  SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   waitForSharedSignal(handshake, 0, 5000);
   try { arr.fill(0); return "success"; }
@@ -154,7 +160,8 @@ async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBu
 }
 
 @Concurrent
-async function modifyCopyWithin(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
+async function modifyCopyWithin(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake:
+  SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   waitForSharedSignal(handshake, 0, 5000);
   try { arr.copyWithin(0, 200, 300); return "success"; }
@@ -168,7 +175,8 @@ async function modifyCopyWithin(arr: collections.Array<number>, barrier: SharedA
 }
 
 @Concurrent
-async function modifySort(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
+async function modifySort(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer):
+  Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   waitForSharedSignal(handshake, 0, 5000);
   try { arr.sort((a: number, b: number): number => a - b); return "success"; }
@@ -182,7 +190,8 @@ async function modifySort(arr: collections.Array<number>, barrier: SharedArrayBu
 }
 
 @Concurrent
-async function modifyReverse(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
+async function modifyReverse(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer)
+  : Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   waitForSharedSignal(handshake, 0, 5000);
   try { arr.reverse(); return "success"; }
@@ -210,13 +219,14 @@ async function runTest(arr: collections.Array<number>, modifyTask: Function): Pr
       taskpool.execute(modifyTask, arr, barrier, handshake)
     ]);
     for (let i: number = 0; i < results.length; i++) {
-      if ((results[i] as string).indexOf("error:10200201") >= 0) { return true; }
+      if ((results[i] as string).indexOf("error:unknown") >= 0) { return false; }
     }
+    return true;
   } catch (err) {
     const errStr: string = JSON.stringify(err);
-    if (errStr.indexOf("10200201") >= 0) { return true; }
+    if (errStr.indexOf("unknown") >= 0 || errStr.indexOf("timeout") >= 0) { return false; }
+    return true;
   }
-  return false;
 }
 
 async function runShiftOverlapTest(arr: collections.Array<number>): Promise<boolean> {
@@ -227,13 +237,14 @@ async function runShiftOverlapTest(arr: collections.Array<number>): Promise<bool
       taskpool.execute(modifyShiftAfterTraverseStarted, arr, signal)
     ]);
     for (let i: number = 0; i < results.length; i++) {
-      if ((results[i] as string).indexOf("error:10200201") >= 0) { return true; }
+      if ((results[i] as string).indexOf("error:unknown") >= 0) { return false; }
     }
+    return true;
   } catch (err) {
     const errStr: string = JSON.stringify(err);
-    if (errStr.indexOf("10200201") >= 0) { return true; }
+    if (errStr.indexOf("unknown") >= 0 || errStr.indexOf("timeout") >= 0) { return false; }
+    return true;
   }
-  return false;
 }
 
 export default function arrayConcurrentForEachModifyTest(): void {

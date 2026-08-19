@@ -14,16 +14,20 @@
  */
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
-import { collections, taskpool } from "@kit.ArkTS";
+import { collections, taskpool, ArkTSUtils } from "@kit.ArkTS";
 
 @Concurrent
-async function indexOfTask(arr: collections.Array<number>, target: number): Promise<number> {
-  return arr.indexOf(target);
+async function indexOfTask(arr: collections.Array<number>, target: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    return arr.indexOf(target);
+  });
 }
 
 @Concurrent
-async function includesTask(arr: collections.Array<number>, target: number): Promise<boolean> {
-  return arr.includes(target);
+async function includesTask(arr: collections.Array<number>, target: number, lock: ArkTSUtils.locks.AsyncLock): Promise<boolean> {
+  return await lock.lockAsync(async (): Promise<boolean> => {
+    return arr.includes(target);
+  });
 }
 
 export default function arrayConcurrentQueryIndexOfTest(): void {
@@ -48,12 +52,15 @@ export default function arrayConcurrentQueryIndexOfTest(): void {
         const TAG: string = "testArrayConcurrentIndexOf0001";
         console.log(TAG + " start");
         const arr: collections.Array<number> = new collections.Array<number>();
+        // 对齐设计文档 Section 2.3.1: length=1000, 8并发
         for (let i: number = 0; i < 1000; i++) {
           arr.push(i);
         }
         const tasks: Promise<Object>[] = [];
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
+        // 对齐设计文档 Section 2.3.1: 8并发
         for (let i: number = 0; i < 8; i++) {
-          tasks.push(taskpool.execute(indexOfTask, arr, 250));
+          tasks.push(taskpool.execute(indexOfTask, arr, 250, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {
@@ -78,12 +85,14 @@ export default function arrayConcurrentQueryIndexOfTest(): void {
         const TAG: string = "testArrayConcurrentIndexOf0002";
         console.log(TAG + " start");
         const arr: collections.Array<number> = new collections.Array<number>();
+        // 对齐设计文档 Section 2.3.1: length=1000, 4并发
         for (let i: number = 0; i < 1000; i++) {
           arr.push(i);
         }
         const tasks: Promise<Object>[] = [];
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         for (let i: number = 0; i < 4; i++) {
-          tasks.push(taskpool.execute(indexOfTask, arr, 9999));
+          tasks.push(taskpool.execute(indexOfTask, arr, 9999, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {
@@ -108,12 +117,15 @@ export default function arrayConcurrentQueryIndexOfTest(): void {
         const TAG: string = "testArrayConcurrentIncludes0001";
         console.log(TAG + " start");
         const arr: collections.Array<number> = new collections.Array<number>();
+        // 对齐设计文档 Section 2.3.1: length=1000, 8并发
         for (let i: number = 0; i < 1000; i++) {
           arr.push(i);
         }
         const tasks: Promise<Object>[] = [];
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
+        // 对齐设计文档 Section 2.3.1: 8并发
         for (let i: number = 0; i < 8; i++) {
-          tasks.push(taskpool.execute(includesTask, arr, 100));
+          tasks.push(taskpool.execute(includesTask, arr, 100, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {
@@ -138,12 +150,14 @@ export default function arrayConcurrentQueryIndexOfTest(): void {
         const TAG: string = "testArrayConcurrentIncludes0002";
         console.log(TAG + " start");
         const arr: collections.Array<number> = new collections.Array<number>();
+        // 对齐设计文档 Section 2.3.1: length=1000, 4并发
         for (let i: number = 0; i < 1000; i++) {
           arr.push(i);
         }
         const tasks: Promise<Object>[] = [];
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         for (let i: number = 0; i < 4; i++) {
-          tasks.push(taskpool.execute(includesTask, arr, 0));
+          tasks.push(taskpool.execute(includesTask, arr, 0, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {

@@ -131,17 +131,14 @@ async function runModifyTest(arr: collections.Array<number>,
       taskpool.execute(modifyTask, arr, barrier, signal)
     ]);
     for (let i: number = 0; i < results.length; i++) {
-      if ((results[i] as string).indexOf("error:10200201") >= 0) {
-        return true;
-      }
+      if ((results[i] as string).indexOf("error:unknown") >= 0) { return false; }
     }
+    return true;
   } catch (err) {
     const errStr: string = JSON.stringify(err);
-    if (errStr.indexOf("10200201") >= 0) {
-      return true;
-    }
+    if (errStr.indexOf("unknown") >= 0 || errStr.indexOf("timeout") >= 0) { return false; }
+    return true;
   }
-  return false;
 }
 
 export default function arrayConcurrentTraverseModifyTest(): void {

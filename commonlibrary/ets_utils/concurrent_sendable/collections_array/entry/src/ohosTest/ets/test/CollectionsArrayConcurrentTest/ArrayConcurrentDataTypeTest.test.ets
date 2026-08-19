@@ -17,10 +17,13 @@ import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/h
 import { collections, taskpool, ArkTSUtils } from "@kit.ArkTS";
 
 @Concurrent
-async function stringForEachTask(arr: collections.Array<string>): Promise<number> {
-  let count: number = 0;
-  arr.forEach((value: string): void => { count++; });
-  return count;
+async function stringForEachTask(arr: collections.Array<string>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    let count: number = 0;
+    arr.forEach((value: string): void => { count++; });
+    return count;
+  });
 }
 
 @Concurrent
@@ -35,8 +38,11 @@ async function numberPushTask(arr: collections.Array<number>, values: number[],
 }
 
 @Concurrent
-async function booleanIncludesTask(arr: collections.Array<boolean>, target: boolean): Promise<boolean> {
-  return arr.includes(target);
+async function booleanIncludesTask(arr: collections.Array<boolean>, target: boolean,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<boolean> {
+  return await lock.lockAsync(async (): Promise<boolean> => {
+    return arr.includes(target);
+  });
 }
 
 @Concurrent
@@ -84,8 +90,9 @@ export default function arrayConcurrentDataTypeTest(): void {
         arr.push("a\n\t\u200B\u0000");
         arr.push("testTest😀🎉🔥");
         const tasks: Promise<Object>[] = [];
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         for (let i: number = 0; i < 4; i++) {
-          tasks.push(taskpool.execute(stringForEachTask, arr));
+          tasks.push(taskpool.execute(stringForEachTask, arr, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {
@@ -144,9 +151,10 @@ export default function arrayConcurrentDataTypeTest(): void {
         arr.push(true);
         arr.push(false);
         const tasks: Promise<Object>[] = [];
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         for (let i: number = 0; i < 4; i++) {
-          tasks.push(taskpool.execute(booleanIncludesTask, arr, true));
-          tasks.push(taskpool.execute(booleanIncludesTask, arr, false));
+          tasks.push(taskpool.execute(booleanIncludesTask, arr, true, lock));
+          tasks.push(taskpool.execute(booleanIncludesTask, arr, false, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i += 2) {

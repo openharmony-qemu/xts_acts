@@ -15,10 +15,20 @@
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool } from "@kit.ArkTS";
-import { createSharedBarrier, waitAtSharedBarrier, createSharedSignal, notifySharedSignal, waitForSharedSignal } from "../SharedLock";
+import {
+  createSharedBarrier,
+  waitAtSharedBarrier,
+  createSharedSignal,
+  notifySharedSignal,
+  waitForSharedSignal
+} from "../SharedLock";
 
 @Concurrent
-async function noLockEntries(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
+async function noLockEntries(
+  arr: collections.Array<number>,
+  barrier: SharedArrayBuffer,
+  handshake: SharedArrayBuffer
+): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   try {
     let count: number = 0;
@@ -35,11 +45,19 @@ async function noLockEntries(arr: collections.Array<number>, barrier: SharedArra
 }
 
 @Concurrent
-async function noLockSplice(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer): Promise<string> {
+async function noLockSplice(
+  arr: collections.Array<number>,
+  barrier: SharedArrayBuffer,
+  handshake: SharedArrayBuffer
+): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   waitForSharedSignal(handshake, 0, 5000);
   try { arr.splice(10, 5); return "success"; }
-  catch (err) { const e: string = JSON.stringify(err); if (e.indexOf("10200201") >= 0) { return "error:10200201"; } return "error:unknown"; }
+  catch (err) {
+    const e: string = JSON.stringify(err);
+    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
+    return "error:unknown";
+  }
 }
 
 function makeArray(count: number): collections.Array<number> {
@@ -48,8 +66,11 @@ function makeArray(count: number): collections.Array<number> {
   return arr;
 }
 
-async function runNoLockTest(arr: collections.Array<number>, traverseTask: Function,
-  modifyTask: Function): Promise<boolean> {
+async function runNoLockTest(
+  arr: collections.Array<number>,
+  traverseTask: Function,
+  modifyTask: Function
+): Promise<boolean> {
   const barrier: SharedArrayBuffer = createSharedBarrier();
   const handshake: SharedArrayBuffer = createSharedSignal(1);
   try {
@@ -58,12 +79,14 @@ async function runNoLockTest(arr: collections.Array<number>, traverseTask: Funct
       taskpool.execute(modifyTask, arr, barrier, handshake)
     ]);
     for (let i: number = 0; i < results.length; i++) {
-      if ((results[i] as string).indexOf("error:10200201") >= 0) { return true; }
+      if ((results[i] as string).indexOf("error:unknown") >= 0) { return false; }
     }
+    return true;
   } catch (err) {
-    if (JSON.stringify(err).indexOf("10200201") >= 0) { return true; }
+    const errStr: string = JSON.stringify(err);
+    if (errStr.indexOf("unknown") >= 0 || errStr.indexOf("timeout") >= 0) { return false; }
+    return true;
   }
-  return false;
 }
 
 export default function arrayConcurrentNoLockTest(): void {

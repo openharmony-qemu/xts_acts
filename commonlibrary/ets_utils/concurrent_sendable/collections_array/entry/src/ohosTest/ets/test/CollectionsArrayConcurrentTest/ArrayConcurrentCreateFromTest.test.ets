@@ -14,24 +14,30 @@
  */
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
-import { collections, taskpool } from "@kit.ArkTS";
+import { collections, taskpool, ArkTSUtils } from "@kit.ArkTS";
 
 @Concurrent
-async function createSameLengthTask(length: number, value: number): Promise<number> {
-  const arr: collections.Array<number> = collections.Array.create<number>(length, value);
-  return arr.length;
+async function createSameLengthTask(length: number, value: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    const arr: collections.Array<number> = collections.Array.create<number>(length, value);
+    return arr.length;
+  });
 }
 
 @Concurrent
-async function fromArrayLikeTask(source: number[]): Promise<number> {
-  const arr: collections.Array<number> = collections.Array.from<number>(source);
-  return arr.length;
+async function fromArrayLikeTask(source: number[], lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    const arr: collections.Array<number> = collections.Array.from<number>(source);
+    return arr.length;
+  });
 }
 
 @Concurrent
-async function fromIterableTask(source: collections.Array<number>): Promise<number> {
-  const arr: collections.Array<number> = collections.Array.from<number>(source);
-  return arr.length;
+async function fromIterableTask(source: collections.Array<number>, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    const arr: collections.Array<number> = collections.Array.from<number>(source);
+    return arr.length;
+  });
 }
 
 export default function arrayConcurrentCreateFromTest(): void {
@@ -56,9 +62,10 @@ export default function arrayConcurrentCreateFromTest(): void {
         const TAG: string = "testArrayConcurrentCreate0001";
         console.log(TAG + " start");
         const threadCount: number = 8;
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < threadCount; i++) {
-          tasks.push(taskpool.execute(createSameLengthTask, 100, 0));
+          tasks.push(taskpool.execute(createSameLengthTask, 100, 0, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {
@@ -83,10 +90,11 @@ export default function arrayConcurrentCreateFromTest(): void {
         const TAG: string = "testArrayConcurrentCreate0002";
         console.log(TAG + " start");
         const tasks: Promise<Object>[] = [];
-        tasks.push(taskpool.execute(createSameLengthTask, 50, 1));
-        tasks.push(taskpool.execute(createSameLengthTask, 200, 2));
-        tasks.push(taskpool.execute(createSameLengthTask, 10, 3));
-        tasks.push(taskpool.execute(createSameLengthTask, 500, 4));
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
+        tasks.push(taskpool.execute(createSameLengthTask, 50, 1, lock));
+        tasks.push(taskpool.execute(createSameLengthTask, 200, 2, lock));
+        tasks.push(taskpool.execute(createSameLengthTask, 10, 3, lock));
+        tasks.push(taskpool.execute(createSameLengthTask, 500, 4, lock));
         const results: Object[] = await Promise.all(tasks);
         expect(results[0] as number).assertEqual(50);
         expect(results[1] as number).assertEqual(200);
@@ -112,8 +120,9 @@ export default function arrayConcurrentCreateFromTest(): void {
         console.log(TAG + " start");
         const source: number[] = [1, 2, 3, 4, 5];
         const tasks: Promise<Object>[] = [];
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         for (let i: number = 0; i < 4; i++) {
-          tasks.push(taskpool.execute(fromArrayLikeTask, source));
+          tasks.push(taskpool.execute(fromArrayLikeTask, source, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {
@@ -142,8 +151,9 @@ export default function arrayConcurrentCreateFromTest(): void {
           source.push(i);
         }
         const tasks: Promise<Object>[] = [];
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         for (let i: number = 0; i < 4; i++) {
-          tasks.push(taskpool.execute(fromIterableTask, source));
+          tasks.push(taskpool.execute(fromIterableTask, source, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {

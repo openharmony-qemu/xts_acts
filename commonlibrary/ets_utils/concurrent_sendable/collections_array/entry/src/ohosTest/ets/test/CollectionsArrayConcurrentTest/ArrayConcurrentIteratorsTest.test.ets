@@ -14,45 +14,51 @@
  */
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
-import { collections, taskpool, worker, MessageEvents } from "@kit.ArkTS";
+import { collections, taskpool, worker, MessageEvents, ArkTSUtils } from "@kit.ArkTS";
 
 @Concurrent
-async function entriesTraverseTask(arr: collections.Array<number>): Promise<number> {
-  let count: number = 0;
-  const iterator: IterableIterator<[number, number]> = arr.entries();
-  let entry: IteratorResult<[number, number]> = iterator.next();
-  while (!entry.done) {
-    count++;
-    entry = iterator.next();
-  }
-  return count;
+async function entriesTraverseTask(arr: collections.Array<number>, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    let count: number = 0;
+    const iterator: IterableIterator<[number, number]> = arr.entries();
+    let entry: IteratorResult<[number, number]> = iterator.next();
+    while (!entry.done) {
+      count++;
+      entry = iterator.next();
+    }
+    return count;
+  });
 }
 
 @Concurrent
-async function keysTraverseTask(arr: collections.Array<number>): Promise<number> {
-  let count: number = 0;
-  const iterator: IterableIterator<number> = arr.keys();
-  let key: IteratorResult<number> = iterator.next();
-  while (!key.done) {
-    count++;
-    key = iterator.next();
-  }
-  return count;
+async function keysTraverseTask(arr: collections.Array<number>, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    let count: number = 0;
+    const iterator: IterableIterator<number> = arr.keys();
+    let key: IteratorResult<number> = iterator.next();
+    while (!key.done) {
+      count++;
+      key = iterator.next();
+    }
+    return count;
+  });
 }
 
 @Concurrent
-async function valuesTraverseTask(arr: collections.Array<number>): Promise<number> {
-  let count: number = 0;
-  const iterator: IterableIterator<number> = arr.values();
-  let val: IteratorResult<number> = iterator.next();
-  while (!val.done) {
-    count++;
-    val = iterator.next();
-  }
-  return count;
+async function valuesTraverseTask(arr: collections.Array<number>, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    let count: number = 0;
+    const iterator: IterableIterator<number> = arr.values();
+    let val: IteratorResult<number> = iterator.next();
+    while (!val.done) {
+      count++;
+      val = iterator.next();
+    }
+    return count;
+  });
 }
 
-function executeArrayEntriesWorker(arr: collections.Array<number>): Promise<Object> {
+function executeArrayEntriesWorker(arr: collections.Array<number>, lock: ArkTSUtils.locks.AsyncLock): Promise<Object> {
   return new Promise<Object>((resolve: (value: Object) => void,
     reject: (reason: Error) => void): void => {
     const workerInstance: worker.ThreadWorker =
@@ -76,7 +82,10 @@ function executeArrayEntriesWorker(arr: collections.Array<number>): Promise<Obje
         reject(new Error("ArrayEntriesWorker exited before posting result"));
       }
     };
-    workerInstance.postMessage(arr);
+    workerInstance.postMessageWithSharedSendable({
+      arr: arr,
+      lock: lock
+    });
   });
 }
 
@@ -107,9 +116,10 @@ export default function arrayConcurrentIteratorsTest(): void {
           arr.push(i);
         }
         const threadCount: number = 4;
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < threadCount; i++) {
-          tasks.push(taskpool.execute(entriesTraverseTask, arr));
+          tasks.push(taskpool.execute(entriesTraverseTask, arr, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {
@@ -139,9 +149,10 @@ export default function arrayConcurrentIteratorsTest(): void {
           arr.push(i);
         }
         const workerCount: number = 2;
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         const resultPromises: Promise<Object>[] = [];
         for (let i: number = 0; i < workerCount; i++) {
-          resultPromises.push(executeArrayEntriesWorker(arr));
+          resultPromises.push(executeArrayEntriesWorker(arr, lock));
         }
         const results: Object[] = await Promise.all(resultPromises);
         for (let i: number = 0; i < results.length; i++) {
@@ -171,9 +182,10 @@ export default function arrayConcurrentIteratorsTest(): void {
           arr.push(i);
         }
         const threadCount: number = 4;
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < threadCount; i++) {
-          tasks.push(taskpool.execute(keysTraverseTask, arr));
+          tasks.push(taskpool.execute(keysTraverseTask, arr, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {
@@ -203,9 +215,10 @@ export default function arrayConcurrentIteratorsTest(): void {
           arr.push(i);
         }
         const threadCount: number = 4;
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < threadCount; i++) {
-          tasks.push(taskpool.execute(valuesTraverseTask, arr));
+          tasks.push(taskpool.execute(valuesTraverseTask, arr, lock));
         }
         const results: Object[] = await Promise.all(tasks);
         for (let i: number = 0; i < results.length; i++) {

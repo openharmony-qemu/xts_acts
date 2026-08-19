@@ -14,18 +14,20 @@
  */
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
-import { collections, taskpool, worker, MessageEvents } from "@kit.ArkTS";
+import { collections, taskpool, worker, MessageEvents, ArkTSUtils } from "@kit.ArkTS";
 
 @Concurrent
-async function concurrentForEachTask(arr: collections.Array<number>): Promise<number> {
-  let count: number = 0;
-  arr.forEach((value: number, index: number): void => {
-    count++;
+async function concurrentForEachTask(arr: collections.Array<number>, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    let count: number = 0;
+    arr.forEach((value: number, index: number): void => {
+      count++;
+    });
+    return count;
   });
-  return count;
 }
 
-function executeArrayForEachWorker(arr: collections.Array<number>): Promise<Object> {
+function executeArrayForEachWorker(arr: collections.Array<number>, lock: ArkTSUtils.locks.AsyncLock): Promise<Object> {
   return new Promise<Object>((resolve: (value: Object) => void,
     reject: (reason: Error) => void): void => {
     const workerInstance: worker.ThreadWorker =
@@ -49,7 +51,10 @@ function executeArrayForEachWorker(arr: collections.Array<number>): Promise<Obje
         reject(new Error("ArrayForEachWorker exited before posting result"));
       }
     };
-    workerInstance.postMessage(arr);
+    workerInstance.postMessageWithSharedSendable({
+      arr: arr,
+      lock: lock
+    });
   });
 }
 
@@ -82,9 +87,10 @@ export default function arrayConcurrentForEachTest(): void {
         }
 
         const threadCount: number = 4;
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         const tasks: Promise<Object>[] = [];
         for (let i: number = 0; i < threadCount; i++) {
-          tasks.push(taskpool.execute(concurrentForEachTask, arr));
+          tasks.push(taskpool.execute(concurrentForEachTask, arr, lock));
         }
 
         const results: Object[] = await Promise.all(tasks);
@@ -118,9 +124,10 @@ export default function arrayConcurrentForEachTest(): void {
         }
 
         const workerCount: number = 2;
+        const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
         const resultPromises: Promise<Object>[] = [];
         for (let i: number = 0; i < workerCount; i++) {
-          resultPromises.push(executeArrayForEachWorker(arr));
+          resultPromises.push(executeArrayForEachWorker(arr, lock));
         }
 
         const results: Object[] = await Promise.all(resultPromises);

@@ -12,15 +12,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope, worker, collections } from '@kit.ArkTS';
+import { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope, worker, collections, ArkTSUtils } from '@kit.ArkTS';
 
 const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
-workerPort.onmessage = (event: MessageEvents): void => {
-  const arr: collections.Array<number> = event.data as collections.Array<number>;
+workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
+  const arr: collections.Array<number> = event.data.arr;
+  const lock: ArkTSUtils.locks.AsyncLock = event.data.lock;
   let count: number = 0;
-  arr.forEach((value: number, index: number): void => {
-    count++;
+  await lock.lockAsync(async (): Promise<void> => {
+    arr.forEach((value: number, index: number): void => {
+      count++;
+    });
   });
   workerPort.postMessage(count);
 };
