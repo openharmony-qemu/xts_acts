@@ -156,10 +156,11 @@ export default function WriteLockUnlockTest(): void {
     it('WriteLockUnlockTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const counter = new UnlockSharedCounter();
-      let p1 = taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(unlockWriteTask, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.value).assertEqual(3);
       } catch (error) {
         console.error(`WriteLockUnlockTest0400 failed: ${error}`);
@@ -179,11 +180,12 @@ export default function WriteLockUnlockTest(): void {
     it('WriteLockUnlockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const counter = new UnlockSharedCounter();
-      let p1 = taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
-      await p1;
-      let p2 = taskpool.execute(new taskpool.Task(unlockThenWriteTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(unlockThenWriteTask, counter));
-      await Promise.all([p2, p3]);
+      await taskpool.execute(new taskpool.Task(unlockWriteTask, counter));
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(unlockThenWriteTask, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.value).assertEqual(21);
       } catch (error) {
         console.error(`WriteLockUnlockTest0500 failed: ${error}`);

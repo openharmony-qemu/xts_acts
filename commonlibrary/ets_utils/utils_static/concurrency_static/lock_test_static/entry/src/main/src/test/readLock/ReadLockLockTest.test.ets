@@ -332,12 +332,11 @@ export default function ReadLockLockTest(): void {
     it('ReadLockLockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       const atomicCounter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p4 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p5 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter)));
+      }
+      await Promise.all(promises);
       expect(atomicCounter.load()).assertEqual(5);
       } catch (error) {
         console.error(`ReadLockLockTest0600 failed: ${error}`);
@@ -357,10 +356,11 @@ export default function ReadLockLockTest(): void {
     it('ReadLockLockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       const atomicCounter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter)));
+      }
+      await Promise.all(promises);
       expect(atomicCounter.load()).assertEqual(3);
       } catch (error) {
         console.error(`ReadLockLockTest0700 failed: ${error}`);
@@ -380,17 +380,11 @@ export default function ReadLockLockTest(): void {
     it('ReadLockLockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       const atomicCounter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p4 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p5 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p6 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p7 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p8 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p9 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p10 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter)));
+      }
+      await Promise.all(promises);
       expect(atomicCounter.load()).assertEqual(10);
       } catch (error) {
         console.error(`ReadLockLockTest0800 failed: ${error}`);
@@ -479,10 +473,11 @@ export default function ReadLockLockTest(): void {
     it('ReadLockLockTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       const atomicCounter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockDowngradeTask, atomicCounter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockDowngradeTask, atomicCounter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockDowngradeTask, atomicCounter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockDowngradeTask, atomicCounter)));
+      }
+      await Promise.all(promises);
       expect(atomicCounter.load()).assertEqual(6);
       } catch (error) {
         console.error(`ReadLockLockTest1100 failed: ${error}`);
@@ -525,12 +520,11 @@ export default function ReadLockLockTest(): void {
     it('ReadLockLockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       const counter = new ReadLockSharedCounter();
-      let p1 = taskpool.execute(new taskpool.Task(readLockSharedIncrementTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockSharedIncrementTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockSharedIncrementTask, counter));
-      let p4 = taskpool.execute(new taskpool.Task(readLockSharedIncrementTask, counter));
-      let p5 = taskpool.execute(new taskpool.Task(readLockSharedIncrementTask, counter));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockSharedIncrementTask, counter)));
+      }
+      await Promise.all(promises);
       await taskpool.execute(new taskpool.Task(readLockWriteAdd100Task, counter));
       // Read locks allow concurrent access, so read-modify-write may lose updates.
       // Write lock adds 100 after all readers finish; at least 1 reader succeeded.
@@ -555,10 +549,11 @@ export default function ReadLockLockTest(): void {
     it('ReadLockLockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const atomicCounter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockReentrantTask, atomicCounter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockReentrantTask, atomicCounter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockReentrantTask, atomicCounter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockReentrantTask, atomicCounter)));
+      }
+      await Promise.all(promises);
       expect(atomicCounter.load()).assertEqual(3);
       } catch (error) {
         console.error(`ReadLockLockTest1400 failed: ${error}`);
@@ -632,10 +627,11 @@ export default function ReadLockLockTest(): void {
     it('ReadLockLockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       const atomicCounter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockMixedTask, atomicCounter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockMixedTask, atomicCounter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockMixedTask, atomicCounter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockMixedTask, atomicCounter)));
+      }
+      await Promise.all(promises);
       expect(atomicCounter.load()).assertEqual(3);
       } catch (error) {
         console.error(`ReadLockLockTest1700 failed: ${error}`);
@@ -658,13 +654,14 @@ export default function ReadLockLockTest(): void {
       const rwlockB = new RWLock();
       const atomicA = new AtomicInt(0);
       const atomicB = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockIndependentIncrementTask, rwlockA, atomicA));
-      let p2 = taskpool.execute(new taskpool.Task(readLockIndependentIncrementTask, rwlockA, atomicA));
-      let p3 = taskpool.execute(new taskpool.Task(readLockIndependentIncrementTask, rwlockA, atomicA));
-      let p4 = taskpool.execute(new taskpool.Task(readLockIndependentIncrementTask, rwlockB, atomicB));
-      let p5 = taskpool.execute(new taskpool.Task(readLockIndependentIncrementTask, rwlockB, atomicB));
-      let p6 = taskpool.execute(new taskpool.Task(readLockIndependentIncrementTask, rwlockB, atomicB));
-      await Promise.all([p1, p2, p3, p4, p5, p6]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockIndependentIncrementTask, rwlockA, atomicA)));
+      }
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockIndependentIncrementTask, rwlockB, atomicB)));
+      }
+      await Promise.all(promises);
       expect(atomicA.load()).assertEqual(3);
       expect(atomicB.load()).assertEqual(3);
       } catch (error) {
@@ -687,28 +684,11 @@ export default function ReadLockLockTest(): void {
     it('ReadLockLockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       const atomicCounter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p4 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p5 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p6 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p7 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p8 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p9 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p10 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p11 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p12 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p13 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p14 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p15 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p16 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p17 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p18 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p19 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      let p20 = taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10,
-        p11, p12, p13, p14, p15, p16, p17, p18, p19, p20]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 20; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockAtomicIncrementTask, atomicCounter)));
+      }
+      await Promise.all(promises);
       expect(atomicCounter.load()).assertEqual(20);
       } catch (error) {
         console.error(`ReadLockLockTest1900 failed: ${error}`);
@@ -728,17 +708,11 @@ export default function ReadLockLockTest(): void {
     it('ReadLockLockTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const atomicCounter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter));
-      let p4 = taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter));
-      let p5 = taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter));
-      let p6 = taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter));
-      let p7 = taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter));
-      let p8 = taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter));
-      let p9 = taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter));
-      let p10 = taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockStressCycleTask, atomicCounter)));
+      }
+      await Promise.all(promises);
       expect(atomicCounter.load()).assertEqual(10);
       } catch (error) {
         console.error(`ReadLockLockTest2000 failed: ${error}`);

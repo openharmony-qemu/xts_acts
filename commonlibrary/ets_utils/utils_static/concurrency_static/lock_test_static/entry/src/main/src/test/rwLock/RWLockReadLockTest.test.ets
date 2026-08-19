@@ -257,12 +257,11 @@ export default function RWLockReadLockTest(): void {
       try {
       const counter = new ReadLockSharedCounter();
       const atomicCounter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter));
-      let p4 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter));
-      let p5 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter)));
+      }
+      await Promise.all(promises);
       expect(atomicCounter.load()).assertEqual(5);
       } catch (error) {
         console.error(`RWLockReadLockTest0300 failed: ${error}`);
@@ -338,17 +337,11 @@ export default function RWLockReadLockTest(): void {
       try {
       const counter = new ReadLockSharedCounter();
       const atomicCounter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockSharedAccessTaskAtomic, counter, atomicCounter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockSharedAccessTaskAtomic, counter, atomicCounter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockSharedAccessTaskAtomic, counter, atomicCounter));
-      let p4 = taskpool.execute(new taskpool.Task(readLockSharedAccessTaskAtomic, counter, atomicCounter));
-      let p5 = taskpool.execute(new taskpool.Task(readLockSharedAccessTaskAtomic, counter, atomicCounter));
-      let p6 = taskpool.execute(new taskpool.Task(readLockSharedAccessTaskAtomic, counter, atomicCounter));
-      let p7 = taskpool.execute(new taskpool.Task(readLockSharedAccessTaskAtomic, counter, atomicCounter));
-      let p8 = taskpool.execute(new taskpool.Task(readLockSharedAccessTaskAtomic, counter, atomicCounter));
-      let p9 = taskpool.execute(new taskpool.Task(readLockSharedAccessTaskAtomic, counter, atomicCounter));
-      let p10 = taskpool.execute(new taskpool.Task(readLockSharedAccessTaskAtomic, counter, atomicCounter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockSharedAccessTaskAtomic, counter, atomicCounter)));
+      }
+      await Promise.all(promises);
       expect(atomicCounter.load()).assertEqual(10);
       } catch (error) {
         console.error(`RWLockReadLockTest0600 failed: ${error}`);
@@ -371,10 +364,11 @@ export default function RWLockReadLockTest(): void {
       const counter = new ReadLockSharedCounter();
       // Use AtomicInt for thread-safe counter to avoid race conditions
       const atomicCounter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockConcurrentReadTaskAtomic, counter, atomicCounter)));
+      }
+      await Promise.all(promises);
       expect(atomicCounter.load()).assertEqual(3);
       } catch (error) {
         console.error(`RWLockReadLockTest0700 failed: ${error}`);
@@ -421,9 +415,11 @@ export default function RWLockReadLockTest(): void {
       try {
       const counter = new ReadLockSharedCounter();
       // Read tasks acquire and release read locks
-      let p1 = taskpool.execute(new taskpool.Task(readLockReaderHolderTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockReaderHolderTask, counter));
-      await Promise.all([p1, p2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockReaderHolderTask, counter)));
+      }
+      await Promise.all(promises);
       // Write task acquires write lock after read locks released
       await taskpool.execute(new taskpool.Task(readLockWriterTask, counter));
       // Readers set to 100 each (last one wins), then writer adds 50 -> 150
@@ -446,12 +442,11 @@ export default function RWLockReadLockTest(): void {
     it('RWLockReadLockTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockStressAcquireReleaseTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockStressAcquireReleaseTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockStressAcquireReleaseTask, counter));
-      let p4 = taskpool.execute(new taskpool.Task(readLockStressAcquireReleaseTask, counter));
-      let p5 = taskpool.execute(new taskpool.Task(readLockStressAcquireReleaseTask, counter));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockStressAcquireReleaseTask, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       } catch (error) {
         console.error(`RWLockReadLockTest1000 failed: ${error}`);
@@ -472,12 +467,11 @@ export default function RWLockReadLockTest(): void {
       try {
       const counter = new ReadLockSharedCounter();
       counter.value = 42;
-      let p1 = taskpool.execute(new taskpool.Task(readLockReadSharedVarTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockReadSharedVarTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockReadSharedVarTask, counter));
-      let p4 = taskpool.execute(new taskpool.Task(readLockReadSharedVarTask, counter));
-      let p5 = taskpool.execute(new taskpool.Task(readLockReadSharedVarTask, counter));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockReadSharedVarTask, counter)));
+      }
+      await Promise.all(promises);
       // Value should remain 42 since readers only read
       expect(counter.value).assertEqual(42);
       } catch (error) {
@@ -498,10 +492,11 @@ export default function RWLockReadLockTest(): void {
     it('RWLockReadLockTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockLifecycleTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockLifecycleTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockLifecycleTask, counter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockLifecycleTask, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       } catch (error) {
         console.error(`RWLockReadLockTest1200 failed: ${error}`);
@@ -550,10 +545,11 @@ export default function RWLockReadLockTest(): void {
     it('RWLockReadLockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockReadWriteMixedTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockReadWriteMixedTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockReadWriteMixedTask, counter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockReadWriteMixedTask, counter)));
+      }
+      await Promise.all(promises);
       // Each task adds 1 via write lock (read lock only reads)
       expect(counter.load()).assertEqual(3);
       } catch (error) {
@@ -575,11 +571,13 @@ export default function RWLockReadLockTest(): void {
       try {
       const counter = new AtomicInt(0);
       // Long-held read lock (500 ms)
-      let p1 = taskpool.execute(new taskpool.Task(readLockLongHoldTask, counter));
+      let promises: Promise<Any>[] = [];
+      promises.push(taskpool.execute(new taskpool.Task(readLockLongHoldTask, counter)));
       // Short reads that run while the long read holds (read locks are shared)
-      let p2 = taskpool.execute(new taskpool.Task(readLockShortReadTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockShortReadTask, counter));
-      await Promise.all([p1, p2, p3]);
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockShortReadTask, counter)));
+      }
+      await Promise.all(promises);
       // Long hold task adds 1, two short reads each add 10 -> 21
       expect(counter.load()).assertEqual(21);
       } catch (error) {

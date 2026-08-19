@@ -145,9 +145,11 @@ export default function RWLockConstructorTest(): void {
       try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(rwlockReadUseTask, rwlock, counter));
-      let p2 = taskpool.execute(new taskpool.Task(rwlockReadUseTask, rwlock, counter));
-      await Promise.all([p1, p2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(rwlockReadUseTask, rwlock, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(2);
       } catch (error) {
         console.error(`RWLockConstructorTest0200 failed: ${error}`);
@@ -236,12 +238,11 @@ export default function RWLockConstructorTest(): void {
     it('RWLockConstructorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p4 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p5 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(concurrentConstructTask, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       } catch (error) {
         console.error(`RWLockConstructorTest0600 failed: ${error}`);
@@ -261,27 +262,11 @@ export default function RWLockConstructorTest(): void {
     it('RWLockConstructorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p4 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p5 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p6 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p7 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p8 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p9 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p10 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p11 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p12 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p13 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p14 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p15 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p16 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p17 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p18 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p19 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      let p20 = taskpool.execute(new taskpool.Task(concurrentConstructTask, counter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 20; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(concurrentConstructTask, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(20);
       } catch (error) {
         console.error(`RWLockConstructorTest0700 failed: ${error}`);
@@ -302,10 +287,11 @@ export default function RWLockConstructorTest(): void {
       try {
       const rwlock = new RWLock();
       const counter = new RWLockCtorSharedCounter();
-      let p1 = taskpool.execute(new taskpool.Task(rwlockWriteUseTask, rwlock, counter));
-      let p2 = taskpool.execute(new taskpool.Task(rwlockWriteUseTask, rwlock, counter));
-      let p3 = taskpool.execute(new taskpool.Task(rwlockWriteUseTask, rwlock, counter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(rwlockWriteUseTask, rwlock, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.value).assertEqual(30);
       } catch (error) {
         console.error(`RWLockConstructorTest0800 failed: ${error}`);
@@ -347,12 +333,11 @@ export default function RWLockConstructorTest(): void {
     it('RWLockConstructorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
-      let p4 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
-      let p5 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(stressConstructTask, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       } catch (error) {
         console.error(`RWLockConstructorTest1000 failed: ${error}`);
@@ -372,10 +357,11 @@ export default function RWLockConstructorTest(): void {
     it('RWLockConstructorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(lifecycleConstructTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(lifecycleConstructTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(lifecycleConstructTask, counter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lifecycleConstructTask, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       } catch (error) {
         console.error(`RWLockConstructorTest1100 failed: ${error}`);
@@ -572,12 +558,11 @@ export default function RWLockConstructorTest(): void {
     it('RWLockConstructorTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(resourcePressureConstructTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(resourcePressureConstructTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(resourcePressureConstructTask, counter));
-      let p4 = taskpool.execute(new taskpool.Task(resourcePressureConstructTask, counter));
-      let p5 = taskpool.execute(new taskpool.Task(resourcePressureConstructTask, counter));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(resourcePressureConstructTask, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       } catch (error) {
         console.error(`RWLockConstructorTest1800 failed: ${error}`);

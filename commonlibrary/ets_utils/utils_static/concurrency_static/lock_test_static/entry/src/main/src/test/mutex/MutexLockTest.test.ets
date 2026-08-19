@@ -374,12 +374,11 @@ export default function MutexLockTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new MutexLockSharedCounter();
-      let p1 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      let p2 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      let p3 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      let p4 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      let p5 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: int = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.value).assertEqual(5);
       } catch (error) {
         console.error(`MutexLockTest0500 failed: ${error}`);
@@ -474,13 +473,15 @@ export default function MutexLockTest(): void {
       const mutex2 = new Mutex();
       const counter1 = new MutexLockSharedCounter();
       const counter2 = new MutexLockSharedCounter();
-      let p1 = taskpool.execute(new taskpool.Task(independentTask1, mutex1, counter1));
-      let p2 = taskpool.execute(new taskpool.Task(independentTask1, mutex2, counter2));
-      let p3 = taskpool.execute(new taskpool.Task(independentTask1, mutex1, counter1));
-      let p4 = taskpool.execute(new taskpool.Task(independentTask1, mutex2, counter2));
-      let p5 = taskpool.execute(new taskpool.Task(independentTask1, mutex1, counter1));
-      let p6 = taskpool.execute(new taskpool.Task(independentTask1, mutex2, counter2));
-      await Promise.all([p1, p2, p3, p4, p5, p6]);
+      const mutexes: Mutex[] = [mutex1, mutex2];
+      const counters: MutexLockSharedCounter[] = [counter1, counter2];
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        for (let j: int = 0; j < mutexes.length; j++) {
+          promises.push(taskpool.execute(new taskpool.Task(independentTask1, mutexes[j], counters[j])));
+        }
+      }
+      await Promise.all(promises);
       expect(counter1.value).assertEqual(3);
       expect(counter2.value).assertEqual(3);
       } catch (error) {
@@ -502,12 +503,11 @@ export default function MutexLockTest(): void {
       try {
       const mutex = new Mutex();
       const data = new MutexLockFairnessData();
-      let p1 = taskpool.execute(new taskpool.Task(fairnessTask, mutex, data, 0));
-      let p2 = taskpool.execute(new taskpool.Task(fairnessTask, mutex, data, 1));
-      let p3 = taskpool.execute(new taskpool.Task(fairnessTask, mutex, data, 2));
-      let p4 = taskpool.execute(new taskpool.Task(fairnessTask, mutex, data, 3));
-      let p5 = taskpool.execute(new taskpool.Task(fairnessTask, mutex, data, 4));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: int = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(fairnessTask, mutex, data, i)));
+      }
+      await Promise.all(promises);
       expect(data.order.length).assertEqual(5);
       let hasAll: boolean = true;
       for (let i = 0; i < 5; i++) {
@@ -588,17 +588,11 @@ export default function MutexLockTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new MutexLockSharedCounter();
-      let p1 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      let p2 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      let p3 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      let p4 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      let p5 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      let p6 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      let p7 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      let p8 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      let p9 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      let p10 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.value).assertEqual(10);
       } catch (error) {
         console.error(`MutexLockTest1200 failed: ${error}`);
@@ -727,16 +721,17 @@ export default function MutexLockTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new MutexLockSharedCounter();
-      const worker1 = new EAWorker('mutexLockEA2');
-      const worker2 = new EAWorker('mutexLockEA3');
-      const worker3 = new EAWorker('mutexLockEA4');
-      worker1.start();
-      worker2.start();
-      worker3.start();
+      let workerNames: string[] = ['mutexLockEA2', 'mutexLockEA3', 'mutexLockEA4'];
+      let workers: EAWorker[] = [];
+      for (let i: int = 0; i < workerNames.length; i++) {
+        let worker = new EAWorker(workerNames[i], false);
+        worker.start();
+        workers.push(worker);
+      }
       try {
-        await worker1.run<void>(eaWorkerConcurrentLockTask, mutex, counter);
-        await worker2.run<void>(eaWorkerConcurrentLockTask, mutex, counter);
-        await worker3.run<void>(eaWorkerConcurrentLockTask, mutex, counter);
+        for (let i: int = 0; i < workers.length; i++) {
+          await workers[i].run<void>(eaWorkerConcurrentLockTask, mutex, counter);
+        }
         // run<void> may resolve before the worker-side store is visible; bounded-poll it.
         let waits: int = 0;
         while (counter.value !== 3 && waits < 50) {
@@ -744,9 +739,9 @@ export default function MutexLockTest(): void {
           waits++;
         }
       } finally {
-        worker1.quit();
-        worker2.quit();
-        worker3.quit();
+        for (let i: int = 0; i < workers.length; i++) {
+          workers[i].quit();
+        }
       }
       expect(counter.value).assertEqual(3);
       } catch (error) {
@@ -772,10 +767,12 @@ export default function MutexLockTest(): void {
       worker.start();
       try {
         const eaPromise = worker.run<void>(eaWorkerConcurrentLockTask, mutex, counter);
-        let p1 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-        let p2 = taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 2; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter)));
+        }
         await eaPromise;
-        await Promise.all([p1, p2]);
+        await Promise.all(promises);
         // run<void> may resolve before the worker-side store is visible; bounded-poll it.
         let waits: int = 0;
         while (counter.value !== 3 && waits < 50) {

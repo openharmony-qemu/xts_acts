@@ -156,12 +156,11 @@ export default function MutexConstructorTest(): void {
     it('MutexConstructorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(constructMutexTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(constructMutexTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(constructMutexTask, counter));
-      let p4 = taskpool.execute(new taskpool.Task(constructMutexTask, counter));
-      let p5 = taskpool.execute(new taskpool.Task(constructMutexTask, counter));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(constructMutexTask, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       } catch (error) {
         console.error(`MutexConstructorTest0500 failed: ${error}`);
@@ -182,10 +181,11 @@ export default function MutexConstructorTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new MutexCtorSharedCounter();
-      let p1 = taskpool.execute(new taskpool.Task(mutexLockUseTask, mutex, counter));
-      let p2 = taskpool.execute(new taskpool.Task(mutexLockUseTask, mutex, counter));
-      let p3 = taskpool.execute(new taskpool.Task(mutexLockUseTask, mutex, counter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(mutexLockUseTask, mutex, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.value).assertEqual(3);
       } catch (error) {
         console.error(`MutexConstructorTest0600 failed: ${error}`);
@@ -205,12 +205,11 @@ export default function MutexConstructorTest(): void {
     it('MutexConstructorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
-      let p4 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
-      let p5 = taskpool.execute(new taskpool.Task(stressConstructTask, counter));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(stressConstructTask, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       } catch (error) {
         console.error(`MutexConstructorTest0700 failed: ${error}`);
@@ -230,10 +229,11 @@ export default function MutexConstructorTest(): void {
     it('MutexConstructorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(lifecycleConstructTask, counter));
-      let p2 = taskpool.execute(new taskpool.Task(lifecycleConstructTask, counter));
-      let p3 = taskpool.execute(new taskpool.Task(lifecycleConstructTask, counter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lifecycleConstructTask, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       } catch (error) {
         console.error(`MutexConstructorTest0800 failed: ${error}`);

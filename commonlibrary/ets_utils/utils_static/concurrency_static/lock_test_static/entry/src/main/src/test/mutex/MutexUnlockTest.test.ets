@@ -277,12 +277,11 @@ export default function MutexUnlockTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
-      let p1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let p2 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let p3 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let p4 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let p5 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.value).assertEqual(5);
       } catch (error) {
         console.error(`MutexUnlockTest0600 failed: ${error}`);
@@ -303,17 +302,11 @@ export default function MutexUnlockTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
-      let p1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let p2 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let p3 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let p4 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let p5 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let p6 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let p7 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let p8 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let p9 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let p10 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.value).assertEqual(10);
       } catch (error) {
         console.error(`MutexUnlockTest0700 failed: ${error}`);
@@ -366,23 +359,25 @@ export default function MutexUnlockTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
-      const workerOne = new EAWorker('mutexUnlockEATwo');
-      const workerTwo = new EAWorker('mutexUnlockEAThree');
-      const workerThree = new EAWorker('mutexUnlockEAFour');
-      workerOne.start();
-      workerTwo.start();
-      workerThree.start();
+      let workerNames: string[] = ['mutexUnlockEATwo', 'mutexUnlockEAThree', 'mutexUnlockEAFour'];
+      let workers: EAWorker[] = [];
+      for (let i: int = 0; i < workerNames.length; i++) {
+        let worker = new EAWorker(workerNames[i], false);
+        worker.start();
+        workers.push(worker);
+      }
       try {
-        const jobOne = workerOne.run<void>(eaWorkerConcurrentUnlockTask, mutex, counter);
-        const jobTwo = workerTwo.run<void>(eaWorkerConcurrentUnlockTask, mutex, counter);
-        const jobThree = workerThree.run<void>(eaWorkerConcurrentUnlockTask, mutex, counter);
-        jobOne.Await();
-        jobTwo.Await();
-        jobThree.Await();
+        let jobs = new Array<Job<void>>();
+        for (let i: int = 0; i < workers.length; i++) {
+          jobs.push(workers[i].run<void>(eaWorkerConcurrentUnlockTask, mutex, counter));
+        }
+        for (let i: int = 0; i < jobs.length; i++) {
+          jobs[i].Await();
+        }
       } finally {
-        workerOne.quit();
-        workerTwo.quit();
-        workerThree.quit();
+        for (let i: int = 0; i < workers.length; i++) {
+          workers[i].quit();
+        }
       }
       expect(counter.value).assertEqual(3);
       } catch (error) {
@@ -408,10 +403,12 @@ export default function MutexUnlockTest(): void {
       worker.start();
       try {
         const eaPromise = worker.run<void>(eaWorkerConcurrentUnlockTask, mutex, counter);
-        let p1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-        let p2 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 2; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter)));
+        }
         await eaPromise;
-        await Promise.all([p1, p2]);
+        await Promise.all(promises);
         // run<void> may resolve before the worker-side store is visible; bounded-poll it.
         let waits: int = 0;
         while (counter.value !== 3 && waits < 50) {
@@ -542,116 +539,13 @@ export default function MutexUnlockTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new MutexUnlockSharedCounter();
-      let batch1P1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch1P2 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch1P3 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch1P4 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch1P5 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch1P6 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch1P7 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch1P8 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch1P9 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch1P10 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      await Promise.all([batch1P1, batch1P2, batch1P3, batch1P4, batch1P5, batch1P6, batch1P7, batch1P8, batch1P9, batch1P10]);
-      let batch2P1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch2P2 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch2P3 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch2P4 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch2P5 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch2P6 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch2P7 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch2P8 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch2P9 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch2P10 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      await Promise.all([batch2P1, batch2P2, batch2P3, batch2P4, batch2P5, batch2P6, batch2P7, batch2P8, batch2P9, batch2P10]);
-      let batch3P1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch3P2 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch3P3 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch3P4 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch3P5 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch3P6 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch3P7 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch3P8 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch3P9 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch3P10 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      await Promise.all([batch3P1, batch3P2, batch3P3, batch3P4, batch3P5, batch3P6, batch3P7, batch3P8, batch3P9, batch3P10]);
-      let batch4P1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch4P2 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch4P3 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch4P4 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch4P5 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch4P6 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch4P7 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch4P8 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch4P9 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch4P10 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      await Promise.all([batch4P1, batch4P2, batch4P3, batch4P4, batch4P5, batch4P6, batch4P7, batch4P8, batch4P9, batch4P10]);
-      let batch5P1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch5P2 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch5P3 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch5P4 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch5P5 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch5P6 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch5P7 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch5P8 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch5P9 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch5P10 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      await Promise.all([batch5P1, batch5P2, batch5P3, batch5P4, batch5P5, batch5P6, batch5P7, batch5P8, batch5P9, batch5P10]);
-      let batch6P1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch6P2 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch6P3 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch6P4 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch6P5 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch6P6 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch6P7 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch6P8 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch6P9 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch6P10 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      await Promise.all([batch6P1, batch6P2, batch6P3, batch6P4, batch6P5, batch6P6, batch6P7, batch6P8, batch6P9, batch6P10]);
-      let batch7P1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch7P2 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch7P3 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch7P4 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch7P5 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch7P6 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch7P7 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch7P8 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch7P9 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch7P10 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      await Promise.all([batch7P1, batch7P2, batch7P3, batch7P4, batch7P5, batch7P6, batch7P7, batch7P8, batch7P9, batch7P10]);
-      let batch8P1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch8P2 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch8P3 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch8P4 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch8P5 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch8P6 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch8P7 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch8P8 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch8P9 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch8P10 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      await Promise.all([batch8P1, batch8P2, batch8P3, batch8P4, batch8P5, batch8P6, batch8P7, batch8P8, batch8P9, batch8P10]);
-      let batch9P1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch9P2 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch9P3 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch9P4 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch9P5 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch9P6 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch9P7 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch9P8 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch9P9 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch9P10 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      await Promise.all([batch9P1, batch9P2, batch9P3, batch9P4, batch9P5, batch9P6, batch9P7, batch9P8, batch9P9, batch9P10]);
-      let batch10P1 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch10P2 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch10P3 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch10P4 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch10P5 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch10P6 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch10P7 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch10P8 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch10P9 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      let batch10P10 = taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter));
-      await Promise.all([batch10P1, batch10P2, batch10P3, batch10P4, batch10P5, batch10P6, batch10P7, batch10P8, batch10P9, batch10P10]);
+      for (let batch: number = 0; batch < 10; batch++) {
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 10; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(competeUnlockTask, mutex, counter)));
+        }
+        await Promise.all(promises);
+      }
       expect(counter.value).assertEqual(100);
       } catch (error) {
         console.error(`MutexUnlockTest1500 failed: ${error}`);

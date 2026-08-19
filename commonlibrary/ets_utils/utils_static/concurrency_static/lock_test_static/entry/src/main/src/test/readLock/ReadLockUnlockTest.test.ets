@@ -203,12 +203,11 @@ export default function ReadLockUnlockTest(): void {
     it('ReadLockUnlockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       const atomicCounter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      let p2 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      let p3 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      let p4 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      let p5 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter)));
+      }
+      await Promise.all(promises);
       expect(atomicCounter.load()).assertEqual(5);
       } catch (error) {
         console.error(`ReadLockUnlockTest0500 failed: ${error}`);
@@ -254,17 +253,11 @@ export default function ReadLockUnlockTest(): void {
     it('ReadLockUnlockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const atomicCounter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      let p2 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      let p3 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      let p4 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      let p5 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      let p6 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      let p7 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      let p8 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      let p9 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      let p10 = taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(unlockAtomicIncrementTask, atomicCounter)));
+      }
+      await Promise.all(promises);
       expect(atomicCounter.load()).assertEqual(10);
       } catch (error) {
         console.error(`ReadLockUnlockTest0700 failed: ${error}`);
@@ -331,10 +324,11 @@ export default function ReadLockUnlockTest(): void {
       await taskpool.execute(new taskpool.Task(unlockWriteAdd100Task, counter));
       // Concurrent readers observe the updated value under the read lock.
       const observed = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(unlockSharedDataObserveTask, counter, observed));
-      let p2 = taskpool.execute(new taskpool.Task(unlockSharedDataObserveTask, counter, observed));
-      let p3 = taskpool.execute(new taskpool.Task(unlockSharedDataObserveTask, counter, observed));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(unlockSharedDataObserveTask, counter, observed)));
+      }
+      await Promise.all(promises);
       expect(counter.value).assertEqual(150);
       expect(observed.load()).assertEqual(3);
       } catch (error) {
