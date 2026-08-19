@@ -21,17 +21,14 @@
 #include <stdio.h>
 #include <string.h>
 
-/* param_comm.h 中的 UDID 长度定义（parameter.h 未间接包含该头） */
 #ifndef UDID_LEN
 #define UDID_LEN 65
 #endif
 
 #define QUERY_TIMES 50
 
-/* 十进制基数（codecheck G.CNS.02 禁止魔数） */
 #define DECIMAL_BASE 10
 
-/* 从 fullname 版本段解析数字；不安全函数 sscanf 被 codecheck 禁止，改为逐字符解析 */
 static int ParseVersionNumber(const char **pp)
 {
     int num = 0;
@@ -667,7 +664,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetOsReleaseType,
                Function | MediumTest | Level1)
 {
-    /* 板卡特定值不硬编码，断言非空即可 */
     const char *value1 = GetOsReleaseType();
     printf("OsReleaseType=%s\n", value1);
     TEST_ASSERT_TRUE(value1 != NULL);
@@ -693,14 +689,11 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDevUdid,
                Function | MediumTest | Level1)
 {
-    /* UDID 为设备唯一标识（每台设备不同，不可写死具体值），断言其契约属性：
-     * 返回 0、长度 64 位非空字符串、多次调用一致（API 文档仅保证非空，不限定字符集） */
     char udid[UDID_LEN] = {0};
     int ret = GetDevUdid(udid, UDID_LEN);
     printf("GetDevUdid ret=%d, udid=%s\n", ret, udid);
     TEST_ASSERT_EQUAL_INT(0, ret);
     TEST_ASSERT_TRUE(strlen(udid) == UDID_LEN - 1);
-    /* 非全零：设备唯一标识不应为空 */
     int allZero = 1;
     for (int i = 0; i < (int)strlen(udid); i++) {
         if (udid[i] != '0') {
@@ -709,12 +702,10 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
         }
     }
     TEST_ASSERT_FALSE(allZero);
-    /* 一致性：同一设备多次调用结果相同（唯一性/稳定性） */
     char udid2[UDID_LEN] = {0};
     ret = GetDevUdid(udid2, UDID_LEN);
     TEST_ASSERT_EQUAL_INT(0, ret);
     TEST_ASSERT_EQUAL_STRING(udid, udid2);
-    /* 非法参数：NULL 缓冲/长度不足返回非 0 */
     ret = GetDevUdid(NULL, UDID_LEN);
     TEST_ASSERT_TRUE(ret != 0);
     ret = GetDevUdid(udid, 0);
@@ -734,7 +725,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetChipType,
                Function | MediumTest | Level1)
 {
-    /* 板卡可能设置或未设置该属性，不限定返回值，断言多次调用结果一致 */
     const char *value1 = GetChipType();
     printf("ChipType=%s\n", (value1 == NULL) ? "(null)" : value1);
     const char *value2 = GetChipType();
@@ -753,7 +743,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetBootCount,
                Function | MediumTest | Level1)
 {
-    /* 启动次数与板卡维护状态相关，不写死具体值，断言非负即可（API 契约） */
     int value1 = GetBootCount();
     printf("BootCount=%d\n", value1);
     TEST_ASSERT_TRUE(value1 >= 0);
@@ -773,7 +762,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDeviceColor,
                Function | MediumTest | Level1)
 {
-    /* 板卡可能设置或未设置该属性，不限定返回值，断言非 NULL 且多次调用一致 */
     const char *value1 = GetDeviceColor();
     printf("DeviceColor=%s\n", value1);
     TEST_ASSERT_TRUE(value1 != NULL);
@@ -793,7 +781,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSApiName,
                Function | MediumTest | Level1)
 {
-    /* 未设置 const.product.os.dist.apiname 时返回空串 */
     const char *value1 = GetDistributionOSApiName();
     printf("DistributionOSApiName=%s\n", value1);
     TEST_ASSERT_TRUE(value1 != NULL);
@@ -814,7 +801,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSName,
                Function | MediumTest | Level1)
 {
-    /* 未设置 const.product.os.dist.name 时返回空串 */
     const char *value1 = GetDistributionOSName();
     printf("DistributionOSName=%s\n", value1);
     TEST_ASSERT_TRUE(value1 != NULL);
@@ -835,7 +821,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSReleaseType,
                Function | MediumTest | Level1)
 {
-    /* 未设置属性时回退到 GetOsReleaseType() */
     const char *value1 = GetDistributionOSReleaseType();
     printf("DistributionOSReleaseType=%s\n", value1);
     TEST_ASSERT_EQUAL_STRING(value1, GetOsReleaseType());
@@ -855,7 +840,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSVersion,
                Function | MediumTest | Level1)
 {
-    /* 未设置属性时回退到 GetOSFullName() */
     const char *value1 = GetDistributionOSVersion();
     printf("DistributionOSVersion=%s\n", value1);
     TEST_ASSERT_EQUAL_STRING(value1, GetOSFullName());
@@ -875,7 +859,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSApiVersion,
                Function | MediumTest | Level1)
 {
-    /* 未设置属性时回退到 GetSdkApiVersion() */
     int value1 = GetDistributionOSApiVersion();
     printf("DistributionOSApiVersion=%d\n", value1);
     TEST_ASSERT_EQUAL_INT(value1, GetSdkApiVersion());
@@ -895,7 +878,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetPerformanceClass,
                Function | MediumTest | Level1)
 {
-    /* 未设置 const.sys.performance_class 时返回 PERFORMANCE_CLASS_HIGH_LEVEL */
     int value1 = GetPerformanceClass();
     printf("PerformanceClass=%d\n", value1);
     TEST_ASSERT_EQUAL_INT(PERFORMANCE_CLASS_HIGH_LEVEL, value1);
@@ -915,7 +897,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetProductModelAlias,
                Function | MediumTest | Level1)
 {
-    /* 未设置 const.product.model_alias 时回退到产品型号 */
     const char *value1 = GetProductModelAlias();
     printf("ProductModelAlias=%s\n", value1);
     TEST_ASSERT_EQUAL_STRING(value1, GetProductModel());
@@ -935,7 +916,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetSdkMinorApiVersion,
                Function | MediumTest | Level1)
 {
-    /* 未设置 const.ohos.apiminorversion 时返回 0 */
     int value1 = GetSdkMinorApiVersion();
     printf("SdkMinorApiVersion=%d\n", value1);
     TEST_ASSERT_EQUAL_INT(0, value1);
@@ -955,7 +935,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetSdkPatchApiVersion,
                Function | MediumTest | Level1)
 {
-    /* 未设置 const.ohos.apipatchversion 时返回 0 */
     int value1 = GetSdkPatchApiVersion();
     printf("SdkPatchApiVersion=%d\n", value1);
     TEST_ASSERT_EQUAL_INT(0, value1);
@@ -975,7 +954,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetMajorVersion,
                Function | MediumTest | Level1)
 {
-    /* major 随版本迭代，从 GetOSFullName() 解析第 1 段动态比对 */
     const char *fullName = GetOSFullName();
     TEST_ASSERT_TRUE(fullName != NULL);
     const char *p = (fullName == NULL) ? NULL : strchr(fullName, '-');
@@ -1009,15 +987,13 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetSeniorVersion,
                Function | MediumTest | Level1)
 {
-    /* 随版本迭代，从 GetOSFullName() 解析第 2 段动态比对 */
     const char *fullName2 = GetOSFullName();
     TEST_ASSERT_TRUE(fullName2 != NULL);
     const char *p2 = (fullName2 == NULL) ? NULL : strchr(fullName2, '-');
     int senior = 0;
     if (p2 != NULL) {
         p2++;
-        (void)ParseVersionNumber(&p2); /* major */
-        if (*p2 == '.') { p2++; }
+        (void)ParseVersionNumber(&p2);        if (*p2 == '.') { p2++; }
         senior = ParseVersionNumber(&p2);
     }
     int value1 = GetSeniorVersion();
@@ -1039,17 +1015,14 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetFeatureVersion,
                Function | MediumTest | Level1)
 {
-    /* 随版本迭代，从 GetOSFullName() 解析第 3 段动态比对 */
     const char *fullName3 = GetOSFullName();
     TEST_ASSERT_TRUE(fullName3 != NULL);
     const char *p3 = (fullName3 == NULL) ? NULL : strchr(fullName3, '-');
     int feature = 0;
     if (p3 != NULL) {
         p3++;
-        (void)ParseVersionNumber(&p3); /* major */
-        if (*p3 == '.') { p3++; }
-        (void)ParseVersionNumber(&p3); /* senior */
-        if (*p3 == '.') { p3++; }
+        (void)ParseVersionNumber(&p3);        if (*p3 == '.') { p3++; }
+        (void)ParseVersionNumber(&p3);        if (*p3 == '.') { p3++; }
         feature = ParseVersionNumber(&p3);
     }
     int value1 = GetFeatureVersion();
@@ -1071,8 +1044,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetBuildVersion,
                Function | MediumTest | Level1)
 {
-    /* build 号随固件版本迭代，不能写死；
-       从 GetOSFullName() 解析第 4 段动态比对 */
     const char *fullName = GetOSFullName();
     TEST_ASSERT_TRUE(fullName != NULL);
     const char *p = (fullName == NULL) ? NULL : strchr(fullName, '-');

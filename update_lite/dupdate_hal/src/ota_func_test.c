@@ -209,7 +209,6 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1400, Function | MediumTest | Leve
 {
     int ret = HotaGetUpdateAbility();
     printf("HotaGetUpdateAbility return = %d\r\n", ret);
-    /* 升级能力位掩码：不同设备能力不同，断言掩码非空（设备必有可执行能力） */
     TEST_ASSERT_TRUE(ret != 0);
 };
 
@@ -225,7 +224,6 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1500, Function | MediumTest | Leve
 {
     int ret = HotaGetUpdateStatus();
     printf("HotaGetUpdateStatus return = %d\r\n", ret);
-    /* 断言返回值为已定义状态枚举（HOTA_NOT_INIT~HOTA_CANCELED） */
     TEST_ASSERT_TRUE(ret >= HOTA_NOT_INIT && ret <= HOTA_CANCELED);
 };
 
@@ -241,7 +239,6 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1700, Function | MediumTest | Leve
 {
     int ret = HotaIsDeviceCanReboot();
     printf("HotaIsDeviceCanReboot return = %d\r\n", ret);
-    /* 布尔语义：0 不可重启 / 1 可重启 */
     TEST_ASSERT_TRUE(ret == 0 || ret == 1);
 };
 
@@ -257,7 +254,6 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI2100, Function | MediumTest | Leve
 {
     int ret = HotaSetBootSettings();
     printf("HotaSetBootSettings return = %d\r\n", ret);
-    /* 升级未开始/校验失败时设置失败，按 API 契约断言返回负错误码 */
     TEST_ASSERT_TRUE(ret < 0);
 };
 
