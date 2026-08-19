@@ -32,11 +32,11 @@ export default function MindSporeStatusTest() {
   describe('MindSporeStatusTest', () => {
     beforeAll(async (done: Function) => {
       let context = getContext()
-      let dir = context.filesDir + "/";
+      let dir = context.filesDir + '/';
       try {
-        let ml_face_model_file = dir + "lenet_train.ms";
-        let ml_face_model_file1 = dir + "ml_face_isface.input";
-        context.resourceManager.getRawFileContent("lenet_train.ms", (error, model_buffer) => {
+        let ml_face_model_file = dir + 'lenet_train.ms';
+        let ml_face_model_file1 = dir + 'ml_face_isface.input';
+        context.resourceManager.getRawFileContent('lenet_train.ms', (error, model_buffer) => {
           if (error) {
             console.log(
               `[rawfile_copy_to_sandbox] lenet_train.ms is
@@ -45,45 +45,45 @@ export default function MindSporeStatusTest() {
             let file = fs.openSync(ml_face_model_file, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
             fs.writeSync(file.fd, model_buffer.buffer);
             fs.closeSync(file);
-            console.log("[rawfile_copy_to_sandbox] lenet_train.ms is copy success");
+            console.log('[rawfile_copy_to_sandbox] lenet_train.ms is copy success');
           }
         });
-        context.resourceManager.getRawFileContent("ml_face_isface.input", (error, model_buffer) => {
+        context.resourceManager.getRawFileContent('ml_face_isface.input', (error, model_buffer) => {
           let file1 = fs.openSync(ml_face_model_file1, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
           fs.writeSync(file1.fd, model_buffer.buffer);
           fs.closeSync(file1);
         });
       } catch (error) {
-        console.info("[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed" + error);
+        console.info('[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed' + error);
       }
-      console.info("[rawfile_copy_to_sandbox] sandbox path:" + dir);
+      console.info('[rawfile_copy_to_sandbox] sandbox path:' + dir);
       await Utils.sleep(500)
       done();
     });
 
     beforeEach(async () => {
-      let dir = getContext().filesDir + "/";
+      let dir = getContext().filesDir + '/';
 
-      let ml_face_model = dir + "lenet_train.ms";
-      let ml_face_model_input = dir + "ml_face_isface.input";
+      let ml_face_model = dir + 'lenet_train.ms';
+      let ml_face_model_input = dir + 'ml_face_isface.input';
       await fs.stat(ml_face_model).then(async (res) => {
         if (res) {
-          console.info("MindSporeDemo lenet_train.ms file exists");
+          console.info('MindSporeDemo lenet_train.ms file exists');
           console.info(`MindSporeDemo lenet_train.ms size:${res.size}`);
         }
       }).catch((err: BusinessError) => {
-        console.info("MindSporeDemo lenet_train.ms file does not exists! access failed with error message: " +
-        err.message + ", error code: " + err.code);
+        console.info('MindSporeDemo lenet_train.ms file does not exists! access failed with error message: ' +
+        err.message + ', error code: ' + err.code);
       });
       await Utils.sleep(500)
       await fs.stat(ml_face_model_input).then(async (res) => {
         if (res) {
-          console.info("MindSporeDemo ml_face_isface.input file exists");
+          console.info('MindSporeDemo ml_face_isface.input file exists');
           console.info(`MindSporeDemo ml_face_isface.input size:${res.size}`);
         }
       }).catch((err: BusinessError) => {
-        console.info("MindSporeDemo ml_face_isface.input file does not exists! access failed with error message: " +
-        err.message + ", error code: " + err.code);
+        console.info('MindSporeDemo ml_face_isface.input file does not exists! access failed with error message: ' +
+        err.message + ', error code: ' + err.code);
       });
     })
     /**
@@ -97,13 +97,13 @@ export default function MindSporeStatusTest() {
     it('testOH_AI_STATUS_LITE_PARAM_INVALID0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_STATUS_LITE_PARAM_INVALID0100 start====");
+          console.info('====>testOH_AI_STATUS_LITE_PARAM_INVALID0100 start====');
           let result: number = mindsporendk.StatusTest_002();
           console.info(`====>testOH_AI_STATUS_LITE_PARAM_INVALID0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_STATUS_LITE_PARAM_INVALID0100 err: " + err);
+          console.error('====>testOH_AI_STATUS_LITE_PARAM_INVALID0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -120,13 +120,13 @@ export default function MindSporeStatusTest() {
     it('testOH_AI_STATUS_LITE_UNINITIALIZED_OBJ0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_STATUS_LITE_UNINITIALIZED_OBJ0100 start====");
+          console.info('====>testOH_AI_STATUS_LITE_UNINITIALIZED_OBJ0100 start====');
           let result: number = mindsporendk.StatusTest_008();
           console.info(`====>testOH_AI_STATUS_LITE_UNINITIALIZED_OBJ0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_STATUS_LITE_UNINITIALIZED_OBJ0100 err: " + err);
+          console.error('====>testOH_AI_STATUS_LITE_UNINITIALIZED_OBJ0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }

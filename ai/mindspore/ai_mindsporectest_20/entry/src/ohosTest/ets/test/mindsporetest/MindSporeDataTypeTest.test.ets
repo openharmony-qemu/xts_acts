@@ -35,13 +35,13 @@ export default function MindSporeDataTypeTest() {
     it('testdatatypetest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testdatatypetest_001 start====");
+          console.info('====>testdatatypetest_001 start====');
           let result: number = mindsporendk.DataTypeTest_001();
           console.info(`====>testdatatypetest_001 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testdatatypetest_001 err: " + err);
+          console.error('====>testdatatypetest_001 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -58,13 +58,13 @@ export default function MindSporeDataTypeTest() {
     it('testdatatypetest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testdatatypetest_002 start====");
+          console.info('====>testdatatypetest_002 start====');
           let result: number = mindsporendk.DataTypeTest_002();
           console.info(`====>testdatatypetest_002 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testdatatypetest_002 err: " + err);
+          console.error('====>testdatatypetest_002 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -81,13 +81,13 @@ export default function MindSporeDataTypeTest() {
     it('testdatatypetest_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testdatatypetest_007 start====");
+          console.info('====>testdatatypetest_007 start====');
           let result: number = mindsporendk.DataTypeTest_007();
           console.info(`====>testdatatypetest_007 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testdatatypetest_007 err: " + err);
+          console.error('====>testdatatypetest_007 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -104,13 +104,13 @@ export default function MindSporeDataTypeTest() {
     it('testdatatypetest_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testdatatypetest_008 start====");
+          console.info('====>testdatatypetest_008 start====');
           let result: number = mindsporendk.DataTypeTest_008();
           console.info(`====>testdatatypetest_008 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testdatatypetest_008 err: " + err);
+          console.error('====>testdatatypetest_008 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -127,13 +127,13 @@ export default function MindSporeDataTypeTest() {
     it('testdatatypetest_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testdatatypetest_009 start====");
+          console.info('====>testdatatypetest_009 start====');
           let result: number = mindsporendk.DataTypeTest_009();
           console.info(`====>testdatatypetest_009 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testdatatypetest_009 err: " + err);
+          console.error('====>testdatatypetest_009 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -150,13 +150,13 @@ export default function MindSporeDataTypeTest() {
     it('testdatatypetest_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testdatatypetest_010 start====");
+          console.info('====>testdatatypetest_010 start====');
           let result: number = mindsporendk.DataTypeTest_010();
           console.info(`====>testdatatypetest_010 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testdatatypetest_010 err: " + err);
+          console.error('====>testdatatypetest_010 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -173,13 +173,13 @@ export default function MindSporeDataTypeTest() {
     it('testdatatypetest_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testdatatypetest_011 start====");
+          console.info('====>testdatatypetest_011 start====');
           let result: number = mindsporendk.DataTypeTest_011();
           console.info(`====>testdatatypetest_011 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testdatatypetest_011 err: " + err);
+          console.error('====>testdatatypetest_011 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -196,13 +196,13 @@ export default function MindSporeDataTypeTest() {
     it('testdatatypetest_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testdatatypetest_012 start====");
+          console.info('====>testdatatypetest_012 start====');
           let result: number = mindsporendk.DataTypeTest_012();
           console.info(`====>testdatatypetest_012 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testdatatypetest_012 err: " + err);
+          console.error('====>testdatatypetest_012 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -219,13 +219,13 @@ export default function MindSporeDataTypeTest() {
     it('testdatatypetest_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testdatatypetest_013 start====");
+          console.info('====>testdatatypetest_013 start====');
           let result: number = mindsporendk.DataTypeTest_013();
           console.info(`====>testdatatypetest_013 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testdatatypetest_013 err: " + err);
+          console.error('====>testdatatypetest_013 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -242,13 +242,13 @@ export default function MindSporeDataTypeTest() {
     it('testdatatypetest_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testdatatypetest_014 start====");
+          console.info('====>testdatatypetest_014 start====');
           let result: number = mindsporendk.DataTypeTest_014();
           console.info(`====>testdatatypetest_014 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testdatatypetest_014 err: " + err);
+          console.error('====>testdatatypetest_014 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -265,13 +265,13 @@ export default function MindSporeDataTypeTest() {
     it('testdatatypetest_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testdatatypetest_015 start====");
+          console.info('====>testdatatypetest_015 start====');
           let result: number = mindsporendk.DataTypeTest_015();
           console.info(`====>testdatatypetest_015 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testdatatypetest_015 err: " + err);
+          console.error('====>testdatatypetest_015 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }

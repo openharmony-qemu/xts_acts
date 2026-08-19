@@ -31,11 +31,11 @@ export default function MindSporeContextTest() {
   describe('MindSporeContextTest', () => {
     beforeAll(async (done: Function) => {
       let context = getContext()
-      let dir = context.filesDir + "/";
+      let dir = context.filesDir + '/';
       try {
-        let ml_face_model_file = dir + "lenet_train.ms";
-        let ml_face_model_file1 = dir + "ml_face_isface.ms";
-        context.resourceManager.getRawFileContent("lenet_train.ms", (error, model_buffer) => {
+        let ml_face_model_file = dir + 'lenet_train.ms';
+        let ml_face_model_file1 = dir + 'ml_face_isface.ms';
+        context.resourceManager.getRawFileContent('lenet_train.ms', (error, model_buffer) => {
           if (error) {
             console.log(
               `[rawfile_copy_to_sandbox] lenet_train.ms is
@@ -44,45 +44,45 @@ export default function MindSporeContextTest() {
             let file = fs.openSync(ml_face_model_file, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
             fs.writeSync(file.fd, model_buffer.buffer);
             fs.closeSync(file);
-            console.log("[rawfile_copy_to_sandbox] lenet_train.ms is copy success");
+            console.log('[rawfile_copy_to_sandbox] lenet_train.ms is copy success');
           }
         });
-        context.resourceManager.getRawFileContent("ml_face_isface.ms", (error, model_buffer) => {
+        context.resourceManager.getRawFileContent('ml_face_isface.ms', (error, model_buffer) => {
           let file1 = fs.openSync(ml_face_model_file1, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
           fs.writeSync(file1.fd, model_buffer.buffer);
           fs.closeSync(file1);
         });
       } catch (error) {
-        console.info("[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed" + error);
+        console.info('[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed' + error);
       }
-      console.info("[rawfile_copy_to_sandbox] sandbox path:" + dir);
+      console.info('[rawfile_copy_to_sandbox] sandbox path:' + dir);
       await Utils.sleep(500);
       done();
     });
 
     beforeEach(async () => {
-      let dir = getContext().filesDir + "/";
+      let dir = getContext().filesDir + '/';
 
-      let ml_face_model = dir + "lenet_train.ms";
-      let ml_face_model_input = dir + "ml_face_isface.ms";
+      let ml_face_model = dir + 'lenet_train.ms';
+      let ml_face_model_input = dir + 'ml_face_isface.ms';
       await fs.stat(ml_face_model).then(async (res) => {
         if (res) {
-          console.info("MindSporeDemo lenet_train.ms file exists");
+          console.info('MindSporeDemo lenet_train.ms file exists');
           console.info(`MindSporeDemo lenet_train.ms size:${res.size}`);
         }
       }).catch((err: BusinessError) => {
-        console.info("MindSporeDemo lenet_train.ms file does not exists! access failed with error message: " +
-        err.message + ", error code: " + err.code);
+        console.info('MindSporeDemo lenet_train.ms file does not exists! access failed with error message: ' +
+        err.message + ', error code: ' + err.code);
       });
       await Utils.sleep(500)
       await fs.stat(ml_face_model_input).then(async (res) => {
         if (res) {
-          console.info("MindSporeDemo ml_face_isface.ms file exists");
+          console.info('MindSporeDemo ml_face_isface.ms file exists');
           console.info(`MindSporeDemo ml_face_isface.ms size:${res.size}`);
         }
       }).catch((err: BusinessError) => {
-        console.info("MindSporeDemo ml_face_isface.ms file does not exists! access failed with error message: " +
-        err.message + ", error code: " + err.code);
+        console.info('MindSporeDemo ml_face_isface.ms file does not exists! access failed with error message: ' +
+        err.message + ', error code: ' + err.code);
       });
     })
 
@@ -97,13 +97,13 @@ export default function MindSporeContextTest() {
     it('testOH_AI_CallBackParam0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_CallBackParam0100 start====");
+          console.info('====>testOH_AI_CallBackParam0100 start====');
           let result: number = mindsporendk.CallBackParamTest_001();
           console.info(`====>testOH_AI_CallBackParam0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_CallBackParam0100 err: " + err);
+          console.error('====>testOH_AI_CallBackParam0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -120,13 +120,13 @@ export default function MindSporeContextTest() {
     it('testOH_AI_CallBackParam0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_CallBackParam0200 start====");
+          console.info('====>testOH_AI_CallBackParam0200 start====');
           let result: number = mindsporendk.CallBackParamTest_002();
           console.info(`====>testOH_AI_CallBackParam0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_CallBackParam0200 err: " + err);
+          console.error('====>testOH_AI_CallBackParam0200 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -143,13 +143,13 @@ export default function MindSporeContextTest() {
     it('testOH_AI_CallBackParam0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_CallBackParam0300 start====");
+          console.info('====>testOH_AI_CallBackParam0300 start====');
           let result: number = mindsporendk.CallBackParamTest_003();
           console.info(`====>testOH_AI_CallBackParam0300 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_CallBackParam0300 err: " + err);
+          console.error('====>testOH_AI_CallBackParam0300 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -166,13 +166,13 @@ export default function MindSporeContextTest() {
     it('testOH_AI_TensorSetAllocator0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_TensorSetAllocator0100 start====");
+          console.info('====>testOH_AI_TensorSetAllocator0100 start====');
           let result: number = mindsporendk.TensorSetAllocatorTest_001();
           console.info(`====>testOH_AI_TensorSetAllocator0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_TensorSetAllocator0100 err: " + err);
+          console.error('====>testOH_AI_TensorSetAllocator0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -189,13 +189,13 @@ export default function MindSporeContextTest() {
     it('testOH_AI_TensorGetAllocator0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_TensorGetAllocator0100 start====");
+          console.info('====>testOH_AI_TensorGetAllocator0100 start====');
           let result: number = mindsporendk.TensorGetAllocatorTest_001();
           console.info(`====>testOH_AI_TensorGetAllocator0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_TensorGetAllocator0100 err: " + err);
+          console.error('====>testOH_AI_TensorGetAllocator0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }

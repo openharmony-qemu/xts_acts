@@ -33,11 +33,11 @@ export default function MindSporeTypesTest() {
   describe('MindSporeTypesTest', () => {
     beforeAll(async (done: Function) => {
       let context = getContext()
-      let dir = context.filesDir + "/";
+      let dir = context.filesDir + '/';
       try {
-        let ml_face_model_file = dir + "lenet_train.ms";
-        let ml_face_model_file1 = dir + "ml_face_isface.input";
-        context.resourceManager.getRawFileContent("lenet_train.ms", (error, model_buffer) => {
+        let ml_face_model_file = dir + 'lenet_train.ms';
+        let ml_face_model_file1 = dir + 'ml_face_isface.input';
+        context.resourceManager.getRawFileContent('lenet_train.ms', (error, model_buffer) => {
           if (error) {
             console.log(
               `[rawfile_copy_to_sandbox] lenet_train.ms is
@@ -46,45 +46,45 @@ export default function MindSporeTypesTest() {
             let file = fs.openSync(ml_face_model_file, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
             fs.writeSync(file.fd, model_buffer.buffer);
             fs.closeSync(file);
-            console.log("[rawfile_copy_to_sandbox] lenet_train.ms is copy success");
+            console.log('[rawfile_copy_to_sandbox] lenet_train.ms is copy success');
           }
         });
-        context.resourceManager.getRawFileContent("ml_face_isface.input", (error, model_buffer) => {
+        context.resourceManager.getRawFileContent('ml_face_isface.input', (error, model_buffer) => {
           let file1 = fs.openSync(ml_face_model_file1, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
           fs.writeSync(file1.fd, model_buffer.buffer);
           fs.closeSync(file1);
         });
       } catch (error) {
-        console.info("[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed" + error);
+        console.info('[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed' + error);
       }
-      console.info("[rawfile_copy_to_sandbox] sandbox path:" + dir);
+      console.info('[rawfile_copy_to_sandbox] sandbox path:' + dir);
       await Utils.sleep(500)
       done();
     });
 
     beforeEach(async () => {
-      let dir = getContext().filesDir + "/";
+      let dir = getContext().filesDir + '/';
 
-      let ml_face_model = dir + "lenet_train.ms";
-      let ml_face_model_input = dir + "ml_face_isface.input";
+      let ml_face_model = dir + 'lenet_train.ms';
+      let ml_face_model_input = dir + 'ml_face_isface.input';
       await fs.stat(ml_face_model).then(async (res) => {
         if (res) {
-          console.info("MindSporeDemo lenet_train.ms file exists");
+          console.info('MindSporeDemo lenet_train.ms file exists');
           console.info(`MindSporeDemo lenet_train.ms size:${res.size}`);
         }
       }).catch((err: BusinessError) => {
-        console.info("MindSporeDemo lenet_train.ms file does not exists! access failed with error message: " +
-        err.message + ", error code: " + err.code);
+        console.info('MindSporeDemo lenet_train.ms file does not exists! access failed with error message: ' +
+        err.message + ', error code: ' + err.code);
       });
       await Utils.sleep(500)
       await fs.stat(ml_face_model_input).then(async (res) => {
         if (res) {
-          console.info("MindSporeDemo ml_face_isface.input file exists");
+          console.info('MindSporeDemo ml_face_isface.input file exists');
           console.info(`MindSporeDemo ml_face_isface.input size:${res.size}`);
         }
       }).catch((err: BusinessError) => {
-        console.info("MindSporeDemo ml_face_isface.input file does not exists! access failed with error message: " +
-        err.message + ", error code: " + err.code);
+        console.info('MindSporeDemo ml_face_isface.input file does not exists! access failed with error message: ' +
+        err.message + ', error code: ' + err.code);
       });
     })
     /**
@@ -98,13 +98,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_DEVICETYPE_GPU0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_DEVICETYPE_GPU0100 start====");
+          console.info('====>testOH_AI_DEVICETYPE_GPU0100 start====');
           let result: number = mindsporendk.DeviceTypeTest_001();
           console.info(`====>testOH_AI_DEVICETYPE_GPU0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_DEVICETYPE_GPU0100 err: " + err);
+          console.error('====>testOH_AI_DEVICETYPE_GPU0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -121,13 +121,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_MODELTYPE_INVALID0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_MODELTYPE_INVALID0100 start====");
+          console.info('====>testOH_AI_MODELTYPE_INVALID0100 start====');
           let result: number = mindsporendk.ModelTypetest_001();
           console.info(`====>testOH_AI_MODELTYPE_INVALID0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_MODELTYPE_INVALID0100 err: " + err);
+          console.error('====>testOH_AI_MODELTYPE_INVALID0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -144,13 +144,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_NNRTDEVICE_OTHERS0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_NNRTDEVICE_OTHERS0100 start====");
+          console.info('====>testOH_AI_NNRTDEVICE_OTHERS0100 start====');
           let result: number = mindsporendk.NNRTDeviceTypetest_001(0);
           console.info(`====>testOH_AI_NNRTDEVICE_OTHERS0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_NNRTDEVICE_OTHERS0100 err: " + err);
+          console.error('====>testOH_AI_NNRTDEVICE_OTHERS0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -167,13 +167,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_NNRTDEVICE_CPU0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_NNRTDEVICE_CPU0100 start====");
+          console.info('====>testOH_AI_NNRTDEVICE_CPU0100 start====');
           let result: number = mindsporendk.NNRTDeviceTypetest_001(1);
           console.info(`====>testOH_AI_NNRTDEVICE_CPU0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_NNRTDEVICE_CPU0100 err: " + err);
+          console.error('====>testOH_AI_NNRTDEVICE_CPU0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -190,13 +190,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_NNRTDEVICE_GPU0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_NNRTDEVICE_GPU0100 start====");
+          console.info('====>testOH_AI_NNRTDEVICE_GPU0100 start====');
           let result: number = mindsporendk.NNRTDeviceTypetest_001(2);
           console.info(`====>testOH_AI_NNRTDEVICE_GPU0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_NNRTDEVICE_GPU0100 err: " + err);
+          console.error('====>testOH_AI_NNRTDEVICE_GPU0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -213,13 +213,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_NNRTDEVICE_ACCELERATOR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_NNRTDEVICE_ACCELERATOR0100 start====");
+          console.info('====>testOH_AI_NNRTDEVICE_ACCELERATOR0100 start====');
           let result: number = mindsporendk.NNRTDeviceTypetest_001(3);
           console.info(`====>testOH_AI_NNRTDEVICE_ACCELERATOR0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_NNRTDEVICE_ACCELERATOR0100 err: " + err);
+          console.error('====>testOH_AI_NNRTDEVICE_ACCELERATOR0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -236,13 +236,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_KO00100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_KO00100 start====");
+          console.info('====>testOH_AI_KO00100 start====');
           let result: number = mindsporendk.OptimizationLevelTest_001();
           console.info(`====>testOH_AI_KO00100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_KO00100 err: " + err);
+          console.error('====>testOH_AI_KO00100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -259,13 +259,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_KO20100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_KO20100 start====");
+          console.info('====>testOH_AI_KO20100 start====');
           let result: number = mindsporendk.OptimizationLevelTest_002();
           console.info(`====>testOH_AI_KO20100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_KO20100 err: " + err);
+          console.error('====>testOH_AI_KO20100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -282,13 +282,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_KO30100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_KO30100 start====");
+          console.info('====>testOH_AI_KO30100 start====');
           let result: number = mindsporendk.OptimizationLevelTest_003();
           console.info(`====>testOH_AI_KO30100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_KO30100 err: " + err);
+          console.error('====>testOH_AI_KO30100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -305,13 +305,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_KAUTO0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_KAUTO0100 start====");
+          console.info('====>testOH_AI_KAUTO0100 start====');
           let result: number = mindsporendk.OptimizationLevelTest_004();
           console.info(`====>testOH_AI_KAUTO0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_KAUTO0100 err: " + err);
+          console.error('====>testOH_AI_KAUTO0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -328,13 +328,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_KOPTIMIZATIONTYPE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_KOPTIMIZATIONTYPE0100 start====");
+          console.info('====>testOH_AI_KOPTIMIZATIONTYPE0100 start====');
           let result: number = mindsporendk.OptimizationLevelTest_005();
           console.info(`====>testOH_AI_KOPTIMIZATIONTYPE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_KOPTIMIZATIONTYPE0100 err: " + err);
+          console.error('====>testOH_AI_KOPTIMIZATIONTYPE0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -351,13 +351,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_NO_QUANT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_NO_QUANT0100 start====");
+          console.info('====>testOH_AI_NO_QUANT0100 start====');
           let result: number = mindsporendk.QuantizationTypeTest_001();
           console.info(`====>testOH_AI_NO_QUANT0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_NO_QUANT0100 err: " + err);
+          console.error('====>testOH_AI_NO_QUANT0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -374,13 +374,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_WEIGHT_QUANT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_WEIGHT_QUANT0100 start====");
+          console.info('====>testOH_AI_WEIGHT_QUANT0100 start====');
           let result: number = mindsporendk.QuantizationTypeTest_002();
           console.info(`====>testOH_AI_WEIGHT_QUANT0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_WEIGHT_QUANT0100 err: " + err);
+          console.error('====>testOH_AI_WEIGHT_QUANT0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -397,13 +397,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_FULL_QUANT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_FULL_QUANT0100 start====");
+          console.info('====>testOH_AI_FULL_QUANT0100 start====');
           let result: number = mindsporendk.QuantizationTypeTest_003();
           console.info(`====>testOH_AI_FULL_QUANT0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_FULL_QUANT0100 err: " + err);
+          console.error('====>testOH_AI_FULL_QUANT0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }
@@ -420,13 +420,13 @@ export default function MindSporeTypesTest() {
     it('testOH_AI_UNKNOWN_QUANT_TYPE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>testOH_AI_UNKNOWN_QUANT_TYPE0100 start====");
+          console.info('====>testOH_AI_UNKNOWN_QUANT_TYPE0100 start====');
           let result: number = mindsporendk.QuantizationTypeTest_003();
           console.info(`====>testOH_AI_UNKNOWN_QUANT_TYPE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
           done();
         } catch (err) {
-          console.error("====>testOH_AI_UNKNOWN_QUANT_TYPE0100 err: " + err);
+          console.error('====>testOH_AI_UNKNOWN_QUANT_TYPE0100 err: ' + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
           done();
         }

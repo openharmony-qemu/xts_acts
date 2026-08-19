@@ -16,7 +16,7 @@ import EmptyTest from './Empty.test';
 import abilityTest from './Ability.test'
 
 export default function testsuite() {
-  if (canIUse("SystemCapability.AI.MindSporeLite")){
+  if (canIUse('SystemCapability.AI.MindSporeLite')){
     abilityTest();
   }else{
     EmptyTest()
