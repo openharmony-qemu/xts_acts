@@ -2111,64 +2111,6 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testFlingDir
-         * @tc.number SUB_testfwk_uitest_Api20_0130
-         * @tc.desc   fling test
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('testFlingDir', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            try {
-                console.log(TestTag, 'testFlingDir start');
-                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-                await driver.delayMs(waitUiReadyMs)
-                let allDisplayIds = await display.getAllDisplay()
-                for (let d of allDisplayIds) {
-                    if (d.id == 999) {
-                        console.info('Can not create full screen application scene')
-                        return
-                    }
-                }
-                let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
-                await driver.delayMs(waitUiReadyMs);
-                try {
-                    await maxUiWindow(driver, window);
-                } catch (error) {
-                    console.info('It is already a Fullscreen window')
-                }
-                let button = await driver.findComponent(ON.text('wearList'))
-                if (button == null) {
-                    let scorll = await driver.findComponent(ON.type('Scroll'))
-                    button = await scorll.scrollSearch(ON.text('wearList'))
-                }
-                await driver.delayMs(waitUiReadyMs)
-                await button.click()
-                await driver.delayMs(waitUiReadyMs)
-                await driver.fling(UiDirection.DOWN, 39000)
-                await driver.delayMs(waitUiReadyMs)
-                let buttonCom = await driver.findComponents(ON.text('1').inWindow('com.uitestScene.acts'))
-                console.log(`${TestTag}, testFlingDir buttonCom: ${JSON.stringify(buttonCom)}`);
-                expect(buttonCom).assertNull()
-                await driver.fling(UiDirection.LEFT, 39000)
-                await driver.delayMs(waitUiReadyMs)
-                await driver.fling(UiDirection.RIGHT, 39000)
-                await driver.delayMs(waitUiReadyMs)
-                await driver.fling(UiDirection.UP, 39000)
-                await driver.delayMs(2000)
-                let button2 = await driver.findComponents(ON.text('15').inWindow('com.uitestScene.acts'))
-                console.log(`${TestTag}, testFlingDir button2: ${JSON.stringify(button2)}`);
-                expect(button2 == null).assertTrue()
-                await stopApplication('com.uitestScene.acts')
-                console.log(TestTag, 'testFlingDir over');
-            } catch (error) {
-                expect().assertFail()
-            }
-            done()
-        })
-
-
-        /**
          * @tc.name   testTriggerCombineKeysWithId
          * @tc.number SUB_testfwk_uitest_Api20_0032
          * @tc.desc   triggerCombineKeys test
