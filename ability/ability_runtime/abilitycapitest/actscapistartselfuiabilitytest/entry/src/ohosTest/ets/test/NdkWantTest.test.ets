@@ -40,13 +40,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_0100', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_0100';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_0100();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -65,13 +65,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_0200', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_0200';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_0200();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -90,13 +90,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_0300', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_0300';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_0300();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -115,14 +115,14 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_0400', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_0400';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_0400();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
-        expect(result).assertEqual("OH_AbilityBase_GetWantElement bundleName: OH_AbilityBase_GetWantElement " +
-          "moduleName: OH_AbilityBase_GetWantElement abilityName:");
+        expect(result).assertEqual('OH_AbilityBase_GetWantElement bundleName: OH_AbilityBase_GetWantElement ' +
+          'moduleName: OH_AbilityBase_GetWantElement abilityName:');
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -141,13 +141,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_0500', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_0500';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_0500();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -166,13 +166,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_0600', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_0600';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_0600();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -191,13 +191,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_0700', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_0700';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_0700();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -216,13 +216,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_0800', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_0800';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_0800();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
-        expect(result).assertEqual("OH_AbilityBase_GetWantCharParam:set second value");
+        expect(result).assertEqual('OH_AbilityBase_GetWantCharParam:set second value');
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -241,13 +241,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_0900', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_0900';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_0900();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -266,13 +266,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_1000', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_1000';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_1000();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -291,13 +291,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_1100', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_1100';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_1100();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
-        expect(result).assertEqual("OH_AbilityBase_GetWantCharParam:");
+        expect(result).assertEqual('OH_AbilityBase_GetWantCharParam:');
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -316,13 +316,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_1200', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_1200';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_1200();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -341,13 +341,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_1300', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_1300';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_1300();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -366,13 +366,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_1400', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_1400';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_1400();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -391,13 +391,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_1500', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_1500';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_1500();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -416,13 +416,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_1600', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_1600';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_1600();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -442,13 +442,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_1700', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_1700';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_1700();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(0);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -467,13 +467,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_1800', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_1800';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_1800();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
-        expect(result).assertEqual("fd1:1fd2:1fd3:1fd4:1fd5:1");
+        expect(result).assertEqual('fd1:1fd2:1fd3:1fd4:1fd5:1');
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -492,13 +492,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_1900', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_1900';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_1900();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
-        expect(result).assertEqual("fd1:5");
+        expect(result).assertEqual('fd1:5');
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -517,13 +517,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_2000', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_2000';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_2000();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(16000050);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -542,7 +542,7 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_2100', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_2100';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         let subscriber = commonEventManager.createSubscriberSync({
           events: ['OH_AbilityRuntime_StartSelfUIAbility_Result']
         });
@@ -563,7 +563,7 @@ export default function ndkTest() {
           done();
         }
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -582,13 +582,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_2200', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_2200';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_2200();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -607,13 +607,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_2300', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_2300';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_2300();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(401);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -632,13 +632,13 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_2400', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_2400';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_2400();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
         expect(result).assertEqual(-1);
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{
@@ -657,14 +657,14 @@ export default function ndkTest() {
      */
     it('SUB_Ability_AbilityRuntime_WantNdk_2500', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_WantNdk_2500';
-      if(isEnabled == "true"){
+      if(isEnabled == 'true'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         let result = testNapi.wantNdk_2500();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
-        expect(result).assertEqual("OH_AbilityBase_GetWantElement bundleName:com.example.myapplication " +
-          "OH_AbilityBase_GetWantElement moduleName:entry OH_AbilityBase_GetWantElement abilityName:EntryAbility1");
+        expect(result).assertEqual('OH_AbilityBase_GetWantElement bundleName:com.example.myapplication ' +
+          'OH_AbilityBase_GetWantElement moduleName:entry OH_AbilityBase_GetWantElement abilityName:EntryAbility1');
         done();
-      }else if(isEnabled == "false"){
+      }else if(isEnabled == 'false'){
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + isEnabled);
         done();
       }else{

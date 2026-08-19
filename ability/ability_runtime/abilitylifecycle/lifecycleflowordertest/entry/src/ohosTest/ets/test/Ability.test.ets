@@ -68,7 +68,7 @@ export default function ActsLifeCycleFlowOrderTest() {
       let subscribeCallBack = async (err: BusinessError, data: commonEventManager.CommonEventData) => {
         console.info(`${tag}-subscribeCallBack success1- ${data.data}`);
         expect(data.data)
-          .assertEqual("onCreate,onWindowStageCreate,onWillForeground,onForeground,show event,onDidForeground");
+          .assertEqual('onCreate,onWindowStageCreate,onWillForeground,onForeground,show event,onDidForeground');
         commonEventManager.unsubscribe(subscriber);
 
         await sleep(3000);
@@ -129,7 +129,7 @@ export default function ActsLifeCycleFlowOrderTest() {
       let subscribeCallBack = async (err: BusinessError, data: commonEventManager.CommonEventData) => {
         console.info(`${tag}-subscribeCallBack success1- ${data.data}`);
         if(data.data != '16000061'){
-          expect(data.data).assertEqual("onWillForeground,onForeground,show event,onDidForeground");
+          expect(data.data).assertEqual('onWillForeground,onForeground,show event,onDidForeground');
         }
         commonEventManager.unsubscribe(subscriber);
         await sleep(3000);
@@ -175,7 +175,7 @@ export default function ActsLifeCycleFlowOrderTest() {
       let subscribeCallBack = async (err: BusinessError, data: commonEventManager.CommonEventData) => {
         console.info(`${tag}-subscribeCallBack success1- ${data.data}`);
         expect(data.data)
-          .assertEqual("onCreate,onWindowStageCreate,onWillForeground,onForeground,show event,onDidForeground");
+          .assertEqual('onCreate,onWindowStageCreate,onWillForeground,onForeground,show event,onDidForeground');
         await sleep(3000);
         commonEventManager.unsubscribe(subscriber);
         done()
@@ -219,7 +219,7 @@ export default function ActsLifeCycleFlowOrderTest() {
       let subscribeCallBack = async (err: BusinessError, data: commonEventManager.CommonEventData) => {
         console.info(`${tag}-subscribeCallBack success1- ${data.data}`);
         expect(data.data)
-          .assertEqual("onCreate,onWindowStageCreate,onWillForeground,onForeground,show event,onDidForeground");
+          .assertEqual('onCreate,onWindowStageCreate,onWillForeground,onForeground,show event,onDidForeground');
         commonEventManager.unsubscribe(subscriber);
         await sleep(3000);
         done()

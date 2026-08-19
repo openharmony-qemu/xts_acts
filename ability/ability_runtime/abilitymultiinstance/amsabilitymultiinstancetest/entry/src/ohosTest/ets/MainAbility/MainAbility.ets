@@ -25,9 +25,9 @@ import window from '@ohos.window';
 export default class MainAbility extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     // Ability is creating, initialize resources for this ability
-    console.log("AbilityMultiInstanceTest onCreate");
+    console.log('AbilityMultiInstanceTest onCreate');
     // globalThis.abilityWant = want;
-    AppStorage.setOrCreate<common.UIAbilityContext>("testAbilityContext", this.context);
+    AppStorage.setOrCreate<common.UIAbilityContext>('testAbilityContext', this.context);
     let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs = AbilityDelegatorRegistry.getArguments();
     console.info('start run testcase!!!');
@@ -36,28 +36,28 @@ export default class MainAbility extends Ability {
 
   onDestroy() {
     // Ability is destroying, release resources for this ability
-    console.log("AbilityMultiInstanceTest onDestroy");
+    console.log('AbilityMultiInstanceTest onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
-    console.log("AbilityMultiInstanceTest onWindowStageCreate");
-    windowStage.loadContent("pages/index/index", null);
-    console.log("AbilityMultiInstanceTest onWindowStageCreate finish");
+    console.log('AbilityMultiInstanceTest onWindowStageCreate');
+    windowStage.loadContent('pages/index/index', null);
+    console.log('AbilityMultiInstanceTest onWindowStageCreate finish');
   }
 
   onWindowStageDestroy() {
     // Main window is destroyed, release UI related resources
-    console.log("AbilityMultiInstanceTest onWindowStageDestroy");
+    console.log('AbilityMultiInstanceTest onWindowStageDestroy');
   }
 
   onForeground() {
     // Ability has brought to foreground
-    console.log("AbilityMultiInstanceTest onForeground");
+    console.log('AbilityMultiInstanceTest onForeground');
   }
 
   onBackground() {
     // Ability has back to background
-    console.log("AbilityMultiInstanceTest onBackground");
+    console.log('AbilityMultiInstanceTest onBackground');
   }
 }

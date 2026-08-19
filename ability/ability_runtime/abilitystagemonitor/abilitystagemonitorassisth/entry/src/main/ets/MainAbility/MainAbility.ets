@@ -30,7 +30,7 @@ export default class MainAbility extends Ability {
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     console.info('MainAbility7Monitor onWindowStageCreate')
-    windowStage.loadContent("MainAbility/pages/index", null)
+    windowStage.loadContent('MainAbility/pages/index', null)
 
     globalThis.abilityContext = this.context;
   }

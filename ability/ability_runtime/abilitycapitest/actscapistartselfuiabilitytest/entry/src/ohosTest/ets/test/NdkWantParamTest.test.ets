@@ -413,7 +413,7 @@ export default function ndkTest() {
       hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= START`);
       let result = testNapi.ndkWantEx_2300();
       hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
-      expect(result).assertEqual("");
+      expect(result).assertEqual('');
       done();
     })
 

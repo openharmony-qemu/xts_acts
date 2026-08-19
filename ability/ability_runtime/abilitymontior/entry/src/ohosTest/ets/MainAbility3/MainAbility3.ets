@@ -22,48 +22,48 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 let EVENT_TIME = 500;
 
 function publishCallBack() {
-  console.debug("====>Publish CallBack ====>");
+  console.debug('====>Publish CallBack ====>');
 }
 
 export default class MainAbility3 extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    console.log("[Demo] MainAbility3 onCreate")
+    console.log('[Demo] MainAbility3 onCreate')
     globalThis.abilityWant = want;
     globalThis.abilityContext = this.context
   }
 
   onDestroy() {
-    console.log("[Demo] MainAbility3 onDestroy")
+    console.log('[Demo] MainAbility3 onDestroy')
     globalThis.abilityContext = undefined;
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
-    console.log("[Demo] MainAbility3 onWindowStageCreate")
+    console.log('[Demo] MainAbility3 onWindowStageCreate')
 
-    windowStage.loadContent("pages/Index3", null)
+    windowStage.loadContent('pages/Index3', null)
     setTimeout(() => {
       globalThis.abilityContext.terminateSelf().then(() => {
-        console.log("====>MainAbility3 in terminateSelf====>");
+        console.log('====>MainAbility3 in terminateSelf====>');
       })
     }, EVENT_TIME);
   }
 
   onWindowStageDestroy() {
     // Main window is destroyed, release UI related resources
-    console.log("[Demo] MainAbility3 onWindowStageDestroy")
+    console.log('[Demo] MainAbility3 onWindowStageDestroy')
   }
 
   onForeground() {
     // Ability has brought to foreground
-    console.log("[Demo] MainAbility3 onForeground")
+    console.log('[Demo] MainAbility3 onForeground')
     setTimeout(() => {
-      commonEvent.publish("MainAbility3_foreground", publishCallBack);
+      commonEvent.publish('MainAbility3_foreground', publishCallBack);
     }, EVENT_TIME);
   }
 
   onBackground() {
     // Ability has back to background
-    console.log("[Demo] MainAbility3 onBackground")
+    console.log('[Demo] MainAbility3 onBackground')
   }
 };

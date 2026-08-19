@@ -46,7 +46,7 @@ export default class MainAbility5 extends Ability {
     // Main window is created, set main page for this ability
     console.log('[Demo] MainAbility5 onWindowStageCreate');
 
-    windowStage.loadContent("pages/Index5", null);
+    windowStage.loadContent('pages/Index5', null);
   }
 
   onWindowStageDestroy(): void {

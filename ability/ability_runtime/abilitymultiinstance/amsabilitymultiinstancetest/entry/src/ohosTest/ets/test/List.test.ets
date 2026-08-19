@@ -19,5 +19,5 @@ import abilityTest from './Ability.test';
 import common from '@ohos.app.ability.common';
 
 export default function testsuite() {
-  abilityTest(AppStorage.get<common.UIAbilityContext>("testAbilityContext")!);
+  abilityTest(AppStorage.get<common.UIAbilityContext>('testAbilityContext')!);
 }
