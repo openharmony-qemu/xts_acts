@@ -18,26 +18,28 @@ import Ability from '@ohos.app.ability.UIAbility'
 import Window from '@ohos.window'
 import commonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
+import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import UIAbility from '@ohos.app.ability.UIAbility';
 
 const DOMAIN = 0x0000;
 
 export default class MainAbility extends Ability {
     private event8: string = 'com.acts.ability.asynclifecycletest.event8';
 
-    onCreate(want, launchParam) {
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
         hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
         hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
         hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
         hilog.info(0x0000, 'testTag', '%{public}s', 'launchParam:' + JSON.stringify(launchParam) ?? '');
     }
 
-    onDestroy() {
+    onDestroy(): void {
         hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
         hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
     }
 
-    onWindowStageCreate(windowStage: Window.WindowStage) {
+    onWindowStageCreate(windowStage: Window.WindowStage): void {
         // Main window is created, set main page for this ability
         hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
         hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
@@ -53,19 +55,19 @@ export default class MainAbility extends Ability {
         });
     }
 
-    onWindowStageDestroy() {
+    onWindowStageDestroy(): void {
         // Main window is destroyed, release UI related resources
         hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
         hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
     }
 
-    onForeground() {
+    onForeground(): void {
         // Ability has brought to foreground
         hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
         hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
     }
 
-    onBackground() {
+    onBackground(): void {
         // Ability has back to background
         hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
         hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');

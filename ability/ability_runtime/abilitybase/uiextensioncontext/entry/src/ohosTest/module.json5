@@ -21,7 +21,7 @@
     "mainElement": "TestAbility",
     "deviceTypes": [],
     "deliveryWithInstall": true,
-    "srcEntry": "./ets/Application/MyAbilityStage.ts",
+    "srcEntry": "./ets/Application/MyAbilityStage.ets",
     "installationFree": false,
     "pages": "$profile:test_pages",
     "abilities": [

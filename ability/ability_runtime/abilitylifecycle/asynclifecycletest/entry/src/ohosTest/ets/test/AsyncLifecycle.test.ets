@@ -18,6 +18,7 @@ import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import { Want } from '@kit.AbilityKit';
+import UIAbility from '@ohos.app.ability.UIAbility';
 
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let bundleName: string = 'com.acts.ability.asynclifecycletest';
