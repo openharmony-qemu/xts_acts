@@ -889,7 +889,7 @@ export default function pasteboardNdkTest() {
      */
     it('SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       hilog.info(0x0000, TAG, TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5900', ' begin');
-      let result = testNapi.OH_UdsPixelMap_GetType_0100();
+      let result = testNapi.OH_UdsPixelMap_SetPixelMap_0100();
       expect(result).assertEqual(1);
       hilog.info(0x0000, TAG,
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5900 result= : ' + JSON.stringify(result));
