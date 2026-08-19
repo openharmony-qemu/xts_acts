@@ -42,7 +42,7 @@ export default function containerStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_CONTAINER_MAP_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_mapContainerStorage_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ResourceMapManager();
         let res1 = manager.createResourceWithKey("key1");
@@ -66,7 +66,7 @@ export default function containerStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_CONTAINER_SET_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_setContainerStorage_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ResourceSetManager();
         let res1 = manager.createUniqueResource(1);
@@ -91,7 +91,7 @@ export default function containerStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_ARRAY_DYNAMIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_dynamicArrayStorage_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new DynamicArrayManager();
         let res1 = manager.createNativeResource();
@@ -120,7 +120,7 @@ export default function containerStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_ARRAY_FIXED_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_fixedArrayStorage_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new FixedArrayManager();
         manager.fixedResourceArray = manager.createFixedArray(FIXED_ARRAY_SIZE);
@@ -148,7 +148,7 @@ export default function containerStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_ARRAY_FIXED_MIXED_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_mixedFixedArrayStorage_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new MixedArrayManager();
         manager.intFixedArray = manager.createIntFixedArray(3);

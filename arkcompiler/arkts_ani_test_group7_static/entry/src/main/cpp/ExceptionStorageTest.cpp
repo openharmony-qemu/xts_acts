@@ -134,6 +134,47 @@ ani_boolean TestArrayIndexOutOfBounds(ani_env *env, ani_object manager)
                ? ANI_TRUE : ANI_FALSE;
 }
 
+ani_boolean MutexBasicLockUnlock(ani_env *env, ani_ref mutexRef, ani_method lockMethod, ani_method unlockMethod)
+{
+    if (env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), lockMethod) != ANI_OK) {
+        env->ResetError();
+        return ANI_FALSE;
+    }
+    if (env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), unlockMethod) != ANI_OK) {
+        env->ResetError();
+        return ANI_FALSE;
+    }
+    return ANI_TRUE;
+}
+
+ani_boolean MutexTryLockWhenHeld(ani_env *env, ani_ref mutexRef, ani_class mutexCls,
+                                 ani_method lockMethod, ani_method unlockMethod, ani_boolean *rejected)
+{
+    *rejected = ANI_FALSE;
+    ani_method tryLockMethod = nullptr;
+    if (env->Class_FindMethod(mutexCls, "tryLock", ":z", &tryLockMethod) != ANI_OK) {
+        return ANI_TRUE;
+    }
+    if (env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), lockMethod) != ANI_OK) {
+        env->ResetError();
+        return ANI_FALSE;
+    }
+    ani_boolean tryLockResult = ANI_TRUE;
+    env->Object_CallMethod_Boolean(static_cast<ani_object>(mutexRef), tryLockMethod, &tryLockResult);
+    env->ResetError();
+    if (env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), unlockMethod) != ANI_OK) {
+        env->ResetError();
+        return ANI_FALSE;
+    }
+    if (!tryLockResult) {
+        *rejected = ANI_TRUE;
+        return ANI_TRUE;
+    }
+    env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), unlockMethod);
+    env->ResetError();
+    return ANI_TRUE;
+}
+
 ani_boolean TestMutexDoubleLockException(ani_env *env, ani_object manager)
 {
     ani_ref mutexRef = nullptr;
@@ -150,53 +191,17 @@ ani_boolean TestMutexDoubleLockException(ani_env *env, ani_object manager)
         env->Class_FindMethod(mutexCls, "unlock", ":", &unlockMethod) != ANI_OK) {
         return ANI_FALSE;
     }
-    // Test 1: Basic lock/unlock works
-    if (env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), lockMethod) != ANI_OK) {
-        env->ResetError();
+    if (!MutexBasicLockUnlock(env, mutexRef, lockMethod, unlockMethod)) {
         return ANI_FALSE;
     }
-    if (env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), unlockMethod) != ANI_OK) {
-        env->ResetError();
+    ani_boolean tryLockRejected = ANI_FALSE;
+    if (!MutexTryLockWhenHeld(env, mutexRef, mutexCls, lockMethod, unlockMethod, &tryLockRejected)) {
         return ANI_FALSE;
     }
-    // Test 2: Try to find tryLock method to verify non-recursive behavior
-    ani_method tryLockMethod = nullptr;
-    if (env->Class_FindMethod(mutexCls, "tryLock", ":z", &tryLockMethod) == ANI_OK) {
-        // Lock the mutex first
-        if (env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), lockMethod) != ANI_OK) {
-            env->ResetError();
-            return ANI_FALSE;
-        }
-        // tryLock should return false when mutex is already held
-        ani_boolean tryLockResult = ANI_TRUE;
-        env->Object_CallMethod_Boolean(static_cast<ani_object>(mutexRef), tryLockMethod, &tryLockResult);
-        env->ResetError();
-        // Unlock the first lock
-        if (env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), unlockMethod) != ANI_OK) {
-            env->ResetError();
-            return ANI_FALSE;
-        }
-        // If tryLock returned false (mutex was held), test passes
-        if (!tryLockResult) {
-            return ANI_TRUE;
-        }
-        // tryLock returned true (meaning it acquired the lock), release it
-        if (tryLockResult) {
-            env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), unlockMethod);
-            env->ResetError();
-        }
+    if (tryLockRejected) {
+        return ANI_TRUE;
     }
-    // Test 3: Verify mutex can be locked/unlocked again after all operations
-    if (env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), lockMethod) != ANI_OK) {
-        env->ResetError();
-        return ANI_FALSE;
-    }
-    if (env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), unlockMethod) != ANI_OK) {
-        env->ResetError();
-        return ANI_FALSE;
-    }
-    // If we got here, mutex basic operations work and we verified locking behavior
-    return ANI_TRUE;
+    return MutexBasicLockUnlock(env, mutexRef, lockMethod, unlockMethod);
 }
 
 ani_boolean TestGlobalRefDeleteNullException(ani_env *env, ani_object manager)

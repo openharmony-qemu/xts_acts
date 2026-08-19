@@ -57,7 +57,7 @@ export default function aniObjectTypeTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_OBJ_TYPE_PRIMITIVE_BOXED_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_primitiveBoxedTypes_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new PrimitiveTypeManager();
         manager.boxedBoolean = manager.createBoxedBoolean(true);
@@ -95,7 +95,7 @@ export default function aniObjectTypeTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_OBJ_TYPE_STRING_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_stringObjectTypes_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new StringObjectManager();
         manager.strField = manager.createUtf8String(UTF8_CONTENT);
@@ -114,7 +114,7 @@ export default function aniObjectTypeTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_OBJ_TYPE_ARRAY_DYNAMIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_dynamicArrayObject_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new DynamicArrayObjectManager();
         manager.objArray = manager.createObjectArray(5);
@@ -134,7 +134,7 @@ export default function aniObjectTypeTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_OBJ_TYPE_FIXEDARRAY_ALL_TYPES_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_fixedArrayAllTypes_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new FixedArrayTypeManager();
         manager.boolFixedArray = manager.createBooleanFixedArray(3);
@@ -192,7 +192,7 @@ export default function aniObjectTypeTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_OBJ_TYPE_ARRAYBUFFER_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_arrayBufferObject_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ArrayBufferObjectManager();
         manager.bufferField = manager.createArrayBuffer(BUFFER_SIZE);
@@ -209,7 +209,7 @@ export default function aniObjectTypeTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_OBJ_TYPE_FUNCTION_OBJECT_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_functionObject_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new FunctionObjectManager();
         let result = manager.createAndCallFunction();
@@ -233,13 +233,16 @@ export default function aniObjectTypeTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_OBJ_TYPE_ERROR_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_errorObject_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ErrorObjectManager();
         try {
           manager.throwCustomError("Custom error message");
         } catch (e) {
-          expect((e as Error).message).assertEqual("Custom error message");
+          expect(e instanceof Error).assertTrue();
+          if (e instanceof Error) {
+            expect(e.message).assertEqual("Custom error message");
+          }
         }
         let errorInfo = manager.catchAndHandleError();
         expect(errorInfo != null).assertTrue();
@@ -254,7 +257,7 @@ export default function aniObjectTypeTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_OBJ_TYPE_ENUM_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_enumObject_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new EnumObjectManager();
         let redValue = manager.getEnumValueByName("Color", "RED");
@@ -274,7 +277,7 @@ export default function aniObjectTypeTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_OBJ_TYPE_CLASS_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_classObject_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ClassObjectManager();
         let classObj = manager.findClassByName("std.core.String");
@@ -290,7 +293,7 @@ export default function aniObjectTypeTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_OBJ_TYPE_MODULE_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_moduleObject_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ModuleObjectManager();
         let funcResult = manager.getModuleFunction("TestModule", "moduleFunc");
@@ -306,7 +309,7 @@ export default function aniObjectTypeTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_OBJ_TYPE_NAMESPACE_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_namespaceObject_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new NamespaceObjectManager();
         let funcResult = manager.getNamespaceFunction("TestNamespace", "namespaceFunc", [10, 20]);

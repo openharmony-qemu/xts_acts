@@ -655,7 +655,6 @@ export class Foo {
   native testAniCachedLookup(): boolean;
 }
 
-// SDK 26 已移除的旧版并发容器/同步原语类型占位 shim，基于内置容器模拟等价语义。
 export class ConcurrentHashMap<K, V> {
   private data: Map<K, V> = new Map<K, V>();
   constructor() {}
@@ -1302,11 +1301,7 @@ export class AsyncCallbackChainManager {
   }
 }
 
-// NOTE: SDK 26 (@ohos.worker.d.ets) 在 arkTS 1.2 'use static' 严格模式下，
-// ThreadWorker.postMessage 存在重复声明（overload 冲突），无法直接使用 Worker。
-// 此处以 taskpool 实现「native 对象跨线程异步往返」语义（对应设计 8.13 的
-// 异步往返意图）。待 SDK 修复后可新增带 'use static' 的 Worker 脚本切换回
-// 真正的 Worker 实现。
+
 export class WorkerAsyncRoundtripManager {
   native testNativeObjectWorkerAsyncRoundtripNative(): boolean;
 

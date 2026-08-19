@@ -23,13 +23,22 @@
 #include "AniObjectTypeTest.h"
 #include "ContainerStorageTest.h"
 
+constexpr size_t LOG_BUFFER_SIZE = 512;
+
 void AniTestLog(const char *fmt, ...)
 {
-    char buf[512] = {0};
+    char buf[LOG_BUFFER_SIZE] = {0};
     va_list args;
     va_start(args, fmt);
-    vsnprintf(buf, sizeof(buf) - 1, fmt, args);
+#if __has_include(<securec.h>)
+    int ret = vsnprintf_s(buf, sizeof(buf), sizeof(buf) - 1, fmt, args);
+#else
+    int ret = vsnprintf(buf, sizeof(buf) - 1, fmt, args);
+#endif
     va_end(args);
+    if (ret < 0) {
+        return;
+    }
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "%{public}s", buf);
 }
 
@@ -88,6 +97,8 @@ ani_object CreateNativeResource(ani_env *env, ani_int value)
     return resource;
 }
 
+constexpr ani_size MAX_MATCHED_METHODS = 256;
+
 void BindClassMethods(ani_env *env, const char *clsName, const ani_native_function *methods,
                       ani_size count, const char *tag)
 {
@@ -96,9 +107,9 @@ void BindClassMethods(ani_env *env, const char *clsName, const ani_native_functi
         AniTestLog("%s: not found '%s'", tag, clsName);
         return;
     }
-    ani_native_function matched[256];
+    ani_native_function matched[MAX_MATCHED_METHODS];
     ani_size matchedCount = 0;
-    for (ani_size idx = 0; idx < count && matchedCount < 256; ++idx) {
+    for (ani_size idx = 0; idx < count && matchedCount < MAX_MATCHED_METHODS; ++idx) {
         ani_method probe = nullptr;
         if (env->Class_FindMethod(cls, methods[idx].name, methods[idx].signature, &probe) == ANI_OK) {
             matched[matchedCount++] = methods[idx];

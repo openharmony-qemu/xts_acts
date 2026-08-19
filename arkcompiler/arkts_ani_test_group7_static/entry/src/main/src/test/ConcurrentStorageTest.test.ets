@@ -38,6 +38,8 @@ const CONCURRENT_MAP_VALUE: int = 50;
 const CONCURRENT_SET_SIZE: int = 10;
 const CONCURRENT_QUEUE_SIZE: int = 100;
 const ASYNC_PROMISE_FINAL: int = 150;
+const ASYNC_CHAIN_FINAL_VALUE: int = 30;
+const TASKPOOL_EXPECTED_RESULT: int = 100;
 
 export default function concurrentStorageTest(): void {
   describe("ConcurrentStorageTest", (): void => {
@@ -50,7 +52,7 @@ export default function concurrentStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_CONCURRENT_HASHMAP_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_concurrentHashMapStorage_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ConcurrentMapManager();
         expect(manager.testNativeObjectInConcurrentHashMapNative()).assertTrue();
@@ -69,7 +71,7 @@ export default function concurrentStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_CONCURRENT_SET_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_concurrentSetStorage_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ConcurrentSetManager();
         expect(manager.testNativeObjectInConcurrentSetNative()).assertTrue();
@@ -85,7 +87,7 @@ export default function concurrentStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_CONCURRENT_QUEUE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_concurrentQueueStorage_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ConcurrentQueueManager();
         expect(manager.testNativeObjectInConcurrentQueueNative()).assertTrue();
@@ -104,7 +106,7 @@ export default function concurrentStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_CONCURRENT_MUTEX_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_mutexProtectedNativeObject_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new MutexManager();
         expect(manager.testNativeObjectWithMutexNative()).assertTrue();
@@ -119,7 +121,7 @@ export default function concurrentStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_CONCURRENT_RWLOCK_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_rwLockProtectedNativeObject_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new RWLockManager();
         expect(manager.testNativeObjectWithRWLockNative()).assertTrue();
@@ -134,7 +136,7 @@ export default function concurrentStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_CONCURRENT_WORKERLOCAL_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_workerLocalStorage_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new WorkerLocalManager();
         expect(manager.testNativeObjectInWorkerLocalNative()).assertTrue();
@@ -149,7 +151,7 @@ export default function concurrentStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_CONCURRENT_EAWORKER_MESSAGE_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_eaWorkerMessagePassing_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new EAWorkerMessageManager();
         manager.eaMessageResource = new NativeResource();
@@ -167,7 +169,7 @@ export default function concurrentStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_CONCURRENT_MULTI_THREAD_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_multiThreadConcurrentAccess_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new MultiThreadManager();
         expect(manager.testMultiThreadConcurrentAccessNative()).assertTrue();
@@ -182,13 +184,18 @@ export default function concurrentStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_ASYNC_PROMISE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_asyncPromiseWithNativeObject_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let manager = new AsyncPromiseManager();
-        await manager.testNativeObjectAsyncPromiseCreateNative();
-        await manager.testNativeObjectAsyncPromiseResolveNative();
-        expect(manager.asyncPromise!.value).assertEqual(ASYNC_PROMISE_FINAL);
-        done();
+        try {
+          await manager.testNativeObjectAsyncPromiseCreateNative();
+          await manager.testNativeObjectAsyncPromiseResolveNative();
+          expect(manager.asyncPromise!.value).assertEqual(ASYNC_PROMISE_FINAL);
+          done();
+        } catch (e) {
+          expect(false).assertTrue();
+          done();
+        }
       });
 
     /**
@@ -199,7 +206,7 @@ export default function concurrentStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_ETS_INTERACTION_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_nativeETSMultiInteraction_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new MultiInteractionManager();
         expect(manager.testNativeETSMultiInteractionNative()).assertTrue();
@@ -214,7 +221,7 @@ export default function concurrentStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_ETS_RECURSIVE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_nativeETSRecursiveInteraction_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new RecursiveInteractionManager();
         expect(manager.testNativeETSRecursiveInteractionNative()).assertTrue();
@@ -229,17 +236,22 @@ export default function concurrentStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_ASYNC_CALLBACK_CHAIN_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_nativeObjectAsyncCallbackChain_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let manager = new AsyncCallbackChainManager();
         expect(manager.testNativeObjectAsyncCallbackChainNative()).assertTrue();
         let resource = manager.chainResource;
         expect(resource != null).assertTrue();
-        resource = await manager.etsAsyncStep1(resource!);
-        resource = await manager.etsAsyncStep2(resource);
-        resource = await manager.etsAsyncStep3(resource);
-        expect(resource.value).assertEqual(30);
-        done();
+        try {
+          resource = await manager.etsAsyncStep1(resource!);
+          resource = await manager.etsAsyncStep2(resource);
+          resource = await manager.etsAsyncStep3(resource);
+          expect(resource.value).assertEqual(ASYNC_CHAIN_FINAL_VALUE);
+          done();
+        } catch (e) {
+          expect(false).assertTrue();
+          done();
+        }
       });
 
     /**
@@ -250,7 +262,7 @@ export default function concurrentStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_WORKER_ASYNC_ROUNDTRIP_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_nativeObjectWorkerAsyncRoundtrip_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let manager = new WorkerAsyncRoundtripManager();
         expect(manager.testNativeObjectWorkerAsyncRoundtripNative()).assertTrue();
@@ -258,10 +270,15 @@ export default function concurrentStorageTest(): void {
         expect(resource != null).assertTrue();
         let originValue = resource!.value;
         manager.etsSendToWorker(resource!);
-        let back = await manager.etsGetFromWorker();
-        expect(back != null).assertTrue();
-        expect(back!.value).assertEqual(originValue + 1);
-        done();
+        try {
+          let back = await manager.etsGetFromWorker();
+          expect(back != null).assertTrue();
+          expect(back!.value).assertEqual(originValue + 1);
+          done();
+        } catch (e) {
+          expect(false).assertTrue();
+          done();
+        }
       });
 
     /**
@@ -272,17 +289,22 @@ export default function concurrentStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_TASKPOOL_ASYNC_EXECUTE_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_nativeObjectTaskPoolAsyncExecute_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let manager = new TaskPoolAsyncExecuteManager();
         expect(manager.testNativeObjectTaskPoolAsyncExecuteNative()).assertTrue();
         let resource = manager.taskResource;
         expect(resource != null).assertTrue();
         let task = manager.etsCreateTaskPoolTask(resource!);
-        let result = await manager.etsExecuteTaskPoolTask(task);
-        expect(result != null).assertTrue();
-        expect(result.value).assertEqual(100);
-        done();
+        try {
+          let result = await manager.etsExecuteTaskPoolTask(task);
+          expect(result != null).assertTrue();
+          expect(result.value).assertEqual(TASKPOOL_EXPECTED_RESULT);
+          done();
+        } catch (e) {
+          expect(false).assertTrue();
+          done();
+        }
       });
   })
 }

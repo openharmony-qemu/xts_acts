@@ -28,7 +28,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_EMPTY_MAP_GET_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_emptyMapGetException_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         let probe = new NativeResource();
@@ -45,7 +45,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_MAP_NULL_KEY_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_mapPutNullKeyException_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         expect(manager.testMapPutNullKeyNative()).assertTrue();
@@ -60,7 +60,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_MAP_NULL_VALUE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_mapPutNullValueException_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         expect(manager.testMapPutNullValueNative()).assertTrue();
@@ -75,7 +75,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_EMPTY_QUEUE_POLL_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_emptyQueuePollException_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         expect(manager.emptyQueue.poll() == null).assertTrue();
@@ -91,7 +91,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_SET_CONTAINS_NULL_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_setContainsNullException_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         expect(manager.testSetContainsNullNative()).assertTrue();
@@ -106,7 +106,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_ARRAY_INDEX_OUT_OF_BOUNDS_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_arrayOutOfBoundsException_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         let handled: boolean = false;
@@ -129,7 +129,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_FIXEDARRAY_INDEX_OUT_OF_BOUNDS_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_fixedArrayOutOfBoundsException_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         expect(manager.testFixedArrayIndexOutOfBoundsNative()).assertTrue();
@@ -144,7 +144,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_MUTEX_DOUBLE_LOCK_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_mutexDoubleLockException_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         expect(manager.testMutexDoubleLockExceptionNative()).assertTrue();
@@ -159,7 +159,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_RWLOCK_CONFLICT_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_rwLockConflictException_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         expect(manager.testRWLockConflictNative()).assertTrue();
@@ -174,7 +174,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_WORKERLOCAL_NOT_SET_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_workerLocalNotSetException_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         expect(manager.testWorkerLocalNotSetNative()).assertTrue();
@@ -189,7 +189,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_GLOBALREF_DELETE_NULL_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_globalRefDeleteNullException_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         expect(manager.testGlobalRefDeleteNullExceptionNative()).assertTrue();
@@ -204,7 +204,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_NULL_OBJECT_PROPERTY_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_nullObjectPropertyException_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         expect(manager.testNullObjectPropertyNative()).assertTrue();
@@ -219,7 +219,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_NULL_ARRAY_OPERATION_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_nullArrayOperationException_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         expect(manager.testNullArrayOperationNative()).assertTrue();
@@ -234,7 +234,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_NULL_STRING_OPERATION_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_nullStringOperationException_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         expect(manager.testNullStringOperationNative()).assertTrue();
@@ -249,7 +249,7 @@ export default function exceptionStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_EXCEPTION_UNBOX_TYPE_MISMATCH_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_unboxTypeMismatchException_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         expect(manager.testUnboxTypeMismatchNative()).assertTrue();

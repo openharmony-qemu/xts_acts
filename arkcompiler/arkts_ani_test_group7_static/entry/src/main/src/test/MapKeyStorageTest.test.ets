@@ -31,7 +31,7 @@ export default function mapKeyStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_MAP_NATIVE_KEY_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_nativeObjectAsMapKey_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new NativeKeyMapManager();
         expect(manager.testNativeObjectAsMapKeyNative()).assertTrue();
@@ -48,7 +48,7 @@ export default function mapKeyStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_MAP_NATIVE_KEY_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_nativeObjectAsBasicMapKey_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new NativeKeyBasicMapManager();
         expect(manager.testNativeKeyBasicMapNative()).assertTrue();

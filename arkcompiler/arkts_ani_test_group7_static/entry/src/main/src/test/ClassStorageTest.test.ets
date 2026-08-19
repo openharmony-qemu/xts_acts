@@ -41,7 +41,7 @@ export default function classStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_CLASS_FIELD_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_classFieldStorage_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let holder = new NativeObjectHolder();
         holder.nativeObj = holder.createAndStoreNativeObject();
@@ -62,7 +62,7 @@ export default function classStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_CLASS_PROPERTY_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_classPropertyStorage_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let container = new ResourceContainer();
         container.resource = container.createResource();
@@ -79,7 +79,7 @@ export default function classStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_CLASS_STATIC_FIELD_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_staticFieldStorage_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new GlobalResourceManager();
         manager.initSharedResource();
@@ -101,7 +101,7 @@ export default function classStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_INTERFACE_PROPERTY_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_interfacePropertyStorage_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let holder: IDataHolder = new DataHolderImpl();
         holder.data = (holder as DataHolderImpl).createNativeData();
@@ -118,7 +118,7 @@ export default function classStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_INTERFACE_ARRAY_PROPERTY_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_interfaceArrayProperty_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let collection: IResourceCollection = new ResourceCollectionImpl();
         let res1 = new NativeResource();

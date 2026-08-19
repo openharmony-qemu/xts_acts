@@ -19,6 +19,9 @@
 #define ARKTS_ANI_NATIVE_OBJECT_STORAGE_TEST_COMMON_H
 #include <cstdarg>
 #include <cstdio>
+#if __has_include(<securec.h>)
+#include <securec.h>
+#endif
 #include <array>
 #include <iostream>
 #include <string>

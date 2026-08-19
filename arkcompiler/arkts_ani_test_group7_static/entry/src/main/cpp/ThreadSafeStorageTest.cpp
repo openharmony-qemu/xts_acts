@@ -24,6 +24,8 @@
 
 namespace {
 
+constexpr int SCOPE_START_POLL_INTERVAL_MS = 1;
+
 ani_ref g_globalResourceRef = nullptr;
 std::mutex g_globalRefMutex;
 ani_ref g_sharedResourceGlobalRef = nullptr;
@@ -311,6 +313,24 @@ ani_boolean VerifyGlobalRefDeleted(ani_env *env, ani_object manager)
     return (g_cachedGlobalRef == nullptr) ? ANI_TRUE : ANI_FALSE;
 }
 
+void ScopeCreateBatch(ani_env *workerEnv, ani_class resourceCls, ani_method ctor)
+{
+    workerEnv->CreateLocalScope(LOCAL_SCOPE_CAPACITY);
+    if (resourceCls == nullptr || ctor == nullptr) {
+        workerEnv->DestroyLocalScope();
+        return;
+    }
+    for (ani_size i = 0; i < LOCAL_SCOPE_CAPACITY && g_scopeRunning.load(); ++i) {
+        ani_object temp = nullptr;
+        if (workerEnv->Object_New(resourceCls, ctor, &temp) == ANI_OK) {
+            workerEnv->Object_SetPropertyByName_Int(temp, "value",
+                static_cast<ani_int>(g_scopeProcessedCount.load()));
+            g_scopeProcessedCount.fetch_add(RES_INCREMENT_STEP);
+        }
+    }
+    workerEnv->DestroyLocalScope();
+}
+
 void ScopeThreadFunc(ani_vm *vm)
 {
     ani_env *workerEnv = nullptr;
@@ -332,18 +352,7 @@ void ScopeThreadFunc(ani_vm *vm)
         workerEnv->Class_FindMethod(resourceCls, "<ctor>", ":", &ctor);
     }
     while (g_scopeRunning.load()) {
-        workerEnv->CreateLocalScope(LOCAL_SCOPE_CAPACITY);
-        if (resourceCls != nullptr && ctor != nullptr) {
-            for (ani_size i = 0; i < LOCAL_SCOPE_CAPACITY && g_scopeRunning.load(); ++i) {
-                ani_object temp = nullptr;
-                if (workerEnv->Object_New(resourceCls, ctor, &temp) == ANI_OK) {
-                    workerEnv->Object_SetPropertyByName_Int(temp, "value",
-                        static_cast<ani_int>(g_scopeProcessedCount.load()));
-                    g_scopeProcessedCount.fetch_add(RES_INCREMENT_STEP);
-                }
-            }
-        }
-        workerEnv->DestroyLocalScope();
+        ScopeCreateBatch(workerEnv, resourceCls, ctor);
     }
     vm->DetachCurrentThread();
 }
@@ -372,7 +381,7 @@ ani_status StartBackgroundThread(ani_env *env, ani_object manager)
     }
     g_scopeThread = std::thread(ScopeThreadFunc, vm);
     while (!g_scopeStarted.load()) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        std::this_thread::sleep_for(std::chrono::milliseconds(SCOPE_START_POLL_INTERVAL_MS));
     }
     return ANI_OK;
 }

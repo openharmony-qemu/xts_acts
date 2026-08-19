@@ -41,7 +41,7 @@ export default function threadSafeStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_THREAD_SAFE_GLOBALREF_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_crossThreadNativeObject_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ThreadSafeResourceManager();
         let resource = manager.createNativeResourceInMainThread();
@@ -60,7 +60,7 @@ export default function threadSafeStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_THREAD_SAFE_EAWORKER_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_eaWorkerConcurrentAccess_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ConcurrentResourceManager();
         manager.initSharedNativeResource();
@@ -79,7 +79,7 @@ export default function threadSafeStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_THREAD_SAFE_TASKPOOL_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_taskPoolConcurrentAccess_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let manager = new TaskPoolResourceManager();
         manager.initTaskPoolResource();
@@ -92,9 +92,14 @@ export default function threadSafeStorageTest(): void {
           });
           tasks.push(promise);
         }
-        let allResults = await Promise.all(tasks);
-        expect(allResults.every((r) => r > 0)).assertTrue();
-        done();
+        try {
+          let allResults: Array<number> = await Promise.all(tasks);
+          expect(allResults.every((r: number): boolean => r > 0)).assertTrue();
+          done();
+        } catch (e) {
+          expect(false).assertTrue();
+          done();
+        }
       });
 
     /**
@@ -105,7 +110,7 @@ export default function threadSafeStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_LIFECYCLE_LOCALREF_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_localRefAutoRelease_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new LocalRefManager();
         manager.createManyLocalRefs(LOCAL_REF_COUNT);
@@ -122,7 +127,7 @@ export default function threadSafeStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_LIFECYCLE_GLOBALREF_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_globalRefManualRelease_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new GlobalRefLifecycleManager();
         let resource = manager.createAndCacheGlobalRef();
@@ -143,7 +148,7 @@ export default function threadSafeStorageTest(): void {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_ANI_NATIVE_OBJ_LIFECYCLE_LOCALSCOPE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_localScopeBatchRelease_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new LocalScopeManager();
         manager.startBackgroundThread();
