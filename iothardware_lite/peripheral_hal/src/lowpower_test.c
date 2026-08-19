@@ -94,6 +94,8 @@ LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower003, Function | MediumTest |
  */
 LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower004, Function | MediumTest | Level1)
 {
+    /* 合法枚举参数（NO_SLEEP）断言成功符合 API 契约；
+       注：HAL 实现未对非法枚举做校验（实现特性，非法枚举亦返回成功） */
     unsigned int ret = LpcSetType(NO_SLEEP);
     printf("LpcSetType(NO_SLEEP) return = %d\r\n", ret);
     TEST_ASSERT_EQUAL_INT(IOT_SUCCESS, ret);

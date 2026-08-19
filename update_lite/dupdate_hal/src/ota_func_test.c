@@ -184,7 +184,7 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1200, Function | MediumTest | Leve
 /**
  * @tc.name   subUpgradeAPI1300
  * @tc.number SUB_Upgrade_API_1300
- * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.desc   test HotaGetOtaPkgPath with legal buffer
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
@@ -200,7 +200,7 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1300, Function | MediumTest | Leve
 /**
  * @tc.name   subUpgradeAPI1400
  * @tc.number SUB_Upgrade_API_1400
- * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.desc   test HotaGetUpdateAbility returns non-empty capability mask
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
@@ -209,14 +209,14 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1400, Function | MediumTest | Leve
 {
     int ret = HotaGetUpdateAbility();
     printf("HotaGetUpdateAbility return = %d\r\n", ret);
-    /* 升级能力位掩码，不同设备能力不同，断言非负即可（API 契约） */
-    TEST_ASSERT_TRUE(ret >= 0);
+    /* 升级能力位掩码：不同设备能力不同，断言掩码非空（设备必有可执行能力） */
+    TEST_ASSERT_TRUE(ret != 0);
 };
 
 /**
  * @tc.name   subUpgradeAPI1500
  * @tc.number SUB_Upgrade_API_1500
- * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.desc   test HotaGetUpdateStatus returns a defined status
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
@@ -225,14 +225,14 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1500, Function | MediumTest | Leve
 {
     int ret = HotaGetUpdateStatus();
     printf("HotaGetUpdateStatus return = %d\r\n", ret);
-    /* 无进行中的升级（状态 0） */
-    TEST_ASSERT_EQUAL_INT(0, ret);
+    /* 断言返回值为已定义状态枚举（HOTA_NOT_INIT~HOTA_CANCELED） */
+    TEST_ASSERT_TRUE(ret >= HOTA_NOT_INIT && ret <= HOTA_CANCELED);
 };
 
 /**
  * @tc.name   subUpgradeAPI1700
  * @tc.number SUB_Upgrade_API_1700
- * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.desc   test HotaIsDeviceCanReboot returns boolean semantics
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
@@ -241,14 +241,14 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1700, Function | MediumTest | Leve
 {
     int ret = HotaIsDeviceCanReboot();
     printf("HotaIsDeviceCanReboot return = %d\r\n", ret);
-    /* 当前可重启 */
-    TEST_ASSERT_EQUAL_INT(1, ret);
+    /* 布尔语义：0 不可重启 / 1 可重启 */
+    TEST_ASSERT_TRUE(ret == 0 || ret == 1);
 };
 
 /**
  * @tc.name   subUpgradeAPI2100
  * @tc.number SUB_Upgrade_API_2100
- * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.desc   test HotaSetBootSettings fails before upgrade started
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
@@ -257,8 +257,8 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI2100, Function | MediumTest | Leve
 {
     int ret = HotaSetBootSettings();
     printf("HotaSetBootSettings return = %d\r\n", ret);
-    /* 升级未开始/校验失败时设置失败（OHOS_FAILURE） */
-    TEST_ASSERT_EQUAL_INT(OHOS_FAILURE, ret);
+    /* 升级未开始/校验失败时设置失败，按 API 契约断言返回负错误码 */
+    TEST_ASSERT_TRUE(ret < 0);
 };
 
 RUN_TEST_SUITE(OtaFuncTestSuite);

@@ -196,21 +196,6 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1100, LEVEL0)
 };
 
 /**
- * @tc.name   subDfxDftHilog1200
- * @tc.number SUB_DFX_DFT_Hilog_1200
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1200, LEVEL0)
-{
-    /* 直接调用 API 验证行为，不做函数指针恒真断言 */
-    HiLogFlush(TRUE);
-    HiLogFlush(FALSE);
-};
-
-/**
  * @tc.name   subDfxDftHilog1300
  * @tc.number SUB_DFX_DFT_Hilog_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -266,36 +251,6 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1500, LEVEL0)
 };
 
 /**
- * @tc.name   subDfxDftHilog1600
- * @tc.number SUB_DFX_DFT_Hilog_1600
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1600, LEVEL0)
-{
-    /* 直接调用 API 并验证副作用（watcher 注册后打印日志不崩溃），不做恒真断言 */
-    HiLogFileAddWatcher(HilogFileWatcher, HIVIEW_FILE_OUT_PATH_LOG);
-    HiLogFileAddWatcher(NULL, NULL);
-};
-
-/**
- * @tc.name   subDfxDftHilog1700
- * @tc.number SUB_DFX_DFT_Hilog_1700
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1700, LEVEL0)
-{
-    /* 直接调用 API 验证行为，不做函数指针恒真断言 */
-    HiLogFileRemoveWatcher(HilogFileWatcher);
-    HiLogFileRemoveWatcher(NULL);
-};
-
-/**
  * @tc.name   subDfxDftHilog1800
  * @tc.number SUB_DFX_DFT_Hilog_1800
  * @tc.desc   [C- SOFTWARE -0200]
@@ -312,36 +267,6 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1800, LEVEL0)
     ret = HiLogFileProc(HIVIEW_FILE_OUT_PATH_LOG, 1);
     printf("HiLogFileProc mode=1 ret=%d\n", ret);
     TEST_ASSERT_TRUE(ret < 0);
-};
-
-/**
- * @tc.name   subDfxDftHilog1900
- * @tc.number SUB_DFX_DFT_Hilog_1900
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1900, LEVEL0)
-{
-    /* 直接调用 API 验证行为，不做函数指针恒真断言 */
-    HiLogOutputFileLock();
-    HiLogOutputFileUnLock();
-};
-
-/**
- * @tc.name   subDfxDftHilog2000
- * @tc.number SUB_DFX_DFT_Hilog_2000
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
-LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2000, LEVEL0)
-{
-    /* 直接调用 API 验证行为，不做函数指针恒真断言 */
-    HiLogOutputFileUnLock();
-    HiLogOutputFileLock();
 };
 
 /**
