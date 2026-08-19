@@ -14,7 +14,7 @@
  */
 
 #include "ClassStorageTest.h"
-#include "Common.h"
+#include "CommonDel.h"
 #include <mutex>
 
 namespace {

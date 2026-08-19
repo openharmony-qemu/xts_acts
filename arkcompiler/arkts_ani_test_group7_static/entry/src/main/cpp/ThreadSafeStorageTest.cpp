@@ -14,7 +14,7 @@
  */
 
 #include "ThreadSafeStorageTest.h"
-#include "Common.h"
+#include "CommonDel.h"
 
 #include <thread>
 #include <atomic>

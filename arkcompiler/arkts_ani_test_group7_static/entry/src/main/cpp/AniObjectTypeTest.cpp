@@ -14,7 +14,7 @@
  */
 
 #include "AniObjectTypeTest.h"
-#include "Common.h"
+#include "CommonDel.h"
 
 #include <cstring>
 #include <string>

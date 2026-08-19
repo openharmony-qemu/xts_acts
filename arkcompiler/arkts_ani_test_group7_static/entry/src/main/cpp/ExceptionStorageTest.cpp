@@ -14,7 +14,7 @@
  */
 
 #include "ExceptionStorageTest.h"
-#include "Common.h"
+#include "CommonDel.h"
 
 namespace {
 

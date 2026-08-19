@@ -14,7 +14,7 @@
  */
 
 #include "MapKeyStorageTest.h"
-#include "Common.h"
+#include "CommonDel.h"
 #include <mutex>
 #include <string>
 
