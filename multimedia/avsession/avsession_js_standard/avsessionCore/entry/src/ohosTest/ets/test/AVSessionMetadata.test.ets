@@ -826,11 +826,11 @@ export default function abilityTest() {
                 for (let i = 0; i < bufferArr2.length; i++) {
                   expect(bufferArr0[i]).assertEqual(bufferArr2[i]);
                 }
-                await sleep(2000);
               }
             })
           }
         })
+        await sleep(2000);
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
