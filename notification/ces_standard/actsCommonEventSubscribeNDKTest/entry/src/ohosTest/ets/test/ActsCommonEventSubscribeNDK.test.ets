@@ -18,14 +18,14 @@ export default function ActsCommonEventSubscribeNDKTest() {
   describe('ActsCommonEventSubscribeNDKTest', () => {
 
     /**
-     * @tc.name   Sub_Notification_Ces_Subscriber_NDK_0003
-     * @tc.number Sub_Notification_Ces_Subscriber_NDK_0003
+     * @tc.name   Sub_Notification_Ces_Subscriber_0003
+     * @tc.number Sub_Notification_Ces_Subscriber_0003
      * @tc.desc   create_subscriber Interface parameter verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ces_Subscriber_NDK_0003', Level.LEVEL2,async (done: Function) => {
+    it('Sub_Notification_Ces_Subscriber_0003', Level.LEVEL2,async (done: Function) => {
       try {
         let result =testNapi.create_subscribe_info(null);
         hilog.info(0x0000, 'testTag', 'create subscribe info : %{public}d', result);
@@ -33,24 +33,24 @@ export default function ActsCommonEventSubscribeNDKTest() {
         let result1 = testNapi.create_subscriber();
         hilog.info(0x0000, 'testTag', 'create subscriber : %{public}d', result1);
         expect(result1).assertEqual(401)
-        console.info('Sub_Notification_Ces_Subscriber_NDK_0003 testcase end')
+        console.info('Sub_Notification_Ces_Subscriber_0003 testcase end')
         done()
       } catch (err) {
-        console.info('Sub_Notification_Ces_Subscriber_NDK_0003 is fail')
+        console.info('Sub_Notification_Ces_Subscriber_0003 is fail')
         expect(false).assertEqual(true)
         done()
       }
     })
 
     /**
-     * @tc.name   Sub_Notification_Ces_Subscriber_NDK_0001
-     * @tc.number Sub_Notification_Ces_Subscriber_NDK_0001
+     * @tc.name   Sub_Notification_Ces_Subscriber_0001
+     * @tc.number Sub_Notification_Ces_Subscriber_0001
      * @tc.desc   Basic Function Flow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ces_Subscriber_NDK_0001', Level.LEVEL0,async (done:Function) => {
+    it('Sub_Notification_Ces_Subscriber_0001', Level.LEVEL0,async (done:Function) => {
       const arrayStr = ['123'];
       try {
         testNapi.create_subscribe_info(arrayStr);
@@ -96,45 +96,45 @@ export default function ActsCommonEventSubscribeNDKTest() {
         let result2 = testNapi.destroy_subscribe_info();
         hilog.info(0x0000, 'testTag', 'destroy subscribe info result : %{public}d', result2);
         expect(result2).assertEqual(400)
-        console.info('Sub_Notification_Ces_Subscriber_NDK_0001 testcase end')
+        console.info('Sub_Notification_Ces_Subscriber_0001 testcase end')
         done()
       } catch (err) {
-        console.info('Sub_Notification_Ces_Subscriber_NDK_0001 is fail')
+        console.info('Sub_Notification_Ces_Subscriber_0001 is fail')
         expect(false).assertEqual(true)
         done()
       }
     })
 
     /**
-     * @tc.name   Sub_Notification_Ces_Subscriber_NDK_0006
-     * @tc.number Sub_Notification_Ces_Subscriber_NDK_0006
+     * @tc.name   Sub_Notification_Ces_Subscriber_0006
+     * @tc.number Sub_Notification_Ces_Subscriber_0006
      * @tc.desc   common_event_unsubscribe Interface parameter verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ces_Subscriber_NDK_0006', Level.LEVEL2,async (done:Function) => {
+    it('Sub_Notification_Ces_Subscriber_0006', Level.LEVEL2,async (done:Function) => {
       try {
         let result = testNapi.common_event_unsubscribe();
         expect(result).assertEqual(401)
-        console.info('Sub_Notification_Ces_Subscriber_NDK_0006 testcase end')
+        console.info('Sub_Notification_Ces_Subscriber_0006 testcase end')
         done()
       } catch (err) {
-        console.info('Sub_Notification_Ces_Subscriber_NDK_0006 is fail')
+        console.info('Sub_Notification_Ces_Subscriber_0006 is fail')
         expect(false).assertEqual(true)
         done()
       }
     })
 
     /**
-     * @tc.name   Sub_Notification_Ces_Subscriber_NDK_0005
-     * @tc.number Sub_Notification_Ces_Subscriber_NDK_0005
+     * @tc.name   Sub_Notification_Ces_Subscriber_0005
+     * @tc.number Sub_Notification_Ces_Subscriber_0005
      * @tc.desc   common_event_subscribe Interface parameter verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ces_Subscriber_NDK_0005', Level.LEVEL2,async (done:Function) => {
+    it('Sub_Notification_Ces_Subscriber_0005', Level.LEVEL2,async (done:Function) => {
       try {
         let result = testNapi.common_event_subscribe();
         expect(result).assertEqual(401)
@@ -171,10 +171,10 @@ export default function ActsCommonEventSubscribeNDKTest() {
             testNapi.common_event_subscribe();
           }
         }
-        console.info('Sub_Notification_Ces_Subscriber_NDK_0005 testcase end')
+        console.info('Sub_Notification_Ces_Subscriber_0005 testcase end')
         done()
       } catch (err) {
-        console.info('Sub_Notification_Ces_Subscriber_NDK_0005 is fail')
+        console.info('Sub_Notification_Ces_Subscriber_0005 is fail')
         expect(false).assertEqual(true)
         done()
       }
