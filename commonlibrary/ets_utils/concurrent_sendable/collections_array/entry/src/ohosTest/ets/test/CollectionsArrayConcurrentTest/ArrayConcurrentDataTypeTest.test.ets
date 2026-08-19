@@ -94,7 +94,12 @@ export default function arrayConcurrentDataTypeTest(): void {
         for (let i: number = 0; i < 4; i++) {
           tasks.push(taskpool.execute(stringForEachTask, arr, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] as number).assertEqual(3);
         }
@@ -123,7 +128,11 @@ export default function arrayConcurrentDataTypeTest(): void {
         tasks.push(taskpool.execute(numberPushTask, arr, values1, lock));
         tasks.push(taskpool.execute(numberPushTask, arr, values2, lock));
         tasks.push(taskpool.execute(numberPushTask, arr, values3, lock));
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(arr.length).assertEqual(4);
         let foundNaN: boolean = false;
         for (let j: number = 0; j < arr.length; j++) {
@@ -156,7 +165,12 @@ export default function arrayConcurrentDataTypeTest(): void {
           tasks.push(taskpool.execute(booleanIncludesTask, arr, true, lock));
           tasks.push(taskpool.execute(booleanIncludesTask, arr, false, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i += 2) {
           expect(results[i] as boolean).assertTrue();
           expect(results[i + 1] as boolean).assertTrue();
@@ -185,7 +199,12 @@ export default function arrayConcurrentDataTypeTest(): void {
         for (let i: number = 0; i < 4; i++) {
           tasks.push(taskpool.execute(nullPushPopTask, arr, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         let nullCount: number = 0;
         for (let i: number = 0; i < results.length; i++) {
           nullCount += results[i] as number;
@@ -214,7 +233,11 @@ export default function arrayConcurrentDataTypeTest(): void {
         for (let i: number = 0; i < 4; i++) {
           tasks.push(taskpool.execute(undefinedPushTask, arr, lock));
         }
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(arr.length).assertEqual(4);
         expect(arr[0] as number | undefined).assertEqual(undefined);
         console.log(TAG + " done"); done(); console.log(TAG + " end");

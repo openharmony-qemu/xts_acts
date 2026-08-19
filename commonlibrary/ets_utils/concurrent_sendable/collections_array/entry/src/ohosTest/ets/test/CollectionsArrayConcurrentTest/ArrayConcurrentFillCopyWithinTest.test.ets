@@ -74,7 +74,11 @@ export default function arrayConcurrentFillCopyWithinTest(): void {
         for (let i: number = 0; i < threadCount; i++) {
           tasks.push(taskpool.execute(lockedFillTask, arr, i * 10, lock));
         }
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(arr.length).assertEqual(500);
         const finalValue: number = arr[0];
         const isExpectedValue: boolean =
@@ -111,7 +115,11 @@ export default function arrayConcurrentFillCopyWithinTest(): void {
         for (let i: number = 0; i < threadCount; i++) {
           tasks.push(taskpool.execute(lockedFillRangeTask, arr, i, i * 10, (i + 1) * 10, lock));
         }
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(arr.length).assertEqual(200);
         for (let i: number = 0; i < 40; i++) {
           expect(arr[i]).assertEqual(Math.floor(i / 10));
@@ -147,7 +155,11 @@ export default function arrayConcurrentFillCopyWithinTest(): void {
         for (let i: number = 0; i < threadCount; i++) {
           tasks.push(taskpool.execute(lockedCopyWithinTask, arr, 100 + i * 100, 0, 100, lock));
         }
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(arr.length).assertEqual(500);
         for (let i: number = 0; i < arr.length; i++) {
           expect(arr[i]).assertEqual(i % 100);

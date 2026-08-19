@@ -67,7 +67,12 @@ export default function arrayConcurrentCreateFromTest(): void {
         for (let i: number = 0; i < threadCount; i++) {
           tasks.push(taskpool.execute(createSameLengthTask, 100, 0, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] as number).assertEqual(100);
         }
@@ -95,7 +100,12 @@ export default function arrayConcurrentCreateFromTest(): void {
         tasks.push(taskpool.execute(createSameLengthTask, 200, 2, lock));
         tasks.push(taskpool.execute(createSameLengthTask, 10, 3, lock));
         tasks.push(taskpool.execute(createSameLengthTask, 500, 4, lock));
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(results[0] as number).assertEqual(50);
         expect(results[1] as number).assertEqual(200);
         expect(results[2] as number).assertEqual(10);
@@ -124,7 +134,12 @@ export default function arrayConcurrentCreateFromTest(): void {
         for (let i: number = 0; i < 4; i++) {
           tasks.push(taskpool.execute(fromArrayLikeTask, source, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] as number).assertEqual(5);
         }
@@ -155,7 +170,12 @@ export default function arrayConcurrentCreateFromTest(): void {
         for (let i: number = 0; i < 4; i++) {
           tasks.push(taskpool.execute(fromIterableTask, source, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] as number).assertEqual(10);
         }

@@ -68,16 +68,18 @@ export default function collectionsSetWorkerTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetWorkerReceive0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerReceive0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetWorkerReceive0001';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<number>((resolve, reject) => {
-        let settled = false;
-        const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
-          "./SetWorker"
-        );
+      let result: number = 0;
+      try {
+        result = await new Promise<number>((resolve, reject) => {
+          let settled = false;
+          const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
+            "./SetWorker"
+          );
 
         workerInstance.onmessage = (event: MessageEvents): void => {
           if (settled) {
@@ -110,8 +112,12 @@ export default function collectionsSetWorkerTest() {
           set: set
         });
       });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
       expect(result).assertEqual(100);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -122,12 +128,14 @@ export default function collectionsSetWorkerTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetWorkerTraverse0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerTraverse0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetWorkerTraverse0002';
       console.info(`[${caseName}] start`);
       let set = createStringSet(50);
 
-      let result = await new Promise<number>((resolve, reject) => {
+      let result: number = 0;
+      try {
+        result = await new Promise<number>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
@@ -160,9 +168,13 @@ export default function collectionsSetWorkerTest() {
           set: set
         });
       });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
 
       expect(result).assertEqual(50);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -173,13 +185,15 @@ export default function collectionsSetWorkerTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetWorkerModify0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerModify0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetWorkerModify0003';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
       let modifyFlag = createCompletionFlag();
 
-      let result = await new Promise<number>((resolve, reject) => {
+      let result: number = 0;
+      try {
+        result = await new Promise<number>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
@@ -218,12 +232,16 @@ export default function collectionsSetWorkerTest() {
           flag: modifyFlag
         });
       });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
 
       waitForComplete(modifyFlag);
       expect(result).assertEqual(101);
       expect(set.has(999)).assertTrue();
       expect(set.size).assertEqual(101);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -234,13 +252,15 @@ export default function collectionsSetWorkerTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetWorkerDelete0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerDelete0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetWorkerDelete0004';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
       let modifyFlag = createCompletionFlag();
 
-      let result = await new Promise<boolean>((resolve, reject) => {
+      let result: boolean = false;
+      try {
+        result = await new Promise<boolean>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
@@ -279,12 +299,16 @@ export default function collectionsSetWorkerTest() {
           flag: modifyFlag
         });
       });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
 
       waitForComplete(modifyFlag);
       expect(result).assertTrue();
       expect(set.has(50)).assertFalse();
       expect(set.size).assertEqual(99);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -295,12 +319,14 @@ export default function collectionsSetWorkerTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetWorkerSendable0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerSendable0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetWorkerSendable0005';
       console.info(`[${caseName}] start`);
       let createFlag = createCompletionFlag();
 
-      let result = await new Promise<collections.Set<SendableClass>>((resolve, reject) => {
+      let result: collections.Set<SendableClass> = new collections.Set<SendableClass>();
+      try {
+        result = await new Promise<collections.Set<SendableClass>>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
@@ -338,6 +364,9 @@ export default function collectionsSetWorkerTest() {
           flag: createFlag
         });
       });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
 
       waitForComplete(createFlag);
       expect(result.size).assertEqual(50);
@@ -351,6 +380,7 @@ export default function collectionsSetWorkerTest() {
       }
       expect(count).assertEqual(50);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -361,11 +391,13 @@ export default function collectionsSetWorkerTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetWorkerCreate0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerCreate0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetWorkerCreate0006';
       console.info(`[${caseName}] start`);
       let createFlag = createCompletionFlag();
-      let result = await new Promise<collections.Set<number>>((resolve, reject) => {
+      let result: collections.Set<number> = new collections.Set<number>();
+      try {
+        result = await new Promise<collections.Set<number>>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
@@ -399,12 +431,16 @@ export default function collectionsSetWorkerTest() {
           flag: createFlag
         });
       });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
       waitForComplete(createFlag);
       expect(result.size).assertEqual(100);
       expect(result.has(0)).assertTrue();
       expect(result.has(50)).assertTrue();
       expect(result.has(99)).assertTrue();
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -415,7 +451,7 @@ export default function collectionsSetWorkerTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetWorkerNestedContainer0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerNestedContainer0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetWorkerNestedContainer0007';
       console.info(`[${caseName}] start`);
       let nestedSet = new collections.Set<collections.Map<string, number>>();
@@ -425,7 +461,9 @@ export default function collectionsSetWorkerTest() {
         nestedSet.add(map);
       }
 
-      let result = await new Promise<number>((resolve, reject) => {
+      let result: number = 0;
+      try {
+        result = await new Promise<number>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
@@ -463,9 +501,13 @@ export default function collectionsSetWorkerTest() {
           set: nestedSet
         });
       });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
 
       expect(result).assertEqual(10);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -476,12 +518,14 @@ export default function collectionsSetWorkerTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetWorkerTaskPoolCombine0008', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async () => {
+    it('testSetWorkerTaskPoolCombine0008', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetWorkerTaskPoolCombine0008';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<number>((resolve, reject) => {
+      let result: number = 0;
+      try {
+        result = await new Promise<number>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
@@ -519,9 +563,13 @@ export default function collectionsSetWorkerTest() {
           set: set
         });
       });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
 
       expect(result).assertEqual(100);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -532,13 +580,15 @@ export default function collectionsSetWorkerTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetWorkerTaskPoolNotify0009', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async () => {
+    it('testSetWorkerTaskPoolNotify0009', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetWorkerTaskPoolNotify0009';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
       let notifyFlag = createCompletionFlag();
 
-      let result = await new Promise<number>((resolve, reject) => {
+      let result: number = 0;
+      try {
+        result = await new Promise<number>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
@@ -578,6 +628,9 @@ export default function collectionsSetWorkerTest() {
           flag: notifyFlag
         });
       });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
 
       waitForComplete(notifyFlag);
       // Worker 内部启动 TaskPool 添加元素后返回新 size
@@ -586,6 +639,7 @@ export default function collectionsSetWorkerTest() {
       expect(set.has(999)).assertTrue();
       expect(set.size).assertEqual(101);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -596,12 +650,14 @@ export default function collectionsSetWorkerTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetWorkerLargeKeys0010', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async () => {
+    it('testSetWorkerLargeKeys0010', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetWorkerLargeKeys0010';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(10000);
 
-      let result = await new Promise<number>((resolve, reject) => {
+      let result: number = 0;
+      try {
+        result = await new Promise<number>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
@@ -639,9 +695,13 @@ export default function collectionsSetWorkerTest() {
           set: set
         });
       });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
 
       expect(result).assertEqual(10000);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -652,12 +712,14 @@ export default function collectionsSetWorkerTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetWorkerValuesAdd0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerValuesAdd0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetWorkerValuesAdd0011';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<number>((resolve, reject) => {
+      let result: number = 0;
+      try {
+        result = await new Promise<number>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
@@ -694,9 +756,13 @@ export default function collectionsSetWorkerTest() {
           set: set
         });
       });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
 
       expect(isAcceptedConcurrentResult(result)).assertTrue();
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -707,12 +773,14 @@ export default function collectionsSetWorkerTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetWorkerKeysDelete0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerKeysDelete0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetWorkerKeysDelete0012';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<number>((resolve, reject) => {
+      let result: number = 0;
+      try {
+        result = await new Promise<number>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
@@ -749,9 +817,13 @@ export default function collectionsSetWorkerTest() {
           set: set
         });
       });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
 
       expect(isAcceptedConcurrentResult(result)).assertTrue();
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -762,12 +834,14 @@ export default function collectionsSetWorkerTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetWorkerErrorRecoverSize0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerErrorRecoverSize0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetWorkerErrorRecoverSize0013';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
 
-      let result = await new Promise<ErrorRecoverSizeResult>((resolve, reject) => {
+      let result: ErrorRecoverSizeResult = { errorCode: 0, sizeBefore: 0, sizeAfter: 0 };
+      try {
+        result = await new Promise<ErrorRecoverSizeResult>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
@@ -805,12 +879,16 @@ export default function collectionsSetWorkerTest() {
           set: set
         });
       });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
 
       expect(isAcceptedConcurrentResult(result.errorCode)).assertTrue();
       expect(result.sizeBefore).assertEqual(result.sizeAfter);
       expect(result.sizeAfter).assertEqual(100);
       expect(set.size).assertEqual(100);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -821,12 +899,14 @@ export default function collectionsSetWorkerTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetWorkerErrorRecoverTraverse0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetWorkerErrorRecoverTraverse0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetWorkerErrorRecoverTraverse0014';
       console.info(`[${caseName}] start`);
       let set = createRangeNumberSet(100);
 
-      let result = await new Promise<ErrorRecoverTraverseResult>((resolve, reject) => {
+      let result: ErrorRecoverTraverseResult = { errorCode: 0, traverseCount: 0, sum: 0 };
+      try {
+        result = await new Promise<ErrorRecoverTraverseResult>((resolve, reject) => {
         let settled = false;
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
           "./SetWorker"
@@ -864,12 +944,16 @@ export default function collectionsSetWorkerTest() {
           set: set
         });
       });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
 
       expect(isAcceptedConcurrentResult(result.errorCode)).assertTrue();
       expect(result.traverseCount).assertEqual(100);
       expect(result.sum).assertEqual(5050);
       expect(set.size).assertEqual(100);
       console.info(`[${caseName}] end`);
+      done();
     });
 
   });

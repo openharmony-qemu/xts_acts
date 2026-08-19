@@ -148,7 +148,7 @@ export default function collectionsSetAuxiliaryTest() {
           set.add(999);
         });
       } catch (e) {
-        errorCode = (e as BusinessError).code;
+        errorCode = e.code;
       }
       expect(errorCode === 0 || errorCode === 10200201).assertTrue();
       if (errorCode === 0) {
@@ -175,7 +175,7 @@ export default function collectionsSetAuxiliaryTest() {
           set.delete(value);
         });
       } catch (e) {
-        errorCode = (e as BusinessError).code;
+        errorCode = e.code;
       }
       expect(errorCode === 0 || errorCode === 10200201).assertTrue();
       if (errorCode === 0) {
@@ -202,7 +202,7 @@ export default function collectionsSetAuxiliaryTest() {
           set.clear();
         });
       } catch (e) {
-        errorCode = (e as BusinessError).code;
+        errorCode = e.code;
       }
       expect(errorCode === 0 || errorCode === 10200201).assertTrue();
       if (errorCode === 0) {
@@ -310,7 +310,7 @@ export default function collectionsSetAuxiliaryTest() {
         fn(1);
       } catch (e) {
         errorCaught = true;
-        expect((e as BusinessError).code).assertEqual(10200011);
+        expect(e.code).assertEqual(10200011);
       }
       expect(errorCaught).assertTrue();
       console.info(`[${caseName}] end`);
@@ -334,7 +334,7 @@ export default function collectionsSetAuxiliaryTest() {
         fn();
       } catch (e) {
         errorCaught = true;
-        expect((e as BusinessError).code).assertEqual(10200011);
+        expect(e.code).assertEqual(10200011);
       }
       expect(errorCaught).assertTrue();
       console.info(`[${caseName}] end`);
@@ -358,7 +358,7 @@ export default function collectionsSetAuxiliaryTest() {
         ctor();
       } catch (e) {
         errorCaught = true;
-        expect((e as BusinessError).code).assertEqual(10200012);
+        expect(e.code).assertEqual(10200012);
       }
       expect(errorCaught).assertTrue();
       console.info(`[${caseName}] end`);
@@ -383,7 +383,7 @@ export default function collectionsSetAuxiliaryTest() {
         unboundFn();
       } catch (e) {
         errorCaught = true;
-        expect((e as BusinessError).code).assertEqual(10200011);
+        expect(e.code).assertEqual(10200011);
       }
       expect(errorCaught).assertTrue();
       // 验证绑定调用不受影响，迭代器仍可正常遍历所有元素
@@ -415,7 +415,7 @@ export default function collectionsSetAuxiliaryTest() {
         unboundFn();
       } catch (e) {
         errorCaught = true;
-        expect((e as BusinessError).code).assertEqual(10200011);
+        expect(e.code).assertEqual(10200011);
       }
       expect(errorCaught).assertTrue();
       // 绑定调用正常返回首个元素
@@ -444,7 +444,7 @@ export default function collectionsSetAuxiliaryTest() {
         unboundFn();
       } catch (e) {
         errorCaught = true;
-        expect((e as BusinessError).code).assertEqual(10200011);
+        expect(e.code).assertEqual(10200011);
       }
       expect(errorCaught).assertTrue();
       // 关键验证：未绑定 clear 失败后，原 Set 数据未被清除
@@ -474,7 +474,7 @@ export default function collectionsSetAuxiliaryTest() {
         unboundFn(100);
       } catch (e) {
         errorCaught = true;
-        expect((e as BusinessError).code).assertEqual(10200011);
+        expect(e.code).assertEqual(10200011);
       }
       expect(errorCaught).assertTrue();
       // 关键验证：未绑定 delete 失败，元素未被删除
@@ -502,10 +502,11 @@ export default function collectionsSetAuxiliaryTest() {
       try {
         unboundFn((_v: number): void => {
           callbackInvoked = true;
+          expect(_v).assertLargerOrEqual(0);
         });
       } catch (e) {
         errorCaught = true;
-        expect((e as BusinessError).code).assertEqual(10200011);
+        expect(e.code).assertEqual(10200011);
       }
       expect(errorCaught).assertTrue();
       // 关键验证：回调从未执行
@@ -536,7 +537,7 @@ export default function collectionsSetAuxiliaryTest() {
         unboundFn('y');
       } catch (e) {
         errorCaught = true;
-        expect((e as BusinessError).code).assertEqual(10200011);
+        expect(e.code).assertEqual(10200011);
       }
       expect(errorCaught).assertTrue();
       // 关键验证：未绑定 add 失败，元素未被插入
@@ -630,7 +631,7 @@ export default function collectionsSetAuxiliaryTest() {
           set.add(999);
         });
       } catch (e) {
-        errorCode = (e as BusinessError).code;
+        errorCode = e.code;
       }
       expect(errorCode === 0 || errorCode === 10200201).assertTrue();
       // 验证错误后容器状态正常，可继续操作

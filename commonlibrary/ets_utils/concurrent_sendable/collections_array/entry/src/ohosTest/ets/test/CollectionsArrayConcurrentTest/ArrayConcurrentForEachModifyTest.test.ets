@@ -267,7 +267,13 @@ export default function arrayConcurrentForEachModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentForEachPush0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(100000), modifyPush)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runTest(makeArray(100000), modifyPush);
+        } catch (err) {
+          console.error(`runTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -283,7 +289,13 @@ export default function arrayConcurrentForEachModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentForEachPop0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(100000), modifyPop)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runTest(makeArray(100000), modifyPop);
+        } catch (err) {
+          console.error(`runTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -299,7 +311,13 @@ export default function arrayConcurrentForEachModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentForEachSplice0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(100000), modifySplice)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runTest(makeArray(100000), modifySplice);
+        } catch (err) {
+          console.error(`runTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -315,7 +333,13 @@ export default function arrayConcurrentForEachModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentForEachShift0001";
         console.log(TAG + " start");
-        expect(await runShiftOverlapTest(makeArray(100000))).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runShiftOverlapTest(makeArray(100000));
+        } catch (err) {
+          console.error(`runShiftOverlapTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -331,7 +355,13 @@ export default function arrayConcurrentForEachModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentForEachUnshift0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(100000), modifyUnshift)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runTest(makeArray(100000), modifyUnshift);
+        } catch (err) {
+          console.error(`runTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -347,7 +377,13 @@ export default function arrayConcurrentForEachModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentForEachFill0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(100000), modifyFill)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runTest(makeArray(100000), modifyFill);
+        } catch (err) {
+          console.error(`runTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -363,7 +399,13 @@ export default function arrayConcurrentForEachModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentForEachCopyWithin0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(100000), modifyCopyWithin)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runTest(makeArray(100000), modifyCopyWithin);
+        } catch (err) {
+          console.error(`runTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -379,7 +421,13 @@ export default function arrayConcurrentForEachModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentForEachSort0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(100000), modifySort)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runTest(makeArray(100000), modifySort);
+        } catch (err) {
+          console.error(`runTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -395,7 +443,13 @@ export default function arrayConcurrentForEachModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentForEachReverse0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(100000), modifyReverse)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runTest(makeArray(100000), modifyReverse);
+        } catch (err) {
+          console.error(`runTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
   });

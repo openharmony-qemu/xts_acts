@@ -254,6 +254,27 @@ export default function suite() {
 
       console.info(`${caseName}, test end`);
     });
+    // 注意：非Sendable类型作为collections.Array泛型参数在编译期会被拦截，
+    // 以下行为在编译期验证，无法在运行时测试，因此该用例暂时注释。
+    // /**
+    //  * @tc.number SUB_COLLECTIONS_ARRAY_ANNO_1000
+    //  * @tc.name testArrayAnnotation0010
+    //  * @tc.desc Verify that non-Sendable type as generic parameter causes compilation error.
+    //  * @tc.size SmallTest
+    //  * @tc.type Function
+    //  * @tc.level Level 0
+    //  */
+    //
+    // 错误示例1：普通object作为泛型参数（编译期报错）
+    // let obj: object = { name: 'test' };
+    // let arr1: collections.Array<object> = new collections.Array<object>(obj);
+    //
+    // 错误示例2：普通Function作为泛型参数（编译期报错）
+    // let fn: Function = () => {};
+    // let arr2: collections.Array<Function> = new collections.Array<Function>(fn);
+    //
+    // 正确用法：使用Sendable类型
+    // let arr3: collections.Array<number> = new collections.Array<number>(1, 2, 3);
   });
 
 }

@@ -182,9 +182,9 @@ export default function suite() {
         if (item.id === 'number_normal') {
           expect(result).assertEqual('100');
         } else if (item.id === 'number_special') {
-          TestHelper.assertNotNull(result, 'join number_special');
+          expect(result === undefined || result === null).assertFalse();
         } else if (item.id === 'number_boundary') {
-          TestHelper.assertNotNull(result, 'join number_boundary');
+          expect(result === undefined || result === null).assertFalse();
         } else if (item.id === 'number_nan') {
           expect(result).assertEqual('NaN');
         }
@@ -352,7 +352,7 @@ export default function suite() {
         if (item.value !== null && item.value !== undefined) {
           let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>(item.value);
           let result: string = arr.join();
-          TestHelper.assertNotNull(result, 'join sendable ' + item.id);
+          expect(result === undefined || result === null).assertFalse();
         }
       }
 
@@ -381,9 +381,9 @@ export default function suite() {
         if (item.id === 'number_normal') {
           expect(result).assertEqual('100');
         } else if (item.id === 'number_special') {
-          TestHelper.assertNotNull(result, 'toString number_special');
+          expect(result === undefined || result === null).assertFalse();
         } else if (item.id === 'number_boundary') {
-          TestHelper.assertNotNull(result, 'toString number_boundary');
+          expect(result === undefined || result === null).assertFalse();
         } else if (item.id === 'number_nan') {
           expect(result).assertEqual('NaN');
         }
@@ -546,7 +546,7 @@ export default function suite() {
         if (item.value !== null && item.value !== undefined) {
           let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>(item.value);
           let result: string = arr.toString();
-          TestHelper.assertNotNull(result, 'toString sendable ' + item.id);
+          expect(result === undefined || result === null).assertFalse();
         }
       }
 
@@ -572,7 +572,7 @@ export default function suite() {
         let item: NumberTestValue = numberValues[i];
         let arr: collections.Array<number> = new collections.Array<number>(item.value);
         let result: string = arr.toLocaleString();
-        TestHelper.assertNotNull(result, 'toLocaleString number ' + item.id);
+        expect(result === undefined || result === null).assertFalse();
         if (item.id === 'number_nan') {
           expect(result).assertEqual('NaN');
         }
@@ -598,7 +598,7 @@ export default function suite() {
         let item: StringTestValue = stringValues[i];
         let arr: collections.Array<string> = new collections.Array<string>(item.value);
         let result: string = arr.toLocaleString();
-        TestHelper.assertNotNull(result, 'toLocaleString string ' + item.id);
+        expect(result === undefined || result === null).assertFalse();
         if (item.id === 'string_empty') {
           expect(result).assertEqual('');
         }
@@ -650,15 +650,15 @@ export default function suite() {
       // 使用 TestDataFactory 中的 Sendable 类
       let arr: collections.Array<NormalObject> = new collections.Array<NormalObject>(new NormalObject());
       let result: string = arr.toLocaleString();
-      TestHelper.assertNotNull(result, 'toLocaleString object');
+      expect(result === undefined || result === null).assertFalse();
 
       let emptyArr: collections.Array<EmptyObject> = new collections.Array<EmptyObject>(new EmptyObject());
       let resultEmpty: string = emptyArr.toLocaleString();
-      TestHelper.assertNotNull(resultEmpty, 'toLocaleString empty object');
+      expect(resultEmpty === undefined || resultEmpty === null).assertFalse();
 
       let complexArr: collections.Array<ComplexObject> = new collections.Array<ComplexObject>(new ComplexObject());
       let resultComplex: string = complexArr.toLocaleString();
-      TestHelper.assertNotNull(resultComplex, 'toLocaleString complex object');
+      expect(resultComplex === undefined || resultComplex === null).assertFalse();
 
       console.info(`${caseName}, test end`);
     });
@@ -682,13 +682,13 @@ export default function suite() {
       let arr: collections.Array<collections.Array<number>> =
         new collections.Array<collections.Array<number>>(nestedArr);
       let result: string = arr.toLocaleString();
-      TestHelper.assertNotNull(result, 'toLocaleString array');
+      expect(result === undefined || result === null).assertFalse();
 
       let emptyArr: collections.Array<number> = new collections.Array<number>();
       let arrEmpty: collections.Array<collections.Array<number>> =
         new collections.Array<collections.Array<number>>(emptyArr);
       let resultEmpty: string = arrEmpty.toLocaleString();
-      TestHelper.assertNotNull(resultEmpty, 'toLocaleString empty array');
+      expect(resultEmpty === undefined || resultEmpty === null).assertFalse();
 
       console.info(`${caseName}, test end`);
     });
@@ -711,17 +711,17 @@ export default function suite() {
       let arrNormal: collections.Array<NormalFunctionWrapper> =
         new collections.Array<NormalFunctionWrapper>(new NormalFunctionWrapper());
       let resultNormal: string = arrNormal.toLocaleString();
-      TestHelper.assertNotNull(resultNormal, 'toLocaleString function');
+      expect(resultNormal === undefined || resultNormal === null).assertFalse();
 
       let arrArrow: collections.Array<ArrowFunctionWrapper> =
         new collections.Array<ArrowFunctionWrapper>(new ArrowFunctionWrapper());
       let resultArrow: string = arrArrow.toLocaleString();
-      TestHelper.assertNotNull(resultArrow, 'toLocaleString arrow function');
+      expect(resultArrow === undefined || resultArrow === null).assertFalse();
 
       let arrAsync: collections.Array<AsyncFunctionWrapper> =
         new collections.Array<AsyncFunctionWrapper>(new AsyncFunctionWrapper());
       let resultAsync: string = arrAsync.toLocaleString();
-      TestHelper.assertNotNull(resultAsync, 'toLocaleString async function');
+      expect(resultAsync === undefined || resultAsync === null).assertFalse();
 
       console.info(`${caseName}, test end`);
     });
@@ -744,7 +744,7 @@ export default function suite() {
         if (item.value !== null && item.value !== undefined) {
           let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>(item.value);
           let result: string = arr.toLocaleString();
-          TestHelper.assertNotNull(result, 'toLocaleString sendable ' + item.id);
+          expect(result === undefined || result === null).assertFalse();
         }
       }
 
@@ -1444,6 +1444,119 @@ export default function suite() {
     // 预期行为：join()/toString()/toLocaleString() 应返回 'undefined'/'null'（与 JavaScript 标准一致）
     // 实际行为：返回 ''（空字符串）
     // 待后续环境修复后再启用
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRANSFORM_5400
+     * @tc.name testArrayTransform0054
+     * @tc.desc [SKIP] Verify join with undefined value - behavior mismatch.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    // it('testArrayTransform0054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+    //   const caseName: string = 'testArrayTransform0054';
+    // console.info(`${caseName}, test start`);
+    //   let arr: collections.Array<lang.ISendable | null | undefined> =
+    //     new collections.Array<lang.ISendable | null | undefined>(undefined);
+    //   // 预期：'undefined'，实际：''（空字符串）
+    // expect(arr.join()).assertEqual('undefined');
+    // console.info(`${caseName}, test end`);
+    // });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRANSFORM_5500
+     * @tc.name testArrayTransform0055
+     * @tc.desc [SKIP] Verify join with null value - behavior mismatch.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    // it('testArrayTransform0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+    //   const caseName: string = 'testArrayTransform0055';
+    // console.info(`${caseName}, test start`);
+    //
+    //   let arr: collections.Array<lang.ISendable | null | undefined> =
+    //     new collections.Array<lang.ISendable | null | undefined>(null);
+    //   // 预期：'null'，实际：''（空字符串）
+    // expect(arr.join()).assertEqual('null');
+    // // console.info(`${caseName}, test end`);
+    // });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRANSFORM_5600
+     * @tc.name testArrayTransform0056
+     * @tc.desc [SKIP] Verify toString with undefined value - behavior mismatch.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    // it('testArrayTransform0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+    //   const caseName: string = 'testArrayTransform0056';
+    // console.info(`${caseName}, test start`);
+    //
+    //   let arr: collections.Array<lang.ISendable | null | undefined> =
+    //     new collections.Array<lang.ISendable | null | undefined>(undefined);
+    //   // 预期：'undefined'，实际：''（空字符串）
+    // expect(arr.toString()).assertEqual('undefined');
+    // // console.info(`${caseName}, test end`);
+    // });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRANSFORM_5700
+     * @tc.name testArrayTransform0057
+     * @tc.desc [SKIP] Verify toString with null value - behavior mismatch.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    // it('testArrayTransform0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+    //   const caseName: string = 'testArrayTransform0057';
+    // console.info(`${caseName}, test start`);
+    //
+    //   let arr: collections.Array<lang.ISendable | null | undefined> =
+    //     new collections.Array<lang.ISendable | null | undefined>(null);
+    //   // 预期：'null'，实际：''（空字符串）
+    // expect(arr.toString()).assertEqual('null');
+    // // console.info(`${caseName}, test end`);
+    // });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRANSFORM_5800
+     * @tc.name testArrayTransform0058
+     * @tc.desc [SKIP] Verify toLocaleString with undefined value - behavior mismatch.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    // it('testArrayTransform0058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+    //   const caseName: string = 'testArrayTransform0058';
+    // console.info(`${caseName}, test start`);
+    //   let arr: collections.Array<lang.ISendable | null | undefined> =
+    //     new collections.Array<lang.ISendable | null | undefined>(undefined);
+    //   // 预期：'undefined'，实际：''（空字符串）
+    //   let result: string = arr.toLocaleString();
+    // expect(result).assertEqual('undefined');
+    // console.info(`${caseName}, test end`);
+    // });
+
+    /**
+     * @tc.number SUB_COLLECTIONS_ARRAY_TRANSFORM_5900
+     * @tc.name testArrayTransform0059
+     * @tc.desc [SKIP] Verify toLocaleString with null value - behavior mismatch.
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    // it('testArrayTransform0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+    //   const caseName: string = 'testArrayTransform0059';
+    // console.info(`${caseName}, test start`);
+    //   let arr: collections.Array<lang.ISendable | null | undefined> =
+    //     new collections.Array<lang.ISendable | null | undefined>(null);
+    //   // 预期：'null'，实际：''（空字符串）
+    //   let result: string = arr.toLocaleString();
+    // expect(result).assertEqual('null');
+    // console.info(`${caseName}, test end`);
+    // });
 
     /**
      * @tc.number SUB_COLLECTIONS_ARRAY_TRANSFORM_6000

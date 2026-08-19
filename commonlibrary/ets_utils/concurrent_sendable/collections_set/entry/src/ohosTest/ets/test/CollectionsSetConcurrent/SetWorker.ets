@@ -158,11 +158,16 @@ workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
       break;
     }
 
-    // ⭐ Worker + TaskPool 组合
+    //Worker + TaskPool 组合
     case 'taskPoolCombine': {
       let set = data.set as collections.Set<number>;
       let task = new taskpool.Task(workerForEachTask, set);
-      let result = await taskpool.execute(task);
+      let result: Object = [];
+      try {
+        result = await taskpool.execute(task);
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       workerPort.postMessage({
         result: result
       });
@@ -182,7 +187,12 @@ workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
 
       // 在 Worker 中通过 TaskPool 执行添加操作
       let task = new taskpool.Task(workerAddTask, set, newValue);
-      let result = await taskpool.execute(task);
+      let result: Object = [];
+      try {
+        result = await taskpool.execute(task);
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
 
       // 写完成信号，确保 TaskPool 修改对主线程可见
       let flag = data.flag as SharedArrayBuffer;
@@ -223,7 +233,7 @@ workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
           set.add(999);
         });
       } catch (e) {
-        code = (e as BusinessError).code;
+        code = e.code;
       }
       workerPort.postMessage({
         result: code
@@ -239,7 +249,7 @@ workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
           set.delete(value);
         });
       } catch (e) {
-        code = (e as BusinessError).code;
+        code = e.code;
       }
       workerPort.postMessage({
         result: code
@@ -257,7 +267,7 @@ workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
           set.clear(); // 触发错误
         });
       } catch (e) {
-        errorCode = (e as BusinessError).code;
+        errorCode = e.code;
       }
 
       // 错误发生后，检查 size 是否正确
@@ -281,7 +291,7 @@ workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
           set.clear();
         });
       } catch (e) {
-        errorCode = (e as BusinessError).code;
+        errorCode = e.code;
       }
 
       // 错误发生后，重新遍历验证数据完整性

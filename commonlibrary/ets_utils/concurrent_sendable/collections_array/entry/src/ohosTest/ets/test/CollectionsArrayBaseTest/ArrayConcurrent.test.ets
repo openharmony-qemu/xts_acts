@@ -95,7 +95,12 @@ export default function suite() {
 
       let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-      let result: number = await taskpool.execute(processArraySum, arr, lock) as number;
+      let result: number = 0;
+      try {
+        result = await taskpool.execute(processArraySum, arr, lock) as number;
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(result).assertEqual(15);
 
       console.info(`${caseName}, test end`);
@@ -117,7 +122,12 @@ export default function suite() {
 
       let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-      let result: collections.Array<number> = await taskpool.execute(processArrayMap, arr, lock) as collections.Array<number>;
+      let result: collections.Array<number> = new collections.Array<number>();
+      try {
+        result = await taskpool.execute(processArrayMap, arr, lock) as collections.Array<number>;
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(2);
       expect(result[1]).assertEqual(4);
@@ -142,7 +152,12 @@ export default function suite() {
 
       let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-      let result: collections.Array<number> = await taskpool.execute(processArrayFilter, arr, lock) as collections.Array<number>;
+      let result: collections.Array<number> = new collections.Array<number>();
+      try {
+        result = await taskpool.execute(processArrayFilter, arr, lock) as collections.Array<number>;
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(4);
       expect(result[1]).assertEqual(5);
@@ -171,7 +186,12 @@ export default function suite() {
       arr.push(new NumberWrapper(4));
       arr.push(new NumberWrapper(5));
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-      let result: number = await taskpool.execute(processArrayCount, arr, lock) as number;
+      let result: number = 0;
+      try {
+        result = await taskpool.execute(processArrayCount, arr, lock) as number;
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(result).assertEqual(5);
 
       console.info(`${caseName}, test end`);

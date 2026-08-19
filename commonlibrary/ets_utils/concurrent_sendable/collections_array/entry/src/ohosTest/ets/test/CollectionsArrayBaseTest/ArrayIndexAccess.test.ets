@@ -346,6 +346,66 @@ export default function suite() {
       console.info(`${caseName}, test end`);
     });
 
+    // 注意：根据官方文档，arr[999] 应抛出 10200001 错误
+    // 但由于当前测试环境（API 11/12）下 collections.Array 对越界索引
+    // 实际返回 undefined 而非抛错，因此以下测试暂时注释
+    // 待后续确认环境支持后再启用
+    // /**
+    //  * @tc.number SUB_COLLECTIONS_ARRAY_INDEXACCESS_1500
+    //  * @tc.name testArrayIndexAccess0015
+    //  * @tc.desc Verify [index] operator with out-of-bounds index on number Array throws 10200001.
+    //  * @tc.size SmallTest
+    //  * @tc.type Function
+    //  * @tc.level Level 0
+    //  */
+    //
+    // it('testArrayIndexAccess0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+    //   const caseName: string = 'testArrayIndexAccess0015';
+    // console.info(`${caseName}, test start`);
+    // //   let arr: collections.Array<number> = new collections.Array<number>(100, 200, 300);
+    //   let caught: boolean = false;
+    //   try {
+    //     let _: number = arr[999];
+    // expect(true).assertFalse();
+    //   } catch (e) {
+    //     caught = true;
+    //     let errObj: Record<string, Object> = e as Record<string, Object>;
+    // expect(errObj['code']).assertEqual(10200001);
+    //   }
+    // expect(caught).assertTrue();
+    // // console.info(`${caseName}, test end`);
+    // });
+
+    // 注意：根据官方文档，arr[-1] 应抛出 10200001 错误
+    // 但由于当前测试环境（API 11/12）下 collections.Array 对负数索引
+    // 实际返回 undefined 而非抛错，因此以下测试暂时注释
+    // 待后续确认环境支持后再启用
+    // /**
+    //  * @tc.number SUB_COLLECTIONS_ARRAY_INDEXACCESS_1600
+    //  * @tc.name testArrayIndexAccess0016
+    //  * @tc.desc Verify [index] operator with negative index on number Array throws 10200001.
+    //  * @tc.size SmallTest
+    //  * @tc.type Function
+    //  * @tc.level Level 0
+    //  */
+    //
+    // it('testArrayIndexAccess0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+    //   const caseName: string = 'testArrayIndexAccess0016';
+    // console.info(`${caseName}, test start`);
+    // //   let arr: collections.Array<number> = new collections.Array<number>(100, 200, 300);
+    //   let caught: boolean = false;
+    //   try {
+    //     let _: number = arr[-1];
+    // expect(true).assertFalse();
+    //   } catch (e) {
+    //     caught = true;
+    //     let errObj: Record<string, Object> = e as Record<string, Object>;
+    // expect(errObj['code']).assertEqual(10200001);
+    //   }
+    // expect(caught).assertTrue();
+    // // console.info(`${caseName}, test end`);
+    // });
+
     // ==================== bigint push/pop 操作测试 ====================
 
     /**

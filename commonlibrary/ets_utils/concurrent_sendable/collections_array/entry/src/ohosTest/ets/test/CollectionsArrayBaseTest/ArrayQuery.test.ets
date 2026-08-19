@@ -571,8 +571,8 @@ export default function suite() {
         let item: TestValueItem = allValues[i];
         if (item.value !== null && item.value !== undefined) {
           let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>(item.value);
-          TestHelper.assertNotNull(arr.at(0), 'at(0) ' + item.id);
-          TestHelper.assertNull(arr.at(10), 'at(10) ' + item.id);
+          expect(arr.at(0) === undefined || arr.at(0) === null).assertFalse();
+          expect(arr.at(10) === undefined || arr.at(10) === null).assertTrue();
         }
       }
 
@@ -647,7 +647,7 @@ export default function suite() {
         let item: TestValueItem = allValues[i];
         if (item.value !== null && item.value !== undefined) {
           let arr: collections.Array<lang.ISendable> = new collections.Array<lang.ISendable>(item.value);
-          TestHelper.assertNotNull(arr.find((): boolean => true), 'find ' + item.id);
+          expect(arr.find((): boolean => true) === undefined || arr.find((): boolean => true) === null).assertFalse();
         }
       }
 
@@ -1177,7 +1177,6 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 0
      */
-
     it('testArrayQuery0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const caseName: string = 'testArrayQuery0050';
       console.info(`${caseName}, test start`);
@@ -1198,7 +1197,6 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 0
      */
-
     it('testArrayQuery0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const caseName: string = 'testArrayQuery0051';
       console.info(`${caseName}, test start`);
@@ -1238,7 +1236,6 @@ export default function suite() {
      * @tc.type Function
      * @tc.level Level 0
      */
-
     it('testArrayQuery0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const caseName: string = 'testArrayQuery0053';
       console.info(`${caseName}, test start`);

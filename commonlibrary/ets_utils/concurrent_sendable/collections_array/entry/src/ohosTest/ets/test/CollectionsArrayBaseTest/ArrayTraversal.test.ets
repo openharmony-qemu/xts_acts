@@ -1463,6 +1463,8 @@ export default function suite() {
      * @tc.level Level 0
      */
     it('testArrayTraversal0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0057';
+      console.info(`${caseName}, test start`);
       let bigintValues: collections.Array<BigIntTestValue> = getBigIntTestValues();
       for (let i: number = 0; i < bigintValues.length; i++) {
         let item: BigIntTestValue = bigintValues[i];
@@ -1474,6 +1476,7 @@ export default function suite() {
         });
         expect(count).assertEqual(2);
       }
+      console.info(`${caseName}, test end`);
     });
 
     /**
@@ -1485,6 +1488,8 @@ export default function suite() {
      * @tc.level Level 0
      */
     it('testArrayTraversal0058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0058';
+      console.info(`${caseName}, test start`);
       let bigintValues: collections.Array<BigIntTestValue> = getBigIntTestValues();
       for (let i: number = 0; i < bigintValues.length; i++) {
         let item: BigIntTestValue = bigintValues[i];
@@ -1496,6 +1501,7 @@ export default function suite() {
         expect(result.value[1]).assertEqual(item.value);
         expect(iter.next().done).assertEqual(true);
       }
+      console.info(`${caseName}, test end`);
     });
 
     /**
@@ -1507,6 +1513,8 @@ export default function suite() {
      * @tc.level Level 0
      */
     it('testArrayTraversal0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0059';
+      console.info(`${caseName}, test start`);
       let bigintValues: collections.Array<BigIntTestValue> = getBigIntTestValues();
       for (let i: number = 0; i < bigintValues.length; i++) {
         let item: BigIntTestValue = bigintValues[i];
@@ -1517,6 +1525,7 @@ export default function suite() {
         }
         expect(count).assertEqual(2);
       }
+      console.info(`${caseName}, test end`);
     });
 
     /**
@@ -1528,6 +1537,8 @@ export default function suite() {
      * @tc.level Level 0
      */
     it('testArrayTraversal0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testArrayTraversal0060';
+      console.info(`${caseName}, test start`);
       let bigintValues: collections.Array<BigIntTestValue> = getBigIntTestValues();
       for (let i: number = 0; i < bigintValues.length; i++) {
         let item: BigIntTestValue = bigintValues[i];
@@ -1538,6 +1549,7 @@ export default function suite() {
         }
         expect(count).assertEqual(2);
       }
+      console.info(`${caseName}, test end`);
     });
 
     /**
