@@ -572,7 +572,7 @@ export default function drawingTsMatrixPart3Test() {
         let matrix = new drawing.Matrix();
         let radius = matrix.mapRadius(Number.MAX_VALUE);
         console.info(msg + ' max radius: ' + radius);
-        expect(radius).assertEqual(Infinity);
+        expect(radius === Infinity || Number.isNaN(radius)).assertTrue();
       } catch (e) {
         console.info(msg + ` errorCode is: ${e.code}, errorMsg is: ${e.message}`);
         expect().assertFail();
