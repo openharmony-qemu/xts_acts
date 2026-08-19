@@ -13,10 +13,13 @@
  * limitations under the License.
  */
 
+import { window } from '@kit.ArkUI';
+import { AbilityConstant } from '@kit.AbilityKit';
+import { Want } from '@kit.AbilityKit';
 import Ability from '@ohos.app.ability.UIAbility';
 
 export default class MainAbility extends Ability {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     console.log("[Demo] MainAbility onCreate");
     globalThis.abilityWant = want;
     globalThis.applicationContext = this.context.getApplicationContext();
@@ -26,11 +29,11 @@ export default class MainAbility extends Ability {
     console.log("[Demo] MainAbility onDestroy");
   }
 
-  onWindowStageCreate(windowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     console.log("[Demo] MainAbility onWindowStageCreate");
     globalThis.abilityContext = this.context;
-    windowStage.setUIContent(this.context, "MainAbility/pages/MainAbility_pages", null);
+    windowStage.loadContent('MainAbility/pages/MainAbility_pages');
   }
 
   onWindowStageDestroy() {
