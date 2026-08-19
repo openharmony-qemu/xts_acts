@@ -1,0 +1,29 @@
+<list class="container" onswipe="swipeEvent">
+  <list-item class="titleItem">
+    <text style="font-size:22px;color:#ffffff;">ActsValidatorLite</text>
+  </list-item>
+  <list-item class="summaryItem">
+    <text style="font-size:15px;color:#cccccc;">Pass: {{ passCount }}  Fail: {{ failCount }}  Untested: {{ untestedCount }}</text>
+  </list-item>
+  <list-item class="listItem">
+    <input class="sub-btn" type="button" value="ArkUI" onclick="navigateTo('ArkUI')" />
+  </list-item>
+  <list-item class="listItem">
+    <input class="sub-btn" type="button" value="PowerManager" onclick="navigateTo('PowerManager')" />
+  </list-item>
+  <list-item class="listItem">
+    <input class="sub-btn" type="button" value="FileManagement" onclick="navigateTo('FileManagement')" />
+  </list-item>
+  <list-item class="listItem">
+    <input class="sub-btn" type="button" value="DistributedData" onclick="navigateTo('DistributedData')" />
+  </list-item>
+  <list-item class="listItem">
+    <input class="sub-btn" type="button" value="Startup" onclick="navigateTo('Startup')" />
+  </list-item>
+  <list-item class="listItem">
+    <input class="sub-btn" type="button" value="Communication" onclick="navigateTo('Communication')" />
+  </list-item>
+  <list-item class="listItem">
+    <input class="report-btn" type="button" value="Generate Report" onclick="generateReport" />
+  </list-item>
+</list>

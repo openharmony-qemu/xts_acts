@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="help-header">
+    <text class="help-title">操作说明</text>
+    <input class="btn-back-top" type="button" value="返回" onclick="back" />
+  </div>
+  <text class="help-section">操作步骤</text>
+  <text class="help-text">{{ step }}</text>
+  <text class="help-section">预期结果</text>
+  <text class="help-text">{{ result }}</text>
+  <text class="help-tip">通过点 Pass，失败点 Fail。</text>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="content-title">
+    <text style="width:150px;height:50px;text-align: center;font-size:16px;">marquee</text>
+    <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
+  </div>
+
+  <marquee
+          scrollamount="1"
+          style="color:#00ff00;width:60%;height:60px;margin-top: 20px;"
+          >Hello JS, we are friends.</marquee>
+  <marquee
+          scrollamount="{{speed}}"
+          class="textStyle"
+          style="width:60%;height:60px;margin-top: 20px;margin-bottom: 20px;"
+          onclick="changeSpeed()"
+          >{{text}}</marquee
+          >
+
+  <div class="bottom-bt">
+    <input type="button" value="pass" class="button" onclick="passClicked" />
+    <input type="button" value="fail" class="button" onclick="failClicked" />
+    <input type="button" value="back" class="button" onclick="backClicked" />
+  </div>
+</div>
