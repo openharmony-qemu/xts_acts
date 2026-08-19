@@ -10801,7 +10801,9 @@ export function executeAVVideoRecorder() : boolean {
     }
     console.info(TAG + 'Exit getCameraManagerInstance');
     mCameraDevicesArray = mCameraManager.getSupportedCameras();
-    if (isEmpty(mCameraDevicesArray)) {
+    console.info("mCameraDevicesArray", mCameraDevicesArray);
+    console.info("mCameraDevicesArray.length", mCameraDevicesArray.length);
+    if (mCameraDevicesArray.length == 0) {
       isSupportedCameras = false;
     }
   } catch (err) {
