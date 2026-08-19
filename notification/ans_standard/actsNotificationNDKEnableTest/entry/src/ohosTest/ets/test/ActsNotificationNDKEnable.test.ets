@@ -1,6 +1,6 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, it, expect, Level } from '@ohos/hypium';
-import { IsNotificationEnabled } from "libenable.so"
+import { IsNotificationEnabled } from 'libenable.so'
 import common from '@ohos.app.ability.common';
 import notificationManager from '@ohos.notificationManager';
 import { Driver, ON } from '@ohos.UiTest';
@@ -50,7 +50,7 @@ export default function ActsNotificationNDKEnableTest() {
           hilog.info(0x0000, 'testTag', 'null button');
         }
       } catch (err) {
-        hilog.info(0x0000, 'testTag',"IsNotificationEnabled Execution Failed")
+        hilog.info(0x0000, 'testTag','IsNotificationEnabled Execution Failed')
         expect(false).assertEqual(true)
         done()
       }

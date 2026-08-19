@@ -201,7 +201,7 @@ export default function ActsNotificationWantUriTest() {
         let wantAgent2: WantAgent | undefined = await createWantAgent(uri2, TC_NAME);
         if (wantAgent1 && wantAgent2) {
           let notificationRequest = createNotificationRequest(wantAgent1, wantAgent2);
-          await publishAndCheck(notificationRequest, "", done, TC_NAME);
+          await publishAndCheck(notificationRequest, '', done, TC_NAME);
         } else {
           expect().assertFail();
           done();

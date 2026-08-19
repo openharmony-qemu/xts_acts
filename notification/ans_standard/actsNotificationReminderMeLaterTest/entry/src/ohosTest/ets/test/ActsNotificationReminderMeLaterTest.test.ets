@@ -74,18 +74,18 @@ export default function actsNotificationReminderMeLaterTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_Notification_Ans_ReminderMe_Later_0100', Level.LEVEL2, async (done : Function) => {
-      let TAG = "SUB_Notification_Ans_ReminderMe_Later_0100"
+      let TAG = 'SUB_Notification_Ans_ReminderMe_Later_0100'
       let notificationRequest: notificationManager.NotificationRequest = {
         id: 1,
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "test",
-            text: "test",
+            title: 'test',
+            text: 'test',
           }
         },
         notificationSlotType: notificationManager.SlotType.SERVICE_INFORMATION,
-        hashCode: "hashCode"
+        hashCode: 'hashCode'
       };
 
       await notificationManager.publish(notificationRequest).then(() => {
@@ -96,8 +96,8 @@ export default function actsNotificationReminderMeLaterTest() {
         done()
       });
       let delayTime: number = 1;
-      await notificationManager.snoozeNotification("hashCode", 1).then(() => {
-        console.info(TAG+"snoozeNotification success.")
+      await notificationManager.snoozeNotification('hashCode', 1).then(() => {
+        console.info(TAG+'snoozeNotification success.')
         expect(false).assertTrue()
         done()
       }).catch((err: BusinessError):void => {

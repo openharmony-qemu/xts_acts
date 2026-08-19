@@ -55,13 +55,5 @@
         "label": "$string:EntryAbility_label"
       }
     ],
-    "requestPermissions": [
-      {
-        "name": 'ohos.permission.NOTIFICATION_CONTROLLER',
-      },
-      {
-        "name": "ohos.permission.SUBSCRIBE_NOTIFICATION"
-      }
-    ]
   }
 }
