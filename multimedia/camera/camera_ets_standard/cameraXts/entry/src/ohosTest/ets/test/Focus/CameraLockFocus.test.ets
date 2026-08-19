@@ -344,7 +344,7 @@ export default function CameraLockFocusTest() {
           console.info(`${caseName} unlockFocusTracking`);
         }
       } catch (err) {
-        let error: BusinessError = err as BusinessError;
+        let error = err;
         console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
         expect().assertFail();
       }
@@ -375,7 +375,7 @@ export default function CameraLockFocusTest() {
           console.info(`${caseName} isSupported is: ${isSupported}`);
           expect().assertFail();
         } catch (err) {
-          let error: BusinessError = err as BusinessError;
+          let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect(err.code).assertEqual(SESSION_NOT_CONFIG_CODE);
         }
@@ -414,7 +414,7 @@ export default function CameraLockFocusTest() {
           mVideoSession.lockFocusTracking({ x: 0.0, y: 0.0 });
           mVideoSession.unlockFocusTracking();
         } catch (err) {
-          let error: BusinessError = err as BusinessError;
+          let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect().assertFail();
         }
@@ -460,7 +460,7 @@ export default function CameraLockFocusTest() {
           mVideoSession.unlockFocusTracking();
           await releaseVideoSession();
         } catch (err) {
-          let error: BusinessError = err as BusinessError;
+          let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           await releaseVideoSession();
           expect().assertFail();
@@ -493,7 +493,7 @@ export default function CameraLockFocusTest() {
           await mVideoSession?.release();
           expect().assertFail();
         } catch (err) {
-          let error: BusinessError = err as BusinessError;
+          let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           await mVideoSession?.release(); 
           expect(err.code).assertEqual(SESSION_NOT_CONFIG_CODE);
@@ -541,7 +541,7 @@ export default function CameraLockFocusTest() {
           }
           mPhotoSession.unlockFocusTracking();
         } catch (err) {
-          let error: BusinessError = err as BusinessError;
+          let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect().assertFail();
         }
@@ -580,7 +580,7 @@ export default function CameraLockFocusTest() {
           mPhotoSession.unlockFocusTracking();
           expect().assertFail();
         } catch (err) {
-          let error: BusinessError = err as BusinessError;
+          let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect(err.code).assertEqual(INVALID_PARAMETER_CODE);
         }
@@ -619,7 +619,7 @@ export default function CameraLockFocusTest() {
           mPhotoSession.unlockFocusTracking();
           expect().assertFail();
         } catch (err) {
-          let error: BusinessError = err as BusinessError;
+          let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect(err.code).assertEqual(INVALID_PARAMETER_CODE);
         }
@@ -650,7 +650,7 @@ export default function CameraLockFocusTest() {
           mPhotoSession.lockFocusTracking({ x: 0.0, y: 0.0 });
           expect().assertFail();
         } catch (err) {
-          let error: BusinessError = err as BusinessError;
+          let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect(err.code).assertEqual(SESSION_NOT_CONFIG_CODE);
         }
@@ -693,7 +693,7 @@ export default function CameraLockFocusTest() {
               mPhotoSession.lockFocusTracking({x, y});
                 expect().assertFail();
               } catch (err) {
-                let error: BusinessError = err as BusinessError;
+                let error = err;
                 console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
                 expect(err.code).assertEqual(INVALID_PARAMETER_CODE);
               }
@@ -739,7 +739,7 @@ export default function CameraLockFocusTest() {
           mPhotoSession.lockFocusTracking({ x: 0.0, y: 0.0 });
           mPhotoSession.unlockFocusTracking();
         } catch (err) {
-          let error: BusinessError = err as BusinessError;
+          let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect().assertFail();
         }
@@ -782,7 +782,7 @@ export default function CameraLockFocusTest() {
           mPhotoSession.lockFocusTracking({ x: 0.0, y: 0.0 });
           mPhotoSession.unlockFocusTracking();
         } catch (err) {
-          let error: BusinessError = err as BusinessError;
+          let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect().assertFail();
         }
@@ -813,7 +813,7 @@ export default function CameraLockFocusTest() {
           console.info(`${caseName} start`);
           mPhotoSession.unlockFocusTracking();
         } catch (err) {
-          let error: BusinessError = err as BusinessError;
+          let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect().assertFail();
         }
