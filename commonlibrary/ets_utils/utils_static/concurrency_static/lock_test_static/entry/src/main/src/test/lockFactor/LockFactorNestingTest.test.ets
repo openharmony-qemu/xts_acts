@@ -820,9 +820,12 @@ export default function LockFactorNestingTest(): void {
     it('LockFactorNestingTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(dynamicNestingTask, counter, 3));
-      let p2 = taskpool.execute(new taskpool.Task(dynamicNestingTask, counter, 5));
-      await Promise.all([p1, p2]);
+      let depths: int[] = [3, 5];
+      let promises: Promise<Any>[] = [];
+      for (let i: int = 0; i < depths.length; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(dynamicNestingTask, counter, depths[i])));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(2);
       } catch (error) {
         console.error(`LockFactorNestingTest1800 failed: ${error}`);

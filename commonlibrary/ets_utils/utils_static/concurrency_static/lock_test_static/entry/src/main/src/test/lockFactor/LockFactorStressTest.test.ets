@@ -243,17 +243,11 @@ export default function LockFactorStressTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(mutexStressTask, mutex, counter));
-      let p2 = taskpool.execute(new taskpool.Task(mutexStressTask, mutex, counter));
-      let p3 = taskpool.execute(new taskpool.Task(mutexStressTask, mutex, counter));
-      let p4 = taskpool.execute(new taskpool.Task(mutexStressTask, mutex, counter));
-      let p5 = taskpool.execute(new taskpool.Task(mutexStressTask, mutex, counter));
-      let p6 = taskpool.execute(new taskpool.Task(mutexStressTask, mutex, counter));
-      let p7 = taskpool.execute(new taskpool.Task(mutexStressTask, mutex, counter));
-      let p8 = taskpool.execute(new taskpool.Task(mutexStressTask, mutex, counter));
-      let p9 = taskpool.execute(new taskpool.Task(mutexStressTask, mutex, counter));
-      let p10 = taskpool.execute(new taskpool.Task(mutexStressTask, mutex, counter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(mutexStressTask, mutex, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(1000);
       } catch (error) {
         console.error(`LockFactorStressTest0100 failed: ${error}`);
@@ -274,17 +268,14 @@ export default function LockFactorStressTest(): void {
       try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
-      let r1 = taskpool.execute(new taskpool.Task(rwlockReadStressTask, rwlock, counter));
-      let r2 = taskpool.execute(new taskpool.Task(rwlockReadStressTask, rwlock, counter));
-      let r3 = taskpool.execute(new taskpool.Task(rwlockReadStressTask, rwlock, counter));
-      let r4 = taskpool.execute(new taskpool.Task(rwlockReadStressTask, rwlock, counter));
-      let r5 = taskpool.execute(new taskpool.Task(rwlockReadStressTask, rwlock, counter));
-      let w1 = taskpool.execute(new taskpool.Task(rwlockWriteStressTask, rwlock, counter));
-      let w2 = taskpool.execute(new taskpool.Task(rwlockWriteStressTask, rwlock, counter));
-      let w3 = taskpool.execute(new taskpool.Task(rwlockWriteStressTask, rwlock, counter));
-      let w4 = taskpool.execute(new taskpool.Task(rwlockWriteStressTask, rwlock, counter));
-      let w5 = taskpool.execute(new taskpool.Task(rwlockWriteStressTask, rwlock, counter));
-      await Promise.all([r1, r2, r3, r4, r5, w1, w2, w3, w4, w5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(rwlockReadStressTask, rwlock, counter)));
+      }
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(rwlockWriteStressTask, rwlock, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(1000);
       } catch (error) {
         console.error(`LockFactorStressTest0200 failed: ${error}`);
@@ -306,12 +297,11 @@ export default function LockFactorStressTest(): void {
       const mutex = new Mutex();
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(mixedLockStressTask, mutex, rwlock, counter));
-      let p2 = taskpool.execute(new taskpool.Task(mixedLockStressTask, mutex, rwlock, counter));
-      let p3 = taskpool.execute(new taskpool.Task(mixedLockStressTask, mutex, rwlock, counter));
-      let p4 = taskpool.execute(new taskpool.Task(mixedLockStressTask, mutex, rwlock, counter));
-      let p5 = taskpool.execute(new taskpool.Task(mixedLockStressTask, mutex, rwlock, counter));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(mixedLockStressTask, mutex, rwlock, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(1000);
       } catch (error) {
         console.error(`LockFactorStressTest0300 failed: ${error}`);
@@ -332,37 +322,16 @@ export default function LockFactorStressTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
-      const task1 = new taskpool.Task(callbackStressTask, mutex, counter);
-      task1.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      const task2 = new taskpool.Task(callbackStressTask, mutex, counter);
-      task2.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      const task3 = new taskpool.Task(callbackStressTask, mutex, counter);
-      task3.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      const task4 = new taskpool.Task(callbackStressTask, mutex, counter);
-      task4.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      const task5 = new taskpool.Task(callbackStressTask, mutex, counter);
-      task5.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      const task6 = new taskpool.Task(callbackStressTask, mutex, counter);
-      task6.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      const task7 = new taskpool.Task(callbackStressTask, mutex, counter);
-      task7.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      const task8 = new taskpool.Task(callbackStressTask, mutex, counter);
-      task8.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      const task9 = new taskpool.Task(callbackStressTask, mutex, counter);
-      task9.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      const task10 = new taskpool.Task(callbackStressTask, mutex, counter);
-      task10.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      let p1 = taskpool.execute(task1);
-      let p2 = taskpool.execute(task2);
-      let p3 = taskpool.execute(task3);
-      let p4 = taskpool.execute(task4);
-      let p5 = taskpool.execute(task5);
-      let p6 = taskpool.execute(task6);
-      let p7 = taskpool.execute(task7);
-      let p8 = taskpool.execute(task8);
-      let p9 = taskpool.execute(task9);
-      let p10 = taskpool.execute(task10);
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        const task = new taskpool.Task(callbackStressTask, mutex, counter);
+        task.onReceiveData((data: string): void => {
+          counter.fetchAdd(1);
+          console.info('received data:', data);
+        });
+        promises.push(taskpool.execute(task));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(20);
       } catch (error) {
         console.error(`LockFactorStressTest0400 failed: ${error}`);
@@ -410,10 +379,11 @@ export default function LockFactorStressTest(): void {
         data.buffer.push(i);
       }
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(largeDataRWLockTask, rwlock, data, counter));
-      let p2 = taskpool.execute(new taskpool.Task(largeDataRWLockTask, rwlock, data, counter));
-      let p3 = taskpool.execute(new taskpool.Task(largeDataRWLockTask, rwlock, data, counter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(largeDataRWLockTask, rwlock, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       } catch (error) {
         console.error(`LockFactorStressTest0600 failed: ${error}`);
@@ -434,12 +404,11 @@ export default function LockFactorStressTest(): void {
       try {
       const mutex = new Mutex();
       const data = new StressSharedData();
-      let p1 = taskpool.execute(new taskpool.Task(multiLargeDataTask, mutex, data, 1));
-      let p2 = taskpool.execute(new taskpool.Task(multiLargeDataTask, mutex, data, 2));
-      let p3 = taskpool.execute(new taskpool.Task(multiLargeDataTask, mutex, data, 3));
-      let p4 = taskpool.execute(new taskpool.Task(multiLargeDataTask, mutex, data, 4));
-      let p5 = taskpool.execute(new taskpool.Task(multiLargeDataTask, mutex, data, 5));
-      await Promise.all([p1, p2, p3, p4, p5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: int = 1; i <= 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(multiLargeDataTask, mutex, data, i)));
+      }
+      await Promise.all(promises);
       expect(data.buffer.length).assertEqual(5000);
       } catch (error) {
         console.error(`LockFactorStressTest0700 failed: ${error}`);
@@ -460,17 +429,11 @@ export default function LockFactorStressTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(mutexLongRunningTask, mutex, counter));
-      let p2 = taskpool.execute(new taskpool.Task(mutexLongRunningTask, mutex, counter));
-      let p3 = taskpool.execute(new taskpool.Task(mutexLongRunningTask, mutex, counter));
-      let p4 = taskpool.execute(new taskpool.Task(mutexLongRunningTask, mutex, counter));
-      let p5 = taskpool.execute(new taskpool.Task(mutexLongRunningTask, mutex, counter));
-      let p6 = taskpool.execute(new taskpool.Task(mutexLongRunningTask, mutex, counter));
-      let p7 = taskpool.execute(new taskpool.Task(mutexLongRunningTask, mutex, counter));
-      let p8 = taskpool.execute(new taskpool.Task(mutexLongRunningTask, mutex, counter));
-      let p9 = taskpool.execute(new taskpool.Task(mutexLongRunningTask, mutex, counter));
-      let p10 = taskpool.execute(new taskpool.Task(mutexLongRunningTask, mutex, counter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(mutexLongRunningTask, mutex, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5000);
       } catch (error) {
         console.error(`LockFactorStressTest0800 failed: ${error}`);
@@ -491,9 +454,11 @@ export default function LockFactorStressTest(): void {
       try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(rwlockLongRunningTask, rwlock, counter));
-      let p2 = taskpool.execute(new taskpool.Task(rwlockLongRunningTask, rwlock, counter));
-      await Promise.all([p1, p2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(rwlockLongRunningTask, rwlock, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(1000);
       } catch (error) {
         console.error(`LockFactorStressTest0900 failed: ${error}`);
@@ -514,13 +479,16 @@ export default function LockFactorStressTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
-      const task1 = new taskpool.Task(callbackLongRunningTask, mutex, counter);
-      const task2 = new taskpool.Task(callbackLongRunningTask, mutex, counter);
-      const task3 = new taskpool.Task(callbackLongRunningTask, mutex, counter);
-      task1.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      task2.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      task3.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      await Promise.all([taskpool.execute(task1), taskpool.execute(task2), taskpool.execute(task3)]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        const task = new taskpool.Task(callbackLongRunningTask, mutex, counter);
+        task.onReceiveData((data: string): void => {
+          counter.fetchAdd(1);
+          console.info('received data:', data);
+        });
+        promises.push(taskpool.execute(task));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(6);
       } catch (error) {
         console.error(`LockFactorStressTest1000 failed: ${error}`);

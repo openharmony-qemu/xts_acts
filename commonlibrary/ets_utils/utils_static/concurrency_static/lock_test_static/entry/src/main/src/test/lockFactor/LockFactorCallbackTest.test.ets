@@ -362,37 +362,21 @@ export default function LockFactorCallbackTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
-      const task1 = new taskpool.Task(multiCallbackTask, mutex, counter);
-      const task2 = new taskpool.Task(multiCallbackTask, mutex, counter);
-      const task3 = new taskpool.Task(multiCallbackTask, mutex, counter);
-      task1.onReceiveData((data: string): void => {
-        console.info('received data:', data);
-        mutex.lock();
-        try {
-          counter.fetchAdd(1);
-        } finally {
-          mutex.unlock();
-        }
-      });
-      task2.onReceiveData((data: string): void => {
-        console.info('received data:', data);
-        mutex.lock();
-        try {
-          counter.fetchAdd(1);
-        } finally {
-          mutex.unlock();
-        }
-      });
-      task3.onReceiveData((data: string): void => {
-        console.info('received data:', data);
-        mutex.lock();
-        try {
-          counter.fetchAdd(1);
-        } finally {
-          mutex.unlock();
-        }
-      });
-      await Promise.all([taskpool.execute(task1), taskpool.execute(task2), taskpool.execute(task3)]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        const task = new taskpool.Task(multiCallbackTask, mutex, counter);
+        task.onReceiveData((data: string): void => {
+          console.info('received data:', data);
+          mutex.lock();
+          try {
+            counter.fetchAdd(1);
+          } finally {
+            mutex.unlock();
+          }
+        });
+        promises.push(taskpool.execute(task));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(6);
       } catch (error) {
         console.error(`LockFactorCallbackTest0600 failed: ${error}`);
@@ -439,17 +423,16 @@ export default function LockFactorCallbackTest(): void {
       try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
-      const task1 = new taskpool.Task(sendDataRWLockTask, rwlock, counter);
-      const task2 = new taskpool.Task(sendDataRWLockTask, rwlock, counter);
-      task1.onReceiveData((data: string): void => {
-        console.info('received data:', data);
-        counter.fetchAdd(1);
-      });
-      task2.onReceiveData((data: string): void => {
-        console.info('received data:', data);
-        counter.fetchAdd(1);
-      });
-      await Promise.all([taskpool.execute(task1), taskpool.execute(task2)]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 2; i++) {
+        const task = new taskpool.Task(sendDataRWLockTask, rwlock, counter);
+        task.onReceiveData((data: string): void => {
+          console.info('received data:', data);
+          counter.fetchAdd(1);
+        });
+        promises.push(taskpool.execute(task));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(4);
       } catch (error) {
         console.error(`LockFactorCallbackTest0800 failed: ${error}`);
@@ -502,20 +485,16 @@ export default function LockFactorCallbackTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
-      const task1 = new taskpool.Task(sendDataConcurrentTask, mutex, counter);
-      const task2 = new taskpool.Task(sendDataConcurrentTask, mutex, counter);
-      const task3 = new taskpool.Task(sendDataConcurrentTask, mutex, counter);
-      const task4 = new taskpool.Task(sendDataConcurrentTask, mutex, counter);
-      const task5 = new taskpool.Task(sendDataConcurrentTask, mutex, counter);
-      task1.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      task2.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      task3.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      task4.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      task5.onReceiveData((data: string): void => { counter.fetchAdd(1); console.info('received data:', data); });
-      await Promise.all([
-        taskpool.execute(task1), taskpool.execute(task2), taskpool.execute(task3),
-        taskpool.execute(task4), taskpool.execute(task5)
-      ]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        const task = new taskpool.Task(sendDataConcurrentTask, mutex, counter);
+        task.onReceiveData((data: string): void => {
+          counter.fetchAdd(1);
+          console.info('received data:', data);
+        });
+        promises.push(taskpool.execute(task));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(10);
       } catch (error) {
         console.error(`LockFactorCallbackTest1000 failed: ${error}`);
@@ -670,18 +649,25 @@ export default function LockFactorCallbackTest(): void {
     it('LockFactorCallbackTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
       const mutex = new Mutex();
-      const worker1 = new EAWorker('lockFactorCB04');
-      const worker2 = new EAWorker('lockFactorCB05');
-      worker1.start();
-      worker2.start();
+      let workerNames: string[] = ['lockFactorCB04', 'lockFactorCB05'];
+      let workers: EAWorker[] = [];
+      for (let i: int = 0; i < workerNames.length; i++) {
+        let worker = new EAWorker(workerNames[i], false);
+        worker.start();
+        workers.push(worker);
+      }
       try {
-        const job1 = worker1.run<number>(workerLockTask, mutex);
-        const job2 = worker2.run<number>(workerLockTask, mutex);
-        expect(job1.Await()).assertEqual(1);
-        expect(job2.Await()).assertEqual(1);
+        let jobs = new Array<Job<number>>();
+        for (let i: int = 0; i < workers.length; i++) {
+          jobs.push(workers[i].run<number>(workerLockTask, mutex));
+        }
+        for (let i: int = 0; i < jobs.length; i++) {
+          expect(jobs[i].Await()).assertEqual(1);
+        }
       } finally {
-        worker1.quit();
-        worker2.quit();
+        for (let i: int = 0; i < workers.length; i++) {
+          workers[i].quit();
+        }
       }
       } catch (error) {
         console.error(`LockFactorCallbackTest1500 failed: ${error}`);
@@ -736,10 +722,11 @@ export default function LockFactorCallbackTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(multiMessageTask, mutex, counter));
-      let p2 = taskpool.execute(new taskpool.Task(multiMessageTask, mutex, counter));
-      let p3 = taskpool.execute(new taskpool.Task(multiMessageTask, mutex, counter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(multiMessageTask, mutex, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       } catch (error) {
         console.error(`LockFactorCallbackTest1700 failed: ${error}`);

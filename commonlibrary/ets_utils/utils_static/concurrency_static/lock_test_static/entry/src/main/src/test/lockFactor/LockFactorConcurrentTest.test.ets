@@ -200,17 +200,11 @@ export default function LockFactorConcurrentTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(mutexContentionTask, mutex, counter));
-      let p2 = taskpool.execute(new taskpool.Task(mutexContentionTask, mutex, counter));
-      let p3 = taskpool.execute(new taskpool.Task(mutexContentionTask, mutex, counter));
-      let p4 = taskpool.execute(new taskpool.Task(mutexContentionTask, mutex, counter));
-      let p5 = taskpool.execute(new taskpool.Task(mutexContentionTask, mutex, counter));
-      let p6 = taskpool.execute(new taskpool.Task(mutexContentionTask, mutex, counter));
-      let p7 = taskpool.execute(new taskpool.Task(mutexContentionTask, mutex, counter));
-      let p8 = taskpool.execute(new taskpool.Task(mutexContentionTask, mutex, counter));
-      let p9 = taskpool.execute(new taskpool.Task(mutexContentionTask, mutex, counter));
-      let p10 = taskpool.execute(new taskpool.Task(mutexContentionTask, mutex, counter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(mutexContentionTask, mutex, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(1000);
       } catch (error) {
         console.error(`LockFactorConcurrentTest0100 failed: ${error}`);
@@ -231,17 +225,11 @@ export default function LockFactorConcurrentTest(): void {
       try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(readLockSharingTask, rwlock, counter));
-      let p2 = taskpool.execute(new taskpool.Task(readLockSharingTask, rwlock, counter));
-      let p3 = taskpool.execute(new taskpool.Task(readLockSharingTask, rwlock, counter));
-      let p4 = taskpool.execute(new taskpool.Task(readLockSharingTask, rwlock, counter));
-      let p5 = taskpool.execute(new taskpool.Task(readLockSharingTask, rwlock, counter));
-      let p6 = taskpool.execute(new taskpool.Task(readLockSharingTask, rwlock, counter));
-      let p7 = taskpool.execute(new taskpool.Task(readLockSharingTask, rwlock, counter));
-      let p8 = taskpool.execute(new taskpool.Task(readLockSharingTask, rwlock, counter));
-      let p9 = taskpool.execute(new taskpool.Task(readLockSharingTask, rwlock, counter));
-      let p10 = taskpool.execute(new taskpool.Task(readLockSharingTask, rwlock, counter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readLockSharingTask, rwlock, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(10);
       } catch (error) {
         console.error(`LockFactorConcurrentTest0200 failed: ${error}`);
@@ -262,17 +250,11 @@ export default function LockFactorConcurrentTest(): void {
       try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(writeLockExclusionTask, rwlock, counter));
-      let p2 = taskpool.execute(new taskpool.Task(writeLockExclusionTask, rwlock, counter));
-      let p3 = taskpool.execute(new taskpool.Task(writeLockExclusionTask, rwlock, counter));
-      let p4 = taskpool.execute(new taskpool.Task(writeLockExclusionTask, rwlock, counter));
-      let p5 = taskpool.execute(new taskpool.Task(writeLockExclusionTask, rwlock, counter));
-      let p6 = taskpool.execute(new taskpool.Task(writeLockExclusionTask, rwlock, counter));
-      let p7 = taskpool.execute(new taskpool.Task(writeLockExclusionTask, rwlock, counter));
-      let p8 = taskpool.execute(new taskpool.Task(writeLockExclusionTask, rwlock, counter));
-      let p9 = taskpool.execute(new taskpool.Task(writeLockExclusionTask, rwlock, counter));
-      let p10 = taskpool.execute(new taskpool.Task(writeLockExclusionTask, rwlock, counter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(writeLockExclusionTask, rwlock, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(10);
       } catch (error) {
         console.error(`LockFactorConcurrentTest0300 failed: ${error}`);
@@ -293,10 +275,11 @@ export default function LockFactorConcurrentTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(lockPassingTask, mutex, counter));
-      let p2 = taskpool.execute(new taskpool.Task(lockPassingTask, mutex, counter));
-      let p3 = taskpool.execute(new taskpool.Task(lockPassingTask, mutex, counter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockPassingTask, mutex, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       } catch (error) {
         console.error(`LockFactorConcurrentTest0400 failed: ${error}`);
@@ -342,27 +325,11 @@ export default function LockFactorConcurrentTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p2 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p3 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p4 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p5 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p6 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p7 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p8 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p9 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p10 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p11 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p12 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p13 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p14 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p15 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p16 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p17 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p18 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p19 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      let p20 = taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 20; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(taskPoolMutexTask, mutex, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(20);
       } catch (error) {
         console.error(`LockFactorConcurrentTest0600 failed: ${error}`);
@@ -383,27 +350,11 @@ export default function LockFactorConcurrentTest(): void {
       try {
       const rwlock = new RWLock();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p2 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p3 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p4 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p5 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p6 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p7 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p8 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p9 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p10 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p11 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p12 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p13 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p14 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p15 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p16 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p17 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p18 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p19 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      let p20 = taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter));
-      await Promise.all([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 20; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(taskPoolRWLockTask, rwlock, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(20);
       } catch (error) {
         console.error(`LockFactorConcurrentTest0700 failed: ${error}`);
@@ -481,17 +432,14 @@ export default function LockFactorConcurrentTest(): void {
       const rwlock = new RWLock();
       const stats = new MixedRWStats();
       const counter = new AtomicInt(0);
-      let r1 = taskpool.execute(new taskpool.Task(mixedReadTask, rwlock, stats, counter));
-      let r2 = taskpool.execute(new taskpool.Task(mixedReadTask, rwlock, stats, counter));
-      let r3 = taskpool.execute(new taskpool.Task(mixedReadTask, rwlock, stats, counter));
-      let r4 = taskpool.execute(new taskpool.Task(mixedReadTask, rwlock, stats, counter));
-      let r5 = taskpool.execute(new taskpool.Task(mixedReadTask, rwlock, stats, counter));
-      let w1 = taskpool.execute(new taskpool.Task(mixedWriteTask, rwlock, stats, counter));
-      let w2 = taskpool.execute(new taskpool.Task(mixedWriteTask, rwlock, stats, counter));
-      let w3 = taskpool.execute(new taskpool.Task(mixedWriteTask, rwlock, stats, counter));
-      let w4 = taskpool.execute(new taskpool.Task(mixedWriteTask, rwlock, stats, counter));
-      let w5 = taskpool.execute(new taskpool.Task(mixedWriteTask, rwlock, stats, counter));
-      await Promise.all([r1, r2, r3, r4, r5, w1, w2, w3, w4, w5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(mixedReadTask, rwlock, stats, counter)));
+      }
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(mixedWriteTask, rwlock, stats, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(10);
       expect(stats.activeReaders.load()).assertEqual(0);
       expect(stats.activeWriters.load()).assertEqual(0);
