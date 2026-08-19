@@ -28,3 +28,11 @@ export const StartAllInterceptor: (groupId: number) => number;
 export const TestCHttpRequest: (url: string) => number;
 export const RegisterInterceptorCallback: (callbackId: string, callback: (request: string, interceptorName: string) => void) => number;
 export const UnregisterCallback: (callbackId: string) => number;
+
+export const GetRequestUrl: () => string;
+export const GetRequestBody: () => string;
+export const GetResponseBody: () => string;
+export const GetRequestMethod: () => string;
+export const GetRequestHeader: () => string;
+export const GetResponseHeader: () => string;
+export const GetResponseCode: () => number;

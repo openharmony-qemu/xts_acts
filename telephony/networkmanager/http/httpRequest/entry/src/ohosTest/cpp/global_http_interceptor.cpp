@@ -16,6 +16,7 @@
 #include "global_http_interceptor.h"
 #include "callback.h"
 #include <hilog/log.h>
+#include <sstream>
 #include <string>
 
 static const int GLOBAL_NETSTACK = 0xFF00;
@@ -96,6 +97,7 @@ OH_Interceptor_Result g_request_group0_modify_url_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
+        SetCurrentRequestData(request);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group0_modify_url---");
         if (request->url.buffer) {
             std::string newurl = "http://www.baidu.com";
@@ -128,6 +130,7 @@ OH_Interceptor_Result g_request_group1_modify_method_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
+        SetCurrentRequestData(request);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group1_modify_method---");
         if (request->method.buffer) {
             std::string method = std::string(request->method.buffer, request->method.length);
@@ -161,6 +164,7 @@ OH_Interceptor_Result g_request_group2_modify_body_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
+        SetCurrentRequestData(request);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group2_modify_body---");
         if (request->body.buffer) {
             std::string body = std::string(request->body.buffer, request->body.length);
@@ -194,6 +198,7 @@ OH_Interceptor_Result g_request_group3_modify_headers_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
+        SetCurrentRequestData(request);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group3_modify_headers---");
         if (request->headers) {
             OH_Http_Interceptor_Headers *header = request->headers;
@@ -228,6 +233,7 @@ OH_Interceptor_Result g_request_group4_modify_abort_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
+        SetCurrentRequestData(request);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group4_modify_abort---");
         PrintRequestInfo(request);
         std::string callbackName = "g_request_group4_modify_abort_interceptor";
@@ -237,6 +243,9 @@ OH_Interceptor_Result g_request_group4_modify_abort_interceptor_handler(
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "Request JSON: %{public}s", result.requestJson.c_str());
         OH_LOG_Print(
             LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "Interceptor Name: %{public}s", result.interceptorName.c_str());
+        if (isModified != nullptr) {
+            *isModified = 1;
+        }
         return OH_ABORT;
     }
     return OH_CONTINUE;
@@ -255,6 +264,7 @@ OH_Interceptor_Result g_request_group10_readonly_url_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
+        SetCurrentRequestData(request);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group10_readonly_url---");
         if (request->url.buffer) {
             std::string url = "www.sina.com";
@@ -286,6 +296,7 @@ OH_Interceptor_Result g_request_group11_readonly_method_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
+        SetCurrentRequestData(request);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group11_readonly_method---");
         if (request->method.buffer) {
             std::string method = "GET";
@@ -317,6 +328,7 @@ OH_Interceptor_Result g_request_group12_readonly_headers_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
+        SetCurrentRequestData(request);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group12_readonly_headers---");
         if (request->headers) {
             OH_Http_Interceptor_Headers *header = request->headers;
@@ -350,6 +362,7 @@ OH_Interceptor_Result g_request_group13_readonly_body_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
+        SetCurrentRequestData(request);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group13_readonly_body---");
         if (request->body.buffer) {
             std::string body = "g_request_group13_readonly_body_interceptor_handler";
@@ -381,6 +394,7 @@ OH_Interceptor_Result g_request_group14_readonly_abort_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (request != nullptr) {
+        SetCurrentRequestData(request);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---request_group14_readonly_all---");
         PrintRequestInfo(request);
         std::string callbackName = "g_request_group14_readonly_abort_interceptor";
@@ -435,6 +449,7 @@ OH_Interceptor_Result g_response_group0_modify_body_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
+        SetCurrentResponseData(response);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group0_modify_body---");
         if (response->body.buffer) {
             OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group0_modify_body1---");
@@ -468,6 +483,7 @@ OH_Interceptor_Result g_response_group1_modify_responseCode_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
+        SetCurrentResponseData(response);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group1_modify_responseCode---");
         response->responseCode = OH_HTTP_FORBIDDEN;
         *isModified = 1;
@@ -495,6 +511,7 @@ OH_Interceptor_Result g_response_group2_modify_headers_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
+        SetCurrentResponseData(response);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group2_modify_headers---");
         if (response->headers) {
             OH_Http_Interceptor_Headers *tmp = response->headers;
@@ -529,6 +546,7 @@ OH_Interceptor_Result g_response_group3_modify_abort_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
+        SetCurrentResponseData(response);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group3_modify_abort---");
         PrintResponseInfo(response);
         std::string callbackName = "g_response_group3_modify_abort_interceptor";
@@ -555,6 +573,7 @@ OH_Interceptor_Result g_response_group10_readonly_body_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
+        SetCurrentResponseData(response);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group10_readonly_body---");
         if (response->body.buffer) {
             std::string body = "g_response_group10_readonly_body_interceptor_handler";
@@ -587,6 +606,7 @@ OH_Interceptor_Result g_response_group11_readonly_responseCode_interceptor_handl
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
+        SetCurrentResponseData(response);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group11_readonly_responseCode---");
         response->responseCode = OH_HTTP_NOT_FOUND;
         PrintResponseInfo(response);
@@ -646,6 +666,7 @@ OH_Interceptor_Result g_response_group13_readonly_abort_interceptor_handler(
     OH_Http_Interceptor_Request *request, OH_Http_Interceptor_Response *response, int32_t *isModified)
 {
     if (response != nullptr) {
+        SetCurrentResponseData(response);
         OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "---response_group13_readonly_abort---");
         PrintResponseInfo(response);
         std::string callbackName = "g_response_group13_readonly_abort_interceptor";
@@ -743,6 +764,93 @@ int32_t RemoveRequestInterceptor(int32_t groupId)
 {
     OH_Http_Interceptor *interceptor = GetRequestInterceptorByGroupId(groupId);
     return OH_Http_RemoveInterceptor(interceptor);
+}
+
+// ===== Global state for Get* functions =====
+static std::string g_lastRequestUrl;
+static std::string g_lastRequestMethod;
+static std::string g_lastRequestBody;
+static std::string g_lastRequestHeader;
+static std::string g_lastResponseBody;
+static std::string g_lastResponseHeader;
+static int16_t g_lastResponseCode = 0;
+
+void SetCurrentRequestData(const OH_Http_Interceptor_Request *request)
+{
+    if (request != nullptr) {
+        g_lastRequestUrl = (request->url.buffer != nullptr) ? std::string(request->url.buffer, request->url.length) : "";
+        g_lastRequestMethod = (request->method.buffer != nullptr) ? std::string(request->method.buffer, request->method.length) : "";
+        g_lastRequestBody = (request->body.buffer != nullptr) ? std::string(request->body.buffer, request->body.length) : "";
+        // Build headers string
+        std::stringstream headersStream;
+        OH_Http_Interceptor_Headers *header = request->headers;
+        bool first = true;
+        while (header != nullptr) {
+            if (header->data != nullptr) {
+                if (!first) headersStream << ", ";
+                headersStream << header->data;
+                first = false;
+            }
+            header = header->next;
+        }
+        g_lastRequestHeader = headersStream.str();
+    }
+}
+
+void SetCurrentResponseData(const OH_Http_Interceptor_Response *response)
+{
+    if (response != nullptr) {
+        g_lastResponseBody = (response->body.buffer != nullptr) ? std::string(response->body.buffer, response->body.length) : "";
+        g_lastResponseCode = response->responseCode;
+        // Build headers string
+        std::stringstream headersStream;
+        OH_Http_Interceptor_Headers *header = response->headers;
+        bool first = true;
+        while (header != nullptr) {
+            if (header->data != nullptr) {
+                if (!first) headersStream << ", ";
+                headersStream << header->data;
+                first = false;
+            }
+            header = header->next;
+        }
+        g_lastResponseHeader = headersStream.str();
+    }
+}
+
+const char* GetRequestUrl()
+{
+    return g_lastRequestUrl.c_str();
+}
+
+const char* GetRequestMethod()
+{
+    return g_lastRequestMethod.c_str();
+}
+
+const char* GetRequestBody()
+{
+    return g_lastRequestBody.c_str();
+}
+
+const char* GetRequestHeader()
+{
+    return g_lastRequestHeader.c_str();
+}
+
+const char* GetResponseBody()
+{
+    return g_lastResponseBody.c_str();
+}
+
+const char* GetResponseHeader()
+{
+    return g_lastResponseHeader.c_str();
+}
+
+int16_t GetResponseCode()
+{
+    return g_lastResponseCode;
 }
 
 int32_t RemoveResponseInterceptor(int32_t groupId)
