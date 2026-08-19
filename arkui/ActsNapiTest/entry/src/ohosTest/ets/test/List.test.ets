@@ -12,6 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import napiSpecDiffBatch1StablePart1Test from './NapiSpecDiff/batch1/NapiSpecDiffBatch1StablePart1.test';
+import napiSpecDiffBatch1StablePart2Test from './NapiSpecDiff/batch1/NapiSpecDiffBatch1StablePart2.test';
+import napiSpecDiffBatch2LifecycleTest from './NapiSpecDiff/batch2/NapiSpecDiffBatch2Lifecycle.test';
+import napiSpecDiffBatch3RuntimeSendableTest from './NapiSpecDiff/batch3/NapiSpecDiffBatch3RuntimeSendable.test';
+import napiSpecDiffBatch4StressProbeTest from './NapiSpecDiff/batch4/NapiSpecDiffBatch4StressProbe.test';
 import bufferTest from './NapiBuffer.test';
 import dataTest from './NapiData.test';
 import stringTest from './NapiString.test';
@@ -21,10 +26,6 @@ import napiCallbackRiskFinalizerTest from './NapiCallbackRisk/NapiCallbackRiskFi
 import napiCallbackRiskAsyncTest from './NapiCallbackRisk/NapiCallbackRiskAsync.test';
 import napiCallbackRiskJsModuleTest from './NapiCallbackRisk/NapiCallbackRiskJsModule.test';
 import napiCallbackRiskNativeBindingTest from './NapiCallbackRisk/NapiCallbackRiskNativeBinding.test';
-import napiSpecDiffBatch1StableTest from './NapiSpecDiff/batch1/NapiSpecDiffBatch1Stable.test';
-import napiSpecDiffBatch2LifecycleTest from './NapiSpecDiff/batch2/NapiSpecDiffBatch2Lifecycle.test';
-import napiSpecDiffBatch3RuntimeSendableTest from './NapiSpecDiff/batch3/NapiSpecDiffBatch3RuntimeSendable.test';
-import napiSpecDiffBatch4StressProbeTest from './NapiSpecDiff/batch4/NapiSpecDiffBatch4StressProbe.test';
 import napiCoverageSampleTest from './NapiCoverageSample/NapiCoverageSample.test';
 import mallocCoverageSampleTest from './MallocCoverageSample/MallocCoverageSample.test';
 
@@ -40,8 +41,8 @@ export default function testsuite() {
   napiCallbackRiskAsyncTest();
   napiCallbackRiskJsModuleTest();
   napiCallbackRiskNativeBindingTest();
-
-  napiSpecDiffBatch1StableTest();
+  napiSpecDiffBatch1StablePart1Test();
+  napiSpecDiffBatch1StablePart2Test();
   napiSpecDiffBatch2LifecycleTest();
   napiSpecDiffBatch3RuntimeSendableTest();
   napiSpecDiffBatch4StressProbeTest();
