@@ -556,7 +556,7 @@ export default function collectionsConcatArrayTest() {
 
 
     /**
-     * @tc.number SUB_COLLECTIONS_CONCAT_ARRAY2900
+     * @tc.number SUB_COLLECTIONS_CONCAT_ARRAY_2900
      * @tc.name testConcatArrayJoinNumber0029
      * @tc.desc Verify join method with number type elements.
      * @tc.size SmallTest

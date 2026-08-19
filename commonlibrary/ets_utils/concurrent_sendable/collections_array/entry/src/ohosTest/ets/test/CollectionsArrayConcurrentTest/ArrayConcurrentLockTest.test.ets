@@ -86,6 +86,9 @@ export default function arrayConcurrentLockTest(): void {
         }
         try {
           await lock.lockAsync(async (err?: Error): Promise<void> => {
+            if (err !== undefined) {
+              console.error(`lockAsync callback error: ${err.message}`);
+            }
             arr.push(9999);
           });
         } catch (err) {

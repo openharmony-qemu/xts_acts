@@ -57,7 +57,7 @@ function concurrentCacheTask(): boolean {
     }
     return true;
   } catch (error) {
-    console.error('Concurrent task failed:', (error as Error).message);
+    console.error('Concurrent task failed:', error.message);
     return false;
   }
 }

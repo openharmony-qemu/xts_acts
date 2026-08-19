@@ -668,8 +668,10 @@ export default function collectionsMapConcurrentTest() {
         let waitPromise: Promise<void> = cv.wait().then(() => {
           map.set('test', 1);
           modified = true;
+          done();
         }).catch((err: Error) => {
           console.error(`cv.wait failed: ${err.message}`);
+          done();
         });
 
         expect(map.get('test')).assertEqual(0);
