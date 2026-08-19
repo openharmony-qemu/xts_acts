@@ -33,13 +33,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescDestroy001 start====");
+        console.info('====>NnrtTensorDescDestroy001 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_DestroyA();
-        console.info("====>NnrtTensorDescDestroy001 result: " + result);
+        console.info('====>NnrtTensorDescDestroy001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescDestroy001 catch err: " + err);
+        console.error('====>NnrtTensorDescDestroy001 catch err: ' + err);
       }
     })
 
@@ -53,13 +53,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescDestroy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescDestroy002 start====");
+        console.info('====>NnrtTensorDescDestroy002 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_DestroyB();
-        console.info("====>NnrtTensorDescDestroy002 result: " + result);
+        console.info('====>NnrtTensorDescDestroy002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescDestroy002 catch err: " + err);
+        console.error('====>NnrtTensorDescDestroy002 catch err: ' + err);
       }
     })
 
@@ -73,13 +73,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescSetName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescSetName001 start====");
+        console.info('====>NnrtTensorDescSetName001 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_SetNameA();
-        console.info("====>NnrtTensorDescSetName001 result: " + result);
+        console.info('====>NnrtTensorDescSetName001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescSetName001 catch err: " + err);
+        console.error('====>NnrtTensorDescSetName001 catch err: ' + err);
       }
     })
 
@@ -93,13 +93,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescSetName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescSetName002 start====");
+        console.info('====>NnrtTensorDescSetName002 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_SetNameB();
-        console.info("====>NnrtTensorDescSetName002 result: " + result);
+        console.info('====>NnrtTensorDescSetName002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescSetName002 catch err: " + err);
+        console.error('====>NnrtTensorDescSetName002 catch err: ' + err);
       }
     })
 
@@ -113,13 +113,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescSetName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescSetName003 start====");
+        console.info('====>NnrtTensorDescSetName003 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_SetNameC();
-        console.info("====>NnrtTensorDescSetName003 result: " + result);
+        console.info('====>NnrtTensorDescSetName003 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescSetName003 catch err: " + err);
+        console.error('====>NnrtTensorDescSetName003 catch err: ' + err);
       }
     })
 
@@ -133,13 +133,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetName001 start====");
+        console.info('====>NnrtTensorDescGetName001 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetNameA();
-        console.info("====>NnrtTensorDescGetName001 result: " + result);
+        console.info('====>NnrtTensorDescGetName001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetName001 catch err: " + err);
+        console.error('====>NnrtTensorDescGetName001 catch err: ' + err);
       }
     })
 
@@ -153,13 +153,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetName002 start====");
+        console.info('====>NnrtTensorDescGetName002 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetNameB();
-        console.info("====>NnrtTensorDescGetName002 result: " + result);
+        console.info('====>NnrtTensorDescGetName002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetName002 catch err: " + err);
+        console.error('====>NnrtTensorDescGetName002 catch err: ' + err);
       }
     })
 
@@ -173,13 +173,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetName003 start====");
+        console.info('====>NnrtTensorDescGetName003 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetNameC();
-        console.info("====>NnrtTensorDescGetName003 result: " + result);
+        console.info('====>NnrtTensorDescGetName003 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetName003 catch err: " + err);
+        console.error('====>NnrtTensorDescGetName003 catch err: ' + err);
       }
     })
 
@@ -193,13 +193,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescSetDataType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescSetDataType001 start====");
+        console.info('====>NnrtTensorDescSetDataType001 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_SetDataTypeA();
-        console.info("====>NnrtTensorDescSetDataType001 result: " + result);
+        console.info('====>NnrtTensorDescSetDataType001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescSetDataType001 catch err: " + err);
+        console.error('====>NnrtTensorDescSetDataType001 catch err: ' + err);
       }
     })
 
@@ -213,13 +213,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescSetDataType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescSetDataType002 start====");
+        console.info('====>NnrtTensorDescSetDataType002 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_SetDataTypeB();
-        console.info("====>NnrtTensorDescSetDataType002 result: " + result);
+        console.info('====>NnrtTensorDescSetDataType002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescSetDataType002 catch err: " + err);
+        console.error('====>NnrtTensorDescSetDataType002 catch err: ' + err);
       }
     })
 
@@ -233,13 +233,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetDataType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetDataType001 start====");
+        console.info('====>NnrtTensorDescGetDataType001 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetDataTypeA();
-        console.info("====>NnrtTensorDescGetDataType001 result: " + result);
+        console.info('====>NnrtTensorDescGetDataType001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetDataType001 catch err: " + err);
+        console.error('====>NnrtTensorDescGetDataType001 catch err: ' + err);
       }
     })
 
@@ -253,13 +253,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetDataType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetDataType002 start====");
+        console.info('====>NnrtTensorDescGetDataType002 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetDataTypeB();
-        console.info("====>NnrtTensorDescGetDataType002 result: " + result);
+        console.info('====>NnrtTensorDescGetDataType002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetDataType002 catch err: " + err);
+        console.error('====>NnrtTensorDescGetDataType002 catch err: ' + err);
       }
     })
 
@@ -273,13 +273,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetDataType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetDataType003 start====");
+        console.info('====>NnrtTensorDescGetDataType003 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetDataTypeC();
-        console.info("====>NnrtTensorDescGetDataType003 result: " + result);
+        console.info('====>NnrtTensorDescGetDataType003 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetDataType003 catch err: " + err);
+        console.error('====>NnrtTensorDescGetDataType003 catch err: ' + err);
       }
     })
 
@@ -293,13 +293,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescSetShape001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescSetShape001 start====");
+        console.info('====>NnrtTensorDescSetShape001 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_SetShapeA();
-        console.info("====>NnrtTensorDescSetShape001 result: " + result);
+        console.info('====>NnrtTensorDescSetShape001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescSetShape001 catch err: " + err);
+        console.error('====>NnrtTensorDescSetShape001 catch err: ' + err);
       }
     })
 
@@ -313,13 +313,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescSetShape002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescSetShape002 start====");
+        console.info('====>NnrtTensorDescSetShape002 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_SetShapeB();
-        console.info("====>NnrtTensorDescSetShape002 result: " + result);
+        console.info('====>NnrtTensorDescSetShape002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescSetShape002 catch err: " + err);
+        console.error('====>NnrtTensorDescSetShape002 catch err: ' + err);
       }
     })
 
@@ -333,13 +333,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescSetShape003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescSetShape003 start====");
+        console.info('====>NnrtTensorDescSetShape003 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_SetShapeC();
-        console.info("====>NnrtTensorDescSetShape003 result: " + result);
+        console.info('====>NnrtTensorDescSetShape003 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescSetShape003 catch err: " + err);
+        console.error('====>NnrtTensorDescSetShape003 catch err: ' + err);
       }
     })
 
@@ -353,13 +353,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescSetShape004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescSetShape004 start====");
+        console.info('====>NnrtTensorDescSetShape004 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_SetShapeD();
-        console.info("====>NnrtTensorDescSetShape004 result: " + result);
+        console.info('====>NnrtTensorDescSetShape004 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescSetShape004 catch err: " + err);
+        console.error('====>NnrtTensorDescSetShape004 catch err: ' + err);
       }
     })
 
@@ -373,13 +373,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetShape001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetShape001 start====");
+        console.info('====>NnrtTensorDescGetShape001 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetShapeA();
-        console.info("====>NnrtTensorDescGetShape001 result: " + result);
+        console.info('====>NnrtTensorDescGetShape001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetShape001 catch err: " + err);
+        console.error('====>NnrtTensorDescGetShape001 catch err: ' + err);
       }
     })
 
@@ -393,13 +393,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetShape002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetShape002 start====");
+        console.info('====>NnrtTensorDescGetShape002 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetShapeB();
-        console.info("====>NnrtTensorDescGetShape002 result: " + result);
+        console.info('====>NnrtTensorDescGetShape002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetShape002 catch err: " + err);
+        console.error('====>NnrtTensorDescGetShape002 catch err: ' + err);
       }
     })
 
@@ -413,13 +413,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetShape003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetShape003 start====");
+        console.info('====>NnrtTensorDescGetShape003 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetShapeC();
-        console.info("====>NnrtTensorDescGetShape003 result: " + result);
+        console.info('====>NnrtTensorDescGetShape003 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetShape003 catch err: " + err);
+        console.error('====>NnrtTensorDescGetShape003 catch err: ' + err);
       }
     })
 
@@ -433,13 +433,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetShape004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetShape004 start====");
+        console.info('====>NnrtTensorDescGetShape004 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetShapeD();
-        console.info("====>NnrtTensorDescGetShape004 result: " + result);
+        console.info('====>NnrtTensorDescGetShape004 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetShape004 catch err: " + err);
+        console.error('====>NnrtTensorDescGetShape004 catch err: ' + err);
       }
     })
 
@@ -453,13 +453,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescSetFormat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescSetFormat001 start====");
+        console.info('====>NnrtTensorDescSetFormat001 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_SetFormatA();
-        console.info("====>NnrtTensorDescSetFormat001 result: " + result);
+        console.info('====>NnrtTensorDescSetFormat001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescSetFormat001 catch err: " + err);
+        console.error('====>NnrtTensorDescSetFormat001 catch err: ' + err);
       }
     })
 
@@ -473,13 +473,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescSetFormat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescSetFormat002 start====");
+        console.info('====>NnrtTensorDescSetFormat002 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_SetFormatB();
-        console.info("====>NnrtTensorDescSetFormat002 result: " + result);
+        console.info('====>NnrtTensorDescSetFormat002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescSetFormat002 catch err: " + err);
+        console.error('====>NnrtTensorDescSetFormat002 catch err: ' + err);
       }
     })
 
@@ -493,13 +493,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetFormat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetFormat001 start====");
+        console.info('====>NnrtTensorDescGetFormat001 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetFormatA();
-        console.info("====>NnrtTensorDescGetFormat001 result: " + result);
+        console.info('====>NnrtTensorDescGetFormat001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetFormat001 catch err: " + err);
+        console.error('====>NnrtTensorDescGetFormat001 catch err: ' + err);
       }
     })
 
@@ -513,13 +513,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetFormat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetFormat002 start====");
+        console.info('====>NnrtTensorDescGetFormat002 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetFormatB();
-        console.info("====>NnrtTensorDescGetFormat002 result: " + result);
+        console.info('====>NnrtTensorDescGetFormat002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetFormat002 catch err: " + err);
+        console.error('====>NnrtTensorDescGetFormat002 catch err: ' + err);
       }
     })
 
@@ -533,13 +533,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetFormat003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetFormat003 start====");
+        console.info('====>NnrtTensorDescGetFormat003 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetFormatC();
-        console.info("====>NnrtTensorDescGetFormat003 result: " + result);
+        console.info('====>NnrtTensorDescGetFormat003 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetFormat003 catch err: " + err);
+        console.error('====>NnrtTensorDescGetFormat003 catch err: ' + err);
       }
     })
 
@@ -553,13 +553,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetElementCount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetElementCount001 start====");
+        console.info('====>NnrtTensorDescGetElementCount001 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetElementCountA();
-        console.info("====>NnrtTensorDescGetElementCount001 result: " + result);
+        console.info('====>NnrtTensorDescGetElementCount001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetElementCount001 catch err: " + err);
+        console.error('====>NnrtTensorDescGetElementCount001 catch err: ' + err);
       }
     })
 
@@ -573,13 +573,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetElementCount002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetElementCount002 start====");
+        console.info('====>NnrtTensorDescGetElementCount002 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetElementCountB();
-        console.info("====>NnrtTensorDescGetElementCount002 result: " + result);
+        console.info('====>NnrtTensorDescGetElementCount002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetElementCount002 catch err: " + err);
+        console.error('====>NnrtTensorDescGetElementCount002 catch err: ' + err);
       }
     })
 
@@ -593,13 +593,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetElementCount003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetElementCount003 start====");
+        console.info('====>NnrtTensorDescGetElementCount003 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetElementCountC();
-        console.info("====>NnrtTensorDescGetElementCount003 result: " + result);
+        console.info('====>NnrtTensorDescGetElementCount003 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetElementCount003 catch err: " + err);
+        console.error('====>NnrtTensorDescGetElementCount003 catch err: ' + err);
       }
     })
 
@@ -613,13 +613,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetElementCount004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetElementCount004 start====");
+        console.info('====>NnrtTensorDescGetElementCount004 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetElementCountD();
-        console.info("====>NnrtTensorDescGetElementCount004 result: " + result);
+        console.info('====>NnrtTensorDescGetElementCount004 result: ' + result);
         expect(result).assertEqual(OH_NN_DYNAMIC_SHAPE);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetElementCount004 catch err: " + err);
+        console.error('====>NnrtTensorDescGetElementCount004 catch err: ' + err);
       }
     })
 
@@ -633,13 +633,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetByteSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetByteSize001 start====");
+        console.info('====>NnrtTensorDescGetByteSize001 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetByteSizeA();
-        console.info("====>NnrtTensorDescGetByteSize001 result: " + result);
+        console.info('====>NnrtTensorDescGetByteSize001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetByteSize001 catch err: " + err);
+        console.error('====>NnrtTensorDescGetByteSize001 catch err: ' + err);
       }
     })
 
@@ -653,13 +653,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetByteSize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetByteSize002 start====");
+        console.info('====>NnrtTensorDescGetByteSize002 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetByteSizeB();
-        console.info("====>NnrtTensorDescGetByteSize002 result: " + result);
+        console.info('====>NnrtTensorDescGetByteSize002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetByteSize002 catch err: " + err);
+        console.error('====>NnrtTensorDescGetByteSize002 catch err: ' + err);
       }
     })
 
@@ -673,13 +673,13 @@ export default function ActsNeuralNetworkCoreTest() {
      */
     it('NnrtTensorDescGetByteSize003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorDescGetByteSize003 start====");
+        console.info('====>NnrtTensorDescGetByteSize003 start====');
         let result : number = neuralnetworkcoretest.NNTensorDesc_GetByteSizeC();
-        console.info("====>NnrtTensorDescGetByteSize003 result: " + result);
+        console.info('====>NnrtTensorDescGetByteSize003 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorDescGetByteSize003 catch err: " + err);
+        console.error('====>NnrtTensorDescGetByteSize003 catch err: ' + err);
       }
     })
   })
