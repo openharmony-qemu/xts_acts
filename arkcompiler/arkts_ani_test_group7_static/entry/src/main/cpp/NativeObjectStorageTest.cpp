@@ -23,23 +23,12 @@
 #include "AniObjectTypeTest.h"
 #include "ContainerStorageTest.h"
 
-constexpr size_t LOG_BUFFER_SIZE = 512;
-
 void AniTestLog(const char *fmt, ...)
 {
-    char buf[LOG_BUFFER_SIZE] = {0};
     va_list args;
     va_start(args, fmt);
-#if __has_include(<securec.h>)
-    int ret = vsnprintf_s(buf, sizeof(buf), sizeof(buf) - 1, fmt, args);
-#else
-    int ret = vsnprintf(buf, sizeof(buf) - 1, fmt, args);
-#endif
+    OH_LOG_VPrint(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, fmt, args);
     va_end(args);
-    if (ret < 0) {
-        return;
-    }
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "%{public}s", buf);
 }
 
 ani_boolean FindClassByName(ani_env *env, const char *className, ani_class *outCls)

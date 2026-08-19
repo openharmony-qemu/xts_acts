@@ -18,6 +18,14 @@
 
 namespace {
 
+struct MutexTestContext {
+    ani_ref mutexRef { nullptr };
+    ani_class mutexCls { nullptr };
+    ani_method lockMethod { nullptr };
+    ani_method unlockMethod { nullptr };
+    ani_method tryLockMethod { nullptr };
+};
+
 ani_boolean TestEmptyMapGetException(ani_env *env, ani_object manager)
 {
     ani_ref mapRef = nullptr;
@@ -134,74 +142,102 @@ ani_boolean TestArrayIndexOutOfBounds(ani_env *env, ani_object manager)
                ? ANI_TRUE : ANI_FALSE;
 }
 
-ani_boolean MutexBasicLockUnlock(ani_env *env, ani_ref mutexRef, ani_method lockMethod, ani_method unlockMethod)
+ani_boolean MutexBasicLockUnlock(ani_env *env, const MutexTestContext &ctx)
 {
-    if (env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), lockMethod) != ANI_OK) {
+    if (env->Object_CallMethod_Void(static_cast<ani_object>(ctx.mutexRef), ctx.lockMethod) != ANI_OK) {
         env->ResetError();
         return ANI_FALSE;
     }
-    if (env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), unlockMethod) != ANI_OK) {
+    if (env->Object_CallMethod_Void(static_cast<ani_object>(ctx.mutexRef), ctx.unlockMethod) != ANI_OK) {
         env->ResetError();
         return ANI_FALSE;
     }
     return ANI_TRUE;
 }
 
-ani_boolean MutexTryLockWhenHeld(ani_env *env, ani_ref mutexRef, ani_class mutexCls,
-                                 ani_method lockMethod, ani_method unlockMethod, ani_boolean *rejected)
+struct MutexTryLockResult {
+    ani_boolean success { ANI_FALSE };
+    ani_boolean rejected { ANI_FALSE };
+};
+
+ani_boolean MutexLock(ani_env *env, const MutexTestContext &ctx)
 {
-    *rejected = ANI_FALSE;
-    ani_method tryLockMethod = nullptr;
-    if (env->Class_FindMethod(mutexCls, "tryLock", ":z", &tryLockMethod) != ANI_OK) {
-        return ANI_TRUE;
-    }
-    if (env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), lockMethod) != ANI_OK) {
+    if (env->Object_CallMethod_Void(static_cast<ani_object>(ctx.mutexRef), ctx.lockMethod) != ANI_OK) {
         env->ResetError();
         return ANI_FALSE;
     }
-    ani_boolean tryLockResult = ANI_TRUE;
-    env->Object_CallMethod_Boolean(static_cast<ani_object>(mutexRef), tryLockMethod, &tryLockResult);
-    env->ResetError();
-    if (env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), unlockMethod) != ANI_OK) {
-        env->ResetError();
-        return ANI_FALSE;
-    }
-    if (!tryLockResult) {
-        *rejected = ANI_TRUE;
-        return ANI_TRUE;
-    }
-    env->Object_CallMethod_Void(static_cast<ani_object>(mutexRef), unlockMethod);
-    env->ResetError();
     return ANI_TRUE;
+}
+
+ani_boolean MutexUnlock(ani_env *env, const MutexTestContext &ctx)
+{
+    if (env->Object_CallMethod_Void(static_cast<ani_object>(ctx.mutexRef), ctx.unlockMethod) != ANI_OK) {
+        env->ResetError();
+        return ANI_FALSE;
+    }
+    return ANI_TRUE;
+}
+
+MutexTryLockResult MutexTryLockWhenHeld(ani_env *env, const MutexTestContext &ctx)
+{
+    MutexTryLockResult result;
+    result.success = ANI_FALSE;
+    result.rejected = ANI_FALSE;
+
+    if (ctx.tryLockMethod == nullptr) {
+        result.success = ANI_TRUE;
+        return result;
+    }
+
+    if (!MutexLock(env, ctx)) {
+        return result;
+    }
+
+    ani_boolean tryLockResult = ANI_TRUE;
+    env->Object_CallMethod_Boolean(static_cast<ani_object>(ctx.mutexRef), ctx.tryLockMethod, &tryLockResult);
+    env->ResetError();
+
+    if (!MutexUnlock(env, ctx)) {
+        return result;
+    }
+
+    if (!tryLockResult) {
+        result.rejected = ANI_TRUE;
+        result.success = ANI_TRUE;
+        return result;
+    }
+
+    env->Object_CallMethod_Void(static_cast<ani_object>(ctx.mutexRef), ctx.unlockMethod);
+    env->ResetError();
+    result.success = ANI_TRUE;
+    return result;
 }
 
 ani_boolean TestMutexDoubleLockException(ani_env *env, ani_object manager)
 {
-    ani_ref mutexRef = nullptr;
-    if (env->Object_GetFieldByName_Ref(manager, "mutex", &mutexRef) != ANI_OK) {
+    MutexTestContext ctx;
+    if (env->Object_GetFieldByName_Ref(manager, "mutex", &ctx.mutexRef) != ANI_OK) {
         return ANI_FALSE;
     }
-    ani_class mutexCls = nullptr;
-    if (FindClassFallback(env, "Mutex", &mutexCls) != ANI_TRUE) {
+    if (FindClassFallback(env, "Mutex", &ctx.mutexCls) != ANI_TRUE) {
         return ANI_FALSE;
     }
-    ani_method lockMethod = nullptr;
-    ani_method unlockMethod = nullptr;
-    if (env->Class_FindMethod(mutexCls, "lock", ":", &lockMethod) != ANI_OK ||
-        env->Class_FindMethod(mutexCls, "unlock", ":", &unlockMethod) != ANI_OK) {
+    if (env->Class_FindMethod(ctx.mutexCls, "lock", ":", &ctx.lockMethod) != ANI_OK ||
+        env->Class_FindMethod(ctx.mutexCls, "unlock", ":", &ctx.unlockMethod) != ANI_OK) {
         return ANI_FALSE;
     }
-    if (!MutexBasicLockUnlock(env, mutexRef, lockMethod, unlockMethod)) {
+    (void)env->Class_FindMethod(ctx.mutexCls, "tryLock", ":z", &ctx.tryLockMethod);
+    if (!MutexBasicLockUnlock(env, ctx)) {
         return ANI_FALSE;
     }
-    ani_boolean tryLockRejected = ANI_FALSE;
-    if (!MutexTryLockWhenHeld(env, mutexRef, mutexCls, lockMethod, unlockMethod, &tryLockRejected)) {
+    MutexTryLockResult tryLockResult = MutexTryLockWhenHeld(env, ctx);
+    if (!tryLockResult.success) {
         return ANI_FALSE;
     }
-    if (tryLockRejected) {
+    if (tryLockResult.rejected) {
         return ANI_TRUE;
     }
-    return MutexBasicLockUnlock(env, mutexRef, lockMethod, unlockMethod);
+    return MutexBasicLockUnlock(env, ctx);
 }
 
 ani_boolean TestGlobalRefDeleteNullException(ani_env *env, ani_object manager)
