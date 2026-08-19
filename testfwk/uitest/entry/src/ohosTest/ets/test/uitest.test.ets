@@ -6441,16 +6441,21 @@ export default function UiTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testScrollToBottomSpeedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let scrollBar = await driver.findComponent(ON.type('Scroll'))
-            expect(scrollBar != null).assertTrue()
-            await scrollBar.scrollToBottom(null)
-            await driver.delayMs(waitUiReadyMs)
-            let button = await driver.findComponent(ON.text('bottom'))
-            expect(await button.getText() == 'bottom').assertTrue()
-            await stopApplication('com.uitestScene.acts')
+        it('testScrollToBottomSpeedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let scrollBar = await driver.findComponent(ON.type('Scroll'))
+                expect(scrollBar != null).assertTrue()
+                await scrollBar.scrollToBottom(null)
+                await driver.delayMs(waitUiReadyMs)
+                let button = await driver.findComponent(ON.text('bottom'))
+                expect(await button.getText() == 'bottom').assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            } catch (error) {
+                expect().assertFail();
+            }
+            done()
         })
 
         /**
@@ -6461,16 +6466,21 @@ export default function UiTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testScrollToBottomSpeedUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let scrollBar = await driver.findComponent(ON.type('Scroll'))
-            expect(scrollBar != null).assertTrue()
-            await scrollBar.scrollToBottom(undefined)
-            await driver.delayMs(waitUiReadyMs)
-            let button = await driver.findComponent(ON.text('bottom'))
-            expect(await button.getText() == 'bottom').assertTrue()
-            await stopApplication('com.uitestScene.acts')
+        it('testScrollToBottomSpeedUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let scrollBar = await driver.findComponent(ON.type('Scroll'))
+                expect(scrollBar != null).assertTrue()
+                await scrollBar.scrollToBottom(undefined)
+                await driver.delayMs(waitUiReadyMs)
+                let button = await driver.findComponent(ON.text('bottom'))
+                expect(await button.getText() == 'bottom').assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            } catch (error) {
+                expect().assertFail()
+            }
+            done()
         })
 
         /**
@@ -6692,7 +6702,7 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testGetDisplaySizefling
+         * @tc.name   testGetDisplaySize
          * @tc.number SUB_testfwk_uitest_Api9_0058
          * @tc.desc   get the size of the device display.
          * @tc.type   FUNCTION
