@@ -24,11 +24,11 @@ export default class MyAbilityStage extends AbilityStage {
 
   onAcceptWant(want: Want): string {
     hilog.info(0x000, 'testTag', 'abilitystage onAcceptWant: ' + want.parameters?.flag);
-    if (want.parameters?.flag == 'auto') {
+    if (want.parameters.flag == 'auto') {
       flagRecord++;
       return 'flag' + flagRecord;
     }
-    if (want.parameters?.flag == 'none') {
+    if (want.parameters.flag == 'none') {
       return '';
     }
     return '222';
