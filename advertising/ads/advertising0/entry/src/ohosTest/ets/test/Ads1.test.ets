@@ -110,11 +110,11 @@ export default function adsTestPart2() {
           expect(errorMsg).assertInstanceOf('String');
           done();
         },
-        onAdLoadSuccess: (ads: Map<string, Array<advertising.Advertisement>>) => {
+        onAdLoadSuccess: (ads: Map<string, advertising.Advertisement[]>) => {
           hilog.info(Domain, TAG, 'request ad success');
           expect(ads != null).assertEqual(true);
-          let returnAds: Array<advertising.Advertisement> = [];
-          ads.forEach((adsArray: Array<advertising.Advertisement>) => {
+          let returnAds: advertising.Advertisement[] = [];
+          ads.forEach((adsArray: advertising.Advertisement[]) => {
             returnAds.push(...adsArray);
           });
           // empty content[] may yield zero ads; callback itself is the contract under test

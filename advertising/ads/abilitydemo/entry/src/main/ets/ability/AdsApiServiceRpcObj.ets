@@ -43,7 +43,7 @@ export default class AdsApiServiceRpcObj extends rpc.RemoteObject {
   }
 
   async doCheckCode(code: number, rpcCallbackFunc: IRpcCallback, data: rpc.MessageSequence): Promise<boolean> {
-    const ads: Array<advertising.Advertisement> = [];
+    const ads: advertising.Advertisement[] = [];
     ads.push({
       adType: 7,
       uniqueId: '122222',
@@ -53,7 +53,7 @@ export default class AdsApiServiceRpcObj extends rpc.RemoteObject {
       clicked: false
     });
     const slot1: string = 'test1';
-    const resMap: Map<string, Array<advertising.Advertisement>> = new Map();
+    const resMap: Map<string, advertising.Advertisement[]> = new Map();
     resMap.set(slot1, ads);
     if (code === 1) {
       // 读取并解析请求参数
@@ -61,7 +61,7 @@ export default class AdsApiServiceRpcObj extends rpc.RemoteObject {
     }
     if (code === 2) {
       // 读取响应体
-      const buffer: Array<string> = [];
+      const buffer: string[] = [];
       data.readStringArray(buffer);
       const respStr: string = buffer.join('');
       Logger.i(TAG, `get the respStr from rpc value is : ${respStr}`);
@@ -89,7 +89,7 @@ export default class AdsApiServiceRpcObj extends rpc.RemoteObject {
     return true;
   }
 
-  private checkCode(data: rpc.MessageSequence, rpcCallbackFunc: IRpcCallback, resMap: Map<string, Array<advertising.Advertisement>>): void {
+  private checkCode(data: rpc.MessageSequence, rpcCallbackFunc: IRpcCallback, resMap: Map<string, advertising.Advertisement[]>): void {
     interface ReqData {
       reqParams: string;
       adOptions: string;

@@ -19,7 +19,7 @@ import type { Permissions } from '@ohos.abilityAccessCtrl';
 const TAG = 'PermissionUtil';
 
 export class PermissionUtil {
-  private static permissions: Array<Permissions> = ['ohos.permission.READ_CALENDAR'];
+  private static permissions: Permissions[] = ['ohos.permission.READ_CALENDAR'];
 
   public static async requestOAIDTrackingConsentPermissions(context: common.UIAbilityContext): Promise<void> {
     let atManager = abilityAccessCtrl.createAtManager();

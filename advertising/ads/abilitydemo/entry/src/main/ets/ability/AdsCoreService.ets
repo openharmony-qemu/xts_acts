@@ -24,7 +24,7 @@ export default class AdsExtensionAbility extends AdsServiceExtensionAbility {
 
   onLoadAd(adParam: advertising.AdRequestParams, adOptions: advertising.AdOptions, respCallback: RespCallback): void {
     Logger.i(TAG, `onLoadAd, adid is : ${adParam.adId}`);
-    const resMap: Map<string, Array<advertising.Advertisement>> = new Map();
+    const resMap: Map<string, advertising.Advertisement[]> = new Map();
     if (adParam.adId === 'adRequest21800003') {
       respCallback(resMap);
       return;
@@ -34,7 +34,7 @@ export default class AdsExtensionAbility extends AdsServiceExtensionAbility {
     }
     try {
       Logger.i(TAG, `onLoadAd, adParam: ${JSON.stringify(adParam)}, adOptions: ${JSON.stringify(adOptions)}`);
-      const ads: Array<advertising.Advertisement> = [];
+      const ads: advertising.Advertisement[] = [];
       ads.push({adType: 7, uniqueId: '122222', rewardVerifyConfig: new Map<string, string>(), rewarded: false, shown: false,  clicked: false});
       const slot1: string = "test1";
       resMap.set(slot1, ads);
@@ -49,7 +49,7 @@ export default class AdsExtensionAbility extends AdsServiceExtensionAbility {
   }
 
   onLoadAdWithMultiSlots(adParams: advertising.AdRequestParams[], adOptions: advertising.AdOptions, respCallback: RespCallback): void {
-    const resMap: Map<string, Array<advertising.Advertisement>> = new Map();
+    const resMap: Map<string, advertising.Advertisement[]> = new Map();
     Logger.i(TAG, `onLoadAdWithMultiSlots, adParams is : ${adParams.length}, adid is : ${adParams[0]?.adId}`);
     if (adParams.length === 1 && adParams[0].adId === 'multiAdRequestError21800003') {
       Logger.i(TAG, `onLoadAdWithMultiSlots, adParams: ${JSON.stringify(adParams)}, adOptions: ${JSON.stringify(adOptions)}`);
@@ -60,7 +60,7 @@ export default class AdsExtensionAbility extends AdsServiceExtensionAbility {
       throw new Error();
     }
     Logger.i(TAG, `onLoadAdWithMultiSlots, adParams: ${JSON.stringify(adParams)}, adOptions: ${JSON.stringify(adOptions)}`);
-    const ads: Array<advertising.Advertisement> = [];
+    const ads: advertising.Advertisement[] = [];
     ads.push({adType: 7, uniqueId: '122222', rewardVerifyConfig: new Map<string, string>(), rewarded: false, shown: false,  clicked: false});
     ads.push({adType: 7, uniqueId: '133333', rewardVerifyConfig: new Map<string, string>(), rewarded: false, shown: false,  clicked: false});
     const slot1: string = "test1";

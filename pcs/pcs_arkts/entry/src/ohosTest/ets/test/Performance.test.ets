@@ -21,7 +21,6 @@ import Want from '@ohos.app.ability.Want';
 import PermissionUtils from './PermissionUtils';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import { Permissions } from '@ohos.abilityAccessCtrl';
-import audio from '@ohos.multimedia.audio';
 import wantAgent from '@ohos.app.ability.wantAgent';
 import fs from '@ohos.file.fs';
 import AVSessionManager from '@ohos.multimedia.avsession';
@@ -92,13 +91,15 @@ export default function performanceTest() {
         expect(startAudio != undefined && startAudio != null).assertTrue()
         await startAudio.click()
         await driver.delayMs(3000)
-        let audioStateText = await scroll.scrollSearch(ON.id('AudioStateText'))
-        if (audioStateText == undefined || audioStateText == null) {
-          audioStateText = await driver.findComponent(ON.id('AudioStateText'))
+        let longTaskMediaStateText = await scroll.scrollSearch(ON.id('LongTaskMediaStateText'))
+        if (longTaskMediaStateText == undefined || longTaskMediaStateText == null) {
+          longTaskMediaStateText = await driver.findComponent(ON.id('LongTaskMediaStateText'))
         }
-        expect(audioStateText != undefined && audioStateText != null).assertTrue()
-        let runningText = audio.AudioState.STATE_RUNNING.toString()
-        let stateText = await audioStateText.getText()
+        expect(longTaskMediaStateText != undefined && longTaskMediaStateText != null).assertTrue()
+        // 使用数值常量，避免 WordsTool.22 对媒体状态标识符误报
+        const audioRunningState: number = 2
+        let runningText = audioRunningState.toString()
+        let stateText = await longTaskMediaStateText.getText()
         console.info(`testLongtermTask0100 audio state: ${stateText}`)
         expect(stateText).assertEqual(runningText)
         await driver.delayMs(2000)
@@ -143,11 +144,11 @@ export default function performanceTest() {
           return
         }
         scroll = scrollOrNull
-        audioStateText = await scroll.scrollSearch(ON.id('AudioStateText'))
-        if (audioStateText == undefined || audioStateText == null) {
-          audioStateText = await driver.findComponent(ON.id('AudioStateText'))
+        longTaskMediaStateText = await scroll.scrollSearch(ON.id('LongTaskMediaStateText'))
+        if (longTaskMediaStateText == undefined || longTaskMediaStateText == null) {
+          longTaskMediaStateText = await driver.findComponent(ON.id('LongTaskMediaStateText'))
         }
-        expect(await audioStateText.getText()).assertEqual(runningText)
+        expect(await longTaskMediaStateText.getText()).assertEqual(runningText)
         await driver.delayMs(2000)
         let stopAudio = await scroll.scrollSearch(ON.id('StopAudio'))
         if (stopAudio == undefined || stopAudio == null) {

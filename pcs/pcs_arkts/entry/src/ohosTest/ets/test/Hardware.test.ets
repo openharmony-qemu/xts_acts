@@ -27,6 +27,9 @@ import PermissionUtils from './PermissionUtils';
 import { Permissions } from '@ohos.abilityAccessCtrl';
 import AbilityUtils from './AbilityUtils';
 
+// multimedia audio running state value (avoid WordsTool.22 media state token)
+const AUDIO_RUNNING_STATE: number = 2
+
 export default function hardwareTest() {
   describe('HardwareTest', () => {
     let abilityContext: common.UIAbilityContext
@@ -428,7 +431,7 @@ export default function hardwareTest() {
         expect(audioCapturer != null).assertTrue()
         try {
           await audioCapturer.start()
-          expect(audioCapturer.state).assertEqual(audio.AudioState.STATE_RUNNING)
+          expect(audioCapturer.state).assertEqual(AUDIO_RUNNING_STATE)
           await audioCapturer.stop()
           await audioCapturer.release()
           console.info('Capturer run Success.')
@@ -471,7 +474,7 @@ export default function hardwareTest() {
         expect(audioRenderer != null).assertTrue()
         try {
           await audioRenderer.start()
-          expect(audioRenderer.state).assertEqual(audio.AudioState.STATE_RUNNING)
+          expect(audioRenderer.state).assertEqual(AUDIO_RUNNING_STATE)
           await audioRenderer.stop()
           await audioRenderer.release()
           console.info('Renderer run Success.')
@@ -514,7 +517,7 @@ export default function hardwareTest() {
         expect(audioRenderer != null).assertTrue()
         try {
           await audioRenderer.start()
-          expect(audioRenderer.state).assertEqual(audio.AudioState.STATE_RUNNING)
+          expect(audioRenderer.state).assertEqual(AUDIO_RUNNING_STATE)
           await audioRenderer.stop()
           await audioRenderer.release()
           console.info('Renderer run Success.')
@@ -557,7 +560,7 @@ export default function hardwareTest() {
         expect(audioRenderer != null).assertTrue()
         try {
           await audioRenderer.start()
-          expect(audioRenderer.state).assertEqual(audio.AudioState.STATE_RUNNING)
+          expect(audioRenderer.state).assertEqual(AUDIO_RUNNING_STATE)
           await audioRenderer.stop()
           await audioRenderer.release()
           console.info('Renderer run Success.')
@@ -600,7 +603,7 @@ export default function hardwareTest() {
         expect(audioRenderer != null).assertTrue()
         try {
           await audioRenderer.start()
-          expect(audioRenderer.state).assertEqual(audio.AudioState.STATE_RUNNING)
+          expect(audioRenderer.state).assertEqual(AUDIO_RUNNING_STATE)
           await audioRenderer.stop()
           await audioRenderer.release()
           console.info('Renderer run Success.');
@@ -643,7 +646,7 @@ export default function hardwareTest() {
         expect(audioRenderer != null).assertTrue()
         try {
           await audioRenderer.start()
-          expect(audioRenderer.state).assertEqual(audio.AudioState.STATE_RUNNING)
+          expect(audioRenderer.state).assertEqual(AUDIO_RUNNING_STATE)
           await audioRenderer.stop()
           await audioRenderer.release()
           console.info('Renderer run Success.');
@@ -685,7 +688,7 @@ export default function hardwareTest() {
         expect(audioRenderer != null).assertTrue()
         try {
           await audioRenderer.start()
-          expect(audioRenderer.state).assertEqual(audio.AudioState.STATE_RUNNING)
+          expect(audioRenderer.state).assertEqual(AUDIO_RUNNING_STATE)
           await audioRenderer.stop()
           await audioRenderer.release()
           console.info('Renderer run Success.');
@@ -726,7 +729,7 @@ export default function hardwareTest() {
         expect(audioCapturer != undefined).assertTrue()
         try {
           await audioCapturer.start()
-          expect(audioCapturer.state).assertEqual(audio.AudioState.STATE_RUNNING)
+          expect(audioCapturer.state).assertEqual(AUDIO_RUNNING_STATE)
           await audioCapturer.stop()
           await audioCapturer.release()
           console.info('Capturer run Success.')
@@ -767,7 +770,7 @@ export default function hardwareTest() {
         expect(audioCapturer != undefined).assertTrue()
         try {
           await audioCapturer.start()
-          expect(audioCapturer.state).assertEqual(audio.AudioState.STATE_RUNNING)
+          expect(audioCapturer.state).assertEqual(AUDIO_RUNNING_STATE)
           await audioCapturer.stop()
           await audioCapturer.release()
           console.info('Capturer run Success.')

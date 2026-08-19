@@ -29,17 +29,17 @@ export class AdContentRsp extends RspBean {
   /**
    * 已经失效的素材id列表
    */
-  invalidcontentid?: Array<string> = void 0;
+  invalidcontentid?: string[] = void 0;
 
   /**
    * 已经失效的slogan id列表
    */
-  invalidSloganId?: Array<string> = void 0;
+  invalidSloganId?: string[] = void 0;
 
   /*
    * 因为fc超限，当天不再展示的素材id列表
    */
-  todayNoShowContentid?: Array<string> = void 0;
+  todayNoShowContentid?: string[] = void 0;
 
 
   /**
