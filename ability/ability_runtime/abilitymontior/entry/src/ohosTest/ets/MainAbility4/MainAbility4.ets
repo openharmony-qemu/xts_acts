@@ -13,9 +13,13 @@
 * limitations under the License.
 */
 import Ability from '@ohos.app.ability.UIAbility'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window'
+import UIAbility from '@ohos.app.ability.UIAbility';
 
 export default class MainAbility4 extends Ability {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     console.log("[Demo] MainAbility4 onCreate")
     globalThis.abilityWant = want;
     globalThis.abilityContext = this.context
@@ -26,11 +30,11 @@ export default class MainAbility4 extends Ability {
     globalThis.abilityContext = undefined;
   }
 
-  onWindowStageCreate(windowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     console.log("[Demo] MainAbility4 onWindowStageCreate")
 
-    windowStage.setUIContent(this.context, "pages/Index4", null)
+    windowStage.loadContent("pages/Index4", null)
     setTimeout(() => {
       globalThis.abilityContext.terminateSelf().then(() => {
         console.log("====>MainAbility4 in terminateSelf====>");

@@ -14,35 +14,39 @@
 */
 
 import Ability from '@ohos.app.ability.UIAbility'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window'
+import UIAbility from '@ohos.app.ability.UIAbility';
 
 export default class MainAbility extends Ability {
-  onCreate(want, launchParam) {
-    console.info('MainAbility3Monitor onCreate')
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    console.info('MainAbilityMonitor onCreate')
   }
 
   onDestroy() {
-    console.info('MainAbility3Monitor onDestroy')
+    console.info('MainAbilityMonitor onDestroy')
   }
 
-  onWindowStageCreate(windowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     console.info('MainAbilityMonitor onWindowStageCreate')
-    windowStage.setUIContent(this.context, 'MainAbility/pages/index', null)
+    windowStage.loadContent("MainAbility/pages/index", null)
 
     globalThis.abilityContext = this.context;
   }
 
   onWindowStageDestroy() {
-    console.info('MainAbility3Monitor onWindowStageDestroy')
+    console.info('MainAbilityMonitor onWindowStageDestroy')
   }
 
   onForeground() {
-    console.info('MainAbility3Monitor onForeground')
+    console.info('MainAbilityMonitor onForeground')
     setTimeout(() => {
       this.context.terminateSelf()
     }, 500)
   }
 
   onBackground() {
-    console.info('MainAbility3Monitor onBackground')
+    console.info('MainAbilityMonitor onBackground')
   }
 };

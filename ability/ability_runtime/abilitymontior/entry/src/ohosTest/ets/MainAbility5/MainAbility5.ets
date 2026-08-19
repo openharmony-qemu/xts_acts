@@ -12,8 +12,12 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import Ability from '@ohos.app.ability.UIAbility';
-import commonEvent from '@ohos.commonEvent';
+import Ability from '@ohos.app.ability.UIAbility'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window';
+import commonEvent from '@ohos.commonEventManager';
+import UIAbility from '@ohos.app.ability.UIAbility';
 
 let EVENT_TIME = 500;
 
@@ -22,7 +26,7 @@ function publishCallBack(): void {
 }
 
 export default class MainAbility5 extends Ability {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     console.log('[Demo] MainAbility5 onCreate');
     globalThis.abilityWant = want;
     globalThis.abilityContext = this.context;
@@ -38,11 +42,11 @@ export default class MainAbility5 extends Ability {
     globalThis.abilityContext = undefined;
   }
 
-  onWindowStageCreate(windowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     console.log('[Demo] MainAbility5 onWindowStageCreate');
 
-    windowStage.setUIContent(this.context, 'pages/Index5', null);
+    windowStage.loadContent("pages/Index5", null);
   }
 
   onWindowStageDestroy(): void {

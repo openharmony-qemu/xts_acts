@@ -13,43 +13,57 @@
 * limitations under the License.
 */
 import Ability from '@ohos.app.ability.UIAbility'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window'
+import commonEvent from '@ohos.commonEventManager'
+import UIAbility from '@ohos.app.ability.UIAbility';
 
-export default class MainAbility2 extends Ability {
-  onCreate(want, launchParam) {
-    console.log("[Demo] MainAbility2 onCreate")
+let EVENT_TIME = 500;
+
+function publishCallBack() {
+  console.debug("====>Publish CallBack ====>");
+}
+
+export default class MainAbility3 extends Ability {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    console.log("[Demo] MainAbility3 onCreate")
     globalThis.abilityWant = want;
     globalThis.abilityContext = this.context
   }
 
   onDestroy() {
-    console.log("[Demo] MainAbility2 onDestroy")
+    console.log("[Demo] MainAbility3 onDestroy")
     globalThis.abilityContext = undefined;
   }
 
-  onWindowStageCreate(windowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
-    console.log("[Demo] MainAbility2 onWindowStageCreate")
+    console.log("[Demo] MainAbility3 onWindowStageCreate")
 
-    windowStage.setUIContent(this.context, "pages/Index2", null)
+    windowStage.loadContent("pages/Index3", null)
     setTimeout(() => {
       globalThis.abilityContext.terminateSelf().then(() => {
-        console.log("====>MainAbility2 in terminateSelf====>");
+        console.log("====>MainAbility3 in terminateSelf====>");
       })
-    }, 500)
+    }, EVENT_TIME);
   }
 
   onWindowStageDestroy() {
     // Main window is destroyed, release UI related resources
-    console.log("[Demo] MainAbility2 onWindowStageDestroy")
+    console.log("[Demo] MainAbility3 onWindowStageDestroy")
   }
 
   onForeground() {
     // Ability has brought to foreground
-    console.log("[Demo] MainAbility2 onForeground")
+    console.log("[Demo] MainAbility3 onForeground")
+    setTimeout(() => {
+      commonEvent.publish("MainAbility3_foreground", publishCallBack);
+    }, EVENT_TIME);
   }
 
   onBackground() {
     // Ability has back to background
-    console.log("[Demo] MainAbility2 onBackground")
+    console.log("[Demo] MainAbility3 onBackground")
   }
 };
