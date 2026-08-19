@@ -119,7 +119,7 @@ export default function es2020Test() {
 
       expect(17n <= 17n).assertEqual(true);
       expect(3n > -1n).assertEqual(true);
-      expect(3n > -1).assertEqual(true);
+      expect(3n > -1n).assertEqual(true);
 
       expect(~0b10n).assertEqual(-3n);
       expect(0b1010n | 0b0111n).assertEqual(15n);
