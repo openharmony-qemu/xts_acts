@@ -32,13 +32,13 @@ export default function ActsNeuralNetworkRuntimeTest() {
      */
     it('NnrtTensorQuantParamSetScales001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorQuantParamSetScales001 start====");
+        console.info('====>NnrtTensorQuantParamSetScales001 start====');
         let result : number = neuralnetworkcoretest.NNQuantParam_SetScalesA();
-        console.info("====>NnrtTensorQuantParamSetScales001 result: " + result);
+        console.info('====>NnrtTensorQuantParamSetScales001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorQuantParamSetScales001 catch err: " + err);
+        console.error('====>NnrtTensorQuantParamSetScales001 catch err: ' + err);
       }
     })
 
@@ -52,13 +52,13 @@ export default function ActsNeuralNetworkRuntimeTest() {
      */
     it('NnrtTensorQuantParamSetScales002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorQuantParamSetScales002 start====");
+        console.info('====>NnrtTensorQuantParamSetScales002 start====');
         let result : number = neuralnetworkcoretest.NNQuantParam_SetScalesB();
-        console.info("====>NnrtTensorQuantParamSetScales002 result: " + result);
+        console.info('====>NnrtTensorQuantParamSetScales002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorQuantParamSetScales002 catch err: " + err);
+        console.error('====>NnrtTensorQuantParamSetScales002 catch err: ' + err);
       }
     })
 
@@ -72,13 +72,13 @@ export default function ActsNeuralNetworkRuntimeTest() {
      */
     it('NnrtTensorQuantParamSetScales003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorQuantParamSetScales003 start====");
+        console.info('====>NnrtTensorQuantParamSetScales003 start====');
         let result : number = neuralnetworkcoretest.NNQuantParam_SetScalesC();
-        console.info("====>NnrtTensorQuantParamSetScales003 result: " + result);
+        console.info('====>NnrtTensorQuantParamSetScales003 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorQuantParamSetScales003 catch err: " + err);
+        console.error('====>NnrtTensorQuantParamSetScales003 catch err: ' + err);
       }
     })
 
@@ -92,13 +92,13 @@ export default function ActsNeuralNetworkRuntimeTest() {
      */
     it('NnrtTensorQuantParamSetScales004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorQuantParamSetScales004 start====");
+        console.info('====>NnrtTensorQuantParamSetScales004 start====');
         let result : number = neuralnetworkcoretest.NNQuantParam_SetScalesD();
-        console.info("====>NnrtTensorQuantParamSetScales004 result: " + result);
+        console.info('====>NnrtTensorQuantParamSetScales004 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorQuantParamSetScales004 catch err: " + err);
+        console.error('====>NnrtTensorQuantParamSetScales004 catch err: ' + err);
       }
     })
 
@@ -112,13 +112,13 @@ export default function ActsNeuralNetworkRuntimeTest() {
      */
     it('NnrtTensorQuantParamSetZeroPoints001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorQuantParamSetZeroPoints001 start====");
+        console.info('====>NnrtTensorQuantParamSetZeroPoints001 start====');
         let result : number = neuralnetworkcoretest.NNQuantParam_SetZeroPointsA();
-        console.info("====>NnrtTensorQuantParamSetZeroPoints001 result: " + result);
+        console.info('====>NnrtTensorQuantParamSetZeroPoints001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorQuantParamSetZeroPoints001 catch err: " + err);
+        console.error('====>NnrtTensorQuantParamSetZeroPoints001 catch err: ' + err);
       }
     })
 
@@ -132,13 +132,13 @@ export default function ActsNeuralNetworkRuntimeTest() {
      */
     it('NnrtTensorQuantParamSetZeroPoints002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorQuantParamSetZeroPoints002 start====");
+        console.info('====>NnrtTensorQuantParamSetZeroPoints002 start====');
         let result : number = neuralnetworkcoretest.NNQuantParam_SetZeroPointsB();
-        console.info("====>NnrtTensorQuantParamSetZeroPoints002 result: " + result);
+        console.info('====>NnrtTensorQuantParamSetZeroPoints002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorQuantParamSetZeroPoints002 catch err: " + err);
+        console.error('====>NnrtTensorQuantParamSetZeroPoints002 catch err: ' + err);
       }
     })
 
@@ -152,13 +152,13 @@ export default function ActsNeuralNetworkRuntimeTest() {
      */
     it('NnrtTensorQuantParamSetZeroPoints003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorQuantParamSetZeroPoints003 start====");
+        console.info('====>NnrtTensorQuantParamSetZeroPoints003 start====');
         let result : number = neuralnetworkcoretest.NNQuantParam_SetZeroPointsC();
-        console.info("====>NnrtTensorQuantParamSetZeroPoints003 result: " + result);
+        console.info('====>NnrtTensorQuantParamSetZeroPoints003 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorQuantParamSetZeroPoints003 catch err: " + err);
+        console.error('====>NnrtTensorQuantParamSetZeroPoints003 catch err: ' + err);
       }
     })
 
@@ -172,13 +172,13 @@ export default function ActsNeuralNetworkRuntimeTest() {
      */
     it('NnrtTensorQuantParamSetZeroPoints004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorQuantParamSetZeroPoints004 start====");
+        console.info('====>NnrtTensorQuantParamSetZeroPoints004 start====');
         let result : number = neuralnetworkcoretest.NNQuantParam_SetZeroPointsD();
-        console.info("====>NnrtTensorQuantParamSetZeroPoints004 result: " + result);
+        console.info('====>NnrtTensorQuantParamSetZeroPoints004 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorQuantParamSetZeroPoints004 catch err: " + err);
+        console.error('====>NnrtTensorQuantParamSetZeroPoints004 catch err: ' + err);
       }
     })
 
@@ -192,13 +192,13 @@ export default function ActsNeuralNetworkRuntimeTest() {
      */
     it('NnrtTensorQuantParamSetNumBits001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorQuantParamSetNumBits001 start====");
+        console.info('====>NnrtTensorQuantParamSetNumBits001 start====');
         let result : number = neuralnetworkcoretest.NNQuantParam_SetNumBitsA();
-        console.info("====>NnrtTensorQuantParamSetNumBits001 result: " + result);
+        console.info('====>NnrtTensorQuantParamSetNumBits001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorQuantParamSetNumBits001 catch err: " + err);
+        console.error('====>NnrtTensorQuantParamSetNumBits001 catch err: ' + err);
       }
     })
 
@@ -212,13 +212,13 @@ export default function ActsNeuralNetworkRuntimeTest() {
      */
     it('NnrtTensorQuantParamSetNumBits002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorQuantParamSetNumBits002 start====");
+        console.info('====>NnrtTensorQuantParamSetNumBits002 start====');
         let result : number = neuralnetworkcoretest.NNQuantParam_SetNumBitsB();
-        console.info("====>NnrtTensorQuantParamSetNumBits002 result: " + result);
+        console.info('====>NnrtTensorQuantParamSetNumBits002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorQuantParamSetNumBits002 catch err: " + err);
+        console.error('====>NnrtTensorQuantParamSetNumBits002 catch err: ' + err);
       }
     })
 
@@ -232,13 +232,13 @@ export default function ActsNeuralNetworkRuntimeTest() {
      */
     it('NnrtTensorQuantParamSetNumBits003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorQuantParamSetNumBits003 start====");
+        console.info('====>NnrtTensorQuantParamSetNumBits003 start====');
         let result : number = neuralnetworkcoretest.NNQuantParam_SetNumBitsC();
-        console.info("====>NnrtTensorQuantParamSetNumBits003 result: " + result);
+        console.info('====>NnrtTensorQuantParamSetNumBits003 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorQuantParamSetNumBits003 catch err: " + err);
+        console.error('====>NnrtTensorQuantParamSetNumBits003 catch err: ' + err);
       }
     })
 
@@ -252,13 +252,13 @@ export default function ActsNeuralNetworkRuntimeTest() {
      */
     it('NnrtTensorQuantParamSetNumBits004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorQuantParamSetNumBits004 start====");
+        console.info('====>NnrtTensorQuantParamSetNumBits004 start====');
         let result : number = neuralnetworkcoretest.NNQuantParam_SetNumBitsD();
-        console.info("====>NnrtTensorQuantParamSetNumBits004 result: " + result);
+        console.info('====>NnrtTensorQuantParamSetNumBits004 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorQuantParamSetNumBits004 catch err: " + err);
+        console.error('====>NnrtTensorQuantParamSetNumBits004 catch err: ' + err);
       }
     })
 
@@ -272,13 +272,13 @@ export default function ActsNeuralNetworkRuntimeTest() {
      */
     it('NnrtTensorQuantParamDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorQuantParamDestroy001 start====");
+        console.info('====>NnrtTensorQuantParamDestroy001 start====');
         let result : number = neuralnetworkcoretest.NNQuantParam_DestroyA();
-        console.info("====>NnrtTensorQuantParamDestroy001 result: " + result);
+        console.info('====>NnrtTensorQuantParamDestroy001 result: ' + result);
         expect(result).assertEqual(OH_NN_SUCCESS);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorQuantParamDestroy001 catch err: " + err);
+        console.error('====>NnrtTensorQuantParamDestroy001 catch err: ' + err);
       }
     })
 
@@ -292,13 +292,13 @@ export default function ActsNeuralNetworkRuntimeTest() {
      */
     it('NnrtTensorQuantParamDestroy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>NnrtTensorQuantParamDestroy002 start====");
+        console.info('====>NnrtTensorQuantParamDestroy002 start====');
         let result : number = neuralnetworkcoretest.NNQuantParam_DestroyB();
-        console.info("====>NnrtTensorQuantParamDestroy002 result: " + result);
+        console.info('====>NnrtTensorQuantParamDestroy002 result: ' + result);
         expect(result).assertEqual(OH_NN_INVALID_PARAMETER);
         done()
       } catch (err) {
-        console.error("====>NnrtTensorQuantParamDestroy002 catch err: " + err);
+        console.error('====>NnrtTensorQuantParamDestroy002 catch err: ' + err);
       }
     })
   })
