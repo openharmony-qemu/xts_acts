@@ -169,6 +169,20 @@ export default function uitestEnumBoundaryErrorCode() {
     it('testDriverSetDisplayRotationNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, testDriverSetDisplayRotationNegative start`);
       try {
+        await driver.setDisplayRotation(null);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testDriverSetDisplayRotationNegative null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode401);
+      }
+      try {
+        await driver.setDisplayRotation(undefined);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testDriverSetDisplayRotationNegative undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode401);
+      }
+      try {
         await driver.setDisplayRotation(-1 as DisplayRotation);
         expect().assertFail();
       } catch (error) {

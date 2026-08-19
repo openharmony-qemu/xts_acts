@@ -459,6 +459,74 @@ export default function UiTest() {
     })
 
     /**
+     * @tc.name   testNewMouseDragSpeedLowRange
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0013
+     * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNewMouseDragSpeedLowRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testNewMouseDragSpeedLowRange start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        let center = await button.getBoundsCenter();
+        await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 2072, 3000)
+        console.log(TestTag, 'mouseLongClick successful');
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.mouseDrag(point1, point2, 199)
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        console.log(TestTag, 'testNewMouseDragSpeedLowRange over');
+        await stopApplication('com.uitestScene.acts');
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testNewMouseDragSpeedAboveMax
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0023
+     * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNewMouseDragSpeedAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        console.log(TestTag, 'testNewMouseDragSpeedAboveMax start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        let center = await button.getBoundsCenter();
+        await driver.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0, 2072, 3000)
+        console.log(TestTag, 'mouseLongClick successful');
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.mouseDrag(point1, point2, 40001)
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        console.log(TestTag, 'testNewMouseDragSpeedAboveMax over');
+        await stopApplication('com.uitestScene.acts')
+      } catch (error) {
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
      * @tc.name   testNewMouseDragDuring
      * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_FUNCTION_0005
      * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.

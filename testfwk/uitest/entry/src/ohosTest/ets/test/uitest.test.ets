@@ -2109,7 +2109,65 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testFlingWithId over');
         })
-      
+
+        /**
+         * @tc.name   testFlingDir
+         * @tc.number SUB_testfwk_uitest_Api20_0130
+         * @tc.desc   fling test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testFlingDir', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            try {
+                console.log(TestTag, 'testFlingDir start');
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let allDisplayIds = await display.getAllDisplay()
+                for (let d of allDisplayIds) {
+                    if (d.id == 999) {
+                        console.info('Can not create full screen application scene')
+                        return
+                    }
+                }
+                let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+                await driver.delayMs(waitUiReadyMs);
+                try {
+                    await maxUiWindow(driver, window);
+                } catch (error) {
+                    console.info('It is already a Fullscreen window')
+                }
+                let button = await driver.findComponent(ON.text('wearList'))
+                if (button == null) {
+                    let scorll = await driver.findComponent(ON.type('Scroll'))
+                    button = await scorll.scrollSearch(ON.text('wearList'))
+                }
+                await driver.delayMs(waitUiReadyMs)
+                await button.click()
+                await driver.delayMs(waitUiReadyMs)
+                await driver.fling(UiDirection.DOWN, 39000)
+                await driver.delayMs(waitUiReadyMs)
+                let buttonCom = await driver.findComponents(ON.text('1').inWindow('com.uitestScene.acts'))
+                console.log(`${TestTag}, testFlingDir buttonCom: ${JSON.stringify(buttonCom)}`);
+                expect(buttonCom).assertNull()
+                await driver.fling(UiDirection.LEFT, 39000)
+                await driver.delayMs(waitUiReadyMs)
+                await driver.fling(UiDirection.RIGHT, 39000)
+                await driver.delayMs(waitUiReadyMs)
+                await driver.fling(UiDirection.UP, 39000)
+                await driver.delayMs(2000)
+                let button2 = await driver.findComponents(ON.text('15').inWindow('com.uitestScene.acts'))
+                console.log(`${TestTag}, testFlingDir button2: ${JSON.stringify(button2)}`);
+                expect(button2 == null).assertTrue()
+                await stopApplication('com.uitestScene.acts')
+                console.log(TestTag, 'testFlingDir over');
+            } catch (error) {
+                expect().assertFail()
+            }
+            done()
+        })
+
+
         /**
          * @tc.name   testTriggerCombineKeysWithId
          * @tc.number SUB_testfwk_uitest_Api20_0032
@@ -3147,6 +3205,80 @@ export default function UiTest() {
                 await stopApplication('com.uitestScene.acts');
             }
             console.log(TestTag, 'testPenSwipeSpeedUndefined end');
+            done()
+        })
+
+        /**
+         * @tc.name   testPenSwipeSpeedLowRange
+         * @tc.number SUB_testfwk_uitest_Api16_0143
+         * @tc.desc   penSwipe function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testPenSwipeSpeedLowRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+            console.log(TestTag, 'testPenSwipeSpeedLowRange start');
+            await driver.delayMs(waitUiReadyMs);
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+            await driver.delayMs(waitUiReadyMs);
+            try {
+                // 垂直滑动
+                await driver.delayMs(waitUiReadyMs);
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                let scrollRect = await scroll.getBounds()
+                let screenWidth = scrollRect.right - scrollRect.left;
+                let screenHeight = scrollRect.bottom - scrollRect.top;
+                console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, 199);
+                await driver.delayMs(waitUiReadyMs);
+                let text = await driver.findComponent(ON.text('toast'));
+                await driver.delayMs(waitUiReadyMs);
+                expect(text == null).assertTrue();
+            } catch (error) {
+                console.log(TestTag, `testPenSwipeSpeedLowRange error is, ${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(DeviceErrorCode);
+            } finally {
+                await stopApplication('com.uitestScene.acts');
+            }
+            console.log(TestTag, 'testPenSwipeSpeedLowRange end');
+            done()
+        })
+
+        /**
+         * @tc.name   testPenSwipeSpeedAboveMax
+         * @tc.number SUB_testfwk_uitest_Api16_0243
+         * @tc.desc   penSwipe function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testPenSwipeSpeedAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+            console.log(TestTag, 'testPenSwipeSpeedAboveMax start');
+            await driver.delayMs(waitUiReadyMs);
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+            await driver.delayMs(waitUiReadyMs);
+            try {
+                // 垂直滑动
+                await driver.delayMs(waitUiReadyMs);
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                let scrollRect = await scroll.getBounds()
+                let screenWidth = scrollRect.right - scrollRect.left;
+                let screenHeight = scrollRect.bottom - scrollRect.top;
+                console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, 40001);
+                await driver.delayMs(waitUiReadyMs);
+                let text = await driver.findComponent(ON.text('toast'));
+                await driver.delayMs(waitUiReadyMs);
+                expect(text == null).assertTrue();
+            } catch (error) {
+                console.log(TestTag, `testPenSwipeSpeedAboveMax error is, ${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(DeviceErrorCode);
+            } finally {
+                await stopApplication('com.uitestScene.acts');
+            }
+            console.log(TestTag, 'testPenSwipeSpeedAboveMax end');
             done()
         })
 
@@ -6302,6 +6434,46 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   testScrollToBottomSpeedNull
+         * @tc.number SUB_testfwk_uitest_Api9_0334
+         * @tc.desc   scroll on this UiComponent to the bottom.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testScrollToBottomSpeedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+            await driver.delayMs(waitUiReadyMs)
+            let scrollBar = await driver.findComponent(ON.type('Scroll'))
+            expect(scrollBar != null).assertTrue()
+            await scrollBar.scrollToBottom(null)
+            await driver.delayMs(waitUiReadyMs)
+            let button = await driver.findComponent(ON.text('bottom'))
+            expect(await button.getText() == 'bottom').assertTrue()
+            await stopApplication('com.uitestScene.acts')
+        })
+
+        /**
+         * @tc.name   testScrollToBottomSpeedUndefined
+         * @tc.number SUB_testfwk_uitest_Api9_0434
+         * @tc.desc   scroll on this UiComponent to the bottom.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testScrollToBottomSpeedUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+            await driver.delayMs(waitUiReadyMs)
+            let scrollBar = await driver.findComponent(ON.type('Scroll'))
+            expect(scrollBar != null).assertTrue()
+            await scrollBar.scrollToBottom(undefined)
+            await driver.delayMs(waitUiReadyMs)
+            let button = await driver.findComponent(ON.text('bottom'))
+            expect(await button.getText() == 'bottom').assertTrue()
+            await stopApplication('com.uitestScene.acts')
+        })
+
+        /**
          * @tc.name   testScrollToTop
          * @tc.number SUB_testfwk_uitest_Api9_0095
          * @tc.desc   scroll on this UiComponent to the top.
@@ -6345,6 +6517,59 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
+        /**
+         * @tc.name   testScrollToTopSpeedNull
+         * @tc.number SUB_testfwk_uitest_Api9_0085
+         * @tc.desc   scroll on this UiComponent to the top.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testScrollToTopSpeedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let scrollBar = await driver.findComponent(ON.type('Scroll'))
+                expect(scrollBar !== null).assertTrue()
+                await scrollBar.scrollToBottom()
+                await driver.delayMs(waitUiReadyMs)
+                await scrollBar.scrollToTop(null)
+                await driver.delayMs(waitUiReadyMs)
+                let button = await driver.findComponent(ON.text('bottom'))
+                expect(button == null).assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            } catch (error) {
+                expect().assertFail()
+            }
+            done()
+        })
+
+        /**
+         * @tc.name   testScrollToTopSpeedUndefined
+         * @tc.number SUB_testfwk_uitest_Api9_0195
+         * @tc.desc   scroll on this UiComponent to the top.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testScrollToTopSpeedUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let scrollBar = await driver.findComponent(ON.type('Scroll'))
+                expect(scrollBar !== null).assertTrue()
+                await scrollBar.scrollToBottom()
+                await driver.delayMs(waitUiReadyMs)
+                await scrollBar.scrollToTop(undefined)
+                await driver.delayMs(waitUiReadyMs)
+                let button = await driver.findComponent(ON.text('bottom'))
+                expect(button == null).assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            } catch (error) {
+                expect().assertFail()
+            }
+            done()
+        })
 
         /**
          * @tc.name   testPinch
@@ -6425,7 +6650,6 @@ export default function UiTest() {
             done()
         })
 
-
         /**
          * @tc.name   testInjectMultiPointerAction
          * @tc.number SUB_testfwk_uitest_Api9_0047
@@ -6468,7 +6692,7 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testGetDisplaySize
+         * @tc.name   testGetDisplaySizefling
          * @tc.number SUB_testfwk_uitest_Api9_0058
          * @tc.desc   get the size of the device display.
          * @tc.type   FUNCTION
