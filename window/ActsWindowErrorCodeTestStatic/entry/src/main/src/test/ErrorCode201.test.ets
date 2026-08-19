@@ -838,6 +838,44 @@ async (done: () => void): Promise<void> => {
   }
 });
 
+
+    /**
+ * @tc.name   testSetTouchableAreasNoPermission_static_0100
+ * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_ERRORCODE_201_STATIC_0100
+ * @tc.desc   不申请权限调用setTouchableAreas接口，验证返回201错误码
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
+it('testSetTouchableAreasNoPermission_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    async (done: () => void): Promise<void> => {
+      let caseName: string = 'testSetTouchableAreasNoPermission_static_0100';
+      let msgStr: string = 'jsunittest ' + caseName + ' ';
+      hilog.info(domain, tag, msgStr + 'begin');
+      let mainWindow: window.Window = windowStage!.getMainWindowSync();
+      let windowRect = mainWindow.getWindowProperties().windowRect;
+      let touchableRects: Array<window.Rect> = [
+        { left: 0, top: 0, width: windowRect.width, height: windowRect.height }
+      ];
+      try {
+        await mainWindow.setTouchableAreas(touchableRects);
+        hilog.error(domain, tag, msgStr + 'Should not succeed without permission.');
+        expect(false).assertTrue();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+        if (exception.code === 201) {
+          hilog.info(domain, tag, msgStr + 'Expected error 201: permission denied.');
+          expect(exception.code).assertEqual(201);
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    });
+
 })
 
 }
