@@ -70,16 +70,15 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
         }
         done();
       } catch (err) {
-        let e: BusinessError = err as BusinessError
         hilog.error(0x0000, 'testTag',
-          `${testNum} openSubscriptionSettingsWithResult failed, code is ${e.code}, message is ${e.message}`);
+          `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
         // 无权限打开订阅设置页（201/801，普通三方应用）→ 接受错误码结束用例，不再执行 UI 流程
-        if (e.code === 201) {
-          expect(e.code).assertEqual(201)
+        if (err.code === 201) {
+          expect(err.code).assertEqual(201)
           done();
           return
-        } else if (e.code === 801) {
-          expect(e.code).assertEqual(801)
+        } else if (err.code === 801) {
+          expect(err.code).assertEqual(801)
           done();
           return
         }
@@ -383,6 +382,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
                 (await button6).click()
                 sleep(100)
               }
+              done();
             } else {
               expect(err.code).assertEqual(1600018);
             }

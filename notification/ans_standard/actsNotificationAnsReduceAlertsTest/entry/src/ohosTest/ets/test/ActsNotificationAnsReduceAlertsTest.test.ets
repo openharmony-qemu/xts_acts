@@ -306,37 +306,36 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         }
       };
       try {
-        await notificationManager.publish(notificationRequest).then(async () => {
+        await notificationManager.publish(notificationRequest).then(() => {
           console.info(TEST_SUITE_NAME + TAG + ' publish success');
-          await sleep(1000)
-          await notificationManager.getActiveNotifications()
-            .then((data: Array<notificationManager.NotificationRequest>) => {
-              console.info(TEST_SUITE_NAME + TAG +
-                ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
-              done()
-            })
-            .catch((err: BusinessError) => {
-              console.error(TEST_SUITE_NAME + TAG +
-                `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-              if (err?.code === 801) {
-                expect(err.code).assertEqual(801);
-                done();
-              }else{
-                expect().assertFail();
-               done();
-              }
-            });
         }).catch((err: BusinessError) => {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
           if (err?.code === 801) {
             expect(err.code).assertEqual(801);
-            done();
-          }else{
+          } else {
             expect().assertFail();
-           done();
           }
+          done();
         });
+        await sleep(1000)
+        await notificationManager.getActiveNotifications()
+          .then((data: Array<notificationManager.NotificationRequest>) => {
+            console.info(TEST_SUITE_NAME + TAG +
+              ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
+            expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
+            done()
+          })
+          .catch((err: BusinessError) => {
+            console.error(TEST_SUITE_NAME + TAG +
+              `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
+            if (err?.code === 801) {
+              expect(err.code).assertEqual(801);
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
+          });
       } catch (err) {
         console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
