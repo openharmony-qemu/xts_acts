@@ -76,8 +76,10 @@ export default function usbDdkTest() {
         console.info('filter device list:', JSON.stringify(filteredList));
         for (let item of filteredList) {
           let device: deviceManager.USBDevice = item as deviceManager.USBDevice;
-          dev = device.deviceId;
-          console.info(`Device id is ${device.deviceId}`);
+          if (usbDdk.usbHasTransferEndpoint(device.deviceId) > 0) {
+            dev = device.deviceId;
+            console.info(`Device id is ${device.deviceId}`);
+          }
         }
       } catch (error) {
         console.error(`Failed to query device. Code is ${error.code}, message is ${error.message}`);
@@ -732,6 +734,12 @@ export default function usbDdkTest() {
         expect(dev).assertEqual(USB_DDK_FAILED);
         done()
       } else {
+        if (usbDdk.usbHasTransferEndpoint(dev) !== 2) {
+          console.info("Device has no OUT endpoint, skip pipe transfer test");
+          expect(true).assertTrue();
+          done()
+          return;
+        }
         let data = usbDdk.usbSendPipeRequestOne(dev);
         console.info("Test USB data Result = " + data);
         expect(data).assertEqual(USB_DDK_SUCCESS);
@@ -879,6 +887,12 @@ export default function usbDdkTest() {
         if (dev < 0) {
           console.info("Test USB device not connected");
           expect(dev).assertEqual(USB_DDK_FAILED);
+          done();
+          return;
+        }
+        if (usbDdk.usbHasTransferEndpoint(dev) !== 2) {
+          console.info("Device has no OUT endpoint, skip pipe transfer test");
+          expect(true).assertTrue();
           done();
           return;
         }

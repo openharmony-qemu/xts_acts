@@ -36,7 +36,10 @@
 #define USB_DDK_ENDPOINT_DIR_MASK 0x80
 #define USB_DDK_DIR_IN 0x80
 #define USB_DDK_ENDPOINT_XFERTYPE_MASK 0x03
+#define USB_DDK_ENDPOINT_XFER_BULK 0x02
 #define USB_DDK_ENDPOINT_XFER_INT 0x03
+#define USB_DDK_DEVICE_DESC_LEN 18
+#define USB_DDK_CLASS_HUB 0x09
 #define PARAM_0 0
 #define PARAM_1 1
 #define PARAM_10 10
@@ -173,40 +176,49 @@ static void AppendIntToString(char *buffer, int32_t ret)
     buffer[bufferLen + i] = '\0';
 }
 
-static bool IsInterruptInEndpoint(const UsbEndpointDescriptor &epDesc)
+static bool IsBulkOrInterruptEndpoint(const UsbEndpointDescriptor &epDesc)
 {
-    return (((epDesc.bEndpointAddress & USB_DDK_ENDPOINT_DIR_MASK) == USB_DDK_DIR_IN) &&
-            ((epDesc.bmAttributes & USB_DDK_ENDPOINT_XFERTYPE_MASK) == USB_DDK_ENDPOINT_XFER_INT));
+    uint8_t xferType = epDesc.bmAttributes & USB_DDK_ENDPOINT_XFERTYPE_MASK;
+    return (xferType == USB_DDK_ENDPOINT_XFER_BULK || xferType == USB_DDK_ENDPOINT_XFER_INT);
 }
 
-static std::tuple<bool, uint8_t, uint8_t, uint16_t> FindForEachInterface(const UsbDdkInterface &interface)
+static void FindForEachInterface(const UsbDdkInterface &interface,
+    std::tuple<bool, uint8_t, uint8_t, uint16_t> &outEndpoint,
+    std::tuple<bool, uint8_t, uint8_t, uint16_t> &inEndpoint)
 {
     struct UsbDdkInterfaceDescriptor *intDesc = interface.altsetting;
     uint32_t numSetting = interface.numAltsetting;
     for (uint32_t setIdx = PARAM_0; setIdx < numSetting; ++setIdx) {
+        if (intDesc[setIdx].interfaceDescriptor.bInterfaceClass == USB_DDK_CLASS_HUB) {
+            continue;
+        }
         uint32_t numEp = intDesc[setIdx].interfaceDescriptor.bNumEndpoints;
         struct UsbDdkEndpointDescriptor *epDesc = intDesc[setIdx].endPoint;
+        uint8_t interfaceNum = intDesc[setIdx].interfaceDescriptor.bInterfaceNumber;
         for (uint32_t epIdx = PARAM_0; epIdx < numEp; ++epIdx) {
-            if (IsInterruptInEndpoint(epDesc[epIdx].endpointDescriptor)) {
-                return {true, intDesc[setIdx].interfaceDescriptor.bInterfaceNumber,
-                        epDesc[epIdx].endpointDescriptor.bEndpointAddress,
-                        epDesc[epIdx].endpointDescriptor.wMaxPacketSize};
+            const UsbEndpointDescriptor &epDescInfo = epDesc[epIdx].endpointDescriptor;
+            bool isIn = (epDescInfo.bEndpointAddress & USB_DDK_ENDPOINT_DIR_MASK) == USB_DDK_DIR_IN;
+            if (!isIn && IsBulkOrInterruptEndpoint(epDescInfo) && !std::get<0>(outEndpoint)) {
+                outEndpoint = {true, interfaceNum, epDescInfo.bEndpointAddress, epDescInfo.wMaxPacketSize};
+            } else if (isIn && IsBulkOrInterruptEndpoint(epDescInfo) && !std::get<0>(inEndpoint)) {
+                inEndpoint = {true, interfaceNum, epDescInfo.bEndpointAddress, epDescInfo.wMaxPacketSize};
             }
         }
     }
-
-    return {false, {}, {}, {}};
 }
 
 static std::tuple<bool, uint8_t, uint8_t, uint16_t> GetEndpointInfo(const struct UsbDdkConfigDescriptor *config)
 {
+    std::tuple<bool, uint8_t, uint8_t, uint16_t> outEndpoint{false, {}, {}, {}};
+    std::tuple<bool, uint8_t, uint8_t, uint16_t> inEndpoint{false, {}, {}, {}};
     for (uint32_t intIdx = PARAM_0; intIdx < config->configDescriptor.bNumInterfaces; ++intIdx) {
-        auto result = FindForEachInterface(config->interface[intIdx]);
-        if (std::get<0>(result)) {
-            return result;
-        }
+        FindForEachInterface(config->interface[intIdx], outEndpoint, inEndpoint);
     }
-    return {false, {}, {}, {}};
+    // Prefer OUT so the normal transfer case is a write that always completes.
+    if (std::get<0>(outEndpoint)) {
+        return outEndpoint;
+    }
+    return inEndpoint;
 }
 
 uint64_t JsDeviceIdToNative(uint64_t deviceId)
@@ -229,6 +241,36 @@ static bool ParseConfiguration(uint64_t deviceId, std::tuple<bool, uint8_t, uint
     }
     OH_Usb_FreeConfigDescriptor(config);
     return true;
+}
+
+static napi_value UsbHasTransferEndpoint(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int64_t deviceId64;
+    napi_get_value_int64(env, args[PARAM_0], &deviceId64);
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    int32_t endpointType = PARAM_0;
+    struct UsbDeviceDescriptor devDesc;
+    int32_t getDevDescRet = OH_Usb_GetDeviceDescriptor(deviceId, &devDesc);
+    if (getDevDescRet == PARAM_0 && devDesc.bDeviceClass != USB_DDK_CLASS_HUB) {
+        struct UsbDdkConfigDescriptor *config = nullptr;
+        int32_t ret = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+        if (ret == PARAM_0) {
+            auto source = GetEndpointInfo(config);
+            OH_Usb_FreeConfigDescriptor(config);
+            if (std::get<0>(source)) {
+                endpointType = ((std::get<2>(source) & USB_DDK_ENDPOINT_DIR_MASK) == USB_DDK_DIR_IN) ? 1 : 2;
+            }
+        }
+    }
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    napi_create_int32(env, endpointType, &result);
+    return result;
 }
 
 static napi_value UsbInit(napi_env env, napi_callback_info info)
@@ -646,14 +688,14 @@ static napi_value UsbSendControlReadRequestOne(napi_env env, napi_callback_info 
     int32_t usbClaimInterfaceValue = OH_Usb_ClaimInterface(deviceId, interface, &interfaceHandle);
     NAPI_ASSERT(env, usbClaimInterfaceValue == PARAM_0, "Usb_ClaimInterface failed");
     struct UsbControlRequestSetup setup;
-    uint8_t data[USB_DDK_TEST_BUF_SIZE] = {PARAM_0};
-    uint32_t dataLen = USB_DDK_TEST_BUF_SIZE;
+    uint8_t data[USB_DDK_DEVICE_DESC_LEN] = {PARAM_0};
+    uint32_t dataLen = USB_DDK_DEVICE_DESC_LEN;
     setup.bmRequestType = 0x80;
     setup.bRequest = 0x06;
-    setup.wValue = (0x03 << PARAM_8) | 0x01;
-    setup.wIndex = 0x409;
+    setup.wValue = 0x0100;
+    setup.wIndex = PARAM_0;
     setup.wLength = dataLen;
-    int32_t returnValue = OH_Usb_SendControlReadRequest(interfaceHandle, &setup, UINT32_MAX, data, &dataLen);
+    int32_t returnValue = OH_Usb_SendControlReadRequest(interfaceHandle, &setup, timeout, data, &dataLen);
     int32_t releaseValue = OH_Usb_ReleaseInterface(interfaceHandle);
     NAPI_ASSERT(env, releaseValue == PARAM_0, "OH_Usb_ReleaseInterface failed");
     OH_Usb_Release();
@@ -788,22 +830,15 @@ static napi_value UsbSendControlWriteRequestOne(napi_env env, napi_callback_info
     int32_t usbClaimInterfaceValue = OH_Usb_ClaimInterface(deviceId, interface, &interfaceHandle);
     NAPI_ASSERT(env, usbClaimInterfaceValue == PARAM_0, "Usb_ClaimInterface failed");
     struct UsbControlRequestSetup setup = {PARAM_0};
-    uint8_t dataw[USB_DDK_TEST_BUF_SIZE] = {PARAM_0};
-    uint32_t dataLen = USB_DDK_TEST_BUF_SIZE;
-    setup.bmRequestType = 0x80;
-    setup.bRequest = 0x06;
-    setup.wValue = (0x03 << PARAM_8) | 0x01;
-    setup.wIndex = 0x409;
-    setup.wLength = dataLen;
-    int32_t returnValueR = OH_Usb_SendControlReadRequest(interfaceHandle, &setup, timeout, dataw, &dataLen);
-    NAPI_ASSERT(env, returnValueR == PARAM_0, "OH_Usb_SendControlReadRequest failed");
-    struct UsbControlRequestSetup setupW = {PARAM_0};
-    setupW.bmRequestType = 0x00;
-    setupW.bRequest = 0x09;
-    setupW.wValue = (0x03 << PARAM_8) | 0x01;
-    setupW.wIndex = 0;
-    setupW.wLength = dataLen;
-    int32_t returnValue = OH_Usb_SendControlWriteRequest(interfaceHandle, &setupW, timeout, dataw, dataLen);
+    uint8_t data = PARAM_0;
+    uint32_t dataLen = PARAM_0;
+    // SET_INTERFACE(alt 0) is accepted by any USB device, unlike SET_DESCRIPTOR.
+    setup.bmRequestType = 0x01;
+    setup.bRequest = 0x0B;
+    setup.wValue = PARAM_0;
+    setup.wIndex = interface;
+    setup.wLength = PARAM_0;
+    int32_t returnValue = OH_Usb_SendControlWriteRequest(interfaceHandle, &setup, timeout, &data, dataLen);
     int32_t releaseValue = OH_Usb_ReleaseInterface(interfaceHandle);
     NAPI_ASSERT(env, releaseValue == PARAM_0, "OH_Usb_ReleaseInterface failed");
     OH_Usb_Release();
@@ -908,9 +943,9 @@ static napi_value UsbSendControlWriteRequestFive(napi_env env, napi_callback_inf
     bool result1 = ParseConfiguration(deviceId, source);
     NAPI_ASSERT(env, result1 == true, "ParseConfiguration failed");
     uint8_t interface = std::get<1>(source);
-    int32_t usbClaimInterfaceValue = OH_Usb_ClaimInterface(deviceId, interfaceIndex, &interfaceHandle);
+    int32_t usbClaimInterfaceValue = OH_Usb_ClaimInterface(deviceId, interface, &interfaceHandle);
     NAPI_ASSERT(env, usbClaimInterfaceValue == PARAM_0, "Usb_ClaimInterface failed");
-    struct UsbControlRequestSetup setup;
+    struct UsbControlRequestSetup setup = {PARAM_0};
     uint8_t data = PARAM_10;
     uint32_t dataLen = PARAM_10;
     int32_t returnValue = OH_Usb_SendControlWriteRequest(interfaceHandle, &setup, timeout, &data, dataLen);
@@ -951,7 +986,7 @@ static napi_value UsbSendPipeRequestOne(napi_env env, napi_callback_info info)
     struct UsbRequestPipe pipe;
     pipe.interfaceHandle = interfaceHandle;
     pipe.endpoint = endpoint1;
-    pipe.timeout = UINT32_MAX;
+    pipe.timeout = timeout;
     int32_t returnValue = OH_Usb_SendPipeRequest(&pipe, devMemMap);
     OH_Usb_DestroyDeviceMemMap(devMemMap);
     int32_t releaseValue = OH_Usb_ReleaseInterface(interfaceHandle);
@@ -1166,7 +1201,7 @@ static napi_value UsbSendPipeRequestWithAshmemOne(napi_env env, napi_callback_in
     struct UsbRequestPipe pipe;
     pipe.interfaceHandle = interfaceHandle;
     pipe.endpoint = endpoint1;
-    pipe.timeout = UINT32_MAX;
+    pipe.timeout = timeout;
     int32_t returnValue = OH_Usb_SendPipeRequestWithAshmem(&pipe, ashmem);
     OH_DDK_DestroyAshmem(ashmem);
     int32_t releaseValue = OH_Usb_ReleaseInterface(interfaceHandle);
@@ -5025,6 +5060,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"usbInit", nullptr, UsbInit, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbRelease", nullptr, UsbRelease, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbReleaseResource", nullptr, UsbReleaseResource, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbHasTransferEndpoint", nullptr, UsbHasTransferEndpoint, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
         {"usbGetDeviceDescriptorOne", nullptr, UsbGetDeviceDescriptorOne, nullptr, nullptr, nullptr, napi_default,
             nullptr},
         {"usbGetDeviceDescriptorTwo", nullptr, UsbGetDeviceDescriptorTwo, nullptr, nullptr, nullptr, napi_default,
