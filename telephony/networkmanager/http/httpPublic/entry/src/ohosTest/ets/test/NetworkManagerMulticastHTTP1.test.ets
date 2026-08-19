@@ -71,7 +71,7 @@ export default function NetworkManagerMulticast1HTTP2Test() {
         console.log('NetworkManagerMulticastHTTPTest afterAll end');
     });
     describe("NetworkManagerMulticast1HTTP2Test", ()=> {
-        /**
+         /**
          * @tc.name   testNetworkMgrHttpQUICXtsAsync0100
          * @tc.number SUB_NetworkMgr_Http_QUIC_Xts_Async_0100
          * @tc.desc   Test request property.
@@ -79,7 +79,7 @@ export default function NetworkManagerMulticast1HTTP2Test() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it("testNetworkMgrHttpQUICXtsAsync0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function)=>{
+         it("testNetworkMgrHttpQUICXtsAsync0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function)=>{
             let caseName:string = "testNetworkMgrHttpQUICXtsAsync0100";
             console.info(`${caseName}---Start`);
             try {
@@ -97,8 +97,8 @@ export default function NetworkManagerMulticast1HTTP2Test() {
                     }
                 })
             } catch(error) {
-                console.log(`${caseName} request failed, err: ${JSON.stringify(error)}`);
-                expectFalse();
+                console.log(`${caseName}  request failed, error: ${JSON.stringify(error)}`);
+                expectTrue(error.code === 2300999);
                 console.info(`${caseName}---End`);
                 done();
             }
