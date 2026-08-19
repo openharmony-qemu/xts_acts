@@ -18,7 +18,7 @@ import { notificationManager } from '@kit.NotificationKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { common, wantAgent } from '@kit.AbilityKit';
-import { Driver, ON } from '@kit.TestKit';
+import { Driver, ON, Component } from '@kit.TestKit';
 import { CustomGlobal } from '../testability/CustomGlobal';
 import notification from '@ohos.notification';
 import { image } from '@kit.ImageKit';
@@ -49,7 +49,7 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
     it('Sub_Notification_Ans_Publish_Publish_5000', Level.LEVEL3, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_5000 START`);
 
-        commonEventManager.publishAsUser("event.test", 0, (err) => {
+        commonEventManager.publishAsUser('event.test', 0, (err) => {
             if (err) {
                 console.info(`${TAG} publishAsUser AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
                 expect(err.code).assertEqual(202);
@@ -76,11 +76,11 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_5100 START`);
 
         let publishData: commonEventManager.CommonEventPublishData = {
-            bundleName: "example.bundleName",
+            bundleName: 'example.bundleName',
             code: 1
         }
 
-        commonEventManager.publishAsUser("event.test", 0, publishData, (err) => {
+        commonEventManager.publishAsUser('event.test', 0, publishData, (err) => {
             if (err) {
                 console.info(`${TAG} publishAsUser AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
                 expect(err.code).assertEqual(202);
@@ -106,13 +106,13 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
     it('Sub_Notification_Ces_StaticEvent_Config_1200', Level.LEVEL3, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ces_StaticEvent_Config_1200 START`);
 
-        commonEventManager.removeStickyCommonEvent("sticky_event", (err) => {
+        commonEventManager.removeStickyCommonEvent('sticky_event', (err) => {
             if (err) {
                 console.info(`${TAG} remove sticky event AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
                 expect(err.code).assertEqual(202);
                 done()
             } else {
-                console.info("${TAG} remove sticky event AsyncCallback success");
+                console.info('${TAG} remove sticky event AsyncCallback success');
                 expect(false).assertTrue()
                 done()
             }
@@ -132,8 +132,8 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
     it('Sub_Notification_Ces_StaticEvent_Config_1300', Level.LEVEL3, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ces_StaticEvent_Config_1300 START`);
 
-        commonEventManager.removeStickyCommonEvent("sticky_event").then(() => {
-            console.info("${TAG} remove sticky event AsyncCallback success");
+        commonEventManager.removeStickyCommonEvent('sticky_event').then(() => {
+            console.info('${TAG} remove sticky event AsyncCallback success');
             expect(false).assertTrue()
             done()
         }).catch ((err: BusinessError) => {
@@ -156,7 +156,7 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
     it('Sub_Notification_Ces_Publish_CommonEvent_7900_278', Level.LEVEL2, (done: Function) => {
       //构造commonEventManager.publish401错误码
       try {
-        commonEventManager.publish("EVENT01", null);
+        commonEventManager.publish('EVENT01', null);
         expect(false).assertTrue()
         done()
       } catch (err) {
@@ -167,11 +167,11 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
 
       let options: commonEventManager.CommonEventPublishData = {
         code: 0,
-        data: "initial data",
+        data: 'initial data',
         isOrdered: true
       }
       try {
-        commonEventManager.publish("EVENT01", options, null);
+        commonEventManager.publish('EVENT01', options, null);
         expect(false).assertTrue()
         done()
       } catch (err) {
@@ -194,7 +194,7 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
 
       //构造commonEventManager.subscribe 401错误码
       let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ["event05"]
+        events: ['event05']
       }
       let subscriber = commonEventManager.createSubscriberSync(subscribeInfo)
       try {
@@ -230,9 +230,9 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
      it('Sub_Notification_Ces_Publish_CommonEvent_7900_279', Level.LEVEL2, async (done: Function) => {
       //构造notificationManager.publish 1600004错误码
       let basicContent: notificationManager.NotificationBasicContent = {
-        title: "test_title",
-        text: "test_text",
-        additionalText: "test_Publish"
+        title: 'test_title',
+        text: 'test_text',
+        additionalText: 'test_Publish'
       }
 
       let notifyContent: notificationManager.NotificationContent = {
@@ -251,7 +251,7 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
       })
 
       await notificationManager.publish(notificationRequest).then(() => {
-        console.info(TAG + "publish update success");
+        console.info(TAG + 'publish update success');
         expect(false).assertTrue()
         done();
       }).catch((err: BusinessError) => {
@@ -266,31 +266,31 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_LIVE_VIEW,
           liveView: {
-            title: "wh",
-            text: "content",
+            title: 'wh',
+            text: 'content',
             status: 1,
             version: 2,
             extraInfo: {
-              "event": "TAXI",
-              "isMute": false,
-              "PrimaryData.title": "title更新",
-              "PrimaryData.content": '[{"text":"您的滴滴快车还有2分钟到达","textColor":"#FFFF0000"}]',
-              "PrimaryData.keepTime": 60,
-              "PrimaryData.extend.text": "extendData text",
-              "PrimaryData.extend.type": 1,
-              "LayoutData.layoutType": 4,
-              "PickupLayout.title": "layout title更新",
-              "PickupLayout.content": "layout content更新后",
-              "PickupLayout.underlineColor": "#FFFFFFFF",
-              "CapsuleData.status": 1,
-              "CapsuleData.type": 1,
-              "CapsuleData.backgroundColor": "#FFFFFFFF",
-              "CapsuleData.title": "capsule title",
-              "CapsuleData.content": "capsule content",
-              "TimerCapsule.content": "capsule title",
-              "TimerCapsule.initialtime": 7349485944,
-              "TimerCapsule.isCountdown": false,
-              "TimerCapsule.isPause": true
+              'event': 'TAXI',
+              'isMute': false,
+              'PrimaryData.title': 'title更新',
+              'PrimaryData.content': '[{"text":"您的滴滴快车还有2分钟到达","textColor":"#FFFF0000"}]',
+              'PrimaryData.keepTime': 60,
+              'PrimaryData.extend.text': 'extendData text',
+              'PrimaryData.extend.type': 1,
+              'LayoutData.layoutType': 4,
+              'PickupLayout.title': 'layout title更新',
+              'PickupLayout.content': 'layout content更新后',
+              'PickupLayout.underlineColor': '#FFFFFFFF',
+              'CapsuleData.status': 1,
+              'CapsuleData.type': 1,
+              'CapsuleData.backgroundColor': '#FFFFFFFF',
+              'CapsuleData.title': 'capsule title',
+              'CapsuleData.content': 'capsule content',
+              'TimerCapsule.content': 'capsule title',
+              'TimerCapsule.initialtime': 7349485944,
+              'TimerCapsule.isCountdown': false,
+              'TimerCapsule.isPause': true
             },
           },
         },
@@ -308,7 +308,7 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
       });
 
       await notificationManager.publish(notificationRequest1600007).then(() => {
-        console.info(TAG + "publish update success");
+        console.info(TAG + 'publish update success');
         expect(false).assertTrue()
         done();
       }).catch((err: BusinessError) => {
@@ -321,31 +321,31 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_LIVE_VIEW,
           liveView: {
-            title: "wh",
-            text: "content",
+            title: 'wh',
+            text: 'content',
             status: 0,
             version: 2,
             extraInfo: {
-              "event": "TAXI",
-              "isMute": false,
-              "PrimaryData.title": "title更新",
-              "PrimaryData.content": '[{"text":"您的滴滴快车还有2分钟到达","textColor":"#FFFF0000"}]',
-              "PrimaryData.keepTime": 60,
-              "PrimaryData.extend.text": "extendData text",
-              "PrimaryData.extend.type": 1,
-              "LayoutData.layoutType": 4,
-              "PickupLayout.title": "layout title更新",
-              "PickupLayout.content": "layout content更新后",
-              "PickupLayout.underlineColor": "#FFFFFFFF",
-              "CapsuleData.status": 1,
-              "CapsuleData.type": 1,
-              "CapsuleData.backgroundColor": "#FFFFFFFF",
-              "CapsuleData.title": "capsule title",
-              "CapsuleData.content": "capsule content",
-              "TimerCapsule.content": "capsule title",
-              "TimerCapsule.initialtime": 7349485944,
-              "TimerCapsule.isCountdown": false,
-              "TimerCapsule.isPause": true
+              'event': 'TAXI',
+              'isMute': false,
+              'PrimaryData.title': 'title更新',
+              'PrimaryData.content': '[{"text":"您的滴滴快车还有2分钟到达","textColor":"#FFFF0000"}]',
+              'PrimaryData.keepTime': 60,
+              'PrimaryData.extend.text': 'extendData text',
+              'PrimaryData.extend.type': 1,
+              'LayoutData.layoutType': 4,
+              'PickupLayout.title': 'layout title更新',
+              'PickupLayout.content': 'layout content更新后',
+              'PickupLayout.underlineColor': '#FFFFFFFF',
+              'CapsuleData.status': 1,
+              'CapsuleData.type': 1,
+              'CapsuleData.backgroundColor': '#FFFFFFFF',
+              'CapsuleData.title': 'capsule title',
+              'CapsuleData.content': 'capsule content',
+              'TimerCapsule.content': 'capsule title',
+              'TimerCapsule.initialtime': 7349485944,
+              'TimerCapsule.isCountdown': false,
+              'TimerCapsule.isPause': true
             },
           },
         },
@@ -363,7 +363,7 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
       });
 
       await notificationManager.publish(notificationRequest1600014).then(() => {
-        console.info(TAG + "publish update success");
+        console.info(TAG + 'publish update success');
         expect(false).assertTrue()
         done();
       }).catch((err: BusinessError) => {
@@ -384,7 +384,7 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_7900_280', Level.LEVEL2, async (done: Function) => {
       let id = 1
-      let label = "label"
+      let label = 'label'
       try {
         notificationManager.cancel(null, (err) => {
           if (err) {
@@ -555,7 +555,7 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
       let subscriber: commonEventManager.CommonEventSubscriber;
       // 订阅者信息
       let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ["event284"],
+        events: ['event284'],
         publisherBundleName: 'com.example.myapplication'
       };
 
@@ -734,7 +734,12 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
   await sleep(1000)
   let driver = Driver.create();
   await sleep(500)
-  let button = await driver.findComponent(ON.text("允许",0));
+  let button: Component | null = null;
+  try {
+    button = await driver.findComponent(ON.text('允许',0));
+  } catch (err) {
+    console.error(`findComponent failed, err: ${JSON.stringify(err)}`);
+  }
   hilog.info(0x0000, 'testTag', `button is ${JSON.stringify(button)}`);
   await sleep(500);
   if (button !== null) {
@@ -815,13 +820,13 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_7900_283', Level.LEVEL2, async (done: () => void) => {
       notificationManager.openNotificationSettings(CustomGlobal.context).then(async () => {
-      console.info(TAG + "openNotificationSettings success " );
+      console.info(TAG + 'openNotificationSettings success ' );
         await sleep(2000)
         await notificationManager.openNotificationSettings(CustomGlobal.context).then(() => {
           expect(false).assertTrue();
           done()
         }).catch((err: BusinessError) => {
-          console.error(TAG + "openNotificationSettings: " + JSON.stringify(err));
+          console.error(TAG + 'openNotificationSettings: ' + JSON.stringify(err));
           if (err.code == 801) {
             expect(err.code).assertEqual(801);
             done();
@@ -831,7 +836,7 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
           }
         });
       }).catch((err: BusinessError) => {
-        console.error(TAG + "openNotificationSettings: " + JSON.stringify(err));
+        console.error(TAG + 'openNotificationSettings: ' + JSON.stringify(err));
         if (err.code == 801) {
           expect(err.code).assertEqual(801);
           done();
@@ -853,34 +858,34 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
     it('Sub_Notification_Ces_Publish_CommonEvent_7900_287', Level.LEVEL2, async (done: Function) => {
 
       let BundleOption: notification.BundleOption = {
-        bundle: "com.example.secondaryDirectory",
+        bundle: 'com.example.secondaryDirectory',
         uid: 101001
       }
       console.info(`${TAG} BundleOption bundle:uid = ${BundleOption.bundle}${BundleOption.uid}`);
       expect(typeof BundleOption.bundle == 'string').assertTrue()
       expect(typeof BundleOption.uid == 'number').assertTrue()
-      expect(BundleOption.bundle).assertEqual("com.example.secondaryDirectory")
+      expect(BundleOption.bundle).assertEqual('com.example.secondaryDirectory')
       expect(BundleOption.uid).assertEqual(101001)
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_7900_287 END`);
 
 
       let removeCallback = (err: BusinessError) => {
         if (err.code) {
-          console.info("remove failed " + JSON.stringify(err));
+          console.info('remove failed ' + JSON.stringify(err));
           expect(err.code).assertEqual(67108878)
           done()
         } else {
-          console.info("whwhwhremove success");
+          console.info('whwhwhremove success');
           expect(false).assertEqual(true)
           done()
         }
       }
       let bundle: notification.BundleOption = {
-        bundle: "bundleName1",
+        bundle: 'bundleName1',
       };
       let notificationKey: notification.NotificationKey = {
         id: 0,
-        label: "label",
+        label: 'label',
       };
       let reason: notification.RemoveReason = notification.RemoveReason.CLICK_REASON_REMOVE;
       notification.remove(bundle, notificationKey, reason, removeCallback);
@@ -898,9 +903,9 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
 
       const TEST_SUITE_NAME = 'Sub_Notification'
       const TEST_CASE_NAME = 'Sub_Notification_Ces_Publish_CommonEvent_7900_287'
-      let imagesource = image.createImageSource(getContext()
+      let imagesource = image.createImageSource(getContext(CustomGlobal.context)
         .resourceManager
-        .getMediaContentSync($r("app.media.icon"))
+        .getMediaContentSync($r('app.media.icon'))
         .buffer
         .slice(0));
       const pixelMap = await imagesource.createPixelMap();
@@ -908,7 +913,7 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
         wants: [
           {
             bundleName: 'com.example.systemAPI',
-            action: "usual.event.REMOVAL_WANTAGENT"
+            action: 'usual.event.REMOVAL_WANTAGENT'
           }
         ],
         actionType: 4,
@@ -932,7 +937,7 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
         },
         smallIcon: pixelMap,
         largeIcon: pixelMap,
-        groupName: "123",
+        groupName: '123',
         removalWantAgent: wantAgentData,
         badgeNumber: 99,
         notificationFlags: {

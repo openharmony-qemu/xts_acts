@@ -11,7 +11,7 @@ function publishCB(err: BusinessError) {
   if (err) {
     console.error(`publish failed, code is ${err.code}, message is ${err.message}`);
   } else {
-    console.info("publish success");
+    console.info('publish success');
   }
 }
 export default function ActsCommonEventSubscribeNDKTest() {
@@ -33,10 +33,10 @@ export default function ActsCommonEventSubscribeNDKTest() {
         let result1 = testNapi.create_subscriber();
         hilog.info(0x0000, 'testTag', 'create subscriber : %{public}d', result1);
         expect(result1).assertEqual(401)
-        console.info("Sub_Notification_Ces_Subscriber_NDK_0003 testcase end")
+        console.info('Sub_Notification_Ces_Subscriber_NDK_0003 testcase end')
         done()
       } catch (err) {
-        console.info("Sub_Notification_Ces_Subscriber_NDK_0003 is fail")
+        console.info('Sub_Notification_Ces_Subscriber_NDK_0003 is fail')
         expect(false).assertEqual(true)
         done()
       }
@@ -51,16 +51,16 @@ export default function ActsCommonEventSubscribeNDKTest() {
      * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ces_Subscriber_NDK_0001', Level.LEVEL0,async (done:Function) => {
-      const arrayStr = ["123"];
+      const arrayStr = ['123'];
       try {
         testNapi.create_subscribe_info(arrayStr);
-        testNapi.set_publisher_bundleName("com.example.myapplication444");
+        testNapi.set_publisher_bundleName('com.example.myapplication444');
         testNapi.create_subscriber();
         testNapi.common_event_subscribe();
         await sleep(50)
         let options: commonEventManager.CommonEventPublishData = {
           code: 0,
-          data: "initial data",
+          data: 'initial data',
           parameters: {
             wh1: 123,
             wh2: 'B',
@@ -68,16 +68,16 @@ export default function ActsCommonEventSubscribeNDKTest() {
             wh4: true,
             wh5: [123, 234, 567],
             wh6: [true, false, true],
-            wh7: "whwhwhwhwhwhwhwhwhhwwhwhwhwhwh",
+            wh7: 'whwhwhwhwhwhwhwhwhhwwhwhwhwhwh',
             wh8: [11.11, 22.22, 33.33, 44.44],
             wh9: 2147483648,
             wh10: [2147483648, 555, 2147483649]
           },
-          bundleName: "com.example.myapplication444"
+          bundleName: 'com.example.myapplication444'
         }
         //发布公共事件
         try {
-          commonEventManager.publish("123", options, publishCB);
+          commonEventManager.publish('123', options, publishCB);
         } catch (error) {
           let err: BusinessError = error as BusinessError;
           console.error(`publish failed, code is ${err.code}, message is ${err.message}`);
@@ -96,10 +96,10 @@ export default function ActsCommonEventSubscribeNDKTest() {
         let result2 = testNapi.destroy_subscribe_info();
         hilog.info(0x0000, 'testTag', 'destroy subscribe info result : %{public}d', result2);
         expect(result2).assertEqual(400)
-        console.info("Sub_Notification_Ces_Subscriber_NDK_0001 testcase end")
+        console.info('Sub_Notification_Ces_Subscriber_NDK_0001 testcase end')
         done()
       } catch (err) {
-        console.info("Sub_Notification_Ces_Subscriber_NDK_0001 is fail")
+        console.info('Sub_Notification_Ces_Subscriber_NDK_0001 is fail')
         expect(false).assertEqual(true)
         done()
       }
@@ -117,10 +117,10 @@ export default function ActsCommonEventSubscribeNDKTest() {
       try {
         let result = testNapi.common_event_unsubscribe();
         expect(result).assertEqual(401)
-        console.info("Sub_Notification_Ces_Subscriber_NDK_0006 testcase end")
+        console.info('Sub_Notification_Ces_Subscriber_NDK_0006 testcase end')
         done()
       } catch (err) {
-        console.info("Sub_Notification_Ces_Subscriber_NDK_0006 is fail")
+        console.info('Sub_Notification_Ces_Subscriber_NDK_0006 is fail')
         expect(false).assertEqual(true)
         done()
       }
@@ -147,12 +147,12 @@ export default function ActsCommonEventSubscribeNDKTest() {
         let result2 = testNapi.common_event_subscribe();
         expect(result2).assertEqual(401)
         // 单应用进程下，subscribe超过200,订阅失败，返回1500010
-        const arrayStr2 = ["123"];
-        console.info("result2:" + result2 )
+        const arrayStr2 = ['123'];
+        console.info('result2:' + result2 )
         for (let i = 0; i < 199; i++) {
           testNapi.create_subscribe_info(arrayStr2);
-          testNapi.set_publisher_permission("ohos.permission.NOTIFICATION_CONTROLLER");
-          testNapi.set_publisher_bundleName("com.example.myapplication444");
+          testNapi.set_publisher_permission('ohos.permission.NOTIFICATION_CONTROLLER');
+          testNapi.set_publisher_bundleName('com.example.myapplication444');
           testNapi.create_subscriber();
           if (i == 198){
             let result3 = testNapi.common_event_subscribe();
@@ -171,10 +171,10 @@ export default function ActsCommonEventSubscribeNDKTest() {
             testNapi.common_event_subscribe();
           }
         }
-        console.info("Sub_Notification_Ces_Subscriber_NDK_0005 testcase end")
+        console.info('Sub_Notification_Ces_Subscriber_NDK_0005 testcase end')
         done()
       } catch (err) {
-        console.info("Sub_Notification_Ces_Subscriber_NDK_0005 is fail")
+        console.info('Sub_Notification_Ces_Subscriber_NDK_0005 is fail')
         expect(false).assertEqual(true)
         done()
       }

@@ -14,9 +14,8 @@
  */
 {
   "module": {
-    "name": "phone",
+    "name": "entry",
     "type": "entry",
-    "srcEntry": "./ets/Application/AbilityStage.ts",
     "description": "$string:phone_entry_dsc",
     "mainElement": "MainAbility",
     "deviceTypes": [],
@@ -26,7 +25,7 @@
     "abilities": [
       {
         "name": "com.example.systemAPI.MainAbility",
-        "srcEntry": "./ets/MainAbility/MainAbility.ts",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
