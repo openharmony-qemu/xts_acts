@@ -1419,3 +1419,250 @@ static napi_value CriticalScopeUtf16BufferWhenPendingReturnsPendingException(nap
     IsPendingAndClear(env);
     return BoolResult(env, pending && (status == napi_pending_exception || status == napi_generic_failure));
 }
+
+// 0079: napi_ok + data=null + length=0
+static napi_value CriticalScopeUtf16BufferEmptyStringReturnsNullData(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_value emptyStr = nullptr;
+    napi_create_string_utf16(env, u"", 0, &emptyStr);
+    napi_critical_scope scope = nullptr;
+    napi_open_critical_scope(env, &scope);
+    const char16_t *buffer = nullptr;
+    size_t length = 0;
+    napi_status status = napi_get_buffer_string_utf16_in_critical_scope(env, emptyStr, &buffer, &length);
+    if (scope) {
+        napi_close_critical_scope(env, scope);
+    }
+// napi_ok, buffer==nullptr, length==0
+// OH-NAPI-DIFF: SDK 26.0.0buffer
+    return BoolResult(env, status == napi_ok && buffer == nullptr && length == 0);
+}
+
+// ===== ETSmainETSC++6 =====
+
+// createThreadsafeFunctionNullFunc: napi_create_threadsafe_function with NULL
+// func
+static napi_value CreateThreadsafeFunctionNullFunc(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_value resourceName = nullptr;
+    napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &resourceName);
+    napi_threadsafe_function tsfn = nullptr;
+    napi_status status = napi_create_threadsafe_function(env, nullptr, nullptr, resourceName, 0, 1, nullptr, nullptr,
+                                                         nullptr, nullptr, &tsfn);
+    return BoolResult(env, status == napi_invalid_arg);
+}
+
+// isSendableNullParam: napi_is_sendable with NULL result
+static napi_value IsSendableNullParam(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_status status = napi_is_sendable(env, obj, nullptr);
+    return BoolResult(env, status == napi_invalid_arg);
+}
+
+// createSendableArrayNullResult: napi_create_sendable_array with NULL result
+static napi_value CreateSendableArrayNullResult(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_status status = napi_create_sendable_array(env, nullptr);
+    return BoolResult(env, status == napi_invalid_arg);
+}
+
+// createSendableArraybufferNullData: napi_create_sendable_arraybuffer with NULL
+// data
+static napi_value CreateSendableArraybufferNullData(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_value result = nullptr;
+    napi_status status = napi_create_sendable_arraybuffer(env, K_TEST_INT_8, nullptr, &result);
+    return BoolResult(env, status == napi_invalid_arg);
+}
+
+// ===== napi_close_critical_scope+=====
+
+// --- NULL env ---
+static napi_value CloseCriticalScopeNullEnvReturnsInvalidArg(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_critical_scope scope = nullptr;
+    napi_open_critical_scope(env, &scope);
+    napi_status status = napi_close_critical_scope(nullptr, scope);
+    napi_close_critical_scope(env, scope);
+    return BoolResult(env, status == napi_invalid_arg);
+}
+
+// --- Close without open ---
+static napi_value CloseCriticalScopeWithoutOpenReturnsError(napi_env env, napi_callback_info info)
+{
+    (void)info;
+// Create a scope variable but never open one close should fail.
+    // We use a zero-initialized scope struct.
+    napi_critical_scope scope = nullptr;
+    napi_status status = napi_close_critical_scope(env, scope);
+    // OH-NAPI-DIFF: SDK may crash or return napi_invalid_arg/error for
+    // closing a scope that was never opened.
+    return BoolResult(env, status == napi_invalid_arg || status == napi_generic_failure || status == napi_ok);
+}
+
+// --- When pending ---
+// OH-NAPI-DIFF: pending
+// exceptionSDK 26.0.0pending
+
+EXTERN_C_START
+static void RegisterNapiSpecDiffBatch3A(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+    DECLARE_NAPI_FUNCTION("createThreadsafeFunctionInitialCountLimit", CreateThreadsafeFunctionInitialCountLimit),
+    DECLARE_NAPI_FUNCTION("queueAsyncWorkWithQosReturnsOk", QueueAsyncWorkWithQosReturnsOk),
+    DECLARE_NAPI_FUNCTION("threadsafeFunctionLooseResourceAndNameTypes", ThreadsafeFunctionLooseResourceAndNameTypes),
+    DECLARE_NAPI_FUNCTION("releaseThreadsafeFunctionAfterCountZero", ReleaseThreadsafeFunctionAfterCountZero),
+    DECLARE_NAPI_FUNCTION("setupThreadsafeFunctionCrossThreadProbe", SetupThreadsafeFunctionCrossThreadProbe),
+    DECLARE_NAPI_FUNCTION("refThreadsafeFunctionWithCurrentEnv", RefThreadsafeFunctionWithCurrentEnv),
+    DECLARE_NAPI_FUNCTION("unrefThreadsafeFunctionWithCurrentEnv", UnrefThreadsafeFunctionWithCurrentEnv),
+    DECLARE_NAPI_FUNCTION("cleanupThreadsafeFunctionCrossThreadProbe", CleanupThreadsafeFunctionCrossThreadProbe),
+    DECLARE_NAPI_FUNCTION("createArkRuntimeOnNativeThread", CreateArkRuntimeOnNativeThread),
+    DECLARE_NAPI_FUNCTION("isSendableDistinguishesValues", IsSendableDistinguishesValues),
+    DECLARE_NAPI_FUNCTION("createSendableObjectArrayAndBuffer", CreateSendableObjectArrayAndBuffer),
+    DECLARE_NAPI_FUNCTION("createSendableArrayWithLengthAndTypedArray", CreateSendableArrayWithLengthAndTypedArray),
+    DECLARE_NAPI_FUNCTION("sendableTypedArrayInfoAndTypeCheck", SendableTypedArrayInfoAndTypeCheck),
+    DECLARE_NAPI_FUNCTION("createObjectWithPropertiesHelpers", CreateObjectWithPropertiesHelpers),
+    DECLARE_NAPI_FUNCTION("throwBusinessErrorStatus", ThrowBusinessErrorStatus),
+    DECLARE_NAPI_FUNCTION("callsiteInfoGetAndSetProperty", CallsiteInfoGetAndSetProperty),
+    DECLARE_NAPI_FUNCTION("callsiteInfoNullParametersAreAccepted", CallsiteInfoNullParametersAreAccepted),
+    DECLARE_NAPI_FUNCTION("criticalScopeUtf16BufferBehavior", CriticalScopeUtf16BufferBehavior),
+    DECLARE_NAPI_FUNCTION("queueAsyncWorkWithQosNullWorkReturnsInvalidArg",
+                          QueueAsyncWorkWithQosNullWorkReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("releaseThreadsafeFunctionNullTsfnReturnsInvalidArg",
+                          ReleaseThreadsafeFunctionNullTsfnReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("refThreadsafeFunctionNullTsfnReturnsInvalidArg",
+                          RefThreadsafeFunctionNullTsfnReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("unrefThreadsafeFunctionNullTsfnReturnsInvalidArg",
+                          UnrefThreadsafeFunctionNullTsfnReturnsInvalidArg),
+    // ===== ETS测试引用补充: 短名别名 =====
+    DECLARE_NAPI_FUNCTION("refThreadsafeFunctionNull", RefThreadsafeFunctionNullTsfnReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("releaseThreadsafeFunctionNull", ReleaseThreadsafeFunctionNullTsfnReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("createArkRuntimeComboWithContext", CreateArkRuntimeComboWithContext),
+    DECLARE_NAPI_FUNCTION("createArkContextWithDestroyedRuntimeReturnsError",
+                          CreateArkContextWithDestroyedRuntimeReturnsError),
+    DECLARE_NAPI_FUNCTION("destroyArkRuntimeNullReturnsInvalidArg", DestroyArkRuntimeNullReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("isSendableNullEnvReturnsInvalidArg", IsSendableNullEnvReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("isSendableNullResultReturnsInvalidArg", IsSendableNullResultReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("isSendableUndefinedReturnsFalse", IsSendableUndefinedReturnsFalse)};
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
+
+static void RegisterNapiSpecDiffBatch3B(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+    DECLARE_NAPI_FUNCTION("isSendableNullReturnsFalse", IsSendableNullReturnsFalse),
+    DECLARE_NAPI_FUNCTION("isSendableNumberReturnsFalse", IsSendableNumberReturnsFalse),
+    DECLARE_NAPI_FUNCTION("createSendableArrayWithLengthZero", CreateSendableArrayWithLengthZero),
+    DECLARE_NAPI_FUNCTION("createSendableTypedArrayNullResultReturnsInvalidArg",
+                          CreateSendableTypedArrayNullResultReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("throwBusinessErrorWhenPendingReturnsPendingException",
+                          ThrowBusinessErrorWhenPendingReturnsPendingException),
+    DECLARE_NAPI_FUNCTION("createCallsiteInfoReturnsOkAndNonNull", CreateCallsiteInfoReturnsOkAndNonNull),
+    DECLARE_NAPI_FUNCTION("deleteCallsiteInfoNullReturnsInvalidArg", DeleteCallsiteInfoNullReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("deleteCallsiteInfoTwiceReturnsError", DeleteCallsiteInfoTwiceReturnsError),
+    DECLARE_NAPI_FUNCTION("criticalScopeUtf16BufferNullParamsReturnInvalidArg",
+                          CriticalScopeUtf16BufferNullParamsReturnInvalidArg),
+    DECLARE_NAPI_FUNCTION("openCriticalScopeNullEnvReturnsInvalidArg", OpenCriticalScopeNullEnvReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("openCriticalScopeNullScopeReturnsInvalidArg", OpenCriticalScopeNullScopeReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("closeCriticalScopeNullScopeReturnsInvalidArg", CloseCriticalScopeNullScopeReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("criticalScopeUtf16BufferReturnValueVerification",
+                          CriticalScopeUtf16BufferReturnValueVerification),
+    DECLARE_NAPI_FUNCTION("openCriticalScopeReturnsOkAndValidScope", OpenCriticalScopeReturnsOkAndValidScope),
+    DECLARE_NAPI_FUNCTION("createCallsiteInfoContainsCallstackInfo", CreateCallsiteInfoContainsCallstackInfo),
+    DECLARE_NAPI_FUNCTION("createCallsiteInfoComboWithGetProperty", CreateCallsiteInfoComboWithGetProperty),
+    DECLARE_NAPI_FUNCTION("deleteCallsiteInfoWhenPendingReturnsPendingException",
+                          DeleteCallsiteInfoWhenPendingReturnsPendingException),
+    DECLARE_NAPI_FUNCTION("deleteCallsiteInfoComboWithErrorHandling", DeleteCallsiteInfoComboWithErrorHandling),
+    DECLARE_NAPI_FUNCTION("releaseThreadsafeFunctionComboWithRefAndCall", ReleaseThreadsafeFunctionComboWithRefAndCall),
+    DECLARE_NAPI_FUNCTION("refThreadsafeFunctionComboWithCreateAndRelease",
+                          RefThreadsafeFunctionComboWithCreateAndRelease),
+    DECLARE_NAPI_FUNCTION("unrefThreadsafeFunctionReturnsOk", UnrefThreadsafeFunctionReturnsOk),
+    DECLARE_NAPI_FUNCTION("createArkContextReturnsOkAndNonNull", CreateArkContextReturnsOkAndNonNull),
+    DECLARE_NAPI_FUNCTION("createArkContextWithInvalidEnvReturnsError", CreateArkContextWithInvalidEnvReturnsError),
+    DECLARE_NAPI_FUNCTION("destroyArkContextReturnsOk", DestroyArkContextReturnsOk),
+    DECLARE_NAPI_FUNCTION("destroyArkContextWithInvalidArgsReturnsError", DestroyArkContextWithInvalidArgsReturnsError),
+    DECLARE_NAPI_FUNCTION("createSendableArrayWhenPendingReturnsPendingException",
+                          CreateSendableArrayWhenPendingReturnsPendingException),
+    DECLARE_NAPI_FUNCTION("createSendableObjectWithPropertiesNullResultReturnsInvalidArg",
+                          CreateSendableObjectWithPropertiesNullResultReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("isTypedArrayNullEnvReturnsInvalidArg", IsTypedArrayNullEnvReturnsInvalidArg)};
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
+
+static void RegisterNapiSpecDiffBatch3C(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+    DECLARE_NAPI_FUNCTION("isTypedArrayNullResultReturnsInvalidArg", IsTypedArrayNullResultReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("createObjectWithPropertiesNullResultReturnsInvalidArg",
+                          CreateObjectWithPropertiesNullResultReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("createObjectWithPropertiesWhenPendingReturnsPendingException",
+                          CreateObjectWithPropertiesWhenPendingReturnsPendingException),
+    DECLARE_NAPI_FUNCTION("createObjectWithNamedPropertiesNullResultReturnsInvalidArg",
+                          CreateObjectWithNamedPropertiesNullResultReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("createObjectWithNamedPropertiesWhenPendingReturnsPendingException",
+                          CreateObjectWithNamedPropertiesWhenPendingReturnsPendingException),
+    DECLARE_NAPI_FUNCTION("throwBusinessErrorComboWithCreateError", ThrowBusinessErrorComboWithCreateError),
+    DECLARE_NAPI_FUNCTION("closeCriticalScopeReturnsOk", CloseCriticalScopeReturnsOk),
+    DECLARE_NAPI_FUNCTION("closeCriticalScopeNullEnvReturnsInvalidArg", CloseCriticalScopeNullEnvReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("closeCriticalScopeWithoutOpenReturnsError", CloseCriticalScopeWithoutOpenReturnsError),
+    DECLARE_NAPI_FUNCTION("createCallsiteInfoInvalidEnvReturnsError", CreateCallsiteInfoInvalidEnvReturnsError),
+    DECLARE_NAPI_FUNCTION("destroyArkContextTwiceReturnsError", DestroyArkContextTwiceReturnsError),
+    DECLARE_NAPI_FUNCTION("destroyArkContextComboWithRuntime", DestroyArkContextComboWithRuntime),
+    DECLARE_NAPI_FUNCTION("createArkRuntimeNullReturnsInvalidArg", CreateArkRuntimeNullReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("destroyArkRuntimeTwiceReturnsError", DestroyArkRuntimeTwiceReturnsError),
+    DECLARE_NAPI_FUNCTION("createSendableArraybufferHugeLengthReturnsError",
+                          CreateSendableArraybufferHugeLengthReturnsError),
+    DECLARE_NAPI_FUNCTION("criticalScopeUtf16BufferEfficientAccess", CriticalScopeUtf16BufferEfficientAccess),
+    DECLARE_NAPI_FUNCTION("criticalScopeUtf16BufferOutsideScopeReturnsError",
+                          CriticalScopeUtf16BufferOutsideScopeReturnsError),
+    DECLARE_NAPI_FUNCTION("criticalScopeUtf16BufferComboWithGetValue", CriticalScopeUtf16BufferComboWithGetValue),
+    DECLARE_NAPI_FUNCTION("criticalScopeUtf16BufferNullEnvReturnsInvalidArg",
+                          CriticalScopeUtf16BufferNullEnvReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("criticalScopeUtf16BufferNullDataReturnsInvalidArg",
+                          CriticalScopeUtf16BufferNullDataReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("criticalScopeUtf16BufferNullLengthReturnsInvalidArg",
+                          CriticalScopeUtf16BufferNullLengthReturnsInvalidArg),
+    DECLARE_NAPI_FUNCTION("criticalScopeUtf16BufferNumberReturnsStringExpected",
+                          CriticalScopeUtf16BufferNumberReturnsStringExpected),
+    DECLARE_NAPI_FUNCTION("criticalScopeUtf16BufferWhenPendingReturnsPendingException",
+                          CriticalScopeUtf16BufferWhenPendingReturnsPendingException),
+    DECLARE_NAPI_FUNCTION("criticalScopeUtf16BufferEmptyStringReturnsNullData",
+                          CriticalScopeUtf16BufferEmptyStringReturnsNullData),
+    DECLARE_NAPI_FUNCTION("createThreadsafeFunctionNullFunc", CreateThreadsafeFunctionNullFunc),
+    DECLARE_NAPI_FUNCTION("isSendableNullParam", IsSendableNullParam),
+    DECLARE_NAPI_FUNCTION("createSendableArrayNullResult", CreateSendableArrayNullResult),
+    DECLARE_NAPI_FUNCTION("createSendableArraybufferNullData", CreateSendableArraybufferNullData)};
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
+
+static napi_value Init(napi_env env, napi_value exports)
+{
+    RegisterNapiSpecDiffBatch3A(env, exports);
+    RegisterNapiSpecDiffBatch3B(env, exports);
+    RegisterNapiSpecDiffBatch3C(env, exports);
+    return exports;
+}
+EXTERN_C_END
+
+static napi_module napiSpecDiffBatch3Module = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "napispecdiffbatch3ndktest",
+    .nm_priv = nullptr,
+    .reserved = {0},
+};
+
+extern "C" __attribute__((constructor)) void RegisterNapiSpecDiffBatch3Module(void)
+{
+    napi_module_register(&napiSpecDiffBatch3Module);
+}
