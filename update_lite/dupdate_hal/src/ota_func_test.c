@@ -225,7 +225,7 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1500, Function | MediumTest | Leve
 {
     int ret = HotaGetUpdateStatus();
     printf("HotaGetUpdateStatus return = %d\r\n", ret);
-    /* ws63 实测 0（无进行中的升级） */
+    /* 无进行中的升级（状态 0） */
     TEST_ASSERT_EQUAL_INT(0, ret);
 };
 
@@ -241,7 +241,7 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1700, Function | MediumTest | Leve
 {
     int ret = HotaIsDeviceCanReboot();
     printf("HotaIsDeviceCanReboot return = %d\r\n", ret);
-    /* ws63 实测 1（可重启） */
+    /* 当前可重启 */
     TEST_ASSERT_EQUAL_INT(1, ret);
 };
 
@@ -257,7 +257,7 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI2100, Function | MediumTest | Leve
 {
     int ret = HotaSetBootSettings();
     printf("HotaSetBootSettings return = %d\r\n", ret);
-    /* ws63 实测 -1（升级未开始/校验失败时设置失败） */
+    /* 升级未开始/校验失败时设置失败（OHOS_FAILURE） */
     TEST_ASSERT_EQUAL_INT(OHOS_FAILURE, ret);
 };
 

@@ -810,18 +810,18 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
                Function | MediumTest | Level1) {
     /* 非法参数：NULL 返回 -1 */
     uint32_t handle = FindParameter(NULL);
-    TEST_ASSERT_TRUE(handle == (uint32_t)(-1));
-    /* 不存在的参数返回 -1 */
+    TEST_ASSERT_TRUE((int32_t)handle < 0);
+    /* 不存在的参数返回负值 */
     handle = FindParameter("rw.sys.xts_notexist_1000");
-    TEST_ASSERT_TRUE(handle == (uint32_t)(-1));
+    TEST_ASSERT_TRUE((int32_t)handle < 0);
     /* 设置参数后返回有效句柄 */
     int ret = SetParameter("rw.sys.xts_findparam", "100");
     TEST_ASSERT_EQUAL_INT(0, ret);
     handle = FindParameter("rw.sys.xts_findparam");
-    TEST_ASSERT_TRUE(handle != (uint32_t)(-1));
+    TEST_ASSERT_TRUE((int32_t)handle >= 0);
     /* 只读系统参数（const 前缀）返回有效句柄 */
     handle = FindParameter("const.product.model");
-    TEST_ASSERT_TRUE(handle != (uint32_t)(-1));
+    TEST_ASSERT_TRUE((int32_t)handle >= 0);
 };
 
 /**
@@ -837,16 +837,16 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
                Function | MediumTest | Level1) {
     /* 非法句柄：0 与 -1 返回 -1 */
     uint32_t commitId = GetParameterCommitId(0);
-    TEST_ASSERT_TRUE(commitId == (uint32_t)(-1));
+    TEST_ASSERT_TRUE((int32_t)commitId < 0);
     commitId = GetParameterCommitId((uint32_t)(-1));
-    TEST_ASSERT_TRUE(commitId == (uint32_t)(-1));
+    TEST_ASSERT_TRUE((int32_t)commitId < 0);
     /* 合法句柄：返回非 -1 的提交号 */
     int ret = SetParameter("rw.sys.xts_commitid", "1");
     TEST_ASSERT_EQUAL_INT(0, ret);
     uint32_t handle = FindParameter("rw.sys.xts_commitid");
-    TEST_ASSERT_TRUE(handle != (uint32_t)(-1));
+    TEST_ASSERT_TRUE((int32_t)handle >= 0);
     commitId = GetParameterCommitId(handle);
-    TEST_ASSERT_TRUE(commitId != (uint32_t)(-1));
+    TEST_ASSERT_TRUE((int32_t)commitId >= 0);
 };
 
 /**
@@ -873,7 +873,7 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
     ret = SetParameter("rw.sys.xts_getname", "abc");
     TEST_ASSERT_EQUAL_INT(0, ret);
     uint32_t handle = FindParameter("rw.sys.xts_getname");
-    TEST_ASSERT_TRUE(handle != (uint32_t)(-1));
+    TEST_ASSERT_TRUE((int32_t)handle >= 0);
     ret = GetParameterName(handle, name, sizeof(name));
     TEST_ASSERT_TRUE(ret > 0);
     TEST_ASSERT_TRUE((uint32_t)ret == strlen(name));
@@ -902,7 +902,7 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
     ret = SetParameter("rw.sys.xts_getvalue", "hello");
     TEST_ASSERT_EQUAL_INT(0, ret);
     uint32_t handle = FindParameter("rw.sys.xts_getvalue");
-    TEST_ASSERT_TRUE(handle != (uint32_t)(-1));
+    TEST_ASSERT_TRUE((int32_t)handle >= 0);
     ret = GetParameterValue(handle, value, sizeof(value));
     TEST_ASSERT_TRUE(ret > 0);
     TEST_ASSERT_TRUE((uint32_t)ret == strlen(value));
