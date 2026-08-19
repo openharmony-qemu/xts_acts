@@ -107,6 +107,14 @@ export default function ActsRpcClientJsTest() {
             }
         }
 
+        class TestMessageOption extends rpc.MessageOption {
+            constructor(syncFlags, waitTime) { super(syncFlags, waitTime); }
+        }
+
+        class TestRemoteObjectSub extends rpc.RemoteObject {
+            constructor(descriptor) { super(descriptor); }
+        }
+
         class TestProxy {
             remote = rpc.RemoteObject;
             constructor(remote) {
@@ -16602,6 +16610,174 @@ export default function ActsRpcClientJsTest() {
         })
 
         /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageOption_0180
+         * @tc.number SUB_DSoftbus_IPC_API_MessageOption_0180
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageOption_0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageOption_0180---------------------------");
+            try {
+                let option = new rpc.MessageOption(null);
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageOption_0180 error is:" + error);
+                expect(error != null).assertTrue();
+            } finally {
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageOption_0180---------------------------");
+        })
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageOption_0190
+         * @tc.number SUB_DSoftbus_IPC_API_MessageOption_0190
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageOption_0190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageOption_0190---------------------------");
+            try {
+                let option = new rpc.MessageOption(undefined);
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageOption_0190 error is:" + error);
+                expect(error != null).assertTrue();
+            } finally {
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageOption_0190---------------------------");
+        })
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageOption_0200
+         * @tc.number SUB_DSoftbus_IPC_API_MessageOption_0200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageOption_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageOption_0200---------------------------");
+            try {
+                let option = new rpc.MessageOption(0, null);
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageOption_0200 error is:" + error);
+                expect(error != null).assertTrue();
+            } finally {
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageOption_0200---------------------------");
+        })
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageOption_0210
+         * @tc.number SUB_DSoftbus_IPC_API_MessageOption_0210
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageOption_0210", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageOption_0210---------------------------");
+            try {
+                let option = new rpc.MessageOption(0, undefined);
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageOption_0210 error is:" + error);
+                expect(error != null).assertTrue();
+            } finally {
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageOption_0210---------------------------");
+        })
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageOption_0220
+         * @tc.number SUB_DSoftbus_IPC_API_MessageOption_0220
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageOption_0220", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageOption_0220---------------------------");
+            try {
+                let option = new TestMessageOption(null, 20);
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageOption_0220 error is:" + error);
+                expect(error != null).assertTrue();
+            } finally {
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageOption_0220---------------------------");
+        })
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageOption_0230
+         * @tc.number SUB_DSoftbus_IPC_API_MessageOption_0230
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageOption_0230", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageOption_0230---------------------------");
+            try {
+                let option = new TestMessageOption(undefined, 20);
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageOption_0230 error is:" + error);
+                expect(error != null).assertTrue();
+            } finally {
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageOption_0230---------------------------");
+        })
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageOption_0240
+         * @tc.number SUB_DSoftbus_IPC_API_MessageOption_0240
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageOption_0240", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageOption_0240---------------------------");
+            try {
+                let option = new TestMessageOption(0, null);
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageOption_0240 error is:" + error);
+                expect(error != null).assertTrue();
+            } finally {
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageOption_0240---------------------------");
+        })
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageOption_0250
+         * @tc.number SUB_DSoftbus_IPC_API_MessageOption_0250
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageOption_0250", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageOption_0250---------------------------");
+            try {
+                let option = new TestMessageOption(0, undefined);
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageOption_0250 error is:" + error);
+                expect(error != null).assertTrue();
+            } finally {
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageOption_0250---------------------------");
+        })
+
+        /**
          * @tc.name   SUB_DSoftbus_IPC_API_Ashmem_0010
          * @tc.number SUB_DSoftbus_IPC_API_Ashmem_0010
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -20795,6 +20971,94 @@ export default function ActsRpcClientJsTest() {
                 done();
             }
             console.info("---------------------end SUB_DSoftbus_IPC_API_RemoteObject_0180---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_RemoteObject_0190
+         * @tc.number SUB_DSoftbus_IPC_API_RemoteObject_0190
+         * @tc.desc   Test RemoteObject constructor with empty string descriptor
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_RemoteObject_0190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_RemoteObject_0190---------------------------");
+            try {
+                let testRemoteObject = new rpc.RemoteObject("");
+                let res = testRemoteObject.getDescriptor();
+                expect(res).assertEqual("");
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_RemoteObject_0190 error is:" + error);
+                expect(error == null).assertTrue();
+            } finally {
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_RemoteObject_0190---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_RemoteObject_0200
+         * @tc.number SUB_DSoftbus_IPC_API_RemoteObject_0200
+         * @tc.desc   Test RemoteObject constructor with null descriptor via subclass
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_RemoteObject_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_RemoteObject_0200---------------------------");
+            try {
+                let testRemoteObject = new TestRemoteObjectSub(null);
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_RemoteObject_0200 error is:" + error);
+                expect(error != null).assertTrue();
+            } finally {
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_RemoteObject_0200---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_RemoteObject_0210
+         * @tc.number SUB_DSoftbus_IPC_API_RemoteObject_0210
+         * @tc.desc   Test RemoteObject constructor with undefined descriptor via subclass
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_RemoteObject_0210", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_RemoteObject_0210---------------------------");
+            try {
+                let testRemoteObject = new TestRemoteObjectSub(undefined);
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_RemoteObject_0210 error is:" + error);
+                expect(error != null).assertTrue();
+            } finally {
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_RemoteObject_0210---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_RemoteObject_0220
+         * @tc.number SUB_DSoftbus_IPC_API_RemoteObject_0220
+         * @tc.desc   Test RemoteObject constructor with empty string descriptor via subclass
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_RemoteObject_0220", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_RemoteObject_0220---------------------------");
+            try {
+                let testRemoteObject = new TestRemoteObjectSub("");
+                let res = testRemoteObject.getDescriptor();
+                expect(res).assertEqual("");
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_RemoteObject_0220 error is:" + error);
+                expect(error == null).assertTrue();
+            } finally {
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_RemoteObject_0220---------------------------");
         });
 
         console.info("-----------------------SUB_DSoftbus_IPC_API_MessageParce_Test is end-----------------------");
