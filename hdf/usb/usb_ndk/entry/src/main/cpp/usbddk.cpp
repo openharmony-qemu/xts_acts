@@ -40,6 +40,9 @@
 #define USB_DDK_ENDPOINT_XFER_INT 0x03
 #define USB_DDK_DEVICE_DESC_LEN 18
 #define USB_DDK_CLASS_HUB 0x09
+#define USB_DDK_ENDPOINT_TYPE_NONE 0
+#define USB_DDK_ENDPOINT_TYPE_IN_ONLY 1
+#define USB_DDK_ENDPOINT_TYPE_HAS_OUT 2
 #define PARAM_0 0
 #define PARAM_1 1
 #define PARAM_10 10
@@ -253,7 +256,7 @@ static napi_value UsbHasTransferEndpoint(napi_env env, napi_callback_info info)
     uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
     int32_t usbInitReturnValue = OH_Usb_Init();
     NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
-    int32_t endpointType = PARAM_0;
+    int32_t endpointType = USB_DDK_ENDPOINT_TYPE_NONE;
     struct UsbDeviceDescriptor devDesc;
     int32_t getDevDescRet = OH_Usb_GetDeviceDescriptor(deviceId, &devDesc);
     if (getDevDescRet == PARAM_0 && devDesc.bDeviceClass != USB_DDK_CLASS_HUB) {
@@ -263,7 +266,8 @@ static napi_value UsbHasTransferEndpoint(napi_env env, napi_callback_info info)
             auto source = GetEndpointInfo(config);
             OH_Usb_FreeConfigDescriptor(config);
             if (std::get<0>(source)) {
-                endpointType = ((std::get<2>(source) & USB_DDK_ENDPOINT_DIR_MASK) == USB_DDK_DIR_IN) ? 1 : 2;
+                endpointType = ((std::get<2>(source) & USB_DDK_ENDPOINT_DIR_MASK) == USB_DDK_DIR_IN)
+                    ? USB_DDK_ENDPOINT_TYPE_IN_ONLY : USB_DDK_ENDPOINT_TYPE_HAS_OUT;
             }
         }
     }
