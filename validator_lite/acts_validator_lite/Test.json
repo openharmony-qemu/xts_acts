@@ -1,0 +1,33 @@
+{
+    "description": "Acts Validator Lite UI component test",
+    "environment": [
+        {
+            "type": "device",
+            "label": "ipcamera",
+            "device": {
+                "label": "ipcamera",
+                "type": "usb"
+            }
+        }
+    ],
+    "kits": [
+        {
+            "type": "MountKit",
+            "server": "NfsServer",
+            "type_kernel": "linux",
+            "mount": [
+                {
+                    "source": "$testcases/acts_validator_lite",
+                    "target": "/test_root"
+                }
+            ]
+        }
+    ],
+    "driver": {
+        "type": "ValidatorLite",
+        "ability-name": "ValidatorAbility",
+        "bundle-name": "com.example.actsvalidator",
+        "hap-file-name": "ActsValidatorLite.hap",
+        "timeout": "600000"
+    }
+}

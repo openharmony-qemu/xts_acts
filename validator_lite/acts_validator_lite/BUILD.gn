@@ -1,0 +1,192 @@
+import("//build/lite/config/hap_pack.gni")
+
+_suite_dir = "$root_out_dir/suites/acts_validator_lite/testcases/acts_validator_lite"
+_tools_dir = "$root_out_dir/suites/acts_validator_lite/testcases/tools"
+
+action("acts_validator_lite_ace_loader_build") {
+  script = "pre_build.py"
+  outputs = [ "$target_gen_dir/ace_loader_build.stamp" ]
+  args = [ rebase_path("$target_gen_dir/ace_loader_build.stamp") ]
+}
+
+action("acts_validator_lite_js_bundle") {
+  deps = [
+    ":acts_validator_lite_ace_loader_build",
+    
+  ]
+  script = "acts_validator_lite_build_js.py"
+  sources = [
+    "entry/src/main/js/MainAbility/app.js",
+    "entry/src/main/js/MainAbility/manifest.json",
+    "entry/src/main/js/MainAbility/common/js/event.js",
+    "entry/src/main/js/MainAbility/common/js/general.js",
+    "entry/src/main/js/MainAbility/common/js/swiper.js",
+    "entry/src/main/js/MainAbility/pages/index/index.css",
+    "entry/src/main/js/MainAbility/pages/index/index.hml",
+    "entry/src/main/js/MainAbility/pages/index/index.js",
+    "entry/src/main/js/MainAbility/pages/common/help/index.css",
+    "entry/src/main/js/MainAbility/pages/common/help/index.hml",
+    "entry/src/main/js/MainAbility/pages/common/help/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/common/index/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/common/index/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/common/index/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/text/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/text/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/text/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/image/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/image/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/image/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/progress/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/progress/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/progress/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/slider/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/slider/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/slider/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/switch/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/switch/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/switch/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/chart/bar/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/chart/bar/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/chart/bar/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/chart/line/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/chart/line/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/chart/line/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/image-animator/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/image-animator/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/image-animator/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/input/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/input/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/input/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/list-item/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/list-item/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/list-item/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/event/longpress/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/event/longpress/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/event/longpress/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/event/swipe/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/event/swipe/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/event/swipe/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/marquee/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/marquee/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/marquee/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/opacity/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/opacity/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/opacity/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/picker-view/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/picker-view/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/picker-view/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/qrcode/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/qrcode/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/qrcode/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/swiper/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/swiper/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/swiper/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/transition/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/transition/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/transition/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/app/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/app/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/app/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/configuration/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/configuration/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/configuration/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/timer/timeout/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/timer/timeout/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/timer/timeout/index.js",
+    "entry/src/main/js/MainAbility/pages/ArkUI/timer/interval/index.css",
+    "entry/src/main/js/MainAbility/pages/ArkUI/timer/interval/index.hml",
+    "entry/src/main/js/MainAbility/pages/ArkUI/timer/interval/index.js",
+    "entry/src/main/js/MainAbility/pages/FileManagement/file/index.css",
+    "entry/src/main/js/MainAbility/pages/FileManagement/file/index.hml",
+    "entry/src/main/js/MainAbility/pages/FileManagement/file/index.js",
+    "entry/src/main/js/MainAbility/pages/PowerManager/common/index/index.css",
+    "entry/src/main/js/MainAbility/pages/PowerManager/common/index/index.hml",
+    "entry/src/main/js/MainAbility/pages/PowerManager/common/index/index.js",
+    "entry/src/main/js/MainAbility/pages/PowerManager/battery/index.css",
+    "entry/src/main/js/MainAbility/pages/PowerManager/battery/index.hml",
+    "entry/src/main/js/MainAbility/pages/PowerManager/battery/index.js",
+    "entry/src/main/js/MainAbility/pages/PowerManager/brightness/value/index.css",
+    "entry/src/main/js/MainAbility/pages/PowerManager/brightness/value/index.hml",
+    "entry/src/main/js/MainAbility/pages/PowerManager/brightness/value/index.js",
+    "entry/src/main/js/MainAbility/pages/PowerManager/brightness/mode/index.css",
+    "entry/src/main/js/MainAbility/pages/PowerManager/brightness/mode/index.hml",
+    "entry/src/main/js/MainAbility/pages/PowerManager/brightness/mode/index.js",
+    "entry/src/main/js/MainAbility/pages/DistributedData/storage/index.css",
+    "entry/src/main/js/MainAbility/pages/DistributedData/storage/index.hml",
+    "entry/src/main/js/MainAbility/pages/DistributedData/storage/index.js",
+    "entry/src/main/js/MainAbility/pages/Startup/deviceInfo/index.css",
+    "entry/src/main/js/MainAbility/pages/Startup/deviceInfo/index.hml",
+    "entry/src/main/js/MainAbility/pages/Startup/deviceInfo/index.js",
+    "entry/src/main/js/MainAbility/pages/Communication/nfc/index.css",
+    "entry/src/main/js/MainAbility/pages/Communication/nfc/index.hml",
+    "entry/src/main/js/MainAbility/pages/Communication/nfc/index.js",
+    "acts_validator_lite_build_js.py",
+  ]
+  outputs = [
+    "$root_out_dir/acts_validator_lite/assets/js/default/app.js",
+    "$root_out_dir/acts_validator_lite/assets/js/default/manifest.json",
+    "$root_out_dir/acts_validator_lite/assets/js/default/pages/index/index.js",
+  ]
+  args = [
+    rebase_path("entry/src/main/js/MainAbility"),
+    rebase_path("$root_out_dir/acts_validator_lite/assets/js/default"),
+  ]
+}
+
+group("acts_validator_lite_js_assets") {
+  deps = [ ":acts_validator_lite_js_bundle" ]
+}
+
+hap_pack("acts_validator_lite_hap") {
+  deps = [
+    ":acts_validator_lite_js_assets",
+  ]
+  mode = "hap"
+  json_path = "entry/src/main/config.json"
+  assets_path = "$root_out_dir/acts_validator_lite/assets"
+  force = "true"
+  cert_profile = "cert/openharmony_sx.p7b"
+  resources_path = "entry/src/main/resources"
+  hap_name = "ActsValidatorLite"
+  privatekey = "HOS Application Provision Release"
+}
+
+action("acts_validator_lite_deploy") {
+  deps = [ ":acts_validator_lite_hap" ]
+  if (ohos_kernel_type == "liteos_a" || ohos_kernel_type == "linux") {
+    deps += [ "//foundation/ability/ability_lite/services/abilitymgr_lite/tools:aa" ]
+  }
+  script = "//test/xts/tools/lite/build/deploy_lite.py"
+  sources = [ "Test.json" ]
+  outputs = [
+    "$_suite_dir/ActsValidatorLite.hap",
+    "$_suite_dir/ActsValidatorLite.json",
+    "$_tools_dir/aa",
+  ]
+  args = [
+    "--hap",
+    rebase_path("$root_out_dir/system/internal/ActsValidatorLite.hap"),
+    "--hap-out",
+    rebase_path(_suite_dir),
+    "--test-json",
+    rebase_path("Test.json"),
+    "--test-json-out",
+    rebase_path("$_suite_dir/ActsValidatorLite.json"),
+    "--aa-src",
+    rebase_path("$root_out_dir/dev_tools/bin/aa"),
+    "--tools-out",
+    rebase_path(_tools_dir),
+  ]
+}
+
+action("acts_validator_lite_remove_from_rootfs") {
+  deps = [ ":acts_validator_lite_deploy" ]
+  script = "rm_from_rootfs.py"
+  outputs = [ "$target_gen_dir/rm_acts_validator_lite.stamp" ]
+  args = [
+    "--remove",
+    rebase_path("$root_out_dir/system/internal/ActsValidatorLite.hap"),
+    "--stamp",
+    rebase_path("$target_gen_dir/rm_acts_validator_lite.stamp"),
+  ]
+}

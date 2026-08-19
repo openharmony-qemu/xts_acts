@@ -1,0 +1,24 @@
+import("//test/xts/tools/lite/build/suite_lite.gni")
+
+_config_dir = "$root_out_dir/suites/acts_validator_lite/config"
+
+action("copy_validator_config") {
+  script = "//test/xts/tools/lite/build/utils.py"
+  sources = [ "validator.json" ]
+  outputs = [ "$_config_dir/validator.json" ]
+  args = [
+    "--method_name",
+    "copy_file",
+    "--arguments",
+    "output=" + rebase_path("$_config_dir") + "#sources=" + rebase_path("validator.json") + "#to_dir=False",
+  ]
+  deps = [ ":acts_validator_lite_xdevice" ]
+}
+
+test_suite("acts_validator_lite") {
+  deps = [
+    "//test/xts/acts/validator_lite/acts_validator_lite:acts_validator_lite_remove_from_rootfs",
+    ":copy_validator_config",
+  ]
+  version = "OpenHarmony-ValidatorLite-1.0.0"
+}
