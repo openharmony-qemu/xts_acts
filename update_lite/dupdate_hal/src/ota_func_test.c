@@ -224,7 +224,7 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1500, Function | MediumTest | Leve
 {
     int ret = HotaGetUpdateStatus();
     printf("HotaGetUpdateStatus return = %d\r\n", ret);
-    TEST_ASSERT_TRUE(ret >= HOTA_NOT_INIT && ret <= HOTA_CANCELED);
+    TEST_ASSERT_TRUE(ret == 0 || ret == 1);
 };
 
 /**

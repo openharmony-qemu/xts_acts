@@ -559,6 +559,7 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0090, Function | MediumTest 
 LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0100, Function | MediumTest | Level2)
 {
     Request request = {.msgId = MSG_NO, .msgValue = 0};
+    request.data = "I wanna async call good result!";
     Identity identity = {0, 0, NULL};
     int32 result = SAMGR_SendRequest(NULL, &request, NULL);
     TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
