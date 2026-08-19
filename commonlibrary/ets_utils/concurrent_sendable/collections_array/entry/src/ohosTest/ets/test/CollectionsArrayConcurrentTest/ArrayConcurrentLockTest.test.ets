@@ -85,7 +85,7 @@ export default function arrayConcurrentLockTest(): void {
           console.error(`results await taskpool.execute failed: ${JSON.stringify(err)}`);
         }
         try {
-          await lock.lockAsync(async (): Promise<void> => {
+          await lock.lockAsync(async (err?: Error): Promise<void> => {
             arr.push(9999);
           });
         } catch (err) {

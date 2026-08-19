@@ -1099,7 +1099,7 @@ export default function sendableLruCacheSpecialTest() {
      * @tc.level  LEVEL0
      */
     it('testConcurrentDecoratorTaskPool0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: Function): Promise<void> => {
       const caseName: string = 'testConcurrentDecoratorTaskPool0042';
       console.info(`${caseName}, test start`);
       try {
@@ -1122,6 +1122,7 @@ export default function sendableLruCacheSpecialTest() {
         expect(false).assertTrue();
       }
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
