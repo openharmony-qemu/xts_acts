@@ -960,6 +960,7 @@ export default function bluetoothAdvertisingTest() {
         duration: 0,
       }
       try {
+        await sleep(500);
         for (let count = 0; count < 17; count++) {
           await bluetooth.startAdvertising(advertisingParams).then((outAdvHandle) => {
             console.info('[bluetooth_js]startAdvertising return outAdvHandle:' + JSON.stringify(outAdvHandle));
@@ -1024,6 +1025,7 @@ export default function bluetoothAdvertisingTest() {
         });
       }
       try {
+        await sleep(500);
         for (let count = 0; count < 17; count++) {
           await startAdvertisingCallback().then((data) => {
             console.info('[bluetooth_js] startAdvertisingCallback result:' + JSON.stringify(data));
