@@ -41,15 +41,15 @@ export default function collectionsMapConcurrentTest() {
   describe('CollectionsMapConcurrentTest', () => {
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0100
-     * @tc.name: testCollectionsMapConcurrent0001
-     * @tc.desc: 3 TaskPool tasks concurrently forEach the same Map (100 entries).
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_0100
+     * @tc.name  testCollectionsMapConcurrent0001
+     * @tc.desc  3 TaskPool tasks concurrently forEach the same Map (100 entries).
      *           Each task performs read-only traversal and returns element count,
      *           verifying concurrent traversal does not throw exceptions and count is correct.
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.type  Function
+     * @tc.level  Level0
      */
-    it('testCollectionsMapConcurrent0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testCollectionsMapConcurrent0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         const caseName: string = 'testCollectionsMapConcurrent0001';
         console.info(caseName + ', test start');
@@ -74,17 +74,18 @@ export default function collectionsMapConcurrentTest() {
       } catch (e) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0200
-     * @tc.name: testCollectionsMapConcurrent0002
-     * @tc.desc: Call delete inside forEach callback, verify 10200201
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_0200
+     * @tc.name  testCollectionsMapConcurrent0002
+     * @tc.desc  Call delete inside forEach callback, verify 10200201
      *           concurrent modification error is thrown.
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.type  Function
+     * @tc.level  Level0
      */
-    it('testCollectionsMapConcurrent0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testCollectionsMapConcurrent0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         const caseName: string = 'testCollectionsMapConcurrent0002';
         console.info(caseName + ', test start');
@@ -102,19 +103,20 @@ export default function collectionsMapConcurrentTest() {
       } catch (e) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0300
-     * @tc.name: testCollectionsMapConcurrent0003
-     * @tc.desc: Main thread creates Map and sends it to Worker via
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_0300
+     * @tc.name  testCollectionsMapConcurrent0003
+     * @tc.desc  Main thread creates Map and sends it to Worker via
      *           postMessageWithSharedSendable. Worker performs read-only
      *           traversal and value retrieval, verifying reference passing
      *           is correct across threads.
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.type  Function
+     * @tc.level  Level0
      */
-    it('testCollectionsMapConcurrent0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testCollectionsMapConcurrent0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const testWorker: worker.ThreadWorker = new worker.ThreadWorker('./CollectionsMapWorker');
       try {
         const caseName: string = 'testCollectionsMapConcurrent0003';
@@ -150,18 +152,19 @@ export default function collectionsMapConcurrentTest() {
       } finally {
         testWorker.terminate();
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0400
-     * @tc.name: testCollectionsMapConcurrent0004
-     * @tc.desc: Concurrent forEach traversal of Map with 10000+ elements,
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_0400
+     * @tc.name  testCollectionsMapConcurrent0004
+     * @tc.desc  Concurrent forEach traversal of Map with 10000+ elements,
      *           verify traversal completeness under large data volume
      *           (count === 10000).
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.type  Function
+     * @tc.level  Level0
      */
-    it('testCollectionsMapConcurrent0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testCollectionsMapConcurrent0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         const caseName: string = 'testCollectionsMapConcurrent0004';
         console.info(caseName + ', test start');
@@ -184,16 +187,17 @@ export default function collectionsMapConcurrentTest() {
       } catch (e) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0500
-     * @tc.name: testCollectionsMapConcurrent0005
-     * @tc.desc: Nested Map<string, Map<string, number>> structure with
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_0500
+     * @tc.name  testCollectionsMapConcurrent0005
+     * @tc.desc  Nested Map<string, Map<string, number>> structure with
      *           two-level forEach traversal, verify nested container reference
      *           correctness and traversal completeness.
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.type  Function
+     * @tc.level  Level0
      */
     it('testCollectionsMapConcurrent0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -230,15 +234,15 @@ export default function collectionsMapConcurrentTest() {
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0600
-     * @tc.name: testCollectionsMapConcurrent0006
-     * @tc.desc: 3 TaskPool tasks use entries/keys/values iterators for
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_0600
+     * @tc.name  testCollectionsMapConcurrent0006
+     * @tc.desc  3 TaskPool tasks use entries/keys/values iterators for
      *           concurrent traversal respectively, verify iterator concurrent
      *           creation and traversal correctness.
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.type  Function
+     * @tc.level  Level0
      */
-    it('testCollectionsMapConcurrent0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testCollectionsMapConcurrent0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         const caseName: string = 'testCollectionsMapConcurrent0006';
         console.info(caseName + ', test start');
@@ -263,19 +267,20 @@ export default function collectionsMapConcurrentTest() {
       } catch (e) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0700
-     * @tc.name: testCollectionsMapConcurrent0007
-     * @tc.desc: Execute a TaskPool task that performs repeated Map forEach
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_0700
+     * @tc.name  testCollectionsMapConcurrent0007
+     * @tc.desc  Execute a TaskPool task that performs repeated Map forEach
      *           traversal, wait for it to complete, then call cancel on the
      *           already-finished task to verify the API handles completed
      *           tasks gracefully without crash.
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.type  Function
+     * @tc.level  Level0
      */
-    it('testCollectionsMapConcurrent0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testCollectionsMapConcurrent0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testCollectionsMapConcurrent0007';
       try {
         console.info(`${caseName} START`);
@@ -295,7 +300,7 @@ export default function collectionsMapConcurrentTest() {
         try {
           taskpool.cancel(task);
         } catch (e) {
-          cancelErrCode = (e as Record<string, number>)['code'] ?? -1;
+          cancelErrCode = e.code ?? -1;
         }
         expect(cancelErrCode).assertEqual(10200015);
         expect(map.has('key_0')).assertEqual(true);
@@ -304,18 +309,19 @@ export default function collectionsMapConcurrentTest() {
       } catch (e) {
         expect('[0007] ' + JSON.stringify(e)).assertEqual('NO_ERROR');
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0800
-     * @tc.name: testCollectionsMapConcurrent0008
-     * @tc.desc: Map stores @Sendable class instances as values,
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_0800
+     * @tc.name  testCollectionsMapConcurrent0008
+     * @tc.desc  Map stores @Sendable class instances as values,
      *           verify cross-thread access via TaskPool and element
      *           property retrieval is correct.
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.type  Function
+     * @tc.level  Level1
      */
-    it('testCollectionsMapConcurrent0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const caseName: string = 'testCollectionsMapConcurrent0008';
         console.info(caseName + ', test start');
@@ -339,18 +345,19 @@ export default function collectionsMapConcurrentTest() {
       } catch (e) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_0900
-     * @tc.name: testCollectionsMapConcurrent0009
-     * @tc.desc: Use AsyncLock to protect concurrent set operations
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_0900
+     * @tc.name  testCollectionsMapConcurrent0009
+     * @tc.desc  Use AsyncLock to protect concurrent set operations
      *           from multiple TaskPool tasks, verify lock-protected
      *           writes are visible and consistent.
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.type  Function
+     * @tc.level  Level1
      */
-    it('testCollectionsMapConcurrent0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const caseName: string = 'testCollectionsMapConcurrent0009';
         console.info(caseName + ', test start');
@@ -375,18 +382,19 @@ export default function collectionsMapConcurrentTest() {
       } catch (e) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1000
-     * @tc.name: testCollectionsMapConcurrent0010
-     * @tc.desc: Pass Map as @Concurrent function parameter via TaskPool,
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_1000
+     * @tc.name  testCollectionsMapConcurrent0010
+     * @tc.desc  Pass Map as @Concurrent function parameter via TaskPool,
      *           verify the task receives the Map correctly and returns
      *           the expected size.
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.type  Function
+     * @tc.level  Level1
      */
-    it('testCollectionsMapConcurrent0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const caseName: string = 'testCollectionsMapConcurrent0010';
         console.info(caseName + ', test start');
@@ -405,18 +413,19 @@ export default function collectionsMapConcurrentTest() {
       } catch (e) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1100
-     * @tc.name: testCollectionsMapConcurrent0011
-     * @tc.desc: @Concurrent function returns a new Map instance,
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_1100
+     * @tc.name  testCollectionsMapConcurrent0011
+     * @tc.desc  @Concurrent function returns a new Map instance,
      *           verify the returned Map is accessible in main thread
      *           with correct key-value pairs.
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.type  Function
+     * @tc.level  Level1
      */
-    it('testCollectionsMapConcurrent0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const caseName: string = 'testCollectionsMapConcurrent0011';
         console.info(caseName + ', test start');
@@ -431,16 +440,17 @@ export default function collectionsMapConcurrentTest() {
       } catch (e) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1200
-     * @tc.name: testCollectionsMapConcurrent0012
-     * @tc.desc: Throw exception inside forEach callback, verify the
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_1200
+     * @tc.name testCollectionsMapConcurrent0012
+     * @tc.desc  Throw exception inside forEach callback, verify the
      *           exception is correctly propagated and caught with the
      *           expected error message.
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.type  Function
+     * @tc.level  Level1
      */
     it('testCollectionsMapConcurrent0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -461,7 +471,7 @@ export default function collectionsMapConcurrentTest() {
           });
         } catch (e) {
           exceptionCaught = true;
-          expect((e as Error).message).assertContain('Test exception');
+          expect(e.message).assertContain('Test exception');
         }
 
         expect(exceptionCaught).assertEqual(true);
@@ -473,15 +483,15 @@ export default function collectionsMapConcurrentTest() {
     });
     
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1300
-     * @tc.name: testCollectionsMapConcurrent0013
-     * @tc.desc: Use Promise.all to wait for forEach traversal tasks
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_1300
+     * @tc.name  testCollectionsMapConcurrent0013
+     * @tc.desc  Use Promise.all to wait for forEach traversal tasks
      *           on three different Maps, verify all tasks complete
      *           with correct counts.
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.type  Function
+     * @tc.level  Level1
      */
-    it('testCollectionsMapConcurrent0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const caseName: string = 'testCollectionsMapConcurrent0013';
         console.info(caseName + ', test start');
@@ -512,18 +522,19 @@ export default function collectionsMapConcurrentTest() {
       } catch (e) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1400
-     * @tc.name: testCollectionsMapConcurrent0014
-     * @tc.desc: Launch 2 Worker threads to concurrently read the same
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_1400
+     * @tc.name  testCollectionsMapConcurrent0014
+     * @tc.desc  Launch 2 Worker threads to concurrently read the same
      *           Map via postMessageWithSharedSendable, verify all workers
      *           complete without exception and read results are correct.
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.type  Function
+     * @tc.level  Level1
      */
-    it('testCollectionsMapConcurrent0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const worker1: worker.ThreadWorker = new worker.ThreadWorker('./CollectionsMapWorker');
       const worker2: worker.ThreadWorker = new worker.ThreadWorker('./CollectionsMapWorker');
       try {
@@ -568,16 +579,17 @@ export default function collectionsMapConcurrentTest() {
         worker1.terminate();
         worker2.terminate();
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1500
-     * @tc.name: testCollectionsMapConcurrent0015
-     * @tc.desc: Export a Map instance via export let from a shared module,
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_1500
+     * @tc.name  testCollectionsMapConcurrent0015
+     * @tc.desc  Export a Map instance via export let from a shared module,
      *           verify the imported Map is accessible and modifiable
      *           from the test module.
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.type  Function
+     * @tc.level  Level1
      */
     it('testCollectionsMapConcurrent0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -595,13 +607,13 @@ export default function collectionsMapConcurrentTest() {
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1600
-     * @tc.name: testCollectionsMapConcurrent0016
-     * @tc.desc: Map<string, collections.Array<number>> nested container,
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_1600
+     * @tc.name  testCollectionsMapConcurrent0016
+     * @tc.desc  Map<string, collections.Array<number>> nested container,
      *           verify inner Array elements are accessible and
      *           correctly retrieved via the outer Map.
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.type  Function
+     * @tc.level  Level1
      */
     it('testCollectionsMapConcurrent0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -632,15 +644,15 @@ export default function collectionsMapConcurrentTest() {
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1700
-     * @tc.name: testCollectionsMapConcurrent0017
-     * @tc.desc: Use ConditionVariable to synchronize Map operations,
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_1700
+     * @tc.name  testCollectionsMapConcurrent0017
+     * @tc.desc  Use ConditionVariable to synchronize Map operations,
      *           verify wait/notifyAll works correctly across async
      *           boundaries in the main thread.
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.type  Function
+     * @tc.level  Level1
      */
-    it('testCollectionsMapConcurrent0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const caseName: string = 'testCollectionsMapConcurrent0017';
         console.info(caseName + ', test start');
@@ -656,6 +668,8 @@ export default function collectionsMapConcurrentTest() {
         let waitPromise: Promise<void> = cv.wait().then(() => {
           map.set('test', 1);
           modified = true;
+        }).catch((err: Error) => {
+          console.error(`cv.wait failed: ${err.message}`);
         });
 
         expect(map.get('test')).assertEqual(0);
@@ -671,18 +685,19 @@ export default function collectionsMapConcurrentTest() {
       } catch (e) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1800
-     * @tc.name: testCollectionsMapConcurrent0018
-     * @tc.desc: Use sendData inside TaskPool forEach traversal to report
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_1800
+     * @tc.name  testCollectionsMapConcurrent0018
+     * @tc.desc  Use sendData inside TaskPool forEach traversal to report
      *           progress, verify onReceiveData callback receives progress
      *           updates and traversal completes correctly.
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.type  Function
+     * @tc.level  Level1
      */
-    it('testCollectionsMapConcurrent0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCollectionsMapConcurrent0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const caseName: string = 'testCollectionsMapConcurrent0018';
         console.info(caseName + ', test start');
@@ -712,16 +727,17 @@ export default function collectionsMapConcurrentTest() {
       } catch (e) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_1900
-     * @tc.name: testCollectionsMapConcurrent0019
-     * @tc.desc: Loop create and destroy Map instances (1000 iterations),
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_1900
+     * @tc.name  testCollectionsMapConcurrent0019
+     * @tc.desc  Loop create and destroy Map instances (1000 iterations),
      *           verify no crash or unhandled exception occurs during
      *           repeated allocation and release.
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.type  Function
+     * @tc.level  Level2
      */
     it('testCollectionsMapConcurrent0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
@@ -749,15 +765,15 @@ export default function collectionsMapConcurrentTest() {
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_2000
-     * @tc.name: testCollectionsMapConcurrent0020
-     * @tc.desc: Perform 10000 forEach iterations on a Map with 100 elements
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_2000
+     * @tc.name  testCollectionsMapConcurrent0020
+     * @tc.desc  Perform 10000 forEach iterations on a Map with 100 elements
      *           in a TaskPool task, verify total traversed element count
      *           equals 100 * 10000.
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.type  Function
+     * @tc.level  Level2
      */
-    it('testCollectionsMapConcurrent0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testCollectionsMapConcurrent0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const caseName: string = 'testCollectionsMapConcurrent0020';
         console.info(caseName + ', test start');
@@ -776,16 +792,17 @@ export default function collectionsMapConcurrentTest() {
       } catch (e) {
         expect().assertFail();
       }
+      done();
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_2100
-     * @tc.name: testCollectionsMapConcurrent0021
-     * @tc.desc: Create a very large Map (500000 entries) to test
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_2100
+     * @tc.name  testCollectionsMapConcurrent0021
+     * @tc.desc  Create a very large Map (500000 entries) to test
      *           boundary behavior, verify the Map is created successfully
      *           and size is reported correctly.
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.type  Function
+     * @tc.level  Level2
      */
     it('testCollectionsMapConcurrent0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
@@ -813,15 +830,15 @@ export default function collectionsMapConcurrentTest() {
     });
 
     /**
-     * @tc.number: SUB_COLLECTIONS_MAP_CONCURRENT_2200
-     * @tc.name: testCollectionsMapConcurrent0022
-     * @tc.desc: Create a Map with 100000 entries and pass it to TaskPool
+     * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_2200
+     * @tc.name  testCollectionsMapConcurrent0022
+     * @tc.desc  Create a Map with 100000 entries and pass it to TaskPool
      *           via reference, verify the task correctly reports the
      *           Map size across threads.
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.type  Function
+     * @tc.level  Level2
      */
-    it('testCollectionsMapConcurrent0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testCollectionsMapConcurrent0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const caseName: string = 'testCollectionsMapConcurrent0022';
         console.info(caseName + ', test start');
@@ -840,6 +857,7 @@ export default function collectionsMapConcurrentTest() {
       } catch (e) {
         expect().assertFail();
       }
+      done();
     });
 
   });

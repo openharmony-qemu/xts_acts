@@ -163,8 +163,12 @@ export default function arrayConcurrentTraverseModifyTest(): void {
         const TAG: string = "testArrayConcurrentEntriesModify0002";
         console.log(TAG + " start");
         const arr: collections.Array<number> = makeArray(500000);
-        const errorDetected: boolean =
-          await runModifyTest(arr, entriesTraverse, modifyFill);
+        let errorDetected: boolean = false;
+        try {
+          errorDetected = await runModifyTest(arr, entriesTraverse, modifyFill);
+        } catch (err) {
+          console.error(`runModifyTest failed: ${JSON.stringify(err)}`);
+        }
         expect(errorDetected).assertTrue();
         console.log(TAG + " done");
         done();
@@ -185,8 +189,12 @@ export default function arrayConcurrentTraverseModifyTest(): void {
         const TAG: string = "testArrayConcurrentValuesModify0001";
         console.log(TAG + " start");
         const arr: collections.Array<number> = makeArray(500000);
-        const errorDetected: boolean =
-          await runModifyTest(arr, valuesTraverse, modifyUnshift);
+        let errorDetected: boolean = false;
+        try {
+          errorDetected = await runModifyTest(arr, valuesTraverse, modifyUnshift);
+        } catch (err) {
+          console.error(`runModifyTest failed: ${JSON.stringify(err)}`);
+        }
         expect(errorDetected).assertTrue();
         console.log(TAG + " done");
         done();

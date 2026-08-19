@@ -65,7 +65,11 @@ export default function arrayConcurrentSortReverseTest(): void {
         for (let i: number = 0; i < threadCount; i++) {
           tasks.push(taskpool.execute(lockedSortTask, arr, lock));
         }
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(arr.length).assertEqual(500);
         for (let i: number = 0; i < arr.length; i++) {
           expect(arr[i]).assertEqual(i + 1);
@@ -98,7 +102,11 @@ export default function arrayConcurrentSortReverseTest(): void {
         for (let i: number = 0; i < threadCount; i++) {
           tasks.push(taskpool.execute(lockedReverseTask, arr, lock));
         }
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(arr.length).assertEqual(500);
         for (let i: number = 0; i < arr.length; i++) {
           expect(arr[i]).assertEqual(i);

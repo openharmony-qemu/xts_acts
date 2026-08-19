@@ -718,19 +718,6 @@ export default function collectionsSetAddHasTest() {
       console.info(`[${caseName}] end`);
       done();
     });
-    /*
-     * [SKIP] testSetHas0015 — SUB_COLLECTIONS_SET_HAS_1500
-     * 注：编号已随批次7重排释放（原序号已由活跃用例占用）
-     * 原因: (1) arkts-no-untyped-obj-literals
-     *       (2) arkts-sendable-generic-types
-     * 原始用例:
-     * it('testSetHas0015', ..., async (done: Function) => {
-     *   let obj = { name: "test", age: 20 };
-     *   let set = new collections.Set<object>([obj]);
-     *   expect(set.has(obj)).assertTrue();
-     *   done();
-     * });
-     */
     /**
      * @tc.number SUB_COLLECTIONS_SET_HAS_1500
      * @tc.name   testSetHas0015

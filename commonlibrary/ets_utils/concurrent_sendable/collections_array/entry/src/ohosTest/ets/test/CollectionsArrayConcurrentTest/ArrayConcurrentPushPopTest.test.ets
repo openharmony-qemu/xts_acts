@@ -137,7 +137,11 @@ export default function arrayConcurrentPushPopTest(): void {
         for (let i: number = 0; i < threadCount; i++) {
           tasks.push(taskpool.execute(pushTask, arr, pushPerThread, lock));
         }
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(arr.length).assertEqual(pushPerThread * threadCount);
         console.log(TAG + " done");
         done();
@@ -166,7 +170,12 @@ export default function arrayConcurrentPushPopTest(): void {
           tasks.push(executeArrayWorker("./workers/ArrayPushWorker",
             arr, pushPerWorker, lock));
         }
-        const results: number[] = await Promise.all(tasks);
+        let results: number[] = [];
+        try {
+          results = await Promise.all(tasks) as number[];
+        } catch (err) {
+          console.error(`Promise.all failed: ${JSON.stringify(err)}`);
+        }
         let totalPushed: number = 0;
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i]).assertEqual(pushPerWorker);
@@ -200,7 +209,11 @@ export default function arrayConcurrentPushPopTest(): void {
         tasks.push(taskpool.execute(pushStringMixedTask, arr, 40, lock));
         tasks.push(taskpool.execute(pushNumberMixedTask, arr, 50, lock));
         tasks.push(taskpool.execute(pushStringMixedTask, arr, 60, lock));
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         const expectedLength: number = 30 + 40 + 50 + 60;
         expect(arr.length).assertEqual(expectedLength);
         let hasNumber: boolean = false;
@@ -246,7 +259,12 @@ export default function arrayConcurrentPushPopTest(): void {
         for (let i: number = 0; i < threadCount; i++) {
           tasks.push(taskpool.execute(lockedPopTask, arr, popPerThread, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`Promise.all failed: ${JSON.stringify(err)}`);
+        }
         let totalPopped: number = 0;
         for (let i: number = 0; i < results.length; i++) {
           totalPopped += results[i] as number;
@@ -284,7 +302,12 @@ export default function arrayConcurrentPushPopTest(): void {
           tasks.push(executeArrayWorker("./workers/ArrayPopWorker",
             arr, popPerWorker, lock));
         }
-        const results: number[] = await Promise.all(tasks);
+        let results: number[] = [];
+        try {
+          results = await Promise.all(tasks) as number[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         let totalPopped: number = 0;
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] >= 0).assertTrue();
@@ -320,7 +343,11 @@ export default function arrayConcurrentPushPopTest(): void {
         for (let i: number = 0; i < threadCount; i++) {
           tasks.push(taskpool.execute(lockedPushPopTask, arr, 50, lock));
         }
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(arr.length).assertEqual(initialCount);
         console.log(TAG + " done");
         done();
@@ -352,7 +379,11 @@ export default function arrayConcurrentPushPopTest(): void {
           tasks.push(taskpool.execute(lockedPushPopTask, arr, 100, lock));
         }
         const startTime: number = Date.now();
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         const endTime: number = Date.now();
         const duration: number = endTime - startTime;
         console.log(`${TAG} duration: ${duration}ms`);

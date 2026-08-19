@@ -83,7 +83,11 @@ export default function arrayConcurrentSendableDataTest(): void {
         for (let i: number = 0; i < 4; i++) {
           tasks.push(taskpool.execute(sendableClassPushTask, arr, lock));
         }
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(arr.length).assertEqual(4);
         expect(arr[0].value).assertEqual(42);
         console.log(TAG + " done"); done(); console.log(TAG + " end");
@@ -109,7 +113,11 @@ export default function arrayConcurrentSendableDataTest(): void {
         for (let i: number = 0; i < 4; i++) {
           tasks.push(taskpool.execute(nestedArrayTask, outer, lock));
         }
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(outer.length).assertEqual(4);
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
@@ -134,7 +142,11 @@ export default function arrayConcurrentSendableDataTest(): void {
         for (let i: number = 0; i < 4; i++) {
           tasks.push(taskpool.execute(mapPutTask, map, lock, i));
         }
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(map.size).assertEqual(4);
         for (let i: number = 0; i < 4; i++) {
           expect(map.has(i)).assertTrue();
@@ -162,7 +174,11 @@ export default function arrayConcurrentSendableDataTest(): void {
         for (let i: number = 0; i < 4; i++) {
           tasks.push(taskpool.execute(setAddTask, set, lock, i));
         }
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(set.size).assertEqual(4);
         for (let i: number = 0; i < 4; i++) {
           expect(set.has(i)).assertTrue();

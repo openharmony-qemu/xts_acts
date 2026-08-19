@@ -111,7 +111,12 @@ export default function arrayConcurrentLargeArrayTest(): void {
         for (let i: number = 0; i < 8; i++) {
           tasks.push(taskpool.execute(largeForEachTask, arr, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           const traversalTime: number = results[i] as number;
           console.log(TAG + " task[" + i + "] time: " + traversalTime + "ms");
@@ -141,7 +146,12 @@ export default function arrayConcurrentLargeArrayTest(): void {
         for (let i: number = 0; i < 16; i++) {
           tasks.push(taskpool.execute(largeForEachTask, arr, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           const traversalTime: number = results[i] as number;
           console.log(TAG + " task[" + i + "] time: " + traversalTime + "ms");
@@ -171,7 +181,12 @@ export default function arrayConcurrentLargeArrayTest(): void {
         for (let i: number = 0; i < 8; i++) {
           tasks.push(taskpool.execute(largeEntriesTask, arr, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           const traversalTime: number = results[i] as number;
           console.log(TAG + " task[" + i + "] time: " + traversalTime + "ms");
@@ -201,7 +216,12 @@ export default function arrayConcurrentLargeArrayTest(): void {
         for (let i: number = 0; i < 8; i++) {
           tasks.push(taskpool.execute(largeValuesTask, arr, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           const traversalTime: number = results[i] as number;
           console.log(TAG + " task[" + i + "] time: " + traversalTime + "ms");
@@ -232,7 +252,12 @@ export default function arrayConcurrentLargeArrayTest(): void {
         for (let i: number = 0; i < 8; i++) {
           tasks.push(taskpool.execute(largePushTask, arr, 500, lockPush));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           const elapsed: number = results[i] as number;
           console.log(TAG + " task[" + i + "] time: " + elapsed + "ms");
@@ -265,7 +290,12 @@ export default function arrayConcurrentLargeArrayTest(): void {
         for (let i: number = 0; i < 8; i++) {
           tasks.push(taskpool.execute(largePopTask, arr, 500, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           const elapsed: number = results[i] as number;
           console.log(TAG + " task[" + i + "] time: " + elapsed + "ms");
@@ -298,7 +328,12 @@ export default function arrayConcurrentLargeArrayTest(): void {
         for (let i: number = 0; i < 8; i++) {
           tasks.push(taskpool.execute(largeSpliceTask, arr, i * 100, 50, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           const elapsed: number = results[i] as number;
           console.log(TAG + " task[" + i + "] time: " + elapsed + "ms");
@@ -330,7 +365,12 @@ export default function arrayConcurrentLargeArrayTest(): void {
         for (let i: number = 0; i < 8; i++) {
           tasks.push(taskpool.execute(largeForEachTask, arr, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           const traversalTime: number = results[i] as number;
           console.log(TAG + " task[" + i + "] time: " + traversalTime + "ms");

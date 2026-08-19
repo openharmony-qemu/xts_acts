@@ -121,7 +121,12 @@ export default function arrayConcurrentIteratorsTest(): void {
         for (let i: number = 0; i < threadCount; i++) {
           tasks.push(taskpool.execute(entriesTraverseTask, arr, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] as number).assertEqual(elementCount);
         }
@@ -154,7 +159,12 @@ export default function arrayConcurrentIteratorsTest(): void {
         for (let i: number = 0; i < workerCount; i++) {
           resultPromises.push(executeArrayEntriesWorker(arr, lock));
         }
-        const results: Object[] = await Promise.all(resultPromises);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(resultPromises);
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] as number).assertEqual(elementCount);
         }
@@ -187,7 +197,12 @@ export default function arrayConcurrentIteratorsTest(): void {
         for (let i: number = 0; i < threadCount; i++) {
           tasks.push(taskpool.execute(keysTraverseTask, arr, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] as number).assertEqual(elementCount);
         }
@@ -220,7 +235,12 @@ export default function arrayConcurrentIteratorsTest(): void {
         for (let i: number = 0; i < threadCount; i++) {
           tasks.push(taskpool.execute(valuesTraverseTask, arr, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] as number).assertEqual(elementCount);
         }

@@ -110,7 +110,13 @@ export default function arrayConcurrentNoLockTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentNoLock0002";
         console.log(TAG + " start");
-        expect(await runNoLockTest(makeArray(100000), noLockEntries, noLockSplice)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runNoLockTest(makeArray(100000), noLockEntries, noLockSplice);
+        } catch (err) {
+          console.error(`runNoLockTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 

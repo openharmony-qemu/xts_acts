@@ -78,10 +78,19 @@ export default function arrayConcurrentLockTest(): void {
         const arr: collections.Array<number> = new collections.Array<number>();
         for (let i: number = 0; i < 200; i++) { arr.push(i); }
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-        const results: Object[] = [await taskpool.execute(lockedForEachTask, arr, lock)];
-        await lock.lockAsync(async (): Promise<void> => {
-          arr.push(9999);
-        });
+        let results: Object[] = [];
+        try {
+          results = [await taskpool.execute(lockedForEachTask, arr, lock)];
+        } catch (err) {
+          console.error(`results await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
+        try {
+          await lock.lockAsync(async (): Promise<void> => {
+            arr.push(9999);
+          });
+        } catch (err) {
+          console.error(`lockAsync failed: ${JSON.stringify(err)}`);
+        }
         expect(results[0] as number).assertEqual(200);
         expect(arr.length).assertEqual(201);
         console.log(TAG + " done"); done(); console.log(TAG + " end");
@@ -103,10 +112,14 @@ export default function arrayConcurrentLockTest(): void {
         const arr: collections.Array<number> = new collections.Array<number>();
         for (let i: number = 0; i < 200; i++) { arr.push(i); }
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-        await Promise.all([
+        try {
+          await Promise.all([
           taskpool.execute(lockedPushTask, arr, lock),
           taskpool.execute(lockedPopTask, arr, lock)
         ]);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(arr.length).assertEqual(200);
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
@@ -127,10 +140,15 @@ export default function arrayConcurrentLockTest(): void {
         const arr: collections.Array<number> = new collections.Array<number>();
         for (let i: number = 0; i < 500; i++) { arr.push(i); }
         const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-        const results: Object[] = await Promise.all([
+        let results: Object[] = [];
+        try {
+          results = await Promise.all([
           taskpool.execute(lockedSpliceTask, arr, lock),
           taskpool.execute(lockedSpliceTask, arr, lock)
         ]);
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         let totalDeleted: number = 0;
         for (let i: number = 0; i < results.length; i++) {
           totalDeleted += results[i] as number;

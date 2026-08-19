@@ -68,7 +68,12 @@ export default function arrayConcurrentSpliceTest(): void {
         for (let i: number = 0; i < threadCount; i++) {
           tasks.push(taskpool.execute(lockedSpliceDeleteTask, arr, i * 10, 10, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         let totalDeleted: number = 0;
         for (let i: number = 0; i < results.length; i++) {
           totalDeleted += results[i] as number;
@@ -103,7 +108,11 @@ export default function arrayConcurrentSpliceTest(): void {
         for (let i: number = 0; i < threadCount; i++) {
           tasks.push(taskpool.execute(lockedSpliceInsertTask, arr, i * 10, insertPerThread, lock));
         }
-        await Promise.all(tasks);
+        try {
+          await Promise.all(tasks);
+        } catch (err) {
+          console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         expect(arr.length).assertEqual(100 + insertPerThread * threadCount);
         console.log(TAG + " done");
         done();
@@ -135,7 +144,12 @@ export default function arrayConcurrentSpliceTest(): void {
           tasks.push(taskpool.execute(lockedSpliceDeleteTask, arr, i * 10, 5, lock));
           tasks.push(taskpool.execute(lockedSpliceInsertTask, arr, i * 10, 3, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         let totalDeleted: number = 0;
         for (let i: number = 0; i < results.length; i += 2) {
           totalDeleted += results[i] as number;

@@ -262,7 +262,13 @@ export default function arrayConcurrentIteratorModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentEntriesPush0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(100000), entriesTraverse, modPush)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runTest(makeArray(100000), entriesTraverse, modPush);
+        } catch (err) {
+          console.error(`runTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -278,7 +284,13 @@ export default function arrayConcurrentIteratorModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentEntriesPop0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(100000), entriesTraverse, modPop)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runTest(makeArray(100000), entriesTraverse, modPop);
+        } catch (err) {
+          console.error(`runTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -294,7 +306,13 @@ export default function arrayConcurrentIteratorModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentKeysPush0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(100000), keysTraverse, modPushForKeys)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runTest(makeArray(100000), keysTraverse, modPushForKeys);
+        } catch (err) {
+          console.error(`runTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -310,7 +328,13 @@ export default function arrayConcurrentIteratorModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentKeysSplice0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(100000), keysTraverse, modSplice)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runTest(makeArray(100000), keysTraverse, modSplice);
+        } catch (err) {
+          console.error(`runTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -326,7 +350,13 @@ export default function arrayConcurrentIteratorModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentValuesPush0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(100000), valuesTraverse, modPush)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runTest(makeArray(100000), valuesTraverse, modPush);
+        } catch (err) {
+          console.error(`runTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
 
@@ -342,7 +372,13 @@ export default function arrayConcurrentIteratorModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentValuesFill0001";
         console.log(TAG + " start");
-        expect(await runTest(makeArray(100000), valuesTraverse, modFill)).assertTrue();
+        let result: boolean = false;
+        try {
+          result = await runTest(makeArray(100000), valuesTraverse, modFill);
+        } catch (err) {
+          console.error(`runTest failed: ${JSON.stringify(err)}`);
+        }
+        expect(result).assertTrue();
         console.log(TAG + " done"); done(); console.log(TAG + " end");
       });
   });

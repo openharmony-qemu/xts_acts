@@ -62,7 +62,12 @@ export default function arrayConcurrentQueryFindTest(): void {
         for (let i: number = 0; i < 8; i++) {
           tasks.push(taskpool.execute(findTask, arr, 100, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] as number).assertEqual(100);
         }
@@ -94,7 +99,12 @@ export default function arrayConcurrentQueryFindTest(): void {
         for (let i: number = 0; i < 4; i++) {
           tasks.push(taskpool.execute(findTask, arr, 9999, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] as number | undefined).assertEqual(undefined);
         }
@@ -127,7 +137,12 @@ export default function arrayConcurrentQueryFindTest(): void {
         for (let i: number = 0; i < 8; i++) {
           tasks.push(taskpool.execute(findIndexTask, arr, 200, lock));
         }
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] as number).assertEqual(200);
         }

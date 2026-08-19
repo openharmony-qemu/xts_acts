@@ -925,6 +925,6 @@ export default function CollectionsMapNonOrthogonalTest() {
       console.info(caseName + ', test end');
     });
 
-  });  // describe('CollectionsMapNonOrthogonalTest')
+  });
 
 }  // export default function CollectionsMapNonOrthogonalTest()

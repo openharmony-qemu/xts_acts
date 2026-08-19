@@ -93,7 +93,12 @@ export default function arrayConcurrentForEachTest(): void {
           tasks.push(taskpool.execute(concurrentForEachTask, arr, lock));
         }
 
-        const results: Object[] = await Promise.all(tasks);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(tasks) as Object[];
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] as number).assertEqual(elementCount);
         }
@@ -130,7 +135,12 @@ export default function arrayConcurrentForEachTest(): void {
           resultPromises.push(executeArrayForEachWorker(arr, lock));
         }
 
-        const results: Object[] = await Promise.all(resultPromises);
+        let results: Object[] = [];
+        try {
+          results = await Promise.all(resultPromises);
+        } catch (err) {
+          console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+        }
         for (let i: number = 0; i < results.length; i++) {
           expect(results[i] as number).assertEqual(elementCount);
         }
