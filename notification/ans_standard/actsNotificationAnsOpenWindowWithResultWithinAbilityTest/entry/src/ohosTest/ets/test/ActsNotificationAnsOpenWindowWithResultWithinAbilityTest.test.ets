@@ -313,16 +313,20 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (data.grantedBundleInfos !== undefined) {
             expect(JSON.stringify(data.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"AAAopenWindow","appIndex":0}')
           }
+          done();
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
+            done();
           } else if(err.code === 801){
             expect(err.code).assertEqual(801)
+            done();
           } else {
             expect(false).assertTrue();
+            done();
           }
         });
         await sleep(1000)
@@ -334,7 +338,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           await button4.click()
           await sleep(100)
         }
-        done();
       } catch (err) {
         console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
         expect(false).assertTrue();

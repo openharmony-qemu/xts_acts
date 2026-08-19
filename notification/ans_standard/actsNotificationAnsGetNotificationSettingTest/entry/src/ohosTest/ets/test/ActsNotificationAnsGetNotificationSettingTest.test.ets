@@ -121,12 +121,11 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
           }
         });
       } catch (err) {
-        let e: BusinessError = err as BusinessError
         hilog.error(0x0000, 'testTag',
-          `${testNum} openNotificationSettingsWithResult failed, code is ${e.code}, message is ${e.message}`);
+          `${testNum} openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
         // 无权限打开设置页（801，普通三方应用）→ 接受错误码结束用例，不再执行 UI 流程
-        if (e.code === 801) {
-          expect(e.code).assertEqual(801);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
           done();
           return
         }

@@ -375,15 +375,18 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
             testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.bannerEnabled).assertEqual(false)
           expect(data.notificationEnabled).assertEqual(true)
+          done();
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code === 801) {
-              expect(err.code).assertEqual(801);
-            } else {
-              expect(false).assertTrue();
-            }
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
         });
         await sleep(1000)
         let button9 = await driver.findComponent(ON.type('SymbolGlyph'));
@@ -394,7 +397,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           await button9.click()
           await sleep(1000)
         }
-        done();
       } catch (err) {
         hilog.error(0x0000, 'testTag',
           testNum + `openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
