@@ -96,15 +96,17 @@ export default function actsNotificationReminderMeLaterTest() {
         done()
       });
       let delayTime: number = 1;
-      await notificationManager.snoozeNotification('hashCode', 1).then(() => {
-        console.info(TAG+'snoozeNotification success.')
-        expect(false).assertTrue()
-        done()
-      }).catch((err: BusinessError):void => {
+      try {
+        await notificationManager.snoozeNotification('hashCode', 1);
+      } catch (err) {
         expect(err.code).assertEqual(202)
         done()
         console.error(TAG+`snoozeNotification failed, code is ${err.code}, message is ${err.message}`);
-      });
+        return;
+      }
+      console.info(TAG+'snoozeNotification success.')
+      expect(false).assertTrue()
+      done()
     })
   })
 }
