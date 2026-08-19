@@ -23,9 +23,6 @@ import Utils from './Utils';
 
 export default function callTest() {
   let TAG = "";
-  const URI_TEST = 'dataability:///ohos.acts.aafwk.test.fasupplement.DataAbility';
-  let dataAbilityHelper = featureAbility.acquireDataAbilityHelper(URI_TEST);
-
   let dataAssert = "";
   let subscriber: commonEventManager.CommonEventSubscriber;
   let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -43,6 +40,8 @@ export default function callTest() {
      */
     it("CallTest_0100", Level.LEVEL0, async (done: Function) => {
       console.info("------------start CallTest_0100-------------");
+      const URI_TEST = 'dataability:///ohos.acts.aafwk.test.fasupplement.DataAbility';
+      let dataAbilityHelper = featureAbility.acquireDataAbilityHelper(URI_TEST);
       console.info("CallTest_0100 commonEvent.createSubscriber start!!!");
       commonEvent.createSubscriber(subscribeInfo, 
         (err: BusinessError, data: commonEventManager.CommonEventSubscriber) => {

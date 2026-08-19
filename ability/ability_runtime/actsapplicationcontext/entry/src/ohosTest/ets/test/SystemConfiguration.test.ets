@@ -60,39 +60,39 @@ export default function systemConfigurationTest() {
     it('SUB_Ability_AbilityRuntime_ApplicationContext_SystemConfigurationUpdated_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`SUB_Ability_AbilityRuntime_ApplicationContext_SystemConfigurationUpdated_0500 start`);
       let callback: systemConfiguration.UpdatedCallback = {
-        onColorModeUpdated(colorMode: ConfigurationConstant.ColorMode) {
+        onColorModeUpdated: (colorMode: ConfigurationConstant.ColorMode) => {
           console.info(`SUB_Ability_AbilityRuntime_ApplicationContext_SystemConfigurationUpdated_0500 onColorModeUpdated:` + colorMode);
           callbackTriggered = true;
         },
-        onFontSizeScaleUpdated(fontSizeScale: number) {
+        onFontSizeScaleUpdated: (fontSizeScale: number) => {
           console.info(`system configuration updated ability:` + fontSizeScale);
           expect().assertFail();
         },
-        onFontWeightScaleUpdated(fontWeightScale: number) {
+        onFontWeightScaleUpdated: (fontWeightScale: number) => {
           console.info(`system configuration updated ability:` + fontWeightScale);
           expect().assertFail();
         },
-        onLanguageUpdated(language: string) {
+        onLanguageUpdated: (language: string) => {
           console.info(`system configuration updated ability:` + language);
           expect().assertFail();
         },
-        onFontIdUpdated(fontId: string) {
+        onFontIdUpdated: (fontId: string) => {
           console.info(`system configuration updated ability:` + fontId);
           expect().assertFail();
         },
-        onMCCUpdated(mcc: string) {
+        onMCCUpdated: (mcc: string) => {
           console.info(`system configuration updated ability:` + mcc);
           expect().assertFail();
         },
-        onMNCUpdated(mnc: string) {
+        onMNCUpdated: (mnc: string) => {
           console.info(`system configuration updated ability:` + mnc);
           expect().assertFail();
         },
-        onHasPointerDeviceUpdated(hasPointerDevice: boolean) {
+        onHasPointerDeviceUpdated: (hasPointerDevice: boolean) => {
           console.info(`system configuration updated ability:` + hasPointerDevice);
           expect().assertFail();
         },
-        onLocaleUpdated(locale: string) {
+        onLocaleUpdated: (locale: string) => {
           console.info(`system configuration updated ability:` + locale);
           expect().assertFail();
         }
