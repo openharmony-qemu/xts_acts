@@ -30,7 +30,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0001
-     * @tc.number SUB_NAPI_STRING_0100
+     * @tc.number SUB_NAPI_STRING_CREATE_STRING_UTF8_0100
      * @tc.desc   Test napi_create_string_utf8 with simple string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -48,7 +48,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0002
-     * @tc.number SUB_NAPI_STRING_0200
+     * @tc.number SUB_NAPI_STRING_CREATE_STRING_UTF8_EMPTY_0200
      * @tc.desc   Test napi_create_string_utf8 with empty string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -66,7 +66,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0003
-     * @tc.number SUB_NAPI_STRING_0300
+     * @tc.number SUB_NAPI_STRING_CREATE_STRING_UTF8_CHINESE_0300
      * @tc.desc   Test napi_create_string_utf8 with Chinese characters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -84,7 +84,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0004
-     * @tc.number SUB_NAPI_STRING_0400
+     * @tc.number SUB_NAPI_STRING_CREATE_STRING_UTF8_SPECIAL_0400
      * @tc.desc   Test napi_create_string_utf8 with special characters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -102,7 +102,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0005
-     * @tc.number SUB_NAPI_STRING_0500
+     * @tc.number SUB_NAPI_STRING_CREATE_STRING_UTF8_NUMERIC_0500
      * @tc.desc   Test napi_create_string_utf8 with numbers string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0006
-     * @tc.number SUB_NAPI_STRING_0600
+     * @tc.number SUB_NAPI_STRING_CREATE_STRING_UTF8_INVALID_0600
      * @tc.desc   Test napi_create_string_utf8 with invalid UTF8 data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -140,7 +140,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0007
-     * @tc.number SUB_NAPI_STRING_0700
+     * @tc.number SUB_NAPI_STRING_CREATE_STRING_UTF8_VERIFY_0700
      * @tc.desc   Test napi_create_string_utf8 creates string that can be verified
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -158,7 +158,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0008
-     * @tc.number SUB_NAPI_STRING_0800
+     * @tc.number SUB_NAPI_STRING_CREATE_EXTERNAL_STRING_ASCII_0800
      * @tc.desc   Test napi_create_external_string_ascii creates normal ASCII string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -176,7 +176,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0009
-     * @tc.number SUB_NAPI_STRING_0900
+     * @tc.number SUB_NAPI_STRING_CREATE_EXTERNAL_STRING_ASCII_NULL_0900
      * @tc.desc   Test napi_create_external_string_ascii with null str
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -194,7 +194,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0010
-     * @tc.number SUB_NAPI_STRING_1000
+     * @tc.number SUB_NAPI_STRING_CREATE_EXTERNAL_STRING_ASCII_NON_ASCII_1000
      * @tc.desc   Test napi_create_external_string_ascii with non-ASCII chars
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -212,7 +212,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0011
-     * @tc.number SUB_NAPI_STRING_1100
+     * @tc.number SUB_NAPI_STRING_CREATE_EXTERNAL_STRING_ASCII_FINALIZE_1100
      * @tc.desc   Test napi_create_external_string_ascii finalize callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -230,7 +230,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0012
-     * @tc.number SUB_NAPI_STRING_1200
+     * @tc.number SUB_NAPI_STRING_CREATE_EXTERNAL_STRING_UTF16_1200
      * @tc.desc   Test napi_create_external_string_utf16 creates normal string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -248,7 +248,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0013
-     * @tc.number SUB_NAPI_STRING_1300
+     * @tc.number SUB_NAPI_STRING_CREATE_EXTERNAL_STRING_UTF16_NULL_1300
      * @tc.desc   Test napi_create_external_string_utf16 with null param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -266,7 +266,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0014
-     * @tc.number SUB_NAPI_STRING_1400
+     * @tc.number SUB_NAPI_STRING_BUFFER_STRING_CRITICAL_SCOPE_1400
      * @tc.desc   Test napi_get_buffer_string_utf16_in_critical_scope
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -284,7 +284,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0015
-     * @tc.number SUB_NAPI_STRING_1500
+     * @tc.number SUB_NAPI_STRING_BUFFER_STRING_CRITICAL_SCOPE_NULL_1500
      * @tc.desc   Test napi_get_buffer_string_utf16 with null param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -302,7 +302,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0016
-     * @tc.number SUB_NAPI_STRING_1600
+     * @tc.number SUB_NAPI_STRING_GET_VALUE_STRING_LATIN1_1600
      * @tc.desc   Test napi_get_value_string_latin1 retrieves string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -320,7 +320,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0017
-     * @tc.number SUB_NAPI_STRING_1700
+     * @tc.number SUB_NAPI_STRING_GET_VALUE_STRING_LATIN1_NULL_1700
      * @tc.desc   Test napi_get_value_string_latin1 with null param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -338,7 +338,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0018
-     * @tc.number SUB_NAPI_STRING_1800
+     * @tc.number SUB_NAPI_STRING_CREATE_STRING_UTF8_LONG_1800
      * @tc.desc   Test napi_create_string_utf8 with long string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -358,7 +358,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0019
-     * @tc.number SUB_NAPI_STRING_1900
+     * @tc.number SUB_NAPI_STRING_CREATE_STRING_UTF8_VERIFY_CONTENT_1900
      * @tc.desc   Test napi_create_string_utf8 and verify content
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -376,7 +376,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0020
-     * @tc.number SUB_NAPI_STRING_2000
+     * @tc.number SUB_NAPI_STRING_BUFFER_STRING_CRITICAL_SCOPE_CHINESE_2000
      * @tc.desc   Test napi_get_buffer_string_utf16 with Chinese chars
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -394,7 +394,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0021
-     * @tc.number SUB_NAPI_STRING_2100
+     * @tc.number SUB_NAPI_STRING_GET_VALUE_STRING_LATIN1_SPECIAL_2100
      * @tc.desc   Test napi_get_value_string_latin1 with special chars
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -415,7 +415,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0022
-     * @tc.number SUB_NAPI_STRING_2200
+     * @tc.number SUB_NAPI_STRING_CREATE_EXTERNAL_STRING_ASCII_RETURN_2200
      * @tc.desc   Test napi_create_external_string_ascii return value verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -433,7 +433,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0023
-     * @tc.number SUB_NAPI_STRING_2300
+     * @tc.number SUB_NAPI_STRING_CREATE_EXTERNAL_STRING_UTF16_RETURN_2300
      * @tc.desc   Test napi_create_external_string_utf16 return value verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -451,7 +451,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0024
-     * @tc.number SUB_NAPI_STRING_2400
+     * @tc.number SUB_NAPI_STRING_CREATE_EXTERNAL_STRING_UTF16_ABNORMAL_2400
      * @tc.desc   Test napi_create_external_string_utf16 abnormal scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -469,7 +469,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0025
-     * @tc.number SUB_NAPI_STRING_2500
+     * @tc.number SUB_NAPI_STRING_CREATE_EXTERNAL_STRING_UTF16_COMBINED_2500
      * @tc.desc   Test napi_create_external_string_utf16 combined usage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -487,7 +487,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0026
-     * @tc.number SUB_NAPI_STRING_2600
+     * @tc.number SUB_NAPI_STRING_BUFFER_STRING_CRITICAL_SCOPE_VERIFY_2600
      * @tc.desc   Test napi_get_buffer_string_utf16_in_critical_scope return value verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -505,7 +505,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0027
-     * @tc.number SUB_NAPI_STRING_2700
+     * @tc.number SUB_NAPI_STRING_BUFFER_STRING_CRITICAL_SCOPE_ABNORMAL_2700
      * @tc.desc   Test napi_get_buffer_string_utf16_in_critical_scope abnormal scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -523,7 +523,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0028
-     * @tc.number SUB_NAPI_STRING_2800
+     * @tc.number SUB_NAPI_STRING_BUFFER_STRING_CRITICAL_SCOPE_COMBINED_2800
      * @tc.desc   Test napi_get_buffer_string_utf16_in_critical_scope combined usage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -541,7 +541,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0029
-     * @tc.number SUB_NAPI_STRING_2900
+     * @tc.number SUB_NAPI_STRING_GET_VALUE_STRING_LATIN1_ABNORMAL_2900
      * @tc.desc   Test napi_get_value_string_latin1 abnormal scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -561,7 +561,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0030
-     * @tc.number SUB_NAPI_STRING_3000
+     * @tc.number SUB_NAPI_STRING_CREATE_EXTERNAL_STRING_ASCII_NORMAL_3000
      * @tc.desc   Test napi_create_external_string_ascii normal scenario as ArkTS string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -580,7 +580,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0031
-     * @tc.number SUB_NAPI_STRING_3100
+     * @tc.number SUB_NAPI_STRING_CREATE_EXTERNAL_STRING_ASCII_FINALIZE_3100
      * @tc.desc   Test napi_create_external_string_ascii combined with finalize callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -598,7 +598,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0032
-     * @tc.number SUB_NAPI_STRING_3200
+     * @tc.number SUB_NAPI_STRING_CREATE_STRING_UTF8_ABNORMAL_3200
      * @tc.desc   Test napi_create_string_utf8 abnormal scenario with invalid UTF8
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -616,7 +616,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0033
-     * @tc.number SUB_NAPI_STRING_3300
+     * @tc.number SUB_NAPI_STRING_BUFFER_STRING_CRITICAL_SCOPE_NULL_PARAMS_3300
      * @tc.desc   Test napi_get_buffer_string_utf16_in_critical_scope abnormal NULL params
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -634,7 +634,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0034
-     * @tc.number SUB_NAPI_STRING_3400
+     * @tc.number SUB_NAPI_STRING_BUFFER_STRING_CRITICAL_SCOPE_NORMAL_3400
      * @tc.desc   Test napi_get_buffer_string_utf16_in_critical_scope normal direct memory access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -652,7 +652,7 @@ export default function stringTest() {
 
     /**
      * @tc.name   testNapiString0035
-     * @tc.number SUB_NAPI_STRING_3500
+     * @tc.number SUB_NAPI_STRING_GET_VALUE_STRING_LATIN1_ABNORMAL_PARAMS_3500
      * @tc.desc   Test napi_get_value_string_latin1 abnormal params NULL and non-string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

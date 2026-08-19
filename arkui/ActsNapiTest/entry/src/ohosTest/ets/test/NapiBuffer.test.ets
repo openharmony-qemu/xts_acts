@@ -26,7 +26,7 @@ export default function bufferTest() {
 
     /**
      * @tc.name testNapiBuffer0001
-     * @tc.number SUB_NAPI_BUFFER_0100
+     * @tc.number SUB_NAPI_BUFFER_IS_BUFFER_0100
      * @tc.desc Original simple test for buffer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -42,7 +42,7 @@ export default function bufferTest() {
 
     /**
      * @tc.name testNapiBuffer0002
-     * @tc.number SUB_NAPI_BUFFER_0200
+     * @tc.number SUB_NAPI_BUFFER_IS_BUFFER_EXCEPTION_0200
      * @tc.desc Test isBuffer with pending exception — napi_create_buffer fails under pending exception,
      *        buffer remains nullptr, causing napi_is_buffer to return napi_invalid_arg (1)
      * @tc.type FUNCTION
@@ -60,7 +60,7 @@ export default function bufferTest() {
 
     /**
      * @tc.name testNapiBuffer0003
-     * @tc.number SUB_NAPI_BUFFER_0300
+     * @tc.number SUB_NAPI_BUFFER_IS_BUFFER_NON_BUFFER_0300
      * @tc.desc Test isBuffer on non-Buffer object returns false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -77,7 +77,7 @@ export default function bufferTest() {
 
     /**
      * @tc.name testNapiBuffer0004
-     * @tc.number SUB_NAPI_BUFFER_0400
+     * @tc.number SUB_NAPI_BUFFER_IS_BUFFER_SLICE_0400
      * @tc.desc Test isBuffer on normal Buffer returns true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -94,7 +94,7 @@ export default function bufferTest() {
 
     /**
      * @tc.name testNapiBuffer0005
-     * @tc.number SUB_NAPI_BUFFER_0500
+     * @tc.number SUB_NAPI_BUFFER_CREATE_BUFFER_VERIFY_0500
      * @tc.desc Test full flow: create buffer → isBuffer → write → verify
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
