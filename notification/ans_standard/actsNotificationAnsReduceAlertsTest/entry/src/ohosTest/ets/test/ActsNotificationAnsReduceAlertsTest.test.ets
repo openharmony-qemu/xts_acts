@@ -35,29 +35,26 @@ export default function ActsNotificationAnsReduceAlertsTest() {
   describe('Sub_NOTIFICATION_ANS_REDUCE_ALERTS_TEST', () => {
     beforeAll(async (done: Function) => {
       notificationManager.requestEnableNotification(la).then(() => {
-        console.info(TEST_SUITE_NAME + "requestEnableNotification success");
+        console.info(TEST_SUITE_NAME + 'requestEnableNotification success');
       }).catch((err: BusinessError) => {
         console.error(TEST_SUITE_NAME +
           `requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
         expect(false).assertTrue();
         console.info(`${TEST_SUITE_NAME}` + `test case end`);
-        done();
       });
 
       let driver: Driver = Driver.create();
       await sleep(1000);
-      await driver.assertComponentExist(ON.text('允许'));
+      // 若权限已授予则不再弹窗，findComponent 返回 null，属正常场景，直接放行
       let button = await driver.findComponent(ON.text('允许'));
       console.log(TEST_SUITE_NAME + `button is ${JSON.stringify(button)}`);
       if (button !== null) {
         await button.click();
         await sleep(1500);
-        done()
       } else {
-        console.log(TEST_SUITE_NAME + `button is null`)
-        expect(false).assertTrue();
-        done()
+        console.log(TEST_SUITE_NAME + `button is null, permission may already be enabled`)
       }
+      done()
 
     })
 
@@ -87,14 +84,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SOCIAL_COMMUNICATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_17000",
+            title: 'SOCIAL_COMMUNICATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_17000',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(() => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           expect(false).assertTrue();
           done()
         }).catch((err: BusinessError) => {
@@ -121,18 +118,24 @@ export default function ActsNotificationAnsReduceAlertsTest() {
     it('SUB_Notification_Ans_Reduce_alerts_0200', Level.LEVEL2, async (done: Function) => {
       let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_0200'
       let context: common.UIAbilityContext = getContext(la) as common.UIAbilityContext;
+      let settingsOpened: boolean = true;
       await notificationManager.openNotificationSettings(context).then(() => {
         console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
       }).catch((err: BusinessError) => {
         console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings err: ${JSON.stringify(err.code)}`);
+        settingsOpened = false;
         if (err?.code === 801) {
           expect(err.code).assertEqual(801);
-          done();
         }else{
           expect().assertFail();
-         done();
         }
       })
+      // done() 后不得再跑 UI 流程：openNotificationSettings 返回 801（非系统应用无权限打开设置页）时
+      // 必须立即结束用例，否则 async 僵尸代码会在下一个用例(currentRunningSpec)期间继续执行并污染其断言。
+      if (!settingsOpened) {
+        done();
+        return
+      }
       let driver: Driver = Driver.create();
       await sleep(1500)
       let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
@@ -164,14 +167,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SOCIAL_COMMUNICATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_0200",
+            title: 'SOCIAL_COMMUNICATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_0200',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(500)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -228,14 +231,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SOCIAL_COMMUNICATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_0300",
+            title: 'SOCIAL_COMMUNICATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_0300',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(500)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -297,14 +300,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SOCIAL_COMMUNICATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_0400",
+            title: 'SOCIAL_COMMUNICATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_0400',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(1000)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -366,14 +369,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SOCIAL_COMMUNICATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_0500",
+            title: 'SOCIAL_COMMUNICATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_0500',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(1000)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -429,14 +432,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SERVICE_INFORMATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_0600",
+            title: 'SERVICE_INFORMATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_0600',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(500)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -498,14 +501,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SERVICE_INFORMATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_0700",
+            title: 'SERVICE_INFORMATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_0700',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(500)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -567,14 +570,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SERVICE_INFORMATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_0800",
+            title: 'SERVICE_INFORMATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_0800',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(1000)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -636,14 +639,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SERVICE_INFORMATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_0900",
+            title: 'SERVICE_INFORMATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_0900',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(1000)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -699,14 +702,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "CUSTOMER_SERVICE",
-            text: "SUB_Notification_Ans_Reduce_alerts_1000",
+            title: 'CUSTOMER_SERVICE',
+            text: 'SUB_Notification_Ans_Reduce_alerts_1000',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(500)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -768,14 +771,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "CUSTOMER_SERVICE",
-            text: "SUB_Notification_Ans_Reduce_alerts_1100",
+            title: 'CUSTOMER_SERVICE',
+            text: 'SUB_Notification_Ans_Reduce_alerts_1100',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(500)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -837,14 +840,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "UNKNOWN_TYPE",
-            text: "SUB_Notification_Ans_Reduce_alerts_1200",
+            title: 'UNKNOWN_TYPE',
+            text: 'SUB_Notification_Ans_Reduce_alerts_1200',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(500)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -906,14 +909,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "CONTENT_INFORMATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_1300",
+            title: 'CONTENT_INFORMATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_1300',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(500)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -975,14 +978,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "OTHER_TYPES",
-            text: "SUB_Notification_Ans_Reduce_alerts_1400",
+            title: 'OTHER_TYPES',
+            text: 'SUB_Notification_Ans_Reduce_alerts_1400',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(500)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -1033,8 +1036,8 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       await notificationManager.cancelAll()
       await sleep(1000)
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      let cmd = "aa start -a TestAbility -b com.example.actsnotificationansreducealertstest";
-      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      let cmd = 'aa start -a TestAbility -b com.example.actsnotificationansreducealertstest';
+      let user = abilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
@@ -1084,14 +1087,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SOCIAL_COMMUNICATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_1500",
+            title: 'SOCIAL_COMMUNICATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_1500',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(500)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -1142,14 +1145,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SERVICE_INFORMATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_1600",
+            title: 'SERVICE_INFORMATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_1600',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(500)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -1263,14 +1266,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SOCIAL_COMMUNICATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_1700",
+            title: 'SOCIAL_COMMUNICATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_1700',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(500)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -1324,14 +1327,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SOCIAL_COMMUNICATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_1800",
+            title: 'SOCIAL_COMMUNICATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_1800',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(1000)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -1383,14 +1386,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SOCIAL_COMMUNICATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_1900",
+            title: 'SOCIAL_COMMUNICATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_1900',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(1000)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -1442,14 +1445,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SERVICE_INFORMATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_2000",
+            title: 'SERVICE_INFORMATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_2000',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(1000)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -1501,14 +1504,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SERVICE_INFORMATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_2100",
+            title: 'SERVICE_INFORMATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_2100',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(1000)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {
@@ -1560,14 +1563,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "SERVICE_INFORMATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_2200",
+            title: 'SERVICE_INFORMATION',
+            text: 'SUB_Notification_Ans_Reduce_alerts_2200',
           }
         }
       };
       try {
         await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          console.info(TEST_SUITE_NAME + TAG + ' publish success');
           await sleep(1000)
           await notificationManager.getActiveNotifications()
             .then((data: Array<notificationManager.NotificationRequest>) => {

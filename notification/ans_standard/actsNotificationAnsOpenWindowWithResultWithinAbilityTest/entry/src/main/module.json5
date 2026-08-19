@@ -26,7 +26,7 @@
     "abilities": [
       {
         "name": "EntryAbility",
-        "srcEntry": "./ets/entryability/EntryAbility.ts",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -53,11 +53,6 @@
         "icon": "$media:icon",
         "type": "notificationSubscriber",
         "label": "$string:TestAbility_label"
-      }
-    ],
-    "requestPermissions": [
-      {
-        "name": "ohos.permission.SUBSCRIBE_NOTIFICATION"
       }
     ]
   }

@@ -25,7 +25,7 @@ let ctx = getContext(this) as common.UIAbilityContext;
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok");
+      resolve('ok');
     }, time)
   });
 }
@@ -51,29 +51,14 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
       let driver: Driver = Driver.create();
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
-          hilog.info(0x0000, 'testTag',
-            `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data.userGrantEnabled).assertEqual(false)
-          if (data.grantedBundleInfos !== undefined) {
-            expect(JSON.stringify(data.grantedBundleInfos)).assertEqual('[]')
-          }
-          done()
-        }).catch((e: Error) => {
-          let err: BusinessError = e as BusinessError
-          hilog.error(0x0000, 'testTag',
-            `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          if (err?.code === 201) {
-            expect(err?.code).assertEqual(201)
-            done()
-          } else if(err.code === 801){
-            expect(err.code).assertEqual(801)
-            done()
-          } else {
-            expect(false).assertTrue();
-            done()
-          }
-        });
+        let data = await notificationExtensionSubscription.openSubscriptionSettingsWithResult(context);
+        hilog.info(0x0000, 'testTag',
+          `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
+        expect(data.userGrantEnabled).assertEqual(false)
+        if (data.grantedBundleInfos !== undefined) {
+          expect(JSON.stringify(data.grantedBundleInfos)).assertEqual('[]')
+        }
+        // 设置页打开成功后执行 UI 流程
         await driver.assertComponentExist(ON.text('应用获取本机通知'));
         let button2 = await driver.findComponent(ON.text('确定'));
         console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
@@ -83,10 +68,23 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           await button2.click()
           await sleep(100)
         }
+        done();
       } catch (err) {
-        console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
+        let e: BusinessError = err as BusinessError
+        hilog.error(0x0000, 'testTag',
+          `${testNum} openSubscriptionSettingsWithResult failed, code is ${e.code}, message is ${e.message}`);
+        // 无权限打开订阅设置页（201/801，普通三方应用）→ 接受错误码结束用例，不再执行 UI 流程
+        if (e.code === 201) {
+          expect(e.code).assertEqual(201)
+          done();
+          return
+        } else if (e.code === 801) {
+          expect(e.code).assertEqual(801)
+          done();
+          return
+        }
         expect(false).assertTrue();
-        done()
+        done();
       }
     })
 
@@ -101,6 +99,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
     it('SUB_Notification_Ans_openWindow_WithResult_0500', Level.LEVEL0, async (done: Function) => {
       let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0500'
       let driver: Driver = Driver.create();
+      let settingsOpened: boolean = true;
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
@@ -112,22 +111,25 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
               expect(data.grantedBundleInfos[index].appIndex).assertEqual(0)
             }
           }
-          done()
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
+          settingsOpened = false;
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
-            done()
           } else if(err.code === 801){
             expect(err.code).assertEqual(801)
-            done()
           } else {
             expect(false).assertTrue();
-            done()
           }
         });
+        // done() 后不得再跑 UI 流程：openSubscriptionSettingsWithResult 返回 201/801（无权限打开订阅设置页）时
+        // 必须立即结束用例，否则 async 僵尸代码会在下一个用例(currentRunningSpec)期间继续执行并污染其断言。
+        if (!settingsOpened) {
+          done();
+          return
+        }
         await sleep(1000)
         let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许获取本机通知')));
         console.info(testNum + `button is ${JSON.stringify(button)}`);
@@ -154,6 +156,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           await button8.click()
           await sleep(100)
         }
+        done();
       } catch (err) {
         console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
         expect(false).assertTrue();
@@ -172,6 +175,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
     it('SUB_Notification_Ans_openWindow_WithResult_0600', Level.LEVEL0, async (done: Function) => {
       let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0600'
       let driver: Driver = Driver.create();
+      let settingsOpened: boolean = true;
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
@@ -181,22 +185,25 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (data.grantedBundleInfos !== undefined) {
             expect(JSON.stringify(data.grantedBundleInfos)).assertEqual('[]')
           }
-          done()
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
+          settingsOpened = false;
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
-            done()
           } else if(err.code === 801){
             expect(err.code).assertEqual(801)
-            done()
           } else {
             expect(false).assertTrue();
-            done()
           }
         });
+        // done() 后不得再跑 UI 流程：openSubscriptionSettingsWithResult 返回 201/801（无权限打开订阅设置页）时
+        // 必须立即结束用例，否则 async 僵尸代码会在下一个用例(currentRunningSpec)期间继续执行并污染其断言。
+        if (!settingsOpened) {
+          done();
+          return
+        }
         await sleep(1000)
         let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许获取本机通知')));
         console.info(testNum + `button is ${JSON.stringify(button)}`);
@@ -215,6 +222,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           await button2.click()
           await sleep(100)
         }
+        done();
       } catch (err) {
         console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
         expect(false).assertTrue();
@@ -233,6 +241,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
     it('SUB_Notification_Ans_openWindow_WithResult_1000', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_1000'
       let driver: Driver = Driver.create();
+      let settingsOpened: boolean = true;
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
@@ -246,17 +255,21 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
+          settingsOpened = false;
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
-            done()
           } else if(err.code === 801){
             expect(err.code).assertEqual(801)
-            done()
           } else {
             expect(false).assertTrue();
-            done()
           }
         });
+        // done() 后不得再跑 UI 流程：openSubscriptionSettingsWithResult 返回 201/801（无权限打开订阅设置页）时
+        // 必须立即结束用例，否则 async 僵尸代码会在下一个用例(currentRunningSpec)期间继续执行并污染其断言。
+        if (!settingsOpened) {
+          done();
+          return
+        }
         await sleep(1000)
         let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('应用获取本机通知')));
         console.info(testNum + `button is ${JSON.stringify(button)}`);
@@ -301,24 +314,20 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (data.grantedBundleInfos !== undefined) {
             expect(JSON.stringify(data.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"AAAopenWindow","appIndex":0}')
           }
-          done()
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
-            done()
           } else if(err.code === 801){
             expect(err.code).assertEqual(801)
-            done()
           } else {
             expect(false).assertTrue();
-            done()
           }
         });
         await sleep(1000)
-        let button4 = await driver.findComponent(ON.type("SymbolGlyph"));
+        let button4 = await driver.findComponent(ON.type('SymbolGlyph'));
         console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
         if (button4 !== null) {
           console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
@@ -326,6 +335,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           await button4.click()
           await sleep(100)
         }
+        done();
       } catch (err) {
         console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
         expect(false).assertTrue();
@@ -423,6 +433,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
               done()
             } else {
               expect(err.code).assertEqual(401);
+              done();
             }
           });
       } catch (err) {
@@ -467,6 +478,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
               done()
             } else {
               expect(err.code).assertEqual(401);
+              done();
             }
           });
       } catch (err) {

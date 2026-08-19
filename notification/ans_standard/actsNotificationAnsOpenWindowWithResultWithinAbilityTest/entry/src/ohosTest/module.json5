@@ -54,11 +54,6 @@
         "type": "notificationSubscriber",
         "label": "$string:TestAbility_label"
       }
-    ],
-    "requestPermissions": [
-      {
-        "name": "ohos.permission.SUBSCRIBE_NOTIFICATION"
-      }
     ]
   }
 }
