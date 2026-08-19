@@ -409,6 +409,5 @@ export default function newSEServicetest() {
             }
         })
         console.info("*************[nfc_test] start nfc js unit test end*************");
-            
     })
 }

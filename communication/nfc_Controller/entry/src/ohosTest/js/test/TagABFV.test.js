@@ -1974,20 +1974,22 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @tc.name   offReaderModeNoCallback
-         * @tc.number nfcTag_2603
+         * @tc.name   SUB_Communication_NFC_nfctage_js_2603
+         * @tc.number SUB_Communication_NFC_nfctage_js_2603
          * @tc.desc   off readerMode without callback parameter.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('offReaderModeNoCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+         it('SUB_Communication_NFC_nfctage_js_2603', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let elementName = {
                 "bundleName": "ohos.acts.communication.nfc.nfcdevice",
                 "abilityName": "MainAbility",
                 "moduleName": "entry"
             };
+            let discTech = [1, 2, 4];
             try {
+                tag.on('readerMode', elementName, discTech, readerModeCb);
                 tag.off('readerMode', elementName);
             } catch (err) {
                 expect().assertFail();
@@ -2216,20 +2218,26 @@ export default function nfcTagABFVTest() {
         })
 
         /**
-         * @tc.name   offReaderModeWithIntervalNoCallback
-         * @tc.number nfcTag_2801
+         * @tc.name   SUB_Communication_NFC_nfctage_js_2801
+         * @tc.number SUB_Communication_NFC_nfctage_js_2801
          * @tc.desc   off readerModeWithInterval without callback parameter.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('offReaderModeWithIntervalNoCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+         it('SUB_Communication_NFC_nfctage_js_2801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let elementName = {
                 "bundleName": "ohos.acts.communication.nfc.nfcdevice",
                 "abilityName": "MainAbility",
                 "moduleName": "entry"
             };
+            let recvNfcTagFunc = tagInfo => {
+                console.info("[NFC_test] recvNfcTagFunc tagInfo ->" + tagInfo);
+            }
+            let discTech = [1, 2, 4];
+            let interval = 200;
             try {
+                tag.on('readerModeWithInterval', elementName, discTech, recvNfcTagFunc, interval);
                 tag.off('readerModeWithInterval', elementName);
             } catch (err) {
                 expect().assertFail();

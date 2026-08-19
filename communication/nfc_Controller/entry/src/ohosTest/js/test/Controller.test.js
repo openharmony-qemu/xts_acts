@@ -161,14 +161,14 @@ export default function nfcControllerTest() {
         })
 
         /**
-         * @tc.name   offNfcStateChangeNoCallback
-         * @tc.number nfcController_0700
+         * @tc.name   SUB_Communication_NFC_nfcController_js_0700
+         * @tc.number SUB_Communication_NFC_nfcController_js_0700
          * @tc.desc   off nfcStateChange without callback parameter.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('offNfcStateChangeNoCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+         it('SUB_Communication_NFC_nfcController_js_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             let NFC_STATE_NOTIFY = "nfcStateChange";
             let recvNfcStateNotifyFunc = result => {
                 console.info("[NFC_test] nfc state receive state ->" + result);

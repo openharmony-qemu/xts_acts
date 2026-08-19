@@ -243,14 +243,14 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @tc.name   authenticateSectorKeyA401
-         * @tc.number nfcMifareClassicTag_0104
-         * @tc.desc   authenticateSector isKeyA null 801 test.
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0104
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0104
+         * @tc.desc   authenticateSector isKeyA null 401 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('authenticateSectorKeyA401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
             try {
                 let mifareTag = tag.getMifareClassic();
                 await mifareTag.authenticateSector(1, [0x04, 0x05, 0x06, 0x07, 0x08, 0x09], null);
@@ -261,14 +261,14 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @tc.name   authenticateSectorKeyB401
-         * @tc.number nfcMifareClassicTag_0105
-         * @tc.desc   authenticateSector isKeyA undefined 801 test.
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0105
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0105
+         * @tc.desc   authenticateSector isKeyA undefined 401 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('authenticateSectorKeyB401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
             try {
                 let mifareTag = tag.getMifareClassic();
                 await mifareTag.authenticateSector(1, [0x04, 0x05, 0x06, 0x07, 0x08, 0x09], undefined);
@@ -279,14 +279,14 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @tc.name   authenticateSectorKeyLength401
-         * @tc.number nfcMifareClassicTag_0106
-         * @tc.desc   authenticateSector key length 801 test.
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0106
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0106
+         * @tc.desc   authenticateSector key length 401 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('authenticateSectorKeyLength401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
             try {
                 let mifareTag = tag.getMifareClassic();
                 await mifareTag.authenticateSector(1, [1, 2, 3], true);
@@ -297,14 +297,14 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @tc.name   authenticateSectorSectorIndex401
-         * @tc.number nfcMifareClassicTag_0107
-         * @tc.desc   authenticateSector sectorIndex boundary 801 test.
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0107
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0107
+         * @tc.desc   authenticateSector sectorIndex boundary 401 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('authenticateSectorSectorIndex401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
             try {
                 let mifareTag = tag.getMifareClassic();
                 await mifareTag.authenticateSector(-1, [0x04, 0x05, 0x06, 0x07, 0x08, 0x09], true);
@@ -479,14 +479,14 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @tc.name   authenticateSectorKeyACallback401
-         * @tc.number nfcMifareClassicTag_0204
-         * @tc.desc   authenticateSector isKeyA null callback 801 test.
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0204
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0204
+         * @tc.desc   authenticateSector isKeyA null callback 401 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('authenticateSectorKeyACallback401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
             try {
                 let mifareTag = tag.getMifareClassic();
                 mifareTag.authenticateSector(1, [0x04, 0x05, 0x06, 0x07, 0x08, 0x09], null, (err, data) => {
@@ -502,14 +502,14 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @tc.name   authenticateSectorKeyBCallback401
-         * @tc.number nfcMifareClassicTag_0205
-         * @tc.desc   authenticateSector isKeyA undefined callback 801 test.
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0205
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0205
+         * @tc.desc   authenticateSector isKeyA undefined callback 401 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('authenticateSectorKeyBCallback401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
             try {
                 let mifareTag = tag.getMifareClassic();
                 mifareTag.authenticateSector(1, [0x04, 0x05, 0x06, 0x07, 0x08, 0x09], undefined, (err, data) => {
@@ -525,14 +525,14 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @tc.name   authenticateSectorKeyLengthCallback401
-         * @tc.number nfcMifareClassicTag_0206
-         * @tc.desc   authenticateSector key length callback 801 test.
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0206
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0206
+         * @tc.desc   authenticateSector key length callback 401 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('authenticateSectorKeyLengthCallback401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
             try {
                 let mifareTag = tag.getMifareClassic();
                 mifareTag.authenticateSector(1, [1, 2, 3], true, (err, data) => {
@@ -548,14 +548,14 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @tc.name   authenticateSectorSectorIndexCallback401
-         * @tc.number nfcMifareClassicTag_0207
-         * @tc.desc   authenticateSector sectorIndex boundary callback 801 test.
+         * @tc.name   SUB_Communication_NFC_nfcMifareClassicTag_js_0207
+         * @tc.number SUB_Communication_NFC_nfcMifareClassicTag_js_0207
+         * @tc.desc   authenticateSector sectorIndex boundary callback 401 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('authenticateSectorSectorIndexCallback401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+         it('SUB_Communication_NFC_nfcMifareClassicTag_js_0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
             try {
                 let mifareTag = tag.getMifareClassic();
                 mifareTag.authenticateSector(-1, [0x04, 0x05, 0x06, 0x07, 0x08, 0x09], true, (err, data) => {

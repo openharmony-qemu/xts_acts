@@ -334,14 +334,14 @@ export default function channelCallbacktest() {
         })
 
         /**
-         * @tc.name   isBasicChannel801Test
-         * @tc.number channelCallbacktest_0910
+         * @tc.name   SUB_Communication_NFC_channelCallbacktest_js_0910
+         * @tc.number SUB_Communication_NFC_channelCallbacktest_js_0910
          * @tc.desc   Channel.isBasicChannel 801 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('isBasicChannel801Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+         it('SUB_Communication_NFC_channelCallbacktest_js_0910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             if (isSESupported) {
                 console.info("[NFC_test]0910 Device supports SE, skip 801 test");
                 return;
@@ -801,14 +801,14 @@ export default function channelCallbacktest() {
         })
 
         /**
-         * @tc.name   getSelectResponse801Test
-         * @tc.number channelCallbacktest_1110
+         * @tc.name   SUB_Communication_NFC_channelCallbacktest_js_1110
+         * @tc.number SUB_Communication_NFC_channelCallbacktest_js_1110
          * @tc.desc   Channel.getSelectResponse 801 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('getSelectResponse801Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+         it('SUB_Communication_NFC_channelCallbacktest_js_1110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             if (isSESupported) {
                 console.info("[NFC_test]1110 Device supports SE, skip 801 test");
                 return;

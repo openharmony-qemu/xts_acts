@@ -1113,14 +1113,14 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @tc.name   getNdefTagTypeStringNull401
-         * @tc.number nfcNDEFTagTest_1405
-         * @tc.desc   getNdefTagTypeString null 801 test.
+         * @tc.name   SUB_Communication_NFC_nfcNDEFTagTest_js_1405
+         * @tc.number SUB_Communication_NFC_nfcNDEFTagTest_js_1405
+         * @tc.desc   getNdefTagTypeString null 401 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('getNdefTagTypeStringNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+         it('SUB_Communication_NFC_nfcNDEFTagTest_js_1405', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
                 let ndefTypeString = NdefTag.getNdefTagTypeString(null);
                 expect().assertFail();
@@ -1130,14 +1130,14 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @tc.name   getNdefTagTypeStringUndefined401
-         * @tc.number nfcNDEFTagTest_1406
-         * @tc.desc   getNdefTagTypeString undefined 801 test.
+         * @tc.name   SUB_Communication_NFC_nfcNDEFTagTest_js_1406
+         * @tc.number SUB_Communication_NFC_nfcNDEFTagTest_js_1406
+         * @tc.desc   getNdefTagTypeString undefined 401 test.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('getNdefTagTypeStringUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+         it('SUB_Communication_NFC_nfcNDEFTagTest_js_1406', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
                 let ndefTypeString = NdefTag.getNdefTagTypeString(undefined);
                 expect().assertFail();
