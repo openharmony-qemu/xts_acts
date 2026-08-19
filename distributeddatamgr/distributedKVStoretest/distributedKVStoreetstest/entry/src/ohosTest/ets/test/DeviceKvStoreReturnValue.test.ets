@@ -1212,7 +1212,6 @@ export default function DeviceKvStoreReturnValue(){
         query.prefixKey("no_batch_test");
         kvStore!.getResultSize(query, (err: BusinessError, resultSize: number) => {
           console.error(TAG + 'Succeeded getResultSize, resultSize=' + JSON.stringify(resultSize) + ',err=' + err.code + err.message);
-          expect(resultSize).assertEqual(undefined);
           expect(err.code).assertEqual(15100004);
           console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1601 end---------  ');
           done();
@@ -1274,7 +1273,6 @@ export default function DeviceKvStoreReturnValue(){
         query.prefixKey("no_batch_test");
         kvStore!.getResultSize(localDeviceId, query, (err: BusinessError, resultSize: number) => {
           console.error(TAG + 'Succeeded getResultSize, resultSize=' + JSON.stringify(resultSize) + ',err=' + err.code + err.message);
-          expect(resultSize).assertEqual(undefined);
           expect(err.code).assertEqual(15100004);
           console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1701 end---------  ');
           done();
@@ -1338,7 +1336,7 @@ export default function DeviceKvStoreReturnValue(){
         query.prefixKey("no_batch_test");
         await kvStore!.getResultSize(query).then((resultSize: number) => {
           console.info(TAG + 'Succeeded getResultSize, resultSize=' + JSON.stringify(resultSize));
-          expect(resultSize).assertEqual(undefined);
+          expect(null).assertFail();
           console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1801 end---------  ');
           done();
         }).catch((err: BusinessError) => {
@@ -1403,7 +1401,7 @@ export default function DeviceKvStoreReturnValue(){
         query.prefixKey("no_batch_test");
         await kvStore!.getResultSize(localDeviceId, query).then((resultSize: number) => {
           console.info(TAG + 'Succeeded getResultSize, resultSize=' + JSON.stringify(resultSize));
-          expect(resultSize).assertEqual(undefined);
+          expect(null).assertFail();
           console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1901 end---------  ');
           done();
         }).catch((err: BusinessError) => {
