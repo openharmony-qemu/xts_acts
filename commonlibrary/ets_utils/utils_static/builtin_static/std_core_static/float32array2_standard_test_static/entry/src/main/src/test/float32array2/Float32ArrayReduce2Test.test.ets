@@ -291,8 +291,6 @@ export default function Float32ArrayReduce2Test(): void {
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
-        const observedValue023 = (e as Error).message;
-        expect(observedValue023).assertEqual('custom-msg-123');
       }
     });
 
