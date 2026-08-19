@@ -646,59 +646,16 @@ export default function WebSocketTest() {
       });
 
     /**
-     * @tc.name   testWebSocketSendCallBack_static_0600
-     * @tc.number SUB_Network_WebSocket_SendCallBack_0600
+     * @tc.name   testWebSocketSendPermission_static_0600
+     * @tc.number SUB_Network_WebSocket_SendPermission_0600
      * @tc.desc   test websocket
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testWebSocketSendCallBack_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testWebSocketSendPermission_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let caseName: string = 'testWebSocketSendCallBack_static_0600';
-        hilog.info(domain, tag, '%{public}s', caseName + ' start');
-        try {
-          let ws = webSocket.createWebSocket();
-          ws.onOpen((value: webSocket.OpenResult | undefined) => {
-            if (value && value !== null) {
-              hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
-              ws.send('hello!', (err: BusinessError<void> | null, value: boolean | undefined) => {
-                if (err && err.code !== 0) {
-                  hilog.info(domain, tag, '%{public}s', caseName + 'send fail' + err.code);
-                  done();
-                } else {
-                  hilog.info(domain, tag, '%{public}s', caseName + 'send success ' + value);
-                  ExpectTrue(value !== null);
-                  done();
-                }
-              });
-            }
-          });
-          ws.connect(availableWebSocketAddress, (err: BusinessError<void> | null, value: boolean | undefined) => {
-            if (err && err.code !== 0) {
-              hilog.info(domain, tag, '%{public}s', caseName + 'connect fail! : errcode is ->' + err.code);
-            } else {
-              hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
-            }
-          });
-        } catch (err) {
-          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + err.code);
-          hilog.info(domain, tag, '%{public}s', caseName + '---test end');
-          done();
-        }
-      });
-
-    /**
-     * @tc.name   testWebSocketSendPermission_static_0700
-     * @tc.number SUB_Network_WebSocket_SendPermission_0700
-     * @tc.desc   test websocket
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testWebSocketSendPermission_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        let caseName: string = 'testWebSocketSendPermission_static_0700';
+        let caseName: string = 'testWebSocketSendPermission_static_0600';
         hilog.info(domain, tag, '%{public}s', caseName + ' start');
         try {
           let ws = webSocket.createWebSocket();
@@ -718,6 +675,9 @@ export default function WebSocketTest() {
                   done();
                 }
               });
+            } else {
+              ExpectFail();
+              done();
             }
           });
           ws.connect(availableWebSocketAddress, (err: BusinessError<void> | null, value: boolean | undefined) => {
@@ -941,6 +901,10 @@ export default function WebSocketTest() {
                   done();
                 }
               });
+            }
+            else {
+              ExpectFail();
+              done();
             }
           });
           ws.connect(availableWebSocketAddress, (err: BusinessError<void> | null, value: boolean | undefined) => {
