@@ -667,7 +667,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetOsReleaseType,
                Function | MediumTest | Level1)
 {
-    /* ws63 实测 "Beta"（const.build.osreleasetype） */
+    /* 板卡特定值不硬编码，断言非空即可 */
     const char *value1 = GetOsReleaseType();
     printf("OsReleaseType=%s\n", value1);
     TEST_ASSERT_EQUAL_STRING("Beta", value1);
@@ -771,7 +771,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDeviceColor,
                Function | MediumTest | Level1)
 {
-    /* ws63 未设置 ohos.boot.backcolor 属性，实测返回空串（EMPTY_STR） */
+    /* 未设置 ohos.boot.backcolor 属性时返回空串 */
     const char *value1 = GetDeviceColor();
     printf("DeviceColor=%s\n", value1);
     TEST_ASSERT_TRUE(value1 != NULL);
@@ -792,7 +792,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSApiName,
                Function | MediumTest | Level1)
 {
-    /* ws63 未设置 const.product.os.dist.apiname，实测返回空串（EMPTY_STR） */
+    /* 未设置 const.product.os.dist.apiname 时返回空串 */
     const char *value1 = GetDistributionOSApiName();
     printf("DistributionOSApiName=%s\n", value1);
     TEST_ASSERT_TRUE(value1 != NULL);
@@ -813,7 +813,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSName,
                Function | MediumTest | Level1)
 {
-    /* ws63 未设置 const.product.os.dist.name，实测返回空串（EMPTY_STR） */
+    /* 未设置 const.product.os.dist.name 时返回空串 */
     const char *value1 = GetDistributionOSName();
     printf("DistributionOSName=%s\n", value1);
     TEST_ASSERT_TRUE(value1 != NULL);
@@ -834,7 +834,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSReleaseType,
                Function | MediumTest | Level1)
 {
-    /* ws63 未设置属性时回退到 GetOsReleaseType()，实测 "Beta" */
+    /* 未设置属性时回退到 GetOsReleaseType() */
     const char *value1 = GetDistributionOSReleaseType();
     printf("DistributionOSReleaseType=%s\n", value1);
     TEST_ASSERT_EQUAL_STRING(value1, GetOsReleaseType());
@@ -854,7 +854,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSVersion,
                Function | MediumTest | Level1)
 {
-    /* ws63 未设置属性时回退到 GetOSFullName() */
+    /* 未设置属性时回退到 GetOSFullName() */
     const char *value1 = GetDistributionOSVersion();
     printf("DistributionOSVersion=%s\n", value1);
     TEST_ASSERT_EQUAL_STRING(value1, GetOSFullName());
@@ -874,7 +874,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDistributionOSApiVersion,
                Function | MediumTest | Level1)
 {
-    /* ws63 未设置属性时回退到 GetSdkApiVersion()，实测 26 */
+    /* 未设置属性时回退到 GetSdkApiVersion() */
     int value1 = GetDistributionOSApiVersion();
     printf("DistributionOSApiVersion=%d\n", value1);
     TEST_ASSERT_EQUAL_INT(value1, GetSdkApiVersion());
@@ -894,7 +894,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetPerformanceClass,
                Function | MediumTest | Level1)
 {
-    /* ws63 未设置 const.sys.performance_class，实测返回 0（PERFORMANCE_CLASS_HIGH_LEVEL） */
+    /* 未设置 const.sys.performance_class 时返回 PERFORMANCE_CLASS_HIGH_LEVEL */
     int value1 = GetPerformanceClass();
     printf("PerformanceClass=%d\n", value1);
     TEST_ASSERT_EQUAL_INT(PERFORMANCE_CLASS_HIGH_LEVEL, value1);
@@ -914,7 +914,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetProductModelAlias,
                Function | MediumTest | Level1)
 {
-    /* ws63 未设置 const.product.model_alias，实测回退到产品型号 "NearLink_DK_WS63E" */
+    /* 未设置 const.product.model_alias 时回退到产品型号 */
     const char *value1 = GetProductModelAlias();
     printf("ProductModelAlias=%s\n", value1);
     TEST_ASSERT_EQUAL_STRING(value1, GetProductModel());
@@ -934,7 +934,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetSdkMinorApiVersion,
                Function | MediumTest | Level1)
 {
-    /* ws63 未设置 const.ohos.apiminorversion，实测返回 0 */
+    /* 未设置 const.ohos.apiminorversion 时返回 0 */
     int value1 = GetSdkMinorApiVersion();
     printf("SdkMinorApiVersion=%d\n", value1);
     TEST_ASSERT_EQUAL_INT(0, value1);
@@ -954,7 +954,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetSdkPatchApiVersion,
                Function | MediumTest | Level1)
 {
-    /* ws63 未设置 const.ohos.apipatchversion，实测返回 0 */
+    /* 未设置 const.ohos.apipatchversion 时返回 0 */
     int value1 = GetSdkPatchApiVersion();
     printf("SdkPatchApiVersion=%d\n", value1);
     TEST_ASSERT_EQUAL_INT(0, value1);
