@@ -566,7 +566,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0100, Function | MediumTest 
     TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
     result = SAMGR_SendRequest(NULL, NULL, NULL);
     TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
-    /* 正常场景：向已注册服务发送请求应返回成功 */
     IUnknown *iUnknown = SAMGR_GetInstance()->GetFeatureApi("serviceName501", "featureName503");
     if (iUnknown != NULL) {
         DemoFeature *feature = GET_OBJECT(iUnknown, DemoFeature, iUnknown);
