@@ -184,21 +184,6 @@ export default function collectionsConcatArrayTest() {
     });
 
     /**
-     * @tc.number SUB_COLLECTIONS_CONCAT_ARRAY_0700
-     * @tc.name testConcatArrayReadonlyLength0007
-     * @tc.desc Verify length is readonly - modification should be rejected.
-     * @tc.size SmallTest
-     * @tc.type Exception
-     * @tc.level Level 0
-     */
-    // it('testConcatArrayReadonlyLength0007', TestType.Exception| Size.SMALLTEST | Level.LEVEL0, () => {
-    //   let arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3);
-    //   // 编译时验证：arr.length = 10 应该报错（readonly）
-    //   // 运行时验证：length 值未被修改
-    //   expect(arr.length).assertEqual(3);
-    // });
-
-    /**
      * @tc.number SUB_COLLECTIONS_CONCAT_ARRAY_0800
      * @tc.name testConcatArrayIndexOutOfBounds0008
      * @tc.desc Verify out-of-bounds index returns undefined.
@@ -421,82 +406,6 @@ export default function collectionsConcatArrayTest() {
       expect(concatArr[2]).assertEqual(30);
       console.info(`[${caseName}] end`);
     });
-
-    // ==================== 3.4 自定义实现约束 ====================
-
-    /**
-     * @tc.number SUB_COLLECTIONS_CONCAT_ARRAY_1800
-     * @tc.name testConcatArrayCustomImplementation0018
-     * @tc.desc [SKIP] ArkTS does not support custom class implementing ConcatArray interface.
-     * @tc.size SmallTest
-     * @tc.type Exception
-     * @tc.level Level 0
-     * @tc.remark Framework limitation: Custom classes cannot implement ConcatArray in ArkTS.
-     */
-    // it('testConcatArrayCustomImplementation0018', TestType.Exception | Size.SMALLTEST | Level.LEVEL0, () => {
-    //   const caseName = 'testConcatArrayCustomImplementation0018';
-    //   console.info(`[${caseName}] start`);
-    //   // ArkTS 限制：自定义类无法 implements ConcatArray 接口
-    //   // 原因：Sendable类不支持索引签名 [index: number]: T
-    //   // 测试结论：CT-14 不适用
-    //   console.info(`[${caseName}] end`);
-    // });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_CONCAT_ARRAY_1900
-     * @tc.name testConcatArrayTypeRestriction0019
-     * @tc.desc Verify ConcatArray reference cannot access Array-specific methods.
-     * @tc.size SmallTest
-     * @tc.type Exception
-     * @tc.level Level 0
-     */
-    // it('testConcatArrayTypeRestriction0019', TestType.Exception | Size.SMALLTEST | Level.LEVEL0, () => {
-    //   let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3);
-    //   let concatArr: collections.ConcatArray<number> = arr;
-    //
-    //   // 通过 ConcatArray 引用只能访问接口定义的方法
-    //   // 使用 Object.getOwnPropertyNames 验证接口成员
-    //   let concatMembers: string[] = Object.getOwnPropertyNames(concatArr);
-    //
-    //   // 验证 length 存在
-    //   expect(concatArr.length).assertEqual(3);
-    //
-    //   // 验证接口方法可以正常调用
-    //   let joinResult: string = concatArr.join();
-    //   expect(joinResult).assertEqual("1,2,3");
-    //
-    //   let sliceResult = concatArr.slice(0, 2);
-    //   expect(sliceResult.length).assertEqual(2);
-    // });
-
-    /**
-     * @tc.number SUB_COLLECTIONS_CONCAT_ARRAY_2000
-     * @tc.name testConcatArrayReadonlyConstraint0020
-     * @tc.desc Verify ConcatArray readonly constraint is enforced.
-     * @tc.size SmallTest
-     * @tc.type Exception
-     * @tc.level Level 0
-     */
-    // it('testConcatArrayReadonlyConstraint0020', TestType.Exception | Size.SMALLTEST | Level.LEVEL0, () => {
-    //   let arr: collections.Array<number> = new collections.Array<number>(10, 20, 30);
-    //   let concatArr: collections.ConcatArray<number> = arr;
-    //
-    //   // 验证通过 ConcatArray 引用访问的值是只读的
-    //   // 编译时：concatArr[0] = 100 会报错
-    //   // 运行时验证：值没有被修改（因为无法通过 ConcatArray 引用修改）
-    //   expect(concatArr[0]).assertEqual(10);
-    //   expect(concatArr[1]).assertEqual(20);
-    //   expect(concatArr[2]).assertEqual(30);
-    //
-    //   // 验证 length 是只读的
-    //   // 编译时：concatArr.length = 10 会报错
-    //   expect(concatArr.length).assertEqual(3);
-    //
-    //   // 验证通过 Array 引用修改后，ConcatArray 引用能看到修改
-    //   arr.push(40);
-    //   expect(concatArr.length).assertEqual(4);
-    //   expect(concatArr[3]).assertEqual(40);
-    // });
 
     // ==================== 4.1 索引访问类型覆盖 ====================
 
@@ -776,43 +685,6 @@ export default function collectionsConcatArrayTest() {
       console.info(`[${caseName}] end`);
     });
 
-    // ==================== 5.1 只读约束验证 ====================
-
-    // /**
-    //  * @tc.number SUB_COLLECTIONS_CONCAT_ARRAY_3600
-    //  * @tc.name testConcatArrayReadonlyIndex0036
-    //  * @tc.desc Verify index is readonly - modification should be rejected at compile time.
-    //  * @tc.size SmallTest
-    //  * @tc.type Exception
-    //  * @tc.level Level 0
-    //  */
-    // it('testConcatArrayReadonlyIndex0036', TestType.Exception | Size.SMALLTEST | Level.LEVEL0, () => {
-    //   let arr: collections.ConcatArray<number> = new collections.Array<number>(10, 20, 30);
-    //   // 验证通过 ConcatArray 引用访问的值是只读的
-    //   // 编译时：arr[0] = 100 会报错 (readonly)
-    //   // 运行时验证：值保持不变
-    //   expect(arr[0]).assertEqual(10);
-    //   expect(arr[1]).assertEqual(20);
-    //   expect(arr[2]).assertEqual(30);
-    // });
-    //
-    // /**
-    //  * @tc.number SUB_COLLECTIONS_CONCAT_ARRAY_3700
-    //  * @tc.name testConcatArrayReadonlyLength0037
-    //  * @tc.desc Verify length is readonly - modification should be rejected at compile time.
-    //  * @tc.size SmallTest
-    //  * @tc.type Exception
-    //  * @tc.level Level 0
-    //  */
-    // it('testConcatArrayReadonlyLength0037', TestType.Exception | Size.SMALLTEST | Level.LEVEL0, () => {
-    //   let arr: collections.ConcatArray<number> = new collections.Array<number>(10, 20, 30);
-    //   // 验证 length 是只读的
-    //   // 编译时：arr.length = 10 会报错 (readonly)
-    //   // 运行时验证：length 值保持不变
-    //   expect(arr.length).assertEqual(3);
-    // });
-
-    // ==================== 5.2 索引边界验证 ====================
 
     /**
      * @tc.number SUB_COLLECTIONS_CONCAT_ARRAY_3800

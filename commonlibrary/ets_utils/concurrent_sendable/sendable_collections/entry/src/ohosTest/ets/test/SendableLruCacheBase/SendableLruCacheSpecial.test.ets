@@ -447,44 +447,6 @@ export default function sendableLruCacheSpecialTest() {
       console.info(`${caseName}, test end`);
     });
 
-    // 验证 clear() 后统计计数器不清零（SDK 设计行为：统计为累计值，clear 不重置）。
-    // /**
-    //  * @tc.name   testStatisticsClearReset0017
-    //  * @tc.number SUB_COLLECTIONS_LRU_SPECIAL_1700
-    //  * @tc.desc   clear() removes all entries but statistics counters persist
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   SMALLTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('testStatisticsClearReset0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testStatisticsClearReset0017';
-    //   console.info(`${caseName}, test start`);
-    //   const cache = new ArkTSUtils.SendableLruCache<string, string>(10);
-    //   cache.put('key1', 'value1');
-    //   cache.put('key2', 'value2');
-    //   cache.get('key1');
-    //   cache.get('key2');
-    //   cache.get('key3');
-    //   cache.put('key3', 'value3');
-    //
-    //   expect(cache.getPutCount()).assertEqual(3);
-    //   expect(cache.getMatchCount()).assertEqual(2);
-    //   expect(cache.getMissCount()).assertEqual(1);
-    //   expect(cache.getRemoveCount()).assertEqual(0);
-    //   cache.clear();
-    //   expect(cache.length).assertEqual(0);
-    //   expect(cache.isEmpty()).assertTrue();
-    //   console.info(`${caseName}, test end`);
-
-    //   /* 以下为设计要求的验证点（当前 SDK 不支持）：
-    //   * expect(cache.getPutCount()).assertEqual(0);
-    //   * expect(cache.getMatchCount()).assertEqual(0);
-    //   * expect(cache.getMissCount()).assertEqual(0);
-    //   * expect(cache.getRemoveCount()).assertEqual(0);
-    //   * 原因：SendableLruCache 统计为生命周期累计值，
-    //   * clear() 不对其清零，且无 resetStatistics 类接口。*/
-    // });
-
     // ============================================================
     // 4.1 entries方法详细测试 (7个)
     // ============================================================
@@ -751,54 +713,6 @@ export default function sendableLruCacheSpecialTest() {
       expect(keys[0]).assertTrue();
       console.info(`${caseName}, test end`);
     });
-
-    // //SendableLruCache 的限制:
-    // // Key 和 Value 必须是 Object 类型
-    // // 不支持原始类型（null、undefined、number、string、boolean 等）直接作为键
-    // //如果用Wrapper包装类：则验证点就不是键，而是属性
-    // /**
-    //  * @tc.name   testKeysNullValue0028
-    //  * @tc.number SUB_COLLECTIONS_LRU_SPECIAL_2800
-    //  * @tc.desc   SendableLruCache disallows null as key type per ArkTS Sendable constraints
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   SMALLTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('testKeysNullValue0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testKeysNullValue0028';
-    //   console.info(`${caseName}, test start`);
-    //   const cache = new ArkTSUtils.SendableLruCache<null, string>(10);
-    //   cache.put(null, 'value');
-    //   const keys: null[] = cache.keys();
-    //   expect(Array.isArray(keys)).assertTrue();
-    //   expect(keys.length).assertEqual(1);
-    //   expect(keys[0]).assertNull();
-    //   console.info(`${caseName}, test end`);
-    // });
-    //
-    // //SendableLruCache 的限制:
-    // // Key 和 Value 必须是 Object 类型
-    // // 不支持原始类型（null、undefined、number、string、boolean 等）直接作为键
-    // //如果用Wrapper包装类：则验证点就不是键，而是属性
-    // /**
-    //  * @tc.name   testKeysUndefinedValue0029
-    //  * @tc.number SUB_COLLECTIONS_LRU_SPECIAL_2900
-    //  * @tc.desc   SendableLruCache disallows undefined as key type per ArkTS Sendable constraints
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   SMALLTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('testKeysUndefinedValue0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testKeysUndefinedValue0029';
-    //   console.info(`${caseName}, test start`);
-    //   const cache = new ArkTSUtils.SendableLruCache<undefined, string>(10);
-    //   cache.put(undefined, 'value');
-    //   const keys: undefined[] = cache.keys();
-    //   expect(Array.isArray(keys)).assertTrue();
-    //   expect(keys.length).assertEqual(1);
-    //   expect(keys[0]).assertUndefined();
-    //   console.info(`${caseName}, test end`);
-    // });
 
     /**
      * @tc.name   testKeysAccessOrder0030
@@ -1235,31 +1149,6 @@ export default function sendableLruCacheSpecialTest() {
       expect(cache.get(1)).assertEqual('one');
       console.info(`${caseName}, test end`);
     });
-
-    //场景：非Sendable类型测试 | 使用Object、普通Function作为泛型参数 | 编译错误或运行时错误 |
-    //原因: ArkTS 编译器在编译期拦截非 Sendable 泛型参数，不存在运行时场景。
-    // /**
-    //  * @tc.name   testNonSendableType0045
-    //  * @tc.number SUB_COLLECTIONS_LRU_SPECIAL_4500
-    //  * @tc.desc   Non-Sendable types cause compilation errors (compile-time check)
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   SMALLTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('testNonSendableType0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-    //   const caseName: string = 'testNonSendableType0045';
-    //   console.info(`${caseName}, test start`);
-    //   @Sendable
-    //   class SendableClass implements lang.ISendable {
-    //     name: string = 'sendable';
-    //   }
-    //   const cache = new ArkTSUtils.SendableLruCache<lang.ISendable, lang.ISendable>(10);
-    //   const key: lang.ISendable = new SendableClass();
-    //   const result: lang.ISendable = cache.put(key, key);
-    //   expect(result).assertEqual(key);
-    //   expect(cache.contains(key)).assertTrue();
-    //   console.info(`${caseName}, test end`);
-    // });
 
     // ============================================================
     // 7. 继承测试 (7个)

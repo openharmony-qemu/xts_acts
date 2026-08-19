@@ -598,7 +598,6 @@ export default function CollectionsMapNonOrthogonalTest() {
             map.set("c", 3);
           }
         });
-        expect(true).assertTrue();
       } catch (err) {
         errorCaught = true;
         expect(err !== undefined).assertTrue();
@@ -606,6 +605,7 @@ export default function CollectionsMapNonOrthogonalTest() {
           expect(err.code).assertEqual(10200201);
         }
       }
+      expect(errorCaught).assertTrue();
       console.info(caseName + ', test end');
     });
 
@@ -924,87 +924,6 @@ export default function CollectionsMapNonOrthogonalTest() {
       expect(map.get("b")).assertEqual(2);
       console.info(caseName + ', test end');
     });
-
-    // ============================================================
-    // Commented Cases (3500-3800)
-    // 以下用例因 ArkTS 编译器硬性限制无法恢复，保留编号注释
-    // ============================================================
-
-    // /**
-    //  * @tc.number  SUB_COLLECTIONS_MAP_NON_ORTHOGONAL_3500
-    //  * @tc.name    testCollectionsMapNonOrthogonal0035
-    //  * @tc.desc    [SKIP] Verify get throws 401 error when key parameter is missing
-    //  * @tc.type    FUNCTION
-    //  * @tc.size    MEDIUMTEST
-    //  * @tc.level   LEVEL0
-    //  * @reason ArkTS 禁止 @ts-ignore (arkts-strict-typing-required)
-    //  */
-    // it('testCollectionsMapNonOrthogonal0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-    //     let map: collections.Map<string, number> = new collections.Map<string, number>();
-    //     try {
-    //         map.get();
-    //         expect(false).assertTrue();
-    //     } catch (err) {
-    //         expect(err !== undefined).assertTrue();
-    //     }
-    // });
-
-    // /**
-    //  * @tc.number  SUB_COLLECTIONS_MAP_NON_ORTHOGONAL_3600
-    //  * @tc.name    testCollectionsMapNonOrthogonal0036
-    //  * @tc.desc    [SKIP] Verify set throws 401 error when key parameter is missing
-    //  * @tc.type    FUNCTION
-    //  * @tc.size    MEDIUMTEST
-    //  * @tc.level   LEVEL0
-    //  * @reason ArkTS 禁止 @ts-ignore (arkts-strict-typing-required)
-    //  */
-    // it('testCollectionsMapNonOrthogonal0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-    //     let map: collections.Map<string, number> = new collections.Map<string, number>();
-    //     try {
-    //         map.set();
-    //         expect(false).assertTrue();
-    //     } catch (err) {
-    //         expect(err !== undefined).assertTrue();
-    //     }
-    // });
-
-    // /**
-    //  * @tc.number  SUB_COLLECTIONS_MAP_NON_ORTHOGONAL_3700
-    //  * @tc.name    testCollectionsMapNonOrthogonal0037
-    //  * @tc.desc    [SKIP] Verify has throws 401 error when key parameter is missing
-    //  * @tc.type    FUNCTION
-    //  * @tc.size    MEDIUMTEST
-    //  * @tc.level   LEVEL0
-    //  * @reason ArkTS 禁止 @ts-ignore (arkts-strict-typing-required)
-    //  */
-    // it('testCollectionsMapNonOrthogonal0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-    //     let map: collections.Map<string, number> = new collections.Map<string, number>();
-    //     try {
-    //         map.has();
-    //         expect(false).assertTrue();
-    //     } catch (err) {
-    //         expect(err !== undefined).assertTrue();
-    //     }
-    // });
-
-    // /**
-    //  * @tc.number  SUB_COLLECTIONS_MAP_NON_ORTHOGONAL_3800
-    //  * @tc.name    testCollectionsMapNonOrthogonal0038
-    //  * @tc.desc    [SKIP] Verify delete throws 401 error when key parameter is missing
-    //  * @tc.type    FUNCTION
-    //  * @tc.size    MEDIUMTEST
-    //  * @tc.level   LEVEL0
-    //  * @reason ArkTS 禁止 @ts-ignore (arkts-strict-typing-required)
-    //  */
-    // it('testCollectionsMapNonOrthogonal0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-    //     let map: collections.Map<string, number> = new collections.Map<string, number>();
-    //     try {
-    //         map.delete();
-    //         expect(false).assertTrue();
-    //     } catch (err) {
-    //         expect(err !== undefined).assertTrue();
-    //     }
-    // });
 
   });  // describe('CollectionsMapNonOrthogonalTest')
 
