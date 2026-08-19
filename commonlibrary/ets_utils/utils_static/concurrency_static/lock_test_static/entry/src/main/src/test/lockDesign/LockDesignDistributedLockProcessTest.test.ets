@@ -259,12 +259,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       const mutex = new Mutex();
       const data = new SharedLockData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(sharedLockTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(sharedLockTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(sharedLockTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(sharedLockTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(sharedLockTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(sharedLockTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.value).assertEqual(5);
       } catch (error) {
@@ -287,12 +286,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       const mutex = new Mutex();
       const data = new ContentionData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(lockContentionTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(lockContentionTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(lockContentionTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(lockContentionTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(lockContentionTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockContentionTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.counter).assertEqual(0);
       // Mutual exclusion oracle: maxSeen stays 1 only if the mutex serializes every cycle.
@@ -316,12 +314,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       try {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(lockTimeoutTask, mutex, counter));
-      let t2 = taskpool.execute(new taskpool.Task(lockTimeoutTask, mutex, counter));
-      let t3 = taskpool.execute(new taskpool.Task(lockTimeoutTask, mutex, counter));
-      let t4 = taskpool.execute(new taskpool.Task(lockTimeoutTask, mutex, counter));
-      let t5 = taskpool.execute(new taskpool.Task(lockTimeoutTask, mutex, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockTimeoutTask, mutex, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       } catch (error) {
         console.error(`LockDesignDistributedLockProcessTest0300 failed: ${error}`);
@@ -343,10 +340,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       const mutex = new Mutex();
       const data = new ProcessRetryData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(lockRetryTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(lockRetryTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(lockRetryTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockRetryTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       expect(data.success).assertEqual(3);
       expect(data.attempts).assertEqual(3);
@@ -369,12 +367,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       const mutex = new Mutex();
       const data = new TimeoutLockData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(lockTimeoutSimpleTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(lockTimeoutSimpleTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(lockTimeoutSimpleTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(lockTimeoutSimpleTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(lockTimeoutSimpleTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockTimeoutSimpleTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
       } catch (error) {
@@ -397,12 +394,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       const mutex = new Mutex();
       const data = new RetryLockData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(lockRetryBackoffTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(lockRetryBackoffTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(lockRetryBackoffTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(lockRetryBackoffTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(lockRetryBackoffTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockRetryBackoffTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.success).assertEqual(5);
       expect(data.attempts).assertEqual(5);
@@ -426,12 +422,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       const mutex = new Mutex();
       const data = new DynamicTimeoutData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(dynamicTimeoutTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(dynamicTimeoutTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(dynamicTimeoutTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(dynamicTimeoutTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(dynamicTimeoutTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(dynamicTimeoutTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
       // The 4th and 5th serialized tasks each double the timeout field: 100 -> 200 -> 400.
@@ -456,12 +451,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       const mutex = new Mutex();
       const data = new RetryLimitData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(retryLimitTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(retryLimitTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(retryLimitTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(retryLimitTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(retryLimitTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(retryLimitTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       // Serialized by the mutex: the first 3 tasks complete, the remaining 2 abort.
       expect(data.completed).assertEqual(3);
@@ -486,14 +480,14 @@ export default function LockDesignDistributedLockProcessTest(): void {
       const rwlock = new RWLock();
       const data = new LockPriorityData();
       const counter = new AtomicInt(0);
-      let r1 = taskpool.execute(new taskpool.Task(readPriorityTask, rwlock, data, counter));
-      let r2 = taskpool.execute(new taskpool.Task(readPriorityTask, rwlock, data, counter));
-      let r3 = taskpool.execute(new taskpool.Task(readPriorityTask, rwlock, data, counter));
-      let r4 = taskpool.execute(new taskpool.Task(readPriorityTask, rwlock, data, counter));
-      let r5 = taskpool.execute(new taskpool.Task(readPriorityTask, rwlock, data, counter));
-      let w1 = taskpool.execute(new taskpool.Task(writePriorityTask, rwlock, data, counter));
-      let w2 = taskpool.execute(new taskpool.Task(writePriorityTask, rwlock, data, counter));
-      await Promise.all([r1, r2, r3, r4, r5, w1, w2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readPriorityTask, rwlock, data, counter)));
+      }
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(writePriorityTask, rwlock, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(7);
       expect(data.readCount.load()).assertEqual(5);
       expect(data.writeCount).assertEqual(2);
@@ -517,12 +511,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       const mutex = new Mutex();
       const data = new HighPriorityData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(highPriorityTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(highPriorityTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(highPriorityTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(highPriorityTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(highPriorityTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(highPriorityTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
       } catch (error) {
@@ -545,12 +538,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       const mutex = new Mutex();
       const data = new LowPriorityData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(lowPriorityTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(lowPriorityTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(lowPriorityTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(lowPriorityTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(lowPriorityTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lowPriorityTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
       } catch (error) {
@@ -573,12 +565,11 @@ export default function LockDesignDistributedLockProcessTest(): void {
       const mutex = new Mutex();
       const data = new DynamicPriorityData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(dynamicPriorityTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(dynamicPriorityTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(dynamicPriorityTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(dynamicPriorityTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(dynamicPriorityTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(dynamicPriorityTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
       // The last 2 serialized tasks each increment the priority field: 5 -> 6 -> 7.

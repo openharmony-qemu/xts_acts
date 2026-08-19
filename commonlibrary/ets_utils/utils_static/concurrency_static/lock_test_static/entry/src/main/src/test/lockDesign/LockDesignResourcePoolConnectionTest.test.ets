@@ -332,17 +332,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       const mutex = new Mutex();
       const pool = new ConnectionPool();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(connAcquireReleaseTask, mutex, pool, counter));
-      let t2 = taskpool.execute(new taskpool.Task(connAcquireReleaseTask, mutex, pool, counter));
-      let t3 = taskpool.execute(new taskpool.Task(connAcquireReleaseTask, mutex, pool, counter));
-      let t4 = taskpool.execute(new taskpool.Task(connAcquireReleaseTask, mutex, pool, counter));
-      let t5 = taskpool.execute(new taskpool.Task(connAcquireReleaseTask, mutex, pool, counter));
-      let t6 = taskpool.execute(new taskpool.Task(connAcquireReleaseTask, mutex, pool, counter));
-      let t7 = taskpool.execute(new taskpool.Task(connAcquireReleaseTask, mutex, pool, counter));
-      let t8 = taskpool.execute(new taskpool.Task(connAcquireReleaseTask, mutex, pool, counter));
-      let t9 = taskpool.execute(new taskpool.Task(connAcquireReleaseTask, mutex, pool, counter));
-      let t10 = taskpool.execute(new taskpool.Task(connAcquireReleaseTask, mutex, pool, counter));
-      await Promise.all([t1, t2, t3, t4, t5, t6, t7, t8, t9, t10]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(connAcquireReleaseTask, mutex, pool, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(10);
       expect(pool.activeCount).assertEqual(0);
       expect(pool.connections.length).assertEqual(5);
@@ -366,11 +360,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       const mutex = new Mutex();
       const pool = new DynamicPool();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(dynamicExpandTask, mutex, pool, counter));
-      let t2 = taskpool.execute(new taskpool.Task(dynamicExpandTask, mutex, pool, counter));
-      let t3 = taskpool.execute(new taskpool.Task(dynamicExpandTask, mutex, pool, counter));
-      let t4 = taskpool.execute(new taskpool.Task(dynamicExpandTask, mutex, pool, counter));
-      await Promise.all([t1, t2, t3, t4]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 4; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(dynamicExpandTask, mutex, pool, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(4);
       expect(pool.connections.length).assertEqual(7);
       // Capacity grows 3 -> 5 -> 7, so expansion happens exactly twice.
@@ -395,12 +389,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       const mutex = new Mutex();
       const pool = new TimeoutPool();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(timeoutRecycleTask, mutex, pool, counter));
-      let t2 = taskpool.execute(new taskpool.Task(timeoutRecycleTask, mutex, pool, counter));
-      let t3 = taskpool.execute(new taskpool.Task(timeoutRecycleTask, mutex, pool, counter));
-      let t4 = taskpool.execute(new taskpool.Task(timeoutRecycleTask, mutex, pool, counter));
-      let t5 = taskpool.execute(new taskpool.Task(timeoutRecycleTask, mutex, pool, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(timeoutRecycleTask, mutex, pool, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(pool.acquired).assertEqual(5);
       expect(pool.recycled).assertEqual(5);
@@ -424,10 +417,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       const mutex = new Mutex();
       const pool = new HealthCheckPool();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(healthCheckTask, mutex, pool, counter));
-      let t2 = taskpool.execute(new taskpool.Task(healthCheckTask, mutex, pool, counter));
-      let t3 = taskpool.execute(new taskpool.Task(healthCheckTask, mutex, pool, counter));
-      await Promise.all([t1, t2, t3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(healthCheckTask, mutex, pool, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       expect(pool.healthyCount).assertEqual(3);
       expect(pool.checkCount).assertEqual(3);
@@ -450,12 +444,14 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       const mutex = new Mutex();
       const pool = new MemoryPool();
       const counter = new AtomicInt(0);
-      let a1 = taskpool.execute(new taskpool.Task(memAllocTask, mutex, pool, counter));
-      let a2 = taskpool.execute(new taskpool.Task(memAllocTask, mutex, pool, counter));
-      let a3 = taskpool.execute(new taskpool.Task(memAllocTask, mutex, pool, counter));
-      let f1 = taskpool.execute(new taskpool.Task(memFreeTask, mutex, pool, counter));
-      let f2 = taskpool.execute(new taskpool.Task(memFreeTask, mutex, pool, counter));
-      await Promise.all([a1, a2, a3, f1, f2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(memAllocTask, mutex, pool, counter)));
+      }
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(memFreeTask, mutex, pool, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(pool.allocated).assertEqual(3);
       expect(pool.freed).assertEqual(2);
@@ -481,9 +477,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       const mutex = new Mutex();
       const pool = new FragmentPool();
       const counter = new AtomicInt(0);
-      let d1 = taskpool.execute(new taskpool.Task(memDefragTask, mutex, pool, counter));
-      let d2 = taskpool.execute(new taskpool.Task(memDefragTask, mutex, pool, counter));
-      await Promise.all([d1, d2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(memDefragTask, mutex, pool, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(2);
       expect(pool.defragCount).assertEqual(2);
       // Defragmentation compacts the 4 used slots to the front.
@@ -509,12 +507,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       const mutex = new Mutex();
       const pool = new PreallocPool();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(memPreallocTask, mutex, pool, counter));
-      let t2 = taskpool.execute(new taskpool.Task(memPreallocTask, mutex, pool, counter));
-      let t3 = taskpool.execute(new taskpool.Task(memPreallocTask, mutex, pool, counter));
-      let t4 = taskpool.execute(new taskpool.Task(memPreallocTask, mutex, pool, counter));
-      let t5 = taskpool.execute(new taskpool.Task(memPreallocTask, mutex, pool, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(memPreallocTask, mutex, pool, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(pool.blocks.length).assertEqual(5);
       expect(pool.usedCount).assertEqual(5);
@@ -538,12 +535,14 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       const mutex = new Mutex();
       const pool = new MonitorPool();
       const counter = new AtomicInt(0);
-      let a1 = taskpool.execute(new taskpool.Task(memMonitorTask, mutex, pool, counter));
-      let a2 = taskpool.execute(new taskpool.Task(memMonitorTask, mutex, pool, counter));
-      let a3 = taskpool.execute(new taskpool.Task(memMonitorTask, mutex, pool, counter));
-      let f1 = taskpool.execute(new taskpool.Task(memMonitorFreeTask, mutex, pool, counter));
-      let f2 = taskpool.execute(new taskpool.Task(memMonitorFreeTask, mutex, pool, counter));
-      await Promise.all([a1, a2, a3, f1, f2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(memMonitorTask, mutex, pool, counter)));
+      }
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(memMonitorFreeTask, mutex, pool, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(pool.totalAlloc).assertEqual(3);
       expect(pool.totalFree).assertEqual(2);
@@ -568,17 +567,14 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       const mutex = new Mutex();
       const queue = new TaskQueue();
       const counter = new AtomicInt(0);
-      let e1 = taskpool.execute(new taskpool.Task(taskEnqueueTask, mutex, queue, counter));
-      let e2 = taskpool.execute(new taskpool.Task(taskEnqueueTask, mutex, queue, counter));
-      let e3 = taskpool.execute(new taskpool.Task(taskEnqueueTask, mutex, queue, counter));
-      let e4 = taskpool.execute(new taskpool.Task(taskEnqueueTask, mutex, queue, counter));
-      let e5 = taskpool.execute(new taskpool.Task(taskEnqueueTask, mutex, queue, counter));
-      let d1 = taskpool.execute(new taskpool.Task(taskDequeueTask, mutex, queue, counter));
-      let d2 = taskpool.execute(new taskpool.Task(taskDequeueTask, mutex, queue, counter));
-      let d3 = taskpool.execute(new taskpool.Task(taskDequeueTask, mutex, queue, counter));
-      let d4 = taskpool.execute(new taskpool.Task(taskDequeueTask, mutex, queue, counter));
-      let d5 = taskpool.execute(new taskpool.Task(taskDequeueTask, mutex, queue, counter));
-      await Promise.all([e1, e2, e3, e4, e5, d1, d2, d3, d4, d5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(taskEnqueueTask, mutex, queue, counter)));
+      }
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(taskDequeueTask, mutex, queue, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(10);
       expect(queue.enqueued).assertEqual(5);
       // Conservation: every dequeued task was enqueued, the rest remain queued.
@@ -603,12 +599,14 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       const mutex = new Mutex();
       const queue = new PriorityTaskQueue();
       const counter = new AtomicInt(0);
-      let h1 = taskpool.execute(new taskpool.Task(priorityHighEnqueueTask, mutex, queue, counter));
-      let h2 = taskpool.execute(new taskpool.Task(priorityHighEnqueueTask, mutex, queue, counter));
-      let h3 = taskpool.execute(new taskpool.Task(priorityHighEnqueueTask, mutex, queue, counter));
-      let l1 = taskpool.execute(new taskpool.Task(priorityLowEnqueueTask, mutex, queue, counter));
-      let l2 = taskpool.execute(new taskpool.Task(priorityLowEnqueueTask, mutex, queue, counter));
-      await Promise.all([h1, h2, h3, l1, l2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(priorityHighEnqueueTask, mutex, queue, counter)));
+      }
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(priorityLowEnqueueTask, mutex, queue, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(queue.highTasks.length).assertEqual(3);
       expect(queue.lowTasks.length).assertEqual(2);
@@ -633,15 +631,11 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       const mutex = new Mutex();
       const queue = new RejectQueue();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(taskSubmitRejectTask, mutex, queue, counter));
-      let t2 = taskpool.execute(new taskpool.Task(taskSubmitRejectTask, mutex, queue, counter));
-      let t3 = taskpool.execute(new taskpool.Task(taskSubmitRejectTask, mutex, queue, counter));
-      let t4 = taskpool.execute(new taskpool.Task(taskSubmitRejectTask, mutex, queue, counter));
-      let t5 = taskpool.execute(new taskpool.Task(taskSubmitRejectTask, mutex, queue, counter));
-      let t6 = taskpool.execute(new taskpool.Task(taskSubmitRejectTask, mutex, queue, counter));
-      let t7 = taskpool.execute(new taskpool.Task(taskSubmitRejectTask, mutex, queue, counter));
-      let t8 = taskpool.execute(new taskpool.Task(taskSubmitRejectTask, mutex, queue, counter));
-      await Promise.all([t1, t2, t3, t4, t5, t6, t7, t8]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 8; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(taskSubmitRejectTask, mutex, queue, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(8);
       // Serialized by the mutex: capacity 5 accepts the first 5 tasks and rejects the remaining 3.
       expect(queue.accepted).assertEqual(5);
@@ -666,14 +660,16 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       const mutex = new Mutex();
       const queue = new TimeoutTaskQueue();
       const counter = new AtomicInt(0);
-      let e1 = taskpool.execute(new taskpool.Task(taskTimeoutEnqueueTask, mutex, queue, counter));
-      let e2 = taskpool.execute(new taskpool.Task(taskTimeoutEnqueueTask, mutex, queue, counter));
-      let e3 = taskpool.execute(new taskpool.Task(taskTimeoutEnqueueTask, mutex, queue, counter));
-      await Promise.all([e1, e2, e3]);
-      let p1 = taskpool.execute(new taskpool.Task(taskTimeoutProcessTask, mutex, queue, counter));
-      let p2 = taskpool.execute(new taskpool.Task(taskTimeoutProcessTask, mutex, queue, counter));
-      let p3 = taskpool.execute(new taskpool.Task(taskTimeoutProcessTask, mutex, queue, counter));
-      await Promise.all([p1, p2, p3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(taskTimeoutEnqueueTask, mutex, queue, counter)));
+      }
+      await Promise.all(promises);
+      promises = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(taskTimeoutProcessTask, mutex, queue, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(6);
       expect(queue.completed).assertEqual(3);
       expect(queue.timedOut).assertEqual(0);

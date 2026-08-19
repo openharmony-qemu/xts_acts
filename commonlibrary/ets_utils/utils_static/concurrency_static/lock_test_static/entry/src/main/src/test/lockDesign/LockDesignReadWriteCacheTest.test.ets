@@ -496,18 +496,12 @@ export default function LockDesignReadWriteCacheTest(): void {
       const cache = new CacheData();
       const readCounter = new AtomicInt(0);
       const writeCounter = new AtomicInt(0);
-      let r1 = taskpool.execute(new taskpool.Task(cacheReadTask, rwlock, cache, readCounter));
-      let r2 = taskpool.execute(new taskpool.Task(cacheReadTask, rwlock, cache, readCounter));
-      let r3 = taskpool.execute(new taskpool.Task(cacheReadTask, rwlock, cache, readCounter));
-      let r4 = taskpool.execute(new taskpool.Task(cacheReadTask, rwlock, cache, readCounter));
-      let r5 = taskpool.execute(new taskpool.Task(cacheReadTask, rwlock, cache, readCounter));
-      let r6 = taskpool.execute(new taskpool.Task(cacheReadTask, rwlock, cache, readCounter));
-      let r7 = taskpool.execute(new taskpool.Task(cacheReadTask, rwlock, cache, readCounter));
-      let r8 = taskpool.execute(new taskpool.Task(cacheReadTask, rwlock, cache, readCounter));
-      let r9 = taskpool.execute(new taskpool.Task(cacheReadTask, rwlock, cache, readCounter));
-      let r10 = taskpool.execute(new taskpool.Task(cacheReadTask, rwlock, cache, readCounter));
-      let w1 = taskpool.execute(new taskpool.Task(cacheWriteTask, rwlock, cache, writeCounter));
-      await Promise.all([r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, w1]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(cacheReadTask, rwlock, cache, readCounter)));
+      }
+      promises.push(taskpool.execute(new taskpool.Task(cacheWriteTask, rwlock, cache, writeCounter)));
+      await Promise.all(promises);
       expect(readCounter.load()).assertEqual(10);
       expect(writeCounter.load()).assertEqual(1);
       } catch (error) {
@@ -531,14 +525,14 @@ export default function LockDesignReadWriteCacheTest(): void {
       const cache = new HotCacheData();
       const counter = new AtomicInt(0);
       const hitCounter = new AtomicInt(0);
-      let r1 = taskpool.execute(new taskpool.Task(hotCacheReadTask, rwlock, cache, counter, hitCounter));
-      let r2 = taskpool.execute(new taskpool.Task(hotCacheReadTask, rwlock, cache, counter, hitCounter));
-      let r3 = taskpool.execute(new taskpool.Task(hotCacheReadTask, rwlock, cache, counter, hitCounter));
-      let r4 = taskpool.execute(new taskpool.Task(hotCacheReadTask, rwlock, cache, counter, hitCounter));
-      let r5 = taskpool.execute(new taskpool.Task(hotCacheReadTask, rwlock, cache, counter, hitCounter));
-      let w1 = taskpool.execute(new taskpool.Task(hotCacheWriteTask, rwlock, cache, counter, hitCounter));
-      let w2 = taskpool.execute(new taskpool.Task(hotCacheWriteTask, rwlock, cache, counter, hitCounter));
-      await Promise.all([r1, r2, r3, r4, r5, w1, w2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(hotCacheReadTask, rwlock, cache, counter, hitCounter)));
+      }
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(hotCacheWriteTask, rwlock, cache, counter, hitCounter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(7);
       expect(hitCounter.load()).assertEqual(5);
       } catch (error) {
@@ -561,14 +555,14 @@ export default function LockDesignReadWriteCacheTest(): void {
       const rwlock = new RWLock();
       const cache = new AvalancheCacheData();
       const counter = new AtomicInt(0);
-      let r1 = taskpool.execute(new taskpool.Task(avalancheReadTask, rwlock, cache, counter));
-      let r2 = taskpool.execute(new taskpool.Task(avalancheReadTask, rwlock, cache, counter));
-      let r3 = taskpool.execute(new taskpool.Task(avalancheReadTask, rwlock, cache, counter));
-      let r4 = taskpool.execute(new taskpool.Task(avalancheReadTask, rwlock, cache, counter));
-      let r5 = taskpool.execute(new taskpool.Task(avalancheReadTask, rwlock, cache, counter));
-      let w1 = taskpool.execute(new taskpool.Task(avalancheRefreshTask, rwlock, cache, counter));
-      let w2 = taskpool.execute(new taskpool.Task(avalancheRefreshTask, rwlock, cache, counter));
-      await Promise.all([r1, r2, r3, r4, r5, w1, w2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(avalancheReadTask, rwlock, cache, counter)));
+      }
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(avalancheRefreshTask, rwlock, cache, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(7);
       expect(cache.refreshCount).assertEqual(2);
       } catch (error) {
@@ -591,13 +585,12 @@ export default function LockDesignReadWriteCacheTest(): void {
       const rwlock = new RWLock();
       const cache = new PenetrateCacheData();
       const counter = new AtomicInt(0);
-      let r1 = taskpool.execute(new taskpool.Task(penetrateReadTask, rwlock, cache, counter));
-      let r2 = taskpool.execute(new taskpool.Task(penetrateReadTask, rwlock, cache, counter));
-      let r3 = taskpool.execute(new taskpool.Task(penetrateReadTask, rwlock, cache, counter));
-      let r4 = taskpool.execute(new taskpool.Task(penetrateReadTask, rwlock, cache, counter));
-      let r5 = taskpool.execute(new taskpool.Task(penetrateReadTask, rwlock, cache, counter));
-      let w1 = taskpool.execute(new taskpool.Task(penetrateWriteTask, rwlock, cache, counter));
-      await Promise.all([r1, r2, r3, r4, r5, w1]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(penetrateReadTask, rwlock, cache, counter)));
+      }
+      promises.push(taskpool.execute(new taskpool.Task(penetrateWriteTask, rwlock, cache, counter)));
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(6);
       expect(cache.hasValue).assertTrue();
       } catch (error) {
@@ -620,12 +613,14 @@ export default function LockDesignReadWriteCacheTest(): void {
       const rwlock = new RWLock();
       const cache = new LruCacheData();
       const counter = new AtomicInt(0);
-      let r1 = taskpool.execute(new taskpool.Task(lruReadTask, rwlock, cache, counter));
-      let r2 = taskpool.execute(new taskpool.Task(lruReadTask, rwlock, cache, counter));
-      let r3 = taskpool.execute(new taskpool.Task(lruReadTask, rwlock, cache, counter));
-      let w1 = taskpool.execute(new taskpool.Task(lruUpdateTask, rwlock, cache, counter));
-      let w2 = taskpool.execute(new taskpool.Task(lruUpdateTask, rwlock, cache, counter));
-      await Promise.all([r1, r2, r3, w1, w2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lruReadTask, rwlock, cache, counter)));
+      }
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lruUpdateTask, rwlock, cache, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(cache.updateCount).assertEqual(2);
       } catch (error) {
@@ -648,13 +643,16 @@ export default function LockDesignReadWriteCacheTest(): void {
       const rwlock = new RWLock();
       const cache = new PreloadCacheData();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(preloadBatchTask, rwlock, cache, counter));
-      let p2 = taskpool.execute(new taskpool.Task(preloadBatchTask, rwlock, cache, counter));
-      await Promise.all([p1, p2]);
-      let v1 = taskpool.execute(new taskpool.Task(preloadVerifyTask, rwlock, cache, counter));
-      let v2 = taskpool.execute(new taskpool.Task(preloadVerifyTask, rwlock, cache, counter));
-      let v3 = taskpool.execute(new taskpool.Task(preloadVerifyTask, rwlock, cache, counter));
-      await Promise.all([v1, v2, v3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(preloadBatchTask, rwlock, cache, counter)));
+      }
+      await Promise.all(promises);
+      promises = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(preloadVerifyTask, rwlock, cache, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(cache.loadedCount).assertEqual(10);
       expect(cache.items.length).assertEqual(10);
@@ -678,13 +676,12 @@ export default function LockDesignReadWriteCacheTest(): void {
       const rwlock = new RWLock();
       const config = new ConfigData();
       const counter = new AtomicInt(0);
-      let r1 = taskpool.execute(new taskpool.Task(configReadTask, rwlock, config, counter));
-      let r2 = taskpool.execute(new taskpool.Task(configReadTask, rwlock, config, counter));
-      let r3 = taskpool.execute(new taskpool.Task(configReadTask, rwlock, config, counter));
-      let r4 = taskpool.execute(new taskpool.Task(configReadTask, rwlock, config, counter));
-      let r5 = taskpool.execute(new taskpool.Task(configReadTask, rwlock, config, counter));
-      let w1 = taskpool.execute(new taskpool.Task(configUpdateTask, rwlock, config, counter));
-      await Promise.all([r1, r2, r3, r4, r5, w1]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(configReadTask, rwlock, config, counter)));
+      }
+      promises.push(taskpool.execute(new taskpool.Task(configUpdateTask, rwlock, config, counter)));
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(6);
       expect(config.readCount.load()).assertEqual(5);
       } catch (error) {
@@ -707,11 +704,12 @@ export default function LockDesignReadWriteCacheTest(): void {
       const rwlock = new RWLock();
       const config = new HotUpdateConfig();
       const counter = new AtomicInt(0);
-      let r1 = taskpool.execute(new taskpool.Task(hotUpdateReadTask, rwlock, config, counter));
-      let r2 = taskpool.execute(new taskpool.Task(hotUpdateReadTask, rwlock, config, counter));
-      let r3 = taskpool.execute(new taskpool.Task(hotUpdateReadTask, rwlock, config, counter));
-      let u1 = taskpool.execute(new taskpool.Task(hotUpdateTask, rwlock, config, counter));
-      await Promise.all([r1, r2, r3, u1]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(hotUpdateReadTask, rwlock, config, counter)));
+      }
+      promises.push(taskpool.execute(new taskpool.Task(hotUpdateTask, rwlock, config, counter)));
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(4);
       expect(config.version).assertEqual(2);
       } catch (error) {
@@ -734,12 +732,14 @@ export default function LockDesignReadWriteCacheTest(): void {
       const rwlock = new RWLock();
       const config = new VersionConfig();
       const counter = new AtomicInt(0);
-      let r1 = taskpool.execute(new taskpool.Task(versionReadTask, rwlock, config, counter));
-      let r2 = taskpool.execute(new taskpool.Task(versionReadTask, rwlock, config, counter));
-      let r3 = taskpool.execute(new taskpool.Task(versionReadTask, rwlock, config, counter));
-      let u1 = taskpool.execute(new taskpool.Task(versionUpdateTask, rwlock, config, counter));
-      let u2 = taskpool.execute(new taskpool.Task(versionUpdateTask, rwlock, config, counter));
-      await Promise.all([r1, r2, r3, u1, u2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(versionReadTask, rwlock, config, counter)));
+      }
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(versionUpdateTask, rwlock, config, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(config.currentVersion).assertEqual(3);
       expect(config.versions.length).assertEqual(3);
@@ -763,9 +763,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       const rwlock = new RWLock();
       const config = new RollbackConfig();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(configRollbackTask, rwlock, config, counter));
-      let t2 = taskpool.execute(new taskpool.Task(configRollbackTask, rwlock, config, counter));
-      await Promise.all([t1, t2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(configRollbackTask, rwlock, config, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(2);
       expect(config.rollbackCount).assertEqual(2);
       // Two serialized swap-rollbacks restore the original current value.
@@ -790,12 +792,12 @@ export default function LockDesignReadWriteCacheTest(): void {
       const rwlock = new RWLock();
       const config = new EncryptConfig();
       const counter = new AtomicInt(0);
-      let e1 = taskpool.execute(new taskpool.Task(configEncryptTask, rwlock, config, counter));
-      await Promise.all([e1]);
-      let d1 = taskpool.execute(new taskpool.Task(configDecryptTask, rwlock, config, counter));
-      let d2 = taskpool.execute(new taskpool.Task(configDecryptTask, rwlock, config, counter));
-      let d3 = taskpool.execute(new taskpool.Task(configDecryptTask, rwlock, config, counter));
-      await Promise.all([d1, d2, d3]);
+      await taskpool.execute(new taskpool.Task(configEncryptTask, rwlock, config, counter));
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(configDecryptTask, rwlock, config, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(4);
       expect(config.encrypted).assertEqual('enc_secret');
       expect(config.decryptCount.load()).assertEqual(3);
@@ -820,12 +822,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       const db = new DatabaseData();
       const counter = new AtomicInt(0);
       // Execute all query tasks first
-      let q1 = taskpool.execute(new taskpool.Task(dbQueryTask, rwlock, db, counter));
-      let q2 = taskpool.execute(new taskpool.Task(dbQueryTask, rwlock, db, counter));
-      let q3 = taskpool.execute(new taskpool.Task(dbQueryTask, rwlock, db, counter));
-      let q4 = taskpool.execute(new taskpool.Task(dbQueryTask, rwlock, db, counter));
-      let q5 = taskpool.execute(new taskpool.Task(dbQueryTask, rwlock, db, counter));
-      await Promise.all([q1, q2, q3, q4, q5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(dbQueryTask, rwlock, db, counter)));
+      }
+      await Promise.all(promises);
       // Then execute update task
       await taskpool.execute(new taskpool.Task(dbUpdateTask, rwlock, db, counter));
       expect(counter.load()).assertEqual(6);
@@ -851,12 +852,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       const mutex = new Mutex();
       const data = new TransactionData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(transactionCommitTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(transactionCommitTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(transactionCommitTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(transactionCommitTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(transactionCommitTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(transactionCommitTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.balance).assertEqual(1000);
       expect(data.committed).assertEqual(5);
@@ -880,12 +880,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       const mutex = new Mutex();
       const pool = new ConnectionPoolData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(connectionAcquireTask, mutex, pool, counter));
-      let t2 = taskpool.execute(new taskpool.Task(connectionAcquireTask, mutex, pool, counter));
-      let t3 = taskpool.execute(new taskpool.Task(connectionAcquireTask, mutex, pool, counter));
-      let t4 = taskpool.execute(new taskpool.Task(connectionAcquireTask, mutex, pool, counter));
-      let t5 = taskpool.execute(new taskpool.Task(connectionAcquireTask, mutex, pool, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(connectionAcquireTask, mutex, pool, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(pool.acquired).assertEqual(5);
       expect(pool.released).assertEqual(5);
@@ -911,14 +910,17 @@ export default function LockDesignReadWriteCacheTest(): void {
       const data = new BatchDbData();
       const counter = new AtomicInt(0);
       // Execute write tasks first and wait for completion
-      let w1 = taskpool.execute(new taskpool.Task(batchWriteTask, rwlock, data, counter));
-      let w2 = taskpool.execute(new taskpool.Task(batchWriteTask, rwlock, data, counter));
-      await Promise.all([w1, w2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(batchWriteTask, rwlock, data, counter)));
+      }
+      await Promise.all(promises);
       // Then execute read tasks
-      let r1 = taskpool.execute(new taskpool.Task(batchReadTask, rwlock, data, counter));
-      let r2 = taskpool.execute(new taskpool.Task(batchReadTask, rwlock, data, counter));
-      let r3 = taskpool.execute(new taskpool.Task(batchReadTask, rwlock, data, counter));
-      await Promise.all([r1, r2, r3]);
+      promises = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(batchReadTask, rwlock, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.records.length).assertEqual(10);
       expect(data.readCount.load()).assertEqual(3);
@@ -944,12 +946,11 @@ export default function LockDesignReadWriteCacheTest(): void {
       const data = new IndexData();
       const counter = new AtomicInt(0);
       // Execute all query tasks first
-      let q1 = taskpool.execute(new taskpool.Task(indexQueryTask, rwlock, data, counter));
-      let q2 = taskpool.execute(new taskpool.Task(indexQueryTask, rwlock, data, counter));
-      let q3 = taskpool.execute(new taskpool.Task(indexQueryTask, rwlock, data, counter));
-      let q4 = taskpool.execute(new taskpool.Task(indexQueryTask, rwlock, data, counter));
-      let q5 = taskpool.execute(new taskpool.Task(indexQueryTask, rwlock, data, counter));
-      await Promise.all([q1, q2, q3, q4, q5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(indexQueryTask, rwlock, data, counter)));
+      }
+      await Promise.all(promises);
       // Then execute rebuild task
       await taskpool.execute(new taskpool.Task(indexRebuildTask, rwlock, data, counter));
       expect(counter.load()).assertEqual(6);

@@ -382,10 +382,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const state = new TransactionState();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(transactionTask, mutex, state, counter));
-      let t2 = taskpool.execute(new taskpool.Task(transactionTask, mutex, state, counter));
-      let t3 = taskpool.execute(new taskpool.Task(transactionTask, mutex, state, counter));
-      await Promise.all([t1, t2, t3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(transactionTask, mutex, state, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       expect(state.balance).assertEqual(1000);
       expect(state.committed).assertEqual(3);
@@ -409,10 +410,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const state = new RollbackState();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(rollbackTask, mutex, state, counter));
-      let t2 = taskpool.execute(new taskpool.Task(rollbackTask, mutex, state, counter));
-      let t3 = taskpool.execute(new taskpool.Task(rollbackTask, mutex, state, counter));
-      await Promise.all([t1, t2, t3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(rollbackTask, mutex, state, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       expect(state.value).assertEqual(100);
       expect(state.rollbackCount).assertEqual(3);
@@ -436,11 +438,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const state = new NestedTxState();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(nestedTransactionTask, mutex, state, counter));
-      let t2 = taskpool.execute(new taskpool.Task(nestedTransactionTask, mutex, state, counter));
-      let t3 = taskpool.execute(new taskpool.Task(nestedTransactionTask, mutex, state, counter));
-      let t4 = taskpool.execute(new taskpool.Task(nestedTransactionTask, mutex, state, counter));
-      await Promise.all([t1, t2, t3, t4]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 4; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(nestedTransactionTask, mutex, state, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(4);
       expect(state.outerValue).assertEqual(4);
       expect(state.innerValue).assertEqual(4);
@@ -464,12 +466,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const state = new IsolationState();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(isolationTask, mutex, state, counter));
-      let t2 = taskpool.execute(new taskpool.Task(isolationTask, mutex, state, counter));
-      let t3 = taskpool.execute(new taskpool.Task(isolationTask, mutex, state, counter));
-      let t4 = taskpool.execute(new taskpool.Task(isolationTask, mutex, state, counter));
-      let t5 = taskpool.execute(new taskpool.Task(isolationTask, mutex, state, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(isolationTask, mutex, state, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(state.data).assertEqual(5);
       expect(state.dirtyRead).assertFalse();
@@ -493,10 +494,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const data = new BatchData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(batchProcessTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(batchProcessTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(batchProcessTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(batchProcessTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       expect(data.processed).assertEqual(30);
       } catch (error) {
@@ -519,11 +521,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const data = new BatchSplitData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(batchSplitTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(batchSplitTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(batchSplitTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(batchSplitTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 4; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(batchSplitTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(4);
       expect(data.batches.length).assertEqual(4);
       expect(data.totalProcessed).assertEqual(20);
@@ -547,9 +549,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const data = new BatchInterruptData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(batchInterruptTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(batchInterruptTask, mutex, data, counter));
-      await Promise.all([t1, t2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(batchInterruptTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(2);
       expect(data.processed).assertEqual(4);
       expect(data.interrupted).assertTrue();
@@ -574,12 +578,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const data = new BatchProgressData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(batchProgressTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(batchProgressTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(batchProgressTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(batchProgressTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(batchProgressTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(batchProgressTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
       expect(data.total).assertEqual(5);
@@ -603,14 +606,14 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const rwlock = new RWLock();
       const data = new StreamData();
       const counter = new AtomicInt(0);
-      let r1 = taskpool.execute(new taskpool.Task(streamReadTask, rwlock, data, counter));
-      let r2 = taskpool.execute(new taskpool.Task(streamReadTask, rwlock, data, counter));
-      let r3 = taskpool.execute(new taskpool.Task(streamReadTask, rwlock, data, counter));
-      let r4 = taskpool.execute(new taskpool.Task(streamReadTask, rwlock, data, counter));
-      let r5 = taskpool.execute(new taskpool.Task(streamReadTask, rwlock, data, counter));
-      let w1 = taskpool.execute(new taskpool.Task(streamWriteTask, rwlock, data, counter));
-      let w2 = taskpool.execute(new taskpool.Task(streamWriteTask, rwlock, data, counter));
-      await Promise.all([r1, r2, r3, r4, r5, w1, w2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(streamReadTask, rwlock, data, counter)));
+      }
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(streamWriteTask, rwlock, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(7);
       expect(data.readCount.load()).assertEqual(5);
       expect(data.writeCount).assertEqual(2);
@@ -634,10 +637,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const rwlock = new RWLock();
       const buf = new StreamBuffer();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(streamBufferTask, rwlock, buf, counter));
-      let t2 = taskpool.execute(new taskpool.Task(streamBufferTask, rwlock, buf, counter));
-      let t3 = taskpool.execute(new taskpool.Task(streamBufferTask, rwlock, buf, counter));
-      await Promise.all([t1, t2, t3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(streamBufferTask, rwlock, buf, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       expect(buf.buffer.length).assertEqual(15);
       expect(buf.flushed).assertEqual(3);
@@ -661,10 +665,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const rwlock = new RWLock();
       const cp = new StreamCheckpoint();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(streamCheckpointTask, rwlock, cp, counter));
-      let t2 = taskpool.execute(new taskpool.Task(streamCheckpointTask, rwlock, cp, counter));
-      let t3 = taskpool.execute(new taskpool.Task(streamCheckpointTask, rwlock, cp, counter));
-      await Promise.all([t1, t2, t3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(streamCheckpointTask, rwlock, cp, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       expect(cp.offset).assertEqual(30);
       expect(cp.checkpointCount).assertEqual(3);
@@ -688,12 +693,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const rwlock = new RWLock();
       const data = new StreamMultiData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(streamMultiFlowTask, rwlock, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(streamMultiFlowTask, rwlock, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(streamMultiFlowTask, rwlock, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(streamMultiFlowTask, rwlock, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(streamMultiFlowTask, rwlock, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(streamMultiFlowTask, rwlock, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.streams.length).assertEqual(5);
       expect(data.processedCount).assertEqual(5);
@@ -717,10 +721,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const data = new ScheduledData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(scheduledTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(scheduledTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(scheduledTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(scheduledTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       expect(data.executed).assertEqual(3);
       } catch (error) {
@@ -743,12 +748,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const data = new ConcurrentScheduledData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(concurrentScheduledTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(concurrentScheduledTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(concurrentScheduledTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(concurrentScheduledTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(concurrentScheduledTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(concurrentScheduledTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.completed).assertEqual(5);
       } catch (error) {
@@ -771,9 +775,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const data = new CancelData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(cancelScheduledTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(cancelScheduledTask, mutex, data, counter));
-      await Promise.all([t1, t2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(cancelScheduledTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(2);
       expect(data.executed).assertEqual(2);
       expect(data.cancelled).assertTrue();
@@ -797,10 +803,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const data = new ErrorScheduledData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(errorScheduledTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(errorScheduledTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(errorScheduledTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(errorScheduledTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(3);
       expect(data.executed).assertEqual(3);
       expect(data.errorHandled).assertTrue();
@@ -824,12 +831,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const data = new EventData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(eventTriggerTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(eventTriggerTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(eventTriggerTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(eventTriggerTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(eventTriggerTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(eventTriggerTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.triggered).assertEqual(5);
       } catch (error) {
@@ -852,11 +858,11 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const data = new EventQueueData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(eventQueueTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(eventQueueTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(eventQueueTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(eventQueueTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 4; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(eventQueueTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(4);
       expect(data.events.length).assertEqual(4);
       expect(data.processed).assertEqual(4);
@@ -880,12 +886,14 @@ export default function LockDesignSpecialBusinessTransactionTest(): void {
       const mutex = new Mutex();
       const data = new EventPriorityData();
       const counter = new AtomicInt(0);
-      let h1 = taskpool.execute(new taskpool.Task(eventPriorityHighTask, mutex, data, counter));
-      let h2 = taskpool.execute(new taskpool.Task(eventPriorityHighTask, mutex, data, counter));
-      let h3 = taskpool.execute(new taskpool.Task(eventPriorityHighTask, mutex, data, counter));
-      let l1 = taskpool.execute(new taskpool.Task(eventPriorityLowTask, mutex, data, counter));
-      let l2 = taskpool.execute(new taskpool.Task(eventPriorityLowTask, mutex, data, counter));
-      await Promise.all([h1, h2, h3, l1, l2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(eventPriorityHighTask, mutex, data, counter)));
+      }
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(eventPriorityLowTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.highEvents).assertEqual(3);
       expect(data.lowEvents).assertEqual(2);

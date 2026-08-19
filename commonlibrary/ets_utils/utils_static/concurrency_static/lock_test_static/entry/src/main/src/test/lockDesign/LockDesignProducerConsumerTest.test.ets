@@ -271,17 +271,14 @@ export default function LockDesignProducerConsumerTest(): void {
       const mutex = new Mutex();
       const queue = new ProducerConsumerQueue();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(pcProducerTask, mutex, queue, counter));
-      let p2 = taskpool.execute(new taskpool.Task(pcProducerTask, mutex, queue, counter));
-      let p3 = taskpool.execute(new taskpool.Task(pcProducerTask, mutex, queue, counter));
-      let p4 = taskpool.execute(new taskpool.Task(pcProducerTask, mutex, queue, counter));
-      let p5 = taskpool.execute(new taskpool.Task(pcProducerTask, mutex, queue, counter));
-      let c1 = taskpool.execute(new taskpool.Task(pcConsumerTask, mutex, queue, counter));
-      let c2 = taskpool.execute(new taskpool.Task(pcConsumerTask, mutex, queue, counter));
-      let c3 = taskpool.execute(new taskpool.Task(pcConsumerTask, mutex, queue, counter));
-      let c4 = taskpool.execute(new taskpool.Task(pcConsumerTask, mutex, queue, counter));
-      let c5 = taskpool.execute(new taskpool.Task(pcConsumerTask, mutex, queue, counter));
-      await Promise.all([p1, p2, p3, p4, p5, c1, c2, c3, c4, c5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(pcProducerTask, mutex, queue, counter)));
+      }
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(pcConsumerTask, mutex, queue, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(10);
       expect(queue.producerAttempts).assertEqual(5);
       expect(queue.consumerAttempts).assertEqual(5);
@@ -308,18 +305,16 @@ export default function LockDesignProducerConsumerTest(): void {
       const mutex = new Mutex();
       const rb = new RingBuffer();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(ringProducerTask, mutex, rb, counter));
-      let p2 = taskpool.execute(new taskpool.Task(ringProducerTask, mutex, rb, counter));
-      let p3 = taskpool.execute(new taskpool.Task(ringProducerTask, mutex, rb, counter));
-      let p4 = taskpool.execute(new taskpool.Task(ringProducerTask, mutex, rb, counter));
-      let p5 = taskpool.execute(new taskpool.Task(ringProducerTask, mutex, rb, counter));
-      await Promise.all([p1, p2, p3, p4, p5]);
-      let c1 = taskpool.execute(new taskpool.Task(ringConsumerTask, mutex, rb, counter));
-      let c2 = taskpool.execute(new taskpool.Task(ringConsumerTask, mutex, rb, counter));
-      let c3 = taskpool.execute(new taskpool.Task(ringConsumerTask, mutex, rb, counter));
-      let c4 = taskpool.execute(new taskpool.Task(ringConsumerTask, mutex, rb, counter));
-      let c5 = taskpool.execute(new taskpool.Task(ringConsumerTask, mutex, rb, counter));
-      await Promise.all([c1, c2, c3, c4, c5]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(ringProducerTask, mutex, rb, counter)));
+      }
+      await Promise.all(promises);
+      promises = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(ringConsumerTask, mutex, rb, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(10);
       expect(rb.writePos).assertEqual(5);
       expect(rb.readPos).assertEqual(5);
@@ -344,13 +339,14 @@ export default function LockDesignProducerConsumerTest(): void {
       const mutex = new Mutex();
       const data = new MultiQueueData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(multiQueueTaskA, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(multiQueueTaskA, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(multiQueueTaskA, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(multiQueueTaskB, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(multiQueueTaskB, mutex, data, counter));
-      let t6 = taskpool.execute(new taskpool.Task(multiQueueTaskB, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5, t6]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(multiQueueTaskA, mutex, data, counter)));
+      }
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(multiQueueTaskB, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(6);
       expect(data.queueA.length).assertEqual(3);
       expect(data.queueB.length).assertEqual(3);
@@ -374,12 +370,14 @@ export default function LockDesignProducerConsumerTest(): void {
       const mutex = new Mutex();
       const data = new PriorityQueueData();
       const counter = new AtomicInt(0);
-      let h1 = taskpool.execute(new taskpool.Task(priorityHighTask, mutex, data, counter));
-      let h2 = taskpool.execute(new taskpool.Task(priorityHighTask, mutex, data, counter));
-      let h3 = taskpool.execute(new taskpool.Task(priorityHighTask, mutex, data, counter));
-      let l1 = taskpool.execute(new taskpool.Task(priorityLowTask, mutex, data, counter));
-      let l2 = taskpool.execute(new taskpool.Task(priorityLowTask, mutex, data, counter));
-      await Promise.all([h1, h2, h3, l1, l2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(priorityHighTask, mutex, data, counter)));
+      }
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(priorityLowTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(5);
       expect(data.highItems.length).assertEqual(3);
       expect(data.lowItems.length).assertEqual(2);
@@ -403,12 +401,16 @@ export default function LockDesignProducerConsumerTest(): void {
       const mutex = new Mutex();
       const data = new BlockingQueueData();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(blockingProducerTask, mutex, data, counter));
-      let p2 = taskpool.execute(new taskpool.Task(blockingProducerTask, mutex, data, counter));
-      await Promise.all([p1, p2]);
-      let c1 = taskpool.execute(new taskpool.Task(blockingConsumerTask, mutex, data, counter));
-      let c2 = taskpool.execute(new taskpool.Task(blockingConsumerTask, mutex, data, counter));
-      await Promise.all([c1, c2]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(blockingProducerTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
+      promises = [];
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(blockingConsumerTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(10);
       expect(data.produced).assertEqual(5);
       expect(data.consumed).assertEqual(5);
@@ -433,17 +435,11 @@ export default function LockDesignProducerConsumerTest(): void {
       const mutex = new Mutex();
       const data = new LockFreeQueueData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(mutexQueueTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(mutexQueueTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(mutexQueueTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(mutexQueueTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(mutexQueueTask, mutex, data, counter));
-      let t6 = taskpool.execute(new taskpool.Task(mutexQueueTask, mutex, data, counter));
-      let t7 = taskpool.execute(new taskpool.Task(mutexQueueTask, mutex, data, counter));
-      let t8 = taskpool.execute(new taskpool.Task(mutexQueueTask, mutex, data, counter));
-      let t9 = taskpool.execute(new taskpool.Task(mutexQueueTask, mutex, data, counter));
-      let t10 = taskpool.execute(new taskpool.Task(mutexQueueTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5, t6, t7, t8, t9, t10]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 10; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(mutexQueueTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(10);
       expect(data.items.length).assertEqual(10);
       expect(data.counter).assertEqual(10);
@@ -467,15 +463,11 @@ export default function LockDesignProducerConsumerTest(): void {
       const mutex = new Mutex();
       const data = new DynamicQueueData();
       const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(dynamicExpandTask, mutex, data, counter));
-      let t2 = taskpool.execute(new taskpool.Task(dynamicExpandTask, mutex, data, counter));
-      let t3 = taskpool.execute(new taskpool.Task(dynamicExpandTask, mutex, data, counter));
-      let t4 = taskpool.execute(new taskpool.Task(dynamicExpandTask, mutex, data, counter));
-      let t5 = taskpool.execute(new taskpool.Task(dynamicExpandTask, mutex, data, counter));
-      let t6 = taskpool.execute(new taskpool.Task(dynamicExpandTask, mutex, data, counter));
-      let t7 = taskpool.execute(new taskpool.Task(dynamicExpandTask, mutex, data, counter));
-      let t8 = taskpool.execute(new taskpool.Task(dynamicExpandTask, mutex, data, counter));
-      await Promise.all([t1, t2, t3, t4, t5, t6, t7, t8]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 8; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(dynamicExpandTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(8);
       expect(data.items.length).assertEqual(8);
       // Capacity doubles from 5 to 10 exactly once when the 6th item is pushed.
@@ -500,15 +492,14 @@ export default function LockDesignProducerConsumerTest(): void {
       const mutex = new Mutex();
       const data = new PersistQueueData();
       const counter = new AtomicInt(0);
-      let p1 = taskpool.execute(new taskpool.Task(persistProducerTask, mutex, data, counter));
-      let p2 = taskpool.execute(new taskpool.Task(persistProducerTask, mutex, data, counter));
-      let p3 = taskpool.execute(new taskpool.Task(persistProducerTask, mutex, data, counter));
-      let p4 = taskpool.execute(new taskpool.Task(persistProducerTask, mutex, data, counter));
-      let p5 = taskpool.execute(new taskpool.Task(persistProducerTask, mutex, data, counter));
-      let c1 = taskpool.execute(new taskpool.Task(persistConsumerTask, mutex, data, counter));
-      let c2 = taskpool.execute(new taskpool.Task(persistConsumerTask, mutex, data, counter));
-      let c3 = taskpool.execute(new taskpool.Task(persistConsumerTask, mutex, data, counter));
-      await Promise.all([p1, p2, p3, p4, p5, c1, c2, c3]);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(persistProducerTask, mutex, data, counter)));
+      }
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(persistConsumerTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
       expect(counter.load()).assertEqual(8);
       expect(data.persisted.length).assertEqual(5);
       } catch (error) {
