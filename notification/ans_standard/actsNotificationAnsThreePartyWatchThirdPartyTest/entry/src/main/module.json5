@@ -27,7 +27,7 @@
         "abilities": [
             {
                 "name": "com.example.badge.MainAbility",
-                "srcEntry": "./ets/entryability/EntryAbility.ts",
+                "srcEntry": "./ets/entryability/EntryAbility.ets",
                 "description": "$string:phone_entry_main",
                 "icon": "$media:icon",
                 "label": "$string:entry_label",
@@ -57,10 +57,5 @@
             "label": "$string:StaticNotificationSubscriber_label"
           }
         ], 
-        "requestPermissions": [
-          {
-            "name": "ohos.permission.SUBSCRIBE_NOTIFICATION"
-          }
-        ]
     }
 }
