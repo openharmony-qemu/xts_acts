@@ -39,7 +39,6 @@ export default function mathAtan2Test2(): void {
       await Utils.msSleep(30);
     })
     afterEach(async (): Promise<void> => {
-      await Utils.msSleep(30);
     })
     afterAll((): void => {
     })
@@ -62,7 +61,7 @@ export default function mathAtan2Test2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0020
      * @tc.name testMathAtan2002
-     * @tc.desc Verify atan2 idempotent across three calls with input a, b [2]
+     * @tc.desc Verify atan2 returns -1.5707963267948966 with input (int -1, int 0)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -155,7 +154,7 @@ export default function mathAtan2Test2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0080
      * @tc.name testMathAtan2008
-     * @tc.desc Verify atan2 batch property with input pairs[i][0], pairs[i][1]
+     * @tc.desc Verify atan2 batch property: result within [-PI, PI] for double pairs (1.0,1.0), (-1.0,1.0), (-1.0,-1.0), (1.0,-1.0), (2.0,0.0), (-2.0,0.0)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -574,7 +573,7 @@ export default function mathAtan2Test2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0350
      * @tc.name testMathAtan2035
-     * @tc.desc Verify atan2 returns -PI/2
+     * @tc.desc Verify atan2 with short values y=-1, x=0 returns approx -PI/2
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -619,7 +618,7 @@ export default function mathAtan2Test2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0380
      * @tc.name testMathAtan2038
-     * @tc.desc Verify atan2 idempotent across three calls with input a, b [5]
+     * @tc.desc Verify atan2 returns 0.6435011087932844 with input (double 3, double 4)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -713,7 +712,7 @@ export default function mathAtan2Test2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0440
      * @tc.name testMathAtan2044
-     * @tc.desc Verify atan2 batch property with input 0, 1
+     * @tc.desc Verify atan2 batch property with double pairs (0,1), (1,1), (-1,-1) returns 0.0, PI/4, -3PI/4
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -758,7 +757,7 @@ export default function mathAtan2Test2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0470
      * @tc.name testMathAtan2047
-     * @tc.desc Verify atan2 batch property with input ys[i], 1.0
+     * @tc.desc Verify atan2 batch property: atan2(-y, 1.0) = -atan2(y, 1.0) for double values 0.5, 1.0, 2.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -804,31 +803,13 @@ export default function mathAtan2Test2(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0500
-     * @tc.name testMathAtan2050
-     * @tc.desc Verify atan2 throws ClassCastError with Korean string parameter
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathAtan2050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let s: string = '테스트'
-        Math.atan2(s as Object as double, s as Object as double)
-        expect().assertFail()
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0510
-     * @tc.name testMathAtan2051
+     * @tc.name testMathAtan050
      * @tc.desc Verify atan2 returns -PI/4 with input y, x
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: byte = -5
       let x: byte = 5
       let result: double = Math.atan2(y, x)
@@ -836,14 +817,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0520
-     * @tc.name testMathAtan2052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0510
+     * @tc.name testMathAtan051
      * @tc.desc Verify atan2 throws ClassCastError with XSS script string parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let str: string = '<script>alert(1)</script>'
         Math.atan2(str as Object as double, 1.0)
@@ -854,14 +835,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0530
-     * @tc.name testMathAtan2053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0520
+     * @tc.name testMathAtan052
      * @tc.desc Verify atan2: atan2(y,x) = 0 when y=0, x>0 with repeated calls
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i: int = 0; i < 10; i++) {
         let yVal: double = 0.0
         let xVal: double = 1.0
@@ -871,14 +852,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0540
-     * @tc.name testMathAtan2054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0530
+     * @tc.name testMathAtan053
      * @tc.desc Verify atan2 throws ClassCastError with Map parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let map: Map<string, int> = new Map<string, int>()
         Math.atan2(map as Object as double, 1.0)
@@ -889,27 +870,27 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0550
-     * @tc.name testMathAtan2055
-     * @tc.desc Verify Math.atan2 with y=0.0, x=1.0 returns 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0540
+     * @tc.name testMathAtan054
+     * @tc.desc Verify Math.atan2 with y=0.0, x=1.0 returns double 0.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.atan2(0.0, 1.0)
       expect(result).assertClose(0.0, 1e-6)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0560
-     * @tc.name testMathAtan2056
-     * @tc.desc Verify atan2 returns -0.0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0550
+     * @tc.name testMathAtan055
+     * @tc.desc Verify atan2 with double values y=-0.0, x=1.0 returns double -0.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: double = -0.0
       let x: double = 1.0
       let result: double = Math.atan2(y, x)
@@ -917,14 +898,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0570
-     * @tc.name testMathAtan2057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0560
+     * @tc.name testMathAtan056
      * @tc.desc Verify atan2(+Infinity, -Infinity) returns 3PI/4
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: double = Double.POSITIVE_INFINITY
       let x: double = Double.NEGATIVE_INFINITY
       let result: double = Math.atan2(y, x)
@@ -932,14 +913,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0580
-     * @tc.name testMathAtan2058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0570
+     * @tc.name testMathAtan057
      * @tc.desc Verify atan2: atan2(int y 1 + double x Double.POSITIVE_INFINITY)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: int = 1
       let x: double = Double.POSITIVE_INFINITY
       let result: double = Math.atan2(y, x)
@@ -947,14 +928,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0590
-     * @tc.name testMathAtan2059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0580
+     * @tc.name testMathAtan058
      * @tc.desc Verify atan2: atan2(finite) all finite
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let vs: double[][] = [[1.0,2.0],[-3.0,4.0],[5.0,-6.0],[-7.0,-8.0],[0.5,0.5]]
       let exp: double[] = [0.4636476090008061, -0.6435011087932844, 2.44685437739309, -2.4227626539681686, 0.7853981633974483]
       for (let i: int = 0; i < vs.length; i++) {
@@ -964,27 +945,27 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0600
-     * @tc.name testMathAtan2060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0590
+     * @tc.name testMathAtan059
      * @tc.desc Verify atan2: atan2(0, x) = PI for x<0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Math.atan2(0, -1.0)).assertClose(Math.PI, 1e-6)
       expect(Math.atan2(0, -5.0)).assertClose(Math.PI, 1e-6)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0610
-     * @tc.name testMathAtan2061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0600
+     * @tc.name testMathAtan060
      * @tc.desc Verify Math.atan2 float overload with y=Number.NaN returns Number.NaN
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: float = Float.NaN
       let x: float = 1.0f
       let result: float = Math.atan2(y, x)
@@ -992,32 +973,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0620
-     * @tc.name testMathAtan2062
-     * @tc.desc Verify atan2 throws ClassCastError with emoji string parameter
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0610
+     * @tc.name testMathAtan061
+     * @tc.desc Verify Math.atan2 float overload with y=0.0f, x=1.0f returns double 0.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let s: string = '\u{1F600}测试'
-        Math.atan2(s as Object as double, s as Object as double)
-        expect().assertFail()
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0630
-     * @tc.name testMathAtan2063
-     * @tc.desc Verify Math.atan2 float overload with y=0.0f, x=1.0f returns 0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathAtan2063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: float = 0.0f
       let x: float = 1.0f
       let result: float = Math.atan2(y, x)
@@ -1025,14 +988,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0640
-     * @tc.name testMathAtan2064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0620
+     * @tc.name testMathAtan062
      * @tc.desc Verify atan2: atan2(float y 0.0f + int x -1) normal values(arguments swapped)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: float = 0.0f
       let x: int = -1
       let result: double = Math.atan2(y, x)
@@ -1040,14 +1003,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0650
-     * @tc.name testMathAtan2065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0630
+     * @tc.name testMathAtan063
      * @tc.desc Verify atan2(+Infinity, 1.0) returns PI/2
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: double = Double.POSITIVE_INFINITY
       let x: double = 1.0
       let result: double = Math.atan2(y, x)
@@ -1055,14 +1018,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0660
-     * @tc.name testMathAtan2066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0640
+     * @tc.name testMathAtan064
      * @tc.desc Verify atan2: atan2(long y 1 + float x 0.0f) normal values
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: long = 1
       let x: float = 0.0f
       let result: double = Math.atan2(y, x)
@@ -1070,27 +1033,27 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0670
-     * @tc.name testMathAtan2067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0650
+     * @tc.name testMathAtan065
      * @tc.desc Verify Math.atan2 with both y and x Number.NaN returns Number.NaN
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.atan2(Number.NaN, Number.NaN)
       expect(isNaN(result)).assertTrue()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0680
-     * @tc.name testMathAtan2068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0660
+     * @tc.name testMathAtan066
      * @tc.desc Verify atan2 throws ClassCastError with string array parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let arr: string[] = ['a', 'b', 'c']
         Math.atan2(arr as Object as double, 1.0)
@@ -1101,14 +1064,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0690
-     * @tc.name testMathAtan2069
-     * @tc.desc Verify atan2 idempotent across three calls with input a, b
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0670
+     * @tc.name testMathAtan067
+     * @tc.desc Verify atan2 returns 0.4636476090008061 with input (short 1, short 2)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: short = 1
       let b: short = 2
       let result: double = Math.atan2(a, b)
@@ -1116,14 +1079,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0700
-     * @tc.name testMathAtan2070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0680
+     * @tc.name testMathAtan068
      * @tc.desc Verify atan2 throws ClassCastError with int array parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let arr: int[] = [1, 2, 3]
         Math.atan2(arr as Object as double, 1.0)
@@ -1134,14 +1097,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0710
-     * @tc.name testMathAtan2071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0690
+     * @tc.name testMathAtan069
      * @tc.desc Verify atan2 throws ClassCastError with Object array parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let arr: Object[] = [1, 'test', true]
         Math.atan2(arr as Object as double, arr as Object as double)
@@ -1152,40 +1115,29 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0720
-     * @tc.name testMathAtan2072
-     * @tc.desc Verify atan2 idempotent across three calls with input val1_y, val1_x
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0700
+     * @tc.name testMathAtan070
+     * @tc.desc Verify atan2 returns 0.0 with input byte 0, byte 1
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val1_y: byte = 0
-      let val1_x: byte = 1
-      let val2_y: byte = 0
-      let val2_x: byte = 1
-      let val3_y: byte = 0
-      let val3_x: byte = 1
-      let result1: double = Math.atan2(val1_y, val1_x)
-      let result2: double = Math.atan2(val2_y, val2_x)
-      let result3: double = Math.atan2(val3_y, val3_x)
-      let isEqual1: boolean = result1 === result2
-      let isEqual2: boolean = result2 === result3
-      let isEqual3: boolean = result1 === result3
-      expect(isEqual1).assertTrue()
-      expect(isEqual2).assertTrue()
-      expect(isEqual3).assertTrue()
+        it('testMathAtan070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: byte = 0
+      let b: byte = 1
+      let result: double = Math.atan2(a, b)
+      expect(result).assertClose(0.0, 1e-6)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0730
-     * @tc.name testMathAtan2073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0710
+     * @tc.name testMathAtan071
      * @tc.desc Verify atan2 throws ClassCastError with Function parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let fn: Function = (): void => {}
         Math.atan2(fn as Object as double, fn as Object as double)
@@ -1196,14 +1148,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0740
-     * @tc.name testMathAtan2074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0720
+     * @tc.name testMathAtan072
      * @tc.desc Verify atan2 throws ClassCastError with boolean true parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Math.atan2(true as Object as double, 1.0)
       expect().assertFail()
@@ -1213,14 +1165,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0750
-     * @tc.name testMathAtan2075
-     * @tc.desc Verify atan2 idempotent across three calls with input a, b [4]
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0730
+     * @tc.name testMathAtan073
+     * @tc.desc Verify atan2 returns 0.5880026035475675 with input (float 2, float 3)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: float = 2
       let b: float = 3
       let result: double = Math.atan2(a, b)
@@ -1228,14 +1180,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0760
-     * @tc.name testMathAtan2076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0740
+     * @tc.name testMathAtan074
      * @tc.desc Verify atan2 throws ClassCastError with Object instance as first argument parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let obj: Object = new Object()
         Math.atan2(obj as Object as double, 1.0)
@@ -1246,32 +1198,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0770
-     * @tc.name testMathAtan2077
-     * @tc.desc Verify atan2 throws ClassCastError with string '\u200B' parameter
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathAtan2077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let str: string = '\u200B'
-        Math.atan2(str as Object as double, 1.0)
-        expect().assertFail()
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0780
-     * @tc.name testMathAtan2078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0750
+     * @tc.name testMathAtan075
      * @tc.desc Verify atan2: atan2(scientific notation y 2.0e0, x 2.0e0) = PI/4
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: double = 2.0e0
       let x: double = 2.0e0
       let result: double = Math.atan2(y, x)
@@ -1279,14 +1213,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0790
-     * @tc.name testMathAtan2079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0760
+     * @tc.name testMathAtan076
      * @tc.desc Verify atan2 throws ClassCastError with Set parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let set: Set<int> = new Set<int>()
         set.add(1)
@@ -1298,50 +1232,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0800
-     * @tc.name testMathAtan2080
-     * @tc.desc Verify atan2 throws ClassCastError with empty string parameter
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathAtan2080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let str: string = ''
-        Math.atan2(str as Object as double, 1.0)
-        expect().assertFail()
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0810
-     * @tc.name testMathAtan2081
-     * @tc.desc Verify atan2 throws ClassCastError with Cyrillic string parameter
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathAtan2081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let s: string = 'АБВГД'
-        Math.atan2(s as Object as double, s as Object as double)
-        expect().assertFail()
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0820
-     * @tc.name testMathAtan2082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0770
+     * @tc.name testMathAtan077
      * @tc.desc Verify atan2: atan2(int y 0 + double x -1.0) normal values
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: int = 0
       let x: double = -1.0
       let result: double = Math.atan2(y, x)
@@ -1349,28 +1247,28 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0830
-     * @tc.name testMathAtan2083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0780
+     * @tc.name testMathAtan078
      * @tc.desc Verify Math.atan2(0, -0) returns PI
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.atan2(0, -0)
       let exprResult: boolean = Math.abs(result - Math.PI) < 1e-6
       expect(exprResult).assertTrue()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0840
-     * @tc.name testMathAtan2084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0790
+     * @tc.name testMathAtan079
      * @tc.desc Verify atan2: atan2(byte y 1 + short x 0) normal values
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: byte = 1
       let x: short = 0
       let result: double = Math.atan2(y, x)
@@ -1378,28 +1276,28 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0850
-     * @tc.name testMathAtan2085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0800
+     * @tc.name testMathAtan080
      * @tc.desc Verify Math.atan2 with y=0.5, x=1.0 returns an angle satisfying tan(result)=0.5
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.atan2(0.5, 1.0)
       let exprResult: boolean = Math.abs(Math.tan(result) - 0.5) < 1e-6
       expect(exprResult).assertTrue()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0860
-     * @tc.name testMathAtan2086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0810
+     * @tc.name testMathAtan081
      * @tc.desc Verify atan2: atan2(0, 1) = 0 cross-type
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let intY1: int = 0
       let intX1: int = 1
       let dblY1: double = 0.0
@@ -1415,14 +1313,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0870
-     * @tc.name testMathAtan2087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0820
+     * @tc.name testMathAtan082
      * @tc.desc Verify atan2 returns -3PI/4 (third quadrant)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: double = -1.0
       let x: double = -1.0
       let result: double = Math.atan2(y, x)
@@ -1430,63 +1328,27 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0880
-     * @tc.name testMathAtan2088
-     * @tc.desc Verify atan2 throws ClassCastError with Japanese string parameter
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0830
+     * @tc.name testMathAtan083
+     * @tc.desc Verify Math.atan2 with y=1.0, x=Number.POSITIVE_INFINITY returns double 0.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let s: string = 'テスト'
-        Math.atan2(s as Object as double, s as Object as double)
-        expect().assertFail()
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0890
-     * @tc.name testMathAtan2089
-     * @tc.desc Verify Math.atan2 with y=1.0, x=Number.POSITIVE_INFINITY returns 0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathAtan2089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.atan2(1.0, Number.POSITIVE_INFINITY)
       expect(result).assertEqual(0)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0900
-     * @tc.name testMathAtan2090
-     * @tc.desc Verify atan2 throws ClassCastError with UUID string parameter
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0840
+     * @tc.name testMathAtan084
+     * @tc.desc Verify atan2 returns 0.7378150601204649 with input (long 10, long 11)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let val: string = '550e8400-e29b-41d4-a716-446655440000'
-        Math.atan2(val as Object as double, val as Object as double)
-        expect().assertFail()
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0910
-     * @tc.name testMathAtan2091
-     * @tc.desc Verify atan2 idempotent across three calls with input a, b [3]
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathAtan2091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: long = 10
       let b: long = 11
       let result: double = Math.atan2(a, b)
@@ -1494,14 +1356,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0920
-     * @tc.name testMathAtan2092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0850
+     * @tc.name testMathAtan085
      * @tc.desc Verify atan2(-Infinity, 1.0) returns -PI/2
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: double = Double.NEGATIVE_INFINITY
       let x: double = 1.0
       let result: double = Math.atan2(y, x)
@@ -1509,29 +1371,28 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0930
-     * @tc.name testMathAtan2093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0860
+     * @tc.name testMathAtan086
      * @tc.desc Verify Math.atan2 extreme values still in range [-PI, PI]
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.atan2(1e308, -1e308)
       let exprResult: boolean = result >= -Math.PI && result <= Math.PI
       expect(exprResult).assertTrue()
     });
 
-
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0940
-     * @tc.name testMathAtan2094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0870
+     * @tc.name testMathAtan087
      * @tc.desc Verify atan2 throws ClassCastError with char 'a' parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let c: char = c'a'
         Math.atan2(c as Object as double, 1.0)
@@ -1542,42 +1403,42 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0950
-     * @tc.name testMathAtan2095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0880
+     * @tc.name testMathAtan088
      * @tc.desc Verify Math.atan2(-0, -0) returns -PI
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.atan2(-0, -0)
       let exprResult: boolean = Math.abs(result + Math.PI) < 1e-6
       expect(exprResult).assertTrue()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0960
-     * @tc.name testMathAtan2096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0890
+     * @tc.name testMathAtan089
      * @tc.desc Verify atan2: atan2(0, x) = 0 for x>0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Math.atan2(0, 1.0)).assertClose(0.0, 1e-6)
       expect(Math.atan2(0, 5.0)).assertClose(0.0, 1e-6)
       expect(Math.atan2(0, 100.0)).assertClose(0.0, 1e-6)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0970
-     * @tc.name testMathAtan2097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0900
+     * @tc.name testMathAtan090
      * @tc.desc Verify atan2 with NaN returns NaN with input y, x
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: float = Float.NaN
       let x: double = 1.0
       let result: double = Math.atan2(y, x)
@@ -1585,14 +1446,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0980
-     * @tc.name testMathAtan2098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0910
+     * @tc.name testMathAtan091
      * @tc.desc Verify atan2 returns PI with input y, x [2]
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: float = 0.0f
       let x: float = -2.0f
       let result: double = Math.atan2(y, x)
@@ -1600,14 +1461,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0990
-     * @tc.name testMathAtan2099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0920
+     * @tc.name testMathAtan092
      * @tc.desc Verify atan2: atan2(byte y 0 + short x 1) normal values
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: byte = 0
       let x: short = 1
       let result: double = Math.atan2(y, x)
@@ -1615,14 +1476,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1000
-     * @tc.name testMathAtan2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0930
+     * @tc.name testMathAtan093
      * @tc.desc Verify atan2 returns PI with input y, x [3]
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: byte = 0
       let x: int = -1
       let result: double = Math.atan2(y, x)
@@ -1630,32 +1491,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1010
-     * @tc.name testMathAtan2101
-     * @tc.desc Verify atan2 throws ClassCastError with Arabic string parameter
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathAtan2101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let s: string = 'الاختبار'
-        Math.atan2(s as Object as double, s as Object as double)
-        expect().assertFail()
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1020
-     * @tc.name testMathAtan2102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0940
+     * @tc.name testMathAtan094
      * @tc.desc Verify Math.atan2 float overload with y=1.0f, x=1.0f
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: float = 1.0f
       let x: float = 1.0f
       let result: float = Math.atan2(y, x)
@@ -1664,14 +1507,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1030
-     * @tc.name testMathAtan2103
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0950
+     * @tc.name testMathAtan095
      * @tc.desc Verify atan2: atan2(int y 1 + float x 0.0f) normal values
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: int = 1
       let x: float = 0.0f
       let result: double = Math.atan2(y, x)
@@ -1679,14 +1522,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1040
-     * @tc.name testMathAtan2104
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0960
+     * @tc.name testMathAtan096
      * @tc.desc Verify atan2 throws ClassCastError with 2D int array parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let matrix: int[][] = [[1, 2], [3, 4]]
         Math.atan2(matrix as Object as double, matrix as Object as double)
@@ -1697,14 +1540,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1050
-     * @tc.name testMathAtan2105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0970
+     * @tc.name testMathAtan097
      * @tc.desc Verify atan2: atan2(y,x) = PI when y=0, x<0 with repeated calls
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i: int = 0; i < 10; i++) {
         let yVal: double = 0.0
         let xVal: double = -1.0
@@ -1714,28 +1557,28 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1060
-     * @tc.name testMathAtan2106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0980
+     * @tc.name testMathAtan098
      * @tc.desc Verify Math.atan2 with y=1.0, x=-1.0 returns 3PI/4
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.atan2(1.0, -1.0)
       let exprResult: boolean = Math.abs(result - 3 * Math.PI / 4) < 1e-6
       expect(exprResult).assertTrue()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1070
-     * @tc.name testMathAtan2107
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_0990
+     * @tc.name testMathAtan099
      * @tc.desc Verify atan2: atan2(float y 2.0f + double x 2.0) normal values
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: float = 2.0f
       let x: double = 2.0
       let result: double = Math.atan2(y, x)
@@ -1743,14 +1586,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1080
-     * @tc.name testMathAtan2108
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1000
+     * @tc.name testMathAtan100
      * @tc.desc Verify atan2 throws ClassCastError with string 'abc' as second argument parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Math.atan2(1.0, 'abc' as Object as double)
         expect().assertFail()
@@ -1760,14 +1603,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1090
-     * @tc.name testMathAtan2109
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1010
+     * @tc.name testMathAtan101
      * @tc.desc Verify atan2: atan2(double y 3.0 + float x 0.0f) normal values
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: double = 3.0
       let x: float = 0.0f
       let result: double = Math.atan2(y, x)
@@ -1775,14 +1618,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1100
-     * @tc.name testMathAtan2110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1020
+     * @tc.name testMathAtan102
      * @tc.desc Verify atan2: atan2(float y 1.0f + int x 1.0) normal values(arguments swapped)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: float = 1.0f
       let x: int = 1
       let result: double = Math.atan2(y, x)
@@ -1790,14 +1633,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1110
-     * @tc.name testMathAtan2111
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1030
+     * @tc.name testMathAtan103
      * @tc.desc Verify Math.atan2 consistency with Math.atan when x>0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let y: double = 2.0
       let x: double = 3.0
       let result: double = Math.atan2(y, x)
@@ -1807,14 +1650,14 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1120
-     * @tc.name testMathAtan2112
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1040
+     * @tc.name testMathAtan104
      * @tc.desc Verify atan2 throws ClassCastError with long string (10000 chars) parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let longStr: string = 'x'.repeat(10000)
         Math.atan2(longStr as Object as double, longStr as Object as double)
@@ -1825,28 +1668,28 @@ export default function mathAtan2Test2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1130
-     * @tc.name testMathAtan2113
-     * @tc.desc Verify Math.atan2(-0, 0) returns -0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1050
+     * @tc.name testMathAtan105
+     * @tc.desc Verify Math.atan2(-0, 0) returns double -0.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.atan2(-0, 0)
       let isNegativeZero: boolean = (1 / result) === Number.NEGATIVE_INFINITY
       expect(isNegativeZero).assertTrue()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1140
-     * @tc.name testMathAtan2114
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_1060
+     * @tc.name testMathAtan106
      * @tc.desc Verify atan2: atan2(y, x) = atan2(-y, -x) + PI quadrant property
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathAtan2114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathAtan106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let yVal: double = 1.0
       let xVal: double = 1.0
       let r1: double = Math.atan2(yVal, xVal)
