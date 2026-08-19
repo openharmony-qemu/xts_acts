@@ -730,13 +730,19 @@ export default function collectionsConcatArrayTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('testConcatArrayTaskPoolTransfer0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testConcatArrayTaskPoolTransfer0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testConcatArrayTaskPoolTransfer0040';
       console.info(`[${caseName}] start`);
       let arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3);
-      let result = await taskpool.execute(taskGetConcatArrayLength, arr);
+      let result: Object = [];
+      try {
+        result = await taskpool.execute(taskGetConcatArrayLength, arr);
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(result as number).assertEqual(3);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -747,47 +753,53 @@ export default function collectionsConcatArrayTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('testConcatArrayWorkerTransfer0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testConcatArrayWorkerTransfer0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testConcatArrayWorkerTransfer0041';
       console.info(`[${caseName}] start`);
       let arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3);
 
-      let result = await new Promise<number>((resolve: (value: number) => void,
-        reject: (reason: Error) => void): void => {
-        const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
-          "./ConcatArrayWorker"
-        );
-        let settled: boolean = false;
+      let result: number = 0;
+      try {
+        result = await new Promise<number>((resolve: (value: number) => void,
+          reject: (reason: Error) => void): void => {
+          const workerInstance: worker.ThreadWorker = new worker.ThreadWorker(
+            "./ConcatArrayWorker"
+          );
+          let settled: boolean = false;
 
-        workerInstance.onmessage = (event: MessageEvents): void => {
-          settled = true;
-          resolve(event.data.result as number);
-          workerInstance.terminate();
-        };
-
-        workerInstance.onerror = (): void => {
-          if (!settled) {
+          workerInstance.onmessage = (event: MessageEvents): void => {
             settled = true;
-            reject(new Error("ConcatArrayWorker error"));
-          }
-          workerInstance.terminate();
-        };
+            resolve(event.data.result as number);
+            workerInstance.terminate();
+          };
 
-        workerInstance.onexit = (): void => {
-          if (!settled) {
-            settled = true;
-            reject(new Error("ConcatArrayWorker exited before posting result"));
-          }
-        };
+          workerInstance.onerror = (): void => {
+            if (!settled) {
+              settled = true;
+              reject(new Error("ConcatArrayWorker error"));
+            }
+            workerInstance.terminate();
+          };
 
-        workerInstance.postMessageWithSharedSendable({
-          type: "concatArraySize",
-          set: arr
+          workerInstance.onexit = (): void => {
+            if (!settled) {
+              settled = true;
+              reject(new Error("ConcatArrayWorker exited before posting result"));
+            }
+          };
+
+          workerInstance.postMessageWithSharedSendable({
+            type: "concatArraySize",
+            set: arr
+          });
         });
-      });
+      } catch (err) {
+        console.error(`new Promise failed: ${JSON.stringify(err)}`);
+      }
 
       expect(result).assertEqual(3);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     // ==================== 6.2 类型安全验证 ====================
@@ -819,7 +831,7 @@ export default function collectionsConcatArrayTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('testConcatArraySendableConstraint0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testConcatArraySendableConstraint0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testConcatArraySendableConstraint0043';
       console.info(`[${caseName}] start`);
       let data1 = new SendableData(1);
@@ -827,12 +839,18 @@ export default function collectionsConcatArrayTest() {
       let data3 = new SendableData(3);
       let arr: collections.ConcatArray<SendableData> = new collections.Array<SendableData>(data1, data2, data3);
 
-      let result = await taskpool.execute(taskGetConcatArrayIds, arr);
+      let result: Object = [];
+      try {
+        result = await taskpool.execute(taskGetConcatArrayIds, arr);
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       let ids = result as number[];
       expect(ids[0]).assertEqual(1);
       expect(ids[1]).assertEqual(2);
       expect(ids[2]).assertEqual(3);
       console.info(`[${caseName}] end`);
+      done();
     });
 
   });

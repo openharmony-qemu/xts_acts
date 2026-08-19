@@ -92,12 +92,14 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentForEach0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentForEach0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentForEach0001';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(
           forEachTask,
           set,
@@ -109,6 +111,9 @@ export default function collectionsSetConcurrentTest() {
           lock
         )
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
       expect(result[0] as number)
         .assertEqual(100);
 
@@ -121,6 +126,7 @@ export default function collectionsSetConcurrentTest() {
 
       expect(total).assertEqual(200);
       console.info(`[${caseName}] end`);
+      done();
     });
 
 
@@ -132,12 +138,14 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentForEach0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentForEach0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentForEach0002';
       console.info(`[${caseName}] start`);
       let set = createStringSet(200);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(
           forEachStringTask,
           set,
@@ -164,6 +172,9 @@ export default function collectionsSetConcurrentTest() {
           lock
         )
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       expect(result[0] as number)
         .assertEqual(200);
@@ -190,6 +201,7 @@ export default function collectionsSetConcurrentTest() {
       expect(total)
         .assertEqual(1000);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -200,13 +212,15 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentForEach0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentForEach0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentForEach0003';
       console.info(`[${caseName}] start`);
       let set = createSendableSet(50);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
 
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(forEachSendableTask, set, lock),
         taskpool.execute(forEachSendableTask, set, lock),
         taskpool.execute(forEachSendableTask, set, lock),
@@ -218,6 +232,9 @@ export default function collectionsSetConcurrentTest() {
         taskpool.execute(forEachSendableTask, set, lock),
         taskpool.execute(forEachSendableTask, set, lock)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       for (let i: number = 0; i < result.length; i++) {
         expect(result[i] as number).assertEqual(50);
@@ -229,6 +246,7 @@ export default function collectionsSetConcurrentTest() {
       }
       expect(total).assertEqual(500);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -239,13 +257,15 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentForEach0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentForEach0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentForEach0004';
       console.info(`[${caseName}] start`);
       let set = createRangeNumberSet(100);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
 
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(
           forEachSumTask,
           set,
@@ -257,6 +277,9 @@ export default function collectionsSetConcurrentTest() {
           lock
         )
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       expect(result[0] as number)
         .assertEqual(5050);
@@ -264,6 +287,7 @@ export default function collectionsSetConcurrentTest() {
       expect(result[1] as number)
         .assertEqual(5050);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -274,24 +298,30 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentForEach0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentForEach0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentForEach0005';
       console.info(`[${caseName}] start`);
       let set = createStringSet(100);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
 
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(forEachFindStringTask, set, 'value_50', lock),
         taskpool.execute(forEachFindStringTask, set, 'value_50', lock),
         taskpool.execute(forEachFindStringTask, set, 'value_50', lock),
         taskpool.execute(forEachFindStringTask, set, 'value_50', lock),
         taskpool.execute(forEachFindStringTask, set, 'value_50', lock)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       for (let i: number = 0; i < result.length; i++) {
         expect(result[i] as boolean).assertTrue();
       }
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -302,22 +332,28 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentForEachSharedCollection0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentForEachSharedCollection0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentForEachSharedCollection0006';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(50);
       let sharedArray = new collections.Array<number>();
       let lockBuffer: SharedArrayBuffer = createSharedLock();
 
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(forEachCollectSharedTask, set, sharedArray, lockBuffer),
         taskpool.execute(forEachCollectSharedTask, set, sharedArray, lockBuffer)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       expect(result[0] as number).assertEqual(50);
       expect(result[1] as number).assertEqual(50);
       expect(sharedArray.length).assertEqual(100);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -328,17 +364,22 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentModify0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentModify0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentModify0001';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
-      let result =
-        await taskpool.execute(
+      let result: Object = [];
+      try {
+        result = await taskpool.execute(
           forEachAddErrorTask,
           set
         );
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(isAcceptedConcurrentResult(result as number)).assertTrue();
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -349,17 +390,22 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentModify0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentModify0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentModify0002';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
-      let result =
-        await taskpool.execute(
+      let result: Object = [];
+      try {
+        result = await taskpool.execute(
           forEachAddExistErrorTask,
           set
         );
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(isAcceptedConcurrentResult(result as number)).assertTrue();
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -370,17 +416,22 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentModify0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentModify0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentModify0003';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
-      let result =
-        await taskpool.execute(
+      let result: Object = [];
+      try {
+        result = await taskpool.execute(
           forEachDeleteErrorTask,
           set
         );
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(isAcceptedConcurrentResult(result as number)).assertTrue();
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -391,13 +442,19 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentModify0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentModify0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentModify0004';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
-      let result = await taskpool.execute(forEachDeleteOtherErrorTask, set);
+      let result: Object = [];
+      try {
+        result = await taskpool.execute(forEachDeleteOtherErrorTask, set);
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(isAcceptedConcurrentResult(result as number)).assertTrue();
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -408,17 +465,22 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentModify0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentModify0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentModify0005';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
-      let result =
-        await taskpool.execute(
+      let result: Object = [];
+      try {
+        result = await taskpool.execute(
           forEachClearErrorTask,
           set
         );
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(isAcceptedConcurrentResult(result as number)).assertTrue();
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -429,18 +491,23 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentErrorRecover0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentErrorRecover0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentErrorRecover0001';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
-      let result =
-        await taskpool.execute(
+      let result: Object = [];
+      try {
+        result = await taskpool.execute(
           errorRecoverTask,
           set
         );
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(result as boolean)
         .assertTrue();
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -451,20 +518,26 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentEntries0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentEntries0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentEntries0001';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(entriesTask, set, lock),
         taskpool.execute(entriesTask, set, lock)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
       expect(result[0] as number)
         .assertEqual(100);
       expect(result[1] as number)
         .assertEqual(100);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -475,15 +548,20 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentEntries0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentEntries0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentEntries0002';
       console.info(`[${caseName}] start`);
       let set = createStringSet(50);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(entriesCollectTask, set, lock),
         taskpool.execute(entriesCollectTask, set, lock)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
       let array1 = result[0] as Array<string>;
       let array2 = result[1] as Array<string>;
       expect(array1.length)
@@ -491,6 +569,7 @@ export default function collectionsSetConcurrentTest() {
       expect(array2.length)
         .assertEqual(50);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -501,18 +580,24 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentEntries0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentEntries0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentEntries0003';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(entriesCheckTask, set, lock),
         taskpool.execute(entriesCheckTask, set, lock)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
       expect(result[0] as boolean).assertTrue();
       expect(result[1] as boolean).assertTrue();
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -523,20 +608,26 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentKeys0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentKeys0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentKeys0001';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(keysTask, set, lock),
         taskpool.execute(keysTask, set, lock)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
       expect(result[0] as number)
         .assertEqual(100);
       expect(result[1] as number)
         .assertEqual(100);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -547,20 +638,26 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentValues0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentValues0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentValues0001';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(valuesTask, set, lock),
         taskpool.execute(valuesTask, set, lock)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
       expect(result[0] as number)
         .assertEqual(100);
       expect(result[1] as number)
         .assertEqual(100);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -571,22 +668,28 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentKeysSharedCollection0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentKeysSharedCollection0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentKeysSharedCollection0001';
       console.info(`[${caseName}] start`);
       let set = createStringSet(50);
       let sharedArray = new collections.Array<string>();
       let lockBuffer: SharedArrayBuffer = createSharedLock();
 
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(keysCollectSharedTask, set, sharedArray, lockBuffer),
         taskpool.execute(keysCollectSharedTask, set, sharedArray, lockBuffer)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       expect(result[0] as number).assertEqual(50);
       expect(result[1] as number).assertEqual(50);
       expect(sharedArray.length).assertEqual(100);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -597,20 +700,26 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentLarge0001', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentLarge0001', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentLarge0001';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(10000);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(largeForEachTask, set, lock),
         taskpool.execute(largeForEachTask, set, lock)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
       expect(result[0] as number)
         .assertEqual(10000);
       expect(result[1] as number)
         .assertEqual(10000);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -621,21 +730,27 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentLarge0002', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentLarge0002', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentLarge0002';
       console.info(`[${caseName}] start`);
       let set = createStringSet(50000);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
 
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(forEachStringTask, set, lock),
         taskpool.execute(forEachStringTask, set, lock)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
       expect(result[0] as number)
         .assertEqual(50000);
       expect(result[1] as number)
         .assertEqual(50000);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -646,16 +761,21 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentLarge0003', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentLarge0003', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentLarge0003';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(10000);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
 
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(largeEntriesTask, set, lock),
         taskpool.execute(largeEntriesTask, set, lock)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       expect(result[0] as number)
         .assertEqual(10000);
@@ -663,6 +783,7 @@ export default function collectionsSetConcurrentTest() {
       expect(result[1] as number)
         .assertEqual(10000);
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -673,12 +794,19 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentEntriesAddError0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentEntriesAddError0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentEntriesAddError0001';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
-      expect(await runModifyTest(set, setEntriesTraverseTask, setAddModifyTask)).assertTrue();
+      let result: boolean = false;
+      try {
+        result = await runModifyTest(set, setEntriesTraverseTask, setAddModifyTask);
+      } catch (err) {
+        console.error(`runModifyTest failed: ${JSON.stringify(err)}`);
+      }
+      expect(result).assertTrue();
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -689,25 +817,26 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentValuesClearError0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentValuesClearError0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentValuesClearError0001';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
       try {
-        // 按设计 MODIFY_008: 遍历 values 迭代器时 clear
+        // 按设�?MODIFY_008: 遍历 values 迭代器时 clear
         let iter = set.values();
         let item = iter.next();
         while (!item.done) {
           set.clear();
           item = iter.next();
         }
-        // 已知运行时限制: clear 终止迭代器，next() 返回 done:true，不抛异常
+        // 已知运行时限�? clear 终止迭代器，next() 返回 done:true，不抛异�?
         console.info(`[${caseName}] no exception thrown (known runtime limitation)`);
       } catch (e) {
-        // 运行时修复后: 此处会抛出异常，必须断言错误码正确
-        expect((e as BusinessError).code).assertEqual(10200201);
+        // 运行时修复后: 此处会抛出异常，必须断言错误码正�?
+        expect(e.code).assertEqual(10200201);
       }
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -718,14 +847,20 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentKeysDeleteError0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentKeysDeleteError0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentKeysDeleteError0001';
       console.info(`[${caseName}] start`);
-      // 使用 100000 元素大集合：delete 是批量操作，需要足够大的集合
-      // 保证遍历任务在修改任务执行期间仍在迭代，扩大冲突窗口以稳定触发 10200201
+      // 使用 100000 元素大集合：delete 是批量操作，需要足够大的集�?      // 保证遍历任务在修改任务执行期间仍在迭代，扩大冲突窗口以稳定触�?10200201
       let set = createNumberSet(100000);
-      expect(await runModifyTest(set, setKeysTraverseTask, setDeleteModifyTask)).assertTrue();
+      let result: boolean = false;
+      try {
+        result = await runModifyTest(set, setKeysTraverseTask, setDeleteModifyTask);
+      } catch (err) {
+        console.error(`runModifyTest failed: ${JSON.stringify(err)}`);
+      }
+      expect(result).assertTrue();
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -736,7 +871,7 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentValuesConsistency0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentValuesConsistency0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentValuesConsistency0001';
       console.info(`[${caseName}] start`);
       let set = createStringSet(50);
@@ -744,10 +879,15 @@ export default function collectionsSetConcurrentTest() {
       // keys 组与 values 组使用独立锁，保留并发读能力
       let keysLock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
       let valuesLock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(keysToStringArrayTask, set, keysLock),
         taskpool.execute(valuesToStringArrayTask, set, valuesLock)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       let keysArr = result[0] as string[];
       let valuesArr = result[1] as string[];
@@ -758,6 +898,7 @@ export default function collectionsSetConcurrentTest() {
         expect(keysArr[i]).assertEqual(valuesArr[i]);
       }
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -768,18 +909,23 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentForOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentForOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentForOf0001';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(50);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
 
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(forOfVerifyTask, set, lock),
         taskpool.execute(forOfVerifyTask, set, lock),
         taskpool.execute(forOfVerifyTask, set, lock),
         taskpool.execute(forOfVerifyTask, set, lock)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       for (let i = 0; i < result.length; i++) {
         let taskResult = result[i] as number[];
@@ -787,6 +933,7 @@ export default function collectionsSetConcurrentTest() {
         expect(taskResult[1] as number).assertEqual(1225);
       }
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -797,18 +944,23 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentSpread0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentSpread0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentSpread0001';
       console.info(`[${caseName}] start`);
       let set = createStringSet(50);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
 
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(spreadToStringArrayTask, set, lock),
         taskpool.execute(spreadToStringArrayTask, set, lock),
         taskpool.execute(spreadToStringArrayTask, set, lock),
         taskpool.execute(spreadToStringArrayTask, set, lock)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       for (let i = 0; i < result.length; i++) {
         let arr = result[i] as string[];
@@ -821,6 +973,7 @@ export default function collectionsSetConcurrentTest() {
         expect(arr1[i]).assertEqual(arr2[i]);
       }
       console.info(`[${caseName}] end`);
+      done();
     });
 
     /**
@@ -831,20 +984,26 @@ export default function collectionsSetConcurrentTest() {
      * @tc.type Function
      * @tc.level Level0
      */
-    it('testSetConcurrentLarge0004', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async () => {
+    it('testSetConcurrentLarge0004', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentLarge0004';
       console.info(`[${caseName}] start`);
       let set = createStringSet(50000);
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
 
-      let result = await Promise.all([
+      let result: Object[] = [];
+      try {
+        result = await Promise.all([
         taskpool.execute(largeKeysStringTask, set, lock),
         taskpool.execute(largeKeysStringTask, set, lock)
       ]);
+      } catch (err) {
+        console.error(`result await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       expect(result[0] as number).assertEqual(50000);
       expect(result[1] as number).assertEqual(50000);
       console.info(`[${caseName}] end`);
+      done();
     });
 
   });

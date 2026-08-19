@@ -1071,16 +1071,22 @@ export default function sendableLruCacheSpecialTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testSendableDecorator0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,async (): Promise<void> => {
+    it('testSendableDecorator0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function): Promise<void> => {
       const caseName: string = 'testSendableDecorator0041';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<string, string>(10);
       cache.put('key', 'value');
       // 将 cache 传入 TaskPool 子线程，验证 @Sendable 装饰使其可跨线程传递
       const task: taskpool.Task = new taskpool.Task(concurrentTestWithCache, cache);
-      const result: string | undefined = await taskpool.execute(task) as string | undefined;
+      let result: string | undefined = undefined;
+      try {
+        result = await taskpool.execute(task) as string | undefined;
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(result).assertEqual('value');
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -1112,7 +1118,7 @@ export default function sendableLruCacheSpecialTest() {
         const allSuccess: boolean = results.every((r: boolean): boolean => r === true);
         expect(allSuccess).assertTrue();
       } catch (error) {
-        console.error('Concurrent decorator test failed:',(error as Error).message);
+        console.error('Concurrent decorator test failed:', error.message);
         expect(false).assertTrue();
       }
       console.info(`${caseName}, test end`);

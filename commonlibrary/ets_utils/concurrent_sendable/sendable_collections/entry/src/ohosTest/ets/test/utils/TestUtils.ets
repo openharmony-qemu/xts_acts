@@ -219,7 +219,7 @@ export function forEachAddErrorTask(
       }
     );
   } catch(e) {
-    code = (e as BusinessError).code;
+    code = e.code;
   }
   return code;
 }
@@ -240,7 +240,7 @@ export function forEachDeleteErrorTask(
     );
   } catch(e){
     code =
-      (e as BusinessError).code;
+      e.code;
   }
   return code;
 }
@@ -260,7 +260,7 @@ export function forEachClearErrorTask(
     );
   } catch(e){
     code =
-      (e as BusinessError).code;
+      e.code;
   }
   return code;
 }
@@ -280,7 +280,7 @@ export function forEachAddExistErrorTask(
     );
   } catch(e){
     code =
-      (e as BusinessError).code;
+      e.code;
   }
   return code;
 }
@@ -514,7 +514,7 @@ export function forEachDeleteOtherErrorTask(
       set.delete(deleteTarget);
     });
   } catch (e) {
-    code = (e as BusinessError).code;
+    code = e.code;
   }
   return code;
 }

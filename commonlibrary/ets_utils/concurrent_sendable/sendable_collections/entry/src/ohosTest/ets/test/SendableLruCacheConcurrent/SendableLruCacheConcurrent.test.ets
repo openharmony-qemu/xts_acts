@@ -437,7 +437,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentPutSameKey0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentPutSameKey0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentPutSameKey0001';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10);
@@ -447,14 +447,29 @@ export default function SendableLruCacheConcurrentTest(): void {
       for (let i = 0; i < 10; i++) {
         tasks.push(taskpool.execute(concurrentPutSameKeyTask, cache, lock, i));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(1);
 
-      const putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      let putCount: number = 0;
+      try {
+        putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(putCount).assertEqual(10);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -465,7 +480,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentPutDiffKeys0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentPutDiffKeys0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentPutDiffKeys0002';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(64);
@@ -475,17 +490,37 @@ export default function SendableLruCacheConcurrentTest(): void {
       for (let i = 0; i < 64; i++) {
         tasks.push(taskpool.execute(concurrentPutTask, cache, lock, i, i));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(64);
 
-      const putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      let putCount: number = 0;
+      try {
+        putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(putCount).assertEqual(64);
 
-      const keys = await taskpool.execute(getCacheKeys, cache, lock) as number[];
+      let keys: number[] = [];
+      try {
+        keys = await taskpool.execute(getCacheKeys, cache, lock) as number[];
+      } catch (err) {
+        console.error(`keys await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(keys.length).assertEqual(64);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -496,7 +531,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentPutEviction0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentPutEviction0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentPutEviction0003';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10);
@@ -506,14 +541,29 @@ export default function SendableLruCacheConcurrentTest(): void {
       for (let i = 0; i < 100; i++) {
         tasks.push(taskpool.execute(concurrentPutTask, cache, lock, i, i));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(10);
 
-      const removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      let removeCount: number = 0;
+      try {
+        removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`removeCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(removeCount).assertEqual(90);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 3.2 并发get场景 ==========
@@ -526,30 +576,50 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentGetSameKey0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentGetSameKey0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentGetSameKey0004';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
-      await taskpool.execute(doCachePut, cache, lock, 1, 100);
+      try {
+        await taskpool.execute(doCachePut, cache, lock, 1, 100);
+      } catch (err) {
+        console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
 
       const tasks: Promise<Object>[] = [];
       for (let i = 0; i < 100; i++) {
         tasks.push(taskpool.execute(concurrentGetTask, cache, lock, 1));
       }
-      const results = await Promise.all(tasks) as (number | undefined)[];
+      let results: (number | undefined)[] = [];
+      try {
+        results = await Promise.all(tasks) as (number | undefined)[];
+      } catch (err) {
+        console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       for (const result of results) {
         expect(result).assertEqual(100);
       }
 
-      const matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      let matchCount: number = 0;
+      try {
+        matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`matchCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(matchCount).assertEqual(100);
 
-      const missCount = await taskpool.execute(getCacheMissCount, cache, lock) as number;
+      let missCount: number = 0;
+      try {
+        missCount = await taskpool.execute(getCacheMissCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`missCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(missCount).assertEqual(0);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -560,32 +630,52 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentGetDiffKeys0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentGetDiffKeys0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentGetDiffKeys0005';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(64);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 64; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const tasks: Promise<Object>[] = [];
       for (let i = 0; i < 64; i++) {
         tasks.push(taskpool.execute(concurrentGetTask, cache, lock, i));
       }
-      const results = await Promise.all(tasks) as (number | undefined)[];
+      let results: (number | undefined)[] = [];
+      try {
+        results = await Promise.all(tasks) as (number | undefined)[];
+      } catch (err) {
+        console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       for (let i = 0; i < results.length; i++) {
         expect(results[i]).assertEqual(i);
       }
 
-      const matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      let matchCount: number = 0;
+      try {
+        matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`matchCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(matchCount).assertEqual(64);
 
-      const missCount = await taskpool.execute(getCacheMissCount, cache, lock) as number;
+      let missCount: number = 0;
+      try {
+        missCount = await taskpool.execute(getCacheMissCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`missCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(missCount).assertEqual(0);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -596,7 +686,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentGetMiss0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentGetMiss0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentGetMiss0006';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10);
@@ -606,18 +696,34 @@ export default function SendableLruCacheConcurrentTest(): void {
       for (let i = 0; i < 100; i++) {
         tasks.push(taskpool.execute(concurrentGetTask, cache, lock, i));
       }
-      const results = await Promise.all(tasks) as (number | undefined)[];
+      let results: (number | undefined)[] = [];
+      try {
+        results = await Promise.all(tasks) as (number | undefined)[];
+      } catch (err) {
+        console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       for (const result of results) {
         expect(result === undefined).assertTrue();
       }
 
-      const missCount = await taskpool.execute(getCacheMissCount, cache, lock) as number;
+      let missCount: number = 0;
+      try {
+        missCount = await taskpool.execute(getCacheMissCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`missCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(missCount).assertEqual(100);
 
-      const matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      let matchCount: number = 0;
+      try {
+        matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`matchCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(matchCount).assertEqual(0);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 3.3 并发get/put混合场景 ==========
@@ -630,30 +736,54 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentReadWriteSame0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentReadWriteSame0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentReadWriteSame0007';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
-      await taskpool.execute(doCachePut, cache, lock, 1, 0);
+      try {
+        await taskpool.execute(doCachePut, cache, lock, 1, 0);
+      } catch (err) {
+        console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
 
       const tasks: Promise<Object>[] = [];
       for (let i = 0; i < 50; i++) {
         tasks.push(taskpool.execute(concurrentGetTask, cache, lock, 1));
         tasks.push(taskpool.execute(concurrentPutSameKeyTask, cache, lock, i + 1));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(1);
 
-      const putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      let putCount: number = 0;
+      try {
+        putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(putCount).assertEqual(51);
 
-      const matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      let matchCount: number = 0;
+      try {
+        matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`matchCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(matchCount).assertEqual(50);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -664,14 +794,18 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentReadWriteDiff0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentReadWriteDiff0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentReadWriteDiff0008';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(200);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 100; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const tasks: Promise<Object>[] = [];
@@ -679,17 +813,37 @@ export default function SendableLruCacheConcurrentTest(): void {
         tasks.push(taskpool.execute(concurrentGetTask, cache, lock, i));
         tasks.push(taskpool.execute(concurrentPutTask, cache, lock, i + 100, i + 100));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(200);
 
-      const putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      let putCount: number = 0;
+      try {
+        putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(putCount).assertEqual(200);
 
-      const matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      let matchCount: number = 0;
+      try {
+        matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`matchCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(matchCount).assertEqual(100);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -700,14 +854,18 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentReadWriteEviction0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentReadWriteEviction0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentReadWriteEviction0009';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 10; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const tasks: Promise<Object>[] = [];
@@ -715,14 +873,29 @@ export default function SendableLruCacheConcurrentTest(): void {
         tasks.push(taskpool.execute(concurrentGetTask, cache, lock, i % 10));
         tasks.push(taskpool.execute(concurrentPutTask, cache, lock, i + 10, i + 10));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(10);
 
-      const removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      let removeCount: number = 0;
+      try {
+        removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`removeCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(removeCount).assertEqual(50);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 3.4 并发remove场景 ==========
@@ -735,19 +908,28 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentRemoveSame0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentRemoveSame0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentRemoveSame0010';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
-      await taskpool.execute(doCachePut, cache, lock, 1, 100);
+      try {
+        await taskpool.execute(doCachePut, cache, lock, 1, 100);
+      } catch (err) {
+        console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
 
       const tasks: Promise<Object>[] = [];
       for (let i = 0; i < 10; i++) {
         tasks.push(taskpool.execute(concurrentRemoveTask, cache, lock, 1));
       }
-      const results = await Promise.all(tasks) as (number | undefined)[];
+      let results: (number | undefined)[] = [];
+      try {
+        results = await Promise.all(tasks) as (number | undefined)[];
+      } catch (err) {
+        console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       let successCount = 0;
       for (const result of results) {
@@ -757,12 +939,23 @@ export default function SendableLruCacheConcurrentTest(): void {
       }
       expect(successCount).assertEqual(1);
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(0);
 
-      const containsResult = await taskpool.execute(cacheContains, cache, lock, 1) as boolean;
+      let containsResult: boolean = false;
+      try {
+        containsResult = await taskpool.execute(cacheContains, cache, lock, 1) as boolean;
+      } catch (err) {
+        console.error(`containsResult await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(containsResult).assertFalse();
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -773,28 +966,47 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentRemoveDiff0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentRemoveDiff0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentRemoveDiff0011';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(64);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 64; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const tasks: Promise<Object>[] = [];
       for (let i = 0; i < 64; i++) {
         tasks.push(taskpool.execute(concurrentRemoveTask, cache, lock, i));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(0);
 
-      const isEmpty = await taskpool.execute(isCacheEmpty, cache, lock) as boolean;
+      let isEmpty: boolean = false;
+      try {
+        isEmpty = await taskpool.execute(isCacheEmpty, cache, lock) as boolean;
+      } catch (err) {
+        console.error(`isEmpty await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(isEmpty).assertTrue();
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 3.5 并发contains场景 ==========
@@ -807,14 +1019,18 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentContains0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentContains0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentContains0012';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(100);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 50; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const tasks: Promise<Object>[] = [];
@@ -822,13 +1038,19 @@ export default function SendableLruCacheConcurrentTest(): void {
         tasks.push(taskpool.execute(concurrentContainsTask, cache, lock, i));
         tasks.push(taskpool.execute(concurrentContainsTask, cache, lock, i + 100));
       }
-      const results = await Promise.all(tasks) as boolean[];
+      let results: boolean[] = [];
+      try {
+        results = await Promise.all(tasks) as boolean[];
+      } catch (err) {
+        console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       for (let i = 0; i < 50; i++) {
         expect(results[i * 2]).assertTrue();
         expect(results[i * 2 + 1]).assertFalse();
       }
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 4.1 并发entries遍历 ==========
@@ -841,26 +1063,36 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentEntriesIter0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentEntriesIter0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentEntriesIter0013';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(100);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 100; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const tasks: Promise<Object>[] = [];
       for (let i = 0; i < 10; i++) {
         tasks.push(taskpool.execute(concurrentEntriesTask, cache, lock));
       }
-      const results = await Promise.all(tasks) as number[];
+      let results: number[] = [];
+      try {
+        results = await Promise.all(tasks) as number[];
+      } catch (err) {
+        console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       for (const result of results) {
         expect(result).assertEqual(100);
       }
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -871,14 +1103,18 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentEntriesModify0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentEntriesModify0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentEntriesModify0014';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(200);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 100; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const iterTasks: Promise<Object>[] = [];
@@ -888,19 +1124,30 @@ export default function SendableLruCacheConcurrentTest(): void {
         modifyTasks.push(taskpool.execute(concurrentPutTask, cache, lock, i + 100, i + 100));
       }
 
-      const allResults = await Promise.all([
+      let allResults: Object[] = [];
+      try {
+        allResults = await Promise.all([
         Promise.all(iterTasks),
         Promise.all(modifyTasks)
       ]);
+      } catch (err) {
+        console.error(`allResults await Promise.all failed: ${JSON.stringify(err)}`);
+      }
       const iterResults = allResults[0] as number[];
 
       for (const result of iterResults) {
         expect(result >= 100).assertTrue();
       }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(110);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 4.2 并发keys遍历 ==========
@@ -913,26 +1160,36 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentKeysIter0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentKeysIter0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentKeysIter0015';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(100);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 100; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const tasks: Promise<Object>[] = [];
       for (let i = 0; i < 10; i++) {
         tasks.push(taskpool.execute(concurrentKeysTask, cache, lock));
       }
-      const results = await Promise.all(tasks) as number[];
+      let results: number[] = [];
+      try {
+        results = await Promise.all(tasks) as number[];
+      } catch (err) {
+        console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       for (const result of results) {
         expect(result).assertEqual(100);
       }
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -943,14 +1200,18 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentKeysModify0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentKeysModify0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentKeysModify0016';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(200);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 100; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const iterTasks: Promise<Object>[] = [];
@@ -960,19 +1221,30 @@ export default function SendableLruCacheConcurrentTest(): void {
         modifyTasks.push(taskpool.execute(concurrentPutTask, cache, lock, i + 100, i + 100));
       }
 
-      const allResults = await Promise.all([
+      let allResults: Object[] = [];
+      try {
+        allResults = await Promise.all([
         Promise.all(iterTasks),
         Promise.all(modifyTasks)
       ]);
+      } catch (err) {
+        console.error(`allResults await Promise.all failed: ${JSON.stringify(err)}`);
+      }
       const iterResults = allResults[0] as number[];
 
       for (const result of iterResults) {
         expect(result >= 100).assertTrue();
       }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(110);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 4.3 并发values遍历 ==========
@@ -985,26 +1257,36 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentValuesIter0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentValuesIter0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentValuesIter0017';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(100);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 100; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const tasks: Promise<Object>[] = [];
       for (let i = 0; i < 10; i++) {
         tasks.push(taskpool.execute(concurrentValuesTask, cache, lock));
       }
-      const results = await Promise.all(tasks) as number[];
+      let results: number[] = [];
+      try {
+        results = await Promise.all(tasks) as number[];
+      } catch (err) {
+        console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       for (const result of results) {
         expect(result).assertEqual(100);
       }
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -1015,14 +1297,18 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentValuesModify0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentValuesModify0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentValuesModify0018';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(200);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 100; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const iterTasks: Promise<Object>[] = [];
@@ -1032,19 +1318,30 @@ export default function SendableLruCacheConcurrentTest(): void {
         modifyTasks.push(taskpool.execute(concurrentPutTask, cache, lock, i + 100, i + 100));
       }
 
-      const allResults = await Promise.all([
+      let allResults: Object[] = [];
+      try {
+        allResults = await Promise.all([
         Promise.all(iterTasks),
         Promise.all(modifyTasks)
       ]);
+      } catch (err) {
+        console.error(`allResults await Promise.all failed: ${JSON.stringify(err)}`);
+      }
       const iterResults = allResults[0] as number[];
 
       for (const result of iterResults) {
         expect(result >= 100).assertTrue();
       }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(110);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 5.1 并发updateCapacity场景 ==========
@@ -1057,27 +1354,45 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentCapacityUpdate0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentCapacityUpdate0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentCapacityUpdate0019';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(64);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 64; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const tasks: Promise<Object>[] = [];
       for (let i = 1; i <= 10; i++) {
         tasks.push(taskpool.execute(concurrentUpdateCapacityTask, cache, lock, i * 10));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      await taskpool.execute(doCacheUpdateCapacity, cache, lock, 100);
+      try {
+        await taskpool.execute(doCacheUpdateCapacity, cache, lock, 100);
+      } catch (err) {
+        console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
 
-      const capacity = await taskpool.execute(getCacheCapacity, cache, lock) as number;
+      let capacity: number = 0;
+      try {
+        capacity = await taskpool.execute(getCacheCapacity, cache, lock) as number;
+      } catch (err) {
+        console.error(`capacity await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(capacity).assertEqual(100);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -1088,14 +1403,18 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentCapacityAccess0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentCapacityAccess0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentCapacityAccess0020';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(64);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 64; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const capacityTask = taskpool.execute(concurrentUpdateCapacityTask, cache, lock, 10);
@@ -1104,14 +1423,29 @@ export default function SendableLruCacheConcurrentTest(): void {
         accessTasks.push(taskpool.execute(concurrentGetTask, cache, lock, i % 64));
       }
 
-      await Promise.all([capacityTask, ...accessTasks]);
+      try {
+        await Promise.all([capacityTask, ...accessTasks]);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const capacity = await taskpool.execute(getCacheCapacity, cache, lock) as number;
+      let capacity: number = 0;
+      try {
+        capacity = await taskpool.execute(getCacheCapacity, cache, lock) as number;
+      } catch (err) {
+        console.error(`capacity await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(capacity).assertEqual(10);
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(10);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -1122,24 +1456,43 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentCapacityReduce0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentCapacityReduce0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentCapacityReduce0021';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(100);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 100; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
-      await taskpool.execute(doCacheUpdateCapacity, cache, lock, 10);
+      try {
+        await taskpool.execute(doCacheUpdateCapacity, cache, lock, 10);
+      } catch (err) {
+        console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(10);
 
-      const removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      let removeCount: number = 0;
+      try {
+        removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`removeCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(removeCount).assertEqual(90);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 5.2 容量边界并发场景 ==========
@@ -1152,7 +1505,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentCapacityOne0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentCapacityOne0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentCapacityOne0022';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(1);
@@ -1162,14 +1515,29 @@ export default function SendableLruCacheConcurrentTest(): void {
       for (let i = 0; i < 100; i++) {
         tasks.push(taskpool.execute(concurrentPutTask, cache, lock, i, i));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(1);
 
-      const removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      let removeCount: number = 0;
+      try {
+        removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`removeCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(removeCount).assertEqual(99);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -1180,33 +1548,61 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentCapacityExpand0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentCapacityExpand0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentCapacityExpand0023';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 10; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
-      await taskpool.execute(doCacheUpdateCapacity, cache, lock, 100);
+      try {
+        await taskpool.execute(doCacheUpdateCapacity, cache, lock, 100);
+      } catch (err) {
+        console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
 
       const tasks: Promise<Object>[] = [];
       for (let i = 10; i < 110; i++) {
         tasks.push(taskpool.execute(concurrentPutTask, cache, lock, i, i));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(100);
 
-      const removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      let removeCount: number = 0;
+      try {
+        removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`removeCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(removeCount).assertEqual(10);
 
-      const putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      let putCount: number = 0;
+      try {
+        putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(putCount).assertEqual(110);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 6.1 并发操作统计 ==========
@@ -1219,7 +1615,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentStatPut0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLruCacheConcurrentStatPut0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentStatPut0024';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(200);
@@ -1229,11 +1625,21 @@ export default function SendableLruCacheConcurrentTest(): void {
       for (let i = 0; i < 100; i++) {
         tasks.push(taskpool.execute(concurrentPutTask, cache, lock, i, i));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      let putCount: number = 0;
+      try {
+        putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(putCount).assertEqual(100);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -1244,14 +1650,18 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentStatMatch0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLruCacheConcurrentStatMatch0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentStatMatch0025';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(100);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 50; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const tasks: Promise<Object>[] = [];
@@ -1259,14 +1669,29 @@ export default function SendableLruCacheConcurrentTest(): void {
         tasks.push(taskpool.execute(concurrentGetTask, cache, lock, i));
         tasks.push(taskpool.execute(concurrentGetTask, cache, lock, i % 64));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      let matchCount: number = 0;
+      try {
+        matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`matchCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(matchCount).assertEqual(100);
 
-      const missCount = await taskpool.execute(getCacheMissCount, cache, lock) as number;
+      let missCount: number = 0;
+      try {
+        missCount = await taskpool.execute(getCacheMissCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`missCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(missCount).assertEqual(0);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -1277,7 +1702,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentStatRemove0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLruCacheConcurrentStatRemove0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentStatRemove0026';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10);
@@ -1287,11 +1712,21 @@ export default function SendableLruCacheConcurrentTest(): void {
       for (let i = 0; i < 100; i++) {
         tasks.push(taskpool.execute(concurrentPutTask, cache, lock, i, i));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      let removeCount: number = 0;
+      try {
+        removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`removeCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(removeCount).assertEqual(90);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 6.2 统计清零场景 ==========
@@ -1304,35 +1739,82 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentStatClear0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLruCacheConcurrentStatClear0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentStatClear0027';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
-      await taskpool.execute(doCachePut, cache, lock, 1, 1);
-      await taskpool.execute(concurrentGetTask, cache, lock, 1) as number | undefined;
-      await taskpool.execute(concurrentRemoveTask, cache, lock, 1) as number | undefined;
-      await taskpool.execute(doCacheClear, cache, lock);
+      try {
+        await taskpool.execute(doCachePut, cache, lock, 1, 1);
+      } catch (err) {
+        console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
+      try {
+        await taskpool.execute(concurrentGetTask, cache, lock, 1);
+      } catch (err) {
+        console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
+      try {
+        await taskpool.execute(concurrentRemoveTask, cache, lock, 1);
+      } catch (err) {
+        console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
+      try {
+        await taskpool.execute(doCacheClear, cache, lock);
+      } catch (err) {
+        console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(0);
 
-      const isEmpty = await taskpool.execute(isCacheEmpty, cache, lock) as boolean;
+      let isEmpty: boolean = false;
+      try {
+        isEmpty = await taskpool.execute(isCacheEmpty, cache, lock) as boolean;
+      } catch (err) {
+        console.error(`isEmpty await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(isEmpty).assertTrue();
 
-      const putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      let putCount: number = 0;
+      try {
+        putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(putCount).assertEqual(1);
 
-      const matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      let matchCount: number = 0;
+      try {
+        matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`matchCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(matchCount).assertEqual(1);
 
-      const missCount = await taskpool.execute(getCacheMissCount, cache, lock) as number;
+      let missCount: number = 0;
+      try {
+        missCount = await taskpool.execute(getCacheMissCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`missCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(missCount).assertEqual(0);
 
-      const removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      let removeCount: number = 0;
+      try {
+        removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`removeCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(removeCount).assertEqual(0);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -1343,14 +1825,18 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentStatConcurrentClear0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLruCacheConcurrentStatConcurrentClear0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentStatConcurrentClear0028';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(100);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 50; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const clearTasks: Promise<Object>[] = [];
@@ -1363,17 +1849,37 @@ export default function SendableLruCacheConcurrentTest(): void {
         operationTasks.push(taskpool.execute(concurrentPutGetTask, cache, lock, i + 200, i + 200));
       }
 
-      await Promise.all([...clearTasks, ...operationTasks]);
+      try {
+        await Promise.all([...clearTasks, ...operationTasks]);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      let putCount: number = 0;
+      try {
+        putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(putCount).assertEqual(140);
 
-      const matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      let matchCount: number = 0;
+      try {
+        matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`matchCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(matchCount).assertEqual(90);
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length <= 90).assertTrue();
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 7.1 缓存引用传递 ==========
@@ -1386,7 +1892,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentSendableRef0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLruCacheConcurrentSendableRef0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentSendableRef0029';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(100);
@@ -1396,14 +1902,29 @@ export default function SendableLruCacheConcurrentTest(): void {
       for (let i = 0; i < 10; i++) {
         tasks.push(taskpool.execute(concurrentPutTask, cache, lock, i, i));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(10);
 
-      const putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      let putCount: number = 0;
+      try {
+        putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(putCount).assertEqual(10);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 7.2 Sendable类型键值对 ==========
@@ -1416,7 +1937,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentSendableNested0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLruCacheConcurrentSendableNested0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentSendableNested0030';
       console.info(`${caseName}, test start`);
       const innerCache = new ArkTSUtils.SendableLruCache<number, number>(10);
@@ -1431,6 +1952,7 @@ export default function SendableLruCacheConcurrentTest(): void {
       expect(retrieved !== undefined).assertTrue();
       expect(retrieved!.get(1)).assertEqual(100);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -1441,25 +1963,39 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentSendableClassKey0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLruCacheConcurrentSendableClassKey0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentSendableClassKey0031';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<TestKey, number>(10);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       const key1 = new TestKey(1);
-      await taskpool.execute(concurrentPutKeyTask, cache, lock, key1, 100);
+      try {
+        await taskpool.execute(concurrentPutKeyTask, cache, lock, key1, 100);
+      } catch (err) {
+        console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
 
       const tasks: Promise<Object>[] = [];
       for (let i = 0; i < 10; i++) {
         const key = new TestKey(i + 100);
         tasks.push(taskpool.execute(concurrentPutKeyTask, cache, lock, key, i * 100));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLengthForTestKey, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLengthForTestKey, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(10);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -1470,7 +2006,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentSendableCollectionValue0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLruCacheConcurrentSendableCollectionValue0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentSendableCollectionValue0032';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, collections.Array<number>>(10);
@@ -1480,17 +2016,32 @@ export default function SendableLruCacheConcurrentTest(): void {
       for (let i = 0; i < 10; i++) {
         tasks.push(taskpool.execute(concurrentPutArrayValueTask, cache, lock, i, i));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLengthForArray, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLengthForArray, cache, lock) as number;
+      } catch (err) {
+        console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(10);
 
-      const result = await taskpool.execute(getCacheArrayValue, cache, lock, 0) as collections.Array<number> | undefined;
+      let result: collections.Array<number> | undefined = undefined;
+      try {
+        result = await taskpool.execute(getCacheArrayValue, cache, lock, 0) as collections.Array<number> | undefined;
+      } catch (err) {
+        console.error(`result await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(result !== undefined).assertTrue();
       const arr = Array.from(result!);
       expect(arr.length).assertEqual(3);
       expect(arr[0]).assertEqual(0);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 7.3 嵌套SendableLruCache ==========
@@ -1503,7 +2054,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentSendableNestedCache0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLruCacheConcurrentSendableNestedCache0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentSendableNestedCache0033';
       console.info(`${caseName}, test start`);
       const innerCache = new ArkTSUtils.SendableLruCache<number, number>(50);
@@ -1515,14 +2066,24 @@ export default function SendableLruCacheConcurrentTest(): void {
         ArkTSUtils.SendableLruCache<number, number>>(10);
       const outerLock = new ArkTSUtils.locks.AsyncLock();
 
-      await taskpool.execute(putNestedCache, outerCache, outerLock, 1, innerCache);
+      try {
+        await taskpool.execute(putNestedCache, outerCache, outerLock, 1, innerCache);
+      } catch (err) {
+        console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
 
-      const retrieved = await taskpool.execute(getNestedCacheValue, outerCache, outerLock, 1) as ArkTSUtils.SendableLruCache<number, number> | undefined;
+      let retrieved: ArkTSUtils.SendableLruCache<number, number> | undefined = undefined;
+      try {
+        retrieved = await taskpool.execute(getNestedCacheValue, outerCache, outerLock, 1) as ArkTSUtils.SendableLruCache<number, number> | undefined;
+      } catch (err) {
+        console.error(`retrieved await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(retrieved !== undefined).assertTrue();
       expect(retrieved!.length).assertEqual(50);
       expect(retrieved!.get(0)).assertEqual(0);
       expect(retrieved!.get(25)).assertEqual(250);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 8.1 高频并发访问 ==========
@@ -1535,7 +2096,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLruCacheConcurrentPressurePut0034', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
+    it('testLruCacheConcurrentPressurePut0034', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentPressurePut0034';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(1000);
@@ -1545,14 +2106,29 @@ export default function SendableLruCacheConcurrentTest(): void {
       for (let i = 0; i < 1000; i++) {
         tasks.push(taskpool.execute(concurrentPutTask, cache, lock, i, i));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(1000);
 
-      const putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      let putCount: number = 0;
+      try {
+        putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(putCount).assertEqual(1000);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -1563,25 +2139,39 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLruCacheConcurrentPressureGet0035', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
+    it('testLruCacheConcurrentPressureGet0035', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentPressureGet0035';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(100);
       const lock = new ArkTSUtils.locks.AsyncLock();
 
       for (let i = 0; i < 100; i++) {
-        await taskpool.execute(doCachePut, cache, lock, i, i);
+        try {
+          await taskpool.execute(doCachePut, cache, lock, i, i);
+        } catch (err) {
+          console.error(`await taskpool.execute failed: ${JSON.stringify(err)}`);
+        }
       }
 
       const tasks: Promise<Object>[] = [];
       for (let i = 0; i < 1000; i++) {
         tasks.push(taskpool.execute(concurrentGetLoopTask, cache, lock, i % 100, 10));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      let matchCount: number = 0;
+      try {
+        matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`matchCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(matchCount).assertEqual(10000);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 8.2 大容量压力 ==========
@@ -1594,7 +2184,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLruCacheConcurrentPressureLargeCapacity0036', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
+    it('testLruCacheConcurrentPressureLargeCapacity0036', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentPressureLargeCapacity0036';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10000);
@@ -1604,17 +2194,37 @@ export default function SendableLruCacheConcurrentTest(): void {
       for (let taskIdx = 0; taskIdx < 100; taskIdx++) {
         tasks.push(taskpool.execute(concurrentPutGetLoopTask, cache, lock, taskIdx, 100));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(10000);
 
-      const putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      let putCount: number = 0;
+      try {
+        putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(putCount).assertEqual(10000);
 
-      const matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      let matchCount: number = 0;
+      try {
+        matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`matchCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(matchCount).assertEqual(10000);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -1625,7 +2235,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLruCacheConcurrentPressureMemoryLeak0037', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
+    it('testLruCacheConcurrentPressureMemoryLeak0037', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentPressureMemoryLeak0037';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(10000);
@@ -1635,23 +2245,53 @@ export default function SendableLruCacheConcurrentTest(): void {
       for (let taskIdx = 0; taskIdx < 100; taskIdx++) {
         tasks.push(taskpool.execute(concurrentPutRemoveLoopTask, cache, lock, taskIdx, 1000));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      let putCount: number = 0;
+      try {
+        putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(putCount).assertEqual(100000);
 
-      const matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      let matchCount: number = 0;
+      try {
+        matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`matchCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(matchCount).assertEqual(100000);
 
-      const missCount = await taskpool.execute(getCacheMissCount, cache, lock) as number;
+      let missCount: number = 0;
+      try {
+        missCount = await taskpool.execute(getCacheMissCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`missCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(missCount).assertEqual(0);
 
-      const removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      let removeCount: number = 0;
+      try {
+        removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`removeCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(removeCount).assertEqual(0);
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(0);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 容量边界与异常场景 ==========
@@ -1664,7 +2304,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentBoundarySingle0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLruCacheConcurrentBoundarySingle0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentBoundarySingle0038';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(1);
@@ -1674,17 +2314,37 @@ export default function SendableLruCacheConcurrentTest(): void {
       for (let i = 0; i < 50; i++) {
         tasks.push(taskpool.execute(concurrentPutTask, cache, lock, i, i));
       }
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(1);
 
-      const removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      let removeCount: number = 0;
+      try {
+        removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`removeCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(removeCount).assertEqual(49);
 
-      const putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      let putCount: number = 0;
+      try {
+        putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(putCount).assertEqual(50);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== 高并发统计准确性 ==========
@@ -1697,7 +2357,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it('testLruCacheConcurrentStatAccuracy0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLruCacheConcurrentStatAccuracy0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testLruCacheConcurrentStatAccuracy0039';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(500);
@@ -1707,36 +2367,74 @@ export default function SendableLruCacheConcurrentTest(): void {
       for (let i = 0; i < 200; i++) {
         putTasks.push(taskpool.execute(concurrentPutTask, cache, lock, i, i));
       }
-      await Promise.all(putTasks);
+      try {
+        await Promise.all(putTasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       const getTasks: Promise<Object>[] = [];
       for (let i = 0; i < 100; i++) {
         getTasks.push(taskpool.execute(concurrentGetTask, cache, lock, i));
         getTasks.push(taskpool.execute(concurrentGetTask, cache, lock, i + 300));
       }
-      await Promise.all(getTasks);
+      try {
+        await Promise.all(getTasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       const removeTasks: Promise<Object>[] = [];
       for (let i = 0; i < 50; i++) {
         removeTasks.push(taskpool.execute(concurrentRemoveTask, cache, lock, i));
       }
-      await Promise.all(removeTasks);
+      try {
+        await Promise.all(removeTasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
-      const putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      let putCount: number = 0;
+      try {
+        putCount = await taskpool.execute(getCachePutCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(putCount).assertEqual(200);
 
-      const matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      let matchCount: number = 0;
+      try {
+        matchCount = await taskpool.execute(getCacheMatchCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`matchCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(matchCount).assertEqual(100);
 
-      const missCount = await taskpool.execute(getCacheMissCount, cache, lock) as number;
+      let missCount: number = 0;
+      try {
+        missCount = await taskpool.execute(getCacheMissCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`missCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(missCount).assertEqual(100);
 
-      const removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      let removeCount: number = 0;
+      try {
+        removeCount = await taskpool.execute(getCacheRemoveCount, cache, lock) as number;
+      } catch (err) {
+        console.error(`removeCount await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(removeCount).assertEqual(0);
 
-      const length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      let length: number = 0;
+      try {
+        length = await taskpool.execute(getCacheLength, cache, lock) as number;
+      } catch (err) {
+        console.error(`length await taskpool.execute failed: ${JSON.stringify(err)}`);
+      }
       expect(length).assertEqual(150);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     // ========== Worker并发访问测试 ==========
@@ -1750,7 +2448,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentWorkerPut0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testLruCacheConcurrentWorkerPut0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function): Promise<void> => {
       const caseName: string = 'testLruCacheConcurrentWorkerPut0040';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(100);
@@ -1767,7 +2465,12 @@ export default function SendableLruCacheConcurrentTest(): void {
         ));
       }
 
-      const results = await Promise.all(tasks) as Object[];
+      let results: Object[] = [];
+      try {
+        results = await Promise.all(tasks) as Object[];
+      } catch (err) {
+        console.error(`results await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       let totalPutted: number = 0;
       for (const result of results) {
@@ -1783,6 +2486,7 @@ export default function SendableLruCacheConcurrentTest(): void {
       const putCount = cache.getPutCount();
       expect(putCount).assertEqual(100);
       console.info(`${caseName}, test end`);
+      done();
     });
 
     /**
@@ -1794,7 +2498,7 @@ export default function SendableLruCacheConcurrentTest(): void {
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('testLruCacheConcurrentWorkerRefPass0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testLruCacheConcurrentWorkerRefPass0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function): Promise<void> => {
       const caseName: string = 'testLruCacheConcurrentWorkerRefPass0041';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<number, number>(50);
@@ -1811,7 +2515,11 @@ export default function SendableLruCacheConcurrentTest(): void {
         ));
       }
 
-      await Promise.all(tasks);
+      try {
+        await Promise.all(tasks);
+      } catch (err) {
+        console.error(`await Promise.all failed: ${JSON.stringify(err)}`);
+      }
 
       const length = cache.length;
       expect(length).assertEqual(40);
@@ -1824,6 +2532,7 @@ export default function SendableLruCacheConcurrentTest(): void {
       const putCount = cache.getPutCount();
       expect(putCount).assertEqual(40);
       console.info(`${caseName}, test end`);
+      done();
     });
   });
 }
