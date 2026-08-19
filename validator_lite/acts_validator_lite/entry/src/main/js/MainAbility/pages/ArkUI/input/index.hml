@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="content-title">
+        <text style="width:150px;height:50px;text-align: center;font-size:16px;">input</text>
+        <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
+    </div>
+
+    <div class="content-checkbox">
+        <text class="content-text">多选框</text>
+        <input type = "checkbox" class = "checkbox" type="checkbox"/>
+    </div>
+    <div class="content-checkbox">
+        <text class="content-text">单选框</text>
+        <input type = "radio" class = "radio" type="radio"/>
+    </div>
+    <div class="content-checkbox">
+        <text class="content-text">图片按钮</text>
+        <input type = "button" class = "backImgBtn" value="点击" onclick="imgBtnClick"/>
+    </div>
+
+    <text class="click-feedback">{{clickMsg}}</text>
+
+    <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>
