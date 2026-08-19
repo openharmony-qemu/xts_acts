@@ -20,6 +20,7 @@ group("concurrent_sendable") {
       "sendable_all_test:ActsSendableAllTest",
       "sendableclasstest:ActsSendableClassTest",
       "sendable_containers:ActsSendableContainersTest",
+      "sendable_decorator:ActsSendableDecoratorTest",
       "sendable_collections:ActsSendableCollectionsTest",
       "collections_array:ActsCollectionsArrayTest",
       "collections_map:ActsCollectionsMapTest",
