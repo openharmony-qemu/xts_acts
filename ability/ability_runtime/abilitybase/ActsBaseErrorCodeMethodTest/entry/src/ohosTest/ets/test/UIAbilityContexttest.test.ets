@@ -236,7 +236,7 @@ export default function UIAbilityContextTest() {
         bundleName: 'com.acts.actsbaseerrrocodemethodtest',
         abilityName: 'EntryAbility',
         parameters:{
-          [wantConstant.Params.APP_INSTANCE_KEY]:"app_instance_0"
+          [wantConstant.Params.APP_INSTANCE_KEY]:'app_instance_0'
         }
       };
       if(mpEnable == 'true'){
@@ -491,7 +491,7 @@ export default function UIAbilityContextTest() {
         bundleName: 'com.acts.actsbaseerrrocodemethodtest',
         abilityName: 'EntryAbility',
         parameters:{
-          [wantConstant.Params.APP_INSTANCE_KEY]:"app_instance_0"
+          [wantConstant.Params.APP_INSTANCE_KEY]:'app_instance_0'
         }
       };
       let options: StartOptions = {
@@ -783,7 +783,7 @@ export default function UIAbilityContextTest() {
         bundleName: 'com.acts.actsbaseerrrocodemethodtest',
         abilityName: 'EntryAbility',
         parameters:{
-          [wantConstant.Params.APP_INSTANCE_KEY]:"app_instance_0"
+          [wantConstant.Params.APP_INSTANCE_KEY]:'app_instance_0'
         }
       };
       let options: StartOptions = {
@@ -948,7 +948,7 @@ export default function UIAbilityContextTest() {
         bundleName: 'com.acts.actsbaseerrrocodemethodtest',
         abilityName: 'EntryAbility',
         parameters:{
-          [wantConstant.Params.APP_INSTANCE_KEY]:"app_instance_0"
+          [wantConstant.Params.APP_INSTANCE_KEY]:'app_instance_0'
         }
       };
       if(mpEnable == 'true'){

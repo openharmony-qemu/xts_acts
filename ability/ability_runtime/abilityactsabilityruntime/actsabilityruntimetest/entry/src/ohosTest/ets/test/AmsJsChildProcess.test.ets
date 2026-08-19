@@ -27,11 +27,11 @@ let mpEnable: string;
 export default function AbilityRuntimeAmsJSChildProcess() {
   describe('AbilityRuntimeAmsJSChildProcess', () => {
     beforeAll(() => {
-      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       try {
         mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model');
       } catch (err) {
-        hilog.info(0x0000, "[%{public}s] Get system parameter error: ${public}s", JSON.stringify(err));
+        hilog.info(0x0000, '[%{public}s] Get system parameter error: ${public}s', JSON.stringify(err));
         mpEnable = 'fail';
       }
     })
@@ -51,12 +51,12 @@ export default function AbilityRuntimeAmsJSChildProcess() {
      */
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0100', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0100';
-      let path = context.filesDir + "/test.txt";
+      let path = context.filesDir + '/test.txt';
       let file = fileIo.openSync(path, fileIo.OpenMode.READ_ONLY | fileIo.OpenMode.CREATE);
       let args: ChildProcessArgs = {
-        entryParams: "testParam",
+        entryParams: 'testParam',
         fds: {
-          "key1": file.fd
+          'key1': file.fd
         }
       };
       let options: ChildProcessOptions = {
@@ -90,12 +90,12 @@ export default function AbilityRuntimeAmsJSChildProcess() {
      */
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0200', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0200';
-      let path = context.filesDir + "/test.txt";
+      let path = context.filesDir + '/test.txt';
       let file = fileIo.openSync(path, fileIo.OpenMode.READ_ONLY | fileIo.OpenMode.CREATE);
       let args: ChildProcessArgs = {
-        entryParams: "testParam",
+        entryParams: 'testParam',
         fds: {
-          "key1": file.fd
+          'key1': file.fd
         }
       };
       let options: ChildProcessOptions = {
@@ -129,12 +129,12 @@ export default function AbilityRuntimeAmsJSChildProcess() {
      */
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0300', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0300';
-      let path = context.filesDir + "/test.txt";
+      let path = context.filesDir + '/test.txt';
       let file = fileIo.openSync(path, fileIo.OpenMode.READ_ONLY | fileIo.OpenMode.CREATE);
       let args: ChildProcessArgs = {
-        entryParams: "testParam",
+        entryParams: 'testParam',
         fds: {
-          "key1": file.fd
+          'key1': file.fd
         }
       };
       let options: ChildProcessOptions = {
@@ -168,12 +168,12 @@ export default function AbilityRuntimeAmsJSChildProcess() {
      */
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0400', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0400';
-      let path = context.filesDir + "/test.txt";
+      let path = context.filesDir + '/test.txt';
       let file = fileIo.openSync(path, fileIo.OpenMode.READ_ONLY | fileIo.OpenMode.CREATE);
       let args: ChildProcessArgs = {
-        entryParams: "testParam",
+        entryParams: 'testParam',
         fds: {
-          "key1": file.fd
+          'key1': file.fd
         }
       };
       let options: ChildProcessOptions = {
@@ -210,7 +210,7 @@ export default function AbilityRuntimeAmsJSChildProcess() {
      */
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0500', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0500';
-      let path = context.filesDir + "/test.txt";
+      let path = context.filesDir + '/test.txt';
       let file = fileIo.openSync(path, fileIo.OpenMode.READ_ONLY | fileIo.OpenMode.CREATE);
       let args: ChildProcessArgs = {};
       let options: ChildProcessOptions = {

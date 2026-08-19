@@ -26,13 +26,13 @@ struct Index222 {
 
   build() {
     Column() {
-      Text("test").margin(20)
+      Text('test').margin(20)
       EmbeddedComponent({
-        bundleName: "com.acts.ability.errcode",
-        abilityName: "TestEmbeddedUIExtAbility",
+        bundleName: 'com.acts.ability.errcode',
+        abilityName: 'TestEmbeddedUIExtAbility',
         parameters:{
-            "case":testAbilityWant?.parameters?.case as string,
-            "caseName":testAbilityWant?.parameters?.caseName as string
+            'case':testAbilityWant?.parameters?.case as string,
+            'caseName':testAbilityWant?.parameters?.caseName as string
         }
       }, EmbeddedType.EMBEDDED_UI_EXTENSION)
         .width('50%')
@@ -40,10 +40,10 @@ struct Index222 {
         .borderWidth(2)
         .borderColor(Color.Blue)
         .onTerminated((info) => {
-          console.info("assitability onTerminated")
+          console.info('assitability onTerminated')
         })
         .onError((error) => {
-          console.info("assitability error")
+          console.info('assitability error')
         })
     }
 

@@ -51,7 +51,7 @@ export default function errorCodeTest2() {
         await driver.triggerKey(2070);
         await Utils.sleep(500)
       }
-      console.info("errorCodeTest after");
+      console.info('errorCodeTest after');
     })
 
     /**
@@ -76,7 +76,7 @@ export default function errorCodeTest2() {
           displayId: 0
         };
         try {
-          await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility(want, options)
+          await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility(want, options)
             .then(() => {
               console.info(TAG + 'startAbility succeed');
             }).catch((err: BusinessError) => {
@@ -92,7 +92,7 @@ export default function errorCodeTest2() {
         await Utils.sleep(1000);
         // two
         try {
-          await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility(want, options)
+          await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility(want, options)
             .then(() => {
               console.info(TAG + 'startAbility succeed');
             }).catch((err: BusinessError) => {
@@ -130,14 +130,14 @@ export default function errorCodeTest2() {
           bundleName: 'com.acts.ability.errcode2',
           abilityName: 'NewAbility',
           parameters: {
-            [wantConstant.Params.APP_INSTANCE_KEY]: "app_instance_100"}
+            [wantConstant.Params.APP_INSTANCE_KEY]: 'app_instance_100'}
         };
         let options: StartOptions = {
           displayId: 0
         };
         // start
         try {
-          await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility(want, options)
+          await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility(want, options)
             .then(() => {
               console.info(TAG + 'startAbility succeed');
               expect().assertFail();
@@ -176,7 +176,7 @@ export default function errorCodeTest2() {
           bundleName: 'com.acts.ability.errcode2',
           abilityName: 'NewAbility',
           parameters: {
-            [wantConstant.Params.APP_INSTANCE_KEY]: "app_instance_100",
+            [wantConstant.Params.APP_INSTANCE_KEY]: 'app_instance_100',
             [wantConstant.Params.CREATE_APP_INSTANCE_KEY]: true,
           }
         };
@@ -185,7 +185,7 @@ export default function errorCodeTest2() {
         };
         // start
         try {
-          await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility(want, options)
+          await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility(want, options)
             .then(() => {
               console.info(TAG + 'SUB_Ability_AbilityBase_ErrorCode_0003 succeed');
               expect().assertFail();
@@ -235,9 +235,9 @@ export default function errorCodeTest2() {
             try {
               if (commonEventData.parameters?.result == 16000076) {
                 expect(true).assertTrue()
-                AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
+                AppStorage.get<common.UIAbilityContext>('errocode1')!.terminateSelf();
               } else {
-                AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
+                AppStorage.get<common.UIAbilityContext>('errocode1')!.terminateSelf();
                 expect().assertFail()
               }
             } catch {
@@ -247,17 +247,17 @@ export default function errorCodeTest2() {
             });
           });
         });
-        await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility({
-          bundleName:"com.acts.ability.errcode2",
-          abilityName:"AssitAbility",
+        await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
+          bundleName:'com.acts.ability.errcode2',
+          abilityName:'AssitAbility',
           parameters: {
-            "case":"startErrorCodeCallBack16000076",
-            "caseName":tag
+            'case':'startErrorCodeCallBack16000076',
+            'caseName':tag
           }
         }).then(()=>{
-          console.info(TAG + "start ability success");
+          console.info(TAG + 'start ability success');
         }).catch((err: BusinessError)=>{
-          console.info(TAG + "start ability Error");
+          console.info(TAG + 'start ability Error');
           expect().assertFail();
           done();
         })
@@ -292,10 +292,10 @@ export default function errorCodeTest2() {
             try {
               if (commonEventData.parameters?.result == 16000077) {
                 expect(true).assertTrue()
-                AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
+                AppStorage.get<common.UIAbilityContext>('errocode1')!.terminateSelf();
 
               } else {
-                AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
+                AppStorage.get<common.UIAbilityContext>('errocode1')!.terminateSelf();
                 expect().assertFail()
               }
 
@@ -306,17 +306,17 @@ export default function errorCodeTest2() {
             });
           });
         });
-        await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility({
-          bundleName:"com.acts.ability.errcode2",
-          abilityName:"AssitAbility",
+        await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
+          bundleName:'com.acts.ability.errcode2',
+          abilityName:'AssitAbility',
           parameters: {
-            "case":"startErrorCodeCallBack16000077",
-            "caseName":tag
+            'case':'startErrorCodeCallBack16000077',
+            'caseName':tag
           }
         }).then(()=>{
-          console.info(TAG + "start ability success");
+          console.info(TAG + 'start ability success');
         }).catch((err: BusinessError)=>{
-          console.info(TAG + "start ability Error");
+          console.info(TAG + 'start ability Error');
           expect().assertFail();
           done();
         })
@@ -351,9 +351,9 @@ export default function errorCodeTest2() {
             try {
               if (commonEventData.parameters?.result == 16000079) {
                 expect(true).assertTrue()
-                AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
+                AppStorage.get<common.UIAbilityContext>('errocode1')!.terminateSelf();
               } else {
-                AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
+                AppStorage.get<common.UIAbilityContext>('errocode1')!.terminateSelf();
                 expect().assertFail()
               }
             } catch {
@@ -363,17 +363,17 @@ export default function errorCodeTest2() {
             });
           });
         });
-        await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility({
-          bundleName:"com.acts.ability.errcode2",
-          abilityName:"AssitAbility",
+        await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
+          bundleName:'com.acts.ability.errcode2',
+          abilityName:'AssitAbility',
           parameters: {
-            "case":"startErrorCodeCallBack16000079",
-            "caseName":tag
+            'case':'startErrorCodeCallBack16000079',
+            'caseName':tag
           }
         }).then(()=>{
-          console.info(TAG + "start ability success");
+          console.info(TAG + 'start ability success');
         }).catch((err: BusinessError)=>{
-          console.info(TAG + "start ability Error");
+          console.info(TAG + 'start ability Error');
           expect().assertFail();
           done();
         })
@@ -408,9 +408,9 @@ export default function errorCodeTest2() {
             try {
               if (commonEventData.parameters?.result == 16000077) {
                 expect(true).assertTrue()
-                AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
+                AppStorage.get<common.UIAbilityContext>('errocode1')!.terminateSelf();
               } else {
-                AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
+                AppStorage.get<common.UIAbilityContext>('errocode1')!.terminateSelf();
                 expect().assertFail()
               }
 
@@ -421,17 +421,17 @@ export default function errorCodeTest2() {
             });
           });
         });
-        await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility({
-          bundleName:"com.acts.ability.errcode2",
-          abilityName:"AssitAbility",
+        await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
+          bundleName:'com.acts.ability.errcode2',
+          abilityName:'AssitAbility',
           parameters: {
-            "case":"startErrorCodeCallBackOptions16000077",
-            "caseName":tag
+            'case':'startErrorCodeCallBackOptions16000077',
+            'caseName':tag
           }
         }).then(()=>{
-          console.info(TAG + "start ability success");
+          console.info(TAG + 'start ability success');
         }).catch((err: BusinessError)=>{
-          console.info(TAG + "start ability Error");
+          console.info(TAG + 'start ability Error');
           expect().assertFail();
           done();
         })
@@ -466,9 +466,9 @@ export default function errorCodeTest2() {
             try {
               if (commonEventData.parameters?.result == 16000079) {
                 expect(true).assertTrue()
-                AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
+                AppStorage.get<common.UIAbilityContext>('errocode1')!.terminateSelf();
               } else {
-                AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
+                AppStorage.get<common.UIAbilityContext>('errocode1')!.terminateSelf();
                 expect().assertFail()
               }
             } catch {
@@ -478,17 +478,17 @@ export default function errorCodeTest2() {
             });
           });
         });
-        await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility({
-          bundleName:"com.acts.ability.errcode2",
-          abilityName:"AssitAbility",
+        await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
+          bundleName:'com.acts.ability.errcode2',
+          abilityName:'AssitAbility',
           parameters: {
-            "case":"startErrorCodeCallBackOptions16000079",
-            "caseName":tag
+            'case':'startErrorCodeCallBackOptions16000079',
+            'caseName':tag
           }
         }).then(()=>{
-          console.info(TAG + "start ability success");
+          console.info(TAG + 'start ability success');
         }).catch((err: BusinessError)=>{
-          console.info(TAG + "start ability Error");
+          console.info(TAG + 'start ability Error');
           expect().assertFail();
           done();
         })
@@ -523,9 +523,9 @@ export default function errorCodeTest2() {
             try {
               if (commonEventData.parameters?.result == 16000076) {
                 expect(true).assertTrue()
-                AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
+                AppStorage.get<common.UIAbilityContext>('errocode1')!.terminateSelf();
               } else {
-                AppStorage.get<common.UIAbilityContext>("errocode1")!.terminateSelf();
+                AppStorage.get<common.UIAbilityContext>('errocode1')!.terminateSelf();
                 expect().assertFail()
               }
             } catch {
@@ -535,17 +535,17 @@ export default function errorCodeTest2() {
             });
           });
         });
-        await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility({
-          bundleName:"com.acts.ability.errcode2",
-          abilityName:"AssitAbility",
+        await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
+          bundleName:'com.acts.ability.errcode2',
+          abilityName:'AssitAbility',
           parameters: {
-            "case":"startErrorCodeCallBackOptions16000076",
-            "caseName":tag
+            'case':'startErrorCodeCallBackOptions16000076',
+            'caseName':tag
           }
         }).then(()=>{
-          console.info(TAG + "start ability success");
+          console.info(TAG + 'start ability success');
         }).catch((err: BusinessError)=>{
-          console.info(TAG + "start ability Error");
+          console.info(TAG + 'start ability Error');
           expect().assertFail();
           done();
         })

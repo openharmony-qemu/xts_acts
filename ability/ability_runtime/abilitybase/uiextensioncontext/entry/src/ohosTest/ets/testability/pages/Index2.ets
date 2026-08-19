@@ -34,10 +34,10 @@ struct Index {
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
         EmbeddedComponent({
-          bundleName: "com.acts.uiextensioncontexttest",
-          abilityName: "EntryEmbeddedUIExtAbility",
+          bundleName: 'com.acts.uiextensioncontexttest',
+          abilityName: 'EntryEmbeddedUIExtAbility',
           parameters:{
-            "case":testAbilityWant?.parameters?.case as string
+            'case':testAbilityWant?.parameters?.case as string
           }
         }, EmbeddedType.EMBEDDED_UI_EXTENSION)
           .width('100%')
@@ -45,7 +45,7 @@ struct Index {
           .onTerminated((info)=>{
             this.message = 'Termination: code = ' + info.code + ', want = ' + JSON.stringify(info.want);
             this.context.terminateSelf()
-          }).onError((error)=>{console.log("EmbeddedComponent uiextension " + JSON.stringify(error))
+          }).onError((error)=>{console.log('EmbeddedComponent uiextension ' + JSON.stringify(error))
             this.message = 'Error: code = ' + error.code;
           })
       }.width('100%')

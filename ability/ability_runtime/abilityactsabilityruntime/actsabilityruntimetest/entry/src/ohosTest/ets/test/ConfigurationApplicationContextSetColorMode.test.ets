@@ -23,7 +23,7 @@ let context:common.UIAbilityContext;
 export default function AbilityRuntimeConfigrationApplicationContextSetColorMode() {
   describe('AbilityRuntimeConfigrationApplicationContextSetColorMode', () => {
     beforeAll(() => {
-      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
     })
     beforeEach(async () => {})
     afterEach(() => {})

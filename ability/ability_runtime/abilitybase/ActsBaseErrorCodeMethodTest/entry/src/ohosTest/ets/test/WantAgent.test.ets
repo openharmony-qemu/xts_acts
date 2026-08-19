@@ -26,20 +26,20 @@ export default function openLinkTest() {
     let WantAgentInfo:wantAgent.WantAgentInfo = {
       wants: [
         {
-          bundleName: "com.acts.actswantagentmethodtest",
-          abilityName: "EntryAbility",
-          action: "action1",
-          entities: ["entity1"],
-          type: "MIMETYPE",
-          uri: "key={true,true,false}",
+          bundleName: 'com.acts.actswantagentmethodtest',
+          abilityName: 'EntryAbility',
+          action: 'action1',
+          entities: ['entity1'],
+          type: 'MIMETYPE',
+          uri: 'key={true,true,false}',
           parameters:
           {
             myKey0: 2222,
             myKey1: [1, 2, 3],
-            myKey2: "[1, 2, 3]",
-            myKey3: "notification",
+            myKey2: '[1, 2, 3]',
+            myKey3: 'notification',
             myKey4: [false, true, false],
-            myKey5: ["ANS", "WANT", "AGENT"],
+            myKey5: ['ANS', 'WANT', 'AGENT'],
             myKey6: true
           }
         }
@@ -54,20 +54,20 @@ export default function openLinkTest() {
     let WantAgentInfoSame:wantAgent.WantAgentInfo = {
       wants: [
         {
-          bundleName: "com.acts.actswantagentmethodtest",
-          abilityName: "EntryAbility",
-          action: "action1",
-          entities: ["entity1"],
-          type: "MIMETYPE",
-          uri: "key={true,true,false}",
+          bundleName: 'com.acts.actswantagentmethodtest',
+          abilityName: 'EntryAbility',
+          action: 'action1',
+          entities: ['entity1'],
+          type: 'MIMETYPE',
+          uri: 'key={true,true,false}',
           parameters:
           {
             myKey0: 2222,
             myKey1: [1, 2, 3],
-            myKey2: "[1, 2, 3]",
-            myKey3: "notification",
+            myKey2: '[1, 2, 3]',
+            myKey3: 'notification',
             myKey4: [false, true, false],
-            myKey5: ["ANS", "WANT", "AGENT"],
+            myKey5: ['ANS', 'WANT', 'AGENT'],
             myKey6: true
           }
         }
@@ -234,13 +234,13 @@ export default function openLinkTest() {
       let triggerInfo:wantAgent.TriggerInfo = {
         code: 0,
         want: {
-          deviceId: "deviceId",
-          bundleName: "com.acts.actswantagentmethodtest",
-          abilityName: "EntryAbility",
-          action: "action1",
-          entities: ["entity1"],
-          type: "MIMETYPE",
-          uri: "key={true,true,false}",
+          deviceId: 'deviceId',
+          bundleName: 'com.acts.actswantagentmethodtest',
+          abilityName: 'EntryAbility',
+          action: 'action1',
+          entities: ['entity1'],
+          type: 'MIMETYPE',
+          uri: 'key={true,true,false}',
         },
         permission: '',
         extraInfos: {
@@ -628,13 +628,13 @@ export default function openLinkTest() {
       let triggerInfo:wantAgent.TriggerInfo = {
         code: 0,
         want: {
-          deviceId: "deviceId",
-          bundleName: "com.acts.actswantagentmethodtest",
-          abilityName: "EntryAbility",
-          action: "action1",
-          entities: ["entity1"],
-          type: "MIMETYPE",
-          uri: "key={true,true,false}",
+          deviceId: 'deviceId',
+          bundleName: 'com.acts.actswantagentmethodtest',
+          abilityName: 'EntryAbility',
+          action: 'action1',
+          entities: ['entity1'],
+          type: 'MIMETYPE',
+          uri: 'key={true,true,false}',
         },
         permission: '',
         extraInfos: {
@@ -878,13 +878,13 @@ export default function openLinkTest() {
     let triggerInfo: wantAgent.TriggerInfo = {
       code: 0,
       want: {
-        deviceId: "deviceId",
-        bundleName: "com.acts.actswantagentmethodtest",
-        abilityName: "EntryAbility",
-        action: "action1",
-        entities: ["entity1"],
-        type: "MIMETYPE",
-        uri: "key={true,true,false}",
+        deviceId: 'deviceId',
+        bundleName: 'com.acts.actswantagentmethodtest',
+        abilityName: 'EntryAbility',
+        action: 'action1',
+        entities: ['entity1'],
+        type: 'MIMETYPE',
+        uri: 'key={true,true,false}',
       },
       permission: '',
       extraInfos: {
@@ -913,13 +913,13 @@ export default function openLinkTest() {
     let triggerInfo: wantAgent.TriggerInfo = {
       code: 0,
       want: {
-        deviceId: "deviceId",
-        bundleName: "com.acts.actswantagentmethodtest",
-        abilityName: "EntryAbility",
-        action: "action1",
-        entities: ["entity1"],
-        type: "MIMETYPE",
-        uri: "key={true,true,false}",
+        deviceId: 'deviceId',
+        bundleName: 'com.acts.actswantagentmethodtest',
+        abilityName: 'EntryAbility',
+        action: 'action1',
+        entities: ['entity1'],
+        type: 'MIMETYPE',
+        uri: 'key={true,true,false}',
       },
       permission: '',
       extraInfos: {

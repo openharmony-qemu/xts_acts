@@ -32,14 +32,14 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
     let storage: LocalStorage = new LocalStorage(param);
 
 
-    if (want?.parameters?.case == "startErrorCodeCallBack16000076")  {
+    if (want?.parameters?.case == 'startErrorCodeCallBack16000076')  {
       try{
 
         let want: Want = {
           bundleName: 'com.acts.ability.errcode2',
           abilityName: 'NewAbility',
           parameters: {
-            [wantConstant.Params.APP_INSTANCE_KEY]: "app_instance_100"}
+            [wantConstant.Params.APP_INSTANCE_KEY]: 'app_instance_100'}
         };
 
         // test errcode
@@ -54,7 +54,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                 }
               }
               commonEventManager.publish(tag, commonEventData, (result) => {
-                console.info(TAG + "common event success " + result);
+                console.info(TAG + 'common event success ' + result);
               });
 
             } else {
@@ -71,12 +71,12 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
         }
 
       } catch (error) {
-        console.info(TAG + "error..." + error)
+        console.info(TAG + 'error...' + error)
       }
 
     } else
 
-    if (want?.parameters?.case == "startErrorCodeCallBack16000077") {
+    if (want?.parameters?.case == 'startErrorCodeCallBack16000077') {
       try{
         let want: Want = {
           bundleName: 'com.acts.ability.errcode2',
@@ -118,7 +118,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                 }
               }
               commonEventManager.publish(tag, commonEventData, (result) => {
-                console.info(TAG + "common event success " + result);
+                console.info(TAG + 'common event success ' + result);
               });
 
             } else {
@@ -135,17 +135,17 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
         }
 
       } catch (error) {
-        console.info(TAG + "error..." + error)
+        console.info(TAG + 'error...' + error)
       }
 
     } else
-    if (want?.parameters?.case == "startErrorCodeCallBack16000079") {
+    if (want?.parameters?.case == 'startErrorCodeCallBack16000079') {
       try{
         let want: Want = {
           bundleName: 'com.acts.ability.errcode2',
           abilityName: 'NewAbility',
           parameters: {
-            [wantConstant.Params.APP_INSTANCE_KEY]: "app_instance_100",
+            [wantConstant.Params.APP_INSTANCE_KEY]: 'app_instance_100',
             [wantConstant.Params.CREATE_APP_INSTANCE_KEY]: true,
 
           }
@@ -162,7 +162,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                 }
               }
               commonEventManager.publish(tag, commonEventData, (result) => {
-                console.info(TAG + "common event success " + result);
+                console.info(TAG + 'common event success ' + result);
               });
 
             } else {
@@ -180,19 +180,19 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
 
 
       } catch (error) {
-        console.info(TAG + "error..." + error)
+        console.info(TAG + 'error...' + error)
       }
 
     } else
    
-    if (want?.parameters?.case == "startErrorCodeCallBackOptions16000076")  {
+    if (want?.parameters?.case == 'startErrorCodeCallBackOptions16000076')  {
       try{
 
         let want: Want = {
           bundleName: 'com.acts.ability.errcode2',
           abilityName: 'NewAbility',
           parameters: {
-            [wantConstant.Params.APP_INSTANCE_KEY]: "app_instance_100"}
+            [wantConstant.Params.APP_INSTANCE_KEY]: 'app_instance_100'}
         };
 
         let options: StartOptions= {
@@ -210,7 +210,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                 }
               }
               commonEventManager.publish(tag, commonEventData, (result) => {
-                console.info(TAG + "common event success " + result);
+                console.info(TAG + 'common event success ' + result);
               });
 
             } else {
@@ -227,12 +227,12 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
         }
 
       } catch (error) {
-        console.info(TAG + "error..." + error)
+        console.info(TAG + 'error...' + error)
       }
 
     } else
 
-    if (want?.parameters?.case == "startErrorCodeCallBackOptions16000077") {
+    if (want?.parameters?.case == 'startErrorCodeCallBackOptions16000077') {
       try{
         let want: Want = {
           bundleName: 'com.acts.ability.errcode2',
@@ -275,7 +275,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                 }
               }
               commonEventManager.publish(tag, commonEventData, (result) => {
-                console.info(TAG + "common event success " + result);
+                console.info(TAG + 'common event success ' + result);
               });
 
             } else {
@@ -291,17 +291,17 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
         }
 
       } catch (error) {
-        console.info(TAG + "error..." + error)
+        console.info(TAG + 'error...' + error)
       }
 
     } else
-    if (want?.parameters?.case == "startErrorCodeCallBackOptions16000079") {
+    if (want?.parameters?.case == 'startErrorCodeCallBackOptions16000079') {
       try{
         let want: Want = {
           bundleName: 'com.acts.ability.errcode2',
           abilityName: 'NewAbility',
           parameters: {
-            [wantConstant.Params.APP_INSTANCE_KEY]: "app_instance_100",
+            [wantConstant.Params.APP_INSTANCE_KEY]: 'app_instance_100',
             [wantConstant.Params.CREATE_APP_INSTANCE_KEY]: true,
 
           }
@@ -321,7 +321,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                 }
               }
               commonEventManager.publish(tag, commonEventData, (result) => {
-                console.info(TAG + "common event success " + result);
+                console.info(TAG + 'common event success ' + result);
               });
 
             } else {
@@ -337,7 +337,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
         }
 
       } catch (error) {
-        console.info(TAG + "error..." + error)
+        console.info(TAG + 'error...' + error)
       }
 
     } 

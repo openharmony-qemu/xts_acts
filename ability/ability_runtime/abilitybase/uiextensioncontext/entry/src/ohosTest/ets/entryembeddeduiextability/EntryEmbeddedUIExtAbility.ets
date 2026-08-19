@@ -69,7 +69,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
             'result': err?.code,
           }
         }
-        commonEventManager.publish("SUB_Ability_AbilityRuntime_UIExtensionContext_0100_event", commonEventData, (result) => {
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_0100_event', commonEventData, (result) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `onConnect, 50==: ${JSON.stringify(result)}`);
           this.context.terminateSelf()
         });
@@ -1108,7 +1108,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
     if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_4200') {
       try {
         // Test openLink with empty string link parameter
-        this.context.openLink("", undefined, (err: BusinessError, result: common.AbilityResult) => {
+        this.context.openLink('', undefined, (err: BusinessError, result: common.AbilityResult) => {
           if (err.code) {
             console.error(`openLink failed, code is ${err.code}, message is ${err.message}`);
             let commonEventData: commonEventManager.CommonEventPublishData = {
@@ -1141,7 +1141,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
     if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_4300') {
       try {
         // Test openLink with null options parameter
-        this.context.openLink("file://example.com", null, (err: BusinessError, result: common.AbilityResult) => {
+        this.context.openLink('file://example.com', null, (err: BusinessError, result: common.AbilityResult) => {
           if (err.code) {
             console.error(`openLink failed, code is ${err.code}, message is ${err.message}`);
             let commonEventData: commonEventManager.CommonEventPublishData = {
@@ -1174,7 +1174,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
     if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_4400') {
       try {
         // Test openLink with undefined options parameter
-        this.context.openLink("file://example.com", undefined, (err: BusinessError, result: common.AbilityResult) => {
+        this.context.openLink('file://example.com', undefined, (err: BusinessError, result: common.AbilityResult) => {
           if (err.code) {
             console.error(`openLink failed, code is ${err.code}, message is ${err.message}`);
             let commonEventData: commonEventManager.CommonEventPublishData = {
@@ -1216,7 +1216,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
     if (want?.parameters?.case == 'SUB_Ability_AbilityRuntime_UIExtensionContext_4500') {
       try {
         // Test openAtomicService with empty string appId parameter
-        this.context.openAtomicService("")
+        this.context.openAtomicService('')
         .then(() => {
           console.info('startAbility promise succeed');
         })
@@ -1288,7 +1288,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
         let options: AtomicServiceOptions = {
           displayId: 0,
         };
-        this.context.openAtomicService("valid.app.id", null)
+        this.context.openAtomicService('valid.app.id', null)
         .then(() => {
           console.info('startAbility promise succeed');
         })
@@ -1324,7 +1324,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
         let options: AtomicServiceOptions = {
           displayId: 0,
         };
-        this.context.openAtomicService("valid.app.id", undefined)
+        this.context.openAtomicService('valid.app.id', undefined)
         .then(() => {
           console.info('startAbility promise succeed');
         })
@@ -1367,9 +1367,9 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
           });
         });
         let testWant: Want = {
-          bundleName: "com.acts.uiextensioncontexttest",
-          abilityName: "EntryAbility2",
-          action: "result"
+          bundleName: 'com.acts.uiextensioncontexttest',
+          abilityName: 'EntryAbility2',
+          action: 'result'
         };
         this.context.startAbility(testWant, null, (err: BusinessError) => {
           if (err.code) {
@@ -1405,9 +1405,9 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
           });
         });
         let testWant: Want = {
-          bundleName: "com.acts.uiextensioncontexttest",
-          abilityName: "EntryAbility2",
-          action: "result"
+          bundleName: 'com.acts.uiextensioncontexttest',
+          abilityName: 'EntryAbility2',
+          action: 'result'
         };
         this.context.startAbility(testWant, undefined, (err: BusinessError) => {
           if (err.code) {
@@ -1434,9 +1434,9 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
       try {
         // Test startAbilityForResult with valid want and null options parameter
         let testWant: Want = {
-          bundleName: "com.acts.uiextensioncontexttest",
-          abilityName: "EntryAbility2",
-          action: "result"
+          bundleName: 'com.acts.uiextensioncontexttest',
+          abilityName: 'EntryAbility2',
+          action: 'result'
         };
         this.context.startAbilityForResult(testWant, null, (err: BusinessError, result: common.AbilityResult) => {
           if (err.code) {
@@ -1464,9 +1464,9 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
       try {
         // Test startAbilityForResult with valid want and undefined options parameter
         let testWant: Want = {
-          bundleName: "com.acts.uiextensioncontexttest",
-          abilityName: "EntryAbility2",
-          action: "result"
+          bundleName: 'com.acts.uiextensioncontexttest',
+          abilityName: 'EntryAbility2',
+          action: 'result'
         };
         this.context.startAbilityForResult(testWant, undefined, (err: BusinessError, result: common.AbilityResult) => {
           if (err.code) {

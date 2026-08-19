@@ -25,7 +25,7 @@ let context:common.UIAbilityContext;
 export default function AbilityRuntimeABILITYStartAbilityOpenLink() {
   describe('AbilityRuntimeABILITYStartAbilityOpenLink', () => {
     beforeAll(() => {
-      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
     })
     beforeEach(async () => {
 

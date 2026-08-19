@@ -6,7 +6,7 @@ export default class AssitAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     AppStorage.setOrCreate<Want>('TestAbilityWant', want);
-    AppStorage.setOrCreate<common.UIAbilityContext>("errocode1", this.context);
+    AppStorage.setOrCreate<common.UIAbilityContext>('errocode1', this.context);
     // globalThis.assitContext2 = this.context;
   }
 
