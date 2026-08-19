@@ -38,7 +38,7 @@ const DEFAULT_TOLERANCE: number = 0.01;
  * 标杆文件名规律：{modelName}{i}.output，i 为输出 tensor 索引。
  *
  * @param syscontext     上下文，用于访问 rawfile
- * @param modelName      模型名（如 "lenet_train_infer"），不传 .output 后缀
+ * @param modelName      模型名（如 'lenet_train_infer'），不传 .output 后缀
  * @param actualOutputs  模型推理输出的 MSTensor 数组
  * @param rTol           相对容差（可选，默认 DEFAULT_TOLERANCE）
  * @param aTol           绝对容差（可选，默认 DEFAULT_TOLERANCE）
@@ -90,12 +90,12 @@ async function compareOutputPrecision(
 
 function printTensors(tensors: mindSporeLite.MSTensor[], label: string): void {
   for (let i = 0; i < tensors.length; i++) {
-    let printStr = tensors[i].name + ", ";
-    printStr += tensors[i].shape + ", ";
-    printStr += tensors[i].dtype + ", ";
-    printStr += tensors[i].dataSize + ", ";
+    let printStr = tensors[i].name + ', ';
+    printStr += tensors[i].shape + ', ';
+    printStr += tensors[i].dtype + ', ';
+    printStr += tensors[i].dataSize + ', ';
     printStr += tensors[i].getData();
-    console.log("==========MSLITE " + label + "===========", printStr);
+    console.log('==========MSLITE ' + label + '===========', printStr);
   }
 }
 
@@ -103,9 +103,9 @@ export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
-      let dir = globalThis.abilityContext.filesDir + "/";
+      let dir = globalThis.abilityContext.filesDir + '/';
       try {
-        await globalThis.context.resourceManager.getRawFileList("")
+        await globalThis.context.resourceManager.getRawFileList('')
           .then((value: Array<string>) => {
             console.info(`getRawFileList, result: ${JSON.stringify(value)}`);
           })
@@ -113,44 +113,44 @@ export default function abilityTest() {
             console.error(`promise getRawFileList failed, error code: ${error.code}, message: ${error.message}.`);
           });
         await copyRawfileToSandbox(globalThis.context, dir,
-          ["ml_face_isface.ms", "ml_face_isface_0.input", "ml_ocr_cn.ms", "lenet_train.ms"]);
+          ['ml_face_isface.ms', 'ml_face_isface_0.input', 'ml_ocr_cn.ms', 'lenet_train.ms']);
       } catch (error) {
-        console.info("[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed" + error);
+        console.info('[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed' + error);
       }
 
-      console.info("[rawfile_copy_to_sandbox] sandbox path:" + dir);
+      console.info('[rawfile_copy_to_sandbox] sandbox path:' + dir);
     })
     beforeEach(async () => {
-      let dir = globalThis.abilityContext.filesDir + "/";
+      let dir = globalThis.abilityContext.filesDir + '/';
 
-      let ml_face_model = dir + "ml_face_isface.ms";
+      let ml_face_model = dir + 'ml_face_isface.ms';
       await fs.access(ml_face_model).then(async (res) => {
         if (res) {
-          console.info("ml_face_isface.ms file exists");
+          console.info('ml_face_isface.ms file exists');
         }
       }).catch((err: BusinessError) => {
-        console.info("ml_face_isface.ms file does not exists! access failed with error message: " +
-          err.message + ", error code: " + err.code);
+        console.info('ml_face_isface.ms file does not exists! access failed with error message: ' +
+          err.message + ', error code: ' + err.code);
       });
 
-      let mnet_caffemodel_bin_file = dir + "ml_face_isface_0.input";
+      let mnet_caffemodel_bin_file = dir + 'ml_face_isface_0.input';
       await fs.access(mnet_caffemodel_bin_file).then(async (res) => {
         if (res) {
-          console.info("ml_face_isface_0.input file exists");
+          console.info('ml_face_isface_0.input file exists');
         }
       }).catch((err: BusinessError) => {
-        console.info("ml_face_isface_0.input file does not exist! access failed with error message: " +
-          err.message + ", error code: " + err.code);
+        console.info('ml_face_isface_0.input file does not exist! access failed with error message: ' +
+          err.message + ', error code: ' + err.code);
       });
 
-      let ml_ocr_model = dir + "ml_ocr_cn.ms";
+      let ml_ocr_model = dir + 'ml_ocr_cn.ms';
       await fs.access(ml_ocr_model).then(async (res) => {
         if (res) {
-          console.info("ml_ocr_cn.ms file exists");
+          console.info('ml_ocr_cn.ms file exists');
         }
       }).catch((err: BusinessError) => {
-        console.info("ml_ocr_cn.ms file does not exists! access failed with error message: " +
-          err.message + ", error code: " + err.code);
+        console.info('ml_ocr_cn.ms file does not exists! access failed with error message: ' +
+          err.message + ', error code: ' + err.code);
       });
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -175,25 +175,25 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_PrecisionCompare_0001', Level.LEVEL0, async () => {
-      console.log("==========MSLITE PrecisionCompare_0001 start===========");
+      console.log('==========MSLITE PrecisionCompare_0001 start===========');
       let syscontext: common.Context = globalThis.context;
-      let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_infer_0.input");
-      let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_infer_1.input");
-      let expectedBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_infer0.output");
-      console.log("==========MSLITE expected file byteLength: " + expectedBuffer.byteLength + "==========");
+      let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_infer_0.input');
+      let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_infer_1.input');
+      let expectedBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_infer0.output');
+      console.log('==========MSLITE expected file byteLength: ' + expectedBuffer.byteLength + '==========');
 
       let parsed = readTestDataFile(expectedBuffer, true);
       expect(parsed.dataSize).assertLarger(0);
       let expectedFloat: Float32Array = new Float32Array(parsed.data);
-      console.log("==========MSLITE expected dataSize=" + parsed.dataSize + ", floatLen=" + expectedFloat.length + "==========");
+      console.log('==========MSLITE expected dataSize=' + parsed.dataSize + ', floatLen=' + expectedFloat.length + '==========');
       for (let i = 0; i < Math.min(expectedFloat.length, 10); i++) {
-        console.log("==========MSLITE expected[" + i + "]=" + expectedFloat[i] + "==========");
+        console.log('==========MSLITE expected[' + i + ']=' + expectedFloat[i] + '==========');
       }
 
       let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
       let cfg: mindSporeLite.TrainCfg = {};
       let context: mindSporeLite.Context = {};
-      context.target = ["cpu"];
+      context.target = ['cpu'];
       context.cpu = {};
       context.cpu.threadNum = 1;
       context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.BIG_CORES_FIRST;
@@ -206,10 +206,10 @@ export default function abilityTest() {
       let ret = msliteModel.runStep(modelInputs);
       expect(ret).assertTrue();
       let path: string = globalThis.abilityContext.filesDir;
-      ret = msliteModel.exportModel(path + "/lenet_train_infer.ms", mindSporeLite.QuantizationType.NO_QUANT, true);
+      ret = msliteModel.exportModel(path + '/lenet_train_infer.ms', mindSporeLite.QuantizationType.NO_QUANT, true);
       expect(ret).assertTrue();
 
-      let predictModel = await mindSporeLite.loadModelFromFile(path + "/lenet_train_infer.ms");
+      let predictModel = await mindSporeLite.loadModelFromFile(path + '/lenet_train_infer.ms');
       expect(predictModel !== null).assertTrue();
       predictModel.trainMode = false;
       const predictInputs = predictModel.getInputs();
@@ -218,10 +218,10 @@ export default function abilityTest() {
       expect(modelOutputs !== null).assertTrue();
       let actualFloat: Float32Array = new Float32Array(modelOutputs[0].getData());
       for (let i = 0; i < Math.min(actualFloat.length, 10); i++) {
-        console.log("==========MSLITE actual[" + i + "]=" + actualFloat[i] + "==========");
+        console.log('==========MSLITE actual[' + i + ']=' + actualFloat[i] + '==========');
       }
 
-      console.log("==========MSLITE compareOutputPrecision===========");
+      console.log('==========MSLITE compareOutputPrecision===========');
       let pass: boolean = await compareOutputPrecision(syscontext, 'lenet_train_infer', modelOutputs);
       expect(pass).assertTrue();
 
@@ -237,7 +237,7 @@ export default function abilityTest() {
 
       let uint8SelfCmp: CompareResult = allCloseInt8(new Uint8Array([1, 2, 3]), new Uint8Array([1, 2, 3]), 3, DEFAULT_TOLERANCE, DEFAULT_TOLERANCE, false);
       expect(uint8SelfCmp.pass).assertTrue();
-      console.log("==========MSLITE PrecisionCompare_0001 end===========");
+      console.log('==========MSLITE PrecisionCompare_0001 end===========');
     })
 
     /**
@@ -249,7 +249,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_PrecisionCompare_0002', Level.LEVEL0, async () => {
-      console.log("==========MSLITE PrecisionCompare_0002 start===========");
+      console.log('==========MSLITE PrecisionCompare_0002 start===========');
       let headerSize: number = 8;
       let header: Uint8Array = new Uint8Array(headerSize);
       header[0] = 1; header[1] = 0; header[2] = 0; header[3] = 0;
@@ -266,13 +266,13 @@ export default function abilityTest() {
 
       let actualUint8: Uint8Array = new Uint8Array([10, 20, 30, 40]);
       let cmpRes: CompareResult = compUint8WithTData(actualUint8, merged, DEFAULT_TOLERANCE, DEFAULT_TOLERANCE, false);
-      console.log("==========MSLITE uint8 precision result: pass=" + cmpRes.pass + ", failCount=" + cmpRes.failCount + "==========");
+      console.log('==========MSLITE uint8 precision result: pass=' + cmpRes.pass + ', failCount=' + cmpRes.failCount + '==========');
       expect(cmpRes.pass).assertTrue();
 
       let badUint8: Uint8Array = new Uint8Array([11, 21, 31, 41]);
       let badRes: CompareResult = compUint8WithTData(badUint8, merged, DEFAULT_TOLERANCE, DEFAULT_TOLERANCE, false);
       expect(badRes.pass).assertFalse();
-      console.log("==========MSLITE PrecisionCompare_0002 end===========");
+      console.log('==========MSLITE PrecisionCompare_0002 end===========');
     })
 
     // loadTrainModelFromFile参数3个
@@ -285,56 +285,56 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_0001', Level.LEVEL0, async () => {
-      console.log("==========MSLITE start===========");
+      console.log('==========MSLITE start===========');
       let syscontext: common.Context = globalThis.context
-      let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_0.input");
-      let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_1.input");
+      let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_0.input');
+      let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_1.input');
       let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
-      console.log("==========MSLITE loadModel===========");
+      console.log('==========MSLITE loadModel===========');
       let cfg: mindSporeLite.TrainCfg = {};
       let context:mindSporeLite.Context={};
-      context.target = ["cpu"];
+      context.target = ['cpu'];
       context.cpu = {};
       context.cpu.threadNum = 1;
       context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.BIG_CORES_FIRST;
       let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, cfg, context);
       expect(msliteModel !== null).assertTrue();
-      console.log("==========MSLITE trainMode===========", msliteModel.trainMode);
+      console.log('==========MSLITE trainMode===========', msliteModel.trainMode);
       msliteModel.trainMode = true;
-      console.log("==========MSLITE set trainMode===========", msliteModel.trainMode);
-      console.log("==========MSLITE getInputs===========");
+      console.log('==========MSLITE set trainMode===========', msliteModel.trainMode);
+      console.log('==========MSLITE getInputs===========');
       const modelInputs = msliteModel.getInputs();
-      printTensors(modelInputs, "modelInputs");
+      printTensors(modelInputs, 'modelInputs');
       modelInputs[0].setData(inputBuffer0.buffer);
       modelInputs[1].setData(inputBuffer1.buffer);
-      console.log("==========MSLITE runStep===========");
+      console.log('==========MSLITE runStep===========');
       let ret = msliteModel.runStep(modelInputs);
       expect(ret).assertTrue();
-      console.log("==========MSLITE exportModel===========");
+      console.log('==========MSLITE exportModel===========');
       let path : String = globalThis.abilityContext.filesDir;
-      console.log("==========MSLITE path===========",path);
-      ret = msliteModel.exportModel(path +"/lenet_train_infer.ms", mindSporeLite.QuantizationType.NO_QUANT, true);
+      console.log('==========MSLITE path===========',path);
+      ret = msliteModel.exportModel(path +'/lenet_train_infer.ms', mindSporeLite.QuantizationType.NO_QUANT, true);
       expect(ret).assertTrue();
-      console.log("==========MSLITE loadModelFromFile===========");
-      let predictModel = await mindSporeLite.loadModelFromFile(path +"/lenet_train_infer.ms");
+      console.log('==========MSLITE loadModelFromFile===========');
+      let predictModel = await mindSporeLite.loadModelFromFile(path +'/lenet_train_infer.ms');
       expect(predictModel !== null).assertTrue();
       predictModel.trainMode = false;
-      console.log("==========MSLITE getInputs===========");
+      console.log('==========MSLITE getInputs===========');
       const predictInputs = predictModel.getInputs();
-      printTensors(predictInputs, "predictInputs");
+      printTensors(predictInputs, 'predictInputs');
       predictInputs[0].setData(inputBuffer0.buffer);
-      console.log("==========MSLITE predict===========");
+      console.log('==========MSLITE predict===========');
       let modelOutputs = await predictModel.predict(predictInputs);
       expect(modelOutputs !== null).assertTrue();
-      printTensors(modelOutputs, "modelOutputs");
+      printTensors(modelOutputs, 'modelOutputs');
       let output0 = new Float32Array(modelOutputs[0].getData());
       for (let i = 0; i < 20; i++) {
         console.log('output:', output0[i]);
       }
-      console.log("==========MSLITE compareOutputPrecision===========");
+      console.log('==========MSLITE compareOutputPrecision===========');
       let pass: boolean = await compareOutputPrecision(syscontext, 'lenet_train_infer', modelOutputs);
       expect(pass).assertTrue();
-      console.log("==========MSLITE end===========");
+      console.log('==========MSLITE end===========');
     })
 
     // loadTrainModelFromFile参数2个
@@ -347,51 +347,51 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_0002', Level.LEVEL0, async () => {
-      console.log("==========MSLITE start===========");
+      console.log('==========MSLITE start===========');
       let syscontext: common.Context = globalThis.context
-      let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_0.input");
-      let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_1.input");
+      let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_0.input');
+      let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_1.input');
       let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
-      console.log("==========MSLITE loadModel===========");
+      console.log('==========MSLITE loadModel===========');
       let cfg: mindSporeLite.TrainCfg = {};
       let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, cfg);
       expect(msliteModel !== null).assertTrue();
-      console.log("==========MSLITE trainMode===========", msliteModel.trainMode);
+      console.log('==========MSLITE trainMode===========', msliteModel.trainMode);
       msliteModel.trainMode = true;
-      console.log("==========MSLITE set trainMode===========", msliteModel.trainMode);
-      console.log("==========MSLITE getInputs===========");
+      console.log('==========MSLITE set trainMode===========', msliteModel.trainMode);
+      console.log('==========MSLITE getInputs===========');
       const modelInputs = msliteModel.getInputs();
-      printTensors(modelInputs, "modelInputs");
+      printTensors(modelInputs, 'modelInputs');
       modelInputs[0].setData(inputBuffer0.buffer);
       modelInputs[1].setData(inputBuffer1.buffer);
-      console.log("==========MSLITE runStep===========");
+      console.log('==========MSLITE runStep===========');
       let ret = msliteModel.runStep(modelInputs);
       expect(ret).assertTrue();
-      console.log("==========MSLITE exportModel===========");
+      console.log('==========MSLITE exportModel===========');
       let path : String = globalThis.abilityContext.filesDir;
-      console.log("==========MSLITE path===========",path);
-      ret = msliteModel.exportModel(path +"/lenet_train_infer.ms", mindSporeLite.QuantizationType.NO_QUANT, true);
+      console.log('==========MSLITE path===========',path);
+      ret = msliteModel.exportModel(path +'/lenet_train_infer.ms', mindSporeLite.QuantizationType.NO_QUANT, true);
       expect(ret).assertTrue();
-      console.log("==========MSLITE loadModelFromFile===========");
-      let predictModel = await mindSporeLite.loadModelFromFile(path +"/lenet_train_infer.ms");
+      console.log('==========MSLITE loadModelFromFile===========');
+      let predictModel = await mindSporeLite.loadModelFromFile(path +'/lenet_train_infer.ms');
       expect(predictModel !== null).assertTrue();
       predictModel.trainMode = false;
-      console.log("==========MSLITE getInputs===========");
+      console.log('==========MSLITE getInputs===========');
       const predictInputs = predictModel.getInputs();
-      printTensors(predictInputs, "predictInputs");
+      printTensors(predictInputs, 'predictInputs');
       predictInputs[0].setData(inputBuffer0.buffer);
-      console.log("==========MSLITE predict===========");
+      console.log('==========MSLITE predict===========');
       let modelOutputs = await predictModel.predict(predictInputs);
       expect(modelOutputs !== null).assertTrue();
-      printTensors(modelOutputs, "modelOutputs");
+      printTensors(modelOutputs, 'modelOutputs');
       let output0 = new Float32Array(modelOutputs[0].getData());
       for (let i = 0; i < 20; i++) {
         console.log('output:', output0[i]);
       }
-      console.log("==========MSLITE compareOutputPrecision===========");
+      console.log('==========MSLITE compareOutputPrecision===========');
       let pass: boolean = await compareOutputPrecision(syscontext, 'lenet_train_infer', modelOutputs);
       expect(pass).assertTrue();
-      console.log("==========MSLITE end===========");
+      console.log('==========MSLITE end===========');
     })
 
     // loadTrainModelFromBuffer参数3个
@@ -404,56 +404,56 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_0001', Level.LEVEL0, async () => {
-      console.log("==========MSLITE start===========");
+      console.log('==========MSLITE start===========');
       let syscontext: common.Context = globalThis.context
-      let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_0.input");
-      let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_1.input");
-      let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train.ms");
-      console.log("==========MSLITE loadModel===========");
+      let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_0.input');
+      let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_1.input');
+      let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train.ms');
+      console.log('==========MSLITE loadModel===========');
       let cfg: mindSporeLite.TrainCfg = {};
       let context:mindSporeLite.Context={};
-      context.target = ["cpu"];
+      context.target = ['cpu'];
       context.cpu = {};
       context.cpu.threadNum = 1;
       context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.BIG_CORES_FIRST;
       let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, cfg, context);
       expect(msliteModel !== null).assertTrue();
-      console.log("==========MSLITE trainMode===========", msliteModel.trainMode);
+      console.log('==========MSLITE trainMode===========', msliteModel.trainMode);
       msliteModel.trainMode = true;
-      console.log("==========MSLITE set trainMode===========", msliteModel.trainMode);
-      console.log("==========MSLITE getInputs===========");
+      console.log('==========MSLITE set trainMode===========', msliteModel.trainMode);
+      console.log('==========MSLITE getInputs===========');
       const modelInputs = msliteModel.getInputs();
-      printTensors(modelInputs, "modelInputs");
+      printTensors(modelInputs, 'modelInputs');
       modelInputs[0].setData(inputBuffer0.buffer);
       modelInputs[1].setData(inputBuffer1.buffer);
-      console.log("==========MSLITE runStep===========");
+      console.log('==========MSLITE runStep===========');
       let ret = msliteModel.runStep(modelInputs);
       expect(ret).assertTrue();
-      console.log("==========MSLITE exportModel===========");
+      console.log('==========MSLITE exportModel===========');
       let path : String = globalThis.abilityContext.filesDir;
-      console.log("==========MSLITE path===========",path);
-      ret = msliteModel.exportModel(path +"/lenet_train_infer.ms", mindSporeLite.QuantizationType.NO_QUANT, true);
+      console.log('==========MSLITE path===========',path);
+      ret = msliteModel.exportModel(path +'/lenet_train_infer.ms', mindSporeLite.QuantizationType.NO_QUANT, true);
       expect(ret).assertTrue();
-      console.log("==========MSLITE loadModelFromFile===========");
-      let predictModel = await mindSporeLite.loadModelFromFile(path +"/lenet_train_infer.ms");
+      console.log('==========MSLITE loadModelFromFile===========');
+      let predictModel = await mindSporeLite.loadModelFromFile(path +'/lenet_train_infer.ms');
       expect(predictModel !== null).assertTrue();
       predictModel.trainMode = false;
-      console.log("==========MSLITE getInputs===========");
+      console.log('==========MSLITE getInputs===========');
       const predictInputs = predictModel.getInputs();
-      printTensors(predictInputs, "predictInputs");
+      printTensors(predictInputs, 'predictInputs');
       predictInputs[0].setData(inputBuffer0.buffer);
-      console.log("==========MSLITE predict===========");
+      console.log('==========MSLITE predict===========');
       let modelOutputs = await predictModel.predict(predictInputs);
       expect(modelOutputs !== null).assertTrue();
-      printTensors(modelOutputs, "modelOutputs");
+      printTensors(modelOutputs, 'modelOutputs');
       let output0 = new Float32Array(modelOutputs[0].getData());
       for (let i = 0; i < 20; i++) {
         console.log('output:', output0[i]);
       }
-      console.log("==========MSLITE compareOutputPrecision===========");
+      console.log('==========MSLITE compareOutputPrecision===========');
       let pass: boolean = await compareOutputPrecision(syscontext, 'lenet_train_infer', modelOutputs);
       expect(pass).assertTrue();
-      console.log("==========MSLITE end===========");
+      console.log('==========MSLITE end===========');
     })
 
     // loadTrainModelFromBuffer参数2个
@@ -466,53 +466,53 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_0002', Level.LEVEL0, async () => {
-      console.log("==========MSLITE start===========");
+      console.log('==========MSLITE start===========');
       let syscontext: common.Context = globalThis.context
-      let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_0.input");
-      let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_1.input");
-      let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train.ms");
-      console.log("==========MSLITE loadModel===========");
+      let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_0.input');
+      let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_1.input');
+      let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train.ms');
+      console.log('==========MSLITE loadModel===========');
       let cfg: mindSporeLite.TrainCfg = {};
       let context:mindSporeLite.Context={};
-      context.target = ["cpu"];
+      context.target = ['cpu'];
       let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, cfg);
       expect(msliteModel !== null).assertTrue();
-      console.log("==========MSLITE trainMode===========", msliteModel.trainMode);
+      console.log('==========MSLITE trainMode===========', msliteModel.trainMode);
       msliteModel.trainMode = true;
-      console.log("==========MSLITE set trainMode===========", msliteModel.trainMode);
-      console.log("==========MSLITE getInputs===========");
+      console.log('==========MSLITE set trainMode===========', msliteModel.trainMode);
+      console.log('==========MSLITE getInputs===========');
       const modelInputs = msliteModel.getInputs();
-      printTensors(modelInputs, "modelInputs");
+      printTensors(modelInputs, 'modelInputs');
       modelInputs[0].setData(inputBuffer0.buffer);
       modelInputs[1].setData(inputBuffer1.buffer);
-      console.log("==========MSLITE runStep===========");
+      console.log('==========MSLITE runStep===========');
       let ret = msliteModel.runStep(modelInputs);
       expect(ret).assertTrue();
-      console.log("==========MSLITE exportModel===========");
+      console.log('==========MSLITE exportModel===========');
       let path : String = globalThis.abilityContext.filesDir;
-      console.log("==========MSLITE path===========",path);
-      ret = msliteModel.exportModel(path +"/lenet_train_infer.ms", mindSporeLite.QuantizationType.NO_QUANT, true);
+      console.log('==========MSLITE path===========',path);
+      ret = msliteModel.exportModel(path +'/lenet_train_infer.ms', mindSporeLite.QuantizationType.NO_QUANT, true);
       expect(ret).assertTrue();
-      console.log("==========MSLITE loadModelFromFile===========");
-      let predictModel = await mindSporeLite.loadModelFromFile(path +"/lenet_train_infer.ms");
+      console.log('==========MSLITE loadModelFromFile===========');
+      let predictModel = await mindSporeLite.loadModelFromFile(path +'/lenet_train_infer.ms');
       expect(predictModel !== null).assertTrue();
       predictModel.trainMode = false;
-      console.log("==========MSLITE getInputs===========");
+      console.log('==========MSLITE getInputs===========');
       const predictInputs = predictModel.getInputs();
-      printTensors(predictInputs, "predictInputs");
+      printTensors(predictInputs, 'predictInputs');
       predictInputs[0].setData(inputBuffer0.buffer);
-      console.log("==========MSLITE predict===========");
+      console.log('==========MSLITE predict===========');
       let modelOutputs = await predictModel.predict(predictInputs);
       expect(modelOutputs !== null).assertTrue();
-      printTensors(modelOutputs, "modelOutputs");
+      printTensors(modelOutputs, 'modelOutputs');
       let output0 = new Float32Array(modelOutputs[0].getData());
       for (let i = 0; i < 20; i++) {
         console.log('output:', output0[i]);
       }
-      console.log("==========MSLITE compareOutputPrecision===========");
+      console.log('==========MSLITE compareOutputPrecision===========');
       let pass: boolean = await compareOutputPrecision(syscontext, 'lenet_train_infer', modelOutputs);
       expect(pass).assertTrue();
-      console.log("==========MSLITE end===========");
+      console.log('==========MSLITE end===========');
     })
 
     // loadTrainModelFromFd参数3个
@@ -525,58 +525,58 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_0001', Level.LEVEL0, async () => {
-      console.log("==========MSLITE start===========");
+      console.log('==========MSLITE start===========');
       let syscontext: common.Context = globalThis.context
-      let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_0.input");
-      let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_1.input");
+      let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_0.input');
+      let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_1.input');
       let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
       let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
-      console.log("==========MSLITE loadModel===========");
+      console.log('==========MSLITE loadModel===========');
       let cfg: mindSporeLite.TrainCfg = {};
       let context:mindSporeLite.Context={};
-      context.target = ["cpu"];
+      context.target = ['cpu'];
       context.cpu = {};
       context.cpu.threadNum = 1;
       context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.BIG_CORES_FIRST;
       let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, cfg, context);
       expect(msliteModel !== null).assertTrue();
       fs.closeSync(file);
-      console.log("==========MSLITE trainMode===========", msliteModel.trainMode);
+      console.log('==========MSLITE trainMode===========', msliteModel.trainMode);
       msliteModel.trainMode = true;
-      console.log("==========MSLITE set trainMode===========", msliteModel.trainMode);
-      console.log("==========MSLITE getInputs===========");
+      console.log('==========MSLITE set trainMode===========', msliteModel.trainMode);
+      console.log('==========MSLITE getInputs===========');
       const modelInputs = msliteModel.getInputs();
-      printTensors(modelInputs, "modelInputs");
+      printTensors(modelInputs, 'modelInputs');
       modelInputs[0].setData(inputBuffer0.buffer);
       modelInputs[1].setData(inputBuffer1.buffer);
-      console.log("==========MSLITE runStep===========");
+      console.log('==========MSLITE runStep===========');
       let ret = msliteModel.runStep(modelInputs);
       expect(ret).assertTrue();
-      console.log("==========MSLITE exportModel===========");
+      console.log('==========MSLITE exportModel===========');
       let path : String = globalThis.abilityContext.filesDir;
-      console.log("==========MSLITE path===========",path);
-      ret = msliteModel.exportModel(path +"/lenet_train_infer.ms", mindSporeLite.QuantizationType.NO_QUANT, true);
+      console.log('==========MSLITE path===========',path);
+      ret = msliteModel.exportModel(path +'/lenet_train_infer.ms', mindSporeLite.QuantizationType.NO_QUANT, true);
       expect(ret).assertTrue();
-      console.log("==========MSLITE loadModelFromFile===========");
-      let predictModel = await mindSporeLite.loadModelFromFile(path +"/lenet_train_infer.ms");
+      console.log('==========MSLITE loadModelFromFile===========');
+      let predictModel = await mindSporeLite.loadModelFromFile(path +'/lenet_train_infer.ms');
       expect(predictModel !== null).assertTrue();
       predictModel.trainMode = false;
-      console.log("==========MSLITE getInputs===========");
+      console.log('==========MSLITE getInputs===========');
       const predictInputs = predictModel.getInputs();
-      printTensors(predictInputs, "predictInputs");
+      printTensors(predictInputs, 'predictInputs');
       predictInputs[0].setData(inputBuffer0.buffer);
-      console.log("==========MSLITE predict===========");
+      console.log('==========MSLITE predict===========');
       let modelOutputs = await predictModel.predict(predictInputs);
       expect(modelOutputs !== null).assertTrue();
-      printTensors(modelOutputs, "modelOutputs");
+      printTensors(modelOutputs, 'modelOutputs');
       let output0 = new Float32Array(modelOutputs[0].getData());
       for (let i = 0; i < 20; i++) {
         console.log('output:', output0[i]);
       }
-      console.log("==========MSLITE compareOutputPrecision===========");
+      console.log('==========MSLITE compareOutputPrecision===========');
       let pass: boolean = await compareOutputPrecision(syscontext, 'lenet_train_infer', modelOutputs);
       expect(pass).assertTrue();
-      console.log("==========MSLITE end===========");
+      console.log('==========MSLITE end===========');
     })
 
     // loadTrainModelFromFd参数2个
@@ -589,13 +589,13 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_0002', Level.LEVEL0, async () => {
-      console.log("==========MSLITE start===========");
+      console.log('==========MSLITE start===========');
       let syscontext: common.Context = globalThis.context
-      let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_0.input");
-      let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train_1.input");
+      let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_0.input');
+      let inputBuffer1: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_1.input');
       let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
       let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
-      console.log("==========MSLITE loadModel===========");
+      console.log('==========MSLITE loadModel===========');
       let cfg: mindSporeLite.TrainCfg = {};
       let context:mindSporeLite.Context={};
       context.target = ["cpu"];
