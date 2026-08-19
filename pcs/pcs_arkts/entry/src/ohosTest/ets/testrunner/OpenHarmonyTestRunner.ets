@@ -17,15 +17,16 @@ import hilog from '@ohos.hilog';
 import TestRunner from '@ohos.application.testRunner';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
+import { BusinessError } from '@ohos.base';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator | undefined = undefined
 let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs | undefined = undefined
 
-async function onAbilityCreateCallback() {
+async function onAbilityCreateCallback(): Promise<void> {
   hilog.info(0x0000, 'testTag', '%{public}s', 'onAbilityCreateCallback');
 }
 
-async function addAbilityMonitorCallback(err : Error) {
+async function addAbilityMonitorCallback(err: BusinessError): Promise<void> {
   hilog.info(0x0000, 'testTag', 'addAbilityMonitorCallback : %{public}s', JSON.stringify(err) ?? '');
 }
 
@@ -33,27 +34,27 @@ export default class OpenHarmonyTestRunner implements TestRunner {
   constructor() {
   }
 
-  onPrepare() {
+  onPrepare(): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner OnPrepare ');
   }
 
-  async onRun() {
+  async onRun(): Promise<void> {
     hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner onRun run');
     abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
     abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-    const bundleName = abilityDelegatorArguments.bundleName;
+    const bundleName: string = abilityDelegatorArguments!.bundleName;
     const testAbilityName = 'TestAbility';
     let lMonitor: AbilityDelegatorRegistry.AbilityMonitor = {
       abilityName: testAbilityName,
       onAbilityCreate: onAbilityCreateCallback,
     };
-    abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback)
+    abilityDelegator!.addAbilityMonitor(lMonitor, addAbilityMonitorCallback)
     const want: Want = {
       bundleName: bundleName,
       abilityName: testAbilityName
     };
     abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-    abilityDelegator.startAbility(want, (err, data) => {
+    abilityDelegator!.startAbility(want, (err: BusinessError, data: ESObject) => {
       hilog.info(0x0000, 'testTag', 'startAbility : err : %{public}s', JSON.stringify(err) ?? '');
       hilog.info(0x0000, 'testTag', 'startAbility : data : %{public}s',JSON.stringify(data) ?? '');
     })
