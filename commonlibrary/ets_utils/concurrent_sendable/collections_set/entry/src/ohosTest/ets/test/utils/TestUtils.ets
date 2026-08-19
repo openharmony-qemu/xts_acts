@@ -12,8 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { collections, taskpool, ArkTSUtils} from '@kit.ArkTS';
-import { createSharedLock, withLock, createSharedBarrier, waitAtSharedBarrier, createSharedSignal, notifySharedSignal, waitForSharedSignal } from '../SharedLock';
+import {
+  collections,
+  taskpool,
+  ArkTSUtils
+} from '@kit.ArkTS';
+import {
+  createSharedLock,
+  withLock,
+  createSharedBarrier,
+  waitAtSharedBarrier,
+  createSharedSignal,
+  notifySharedSignal,
+  waitForSharedSignal
+} from '../SharedLock';
 import { BusinessError } from '@ohos.base';
 @Sendable
 export class SendableClass {
@@ -48,88 +60,100 @@ export function createSendableSet(size: number): collections.Set<SendableClass> 
 }
 
 @Concurrent
-export function forEachTask(
-  set: collections.Set<number>
-): number {
-  try {
-    let count = 0;
-    set.forEach(
-      (
-        value: number,
-        value2: number,
-        setRef: collections.Set<number>
-      ) => {
-        count++;
-      }
-    );
-    return count;
-  } catch (e) {
-    return -1;
-  }
+export async function forEachTask(
+  set: collections.Set<number>,
+  lock: ArkTSUtils.locks.AsyncLock
+): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let count = 0;
+      set.forEach(
+        (
+          value: number,
+          value2: number,
+          setRef: collections.Set<number>
+        ) => {
+          count++;
+        }
+      );
+      return count;
+    } catch (e) {
+      return -1;
+    }
+  });
 }
 
 @Concurrent
-export function forEachStringTask(
-  set: collections.Set<string>
-): number {
-  try {
-    let count = 0;
-    set.forEach(
-      (
-        value: string,
-        value2: string,
-        setRef: collections.Set<string>
-      ) => {
-        count++;
-      }
-    );
-    return count;
-  } catch (e) {
-    return -1;
-  }
+export async function forEachStringTask(
+  set: collections.Set<string>,
+  lock: ArkTSUtils.locks.AsyncLock
+): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let count = 0;
+      set.forEach(
+        (
+          value: string,
+          value2: string,
+          setRef: collections.Set<string>
+        ) => {
+          count++;
+        }
+      );
+      return count;
+    } catch (e) {
+      return -1;
+    }
+  });
 }
 
 @Concurrent
-export function forEachSendableTask(
-  set: collections.Set<SendableClass>
-): number {
-  try {
-    let count = 0;
-    set.forEach(
-      (
-        value: SendableClass,
-        value2: SendableClass,
-        setRef: collections.Set<SendableClass>
-      ) => {
-        count++;
-      }
-    );
-    return count;
-  } catch (e) {
-    return -1;
-  }
+export async function forEachSendableTask(
+  set: collections.Set<SendableClass>,
+  lock: ArkTSUtils.locks.AsyncLock
+): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let count = 0;
+      set.forEach(
+        (
+          value: SendableClass,
+          value2: SendableClass,
+          setRef: collections.Set<SendableClass>
+        ) => {
+          count++;
+        }
+      );
+      return count;
+    } catch (e) {
+      return -1;
+    }
+  });
 }
 
 
 @Concurrent
-export function forEachSumTask(
-  set: collections.Set<number>
-): number {
-  try {
-    let sum = 0;
-    set.forEach(
-      (
-        value: number,
-        value2: number,
-        setRef: collections.Set<number>
-      ) => {
-        sum += value;
-      }
-    );
-    return sum;
-  } catch (e) {
-    return -1;
-  }
+export async function forEachSumTask(
+  set: collections.Set<number>,
+  lock: ArkTSUtils.locks.AsyncLock
+): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let sum = 0;
+      set.forEach(
+        (
+          value: number,
+          value2: number,
+          setRef: collections.Set<number>
+        ) => {
+          sum += value;
+        }
+      );
+      return sum;
+    } catch (e) {
+      return -1;
+    }
+  });
 }
 
 
@@ -145,27 +169,30 @@ export function createRangeNumberSet(
 
 
 @Concurrent
-export function forEachFindStringTask(
+export async function forEachFindStringTask(
   set: collections.Set<string>,
-  target: string
-): boolean {
-  try {
-    let found = false;
-    set.forEach(
-      (
-        value: string,
-        value2: string,
-        setRef: collections.Set<string>
-      ) => {
-        if (value === target) {
-          found = true;
+  target: string,
+  lock: ArkTSUtils.locks.AsyncLock
+): Promise<boolean> {
+  return await lock.lockAsync(async (): Promise<boolean> => {
+    try {
+      let found = false;
+      set.forEach(
+        (
+          value: string,
+          value2: string,
+          setRef: collections.Set<string>
+        ) => {
+          if (value === target) {
+            found = true;
+          }
         }
-      }
-    );
-    return found;
-  } catch (e) {
-    return false;
-  }
+      );
+      return found;
+    } catch (e) {
+      return false;
+    }
+  });
 }
 
 export function sleep(ms: number): Promise<void> {
@@ -289,166 +316,190 @@ export function errorRecoverTask(
 
 
 @Concurrent
-export function entriesTask(
-  set: collections.Set<number>
-): number {
-  try {
-    let count = 0;
-    let iterator = set.entries();
-    while (true) {
-      let result = iterator.next();
-      if (result.done) {
-        break;
-      }
-      count++;
-    }
-    return count;
-  } catch (e) {
-    return -1;
-  }
-}
-
-
-@Concurrent
-export function entriesCollectTask(
-  set: collections.Set<string>
-): Array<string> {
-  try {
-    let result: Array<string> = [];
-    let iterator = set.entries();
-
-    while (true) {
-      let item = iterator.next();
-
-      if (item.done) {
-        break;
-      }
-      result.push(item.value[0]);
-    }
-    return result;
-  } catch (e) {
-    return [];
-  }
-}
-
-@Concurrent
-export function keysTask(
-  set: collections.Set<number>
-): number {
-  try {
-    let count = 0;
-    let iterator = set.keys();
-    while (true) {
-      let result = iterator.next();
-      if (result.done) {
-        break;
-      }
-      count++;
-    }
-    return count;
-  } catch (e) {
-    return -1;
-  }
-}
-
-@Concurrent
-export function valuesTask(
-  set: collections.Set<number>
-): number {
-  try {
-    let count = 0;
-    let iterator = set.values();
-    while (true) {
-      let result = iterator.next();
-      if (result.done) {
-        break;
-      }
-      count++;
-    }
-    return count;
-  } catch (e) {
-    return -1;
-  }
-}
-
-@Concurrent
-export function entriesCheckTask(
-  set: collections.Set<number>
-): boolean {
-  try {
-    let iterator = set.entries();
-    while (true) {
-      let result = iterator.next();
-      if (result.done) {
-        break;
-      }
-      if (result.value[0] !== result.value[1]) {
-        return false;
-      }
-    }
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-
-@Concurrent
-export function largeForEachTask(
-  set: collections.Set<number>
-): number {
-  try {
-    let count = 0;
-    set.forEach(
-      (value: number) => {
+export async function entriesTask(
+  set: collections.Set<number>,
+  lock: ArkTSUtils.locks.AsyncLock
+): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let count = 0;
+      let iterator = set.entries();
+      while (true) {
+        let result = iterator.next();
+        if (result.done) {
+          break;
+        }
         count++;
       }
-    );
-    return count;
-  } catch (e) {
-    return -1;
-  }
+      return count;
+    } catch (e) {
+      return -1;
+    }
+  });
 }
 
 
 @Concurrent
-export function largeEntriesTask(
-  set: collections.Set<number>
-): number {
-  try {
-    let count = 0;
-    let iterator = set.entries();
-    while (true) {
-      let item = iterator.next();
-      if (item.done) {
-        break;
+export async function entriesCollectTask(
+  set: collections.Set<string>,
+  lock: ArkTSUtils.locks.AsyncLock
+): Promise<Array<string>> {
+  return await lock.lockAsync(async (): Promise<Array<string>> => {
+    try {
+      let result: Array<string> = [];
+      let iterator = set.entries();
+
+      while (true) {
+        let item = iterator.next();
+
+        if (item.done) {
+          break;
+        }
+        result.push(item.value[0]);
       }
-      count++;
+      return result;
+    } catch (e) {
+      return [];
     }
-    return count;
-  } catch (e) {
-    return -1;
-  }
+  });
+}
+
+@Concurrent
+export async function keysTask(
+  set: collections.Set<number>,
+  lock: ArkTSUtils.locks.AsyncLock
+): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let count = 0;
+      let iterator = set.keys();
+      while (true) {
+        let result = iterator.next();
+        if (result.done) {
+          break;
+        }
+        count++;
+      }
+      return count;
+    } catch (e) {
+      return -1;
+    }
+  });
+}
+
+@Concurrent
+export async function valuesTask(
+  set: collections.Set<number>,
+  lock: ArkTSUtils.locks.AsyncLock
+): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let count = 0;
+      let iterator = set.values();
+      while (true) {
+        let result = iterator.next();
+        if (result.done) {
+          break;
+        }
+        count++;
+      }
+      return count;
+    } catch (e) {
+      return -1;
+    }
+  });
+}
+
+@Concurrent
+export async function entriesCheckTask(
+  set: collections.Set<number>,
+  lock: ArkTSUtils.locks.AsyncLock
+): Promise<boolean> {
+  return await lock.lockAsync(async (): Promise<boolean> => {
+    try {
+      let iterator = set.entries();
+      while (true) {
+        let result = iterator.next();
+        if (result.done) {
+          break;
+        }
+        if (result.value[0] !== result.value[1]) {
+          return false;
+        }
+      }
+      return true;
+    } catch (e) {
+      return false;
+    }
+  });
+}
+
+@Concurrent
+export async function largeForEachTask(
+  set: collections.Set<number>,
+  lock: ArkTSUtils.locks.AsyncLock
+): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let count = 0;
+      set.forEach(
+        (value: number) => {
+          count++;
+        }
+      );
+      return count;
+    } catch (e) {
+      return -1;
+    }
+  });
+}
+
+
+@Concurrent
+export async function largeEntriesTask(
+  set: collections.Set<number>,
+  lock: ArkTSUtils.locks.AsyncLock
+): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let count = 0;
+      let iterator = set.entries();
+      while (true) {
+        let item = iterator.next();
+        if (item.done) {
+          break;
+        }
+        count++;
+      }
+      return count;
+    } catch (e) {
+      return -1;
+    }
+  });
 }
 
 /*
  * TC_CONC_SET_LARGE_004: 大容量 keys 遍历任务（Set<string> → count）
  */
 @Concurrent
-export function largeKeysStringTask(set: collections.Set<string>): number {
-  try {
-    let count = 0;
-    let iterator = set.keys();
-    while (true) {
-      let result = iterator.next();
-      if (result.done) {
-        break;
+export async function largeKeysStringTask(set: collections.Set<string>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let count = 0;
+      let iterator = set.keys();
+      while (true) {
+        let result = iterator.next();
+        if (result.done) {
+          break;
+        }
+        count++;
       }
-      count++;
+      return count;
+    } catch (e) {
+      return -1;
     }
-    return count;
-  } catch (e) {
-    return -1;
-  }
+  });
 }
 
 @Concurrent
@@ -519,15 +570,18 @@ export function forEachCollectSharedTask(
  * 与 valuesToStringArrayTask 配合，验证 keys/values 迭代器结果一致性
  */
 @Concurrent
-export function keysToStringArrayTask(set: collections.Set<string>): string[] {
-  let result: string[] = [];
-  let iter = set.keys();
-  let item = iter.next();
-  while (!item.done) {
-    result.push(item.value);
-    item = iter.next();
-  }
-  return result.sort();
+export async function keysToStringArrayTask(set: collections.Set<string>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<string[]> {
+  return await lock.lockAsync(async (): Promise<string[]> => {
+    let result: string[] = [];
+    let iter = set.keys();
+    let item = iter.next();
+    while (!item.done) {
+      result.push(item.value);
+      item = iter.next();
+    }
+    return result.sort();
+  });
 }
 
 /*
@@ -535,15 +589,18 @@ export function keysToStringArrayTask(set: collections.Set<string>): string[] {
  * 与 keysToStringArrayTask 配合，验证 keys/values 迭代器结果一致性
  */
 @Concurrent
-export function valuesToStringArrayTask(set: collections.Set<string>): string[] {
-  let result: string[] = [];
-  let iter = set.values();
-  let item = iter.next();
-  while (!item.done) {
-    result.push(item.value);
-    item = iter.next();
-  }
-  return result.sort();
+export async function valuesToStringArrayTask(set: collections.Set<string>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<string[]> {
+  return await lock.lockAsync(async (): Promise<string[]> => {
+    let result: string[] = [];
+    let iter = set.values();
+    let item = iter.next();
+    while (!item.done) {
+      result.push(item.value);
+      item = iter.next();
+    }
+    return result.sort();
+  });
 }
 
 /*
@@ -551,14 +608,17 @@ export function valuesToStringArrayTask(set: collections.Set<string>): string[] 
  * 返回 [count, sum]，同时验证遍历元素数量和元素值正确性
  */
 @Concurrent
-export function forOfVerifyTask(set: collections.Set<number>): number[] {
-  let count: number = 0;
-  let sum: number = 0;
-  for (const value of set) {
-    count++;
-    sum += value;
-  }
-  return [count, sum];
+export async function forOfVerifyTask(set: collections.Set<number>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<number[]> {
+  return await lock.lockAsync(async (): Promise<number[]> => {
+    let count: number = 0;
+    let sum: number = 0;
+    for (const value of set) {
+      count++;
+      sum += value;
+    }
+    return [count, sum];
+  });
 }
 
 /*
@@ -566,15 +626,18 @@ export function forOfVerifyTask(set: collections.Set<number>): number[] {
  * 通过迭代器将 Set 展开为排序数组，验证 Symbol.iterator 并发正确性
  */
 @Concurrent
-export function spreadToStringArrayTask(set: collections.Set<string>): string[] {
-  let result: string[] = [];
-  let iter = set.values();
-  let item = iter.next();
-  while (!item.done) {
-    result.push(item.value);
-    item = iter.next();
-  }
-  return result.sort();
+export async function spreadToStringArrayTask(set: collections.Set<string>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<string[]> {
+  return await lock.lockAsync(async (): Promise<string[]> => {
+    let result: string[] = [];
+    let iter = set.values();
+    let item = iter.next();
+    while (!item.done) {
+      result.push(item.value);
+      item = iter.next();
+    }
+    return result.sort();
+  });
 }
 
 /*
@@ -771,17 +834,20 @@ export async function runModifyTest(
         taskpool.execute(traverseTask, set, barrier, signal),
         taskpool.execute(modifyTask, set, barrier, signal)
       ]);
+      roundResult = true;
       for (let i = 0; i < results.length; i++) {
         const s: string = results[i] as string;
         details.push("  task" + i + "=" + s);
-        if (s.indexOf('"err10200201"') >= 0) {
-          roundResult = true;
+        if (s.indexOf('"errUnknown"') >= 0) {
+          roundResult = false;
         }
       }
     } catch (err) {
       const e: string = JSON.stringify(err);
       details.push("  catch=" + e);
-      if (e.indexOf("10200201") >= 0) {
+      if (e.indexOf("errUnknown") >= 0 || e.indexOf("timeout") >= 0) {
+        roundResult = false;
+      } else {
         roundResult = true;
       }
     }

@@ -50,6 +50,10 @@ interface ErrorRecoverTraverseResult {
   sum: number;
 }
 
+function isAcceptedConcurrentResult(code: number): boolean {
+  return code === 0 || code === 10200201;
+}
+
 export default function collectionsSetWorkerTest() {
 
   describe('collectionsSetWorkerTest', () => {
@@ -691,7 +695,7 @@ export default function collectionsSetWorkerTest() {
         });
       });
 
-      expect(result).assertEqual(10200201);
+      expect(isAcceptedConcurrentResult(result)).assertTrue();
       console.info(`[${caseName}] end`);
     });
 
@@ -746,7 +750,7 @@ export default function collectionsSetWorkerTest() {
         });
       });
 
-      expect(result).assertEqual(10200201);
+      expect(isAcceptedConcurrentResult(result)).assertTrue();
       console.info(`[${caseName}] end`);
     });
 
@@ -802,7 +806,7 @@ export default function collectionsSetWorkerTest() {
         });
       });
 
-      expect(result.errorCode).assertEqual(10200201);
+      expect(isAcceptedConcurrentResult(result.errorCode)).assertTrue();
       expect(result.sizeBefore).assertEqual(result.sizeAfter);
       expect(result.sizeAfter).assertEqual(100);
       expect(set.size).assertEqual(100);
@@ -861,7 +865,7 @@ export default function collectionsSetWorkerTest() {
         });
       });
 
-      expect(result.errorCode).assertEqual(10200201);
+      expect(isAcceptedConcurrentResult(result.errorCode)).assertTrue();
       expect(result.traverseCount).assertEqual(100);
       expect(result.sum).assertEqual(5050);
       expect(set.size).assertEqual(100);

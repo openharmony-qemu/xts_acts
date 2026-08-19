@@ -15,18 +15,22 @@
 
 import { worker } from '@kit.ArkTS';
 import { collections } from '@kit.ArkTS';
+import { ArkTSUtils } from '@kit.ArkTS';
 
 const workerPort = worker.workerPort;
 
-workerPort.onmessage = (e) => {
-  let map: collections.Map<string, number> = e.data as collections.Map<string, number>;
+workerPort.onmessage = async (e) => {
+  let map: collections.Map<string, number> = e.data.map;
+  let lock: ArkTSUtils.locks.AsyncLock = e.data.lock;
 
   let count: number = 0;
-  map.forEach((_value: number, _key: string) => {
-    count++;
+  let value50: number | undefined = undefined;
+  await lock.lockAsync(async () => {
+    map.forEach((_value: number, _key: string) => {
+      count++;
+    });
+    value50 = map.get('key_50');
   });
-
-  let value50: number | undefined = map.get('key_50');
 
   let result: string = JSON.stringify({
     count: count,
