@@ -438,6 +438,301 @@ export default function CameraPhotoSessionMetadata(): void {
       })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MetadataHumanBodyObject_isLockFocusTracked_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MetadataHumanBodyObject_isLockFocusTracked_STATIC_0100
+     * @tc.desc   test MetadataHumanBodyObject properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_MetadataHumanBodyObject_isLockFocusTracked_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_MetadataHumanBodyObject_isLockFocusTracked_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            console.info(TAG, 'getCreatePhotoSession.');
+            let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDeviceArray![0], camera.SceneMode.NORMAL_PHOTO);
+            let mMetadataObjectTypes: Array<camera.MetadataObjectType> = cameraOutputCap.supportedMetadataObjectTypes;
+            console.info(TAG, testName + ' mMetadataObjectTypes is ' + JSON.stringify(mMetadataObjectTypes));
+            let mMetadataOutput: camera.MetadataOutput = mCameraManager!.createMetadataOutput(mMetadataObjectTypes!);
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            mPhotoSession!.beginConfig();
+            mPhotoSession!.addInput(mCameraInput!);
+            await mCameraInput!.open();
+            mPhotoSession!.addOutput(mPreviewOutput!);
+            mPhotoSession!.addOutput(mPhotoOutput!);
+            mPhotoSession!.addOutput(mMetadataOutput!);
+            await mPhotoSession!.commitConfig();
+            await mPhotoSession!.start();
+            let isSupported: boolean = mMetadataOutput!.isLockMetadataObjectTrackingSupported();
+            console.info(TAG, testName + ' isSupported is ' + isSupported);
+            expect(isSupported == true || isSupported == false).assertTrue();
+            if (isSupported) {
+              mMetadataOutput!.onMetadataObjectsAvailable((error: BusinessError | null, metadataObjectArr: Array<camera.MetadataObject> | undefined) => {
+                console.info(TAG + testName + " metadataObjectArr: " + metadataObjectArr);
+                if (metadataObjectArr!.length > 0) {
+                  let metadataObject = metadataObjectArr![0]
+                  if (metadataObject.type == camera.MetadataObjectType.HUMAN_BODY) {
+                    metadataObject = metadataObject as camera.MetadataHumanBodyObject;
+                    console.info(TAG + testName + " metadataObject timestamp： " + metadataObject.timestamp);
+                    console.info(TAG + testName + " metadataObject isLockFocusTracked： " + metadataObject.isLockFocusTracked);
+                    console.info(TAG + testName + " metadataObject boundingBox： " + JSON.stringify(metadataObject.boundingBox));
+                  }
+                }
+              });
+            }
+            await mMetadataOutput?.release();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MetadataCatBodyObject_isLockFocusTracked_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MetadataCatBodyObject_isLockFocusTracked_STATIC_0100
+     * @tc.desc   test MetadataCatBodyObject properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_MetadataCatBodyObject_isLockFocusTracked_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_MetadataCatBodyObject_isLockFocusTracked_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            console.info(TAG, 'getCreatePhotoSession.');
+            let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDeviceArray![0], camera.SceneMode.NORMAL_PHOTO);
+            let mMetadataObjectTypes: Array<camera.MetadataObjectType> = cameraOutputCap.supportedMetadataObjectTypes;
+            console.info(TAG, testName + ' mMetadataObjectTypes is ' + JSON.stringify(mMetadataObjectTypes));
+            let mMetadataOutput: camera.MetadataOutput = mCameraManager!.createMetadataOutput(mMetadataObjectTypes!);
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            mPhotoSession!.beginConfig();
+            mPhotoSession!.addInput(mCameraInput!);
+            await mCameraInput!.open();
+            mPhotoSession!.addOutput(mPreviewOutput!);
+            mPhotoSession!.addOutput(mPhotoOutput!);
+            mPhotoSession!.addOutput(mMetadataOutput!);
+            await mPhotoSession!.commitConfig();
+            await mPhotoSession!.start();
+            let isSupported: boolean = mMetadataOutput!.isLockMetadataObjectTrackingSupported();
+            console.info(TAG, testName + ' isSupported is ' + isSupported);
+            expect(isSupported == true || isSupported == false).assertTrue();
+            if (isSupported) {
+              mMetadataOutput!.onMetadataObjectsAvailable((error: BusinessError | null, metadataObjectArr: Array<camera.MetadataObject> | undefined) => {
+                console.info(TAG + testName + " metadataObjectArr: " + metadataObjectArr);
+                if (metadataObjectArr!.length > 0) {
+                  let metadataObject = metadataObjectArr![0]
+                  if (metadataObject.type == camera.MetadataObjectType.CAT_BODY) {
+                    metadataObject = metadataObject as camera.MetadataCatBodyObject;
+                    console.info(TAG + testName + " metadataObject timestamp: " + metadataObject.timestamp);
+                    console.info(TAG + testName + " metadataObject isLockFocusTracked: " + metadataObject.isLockFocusTracked);
+                    console.info(TAG + testName + " metadataObject boundingBox: " + JSON.stringify(metadataObject.boundingBox));
+                  }
+                }
+              });
+            }
+            await mMetadataOutput?.release();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MetadataDogBodyObject_isLockFocusTracked_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MetadataDogBodyObject_isLockFocusTracked_STATIC_0100
+     * @tc.desc   test MetadataDogBodyObject properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_MetadataDogBodyObject_isLockFocusTracked_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_MetadataDogBodyObject_isLockFocusTracked_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            console.info(TAG, 'getCreatePhotoSession.');
+            let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDeviceArray![0], camera.SceneMode.NORMAL_PHOTO);
+            let mMetadataObjectTypes: Array<camera.MetadataObjectType> = cameraOutputCap.supportedMetadataObjectTypes;
+            console.info(TAG, testName + ' mMetadataObjectTypes is ' + JSON.stringify(mMetadataObjectTypes));
+            let mMetadataOutput: camera.MetadataOutput = mCameraManager!.createMetadataOutput(mMetadataObjectTypes!);
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            mPhotoSession!.beginConfig();
+            mPhotoSession!.addInput(mCameraInput!);
+            await mCameraInput!.open();
+            mPhotoSession!.addOutput(mPreviewOutput!);
+            mPhotoSession!.addOutput(mPhotoOutput!);
+            mPhotoSession!.addOutput(mMetadataOutput!);
+            await mPhotoSession!.commitConfig();
+            await mPhotoSession!.start();
+            let isSupported: boolean = mMetadataOutput!.isLockMetadataObjectTrackingSupported();
+            console.info(TAG, testName + ' isSupported is ' + isSupported);
+            expect(isSupported == true || isSupported == false).assertTrue();
+            if (isSupported) {
+              mMetadataOutput!.onMetadataObjectsAvailable((error: BusinessError | null, metadataObjectArr: Array<camera.MetadataObject> | undefined) => {
+                console.info(TAG + testName + " metadataObjectArr: " + metadataObjectArr);
+                if (metadataObjectArr!.length > 0) {
+                  let metadataObject = metadataObjectArr![0]
+                  if (metadataObject.type == camera.MetadataObjectType.DOG_BODY) {
+                    metadataObject = metadataObject as camera.MetadataDogBodyObject;
+                    console.info(TAG + testName + " metadataObject timestamp: " + metadataObject.timestamp);
+                    console.info(TAG + testName + " metadataObject isLockFocusTracked: " + metadataObject.isLockFocusTracked);
+                    console.info(TAG + testName + " metadataObject boundingBox: " + JSON.stringify(metadataObject.boundingBox));
+                  }
+                }
+              });
+            }
+            await mMetadataOutput?.release();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MetadataSalientDetectionObject_isLockFocusTracked_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MetadataSalientDetectionObject_isLockFocusTracked_STATIC_0100
+     * @tc.desc   test MetadataSalientDetectionObject properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_MetadataSalientDetectionObject_isLockFocusTracked_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_MetadataSalientDetectionObject_isLockFocusTracked_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            console.info(TAG, 'getCreatePhotoSession.');
+            let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDeviceArray![0], camera.SceneMode.NORMAL_PHOTO);
+            let mMetadataObjectTypes: Array<camera.MetadataObjectType> = cameraOutputCap.supportedMetadataObjectTypes;
+            console.info(TAG, testName + ' mMetadataObjectTypes is ' + JSON.stringify(mMetadataObjectTypes));
+            let mMetadataOutput: camera.MetadataOutput = mCameraManager!.createMetadataOutput(mMetadataObjectTypes!);
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            mPhotoSession!.beginConfig();
+            mPhotoSession!.addInput(mCameraInput!);
+            await mCameraInput!.open();
+            mPhotoSession!.addOutput(mPreviewOutput!);
+            mPhotoSession!.addOutput(mPhotoOutput!);
+            mPhotoSession!.addOutput(mMetadataOutput!);
+            await mPhotoSession!.commitConfig();
+            await mPhotoSession!.start();
+            let isSupported: boolean = mMetadataOutput!.isLockMetadataObjectTrackingSupported();
+            console.info(TAG, testName + ' isSupported is ' + isSupported);
+            expect(isSupported == true || isSupported == false).assertTrue();
+            if (isSupported) {
+              mMetadataOutput!.onMetadataObjectsAvailable((error: BusinessError | null, metadataObjectArr: Array<camera.MetadataObject> | undefined) => {
+                console.info(TAG + testName + " metadataObjectArr: " + metadataObjectArr);
+                if (metadataObjectArr!.length > 0) {
+                  let metadataObject = metadataObjectArr![0]
+                  if (metadataObject.type == camera.MetadataObjectType.SALIENT_DETECTION) {
+                    metadataObject = metadataObject as camera.MetadataSalientDetectionObject;
+                    console.info(TAG + testName + " metadataObject timestamp: " + metadataObject.timestamp);
+                    console.info(TAG + testName + " metadataObject isLockFocusTracked: " + metadataObject.isLockFocusTracked);
+                    console.info(TAG + testName + " metadataObject boundingBox: " + JSON.stringify(metadataObject.boundingBox));
+                  }
+                }
+              });
+            }
+            await mMetadataOutput?.release();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MetadataBarcodeObject_isLockFocusTracked_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MetadataBarcodeObject_isLockFocusTracked_STATIC_0100
+     * @tc.desc   test MetadataBarcodeObject properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_MetadataBarcodeObject_isLockFocusTracked_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_MetadataBarcodeObject_isLockFocusTracked_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            console.info(TAG, 'getCreatePhotoSession.');
+            let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDeviceArray![0], camera.SceneMode.NORMAL_PHOTO);
+            let mMetadataObjectTypes: Array<camera.MetadataObjectType> = cameraOutputCap.supportedMetadataObjectTypes;
+            console.info(TAG, testName + ' mMetadataObjectTypes is ' + JSON.stringify(mMetadataObjectTypes));
+            let mMetadataOutput: camera.MetadataOutput = mCameraManager!.createMetadataOutput(mMetadataObjectTypes!);
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            mPhotoSession!.beginConfig();
+            mPhotoSession!.addInput(mCameraInput!);
+            await mCameraInput!.open();
+            mPhotoSession!.addOutput(mPreviewOutput!);
+            mPhotoSession!.addOutput(mPhotoOutput!);
+            mPhotoSession!.addOutput(mMetadataOutput!);
+            await mPhotoSession!.commitConfig();
+            await mPhotoSession!.start();
+            let isSupported: boolean = mMetadataOutput!.isLockMetadataObjectTrackingSupported();
+            console.info(TAG, testName + ' isSupported is ' + isSupported);
+            expect(isSupported == true || isSupported == false).assertTrue();
+            if (isSupported) {
+              mMetadataOutput!.onMetadataObjectsAvailable((error: BusinessError | null, metadataObjectArr: Array<camera.MetadataObject> | undefined) => {
+                console.info(TAG + testName + " metadataObjectArr: " + metadataObjectArr);
+                if (metadataObjectArr!.length > 0) {
+                  let metadataObject = metadataObjectArr![0]
+                  if (metadataObject.type == camera.MetadataObjectType.BAR_CODE_DETECTION) {
+                    metadataObject = metadataObject as camera.MetadataBarcodeObject;
+                    console.info(TAG + testName + " metadataObject timestamp: " + metadataObject.timestamp);
+                    console.info(TAG + testName + " metadataObject isLockFocusTracked: " + metadataObject.isLockFocusTracked);
+                    console.info(TAG + testName + " metadataObject boundingBox: " + JSON.stringify(metadataObject.boundingBox));
+                  }
+                }
+              });
+            }
+            await mMetadataOutput?.release();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_MetadatFaceObject_emotion_enum_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_MetadatFaceObject_emotion_enum_STATIC_0100
      * @tc.desc   test  emotion enum
