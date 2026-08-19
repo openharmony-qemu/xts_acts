@@ -72,7 +72,7 @@ export default function ActsNotificationBadgeTest() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Corner_Query_0004', Level.LEVEL2, async (done: Function) => {
-      TAG = TAG + "Sub_Notification_Ans_Corner_Query_0004 "
+      TAG = TAG + 'Sub_Notification_Ans_Corner_Query_0004 '
       try{
         notificationManager.onBadgeNumberQuery(
           async (bundleOption: notificationManager.BundleOption) => {
@@ -89,7 +89,7 @@ export default function ActsNotificationBadgeTest() {
       } catch(err) {
         hilog.info(0x0000, TAG, `offBadgeNumberQuery failed, code is ${err.code}, message is ${err.message}`);
         expect(err.code).assertEqual(202)
-        console.info(TAG + "Sub_Notification_Ans_Corner_Query_0004 PASS");
+        console.info(TAG + 'Sub_Notification_Ans_Corner_Query_0004 PASS');
         done()
       }
     })
@@ -118,7 +118,7 @@ export default function ActsNotificationBadgeTest() {
             }
           } else {
             count++
-            console.log("Sub_Notification_Ans_Corner_SetNum_0900 success")
+            console.log('Sub_Notification_Ans_Corner_SetNum_0900 success')
             expect(count).assertEqual(1)
             done();
           }
@@ -143,7 +143,7 @@ export default function ActsNotificationBadgeTest() {
       try {
         await notificationManager.setBadgeNumber(10).then(() => {
           count++
-          console.log("Sub_Notification_Ans_Corner_SetNum_1000 success")
+          console.log('Sub_Notification_Ans_Corner_SetNum_1000 success')
           expect(count).assertEqual(1)
           done();
         }).catch((err: BusinessError) => {
