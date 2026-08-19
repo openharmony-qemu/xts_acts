@@ -147,11 +147,9 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash007, Function | MediumTest | Level
     unsigned int ret = IoTFlashWrite(TEST_FLASH_OFFSET, TEST_FLASH_SIZE, ramData, 0);
     printf("IoTFlashWrite return = %d\r\n", ret);
     /* 非法偏移预期失败：按 API 契约断言返回失败（不等于 IOT_SUCCESS） */
-    /* 非法偏移预期失败：成功返回 0，失败返回非 0 错误码 */
     TEST_ASSERT_TRUE(ret != IOT_SUCCESS);
     ret = IoTFlashWrite(TEST_FLASH_OFFSET, TEST_FLASH_SIZE, ramData, 1);
     printf("IoTFlashWrite with erase return = %d\r\n", ret);
-    /* 非法偏移预期失败：成功返回 0，失败返回非 0 错误码 */
     TEST_ASSERT_TRUE(ret != IOT_SUCCESS);
 };
 
@@ -169,11 +167,9 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash008, Function | MediumTest | Level
     unsigned int ret = IoTFlashRead(TEST_FLASH_OFFSET, TEST_FLASH_SIZE, ramData);
     printf("IoTFlashRead return = %d\r\n", ret);
     /* 非法偏移/空缓冲预期失败：按 API 契约断言返回失败（不等于 IOT_SUCCESS） */
-    /* 非法偏移预期失败：成功返回 0，失败返回非 0 错误码 */
     TEST_ASSERT_TRUE(ret != IOT_SUCCESS);
     ret = IoTFlashRead(TEST_FLASH_OFFSET, TEST_FLASH_SIZE, NULL);
     printf("IoTFlashRead with null buffer return = %d\r\n", ret);
-    /* 非法偏移预期失败：成功返回 0，失败返回非 0 错误码 */
     TEST_ASSERT_TRUE(ret != IOT_SUCCESS);
 };
 
@@ -189,8 +185,7 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash009, Function | MediumTest | Level
 {
     unsigned int ret = IoTFlashErase(TEST_FLASH_OFFSET, TEST_FLASH_SIZE_4K);
     printf("IoTFlashErase return = %d\r\n", ret);
-    /* 非法偏移预期失败：成功返回 0，失败返回板卡实现错误码 */
-    /* 非法偏移预期失败：成功返回 0，失败返回非 0 错误码 */
+    /* 非法偏移预期失败：按 API 契约断言返回失败（不等于 IOT_SUCCESS） */
     TEST_ASSERT_TRUE(ret != IOT_SUCCESS);
 };
 

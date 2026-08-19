@@ -311,8 +311,8 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedRequest0050, Function |
 {
     Request request = {.msgId = MSG_NO, .msgValue = 0};
     Identity identity = {0, 0, NULL};
-    uint32 *token = NULL;
-    uint32 *result = SAMGR_SendSharedRequest(NULL, &request, token, NULL);
+    uint32_t *token = NULL;
+    uint32_t *result = SAMGR_SendSharedRequest(NULL, &request, token, NULL);
     TEST_ASSERT_NULL(result);
     result = SAMGR_SendSharedRequest(&identity, NULL, token, NULL);
     TEST_ASSERT_NULL(result);
@@ -330,7 +330,7 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedRequest0050, Function |
  */
 LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedDirectRequest0040, Function | MediumTest | Level2)
 {
-    uint32 *ref = NULL;
+    uint32_t *ref = NULL;
     int32_t result = SAMGR_SendSharedDirectRequest(NULL, NULL, NULL, NULL, NULL);
     TEST_ASSERT_EQUAL_INT(EC_INVALID, result);
     result = SAMGR_SendSharedDirectRequest(NULL, NULL, NULL, &ref, NULL);
