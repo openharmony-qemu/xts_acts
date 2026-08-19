@@ -140,7 +140,6 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog0700, LEVEL0)
     TEST_ASSERT_EQUAL_STRING(ret, "HIVIEW"); 
 };
 
-/* hilog registerProc callback */
 static boolean g_procCalled = FALSE;
 static boolean HilogOutputProc(const HiLogContent *hilogContent, uint32 len)
 {
@@ -149,7 +148,6 @@ static boolean HilogOutputProc(const HiLogContent *hilogContent, uint32 len)
     return TRUE;
 }
 
-/* hilog file watcher callback */
 static void HilogFileWatcher(const char *path, uint8 type, uint8 event)
 {
     printf("HilogFileWatcher, path is %s, type is %d, event is %d\n", path, type, event);
@@ -229,7 +227,6 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1400, LEVEL0)
     HiLogUnRegisterProc(HilogOutputProc);
     g_procCalled = FALSE;
     HiLogPrintf(HILOG_MODULE_HIVIEW, HILOG_LV_INFO, FUN_ARG_NUM(1), "hilog unregister proc test %d", TEST_LOG_VALUE);
-    /* 已反注册回调：打印不再触发 proc，标志保持 FALSE（验证 UnRegisterProc 真实生效） */
     TEST_ASSERT_FALSE(g_procCalled);
     HiLogUnRegisterProc(NULL);
 };
@@ -246,7 +243,6 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1500, LEVEL0)
 {
     uint32 ret = HiLogGetConfigOption();
     printf("HiLogGetConfigOption ret=%u\n", ret);
-    /* 配置选项值，按 API 契约返回非 0 */
     TEST_ASSERT_EQUAL_UINT32(1, ret);
 };
 
@@ -262,7 +258,6 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1800, LEVEL0)
 {
     int ret = HiLogFileProc(HIVIEW_FILE_OUT_PATH_LOG, 0);
     printf("HiLogFileProc mode=0 ret=%d\n", ret);
-    /* 按 API 契约：失败返回负值，不写死板卡特定错误码 */
     TEST_ASSERT_TRUE(ret < 0);
     ret = HiLogFileProc(HIVIEW_FILE_OUT_PATH_LOG, 1);
     printf("HiLogFileProc mode=1 ret=%d\n", ret);

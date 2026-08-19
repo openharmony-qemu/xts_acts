@@ -808,18 +808,14 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testFindParameter001,
                Function | MediumTest | Level1) {
-    /* 非法参数：NULL 返回 -1 */
     uint32_t handle = FindParameter(NULL);
     TEST_ASSERT_TRUE((int32_t)handle < 0);
-    /* 不存在的参数返回负值 */
     handle = FindParameter("rw.sys.xts_notexist_1000");
     TEST_ASSERT_TRUE((int32_t)handle < 0);
-    /* 设置参数后返回有效句柄 */
     int ret = SetParameter("rw.sys.xts_findparam", "100");
     TEST_ASSERT_EQUAL_INT(0, ret);
     handle = FindParameter("rw.sys.xts_findparam");
     TEST_ASSERT_TRUE((int32_t)handle >= 0);
-    /* 只读系统参数（const 前缀）返回有效句柄 */
     handle = FindParameter("const.product.model");
     TEST_ASSERT_TRUE((int32_t)handle >= 0);
 };
@@ -835,12 +831,10 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameterCommitId001,
                Function | MediumTest | Level1) {
-    /* 非法句柄：0 与 -1 返回 -1 */
     uint32_t commitId = GetParameterCommitId(0);
     TEST_ASSERT_TRUE((int32_t)commitId < 0);
     commitId = GetParameterCommitId((uint32_t)(-1));
     TEST_ASSERT_TRUE((int32_t)commitId < 0);
-    /* 合法句柄：返回非 -1 的提交号 */
     int ret = SetParameter("rw.sys.xts_commitid", "1");
     TEST_ASSERT_EQUAL_INT(0, ret);
     uint32_t handle = FindParameter("rw.sys.xts_commitid");
@@ -861,15 +855,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameterName001,
                Function | MediumTest | Level1) {
     char name[MAX_LEN] = {0};
-    /* 非法句柄返回负错误码 */
     int ret = GetParameterName(0, name, sizeof(name));
     TEST_ASSERT_TRUE(ret < 0);
     ret = GetParameterName((uint32_t)(-1), name, sizeof(name));
     TEST_ASSERT_TRUE(ret < 0);
-    /* NULL 缓冲返回 EC_INVALID */
     ret = GetParameterName(0, NULL, sizeof(name));
     TEST_ASSERT_EQUAL_INT(EC_INVALID, ret);
-    /* 合法句柄：返回名字长度且内容一致 */
     ret = SetParameter("rw.sys.xts_getname", "abc");
     TEST_ASSERT_EQUAL_INT(0, ret);
     uint32_t handle = FindParameter("rw.sys.xts_getname");
@@ -892,13 +883,10 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameterValue001,
                Function | MediumTest | Level1) {
     char value[MAX_LEN] = {0};
-    /* 非法句柄返回负错误码 */
     int ret = GetParameterValue(0, value, sizeof(value));
     TEST_ASSERT_TRUE(ret < 0);
-    /* NULL 缓冲返回 EC_INVALID */
     ret = GetParameterValue(0, NULL, sizeof(value));
     TEST_ASSERT_EQUAL_INT(EC_INVALID, ret);
-    /* 合法句柄：返回值长度且内容一致 */
     ret = SetParameter("rw.sys.xts_getvalue", "hello");
     TEST_ASSERT_EQUAL_INT(0, ret);
     uint32_t handle = FindParameter("rw.sys.xts_getvalue");
@@ -920,10 +908,8 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetSystemCommitId001,
                Function | MediumTest | Level1) {
-    /* 参数工作区已初始化，不应返回 -1（未初始化错误码） */
     long long commitId = GetSystemCommitId();
     printf("SystemCommitId=%lld\n", commitId);
-    /* 参数工作区已初始化后返回全局提交号（非负），未初始化才返回 -1 */
     TEST_ASSERT_TRUE(commitId >= 0);
     long long commitId2 = GetSystemCommitId();
     TEST_ASSERT_TRUE(commitId2 >= 0);
@@ -940,13 +926,10 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetIntParameter001,
                Function | MediumTest | Level1) {
-    /* 不存在的参数返回默认值 */
     int32_t ret = GetIntParameter("rw.sys.xts_notexist_int", 1234);
     TEST_ASSERT_EQUAL_INT(1234, ret);
-    /* NULL key 返回默认值 */
     ret = GetIntParameter(NULL, 5678);
     TEST_ASSERT_EQUAL_INT(5678, ret);
-    /* 设置后返回解析值 */
     int setRet = SetParameter("rw.sys.xts_int", "42");
     TEST_ASSERT_EQUAL_INT(0, setRet);
     ret = GetIntParameter("rw.sys.xts_int", -1);
@@ -964,13 +947,10 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetUintParameter001,
                Function | MediumTest | Level1) {
-    /* 不存在的参数返回默认值 */
     uint32_t ret = GetUintParameter("rw.sys.xts_notexist_uint", 8888);
     TEST_ASSERT_TRUE(ret == 8888);
-    /* NULL key 返回默认值 */
     ret = GetUintParameter(NULL, 9999);
     TEST_ASSERT_TRUE(ret == 9999);
-    /* 设置后返回解析值 */
     int setRet = SetParameter("rw.sys.xts_uint", "77");
     TEST_ASSERT_EQUAL_INT(0, setRet);
     ret = GetUintParameter("rw.sys.xts_uint", 0);
@@ -988,7 +968,6 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSaveParameters001,
                Function | MediumTest | Level1) {
-    /* 契约：持久化保存成功返回 0（SystemSaveParameters 恒返回 SUCCESS） */
     int ret = SaveParameters();
     printf("SaveParameters ret=%d\n", ret);
     TEST_ASSERT_EQUAL_INT(0, ret);
@@ -1005,12 +984,10 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testWaitParameter001,
                Function | MediumTest | Level1) {
-    /* NULL 参数返回 EC_INVALID */
     int ret = WaitParameter(NULL, "1", 1);
     TEST_ASSERT_EQUAL_INT(EC_INVALID, ret);
     ret = WaitParameter("rw.sys.xts_wait", NULL, 1);
     TEST_ASSERT_EQUAL_INT(EC_INVALID, ret);
-    /* 等待一个不会被设置的值，1 秒超时返回 SYSPARAM_WAIT_TIMEOUT */
     ret = WaitParameter("rw.sys.xts_never_set", "any", 1);
     printf("WaitParameter timeout ret=%d\n", ret);
     TEST_ASSERT_EQUAL_INT(SYSPARAM_WAIT_TIMEOUT, ret);
