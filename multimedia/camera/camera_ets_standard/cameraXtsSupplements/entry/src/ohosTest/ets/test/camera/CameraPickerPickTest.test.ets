@@ -34,6 +34,49 @@ import { colorSpaceManager } from '@kit.ArkGraphics2D';
 import { fileUri } from '@kit.CoreFileKit';
 import { Driver, ON } from '@kit.TestKit';
 
+export function executePicker() : boolean {
+  const cameraAvailable = canIUse('SystemCapability.Multimedia.Camera.Core');
+  let context = getContext();
+  console.info(TAG + 'Enter cameraAvailable is '+ cameraAvailable);
+  let isSupportedCameras = true;
+  let isExecute = false;
+  let mCameraManager: camera.CameraManager;
+  let mCameraDevicesArray: Array<camera.CameraDevice>;
+
+  let isEmpty = (data: ESObject) => {
+    if (data == null || data == undefined) {
+      return true;
+    }
+    return false;
+  }
+
+  console.info(TAG + 'Enter getCameraManagerInstance');
+  mCameraManager = camera.getCameraManager(context);
+  if (isEmpty(mCameraManager)) {
+    console.info(TAG + "getCameraManager FAILED");
+    return false;
+  }
+  console.info(TAG + 'Exit getCameraManagerInstance');
+  mCameraDevicesArray = mCameraManager.getSupportedCameras();
+  console.info(TAG + 'Enter mCameraDevicesArray is '+ JSON.stringify(mCameraDevicesArray));
+  if (isEmpty(mCameraDevicesArray)) {
+    isSupportedCameras = false;
+  }
+  if (cameraAvailable && isSupportedCameras) {
+    isExecute = true;
+  } else {
+    isExecute = false;
+  }
+  let uidriver = UiDriver.create();
+  let uiButton = uidriver.findComponent(BY.text("COMPONENT_ID_SHUTTER_PHOTO_1"));
+  if (uiButton !== null) {
+      isExecute = false;
+  } else {
+      isExecute = true;
+  }
+  return isExecute;
+}
+
 
 const TAG = "CameraXtsCameraPickerTest";
 let mCameraManager: camera.CameraManager;
