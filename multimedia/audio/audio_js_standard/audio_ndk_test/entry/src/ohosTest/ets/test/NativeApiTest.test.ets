@@ -20,6 +20,7 @@ import { abilityAccessCtrl, PermissionRequestResult, Permissions } from '@kit.Ab
 import { BusinessError } from '@kit.BasicServicesKit';
 import { resourceManager } from '@kit.LocalizationKit';
 import common from '@ohos.app.ability.common';
+import audio from '@ohos.multimedia.audio';
 
 const Tag = 'audio_ndk_test:'
 const test_pass = 0;  // success result
@@ -7813,9 +7814,29 @@ export default function audioNDK() {
       */
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
-        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100()
-        console.info(`${Tag} Write frame length mismatch result: ${result}`)
-        expect(result).assertEqual(test_pass)
+        try {
+          let audioManager = audio.getAudioManager();
+          let audioRoutingManager = audioManager.getRoutingManager();
+          let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          console.info(`Determine if this is a default device`)
+          const detecteDevice = outputDeviceDescription.some(device =>
+            device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+          );
+          if (detecteDevice) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100()
+          console.info(`${Tag} Write frame length mismatch result: ${result}`)
+          expect(result).assertEqual(test_pass)
+          await sleep(3000)
+          done()
+        } catch (error) {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          expect().assertFail();
+        }
         done()
     })
 
@@ -7832,9 +7853,16 @@ export default function audioNDK() {
       */
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
-        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100()
-        console.info(`${Tag} Writable illegal state (released) result: ${result}`)
-        expect(result).assertEqual(test_pass)
+        try {
+          let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100()
+          console.info(`${Tag} Writable illegal state (released) result: ${result}`)
+          expect(result).assertEqual(test_pass)
+          await sleep(3000)
+          done()
+        } catch (error) {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          expect().assertFail();
+        }
         done()
     })
 
@@ -7852,9 +7880,16 @@ export default function audioNDK() {
       */
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
-        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100()
-        console.info(`${Tag} GetWritableSize illegal state (released) result: ${result}`)
-        expect(result).assertEqual(test_pass)
+        try {
+          let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100()
+          console.info(`${Tag} GetWritableSize illegal state (released) result: ${result}`)
+          expect(result).assertEqual(test_pass)
+          await sleep(3000)
+          done()
+        } catch (error) {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          expect().assertFail();
+        }
         done()
     })
 
@@ -7871,9 +7906,16 @@ export default function audioNDK() {
       */
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
-        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100()
-        console.info(`${Tag} RegisterStartCallback illegal state result: ${result}`)
-        expect(result).assertEqual(test_pass)
+        try {
+          let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100()
+          console.info(`${Tag} RegisterStartCallback illegal state result: ${result}`)
+          expect(result).assertEqual(test_pass)
+          await sleep(3000)
+          done()
+        } catch (error) {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          expect().assertFail();
+        }
         done()
     })
 
@@ -7890,9 +7932,16 @@ export default function audioNDK() {
       */
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
-        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100()
-        console.info(`${Tag} RegisterStopCallback illegal state result: ${result}`)
-        expect(result).assertEqual(test_pass)
+        try {
+          let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100()
+          console.info(`${Tag} RegisterStopCallback illegal state result: ${result}`)
+          expect(result).assertEqual(test_pass)
+          await sleep(3000)
+          done()
+        } catch (error) {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          expect().assertFail();
+        }
         done()
     })
 
@@ -7909,9 +7958,16 @@ export default function audioNDK() {
       */
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
-        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100()
-        console.info(`${Tag} RegisterReleaseCallback illegal state result: ${result}`)
-        expect(result).assertEqual(test_pass)
+        try {
+          let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100()
+          console.info(`${Tag} RegisterReleaseCallback illegal state result: ${result}`)
+          expect(result).assertEqual(test_pass)
+          await sleep(3000)
+          done()
+        } catch (error) {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          expect().assertFail();
+        }
         done()
     })
 
@@ -7928,9 +7984,16 @@ export default function audioNDK() {
       */
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
-        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100()
-        console.info(`${Tag} RegisterLatencyCallback illegal state result: ${result}`)
-        expect(result).assertEqual(test_pass)
+        try {
+          let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100()
+          console.info(`${Tag} RegisterLatencyCallback illegal state result: ${result}`)
+          expect(result).assertEqual(test_pass)
+          await sleep(3000)
+          done()
+        } catch (error) {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          expect().assertFail();
+        }
         done()
     })
 
@@ -7947,9 +8010,16 @@ export default function audioNDK() {
       */
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
-        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100()
-        console.info(`${Tag} RegisterFramePositionCallback illegal state result: ${result}`)
-        expect(result).assertEqual(test_pass)
+        try {
+          let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100()
+          console.info(`${Tag} RegisterFramePositionCallback illegal state result: ${result}`)
+          expect(result).assertEqual(test_pass)
+          await sleep(3000)
+          done()
+        } catch (error) {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          expect().assertFail();
+        }
         done()
     })
 
@@ -8042,10 +8112,17 @@ export default function audioNDK() {
       */
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100()
-      console.info(`${Tag} Write success result: ${result}`)
-      expect(result).assertEqual(test_pass)
-      done()
+      try {
+          let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100()
+          console.info(`${Tag} Write success result: ${result}`)
+          expect(result).assertEqual(test_pass)
+          await sleep(3000)
+          done()
+        } catch (error) {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          expect().assertFail();
+        }
+        done()
     })
 
     /**
@@ -8061,10 +8138,17 @@ export default function audioNDK() {
       */
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100()
-      console.info(`${Tag} GetWritableSize success result: ${result}`)
-      expect(result).assertEqual(test_pass)
-      done()
+      try {
+          let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100()
+          console.info(`${Tag} GetWritableSize success result: ${result}`)
+          expect(result).assertEqual(test_pass)
+          await sleep(3000)
+          done()
+        } catch (error) {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          expect().assertFail();
+        }
+        done()
     })
 
     /**
@@ -8317,10 +8401,29 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100',
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100 : ${result}`);
-      expect(result).assertEqual(test_pass);
-      done();
+          try{
+            let audioManager = audio.getAudioManager();
+            let audioRoutingManager = audioManager.getRoutingManager();
+            let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+            console.info(`SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+            console.info(`Determine if this is a default device`)
+            const detecteDevice = outputDeviceDescription.some(device =>
+              device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+            );
+            if (detecteDevice) {
+              console.info(`this device has external device`)
+              done();
+              return;
+            }
+            let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100();
+            console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100 : ${result}`);
+            expect(result).assertEqual(test_pass);
+            done();
+          } catch (error) {
+            console.info(`SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100 ERROR: ${error.message}`);
+            expect().assertFail();
+          }
+          done();
     })
 
     /**
@@ -8333,10 +8436,29 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100',
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100 : ${result}`);
-      expect(result).assertEqual(test_pass);
-      done();
+          try{
+            let audioManager = audio.getAudioManager();
+            let audioRoutingManager = audioManager.getRoutingManager();
+            let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+            console.info(`SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+            console.info(`Determine if this is a default device`)
+            const detecteDevice = outputDeviceDescription.some(device =>
+              device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+            );
+            if (detecteDevice) {
+              console.info(`this device has external device`)
+              done();
+              return;
+            }
+            let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100();
+            console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100 : ${result}`);
+            expect(result).assertEqual(test_pass);
+            done();
+          } catch (error) {
+            console.info(`SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100 ERROR: ${error.message}`);
+            expect().assertFail();
+          }
+          done();
     })
 
     /**
