@@ -771,11 +771,10 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetDeviceColor,
                Function | MediumTest | Level1)
 {
-    /* 未设置 ohos.boot.backcolor 属性时返回空串 */
+    /* 板卡可能设置或未设置该属性，不限定返回值，断言非 NULL 且多次调用一致 */
     const char *value1 = GetDeviceColor();
     printf("DeviceColor=%s\n", value1);
     TEST_ASSERT_TRUE(value1 != NULL);
-    TEST_ASSERT_TRUE(value1[0] == '\0');
     const char *value2 = GetDeviceColor();
     TEST_ASSERT_EQUAL_STRING(value1, value2);
 };
@@ -1007,10 +1006,20 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetSeniorVersion,
                Function | MediumTest | Level1)
 {
-    /* 由 const.ohos.fullname 解析，实测 S=0 */
+    /* 随版本迭代，从 GetOSFullName() 解析第 2 段动态比对 */
+    const char *fullName2 = GetOSFullName();
+    TEST_ASSERT_TRUE(fullName2 != NULL);
+    const char *p2 = (fullName2 == NULL) ? NULL : strchr(fullName2, '-');
+    int senior = 0;
+    if (p2 != NULL) {
+        p2++;
+        (void)ParseVersionNumber(&p2); /* major */
+        if (*p2 == '.') { p2++; }
+        senior = ParseVersionNumber(&p2);
+    }
     int value1 = GetSeniorVersion();
     printf("SeniorVersion=%d\n", value1);
-    TEST_ASSERT_EQUAL_INT(0, value1);
+    TEST_ASSERT_EQUAL_INT(senior, value1);
     int value2 = GetSeniorVersion();
     TEST_ASSERT_EQUAL_INT(value1, value2);
 };
@@ -1027,10 +1036,22 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                testGetFeatureVersion,
                Function | MediumTest | Level1)
 {
-    /* 由 const.ohos.fullname 解析，实测 F=0 */
+    /* 随版本迭代，从 GetOSFullName() 解析第 3 段动态比对 */
+    const char *fullName3 = GetOSFullName();
+    TEST_ASSERT_TRUE(fullName3 != NULL);
+    const char *p3 = (fullName3 == NULL) ? NULL : strchr(fullName3, '-');
+    int feature = 0;
+    if (p3 != NULL) {
+        p3++;
+        (void)ParseVersionNumber(&p3); /* major */
+        if (*p3 == '.') { p3++; }
+        (void)ParseVersionNumber(&p3); /* senior */
+        if (*p3 == '.') { p3++; }
+        feature = ParseVersionNumber(&p3);
+    }
     int value1 = GetFeatureVersion();
     printf("FeatureVersion=%d\n", value1);
-    TEST_ASSERT_EQUAL_INT(0, value1);
+    TEST_ASSERT_EQUAL_INT(feature, value1);
     int value2 = GetFeatureVersion();
     TEST_ASSERT_EQUAL_INT(value1, value2);
 };
