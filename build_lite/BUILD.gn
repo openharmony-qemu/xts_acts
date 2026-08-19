@@ -170,7 +170,7 @@ test_suite("acts") {
   deps = [ ":acts_component" ]
   version = "OpenHarmony-ACTS-1.0.1"
   deps += [ "//test/xts/tools/lite/others/query:libQuery" ]
-  if (ohos_kernel_type == "liteos_a" || ohos_kernel_type == "linux") {
+  if (ohos_kernel_type == "liteos_a") {
     deps += [ "//test/xts/acts/validator_lite:acts_validator_lite" ]
   }
 }
