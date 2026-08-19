@@ -21,9 +21,6 @@
             "uinput -T -m 300 2700 280 200",
             "power-shell timeout -o 86400000",
             "hidumper -s 3301 -a -t"
-        ],
-        "teardown-command": [
-            "power-shell setmode 601"
         ]
     }]
 }
