@@ -83,7 +83,7 @@ async function createVideoOutput(cameraNum: number) {
   let mvideoProfile = cameraOutputCap.videoProfiles[0];
   for (const indexPreviewProfiles of cameraOutputCap.previewProfiles) {
     let foundProfile = cameraOutputCap.videoProfiles.find((indexVideoProfile: camera.Profile) => {
-      console.log(TAG, 'find videoProfile: w: ' + indexVideoProfile.size.width + 'h: ' + indexVideoProfile.size.height);
+      console.log(TAG, 'find mvideoProfile: w: ' + indexVideoProfile.size.width + 'h: ' + indexVideoProfile.size.height);
       console.log(TAG,
         'find previewProfile: w: ' + indexPreviewProfiles.size.width + 'h: ' + indexPreviewProfiles.size.height);
       return Math.abs((indexVideoProfile.size.width * indexPreviewProfiles.size.height) -
@@ -95,7 +95,7 @@ async function createVideoOutput(cameraNum: number) {
       break;
     }
   }
-  console.log(TAG, 'videoProfile: w: ' + mvideoProfile.size.width + 'h: ' + mvideoProfile.size.height);
+  console.log(TAG, 'mvideoProfile: w: ' + mvideoProfile.size.width + 'h: ' + mvideoProfile.size.height);
   console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
   CameraVideoProfile.videoFrameWidth = mvideoProfile.size.width;
   CameraVideoProfile.videoFrameHeight = mvideoProfile.size.height;
@@ -225,8 +225,8 @@ async function videoSessionCommitConfig(testName: string, cameraNum: number) {
 
 async function releasePhotoSession() {
   console.info(TAG, 'releasePhotoSession.');
-  try { await mPreviewOutput?.release(); } catch (e) { console.error(TAG, 'release mPreviewOutput err: ' + (e as BusinessError).code); }
-  try { await mPhotoSession?.release(); } catch (e) { console.error(TAG, 'release mPhotoSession err: ' + (e as BusinessError).code); }
+  try { await mPreviewOutput?.release(); } catch (e) { console.error(TAG, 'release mPreviewOutput err: ' + e.code); }
+  try { await mPhotoSession?.release(); } catch (e) { console.error(TAG, 'release mPhotoSession err: ' + e.code); }
 }
 
 async function releaseVideoSession() {
@@ -490,6 +490,7 @@ export default function CameraLockFocusTest() {
           console.info(`${caseName} mVideoSession.start`);
           let isSupported = await mVideoSession.isLockFocusTrackingSupported();
           console.info(`${caseName} isSupported is: ${isSupported}`);
+          await mVideoSession?.release();
           expect().assertFail();
         } catch (err) {
           let error: BusinessError = err as BusinessError;
@@ -852,7 +853,7 @@ export default function CameraLockFocusTest() {
           mPhotoSession.unlockFocusTracking();
           mPhotoSession.unlockFocusTracking();
         } catch (err) {
-          let error: BusinessError = err as BusinessError;
+          let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect().assertFail();
         }
@@ -881,14 +882,15 @@ export default function CameraLockFocusTest() {
           await photoSessionWithoutCommitConfig(caseName, i);
           console.info(`${caseName} start`);
           mPhotoSession.unlockFocusTracking();
+          await releasePhotoSession();
           expect().assertFail();
         } catch (err) {
           let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+          await releasePhotoSession();
           expect(err.code).assertEqual(SESSION_NOT_CONFIG_CODE)
         }
       }
-      await releasePhotoSession();
       done();
     });
 
