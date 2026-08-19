@@ -681,9 +681,9 @@ export default function CameraPhotoSessionMetadata(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_MetadataSalientDetectionObject_isLockFocusTracked_STATIC_0100',
+    it('SUB_MULTIMEDIA_CAMERA_MetadataBarcodeObject_isLockFocusTracked_STATIC_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        const testName = 'SUB_MULTIMEDIA_CAMERA_MetadataSalientDetectionObject_isLockFocusTracked_STATIC_0100';
+        const testName = 'SUB_MULTIMEDIA_CAMERA_MetadataBarcodeObject_isLockFocusTracked_STATIC_0100';
         if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
           console.info(TAG, testName, "Entering FAILED with NoCamera");
           expect().assertFail();
