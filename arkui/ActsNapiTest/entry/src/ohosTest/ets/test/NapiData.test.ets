@@ -31,13 +31,12 @@ export default function dataTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('testNapiData0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiData0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName = 'testNapiData001';
       console.info(`${caseName} START`);
       const now: Date = new Date();
       expect(testNapi.isDate(now)).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -48,13 +47,12 @@ export default function dataTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('testNapiData0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiData0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName = 'testNapiData002';
       console.info(`${caseName} START`);
       const invalidDate: Date = new Date(NaN);
       expect(testNapi.isDate(invalidDate)).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -65,12 +63,11 @@ export default function dataTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('testNapiData0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiData0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName = 'testNapiData003';
       console.info(`${caseName} START`);
       expect(testNapi.isDatePrototypeObject()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -81,12 +78,11 @@ export default function dataTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('testNapiData0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiData0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName = 'testNapiData004';
       console.info(`${caseName} START`);
       expect(testNapi.isFrozenDate()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -97,12 +93,11 @@ export default function dataTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('testNapiData0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiData0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName = 'testNapiData005';
       console.info(`${caseName} START`);
       expect(testNapi.isDateCrossRealm()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -113,12 +108,11 @@ export default function dataTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('testNapiData0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiData0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName = 'testNapiData006';
       console.info(`${caseName} START`);
       expect(testNapi.isDateAfterExceptionClear()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -129,12 +123,11 @@ export default function dataTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('testNapiData0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiData0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName = 'testNapiData007';
       console.info(`${caseName} START`);
       expect(testNapi.isDateWithMultipleExceptions()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     // ===== napi_delete_callsite_info 测试 =====
@@ -147,12 +140,11 @@ export default function dataTest() {
      * @tc.level LEVEL0
      */
     it('testDeleteCallsiteInfoNormalParams0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
+      () => {
       const caseName = 'testDeleteCallsiteInfoNormalParams008';
       console.info(`${caseName} START`);
       expect(testNapi.testDeleteCallsiteInfoNormalParams()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -164,12 +156,11 @@ export default function dataTest() {
      * @tc.level LEVEL0
      */
     it('testDeleteCallsiteInfoCombination0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
+      () => {
       const caseName = 'testDeleteCallsiteInfoCombination009';
       console.info(`${caseName} START`);
       expect(testNapi.testDeleteCallsiteInfoCombination()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     // ===== node_api_get_module_file_name 测试 =====
@@ -182,12 +173,11 @@ export default function dataTest() {
      * @tc.level LEVEL0
      */
     it('testGetModuleFileNameNormalParams0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
+      () => {
       const caseName = 'testGetModuleFileNameNormalParams010';
       console.info(`${caseName} START`);
       expect(testNapi.testGetModuleFileNameNormalParams()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -199,12 +189,11 @@ export default function dataTest() {
      * @tc.level LEVEL0
      */
     it('testGetModuleFileNameAbnormalParams0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
+      () => {
       const caseName = 'testGetModuleFileNameAbnormalParams011';
       console.info(`${caseName} START`);
       expect(testNapi.testGetModuleFileNameAbnormalParams()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -216,12 +205,11 @@ export default function dataTest() {
      * @tc.level LEVEL0
      */
     it('testGetModuleFileNameReturnValue0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
+      () => {
       const caseName = 'testGetModuleFileNameReturnValue012';
       console.info(`${caseName} START`);
       expect(testNapi.testGetModuleFileNameReturnValue()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -233,12 +221,11 @@ export default function dataTest() {
      * @tc.level LEVEL0
      */
     it('testThrowBusinessErrorCombination0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
+      () => {
       const caseName = 'testThrowBusinessErrorCombination013';
       console.info(`${caseName} START`);
       expect(testNapi.testThrowBusinessErrorCombination()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     // ===== napi_serialize 测试 =====
@@ -250,12 +237,11 @@ export default function dataTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('testSerializeNullValue0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testSerializeNullValue0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName = 'testSerializeNullValue014';
       console.info(`${caseName} START`);
       expect(testNapi.testSerializeNullValue()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     // ===== napi_switch_ark_context 测试 =====
@@ -268,12 +254,11 @@ export default function dataTest() {
      * @tc.level LEVEL0
      */
     it('testSwitchArkContextReturnValue0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
+      () => {
       const caseName = 'testSwitchArkContextReturnValue015';
       console.info(`${caseName} START`);
       expect(testNapi.testSwitchArkContextReturnValue()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     // ===== node_api_get_module_file_name 组合场景 =====
@@ -286,12 +271,11 @@ export default function dataTest() {
      * @tc.level LEVEL0
      */
     it('testGetModuleFileNameCombination0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
+      () => {
       const caseName = 'testGetModuleFileNameCombination016';
       console.info(`${caseName} START`);
       expect(testNapi.testGetModuleFileNameCombination()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -303,12 +287,11 @@ export default function dataTest() {
      * @tc.level LEVEL0
      */
     it('testModuleRegisterCombination0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
+      () => {
       const caseName = 'testModuleRegisterCombination017';
       console.info(`${caseName} START`);
       expect(testNapi.testModuleRegisterCombination()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
   });
 }

@@ -32,12 +32,11 @@ export default function bufferTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('testNapiBuffer0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiBuffer0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName = 'testNapiBuffer001';
       console.info(`${caseName} START`);
       expect(testNapi.isBuffer()).assertTrue();
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -49,13 +48,12 @@ export default function bufferTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('testNapiBuffer0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiBuffer0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName = 'testNapiBuffer002';
       console.info(`${caseName} START`);
       let status: number = testNapi.isBufferAfterException();
       expect(status).assertEqual(1);
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -66,13 +64,12 @@ export default function bufferTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('testNapiBuffer0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiBuffer0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName = 'testNapiBuffer003';
       console.info(`${caseName} START`);
       let ret: number = testNapi.isBufferOnNonBuffer();
       expect(ret).assertEqual(0);
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -83,13 +80,12 @@ export default function bufferTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('testNapiBuffer0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiBuffer0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName = 'testNapiBuffer004';
       console.info(`${caseName} START`);
       let ret: number = testNapi.isBufferOnSlice();
       expect(ret).assertEqual(1);
       console.info(`${caseName} END`);
-      done();
     });
 
     /**
@@ -100,13 +96,12 @@ export default function bufferTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('testNapiBuffer0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiBuffer0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName = 'testNapiBuffer005';
       console.info(`${caseName} START`);
       let result: number = testNapi.createBufferAndVerify();
       expect(result).assertEqual(0);
       console.info(`${caseName} END`);
-      done();
     });
   })
 }

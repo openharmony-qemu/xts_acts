@@ -36,13 +36,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0001';
       console.log(TAG + ' start');
       let ret: string = testNapi.createStringUtf8('abc');
       expect(ret).assertEqual('abc');
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -54,13 +53,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0002';
       console.log(TAG + ' start');
       let ret: string = testNapi.createStringUtf8('');
       expect(ret).assertEqual('');
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -72,13 +70,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0003';
       console.log(TAG + ' start');
       let ret: string = testNapi.createStringUtf8('测试');
       expect(ret).assertEqual('测试');
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -90,13 +87,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0004';
       console.log(TAG + ' start');
       let ret: string = testNapi.createStringUtf8('!@#$%^&*()');
       expect(ret).assertEqual('!@#$%^&*()');
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -108,13 +104,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0005';
       console.log(TAG + ' start');
       let ret: string = testNapi.createStringUtf8('1234567890');
       expect(ret).assertEqual('1234567890');
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -128,13 +123,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0006';
       console.log(TAG + ' start');
       let status: number = testNapi.createStringUtf8InvalidData();
       expect(status !== 0).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -146,13 +140,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0007';
       console.log(TAG + ' start');
       let result: boolean = testNapi.createStringUtf8AndVerify('hello world');
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -164,13 +157,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0008';
       console.log(TAG + ' start');
       let ret: string = testNapi.createExternalStringAscii('hello');
       expect(ret).assertEqual('hello');
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -182,13 +174,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0009';
       console.log(TAG + ' start');
       let status: number = testNapi.createExternalStringAsciiNullStr();
       expect(status !== 0).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -200,13 +191,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0010';
       console.log(TAG + ' start');
       let status: number = testNapi.createExternalStringAsciiNonAscii('测试');
       expect(status !== 0).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -218,13 +208,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testNapiString0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testNapiString0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNapiString0011';
       console.log(TAG + ' start');
       let str: string = testNapi.createExternalStringAscii('test');
       expect(str).assertEqual('test');
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -236,13 +225,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0012';
       console.log(TAG + ' start');
       let ret: string = testNapi.createExternalStringUtf16('hello utf16');
       expect(ret).assertEqual('hello utf16');
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -254,13 +242,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0013';
       console.log(TAG + ' start');
       let status: number = testNapi.createExternalStringUtf16NullParam();
       expect(status !== 0).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -272,13 +259,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0014';
       console.log(TAG + ' start');
       let result: boolean = testNapi.getBufferStringUtf16InCriticalScope('critical scope 临界区测试');
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -290,13 +276,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0015';
       console.log(TAG + ' start');
       let status: number = testNapi.getBufferStringUtf16InCriticalScopeNull();
       expect(status !== 0).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -308,13 +293,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0016';
       console.log(TAG + ' start');
       let ret: string = testNapi.getValueStringLatin1('latin1 test');
       expect(ret).assertEqual('latin1 test');
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -326,13 +310,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0017';
       console.log(TAG + ' start');
       let status: number = testNapi.getValueStringLatin1NullParam();
       expect(status !== 0).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -344,7 +327,7 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0018';
       console.log(TAG + ' start');
       let longStr: string = 'A'.repeat(100);
@@ -352,7 +335,6 @@ export default function stringTest() {
       expect(ret.length).assertEqual(100);
       expect(ret).assertEqual(longStr);
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -364,13 +346,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0019';
       console.log(TAG + ' start');
       let result: boolean = testNapi.createStringUtf8AndVerify('verify content');
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -382,13 +363,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0020';
       console.log(TAG + ' start');
       let result: boolean = testNapi.getBufferStringUtf16InCriticalScope('中文字符测试');
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -400,7 +380,7 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0021';
       console.log(TAG + ' start');
       let inputStr: string = 'latin-1 chars test';
@@ -409,7 +389,6 @@ export default function stringTest() {
       expect(ret.length).assertEqual(inputStr.length);
       expect(ret).assertEqual(inputStr);
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -421,13 +400,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0022';
       console.log(TAG + ' start');
       let result: boolean = testNapi.createExternalStringAsciiVerifyReturn('verify ascii return');
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -439,13 +417,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0023';
       console.log(TAG + ' start');
       let result: boolean = testNapi.createExternalStringUtf16VerifyReturn('verify utf16 return');
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -457,13 +434,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0024';
       console.log(TAG + ' start');
       let status: number = testNapi.createExternalStringUtf16Abnormal();
       expect(status !== 0).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -475,13 +451,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0025';
       console.log(TAG + ' start');
       let result: boolean = testNapi.createExternalStringUtf16Combined('combined utf16 test');
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -493,13 +468,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0026';
       console.log(TAG + ' start');
       let result: boolean = testNapi.getBufferStringUtf16VerifyReturn('complex string 复杂字符串');
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -511,13 +485,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0027';
       console.log(TAG + ' start');
       let status: number = testNapi.getBufferStringUtf16Abnormal();
       expect(status !== 0).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -529,13 +502,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0028';
       console.log(TAG + ' start');
       let result: boolean = testNapi.getBufferStringUtf16Combined('combined memory 组合访问');
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -547,13 +519,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0029';
       console.log(TAG + ' start');
       let result: boolean = testNapi.getValueStringLatin1Abnormal('normal string');
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -567,14 +538,13 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0030';
       console.log(TAG + ' start');
       let ret: string = testNapi.createExternalStringAsciiNormalUsage();
       expect(ret.length).assertEqual(11);
       expect(ret).assertEqual('hello world');
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -586,13 +556,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testNapiString0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testNapiString0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNapiString0031';
       console.log(TAG + ' start');
       let result: boolean = testNapi.createExternalStringAsciiWithFinalize();
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -604,13 +573,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0032';
       console.log(TAG + ' start');
       let result: boolean = testNapi.createStringUtf8AbnormalScenario();
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -622,13 +590,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0033';
       console.log(TAG + ' start');
       let result: boolean = testNapi.getBufferStringUtf16AbnormalParams();
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -640,13 +607,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0034';
       console.log(TAG + ' start');
       let result: boolean = testNapi.getBufferStringUtf16NormalScenario('direct buffer 直接访问');
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
 
@@ -658,13 +624,12 @@ export default function stringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiString0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiString0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testNapiString0035';
       console.log(TAG + ' start');
       let result: boolean = testNapi.getValueStringLatin1AbnormalParams();
       expect(result).assertTrue();
       console.log(TAG + ' done');
-      done();
       console.log(TAG + ' end');
     });
   });
