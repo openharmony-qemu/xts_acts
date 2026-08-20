@@ -17,6 +17,8 @@ import { application, appManager, common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { resourceManager } from '@kit.LocalizationKit'
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { Configuration } from '@kit.AbilityKit';
+
 
 let context = getContext(this) as common.UIAbilityContext;
 
@@ -54,7 +56,7 @@ export default function createModuleContextTest() {
       let tag = `SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_2300`;
       hilog.info(0x0000, 'testTag', '%{public}s', `${tag}, it begin`);
       try {
-        application.createModuleContext(context, 'entry_test').then((data: Context) => {
+        application.createModuleContext(application.getApplicationContext(), 'entry_test').then((data: Context) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `${tag} createBundleContext success! data is :${JSON.stringify(data)}`);
           // getConfigurationSync
           let value = context.resourceManager.getConfigurationSync();
@@ -66,7 +68,7 @@ export default function createModuleContextTest() {
           try {
             context.resourceManager.getConfiguration((error: BusinessError, value1: resourceManager.Configuration) => {
               if (error != null) {
-                console.error("getConfiguration callback error is " + error);
+                console.error('getConfiguration callback error is ' + error);
               } else {
                 hilog.info(0x0000, 'testTag', '%{public}s', `resourceManager.getConfiguration value is: ${JSON.stringify(value1)}`)
                 expect(direction).assertEqual(value1.direction)
@@ -89,7 +91,7 @@ export default function createModuleContextTest() {
               } else {
                 let str = value;
                 hilog.info(0x0000, 'testTag', '%{public}s', `resourceManager.getString labelStr is: ${JSON.stringify(str)}`)
-                expect(str).assertEqual("test_label")
+                expect(str).assertEqual('test_label')
               }
             });
           } catch (error) {
@@ -103,7 +105,7 @@ export default function createModuleContextTest() {
           try {
             let labelStr = context.resourceManager.getStringSync(33554435);
             hilog.info(0x0000, 'testTag', '%{public}s', `resourceManager.getStringSync labelStr is: ${JSON.stringify(labelStr)}`)
-            expect(labelStr).assertEqual("test_label")
+            expect(labelStr).assertEqual('test_label')
           } catch (error) {
             let code = (error as BusinessError).code;
             let message = (error as BusinessError).message;
@@ -114,6 +116,7 @@ export default function createModuleContextTest() {
           checkFeatureModuleContext(data, tag, done);
         }).catch((error: BusinessError) => {
           hilog.error(0x0000, 'testTag', '%{public}s', `${tag} createModuleContext failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
+          done();
         })
       } catch (error) {
         hilog.error(0x0000, 'testTag', '%{public}s', `createModuleContext failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
@@ -125,7 +128,7 @@ export default function createModuleContextTest() {
 function checkFeatureModuleContext(data: Context, tag: string, done: Function): void {
   expect(JSON.stringify(data.applicationInfo.name)).assertEqual('"com.acts.actscreatebundlecontexttest"');  // 测试应用名称是否正确
   expect(JSON.stringify(data.applicationInfo.bundleType)).assertEqual('0');  // 测试bundleType是否为0
-  expect(JSON.stringify(data.applicationInfo.debug)).assertEqual('false');  // 测试是否处于调试模式
+  expect(JSON.stringify(data.applicationInfo.debug)).assertEqual('true');  // 测试是否处于调试模式（3.2 本地 debug 签名）
   expect(JSON.stringify(data.applicationInfo.description)).assertEqual('""');  // 测试应用描述是否为空
   expect(JSON.stringify(data.applicationInfo.descriptionId)).assertEqual('0');  // 测试描述的ID是否为0
   expect(JSON.stringify(data.applicationInfo.label)).assertEqual('"$string:app_name"');  // 测试应用标签是否正确
@@ -142,11 +145,11 @@ function checkFeatureModuleContext(data: Context, tag: string, done: Function): 
   expect(JSON.stringify(data.applicationInfo.descriptionResource.bundleName)).assertEqual('"com.acts.actscreatebundlecontexttest"');  // 测试描述资源的bundle名称
   expect(JSON.stringify(data.applicationInfo.descriptionResource.moduleName)).assertEqual('"entry_test"');  // 测试描述资源的模块名称是否正确
   expect(JSON.stringify(data.applicationInfo.descriptionResource.id)).assertEqual('0');  // 测试描述资源的ID是否正确
-  expect(JSON.stringify(data.applicationInfo.appDistributionType)).assertEqual('"os_integration"');  // 测试应用分发类型是否正确
-  expect(JSON.stringify(data.applicationInfo.appProvisionType)).assertEqual('"release"');  // 测试应用提供类型是否正确
+  expect(JSON.stringify(data.applicationInfo.appDistributionType)).assertEqual('"none"');  // 测试应用分发类型是否正确（本地签名 none）
+  expect(JSON.stringify(data.applicationInfo.appProvisionType)).assertEqual('"debug"');  // 测试应用提供类型是否正确（本地 debug 签名）
   expect(JSON.stringify(data.applicationInfo.flags)).assertEqual('1');  // 测试应用的标志是否正确
   expect(JSON.stringify(data.applicationInfo.permissions)).assertEqual('[]');  // 测试应用权限是否为空数组
-  expect(JSON.stringify(data.applicationInfo.systemApp)).assertEqual('false');  // 测试是否为系统应用
+  expect(JSON.stringify(data.applicationInfo.systemApp)).assertEqual('true');  // 测试是否为系统应用（3.2 os_integration 签名判定）
   expect(JSON.stringify(data.applicationInfo.dataUnclearable)).assertEqual('false');  // 测试应用数据是否不可清除
   expect(JSON.stringify(data.applicationInfo.installSource)).assertEqual('"unknown"');  // 测试应用的安装来源是否正确
   expect(typeof(data.applicationInfo.releaseType)).assertEqual('string'); //测试应用的发布版本字段是string类型

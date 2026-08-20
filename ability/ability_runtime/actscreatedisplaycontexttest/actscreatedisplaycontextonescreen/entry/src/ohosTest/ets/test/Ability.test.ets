@@ -29,6 +29,7 @@ import { resourceManager } from '@kit.LocalizationKit';
 import { display } from '@kit.ArkUI';
 import { JSON, worker } from '@kit.ArkTS';
 import { Driver, ON } from '@ohos.UiTest';
+import { Configuration } from '@kit.AbilityKit';
 
 
 const TAG: string = 'DisplayContextTest';
@@ -514,7 +515,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2500', Level.LEVEL0, async () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2500]: start');
       try {
-        let displayContext: common.Context;
+        let displayContext: common.UIAbilityContext;
         let context = await application.createModuleContext(uiAbilityContext, 'entry_test');
         if (context != undefined) {
           displayContext = context.createDisplayContext(disPlayId);
@@ -550,7 +551,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2600', Level.LEVEL0, async (done: Function) => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2600]: start');
       try {
-        let displayContext: common.Context;
+        let displayContext: common.UIAbilityContext;
         let uiAbilityContext: common.UIAbilityContext | undefined = AppStorage.get('context');
         let context = await application.createModuleContext(uiAbilityContext, 'entry_test');
         if (context != undefined) {
@@ -583,7 +584,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2700', Level.LEVEL0, async () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2700]: start');
       try {
-        let displayContext: common.Context;
+        let displayContext: common.UIAbilityContext;
         let context = await application.createModuleContext(uiAbilityContext, 'entry_test');
         if (context != undefined) {
           displayContext = context.createDisplayContext(disPlayId);
@@ -611,7 +612,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2800', Level.LEVEL0, async () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2800]: start');
       try {
-        let displayContext: common.Context;
+        let displayContext: common.UIAbilityContext;
         let appContext: common.ApplicationContext;
         let context = await application.createModuleContext(uiAbilityContext, 'entry_test');
         if (context != undefined) {
@@ -723,7 +724,7 @@ export function sendableContext(context: Context): boolean | undefined {
   let myWorker: worker.ThreadWorker = new worker.ThreadWorker('../workers/Worker.ets');
   let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(context);
   let object: SendableObject = new SendableObject(sendableContext, 'BaseContext');
-  let contextAfter: common.Context = sendableContextManager.convertToContext(sendableContext);
+  let contextAfter: common.UIAbilityContext = sendableContextManager.convertToContext(sendableContext);
 
   hilog.info(DOMAIN_NUMBER, TAG, 'Ability context after convert: %{public}s', JSON.stringify(contextAfter));
   expect(contextAfter.cacheDir).assertEqual(context.cacheDir);
@@ -787,7 +788,7 @@ export async function createModuleContextTest(displayContext: Context): Promise<
     await sleep(500);
     hilog.info(DOMAIN_NUMBER, TAG, 'uiConfig | direction: %{public}s | screenDensity: %{public}s',
       JSON.stringify(uiConfig?.direction), JSON.stringify(uiConfig?.screenDensity));
-    return displayConfig?.direction === uiConfig?.direction && displayConfig?.screenDensity === uiConfig?.screenDensity;
+    return displayConfig.direction === uiConfig?.direction && displayConfig.screenDensity === uiConfig?.screenDensity;
   } catch (error) {
     console.error('Error in createModuleContextTest: ', error);
     return false;

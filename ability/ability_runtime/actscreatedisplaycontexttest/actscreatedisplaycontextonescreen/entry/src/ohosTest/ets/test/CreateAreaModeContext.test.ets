@@ -89,7 +89,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_CreateAreaModeContext_1000', Level.LEVEL0, async (done: Function) => {
       console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1000]: start');
       try {
-        let areaModeContext: common.Context | undefined = uiAbilityContext?.createAreaModeContext(1);
+        let areaModeContext: common.UIAbilityContext | undefined = uiAbilityContext?.createAreaModeContext(1);
         if (areaModeContext != undefined) {
           console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1000]: areaModeContext' +
           JSON.stringify(areaModeContext));
@@ -119,7 +119,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100', Level.LEVEL0, async () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100]: start');
       try {
-        let areaModeContext: common.Context | undefined = uiAbilityContext?.createAreaModeContext(1);
+        let areaModeContext: common.UIAbilityContext | undefined = uiAbilityContext?.createAreaModeContext(1);
         if (areaModeContext != undefined) {
           console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1100]: get ' + JSON.stringify(areaModeContext?.applicationInfo));
           compareInfo(areaModeContext);
@@ -172,7 +172,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_CreateAreaModeContext_1300', Level.LEVEL0, async () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1300]: start');
       try {
-        let moduleContext: common.Context | undefined = uiAbilityContext?.createModuleContext('entry_test');
+        let moduleContext: common.UIAbilityContext | undefined = uiAbilityContext?.createModuleContext('entry_test');
         if (moduleContext != undefined) {
           console.log('[SUB_Ability_AbilityRuntime_CreateAreaModeContext_1300]: get ' + JSON.stringify(moduleContext?.applicationInfo));
           compareInfo(moduleContext as common.Context);

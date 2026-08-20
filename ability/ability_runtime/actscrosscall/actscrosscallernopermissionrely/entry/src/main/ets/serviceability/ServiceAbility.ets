@@ -15,13 +15,16 @@
 import commonEvent from '@ohos.commonEventManager'
 import rpc from '@ohos.rpc';
 import ServiceExtensionAbility from '@ohos.app.ability.ServiceExtensionAbility'
+import { BusinessError } from '@ohos.base';
+import { Configuration } from '@kit.AbilityKit';
+import Want from '@ohos.app.ability.Want';
 
 class StubTest extends rpc.RemoteObject {
-  constructor(des) {
+  constructor(des: string) {
     super(des)
   }
 
-  onRemoteRequest(code, data, reply, option) {
+  onRemoteRequest(code: number, data: rpc.MessageParcel, reply: rpc.MessageParcel, option: rpc.MessageOption) {
     console.info('ServiceAbility onRemoteRequest');
     if (code === 1) {
       let op1 = data.readInt();
@@ -32,26 +35,26 @@ class StubTest extends rpc.RemoteObject {
     return true;
   }
 }
-var actionStr;
-var accountId;
-var message;
-var commonEventData = {
+let actionStr: ESObject;
+let accountId: ESObject;
+let message: ESObject;
+let commonEventData: commonEvent.CommonEventPublishData = {
   parameters:{
     message:message,
   }
 }
-let remoteOBJ = new StubTest("test");
+let remoteOBJ = new StubTest('test');
 export default class ServiceAbility extends ServiceExtensionAbility {
-  onCreate(want){
-    actionStr = want.parameters.action;
-    accountId = want.parameters.accountId;
+  onCreate(want: Want) {
+    actionStr = want.parameters?.action;
+    accountId = want.parameters?.accountId;
     console.info('ServiceAbility onCreate want:' + JSON.stringify(want));
     globalThis.terminate = () => {
       setTimeout(() => {
         this.context.terminateSelf().then(() => {
-          console.info("====>ServiceAbility terminateSelf end");
-        }).catch((err) => {
-          console.info("====>ServiceAbility terminateSelf err:" + JSON.stringify(err));
+          console.info('====>ServiceAbility terminateSelf end');
+        }).catch((err: BusinessError) => {
+          console.info('====>ServiceAbility terminateSelf err:' + JSON.stringify(err));
         });
       }, 50)
     };
@@ -60,11 +63,11 @@ export default class ServiceAbility extends ServiceExtensionAbility {
       this.context.startAbilityByCallWithAccount({
         bundleName: 'com.acts.calleeabilityrely',
         abilityName: 'EntryAbility',
-      }, accountId).then((data) => {
+      }, accountId).then((data: ESObject) => {
         console.info('====>' + actionStr + ' startAbilityByCall data:' + JSON.stringify(data));
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.info('====>' + actionStr + ' startAbilityByCall err:' + JSON.stringify(err));
-        commonEventData.parameters.message = err;
+        commonEventData.parameters!.message = err;
         commonEvent.publish('ACTS_CROSS_CALL_EVENT', commonEventData, (err) => {
           console.info('====>' + actionStr + ' publish err:' + JSON.stringify(err));
           globalThis.terminate();
@@ -76,28 +79,28 @@ export default class ServiceAbility extends ServiceExtensionAbility {
     console.info('ServiceAbility onDestroy');
   }
 
-  onRequest(want, startId) {
+  onRequest(want: Want, startId: number) {
     console.info('ServiceAbility onRequest');
   }
 
-  onConnect(want) {
+  onConnect(want: Want) {
     console.info('ServiceAbility onConnect');
     return remoteOBJ;
   }
 
-  onDisconnect(want) {
+  onDisconnect(want: Want) {
     console.info('ServiceAbility onDisconnect');
   }
 
-  onReconnect(want) {
+  onReconnect(want: Want) {
     console.info('ServiceAbility onReconnect');
   }
 
-  onConfigurationUpdate(newConfig) {
+  onConfigurationUpdate(newConfig: Configuration) {
     console.info('ServiceAbility onConfigurationUpdate');
   }
 
-  onDump(params) {
+  onDump(params: string[]): string[] {
     console.info('ServiceAbility onDump');
     return params;
   }

@@ -15,7 +15,7 @@
 
 import commonEvent from '@ohos.commonEventManager';
 import delegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
 import { getContext } from '../common/getContext';
 import common from '@ohos.app.ability.common';
 
@@ -33,6 +33,13 @@ let ACTS_Register: commonEvent.CommonEventSubscribeInfo = {
 
 export default function abilityTest() {
   describe('ActsCleanTempFilesTest', () => {
+
+    beforeEach(async (done: Function) => {
+      // 清理 rely 残留进程，避免 startAbility 竞态（3.2 进程复用导致 err 17）
+      delegatorRegistry.getAbilityDelegator().executeShellCommand('aa force-stop com.acts.cleancachefilesreply').then(() => {
+        done();
+      });
+    })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0100
