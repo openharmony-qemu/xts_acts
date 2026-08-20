@@ -2000,7 +2000,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
     expect(prevMargin).assertEqual("6.00vp");
     expect(itemspace).assertEqual("10.00vp");
 
-    expect(Math.abs(Math.round(swiperTop - swiperbottom) -  Math.round(3 *(top - bottom) - vp2px(4*10 + 15 + 6))) <= 1).assertTrue();
+    expect(Math.floor(Math.abs(Math.round(swiperTop - swiperbottom) -  Math.round(3 *(top - bottom) - vp2px(4*10 + 15 + 6)))) <= 1).assertTrue();
     done();
   });
 
@@ -2449,7 +2449,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
     expect(prevMargin).assertEqual("6.00vp");
     expect(itemspace).assertEqual("10.00vp");
 
-    expect(Math.abs(Math.round(swiperTop - swiperbottom) -  Math.round(3 *(top - bottom) - vp2px(15 + 6 + 4 * 10))) <= 1).assertTrue();
+    expect(Math.floor(Math.abs(Math.round(swiperTop - swiperbottom) -  Math.round(3 *(top - bottom) - vp2px(15 + 6 + 4 * 10)))) <= 1).assertTrue();
     done();
   });
 
