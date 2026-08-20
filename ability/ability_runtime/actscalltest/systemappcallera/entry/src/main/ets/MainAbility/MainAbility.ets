@@ -98,8 +98,8 @@ function unsubscribeCallback() {
 
 function releaseCallee() {
     try {
-        caller.onRelease((data: Caller) => {
-            console.log('SystemAppCallerA MainAbility releaseCallBack:' + data);
+        caller.onRelease((msg: string) => {
+            console.log('SystemAppCallerA MainAbility releaseCallBack:' + msg);
         });
         caller.release();
     } catch (e) {
