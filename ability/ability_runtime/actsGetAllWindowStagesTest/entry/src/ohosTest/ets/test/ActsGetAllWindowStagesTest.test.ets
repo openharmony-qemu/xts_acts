@@ -28,7 +28,11 @@ export default function ActsGetAllWindowStagesTest() {
     afterEach(async () => {
       try{
         let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext') as common.UIAbilityContext;
-        await TestAbility1_UIAbilityContext.terminateSelf();
+        try {
+          await TestAbility1_UIAbilityContext.terminateSelf();
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `TestAbility1_UIAbilityContext.terminateSelf() failed: ${JSON.stringify(e)}`);
+        }
 
       } catch (e) {
         const err: BusinessError = e as BusinessError;
@@ -36,21 +40,33 @@ export default function ActsGetAllWindowStagesTest() {
       }
       try{
         let TestAbility2_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbility2_UIAbilityContext') as common.UIAbilityContext;
-        await TestAbility2_UIAbilityContext.terminateSelf()
+        try {
+          await TestAbility2_UIAbilityContext.terminateSelf();
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `TestAbility2_UIAbilityContext.terminateSelf() failed: ${JSON.stringify(e)}`);
+        }
       } catch (e) {
         const err: BusinessError = e as BusinessError;
         hilog.error(0x0000, 'testTag', `TestAbility2_UIAbilityContext failed, code: ${err?.code}, message: ${err?.message}`);
       }
       try{
         let TestAbility3_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbility3_UIAbilityContext') as common.UIAbilityContext;
-        await TestAbility3_UIAbilityContext.terminateSelf()
+        try {
+          await TestAbility3_UIAbilityContext.terminateSelf();
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `TestAbility3_UIAbilityContext.terminateSelf() failed: ${JSON.stringify(e)}`);
+        }
       } catch (e) {
         const err: BusinessError = e as BusinessError;
         hilog.error(0x0000, 'testTag', `TestAbility3_UIAbilityContext failed, code: ${err?.code}, message: ${err?.message}`);
       }
       try{
         let ApplicationModule_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('ApplicationModule_UIAbilityContext') as common.UIAbilityContext;
-        await ApplicationModule_UIAbilityContext.terminateSelf()
+        try {
+          await ApplicationModule_UIAbilityContext.terminateSelf();
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `ApplicationModule_UIAbilityContext.terminateSelf() failed: ${JSON.stringify(e)}`);
+        }
       } catch (e) {
         const err: BusinessError = e as BusinessError;
         hilog.error(0x0000, 'testTag', `ApplicationModule_UIAbilityContext failed, code: ${err?.code}, message: ${err?.message}`);
@@ -105,14 +121,12 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              const err: BusinessError = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err?.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -165,14 +179,12 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              const err: BusinessError = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err?.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -225,14 +237,12 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              const err: BusinessError = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err?.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -285,14 +295,12 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              const err: BusinessError = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err?.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -341,8 +349,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
           done();
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -391,8 +398,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
           done();
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -441,8 +447,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
           done();
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -491,8 +496,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
           done();
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -524,7 +528,11 @@ export default function ActsGetAllWindowStagesTest() {
         });
         await Utils.sleep(1000);
         let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext') as common.UIAbilityContext;
-        await TestAbility1_UIAbilityContext.terminateSelf()
+        try {
+          await TestAbility1_UIAbilityContext.terminateSelf();
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `TestAbility1_UIAbilityContext.terminateSelf() failed: ${JSON.stringify(e)}`);
+        }
         await Utils.sleep(1000);
         let onDestroy_WindowStage =  AppStorage.get<Array<window.WindowStage>>('onDestroy_WindowStage') as Array<window.WindowStage>
         try {
@@ -537,8 +545,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect((onDestroy_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
           done();
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -569,7 +576,12 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
-        let TestAbility1_UIAbilityContext: common.UIAbilityContext = await AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext') as common.UIAbilityContext;
+        let TestAbility1_UIAbilityContext: common.UIAbilityContext;
+        try {
+          TestAbility1_UIAbilityContext = await AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext') as common.UIAbilityContext;
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `get TestAbility1_UIAbilityContext failed: ${JSON.stringify(e)}`);
+        }
         try {
           await TestAbility1_UIAbilityContext.terminateSelf()
         } catch (e) {
@@ -587,8 +599,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect((onWindowStageDestroy_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
           done();
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -620,7 +631,11 @@ export default function ActsGetAllWindowStagesTest() {
         });
         await Utils.sleep(1000);
         let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext') as common.UIAbilityContext;
-        await TestAbility1_UIAbilityContext.terminateSelf()
+        try {
+          await TestAbility1_UIAbilityContext.terminateSelf();
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `TestAbility1_UIAbilityContext.terminateSelf() failed: ${JSON.stringify(e)}`);
+        }
         await Utils.sleep(1000);
         try {
           let onWindowStageWillDestroy_WindowStage =  AppStorage.get<Array<window.WindowStage>>('onWindowStageWillDestroy_WindowStage') as Array<window.WindowStage>
@@ -633,8 +648,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect((onWindowStageWillDestroy_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
           done();
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -662,8 +676,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect(AbilityStage_WindowStage.length).assertEqual(0);
           done();
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -716,14 +729,12 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              const err: BusinessError = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err?.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -780,15 +791,13 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              const err: BusinessError = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err?.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
 
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -843,14 +852,12 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              const err: BusinessError = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err?.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -904,14 +911,12 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              const err: BusinessError = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err?.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -964,14 +969,12 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              const err: BusinessError = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err?.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -1024,8 +1027,7 @@ export default function ActsGetAllWindowStagesTest() {
                 expect(matchedInfos.includes('TestAbility')).assertEqual(true);
               })
               .catch((e: Error) => {
-                const err: BusinessError = e as BusinessError;
-                hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err?.message}`);
+                hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
                 expect().assertFail();
                 done();
               });
@@ -1033,8 +1035,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect(i).assertEqual(1000);
           done();
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -1098,8 +1099,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect(matchedInfos1.includes('TestAbility3')).assertEqual(true);
           hilog.info(0x0000, 'testTag', 'First verification PASSED: 3 WindowStages');
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `First getAllWindowStages failed: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `First getAllWindowStages failed: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
         await Utils.sleep(1500);

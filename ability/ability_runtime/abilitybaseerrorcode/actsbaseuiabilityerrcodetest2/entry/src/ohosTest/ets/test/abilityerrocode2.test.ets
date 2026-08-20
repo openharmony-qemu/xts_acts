@@ -247,6 +247,7 @@ export default function errorCodeTest2() {
             });
           });
         });
+        try {
         await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
           bundleName:'com.acts.ability.errcode2',
           abilityName:'AssitAbility',
@@ -261,6 +262,9 @@ export default function errorCodeTest2() {
           expect().assertFail();
           done();
         })
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else {
         console.error(`${TAG} SUB_Ability_AbilityBase_ErrorCode_0004 error, current device not support feature.`);
         done();
@@ -306,6 +310,7 @@ export default function errorCodeTest2() {
             });
           });
         });
+        try {
         await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
           bundleName:'com.acts.ability.errcode2',
           abilityName:'AssitAbility',
@@ -320,6 +325,9 @@ export default function errorCodeTest2() {
           expect().assertFail();
           done();
         })
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else {
         console.error(`${TAG} SUB_Ability_AbilityBase_ErrorCode_0005 error, current device not support feature.`);
         done();
@@ -363,6 +371,7 @@ export default function errorCodeTest2() {
             });
           });
         });
+        try {
         await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
           bundleName:'com.acts.ability.errcode2',
           abilityName:'AssitAbility',
@@ -377,6 +386,9 @@ export default function errorCodeTest2() {
           expect().assertFail();
           done();
         })
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else {
         console.error(`${TAG} SUB_Ability_AbilityBase_ErrorCode_0006 error, current device not support feature.`);
         done();
@@ -421,6 +433,7 @@ export default function errorCodeTest2() {
             });
           });
         });
+        try {
         await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
           bundleName:'com.acts.ability.errcode2',
           abilityName:'AssitAbility',
@@ -435,6 +448,9 @@ export default function errorCodeTest2() {
           expect().assertFail();
           done();
         })
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else {
         console.error(`${TAG} SUB_Ability_AbilityBase_ErrorCode_0007 error, current device not support feature.`);
         done();
@@ -478,6 +494,7 @@ export default function errorCodeTest2() {
             });
           });
         });
+        try {
         await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
           bundleName:'com.acts.ability.errcode2',
           abilityName:'AssitAbility',
@@ -492,6 +509,9 @@ export default function errorCodeTest2() {
           expect().assertFail();
           done();
         })
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else {
         console.error(`${TAG} SUB_Ability_AbilityBase_ErrorCode_0008 error, current device not support feature.`);
         done();

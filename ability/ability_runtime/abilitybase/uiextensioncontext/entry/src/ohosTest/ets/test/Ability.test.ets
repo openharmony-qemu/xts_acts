@@ -63,6 +63,7 @@ export default function ActsUIExtensionContextMethodTest() {
           let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
             events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_0100_event']
           };
+          try {
           await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0100] commonEventSubscribeInfo success: ');
             sub = subscriber;
@@ -93,6 +94,9 @@ export default function ActsUIExtensionContextMethodTest() {
               console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0100] startAbility result ' + err?.code);
             })
           });
+          } catch (e) {
+            console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -121,6 +125,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_0200_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0200] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -132,7 +137,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -147,6 +160,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0200] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -175,6 +191,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_0300_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0300] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -186,7 +203,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -201,6 +226,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0300] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -229,6 +257,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_0400_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0400] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -240,7 +269,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -255,6 +292,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0400] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -283,6 +323,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_0500_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0500] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -294,7 +335,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -309,6 +358,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0500] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -337,6 +389,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_0600_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0600] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -348,7 +401,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -363,6 +424,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0600] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -391,6 +455,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_0700_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0700] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -402,7 +467,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -417,6 +490,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0700] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -445,6 +521,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_0800_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0800] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -456,7 +533,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -471,6 +556,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0800] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -499,6 +587,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_0900_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0900] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -510,7 +599,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -525,6 +622,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0900] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -553,6 +653,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_1000_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1000] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -564,7 +665,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -579,6 +688,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1000] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -607,6 +719,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_1100_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1100] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -618,7 +731,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -633,6 +754,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1200] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -661,6 +785,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_1200_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1200] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -672,7 +797,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -687,6 +820,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1200] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -715,6 +851,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_1300_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1200] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -726,7 +863,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -741,6 +886,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1300] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -769,6 +917,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_1400_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1400] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -780,7 +929,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -795,6 +952,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1400] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -823,6 +983,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_1500_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1400] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -834,7 +995,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -849,6 +1018,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1500] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -877,6 +1049,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_1600_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1400] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -888,7 +1061,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -903,6 +1084,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1600] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -931,6 +1115,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_1700_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1700] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -942,7 +1127,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -957,6 +1150,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1700] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -986,6 +1182,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_1800_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0100] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -997,7 +1194,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1012,6 +1217,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1800] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1040,6 +1248,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_4200_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_001] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1051,7 +1260,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1066,6 +1283,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_001] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1094,6 +1314,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_1900_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1900] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1105,7 +1326,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1120,6 +1349,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1900] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1148,6 +1380,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_2000_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0300] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1159,7 +1392,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1174,6 +1415,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2000] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1202,6 +1446,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_2100_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2100] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1213,7 +1458,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1228,6 +1481,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2100] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1256,6 +1512,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_2200_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2200] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1267,7 +1524,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1282,6 +1547,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2200] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1310,6 +1578,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_2300_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2300] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1321,7 +1590,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1336,6 +1613,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2300] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1364,6 +1644,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_2400_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2400] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1375,7 +1656,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1390,6 +1679,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2400] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1418,6 +1710,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_2500_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2500] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1429,7 +1722,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1444,6 +1745,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2500] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1472,6 +1776,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_2600_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2600] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1483,7 +1788,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1498,6 +1811,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2600] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1526,6 +1842,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_2700_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2700] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1537,7 +1854,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1552,6 +1877,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2700] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1580,6 +1908,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_2800_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2800] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1591,7 +1920,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1606,6 +1943,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2800] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1634,6 +1974,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_2900_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2900] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1645,7 +1986,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1660,6 +2009,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_2900] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1688,6 +2040,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_3000_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3000] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1699,7 +2052,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1714,6 +2075,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3000] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1742,6 +2106,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_3100_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3100] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1753,7 +2118,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1768,6 +2141,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3100] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1796,6 +2172,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_3200_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3200] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1807,7 +2184,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1822,6 +2207,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3200] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
         
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1851,6 +2239,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_3300_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_1400] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1862,7 +2251,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1877,6 +2274,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3300] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1905,6 +2305,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_3400_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3400] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1916,7 +2317,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1931,6 +2340,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3400] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -1959,6 +2371,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_3500_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3500] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -1970,7 +2383,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate', () => { });
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -1985,6 +2406,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3500] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2013,6 +2437,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_3600_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3600] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2024,7 +2449,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate', () => { });
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2039,6 +2472,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3600] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2067,6 +2503,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_3700_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3700] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2078,7 +2515,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate', () => { });
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2093,6 +2538,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3700] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2119,6 +2567,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_3800_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3800] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2130,7 +2579,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate', () => { });
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             try {
               await eventBusPlue.onWait('EntryAbility1_onDestroy')
@@ -2149,6 +2606,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3800] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2177,6 +2637,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_3900_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3900] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2189,7 +2650,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.colorMode != -1).assertTrue(); // COLOR_MODE_NOT_SET = -1
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2204,6 +2673,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_3900] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2232,6 +2704,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_4000_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4000] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2244,7 +2717,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.colorMode).assertEqual(0); // COLOR_MODE_DARK = 0
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2259,6 +2740,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4000] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2287,6 +2771,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_4100_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4100] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2299,7 +2784,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.colorMode).assertEqual(1); // COLOR_MODE_LIGHT = 1
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2314,6 +2807,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4100] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2342,6 +2838,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_4500_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4500] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2353,7 +2850,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(16000050);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2368,6 +2873,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4500] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2396,6 +2904,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_4600_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4600] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2407,7 +2916,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2422,6 +2939,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4600] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2450,6 +2970,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_4700_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4700] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2461,7 +2982,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2476,6 +3005,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4700] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2504,6 +3036,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_4800_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4800] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2515,7 +3048,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(16000050);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2530,6 +3071,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4800] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2558,6 +3102,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['SUB_Ability_AbilityRuntime_UIExtensionContext_4900_event']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4900] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2569,7 +3114,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.parameters?.result).assertEqual(16000050);
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2584,6 +3137,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4900] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2612,6 +3168,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['AbilityRuntime_OptionResult']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5000] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2622,7 +3179,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.event).assertEqual('AbilityRuntime_OptionResult');
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2637,6 +3202,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5000] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2665,6 +3233,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['AbilityRuntime_OptionResult']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5100] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2675,7 +3244,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.event).assertEqual('AbilityRuntime_OptionResult');
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2690,6 +3267,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5100] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2718,6 +3298,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['AbilityRuntime_OptionResult']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5400] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2728,7 +3309,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.event).assertEqual('AbilityRuntime_OptionResult');
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2743,6 +3332,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5400] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2771,6 +3363,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['AbilityRuntime_OptionResult']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5500] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2781,7 +3374,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.event).assertEqual('AbilityRuntime_OptionResult');
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2796,6 +3397,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5500] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2824,6 +3428,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['AbilityRuntime_OptionResult']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0100] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2834,7 +3439,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.event).assertEqual('AbilityRuntime_OptionResult');
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2847,6 +3460,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0100] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2875,6 +3491,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['AbilityRuntime_OptionResult']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0200] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2885,7 +3502,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.event).assertEqual('AbilityRuntime_OptionResult');
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2898,6 +3523,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0200] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2927,6 +3555,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['AbilityRuntime_OptionResult']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0300] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2937,7 +3566,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.event).assertEqual('AbilityRuntime_OptionResult');
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2948,6 +3585,9 @@ export default function ActsUIExtensionContextMethodTest() {
             action:'result'
           }, null)
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2976,6 +3616,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['AbilityRuntime_OptionResult']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0400] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -2986,7 +3627,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.event).assertEqual('AbilityRuntime_OptionResult');
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -2997,6 +3646,9 @@ export default function ActsUIExtensionContextMethodTest() {
             action:'result'
           }, undefined)
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -3027,6 +3679,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['AbilityRuntime_OptionResult']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -3037,7 +3690,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.event).assertEqual('AbilityRuntime_OptionResult');
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -3050,6 +3711,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -3078,6 +3742,7 @@ export default function ActsUIExtensionContextMethodTest() {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ['AbilityRuntime_OptionResult']
         };
+        try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] commonEventSubscribeInfo success: ');
           sub = subscriber;
@@ -3088,7 +3753,15 @@ export default function ActsUIExtensionContextMethodTest() {
               expect(commonEventData.event).assertEqual('AbilityRuntime_OptionResult');
             } catch {
             }
-            commonEventManager.publish('teminate',() => {});
+            commonEventManager.publish('teminate',(err) => {
+
+              if (err) {
+
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+
+              }
+
+            });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
             await Promise.all([entryAbility1,uiExtension]);
             done();
@@ -3101,6 +3774,9 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] startAbility result ' + err?.code);
           })
         });
+        } catch (e) {
+          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+        }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
