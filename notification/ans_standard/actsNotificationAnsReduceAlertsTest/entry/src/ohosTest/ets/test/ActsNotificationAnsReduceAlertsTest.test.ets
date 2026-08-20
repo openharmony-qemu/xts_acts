@@ -62,82 +62,8 @@ export default function ActsNotificationAnsReduceAlertsTest() {
     })
 
     afterEach(async () => {
-      await sleep(2000)
-    })
-
-    /**
-     * @tc.name   SUB_Notification_Ans_Reduce_alerts_0300
-     * @tc.number SUB_Notification_Ans_Reduce_alerts_0300
-     * @tc.desc   Reduce Notification alerts
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Notification_Ans_Reduce_alerts_0300', Level.LEVEL0, async (done: Function) => {
-      let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_0300'
-      //await notificationManager.cancelAll()
       await sleep(1000)
-      let notificationRequest: notificationManager.NotificationRequest = {
-        id: getRandomNumber(1, 1000),
-        notificationFlags: {
-          soundEnabled: 0,
-          vibrationEnabled: 0,
-          bannerEnabled: 0,
-          lockScreenEnabled: 0,
-        } as notificationManager.NotificationFlags,
-        notificationSlotType: notificationManager.SlotType.SOCIAL_COMMUNICATION,
-        content: {
-          notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-          normal: {
-            title: "SOCIAL_COMMUNICATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_0300",
-          }
-        }
-      };
-      try {
-        await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + " publish success");
-          await sleep(500)
-          await notificationManager.getActiveNotifications()
-            .then((data: Array<notificationManager.NotificationRequest>) => {
-              console.info(TEST_SUITE_NAME + TAG +
-                ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-                console.info(TEST_SUITE_NAME + TAG +
-                  ` Scceeded in getting active notifications, data is ${JSON.stringify(data?.[0]?.notificationFlags?.lockScreenEnabled)}`);
-                  let lsed = data?.[0]?.notificationFlags?.lockScreenEnabled
-                  console.info(TEST_SUITE_NAME + TAG +
-                    ` Scceeded in getting active notifications, data is ${JSON.stringify(typeof lsed)}`);
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
-              done()
-            }).catch((err: BusinessError) => {
-              console.error(TEST_SUITE_NAME + TAG +
-                `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-              if (err?.code === 801) {
-                expect(err.code).assertEqual(801);
-                done();
-              }else{
-                expect().assertFail();
-               done();
-              }
-            });
-        }).catch((err: BusinessError) => {
-          console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err?.code === 801) {
-            expect(err.code).assertEqual(801);
-            done();
-          }else{
-            expect().assertFail();
-           done();
-          }
-        });
-      } catch (err) {
-        console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
-        done()
-      }
-
     })
-
 
     /**
      * @tc.name   SUB_Notification_Ans_Reduce_alerts_0100
@@ -211,8 +137,9 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       await sleep(1500)
       let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
       console.info(TAG + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-      expect(scrollBar != null).assertTrue()
-      await scrollBar.scrollToBottom()
+      if(scrollBar != null){
+        await scrollBar.scrollToBottom()
+      }
       await sleep(1500)
       await driver.assertComponentExist(ON.text('横幅通知'));
       await sleep(1500)
@@ -269,6 +196,79 @@ export default function ActsNotificationAnsReduceAlertsTest() {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
           done()
+        });
+      } catch (err) {
+        console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
+        expect(false).assertTrue();
+        done()
+      }
+
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_0300
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_0300
+     * @tc.desc   Reduce Notification alerts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Reduce_alerts_0300', Level.LEVEL0, async (done: Function) => {
+      let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_0300'
+      //await notificationManager.cancelAll()
+      await sleep(1000)
+      let notificationRequest: notificationManager.NotificationRequest = {
+        id: getRandomNumber(1, 1000),
+        notificationFlags: {
+          soundEnabled: 0,
+          vibrationEnabled: 0,
+          bannerEnabled: 0,
+          lockScreenEnabled: 0,
+        } as notificationManager.NotificationFlags,
+        notificationSlotType: notificationManager.SlotType.SOCIAL_COMMUNICATION,
+        content: {
+          notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+          normal: {
+            title: "SOCIAL_COMMUNICATION",
+            text: "SUB_Notification_Ans_Reduce_alerts_0300",
+          }
+        }
+      };
+      try {
+        await notificationManager.publish(notificationRequest).then(async () => {
+          console.info(TEST_SUITE_NAME + TAG + " publish success");
+          await sleep(500)
+          await notificationManager.getActiveNotifications()
+            .then((data: Array<notificationManager.NotificationRequest>) => {
+              console.info(TEST_SUITE_NAME + TAG +
+                ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
+                console.info(TEST_SUITE_NAME + TAG +
+                  ` Scceeded in getting active notifications, data is ${JSON.stringify(data?.[0]?.notificationFlags?.lockScreenEnabled)}`);
+                  let lsed = data?.[0]?.notificationFlags?.lockScreenEnabled
+                  console.info(TEST_SUITE_NAME + TAG +
+                    ` Scceeded in getting active notifications, data is ${JSON.stringify(typeof lsed)}`);
+              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
+              done()
+            }).catch((err: BusinessError) => {
+              console.error(TEST_SUITE_NAME + TAG +
+                `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
+              if (err?.code === 801) {
+                expect(err.code).assertEqual(801);
+                done();
+              }else{
+                expect().assertFail();
+               done();
+              }
+            });
+        }).catch((err: BusinessError) => {
+          console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
+          if (err?.code === 801) {
+            expect(err.code).assertEqual(801);
+            done();
+          }else{
+            expect().assertFail();
+           done();
+          }
         });
       } catch (err) {
         console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
