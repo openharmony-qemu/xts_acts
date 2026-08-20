@@ -437,7 +437,7 @@ export default function ActsGetInstanceIdTest() {
             }
             done();
           });
-          
+
           await startEntryAbility('case08');
         } catch (err) {
           hilog.error(DOMAIN, 'testTag', '%{public}s error: %{public}s', caseName, JSON.stringify(err));
