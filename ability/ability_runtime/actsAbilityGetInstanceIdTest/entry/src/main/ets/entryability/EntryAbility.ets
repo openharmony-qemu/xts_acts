@@ -68,7 +68,7 @@ async function executeTestLogic(flag?: string): Promise<void> {
 
     let instanceId: string = testNapi.getInstanceId();
     let abilityName: string = testNapi.getAbilityName();
-    let envResult: string = testNapi.getEnv();
+    let envResult: number = testNapi.getEnv();
     AppStorage.setOrCreate('EntryAbilityInstanceId_Native', instanceId);
     if (!instanceId || instanceId.length === 0) {
       hilog.error(DOMAIN, TAG, 'instanceId is empty');

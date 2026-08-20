@@ -14,7 +14,6 @@
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import testNapi from 'libentry.so';
-import { common } from '@kit.AbilityKit';
 
 const DOMAIN = 0x0000;
 
@@ -23,7 +22,6 @@ const DOMAIN = 0x0000;
 @Component
 struct Index {
   @State message: string = 'PAGE2';
-  private context = getContext(this) as common.UIAbilityContext;
 
   build() {
       Column() {
