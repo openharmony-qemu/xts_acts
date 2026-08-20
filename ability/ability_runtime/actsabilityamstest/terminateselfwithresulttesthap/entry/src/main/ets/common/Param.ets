@@ -15,16 +15,16 @@
 
 const TAG = 'ParamManager';
 
-interface JsonParam {
-  name: string;
-  age: number;
-  isStudent: boolean;
-  hobbies: string[];
+class JsonParam {
+  public name: string = '';
+  public age: number = 0;
+  public isStudent: boolean = false;
+  public hobbies: string[] = [];
 }
 
-interface JsonArrayItem {
-  name: string;
-  password: string;
+class JsonArrayItem {
+  public name: string = '';
+  public password: string = '';
 }
 
 export default class ParamManager {
