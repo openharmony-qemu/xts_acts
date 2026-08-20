@@ -1199,6 +1199,7 @@ export default function int32ArrayOverviewPart04Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.forEach((_v: number, _i: int, _arr: Int32Array): void => {
+          expect(_v).assertEqual(1);
           throw new Error('boom');
         });
         expect().assertFail();
@@ -1219,6 +1220,7 @@ export default function int32ArrayOverviewPart04Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.map((_v: number, _i: int, _arr: Int32Array): number => {
+          expect(_v).assertEqual(1);
           throw new Error('map err');
         });
         expect().assertFail();
@@ -1239,6 +1241,7 @@ export default function int32ArrayOverviewPart04Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.filter((_v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(_v).assertEqual(1);
           throw new Error('filter err');
         });
         expect().assertFail();
@@ -1259,6 +1262,7 @@ export default function int32ArrayOverviewPart04Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         let _v = arr.find((_v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(_v).assertEqual(1);
           throw new Error('find err');
         });
         expect().assertFail();
@@ -1279,6 +1283,7 @@ export default function int32ArrayOverviewPart04Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.findIndex((_v: number, _i2: int, _arr: Int32Array): boolean => {
+          expect(_v).assertEqual(1);
           throw new Error('fi err');
         });
         expect().assertFail();
@@ -1299,6 +1304,7 @@ export default function int32ArrayOverviewPart04Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         let _v = arr.findLast((_v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(_v).assertEqual(3);
           throw new Error('fl err');
         });
         expect().assertFail();
@@ -1319,6 +1325,7 @@ export default function int32ArrayOverviewPart04Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.findLastIndex((_v: number, _i2: int, _arr: Int32Array): boolean => {
+          expect(_v).assertEqual(3);
           throw new Error('fli err');
         });
         expect().assertFail();
@@ -1339,6 +1346,7 @@ export default function int32ArrayOverviewPart04Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.some((_v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(_v).assertEqual(1);
           throw new Error('some err');
         });
         expect().assertFail();
@@ -1359,6 +1367,7 @@ export default function int32ArrayOverviewPart04Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.every((_v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(_v).assertEqual(1);
           throw new Error('every err');
         });
         expect().assertFail();
@@ -1379,6 +1388,7 @@ export default function int32ArrayOverviewPart04Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.reduce((_acc: number, _v: number, _i: int, _arr: Int32Array): number => {
+          expect(_v).assertEqual(1);
           throw new Error('red err');
         }, 0);
         expect().assertFail();
@@ -1399,6 +1409,7 @@ export default function int32ArrayOverviewPart04Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.reduceRight((_acc: number, _v: number, _i: int, _arr: Int32Array): number => {
+          expect(_v).assertEqual(3);
           throw new Error('rr err');
         }, 0);
         expect().assertFail();
