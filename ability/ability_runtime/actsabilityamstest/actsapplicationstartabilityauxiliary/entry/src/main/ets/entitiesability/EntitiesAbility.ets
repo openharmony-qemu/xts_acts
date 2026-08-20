@@ -58,7 +58,8 @@ export default class EntryAbility extends UIAbility {
         want.parameters?.keyForInt === 100 &&
         want.parameters?.keyForDouble === 99.99 &&
         want.parameters?.keyForBool === true &&
-      DeepEquals.deepEqual<KeyForObjectExpected>(want.parameters?.keyForObject as KeyForObjectExpected, keyForObjectExpected) &&
+        DeepEquals.deepEqual<KeyForObjectExpected>(want.parameters?.keyForObject as KeyForObjectExpected,
+          keyForObjectExpected) &&
         JSON.stringify(want.parameters?.keyForArrayString) == JSON.stringify(['str1', 'str2', 'str3']) &&
         JSON.stringify(want.parameters?.keyForArrayInt) == JSON.stringify([100, 200, 300, 400]) &&
         JSON.stringify(want.parameters?.keyForArrayDouble) == JSON.stringify([0.1, 0.2]) &&

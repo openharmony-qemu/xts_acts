@@ -35,7 +35,8 @@ export class DeepEquals {
         return false;
       }
 
-      if (typeof (obj1 as Record<string, ESObject>)[key] === 'object' && typeof (obj2 as Record<string, ESObject>)[key] === 'object') {
+      if (typeof (obj1 as Record<string, ESObject>)[key] === 'object' &&
+        typeof (obj2 as Record<string, ESObject>)[key] === 'object') {
         if (!DeepEquals.deepEqual((obj1 as Record<string, ESObject>)[key] as T, (obj2 as Record<string, ESObject>)[key] as T)) {
           return false;
         }
