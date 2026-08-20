@@ -16,7 +16,7 @@
 
 import tag from '@ohos.nfc.tag';
 import controller from '@ohos.nfc.controller';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium'
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
 
 function sleep(delay) {
     return new Promise(resovle => setTimeout(resovle, delay))
@@ -157,6 +157,27 @@ export default function nfcControllerTest() {
             } else {
                 console.info("[NFC_test] controller6 nfcisSupported is -> " + nfcisSupported);
                 expect(nfcisSupported).assertFalse();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcController_js_0700
+         * @tc.number SUB_Communication_NFC_nfcController_js_0700
+         * @tc.desc   off nfcStateChange without callback parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_Communication_NFC_nfcController_js_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+            let NFC_STATE_NOTIFY = "nfcStateChange";
+            let recvNfcStateNotifyFunc = result => {
+                console.info("[NFC_test] nfc state receive state ->" + result);
+            }
+            try {
+                controller.on(NFC_STATE_NOTIFY, recvNfcStateNotifyFunc);
+                controller.off(NFC_STATE_NOTIFY);
+            } catch (err) {
+                expect().assertFail();
             }
         })
 

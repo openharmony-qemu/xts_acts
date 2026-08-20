@@ -16,7 +16,7 @@
 
 import tag from '@ohos.nfc.tag';
 import cardEmulation from '@ohos.nfc.cardEmulation';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium'
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
 
 function sleep(delay) {
     return new Promise(resovle => setTimeout(resovle, delay))
@@ -1109,6 +1109,40 @@ export default function nfcNDEFTagTest() {
             } else {
                 console.info("[NFC_test]NdefTag14 = null & = undefined: ");
                 expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcNDEFTagTest_js_1405
+         * @tc.number SUB_Communication_NFC_nfcNDEFTagTest_js_1405
+         * @tc.desc   getNdefTagTypeString null 401 test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_Communication_NFC_nfcNDEFTagTest_js_1405', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+            try {
+                let ndefTypeString = NdefTag.getNdefTagTypeString(null);
+                expect().assertFail();
+            } catch (error) {
+                expect(error.code).assertEqual(401);
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcNDEFTagTest_js_1406
+         * @tc.number SUB_Communication_NFC_nfcNDEFTagTest_js_1406
+         * @tc.desc   getNdefTagTypeString undefined 401 test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_Communication_NFC_nfcNDEFTagTest_js_1406', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+            try {
+                let ndefTypeString = NdefTag.getNdefTagTypeString(undefined);
+                expect().assertFail();
+            } catch (error) {
+                expect(error.code).assertEqual(401);
             }
         })
 
