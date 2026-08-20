@@ -27,7 +27,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
 let driver = Driver.create();
 const TEST_CASE_NAME: string = 'SUB_ChildProcessManager_sendableContextManager_';
-let textsToMatch: Array<string> = ["打开", "允许", "本次允许"];
+let textsToMatch: Array<string> = ['打开', '允许', '本次允许'];
 let TAG = 'clickMatchingButton';
 async function clickMatchingButton(texts: Array<string>) {
   let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
@@ -56,7 +56,7 @@ let ACTS_EVENT: commonEventManager.CommonEventSubscribeInfo = {
 let subscriber: commonEventManager.CommonEventSubscriber;
 let context = getContext(this) as common.UIAbilityContext;
 let wantAgentData: WantAgent;
-let mpEnable="";
+let mpEnable='';
 function publishCB(err: BusinessError) {
   if (err) {
     console.error(`Failed to publish common event. Code is ${err.code}, message is ${err.message}`);
@@ -94,9 +94,9 @@ export default function sendableContextManagerTest() {
      */
     it('SUB_ChildProcessManager_sendableContextManager_0200', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_0200`;
-      let moduleContext: common.Context;
+      let moduleContext: common.UIAbilityContext;
       try {
-        moduleContext = context.createModuleContext(undefined);
+        moduleContext = context.createModuleContext('') as common.UIAbilityContext;;
       } catch (error) {
         console.error(`createModuleContext failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
         expect(error.code).assertEqual(401)
@@ -167,9 +167,9 @@ export default function sendableContextManagerTest() {
      */
     it('SUB_ChildProcessManager_sendableContextManager_0500', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_0500`;
-      let moduleContext: common.Context;
+      let moduleContext: common.UIAbilityContext;
       try {
-        moduleContext = context.createAreaModeContext(undefined)
+        moduleContext = context.createAreaModeContext(0) as common.UIAbilityContext;
       } catch (error) {
         console.error(`${tag} createModuleContext failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
         expect(error.code).assertEqual(401)
@@ -210,8 +210,8 @@ export default function sendableContextManagerTest() {
       if (mpEnable === 'true') {
         let link:string = 'https://www.applicationContext02.com'
         let want: Want = {
-          bundleName:"com.test.actsabilityerrcodequerytest",
-          abilityName:"applicationContext02",
+          bundleName:'com.test.actsabilityerrcodequerytest',
+          abilityName:'applicationContext02',
           parameters: {
             appLinkingOnly: false,
             demo_num: 111
@@ -229,7 +229,7 @@ export default function sendableContextManagerTest() {
               }, 600);
             }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success " + JSON.stringify(data))
+            console.log('OpenLink subscribeCallBack success ' + JSON.stringify(data))
             if (data.event == 'ACTS_TEST_OPENLINK') {
               context.startAbility(want, (err: BusinessError) => {
                 console.info('context.startAbility applicationContext02 succeed');
@@ -437,7 +437,7 @@ export default function sendableContextManagerTest() {
      */
     it('SUB_ChildProcessManager_sendableContextManager_1500', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_1500`;
-      let groupName: string = "";
+      let groupName: string = '';
       try {
         context.getGroupDir(groupName, (err: BusinessError, data: string) => {
           if (err?.code) {
@@ -469,7 +469,7 @@ export default function sendableContextManagerTest() {
      */
     it('SUB_ChildProcessManager_sendableContextManager_1600', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_1600`;
-      let groupName: string = "";
+      let groupName: string = '';
       try {
         context.getGroupDir(groupName).then(data => {
           console.log(`${tag} getGroupDir result: ${data}`);
@@ -499,7 +499,7 @@ export default function sendableContextManagerTest() {
      */
     it('SUB_ChildProcessManager_sendableContextManager_1700', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_1700`;
-      let moduleName: string = "";
+      let moduleName: string = '';
       try {
         let moduleContext = context.createModuleContext(moduleName);
         console.info(`${tag} createModuleContext succeed`);
@@ -584,7 +584,7 @@ export default function sendableContextManagerTest() {
      */
     it('SUB_ChildProcessManager_sendableContextManager_2000', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2000`;
-      let startupTasks: Array<string> = ["testTask"];
+      let startupTasks: Array<string> = ['testTask'];
       let config = null;
       try {
         startupManager.run(startupTasks, config).then(() => {
@@ -615,8 +615,8 @@ export default function sendableContextManagerTest() {
      */
     it('SUB_ChildProcessManager_sendableContextManager_2100', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2100`;
-      let startupTasks: Array<string> = ["testTask"];
-      let config = undefined;
+      let startupTasks: Array<string> = ['testTask'];
+      let config: ESObject = undefined;
       try {
         startupManager.run(startupTasks, config).then(() => {
           console.info(`${tag} startupManager.run succeed`);
@@ -679,8 +679,8 @@ export default function sendableContextManagerTest() {
     it('SUB_ChildProcessManager_sendableContextManager_2300', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2300`;
       let startupTasks: Array<string>|undefined = undefined;
-      let abilityStageContext = undefined;
-      let config = undefined;
+      let abilityStageContext: ESObject = undefined;
+      let config: ESObject = undefined;
       try {
         startupManager.run(startupTasks, abilityStageContext, config).then(() => {
           console.info(`${tag} startupManager.run succeed`);
@@ -742,7 +742,7 @@ export default function sendableContextManagerTest() {
      */
     it('SUB_ChildProcessManager_sendableContextManager_2500', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2500`;
-      let startupTasks: Array<string> = ["testTask"];
+      let startupTasks: Array<string> = ['testTask'];
       let abilityStageContext = null;
       let config = null;
       try {
@@ -774,9 +774,9 @@ export default function sendableContextManagerTest() {
      */
     it('SUB_ChildProcessManager_sendableContextManager_2600', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2600`;
-      let startupTasks: Array<string> = ["testTask"];
-      let abilityStageContext = undefined;
-      let config = undefined;
+      let startupTasks: Array<string> = ['testTask'];
+      let abilityStageContext: ESObject = undefined;
+      let config: ESObject = undefined;
       try {
         startupManager.run(startupTasks, abilityStageContext, config).then(() => {
           console.info(`${tag} startupManager.run succeed`);
@@ -806,8 +806,8 @@ export default function sendableContextManagerTest() {
      */
     it('SUB_ChildProcessManager_sendableContextManager_2700', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2700`;
-      let startupTasks: Array<string> = ["testTask"];
-      let abilityStageContext = undefined;
+      let startupTasks: Array<string> = ['testTask'];
+      let abilityStageContext: ESObject = undefined;
       let config = null;
       try {
         startupManager.run(startupTasks, abilityStageContext, config).then(() => {
@@ -838,9 +838,9 @@ export default function sendableContextManagerTest() {
      */
     it('SUB_ChildProcessManager_sendableContextManager_2800', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2800`;
-      let startupTasks: Array<string> = ["testTask"];
-      let abilityStageContext = undefined;
-      let config = undefined;
+      let startupTasks: Array<string> = ['testTask'];
+      let abilityStageContext: ESObject = undefined;
+      let config: ESObject = undefined;
       try {
         startupManager.run(startupTasks, abilityStageContext, config).then(() => {
           console.info(`${tag} startupManager.run succeed`);

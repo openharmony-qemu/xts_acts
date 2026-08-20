@@ -17,15 +17,17 @@ import { AbilityConstant, common, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-import commonEventManger from '@ohos.commonEventManager';
+import commonEventManager from '@ohos.commonEventManager';
 import ParamManager from '../common/Param';
+
+
 
 let param = new ParamManager();
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    param.setTextNme(want.action);
+    param.setTextNme(want.action ?? '');
   }
 
   onDestroy() {
@@ -36,7 +38,7 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err, data) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: ESObject) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
@@ -70,14 +72,14 @@ export default class EntryAbility extends UIAbility {
       setTimeout(() => {
         this.context.startAbilityForResult(want).then((result: common.AbilityResult) => {
           hilog.info(0x0000, 'testTag', `startAbilityForResult ok, result==: ${JSON.stringify(result)}`);
-          let commonEventData: commonEventManger.CommonEventPublishData = {
+          let commonEventData: commonEventManager.CommonEventPublishData = {
             parameters: {
               data: {
                 result: result
               }
             }
           };
-          commonEventManger.publish(events, commonEventData, (result) => {
+          commonEventManager.publish(events, commonEventData, (result) => {
             hilog.info(0x0000, 'testTag', `startAbilityForResult ok, 50 == ${JSON.stringify(result)}`);
           });
           setTimeout(async () => {

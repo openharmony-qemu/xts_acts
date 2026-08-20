@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 import Ability from '@ohos.app.ability.UIAbility'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window'
 import hilog from '@ohos.hilog';
+import UIAbility from '@ohos.app.ability.UIAbility';
 
 export default class MainAbility extends Ability {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     // Ability is creating, initialize resources for this ability
     console.log('ActsSystemAPITest  MainAbility onCreate');
   }
@@ -26,7 +30,7 @@ export default class MainAbility extends Ability {
     console.log('ActsSystemAPITest  MainAbility onDestroy');
   }
 
-  onWindowStageCreate(windowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     console.log('ActsSystemAPITest  MainAbility onWindowStageCreate');
     windowStage.loadContent('pages/Index', (err, data) => {

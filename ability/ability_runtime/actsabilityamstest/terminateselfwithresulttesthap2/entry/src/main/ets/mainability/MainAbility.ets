@@ -17,8 +17,10 @@ import { AbilityConstant, common, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-import commonEventManger from '@ohos.commonEventManager';
+import commonEventManager from '@ohos.commonEventManager';
 import ParamManager from '../common/Param';
+
+
 
 let param = new ParamManager();
 
@@ -28,7 +30,7 @@ export default class MainAbility extends UIAbility {
     hilog.info(0x0000, 'MainAbility', `want, 50 == ${JSON.stringify(want)}`);
     AppStorage.SetOrCreate<boolean>('onCreate', true);
     AppStorage.SetOrCreate<boolean>('isStart', false);
-    param.setTextNme(want.action);
+    param.setTextNme(want.action ?? '');
   }
 
   sleep(ms: number): Promise<void> {
@@ -46,7 +48,7 @@ export default class MainAbility extends UIAbility {
     let onBackground = AppStorage.get<boolean>('onBackground');
     let abilityResult = AppStorage.get<common.AbilityResult>('AbilityResult');
     let onDestroy = true;
-    let commonEventData: commonEventManger.CommonEventPublishData = {
+    let commonEventData: commonEventManager.CommonEventPublishData = {
       parameters: {
         data: {
           onCreate: onCreate,
@@ -59,7 +61,7 @@ export default class MainAbility extends UIAbility {
         }
       }
     };
-    commonEventManger.publish(events, commonEventData, (result) => {
+    commonEventManager.publish(events, commonEventData, (result) => {
       hilog.info(0x0000, 'MainAbility', `startAbilityForResult ok, 50 == ${JSON.stringify(result)}`);
     });
     await this.sleep(1000);

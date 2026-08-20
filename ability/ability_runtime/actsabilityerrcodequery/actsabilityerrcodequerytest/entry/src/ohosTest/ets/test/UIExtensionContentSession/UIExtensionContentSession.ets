@@ -40,7 +40,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
   }
 
   onSessionCreate(want: Want, session: UIExtensionContentSession) {
-    caseTag = want.action
+    caseTag = want.action ?? ''
     TAG = caseTag
     console.log(`${caseTag} onSessionCreate, want: ${JSON.stringify(want)}}`);
     let storage: LocalStorage = new LocalStorage();
@@ -50,7 +50,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
       try {
         session.loadContent(undefined);
         console.info(`${caseTag} session.loadContent success`);
-        commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+        commonEventManager.publish('ACTS_TEST_DESTROY', () => {
           console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
         });
       } catch (error) {
@@ -61,7 +61,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -80,7 +80,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
       try {
         session.loadContentByName(undefined);
         console.info('loadContentByName session.loadContentByName success');
-        commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+        commonEventManager.publish('ACTS_TEST_DESTROY', () => {
           console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
         });
       } catch (error) {
@@ -91,7 +91,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -115,7 +115,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           }
           console.info(`Successed in terminateSelf with result.`);
           console.error(`Test case execution results do not match expected outcomes.`);
-          commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+          commonEventManager.publish('ACTS_TEST_DESTROY', () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
           });
         });
@@ -127,7 +127,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -148,7 +148,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           .then(() => {
             console.info(`Successed in terminateSelf with result.`);
             console.error(`Test case execution results do not match expected outcomes.`);
-            commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+            commonEventManager.publish('ACTS_TEST_DESTROY', () => {
               console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             });
           })
@@ -163,7 +163,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -184,7 +184,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           .then(() => {
             console.info(`Successed in setting window to privacy mode.`);
             console.error(`Test case execution results do not match expected outcomes.`);
-            commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+            commonEventManager.publish('ACTS_TEST_DESTROY', () => {
               console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             });
           })
@@ -199,7 +199,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -223,7 +223,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           }
           console.info(`Successed in setting window to privacy mode.`);
           console.error(`Test case execution results do not match expected outcomes.`);
-          commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+          commonEventManager.publish('ACTS_TEST_DESTROY', () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
           });
         });
@@ -235,7 +235,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -261,7 +261,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
         onResult: (result: common.AbilityResult) => {
           console.info(`onResult, result: ${JSON.stringify(result)}`);
           console.error(`Test case execution results do not match expected outcomes.`);
-          commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+          commonEventManager.publish('ACTS_TEST_DESTROY', () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
           });
         }
@@ -275,7 +275,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':err?.code,
             }
-          }, function () {
+          }, () => {
               console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
               setTimeout(() => {
                 session?.terminateSelf((err: BusinessError) => {
@@ -317,7 +317,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':err?.code,
             }
-          }, function () {
+          }, () => {
               console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
               setTimeout(() => {
                 session?.terminateSelf((err: BusinessError) => {
@@ -341,7 +341,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           }
           console.info(`Successed in terminateSelf with result.`);
           console.error(`Test case execution results do not match expected outcomes.`);
-          commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+          commonEventManager.publish('ACTS_TEST_DESTROY', () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
           });
         });
@@ -353,7 +353,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -374,7 +374,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           .then(() => {
             console.info(`Successed in terminateSelf with result.`);
             console.error(`Test case execution results do not match expected outcomes.`);
-            commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+            commonEventManager.publish('ACTS_TEST_DESTROY', () => {
               console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             });
           })
@@ -389,7 +389,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -427,7 +427,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
                 parameters: {
                   'result':err?.code,
                 }
-              }, function () {
+              }, () => {
                 console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
                 setTimeout(() => {
                   session?.terminateSelf((err: BusinessError) => {
@@ -444,7 +444,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           }
           console.info(`Successed in startAbilityByType`);
           console.error(`Test case execution results do not match expected outcomes.`);
-          commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+          commonEventManager.publish('ACTS_TEST_DESTROY', () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
           });
         });
@@ -456,7 +456,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -494,7 +494,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
                 parameters: {
                   'result':err?.code,
                 }
-              }, function () {
+              }, () => {
                 console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
                 setTimeout(() => {
                   session?.terminateSelf((err: BusinessError) => {
@@ -511,7 +511,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           }
           console.info(`Successed in startAbilityByType`);
           console.error(`Test case execution results do not match expected outcomes.`);
-          commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+          commonEventManager.publish('ACTS_TEST_DESTROY', () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
           });
         });
@@ -523,7 +523,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -559,7 +559,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
               parameters: {
                 'result':err?.code,
               }
-            }, function () {
+            }, () => {
               console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
               setTimeout(() => {
                 session?.terminateSelf((err: BusinessError) => {
@@ -580,7 +580,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -615,7 +615,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
                 parameters: {
                   'result':err?.code,
                 }
-              }, function () {
+              }, () => {
                 console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
                 setTimeout(() => {
                   session?.terminateSelf((err: BusinessError) => {
@@ -632,7 +632,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           }
           console.info(`Successed in startAbilityByType`);
           console.error(`Test case execution results do not match expected outcomes.`);
-          commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+          commonEventManager.publish('ACTS_TEST_DESTROY', () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
           });
         });
@@ -644,7 +644,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -679,7 +679,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
                 parameters: {
                   'result':err?.code,
                 }
-              }, function () {
+              }, () => {
                 console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
                 setTimeout(() => {
                   session?.terminateSelf((err: BusinessError) => {
@@ -696,7 +696,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           }
           console.info(`Successed in startAbilityByType`);
           console.error(`Test case execution results do not match expected outcomes.`);
-          commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+          commonEventManager.publish('ACTS_TEST_DESTROY', () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
           });
         });
@@ -708,7 +708,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -736,7 +736,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
               parameters: {
                 'result':err?.code,
               }
-            }, function () {
+            }, () => {
               console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
               setTimeout(() => {
                 session?.terminateSelf((err: BusinessError) => {
@@ -757,7 +757,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -785,7 +785,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
               parameters: {
                 'result':err?.code,
               }
-            }, function () {
+            }, () => {
               console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
               setTimeout(() => {
                 session?.terminateSelf((err: BusinessError) => {
@@ -806,7 +806,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -848,7 +848,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
                 parameters: {
                   'result':err?.code,
                 }
-              }, function () {
+              }, () => {
                 console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
                 setTimeout(() => {
                   session?.terminateSelf((err: BusinessError) => {
@@ -870,7 +870,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -912,7 +912,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
                 parameters: {
                   'result':err?.code,
                 }
-              }, function () {
+              }, () => {
                 console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
                 setTimeout(() => {
                   session?.terminateSelf((err: BusinessError) => {
@@ -934,7 +934,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -975,7 +975,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
                 parameters: {
                   'result':err?.code,
                 }
-              }, function () {
+              }, () => {
                 console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
                 setTimeout(() => {
                   session?.terminateSelf((err: BusinessError) => {
@@ -996,7 +996,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -1035,7 +1035,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
                 parameters: {
                   'result':err?.code,
                 }
-              }, function () {
+              }, () => {
                 console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
                 setTimeout(() => {
                   session?.terminateSelf((err: BusinessError) => {
@@ -1057,7 +1057,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -1096,7 +1096,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
                 parameters: {
                   'result':err?.code,
                 }
-              }, function () {
+              }, () => {
                 console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
                 setTimeout(() => {
                   session?.terminateSelf((err: BusinessError) => {
@@ -1118,7 +1118,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -1151,7 +1151,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
                 parameters: {
                   'result':err?.code,
                 }
-              }, function () {
+              }, () => {
                 console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
                 setTimeout(() => {
                   session?.terminateSelf((err: BusinessError) => {
@@ -1172,7 +1172,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -1205,7 +1205,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
                 parameters: {
                   'result':err?.code,
                 }
-              }, function () {
+              }, () => {
                 console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
                 setTimeout(() => {
                   session?.terminateSelf((err: BusinessError) => {
@@ -1226,7 +1226,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -1251,7 +1251,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
               parameters: {
                 'result': err?.code,
               }
-            }, function () {
+            }, () => {
               console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             });
             return;
@@ -1261,7 +1261,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result': 0,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
           });
         });
@@ -1271,7 +1271,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           parameters: {
             'result': error?.code || -1,
           }
-        }, function () {
+        }, () => {
           console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
         });
       }
@@ -1286,7 +1286,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
               parameters: {
                 'result': 0,
               }
-            }, function () {
+            }, () => {
               console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             });
           })
@@ -1296,7 +1296,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
               parameters: {
                 'result': err?.code,
               }
-            }, function () {
+            }, () => {
               console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             });
           });
@@ -1306,7 +1306,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           parameters: {
             'result': error?.code || -1,
           }
-        }, function () {
+        }, () => {
           console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
         });
       }
@@ -1316,7 +1316,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
       try {
         session.loadContent(null);
         console.info(`${caseTag} session.loadContent success`);
-        commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+        commonEventManager.publish('ACTS_TEST_DESTROY', () => {
           console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
         });
       } catch (error) {
@@ -1326,7 +1326,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -1351,7 +1351,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           parameters: {
             'result': errorCode_3100
           }
-        }, function () {
+        }, () => {
           console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
         });
       } catch (error) {
@@ -1362,7 +1362,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
         parameters: {
           'result': errorCode_3100
         }
-      }, function () {
+      }, () => {
         console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
         setTimeout(() => {
           session?.terminateSelf((err: BusinessError) => {
@@ -1380,7 +1380,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
       try {
         session.loadContent('', undefined);
         console.info(`${caseTag} session.loadContent success`);
-        commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+        commonEventManager.publish('ACTS_TEST_DESTROY', () => {
           console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
         });
       } catch (error) {
@@ -1390,7 +1390,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -1410,7 +1410,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
       try {
         session.loadContent('', null);
         console.info(`${caseTag} session.loadContent success`);
-        commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+        commonEventManager.publish('ACTS_TEST_DESTROY', () => {
           console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
         });
       } catch (error) {
@@ -1420,7 +1420,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result':error?.code,
             }
-          }, function () {
+          }, () => {
             console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {

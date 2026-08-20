@@ -17,16 +17,18 @@ import { UIAbility, Want } from '@kit.AbilityKit';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
+import common from '@ohos.app.ability.common';
+
 
 let flag = true;
 export default class applicationContext02 extends UIAbility {
-  onCreate(want) {
+onCreate(want: Want) {
     console.info('applicationContext02 onCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     globalThis.applicationContext02 = this.context
     console.info('applicationContext02 JSON.stringify(want) is', JSON.stringify(want));
     console.info('applicationContext02 JSON.stringify(want) is', JSON.stringify(want.parameters));
-    let applicationContext = globalThis.applicationContext02.getApplicationContext();
+    let applicationContext = globalThis.applicationContext02.getApplicationContext() as common.UIAbilityContext;
     globalThis.applicationContext = applicationContext
   };
 
@@ -38,7 +40,7 @@ export default class applicationContext02 extends UIAbility {
     // Main window is created, set main page for this ability
     console.info('applicationContext02 onWindowStageCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-    windowStage.loadContent('testability/pages/UiAbility/UiAbility12', (err, data) => {
+    windowStage.loadContent('testability/pages/UiAbility/UiAbility12', (err: BusinessError, data: ESObject) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
@@ -57,8 +59,8 @@ export default class applicationContext02 extends UIAbility {
     if(flag){
       setTimeout(()=>{
         let want1: Want = {
-          bundleName: "ohos.acts.applicationContextAssist",
-          abilityName: "EntryAbility",
+          bundleName: 'ohos.acts.applicationContextAssist',
+          abilityName: 'EntryAbility',
           parameters: {
             appLinkingOnly: false,
             demo_num: 111
@@ -81,8 +83,8 @@ export default class applicationContext02 extends UIAbility {
     console.info('applicationContext02 onBackground');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
     let want: Want = {
-      bundleName: "com.test.actsabilityerrcodequerytest",
-      abilityName: "applicationContext02",
+      bundleName: 'com.test.actsabilityerrcodequerytest',
+      abilityName: 'applicationContext02',
       parameters: {
         appLinkingOnly: false,
         demo_num: 111
@@ -100,7 +102,7 @@ export default class applicationContext02 extends UIAbility {
             parameters:{
               result: error.code
             }
-          }, function () {
+          }, () => {
             console.info('====>SUB_ChildProcessManager_sendableContextManager_0800 publish ACTS_TEST_DESTROY');
             setTimeout(() => {
               globalThis.applicationContext02.terminateSelf()

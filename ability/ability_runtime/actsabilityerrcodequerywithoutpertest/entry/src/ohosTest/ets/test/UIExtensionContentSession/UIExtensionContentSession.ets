@@ -37,7 +37,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
   }
 
   onSessionCreate(want: Want, session: UIExtensionContentSession) {
-    caseTag = want.action
+    caseTag = want.action ?? ''
     TAG = caseTag
     console.log(`${caseTag} onSessionCreate, want: ${JSON.stringify(want)}}`);
     let storage: LocalStorage = new LocalStorage();
@@ -48,7 +48,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
           .then(() => {
             console.info(caseTag + `Successed in setting window to privacy mode.`);
             console.error(caseTag + `Test case execution results do not match expected outcomes.`);
-            commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+            commonEventManager.publish('ACTS_TEST_DESTROY', () => {
               console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
             });
           })
@@ -62,7 +62,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result': error.code
             }
-          }, function () {
+          }, () => {
             console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -90,7 +90,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result': 0
             }
-          }, function () {
+          }, () => {
             console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
           });
         });
@@ -101,7 +101,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result': error.code
             }
-          }, function () {
+          }, () => {
             console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -126,7 +126,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
              parameters: {
                'result': 0
              }
-           }, function () {
+           }, () => {
              console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
            });
           })
@@ -140,7 +140,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result': error.code
             }
-          }, function () {
+          }, () => {
             console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -168,7 +168,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result': 0
             }
-          }, function () {
+          }, () => {
             console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
           });
         });
@@ -179,7 +179,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result': error.code
             }
-          }, function () {
+          }, () => {
             console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -213,7 +213,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
                 'width': rect.width,
                 'height': rect.height
               }
-            }, function () {
+            }, () => {
               console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY with rect values`);
             });
           } catch (rectError) {
@@ -222,7 +222,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
               parameters: {
                 'result': rectError.code
               }
-            }, function () {
+            }, () => {
               console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
             });
           }
@@ -232,7 +232,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result': -1
             }
-          }, function () {
+          }, () => {
             console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
           });
         }
@@ -243,7 +243,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result': error.code
             }
-          }, function () {
+          }, () => {
             console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
@@ -260,7 +260,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
             parameters: {
               'result': error.code
             }
-          }, function () {
+          }, () => {
             console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
           });
         }

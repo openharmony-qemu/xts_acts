@@ -15,6 +15,18 @@
 
 const TAG = 'ParamManager';
 
+interface JsonParam {
+  name: string;
+  age: number;
+  isStudent: boolean;
+  hobbies: string[];
+}
+
+interface JsonArrayItem {
+  name: string;
+  password: string;
+}
+
 export default class ParamManager {
   testName: string = '';
 
@@ -42,9 +54,8 @@ export default class ParamManager {
     return resultCode;
   }
 
-  public getParam(): {} {
-    let param = {}
-    switch (this.testName) {
+  public getParam() : Record<string, Object> {
+    let param: Record<string, Object> = {}; switch (this.testName) {
       case 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3800':
         param = {
           'keyForInt': 100,
@@ -58,33 +69,33 @@ export default class ParamManager {
         break;
       case 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3600':
         param = {
-          'keyForStrArray': ["str1", "str2", "str3"]
+          'keyForStrArray': ['str1', 'str2', 'str3']
         };
         break;
       case 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3400':
         param = {
-          'keyForStr': "str"
+          'keyForStr': 'str'
         };
         break;
       case 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3300':
         param = {
-          'keyForDouble': "a"
+          'keyForDouble': 'a'
         };
         break;
       case 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3200':
         param = {
           'keyForJson': {
-            "name": "张三", "age": 30, "isStudent": false, "hobbies": ["阅读", "旅行", "烹饪"]
-          }
+            'name': '张三', 'age': 30, 'isStudent': false, 'hobbies': ['阅读', '旅行', '烹饪']
+          } as JsonParam
         };
         break;
       case 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3100':
         param = {
           'keyForJsonArray': [{
-            "name": "zhang", "password": "123"
+            'name': 'zhang', 'password': '123'
           }, {
-            "name": "yang", "password": "456"
-          }]
+            'name': 'yang', 'password': '456'
+          }] as JsonArrayItem[]
         };
         break;
       case 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_3000':

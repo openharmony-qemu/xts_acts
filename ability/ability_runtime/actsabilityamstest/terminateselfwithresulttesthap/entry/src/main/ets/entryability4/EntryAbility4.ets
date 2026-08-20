@@ -17,8 +17,10 @@ import { AbilityConstant, common, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-import commonEventManger from '@ohos.commonEventManager';
+import commonEventManager from '@ohos.commonEventManager';
 import ParamManager from '../common/Param';
+
+
 
 let param = new ParamManager();
 
@@ -27,7 +29,7 @@ export default class EntryAbility4 extends UIAbility {
     hilog.info(0x0000, 'EntryAbility4', '%{public}s', 'Ability onCreate');
     hilog.info(0x0000, 'EntryAbility4', `want, 50 == ${JSON.stringify(want)}`);
     AppStorage.SetOrCreate<boolean>('onCreate', true);
-    param.setTextNme(want.action);
+    param.setTextNme(want.action ?? '');
   }
   sleep(ms: number): Promise<void> {
     return new Promise((resolve, reject) => {
@@ -41,7 +43,7 @@ export default class EntryAbility4 extends UIAbility {
     let onDestroy = true;
     let events = param.getTextNme();
     if (events == 'EntryAbility3') {
-      let commonEventData: commonEventManger.CommonEventPublishData = {
+      let commonEventData: commonEventManager.CommonEventPublishData = {
         parameters: {
           data: {
             onBackground: onBackground,
@@ -50,7 +52,7 @@ export default class EntryAbility4 extends UIAbility {
           }
         }
       };
-      commonEventManger.publish(events, commonEventData, (result) => {
+      commonEventManager.publish(events, commonEventData, (result) => {
         hilog.info(0x0000, 'EntryAbility4', `onConnect, 50 == ${JSON.stringify(result)}`);
       });
     }
@@ -83,7 +85,7 @@ export default class EntryAbility4 extends UIAbility {
     let events = param.getTextNme();
     if (events == 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4300_2') {
       param.setTextNme('EntryAbility3');
-      let commonEventData: commonEventManger.CommonEventPublishData = {
+      let commonEventData: commonEventManager.CommonEventPublishData = {
         parameters: {
           data: {
             onCreate: onCreate,
@@ -92,7 +94,7 @@ export default class EntryAbility4 extends UIAbility {
           }
         }
       };
-      commonEventManger.publish(events, commonEventData, (result) => {
+      commonEventManager.publish(events, commonEventData, (result) => {
         hilog.info(0x0000, 'EntryAbility4', `onConnect, 50 == ${JSON.stringify(result)}`);
       });
     }

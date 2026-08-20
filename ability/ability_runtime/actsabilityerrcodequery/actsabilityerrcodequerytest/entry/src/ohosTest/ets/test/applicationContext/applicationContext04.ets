@@ -19,8 +19,9 @@ import window from '@ohos.window';
 import { commonEventManager } from '@kit.BasicServicesKit';
 import { UIExtensionContentSession, UIExtensionAbility } from '@kit.AbilityKit';
 
+
 export default class applicationContext04 extends UIExtensionAbility  {
-  public session:UIExtensionContentSession;
+  public session!: UIExtensionContentSession;
 
   onSessionCreate(want: Want, session: UIExtensionContentSession): void {
     this.session = session
@@ -42,9 +43,9 @@ export default class applicationContext04 extends UIExtensionAbility  {
               }
             }
           }, () => {
-          console.log("====>terminateSelfWithResult success====>")
+          console.log('====>terminateSelfWithResult success====>')
         });
-        commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+        commonEventManager.publish('ACTS_TEST_DESTROY', () => {
           console.info('====>SUB_ChildProcessManager_sendableContextManager_1100 publish ACTS_TEST_DESTROY');
         });
       }
@@ -63,7 +64,7 @@ export default class applicationContext04 extends UIExtensionAbility  {
     // Main window is created, set main page for this ability
     console.info('applicationContext04 onWindowStageCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-    windowStage.loadContent('testability/pages/UiAbility/UiAbility12', (err, data) => {
+    windowStage.loadContent('testability/pages/UiAbility/UiAbility12', (err: BusinessError, data: ESObject) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

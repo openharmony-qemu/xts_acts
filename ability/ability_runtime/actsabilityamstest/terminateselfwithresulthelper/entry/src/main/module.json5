@@ -18,7 +18,7 @@
     "name": "entry",
     "type": "entry",
     "description": "$string:module_desc",
-    "srcEntry": "./ets/application/EntryAbilityStage.ts",
+    "srcEntry": "./ets/application/EntryAbilityStage.ets",
     "mainElement": "EntryAbility",
     "deviceTypes": [],
     "deliveryWithInstall": true,

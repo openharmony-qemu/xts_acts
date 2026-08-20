@@ -28,6 +28,8 @@ import { BusinessError ,systemParameterEnhance} from '@kit.BasicServicesKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { image } from '@kit.ImageKit';
 import { rpc } from '@kit.IPCKit';
+import { Want } from '@kit.AbilityKit';
+
 function sleep(ms: number) {
   return new Promise<string>(resolve => setTimeout(resolve, ms));
 }

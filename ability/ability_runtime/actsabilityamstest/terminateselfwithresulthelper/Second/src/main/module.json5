@@ -19,7 +19,7 @@
     "type": "feature",
     "description": "$string:module_desc",
     "mainElement": "SecondAbility",
-    "srcEntry": "./ets/application/EntryAbilityStage.ts",
+    "srcEntry": "./ets/application/EntryAbilityStage.ets",
     "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,

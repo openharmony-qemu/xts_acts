@@ -21,18 +21,19 @@ import { url } from '@kit.ArkTS';
 import { rpc } from '@kit.IPCKit';
 import { commonEventManager } from '@kit.BasicServicesKit';
 import { BusinessError } from '@ohos.base';
+import { Want } from '@kit.AbilityKit';
 
 export default class applicationContext01 extends UIAbility {
-  onCreate(want) {
+onCreate(want: Want) {
     console.info('applicationContext01 onCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     globalThis.applicationContext01 = this.context
     console.info('applicationContext01 JSON.stringify(want) is', JSON.stringify(want));
     console.info('applicationContext01 JSON.stringify(want) is', JSON.stringify(want.parameters));
-    let applicationContext = globalThis.applicationContext01.getApplicationContext()
+    let applicationContext = globalThis.applicationContext01.getApplicationContext() as common.ApplicationContext
     console.log('killAllProcesses begin');
     try {
-      applicationContext.killAllProcesses(undefined)
+      applicationContext.killAllProcesses()
       console.log('killAllProcesses success');
       globalThis.applicationContext01.terminateSelfWithResult(
         {
@@ -43,8 +44,8 @@ export default class applicationContext01 extends UIAbility {
             }
           }
         }, () => {
-        console.log("====>terminateSelfWithResult success====>")
-        commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+        console.log('====>terminateSelfWithResult success====>')
+        commonEventManager.publish('ACTS_TEST_DESTROY', () => {
           console.info('====>SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3000 publish ACTS_TEST_DESTROY');
         });
       });
@@ -63,7 +64,7 @@ export default class applicationContext01 extends UIAbility {
     // Main window is created, set main page for this ability
     console.info('applicationContext01 onWindowStageCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-    windowStage.loadContent('testability/pages/UiAbility/UiAbility12', (err, data) => {
+    windowStage.loadContent('testability/pages/UiAbility/UiAbility12', (err: BusinessError, data: ESObject) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
@@ -79,8 +80,8 @@ export default class applicationContext01 extends UIAbility {
           }
         }
       }, () => {
-      console.log("====>terminateSelfWithResult success====>")
-      commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+      console.log('====>terminateSelfWithResult success====>')
+      commonEventManager.publish('ACTS_TEST_DESTROY', () => {
         console.info('====>SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3000 publish ACTS_TEST_DESTROY');
       });
     });
@@ -104,8 +105,8 @@ export default class applicationContext01 extends UIAbility {
           }
         }
       }, () => {
-      console.log("====>terminateSelfWithResult success====>")
-      commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+      console.log('====>terminateSelfWithResult success====>')
+      commonEventManager.publish('ACTS_TEST_DESTROY', () => {
         console.info('====>SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3000 publish ACTS_TEST_DESTROY');
       });
     });
