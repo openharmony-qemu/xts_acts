@@ -215,7 +215,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
      */
     it('SUB_Notification_Ans_Reduce_alerts_0300', Level.LEVEL0, async (done: Function) => {
       let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_0300'
-      //await notificationManager.cancelAll()
+      await notificationManager.cancelAll()
       await sleep(1000)
       let notificationRequest: notificationManager.NotificationRequest = {
         id: getRandomNumber(1, 1000),
