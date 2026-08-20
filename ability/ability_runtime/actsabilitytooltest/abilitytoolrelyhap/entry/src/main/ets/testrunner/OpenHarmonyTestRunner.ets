@@ -56,9 +56,9 @@ export default class OpenHarmonyTestRunner implements TestRunner {
     abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
     abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     AppStorage.setOrCreate<AbilityDelegatorRegistry.AbilityDelegator>('abilityDelegator', abilityDelegator);
-    let MainAbilityName = abilityDelegatorArguments.bundleName + '.MainAbility';
+    let mainAbilityName = abilityDelegatorArguments.bundleName + '.MainAbility';
     let lMonitor: AbilityDelegatorRegistry.AbilityMonitor = {
-      abilityName: MainAbilityName,
+      abilityName: mainAbilityName,
       onAbilityCreate: onAbilityCreateCallback,
     }
     abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback);

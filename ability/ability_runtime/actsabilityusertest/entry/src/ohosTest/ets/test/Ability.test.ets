@@ -175,16 +175,22 @@ export default function abilityTest() {
                 })
               })
               console.log('====>start startAbility====>');
-              await AppStorage.get<common.UIAbilityContext>('abilityContext')!.startAbility(
-                {
-                  bundleName: 'com.example.actsabilityusertest',
-                  abilityName: 'MainAbility3'
-                })
-                .then(() => {
-                  console.log('====>startAbility end====>');
-                }).catch((err: BusinessError) => {
-                  console.error('====>startAbility failed====>' + JSON.stringify(err));
-                })
+              try {
+                await AppStorage.get<common.UIAbilityContext>('abilityContext')!.startAbility(
+                  {
+                    bundleName: 'com.example.actsabilityusertest',
+                    abilityName: 'MainAbility3'
+                  })
+                  .then(() => {
+                    console.log('====>startAbility end====>');
+                  }).catch((err: BusinessError) => {
+                    console.error('====>startAbility failed====>' + JSON.stringify(err));
+                    done();
+                  })
+              } catch (e) {
+                console.error('====>startAbility await exception====>' + JSON.stringify(e));
+                done();
+              }
             })
         })
       setTimeout(() => {
@@ -238,6 +244,7 @@ export default function abilityTest() {
                   console.log('====>startAbility end====>');
                 }).catch((err: BusinessError) => {
                   console.error('====>startAbility failed====>' + JSON.stringify(err));
+                  done();
                 })
             })
         })

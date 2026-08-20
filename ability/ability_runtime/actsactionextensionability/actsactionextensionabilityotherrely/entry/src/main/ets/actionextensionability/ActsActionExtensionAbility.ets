@@ -26,8 +26,8 @@ function sleep(ms: number) {
   return new Promise<void>(resolve => setTimeout(resolve, ms));
 }
 export default class ActsActionExtensionAbility extends ActionExtensionAbility {
-  storage: LocalStorage = new LocalStorage();
-  message: string = '';
+  private storage: LocalStorage = new LocalStorage();
+  private message: string = '';
   onCreate() {
     console.log('====>ActsActionExtensionAbility onCreate called');
     count++;
