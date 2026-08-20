@@ -293,7 +293,7 @@ async function releaseVideoSession() {
   await mVideoSession?.release();
 }
 
-export default function CameraPickerPickTest() {
+export function CameraPickerPickTest() {
   describe('CameraPickerPickTest', () => {
     beforeAll(async () => {
       console.info('beforeAll case');
