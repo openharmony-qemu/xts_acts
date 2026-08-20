@@ -92,7 +92,8 @@ async function createSubscriberAndSubscribe(subscribeInfo: commonEventManager.Co
 
 async function installFeatureHap(cmd: string) {
   return new Promise<abilityDelegatorRegistry.ShellCmdResult>((resolve, reject) => {
-    AppStorage.get<abilityDelegatorRegistry.AbilityDelegator>('abilityDelegator')!.executeShellCommand(cmd, (err: BusinessError, d: abilityDelegatorRegistry.ShellCmdResult) => {
+    AppStorage.get<abilityDelegatorRegistry.AbilityDelegator>('abilityDelegator')!
+      .executeShellCommand(cmd, (err: BusinessError, d: abilityDelegatorRegistry.ShellCmdResult) => {
       hilog.info(0x0000, TAG, '%{public}s', `executeShellCommand : = ${cmd},err  : ${JSON.stringify(err)}, data: ${JSON.stringify(d)}`);
       if (err) {
         reject(err);
