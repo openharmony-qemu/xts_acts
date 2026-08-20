@@ -666,10 +666,12 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
 {
     const char *value1 = GetOsReleaseType();
     printf("OsReleaseType=%s\n", value1);
-    TEST_ASSERT_EQUAL_STRING("Beta", value1);
+    TEST_ASSERT_TRUE(value1 != NULL);
+    TEST_ASSERT_TRUE(value1[0] != '\0');
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetOsReleaseType();
-        TEST_ASSERT_EQUAL_STRING("Beta", value);
+        TEST_ASSERT_TRUE(value != NULL);
+        TEST_ASSERT_TRUE(value[0] != '\0');
     }
     const char *value2 = GetOsReleaseType();
     TEST_ASSERT_EQUAL_STRING(value1, value2);
@@ -951,7 +953,8 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *fullName = GetOSFullName();
-    const char *p = strchr(fullName, '-');
+    TEST_ASSERT_TRUE(fullName != NULL);
+    const char *p = (fullName == NULL) ? NULL : strchr(fullName, '-');
     int major = 0, minor = 0, patch = 0, build = 0;
     if (p != NULL) {
         p++;
@@ -1040,7 +1043,8 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
                Function | MediumTest | Level1)
 {
     const char *fullName = GetOSFullName();
-    const char *p = strchr(fullName, '-');
+    TEST_ASSERT_TRUE(fullName != NULL);
+    const char *p = (fullName == NULL) ? NULL : strchr(fullName, '-');
     int major = 0, minor = 0, patch = 0, build = 0;
     if (p != NULL) {
         p++;

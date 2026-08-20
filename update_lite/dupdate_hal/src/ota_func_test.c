@@ -243,7 +243,7 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1700, Function | MediumTest | Leve
 };
 
 /**
-
+ * @tc.name   subUpgradeAPI2100
  * @tc.number SUB_Upgrade_API_2100
  * @tc.desc   test HotaSetBootSettings fails before upgrade started
  * @tc.type   FUNCTION
