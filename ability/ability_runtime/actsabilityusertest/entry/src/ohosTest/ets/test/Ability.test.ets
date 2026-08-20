@@ -32,7 +32,11 @@ export default function abilityTest() {
         if(user !== undefined){
             cmd += ' -u ' + user;
         }
+        try {
         await abilityDelegator.executeShellCommand(cmd);
+        } catch (e) {
+          console.error('====>await exception====>' + JSON.stringify(e));
+        }
         done();
     });
     /**
@@ -48,6 +52,7 @@ export default function abilityTest() {
       let flag = true;
       let startresult = false;
 
+      try {
       await commonEvent.createSubscriber(subscriberInfo_MainAbility)
         .then((data) => {
           console.log('====>Create Subscriber====>');
@@ -78,6 +83,9 @@ export default function abilityTest() {
               })
             })
         })
+      } catch (e) {
+        console.error('====>await exception====>' + JSON.stringify(e));
+      }
 
       setTimeout(() => {
         if (flag == true) {
@@ -106,6 +114,7 @@ export default function abilityTest() {
       console.log('====>getArguments is====>' + JSON.stringify(AbilityDelegatorArgs));
       let Subscriber: commonEventManager.CommonEventSubscriber;
 
+      try {
       await commonEvent.createSubscriber(subscriberInfo_MainAbility)
         .then((data) => {
           console.log('====>Create Subscriber====>');
@@ -131,6 +140,9 @@ export default function abilityTest() {
               })
             })
         })
+      } catch (e) {
+        console.error('====>await exception====>' + JSON.stringify(e));
+      }
 
       setTimeout(() => {
         console.log('ACTS_StartAbility_Callback_Error_0200 - timeout');
@@ -183,6 +195,7 @@ export default function abilityTest() {
                   })
                   .then(() => {
                     console.log('====>startAbility end====>');
+                    done();
                   }).catch((err: BusinessError) => {
                     console.error('====>startAbility failed====>' + JSON.stringify(err));
                     done();
@@ -242,6 +255,7 @@ export default function abilityTest() {
                 })
                 .then(() => {
                   console.log('====>startAbility end====>');
+                  done();
                 }).catch((err: BusinessError) => {
                   console.error('====>startAbility failed====>' + JSON.stringify(err));
                   done();
