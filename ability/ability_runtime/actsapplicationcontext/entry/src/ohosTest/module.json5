@@ -45,7 +45,7 @@
       },
       {
         "name": "MainAbility2",
-        "srcEntry": "./ets/MainAbility2/MainAbility2.ts",
+        "srcEntry": "./ets/MainAbility2/MainAbility2.ets",
         "description": "$string:MainAbility2_desc",
         "icon": "$media:icon",
         "label": "$string:MainAbility2_label",

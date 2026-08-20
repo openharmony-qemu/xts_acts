@@ -14,33 +14,33 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import featureAbility from "@ohos.ability.featureAbility";
-import commonEvent from '@ohos.commonEvent';
+import featureAbility from '@ohos.ability.featureAbility';
+import commonEvent from '@ohos.commonEventManager';
 import Utils from './Utils';
 
 export default function callTest() {
-  let TAG = "";
+  let TAG = '';
   const URI_TEST = 'dataability:///ohos.acts.aafwk.test.fasupplement.DataAbility';
   let dataAbilityHelper = featureAbility.acquireDataAbilityHelper(URI_TEST);
   let pacMap = {
     'group_name': 'test1',
     'ringtone_modify_time': 28
   };
-  let dataAssert = "";
-  let subscriber;
-  let subscribeInfo = {
-    events: ["call_event"]
+  let dataAssert = '';
+  let subscriber: ESObject;
+  let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
+    events: ['call_event']
   };
 
   function SubscribeCallBack(err, data) {
     if (err.code) {
-      console.error("commonEvent subscribe failed " + JSON.stringify(err));
+      console.error('commonEvent subscribe failed ' + JSON.stringify(err));
     } else {
-      console.info("commonEvent subscribe service " + JSON.stringify(data));
+      console.info('commonEvent subscribe service ' + JSON.stringify(data));
       for (var key in data.parameters) {
         if (data.parameters[key]) {
           dataAssert = data.parameters[key]
-          console.info("callTest dataAssert is : " + dataAssert);
+          console.info('callTest dataAssert is : ' + dataAssert);
         }
       }
     }
@@ -48,9 +48,9 @@ export default function callTest() {
 
   function CreateSubscriberCallBack(err, commonEventSubscriber) {
     if (err.code) {
-      console.error("commonEvent createSubscriber failed " + JSON.stringify(err));
+      console.error('commonEvent createSubscriber failed ' + JSON.stringify(err));
     } else {
-      console.info("----commonEvent createSubscriber------");
+      console.info('----commonEvent createSubscriber------');
       subscriber = commonEventSubscriber;
       commonEvent.subscribe(subscriber, SubscribeCallBack);
     }
@@ -65,13 +65,13 @@ export default function callTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("CallTest_0100", Level.LEVEL0, async  (done: Function) => {
-      console.info("------------start CallTest_0100-------------");
-      console.info("CallTest_0100 commonEvent.createSubscriber start!!!");
+    it('CallTest_0100', Level.LEVEL0, async  (done: Function) => {
+      console.info('------------start CallTest_0100-------------');
+      console.info('CallTest_0100 commonEvent.createSubscriber start!!!');
       commonEvent.createSubscriber(subscribeInfo, CreateSubscriberCallBack);
       await Utils.sleep(2000);
-      TAG = "CallTest_0100";
-      let details;
+      TAG = 'CallTest_0100';
+      let details: ESObject;
       dataAbilityHelper.call(URI_TEST, 'insert', '', pacMap).then((data) => {
         console.info(TAG + ' call succeeded, data: ' + JSON.stringify(data));
         details = data;
@@ -79,11 +79,11 @@ export default function callTest() {
         console.error(TAG + ' call failed, error: ' + JSON.stringify(error));
       });
       await Utils.sleep(2000);
-      expect(details.result).assertEqual("{\"group_name\":{\"data\":\"test1\",\"type\":10}," +
-        "\"ringtone_modify_time\":{\"data\":\"28wTypeToString\",\"type\":9}}");
-      expect(dataAssert).assertEqual("{\"group_name\":{\"data\":\"test1\",\"type\":10}" +
-        ",\"ringtone_modify_time\":{\"data\":\"28wTypeToString\",\"type\":9}}");
-      console.info("------------end CallTest_0100-------------");
+      expect(details.result).assertEqual('{\"group_name\":{\"data\":\"test1\",\"type\":10},' +
+        '\"ringtone_modify_time\":{\"data\":\"28wTypeToString\",\"type\":9}}');
+      expect(dataAssert).assertEqual('{\"group_name\":{\"data\":\"test1\",\"type\":10}' +
+        ',\"ringtone_modify_time\":{\"data\":\"28wTypeToString\",\"type\":9}}');
+      console.info('------------end CallTest_0100-------------');
       done();
     });
   })

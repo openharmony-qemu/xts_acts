@@ -46,7 +46,7 @@
       },
       {
         "name": "callerInfo01",
-        "srcEntry": "./ets/test/callerInfoAbility/ability01.ts",
+        "srcEntry": "./ets/test/callerInfoAbility/ability01.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -66,7 +66,7 @@
       },
       {
         "name": "callerInfo02",
-        "srcEntry": "./ets/test/callerInfoAbility/ability02.ts",
+        "srcEntry": "./ets/test/callerInfoAbility/ability02.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -86,7 +86,7 @@
       },
       {
         "name": "callerInfo03",
-        "srcEntry": "./ets/test/callerInfoAbility/ability03.ts",
+        "srcEntry": "./ets/test/callerInfoAbility/ability03.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -107,7 +107,7 @@
       },
       {
         "name": "callerInfo04",
-        "srcEntry": "./ets/test/callerInfoAbility/ability04.ts",
+        "srcEntry": "./ets/test/callerInfoAbility/ability04.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -128,7 +128,7 @@
       },
       {
         "name": "callerInfo05",
-        "srcEntry": "./ets/test/callerInfoAbility/ability05.ts",
+        "srcEntry": "./ets/test/callerInfoAbility/ability05.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -149,7 +149,7 @@
       },
       {
         "name": "callerInfo06",
-        "srcEntry": "./ets/test/callerInfoAbility/ability06.ts",
+        "srcEntry": "./ets/test/callerInfoAbility/ability06.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -169,7 +169,7 @@
       },
       {
         "name": "callerInfo07",
-        "srcEntry": "./ets/test/callerInfoAbility/ability07.ts",
+        "srcEntry": "./ets/test/callerInfoAbility/ability07.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -190,7 +190,7 @@
       },
       {
         "name": "callerInfo08",
-        "srcEntry": "./ets/test/callerInfoAbility/ability08.ts",
+        "srcEntry": "./ets/test/callerInfoAbility/ability08.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -211,7 +211,7 @@
       },
       {
         "name": "callerInfo09",
-        "srcEntry": "./ets/test/callerInfoAbility/ability09.ts",
+        "srcEntry": "./ets/test/callerInfoAbility/ability09.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -232,7 +232,7 @@
       },
       {
         "name": "callerInfo10",
-        "srcEntry": "./ets/test/callerInfoAbility/ability10.ts",
+        "srcEntry": "./ets/test/callerInfoAbility/ability10.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",

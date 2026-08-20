@@ -17,6 +17,8 @@ import { common, OpenLinkOptions } from '@kit.AbilityKit';
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import eventBusPlus from '../lib/EventBusPlus';
+import UIAbility from '@ohos.app.ability.UIAbility';
+
 
 let context = getContext(this) as common.UIAbilityContext;
 let ACTS_EVENT: commonEventManager.CommonEventSubscribeInfo = {
@@ -62,7 +64,7 @@ export default function callerInfoTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CallerInfo_0100', Level.LEVEL0, async (done: Function) => {
-      let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0100"
+      let tag: string = 'SUB_Ability_AbilityRuntime_CallerInfo_0100'
       hilog.info(0x0000, 'testTag', '%{public}s', `${tag} start`);
       try {
         context.startAbility(
@@ -87,14 +89,14 @@ export default function callerInfoTest() {
       let data: commonEventManager.CommonEventData = dataList[0];
 
       hilog.info(0x0000, 'testTag',
-        `%{public}s', onNewWant, ACTS_TEST_ON_CREATE_WANT data.parameters.result: ${JSON.stringify(data.parameters?.result)}`);
+        `%{public}s', onNewWant, ACTS_TEST_ON_CREATE_WANT data.parameters?.result: ${JSON.stringify(data.parameters?.result)}`);
       try{
         expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
         expect(data.parameters?.result['debugApp']).assertEqual(false);
         expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
         expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
         expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BNtg4JBClbl92Rgc3jm/RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=');
         expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
       }catch{}
 
@@ -116,14 +118,14 @@ export default function callerInfoTest() {
       data = await eventBusPlus.onWait('ACTS_TEST_ON_CREATE_WANT_ASSIST');
 
       hilog.info(0x0000, 'testTag',
-        `%{public}s', onNewWant, ACTS_TEST_ON_CREATE_WANT_ASSIST data.parameters.result: ${JSON.stringify(data.parameters?.result)}`);
+        `%{public}s', onNewWant, ACTS_TEST_ON_CREATE_WANT_ASSIST data.parameters?.result: ${JSON.stringify(data.parameters?.result)}`);
       try{
         expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
         expect(data.parameters?.result['debugApp']).assertEqual(undefined);
         expect(data.parameters?.result['moduleName']).assertEqual('entry');
         expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('callerInfo01');
         expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BNtg4JBClbl92Rgc3jm/RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=');
         expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
       }catch{}
 
@@ -153,14 +155,14 @@ export default function callerInfoTest() {
       data = dataList[0];
 
       hilog.info(0x0000, 'testTag',
-        `%{public}s', onNewWant, ACTS_TEST_ON_NEW_WANT data.parameters.result: ${JSON.stringify(data.parameters?.result)}`);
+        `%{public}s', onNewWant, ACTS_TEST_ON_NEW_WANT data.parameters?.result: ${JSON.stringify(data.parameters?.result)}`);
       try{
         expect(data.parameters?.result['component.startup.newRules']).assertEqual(undefined);
         expect(data.parameters?.result['debugApp']).assertEqual(false);
         expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
         expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('callerInfo02');
         expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BNtg4JBClbl92Rgc3jm/RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=');
         expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
       }catch{}
 
@@ -183,14 +185,14 @@ export default function callerInfoTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CallerInfo_0200', Level.LEVEL0, async (done: Function) => {
-      let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0200"
+      let tag: string = 'SUB_Ability_AbilityRuntime_CallerInfo_0200'
       hilog.info(0x0000, 'testTag', '%{public}s', `${tag} start`);
       try {
         context.startAbility(
           {
-            bundleName: "com.acts.actsCallerInfoTest",
-            moduleName: "entry_test",
-            action:"callerInfo03"
+            bundleName: 'com.acts.actsCallerInfoTest',
+            moduleName: 'entry_test',
+            action:'callerInfo03'
           }).then(() => {
           hilog.info(0x0000, 'testTag', '%{public}s', `${tag} startAbility end`);
         })
@@ -209,14 +211,14 @@ export default function callerInfoTest() {
       let data: commonEventManager.CommonEventData = dataList[0];
 
       hilog.info(0x0000, 'testTag',
-        `%{public}s', onNewWant, data.parameters.result: ${JSON.stringify(data.parameters?.result)}`);
+        `%{public}s', onNewWant, data.parameters?.result: ${JSON.stringify(data.parameters?.result)}`);
       try{
         expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
         expect(data.parameters?.result['debugApp']).assertEqual(false);
         expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
         expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
         expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BNtg4JBClbl92Rgc3jm/RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=');
         expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
       }catch{}
 
@@ -235,11 +237,11 @@ export default function callerInfoTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CallerInfo_0400', Level.LEVEL0, async (done: Function) => {
-      let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0400"
+      let tag: string = 'SUB_Ability_AbilityRuntime_CallerInfo_0400'
       hilog.info(0x0000, 'testTag', '%{public}s', `${tag} start`);
       let want: Want = {
-        bundleName: "com.acts.actsCallerInfoTest",
-        moduleName: "entry_test",
+        bundleName: 'com.acts.actsCallerInfoTest',
+        moduleName: 'entry_test',
         abilityName: 'callerInfo06'
       };
       try {
@@ -273,7 +275,7 @@ export default function callerInfoTest() {
         expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
         expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
         expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BNtg4JBClbl92Rgc3jm/RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=');
         expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
       }catch{}
 
@@ -292,11 +294,11 @@ export default function callerInfoTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CallerInfo_0500', Level.LEVEL0, async (done: Function) => {
-      let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0500"
+      let tag: string = 'SUB_Ability_AbilityRuntime_CallerInfo_0500'
       hilog.info(0x0000, 'testTag', '%{public}s', `${tag} start`);
       let want: Want = {
-        bundleName: "com.acts.actsCallerInfoTest",
-        moduleName: "entry_test",
+        bundleName: 'com.acts.actsCallerInfoTest',
+        moduleName: 'entry_test',
         action: 'callerInfo07'
       };
       try {
@@ -330,7 +332,7 @@ export default function callerInfoTest() {
         expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
         expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
         expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BNtg4JBClbl92Rgc3jm/RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=');
         expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
       }catch{}
 
@@ -349,13 +351,13 @@ export default function callerInfoTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CallerInfo_0700', Level.LEVEL0, async (done: Function) => {
-      let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0700"
+      let tag: string = 'SUB_Ability_AbilityRuntime_CallerInfo_0700'
       hilog.info(0x0000, 'testTag', '%{public}s', `${tag} start`);
       try {
         context.startAbility(
           {
-            bundleName: "com.acts.actsCallerInfoTest",
-            moduleName: "entry_test",
+            bundleName: 'com.acts.actsCallerInfoTest',
+            moduleName: 'entry_test',
             abilityName: 'callerInfo10'
           }).then(() => {
           hilog.info(0x0000, 'testTag', '%{public}s', `${tag} startAbility end`);
@@ -382,7 +384,7 @@ export default function callerInfoTest() {
         expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
         expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
         expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BNtg4JBClbl92Rgc3jm/RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=');
         expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
       }catch{}
 
