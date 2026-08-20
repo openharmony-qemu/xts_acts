@@ -300,7 +300,7 @@ export default function ThreadWorkerInheritanceTest(): void {
     /**
      * @tc.name   ThreadWorkerInheritanceTest0200
      * @tc.number SUB_RUNTIME_LANGUAGE_INHERITANCE_THREADWORKER_0200
-     * @tc.desc   Verify ThreadWorker implements the WorkerEventTarget interface methods and they work on real message events.
+     * @tc.desc   Verify ThreadWorker implements WorkerEventTarget methods and a removed listener ignores a real worker message.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -316,17 +316,23 @@ export default function ThreadWorkerInheritanceTest(): void {
         expect(typeof workerInstance.on).assertEqual('function');
         expect(typeof workerInstance.once).assertEqual('function');
         expect(typeof workerInstance.off).assertEqual('function');
-        let fired: boolean = false;
-        const firedPromise = new Promise<void>((resolve: () => void) => {
-          workerInstance!.addEventListener('message', (): void => {
-            fired = true;
+        let removedListenerFired: boolean = false;
+        const removedListener: WorkerEventListener = (): void => {
+          removedListenerFired = true;
+        };
+        workerInstance.addEventListener('message', removedListener);
+        workerInstance.removeEventListener('message', removedListener);
+        let received: string = '';
+        const receivedPromise = new Promise<void>((resolve: () => void) => {
+          workerInstance!.onmessage = (e: MessageEvents): void => {
+            received = e.data as string;
             resolve();
-          });
+          };
         });
         workerInstance.postMessage('ping');
-        await waitForEvent(firedPromise);
-        expect(fired).assertTrue();
-        workerInstance.removeEventListener('message');
+        await waitForEvent(receivedPromise);
+        expect(received).assertEqual('pong');
+        expect(removedListenerFired).assertFalse();
       } catch (err) {
         console.error(`ThreadWorkerInheritanceTest0200 failed, error: ${String(err)}`);
         expect().assertFail();
