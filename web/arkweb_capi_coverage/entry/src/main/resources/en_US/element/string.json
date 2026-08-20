@@ -1,0 +1,12 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "ArkWebCapiCoverage"
+    },
+    {
+      "name": "entry_desc",
+      "value": "ArkWeb CAPI Coverage Test"
+    }
+  ]
+}

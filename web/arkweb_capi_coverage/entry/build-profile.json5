@@ -1,0 +1,27 @@
+{
+  "apiType": "stageMode",
+  "buildOption": {
+    "externalNativeOptions": {
+      "path": "./src/main/cpp/CMakeLists.txt",
+      "arguments": "",
+      "cppFlags": "-O0 -g",
+      "abiFilters": ["arm64-v8a", "armeabi-v7a"]
+    }
+  },
+  "targets": [
+    {
+      "name": "default",
+      "runtimeOS": "OpenHarmony"
+    },
+    {
+      "name": "ohosTest",
+      "runtimeOS": "OpenHarmony",
+      "source": {
+        "sourceRoots": ["./src/ohosTest"]
+      },
+      "resource": {
+        "directories": ["./src/ohosTest/resources", "./src/main/resources"]
+      }
+    }
+  ]
+}
