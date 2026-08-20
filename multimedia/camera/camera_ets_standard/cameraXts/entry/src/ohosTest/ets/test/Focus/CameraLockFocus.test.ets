@@ -462,7 +462,11 @@ export default function CameraLockFocusTest() {
         } catch (err) {
           let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-          await releaseVideoSession();
+          try {
+            await releaseVideoSession();
+          } catch (merror) {
+            console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+          }
           expect().assertFail();
         }
       }
@@ -495,7 +499,11 @@ export default function CameraLockFocusTest() {
         } catch (err) {
           let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-          await mVideoSession?.release(); 
+          try {
+            await mVideoSession?.release();
+          } catch (merror) {
+            console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+          }
           expect(err.code).assertEqual(SESSION_NOT_CONFIG_CODE);
         }
       }    
@@ -887,7 +895,11 @@ export default function CameraLockFocusTest() {
         } catch (err) {
           let error = err;
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-          await releasePhotoSession();
+          try {
+            await releasePhotoSession();
+          } catch (merror) {
+            console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+          }
           expect(err.code).assertEqual(SESSION_NOT_CONFIG_CODE)
         }
       }
