@@ -45,9 +45,11 @@ workerPort.onmessage = (e: MessageEvents): void => {
     case 'start_promise_rejection': {
       // Intentionally create an unhandled promise rejection so onAllErrors can
       // capture it as a global exception of the worker thread.
-      let rejectedPromise: Promise<void> = new Promise<void>((resolve: () => void, reject: (reason?: Object) => void) => {
+      let rejectedPromise: Promise<void> = new Promise<void>(
+        (resolve: () => void, reject: (reason?: Object) => void) => {
         reject(new Error('Unhandled rejection'));
-      });
+        }
+      );
       // Deliberately not awaited or caught.
       // Acknowledge that the rejection was triggered before the host continues.
       workerPort.postMessage('rejection_started');

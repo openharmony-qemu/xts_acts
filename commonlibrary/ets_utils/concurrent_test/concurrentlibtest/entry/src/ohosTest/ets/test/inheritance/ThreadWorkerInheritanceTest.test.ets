@@ -251,7 +251,7 @@ async function createWorkerInTask(): Promise<string> {
     try {
       w.terminate();
     } catch (err) {
-      console.warn(`createWorkerInTask terminate failed: ${String(err)}`);
+      console.warn(`createWorkerInTask terminate failed: ${err}`);
     }
   }
 }
@@ -289,7 +289,7 @@ export default function ThreadWorkerInheritanceTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertEqual('hello_response');
       } catch (err) {
-        console.error(`ThreadWorkerInheritanceTest0100 failed, error: ${String(err)}`);
+        console.error(`ThreadWorkerInheritanceTest0100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -334,7 +334,7 @@ export default function ThreadWorkerInheritanceTest(): void {
         expect(received).assertEqual('pong');
         expect(removedListenerFired).assertFalse();
       } catch (err) {
-        console.error(`ThreadWorkerInheritanceTest0200 failed, error: ${String(err)}`);
+        console.error(`ThreadWorkerInheritanceTest0200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -360,7 +360,7 @@ export default function ThreadWorkerInheritanceTest(): void {
         // (non-system) test application cannot construct it, which is recorded
         // as evidence for the NOT_APPLICABLE status of this design point.
         constructionRejected = true;
-        console.error(`ThreadWorkerInheritanceTest0300 RestrictedWorker construction rejected: ${String(err)}`);
+        console.error(`ThreadWorkerInheritanceTest0300 RestrictedWorker construction rejected: ${err}`);
       }
       if (restrictedWorker === null) {
         expect(constructionRejected).assertTrue();
@@ -368,7 +368,7 @@ export default function ThreadWorkerInheritanceTest(): void {
         // Runtime evidence (2026-08-19, SDK 26 dynamic): instanceof against
         // native-backed worker classes is unreliable (the same limitation is
         // verified for taskpool.LongTask/GenericsTask), so inheritance is
-        // verified through the inherited method surface instead.
+        // verified through the inherited methods instead.
         expect(typeof restrictedWorker.postMessage).assertEqual('function');
         expect(typeof restrictedWorker.terminate).assertEqual('function');
         expect(typeof restrictedWorker.addEventListener).assertEqual('function');
@@ -542,7 +542,7 @@ export default function ThreadWorkerInheritanceTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertEqual('hello_response');
       } catch (err) {
-        console.error(`ThreadWorkerInheritanceTest0900 failed, error: ${String(err)}`);
+        console.error(`ThreadWorkerInheritanceTest0900 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -587,7 +587,7 @@ export default function ThreadWorkerInheritanceTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`ThreadWorkerInheritanceTest1000 failed, error: ${String(err)}`);
+        console.error(`ThreadWorkerInheritanceTest1000 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -625,7 +625,7 @@ export default function ThreadWorkerInheritanceTest(): void {
         // side observes the mutation without an explicit reply message.
         expect(sharedArr.length).assertEqual(4);
       } catch (err) {
-        console.error(`ThreadWorkerInheritanceTest1100 failed, error: ${String(err)}`);
+        console.error(`ThreadWorkerInheritanceTest1100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -667,7 +667,7 @@ export default function ThreadWorkerInheritanceTest(): void {
         expect(exitCode).assertEqual(0);
         workerInstance = null;
       } catch (err) {
-        console.error(`ThreadWorkerInheritanceTest1200 failed, error: ${String(err)}`);
+        console.error(`ThreadWorkerInheritanceTest1200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -710,7 +710,7 @@ export default function ThreadWorkerInheritanceTest(): void {
         expect(triggered).assertTrue();
         workerInstance = null;
       } catch (err) {
-        console.error(`ThreadWorkerInheritanceTest1300 failed, error: ${String(err)}`);
+        console.error(`ThreadWorkerInheritanceTest1300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -745,7 +745,7 @@ export default function ThreadWorkerInheritanceTest(): void {
         await waitForEvent(errorPromise);
         expect(triggered).assertTrue();
       } catch (err) {
-        console.error(`ThreadWorkerInheritanceTest1400 failed, error: ${String(err)}`);
+        console.error(`ThreadWorkerInheritanceTest1400 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -780,7 +780,7 @@ export default function ThreadWorkerInheritanceTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertEqual('hello_response');
       } catch (err) {
-        console.error(`ThreadWorkerInheritanceTest1500 failed, error: ${String(err)}`);
+        console.error(`ThreadWorkerInheritanceTest1500 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -810,7 +810,7 @@ export default function ThreadWorkerInheritanceTest(): void {
         clearTimeout(timeoutId1600);
         expect(taskResult).assertEqual('done');
       } catch (err) {
-        console.error(`ThreadWorkerInheritanceTest1600 failed, error: ${String(err)}`);
+        console.error(`ThreadWorkerInheritanceTest1600 failed, error: ${err}`);
         expect().assertFail();
       }
       done();
@@ -846,7 +846,7 @@ export default function ThreadWorkerInheritanceTest(): void {
         await waitForEvent(responsePromise);
         expect(responseCount).assertEqual(3);
       } catch (err) {
-        console.error(`ThreadWorkerInheritanceTest1700 failed, error: ${String(err)}`);
+        console.error(`ThreadWorkerInheritanceTest1700 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         for (const w of workers) {
@@ -874,14 +874,13 @@ export default function ThreadWorkerInheritanceTest(): void {
           workerInstance.postMessage('test');
           expect().assertFail();
         } catch (err) {
-          let e = err as BusinessError;
-          expect(e.code).assertEqual(10200004);
+          expect(err.code).assertEqual(10200004);
           caught = true;
         }
         expect(caught).assertTrue();
         workerInstance = null;
       } catch (err) {
-        console.error(`ThreadWorkerInheritanceTest1800 failed, error: ${String(err)}`);
+        console.error(`ThreadWorkerInheritanceTest1800 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);

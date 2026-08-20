@@ -84,7 +84,7 @@ export default function OnMessageTest(): void {
         workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
         expect(workerInstance.onmessage).assertUndefined();
       } catch (err) {
-        console.error(`OnMessageTest0100 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest0100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -108,7 +108,7 @@ export default function OnMessageTest(): void {
         workerInstance.onmessage = (e: MessageEvents) => {};
         expect(typeof workerInstance.onmessage).assertEqual('function');
       } catch (err) {
-        console.error(`OnMessageTest0200 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest0200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -143,7 +143,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest0300 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest0300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -178,7 +178,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest0400 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest0400 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -213,7 +213,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest0500 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest0500 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -247,7 +247,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest0600 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest0600 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -282,7 +282,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest0700 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest0700 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -316,7 +316,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest0800 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest0800 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -353,7 +353,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest0900 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest0900 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -388,7 +388,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest1000 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest1000 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -423,7 +423,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest1100 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest1100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -466,7 +466,7 @@ export default function OnMessageTest(): void {
           expect(receivedValues[i]).assertEqual(testValues[i]);
         }
       } catch (err) {
-        console.error(`OnMessageTest1200 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest1200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -501,7 +501,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest1300 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest1300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -536,7 +536,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest1400 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest1400 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -584,7 +584,7 @@ export default function OnMessageTest(): void {
           expect(receivedValues[i]).assertEqual(testValues[i]);
         }
       } catch (err) {
-        console.error(`OnMessageTest1500 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest1500 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -627,7 +627,7 @@ export default function OnMessageTest(): void {
         // Distinguish -0 from 0: 1/(-0) === -Infinity, 1/0 === Infinity
         expect(1 / receivedValues[2]).assertEqual(-Infinity);
       } catch (err) {
-        console.error(`OnMessageTest1600 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest1600 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -663,7 +663,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest1700 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest1700 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -700,7 +700,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest1800 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest1800 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -739,7 +739,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest1900 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest1900 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -775,7 +775,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest2000 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest2000 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -811,7 +811,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest2100 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest2100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -847,7 +847,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest2200 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest2200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -883,7 +883,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest2300 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest2300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -923,7 +923,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest2400 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest2400 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -966,7 +966,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest2500 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest2500 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -1003,7 +1003,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest2600 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest2600 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -1040,7 +1040,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest2700 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest2700 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -1080,7 +1080,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest2800 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest2800 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -1115,7 +1115,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest2900 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest2900 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -1150,7 +1150,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`OnMessageTest3000 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest3000 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -1191,7 +1191,7 @@ export default function OnMessageTest(): void {
         expect(responses[1]).assertEqual('response_msg2');
         expect(responses[2]).assertEqual('response_msg3');
       } catch (err) {
-        console.error(`OnMessageTest3100 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest3100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -1229,7 +1229,7 @@ export default function OnMessageTest(): void {
         expect(count1).assertEqual(0);
         expect(count2).assertEqual(1);
       } catch (err) {
-        console.error(`OnMessageTest3200 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest3200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -1262,7 +1262,7 @@ export default function OnMessageTest(): void {
         }
         expect(count).assertEqual(0);
       } catch (err) {
-        console.error(`OnMessageTest3300 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest3300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -1309,7 +1309,7 @@ export default function OnMessageTest(): void {
         // here; the host thread continues normally, which is the design focus.
         expect(typeof w.postMessage).assertEqual('function');
       } catch (err) {
-        console.error(`OnMessageTest3400 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest3400 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -1348,7 +1348,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(responseCount).assertEqual(3);
       } catch (err) {
-        console.error(`OnMessageTest3500 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest3500 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         for (const w of workers) {
@@ -1385,7 +1385,7 @@ export default function OnMessageTest(): void {
         await waitForEvent(receivedPromise);
         expect(receivedCount).assertEqual(100);
       } catch (err) {
-        console.error(`OnMessageTest3600 failed, error: ${String(err)}`);
+        console.error(`OnMessageTest3600 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);

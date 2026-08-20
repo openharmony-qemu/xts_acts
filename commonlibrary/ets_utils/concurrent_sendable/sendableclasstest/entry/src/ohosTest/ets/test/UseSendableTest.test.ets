@@ -706,7 +706,7 @@ export default function UseSendableTest(): void {
         try {
           myWorker.terminate()
         } catch (e) {
-          console.warn(`UseSendableTest2700 terminate failed: ${String(e)}`)
+          console.warn(`UseSendableTest2700 terminate failed: ${e}`)
         }
       }
 

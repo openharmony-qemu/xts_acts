@@ -104,7 +104,7 @@ export default function MessageEventsInheritanceTest(): void {
         expect(checked).assertTrue();
         expect(capturedData === 'hello_response').assertTrue();
       } catch (err) {
-        console.error(`MessageEventsInheritanceTest0100 failed, error: ${String(err)}`);
+        console.error(`MessageEventsInheritanceTest0100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -140,7 +140,7 @@ export default function MessageEventsInheritanceTest(): void {
         console.info(`MessageEventsInheritanceTest0200 captured type: ${capturedType}`);
         expect(checked).assertTrue();
       } catch (err) {
-        console.error(`MessageEventsInheritanceTest0200 failed, error: ${String(err)}`);
+        console.error(`MessageEventsInheritanceTest0200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -177,7 +177,7 @@ export default function MessageEventsInheritanceTest(): void {
         console.info(`MessageEventsInheritanceTest0300 captured timeStamp: ${capturedTimeStamp}`);
         expect(checked).assertTrue();
       } catch (err) {
-        console.error(`MessageEventsInheritanceTest0300 failed, error: ${String(err)}`);
+        console.error(`MessageEventsInheritanceTest0300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -229,7 +229,7 @@ export default function MessageEventsInheritanceTest(): void {
         expect(strChecked).assertTrue();
         expect(boolChecked).assertTrue();
       } catch (err) {
-        console.error(`MessageEventsInheritanceTest0400 failed, error: ${String(err)}`);
+        console.error(`MessageEventsInheritanceTest0400 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -263,7 +263,7 @@ export default function MessageEventsInheritanceTest(): void {
         await waitForEvent(checkedPromise);
         expect(checked).assertTrue();
       } catch (err) {
-        console.error(`MessageEventsInheritanceTest0500 failed, error: ${String(err)}`);
+        console.error(`MessageEventsInheritanceTest0500 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -299,7 +299,7 @@ export default function MessageEventsInheritanceTest(): void {
         // The host-side sendable object is not detached and stays fully usable.
         expect(shared.value).assertEqual(100);
       } catch (err) {
-        console.error(`MessageEventsInheritanceTest0600 failed, error: ${String(err)}`);
+        console.error(`MessageEventsInheritanceTest0600 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -337,7 +337,7 @@ export default function MessageEventsInheritanceTest(): void {
         // the host without an explicit reply message.
         expect(arr.length).assertEqual(4);
       } catch (err) {
-        console.error(`MessageEventsInheritanceTest0700 failed, error: ${String(err)}`);
+        console.error(`MessageEventsInheritanceTest0700 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -348,7 +348,7 @@ export default function MessageEventsInheritanceTest(): void {
     /**
      * @tc.name   MessageEventsInheritanceTest0800
      * @tc.number SUB_RUNTIME_LANGUAGE_INHERITANCE_MESSAGEEVENTS_0800
-     * @tc.desc   Verify MessageEvents.data accessibility; read-only is enforced by the type definition (no setter).
+     * @tc.desc   Verify MessageEvents.data readability; read-only is enforced by the type definition (no setter).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -386,11 +386,11 @@ export default function MessageEventsInheritanceTest(): void {
         expect(checked).assertTrue();
         // Runtime evidence (2026-08-19): Reflect.set on event properties
         // succeeds at runtime; read-only is a compile-time type constraint.
-        // Runtime verification covers accessibility and data correctness.
+        // Runtime verification covers readability and data correctness.
         console.info(`MessageEventsInheritanceTest0800 setRejected=${capturedSetRejected} setCaught=${capturedSetCaught} unchanged=${capturedUnchanged}`);
         expect(capturedData === 'hello_response').assertTrue();
       } catch (err) {
-        console.error(`MessageEventsInheritanceTest0800 failed, error: ${String(err)}`);
+        console.error(`MessageEventsInheritanceTest0800 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -441,11 +441,11 @@ export default function MessageEventsInheritanceTest(): void {
         expect(checked).assertTrue();
         // Runtime evidence (2026-08-19): Reflect.set on event properties
         // succeeds at runtime; read-only is a compile-time type constraint.
-        // Runtime verification covers accessibility of type/timeStamp.
+        // Runtime verification covers reading type and timeStamp.
         console.info(`MessageEventsInheritanceTest0900 per-prop results rejected=${capturedRejected} caught=${capturedCaught} unchanged=${capturedUnchanged}`);
         expect(capturedRejected.length).assertEqual(2);
       } catch (err) {
-        console.error(`MessageEventsInheritanceTest0900 failed, error: ${String(err)}`);
+        console.error(`MessageEventsInheritanceTest0900 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -486,7 +486,7 @@ export default function MessageEventsInheritanceTest(): void {
         await waitForEvent(checkedPromise);
         expect(checked).assertTrue();
       } catch (err) {
-        console.error(`MessageEventsInheritanceTest1000 failed, error: ${String(err)}`);
+        console.error(`MessageEventsInheritanceTest1000 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -531,7 +531,7 @@ export default function MessageEventsInheritanceTest(): void {
         await waitForEvent(receivedPromise);
         expect(received).assertTrue();
       } catch (err) {
-        console.error(`MessageEventsInheritanceTest1100 failed, error: ${String(err)}`);
+        console.error(`MessageEventsInheritanceTest1100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -569,7 +569,7 @@ export default function MessageEventsInheritanceTest(): void {
         await waitForEvent(responsePromise);
         expect(responseCount).assertEqual(3);
       } catch (err) {
-        console.error(`MessageEventsInheritanceTest1200 failed, error: ${String(err)}`);
+        console.error(`MessageEventsInheritanceTest1200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         for (const w of workers) {

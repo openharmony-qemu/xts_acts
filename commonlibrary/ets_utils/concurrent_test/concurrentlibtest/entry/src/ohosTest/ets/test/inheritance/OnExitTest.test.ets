@@ -75,7 +75,7 @@ export default function OnExitTest(): void {
         workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
         expect(workerInstance.onexit).assertUndefined();
       } catch (err) {
-        console.error(`OnExitTest0100 failed, error: ${String(err)}`);
+        console.error(`OnExitTest0100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -99,7 +99,7 @@ export default function OnExitTest(): void {
         workerInstance.onexit = (code: number) => {};
         expect(typeof workerInstance.onexit).assertEqual('function');
       } catch (err) {
-        console.error(`OnExitTest0200 failed, error: ${String(err)}`);
+        console.error(`OnExitTest0200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -135,7 +135,7 @@ export default function OnExitTest(): void {
         expect(exitCalled).assertTrue();
         expect(exitCode).assertEqual(0);
       } catch (err) {
-        console.error(`OnExitTest0300 failed, error: ${String(err)}`);
+        console.error(`OnExitTest0300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -174,7 +174,7 @@ export default function OnExitTest(): void {
         expect(exitCalled).assertTrue();
         expect(exitCode).assertEqual(1);
       } catch (err) {
-        console.error(`OnExitTest0400 failed, error: ${String(err)}`);
+        console.error(`OnExitTest0400 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -207,7 +207,7 @@ export default function OnExitTest(): void {
         workerInstance = null;
         expect(typeof receivedCode).assertEqual('number');
       } catch (err) {
-        console.error(`OnExitTest0500 failed, error: ${String(err)}`);
+        console.error(`OnExitTest0500 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -241,7 +241,7 @@ export default function OnExitTest(): void {
         workerInstance = null;
         expect(exitChecked).assertTrue();
       } catch (err) {
-        console.error(`OnExitTest0600 failed, error: ${String(err)}`);
+        console.error(`OnExitTest0600 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -274,7 +274,7 @@ export default function OnExitTest(): void {
         workerInstance = null;
         expect(exitCalled).assertTrue();
       } catch (err) {
-        console.error(`OnExitTest0700 failed, error: ${String(err)}`);
+        console.error(`OnExitTest0700 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -310,7 +310,7 @@ export default function OnExitTest(): void {
         expect(exitCalled).assertTrue();
         expect(exitCode).assertEqual(0);
       } catch (err) {
-        console.error(`OnExitTest0800 failed, error: ${String(err)}`);
+        console.error(`OnExitTest0800 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -348,7 +348,7 @@ export default function OnExitTest(): void {
         expect(count1).assertEqual(0);
         expect(count2).assertEqual(1);
       } catch (err) {
-        console.error(`OnExitTest0900 failed, error: ${String(err)}`);
+        console.error(`OnExitTest0900 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -382,7 +382,7 @@ export default function OnExitTest(): void {
         workerInstance = null;
         expect(count).assertEqual(0);
       } catch (err) {
-        console.error(`OnExitTest1000 failed, error: ${String(err)}`);
+        console.error(`OnExitTest1000 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -442,7 +442,7 @@ export default function OnExitTest(): void {
           await terminateAndAwait(secondWorker);
         }
       } catch (err) {
-        console.error(`OnExitTest1100 failed, error: ${String(err)}`);
+        console.error(`OnExitTest1100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -483,7 +483,7 @@ export default function OnExitTest(): void {
           expect(exitCodes[i]).assertEqual(0);
         }
       } catch (err) {
-        console.error(`OnExitTest1200 failed, error: ${String(err)}`);
+        console.error(`OnExitTest1200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         for (const w of workers) {

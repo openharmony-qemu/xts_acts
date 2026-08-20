@@ -122,7 +122,7 @@ export default function ErrorEventInheritanceTest(): void {
           expect((capturedTimeStamp as number) > 0).assertTrue();
         }
       } catch (err) {
-        console.error(`ErrorEventInheritanceTest0100 failed, error: ${String(err)}`);
+        console.error(`ErrorEventInheritanceTest0100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -157,7 +157,7 @@ export default function ErrorEventInheritanceTest(): void {
         // Runtime evidence (2026-08-19): err.type is the string 'ErrorEvent' on this build.
         expect(capturedType).assertEqual('ErrorEvent');
       } catch (err) {
-        console.error(`ErrorEventInheritanceTest0200 failed, error: ${String(err)}`);
+        console.error(`ErrorEventInheritanceTest0200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -196,7 +196,7 @@ export default function ErrorEventInheritanceTest(): void {
           expect((capturedTimeStamp as number) > 0).assertTrue();
         }
       } catch (err) {
-        console.error(`ErrorEventInheritanceTest0300 failed, error: ${String(err)}`);
+        console.error(`ErrorEventInheritanceTest0300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -231,7 +231,7 @@ export default function ErrorEventInheritanceTest(): void {
         expect(typeof capturedMessage).assertEqual('string');
         expect(capturedMessage.length > 0).assertTrue();
       } catch (err) {
-        console.error(`ErrorEventInheritanceTest0400 failed, error: ${String(err)}`);
+        console.error(`ErrorEventInheritanceTest0400 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -266,7 +266,7 @@ export default function ErrorEventInheritanceTest(): void {
         expect(typeof capturedFilename).assertEqual('string');
         expect(capturedFilename.length > 0).assertTrue();
       } catch (err) {
-        console.error(`ErrorEventInheritanceTest0500 failed, error: ${String(err)}`);
+        console.error(`ErrorEventInheritanceTest0500 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -301,7 +301,7 @@ export default function ErrorEventInheritanceTest(): void {
         expect(typeof capturedLineno).assertEqual('number');
         expect(capturedLineno > 0).assertTrue();
       } catch (err) {
-        console.error(`ErrorEventInheritanceTest0600 failed, error: ${String(err)}`);
+        console.error(`ErrorEventInheritanceTest0600 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -336,7 +336,7 @@ export default function ErrorEventInheritanceTest(): void {
         expect(typeof capturedColno).assertEqual('number');
         expect(capturedColno > 0).assertTrue();
       } catch (err) {
-        console.error(`ErrorEventInheritanceTest0700 failed, error: ${String(err)}`);
+        console.error(`ErrorEventInheritanceTest0700 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -370,7 +370,7 @@ export default function ErrorEventInheritanceTest(): void {
         expect(checked).assertTrue();
         expect(capturedError instanceof Error).assertTrue();
       } catch (err) {
-        console.error(`ErrorEventInheritanceTest0800 failed, error: ${String(err)}`);
+        console.error(`ErrorEventInheritanceTest0800 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -381,7 +381,7 @@ export default function ErrorEventInheritanceTest(): void {
     /**
      * @tc.name   ErrorEventInheritanceTest0900
      * @tc.number SUB_RUNTIME_LANGUAGE_INHERITANCE_ERROREVENT_0900
-     * @tc.desc   Verify ErrorEvent.message accessibility; read-only is enforced by the type definition (no setter).
+     * @tc.desc   Verify ErrorEvent.message readability; read-only is enforced by the type definition (no setter).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -420,11 +420,11 @@ export default function ErrorEventInheritanceTest(): void {
         // Runtime evidence (2026-08-19): Reflect.set on event properties
         // succeeds at runtime; read-only is a compile-time type constraint
         // (ErrorEvent.message has no setter). Runtime verification covers
-        // property accessibility and value sanity.
+        // property readability and value sanity.
         console.info(`ErrorEventInheritanceTest0900 setRejected=${capturedSetRejected} setCaught=${capturedSetCaught} unchanged=${capturedUnchanged}`);
         expect(capturedMessage.length > 0).assertTrue();
       } catch (err) {
-        console.error(`ErrorEventInheritanceTest0900 failed, error: ${String(err)}`);
+        console.error(`ErrorEventInheritanceTest0900 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -475,11 +475,11 @@ export default function ErrorEventInheritanceTest(): void {
         expect(checked).assertTrue();
         // Runtime evidence (2026-08-19): Reflect.set on event properties
         // succeeds at runtime; read-only is a compile-time type constraint.
-        // Runtime verification covers accessibility of all seven properties.
+        // Runtime verification covers reading all seven properties.
         console.info(`ErrorEventInheritanceTest1000 per-prop results rejected=${capturedRejected} caught=${capturedCaught} unchanged=${capturedUnchanged}`);
         expect(capturedRejected.length).assertEqual(7);
       } catch (err) {
-        console.error(`ErrorEventInheritanceTest1000 failed, error: ${String(err)}`);
+        console.error(`ErrorEventInheritanceTest1000 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -513,7 +513,7 @@ export default function ErrorEventInheritanceTest(): void {
         expect(handler.lastMessage.length > 0).assertTrue();
         expect(handleResult).assertTrue();
       } catch (err) {
-        console.error(`ErrorEventInheritanceTest1100 failed, error: ${String(err)}`);
+        console.error(`ErrorEventInheritanceTest1100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -555,7 +555,7 @@ export default function ErrorEventInheritanceTest(): void {
         expect(capturedError instanceof Error).assertTrue();
         expect(capturedMessage.length > 0).assertTrue();
       } catch (err) {
-        console.error(`ErrorEventInheritanceTest1200 failed, error: ${String(err)}`);
+        console.error(`ErrorEventInheritanceTest1200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         await terminateAndAwait(workerInstance);
@@ -596,7 +596,7 @@ export default function ErrorEventInheritanceTest(): void {
           expect(capturedTypes[i]).assertEqual('ErrorEvent');
         }
       } catch (err) {
-        console.error(`ErrorEventInheritanceTest1300 failed, error: ${String(err)}`);
+        console.error(`ErrorEventInheritanceTest1300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
         for (const w of workers) {

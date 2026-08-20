@@ -1094,7 +1094,7 @@ export default function ISendableImplTest(): void {
         try {
           myWorker.terminate()
         } catch (e) {
-          console.warn(`ISendableImplTest4600 terminate failed: ${String(e)}`)
+          console.warn(`ISendableImplTest4600 terminate failed: ${e}`)
         }
       }
 

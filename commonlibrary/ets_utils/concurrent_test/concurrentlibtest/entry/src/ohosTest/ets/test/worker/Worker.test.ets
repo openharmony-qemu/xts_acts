@@ -4171,15 +4171,7 @@ export default function workerTest() {
       }
       ;
       done()
-    }); /**
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_0200
-     * @tc.name      : testOnce0002
-     * @tc.desc      : Add an event listener to the Worker. The event listener is executed only once and is
-     *                 automatically deleted
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+    });
     /**
      * @tc.name   testOnce0002
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_0200
