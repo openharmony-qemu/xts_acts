@@ -101,42 +101,48 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then(async (data) => {
-          hilog.info(0x0000, 'testTag',
-            `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data.userGrantEnabled).assertEqual(true)
-          if (data.grantedBundleInfos !== undefined) {
-            for (let index = 0; index < data.grantedBundleInfos?.length; index++) {
-              expect(data.grantedBundleInfos[index].appIndex).assertEqual(0)
+          try {
+            hilog.info(0x0000, 'testTag',
+              `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
+            expect(data.userGrantEnabled).assertEqual(true)
+            if (data.grantedBundleInfos !== undefined) {
+              for (let index = 0; index < data.grantedBundleInfos?.length; index++) {
+                expect(data.grantedBundleInfos[index].appIndex).assertEqual(0)
+              }
             }
-          }
-          // 成功回调内执行 UI 流程（点击会改变本应用通知授权状态，供下一用例读取），完成后才 done()
-          await sleep(1000)
-          let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许获取本机通知')));
-          console.info(testNum + `button is ${JSON.stringify(button)}`);
-          if (button !== null) {
+            // 成功回调内执行 UI 流程（点击会改变本应用通知授权状态，供下一用例读取），完成后才 done()
+            await sleep(1000)
+            let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许获取本机通知')));
             console.info(testNum + `button is ${JSON.stringify(button)}`);
-            await sleep(1000);
-            await button.click()
-            await sleep(500)
-          }
-          let button1 = await driver.findComponent(ON.text('允许'));
-          console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
-          if (button1 !== null) {
+            if (button !== null) {
+              console.info(testNum + `button is ${JSON.stringify(button)}`);
+              await sleep(1000);
+              await button.click()
+              await sleep(500)
+            }
+            let button1 = await driver.findComponent(ON.text('允许'));
             console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
-            await sleep(1000);
-            await button1.click()
-            await sleep(100)
-          }
-          await sleep(500)
-          let button8 = await driver.findComponent(ON.text('确定'));
-          console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
-          if (button8 !== null) {
+            if (button1 !== null) {
+              console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
+              await sleep(1000);
+              await button1.click()
+              await sleep(100)
+            }
+            await sleep(500)
+            let button8 = await driver.findComponent(ON.text('确定'));
             console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
-            await sleep(1000);
-            await button8.click()
-            await sleep(100)
+            if (button8 !== null) {
+              console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
+              await sleep(1000);
+              await button8.click()
+              await sleep(100)
+            }
+            done();
+          } catch (err) {
+            console.error(testNum + `openSubscriptionSettingsWithResult UI flow fail: ${JSON.stringify(err)}`);
+            expect(false).assertTrue();
+            done();
           }
-          done();
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
@@ -173,32 +179,38 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then(async (data) => {
-          hilog.info(0x0000, 'testTag',
-            `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data.userGrantEnabled).assertEqual(false)
-          if (data.grantedBundleInfos !== undefined) {
-            expect(JSON.stringify(data.grantedBundleInfos)).assertEqual('[]')
-          }
-          // 成功回调内执行 UI 流程（点击会改变本应用通知授权状态，供下一用例读取），完成后才 done()
-          await sleep(1000)
-          let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许获取本机通知')));
-          console.info(testNum + `button is ${JSON.stringify(button)}`);
-          if (button !== null) {
+          try {
+            hilog.info(0x0000, 'testTag',
+              `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
+            expect(data.userGrantEnabled).assertEqual(false)
+            if (data.grantedBundleInfos !== undefined) {
+              expect(JSON.stringify(data.grantedBundleInfos)).assertEqual('[]')
+            }
+            // 成功回调内执行 UI 流程（点击会改变本应用通知授权状态，供下一用例读取），完成后才 done()
+            await sleep(1000)
+            let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许获取本机通知')));
             console.info(testNum + `button is ${JSON.stringify(button)}`);
-            await sleep(1000);
-            await button.click()
+            if (button !== null) {
+              console.info(testNum + `button is ${JSON.stringify(button)}`);
+              await sleep(1000);
+              await button.click()
+              await sleep(500)
+            }
             await sleep(500)
-          }
-          await sleep(500)
-          let button2 = await driver.findComponent(ON.text('确定'));
-          console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-          if (button2 !== null) {
+            let button2 = await driver.findComponent(ON.text('确定'));
             console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-            await sleep(1000);
-            await button2.click()
-            await sleep(100)
+            if (button2 !== null) {
+              console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
+              await sleep(1000);
+              await button2.click()
+              await sleep(100)
+            }
+            done();
+          } catch (err) {
+            console.error(testNum + `openSubscriptionSettingsWithResult UI flow fail: ${JSON.stringify(err)}`);
+            expect(false).assertTrue();
+            done();
           }
-          done();
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
@@ -235,82 +247,88 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then(async (data) => {
-          hilog.info(0x0000, 'testTag',
-            `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data.userGrantEnabled).assertEqual(true)
-          if (data.grantedBundleInfos !== undefined) {
-            expect(JSON.stringify(data.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"AAAopenWindow","appIndex":0}')
-          }
-          // 成功回调内执行 UI 流程（点击会改变本应用通知授权状态，供第二次调用读取），完成后才进行第二次调用
-          await sleep(1000)
-          let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('应用获取本机通知')));
-          console.info(testNum + `button is ${JSON.stringify(button)}`);
-          if (button !== null) {
-            console.info(testNum + `button is ${JSON.stringify(button)}`);
-            await sleep(1000);
-            await button.click()
-            await sleep(500)
-          }
-          await sleep(500)
-          let button1 = await driver.findComponent(ON.text('允许'));
-          console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
-          if (button1 !== null) {
-            console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
-            await sleep(1000);
-            await button1.click()
-            await sleep(100)
-          }
-          await sleep(1000)
-          let button2 = await driver.findComponent(ON.type('Toggle').isAfter(ON.originalText('全部')));
-          console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-          if (button2 !== null) {
-            console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-            await sleep(1000);
-            await button2.click()
-            await sleep(100)
-          }
-          await sleep(1000)
-          let button3 = await driver.findComponent(ON.text('确定'));
-          console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
-          if (button3 !== null) {
-            console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
-            await sleep(1000);
-            await button3.click()
-            await sleep(100)
-          }
-          await sleep(1000)
-          await notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
+          try {
             hilog.info(0x0000, 'testTag',
               `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
             expect(data.userGrantEnabled).assertEqual(true)
             if (data.grantedBundleInfos !== undefined) {
               expect(JSON.stringify(data.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"AAAopenWindow","appIndex":0}')
             }
-            done();
-          }).catch((e: Error) => {
-            let err: BusinessError = e as BusinessError
-            hilog.error(0x0000, 'testTag',
-              `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-            if (err?.code === 201) {
-              expect(err?.code).assertEqual(201)
-              done();
-            } else if(err.code === 801){
-              expect(err.code).assertEqual(801)
-              done();
-            } else {
-              expect(false).assertTrue();
-              done();
+            // 成功回调内执行 UI 流程（点击会改变本应用通知授权状态，供第二次调用读取），完成后才进行第二次调用
+            await sleep(1000)
+            let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('应用获取本机通知')));
+            console.info(testNum + `button is ${JSON.stringify(button)}`);
+            if (button !== null) {
+              console.info(testNum + `button is ${JSON.stringify(button)}`);
+              await sleep(1000);
+              await button.click()
+              await sleep(500)
             }
-          });
-          // 关闭设置窗口（点击无断言，可在 done() 后作为无害僵尸执行）
-          await sleep(1000)
-          let button4 = await driver.findComponent(ON.type('SymbolGlyph'));
-          console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
-          if (button4 !== null) {
+            await sleep(500)
+            let button1 = await driver.findComponent(ON.text('允许'));
+            console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
+            if (button1 !== null) {
+              console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
+              await sleep(1000);
+              await button1.click()
+              await sleep(100)
+            }
+            await sleep(1000)
+            let button2 = await driver.findComponent(ON.type('Toggle').isAfter(ON.originalText('全部')));
+            console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
+            if (button2 !== null) {
+              console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
+              await sleep(1000);
+              await button2.click()
+              await sleep(100)
+            }
+            await sleep(1000)
+            let button3 = await driver.findComponent(ON.text('确定'));
+            console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
+            if (button3 !== null) {
+              console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
+              await sleep(1000);
+              await button3.click()
+              await sleep(100)
+            }
+            await sleep(1000)
+            await notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
+              hilog.info(0x0000, 'testTag',
+                `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
+              expect(data.userGrantEnabled).assertEqual(true)
+              if (data.grantedBundleInfos !== undefined) {
+                expect(JSON.stringify(data.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"AAAopenWindow","appIndex":0}')
+              }
+              done();
+            }).catch((e: Error) => {
+              let err: BusinessError = e as BusinessError
+              hilog.error(0x0000, 'testTag',
+                `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
+              if (err?.code === 201) {
+                expect(err?.code).assertEqual(201)
+                done();
+              } else if(err.code === 801){
+                expect(err.code).assertEqual(801)
+                done();
+              } else {
+                expect(false).assertTrue();
+                done();
+              }
+            });
+            // 关闭设置窗口（点击无断言，可在 done() 后作为无害僵尸执行）
+            await sleep(1000)
+            let button4 = await driver.findComponent(ON.type('SymbolGlyph'));
             console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
-            await sleep(1000);
-            await button4.click()
-            await sleep(100)
+            if (button4 !== null) {
+              console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
+              await sleep(1000);
+              await button4.click()
+              await sleep(100)
+            }
+          } catch (err) {
+            console.error(testNum + `openSubscriptionSettingsWithResult UI flow fail: ${JSON.stringify(err)}`);
+            expect(false).assertTrue();
+            done();
           }
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
