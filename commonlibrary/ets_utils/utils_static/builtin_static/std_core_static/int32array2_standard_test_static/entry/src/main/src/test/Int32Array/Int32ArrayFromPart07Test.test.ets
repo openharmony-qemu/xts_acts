@@ -729,7 +729,7 @@ export default function int32ArrayFromPart07Test(): void {
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
-        msg = (e as Error).message;
+        msg = e.message;
       }
       expect(msg).assertEqual('iter mid');
     });
