@@ -1406,7 +1406,8 @@ export default function int32ArraySubarrayPart02Test(): void {
       let arr: Int32Array = Int32Array.of(10, 20, 30, 40, 50);
       let sub: Int32Array = arr.subarray(1, 4);
       let count: int = 0;
-      sub.forEach((_v: number, _i: int) => {
+      sub.forEach((v: number, i: int) => {
+        expect(v).assertEqual(20 + i * 10);
         count++;
       });
       expect(count).assertEqual(3);
