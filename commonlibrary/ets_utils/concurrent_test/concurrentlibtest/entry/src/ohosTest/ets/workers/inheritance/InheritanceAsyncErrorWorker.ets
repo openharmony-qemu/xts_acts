@@ -42,6 +42,21 @@ workerPort.onmessage = (e: MessageEvents): void => {
     }
     case 'throw_in_callback':
       throw new Error('Error in onmessage callback');
+    case 'start_promise_rejection': {
+      // Intentionally create an unhandled promise rejection so onAllErrors can
+      // capture it as a global exception of the worker thread.
+      let rejectedPromise: Promise<void> = new Promise<void>((resolve: () => void, reject: (reason?: Object) => void) => {
+        reject(new Error('Unhandled rejection'));
+      });
+      // Deliberately not awaited or caught.
+      // Acknowledge that the rejection was triggered before the host continues.
+      workerPort.postMessage('rejection_started');
+      break;
+    }
+    case 'ping':
+      // Liveness probe used after triggering asynchronous errors.
+      workerPort.postMessage('pong');
+      break;
     default:
       break;
   }

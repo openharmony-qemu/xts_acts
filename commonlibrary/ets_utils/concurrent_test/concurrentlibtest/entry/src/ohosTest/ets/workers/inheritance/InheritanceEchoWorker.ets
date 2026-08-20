@@ -77,6 +77,15 @@ workerPort.onmessage = (e: MessageEvents): void => {
         // before the catch block can execute. Report the error directly.
         workerPort.postMessage('__worker_serialize_error__');
         break;
+      case 'sendFunctionObject': {
+        // An object containing a function property cannot be serialized.
+        // The serialization failure is caught below and reported to the host.
+        let fnObj = new CircularRefData();
+        fnObj.name = 'withFn';
+        fnObj.fn = () => {};
+        workerPort.postMessage(fnObj);
+        break;
+      }
       case 'sendCircularToHost': {
         // Structured clone supports circular refs, so include a non-serializable
         // function property to trigger serialization failure.
@@ -115,7 +124,7 @@ workerPort.onmessage = (e: MessageEvents): void => {
         workerPort.postMessage({ level1: { level2: { level3: { level4: 'deep' } } } });
         break;
       case 'echoObjectArray':
-        workerPort.postMessage([{ id: 1 }, { id: 2 }, { id: 3 }]);
+        workerPort.postMessage([{ id: 1, name: 'Item1' }, { id: 2, name: 'Item2' }]);
         break;
       case 'echoEmptyArray':
         workerPort.postMessage([]);
@@ -204,5 +213,3 @@ workerPort.onmessage = (e: MessageEvents): void => {
 workerPort.onmessageerror = (e: MessageEvents): void => {
   console.info('InheritanceEchoWorker onmessageerror');
 }
-
-
