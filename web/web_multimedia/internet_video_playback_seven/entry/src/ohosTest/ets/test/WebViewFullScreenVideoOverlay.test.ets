@@ -13,16 +13,17 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import {  beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
 import Utils from './Utils.test';
 import { BusinessError } from '@ohos.base';
 import router from '@ohos.router';
-import { accessibility, config } from '@kit.AccessibilityKit';
+import events_emitter from '@ohos.events.emitter';
+import { accessibility } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@kit.TestKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
-const EVENT_ID_SET_SUITE_KEY = 181203;
+let emitKey = ""
+const EVENT_ID_SET_SUITE_KEY = 181214;
 const driver = Driver.create();
 
 export default function WebViewFullScreenVideoOverlayCaseTest() {
@@ -47,11 +48,6 @@ export default function WebViewFullScreenVideoOverlayCaseTest() {
       done()
     });
     beforeEach(async (done: Function) => {
-      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-        console.info(`enable success`);
-      }).catch((err: object) => {
-        console.error(`failed to enable, ${err}`);
-      })
       console.info("web beforeEach start");
       done();
     })
@@ -65,56 +61,32 @@ export default function WebViewFullScreenVideoOverlayCaseTest() {
      * @tc.level  LEVEL1
      */
     it('testEnableFullscreenVideoOverlay01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitEnableFullscreenVideoOverlay01", EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent("testEnableFullscreenVideoOverlay01", true, 20260819, (error: BusinessError | null) => {
-        if (error) {
-          console.error(`[Test] registerEvent failed: ${error}`);
-          isReturn = false; // 明确标记失败
-        } else {
-          isReturn = true;
-        }
-      });
-        Utils.waitAndClickComponent(driver, "FullScreenVideoOverlayButton");
-        // try {
-        //   await Utils.waitForExist(() => {
-        //     return isReturn;
-        //   }, '_returnCheck', true, 1000);
-        // } catch (error) {
-        //   console.error("An error occurred while waiting for existence:", error);
-        // }
-        done();
-      })
-
-      /**
-       * @tc.name   testEnableFullscreenVideoOverlay02
-       * @tc.number SUB_WEB_FULL_SCREEN_0200
-       * @tc.desc   test testEnableFullscreenVideoOverlay02
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL1
-       */
-      it('testEnableFullscreenVideoOverlay02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        Utils.emitEvent("emitEnableFullscreenVideoOverlay02", EVENT_ID_SET_SUITE_KEY)
-        let isReturn = false;
-        Utils.registerEvent("testEnableFullscreenVideoOverlay02", true, 20260820, (error: BusinessError | null) => {
-          if (error) {
-            console.error(`[Test] registerEvent failed: ${error}`);
-            isReturn = false; // 明确标记失败
-          } else {
-            isReturn = true;
-          }
+      emitKey = "emitEnableFullscreenVideoOverlay01"
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testEnableFullscreenVideoOverlay01", true, 20260819, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
         });
-          Utils.waitAndClickComponent(driver, "FullScreenVideoOverlayButton");
-          // try {
-          //   await Utils.waitForExist(() => {
-          //     return isReturn;
-          //   }, '_returnCheck', true, 1000);
-          // } catch (error) {
-          //   console.error("An error occurred while waiting for existence:", error);
-          // }
-          done();
-        })
+      await Utils.waitAndClickComponent(driver, 'FullScreenVideoOverlayButton')
+    })
 
-      })
-    }
+    /**
+     * @tc.name   testEnableFullscreenVideoOverlay02
+     * @tc.number SUB_WEB_FULL_SCREEN_0200
+     * @tc.desc   test testEnableFullscreenVideoOverlay02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEnableFullscreenVideoOverlay02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      emitKey = "emitEnableFullscreenVideoOverlay02"
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testEnableFullscreenVideoOverlay02", true, 20260820, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'FullScreenVideoOverlayButton')
+    })
+
+  })
+}
