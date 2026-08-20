@@ -33,9 +33,8 @@ import { media } from '@kit.MediaKit';
 import { colorSpaceManager } from '@kit.ArkGraphics2D';
 import { fileUri } from '@kit.CoreFileKit';
 import { Driver, ON } from '@kit.TestKit';
-import { UiDriver, BY } from '@ohos.UiTest'
 
-export function executePicker() : boolean {
+function executePicker() : boolean {
   const cameraAvailable = canIUse('SystemCapability.Multimedia.Camera.Core');
   let context = getContext();
   console.info(TAG + 'Enter cameraAvailable is '+ cameraAvailable);
@@ -68,17 +67,21 @@ export function executePicker() : boolean {
   } else {
     isExecute = false;
   }
-  let uidriver = UiDriver.create();
-  let uiButton = uidriver.findComponent(BY.text("COMPONENT_ID_SHUTTER_PHOTO_1"));
-  console.info(TAG + 'Enter uiButton is '+ JSON.stringify(uiButton));
-  if (uiButton !== null) {
-      isExecute = false;
-  } else {
-      isExecute = true;
+  try {
+    let driver =  Driver.create();
+    let uiButton =  driver.findComponent(ON.id("COMPONENT_ID_SHUTTER_PHOTO_1"));
+    console.info(TAG + 'Enter uiButton is '+ JSON.stringify(uiButton));
+    if (uiButton !== null) {
+        isExecute = false;
+    } else {
+        isExecute = true;
+    }
+  } catch(err) {
+    isExecute = false;
   }
+  console.info(TAG + 'Enter isExecute is '+ isExecute);
   return isExecute;
 }
-
 
 const TAG = "CameraXtsCameraPickerTest";
 let mCameraManager: camera.CameraManager;
@@ -294,7 +297,7 @@ async function releaseVideoSession() {
   await mVideoSession?.release();
 }
 
-export function CameraPickerPickTest() {
+export default function CameraPickerPickTest() {
   describe('CameraPickerPickTest', () => {
     beforeAll(async () => {
       console.info('beforeAll case');
@@ -330,6 +333,10 @@ export function CameraPickerPickTest() {
      */
     it('CAMERA_PICKER_PICK_TEST_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'CAMERA_PICKER_PICK_TEST_001';
+      if (!executePicker()) {
+        done();
+        return;
+      }
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -394,6 +401,10 @@ export function CameraPickerPickTest() {
      */
     it('CAMERA_PICKER_PICK_TEST_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'CAMERA_PICKER_PICK_TEST_002';
+      if (!executePicker()) {
+        done();
+        return;
+      }
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -456,6 +467,10 @@ export function CameraPickerPickTest() {
      */
     it('CAMERA_PICKER_PICK_TEST_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'CAMERA_PICKER_PICK_TEST_003';
+      if (!executePicker()) {
+        done();
+        return;
+      }
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -518,6 +533,10 @@ export function CameraPickerPickTest() {
      */
     it('CAMERA_PICKER_PICK_TEST_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'CAMERA_PICKER_PICK_TEST_004';
+      if (!executePicker()) {
+        done();
+        return;
+      }
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -554,6 +573,10 @@ export function CameraPickerPickTest() {
      */
     it('CAMERA_PICKER_PICK_TEST_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'CAMERA_PICKER_PICK_TEST_005';
+      if (!executePicker()) {
+        done();
+        return;
+      }
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -590,6 +613,10 @@ export function CameraPickerPickTest() {
      */
     it('CAMERA_PICKER_PICK_TEST_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'CAMERA_PICKER_PICK_TEST_006';
+      if (!executePicker()) {
+        done();
+        return;
+      }
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -626,6 +653,10 @@ export function CameraPickerPickTest() {
      */
     it('CAMERA_PICKER_PICK_TEST_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'CAMERA_PICKER_PICK_TEST_007';
+      if (!executePicker()) {
+        done();
+        return;
+      }
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -662,6 +693,10 @@ export function CameraPickerPickTest() {
      */
     it('CAMERA_PICKER_PICK_TEST_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'CAMERA_PICKER_PICK_TEST_008';
+      if (!executePicker()) {
+        done();
+        return;
+      }
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -698,6 +733,10 @@ export function CameraPickerPickTest() {
      */
     it('CAMERA_PICKER_PICK_TEST_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'CAMERA_PICKER_PICK_TEST_009';
+      if (!executePicker()) {
+        done();
+        return;
+      }
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -734,6 +773,11 @@ export function CameraPickerPickTest() {
      */
     it('CAMERA_PICKER_PICK_TEST_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'CAMERA_PICKER_PICK_TEST_010';
+      if (!executePicker()) {
+        console.info(TAG, testName, ' executePicker is false.');
+        done();
+        return;
+      }
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
