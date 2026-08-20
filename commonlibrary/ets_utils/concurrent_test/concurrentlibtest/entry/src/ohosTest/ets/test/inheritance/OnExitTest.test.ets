@@ -16,10 +16,6 @@
 import { describe, beforeAll, beforeEach, afterAll, it, afterEach, expect, Level, Size, TestType } from '@ohos/hypium';
 import { ErrorEvent, MessageEvents, worker } from '@kit.ArkTS';
 
-function sleep(ms: number): Promise<void> {
-  return new Promise<void>((resolve: () => void) => setTimeout(resolve, ms));
-}
-
 async function terminateAndAwait(w: worker.ThreadWorker | null): Promise<void> {
   if (!w) {
     return;
@@ -31,7 +27,14 @@ async function terminateAndAwait(w: worker.ThreadWorker | null): Promise<void> {
       };
     });
     w.terminate();
-    await waitForEvent(exitPromise);
+    let timeoutId: number = -1;
+    await Promise.race([
+      exitPromise,
+      new Promise<void>((resolve: () => void) => {
+        timeoutId = setTimeout(resolve, 3000);
+      })
+    ]);
+    clearTimeout(timeoutId);
     w.removeAllListener();
     w.onexit = (): void => {};
     w.onmessage = (e: MessageEvents): void => {};
@@ -50,40 +53,36 @@ async function waitForEvent(promise: Promise<void>): Promise<void> {
   clearTimeout(timeoutId);
 }
 
-export default function onExitTest(): void {
+export default function OnExitTest(): void {
   describe('OnExitTest', (): void => {
     beforeAll((): void => {})
     beforeEach((): void => {})
-    // async afterAll + single await sleep(100) for resource drain — reviewer-approved exception (high-frequency-issues.md §1)
-    afterAll(async (): Promise<void> => {
-      await sleep(100);
-    })
+    afterEach((): void => {})
+    afterAll((): void => {})
 
-    afterEach(async (): Promise<void> => {
-      await sleep(100);
-    })
 
     /**
      * @tc.name   OnExitTest0100
      * @tc.number SUB_RUNTIME_LANGUAGE_INHERITANCE_ONEXIT_0100
-     * @tc.desc   Verify onexit property exists and has the correct type.
+     * @tc.desc   Verify onexit property exists and is initially undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('OnExitTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-        let workerInstance: worker.ThreadWorker | null = null;
-        try {
-            workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
-            expect(workerInstance.onexit).assertUndefined();
-        } catch (err) {
-            console.error(`OnExitTest0100 failed, error: ${String(err)}`);
-            expect().assertFail();
-        } finally {
-            await terminateAndAwait(workerInstance);
-        }
-        done();
+      let workerInstance: worker.ThreadWorker | null = null;
+      try {
+        workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
+        expect(workerInstance.onexit).assertUndefined();
+      } catch (err) {
+        console.error(`OnExitTest0100 failed, error: ${String(err)}`);
+        expect().assertFail();
+      } finally {
+        await terminateAndAwait(workerInstance);
+      }
+      done();
     });
+
 
     /**
      * @tc.name   OnExitTest0200
@@ -94,19 +93,20 @@ export default function onExitTest(): void {
      * @tc.level  LEVEL0
      */
     it('OnExitTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-        let workerInstance: worker.ThreadWorker | null = null;
-        try {
-            workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
-            workerInstance.onexit = (code: number) => {};
-            expect(typeof workerInstance.onexit).assertEqual('function');
-        } catch (err) {
-            console.error(`OnExitTest0200 failed, error: ${String(err)}`);
-            expect().assertFail();
-        } finally {
-            await terminateAndAwait(workerInstance);
-        }
-        done();
+      let workerInstance: worker.ThreadWorker | null = null;
+      try {
+        workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
+        workerInstance.onexit = (code: number) => {};
+        expect(typeof workerInstance.onexit).assertEqual('function');
+      } catch (err) {
+        console.error(`OnExitTest0200 failed, error: ${String(err)}`);
+        expect().assertFail();
+      } finally {
+        await terminateAndAwait(workerInstance);
+      }
+      done();
     });
+
 
     /**
      * @tc.name   OnExitTest0300
@@ -117,31 +117,32 @@ export default function onExitTest(): void {
      * @tc.level  LEVEL0
      */
     it('OnExitTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-        let workerInstance: worker.ThreadWorker | null = null;
-        try {
-            workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
-            let exitCode = -1;
-            let exitCalled = false;
-            const exitPromise = new Promise<void>((resolve: () => void) => {
-                workerInstance!.onexit = (code: number) => {
-                    exitCode = code;
-                    exitCalled = true;
-                    resolve();
-                };
-            });
-            workerInstance.terminate();
-            await waitForEvent(exitPromise);
-            workerInstance = null;
-            expect(exitCalled).assertTrue();
-            expect(exitCode).assertEqual(0);
-        } catch (err) {
-            console.error(`OnExitTest0300 failed, error: ${String(err)}`);
-            expect().assertFail();
-        } finally {
-            await terminateAndAwait(workerInstance);
-        }
-        done();
+      let workerInstance: worker.ThreadWorker | null = null;
+      try {
+        workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
+        let exitCode = -1;
+        let exitCalled = false;
+        const exitPromise = new Promise<void>((resolve: () => void) => {
+          workerInstance!.onexit = (code: number) => {
+            exitCode = code;
+            exitCalled = true;
+            resolve();
+          };
+        });
+        workerInstance.terminate();
+        await waitForEvent(exitPromise);
+        workerInstance = null;
+        expect(exitCalled).assertTrue();
+        expect(exitCode).assertEqual(0);
+      } catch (err) {
+        console.error(`OnExitTest0300 failed, error: ${String(err)}`);
+        expect().assertFail();
+      } finally {
+        await terminateAndAwait(workerInstance);
+      }
+      done();
     });
+
 
     /**
      * @tc.name   OnExitTest0400
@@ -152,34 +153,35 @@ export default function onExitTest(): void {
      * @tc.level  LEVEL0
      */
     it('OnExitTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-        let workerInstance: worker.ThreadWorker | null = null;
-        try {
-            workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceErrorWorker.ets');
-            let exitCode = -1;
-            let exitCalled = false;
-            workerInstance!.onerror = (e: ErrorEvent) => {
-                console.info(`OnExitTest0400 onerror: ${e.message}`);
-            };
-            const exitPromise = new Promise<void>((resolve: () => void) => {
-                workerInstance!.onexit = (code: number) => {
-                    exitCode = code;
-                    exitCalled = true;
-                    resolve();
-                };
-            });
-            workerInstance.postMessage('trigger_error');
-            await waitForEvent(exitPromise);
-            workerInstance = null;
-            expect(exitCalled).assertTrue();
-            expect(exitCode).assertEqual(1);
-        } catch (err) {
-            console.error(`OnExitTest0400 failed, error: ${String(err)}`);
-            expect().assertFail();
-        } finally {
-            await terminateAndAwait(workerInstance);
-        }
-        done();
+      let workerInstance: worker.ThreadWorker | null = null;
+      try {
+        workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceErrorWorker.ets');
+        let exitCode = -1;
+        let exitCalled = false;
+        workerInstance.onerror = (e: ErrorEvent) => {
+          console.info(`OnExitTest0400 onerror: ${e.message.length}`);
+        };
+        const exitPromise = new Promise<void>((resolve: () => void) => {
+          workerInstance!.onexit = (code: number) => {
+            exitCode = code;
+            exitCalled = true;
+            resolve();
+          };
+        });
+        workerInstance.postMessage('trigger_error');
+        await waitForEvent(exitPromise);
+        workerInstance = null;
+        expect(exitCalled).assertTrue();
+        expect(exitCode).assertEqual(1);
+      } catch (err) {
+        console.error(`OnExitTest0400 failed, error: ${String(err)}`);
+        expect().assertFail();
+      } finally {
+        await terminateAndAwait(workerInstance);
+      }
+      done();
     });
+
 
     /**
      * @tc.name   OnExitTest0500
@@ -190,61 +192,63 @@ export default function onExitTest(): void {
      * @tc.level  LEVEL0
      */
     it('OnExitTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-        let workerInstance: worker.ThreadWorker | null = null;
-        try {
-            workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
-            let receivedCode: number | null = null;
-            const receivedPromise = new Promise<void>((resolve: () => void) => {
-                workerInstance!.onexit = (code: number) => {
-                    receivedCode = code;
-                    resolve();
-                };
-            });
-            workerInstance.terminate();
-            await waitForEvent(receivedPromise);
-            workerInstance = null;
-            expect(typeof receivedCode).assertEqual('number');
-        } catch (err) {
-            console.error(`OnExitTest0500 failed, error: ${String(err)}`);
-            expect().assertFail();
-        } finally {
-            await terminateAndAwait(workerInstance);
-        }
-        done();
+      let workerInstance: worker.ThreadWorker | null = null;
+      try {
+        workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
+        let receivedCode: number | null = null;
+        const receivedPromise = new Promise<void>((resolve: () => void) => {
+          workerInstance!.onexit = (code: number) => {
+            receivedCode = code;
+            resolve();
+          };
+        });
+        workerInstance.terminate();
+        await waitForEvent(receivedPromise);
+        workerInstance = null;
+        expect(typeof receivedCode).assertEqual('number');
+      } catch (err) {
+        console.error(`OnExitTest0500 failed, error: ${String(err)}`);
+        expect().assertFail();
+      } finally {
+        await terminateAndAwait(workerInstance);
+      }
+      done();
     });
+
 
     /**
      * @tc.name   OnExitTest0600
      * @tc.number SUB_RUNTIME_LANGUAGE_INHERITANCE_ONEXIT_0600
-     * @tc.desc   Verify exit code is 0 when worker is terminated normally.
+     * @tc.desc   Verify exit code value is 0 for normal exit (code is limited to 0/1).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('OnExitTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
-        let workerInstance: worker.ThreadWorker | null = null;
-        try {
-            workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
-            let exitChecked = false;
-            const exitPromise = new Promise<void>((resolve: () => void) => {
-                workerInstance!.onexit = (code: number) => {
-                    expect(code).assertEqual(0);
-                    exitChecked = true;
-                    resolve();
-                };
-            });
-            workerInstance.terminate();
-            await waitForEvent(exitPromise);
-            workerInstance = null;
-            expect(exitChecked).assertTrue();
-        } catch (err) {
-            console.error(`OnExitTest0600 failed, error: ${String(err)}`);
-            expect().assertFail();
-        } finally {
-            await terminateAndAwait(workerInstance);
-        }
-        done();
+      let workerInstance: worker.ThreadWorker | null = null;
+      try {
+        workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
+        let exitChecked = false;
+        const exitPromise = new Promise<void>((resolve: () => void) => {
+          workerInstance!.onexit = (code: number) => {
+            expect(code).assertEqual(0);
+            exitChecked = true;
+            resolve();
+          };
+        });
+        workerInstance.terminate();
+        await waitForEvent(exitPromise);
+        workerInstance = null;
+        expect(exitChecked).assertTrue();
+      } catch (err) {
+        console.error(`OnExitTest0600 failed, error: ${String(err)}`);
+        expect().assertFail();
+      } finally {
+        await terminateAndAwait(workerInstance);
+      }
+      done();
     });
+
 
     /**
      * @tc.name   OnExitTest0700
@@ -255,28 +259,29 @@ export default function onExitTest(): void {
      * @tc.level  LEVEL0
      */
     it('OnExitTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-        let workerInstance: worker.ThreadWorker | null = null;
-        try {
-            workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
-            let exitCalled = false;
-            const exitPromise = new Promise<void>((resolve: () => void) => {
-                workerInstance!.onexit = (code: number) => {
-                    exitCalled = true;
-                    resolve();
-                };
-            });
-            workerInstance.terminate();
-            await waitForEvent(exitPromise);
-            workerInstance = null;
-            expect(exitCalled).assertTrue();
-        } catch (err) {
-            console.error(`OnExitTest0700 failed, error: ${String(err)}`);
-            expect().assertFail();
-        } finally {
-            await terminateAndAwait(workerInstance);
-        }
-        done();
+      let workerInstance: worker.ThreadWorker | null = null;
+      try {
+        workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
+        let exitCalled = false;
+        const exitPromise = new Promise<void>((resolve: () => void) => {
+          workerInstance!.onexit = (code: number) => {
+            exitCalled = true;
+            resolve();
+          };
+        });
+        workerInstance.terminate();
+        await waitForEvent(exitPromise);
+        workerInstance = null;
+        expect(exitCalled).assertTrue();
+      } catch (err) {
+        console.error(`OnExitTest0700 failed, error: ${String(err)}`);
+        expect().assertFail();
+      } finally {
+        await terminateAndAwait(workerInstance);
+      }
+      done();
     });
+
 
     /**
      * @tc.name   OnExitTest0800
@@ -287,31 +292,32 @@ export default function onExitTest(): void {
      * @tc.level  LEVEL0
      */
     it('OnExitTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-        let workerInstance: worker.ThreadWorker | null = null;
-        try {
-            workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceSelfCloseWorker.ets');
-            let exitCode = -1;
-            let exitCalled = false;
-            const exitPromise = new Promise<void>((resolve: () => void) => {
-                workerInstance!.onexit = (code: number) => {
-                    exitCode = code;
-                    exitCalled = true;
-                    resolve();
-                };
-            });
-            workerInstance.postMessage('close_self');
-            await waitForEvent(exitPromise);
-            workerInstance = null;
-            expect(exitCalled).assertTrue();
-            expect(exitCode).assertEqual(0);
-        } catch (err) {
-            console.error(`OnExitTest0800 failed, error: ${String(err)}`);
-            expect().assertFail();
-        } finally {
-            await terminateAndAwait(workerInstance);
-        }
-        done();
+      let workerInstance: worker.ThreadWorker | null = null;
+      try {
+        workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceSelfCloseWorker.ets');
+        let exitCode = -1;
+        let exitCalled = false;
+        const exitPromise = new Promise<void>((resolve: () => void) => {
+          workerInstance!.onexit = (code: number) => {
+            exitCode = code;
+            exitCalled = true;
+            resolve();
+          };
+        });
+        workerInstance.postMessage('close_self');
+        await waitForEvent(exitPromise);
+        workerInstance = null;
+        expect(exitCalled).assertTrue();
+        expect(exitCode).assertEqual(0);
+      } catch (err) {
+        console.error(`OnExitTest0800 failed, error: ${String(err)}`);
+        expect().assertFail();
+      } finally {
+        await terminateAndAwait(workerInstance);
+      }
+      done();
     });
+
 
     /**
      * @tc.name   OnExitTest0900
@@ -322,33 +328,34 @@ export default function onExitTest(): void {
      * @tc.level  LEVEL1
      */
     it('OnExitTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
-        let workerInstance: worker.ThreadWorker | null = null;
-        try {
-            workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
-            let count1 = 0;
-            let count2 = 0;
-            const exitPromise = new Promise<void>((resolve: () => void) => {
-                workerInstance!.onexit = (code: number) => {
-                    count1++;
-                };
-                workerInstance!.onexit = (code: number) => {
-                    count2++;
-                    resolve();
-                };
-            });
-            workerInstance.terminate();
-            await waitForEvent(exitPromise);
-            workerInstance = null;
-            expect(count1).assertEqual(0);
-            expect(count2).assertEqual(1);
-        } catch (err) {
-            console.error(`OnExitTest0900 failed, error: ${String(err)}`);
-            expect().assertFail();
-        } finally {
-            await terminateAndAwait(workerInstance);
-        }
-        done();
+      let workerInstance: worker.ThreadWorker | null = null;
+      try {
+        workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
+        let count1 = 0;
+        let count2 = 0;
+        const exitPromise = new Promise<void>((resolve: () => void) => {
+          workerInstance!.onexit = (code: number) => {
+            count1++;
+          };
+          workerInstance!.onexit = (code: number) => {
+            count2++;
+            resolve();
+          };
+        });
+        workerInstance.terminate();
+        await waitForEvent(exitPromise);
+        workerInstance = null;
+        expect(count1).assertEqual(0);
+        expect(count2).assertEqual(1);
+      } catch (err) {
+        console.error(`OnExitTest0900 failed, error: ${String(err)}`);
+        expect().assertFail();
+      } finally {
+        await terminateAndAwait(workerInstance);
+      }
+      done();
     });
+
 
     /**
      * @tc.name   OnExitTest1000
@@ -359,129 +366,132 @@ export default function onExitTest(): void {
      * @tc.level  LEVEL1
      */
     it('OnExitTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
-        let workerInstance: worker.ThreadWorker | null = null;
-        try {
-            workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
-            let count = 0;
-            workerInstance.onexit = (code: number) => {
-                count++;
-            };
-            workerInstance.onexit = undefined;
-            workerInstance.terminate();
-            const pollDeadline = Date.now() + 500;
-            while (Date.now() < pollDeadline) {
-                await new Promise<void>((resolve: () => void) => setTimeout(resolve, 100));
-            }
-            workerInstance = null;
-            expect(count).assertEqual(0);
-        } catch (err) {
-            console.error(`OnExitTest1000 failed, error: ${String(err)}`);
-            expect().assertFail();
-        } finally {
-            await terminateAndAwait(workerInstance);
+      let workerInstance: worker.ThreadWorker | null = null;
+      try {
+        workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
+        let count = 0;
+        workerInstance.onexit = (code: number) => {
+          count++;
+        };
+        workerInstance.onexit = undefined;
+        workerInstance.terminate();
+        const pollDeadline = Date.now() + 500;
+        while (Date.now() < pollDeadline) {
+          await new Promise<void>((resolve: () => void) => setTimeout(resolve, 100));
         }
-        done();
+        workerInstance = null;
+        expect(count).assertEqual(0);
+      } catch (err) {
+        console.error(`OnExitTest1000 failed, error: ${String(err)}`);
+        expect().assertFail();
+      } finally {
+        await terminateAndAwait(workerInstance);
+      }
+      done();
     });
+
 
     /**
      * @tc.name   OnExitTest1100
      * @tc.number SUB_RUNTIME_LANGUAGE_INHERITANCE_ONEXIT_1100
-     * @tc.desc   Verify multiple worker instances trigger onexit independently.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('OnExitTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-        let workers: worker.ThreadWorker[] = [];
-        try {
-            const exitCodes: number[] = [];
-            const exitPromise = new Promise<void>((resolve: () => void) => {
-                for (let i = 0; i < 5; i++) {
-                    const w = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
-                    w.onexit = (code: number) => {
-                        exitCodes.push(code);
-                        if (exitCodes.length >= 5) {
-                            resolve();
-                        }
-                    };
-                    workers.push(w);
-                }
-            });
-            workers.forEach(w => w.terminate());
-            await waitForEvent(exitPromise);
-            workers = [];
-            expect(exitCodes.length).assertEqual(5);
-            for (let i = 0; i < exitCodes.length; i++) {
-                expect(exitCodes[i]).assertEqual(0);
-            }
-        } catch (err) {
-            console.error(`OnExitTest1100 failed, error: ${String(err)}`);
-            expect().assertFail();
-        } finally {
-            for (const w of workers) {
-                await terminateAndAwait(w);
-            }
-        }
-        done();
-    });
-
-    /**
-     * @tc.name   OnExitTest1200
-     * @tc.number SUB_RUNTIME_LANGUAGE_INHERITANCE_ONEXIT_1200
      * @tc.desc   Verify an exception thrown in onexit callback is contained and does not affect host thread.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('OnExitTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
-        let workerInstance: worker.ThreadWorker | null = null;
-        try {
-            workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
-            let exitCalled = false;
-            let exceptionContained = false;
-            const exitPromise = new Promise<void>((resolve: () => void) => {
-                workerInstance!.onexit = (code: number) => {
-                    exitCalled = true;
-                    try {
-                        throw new Error('onexit callback error');
-                    } catch (e) {
-                        exceptionContained = true;
-                    }
-                    resolve();
-                };
-            });
-            workerInstance.terminate();
-            await waitForEvent(exitPromise);
-            workerInstance = null;
-            expect(exitCalled).assertTrue();
-            expect(exceptionContained).assertTrue();
-            // Main thread continues normally after onexit callback threw an exception.
-            // Verify by creating a new worker and communicating with it.
-            let secondWorker: worker.ThreadWorker | null = null;
+    it('OnExitTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let workerInstance: worker.ThreadWorker | null = null;
+      try {
+        workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
+        let exitCalled = false;
+        let exceptionContained = false;
+        const exitPromise = new Promise<void>((resolve: () => void) => {
+          workerInstance!.onexit = (code: number) => {
+            exitCalled = true;
             try {
-                secondWorker = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
-                let received = false;
-                const receivedPromise = new Promise<void>((resolve: () => void) => {
-                    secondWorker!.onmessage = (e: MessageEvents) => {
-                        if (e.data === 'hello_response') {
-                            received = true;
-                            resolve();
-                        }
-                    };
-                });
-                secondWorker.postMessage('hello');
-                await waitForEvent(receivedPromise);
-                expect(received).assertTrue();
-            } finally {
-                await terminateAndAwait(secondWorker);
+              throw new Error('onexit callback error');
+            } catch (e) {
+              exceptionContained = true;
             }
-        } catch (err) {
-            console.error(`OnExitTest1200 failed, error: ${String(err)}`);
-            expect().assertFail();
+            resolve();
+          };
+        });
+        workerInstance.terminate();
+        await waitForEvent(exitPromise);
+        workerInstance = null;
+        expect(exitCalled).assertTrue();
+        expect(exceptionContained).assertTrue();
+        // Main thread continues normally after onexit callback threw an exception.
+        // Verify by creating a new worker and communicating with it.
+        let secondWorker: worker.ThreadWorker | null = null;
+        try {
+          secondWorker = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
+          let received = false;
+          const receivedPromise = new Promise<void>((resolve: () => void) => {
+            secondWorker!.onmessage = (e: MessageEvents) => {
+              if (e.data === 'hello_response') {
+                received = true;
+                resolve();
+              }
+            };
+          });
+          secondWorker.postMessage('hello');
+          await waitForEvent(receivedPromise);
+          expect(received).assertTrue();
         } finally {
-            await terminateAndAwait(workerInstance);
+          await terminateAndAwait(secondWorker);
         }
-        done();
+      } catch (err) {
+        console.error(`OnExitTest1100 failed, error: ${String(err)}`);
+        expect().assertFail();
+      } finally {
+        await terminateAndAwait(workerInstance);
+      }
+      done();
     });
+
+
+    /**
+     * @tc.name   OnExitTest1200
+     * @tc.number SUB_RUNTIME_LANGUAGE_INHERITANCE_ONEXIT_1200
+     * @tc.desc   Verify multiple worker instances trigger onexit independently.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OnExitTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let workers: worker.ThreadWorker[] = [];
+      try {
+        const exitCodes: number[] = [];
+        const exitPromise = new Promise<void>((resolve: () => void) => {
+          for (let i = 0; i < 5; i++) {
+            const w = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
+            w.onexit = (code: number) => {
+              exitCodes.push(code);
+              if (exitCodes.length >= 5) {
+                resolve();
+              }
+            };
+            workers.push(w);
+          }
+        });
+        workers.forEach(w => w.terminate());
+        await waitForEvent(exitPromise);
+        workers = [];
+        expect(exitCodes.length).assertEqual(5);
+        for (let i = 0; i < exitCodes.length; i++) {
+          expect(exitCodes[i]).assertEqual(0);
+        }
+      } catch (err) {
+        console.error(`OnExitTest1200 failed, error: ${String(err)}`);
+        expect().assertFail();
+      } finally {
+        for (const w of workers) {
+          await terminateAndAwait(w);
+        }
+      }
+      done();
+    });
+
   });
 }
