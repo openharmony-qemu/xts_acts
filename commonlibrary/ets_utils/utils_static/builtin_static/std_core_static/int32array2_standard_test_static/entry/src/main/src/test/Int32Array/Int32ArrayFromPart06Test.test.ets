@@ -156,6 +156,7 @@ export default function int32ArrayFromPart06Test(): void {
       let cc: number = 0;
       let r: Int32Array = Int32Array.from(['a', 'b'] as string[], (v: string, k: number): number => {
         cc = cc + 1;
+        expect(v.length).assertEqual(1);
         return k;
       });
       expect(r.length).assertEqual(2);
@@ -794,6 +795,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Int32Array.from(['a', 'b', 'c'] as string[], (v: string, k: number): number => {
+          expect(v.length).assertEqual(1);
           throw new Error('mapfn-err-0');
         });
         expect().assertFail();
@@ -815,6 +817,7 @@ export default function int32ArrayFromPart06Test(): void {
       try {
         Int32Array.from(['a', 'b', 'c', 'd', 'e'] as string[], (v: string, k: number): number => {
           cc = cc + 1;
+          expect(v.length).assertEqual(1);
           if (k === 2) {
             throw new Error('mid-err');
           }
@@ -840,6 +843,7 @@ export default function int32ArrayFromPart06Test(): void {
       try {
         Int32Array.from(['a', 'b', 'c', 'd'] as string[], (v: string, k: number): number => {
           cc = cc + 1;
+          expect(v.length).assertEqual(1);
           if (k === 3) {
             throw new Error('last-err');
           }
@@ -863,6 +867,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Int32Array.from(['a'] as string[], (v: string, k: number): number => {
+          expect(v).assertEqual('a');
           let err: Error = new Error('range');
           err.name = 'RangeError';
           throw err;
@@ -883,6 +888,7 @@ export default function int32ArrayFromPart06Test(): void {
      */
     it('int32ArrayFromPart06TestMindmapTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Int32Array = Int32Array.from(['a'] as string[], (v: string, k: number): number => {
+        expect(v).assertEqual('a');
         return 0;
       });
       expect(r.length).assertEqual(1);
@@ -997,6 +1003,7 @@ export default function int32ArrayFromPart06Test(): void {
      */
     it('int32ArrayFromPart06TestMindmapTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Int32Array = Int32Array.from([] as number[], (v: number, k: number): number => {
+        expect(v).assertEqual(0);
         return 0;
       });
       expect(r.length).assertEqual(0);
@@ -1292,6 +1299,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Int32Array.from(['a', 'b'] as string[], (v: string, k: number): number => {
+          expect(v.length).assertEqual(1);
           if (k === 1) {
             throw new Error('boom');
           }
@@ -1330,6 +1338,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['a', 'b', 'c', 'd'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v.length).assertEqual(1);
         return k;
       });
       expect(r.length).assertEqual(4);
