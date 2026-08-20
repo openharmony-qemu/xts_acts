@@ -15,9 +15,10 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 // 加载js测试框架
-import { common, sendableContextManager, StartOptions, WantAgent,xtConstant,startupManager,
-import { wantAgent ,wantConstant,contextConstant,startupManager,
-  Want} from '@kit.AbilityKit';
+import {
+  common, sendableContextManager, StartOptions, WantAgent, wantAgent, wantConstant, contextConstant,
+  startupManager, Want
+} from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError ,systemParameterEnhance } from '@kit.BasicServicesKit';
 import { rpc } from '@kit.IPCKit';
@@ -111,7 +112,8 @@ export default function errorCodeTest() {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_ErrorCode_0002 start');
       // test errcode
       try {
-        let appCloneIndex = AppStorage.get<common.ApplicationContext>('ApplicationContext')!.getApplicationContext().getCurrentAppCloneIndex();
+        let appCloneIndex = AppStorage.get<common.ApplicationContext>('ApplicationContext')!
+          .getApplicationContext().getCurrentAppCloneIndex();
         console.info('the app clone is ' + appCloneIndex);
         expect().assertFail();
         done();

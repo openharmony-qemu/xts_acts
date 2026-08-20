@@ -28,7 +28,9 @@ export default function ActsGetAllWindowStagesTest() {
     })
     afterEach(async () => {
       try{
-        let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext') as common.UIAbilityContext;
+        let TestAbility1_UIAbilityContext: common.UIAbilityContext =
+          AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext')
+            as common.UIAbilityContext;
         try {
           await TestAbility1_UIAbilityContext.terminateSelf();
         } catch (e) {
@@ -515,7 +517,9 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
-        let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext') as common.UIAbilityContext;
+        let TestAbility1_UIAbilityContext: common.UIAbilityContext =
+          AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext')
+            as common.UIAbilityContext;
         try {
           await TestAbility1_UIAbilityContext.terminateSelf();
         } catch (e) {
@@ -563,12 +567,9 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
-        let TestAbility1_UIAbilityContext: common.UIAbilityContext;
-        try {
-          TestAbility1_UIAbilityContext = await AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext') as common.UIAbilityContext;
-        } catch (e) {
-          hilog.error(0x0000, 'testTag', `get TestAbility1_UIAbilityContext failed: ${JSON.stringify(e)}`);
-        }
+        let TestAbility1_UIAbilityContext: common.UIAbilityContext =
+          AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext')
+            as common.UIAbilityContext;
         try {
           await TestAbility1_UIAbilityContext.terminateSelf()
         } catch (e) {
@@ -616,7 +617,9 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
-        let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext') as common.UIAbilityContext;
+        let TestAbility1_UIAbilityContext: common.UIAbilityContext =
+          AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext')
+            as common.UIAbilityContext;
         try {
           await TestAbility1_UIAbilityContext.terminateSelf();
         } catch (e) {
@@ -754,7 +757,8 @@ export default function ActsGetAllWindowStagesTest() {
             if(err?.code==801) {
               done()
             }else{
-              hilog.info(0x0000,'testTag',`startAbilitycccc, code is ${JSON.stringify(e)}, message is ${JSON.stringify(e)}`);
+              hilog.info(0x0000, 'testTag',
+                `startAbilitycccc, code is ${JSON.stringify(err)}, message is ${JSON.stringify(err)}`);
               done()
             }
           } else {
@@ -930,7 +934,8 @@ export default function ActsGetAllWindowStagesTest() {
           await context.startAbility(want).then(() => {
             hilog.info(0x0000, 'testTag','startAbility succeed');
           }).catch((err: BusinessError) => {
-            hilog.error(0x0000, 'testTag',`startAbility failed, code is ${JSON.stringify(e)}, message is ${JSON.stringify(e)}`);
+            hilog.error(0x0000, 'testTag',
+              `startAbility failed, code is ${JSON.stringify(err)}, message is ${JSON.stringify(err)}`);
           });
         } catch (err) {
           hilog.error(0x0000, 'testTag',`startAbility failed: ${JSON.stringify(err)}`);
