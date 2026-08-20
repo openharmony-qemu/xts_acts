@@ -21,6 +21,7 @@ hctest_suite("ActsParameterTest") {
   suite_name = "acts"
 
   sources = [
+    "src/deviceinfo_test.c",
     "src/parameter_func_test.c",
     "src/parameter_utils.c",
   ]

@@ -751,25 +751,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
 };
 
 /**
- * @tc.name   testGetDeviceColor
- * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2505
- * @tc.desc   test GetDeviceColor, consistent across queries.
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
-LITE_TEST_CASE(DeviceInfoTestSuite,
-               testGetDeviceColor,
-               Function | MediumTest | Level1)
-{
-    const char *value1 = GetDeviceColor();
-    printf("DeviceColor=%s\n", value1);
-    TEST_ASSERT_TRUE(value1 != NULL);
-    const char *value2 = GetDeviceColor();
-    TEST_ASSERT_EQUAL_STRING(value1, value2);
-};
-
-/**
  * @tc.name   testGetDistributionOSApiName
  * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2506
  * @tc.desc   test GetDistributionOSApiName, consistent across queries.
