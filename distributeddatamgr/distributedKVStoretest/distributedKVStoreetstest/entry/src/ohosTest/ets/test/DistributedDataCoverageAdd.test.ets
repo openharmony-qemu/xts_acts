@@ -2489,6 +2489,59 @@ export default function DistributedDataCoverageAdd(){
         expect(e.message).assertContain("failed: invalid arguments");
       }
     })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_DisdataCoverageAdd_autoSync_0100
+     * @tc.name DisdataCoverageAdd_autoSync_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc  no  ohos.permission.DISTRIBUTED_DATASYNC
+     */
+    it('DisdataCoverageAdd_autoSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      
+      const TEST_BUNDLE_NAME = 'ohos.acts.distributedKvStore';
+      const TEST_STORE_ID = 'DistributedDataAutoSync0100';
+      let kvManager = null;
+      let kvStore = null;
+      try {
+            console.info(TAG + ' --------- createKVManager begin---------  ');
+            const kvManagerConfig = {
+              bundleName : TEST_BUNDLE_NAME,
+              userInfo : {
+                userId : '0',
+                userType : ddm.UserType.SAME_USER_ID
+              }
+            }
+            const options = {
+              createIfMissing : true,
+              encrypt : false,
+              backup : false,
+              autoSync : true,
+              kvStoreType : ddm.KVStoreType.SINGLE_VERSION,
+              securityLevel : ddm.SecurityLevel.S1,
+            };
+
+            kvManager = await ddm.createKVManager(kvManagerConfig);
+            console.log(TAG +"createKVManager success");
+
+            kvManager.getKVStore(TEST_STORE_ID, options, function (err, store) {
+              if (err) {
+                console.log(TAG +"getKVStore err: "  + JSON.stringify(err)+ `, error message is ${err.message}`);
+                done();
+              }else{
+                console.log(TAG +"getKVStore success");
+                expect(null).assertFail();
+                done();
+              }
+            });
+          } catch (e) {
+            console.error(TAG + ' catch e ' + `, error message is ${e.message}`);
+            expect(e.message).assertContain("invalid");
+            done();
+          }
+    })
+
     console.info(TAG + '-------------------describe DisdataCoverageAdd  end-------------------');
   })
 }

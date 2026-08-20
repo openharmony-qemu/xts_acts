@@ -27,7 +27,7 @@ let testAbilityContext:common.UIAbilityContext;
 let emitKey = ''
 
 
-export default function WebViewRotateRenderEffect() {
+export default function WebViewRotateRenderEffect(): void {
   describe('WebViewRotateRenderEffect', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')

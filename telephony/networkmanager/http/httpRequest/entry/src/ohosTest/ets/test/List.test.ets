@@ -41,7 +41,6 @@ import connection from '@ohos.net.connection';
 let netHandle = connection.getDefaultNetSync();
 export default function testsuite() {
   if (netHandle.netId != 0 && canIUse("SystemCapability.Communication.NetStack")) {
-    HttpInterceptorForSafeCheckTest();
     HttpRequestInterceptor();
     HttpRequestMaxAutoRedirectsTest();
     HttpRequestMaxAutoRedirectsWithInterceptorTest();
@@ -71,6 +70,7 @@ export default function testsuite() {
     } else {
       EmptyTest();
     }
+    HttpInterceptorForSafeCheckTest();
   } else {
     EmptyTest();
   }

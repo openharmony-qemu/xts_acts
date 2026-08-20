@@ -381,13 +381,7 @@ export default function TextPicker(): void {
         isExecuteTestCase = true;
       }
       await Utils.msSleep(1000);
-      if (!isExecuteTestCase) {
-        try {
-          driver.triggerCombineKeys(17, 18);
-        } catch (error) {
-          console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
-        }
-      }
+
     });
 
     beforeEach(async () => {

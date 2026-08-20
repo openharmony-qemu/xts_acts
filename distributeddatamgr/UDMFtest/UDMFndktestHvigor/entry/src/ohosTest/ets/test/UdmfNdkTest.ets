@@ -1770,6 +1770,21 @@ export default function UdmfNdkTest() {
       expect(data).assertEqual(1);
     });
 
+    /**
+     * @tc.name   OH_Udmf_GetDataElementAt_002
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_GetDataElementAt_002
+     * @tc.desc   OH_Udmf_GetDataElementAt_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_Udmf_GetDataElementAt_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + 'OH_Udmf_GetDataElementAt_002');
+      let data = testNapi.OH_Udmf_GetDataElementAt_002();
+      console.info(TAG + 'OH_Udmf_GetDataElementAt_002 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
 
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_ListenerStatus_0100

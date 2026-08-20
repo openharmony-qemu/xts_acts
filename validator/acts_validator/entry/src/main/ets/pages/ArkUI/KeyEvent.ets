@@ -23,7 +23,7 @@ const TAG = '[keyEvent]';
 struct keyEventExample {
   @State text: string = ''
   @State axisValue: string = ''
-  @State name: string = 'keyEvent';
+  @State name: string = 'KeyEvent';
   @State keyEventVue: boolean = false;
   @State intervalNum: number = 0;
   @State hoverMoveText: string = '';

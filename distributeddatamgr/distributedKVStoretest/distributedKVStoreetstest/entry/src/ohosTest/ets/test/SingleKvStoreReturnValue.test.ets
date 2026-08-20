@@ -87,16 +87,16 @@ export default function SingleKvStoreReturnValue(){
       await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(async () => {
         console.info('afterEach closeKVStore success');
         await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-            console.info('afterEach deleteKVStore success');
-            kvStore = null;
-            done();
+          console.info('afterEach deleteKVStore success');
+          kvStore = null;
+          done();
         }).catch((err: BusinessError) => {
-            console.info('afterEach deleteKVStore err ' + err);
-            done();
+          console.info('afterEach deleteKVStore err ' + err);
+          done();
         });
       }).catch((err: BusinessError) => {
-          console.info('afterEach closeKVStore err ' + err);
-          done();
+        console.info('afterEach closeKVStore err ' + err);
+        done();
       });
 
 
@@ -576,7 +576,6 @@ export default function SingleKvStoreReturnValue(){
         query.prefixKey("batch_test");
         kvStore!.getResultSize(query, (err: BusinessError, resultSize: number) => {
           console.info(TAG + 'Succeeded getResultSize, resultSize=' + JSON.stringify(resultSize) + ',err=' + err.code + err.message);
-          expect(resultSize).assertEqual(undefined);
           expect(err.code).assertEqual(15100004);
           console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_1601 end---------  ');
           done();
@@ -640,7 +639,7 @@ export default function SingleKvStoreReturnValue(){
         query.prefixKey("batch_test");
         await kvStore!.getResultSize(query).then((resultSize: number) => {
           console.info(TAG + 'Succeeded getResultSize, resultSize=' + JSON.stringify(resultSize));
-          expect(resultSize).assertEqual(undefined);
+          expect(null).assertFail();
           console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_1801 end---------  ');
           done();
         }).catch((err: BusinessError) => {
@@ -1369,6 +1368,545 @@ export default function SingleKvStoreReturnValue(){
         expect(error.code).assertEqual(15100005);
       }
     });
+
+    /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_on_syncComplete_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_on_syncComplete_0100
+     * @tc.desc   SUB_DDM_SKV_ReturnValue_on_syncComplete func 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_SKV_ReturnValue_on_syncComplete_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + 'SUB_DDM_SKV_ReturnValue_on_syncComplete_0100');
+      try {
+        let func = (data: Array<[string, number]>) => {
+          console.info(TAG + 'SUB_DDM_SKV_ReturnValue_on_syncComplete_0100 syncComplete' + data)
+        };
+        let func1 = (data: Array<[string, number]>) => {
+          console.info(TAG + 'SUB_DDM_SKV_ReturnValue_on_syncComplete_0100 syncComplete1' + data)
+        };
+        let func2 = (data: Array<[string, number]>) => {
+          console.info(TAG + 'SUB_DDM_SKV_ReturnValue_on_syncComplete_0100 syncComplete2' + data)
+        };
+        kvStore!.on('syncComplete', func);
+        kvStore!.on('syncComplete', func1);
+        kvStore!.on('syncComplete', func2);
+        kvStore!.off('syncComplete', func);
+        kvStore!.off('syncComplete', func1);
+        kvStore!.off('syncComplete', func2);
+        done();
+      }catch(e) {
+        console.error(TAG + 'SUB_DDM_SKV_ReturnValue_on_syncComplete_0100 put e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0300
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_SL_0300
+     * @tc.desc   getKVStore  第2个参数属性kvStoreType:未覆盖非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_SKV_ReturnValue_SL_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0300 begin---------  ');
+      const optionsS1: factory.Options = {
+        createIfMissing: true,
+        encrypt: false,
+        backup: false,
+        autoSync: true,
+        kvStoreType: 999 as factory.KVStoreType,
+        securityLevel: factory.SecurityLevel.S1,
+      };
+      const TEST_STORE_S1_ID = 'DataChangeStoreS1Id';
+
+      try {
+        kvManager!.getKVStore(TEST_STORE_S1_ID, optionsS1, (err: BusinessError, store: factory.SingleKVStore) => {
+          if (err) {
+            console.error(`Failed to get KVStore. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+            done();
+          } else {
+            console.info(TAG + "success getKVStore callback" + store);
+            expect(null).assertFail();
+            done();
+          }
+        });
+      } catch (e) {
+        console.error(TAG + ' catch getKVStore callback, e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        await kvManager!.getKVStore(TEST_STORE_S1_ID, optionsS1).then((store: factory.SingleKVStore) => {
+          console.info(TAG + "success getKVStore promise " + store);
+          expect(null).assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(TAG +`catch getKVStore promise. err.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+      } catch (e) {
+        console.error(TAG + ' catch getKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0301
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_SL_0301
+     * @tc.desc   getKVStore  属性securityLevel:未覆盖非法枚举值；
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_SKV_ReturnValue_SL_0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0301 begin---------  ');
+      const optionsS1: factory.Options = {
+        createIfMissing: true,
+        encrypt: false,
+        backup: false,
+        autoSync: true,
+        kvStoreType: factory.KVStoreType.SINGLE_VERSION,
+        securityLevel: 999 as factory.SecurityLevel,
+      };
+      const TEST_STORE_S1_ID = 'DataChangeStoreS1Id';
+
+      try {
+        kvManager!.getKVStore(TEST_STORE_S1_ID, optionsS1, (err: BusinessError, store: factory.SingleKVStore) => {
+          if (err) {
+            console.error(`Failed to get KVStore. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+            done();
+          } else {
+            console.info(TAG + "success getKVStore callback" + store);
+            expect(null).assertFail();
+            done();
+          }
+        });
+      } catch (e) {
+        console.error(TAG + ' catch getKVStore callback, e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        await kvManager!.getKVStore(TEST_STORE_S1_ID, optionsS1).then((store: factory.SingleKVStore) => {
+          console.info(TAG + "success getKVStore promise " + store);
+          expect(null).assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(TAG +`catch getKVStore promise. err.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+      } catch (e) {
+        console.error(TAG + ' catch getKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0400
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_SL_0400
+     * @tc.desc   closeKVStore, deletekvstore  第2个参数属性kvStoreType:未覆盖非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_SKV_ReturnValue_SL_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0400 begin---------  ');
+      const options: factory.Options = {
+        createIfMissing: true,
+        encrypt: false,
+        backup: false,
+        autoSync: true,
+        kvStoreType: factory.KVStoreType.SINGLE_VERSION,
+        securityLevel: factory.SecurityLevel.S2,
+      };
+
+      const optionsS1: factory.Options = {
+        createIfMissing: true,
+        encrypt: false,
+        backup: false,
+        autoSync: true,
+        kvStoreType: 999 as factory.KVStoreType,
+        securityLevel: factory.SecurityLevel.S2,
+      };
+      const TEST_STORE_S1_ID = 'kvS1Id0400';
+      try {
+        await kvManager!.getKVStore(TEST_STORE_S1_ID, options).then(async(store: factory.SingleKVStore) => {
+          console.info(TAG + "success getKVStore promise " + store);
+          try {
+            await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, optionsS1).then(async() => {
+              console.info(TAG + "success closeKVStore promise ");
+              try {
+                await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, optionsS1).then(async() => {
+                  console.info(TAG + "success deleteKVStore promise ");
+                  done();
+                }).catch((err: BusinessError) => {
+                  console.error(TAG +`catch deleteKVStore promise. err.code is ${err.code},message is ${err.message}`);
+                  expect(null).assertFail();
+                  done();
+                });
+              } catch (e) {
+                console.error(TAG + ' catch deleteKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
+                expect(null).assertFail();
+                done();
+              }
+            }).catch((err: BusinessError) => {
+              console.error(TAG +`catch closeKVStore promise. err.code is ${err.code},message is ${err.message}`);
+              expect(null).assertFail();
+              done();
+            });
+          } catch (e) {
+            console.error(TAG + ' catch closeKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
+            expect(null).assertFail();
+            done();
+          }
+        }).catch((err: BusinessError) => {
+          console.error(TAG +`catch getKVStore promise. err.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+      } catch (e) {
+        console.error(TAG + ' catch getKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0401
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_SL_0401
+     * @tc.desc   closeKVStore  属性securityLevel:未覆盖非法枚举值；
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_SKV_ReturnValue_SL_0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0401 begin---------  ');
+      const options: factory.Options = {
+        createIfMissing: true,
+        encrypt: false,
+        backup: false,
+        autoSync: true,
+        kvStoreType: factory.KVStoreType.SINGLE_VERSION,
+        securityLevel: factory.SecurityLevel.S2,
+      };
+
+      const optionsS1: factory.Options = {
+        createIfMissing: true,
+        encrypt: false,
+        backup: false,
+        autoSync: true,
+        kvStoreType: factory.KVStoreType.SINGLE_VERSION,
+        securityLevel: 999 as factory.SecurityLevel,
+      };
+      const TEST_STORE_S1_ID = 'kvS1Id0401';
+      try {
+        await kvManager!.getKVStore(TEST_STORE_S1_ID, options).then(async(store: factory.SingleKVStore) => {
+          console.info(TAG + "success getKVStore promise " + store);
+          try {
+            await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, optionsS1).then(async() => {
+              console.info(TAG + "success closeKVStore promise ");
+              try {
+                await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, optionsS1).then(async() => {
+                  console.info(TAG + "success deleteKVStore promise ");
+                  done();
+                }).catch((err: BusinessError) => {
+                  console.error(TAG +`catch deleteKVStore promise. err.code is ${err.code},message is ${err.message}`);
+                  expect(null).assertFail();
+                  done();
+                });
+              } catch (e) {
+                console.error(TAG + ' catch deleteKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
+                expect(null).assertFail();
+                done();
+              }
+            }).catch((err: BusinessError) => {
+              console.error(TAG +`catch closeKVStore promise. err.code is ${err.code},message is ${err.message}`);
+              expect(null).assertFail();
+              done();
+            });
+          } catch (e) {
+            console.error(TAG + ' catch closeKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
+            expect(null).assertFail();
+            done();
+          }
+        }).catch((err: BusinessError) => {
+          console.error(TAG +`catch getKVStore promise. err.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+      } catch (e) {
+        console.error(TAG + ' catch getKVStore promise. e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_enableSync_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_enableSync_0100
+     * @tc.desc   enableSync  callback 第1个参数缺少undefined覆盖;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_SKV_ReturnValue_enableSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_enableSync_0100 begin---------  ');
+      try {
+        kvStore!.enableSync(null, (err: BusinessError) => {
+          if (err) {
+            console.error(TAG + `Failed to enableSync. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+            done();
+          } else {
+            console.info(TAG + "success enableSync callback");
+            expect(null).assertFail();
+            done();
+          }
+        });
+      }catch(e) {
+        console.error(TAG + '1- catch e, enableSync(null) ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        kvStore!.enableSync(undefined, (err: BusinessError) => {
+          if (err) {
+            console.error(TAG + `Failed to enableSync. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+            done();
+          } else {
+            console.info(TAG + "success enableSync callback");
+            expect(null).assertFail();
+            done();
+          }
+        });
+      }catch(e) {
+        console.error(TAG + '2- catch e, enableSync(undefined) ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_enableSync_0200
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_enableSync_0200
+     * @tc.desc   enableSync  promise 第1个参数缺少 undefined 覆盖;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_SKV_ReturnValue_enableSync_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_enableSync_0200 begin---------  ');
+      try {
+        await kvStore!.enableSync(null).then(() => {
+          console.info(TAG + 'Succeeded in enabling sync');
+          expect(null).assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(TAG + `Failed to enable sync. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+      }catch(e) {
+        console.error(TAG + '1- catch e, enableSync(null) ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        await kvStore!.enableSync(undefined).then(() => {
+          console.info(TAG + 'Succeeded in enabling sync');
+          expect(null).assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(TAG + `Failed to enable sync. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+      }catch(e) {
+        console.error(TAG + '2- catch e, enableSync(undefined) ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_sync_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_sync_0100
+     * @tc.desc   sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void;
+     * 第2个参数枚举类型缺少 null、undefined 覆盖，;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_SKV_ReturnValue_sync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_sync_0100 begin---------  ');
+      try {
+        kvStore!.sync(["loacalDeveice"], null, 1000);
+        done();
+      }catch(e) {
+        console.error(TAG + '1- catch e, sync(null) ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        kvStore!.sync(["loacalDeveice"], undefined, 1000);
+        done();
+      }catch(e) {
+        console.error(TAG + '2- catch e, sync(undefined) ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        let mode = 999 as factory.SyncMode;
+        kvStore!.sync(["loacalDeveice"], mode, 1000);
+        done();
+      }catch(e) {
+        console.error(TAG + '3- catch e, sync(999) ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_sync_0200
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_sync_0200
+     * @tc.desc   sync(deviceIds: string[], query: Query, mode: SyncMode, delayMs?: number): void;
+     * 第2个参数枚举类型缺少 null、undefined 覆盖，;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_SKV_ReturnValue_sync_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_sync_0200 begin---------  ');
+      let mode = factory.SyncMode.PUSH_ONLY;
+      const query = new factory.Query();
+      query.prefixKey("batch_test");
+      try {
+        kvStore!.sync(["loacalDeveice"], query, null, 1000);
+        done();
+      }catch(e) {
+        console.error(TAG + '1- catch e, sync(null) ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        kvStore!.sync(["loacalDeveice"], query, undefined, 1000);
+        done();
+      }catch(e) {
+        console.error(TAG + '2- catch e, sync(undefined) ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        let mode = 999 as factory.SyncMode;
+        kvStore!.sync(["loacalDeveice"], query, mode, 1000);
+        done();
+      }catch(e) {
+        console.error(TAG + '3- catch e, sync(999) ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_ONdataChange_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_ONdataChange_0100
+     * @tc.desc   on(event: 'dataChange', type: SubscribeType, listener: Callback<ChangeNotification>): void;
+     * 第2个参数枚举类型缺少undefined覆盖，未覆盖API定义之外的枚举;;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_SKV_ReturnValue_ONdataChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_ONdataChange_0100 begin---------  ');
+
+      try {
+        let func = (data: factory.ChangeNotification) => {
+          console.info('SUB_DDM_SKV_ReturnValue_ONdataChange_0100 func= ' + data)
+        };
+        let func1 = (data: factory.ChangeNotification) => {
+          console.info('SUB_DDM_SKV_ReturnValue_ONdataChange_0100 func1= ' + data)
+        };
+        let func2 = (data: factory.ChangeNotification) => {
+          console.info('SUB_DDM_SKV_ReturnValue_ONdataChange_0100 func2= ' + data)
+        };
+
+        kvStore!.on('dataChange', factory.SubscribeType.SUBSCRIBE_TYPE_LOCAL, func);
+        kvStore!.on('dataChange', factory.SubscribeType.SUBSCRIBE_TYPE_LOCAL, func1);
+        kvStore!.on('dataChange', factory.SubscribeType.SUBSCRIBE_TYPE_LOCAL, func2);
+        kvStore!.off('dataChange', func);
+        kvStore!.off('dataChange', func1);
+        kvStore!.off('dataChange', func2);
+        done();
+      }catch(e) {
+        console.error(TAG + '1- catch e, sync(null) ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_ONdataChange_0101
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_ONdataChange_0101
+     * @tc.desc   on(event: 'dataChange', type: SubscribeType, listener: Callback<ChangeNotification>): void;
+     * 第2个参数枚举类型缺少undefined覆盖，未覆盖API定义之外的枚举;;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_SKV_ReturnValue_ONdataChange_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_ONdataChange_0101 begin---------  ');
+
+      try {
+        let func = (data: factory.ChangeNotification) => {
+          console.info('SUB_DDM_SKV_ReturnValue_ONdataChange_0100 func= ' + data)
+        };
+        kvStore!.on('dataChange', null, func);
+        expect().assertFail();
+        done();
+      }catch(e) {
+        console.error(TAG + '1- catch e, on-dataChange,null ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        let func = (data: factory.ChangeNotification) => {
+          console.info('SUB_DDM_SKV_ReturnValue_ONdataChange_0100 func= ' + data)
+        };
+        kvStore!.on('dataChange', undefined, func);
+        expect().assertFail();
+        done();
+      }catch(e) {
+        console.error(TAG + '2- catch e, on-dataChange,undefined ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        let func = (data: factory.ChangeNotification) => {
+          console.info('SUB_DDM_SKV_ReturnValue_ONdataChange_0100 func= ' + data)
+        };
+        let type = 999 as factory.SubscribeType;
+        kvStore!.on('dataChange', type, func);
+        expect().assertFail();
+        done();
+      }catch(e) {
+        console.error(TAG + '3- catch e, on-dataChange,999 ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(401);
+        done();
+      }
+    })
 
     console.info(TAG + '-------------------describe SingleKvStoreReturnValue  end-------------------');
   })

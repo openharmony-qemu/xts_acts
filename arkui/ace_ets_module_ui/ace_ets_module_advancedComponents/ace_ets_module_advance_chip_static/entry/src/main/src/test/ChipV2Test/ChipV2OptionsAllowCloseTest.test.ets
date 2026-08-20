@@ -69,10 +69,10 @@ export default function ChipV2OptionsAllowCloseTest(): void {
     it('SUB_ARKUI_API_ChipV2OptionsAllowCloseTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsAllowCloseTest_static_0100] START');
       await CommonFunc.sleep(1000);
-      const driver = Driver.create();
-      const chipList = await driver.findComponents(ON.type('SymbolGlyph').within(ON.id('ChipV2OptionsAllowCloseExample')));
-      console.info('[SUB_ARKUI_API_ChipV2OptionsAllowCloseTest_static_0100] length '+chipList?.length);
-      expect(chipList?.length).assertEqual(2);
+      const treeText = JSON.stringify(inspector.getInspectorTree());
+      const componentCount = treeText.split('"$type":"SymbolGlyph"').length - 1;
+      console.info('[SUB_ARKUI_API_ChipV2OptionsAllowCloseTest_static_0100] length '+componentCount);
+      expect(componentCount).assertEqual(2);
       console.info('[SUB_ARKUI_API_ChipV2OptionsAllowCloseTest_static_0100] END');
       done();
     });

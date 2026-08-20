@@ -20,7 +20,7 @@ import drawing from '@ohos.graphics.drawing';
 import common2D from '@ohos.graphics.common2D';
 import { BusinessError } from '@ohos.base';
 
-export default function drawingTsCanvasPart5Test() {
+export default function drawingTsCanvasPart5Test(): void {
   describe('DrawingTsCanvasPart5Test', () => {
     let pixel: image.PixelMap | undefined;
     const DEFAULT = 0;
@@ -809,15 +809,15 @@ export default function drawingTsCanvasPart5Test() {
     })
 
     /**
-     * @tc.name   testCanvasDrawShadowNormalStatic
+     * @tc.name   testCanvasDrawShadow3NormalStatic
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_4505
-     * @tc.desc   testCanvasDrawShadowNormalStatic
+     * @tc.desc   testCanvasDrawShadow3NormalStatic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCanvasDrawShadowNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
-      const msg = 'testCanvasDrawShadowNormalStatic';
+    it('testCanvasDrawShadow3NormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawShadow3NormalStatic';
       const canvas = new drawing.Canvas(pixel!);
       const path = new drawing.Path();
       try {

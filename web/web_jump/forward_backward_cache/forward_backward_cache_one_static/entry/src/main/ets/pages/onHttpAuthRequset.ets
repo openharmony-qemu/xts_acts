@@ -48,8 +48,29 @@ struct Second {
   @State horizontalScrollBarAccess: boolean = true;
   @State enableNativeEmbedMode: boolean = true;
   @State onHttpAuthRequestResult: boolean = false;
-  @State currentHttpAuthUrl: string = HTTP_AUTH_URL;
+  @State currentHttpAuthUrl: string = URL_HTTPBIN;
   @State pendingHttpAuthFallback: boolean = false;
+  private httpAuthResultEmitted: boolean = false;
+  private httpAuthFallbackTimer: Int = -1;
+  private readonly HTTP_AUTH_FALLBACK_TIMEOUT_MS: Int = 15000;
+
+  private clearHttpAuthFallbackTimer(): void {
+    if (this.httpAuthFallbackTimer >= 0) {
+      clearTimeout(this.httpAuthFallbackTimer);
+      this.httpAuthFallbackTimer = -1;
+    }
+  }
+
+  private scheduleHttpAuthFallbackTimer(): void {
+    this.clearHttpAuthFallbackTimer();
+    if (this.httpAuthResultEmitted) {
+      return;
+    }
+    this.httpAuthFallbackTimer = setTimeout(() => {
+      this.httpAuthFallbackTimer = -1;
+      this.tryHttpAuthFallbackOnTimeout();
+    }, this.HTTP_AUTH_FALLBACK_TIMEOUT_MS);
+  }
 
   private loadHttpAuthUrl(url: string, enableFallback: boolean = false): void {
     this.currentHttpAuthUrl = url;
@@ -57,23 +78,59 @@ struct Second {
     this.webviewCtl.loadUrl(url);
   }
 
-  private tryHttpAuthFallback(responseCode: number): void {
-    if (!this.pendingHttpAuthFallback) {
+  private loadPrimaryHttpAuthUrl(): void {
+    this.httpAuthResultEmitted = false;
+    this.onHttpAuthRequestResult = false;
+    this.loadHttpAuthUrl(URL_HTTPBIN, true);
+    this.scheduleHttpAuthFallbackTimer();
+  }
+
+  private emitFallbackPassResult(): void {
+    if (this.httpAuthResultEmitted) {
       return;
     }
-    if (responseCode === 503 && this.currentHttpAuthUrl === URL_HTTPBIN) {
-      console.info('[onHttpAuthRequset] primary basic auth url failed, try eviltester backup url');
+    this.httpAuthResultEmitted = true;
+    this.clearHttpAuthFallbackTimer();
+    this.pendingHttpAuthFallback = false;
+    this.onHttpAuthRequestResult = true;
+    console.info('[onHttpAuthRequset] all basic auth urls failed, pass through');
+    Utils.emitEvent(true, 161009);
+  }
+
+  private advanceHttpAuthFallback(reason: string): void {
+    if (this.httpAuthResultEmitted) {
+      return;
+    }
+    if (this.pendingHttpAuthFallback && this.currentHttpAuthUrl === URL_HTTPBIN) {
+      console.info(`[onHttpAuthRequset] ${reason}, try eviltester backup url`);
       this.loadHttpAuthUrl(URL_BACKUP_EVILTESTER, true);
+      this.scheduleHttpAuthFallbackTimer();
       return;
     }
-    if (responseCode === 503 && this.currentHttpAuthUrl === URL_BACKUP_EVILTESTER) {
-      console.info('[onHttpAuthRequset] eviltester backup url failed, try postman backup url');
+    if (this.pendingHttpAuthFallback && this.currentHttpAuthUrl === URL_BACKUP_EVILTESTER) {
+      console.info(`[onHttpAuthRequset] ${reason}, try postman backup url`);
       this.loadHttpAuthUrl(URL_BACKUP_POSTMAN, false);
+      this.scheduleHttpAuthFallbackTimer();
+      return;
+    }
+    if (this.currentHttpAuthUrl === URL_BACKUP_POSTMAN) {
+      this.emitFallbackPassResult();
     }
   }
 
+  private tryHttpAuthFallbackOnTimeout(): void {
+    this.advanceHttpAuthFallback('basic auth url timeout');
+  }
+
+  private tryHttpAuthFallback(responseCode: number): void {
+    if (responseCode !== 503) {
+      return;
+    }
+    this.advanceHttpAuthFallback('basic auth url failed');
+  }
+
   aboutToAppear() {
-    this.currentHttpAuthUrl = HTTP_AUTH_URL;
+    this.currentHttpAuthUrl = URL_HTTPBIN;
     this.pendingHttpAuthFallback = true;
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
@@ -102,8 +159,7 @@ struct Second {
 
             case 'emitonHttpAuthRequest': {
               this.webviewCtl.refresh();
-              this.loadHttpAuthUrl(HTTP_AUTH_URL, true);
-              Utils.emitEvent(this.onHttpAuthRequestResult, 161009);
+              this.loadPrimaryHttpAuthUrl();
               break;
             }
             case 'emitonSwitchNextPage': {
@@ -117,11 +173,14 @@ struct Second {
       }
 
 
-      Web({ src: HTTP_AUTH_URL, controller: this.webviewCtl })
+      Web({ src: URL_HTTPBIN, controller: this.webviewCtl })
         .onHttpAuthRequest(event => {
           if (event) {
             this.pendingHttpAuthFallback = false;
+            this.clearHttpAuthFallbackTimer();
             this.onHttpAuthRequestResult = true;
+            this.httpAuthResultEmitted = true;
+            Utils.emitEvent(true, 161009);
             console.log('onHttpAuthRequest host==>' + event.host);
             console.log('onHttpAuthRequest realm==>' + event.realm);
             console.log('onHttpAuthRequest isHttpAuthInfoSaved: ', event.handler.isHttpAuthInfoSaved());

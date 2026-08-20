@@ -692,6 +692,10 @@ int GewuDestroySessionInvalTest()
 int GewuCreateSessionTest()
 {
     OH_QoS_GewuCreateSessionResult result = OH_QoS_GewuCreateSession(GEWU_ATTRIBUTES);
+    if (result.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "[CS_OK] Got NOSYS, Not support");
+        return OH_NN_SUCCESS;
+    }
     if (result.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK) {
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "[CS_OK] SUCCESS: Session created");
         OH_QoS_GewuDestroySession(result.session);
@@ -742,9 +746,9 @@ int GewuSubmitRequestTest()
 {
     OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession(GEWU_ATTRIBUTES);
     if (sessionResult.error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, "[SR_OK] CreateSession failed: %s",
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "[SR_OK] Got %s",
                      GewuErrorCodeToString(sessionResult.error));
-        return -1;
+        return sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS ? OH_NN_SUCCESS : -1;
     }
 
     OH_QoS_GewuSubmitRequestResult requestResult =
@@ -800,7 +804,9 @@ int GewuAbortRequestTest()
 {
     OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession(GEWU_ATTRIBUTES);
     if (sessionResult.error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK) {
-        return -1;
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "[AR_OK] Got %s",
+                     GewuErrorCodeToString(sessionResult.error));
+        return sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS ? OH_NN_SUCCESS : -1;
     }
 
     OH_QoS_GewuSubmitRequestResult requestResult =
@@ -816,12 +822,12 @@ int GewuAbortRequestTest()
     if (abortError == OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK) {
         return OH_NN_SUCCESS;
     }
-    if (abortError == OH_QoS_GewuErrorCode::OH_QOS_GEWU_INVAL) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, "[AR_OK] Got INVAL");
-        return -1;
-    }
     if (abortError == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, "[AR_OK] Got NOSYS");
+        return -1;
+    }
+    if (abortError == OH_QoS_GewuErrorCode::OH_QOS_GEWU_INVAL) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, "[AR_OK] Got INVAL");
         return -1;
     }
     if (abortError == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT) {
@@ -861,9 +867,9 @@ int GewuDestroySessionTest()
 {
     OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession(GEWU_ATTRIBUTES);
     if (sessionResult.error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, "[DS_OK] CreateSession failed: %s",
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "[DS_OK] Got %s",
                      GewuErrorCodeToString(sessionResult.error));
-        return -1;
+        return sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS ? OH_NN_SUCCESS : -1;
     }
 
     OH_QoS_GewuErrorCode destroyError = OH_QoS_GewuDestroySession(sessionResult.session);

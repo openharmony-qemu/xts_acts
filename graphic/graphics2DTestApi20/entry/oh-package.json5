@@ -14,7 +14,9 @@
  */
 {
   "license": "",
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/libgraphicsApiNdk.so": "file:./src/main/cpp/types/libgraphicsApiNdk"
+  },
   "author": "",
   "name": "entry",
   "description": "Please describe the basic information.",

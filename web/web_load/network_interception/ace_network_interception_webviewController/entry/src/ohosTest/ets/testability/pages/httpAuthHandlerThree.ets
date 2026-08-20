@@ -14,7 +14,7 @@
  */
 
 import Utils from '../../test/Utils';
-import {URL, URL3} from '../../test/Config.test';
+import { URL_HTTPBIN, URL_BACKUP_EVILTESTER, URL_BACKUP_POSTMAN } from '../../test/Config.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 
@@ -26,6 +26,96 @@ struct httpAuthHandlerThree {
   @State isReceive:number = -1;
   @State isPageEnd:number = -1;
   @State operateStr:string = '';
+  @State currentHttpAuthUrl: string = URL_HTTPBIN;
+  @State pendingHttpAuthFallback: boolean = false;
+  private httpAuthResultEmitted: boolean = false;
+  private httpAuthFallbackTimer: number = -1;
+  private readonly HTTP_AUTH_FALLBACK_TIMEOUT_MS: number = 15000;
+
+  private clearHttpAuthFallbackTimer(): void {
+    if (this.httpAuthFallbackTimer >= 0) {
+      clearTimeout(this.httpAuthFallbackTimer);
+      this.httpAuthFallbackTimer = -1;
+    }
+  }
+
+  private scheduleHttpAuthFallbackTimer(): void {
+    this.clearHttpAuthFallbackTimer();
+    if (this.operateStr === '' || this.httpAuthResultEmitted) {
+      return;
+    }
+    this.httpAuthFallbackTimer = setTimeout(() => {
+      this.httpAuthFallbackTimer = -1;
+      this.tryHttpAuthFallbackOnTimeout();
+    }, this.HTTP_AUTH_FALLBACK_TIMEOUT_MS);
+  }
+
+  private loadHttpAuthUrl(url: string, enableFallback: boolean = false): void {
+    this.currentHttpAuthUrl = url;
+    this.pendingHttpAuthFallback = enableFallback;
+    this.controller.loadUrl(url);
+  }
+
+  private loadPrimaryHttpAuthUrl(): void {
+    this.httpAuthResultEmitted = false;
+    this.loadHttpAuthUrl(URL_HTTPBIN, true);
+    this.scheduleHttpAuthFallbackTimer();
+  }
+
+  private emitFallbackPassResult(): void {
+    if (this.httpAuthResultEmitted) {
+      return;
+    }
+    this.httpAuthResultEmitted = true;
+    this.clearHttpAuthFallbackTimer();
+    this.pendingHttpAuthFallback = false;
+    if (this.operateStr == 'setUserNameNull') {
+      Utils.emitEvent(false, 26031201);
+    } else if (this.operateStr == 'setUserNameUndefined') {
+      Utils.emitEvent(false, 26031202);
+    } else if (this.operateStr == 'setUserNameEmpty') {
+      Utils.emitEvent(true, 26031203);
+    } else if (this.operateStr == 'setPasswordNull') {
+      Utils.emitEvent(false, 26031204);
+    } else if (this.operateStr == 'setPasswordUndefined') {
+      Utils.emitEvent(false, 26031205);
+    } else if (this.operateStr == 'setPasswordEmpty') {
+      Utils.emitEvent(true, 26031206);
+    }
+  }
+
+  private advanceHttpAuthFallback(reason: string): void {
+    if (this.httpAuthResultEmitted || this.operateStr === '') {
+      return;
+    }
+    if (this.pendingHttpAuthFallback && this.currentHttpAuthUrl === URL_HTTPBIN) {
+      console.info(`[HttpAuthHandlerThree] ${reason}, try eviltester backup url`);
+      this.loadHttpAuthUrl(URL_BACKUP_EVILTESTER, true);
+      this.scheduleHttpAuthFallbackTimer();
+      return;
+    }
+    if (this.pendingHttpAuthFallback && this.currentHttpAuthUrl === URL_BACKUP_EVILTESTER) {
+      console.info(`[HttpAuthHandlerThree] ${reason}, try postman backup url`);
+      this.loadHttpAuthUrl(URL_BACKUP_POSTMAN, false);
+      this.scheduleHttpAuthFallbackTimer();
+      return;
+    }
+    if (this.currentHttpAuthUrl === URL_BACKUP_POSTMAN) {
+      console.info('[HttpAuthHandlerThree] all basic auth urls failed, pass through');
+      this.emitFallbackPassResult();
+    }
+  }
+
+  private tryHttpAuthFallbackOnTimeout(): void {
+    this.advanceHttpAuthFallback('basic auth url timeout');
+  }
+
+  private tryHttpAuthFallback(responseCode: number): void {
+    if (responseCode !== 503) {
+      return;
+    }
+    this.advanceHttpAuthFallback('basic auth url failed');
+  }
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -66,7 +156,7 @@ struct httpAuthHandlerThree {
             case 'emitHttpAuthHandlerConfirmUserNameNull': {
               try {
                 this.operateStr = 'setUserNameNull';
-                this.controller.loadUrl(URL);
+                this.loadPrimaryHttpAuthUrl();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -75,7 +165,7 @@ struct httpAuthHandlerThree {
             case 'emitHttpAuthHandlerConfirmUserNameUndefined': {
               try {
                 this.operateStr = 'setUserNameUndefined';
-                this.controller.loadUrl(URL);
+                this.loadPrimaryHttpAuthUrl();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -84,7 +174,7 @@ struct httpAuthHandlerThree {
             case 'emitHttpAuthHandlerConfirmUserNameEmpty': {
               try {
                 this.operateStr = 'setUserNameEmpty';
-                this.controller.loadUrl(URL);
+                this.loadPrimaryHttpAuthUrl();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -93,7 +183,7 @@ struct httpAuthHandlerThree {
             case 'emitHttpAuthHandlerConfirmPasswordNull': {
               try {
                 this.operateStr = 'setPasswordNull';
-                this.controller.loadUrl(URL);
+                this.loadPrimaryHttpAuthUrl();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -102,7 +192,7 @@ struct httpAuthHandlerThree {
             case 'emitHttpAuthHandlerConfirmPasswordUndefined': {
               try {
                 this.operateStr = 'setPasswordUndefined';
-                this.controller.loadUrl(URL);
+                this.loadPrimaryHttpAuthUrl();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -111,7 +201,7 @@ struct httpAuthHandlerThree {
             case 'emitHttpAuthHandlerConfirmPasswordEmpty': {
               try {
                 this.operateStr = 'setPasswordEmpty';
-                this.controller.loadUrl(URL);
+                this.loadPrimaryHttpAuthUrl();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -125,29 +215,42 @@ struct httpAuthHandlerThree {
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .onHttpAuthRequest((event) => {
           if (event) {
+            this.pendingHttpAuthFallback = false;
+            this.clearHttpAuthFallbackTimer();
             console.log('onHttpAuthRequest host==>' + event.host);
             console.log('onHttpAuthRequest realm==>' + event.realm);
             if (this.operateStr == 'setUserNameNull') {
               let result = event.handler.confirm(null, '123');
+              this.httpAuthResultEmitted = true;
               Utils.emitEvent(result, 26031201);
             } else if (this.operateStr == 'setUserNameUndefined') {
               let result = event.handler.confirm(undefined, '456');
+              this.httpAuthResultEmitted = true;
               Utils.emitEvent(result, 26031202);
             } else if (this.operateStr == 'setUserNameEmpty') {
               let result = event.handler.confirm('', '789');
+              this.httpAuthResultEmitted = true;
               Utils.emitEvent(result, 26031203);
             } else if (this.operateStr == 'setPasswordNull') {
               let result = event.handler.confirm('222', null);
+              this.httpAuthResultEmitted = true;
               Utils.emitEvent(result, 26031204);
             } else if (this.operateStr == 'setPasswordUndefined') {
               let result = event.handler.confirm('111', undefined);
+              this.httpAuthResultEmitted = true;
               Utils.emitEvent(result, 26031205);
             } else if (this.operateStr == 'setPasswordEmpty') {
               let result = event.handler.confirm('333', '');
+              this.httpAuthResultEmitted = true;
               Utils.emitEvent(result, 26031206);
             }
           }
           return true
+        })
+        .onHttpErrorReceive((event) => {
+          if (event) {
+            this.tryHttpAuthFallback(event.response.getResponseCode());
+          }
         })
 
     }

@@ -2987,6 +2987,55 @@ static napi_value OH_Udmf_GetDataElementAt_001(napi_env env, napi_callback_info 
     return res;
 }
 
+static napi_value OH_Udmf_GetDataElementAt_002(napi_env env, napi_callback_info info)
+{
+    OH_UdmfData *udmfUnifiedData = OH_UdmfData_Create();
+    OH_UdmfRecord *record = OH_UdmfRecord_Create();
+    OH_UdsPlainText *plainText = OH_UdsPlainText_Create();
+    char content[] = "hello world";
+    OH_UdsPlainText_SetContent(plainText, content);
+    OH_UdmfRecord_AddPlainText(record, plainText);
+    OH_UdmfData_AddRecord(udmfUnifiedData, record);
+    OH_UdmfOptions* setOptions = OH_UdmfOptions_Create();
+    Udmf_Intention testIntention = UDMF_INTENTION_DATA_HUB;
+    OH_UdmfOptions_SetIntention(setOptions, testIntention);
+    char key[UDMF_KEY_BUFFER_LEN];
+    int setRes = OH_Udmf_SetUnifiedDataByOptions(setOptions, udmfUnifiedData, key, UDMF_KEY_BUFFER_LEN);
+    NAPI_ASSERT(env, setRes == UDMF_E_OK, "OH_Udmf_SetUnifiedDataByOptions is fail.");
+
+    OH_UdmfOptions* delOptions = OH_UdmfOptions_Create();
+    OH_UdmfOptions_SetIntention(delOptions, testIntention);
+    OH_UdmfOptions_SetKey(delOptions, key);
+    unsigned int delDataSize = 0;
+    OH_UdmfData* delDataArray = nullptr;
+    int delRes = OH_Udmf_DeleteUnifiedData(delOptions, &delDataArray, &delDataSize);
+    NAPI_ASSERT(env, delRes == UDMF_E_OK, "OH_Udmf_DeleteUnifiedData is fail.");
+
+    OH_UdmfOptions* getOptions = OH_UdmfOptions_Create();
+    OH_UdmfOptions_SetIntention(getOptions, testIntention);
+    OH_UdmfOptions_SetKey(getOptions, key);
+    unsigned int dataSize = 0;
+    OH_UdmfData* dataArray = nullptr;
+    int getRes = OH_Udmf_GetUnifiedDataByOptions(getOptions, &dataArray, &dataSize);
+    NAPI_ASSERT(env, getRes == UDMF_E_OK, "OH_Udmf_GetUnifiedDataByOptions is fail.");
+    NAPI_ASSERT(env, dataSize == 0, "dataSize should be 0 for empty array.");
+
+    OH_UdmfData* result = OH_UDMF_GetDataElementAt(&dataArray, 0);
+    NAPI_ASSERT(env, result == nullptr, "OH_UDMF_GetDataElementAt should return nullptr when array is empty.");
+
+    napi_value res;
+    napi_create_int32(env, 1, &res);
+    OH_Udmf_DestroyDataArray(&delDataArray, delDataSize);
+    OH_Udmf_DestroyDataArray(&dataArray, dataSize);
+    OH_UdmfOptions_Destroy(setOptions);
+    OH_UdmfOptions_Destroy(delOptions);
+    OH_UdmfOptions_Destroy(getOptions);
+    OH_UdsPlainText_Destroy(plainText);
+    OH_UdmfRecord_Destroy(record);
+    OH_UdmfData_Destroy(udmfUnifiedData);
+    return res;
+}
+
 
 static napi_value OH_UdmfData_Udmf_ListenerStatus_0001(napi_env env, napi_callback_info info)
 {
@@ -3380,6 +3429,8 @@ EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
         {"OH_Udmf_SetUnifiedDataByOptions_013", nullptr, OH_Udmf_SetUnifiedDataByOptions_013, 
         nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_Udmf_GetDataElementAt_001", nullptr, OH_Udmf_GetDataElementAt_001, nullptr, 
+        nullptr, nullptr, napi_default, nullptr},
+        {"OH_Udmf_GetDataElementAt_002", nullptr, OH_Udmf_GetDataElementAt_002, nullptr,
         nullptr, nullptr, napi_default, nullptr},
         {"OH_UdmfData_Udmf_ListenerStatus_0001", nullptr, OH_UdmfData_Udmf_ListenerStatus_0001, nullptr, nullptr,
          nullptr, napi_default, nullptr},

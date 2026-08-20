@@ -205,8 +205,17 @@ export default function AVPlayerSetPlaybackRateTest() {
       let setrate = 0.125
       let operationRecord: Record<string, () => Promise<void>> = {}
       operationRecord[PREPARED] = async () => {
-        avPlayer!!.setPlaybackRate(setrate)
-        console.info(`case operationRecord[PREPARED] call`)
+        try {
+          avPlayer!!.setPlaybackRate(setrate)
+          console.info(`case operationRecord[PREPARED] call`)
+          await sleep(500);
+          let rate:double = await avPlayer!!.getPlaybackRate();
+          expect(setrate).assertEqual(rate);
+        } catch (error) {
+          console.info('setPlaybackRate fail')
+          expect().assertFail();
+          done();
+        }
       }
       let callback: media.OnPlaybackRateDone = (rate: double) => {
         console.info(`case OnPlaybackRateDone call: setrate: ${setrate}, rate: ${rate}`)

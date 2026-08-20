@@ -18,7 +18,6 @@
 #include "http_request.h"
 #include "napi/native_api.h"
 #include "network/netstack/http_interceptor.h"
-#include <hilog/log.h>
 
 const int GLOBAL_NETSTACK = 0xFF00;
 const char *TAG = "[netstack]";
@@ -223,6 +222,62 @@ static napi_value NAPI_RegisterInterceptorCallback(napi_env env, napi_callback_i
     return nullptr;
 }
 
+static napi_value NAPI_GetRequestUrl(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    auto param = GetRequestUrl();
+    napi_create_string_utf8(env, param, NAPI_AUTO_LENGTH, &result);
+    return result;
+}
+
+static napi_value NAPI_GetRequestBody(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    auto param = GetRequestBody();
+    napi_create_string_utf8(env, param, NAPI_AUTO_LENGTH, &result);
+    return result;
+}
+
+static napi_value NAPI_GetResponseBody(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    auto param = GetResponseBody();
+    napi_create_string_utf8(env, param, NAPI_AUTO_LENGTH, &result);
+    return result;
+}
+
+static napi_value NAPI_GetRequestMethod(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    auto param = GetRequestMethod();
+    napi_create_string_utf8(env, param, NAPI_AUTO_LENGTH, &result);
+    return result;
+}
+
+static napi_value NAPI_GetRequestHeader(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    auto param = GetRequestHeader();
+    napi_create_string_utf8(env, param, NAPI_AUTO_LENGTH, &result);
+    return result;
+}
+
+static napi_value NAPI_GetResponseHeader(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    auto param = GetResponseHeader();
+    napi_create_string_utf8(env, param, NAPI_AUTO_LENGTH, &result);
+    return result;
+}
+
+static napi_value NAPI_GetResponseCode(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    auto param = GetResponseCode();
+    napi_create_int32(env, param, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -257,6 +312,20 @@ static napi_value Init(napi_env env, napi_value exports)
           nullptr, nullptr, napi_default, nullptr },
         { "UnregisterCallback", nullptr, NAPI_UnregisterCallback, nullptr,
           nullptr, nullptr, napi_default, nullptr },
+        { "GetRequestUrl", nullptr, NAPI_GetRequestUrl, nullptr, nullptr, nullptr,
+          napi_default, nullptr },
+        { "GetRequestBody", nullptr, NAPI_GetRequestBody, nullptr, nullptr,
+          nullptr, napi_default, nullptr },
+        { "GetResponseBody", nullptr, NAPI_GetResponseBody, nullptr, nullptr,
+          nullptr, napi_default, nullptr },
+        { "GetRequestMethod", nullptr, NAPI_GetRequestMethod, nullptr, nullptr,
+          nullptr, napi_default, nullptr },
+        { "GetRequestHeader", nullptr, NAPI_GetRequestHeader, nullptr, nullptr,
+          nullptr, napi_default, nullptr },
+        { "GetResponseHeader", nullptr, NAPI_GetResponseHeader, nullptr, nullptr,
+          nullptr, napi_default, nullptr },
+        { "GetResponseCode", nullptr, NAPI_GetResponseCode, nullptr, nullptr,
+          nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
@@ -269,8 +338,8 @@ static napi_module demoModule = {
     .nm_filename = nullptr,
     .nm_register_func = Init,
     .nm_modname = "entry",
-    .nm_priv = ((void *)0),
-    .reserved = { 0 },
+    .nm_priv = ((void*)0),
+    .reserved = {0},
 };
 
 extern "C" __attribute__((constructor)) void RegisterEntryModule(void)

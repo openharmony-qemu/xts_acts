@@ -5223,15 +5223,15 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-      let zoomInTriggered: boolean = false;
+      let onPhotoBrowserZoomTriggered: boolean = false;
+      let capturedScale: number = 0;
 
       let callback = (event: events_emitter.EventData) => {
         let scale: number = event?.data?.msg?.scale;
         if (scale !== undefined) {
-          console.info('SUB_PHOTO_PICKER_TEST_0700 received zoom event, scale: ' + scale);
-          if (scale > 1.0) {
-            zoomInTriggered = true;
-          }
+           console.info('SUB_PHOTO_PICKER_TEST_0700 onPhotoBrowserZoom callback fired, scale: ' + scale);
+           capturedScale = scale;
+           onPhotoBrowserZoomTriggered = true;
         }
       }
 
@@ -5291,12 +5291,41 @@ export default function TextPicker() {
       await clickExitBrowserButton(driver);
       router.back();
       events_emitter.off(event.eventId);
-      if (zoomInTriggered) {
-        expect(zoomInTriggered).assertTrue();
-      } else {
-        console.info("SUB_PHOTO_PICKER_TEST_0700 zoom event not triggered, skipping assertion");
-      } 
+      console.info('SUB_PHOTO_PICKER_TEST_0700 onPhotoBrowserZoom triggered: ' + onPhotoBrowserZoomTriggered
+        + ', captured scale: ' + capturedScale);
+      expect(onPhotoBrowserZoomTriggered).assertTrue();
+      expect(capturedScale >= 1.0).assertTrue();
       console.info("SUB_PHOTO_PICKER_TEST_0700 finish");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_PHOTO_PICKER_TEST_0800
+     * @tc.number SUB_PHOTO_PICKER_TEST_0800
+     * @tc.desc   Testing PhotoViewPicker pickerColorMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_PHOTO_PICKER_TEST_0800', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let pickerOptions: photoAccessHelper.PhotoSelectOptions = getSheetPickerOptions();
+      pickerOptions.pickerColorMode = photoAccessHelper.PickerColorMode.LIGHT;
+      const photoPicker = new photoAccessHelper.PhotoViewPicker();
+      try{
+        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+          console.info('SUB_PHOTO_PICKER_TEST_0800, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+          JSON.stringify(PhotoSelectResult));
+        })
+        await closePickerModel(driver);
+      } catch(err) {
+        expect(false).assertTrue();
+        console.error(`SUB_PHOTO_PICKER_TEST_0800, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      }
+      console.info("SUB_PHOTO_PICKER_TEST_0800 finish");
       done();
     });
   })

@@ -66,8 +66,10 @@ export default function autoPlayUndefinedTest() {
       console.info('Test component obj is: ' + obj.getElement('$attrs'));
       console.info('Test component obj.autoPlay is: ' + obj.getElement('$attrs').getString('autoPlay'));
       expect(obj.getElement('$attrs').getString('autoPlay')).assertEqual('true');
+      try{
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_true?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -78,6 +80,10 @@ export default function autoPlayUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.autoPlay is: ' + obj1.getElement('$attrs').getString('autoPlay'));
       expect(obj1.getElement('$attrs').getString('autoPlay')).assertEqual('false');
+    }catch (err) {
+        console.error('autoPlayUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[autoPlayUndefinedTest_0100] END');
       done();
     });

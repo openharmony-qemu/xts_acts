@@ -2653,7 +2653,7 @@ export default function bundleManagerTest() {
      * @tc.level  LEVEL2
      */
     it("test_install_010", Level.LEVEL2, async (done: Function) => {
-      let isEnterprise: string = systemparameter.getSync('const.edm.is_enterprise_device');
+      let isEnterprise: string = systemparameter.getSync('const.edm.is_enterprise_device_provisioned');
       if (isEnterprise != 'true') {
         console.log('the device is not enterprise');
         done();
@@ -6572,7 +6572,7 @@ export default function bundleManagerTest() {
      */
     it("test_installForResult_1500", Level.LEVEL2, async (done: Function) => {
       console.info(' --- test_installForResult_1500  -------- START --------');
-      let isEnterprise: string = systemparameter.getSync('const.edm.is_enterprise_device');
+      let isEnterprise: string = systemparameter.getSync('const.edm.is_enterprise_device_provisioned');
       if (isEnterprise != 'true') {
         console.log('the device is not enterprise');
         done();

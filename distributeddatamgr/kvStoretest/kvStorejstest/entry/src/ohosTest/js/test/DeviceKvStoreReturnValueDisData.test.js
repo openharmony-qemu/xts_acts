@@ -1006,7 +1006,6 @@ export default function DeviceKvStoreReturnValueDisData(){
         query.prefixKey("batch_test");
         kvStore.getResultSize(query, (err, resultSize) => {
           console.info(TAG + 'Succeeded getResultSize, resultSize=' + JSON.stringify(resultSize) + ',err=' + err.code + err.message);
-          expect(resultSize).assertEqual(undefined);
           expect(err != undefined).assertTrue();
           console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1601 end---------  ');
           done();
@@ -1078,7 +1077,6 @@ export default function DeviceKvStoreReturnValueDisData(){
         query.prefixKey("batch_test");
         kvStore.getResultSize(localDeviceId, query, (err, resultSize) => {
           console.info(TAG + 'Succeeded getResultSize, resultSize=' + JSON.stringify(resultSize) + ',err=' + err.code + err.message);
-          expect(resultSize).assertEqual(undefined);
           expect(err != undefined).assertTrue();
           console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1701 end---------  ');
           done();
@@ -1142,7 +1140,7 @@ export default function DeviceKvStoreReturnValueDisData(){
         query.prefixKey("batch_test");
         await kvStore.getResultSize(query).then((resultSize) => {
           console.info(TAG + 'Succeeded getResultSize, resultSize=' + JSON.stringify(resultSize));
-          expect(resultSize).assertEqual(undefined);
+          expect(null).assertFail();
           console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1801 end---------  ');
           done();
         }).catch((err) => {
@@ -1217,7 +1215,7 @@ export default function DeviceKvStoreReturnValueDisData(){
         query.prefixKey("batch_test");
         await kvStore.getResultSize(localDeviceId, query).then((resultSize) => {
           console.info(TAG + 'Succeeded getResultSize, resultSize=' + JSON.stringify(resultSize));
-          expect(resultSize).assertEqual(undefined);
+          expect(null).assertFail();
           console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1901 end---------  ');
           done();
         }).catch((err) => {

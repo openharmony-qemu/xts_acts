@@ -71,7 +71,7 @@ export default function SVDeepListenMakeObservedFalseTest(): void {
 
 
       let button = await driver.findComponent(ON.id('allowDeep_false_changNameButton'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(500);
 
       strJson = inspector.getInspectorByKey('allowDeep_false_infoNameText');

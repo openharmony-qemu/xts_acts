@@ -53,6 +53,9 @@ export const VideoDecCapApi0024: () => Promise<number>;
 export const VideoDecCapApi0025: () => Promise<number>;
 export const VideoDecCapApi0026: () => Promise<number>;
 export const VideoDecCapApi0027: () => Promise<number>;
+export const VideoDecCapApi0028: () => Promise<number>;
+export const VideoDecCapApi0029: () => Promise<number>;
+export const VideoDecCapApi0030: () => Promise<number>;
 
 // Decoder Function Test functions
 export const VideoVc1DecFunction0001: () => Promise<number>;

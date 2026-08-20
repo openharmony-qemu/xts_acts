@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,6 +48,7 @@ export default function onGestureSwipe_ModifierStartUndefinedTest() {
       } catch (err) {
         console.error('push onGestureSwipe_ModifierUndefinedTest page error:' + err);
       }
+
       console.info('onGestureSwipe_ModifierUndefinedTest beforeEach end');
     });
 
@@ -61,13 +62,15 @@ export default function onGestureSwipe_ModifierStartUndefinedTest() {
       console.info('onGestureSwipe_ModifierUndefinedTest_0100 START');
       await CommonFunc.sleep(500);
 
-      let driver = Driver.create();
-      //滑动触发回调
+      try{
+
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let swiperItem = await driver.findComponent(ON.id('testSwiper')) as Component;
       let bounds = await swiperItem.getBounds();
       let width = bounds.right - bounds.left;
       let height = bounds.bottom - bounds.top;
-      driver.swipe(
+      await driver.swipe(
         (bounds.left + width - 50).toInt(),
         (bounds.top + height / 2).toInt(),
         (bounds.left + 50).toInt(),
@@ -76,20 +79,17 @@ export default function onGestureSwipe_ModifierStartUndefinedTest() {
       );
       await CommonFunc.sleep(1000);
 
-      //判断回调更新后结果
       let strJson = inspector.getInspectorByKey('testTextModifier');
       let obj = JSON.parseJsonElement(strJson);
       let testText = obj.getElement('$attrs').getString('content');
       console.info('[Initial] swiper_onGestureSwipe_Modifier content: ' + testText);
       expect(testText).assertEqual("swiperIndex2");
 
-      //点击动态改成undefined
       let undefinedBtn = await driver.findComponent(ON.id('undefinedBtnModifier')) as Component;
       await (undefinedBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      //点击跳转索引不触发回调
-      driver.swipe(
+      await driver.swipe(
         (bounds.left + width - 50).toInt(),
         (bounds.top + height / 2).toInt(),
         (bounds.left + 50).toInt(),
@@ -98,12 +98,16 @@ export default function onGestureSwipe_ModifierStartUndefinedTest() {
       );
       await CommonFunc.sleep(1000);
 
-      //判断回调更新后结果
       let strJson2 = inspector.getInspectorByKey('testTextModifier');
       let obj2 = JSON.parseJsonElement(strJson2);
       let testText2 = obj2.getElement('$attrs').getString('content');
       console.info('[Initial] swiper_onGestureSwipe_Modifier content: ' + testText2);
       expect(testText2).assertEqual("isUndefined");
+    }catch (err) {
+        console.error('onGestureSwipe_ModifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
 
       console.info('onGestureSwipe_ModifierUndefinedTest_0100 END');
       done();

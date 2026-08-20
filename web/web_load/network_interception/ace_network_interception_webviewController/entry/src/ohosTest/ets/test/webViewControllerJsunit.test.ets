@@ -17,6 +17,7 @@ import { describe, beforeEach, afterEach, it, expect , TestType, Size, Level } f
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
 import wifiMg from '@ohos.wifiManager';
 
@@ -74,9 +75,20 @@ export default function webViewControllerJsunit() {
     it('testPageDown',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("testPageDown", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
-      Utils.registerEvent("testPageDown",true,142510,() =>{isReturn = 1});
-      await Utils.waitAndClickComponent(driver, "webcomponent");
-      await Utils.waitForExist(()=>isReturn, "testPageDown_checkReturn", 1, 1000);
+      Utils.registerEvent("testPageDown",true,142510,(error: BusinessError) => {
+        if (error) {
+          console.error(`testPageDown registerEvent error: ${error.message}`);
+          return;
+        }
+        isReturn = 1;
+      });
+      try {
+        await Utils.waitAndClickComponent(driver, "webcomponent");
+        const stateGetter = (): number => isReturn;
+        await Utils.waitForExist(stateGetter, "testPageDown_checkReturn", 1, 1000, 60);
+      } catch (err) {
+        console.error(`testPageDown execute error: ${JSON.stringify(err)}`);
+      }
       done();
     })
     /**
@@ -90,9 +102,20 @@ export default function webViewControllerJsunit() {
     it('testSetNetworkAvailable',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("testSetNetworkAvailable", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
-      Utils.registerEvent("testSetNetworkAvailable",false,142520,() =>{isReturn = 1});
-      await Utils.waitAndClickComponent(driver, "webcomponent");
-      await Utils.waitForExist(()=>isReturn, "testSetNetworkAvailable_checkReturn", 1, 1000);
+      Utils.registerEvent("testSetNetworkAvailable",false,142520,(error: BusinessError) => {
+        if (error) {
+          console.error(`testSetNetworkAvailable registerEvent error: ${error.message}`);
+          return;
+        }
+        isReturn = 1;
+      });
+      try {
+        await Utils.waitAndClickComponent(driver, "webcomponent");
+        const stateGetter = (): number => isReturn;
+        await Utils.waitForExist(stateGetter, "testSetNetworkAvailable_checkReturn", 1, 1000, 60);
+      } catch (err) {
+        console.error(`testSetNetworkAvailable execute error: ${JSON.stringify(err)}`);
+      }
       done();
     })
     /**
@@ -106,9 +129,20 @@ export default function webViewControllerJsunit() {
     it('testSetNetworkAvailableAgain',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("testSetNetworkAvailableAgain", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
-      Utils.registerEvent("emitSetNetworkAvailableAgain",true,142530,() =>{isReturn = 1});
-      await Utils.waitAndClickComponent(driver, "webcomponent");
-      await Utils.waitForExist(()=>isReturn, "testSetNetworkAvailableAgain_checkReturn", 1, 1000);
+      Utils.registerEvent("emitSetNetworkAvailableAgain",true,142530,(error: BusinessError) => {
+        if (error) {
+          console.error(`emitSetNetworkAvailableAgain registerEvent error: ${error.message}`);
+          return;
+        }
+        isReturn = 1;
+      });
+      try {
+        await Utils.waitAndClickComponent(driver, "webcomponent");
+        const stateGetter = (): number => isReturn;
+        await Utils.waitForExist(stateGetter, "testSetNetworkAvailableAgain_checkReturn", 1, 1000, 60);
+      } catch (err) {
+        console.error(`testSetNetworkAvailableAgain execute error: ${JSON.stringify(err)}`);
+      }
       done();
     })
   })

@@ -25,11 +25,10 @@ struct ComposeListItemV2Page {
   build() {
     Column() {
       Scroll() {
-        Column({ space: 12 }) {
+        Column() {
           Text('ComposeListItemV2 Basic Test')
-            .fontSize(16)
+            .fontSize(12)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 25 })
 
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({
@@ -39,9 +38,8 @@ struct ComposeListItemV2Page {
           })
 
           Text('ComposeListItemV2 with IconStyle')
-            .fontSize(16)
+            .fontSize(12)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 10 })
 
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({
@@ -62,9 +60,8 @@ struct ComposeListItemV2Page {
           })
 
           Text('ComposeListItemV2 with OperateItem')
-            .fontSize(16)
+            .fontSize(12)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 10 })
 
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({

@@ -26,7 +26,7 @@ export default class Log {
    * @param {String} tag - Page or class tag
    * @param {String} log - Log needs to be printed
    */
-  static showInfo(tag: String, log: String) {
+  static showInfo(tag: String, log: String): void {
     console.info(`${TAG} tag: ${tag} --> ${log}`);
   }
 
@@ -36,7 +36,7 @@ export default class Log {
    * @param {String} tag - Page or class tag
    * @param {String} log - Log needs to be printed
    */
-  static showDebug(tag: String, log: String) {
+  static showDebug(tag: String, log: String): void {
     console.debug(`${TAG} tag: ${tag} --> ${log}`);
   }
 
@@ -46,7 +46,7 @@ export default class Log {
    * @param {String} tag - Page or class tag
    * @param {String} log - Log needs to be printed
    */
-  static showError(tag: String, log: String) {
+  static showError(tag: String, log: String): void {
     console.error(`${TAG} tag: ${tag} --> ${log}`);
   }
 }

@@ -66,8 +66,10 @@ export default function cachedCountUndefinedTest() {
       console.info('Test component obj is: ' + obj.getElement('$attrs'));
       console.info('Test component obj.cachedCount is: ' + obj.getElement('$attrs').getDouble('cachedCount'));
       expect(obj.getElement('$attrs').getDouble('cachedCount')).assertEqual(2);
+      try{
 
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_true?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -78,6 +80,11 @@ export default function cachedCountUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.cachedCount is: ' + obj1.getElement('$attrs').getDouble('cachedCount'));
       expect(obj1.getElement('$attrs').getDouble('cachedCount')).assertEqual(1);
+    }catch (err) {
+        console.error('cachedCountUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[cachedCountUndefinedTest_0100] END');
       done();
     });

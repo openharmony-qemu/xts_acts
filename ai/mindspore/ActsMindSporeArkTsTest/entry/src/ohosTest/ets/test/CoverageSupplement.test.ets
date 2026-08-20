@@ -17,60 +17,21 @@ import mindSporeLite from '@ohos.ai.mindSporeLite';
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
+import {
+  copyRawfileToSandbox,
+} from './CommonUtils';
 
 export default function coverageSupplementTest() {
   describe('CoverageSupplementTest', () => {
-    beforeAll(() => {
-      let dir = globalThis.abilityContext.filesDir + '/';
+    beforeAll(async () => {
       try {
-        let ml_face_model_file = dir + 'ml_face_isface.ms';
-        globalThis.context.resourceManager.getRawFileContent('ml_face_isface.ms', (error: BusinessError, model_buffer: Uint8Array) => {
-          if (error != null) {
-            console.log(
-              '[rawfile_copy_to_sandbox] ml_face_isface.ms is copy ' +
-              'failed:${error.code}, message: ${error.message}.');
-          } else {
-            let file = fs.openSync(ml_face_model_file, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-            fs.writeSync(file.fd, model_buffer.buffer);
-            fs.closeSync(file);
-            console.log('[rawfile_copy_to_sandbox] ml_face_isface.ms is copy success');
-          }
-        });
-
-        let ml_ocr_model_file = dir + 'ml_ocr_cn.ms';
-        globalThis.context.resourceManager.getRawFileContent('ml_ocr_cn.ms', (error: BusinessError, model_buffer: Uint8Array) => {
-          if (error != null) {
-            console.log(
-              '[rawfile_copy_to_sandbox] ml_ocr_cn.ms is copy ' +
-              'failed:${error.code}, message: ${error.message}.');
-          } else {
-            let file = fs.openSync(ml_ocr_model_file, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-            fs.writeSync(file.fd, model_buffer.buffer);
-            fs.closeSync(file);
-            console.log('[rawfile_copy_to_sandbox] ml_ocr_cn.ms is copy success');
-          }
-        });
-
-        let lenet_train_model_file = dir + 'lenet_train.ms';
-        globalThis.context.resourceManager.getRawFileContent('lenet_train.ms', (error: BusinessError, model_buffer: Uint8Array) => {
-          if (error != null) {
-            console.log(
-              '[rawfile_copy_to_sandbox] lenet_train.ms is copy ' +
-              'failed:${error.code}, message: ${error.message}.');
-          } else {
-            let file = fs.openSync(lenet_train_model_file, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-            fs.writeSync(file.fd, model_buffer.buffer);
-            fs.closeSync(file);
-            console.log('[rawfile_copy_to_sandbox] lenet_train.ms is copy success');
-          }
-        });
-
+        let dir = globalThis.abilityContext.filesDir + '/';
+        await copyRawfileToSandbox(globalThis.context, dir,
+          ['ml_face_isface.ms', 'ml_face_isface_0.input', 'ml_ocr_cn.ms', 'lenet_train.ms']);
       } catch (error) {
         console.info('[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed' + error);
       }
-
-      console.info('[rawfile_copy_to_sandbox] sandbox path:' + dir);
-    })
+    });
 
     beforeEach(async () => {
       let dir = globalThis.abilityContext.filesDir + '/';

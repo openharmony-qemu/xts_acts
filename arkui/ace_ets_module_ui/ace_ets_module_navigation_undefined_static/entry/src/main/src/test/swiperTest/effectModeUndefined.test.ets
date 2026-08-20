@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,6 +48,7 @@ export default function effectModeUndefinedTest() {
       } catch (err) {
         console.error('push effectModeUndefinedTest page error:' + err);
       }
+
       console.info('effectModeUndefinedTest beforeEach end');
     });
 
@@ -67,7 +68,10 @@ export default function effectModeUndefinedTest() {
       console.info('Test component obj.effectMode is: ' + obj.getElement('$attrs').getString('effectMode'));
       expect(obj.getElement('$attrs').getString('effectMode')).assertEqual('EdgeEffect.Fade');
 
-      let driver = Driver.create();
+      try{
+
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_true?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -78,6 +82,11 @@ export default function effectModeUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.effectMode is: ' + obj1.getElement('$attrs').getString('effectMode'));
       expect(obj1.getElement('$attrs').getString('effectMode')).assertEqual('EdgeEffect.Spring');
+    }catch (err) {
+        console.error('effectModeUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[effectModeUndefinedTest_0100] END');
       done();
     });

@@ -204,6 +204,9 @@ static void InitPush1(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("VideoDecCapApi0025", VideoDecCapApi0025));
     desc.push_back(XL("VideoDecCapApi0026", VideoDecCapApi0026));
     desc.push_back(XL("VideoDecCapApi0027", VideoDecCapApi0027));
+    desc.push_back(XL("VideoDecCapApi0028", VideoDecCapApi0028));
+    desc.push_back(XL("VideoDecCapApi0029", VideoDecCapApi0029));
+    desc.push_back(XL("VideoDecCapApi0030", VideoDecCapApi0030));
 }
 
 static void InitPush2(std::vector<napi_property_descriptor> &desc)

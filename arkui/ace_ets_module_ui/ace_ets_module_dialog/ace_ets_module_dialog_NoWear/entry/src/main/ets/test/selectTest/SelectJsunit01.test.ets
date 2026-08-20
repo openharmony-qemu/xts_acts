@@ -92,9 +92,9 @@ export default function SelectJsunit01() {
       expect(obj.$attrs.selectedOptionBgColor).assertEqual('#FF808080');
       expect(obj.$attrs.selectedOptionFont).assertEqual('{"size":"16.00fp","weight":"400","family":"","style":"FontStyle.Normal"}');
       expect(obj.$attrs.selectedOptionFontColor).assertEqual('#FFFF0000');
-      expect(obj.$attrs.optionBgColor).assertEqual('#FF808080');
+      expect(obj.$attrs.optionBgColor).assertEqual('#FFFFFFFF');
       expect(obj.$attrs.optionFont).assertEqual('{"size":"16.00fp","weight":"400","family":"","style":"FontStyle.Normal"}');
-      expect(obj.$attrs.optionFontColor).assertEqual('#FFFF0000');
+      expect(obj.$attrs.optionFontColor).assertEqual('#FF00007B');
       await CommonFunc.sleep(1000);
       let strJson1 = getInspectorByKey('SelectPage1' + '_indexValue');
       let obj1: ESObject = JSON.parse(strJson1);

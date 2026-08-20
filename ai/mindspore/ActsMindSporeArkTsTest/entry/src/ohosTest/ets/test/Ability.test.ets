@@ -19,74 +19,18 @@ import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import {
-  comparePrecisionAbs,
-  cosineSimilarity,
   allCloseFloat,
   allCloseInt8,
   readTestDataFile,
-  compFp32WithTData,
   compUint8WithTData,
   CompareResult,
 } from './PrecisionCompare';
-import { copyRawfileToSandbox } from './CommonUtils';
-
-/** 默认精度容差（与 C 端 ActsMindSporeValues::DEFAULT_TOLERANCE 一致） */
-const DEFAULT_TOLERANCE: number = 0.01;
-
-/**
- * 比对模型推理输出与 rawfile 下标杆文件的精度（参考 C 端 CompareResult 实现）。
- * 标杆文件名规律：{modelName}{i}.output，i 为输出 tensor 索引。
- *
- * @param syscontext     上下文，用于访问 rawfile
- * @param modelName      模型名（如 'lenet_train_infer'），不传 .output 后缀
- * @param actualOutputs  模型推理输出的 MSTensor 数组
- * @param rTol           相对容差（可选，默认 DEFAULT_TOLERANCE）
- * @param aTol           绝对容差（可选，默认 DEFAULT_TOLERANCE）
- * @param isQuant        是否为量化模型（可选，默认 false；true 时走 uint8 路径）
- * @returns true 表示所有输出 tensor 都通过精度对比
- */
-async function compareOutputPrecision(
-  syscontext: common.Context,
-  modelName: string,
-  actualOutputs: mindSporeLite.MSTensor[],
-  rTol: number = DEFAULT_TOLERANCE,
-  aTol: number = DEFAULT_TOLERANCE,
-  isQuant: boolean = false,
-): Promise<boolean> {
-  let allPass: boolean = true;
-  for (let i = 0; i < actualOutputs.length; i++) {
-    let outputName: string = modelName + i.toString() + '.output';
-    console.log('==========MSLITE CompWithTData: ' + outputName + '==========');
-    let expectedBuffer: Uint8Array;
-    try {
-      expectedBuffer = await syscontext.resourceManager.getRawFileContent(outputName);
-    } catch (e) {
-      console.log('==========MSLITE no expected file: ' + outputName + '==========');
-      allPass = false;
-      continue;
-    }
-    let actualData: ArrayBuffer = actualOutputs[i].getData();
-    let cmpResult: CompareResult;
-    if (isQuant) {
-      let actualUint8: Uint8Array = new Uint8Array(actualData);
-      cmpResult = compUint8WithTData(actualUint8, expectedBuffer, rTol, aTol, isQuant);
-    } else {
-      let actualFloat: Float32Array = new Float32Array(actualData);
-      cmpResult = compFp32WithTData(actualFloat, expectedBuffer, rTol, aTol, isQuant);
-    }
-    console.log('==========MSLITE [' + outputName + '] pass=' + cmpResult.pass +
-      ', failCount=' + cmpResult.failCount +
-      ', avgTol=' + cmpResult.avgTol +
-      ', avgAbsDiff=' + cmpResult.avgAbsDiff +
-      ', avgRelDiff=' + cmpResult.avgRelDiff +
-      ', max=' + cmpResult.maximum +
-      ', min=' + cmpResult.minimum + '==========');
-    if (!cmpResult.pass) {
-      allPass = false;
-    }
-  }
-  return allPass;
-}
+import {
+  copyRawfileToSandbox,
+  setRandomInputs,
+  compareOutputPrecision,
+  DEFAULT_TOLERANCE,
+} from './CommonUtils';
 
 function printTensors(tensors: mindSporeLite.MSTensor[], label: string): void {
   for (let i = 0; i < tensors.length; i++) {

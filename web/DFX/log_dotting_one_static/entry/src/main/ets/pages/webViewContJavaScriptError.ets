@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 
 import { Entry, Row, Text, TextAttribute, Column, Component, Button, ClickEvent, Web } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
-import Utils from '../../src/test/Utils.test';
+import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
@@ -24,8 +24,9 @@ import { Hypium } from '../../../hypium/index';
 import testsuite from '../../src/test/List.test';
 import { BusinessError } from '@ohos.base';
 import web_webview from '@ohos.web.webview';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
-export class StringFields {
+class StringFields {
   public str: string = '';
 }
 
@@ -86,7 +87,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                     }
                   });
               } catch (error) {
-                error = error as BusinessError;
+               
                 console.error(`emitRunJavaScriptCallbackInitErr ErrorCode: ${error.code}`);
                 Utils.emitEvent(error.code, 652)
               }
@@ -126,7 +127,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                     console.error('error: ' + error);
                   })
               } catch (error) {
-                error = error as BusinessError;
+               
                 console.error(`emitRunJavaScriptPromiseInitErr ErrorCode: ${error.code}`);
                 Utils.emitEvent(error.code, 654)
               }
@@ -165,7 +166,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                     }
                   });
               } catch (error) {
-                error = error as BusinessError;
+               
                 console.error(`emitRunJavaScriptExtCallbackInitErr ErrorCode: ${error.code}`);
                 Utils.emitEvent(error.code, 656)
               }
@@ -203,7 +204,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                     console.error('error: ' + error);
                   })
               } catch (error) {
-                error = error as BusinessError;
+               
                 console.error(`emitRunJavaScriptExtPromiseInitErr ErrorCode: ${error.code}`);
                 Utils.emitEvent(error.code, 658)
               }
@@ -227,9 +228,15 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               }
               break;
             }
+
+            case 'emitonSwitchNextPage01': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebViewContCreatePdfAndOthersError' })
+              console.log('push URL success')
           }
-        })
-      }
+        }
+      })
 
       Web({ src: 'resource://rawfile/index.html', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
@@ -241,4 +248,5 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
 
     }
   }
+}
 }

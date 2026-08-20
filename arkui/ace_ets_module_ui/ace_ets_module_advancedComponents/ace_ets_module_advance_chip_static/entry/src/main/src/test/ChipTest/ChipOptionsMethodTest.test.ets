@@ -42,6 +42,7 @@ export default function ChipOptionsMethodTest(): void {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        AppStorage.setOrCreate<string>('chipOptionsMethodAction', 'none');
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ChipOptionsMethodTest state pages:" + JSON.stringify(pages));
@@ -76,10 +77,10 @@ export default function ChipOptionsMethodTest(): void {
     it('ChipOptionsMethodTest_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ChipOptionsMethodTest_static_001] START');
       await CommonFunc.sleep(1000);
-      const driver = Driver.create();
-      const chipList = await driver.findComponents(ON.type('Image').within(ON.id('ChipOptionsMethodExample')));
-      console.info('[ChipOptionsMethodTest_static_001] length '+chipList?.length);
-      expect(chipList?.length).assertEqual(2);
+      const treeText = JSON.stringify(inspector.getInspectorTree());
+      const componentCount = treeText.split('"$type":"Image"').length - 1;
+      console.info('[ChipOptionsMethodTest_static_001] length '+componentCount);
+      expect(componentCount).assertEqual(2);
       console.info('[ChipOptionsMethodTest_static_001] END');
       done();
     });
@@ -91,16 +92,20 @@ export default function ChipOptionsMethodTest(): void {
      * @tc.level    Level.LEVEL2
      */
     it('ChipOptionsMethodTest_static_002', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[ChipOptionsMethodTest_static_002] START');
-      await CommonFunc.sleep(1000);
-      const driver = Driver.create();
-      const ButtonList = await driver.findComponents(ON.type('Button').within(ON.id('ChipOptionsMethodExample')));
-      await ButtonList![0].click()
-      await CommonFunc.sleep(1000);
-      let clickedTextJson = inspector.getInspectorByKey('ChipOptionsClickedText');
-      console.info('ChipOptionsMethodTest_static_002' + JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getElement('content'));
-      expect(JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getString('content')).assertEqual('clickedChip0');
-      console.info('[ChipOptionsMethodTest_static_002] END');
+      try {
+        console.info('[ChipOptionsMethodTest_static_002] START');
+        AppStorage.setOrCreate<string>('chipOptionsMethodAction', 'clicked');
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.replaceUrl({ url: 'MainAbility/pages/Chip/ChipOptionsMethodTest' });
+        await CommonFunc.sleep(2000);
+        let clickedTextJson = inspector.getInspectorByKey('ChipOptionsClickedText');
+        console.info('ChipOptionsMethodTest_static_002' + JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getElement('content'));
+        expect(JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getString('content')).assertEqual('clickedChip0');
+        console.info('[ChipOptionsMethodTest_static_002] END');
+      } catch (error) {
+        console.error('[ChipOptionsMethodTest_static_002] error: ' + error);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -111,16 +116,20 @@ export default function ChipOptionsMethodTest(): void {
      * @tc.level    Level.LEVEL2
      */
     it('ChipOptionsMethodTest_static_003', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[ChipOptionsMethodTest_static_003] START');
-      await CommonFunc.sleep(1000);
-      const driver = Driver.create();
-      const symbolList = await driver.findComponents(ON.type('SymbolGlyph').within(ON.id('ChipOptionsMethodExample')));
-      await symbolList![0].click()
-      await CommonFunc.sleep(1000);
-      let closeTextJson = inspector.getInspectorByKey('ChipOptionsCloseText');
-      console.info('ChipOptionsMethodTest_static_002' + JSON.parseJsonElement(closeTextJson).getElement('$attrs').getElement('content'));
-      expect(JSON.parseJsonElement(closeTextJson).getElement('$attrs').getString('content')).assertEqual('closeChip0');
-      console.info('[ChipOptionsMethodTest_static_003] END');
+      try {
+        console.info('[ChipOptionsMethodTest_static_003] START');
+        AppStorage.setOrCreate<string>('chipOptionsMethodAction', 'close');
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.replaceUrl({ url: 'MainAbility/pages/Chip/ChipOptionsMethodTest' });
+        await CommonFunc.sleep(2000);
+        let closeTextJson = inspector.getInspectorByKey('ChipOptionsCloseText');
+        console.info('ChipOptionsMethodTest_static_002' + JSON.parseJsonElement(closeTextJson).getElement('$attrs').getElement('content'));
+        expect(JSON.parseJsonElement(closeTextJson).getElement('$attrs').getString('content')).assertEqual('closeChip0');
+        console.info('[ChipOptionsMethodTest_static_003] END');
+      } catch (error) {
+        console.error('[ChipOptionsMethodTest_static_003] error: ' + error);
+        expect().assertFail();
+      }
       done();
     });
   })

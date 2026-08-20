@@ -530,15 +530,15 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.name   testImageFilterCreateFromImageMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0301
-     * @tc.desc   Test for testImageFilterCreateFromImageMultipleCalls.
+     * @tc.name   testImageFilterCreateFromImageMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_STATIC_0301
+     * @tc.desc   Test for testImageFilterCreateFromImageMultipleCallsStatic.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testImageFilterCreateFromImageMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const msg = 'testImageFilterCreateFromImageMultipleCalls';
+    it('testImageFilterCreateFromImageMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const msg = 'testImageFilterCreateFromImageMultipleCallsStatic';
       for (let i = 0; i < 20; i++) {
         let srcRect: common2D.Rect = {
           left: Math.floor(Math.random() * 100),
@@ -1195,15 +1195,15 @@ export default function imageFilterTest() {
       }
     });
     /**
-     * @tc.name   testImageFilterCreateOffsetImageFilterMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_0601
+     * @tc.name   testImageFilterCreateOffsetImageFilterMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_STATIC_0601
      * @tc.desc   Test for testImageFilterCreateOffsetImageFilterMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testImageFilterCreateOffsetImageFilterMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testImageFilterCreateOffsetImageFilterMultipleCalls';
+    it('testImageFilterCreateOffsetImageFilterMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testImageFilterCreateOffsetImageFilterMultipleCallsStatic';
       for (let i = 0; i < 20; i++) {
         let blurSigmaX = 10.0;
         let blurSigmaY = 10.0;

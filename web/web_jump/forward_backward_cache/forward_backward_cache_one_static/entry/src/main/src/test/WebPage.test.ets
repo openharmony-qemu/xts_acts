@@ -27,7 +27,7 @@ let testAbilityContext:common.UIAbilityContext;
 let emitKey = ''
 
 
-export default function WebPageTest() {
+export default function WebPageTest(): void {
   describe('WebPageTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')
@@ -50,7 +50,7 @@ export default function WebPageTest() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitDatabaseAccessTrue', 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent('emitDatabaseAccessTrue', '"openDatabase"', 161000, done);
+        Utils.registerContainEvent('emitDatabaseAccessTrue', 'openDatabase', 161000, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('web', 10, '');
         await Utils.msSleep(2000);
@@ -69,7 +69,7 @@ export default function WebPageTest() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitDatabaseAccessFalse', 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent('emitDatabaseAccessFalse', '"openDatabase"', 161001, done);
+        Utils.registerContainEvent('emitDatabaseAccessFalse', 'openDatabase', 161001, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('web', 10, '');
         await Utils.msSleep(2000);

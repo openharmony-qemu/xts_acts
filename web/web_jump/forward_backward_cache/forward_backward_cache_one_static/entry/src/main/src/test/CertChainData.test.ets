@@ -27,7 +27,7 @@ let testAbilityContext:common.UIAbilityContext;
 let emitKey = ''
 
 
-export default function CertChainDataTest() {
+export default function CertChainDataTest(): void {
   describe('CertChainDataTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')

@@ -47,7 +47,7 @@ let domain: number = 0x0000;
 let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-export default function zIndexJsunit() {
+export default function zIndexJsunit(): void {
   describe('zIndexTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("zIndexJsunit beforeAll start");

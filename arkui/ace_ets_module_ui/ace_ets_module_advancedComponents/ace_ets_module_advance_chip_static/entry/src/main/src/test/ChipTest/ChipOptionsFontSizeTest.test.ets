@@ -76,10 +76,10 @@ export default function ChipOptionsFontSizeTest(): void {
     it('ChipOptionsFontSizeTest_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ChipOptionsFontSizeTest_static_001] START');
       await CommonFunc.sleep(1000);
-      const driver = Driver.create();
-      const chipList = await driver.findComponents(ON.type('Image').within(ON.id('ChipOptionsFontSizeExample')));
-      console.info('[ChipOptionsFontSizeTest_static_001] length '+chipList?.length);
-      expect(chipList?.length).assertEqual(3);
+      const treeText = JSON.stringify(inspector.getInspectorTree());
+      const componentCount = treeText.split('"$type":"Image"').length - 1;
+      console.info('[ChipOptionsFontSizeTest_static_001] length '+componentCount);
+      expect(componentCount).assertEqual(3);
       console.info('[ChipOptionsFontSizeTest_static_001] END');
       done();
     });

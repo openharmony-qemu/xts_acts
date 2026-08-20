@@ -46,7 +46,7 @@ let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 
-export default function accessVnTest() {
+export default function accessVnTest(): void {
   describe('accessVnTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("accessVnTest beforeAll start");

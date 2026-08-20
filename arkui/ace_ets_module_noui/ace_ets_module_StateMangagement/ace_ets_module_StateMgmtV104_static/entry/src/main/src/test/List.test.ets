@@ -24,9 +24,17 @@ import GlobalReusePoolTest from './uiutilsTest/GlobalReusePool.test';
 import GlobalReusePool002Test from './uiutilsTest/GlobalReusePool002.test';
 import GlobalReusePool003Test from './uiutilsTest/GlobalReusePool003.test';
 import GlobalReusePool004Test from './uiutilsTest/GlobalReusePool004.test';
+import StaticCoverageComponentTest from './staticCoverage/StaticCoverageComponent.test';
+import StaticCoverageDecoratorTest from './staticCoverage/StaticCoverageDecorator.test';
+import StaticCoverageStorageTest from './staticCoverage/StaticCoverageStorage.test';
+import StaticCoverageUtilsTest from './staticCoverage/StaticCoverageUtils.test';
  
  
-export default function testsuite() {
+export default function testsuite(): void {
+  StaticCoverageComponentTest();
+  StaticCoverageDecoratorTest();
+  StaticCoverageStorageTest();
+  StaticCoverageUtilsTest();
   //repeatReusableFalse(); 
   //repeatReusableTrue(); 
   GlobalReusePool004Test();

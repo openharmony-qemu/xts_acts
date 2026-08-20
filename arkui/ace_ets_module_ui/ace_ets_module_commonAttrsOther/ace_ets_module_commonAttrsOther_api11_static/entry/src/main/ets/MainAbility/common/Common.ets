@@ -57,10 +57,10 @@ export default class CommonFunc {
       "windowRect Top: " + AppStorage.get<number>("winTop"));
     console.info("test: rectInfo: " + rectInfo.toString());
     return {
-      "left": Number(rectInfo[0][0] ?? 0),
-      "top": Number(rectInfo[0][1] ?? 0),
-      "right": Number(rectInfo[1][0] ?? 0),
-      "bottom": Number(rectInfo[1][1] ?? 0)
+      left: Number(rectInfo[0][0]),
+      top: Number(rectInfo[0][1]),
+      right: Number(rectInfo[1][0]),
+      bottom: Number(rectInfo[1][1])
     } as RectValue
   }
 
@@ -72,15 +72,15 @@ export default class CommonFunc {
     let rectInfo = parts.map((part: String) => {
       return part.split(",").map((item: String): double => parseFloat(item.trim()));
     });
-    CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
-    CommonFunc.rect_top = Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
-    CommonFunc.rect_right = Number(Number(rectInfo[1][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
-    CommonFunc.rect_bottom = Number(Number(rectInfo[1][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
+    CommonFunc.rect_left = Number(Number(rectInfo[0][0]) + Number(AppStorage.get<number>("winLeft")));
+    CommonFunc.rect_top = Number(Number(rectInfo[0][1]) + Number(AppStorage.get<number>("winTop")));
+    CommonFunc.rect_right = Number(Number(rectInfo[1][0]) + Number(AppStorage.get<number>("winLeft")));
+    CommonFunc.rect_bottom = Number(Number(rectInfo[1][1]) + Number(AppStorage.get<number>("winTop")));
     return CommonFunc.rect_value = {
-      "left": CommonFunc.rect_left,
-      "top": CommonFunc.rect_top,
-      "right": CommonFunc.rect_right,
-      "bottom": CommonFunc.rect_bottom
+      left: CommonFunc.rect_left,
+      top: CommonFunc.rect_top,
+      right: CommonFunc.rect_right,
+      bottom: CommonFunc.rect_bottom
     }
   }
 

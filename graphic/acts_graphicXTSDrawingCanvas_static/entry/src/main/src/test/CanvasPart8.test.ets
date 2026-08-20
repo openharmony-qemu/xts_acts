@@ -20,7 +20,7 @@ import drawing from '@ohos.graphics.drawing';
 import common2D from '@ohos.graphics.common2D';
 import { BusinessError } from '@ohos.base';
 
-export default function drawingTsCanvasPart8Test() {
+export default function drawingTsCanvasPart8Test(): void {
   describe('DrawingTsCanvasPart8Test', () => {
     let pixel: image.PixelMap | undefined;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.

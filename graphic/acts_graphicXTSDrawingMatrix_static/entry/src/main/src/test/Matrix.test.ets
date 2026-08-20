@@ -31,7 +31,7 @@ import { BusinessError } from '@ohos.base';
 
 const loop_times = 20;
 
-export default function drawingTsMatrixTest() {
+export default function drawingTsMatrixTest(): void {
   describe('drawingTsMatrixTest', () => {
     const DEFAULT = 0;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.

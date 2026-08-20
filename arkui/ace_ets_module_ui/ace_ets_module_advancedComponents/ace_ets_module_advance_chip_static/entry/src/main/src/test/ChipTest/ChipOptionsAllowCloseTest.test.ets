@@ -73,10 +73,10 @@ export default function ChipOptionsAllowCloseTest(): void {
     it('ChipOptionsAllowCloseTest_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ChipOptionsAllowCloseTest_static_001] START');
       await CommonFunc.sleep(1000);
-      const driver = Driver.create();
-      const chipList = await driver.findComponents(ON.type('SymbolGlyph').within(ON.id('ChipOptionsAllowCloseExample')));
-      console.info('[ChipOptionsAllowCloseTest_static_001] length '+chipList?.length);
-      expect(chipList?.length).assertEqual(2);
+      const treeText = JSON.stringify(inspector.getInspectorTree());
+      const componentCount = treeText.split('"$type":"SymbolGlyph"').length - 1;
+      console.info('[ChipOptionsAllowCloseTest_static_001] length '+componentCount);
+      expect(componentCount).assertEqual(2);
       console.info('[ChipOptionsAllowCloseTest_static_001] END');
       done();
     });

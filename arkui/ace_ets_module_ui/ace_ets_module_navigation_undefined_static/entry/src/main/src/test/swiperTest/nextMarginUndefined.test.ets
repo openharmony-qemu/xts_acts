@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -53,6 +53,7 @@ export default function nextMarginUndefinedTest() {
       } catch (err) {
         console.error('push nextMarginUndefinedTest page error:' + err);
       }
+
       console.info('nextMarginUndefinedTest beforeEach end');
     });
 
@@ -74,7 +75,11 @@ export default function nextMarginUndefinedTest() {
       expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('50.00vp');
 
 
-      let driver = Driver.create();
+      try{
+
+
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_true?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -85,18 +90,20 @@ export default function nextMarginUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.nextMargin is: ' + obj1.getElement('$attrs').getString('nextMargin'));
 
-      // 使用 UIContext.resolveUIContext()!.px2vp() 进行转换
       let nextMarginValue = obj1.getElement('$attrs').getString('nextMargin');
       let nextMarginInVp: number;
       if (nextMarginValue.endsWith('px')) {
-        // 如果是 px，转换为 vp
         nextMarginInVp = Math.round(UIContext.resolveUIContext()!.px2vp(parseFloat(nextMarginValue.replace('px', ''))));
       } else {
-        // 如果是 vp，直接取值
         nextMarginInVp = Math.round(parseFloat(nextMarginValue.replace('vp', '')));
       }
       console.info('Test component nextMarginInVp is: ' + nextMarginInVp);
       expect(nextMarginInVp).assertEqual(0);
+    }catch (err) {
+        console.error('nextMarginUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
 
       console.info('nextMarginUndefinedTest_0100 END');
       done();

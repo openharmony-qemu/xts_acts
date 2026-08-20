@@ -18,13 +18,14 @@ import {OnScreenCaptureRequestEvent, Entry, Component, Column, Row, Button, Clic
 import { State } from "@ohos.arkui.stateManagement"
 import { Callback } from '@ohos.base'
 import Utils from '../../src/test/Util.test';
+import router from '@ohos.router';
 import webview from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON, On } from '@ohos.UiTest';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from "../../../hypium/index";
 import { BusinessError, RecordData } from '@ohos.base';
-
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -74,7 +75,7 @@ struct webViewContCreatePdfAndOthersError {
               try {
                 this.controllerNull.setPrintBackground(false)
               } catch (error) {
-                error = error as BusinessError;
+               
                 console.error(`XXXXXXXX emitGetScrollableInitErr ErrorCode: ${error.code}`);
                 this.errorCode = error.code;
                 Utils.emitEvent(this.errorCode, 17113)
@@ -93,6 +94,12 @@ struct webViewContCreatePdfAndOthersError {
               break;
             }
 
+            case 'emitOnSwitchNextPage02': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebViewWebConstructor' })
+              console.log('push URL success')
+            }
           }
         })
       }

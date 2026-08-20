@@ -13,7 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import webViewContJavaScriptError from './WebViewContJavaScriptError.test'
+import WebViewContJavaScriptError from './WebViewContJavaScriptError.test'
+import WebViewContCreatePdfAndOthersError from './WebViewContCreatePdfAndOthersError.test'
+import WebViewEventResultConstructor from './WebViewEventResultConstructor.test'
+import WebViewTextSelection from './WebViewTextSelection.test'
+import WebViewWebConstructor from './WebViewWebConstructor.test'
 export default function testsuite() {
-  webViewContJavaScriptError();
+  WebViewContJavaScriptError();
+  WebViewContCreatePdfAndOthersError()
+  WebViewEventResultConstructor()
+  WebViewTextSelection()
+  WebViewWebConstructor()
 }

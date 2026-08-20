@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,6 +48,7 @@ export default function curveUndefinedTest() {
       } catch (err) {
         console.error('push curveUndefinedTest page error:' + err);
       }
+
       console.info('curveUndefinedTest beforeEach end');
     });
 
@@ -67,7 +68,10 @@ export default function curveUndefinedTest() {
       console.info('Test component obj.curve is: ' + obj.getElement('$attrs').getString('curve'));
       expect(obj.getElement('$attrs').getString('curve')).assertEqual('Curves.Linear');
 
-      let driver = Driver.create();
+      try{
+
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_true?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -78,6 +82,11 @@ export default function curveUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.curve is: ' + obj1.getElement('$attrs').getString('curve'));
       expect(obj1.getElement('$attrs').getString('curve')).assertEqual('interpolating-spring(-1.000000,1.000000,328.000000,34.000000)');
+    }catch (err) {
+        console.error('curveUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[curveUndefinedTest_0100] END');
       done();
     });

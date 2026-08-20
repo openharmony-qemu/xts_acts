@@ -175,3 +175,34 @@ export const RadialGradientTest_030: () => number;
 export const RadialGradientTest_031: () => number;
 export const RadialGradientTest_032: () => number;
 export const RadialGradientTest_033: () => number;
+
+export const GetGlyphRangeForCharacterRangeWithEncodingTest_001: () => number;
+export const GetGlyphRangeForCharacterRangeWithEncodingTest_002: () => number;
+export const GetGlyphRangeForCharacterRangeWithEncodingTest_003: () => number;
+export const GetGlyphRangeForCharacterRangeWithEncodingTest_004: () => number;
+export const GetGlyphRangeForCharacterRangeWithEncodingTest_005: () => number;
+export const GetGlyphRangeForCharacterRangeWithEncodingTest_006: () => number;
+export const GetGlyphRangeForCharacterRangeWithEncodingTest_007: () => number;
+export const GetGlyphRangeForCharacterRangeWithEncodingTest_008: () => number;
+export const GetGlyphRangeForCharacterRangeWithEncodingTest_009: () => number;
+
+export const GetCharacterRangeForGlyphRangeWithEncodingTest_001: () => number;
+export const GetCharacterRangeForGlyphRangeWithEncodingTest_002: () => number;
+export const GetCharacterRangeForGlyphRangeWithEncodingTest_003: () => number;
+export const GetCharacterRangeForGlyphRangeWithEncodingTest_004: () => number;
+export const GetCharacterRangeForGlyphRangeWithEncodingTest_005: () => number;
+export const GetCharacterRangeForGlyphRangeWithEncodingTest_006: () => number;
+export const GetCharacterRangeForGlyphRangeWithEncodingTest_007: () => number;
+export const GetCharacterRangeForGlyphRangeWithEncodingTest_008: () => number;
+export const GetCharacterRangeForGlyphRangeWithEncodingTest_009: () => number;
+
+export const GetCharacterPositionAtCoordinateWithEncodingTest_001: () => number;
+export const GetCharacterPositionAtCoordinateWithEncodingTest_002: () => number;
+export const GetCharacterPositionAtCoordinateWithEncodingTest_003: () => number;
+export const GetCharacterPositionAtCoordinateWithEncodingTest_004: () => number;
+export const GetCharacterPositionAtCoordinateWithEncodingTest_005: () => number;
+export const GetCharacterPositionAtCoordinateWithEncodingTest_006: () => number;
+export const GetCharacterPositionAtCoordinateWithEncodingTest_007: () => number;
+export const GetCharacterPositionAtCoordinateWithEncodingTest_008: () => number;
+export const GetCharacterPositionAtCoordinateWithEncodingTest_009: () => number;
+export const GetCharacterPositionAtCoordinateWithEncodingTest_010: () => number;

@@ -288,6 +288,9 @@ export default function AvPlayerEnumTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       expect(Number(media.MediaType.MEDIA_TYPE_UNSUPPORTED)).assertEqual(-1);
+      expect(Number(media.MediaType.MEDIA_TYPE_AUD)).assertEqual(0);
+      expect(Number(media.MediaType.MEDIA_TYPE_VID)).assertEqual(1);
+      expect(Number(media.MediaType.MEDIA_TYPE_SUBTITLE)).assertEqual(2);
       expect(Number(media.MediaType.MEDIA_TYPE_ATTACHMENT)).assertEqual(3);
       expect(Number(media.MediaType.MEDIA_TYPE_DATA)).assertEqual(4);
       expect(Number(media.MediaType.MEDIA_TYPE_TIMED_METADATA)).assertEqual(5);
@@ -348,6 +351,19 @@ export default function AvPlayerEnumTest() {
       expect(Number(media.FetchResult.FETCH_FAILED)).assertEqual(0);
       expect(Number(media.FetchResult.FETCH_SUCCEEDED)).assertEqual(1);
       expect(Number(media.FetchResult.FETCH_CANCELED)).assertEqual(2);
+      done();
+    });
+
+     /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_1000
+     * @tc.desc   AVPlayer Enumeration test - AVMetricsEventType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(string(media.ContainerFormatType.CFT_WAV)).assertEqual('wav');
       done();
     });
   })

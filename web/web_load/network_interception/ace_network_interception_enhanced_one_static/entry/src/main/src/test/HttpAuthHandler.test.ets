@@ -25,7 +25,7 @@ import inspector from '@ohos.arkui.inspector';
 let testAbilityContext:common.UIAbilityContext;
 
 
-export default function httpAuthHandler() {
+export default function httpAuthHandler(): void {
 
   describe('HttpAuthHandlerTestSuite', () => {
 

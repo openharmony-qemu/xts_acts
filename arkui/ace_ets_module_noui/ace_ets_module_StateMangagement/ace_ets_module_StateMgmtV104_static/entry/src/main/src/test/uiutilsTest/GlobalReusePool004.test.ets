@@ -51,7 +51,7 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { IReusableInfo, IReusePool, AppStorage } from '@kit.ArkUI';
 
 
-export default function GlobalReusePool004Test() {
+export default function GlobalReusePool004Test(): void {
   describe('GlobalReusePool004Test', () => {
     beforeAll(async () => {
 
@@ -106,17 +106,17 @@ export default function GlobalReusePool004Test() {
         AppStorage.get<boolean | undefined>('GlobalReuse004') as boolean | undefined;
       expect(globalReuse004).assertUndefined();
       let button = await driver.findComponent(ON.id('GlobalReuse004Change'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(1000);
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(1000);
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(1000);
       globalReuse004 = AppStorage.get<boolean | undefined>('GlobalReuse004') as boolean | undefined
       expect(globalReuse004).assertTrue()
 
       let button1 = await driver.findComponent(ON.id('GlobalReuse004_002'));
-      await (button1?.click() as Promise<void>);
+      button1?.click();
       await CommonFunc.sleep(1000);
 
       let strJsonNew = inspector.getInspectorByKey('GlobalReuse004_001');
@@ -134,7 +134,7 @@ export default function GlobalReusePool004Test() {
         .assertEqual('SubChildGlobalV1  @Consume: 11,@Link: 110,@LocalStoragePropRef: 10,@Provide: 11,@State: 0,@PropRef: 0,@StoragePropRef: 10,@ObjectLink: 100');
 
       let button2 = await driver.findComponent(ON.id('ChildGlobal001_005'));
-      await (button2?.click() as Promise<void>);
+      button2?.click();
       await CommonFunc.sleep(1000);
 
       strJsonNew = inspector.getInspectorByKey('GlobalReuse004_001');
@@ -152,7 +152,7 @@ export default function GlobalReusePool004Test() {
         .assertEqual('SubChildGlobalV1  @Consume: 11,@Link: 120,@LocalStoragePropRef: 10,@Provide: 11,@State: 0,@PropRef: 0,@StoragePropRef: 10,@ObjectLink: 100');
 
       let button3 = await driver.findComponent(ON.id('SubChildGlobalV1_002'));
-      await (button3?.click() as Promise<void>);
+      button3?.click();
       await CommonFunc.sleep(1000);
 
       strJsonNew = inspector.getInspectorByKey('GlobalReuse004_001');

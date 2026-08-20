@@ -126,7 +126,7 @@ struct ComposeListItemV2Page02 {
   build() {
     Column() {
       Scroll() {
-        Column({ space: 8 }) {
+        Column() {
           ComposeListItemV2({
             contentItemV2: new ContentItemV2({
               primaryText: '',

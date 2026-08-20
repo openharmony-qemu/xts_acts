@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 import { Entry, Column, Row, Component, Color, $r, ColumnOptions, Direction, Button } from '@ohos.arkui.component';
-import { State } from '@ohos.arkui.stateManagement';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import { Chip, ChipSize, PrefixIconOptions, SuffixIconOptions, ChipOptions, ChipSymbolGlyphOptions, LabelOptions } from '@ohos.arkui.advanced.Chip';
 
 @Entry
 @Component
 struct prefixIconChipTest {
-  @State isActivated: boolean = false;
+  @State isActivated: boolean = AppStorage.get<boolean>('prefixIconActivated') as boolean;
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Chip({

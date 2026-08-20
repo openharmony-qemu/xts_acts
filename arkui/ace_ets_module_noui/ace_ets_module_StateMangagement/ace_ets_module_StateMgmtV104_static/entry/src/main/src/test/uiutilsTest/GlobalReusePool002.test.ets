@@ -29,7 +29,7 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { IReusableInfo, IReusePool, AppStorage } from '@kit.ArkUI';
 
 
-export default function GlobalReusePool002Test() {
+export default function GlobalReusePool002Test(): void {
   describe('GlobalReusePool002Test', () => {
     beforeAll(async () => {
 
@@ -83,7 +83,7 @@ export default function GlobalReusePool002Test() {
       let globalReuse002: boolean | undefined = AppStorage.get<boolean | undefined>('GlobalReuse002') as boolean | undefined;
       expect(globalReuse002).assertUndefined();
       let button = await driver.findComponent(ON.id('GlobalReuse002Change'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await driver.delayMs(500);
       globalReuse002  = AppStorage.get<boolean | undefined>('GlobalReuse002')
       expect(globalReuse002).assertTrue()

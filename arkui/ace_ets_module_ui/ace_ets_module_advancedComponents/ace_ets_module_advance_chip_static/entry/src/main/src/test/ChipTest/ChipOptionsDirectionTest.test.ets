@@ -76,10 +76,10 @@ export default function ChipOptionsDirectionTest(): void {
     it('ChipOptionsDirectionTest_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ChipOptionsDirectionTest_static_001] START');
       await CommonFunc.sleep(1000);
-      const driver = Driver.create();
-      const chipList = await driver.findComponents(ON.type('Image').within(ON.id('ChipOptionsDirectionExample')));
-      console.info('[ChipOptionsDirectionTest_static_001] length '+chipList?.length);
-      expect(chipList?.length).assertEqual(4);
+      const treeText = JSON.stringify(inspector.getInspectorTree());
+      const componentCount = treeText.split('"$type":"Image"').length - 1;
+      console.info('[ChipOptionsDirectionTest_static_001] length '+componentCount);
+      expect(componentCount).assertEqual(4);
       console.info('[ChipOptionsDirectionTest_static_001] END');
       done();
     });

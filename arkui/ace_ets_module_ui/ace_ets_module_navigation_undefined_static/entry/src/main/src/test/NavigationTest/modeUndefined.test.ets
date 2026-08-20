@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -70,7 +70,9 @@ export default function ModeUndefinedTest() {
      */
     it('ModeUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ModeUndefinedTest_static_0001] START');
-      let driver: Driver = Driver.create()
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MyNavigation3');
       await CommonFunc.sleep(1000);
@@ -95,6 +97,10 @@ export default function ModeUndefinedTest() {
         .assertEqual('\"NavigationMode.AUTO\"');
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('ModeUndefinedTest_static_0001 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[ModeUndefinedTest_static_0001] END');
       done();
     });
@@ -107,7 +113,9 @@ export default function ModeUndefinedTest() {
      */
     it('ModeUndefinedTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ModeUndefinedTest_static_0002] START');
-      let driver: Driver = Driver.create()
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MyNavigation3');
       await CommonFunc.sleep(1000);
@@ -132,6 +140,10 @@ export default function ModeUndefinedTest() {
         .assertEqual('\"360.00vp\"');
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('ModeUndefinedTest_static_0002 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[ModeUndefinedTest_static_0002] END');
       done();
     });
@@ -144,7 +156,9 @@ export default function ModeUndefinedTest() {
      */
     it('ModeUndefinedTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ModeUndefinedTest_static_0003] START');
-      let driver: Driver = Driver.create()
+      try{
+
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MyNavigation3');
       await CommonFunc.sleep(1000);
@@ -169,6 +183,10 @@ export default function ModeUndefinedTest() {
         .assertEqual('\"240.00vp, 432.00vp\"');
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
+      }catch (err) {
+        console.error('ModeUndefinedTest_static_0003 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[ModeUndefinedTest_static_0003] END');
       done();
     });

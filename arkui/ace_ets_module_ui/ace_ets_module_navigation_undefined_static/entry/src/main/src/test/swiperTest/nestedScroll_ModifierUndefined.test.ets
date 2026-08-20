@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -53,6 +53,7 @@ export default function nestedScroll_ModifierUndefinedTest() {
       } catch (err) {
         console.error('push nestedScroll_ModifierUndefinedTest page error:' + err);
       }
+
       console.info('nestedScroll_ModifierUndefinedTest beforeEach end');
     });
 
@@ -74,7 +75,10 @@ export default function nestedScroll_ModifierUndefinedTest() {
       console.info('[Initial] nestedScroll value: ' + nestedScrollValue);
       expect(nestedScrollValue).assertEqual("SwiperNestedScrollMode.SELF_FIRST");
 
-      let driver = Driver.create();
+      try{
+
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_change = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_change?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -97,6 +101,11 @@ export default function nestedScroll_ModifierUndefinedTest() {
       let nestedScrollValue2 = obj2.getElement('$attrs').getString('nestedScroll');
       console.info('[After 2nd click] nestedScroll value: ' + nestedScrollValue2);
       expect(nestedScrollValue2).assertEqual("SwiperNestedScrollMode.SELF_FIRST");
+    }catch (err) {
+        console.error('nestedScroll_ModifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
 
       console.info('nestedScroll_ModifierUndefinedTest_0100 END');
       done();

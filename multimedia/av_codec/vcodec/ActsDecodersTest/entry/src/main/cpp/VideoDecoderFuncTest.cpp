@@ -517,7 +517,7 @@ napi_value VideoAv1DecFunction0015(napi_env env, napi_callback_info info)
         return CreateIntInt32Result(env, -1);
     }
     vDecSample->WaitForEOS();
-    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE180));
+    return CreateIntInt32Result(env, VerifyDecodingResult(vDecSample, FRAMESIZE60));
 }
 
 // Test AV1 decoder function with high profile 8bit

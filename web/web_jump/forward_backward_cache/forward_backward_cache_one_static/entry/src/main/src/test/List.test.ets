@@ -21,7 +21,7 @@ import WebPageTest from './WebPage.test'
 import OnHttpAuthTest from './OnHttpAuthRequset.test'
 import WebViewMetaViewport from './WebViewMetaViewport.test'
 import OnTitleReceive from './OnTitleReceive.test'
-export default function testsuite() {
+export default function testsuite(): void {
   webCookieManagerTest();
   WebEumClassTest();
   WebViewRotateRenderEffect();

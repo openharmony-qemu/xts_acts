@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -53,6 +53,7 @@ export default function loop_ModifierUndefinedTest() {
       } catch (err) {
         console.error('push loop_ModifierUndefinedTest page error:' + err);
       }
+
       console.info('loop_ModifierUndefinedTest beforeEach end');
     });
 
@@ -74,7 +75,10 @@ export default function loop_ModifierUndefinedTest() {
       console.info('[Initial] loop value: ' + loopValue);
       expect(loopValue).assertEqual("false");
 
-      let driver = Driver.create();
+      try{
+
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_change = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_change?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -97,6 +101,11 @@ export default function loop_ModifierUndefinedTest() {
       let loopValue2 = obj2.getElement('$attrs').getString('loop');
       console.info('[After 2nd click] loop value: ' + loopValue2);
       expect(loopValue2).assertEqual("false");
+    }catch (err) {
+        console.error('loop_ModifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
 
       console.info('loop_ModifierUndefinedTest_0100 END');
       done();

@@ -74,7 +74,7 @@ export default function SVDeepListenObservedAndObjectlinkTest(): void {
       // Step2: Click changeBagBookNameButton to change second level property bag.book.name from 'JS' to 'TS'
       // This should trigger UI update in parent component (Index) due to deep listener
       let button = await driver.findComponent(ON.id('changeBagBookNameButton'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(500);
 
       strJson = inspector.getInspectorByKey('indexText');
@@ -108,7 +108,7 @@ export default function SVDeepListenObservedAndObjectlinkTest(): void {
       // Step2: Click BookCard's changeBookNameButton to change book.name from 'JS' to 'C++'
       // This should trigger UI update in BookCard child component due to @ObjectLink
       let button = await driver.findComponent(ON.id('changeBookNameButton'));
-      await (button?.click() as Promise<void>);
+      button?.click();
       await CommonFunc.sleep(500);
 
       strJson = inspector.getInspectorByKey('bookCardText');

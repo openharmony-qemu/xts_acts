@@ -49,7 +49,7 @@ let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 
-export default function visibilityJsunit() {
+export default function visibilityJsunit(): void {
   describe('visibilityTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("visibilityJsunit beforeAll start");

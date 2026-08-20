@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,6 +48,7 @@ export default function duration_modifierUndefinedTest() {
       } catch (err) {
         console.error('push duration_modifierUndefinedTest page error:' + err);
       }
+
       console.info('duration_modifierUndefinedTest beforeEach end');
     });
 
@@ -67,7 +68,10 @@ export default function duration_modifierUndefinedTest() {
       console.info('Test component obj.duration is: ' + obj.getElement('$attrs').getString('duration'));
       expect(obj.getElement('$attrs').getString('duration')).assertEqual('1000');
 
-      let driver = Driver.create();
+      try{
+
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
       await (btn_true?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -78,6 +82,11 @@ export default function duration_modifierUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.duration is: ' + obj1.getElement('$attrs').getString('duration'));
       expect(obj1.getElement('$attrs').getString('duration')).assertEqual('400');
+    }catch (err) {
+        console.error('duration_modifierUndefinedTest_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
+
       console.info('[duration_modifierUndefinedTest_0100] END');
       done();
     });

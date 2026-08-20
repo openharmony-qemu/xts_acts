@@ -50,7 +50,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 
 
-export default function overLayJsunit() {
+export default function overLayJsunit(): void {
   describe('overLayTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("overLayJsunit beforeAll start");
