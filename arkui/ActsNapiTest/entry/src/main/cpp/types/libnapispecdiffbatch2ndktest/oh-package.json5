@@ -1,6 +1,0 @@
-﻿{
-  name: "libnapispecdiffbatch2ndktest.so",
-  types: "./Index.d.ts",
-  version: "1.0.0",
-  description: "NAPI spec diff batch2 XTS native library"
-}
