@@ -93,14 +93,13 @@ const createServer = async (caseName: string, done: Function) => {
     port: 9999,
     family: 1
   }
-  await server.listen(listenAddr).then(async ()=> {
-    let listenAddr: socket.NetAddress =  await server.getLocalAddress();
-    console.info(`${TAG} ${caseName} tcpSocketServer listen address: `+JSON.stringify(listenAddr.address) +' port: '+JSON.stringify(listenAddr.port));
-  }).catch((err: BusinessError) => {
+  await server.listen(listenAddr).catch((err: BusinessError) => {
     console.error(`${caseName} get err is `+JSON.stringify(err));
     ExpectFail();
     done();
-  })
+  });
+  let localAddr: socket.NetAddress =  await server.getLocalAddress();
+  console.info(`${TAG} ${caseName} tcpSocketServer listen address: `+JSON.stringify(localAddr.address) +' port: '+JSON.stringify(localAddr.port));
   server.off('connect');
   server.on('connect', async (clientSocket: socket.TCPSocketConnection)=>{
     console.info(`${TAG} ${caseName}-----tcpSocketServer on connect`);
