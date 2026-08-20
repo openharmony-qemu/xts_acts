@@ -68,7 +68,7 @@ export default class ActsActionExtensionAbility extends ActionExtensionAbility {
     count++;
     this.message = want.parameters?.shareMessages as string ?? '';
     let storageParams: Record<string, Object> = {
-        
+
         'session': session,
         'messages': this.message
       };
