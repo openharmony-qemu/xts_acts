@@ -16,7 +16,7 @@
 import hilog from '@ohos.hilog';
 import featureAbility from '@ohos.ability.featureAbility';
 import bundle from '@ohos.bundle';
-import commonEvent from '@ohos.commonEvent';
+import commonEvent from '@ohos.commonEventManager';
 
 const Event_FA_DisplayOrientation_1000 = 'Event_FA_DisplayOrientation_1000';
 

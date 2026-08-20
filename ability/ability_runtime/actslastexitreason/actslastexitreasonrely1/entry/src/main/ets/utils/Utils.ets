@@ -22,12 +22,12 @@ export function publishEvent(event: string, reason: AbilityConstant.LastExitReas
 ) {
   let options: CommonEventManager.CommonEventPublishData = {
     code: 0,
-    bundleName: "com.acts.lastexitreasontest",
+    bundleName: 'com.acts.lastexitreasontest',
     parameters: {
-      "lastExitReason": reason,
-      "lastExitMessage": exitMsg,
-      "lastExitDetailInfo": lastExitDetailInfo,
-      "launchReasonMessage": launchReasonMessage
+      'lastExitReason': reason,
+      'lastExitMessage': exitMsg,
+      'lastExitDetailInfo': lastExitDetailInfo,
+      'launchReasonMessage': launchReasonMessage
     },
     isOrdered: false
   }
@@ -35,7 +35,7 @@ export function publishEvent(event: string, reason: AbilityConstant.LastExitReas
     if (err) {
       console.error(`publish failed, err: ${JSON.stringify(err)}`);
     } else {
-      console.info("publish success");
+      console.info('publish success');
     }
   }
   CommonEventManager.publish(event, options, publishCB);
