@@ -357,7 +357,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
     }
 
     if (want.action === 'Acts_ActionExtensionAbility_3200') {
-      let moduleContext: common.Context;
+      let moduleContext: common.Context = this.context;
       try {
         moduleContext = this.context.createModuleContext('entry_assist');
       } catch {
@@ -374,7 +374,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
     }
 
     if (want.action === 'Acts_ActionExtensionAbility_3300') {
-      let moduleContext: common.Context;
+      let moduleContext: common.Context = this.context;
       try {
         moduleContext = this.context.createModuleContext('abc');
       } catch {
@@ -391,7 +391,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
     }
 
     if (want.action === 'Acts_ActionExtensionAbility_3400') {
-      let moduleContext: common.Context;
+      let moduleContext: common.Context = this.context;
       try {
         moduleContext = this.context.createModuleContext(undefined);
       } catch {
