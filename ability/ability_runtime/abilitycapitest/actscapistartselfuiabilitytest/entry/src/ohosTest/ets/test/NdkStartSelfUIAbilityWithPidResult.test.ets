@@ -41,7 +41,7 @@ export default function NdkStartSelfUIAbilityWithPidResultTest() {
     beforeEach(() => {})
     afterEach(() => {})
     afterAll(() => {})
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0100
      * @tc.number SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0100

@@ -114,7 +114,7 @@ export default function ActsLifeCycleFlowOrderTest() {
               }, (err: BusinessError) => {
                 console.info(`${tag}-startAbility err1:` + JSON.stringify(err));
               });
-              
+
 
             } catch (e) {
               console.error(`${tag}-pressHome error`, e)

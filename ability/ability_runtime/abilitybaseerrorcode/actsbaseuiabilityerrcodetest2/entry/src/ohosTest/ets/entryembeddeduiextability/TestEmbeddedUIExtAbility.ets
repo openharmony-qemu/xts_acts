@@ -184,7 +184,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
       }
 
     } else
-   
+
     if (want?.parameters?.case == 'startErrorCodeCallBackOptions16000076')  {
       try{
 
@@ -340,7 +340,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
         console.info(TAG + 'error...' + error)
       }
 
-    } 
+    }
 
 
 

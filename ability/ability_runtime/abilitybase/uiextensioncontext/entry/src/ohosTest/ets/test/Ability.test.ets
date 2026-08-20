@@ -1304,8 +1304,8 @@ export default function ActsUIExtensionContextMethodTest() {
             }
           },(err, data)=>{
             console.info(
-                            
-                '====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_001] startAbility result ' + 
+
+                '====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_001] startAbility result ' +
           })
         });
         } catch (e) {
@@ -2249,7 +2249,7 @@ export default function ActsUIExtensionContextMethodTest() {
         } catch (e) {
           console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
-        
+
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
@@ -2665,7 +2665,7 @@ export default function ActsUIExtensionContextMethodTest() {
         done();
       }
      });
-     
+
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_3900
      * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_3900
@@ -3464,7 +3464,7 @@ export default function ActsUIExtensionContextMethodTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0100
      * @tc.number SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0100
@@ -3529,7 +3529,7 @@ export default function ActsUIExtensionContextMethodTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0200
      * @tc.number SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0200
@@ -3595,7 +3595,7 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0300
      * @tc.number SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0300
@@ -3657,7 +3657,7 @@ export default function ActsUIExtensionContextMethodTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0400
      * @tc.number SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0400
@@ -3720,8 +3720,8 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    
-    
+
+
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100
      * @tc.number SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100
@@ -3730,7 +3730,7 @@ export default function ActsUIExtensionContextMethodTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100', Level.LEVEL0, 
+    it('SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100', Level.LEVEL0,
       async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100';
       if (mpEnable === 'true') {
@@ -3772,8 +3772,8 @@ export default function ActsUIExtensionContextMethodTest() {
             action:'result'
           }, null, (err, data)=>{
             console.info(
-                            
-                '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] startAbility result ' + 
+
+                '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] startAbility result ' +
           })
         });
         } catch (e) {
@@ -3789,7 +3789,7 @@ export default function ActsUIExtensionContextMethodTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200
      * @tc.number SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200
@@ -3798,7 +3798,7 @@ export default function ActsUIExtensionContextMethodTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200', Level.LEVEL0, 
+    it('SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200', Level.LEVEL0,
       async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200';
       if (mpEnable === 'true') {
@@ -3840,8 +3840,8 @@ export default function ActsUIExtensionContextMethodTest() {
             action:'result'
           }, undefined, (err, data)=>{
             console.info(
-                            
-                '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] startAbility result ' + 
+
+                '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] startAbility result ' +
           })
         });
         } catch (e) {

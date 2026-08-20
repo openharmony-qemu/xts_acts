@@ -103,5 +103,5 @@ export default class TestAbility extends UIAbility {
             resolve(AbilityConstant.OnSaveResult.ALL_AGREE);
         });
     }
-    
+
 }

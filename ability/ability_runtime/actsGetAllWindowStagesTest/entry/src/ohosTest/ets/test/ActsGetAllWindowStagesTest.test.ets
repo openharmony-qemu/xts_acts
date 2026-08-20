@@ -108,10 +108,10 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + 
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
                 (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                   .abilityInfo.name);
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + 
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
                 (data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                   .abilityInfo.name);
               expect(data.length).assertEqual(2);
@@ -171,10 +171,10 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + 
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
                 (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                   .abilityInfo.name);
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + 
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
                 (data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                   .abilityInfo.name);
               expect(data.length).assertEqual(2);
@@ -234,10 +234,10 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + 
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
                 (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                   .abilityInfo.name);
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + 
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
                 (data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                   .abilityInfo.name);
               expect(data.length).assertEqual(2);
@@ -297,10 +297,10 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + 
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
                 (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                   .abilityInfo.name);
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + 
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
                 (data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                   .abilityInfo.name);
               expect(data.length).assertEqual(2);
@@ -357,7 +357,7 @@ export default function ActsGetAllWindowStagesTest() {
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onCreate_WindowStage] getAllWindowStages size` +
             `${onCreate_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onCreate_WindowStage] Data: ` + 
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onCreate_WindowStage] Data: ` +
             JSON.stringify(onCreate_WindowStage));
           for (let i = 0; i < onCreate_WindowStage.length; i++) {
             hilog.info(0x0000, 'testTag',,
@@ -413,7 +413,7 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.info(0x0000, 'testTag',,
             `${TESTCASE} ${NAME} [onWindowStageCreate_WindowStage] getAllWindowStages size` +
             `${onWindowStageCreate_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageCreate_WindowStage] Data: ` + 
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageCreate_WindowStage] Data: ` +
             JSON.stringify(onWindowStageCreate_WindowStage));
           for (let i = 0; i < onWindowStageCreate_WindowStage.length; i++) {
             hilog.info(0x0000, 'testTag',,
@@ -469,7 +469,7 @@ export default function ActsGetAllWindowStagesTest() {
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onForeground_WindowStage] getAllWindowStages size` +
             `${onForeground_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onForeground_WindowStage] Data: ` + 
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onForeground_WindowStage] Data: ` +
             JSON.stringify(onForeground_WindowStage));
           for (let i = 0; i < onForeground_WindowStage.length; i++) {
             hilog.info(0x0000, 'testTag',,
@@ -525,7 +525,7 @@ export default function ActsGetAllWindowStagesTest() {
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onBackground_WindowStage] getAllWindowStages size` +
             `${onBackground_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onBackground_WindowStage] Data: ` + 
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onBackground_WindowStage] Data: ` +
             JSON.stringify(onBackground_WindowStage));
           for (let i = 0; i < onBackground_WindowStage.length; i++) {
             hilog.info(0x0000, 'testTag',,
@@ -589,7 +589,7 @@ export default function ActsGetAllWindowStagesTest() {
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onDestroy_WindowStage] getAllWindowStages size` +
             `${onDestroy_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onDestroy_WindowStage] Data: ` + 
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onDestroy_WindowStage] Data: ` +
             JSON.stringify(onDestroy_WindowStage));
           for (let i = 0; i < onDestroy_WindowStage.length; i++) {
             hilog.info(0x0000, 'testTag',,
@@ -647,7 +647,7 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.info(0x0000, 'testTag',,
             `${TESTCASE} ${NAME} [onWindowStageDestroy_WindowStage] getAllWindowStages size` +
             `${onWindowStageDestroy_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageDestroy_WindowStage] Data: ` + 
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageDestroy_WindowStage] Data: ` +
             JSON.stringify(onWindowStageDestroy_WindowStage));
           for (let i = 0; i < onWindowStageDestroy_WindowStage.length; i++) {
             hilog.info(0x0000, 'testTag',,
@@ -706,7 +706,7 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.info(0x0000, 'testTag',,
             `${TESTCASE} ${NAME} [onWindowStageWillDestroy_WindowStage] getAllWindowStages size` +
             `${onWindowStageWillDestroy_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageWillDestroy_WindowStage] Data: ` + 
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageWillDestroy_WindowStage] Data: ` +
             JSON.stringify(onWindowStageWillDestroy_WindowStage));
           for (let i = 0; i < onWindowStageWillDestroy_WindowStage.length; i++) {
             hilog.info(0x0000, 'testTag',,
@@ -744,7 +744,7 @@ export default function ActsGetAllWindowStagesTest() {
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [AbilityStage] getAllWindowStages size` +
             `${AbilityStage_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [[AbilityStage]] Data: ` + 
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [[AbilityStage]] Data: ` +
             JSON.stringify(AbilityStage_WindowStage));
           for (let i = 0; i < AbilityStage_WindowStage.length; i++) {
             hilog.info(0x0000, 'testTag',,
@@ -796,7 +796,7 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               for (let i = 0; i < data.length; i++) {
-                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` + 
+                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` +
                   (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                     .abilityInfo.name);
               }
@@ -930,7 +930,7 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
               for (let i = 0; i < data.length; i++) {
-                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` + 
+                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` +
                   (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                     .abilityInfo.name);
               }
@@ -991,7 +991,7 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
               for (let i = 0; i < data.length; i++) {
-                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` + 
+                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` +
                   (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                     .abilityInfo.name);
               }
@@ -1059,7 +1059,7 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
               for (let i = 0; i < data.length; i++) {
-                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` + 
+                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` +
                   (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                     .abilityInfo.name);
               }
@@ -1082,7 +1082,7 @@ export default function ActsGetAllWindowStagesTest() {
         }
       })
 
-      
+
    /**
      * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_1700
      * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_1700

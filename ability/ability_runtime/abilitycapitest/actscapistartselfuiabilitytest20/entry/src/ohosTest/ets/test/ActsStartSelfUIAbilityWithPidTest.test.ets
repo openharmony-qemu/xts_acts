@@ -57,7 +57,7 @@ function StartSelfUIAbilityWithPidResult(casesName: string): number {
 
 export default function ActsStartSelfUIAbilityWithPidTest() {
   describe('ActsStartSelfUIAbilityWithPidTest', () => {
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200
      * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200
@@ -93,7 +93,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
         }
       })
 
-      
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0100
      * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0100

@@ -1107,7 +1107,7 @@ export default function openLinkTest() {
         done();
       }
     })
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4502
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4502
@@ -1277,7 +1277,7 @@ export default function openLinkTest() {
       }
     })
 
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_5500
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_5500
@@ -1298,7 +1298,7 @@ export default function openLinkTest() {
         done();
       }
     })
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_5600
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_5600
@@ -1344,7 +1344,7 @@ export default function openLinkTest() {
         done();
       }
     })
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_5800
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_5800
@@ -1368,7 +1368,7 @@ export default function openLinkTest() {
       }
     })
 
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_5900
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_5900
@@ -1389,7 +1389,7 @@ export default function openLinkTest() {
         done();
       }
     })
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_6000
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_6000
@@ -1435,7 +1435,7 @@ export default function openLinkTest() {
         done();
       }
     })
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_6200
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_6200
@@ -1482,7 +1482,7 @@ export default function openLinkTest() {
       }
     })
 
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_6600
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_6600
@@ -1530,7 +1530,7 @@ export default function openLinkTest() {
       }
     })
 
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_6800
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_6800
@@ -1554,7 +1554,7 @@ export default function openLinkTest() {
         done();
       }
     })
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_6900
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_6900
@@ -1628,7 +1628,7 @@ export default function openLinkTest() {
         done();
       }
     })
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_7200
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_7200
@@ -1652,7 +1652,7 @@ export default function openLinkTest() {
       }
     })
 
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_7300
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_7300
@@ -1675,7 +1675,7 @@ export default function openLinkTest() {
         done();
       }
     })
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_7600
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_7600

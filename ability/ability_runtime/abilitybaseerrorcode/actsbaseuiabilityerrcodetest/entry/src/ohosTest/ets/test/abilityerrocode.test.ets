@@ -587,7 +587,7 @@ export default function errorCodeTest() {
               console.info(TAG + 'SUB_Ability_AbilityBase_ErrorCode_0013 succeed');
             }).catch((err: BusinessError) => {
               // 处理业务逻辑错误
-              console.error(TAG + 
+              console.error(TAG +
                 `SUB_Ability_AbilityBase_ErrorCode_00130 failed, code is ${err.code}, message is ${err.message}`);
               expect().assertFail();
             });

@@ -30,7 +30,7 @@ export default function ndkTest() {
     beforeEach(() => {})
     afterEach(() => {})
     afterAll(() => {})
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_NdkStartAbility_0100
      * @tc.number SUB_Ability_AbilityRuntime_NdkStartAbility_0100
@@ -328,7 +328,7 @@ export default function ndkTest() {
         done();
       }
     })
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_NdkStartAbility_1600
      * @tc.number SUB_Ability_AbilityRuntime_NdkStartAbility_1600

@@ -1142,7 +1142,7 @@ export default function UIAbilityContextTest() {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_openLinkError_4200 end');
     })
 
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_openLinkError_4300
      * @tc.number SUB_Ability_AbilityBase_openLinkError_4300
@@ -1173,7 +1173,7 @@ export default function UIAbilityContextTest() {
     })
 
 
-    
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_openLinkError_4400
      * @tc.number SUB_Ability_AbilityBase_openLinkError_4400
