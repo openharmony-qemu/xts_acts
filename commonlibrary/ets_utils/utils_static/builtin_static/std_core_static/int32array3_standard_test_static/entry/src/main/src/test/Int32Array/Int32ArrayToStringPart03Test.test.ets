@@ -687,7 +687,7 @@ export default function int32ArrayToStringPart03Test(): void {
      */
     it('int32ArrayToStringPart03Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
-      let filtered: Int32Array = arr.filter((_v: number, _i: int) => false);
+      let filtered: Int32Array = arr.filter((v: number, _i: int) => v < 0);
       expect(filtered.toString()).assertEqual('');
     });
 
@@ -701,7 +701,7 @@ export default function int32ArrayToStringPart03Test(): void {
      */
     it('int32ArrayToStringPart03Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
-      let filtered: Int32Array = arr.filter((_v: number) => false);
+      let filtered: Int32Array = arr.filter((v: number) => v < 0);
       let mapped: Int32Array = filtered.map((v: number) => v * 2);
       expect(mapped.toString()).assertEqual('');
     });
