@@ -3296,7 +3296,181 @@ export default function HttpInterceptorForSafeCheckTest() {
         }
         console.info(`${TAG} ${caseName} test End`);
       });
+    /**
+     * @tc.name   testHttpRequestInterceptorAbortPromise0100
+     * @tc.number SUB_NetworkMgr_HttpRequest_Abort_Promise_0100
+     * @tc.desc   test request(url, options) Promise with request abort interceptor (group 4), verify error code 2300996
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHttpRequestInterceptorAbortPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const caseName: string = "testHttpRequestInterceptorAbortPromise0100";
+        console.info(`${TAG} ${caseName} test Start`);
+        try {
+          let result: number = testNetManager.AddWritableRequestInterceptor(4, 1);
+          ExpectTrue(result === 0);
+          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
+          let httpRequest: http.HttpRequest = http.createHttp();
+          let options: http.HttpRequestOptions = {
+            method: http.RequestMethod.POST
+          };
+          try {
+            let response: http.HttpResponse = await httpRequest.request(HTTP_URL, options);
+            console.info(`${TAG} ${caseName} request unexpected success:${JSON.stringify(response)}`);
+            testNetManager.RemoveAllInterceptor(4);
+            httpRequest.destroy();
+            ExpectFail();
+            done();
+          } catch (error) {
+            const err: BusinessError = error as BusinessError;
+            console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
+            testNetManager.RemoveAllInterceptor(4);
+            httpRequest.destroy();
+            ExpectTrue(Number(err.code) === 2300996);
+            ExpectTrue(Number(err.code) === Http_ErrCode.OH_HTTP_REQUEST_INTERCEPTED);
+            done();
+          }
+        } catch (error) {
+          const err: BusinessError = error as BusinessError;
+          console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
+          testNetManager.RemoveAllInterceptor(4);
+          ExpectFail();
+          done();
+        }
+        console.info(`${TAG} ${caseName} test End`);
+      });
 
+    /**
+     * @tc.name   testHttpRequestInStreamInterceptorAbortCallback0100
+     * @tc.number SUB_NetworkMgr_HttpRequestInStream_Abort_Callback_0100
+     * @tc.desc   test requestInStream(url, callback) with request abort interceptor (group 4), verify error code 2300996
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHttpRequestInStreamInterceptorAbortCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const caseName: string = "testHttpRequestInStreamInterceptorAbortCallback0100";
+        console.info(`${TAG} ${caseName} test Start`);
+        try {
+          let result: number = testNetManager.AddWritableRequestInterceptor(4, 1);
+          ExpectTrue(result === 0);
+          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
+          let httpRequest: http.HttpRequest = http.createHttp();
+          httpRequest.requestInStream(HTTP_URL, (err: BusinessError, responseCode: number) => {
+            if (err) {
+              console.info(`${TAG} ${caseName} requestInStream fail, error code: ${err.code}, msg: ${err.message}`);
+              testNetManager.RemoveAllInterceptor(4);
+              httpRequest.destroy();
+              ExpectTrue(Number(err.code) === 2300996);
+              ExpectTrue(Number(err.code) === Http_ErrCode.OH_HTTP_REQUEST_INTERCEPTED);
+              done();
+            } else {
+              console.info(`${TAG} ${caseName} requestInStream unexpected success, response code: ${responseCode}`);
+              testNetManager.RemoveAllInterceptor(4);
+              httpRequest.destroy();
+              ExpectFail();
+              done();
+            }
+          });
+        } catch (error) {
+          const err: BusinessError = error as BusinessError;
+          console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
+          testNetManager.RemoveAllInterceptor(4);
+          ExpectFail();
+          done();
+        }
+        console.info(`${TAG} ${caseName} test End`);
+      });
+
+    /**
+     * @tc.name   testHttpRequestInStreamInterceptorAbortCallback0200
+     * @tc.number SUB_NetworkMgr_HttpRequestInStream_Abort_Callback_0200
+     * @tc.desc   test requestInStream(url, options, callback) with request abort interceptor (group 4), verify error code 2300996
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHttpRequestInStreamInterceptorAbortCallback0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const caseName: string = "testHttpRequestInStreamInterceptorAbortCallback0200";
+        console.info(`${TAG} ${caseName} test Start`);
+        try {
+          let result: number = testNetManager.AddWritableRequestInterceptor(4, 1);
+          ExpectTrue(result === 0);
+          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
+          let httpRequest: http.HttpRequest = http.createHttp();
+          let options: http.HttpRequestOptions = {
+            method: http.RequestMethod.POST
+          };
+          httpRequest.requestInStream(HTTP_URL, options, (err: BusinessError, responseCode: number) => {
+            if (err) {
+              console.info(`${TAG} ${caseName} requestInStream fail, error code: ${err.code}, msg: ${err.message}`);
+              testNetManager.RemoveAllInterceptor(4);
+              httpRequest.destroy();
+              ExpectTrue(Number(err.code) === 2300996);
+              ExpectTrue(Number(err.code) === Http_ErrCode.OH_HTTP_REQUEST_INTERCEPTED);
+              done();
+            } else {
+              console.info(`${TAG} ${caseName} requestInStream unexpected success, response code: ${responseCode}`);
+              testNetManager.RemoveAllInterceptor(4);
+              httpRequest.destroy();
+              ExpectFail();
+              done();
+            }
+          });
+        } catch (error) {
+          const err: BusinessError = error as BusinessError;
+          console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
+          testNetManager.RemoveAllInterceptor(4);
+          ExpectFail();
+          done();
+        }
+        console.info(`${TAG} ${caseName} test End`);
+      });
+    /**
+     * @tc.name   testHttpRequestInterceptorAbortCallback0100
+     * @tc.number SUB_NetworkMgr_HttpRequest_Abort_Callback_0100
+     * @tc.desc   test request(url, callback) with request abort interceptor (group 4), verify error code 2300996
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHttpRequestInterceptorAbortCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const caseName: string = "testHttpRequestInterceptorAbortCallback0100";
+        console.info(`${TAG} ${caseName} test Start`);
+        try {
+          let result: number = testNetManager.AddWritableRequestInterceptor(4, 1);
+          ExpectTrue(result === 0);
+          console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
+          let httpRequest: http.HttpRequest = http.createHttp();
+          httpRequest.request(HTTP_URL, (err: BusinessError, res: http.HttpResponse) => {
+            if (err) {
+              console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
+              testNetManager.RemoveAllInterceptor(4);
+              httpRequest.destroy();
+              ExpectTrue(err.code == 2300996);
+              done();
+            } else {
+              console.info(`${TAG} ${caseName} request unexpected success:${JSON.stringify(res)}`);
+              testNetManager.RemoveAllInterceptor(4);
+              httpRequest.destroy();
+              ExpectFail();
+              done();
+            }
+          });
+        } catch (error) {
+          const err: BusinessError = error as BusinessError;
+          console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
+          testNetManager.RemoveAllInterceptor(4);
+          ExpectFail();
+          done();
+        }
+        console.info(`${TAG} ${caseName} test End`);
+      });
     /**
      * @tc.name   testHttpRequestSyncInterceptorAbort0100
      * @tc.number SUB_NetworkMgr_HttpRequestSync_Abort_0100

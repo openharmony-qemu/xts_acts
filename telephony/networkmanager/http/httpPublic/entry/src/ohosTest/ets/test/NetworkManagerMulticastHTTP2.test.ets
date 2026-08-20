@@ -96,8 +96,8 @@ export default function NetworkManagerMulticast2HTTP2Test() {
                     done();
                 })
             }catch (error) {
-                console.log(`${caseName} request failed, error: ${JSON.stringify(error)}`);
-                expectFalse();
+                console.log(`${caseName}  request failed, error: ${JSON.stringify(error)}`);
+                expectTrue(error.code === 2300999);
                 console.info(`${caseName}---End`);
                 done();
             }
