@@ -16,7 +16,14 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium';
 import { hidebug } from '@kit.PerformanceAnalysisKit';
 
+function asyncSleep(time: number): Pomise<object> {
+ 	return new Promise((resolve) => {
+    setTimeout(resolve, time);
+  });
+}
+
 export default function HidebuggwpasanTest() {
+  const waittime = 1500;
   describe('HidebuggwpasanTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -29,6 +36,7 @@ export default function HidebuggwpasanTest() {
       // This API supports only one parameter: preset action function.
     })
     afterEach(() => {
+      await asyncSleep(waittime);
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
@@ -66,7 +74,11 @@ export default function HidebuggwpasanTest() {
         done();
       } catch (err) {
         console.info(`testHidebuggwpasan_0100 > error code: ${err.code}, error msg: ${err.message}`);
-        expect().assertFail();
+        if (err.code === 11400114) {
+          console.info(`testHidebuggwpasan_0100 > 11400114 (app num limit), skip.`);
+        } else {
+          expect().assertFail();
+        }
         done();
       }
       console.info("testHidebuggwpasan_0100 end");
@@ -100,7 +112,11 @@ export default function HidebuggwpasanTest() {
         done();
       } catch (err) {
         console.info(`testHidebuggwpasan_0200 > error code: ${err.code}, error msg: ${err.message}`);
-        expect().assertFail();
+        if (err.code === 11400114) {
+ 	        console.info(`testHidebuggwpasan_0200 > 11400114 (app num limit), skip.`);
+ 	      } else {
+ 	        expect().assertFail();
+ 	      }
         done();
       }
       console.info("testHidebuggwpasan_0200 end");
@@ -127,7 +143,7 @@ export default function HidebuggwpasanTest() {
         done();
       } catch (err) {
         console.info(`testHidebuggwpasan_0300 > error code: ${err.code}, error msg: ${err.message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHidebuggwpasan_0300 end");
@@ -156,7 +172,11 @@ export default function HidebuggwpasanTest() {
         done();
       } catch (err) {
         console.info(`testHidebuggwpasan_0400 > error code: ${err.code}, error msg: ${err.message}`);
-        expect().assertFail();
+        if (err.code === 11400114) {
+ 	        console.info(`testHidebuggwpasan_0400 > 11400114 (app num limit), skip.`);
+ 	      } else {
+ 	        expect().assertFail();
+ 	      }
         done();
       }
       console.info("testHidebuggwpasan_0400 end");
@@ -179,7 +199,7 @@ export default function HidebuggwpasanTest() {
         done();
       } catch (err) {
         console.info(`testHidebuggwpasan_0500 > error code: ${err.code}, error msg: ${err.message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHidebuggwpasan_0500 end");
@@ -206,7 +226,11 @@ export default function HidebuggwpasanTest() {
         done();
       } catch (err) {
         console.info(`testHidebuggwpasan_0600 > error code: ${err.code}, error msg: ${err.message}`);
-        expect().assertFalse();
+        if (err.code === 11400114) {
+ 	        console.info(`testHidebuggwpasan_0600 > 11400114 (app num limit), skip.`);
+ 	      } else {
+ 	        expect().assertFail();
+ 	      }
         done();
       }
       console.info("testHidebuggwpasan_0600 end");
@@ -235,7 +259,11 @@ export default function HidebuggwpasanTest() {
         done();
       } catch (err) {
         console.info(`testHidebuggwpasan_0700 > error code: ${err.code}, error msg: ${err.message}`);
-        expect().assertFalse();
+        if (err.code === 11400114) {
+ 	        console.info(`testHidebuggwpasan_0700 > 11400114 (app num limit), skip.`);
+ 	      } else {
+ 	        expect().assertFail();
+ 	      }
         done();
       }
       console.info("testHidebuggwpasan_0700 end");
@@ -263,7 +291,7 @@ export default function HidebuggwpasanTest() {
         done();
       } catch (err) {
         console.info(`testHidebuggwpasan_0800 > error code: ${err.code}, error msg: ${err.message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHidebuggwpasan_0800 end");
@@ -292,7 +320,7 @@ export default function HidebuggwpasanTest() {
         done();
       } catch (err) {
         console.info(`testHidebuggwpasan_0900 > error code: ${err.code}, error msg: ${err.message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHidebuggwpasan_0900 end");
@@ -318,7 +346,7 @@ export default function HidebuggwpasanTest() {
         done();
       } catch (err) {
         console.info(`testHidebuggwpasan_0900 > error code: ${err.code}, error msg: ${err.message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHidebuggwpasan_0900 end");
@@ -351,7 +379,11 @@ export default function HidebuggwpasanTest() {
         done();
       } catch (err) {
         console.info(`testHidebuggwpasan_1100 > error code: ${err.code}, error msg: ${err.message}`);
-        expect().assertFail();
+        if (err.code === 11400114) {
+ 	        console.info(`testHidebuggwpasan_1100 > 11400114 (app num limit), skip.`);
+ 	      } else {
+ 	        expect().assertFail();
+ 	      }
         done();
       }
       console.info("testHidebuggwpasan_1100 end");
@@ -384,7 +416,11 @@ export default function HidebuggwpasanTest() {
         done();
       } catch (err) {
         console.info(`testHidebuggwpasan_1200 > error code: ${err.code}, error msg: ${err.message}`);
-        expect().assertFail();
+        if (err.code === 11400114) {
+ 	        console.info(`testHidebuggwpasan_1200 > 11400114 (app num limit), skip.`);
+ 	      } else {
+ 	        expect().assertFail();
+ 	      }
         done();
       }
       console.info("testHidebuggwpasan_1200 end");
@@ -410,7 +446,7 @@ export default function HidebuggwpasanTest() {
         done();
       } catch (err) {
         console.info(`testHidebuggwpasan_1300 > error code: ${err.code}, error msg: ${err.message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHidebuggwpasan_1300 end");

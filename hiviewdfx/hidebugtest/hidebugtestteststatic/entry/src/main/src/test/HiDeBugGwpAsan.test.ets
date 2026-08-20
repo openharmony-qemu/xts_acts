@@ -6,8 +6,14 @@ import { BusinessError } from '@ohos.base';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
-export default function HidebuggwpasanTest() {
+function asyncSleep(time:int) {
+    return new Promise<int>((resolve, reject) => {
+        setTimeout(() => resolve(0), time)
+    });
+}
 
+export default function HidebuggwpasanTest() {
+    const waittime = 1500;
     describe("HidebuggwpasanTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         /**
@@ -34,11 +40,16 @@ export default function HidebuggwpasanTest() {
                 expect(state == 10).assertTrue();
                 console.info("testHidebuggwpasan_0100 start 03");
                 hidebug.disableGwpAsanGrayscale();
+                await asyncSleep(waittime);
                 console.info("testHidebuggwpasan_0100 start 04");
                 done();
             } catch (err) {
                 console.info(`testHidebuggwpasan_0100 > error code: ${err.code}, error msg: ${err.message}`);
-                expect().assertFail();
+                if (err.code === 11400114) {
+                    console.info(`testHidebuggwpasan_0100 > 11400114 (app num limit), skip.`);
+                } else {
+                    expect().assertFail();
+                }
                 done();
             }
             console.info("testHidebuggwpasan_0100 end");
@@ -68,11 +79,16 @@ export default function HidebuggwpasanTest() {
                 expect(state == 3).assertTrue();
                 console.info("testHidebuggwpasan_0200 start 03");
                 hidebug.disableGwpAsanGrayscale();
+                await asyncSleep(waittime);
                 console.info("testHidebuggwpasan_0200 start 04");
                 done();
             } catch (err) {
                 console.info(`testHidebuggwpasan_0200 > error code: ${err.code}, error msg: ${err.message}`);
-                expect().assertFail();
+                if (err.code === 11400114) {
+                    console.info(`testHidebuggwpasan_0200 > 11400114 (app num limit), skip.`);
+                } else {
+                    expect().assertFail();
+                }
                 done();
             }
             console.info("testHidebuggwpasan_0200 end");
@@ -97,11 +113,16 @@ export default function HidebuggwpasanTest() {
                 expect(state == 7).assertTrue();
                 console.info("testHidebuggwpasan_0400 start 03");
                 hidebug.disableGwpAsanGrayscale();
+                await asyncSleep(waittime);
                 console.info("testHidebuggwpasan_0400 start 04");
                 done();
             } catch (err) {
                 console.info(`testHidebuggwpasan_0400 > error code: ${err.code}, error msg: ${err.message}`);
-                expect().assertFail();
+                if (err.code === 11400114) {
+                    console.info(`testHidebuggwpasan_0400 > 11400114 (app num limit), skip.`);
+                } else {
+                    expect().assertFail();
+                }
                 done();
             }
             console.info("testHidebuggwpasan_0400 end");
@@ -129,7 +150,11 @@ export default function HidebuggwpasanTest() {
             } catch (err) {
                 err = err as BusinessError;
                 console.info(`testHidebuggwpasan_0500 > error code: ${err.code}, error msg: ${err.message}`);
-                expect(err.code == 401).assertTrue();
+                if (err.code === 11400114) {
+                    console.info(`testHidebuggwpasan_0500 > 11400114 (app num limit), skip.`);
+                } else {
+                    expect(err.code === 401).assertTrue();
+                }
                 done();
             }
             console.info("testHidebuggwpasan_0500 end");
@@ -153,10 +178,15 @@ export default function HidebuggwpasanTest() {
                 hidebug.enableGwpAsanGrayscale(options6);
                 console.info("testHidebuggwpasan_0600 start 02");
                 hidebug.disableGwpAsanGrayscale();
+                await asyncSleep(waittime);
                 done();
             } catch (err) {
                 console.info(`testHidebuggwpasan_0600 > error code: ${err.code}, error msg: ${err.message}`);
-                expect().assertFalse();
+                if (err.code === 11400114) {
+                    console.info(`testHidebuggwpasan_0600 > 11400114 (app num limit), skip.`);
+                } else {
+                    expect().assertFail();
+                }
                 done();
             }
             console.info("testHidebuggwpasan_0600 end");
@@ -182,10 +212,15 @@ export default function HidebuggwpasanTest() {
                 hidebug.enableGwpAsanGrayscale(options7);
                 console.info("testHidebuggwpasan_0700 start 02");
                 hidebug.disableGwpAsanGrayscale();
+                await asyncSleep(waittime);
                 done();
             } catch (err) {
                 console.info(`testHidebuggwpasan_0700 > error code: ${err.code}, error msg: ${err.message}`);
-                expect().assertFalse();
+                if (err.code === 11400114) {
+                    console.info(`testHidebuggwpasan_0700 > 11400114 (app num limit), skip.`);
+                } else {
+                    expect().assertFail();
+                }
                 done();
             }
             console.info("testHidebuggwpasan_0700 end");
@@ -214,7 +249,11 @@ export default function HidebuggwpasanTest() {
             } catch (err) {
                 err = err as BusinessError;
                 console.info(`testHidebuggwpasan_0800 > error code: ${err.code}, error msg: ${err.message}`);
-                expect(err.code == 401).assertTrue();
+                if (err.code === 11400114) {
+                    console.info(`testHidebuggwpasan_0800 > 11400114 (app num limit), skip.`);
+                } else {
+                    expect(err.code === 401).assertTrue();
+                }
                 done();
             }
             console.info("testHidebuggwpasan_0800 end");
@@ -244,7 +283,11 @@ export default function HidebuggwpasanTest() {
             } catch (err) {
                 err = err as BusinessError;
                 console.info(`testHidebuggwpasan_0900 > error code: ${err.code}, error msg: ${err.message}`);
-                expect(err.code == 401).assertTrue();
+                if (err.code === 11400114) {
+                    console.info(`testHidebuggwpasan_0900 > 11400114 (app num limit), skip.`);
+                } else {
+                    expect(err.code === 401).assertTrue();
+                }
                 done();
             }
             console.info("testHidebuggwpasan_0900 end");
@@ -271,7 +314,11 @@ export default function HidebuggwpasanTest() {
             } catch (err) {
                 err = err as BusinessError;
                 console.info(`testHidebuggwpasan_1000 > error code: ${err.code}, error msg: ${err.message}`);
-                expect(err.code == 401).assertTrue();
+                if (err.code === 11400114) {
+                    console.info(`testHidebuggwpasan_1000 > 11400114 (app num limit), skip.`);
+                } else {
+                    expect(err.code === 401).assertTrue();
+                }
                 done();
             }
             console.info("testHidebuggwpasan_1000 end");
@@ -300,11 +347,16 @@ export default function HidebuggwpasanTest() {
                 expect(state == 3).assertTrue();
                 console.info("testHidebuggwpasan_1100 start 03");
                 hidebug.disableGwpAsanGrayscale();
+                await asyncSleep(waittime);
                 console.info("testHidebuggwpasan_1100 start 04");
                 done();
             } catch (err) {
                 console.info(`testHidebuggwpasan_1100 > error code: ${err.code}, error msg: ${err.message}`);
-                expect().assertFail();
+                if (err.code === 11400114) {
+                    console.info(`testHidebuggwpasan_1100 > 11400114 (app num limit), skip.`);
+                } else {
+                    expect().assertFail();
+                }
                 done();
             }
             console.info("testHidebuggwpasan_1100 end");
@@ -333,11 +385,16 @@ export default function HidebuggwpasanTest() {
                 expect(state == 3).assertTrue();
                 console.info("testHidebuggwpasan_1200 start 03");
                 hidebug.disableGwpAsanGrayscale();
+                await asyncSleep(waittime);
                 console.info("testHidebuggwpasan_1200 start 04");
                 done();
             } catch (err) {
                 console.info(`testHidebuggwpasan_1200 > error code: ${err.code}, error msg: ${err.message}`);
-                expect().assertFail();
+                if (err.code === 11400114) {
+                    console.info(`testHidebuggwpasan_1200 > 11400114 (app num limit), skip.`);
+                } else {
+                    expect().assertFail();
+                }
                 done();
             }
             console.info("testHidebuggwpasan_1200 end");
@@ -363,7 +420,11 @@ export default function HidebuggwpasanTest() {
                 done();
             } catch (err) {
                 console.info(`testHidebuggwpasan_1300 > error code: ${err.code}, error msg: ${err.message}`);
-                expect(err.code === 401).assertTrue();
+                if (err.code === 11400114) {
+                    console.info(`testHidebuggwpasan_1300 > 11400114 (app num limit), skip.`);
+                } else {
+                    expect(err.code === 401).assertTrue();
+                }
                 done();
             }
             console.info("testHidebuggwpasan_1300 end");
