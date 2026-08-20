@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -843,6 +843,9 @@ export default function int8ArrayFromPart02Test(): void {
     it('int8ArrayFromPart02Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Iterable<number> = [1, 2, 3];
       let arr: Int8Array = Int8Array.from<number>(src, (v: number, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual(1);
+        }
         return 5;
       });
       expect(arr.length).assertEqual(3);
@@ -898,6 +901,9 @@ export default function int8ArrayFromPart02Test(): void {
     it('int8ArrayFromPart02Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Iterable<number> = [1, 2, 3];
       let arr: Int8Array = Int8Array.from<number>(src, (v: number, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual(1);
+        }
         return INT8_MAX;
       });
       expect(arr[0]).assertEqual(INT8_MAX);
@@ -914,6 +920,9 @@ export default function int8ArrayFromPart02Test(): void {
     it('int8ArrayFromPart02Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Iterable<number> = [1, 2, 3];
       let arr: Int8Array = Int8Array.from<number>(src, (v: number, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual(1);
+        }
         return INT8_MIN;
       });
       let r1: number = arr[0];
@@ -932,6 +941,9 @@ export default function int8ArrayFromPart02Test(): void {
     it('int8ArrayFromPart02Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Iterable<number> = [1, 2, 3];
       let arr: Int8Array = Int8Array.from<number>(src, (v: number, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual(1);
+        }
         return 128;
       });
       let r1: number = arr[0];
@@ -950,6 +962,9 @@ export default function int8ArrayFromPart02Test(): void {
     it('int8ArrayFromPart02Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Iterable<number> = [1, 2, 3];
       let arr: Int8Array = Int8Array.from<number>(src, (v: number, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual(1);
+        }
         return -129;
       });
       expect(arr[0]).assertEqual(INT8_MAX);
@@ -966,6 +981,9 @@ export default function int8ArrayFromPart02Test(): void {
     it('int8ArrayFromPart02Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Iterable<number> = [1, 2, 3];
       let arr: Int8Array = Int8Array.from<number>(src, (v: number, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual(1);
+        }
         return 255;
       });
       expect(arr[0]).assertEqual(-1);
@@ -982,6 +1000,9 @@ export default function int8ArrayFromPart02Test(): void {
     it('int8ArrayFromPart02Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Iterable<number> = [1, 2, 3];
       let arr: Int8Array = Int8Array.from<number>(src, (v: number, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual(1);
+        }
         return Number.NaN;
       });
       expect(arr[0]).assertEqual(0);
@@ -998,6 +1019,9 @@ export default function int8ArrayFromPart02Test(): void {
     it('int8ArrayFromPart02Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Iterable<number> = [1, 2, 3];
       let arr: Int8Array = Int8Array.from<number>(src, (v: number, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual(1);
+        }
         return 1.9;
       });
       expect(arr[0]).assertEqual(1);
@@ -1014,6 +1038,9 @@ export default function int8ArrayFromPart02Test(): void {
     it('int8ArrayFromPart02Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Iterable<number> = [1, 2, 3];
       let arr: Int8Array = Int8Array.from<number>(src, (v: number, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual(1);
+        }
         return -1.9;
       });
       expect(arr[0]).assertEqual(-1);

@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -450,6 +450,9 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['1', '2'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('1');
+        }
         return k + 1;
       });
       expect(result.length).assertEqual(2);
@@ -468,6 +471,10 @@ export default function int8ArrayFromPart01Test(): void {
       let count: number = 0.0;
       const src: Array<string> = [];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v.length).assertEqual(0);
+        }
+
         count = count + 1;
         return 0.0;
       });
@@ -572,6 +579,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return 128.0;
       });
       let r1: number = result[0];
@@ -590,6 +601,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return -129.0;
       });
       expect(result[0]).assertEqual(INT8_MAX);
@@ -606,6 +621,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return 255.0;
       });
       expect(result[0]).assertEqual(-1);
@@ -622,6 +641,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return 256.0;
       });
       expect(result[0]).assertEqual(0);
@@ -638,6 +661,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return 129.0;
       });
       expect(result[0]).assertEqual(-INT8_MAX);
@@ -654,6 +681,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return 383.0;
       });
       expect(result[0]).assertEqual(INT8_MAX);
@@ -670,6 +701,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return -256.0;
       });
       expect(result[0]).assertEqual(0);
@@ -686,6 +721,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return -255.0;
       });
       expect(result[0]).assertEqual(1);
@@ -702,6 +741,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return Number.NaN;
       });
       expect(result[0]).assertEqual(0);
@@ -718,6 +761,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return 1.9;
       });
       expect(result[0]).assertEqual(1);
@@ -734,6 +781,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return -1.9;
       });
       expect(result[0]).assertEqual(-1);
@@ -750,6 +801,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return 0.0;
       });
       expect(result[0]).assertEqual(0);
@@ -766,6 +821,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return -0.0;
       });
       expect(result[0]).assertEqual(0);
@@ -796,6 +855,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return -128.0;
       });
       let r1: number = result[0];
@@ -814,6 +877,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return 127.0;
       });
       expect(result[0]).assertEqual(INT8_MAX);
@@ -830,6 +897,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a', 'b', 'c'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return k;
       });
       expect(result[0]).assertEqual(0);
@@ -863,6 +934,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a', 'b'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return 42.0;
       });
       expect(result[0]).assertEqual(42);
@@ -902,6 +977,10 @@ export default function int8ArrayFromPart01Test(): void {
       let factor: number = 2.0;
       const src: Array<string> = ['a', 'b', 'c'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return k * factor;
       });
       expect(result[2]).assertEqual(4);
@@ -919,6 +998,10 @@ export default function int8ArrayFromPart01Test(): void {
       let collected: Array<number> = [];
       const src: Array<string> = ['a', 'b', 'c'];
       Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         collected.push(k);
         return 0.0;
       });
@@ -938,6 +1021,10 @@ export default function int8ArrayFromPart01Test(): void {
       let calls: number = 0.0;
       const src: Array<string> = ['a', 'b', 'c'];
       Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         calls = calls + 1;
         return 0.0;
       });
@@ -974,6 +1061,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a', 'b'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return k * 2;
       });
       expect(result[1]).assertEqual(2);
@@ -990,6 +1081,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return 0.0;
       });
       expect(result.BYTES_PER_ELEMENT).assertEqual(1);
@@ -1006,6 +1101,10 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a', 'b', 'c'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        if (k === 0) {
+          expect(v).assertEqual('a');
+        }
+
         return 0.0;
       });
       let r1: int = result.length;
@@ -1024,6 +1123,7 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a', 'b'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        expect(v.length).assertEqual(1);
         return k + 1;
       });
       expect(result[0]).assertEqual(1);
@@ -1059,7 +1159,7 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['a'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
-        expect(v.length).assertEqual(1);
+        expect(v).assertEqual('a');
         expect(k).assertEqual(0);
         return 0.0;
       });
@@ -1078,6 +1178,7 @@ export default function int8ArrayFromPart01Test(): void {
       const src: Array<string> = ['a'];
       try {
         Int8Array.from<string>(src, (v: string, k: number) => {
+          expect(v).assertEqual('a');
           throw new Error('boom');
         });
         expect().assertFail();
@@ -1099,6 +1200,7 @@ export default function int8ArrayFromPart01Test(): void {
       const src: Array<string> = ['a'];
       try {
         Int8Array.from<string>(src, (v: string, k: number) => {
+          expect(v).assertEqual('a');
           throw new RangeError('r');
         });
         expect().assertFail();

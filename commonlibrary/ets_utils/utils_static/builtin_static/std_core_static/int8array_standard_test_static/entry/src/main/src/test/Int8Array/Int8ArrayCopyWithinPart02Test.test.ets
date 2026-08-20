@@ -55,7 +55,6 @@ export default function int8ArrayCopyWithinPart02Test(): void {
     it('int8ArrayCopyWithinPart02Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3, 4, 5]);
       let ret = arr.copyWithin(0, 1, 3);
-      expect(ret).not().assertEqual(undefined);
       let r1: number = ret.$_get(0);
       let e1: int = 2;
       expect(r1).assertEqual(e1);
@@ -87,7 +86,6 @@ export default function int8ArrayCopyWithinPart02Test(): void {
     it('int8ArrayCopyWithinPart02Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array(0);
       let ret = arr.copyWithin(0, 0, 0);
-      expect(ret).not().assertEqual(undefined);
       let r1: int = ret.length;
       let e1: int = 0;
       expect(r1).assertEqual(e1);
@@ -111,7 +109,6 @@ export default function int8ArrayCopyWithinPart02Test(): void {
     it('int8ArrayCopyWithinPart02Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([7]);
       let ret = arr.copyWithin(0, 0, 1);
-      expect(ret).not().assertEqual(undefined);
       let r1: number = ret.$_get(0);
       let e1: int = 7;
       expect(r1).assertEqual(e1);

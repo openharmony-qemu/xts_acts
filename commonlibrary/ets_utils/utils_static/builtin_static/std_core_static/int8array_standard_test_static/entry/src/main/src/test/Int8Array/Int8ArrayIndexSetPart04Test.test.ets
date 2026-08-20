@@ -627,6 +627,9 @@ export default function int8ArrayIndexSetPart04Test(): void {
     it('int8ArrayIndexSetPart04Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       const filtered: Int8Array = arr.filter((value: number, index: int, array: Int8Array) => {
+        if (index === 0) {
+          expect(value).assertEqual(1);
+        }
         arr.$_set(index, 99);
         return true;
       });
@@ -649,6 +652,9 @@ export default function int8ArrayIndexSetPart04Test(): void {
     it('int8ArrayIndexSetPart04Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       arr.forEach((value: number, index: int, array: Int8Array) => {
+        if (index === 0) {
+          expect(value).assertEqual(1);
+        }
         arr.$_set(2, 99);
       });
       let valueAt2: number = arr.$_get(2);

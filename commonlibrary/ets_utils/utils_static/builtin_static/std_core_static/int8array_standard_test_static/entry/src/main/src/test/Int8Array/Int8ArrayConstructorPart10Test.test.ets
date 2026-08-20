@@ -800,6 +800,9 @@ export default function int8ArrayConstructorPart10Test(): void {
       let view = new Int8Array(buf, off);
       let count: int = 0;
       view.forEach((v: number) => {
+        if (v === 0.0) {
+          count = count + 1;
+        }
         count = count + 1;
       });
       expect(count).assertEqual(0);
@@ -873,6 +876,9 @@ export default function int8ArrayConstructorPart10Test(): void {
       let view = new Int8Array(buf, off);
       let count: int = 0;
       view.forEach((v: number) => {
+        if (v === 0.0) {
+          count = count + 1;
+        }
         count = count + 1;
       });
       expect(count).assertEqual(0);

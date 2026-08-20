@@ -457,6 +457,9 @@ export default function int8ArrayFromPart06Test(): void {
       const src: Array<number> = [10, 20, 30];
       try {
         Int8Array.from(src, (v, k) => {
+          if (k === 0) {
+            expect(v).assertEqual(10);
+          }
           throw new RangeError('boom');
         });
         expect().assertFail();
@@ -478,6 +481,9 @@ export default function int8ArrayFromPart06Test(): void {
       const src: Int8Array = Int8Array.of(10, 20, 30);
       try {
         Int8Array.from(src, (v, k) => {
+          if (k === 0) {
+            expect(v).assertEqual(10);
+          }
           throw new TypeError('t');
         });
         expect().assertFail();
@@ -500,6 +506,9 @@ export default function int8ArrayFromPart06Test(): void {
       const src: ArrayLikeN3_10_20_30 = new ArrayLikeN3_10_20_30();
       try {
         Int8Array.from(src, (v, k) => {
+          if (k === 0) {
+            expect(v).assertEqual(10);
+          }
           throw new RangeError('al');
         });
         expect().assertFail();
@@ -732,9 +741,15 @@ export default function int8ArrayFromPart06Test(): void {
       let c1: number = 0;
       let c2: number = 0;
       r1.forEach((v, k) => {
+        if (k === 0) {
+          expect(v).assertEqual(10);
+        }
         c1 = c1 + 1;
       });
       r2.forEach((v, k) => {
+        if (k === 0) {
+          expect(v).assertEqual(10);
+        }
         c2 = c2 + 1;
       });
       expect(c1).assertEqual(3);
@@ -874,6 +889,9 @@ export default function int8ArrayFromPart06Test(): void {
       const i8Src: Int8Array = Int8Array.of(1, 2, 3);
       const arrSrc: Array<number> = [1, 2, 3];
       const fn: (v: number, k: number) => number = (v, k) => {
+        if (k === 0) {
+          expect(v).assertEqual(1);
+        }
         return 0;
       };
       const r1: Int8Array = Int8Array.from(i8Src, fn);
@@ -895,6 +913,9 @@ export default function int8ArrayFromPart06Test(): void {
       const i8Src: Int8Array = Int8Array.of(1, 2, 3);
       const arrSrc: Array<number> = [1, 2, 3];
       const fn: (v: number, k: number) => number = (v, k) => {
+        if (k === 0) {
+          expect(v).assertEqual(1);
+        }
         return INT8_MAX;
       };
       const r1: Int8Array = Int8Array.from(i8Src, fn);
@@ -915,6 +936,9 @@ export default function int8ArrayFromPart06Test(): void {
       const i8Src: Int8Array = Int8Array.of(1, 2, 3);
       const arrSrc: Array<number> = [1, 2, 3];
       const fn: (v: number, k: number) => number = (v, k) => {
+        if (k === 0) {
+          expect(v).assertEqual(1);
+        }
         return 128;
       };
       const r1: Int8Array = Int8Array.from(i8Src, fn);
@@ -935,6 +959,9 @@ export default function int8ArrayFromPart06Test(): void {
       const i8Src: Int8Array = Int8Array.of(1, 2, 3);
       const arrSrc: Array<number> = [1, 2, 3];
       const fn: (v: number, k: number) => number = (v, k) => {
+        if (k === 0) {
+          expect(v).assertEqual(1);
+        }
         return Number.NaN;
       };
       const r1: Int8Array = Int8Array.from(i8Src, fn);

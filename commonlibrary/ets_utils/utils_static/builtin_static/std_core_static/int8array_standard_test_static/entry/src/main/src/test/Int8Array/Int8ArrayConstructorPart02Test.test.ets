@@ -99,6 +99,9 @@ export default function int8ArrayConstructorPart02Test(): void {
       let arr: Int8Array = new Int8Array(len);
       let count: int = 0;
       arr.forEach((v: number) => {
+        if (v === 0.0) {
+          count = count + 1;
+        }
         count = count + 1;
       });
       expect(count).assertEqual(0);
