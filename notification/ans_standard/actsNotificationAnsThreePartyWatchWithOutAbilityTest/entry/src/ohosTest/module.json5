@@ -45,5 +45,19 @@
         ]
       }
     ],
+    "requestPermissions": [
+      {
+        "name": 'ohos.permission.NOTIFICATION_CONTROLLER'
+      },
+      {
+        "name": 'ohos.permission.SUBSCRIBE_NOTIFICATION'
+      },
+      {
+        "name": 'ohos.permission.NOTIFICATION_SYSTEM_SUBSCRIBER'
+      },
+      {
+        "name": 'ohos.permission.ACCESS_BLUETOOTH'
+      }
+    ]
   }
 }

@@ -44,5 +44,29 @@
         ]
       }
     ],
+    "requestPermissions": [
+      {
+        "name": 'ohos.permission.NOTIFICATION_CONTROLLER',
+        "reason": "$string:notification", // 权限用途描述,
+      },
+      {
+        "name": 'ohos.permission.GET_BUNDLE_INFO_PRIVILEGED',
+      },
+      {
+        "name": 'ohos.permission.NOTIFICATION_AGENT_CONTROLLER',
+      },
+      {
+        "name": 'ohos.permission.SUBSCRIBE_NOTIFICATION'
+      },
+      {
+        "name": 'ohos.permission.ACCESS_BLUETOOTH',
+        "reason": "$string:access_bluetooth", // 权限用途描述,
+        "usedScene": {
+          "abilities": ["EntryAbility"],
+          "when": "always"
+        }
+      }
+    ]
   }
+}
 }

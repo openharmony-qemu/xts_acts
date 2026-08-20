@@ -44,5 +44,10 @@
         ]
       }
     ],
+    "requestPermissions": [
+      {
+        "name": 'ohos.permission.NOTIFICATION_CONTROLLER'
+      }
+    ]
   }
 }

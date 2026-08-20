@@ -55,5 +55,10 @@
         "label": "$string:StaticNotificationSubscriber_label"
       }
     ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.SUBSCRIBE_NOTIFICATION"
+      }
+    ]
   }
 }
