@@ -528,7 +528,8 @@ export default function int32ArrayToLocaleStringPart04Test(): void {
     it('int32ArrayToLocaleStringPart04Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       let calls: number = 0;
-      arr.forEach((_v: number, _i: int, _a: Int32Array) => {
+      arr.forEach((v: number, i: int, _a: Int32Array) => {
+        expect(v).assertEqual(i + 1);
         arr.toLocaleString('en-US');
         calls = calls + 1;
       });
