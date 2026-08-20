@@ -20,6 +20,7 @@ import { commonEventManager } from '@kit.BasicServicesKit';
 import base from '@ohos.base';
 import { common, sendableContextManager } from '@kit.AbilityKit';
 import startupManager from '@ohos.app.appstartup.startupManager';
+import StartupConfig from '@ohos.app.appstartup.StartupConfig';
 import { wantAgent, Want } from '@kit.AbilityKit';
 import type { WantAgent } from '@kit.AbilityKit';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
@@ -616,7 +617,7 @@ export default function sendableContextManagerTest() {
     it('SUB_ChildProcessManager_sendableContextManager_2100', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2100`;
       let startupTasks: Array<string> = ['testTask'];
-      let config: startupManager.StartupConfig | undefined = undefined;
+      let config: StartupConfig | undefined = undefined;
       try {
         startupManager.run(startupTasks, config).then(() => {
           console.info(`${tag} startupManager.run succeed`);
@@ -679,8 +680,8 @@ export default function sendableContextManagerTest() {
     it('SUB_ChildProcessManager_sendableContextManager_2300', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2300`;
       let startupTasks: Array<string>|undefined = undefined;
-      let abilityStageContext: startupManager.StartupConfig | undefined = undefined;
-      let config: startupManager.StartupConfig | undefined = undefined;
+      let abilityStageContext: common.AbilityStageContext | undefined = undefined;
+      let config: StartupConfig | undefined = undefined;
       try {
         startupManager.run(startupTasks, abilityStageContext, config).then(() => {
           console.info(`${tag} startupManager.run succeed`);
@@ -775,8 +776,8 @@ export default function sendableContextManagerTest() {
     it('SUB_ChildProcessManager_sendableContextManager_2600', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2600`;
       let startupTasks: Array<string> = ['testTask'];
-      let abilityStageContext: startupManager.StartupConfig | undefined = undefined;
-      let config: startupManager.StartupConfig | undefined = undefined;
+      let abilityStageContext: common.AbilityStageContext | undefined = undefined;
+      let config: StartupConfig | undefined = undefined;
       try {
         startupManager.run(startupTasks, abilityStageContext, config).then(() => {
           console.info(`${tag} startupManager.run succeed`);
@@ -807,7 +808,7 @@ export default function sendableContextManagerTest() {
     it('SUB_ChildProcessManager_sendableContextManager_2700', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2700`;
       let startupTasks: Array<string> = ['testTask'];
-      let abilityStageContext: startupManager.StartupConfig | undefined = undefined;
+      let abilityStageContext: common.AbilityStageContext | undefined = undefined;
       let config = null;
       try {
         startupManager.run(startupTasks, abilityStageContext, config).then(() => {
@@ -839,8 +840,8 @@ export default function sendableContextManagerTest() {
     it('SUB_ChildProcessManager_sendableContextManager_2800', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2800`;
       let startupTasks: Array<string> = ['testTask'];
-      let abilityStageContext: startupManager.StartupConfig | undefined = undefined;
-      let config: startupManager.StartupConfig | undefined = undefined;
+      let abilityStageContext: common.AbilityStageContext | undefined = undefined;
+      let config: StartupConfig | undefined = undefined;
       try {
         startupManager.run(startupTasks, abilityStageContext, config).then(() => {
           console.info(`${tag} startupManager.run succeed`);
