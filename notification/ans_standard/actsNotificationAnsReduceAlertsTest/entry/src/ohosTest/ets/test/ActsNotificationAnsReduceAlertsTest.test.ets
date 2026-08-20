@@ -241,10 +241,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
+                console.info(TEST_SUITE_NAME + TAG +
+                  ` Scceeded in getting active notifications, data is ${JSON.stringify(data?.[0]?.notificationFlags?.lockScreenEnabled)}`);
+                  let lsed = data?.[0]?.notificationFlags?.lockScreenEnabled
+                  console.info(TEST_SUITE_NAME + TAG +
+                    ` Scceeded in getting active notifications, data is ${JSON.stringify(typeof lsed)}`);
               expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
               done()
-            })
-            .catch((err: BusinessError) => {
+            }).catch((err: BusinessError) => {
               console.error(TEST_SUITE_NAME + TAG +
                 `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
               if (err?.code === 801) {
