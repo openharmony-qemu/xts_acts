@@ -137,20 +137,25 @@ export default function TaskPolymorphismTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskPolymorphismTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let buffer = new ArrayBuffer(64)
-      let longTask = new taskpool.LongTask(processArrayBuffer, buffer)
-      let task: taskpool.Task = longTask
-      task.setTransferList([buffer])
       try {
-        let result = await taskpool.execute(task)
-        expect(String(result)).assertEqual(String(64))
-      } finally {
-        // Cleanup-only: terminateTask() may throw if the task already finished
-        // or was never scheduled. This is best-effort cleanup, not a test
-        // assertion, so a failure here does not invalidate the test result.
-        try { taskpool.terminateTask(longTask) } catch (e) { console.warn(`terminateTask error: ${e}`) }
+        let buffer = new ArrayBuffer(64)
+        let longTask = new taskpool.LongTask(processArrayBuffer, buffer)
+        let task: taskpool.Task = longTask
+        task.setTransferList([buffer])
+        try {
+          let result = await taskpool.execute(task)
+          expect(String(result)).assertEqual(String(64))
+        } finally {
+          // Cleanup-only: terminateTask() may throw if the task already finished
+          // or was never scheduled. This is best-effort cleanup, not a test
+          // assertion, so a failure here does not invalidate the test result.
+          try { taskpool.terminateTask(longTask) } catch (e) { console.warn(`terminateTask error: ${e}`) }
+        }
+        done()
+      } catch (error) {
+        console.error(`TaskPolymorphismTest0300 failed: ${error}`)
+        expect().assertFail()
       }
-      done()
     })
 
     /**
@@ -219,25 +224,30 @@ export default function TaskPolymorphismTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskPolymorphismTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let genericsTask = new taskpool.GenericsTask<[], void>(sendProgress)
-      let task: taskpool.Task = genericsTask
-      let received: string = ''
-      let dataPromise = new Promise<void>((resolve: () => void, reject: (reason?: Object) => void) => {
-        let timer: number = setTimeout((): void => {
-          reject(new Error('receive data timeout'))
-        }, 10000)
-        task.onReceiveData((data: Object): void => {
-          received = String(data)
-          clearTimeout(timer)
-          resolve()
+      try {
+        let genericsTask = new taskpool.GenericsTask<[], void>(sendProgress)
+        let task: taskpool.Task = genericsTask
+        let received: string = ''
+        let dataPromise = new Promise<void>((resolve: () => void, reject: (reason?: Object) => void) => {
+          let timer: number = setTimeout((): void => {
+            reject(new Error('receive data timeout'))
+          }, 10000)
+          task.onReceiveData((data: Object): void => {
+            received = String(data)
+            clearTimeout(timer)
+            resolve()
+          })
         })
-      })
 
-      await taskpool.execute(task)
-      await dataPromise
+        await taskpool.execute(task)
+        await dataPromise
 
-      expect(received).assertEqual('progress: 50%')
-      done()
+        expect(received).assertEqual('progress: 50%')
+        done()
+      } catch (error) {
+        console.error(`TaskPolymorphismTest0700 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -281,17 +291,22 @@ export default function TaskPolymorphismTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskPolymorphismTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let longTask = new taskpool.LongTask(identityFunc, 100.0)
       try {
-        let result = await taskpool.executeDelayed(1000, longTask)
-        expect(String(result)).assertEqual(String(100))
-      } finally {
-        // Cleanup-only: terminateTask() may throw if the task already finished
-        // or was never scheduled. This is best-effort cleanup, not a test
-        // assertion, so a failure here does not invalidate the test result.
-        try { taskpool.terminateTask(longTask) } catch (e) { console.warn(`terminateTask error: ${e}`) }
+        let longTask = new taskpool.LongTask(identityFunc, 100.0)
+        try {
+          let result = await taskpool.executeDelayed(1000, longTask)
+          expect(String(result)).assertEqual(String(100))
+        } finally {
+          // Cleanup-only: terminateTask() may throw if the task already finished
+          // or was never scheduled. This is best-effort cleanup, not a test
+          // assertion, so a failure here does not invalidate the test result.
+          try { taskpool.terminateTask(longTask) } catch (e) { console.warn(`terminateTask error: ${e}`) }
+        }
+        done()
+      } catch (error) {
+        console.error(`TaskPolymorphismTest0900 failed: ${error}`)
+        expect().assertFail()
       }
-      done()
     })
 
     /**
@@ -303,25 +318,30 @@ export default function TaskPolymorphismTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskPolymorphismTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let data = new ConcurrentData()
-      let depTask = new taskpool.Task(dependencyFlagProducer, data)
-      let mainTask = new taskpool.LongTask(dependencyFlagConsumer, data)
-      mainTask.addDependency(depTask)
       try {
-        let results = await Promise.all([
-          taskpool.execute(mainTask),
-          taskpool.execute(depTask)
-        ])
+        let data = new ConcurrentData()
+        let depTask = new taskpool.Task(dependencyFlagProducer, data)
+        let mainTask = new taskpool.LongTask(dependencyFlagConsumer, data)
+        mainTask.addDependency(depTask)
+        try {
+          let results = await Promise.all([
+            taskpool.execute(mainTask),
+            taskpool.execute(depTask)
+          ])
 
-        expect(String(results[0])).assertEqual(String(100))
-        expect(String(results[1])).assertEqual(String(10))
-      } finally {
-        // Cleanup-only: terminateTask() may throw if the task already finished
-        // or was never scheduled. This is best-effort cleanup, not a test
-        // assertion, so a failure here does not invalidate the test result.
-        try { taskpool.terminateTask(mainTask) } catch (e) { console.warn(`terminateTask error: ${e}`) }
+          expect(String(results[0])).assertEqual(String(100))
+          expect(String(results[1])).assertEqual(String(10))
+        } finally {
+          // Cleanup-only: terminateTask() may throw if the task already finished
+          // or was never scheduled. This is best-effort cleanup, not a test
+          // assertion, so a failure here does not invalidate the test result.
+          try { taskpool.terminateTask(mainTask) } catch (e) { console.warn(`terminateTask error: ${e}`) }
+        }
+        done()
+      } catch (error) {
+        console.error(`TaskPolymorphismTest1000 failed: ${error}`)
+        expect().assertFail()
       }
-      done()
     })
 
     /**
@@ -383,17 +403,22 @@ export default function TaskPolymorphismTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskPolymorphismTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let longTask = new taskpool.LongTask(longRunningTask)
       try {
-        let result = await taskpool.execute(longTask)
-        expect(String(result)).assertEqual(String(499999500000))
-      } finally {
-        // Cleanup-only: terminateTask() may throw if the task already finished
-        // or was never scheduled. This is best-effort cleanup, not a test
-        // assertion, so a failure here does not invalidate the test result.
-        try { taskpool.terminateTask(longTask) } catch (e) { console.warn(`terminateTask error: ${e}`) }
+        let longTask = new taskpool.LongTask(longRunningTask)
+        try {
+          let result = await taskpool.execute(longTask)
+          expect(String(result)).assertEqual(String(499999500000))
+        } finally {
+          // Cleanup-only: terminateTask() may throw if the task already finished
+          // or was never scheduled. This is best-effort cleanup, not a test
+          // assertion, so a failure here does not invalidate the test result.
+          try { taskpool.terminateTask(longTask) } catch (e) { console.warn(`terminateTask error: ${e}`) }
+        }
+        done()
+      } catch (error) {
+        console.error(`TaskPolymorphismTest1400 failed: ${error}`)
+        expect().assertFail()
       }
-      done()
     })
 
     /**
@@ -405,12 +430,17 @@ export default function TaskPolymorphismTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskPolymorphismTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let genericsTask = new taskpool.GenericsTask<[number], string>(stringFunc, 100)
-      let result = await taskpool.execute(genericsTask)
+      try {
+        let genericsTask = new taskpool.GenericsTask<[number], string>(stringFunc, 100)
+        let result = await taskpool.execute(genericsTask)
 
-      expect(result as string).assertEqual('value: 100')
-      expect(typeof result).assertEqual('string')
-      done()
+        expect(result as string).assertEqual('value: 100')
+        expect(typeof result).assertEqual('string')
+        done()
+      } catch (error) {
+        console.error(`TaskPolymorphismTest1500 failed: ${error}`)
+        expect().assertFail()
+      }
     })
   })
 }

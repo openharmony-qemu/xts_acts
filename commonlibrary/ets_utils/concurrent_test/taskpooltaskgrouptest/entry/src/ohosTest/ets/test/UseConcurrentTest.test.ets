@@ -409,15 +409,20 @@ export default function UseConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('UseConcurrentTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let task1 = new taskpool.Task(concurrentReturnBoolean, 42.0)
-      let task2 = new taskpool.Task(concurrentReturnBoolean, -1.0)
+      try {
+        let task1 = new taskpool.Task(concurrentReturnBoolean, 42.0)
+        let task2 = new taskpool.Task(concurrentReturnBoolean, -1.0)
 
-      let result1 = await taskpool.execute(task1)
-      let result2 = await taskpool.execute(task2)
+        let result1 = await taskpool.execute(task1)
+        let result2 = await taskpool.execute(task2)
 
-      expect(result1 as boolean).assertTrue()
-      expect(result2 as boolean).assertFalse()
-      done()
+        expect(result1 as boolean).assertTrue()
+        expect(result2 as boolean).assertFalse()
+        done()
+      } catch (error) {
+        console.error(`UseConcurrentTest1500 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -429,14 +434,19 @@ export default function UseConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('UseConcurrentTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let task = new taskpool.Task(concurrentReturnCollectionsArray)
-      let result = await taskpool.execute(task) as collections.Array<number>
+      try {
+        let task = new taskpool.Task(concurrentReturnCollectionsArray)
+        let result = await taskpool.execute(task) as collections.Array<number>
 
-      expect(result.length).assertEqual(3)
-      expect(result[0]).assertEqual(10)
-      expect(result[1]).assertEqual(20)
-      expect(result[2]).assertEqual(30)
-      done()
+        expect(result.length).assertEqual(3)
+        expect(result[0]).assertEqual(10)
+        expect(result[1]).assertEqual(20)
+        expect(result[2]).assertEqual(30)
+        done()
+      } catch (error) {
+        console.error(`UseConcurrentTest1600 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -448,13 +458,18 @@ export default function UseConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('UseConcurrentTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let task = new taskpool.Task(concurrentReturnCollectionsMap)
-      let result = await taskpool.execute(task) as collections.Map<string, number>
+      try {
+        let task = new taskpool.Task(concurrentReturnCollectionsMap)
+        let result = await taskpool.execute(task) as collections.Map<string, number>
 
-      expect(result.size).assertEqual(2)
-      expect(result.get('x')).assertEqual(100)
-      expect(result.get('y')).assertEqual(200)
-      done()
+        expect(result.size).assertEqual(2)
+        expect(result.get('x')).assertEqual(100)
+        expect(result.get('y')).assertEqual(200)
+        done()
+      } catch (error) {
+        console.error(`UseConcurrentTest1700 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -466,11 +481,16 @@ export default function UseConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('UseConcurrentTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let task = new taskpool.Task(concurrentCreateResult, 55.0)
-      let result = await taskpool.execute(task) as ResultData
+      try {
+        let task = new taskpool.Task(concurrentCreateResult, 55.0)
+        let result = await taskpool.execute(task) as ResultData
 
-      expect(result.value_).assertEqual(55)
-      done()
+        expect(result.value_).assertEqual(55)
+        done()
+      } catch (error) {
+        console.error(`UseConcurrentTest1800 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -546,18 +566,23 @@ export default function UseConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('UseConcurrentTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let group = new taskpool.TaskGroup()
-      group.addTask(tsConcurrentAdd, 10.0, 20.0)
-      group.addTask(tsConcurrentMultiply, 3.0, 4.0)
-      group.addTask(tsConcurrentIdentity, 42.0)
+      try {
+        let group = new taskpool.TaskGroup()
+        group.addTask(tsConcurrentAdd, 10.0, 20.0)
+        group.addTask(tsConcurrentMultiply, 3.0, 4.0)
+        group.addTask(tsConcurrentIdentity, 42.0)
 
-      let results = await taskpool.execute(group) as Object[]
+        let results = await taskpool.execute(group) as Object[]
 
-      expect(results.length).assertEqual(3)
-      expect(String(results[0])).assertEqual(String(30))
-      expect(String(results[1])).assertEqual(String(12))
-      expect(String(results[2])).assertEqual(String(42))
-      done()
+        expect(results.length).assertEqual(3)
+        expect(String(results[0])).assertEqual(String(30))
+        expect(String(results[1])).assertEqual(String(12))
+        expect(String(results[2])).assertEqual(String(42))
+        done()
+      } catch (error) {
+        console.error(`UseConcurrentTest2300 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -585,20 +610,25 @@ export default function UseConcurrentTest(): void {
      * @tc.level  LEVEL0
      */
     it('UseConcurrentTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let tasks: taskpool.Task[] = []
-      for (let i = 0; i < 10; i++) {
-        tasks.push(new taskpool.Task(tsConcurrentIdentity, i * 1.0))
+      try {
+        let tasks: taskpool.Task[] = []
+        for (let i = 0; i < 10; i++) {
+          tasks.push(new taskpool.Task(tsConcurrentIdentity, i * 1.0))
+        }
+
+        let results = await Promise.all(tasks.map((t: taskpool.Task): Promise<Object> => {
+          return taskpool.execute(t)
+        }))
+
+        expect(results.length).assertEqual(10)
+        expect(String(results[0])).assertEqual(String(0))
+        expect(String(results[5])).assertEqual(String(5))
+        expect(String(results[9])).assertEqual(String(9))
+        done()
+      } catch (error) {
+        console.error(`UseConcurrentTest2500 failed: ${error}`)
+        expect().assertFail()
       }
-
-      let results = await Promise.all(tasks.map((t: taskpool.Task): Promise<Object> => {
-        return taskpool.execute(t)
-      }))
-
-      expect(results.length).assertEqual(10)
-      expect(String(results[0])).assertEqual(String(0))
-      expect(String(results[5])).assertEqual(String(5))
-      expect(String(results[9])).assertEqual(String(9))
-      done()
     })
 
     /**
@@ -722,11 +752,16 @@ export default function UseConcurrentTest(): void {
      * @tc.level  LEVEL1
      */
     it('UseConcurrentTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let task = new taskpool.Task(tsComboConcurrent, 7)
-      let result = await taskpool.execute(task)
+      try {
+        let task = new taskpool.Task(tsComboConcurrent, 7)
+        let result = await taskpool.execute(task)
 
-      expect(String(result)).assertEqual(String(120))
-      done()
+        expect(String(result)).assertEqual(String(120))
+        done()
+      } catch (error) {
+        console.error(`UseConcurrentTest3000 failed: ${error}`)
+        expect().assertFail()
+      }
     })
   })
 }

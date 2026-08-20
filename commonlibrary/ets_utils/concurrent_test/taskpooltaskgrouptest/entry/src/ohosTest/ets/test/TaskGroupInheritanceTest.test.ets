@@ -306,18 +306,23 @@ export default function TaskGroupInheritanceTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskGroupInheritanceTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let myGroup = new MyTaskGroup()
-      myGroup.addTask(addTask, 1.0, 2.0)
-      myGroup.addTask(multiplyTask, 3.0, 4.0)
-      myGroup.addTask(squareTask, 5.0)
+      try {
+        let myGroup = new MyTaskGroup()
+        myGroup.addTask(addTask, 1.0, 2.0)
+        myGroup.addTask(multiplyTask, 3.0, 4.0)
+        myGroup.addTask(squareTask, 5.0)
 
-      let results = await taskpool.execute(myGroup) as Object[]
+        let results = await taskpool.execute(myGroup) as Object[]
 
-      expect(results.length).assertEqual(3)
-      expect(String(results[0])).assertEqual(String(3))
-      expect(String(results[1])).assertEqual(String(12))
-      expect(String(results[2])).assertEqual(String(25))
-      done()
+        expect(results.length).assertEqual(3)
+        expect(String(results[0])).assertEqual(String(3))
+        expect(String(results[1])).assertEqual(String(12))
+        expect(String(results[2])).assertEqual(String(25))
+        done()
+      } catch (error) {
+        console.error(`TaskGroupInheritanceTest1100 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -329,26 +334,31 @@ export default function TaskGroupInheritanceTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskGroupInheritanceTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let group1 = new MyTaskGroup()
-      group1.addTask(addTask, 1.0, 2.0)
-      group1.addTask(multiplyTask, 3.0, 4.0)
+      try {
+        let group1 = new MyTaskGroup()
+        group1.addTask(addTask, 1.0, 2.0)
+        group1.addTask(multiplyTask, 3.0, 4.0)
 
-      let group2 = new MyTaskGroup()
-      group2.addTask(squareTask, 5.0)
-      group2.addTask(addTask, 10.0, 20.0)
+        let group2 = new MyTaskGroup()
+        group2.addTask(squareTask, 5.0)
+        group2.addTask(addTask, 10.0, 20.0)
 
-      let results = await Promise.all([
-        taskpool.execute(group1),
-        taskpool.execute(group2)
-      ]) as Object[][]
+        let results = await Promise.all([
+          taskpool.execute(group1),
+          taskpool.execute(group2)
+        ]) as Object[][]
 
-      expect(results[0].length).assertEqual(2)
-      expect(String(results[0][0])).assertEqual(String(3))
-      expect(String(results[0][1])).assertEqual(String(12))
-      expect(results[1].length).assertEqual(2)
-      expect(String(results[1][0])).assertEqual(String(25))
-      expect(String(results[1][1])).assertEqual(String(30))
-      done()
+        expect(results[0].length).assertEqual(2)
+        expect(String(results[0][0])).assertEqual(String(3))
+        expect(String(results[0][1])).assertEqual(String(12))
+        expect(results[1].length).assertEqual(2)
+        expect(String(results[1][0])).assertEqual(String(25))
+        expect(String(results[1][1])).assertEqual(String(30))
+        done()
+      } catch (error) {
+        console.error(`TaskGroupInheritanceTest1200 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -360,19 +370,24 @@ export default function TaskGroupInheritanceTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskGroupInheritanceTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let task = new taskpool.Task(addTask, 1.0, 2.0)
-      await taskpool.execute(task)
-
-      let myGroup = new MyTaskGroup()
-      let caught: boolean = false
       try {
-        myGroup.addTask(task)
+        let task = new taskpool.Task(addTask, 1.0, 2.0)
+        await taskpool.execute(task)
+
+        let myGroup = new MyTaskGroup()
+        let caught: boolean = false
+        try {
+          myGroup.addTask(task)
+          expect().assertFail()
+        } catch (e) {
+          caught = true
+        }
+        expect(caught).assertTrue()
+        done()
+      } catch (error) {
+        console.error(`TaskGroupInheritanceTest1300 failed: ${error}`)
         expect().assertFail()
-      } catch (e) {
-        caught = true
       }
-      expect(caught).assertTrue()
-      done()
     })
   })
 }

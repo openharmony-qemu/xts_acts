@@ -363,13 +363,18 @@ export default function ISendableImplTest(): void {
      * @tc.level  LEVEL0
      */
     it('ISendableImplTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let outer = new OuterSendable()
+      try {
+        let outer = new OuterSendable()
 
-      let task = new taskpool.Task(nestedSendableModifyDispatch, outer, 55.0)
-      await taskpool.execute(task)
+        let task = new taskpool.Task(nestedSendableModifyDispatch, outer, 55.0)
+        await taskpool.execute(task)
 
-      expect(outer.getNestedValue()).assertEqual(55)
-      done()
+        expect(outer.getNestedValue()).assertEqual(55)
+        done()
+      } catch (error) {
+        console.error(`ISendableImplTest1500 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -400,12 +405,17 @@ export default function ISendableImplTest(): void {
      * @tc.level  LEVEL0
      */
     it('ISendableImplTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let initData = new ResultData()
-      let task = new taskpool.Task(createAndReturnSendableDispatch, initData)
-      let result = await taskpool.execute(task) as ResultData
+      try {
+        let initData = new ResultData()
+        let task = new taskpool.Task(createAndReturnSendableDispatch, initData)
+        let result = await taskpool.execute(task) as ResultData
 
-      expect(result.value_).assertEqual(42)
-      done()
+        expect(result.value_).assertEqual(42)
+        done()
+      } catch (error) {
+        console.error(`ISendableImplTest1700 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -624,17 +634,22 @@ export default function ISendableImplTest(): void {
      * @tc.level  LEVEL1
      */
     it('ISendableImplTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let data = new CustomSendable()
-      data.value_ = 10
+      try {
+        let data = new CustomSendable()
+        data.value_ = 10
 
-      let task1 = new taskpool.Task(modifySendableValueDispatch, data, 25.0)
-      await taskpool.execute(task1)
+        let task1 = new taskpool.Task(modifySendableValueDispatch, data, 25.0)
+        await taskpool.execute(task1)
 
-      let task2 = new taskpool.Task(readSendableValueDispatch, data)
-      let result = await taskpool.execute(task2)
+        let task2 = new taskpool.Task(readSendableValueDispatch, data)
+        let result = await taskpool.execute(task2)
 
-      expect(result as number).assertEqual(25)
-      done()
+        expect(result as number).assertEqual(25)
+        done()
+      } catch (error) {
+        console.error(`ISendableImplTest2700 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -646,24 +661,29 @@ export default function ISendableImplTest(): void {
      * @tc.level  LEVEL1
      */
     it('ISendableImplTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let data1 = new CustomSendable()
-      data1.value_ = 11
-      let data2 = new CustomSendable()
-      data2.value_ = 22
+      try {
+        let data1 = new CustomSendable()
+        data1.value_ = 11
+        let data2 = new CustomSendable()
+        data2.value_ = 22
 
-      let task1 = new taskpool.Task(incrementSendableValueDispatch, data1)
-      let task2 = new taskpool.Task(incrementSendableValueDispatch, data2)
+        let task1 = new taskpool.Task(incrementSendableValueDispatch, data1)
+        let task2 = new taskpool.Task(incrementSendableValueDispatch, data2)
 
-      let results = await Promise.all([
-        taskpool.execute(task1),
-        taskpool.execute(task2)
-      ])
+        let results = await Promise.all([
+          taskpool.execute(task1),
+          taskpool.execute(task2)
+        ])
 
-      expect(results[0] as number).assertEqual(12)
-      expect(results[1] as number).assertEqual(23)
-      expect(data1.value_).assertEqual(12)
-      expect(data2.value_).assertEqual(23)
-      done()
+        expect(results[0] as number).assertEqual(12)
+        expect(results[1] as number).assertEqual(23)
+        expect(data1.value_).assertEqual(12)
+        expect(data2.value_).assertEqual(23)
+        done()
+      } catch (error) {
+        console.error(`ISendableImplTest2800 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -675,28 +695,33 @@ export default function ISendableImplTest(): void {
      * @tc.level  LEVEL1
      */
     it('ISendableImplTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let sharedData = new SharedCounter()
+      try {
+        let sharedData = new SharedCounter()
 
-      let task1 = new taskpool.Task(incrementSharedDispatch, sharedData)
-      let task2 = new taskpool.Task(incrementSharedDispatch, sharedData)
-      let task3 = new taskpool.Task(incrementSharedDispatch, sharedData)
-      let task4 = new taskpool.Task(incrementSharedDispatch, sharedData)
-      let task5 = new taskpool.Task(incrementSharedDispatch, sharedData)
+        let task1 = new taskpool.Task(incrementSharedDispatch, sharedData)
+        let task2 = new taskpool.Task(incrementSharedDispatch, sharedData)
+        let task3 = new taskpool.Task(incrementSharedDispatch, sharedData)
+        let task4 = new taskpool.Task(incrementSharedDispatch, sharedData)
+        let task5 = new taskpool.Task(incrementSharedDispatch, sharedData)
 
-      await Promise.all([
-        taskpool.execute(task1),
-        taskpool.execute(task2),
-        taskpool.execute(task3),
-        taskpool.execute(task4),
-        taskpool.execute(task5)
-      ])
+        await Promise.all([
+          taskpool.execute(task1),
+          taskpool.execute(task2),
+          taskpool.execute(task3),
+          taskpool.execute(task4),
+          taskpool.execute(task5)
+        ])
 
-      // 5 concurrent tasks increment the same unsynchronized counter. Without
-      // locking, lost updates may occur (read-modify-write is not atomic), so
-      // the final value is non-deterministic. The value must be at least 1 (all
-      // tasks ran) and at most 5 (one increment per task) under any interleaving.
-      expect(sharedData.counter_ >= 1 && sharedData.counter_ <= 5).assertTrue()
-      done()
+        // 5 concurrent tasks increment the same unsynchronized counter. Without
+        // locking, lost updates may occur (read-modify-write is not atomic), so
+        // the final value is non-deterministic. The value must be at least 1 (all
+        // tasks ran) and at most 5 (one increment per task) under any interleaving.
+        expect(sharedData.counter_ >= 1 && sharedData.counter_ <= 5).assertTrue()
+        done()
+      } catch (error) {
+        console.error(`ISendableImplTest2900 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -730,27 +755,32 @@ export default function ISendableImplTest(): void {
      * @tc.level  LEVEL0
      */
     it('ISendableImplTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let cv = new utils.locks.ConditionVariable()
-      expect(typeof cv.wait).assertEqual('function')
-      expect(typeof cv.notifyOne).assertEqual('function')
+      try {
+        let cv = new utils.locks.ConditionVariable()
+        expect(typeof cv.wait).assertEqual('function')
+        expect(typeof cv.notifyOne).assertEqual('function')
 
-      const notifyTimer = setTimeout((): void => {
-        cv.notifyOne()
-      }, 500)
-      let waitTimer: number = -1
-      // Race wait() against a timeout so the test cannot hang indefinitely.
-      const waitResult = await Promise.race<boolean>([
-        cv.wait().then((): boolean => true),
-        new Promise<boolean>((resolve): void => {
-          waitTimer = setTimeout((): void => { resolve(false) }, 3000)
-        })
-      ])
-      clearTimeout(notifyTimer)
-      if (waitTimer !== -1) {
-        clearTimeout(waitTimer)
+        const notifyTimer = setTimeout((): void => {
+          cv.notifyOne()
+        }, 500)
+        let waitTimer: number = -1
+        // Race wait() against a timeout so the test cannot hang indefinitely.
+        const waitResult = await Promise.race<boolean>([
+          cv.wait().then((): boolean => true),
+          new Promise<boolean>((resolve): void => {
+            waitTimer = setTimeout((): void => { resolve(false) }, 3000)
+          })
+        ])
+        clearTimeout(notifyTimer)
+        if (waitTimer !== -1) {
+          clearTimeout(waitTimer)
+        }
+        expect(waitResult).assertTrue()
+        done()
+      } catch (error) {
+        console.error(`ISendableImplTest3100 failed: ${error}`)
+        expect().assertFail()
       }
-      expect(waitResult).assertTrue()
-      done()
     })
 
     /**
@@ -882,19 +912,24 @@ export default function ISendableImplTest(): void {
      * @tc.level  LEVEL0
      */
     it('ISendableImplTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let instance = new ExtendedSendable()
-      instance.value_ = 10
+      try {
+        let instance = new ExtendedSendable()
+        instance.value_ = 10
 
-      let task1 = new taskpool.Task(readCalculatedDispatch, instance, 3.0)
-      let result1 = await taskpool.execute(task1)
+        let task1 = new taskpool.Task(readCalculatedDispatch, instance, 3.0)
+        let result1 = await taskpool.execute(task1)
 
-      expect(result1 as number).assertEqual(30)
+        expect(result1 as number).assertEqual(30)
 
-      let task2 = new taskpool.Task(readIsValidDispatch, instance)
-      let result2 = await taskpool.execute(task2)
+        let task2 = new taskpool.Task(readIsValidDispatch, instance)
+        let result2 = await taskpool.execute(task2)
 
-      expect(result2 as boolean).assertTrue()
-      done()
+        expect(result2 as boolean).assertTrue()
+        done()
+      } catch (error) {
+        console.error(`ISendableImplTest3800 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -1040,18 +1075,23 @@ export default function ISendableImplTest(): void {
      * @tc.level  LEVEL0
      */
     it('ISendableImplTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let instance = new MultiInterfaceSendable()
+      try {
+        let instance = new MultiInterfaceSendable()
 
-      instance.increment()
-      instance.increment()
+        instance.increment()
+        instance.increment()
 
-      expect(instance.getCount()).assertEqual(2)
+        expect(instance.getCount()).assertEqual(2)
 
-      let task = new taskpool.Task(readMultiCountDispatch, instance)
-      let result = await taskpool.execute(task)
+        let task = new taskpool.Task(readMultiCountDispatch, instance)
+        let result = await taskpool.execute(task)
 
-      expect(result as number).assertEqual(2)
-      done()
+        expect(result as number).assertEqual(2)
+        done()
+      } catch (error) {
+        console.error(`ISendableImplTest4500 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
@@ -1063,43 +1103,48 @@ export default function ISendableImplTest(): void {
      * @tc.level  LEVEL1
      */
     it('ISendableImplTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let instance = new SharedSendableData()
-      instance.value_ = 100
-
-      let receivedValue: number = -1
-      let myWorker = new worker.ThreadWorker('../workers/SendablePassWorker.ets')
-      let timeoutId: number = -1
       try {
-        await Promise.race([
-          new Promise<void>((resolve, reject): void => {
-            myWorker.onmessage = (e: MessageEvents): void => {
-              receivedValue = e.data as number
-              resolve()
-            }
-            myWorker.onerror = (e: ErrorEvent): void => {
-              reject(e)
-            }
-            myWorker.postMessage(instance)
-          }),
-          new Promise<void>((resolve, reject): void => {
-            timeoutId = setTimeout((): void => {
-              reject(new Error('ISendableImplTest4600: worker reply timeout'))
-            }, 5000)
-          })
-        ])
-      } finally {
-        if (timeoutId !== -1) {
-          clearTimeout(timeoutId)
-        }
-        try {
-          myWorker.terminate()
-        } catch (e) {
-          console.warn(`ISendableImplTest4600 terminate failed: ${e}`)
-        }
-      }
+        let instance = new SharedSendableData()
+        instance.value_ = 100
 
-      expect(receivedValue).assertEqual(100)
-      done()
+        let receivedValue: number = -1
+        let myWorker = new worker.ThreadWorker('../workers/SendablePassWorker.ets')
+        let timeoutId: number = -1
+        try {
+          await Promise.race([
+            new Promise<void>((resolve, reject): void => {
+              myWorker.onmessage = (e: MessageEvents): void => {
+                receivedValue = e.data as number
+                resolve()
+              }
+              myWorker.onerror = (e: ErrorEvent): void => {
+                reject(e)
+              }
+              myWorker.postMessage(instance)
+            }),
+            new Promise<void>((resolve, reject): void => {
+              timeoutId = setTimeout((): void => {
+                reject(new Error('ISendableImplTest4600: worker reply timeout'))
+              }, 5000)
+            })
+          ])
+        } finally {
+          if (timeoutId !== -1) {
+            clearTimeout(timeoutId)
+          }
+          try {
+            myWorker.terminate()
+          } catch (e) {
+            console.warn(`ISendableImplTest4600 terminate failed: ${e}`)
+          }
+        }
+
+        expect(receivedValue).assertEqual(100)
+        done()
+      } catch (error) {
+        console.error(`ISendableImplTest4600 failed: ${error}`)
+        expect().assertFail()
+      }
     })
 
     /**
