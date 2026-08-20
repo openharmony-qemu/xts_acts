@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
-import libMindSpore from 'libmindspore.so';
+import * as libMindSpore from 'libmindspore.so';
 import Utils, { Log } from './Utils.test';
 
 const fileArr = [
@@ -112,7 +112,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_UpdateWeights_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(0);
       expect(result).assertEqual(0);
     })
 
@@ -125,7 +125,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_UpdateWeights_0002', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(1);
       expect(result).assertEqual(0);
     })
 
@@ -138,7 +138,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_UpdateWeights_0003', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(2);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(2);
       expect(result).assertEqual(0);
     })
     /**
@@ -150,7 +150,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_UpdateWeights_0004', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(3);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(3);
       expect(result).assertEqual(0);
     })
     /**
@@ -162,7 +162,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_UpdateWeights_0005', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(4);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(4);
       expect(result).assertEqual(0);
     })
     /**
@@ -174,7 +174,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_UpdateWeights_0006', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(5);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(5);
       expect(result).assertEqual(0);
     })
 
@@ -187,7 +187,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_SetLearningRate_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_SetLearningRate(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_SetLearningRate(0);
       expect(result).assertEqual(0);
     })
 
@@ -200,7 +200,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_SetLearningRate_0002', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_SetLearningRate(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_SetLearningRate(1);
       expect(result).assertEqual(0);
     })
 
@@ -213,7 +213,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_SetupVirtualBatch_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_SetupVirtualBatch(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_SetupVirtualBatch(0);
       expect(result).assertEqual(0);
     })
 
@@ -226,7 +226,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_SetOptimizationLevel_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_SetOptimizationLevel(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_SetOptimizationLevel(0);
       expect(result).assertEqual(0);
     })
 
@@ -239,7 +239,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_TrainCfg_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_TrainCfg(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_TrainCfg(0);
       expect(result).assertEqual(0);
     })
 
@@ -252,7 +252,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_TrainCfg_0002', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_TrainCfg(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_TrainCfg(1);
       expect(result).assertEqual(0);
     })
 
@@ -265,7 +265,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_TrainCfg_0003', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_TrainCfg(2);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_TrainCfg(2);
       expect(result).assertEqual(0);
     })
 
@@ -278,7 +278,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_TrainCfg_0004', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_TrainCfg(3);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_TrainCfg(3);
       expect(result).assertEqual(0);
     })
 
@@ -291,7 +291,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ModelBuild_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ModelBuild(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ModelBuild(0);
       expect(result).assertEqual(0);
     })
 
@@ -304,7 +304,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ModelBuild_0002', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ModelBuild(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ModelBuild(1);
       expect(result).assertEqual(0);
     })
 
@@ -317,7 +317,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ModelBuild_0003', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ModelBuild(2);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ModelBuild(2);
       expect(result).assertEqual(0);
     })
 
@@ -330,7 +330,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ModelBuild_0004', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ModelBuild(3);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ModelBuild(3);
       expect(result).assertEqual(0);
     })
 
@@ -343,7 +343,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ModelBuild_0005', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ModelBuild(4);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ModelBuild(4);
       expect(result).assertEqual(0);
     })
 
@@ -356,7 +356,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportModel_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(0);
       expect(result).assertEqual(0);
     })
 
@@ -369,7 +369,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportModel_0002', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(1);
       expect(result).assertEqual(0);
     })
 
@@ -382,7 +382,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportModel_0003', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(2);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(2);
       expect(result).assertEqual(0);
     })
 
@@ -395,7 +395,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportModel_0004', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(3);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(3);
       expect(result).assertEqual(0);
     })
 
@@ -408,7 +408,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportModel_0005', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(4);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(4);
       expect(result).assertEqual(0);
     })
 
@@ -421,7 +421,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportModel_0006', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(5);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(5);
       expect(result).assertEqual(0);
     })
 
@@ -434,7 +434,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportModel_0007', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(6);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(6);
       expect(result).assertEqual(0);
     })
 
@@ -447,7 +447,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportModel_0008', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(7);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(7);
       expect(result).assertEqual(0);
     })
 
@@ -460,7 +460,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportModel_0009', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(8);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(8);
       expect(result).assertEqual(0);
     })
 
@@ -473,7 +473,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportModel_0010', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(9);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(9);
       expect(result).assertEqual(0);
     })
 
@@ -486,7 +486,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportModel_0011', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(10);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(10);
       expect(result).assertEqual(0);
     })
 
@@ -499,7 +499,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportModel_0012', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(11);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(11);
       expect(result).assertEqual(0);
     })
 
@@ -512,7 +512,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportModel_0013', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(12);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(12);
       expect(result).assertEqual(0);
     })
 
@@ -525,7 +525,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportModel_0014', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(13);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportModel(13);
       expect(result).assertEqual(0);
     })
 
@@ -538,7 +538,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportWeights_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportWeights(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportWeights(0);
       expect(result).assertEqual(0);
     })
 
@@ -551,7 +551,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportWeights_0002', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportWeights(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportWeights(1);
       expect(result).assertEqual(0);
     })
 
@@ -564,7 +564,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportWeights_0003', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportWeights(2);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportWeights(2);
       expect(result).assertEqual(0);
     })
 
@@ -577,7 +577,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportWeights_0004', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportWeights(3);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportWeights(3);
       expect(result).assertEqual(0);
     })
 
@@ -590,7 +590,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportWeights_0005', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportWeights(4);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportWeights(4);
       expect(result).assertEqual(0);
     })
 
@@ -603,7 +603,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Train_ExportWeights_0006', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Train_ExportWeights(5);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Train_ExportWeights(5);
       expect(result).assertEqual(0);
     })
 
@@ -617,7 +617,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(0);
       expect(result).assertEqual(0);
     })
 
@@ -630,7 +630,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0002', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(1);
       expect(result).assertEqual(0);
     })
 
@@ -643,7 +643,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0003', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(2);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(2);
       expect(result).assertEqual(0);
     })
 
@@ -656,7 +656,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0004', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(3);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(3);
       expect(result).assertEqual(0);
     })
 
@@ -669,7 +669,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0005', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(4);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(4);
       expect(result).assertEqual(0);
     })
 
@@ -682,7 +682,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0006', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(5);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(5);
       expect(result).assertEqual(0);
     })
 
@@ -695,7 +695,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0007', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(6);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(6);
       expect(result).assertEqual(0);
     })
 
@@ -708,7 +708,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0008', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(7);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(7);
       expect(result).assertEqual(0);
     })
 
@@ -721,7 +721,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0009', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(8);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(8);
       expect(result).assertEqual(0);
     })
 
@@ -734,7 +734,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0010', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(9);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(9);
       expect(result).assertEqual(0);
     })
 
@@ -747,7 +747,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0011', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(10);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(10);
       expect(result).assertEqual(0);
     })
 
@@ -760,7 +760,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0012', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(11);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(11);
       expect(result).assertEqual(0);
     })
 
@@ -773,7 +773,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0013', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(12);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(12);
       expect(result).assertEqual(0);
     })
 
@@ -786,7 +786,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0014', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(13);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(13);
       expect(result).assertEqual(0);
     })
 
@@ -799,7 +799,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0015', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(14);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(14);
       expect(result).assertEqual(0);
     })
 
@@ -812,7 +812,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0016', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(15);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(15);
       expect(result).assertEqual(0);
     })
 
@@ -825,7 +825,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0017', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(16);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(16);
       expect(result).assertEqual(0);
     })
 
@@ -838,7 +838,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0018', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(17);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(17);
       expect(result).assertEqual(0);
     })
 
@@ -851,7 +851,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0019', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(18);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(18);
       expect(result).assertEqual(0);
     })
 
@@ -864,7 +864,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0020', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(19);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(19);
       expect(result).assertEqual(0);
     })
 
@@ -877,7 +877,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0021', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(20);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(20);
       expect(result).assertEqual(0);
     })
 
@@ -890,7 +890,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0022', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(21);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(21);
       expect(result).assertEqual(0);
     })
 
@@ -903,7 +903,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0023', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(22);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(22);
       expect(result).assertEqual(0);
     })
 
@@ -916,7 +916,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0024', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(23);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(23);
       expect(result).assertEqual(0);
     })
 
@@ -929,7 +929,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0025', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(24);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(24);
       expect(result).assertEqual(0);
     })
 
@@ -942,7 +942,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0026', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(25);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(25);
       expect(result).assertEqual(0);
     })
 
@@ -955,7 +955,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0027', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(26);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(26);
       expect(result).assertEqual(0);
     })
 
@@ -968,7 +968,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0028', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(27);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(27);
       expect(result).assertEqual(0);
     })
 
@@ -981,7 +981,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0029', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(28);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(28);
       expect(result).assertEqual(0);
     })
 
@@ -994,7 +994,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0030', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(29);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(29);
       expect(result).assertEqual(0);
     })
 
@@ -1007,7 +1007,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0031', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(30);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(30);
       expect(result).assertEqual(0);
     })
 
@@ -1020,7 +1020,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0032', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(31);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(31);
       expect(result).assertEqual(0);
     })
 
@@ -1033,7 +1033,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0033', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(32);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(32);
       expect(result).assertEqual(0);
     })
 
@@ -1046,7 +1046,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0034', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(33);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(33);
       expect(result).assertEqual(0);
     })
 
@@ -1059,7 +1059,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0035', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(34);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(34);
       expect(result).assertEqual(0);
     })
 
@@ -1072,7 +1072,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0036', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(35);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(35);
       expect(result).assertEqual(0);
     })
 
@@ -1085,7 +1085,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0037', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(36);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(36);
       expect(result).assertEqual(0);
     })
 
@@ -1098,7 +1098,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0038', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(37);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(37);
       expect(result).assertEqual(0);
     })
 
@@ -1111,7 +1111,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0039', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(38);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(38);
       expect(result).assertEqual(0);
     })
 
@@ -1124,7 +1124,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0040', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(39);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(39);
       expect(result).assertEqual(0);
     })
 
@@ -1137,7 +1137,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0041', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(40);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(40);
       expect(result).assertEqual(0);
     })
 
@@ -1150,7 +1150,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0042', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(41);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(41);
       expect(result).assertEqual(0);
     })
 
@@ -1163,7 +1163,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0043', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(42);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(42);
       expect(result).assertEqual(0);
     })
 
@@ -1176,7 +1176,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0044', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(43);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(43);
       expect(result).assertEqual(0);
     })
 
@@ -1189,7 +1189,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0045', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(44);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(44);
       expect(result).assertEqual(0);
     })
 
@@ -1202,7 +1202,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0046', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(45);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(45);
       expect(result).assertEqual(0);
     })
 
@@ -1215,7 +1215,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0047', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(46);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(46);
       expect(result).assertEqual(0);
     })
 
@@ -1228,7 +1228,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0048', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(47);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(47);
       expect(result).assertEqual(0);
     })
 
@@ -1241,7 +1241,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0049', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(48);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(48);
       expect(result).assertEqual(0);
     })
 
@@ -1254,7 +1254,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0050', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(49);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(49);
       expect(result).assertEqual(0);
     })
 
@@ -1267,7 +1267,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0051', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(50);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(50);
       expect(result).assertEqual(0);
     })
 
@@ -1280,7 +1280,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0052', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(51);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(51);
       expect(result).assertEqual(0);
     })
 
@@ -1293,7 +1293,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0053', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(52);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(52);
       expect(result).assertEqual(0);
     })
 
@@ -1306,7 +1306,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0054', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(53);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(53);
       expect(result).assertEqual(0);
     })
 
@@ -1319,7 +1319,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0055', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(54);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(54);
       expect(result).assertEqual(0);
     })
 
@@ -1332,7 +1332,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0056', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(55);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(55);
       expect(result).assertEqual(0);
     })
 
@@ -1345,7 +1345,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0057', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(56);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(56);
       expect(result).assertEqual(0);
     })
 
@@ -1358,7 +1358,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0058', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(57);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(57);
       expect(result).assertEqual(0);
     })
 
@@ -1371,7 +1371,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0059', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(58);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(58);
       expect(result).assertEqual(0);
     })
 
@@ -1384,7 +1384,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0060', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(59);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(59);
       expect(result).assertEqual(0);
     })
 
@@ -1397,7 +1397,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0061', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(60);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(60);
       expect(result).assertEqual(0);
     })
 
@@ -1410,7 +1410,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0062', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(61);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(61);
       expect(result).assertEqual(0);
     })
 
@@ -1423,7 +1423,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0063', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(62);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(62);
       expect(result).assertEqual(0);
     })
 
@@ -1436,7 +1436,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0064', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(63);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(63);
       expect(result).assertEqual(0);
     })
 
@@ -1449,7 +1449,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0065', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(64);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(64);
       expect(result).assertEqual(0);
     })
 
@@ -1462,7 +1462,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextCreate_0066', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(65);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextCreate(65);
       expect(result).assertEqual(0);
     })
 
@@ -1475,7 +1475,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextDestroy_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextDestroy(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextDestroy(0);
       expect(result).assertEqual(0);
     })
 
@@ -1488,7 +1488,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ContextDestroy_0002', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ContextDestroy(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ContextDestroy(1);
       expect(result).assertEqual(0);
     })
 
@@ -1502,7 +1502,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(0);
       expect(result).assertEqual(0);
     })
 
@@ -1515,7 +1515,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0002', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(1);
       expect(result).assertEqual(0);
     })
 
@@ -1528,7 +1528,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0003', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(2);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(2);
       expect(result).assertEqual(0);
     })
 
@@ -1541,7 +1541,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0005', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(3);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(3);
       expect(result).assertEqual(0);
     })
 
@@ -1554,7 +1554,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0006', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(4);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(4);
       expect(result).assertEqual(0);
     })
 
@@ -1567,7 +1567,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0007', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(5);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(5);
       expect(result).assertEqual(0);
     })
 
@@ -1580,7 +1580,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0008', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(6);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(6);
       expect(result).assertEqual(0);
     })
 
@@ -1593,7 +1593,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0009', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(7);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(7);
       expect(result).assertEqual(0);
     })
 
@@ -1606,7 +1606,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0010', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(8);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(8);
       expect(result).assertEqual(0);
     })
 
@@ -1619,7 +1619,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0011', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(9);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(9);
       expect(result).assertEqual(0);
     })
 
@@ -1632,7 +1632,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0012', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(10);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(10);
       expect(result).assertEqual(0);
     })
 
@@ -1645,7 +1645,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0013', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(11);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(11);
       expect(result).assertEqual(0);
     })
 
@@ -1658,7 +1658,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0014', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(12);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(12);
       expect(result).assertEqual(0);
     })
 
@@ -1671,7 +1671,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0015', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(13);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(13);
       expect(result).assertEqual(0);
     })
 
@@ -1684,7 +1684,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0016', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(14);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(14);
       expect(result).assertEqual(0);
     })
 
@@ -1697,7 +1697,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0017', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(15);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(15);
       expect(result).assertEqual(0);
     })
 
@@ -1710,7 +1710,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0018', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(16);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(16);
       expect(result).assertEqual(0);
     })
 
@@ -1723,7 +1723,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0019', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(17);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(17);
       expect(result).assertEqual(0);
     })
 
@@ -1736,7 +1736,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0020', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(18);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(18);
       expect(result).assertEqual(0);
     })
 
@@ -1749,7 +1749,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0021', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(19);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(19);
       expect(result).assertEqual(0);
     })
 
@@ -1762,7 +1762,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0022', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(20);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(20);
       expect(result).assertEqual(0);
     })
 
@@ -1775,7 +1775,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0027', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(21);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(21);
       expect(result).assertEqual(0);
     })
 
@@ -1788,7 +1788,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0028', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(22);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(22);
       expect(result).assertEqual(0);
     })
 
@@ -1801,7 +1801,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0029', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(23);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(23);
       expect(result).assertEqual(0);
     })
 
@@ -1814,7 +1814,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0030', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(24);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(24);
       expect(result).assertEqual(0);
     })
 
@@ -1827,7 +1827,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0031', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(25);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(25);
       expect(result).assertEqual(0);
     })
 
@@ -1840,7 +1840,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0032', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(26);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(26);
       expect(result).assertEqual(0);
     })
 
@@ -1853,7 +1853,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0033', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(27);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(27);
       expect(result).assertEqual(0);
     })
 
@@ -1866,7 +1866,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0034', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(28);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(28);
       expect(result).assertEqual(0);
     })
 
@@ -1879,7 +1879,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0035', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(29);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(29);
       expect(result).assertEqual(0);
     })
 
@@ -1892,7 +1892,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0036', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(30);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(30);
       expect(result).assertEqual(0);
     })
 
@@ -1905,7 +1905,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0037', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(31);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(31);
       expect(result).assertEqual(0);
     })
 
@@ -1918,7 +1918,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0038', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(32);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(32);
       expect(result).assertEqual(0);
     })
 
@@ -1931,7 +1931,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0039', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(33);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(33);
       expect(result).assertEqual(0);
     })
 
@@ -1944,7 +1944,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0040', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(34);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(34);
       expect(result).assertEqual(0);
     })
 
@@ -1957,7 +1957,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0041', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(35);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(35);
       expect(result).assertEqual(0);
     })
 
@@ -1970,7 +1970,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelCreate_0042', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(36);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelCreate(36);
       expect(result).assertEqual(0);
     })
 
@@ -1983,7 +1983,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelLoadConfig_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelLoadConfig(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelLoadConfig(0);
       expect(result).assertEqual(0);
     })
 
@@ -1996,7 +1996,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelLoadConfig_0002', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelLoadConfig(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelLoadConfig(1);
       expect(result).assertEqual(0);
     })
 
@@ -2009,7 +2009,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelLoadConfig_0003', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelLoadConfig(2);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelLoadConfig(2);
       expect(result).assertEqual(0);
     })
 
@@ -2022,7 +2022,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ModelLoadConfig_0004', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_ModelLoadConfig(3);
+      const result: number = libMindSpore.SUB_AI_MindSpore_ModelLoadConfig(3);
       expect(result).assertEqual(0);
     })
 
@@ -2036,7 +2036,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_Covered_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_Covered(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_Covered(0);
       expect(result).assertEqual(0);
     })
 
@@ -2050,7 +2050,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_NNRT_copy_free_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(0);
       expect(result).assertEqual(0);
     })
 
@@ -2063,7 +2063,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_NNRT_copy_free_0002', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(1);
       expect(result).assertEqual(0);
     })
 
@@ -2076,7 +2076,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_NNRT_copy_free_0003', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(2);
+      const result: number = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(2);
       expect(result).assertEqual(0);
     })
 
@@ -2089,7 +2089,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_NNRT_copy_free_0004', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(3);
+      const result: number = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(3);
       expect(result).assertEqual(0);
     })
 
@@ -2102,7 +2102,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_NNRT_copy_free_0005', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(4);
+      const result: number = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(4);
       expect(result).assertEqual(0);
     })
 
@@ -2115,7 +2115,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_NNRT_copy_free_0006', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(5);
+      const result: number = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(5);
       expect(result).assertEqual(0);
     })
 
@@ -2128,7 +2128,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_NNRT_copy_free_0007', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(6);
+      const result: number = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(6);
       expect(result).assertEqual(0);
     })
 
@@ -2142,7 +2142,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_CPU_copy_free_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_CPU_copy_free(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_CPU_copy_free(0);
       expect(result).assertEqual(0);
     })
 
@@ -2155,7 +2155,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_CPU_copy_free_0002', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_CPU_copy_free(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_CPU_copy_free(1);
       expect(result).assertEqual(0);
     })
 
@@ -2168,7 +2168,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_CPU_copy_free_0003', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_CPU_copy_free(2);
+      const result: number = libMindSpore.SUB_AI_MindSpore_CPU_copy_free(2);
       expect(result).assertEqual(0);
     })
 
@@ -2181,7 +2181,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_CPU_copy_free_0004', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_CPU_copy_free(3);
+      const result: number = libMindSpore.SUB_AI_MindSpore_CPU_copy_free(3);
       expect(result).assertEqual(0);
     })
 
@@ -2195,7 +2195,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0004', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(0);
       expect(result).assertEqual(0);
     })
 
@@ -2208,7 +2208,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0005', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(1);
       expect(result).assertEqual(0);
     })
 
@@ -2221,7 +2221,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0006', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(2);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(2);
       expect(result).assertEqual(0);
     })
 
@@ -2234,7 +2234,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0007', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(3);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(3);
       expect(result).assertEqual(0);
     })
 
@@ -2247,7 +2247,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0008', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(4);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(4);
       expect(result).assertEqual(0);
     })
 
@@ -2260,7 +2260,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0009', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(5);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(5);
       expect(result).assertEqual(0);
     })
 
@@ -2273,7 +2273,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0010', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(6);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(6);
       expect(result).assertEqual(0);
     })
 
@@ -2286,7 +2286,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0011', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(7);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(7);
       expect(result).assertEqual(0);
     })
 
@@ -2299,7 +2299,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0012', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(8);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(8);
       expect(result).assertEqual(0);
     })
 
@@ -2312,7 +2312,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0013', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(9);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(9);
       expect(result).assertEqual(0);
     })
 
@@ -2325,7 +2325,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0014', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(10);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(10);
       expect(result).assertEqual(0);
     })
 
@@ -2338,7 +2338,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0015', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(11);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(11);
       expect(result).assertEqual(0);
     })
 
@@ -2351,7 +2351,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0016', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(12);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(12);
       expect(result).assertEqual(0);
     })
 
@@ -2364,7 +2364,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0017', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(13);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(13);
       expect(result).assertEqual(0);
     })
 
@@ -2377,7 +2377,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_HIAI_OfflineModel_0018', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(14);
+      const result: number = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(14);
       expect(result).assertEqual(0);
     })
 
@@ -2450,7 +2450,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(0);
       expect(result).assertEqual(0);
     })
 
@@ -2463,7 +2463,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0002', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(1);
       expect(result).assertEqual(0);
     })
 
@@ -2476,7 +2476,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0003', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(2);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(2);
       expect(result).assertEqual(0);
     })
 
@@ -2489,7 +2489,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0004', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(3);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(3);
       expect(result).assertEqual(0);
     })
 
@@ -2502,7 +2502,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0005', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(4);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(4);
       expect(result).assertEqual(0);
     })
 
@@ -2515,7 +2515,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0006', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(5);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(5);
       expect(result).assertEqual(0);
     })
 
@@ -2528,7 +2528,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0007', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(6);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(6);
       expect(result).assertEqual(0);
     })
 
@@ -2541,7 +2541,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0008', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(7);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(7);
       expect(result).assertEqual(0);
     })
 
@@ -2554,7 +2554,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0009', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(8);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(8);
       expect(result).assertEqual(0);
     })
 
@@ -2567,7 +2567,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0010', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(9);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(9);
       expect(result).assertEqual(0);
     })
 
@@ -2580,7 +2580,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0011', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(10);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(10);
       expect(result).assertEqual(0);
     })
 
@@ -2593,7 +2593,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0012', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(11);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(11);
       expect(result).assertEqual(0);
     })
 
@@ -2606,7 +2606,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0013', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(12);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(12);
       expect(result).assertEqual(0);
     })
 
@@ -2619,7 +2619,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0014', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(13);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(13);
       expect(result).assertEqual(0);
     })
 
@@ -2632,7 +2632,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0015', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(14);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(14);
       expect(result).assertEqual(0);
     })
 
@@ -2645,7 +2645,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0016', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(15);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(15);
       expect(result).assertEqual(0);
     })
 
@@ -2658,7 +2658,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0017', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(16);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(16);
       expect(result).assertEqual(0);
     })
 
@@ -2671,7 +2671,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0018', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(17);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(17);
       expect(result).assertEqual(0);
     })
 
@@ -2684,7 +2684,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0019', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(18);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(18);
       expect(result).assertEqual(0);
     })
 
@@ -2697,7 +2697,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0020', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(19);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(19);
       expect(result).assertEqual(0);
     })
 
@@ -2710,7 +2710,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0021', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(20);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(20);
       expect(result).assertEqual(0);
     })
 
@@ -2723,7 +2723,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0022', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(21);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(21);
       expect(result).assertEqual(0);
     })
 
@@ -2736,7 +2736,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0023', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(22);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(22);
       expect(result).assertEqual(0);
     })
 
@@ -2749,7 +2749,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0024', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(23);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(23);
       expect(result).assertEqual(0);
     })
 
@@ -2762,7 +2762,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0025', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(24);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(24);
       expect(result).assertEqual(0);
     })
 
@@ -2775,7 +2775,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0026', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(25);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(25);
       expect(result).assertEqual(0);
     })
 
@@ -2788,7 +2788,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0027', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(26);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(26);
       expect(result).assertEqual(0);
     })
 
@@ -2801,7 +2801,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0028', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(27);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(27);
       expect(result).assertEqual(0);
     })
 
@@ -2814,7 +2814,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0029', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(28);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(28);
       expect(result).assertEqual(0);
     })
 
@@ -2827,7 +2827,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0030', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(29);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(29);
       expect(result).assertEqual(0);
     })
 
@@ -2840,7 +2840,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0031', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(30);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(30);
       expect(result).assertEqual(0);
     })
 
@@ -2853,7 +2853,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0032', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(31);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(31);
       expect(result).assertEqual(0);
     })
 
@@ -2866,7 +2866,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0033', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(32);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(32);
       expect(result).assertEqual(0);
     })
 
@@ -2879,7 +2879,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0034', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(33);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(33);
       expect(result).assertEqual(0);
     })
 
@@ -2892,7 +2892,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0035', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(34);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(34);
       expect(result).assertEqual(0);
     })
 
@@ -2905,7 +2905,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0036', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(35);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(35);
       expect(result).assertEqual(0);
     })
 
@@ -2918,7 +2918,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0037', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(36);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(36);
       expect(result).assertEqual(0);
     })
 
@@ -2931,7 +2931,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0038', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(37);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(37);
       expect(result).assertEqual(0);
     })
 
@@ -2944,7 +2944,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0039', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(38);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(38);
       expect(result).assertEqual(0);
     })
 
@@ -2957,7 +2957,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0040', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(39);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(39);
       expect(result).assertEqual(0);
     })
 
@@ -2970,7 +2970,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0041', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(40);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(40);
       expect(result).assertEqual(0);
     })
 
@@ -2983,7 +2983,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0042', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(41);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(41);
       expect(result).assertEqual(0);
     })
 
@@ -2996,7 +2996,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0043', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(42);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(42);
       expect(result).assertEqual(0);
     })
 
@@ -3009,7 +3009,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0044', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(43);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(43);
       expect(result).assertEqual(0);
     })
 
@@ -3022,7 +3022,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0045', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(44);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(44);
       expect(result).assertEqual(0);
     })
 
@@ -3035,7 +3035,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0046', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(45);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(45);
       expect(result).assertEqual(0);
     })
 
@@ -3048,7 +3048,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0047', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(46);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(46);
       expect(result).assertEqual(0);
     })
 
@@ -3061,7 +3061,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0048', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(47);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(47);
       expect(result).assertEqual(0);
     })
 
@@ -3074,7 +3074,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0049', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(48);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(48);
       expect(result).assertEqual(0);
     })
 
@@ -3087,7 +3087,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_TensorCreate_0050', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(49);
+      const result: number = libMindSpore.SUB_AI_MindSpore_TensorCreate(49);
       expect(result).assertEqual(0);
     })
 
@@ -3101,7 +3101,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_NNRT_Cache_0001', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(0);
+      const result: number = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(0);
       expect(result).assertEqual(0);
     })
 
@@ -3114,7 +3114,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_NNRT_Cache_0002', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(1);
+      const result: number = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(1);
       expect(result).assertEqual(0);
     })
 
@@ -3127,7 +3127,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_NNRT_Cache_0003', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(2);
+      const result: number = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(2);
       expect(result).assertEqual(0);
     })
 
@@ -3140,7 +3140,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_NNRT_Cache_0004', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(3);
+      const result: number = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(3);
       expect(result).assertEqual(0);
     })
 
@@ -3153,7 +3153,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_NNRT_Cache_0005', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(4);
+      const result: number = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(4);
       expect(result).assertEqual(0);
     })
 
@@ -3166,7 +3166,7 @@ export default function MindSporeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_NNRT_Cache_0006', Level.LEVEL0, () => {
-      const result = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(5);
+      const result: number = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(5);
       expect(result).assertEqual(0);
     })
 
