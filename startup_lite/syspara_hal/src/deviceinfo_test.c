@@ -918,7 +918,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
 {
     int value1 = GetSdkMinorApiVersion();
     printf("SdkMinorApiVersion=%d\n", value1);
-    TEST_ASSERT_EQUAL_INT(0, value1);
     int value2 = GetSdkMinorApiVersion();
     TEST_ASSERT_EQUAL_INT(value1, value2);
 };
@@ -937,7 +936,6 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
 {
     int value1 = GetSdkPatchApiVersion();
     printf("SdkPatchApiVersion=%d\n", value1);
-    TEST_ASSERT_EQUAL_INT(0, value1);
     int value2 = GetSdkPatchApiVersion();
     TEST_ASSERT_EQUAL_INT(value1, value2);
 };

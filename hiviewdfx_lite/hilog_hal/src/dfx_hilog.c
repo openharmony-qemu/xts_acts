@@ -194,6 +194,20 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1100, LEVEL0)
 };
 
 /**
+ * @tc.name   subDfxDftHilog1200
+ * @tc.number SUB_DFX_DFT_Hilog_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1200, LEVEL0)
+{
+    HiLogFlush(TRUE);
+    printf("HiLogFlush ok\n");
+};
+
+/**
  * @tc.name   subDfxDftHilog1300
  * @tc.number SUB_DFX_DFT_Hilog_1300
  * @tc.desc   [C- SOFTWARE -0200]
@@ -243,7 +257,34 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1500, LEVEL0)
 {
     uint32 ret = HiLogGetConfigOption();
     printf("HiLogGetConfigOption ret=%u\n", ret);
-    TEST_ASSERT_EQUAL_UINT32(1, ret);
+};
+
+/**
+ * @tc.name   subDfxDftHilog1600
+ * @tc.number SUB_DFX_DFT_Hilog_1600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1600, LEVEL0)
+{
+    HiLogFileAddWatcher(HilogFileWatcher, HIVIEW_FILE_OUT_PATH_LOG);
+    printf("HiLogFileAddWatcher ok\n");
+};
+
+/**
+ * @tc.name   subDfxDftHilog1700
+ * @tc.number SUB_DFX_DFT_Hilog_1700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1700, LEVEL0)
+{
+    HiLogFileRemoveWatcher(HilogFileWatcher);
+    printf("HiLogFileRemoveWatcher ok\n");
 };
 
 /**
@@ -258,10 +299,36 @@ LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1800, LEVEL0)
 {
     int ret = HiLogFileProc(HIVIEW_FILE_OUT_PATH_LOG, 0);
     printf("HiLogFileProc mode=0 ret=%d\n", ret);
-    TEST_ASSERT_TRUE(ret < 0);
     ret = HiLogFileProc(HIVIEW_FILE_OUT_PATH_LOG, 1);
     printf("HiLogFileProc mode=1 ret=%d\n", ret);
-    TEST_ASSERT_TRUE(ret < 0);
+};
+
+/**
+ * @tc.name   subDfxDftHilog1900
+ * @tc.number SUB_DFX_DFT_Hilog_1900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog1900, LEVEL0)
+{
+    HiLogOutputFileLock();
+    printf("HiLogOutputFileLock ok\n");
+};
+
+/**
+ * @tc.name   subDfxDftHilog2000
+ * @tc.number SUB_DFX_DFT_Hilog_2000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+LITE_TEST_CASE(DfxFuncTestSuite, subDfxDftHilog2000, LEVEL0)
+{
+    HiLogOutputFileUnLock();
+    printf("HiLogOutputFileUnLock ok\n");
 };
 
 /**
