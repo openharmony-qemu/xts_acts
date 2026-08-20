@@ -451,6 +451,7 @@ export default function Int32ArrayReducePart03Test(): void {
       try {
         arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => {
           count = count + 1;
+          expect(c).assertEqual(2);
           throw new Error('boom first');
         });
         expect().assertFail();
@@ -475,6 +476,7 @@ export default function Int32ArrayReducePart03Test(): void {
         arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => {
           count = count + 1;
           if (count === 2) {
+            expect(c).assertEqual(3);
             throw new Error('stop');
           }
           return p + c;
@@ -521,6 +523,7 @@ export default function Int32ArrayReducePart03Test(): void {
       let errName: string = '';
       try {
         arr.reduce((_p: number, _c: number, _i: int, _a: Int32Array): number => {
+          expect(_c).assertEqual(2);
           throw new URIError('uri err');
         });
       } catch (e) {
@@ -543,6 +546,7 @@ export default function Int32ArrayReducePart03Test(): void {
       let errName: string = '';
       try {
         arr.reduce((_p: number, _c: number, _i: int, _a: Int32Array): number => {
+          expect(_c).assertEqual(2);
           throw new EvalError('eval err');
         });
       } catch (e) {
@@ -1445,6 +1449,7 @@ export default function Int32ArrayReducePart03Test(): void {
       let isInstance: boolean = false;
       try {
         arr.reduce((_p: number, _c: number, _i: int, _a: Int32Array): number => {
+          expect(_c).assertEqual(2);
           throw new Error('x');
         });
       } catch (e) {
