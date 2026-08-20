@@ -213,3 +213,5 @@ workerPort.onmessage = (e: MessageEvents): void => {
 workerPort.onmessageerror = (e: MessageEvents): void => {
   console.info('InheritanceEchoWorker onmessageerror');
 }
+
+

@@ -278,6 +278,16 @@ export default function ThreadWorkerInheritanceTest(): void {
         expect(workerInstance instanceof worker.ThreadWorker).assertTrue();
         expect(typeof workerInstance.postMessage).assertEqual('function');
         expect(typeof workerInstance.terminate).assertEqual('function');
+        let received: string = '';
+        const receivedPromise = new Promise<void>((resolve: () => void) => {
+          workerInstance!.onmessage = (e: MessageEvents): void => {
+            received = e.data as string;
+            resolve();
+          };
+        });
+        workerInstance.postMessage('hello');
+        await waitForEvent(receivedPromise);
+        expect(received).assertEqual('hello_response');
       } catch (err) {
         console.error(`ThreadWorkerInheritanceTest0100 failed, error: ${String(err)}`);
         expect().assertFail();
