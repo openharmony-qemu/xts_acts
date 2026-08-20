@@ -934,6 +934,7 @@ export default function int32ArrayReduceRightPart01TestMindmapTestTest(): void {
       const values = Int32Array.of(1, 2, 3);
       try {
         values.reduceRight((prev: number, cur: number, idx: int, arr: Int32Array): number => {
+          expect(cur).assertEqual(3);
           throw new Error('callback error');
         }, 0);
         expect().assertFail();
@@ -956,6 +957,7 @@ export default function int32ArrayReduceRightPart01TestMindmapTestTest(): void {
       try {
         values.reduceRight((prev: number, cur: number, idx: int, arr: Int32Array): number => {
           callCount++;
+          expect(cur).assertEqual(3);
           throw new Error('first iter');
         }, 0);
         expect().assertFail();
