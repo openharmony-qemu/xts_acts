@@ -1477,6 +1477,7 @@ export default function int32ArrayFromPart01Test(): void {
       m.set(1, 2);
       try {
         Int32Array.from(m.values(), (v: number, k: number): number => {
+          expect(v).assertEqual(1);
           throw new Error('mapfn throw at 0');
         });
         expect().assertFail();
