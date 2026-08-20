@@ -28,7 +28,7 @@
   },
   "modules": [
     {
-      "name": "entry1",
+      "name": "entry",
       "srcPath": "./entry",
       "targets": [
         {
