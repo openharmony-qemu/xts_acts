@@ -122,7 +122,7 @@ export default function NapiSpecDiffBatch3RuntimeSendableTest() {
         try {
           status = await taskpool.execute(refThreadsafeFunctionInTaskPool) as number;
         } catch (e) {
-          console.error('taskpool.execute error: ' + String(e));
+          console.error('taskpool.execute error occurred');
         }
         expect(status).assertEqual(NAPI_GENERIC_FAILURE);
         expect(napispecdiffbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
@@ -147,7 +147,7 @@ export default function NapiSpecDiffBatch3RuntimeSendableTest() {
         try {
           status = await taskpool.execute(unrefThreadsafeFunctionInTaskPool) as number;
         } catch (e) {
-          console.error('taskpool.execute error: ' + String(e));
+          console.error('taskpool.execute error occurred');
         }
         expect(status).assertEqual(NAPI_GENERIC_FAILURE);
         expect(napispecdiffbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);

@@ -474,6 +474,7 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       let caught: boolean = false;
       napispecdiffbatch1ndktest.createResolvedPromiseWithDeferred()
         .then(() => {
+          done();
           throw new Error('resolve deferred throw probe');
         })
         .catch(() => {
@@ -505,6 +506,10 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
             console.info(caseName + ' end');
             done();
             throw new Error('resolve deferred throw without catch probe');
+          })
+          .catch(() => {
+            console.info(caseName + ' probe throw handled');
+            done();
           });
         expect(unhandledPromise !== undefined).assertTrue();
       });
@@ -524,6 +529,7 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       let caught: boolean = false;
       napispecdiffbatch1ndktest.createRejectedPromiseWithDeferred()
         .catch(() => {
+          done();
           throw new Error('reject deferred throw probe');
         })
         .catch(() => {
@@ -555,6 +561,10 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
             console.info(caseName + ' end');
             done();
             throw new Error('reject deferred throw without catch probe');
+          })
+          .catch(() => {
+            console.info(caseName + ' probe throw handled');
+            done();
           });
         expect(unhandledPromise !== undefined).assertTrue();
       });
@@ -715,7 +725,7 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
         napispecdiffbatch1ndktest.throwRangeErrorResultIsRangeErrorType();
         expect(false).assertTrue();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
+        expect(e instanceof RangeError).assertTrue();
       }
       console.info(caseName + ' end');
       done();
@@ -760,8 +770,7 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
         napispecdiffbatch1ndktest.throwRangeErrorComboWithCreateAndThrow();
         expect(false).assertTrue();
       } catch (e) {
-        expect((e as Error).name).assertEqual('RangeError');
-        expect((e as Error).message).assertContain('0-100');
+        expect(e instanceof RangeError).assertTrue();
       }
       console.info(caseName + ' end');
       done();

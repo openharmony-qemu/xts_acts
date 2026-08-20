@@ -227,31 +227,6 @@ export default function napiSpecDiffBatch4StressProbeTest() {
       done();
     });
 
-    // ===== napi_fatal_exception 测试 =====
-
-
-    // KNOWN_RUNTIME_LIMITATION: napi_fatal_exception may terminate the test process
-    // for pending, undefined, or null exception values. Keep this probe disabled.
-    // /**
-    //  * @tc.name testFatalExceptionAbnormalScene0015
-    //  * @tc.number SUB_THIRDPARTY_NAPI_SPEC_DIFF_BATCH4_FATAL_EXCEPTION_ABNORMAL_SCENE_1800
-    //  * @tc.desc Verify napi_fatal_exception behavior with pending exception, undefined, null
-    //  * @tc.type FUNCTION
-    //  * @tc.size MEDIUMTEST
-    //  * @tc.level LEVEL3
-    //  */
-    // it('testFatalExceptionAbnormalScene0015',
-    //   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-    //   const caseName = 'testFatalExceptionAbnormalScene0015';
-    //   console.info(caseName + ' start');
-    //   await new Promise<void>((resolve: () => void): void => {
-    //     setTimeout((): void => { resolve(); }, 20);
-    //   });
-    //   expect(napiSpecDiffBatch4.testFatalExceptionAbnormalScene()).assertEqual(1);
-    //   console.info(caseName + ' end');
-    // });
-
-
     /**
      * @tc.name testExternalStringUtf16ReturnValue0016
      * @tc.number SUB_THIRDPARTY_NAPI_SPEC_DIFF_BATCH4_UTF16_RETURN_VALUE_1600
