@@ -66,9 +66,9 @@ async function executeTestLogic(flag?: string): Promise<void> {
         return;
     }
 
-    let instanceId = testNapi.getInstanceId();
-    let abilityName = testNapi.getAbilityName();
-    let envResult = testNapi.getEnv();
+    let instanceId: string = testNapi.getInstanceId();
+    let abilityName: string = testNapi.getAbilityName();
+    let envResult: string = testNapi.getEnv();
     AppStorage.setOrCreate('EntryAbilityInstanceId_Native', instanceId);
     if (!instanceId || instanceId.length === 0) {
       hilog.error(DOMAIN, TAG, 'instanceId is empty');
@@ -112,7 +112,7 @@ async function executeTestLogic(flag?: string): Promise<void> {
 
 async function executeCase10(): Promise<void> {
   try {
-    let errorCodeStr = testNapi.getInstanceIdError1();
+    let errorCodeStr: string = testNapi.getInstanceIdError1();
     hilog.info(DOMAIN, TAG, 'executeCase10 errorCodeStr: %{public}s', errorCodeStr);
     let testSuccess = (errorCodeStr === '401');
     await publishEvent(EVENT_TEST_RESULT, {
@@ -131,7 +131,7 @@ async function executeCase10(): Promise<void> {
 
 async function executeCase11(): Promise<void> {
   try {
-    let errorCodeStr = testNapi.getAbilityNameError1();
+    let errorCodeStr: string = testNapi.getAbilityNameError1();
     hilog.info(DOMAIN, TAG, 'executeCase11 errorCodeStr: %{public}s', errorCodeStr);
     let testSuccess = (errorCodeStr === '401');
     await publishEvent(EVENT_TEST_RESULT, {
@@ -150,7 +150,7 @@ async function executeCase11(): Promise<void> {
 
 async function executeCase12(): Promise<void> {
   try {
-    let errorCodeStr = testNapi.getAbilityNameError2();
+    let errorCodeStr: string = testNapi.getAbilityNameError2();
     hilog.info(DOMAIN, TAG, 'executeCase12 errorCodeStr: %{public}s', errorCodeStr);
     let testSuccess = (errorCodeStr === '401');
     await publishEvent(EVENT_TEST_RESULT, {
@@ -169,7 +169,7 @@ async function executeCase12(): Promise<void> {
 
 async function executeCase13(): Promise<void> {
   try {
-    let errorCodeStr = testNapi.getAbilityNameError3();
+    let errorCodeStr: string = testNapi.getAbilityNameError3();
     hilog.info(DOMAIN, TAG, 'executeCase13 errorCodeStr: %{public}s', errorCodeStr);
     let testSuccess = (errorCodeStr === '16000177');
     await publishEvent(EVENT_TEST_RESULT, {
@@ -188,7 +188,7 @@ async function executeCase13(): Promise<void> {
 
 async function executeCase14(): Promise<void> {
   try {
-    let errorCodeStr = testNapi.getEnvError1();
+    let errorCodeStr: string = testNapi.getEnvError1();
     hilog.info(DOMAIN, TAG, 'executeCase14 errorCodeStr: %{public}s', errorCodeStr);
     let testSuccess = (errorCodeStr === '401');
     await publishEvent(EVENT_TEST_RESULT, {
@@ -207,7 +207,7 @@ async function executeCase14(): Promise<void> {
 
 async function executeCase15(): Promise<void> {
   try {
-    let errorCodeStr = testNapi.getEnvError2();
+    let errorCodeStr: string = testNapi.getEnvError2();
     hilog.info(DOMAIN, TAG, 'executeCase15 errorCodeStr: %{public}s', errorCodeStr);
     let testSuccess = (errorCodeStr === '401');
     await publishEvent(EVENT_TEST_RESULT, {
@@ -226,7 +226,7 @@ async function executeCase15(): Promise<void> {
 
 async function executeCase16(): Promise<void> {
   try {
-    let errorCodeStr = testNapi.getEnvError3();
+    let errorCodeStr: string = testNapi.getEnvError3();
     hilog.info(DOMAIN, TAG, 'executeCase16 errorCodeStr: %{public}s', errorCodeStr);
     let testSuccess = (errorCodeStr === '16000177');
     await publishEvent(EVENT_TEST_RESULT, {

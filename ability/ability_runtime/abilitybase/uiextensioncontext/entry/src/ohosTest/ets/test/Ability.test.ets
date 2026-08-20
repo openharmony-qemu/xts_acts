@@ -95,7 +95,7 @@ export default function ActsUIExtensionContextMethodTest() {
             })
           });
           } catch (e) {
-            console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+            console.error(tag + `await exception: ${JSON.stringify(e)}`);
           }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -161,7 +161,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -227,7 +227,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -293,7 +293,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -359,7 +359,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -425,7 +425,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -491,7 +491,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -557,7 +557,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -623,7 +623,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -689,7 +689,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -755,7 +755,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -821,7 +821,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -887,7 +887,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -953,7 +953,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1019,7 +1019,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1085,7 +1085,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1151,7 +1151,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1218,7 +1218,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1284,7 +1284,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1350,7 +1350,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1416,7 +1416,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1482,7 +1482,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1548,7 +1548,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1614,7 +1614,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1680,7 +1680,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1746,7 +1746,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1812,7 +1812,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1878,7 +1878,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -1944,7 +1944,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -2010,7 +2010,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -2076,7 +2076,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -2142,7 +2142,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -2208,7 +2208,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
         
       } else if (mpEnable === 'false') {
@@ -2275,7 +2275,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -2341,7 +2341,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -2407,7 +2407,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -2473,7 +2473,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -2539,7 +2539,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -2607,7 +2607,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -2674,7 +2674,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -2741,7 +2741,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -2808,7 +2808,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -2874,7 +2874,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -2940,7 +2940,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -3006,7 +3006,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -3072,7 +3072,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -3138,7 +3138,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -3203,7 +3203,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -3268,7 +3268,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -3333,7 +3333,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -3398,7 +3398,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -3461,7 +3461,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -3524,7 +3524,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -3586,7 +3586,7 @@ export default function ActsUIExtensionContextMethodTest() {
           }, null)
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -3647,7 +3647,7 @@ export default function ActsUIExtensionContextMethodTest() {
           }, undefined)
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -3712,7 +3712,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
@@ -3775,7 +3775,7 @@ export default function ActsUIExtensionContextMethodTest() {
           })
         });
         } catch (e) {
-          console.error(TAG + `await exception: ${JSON.stringify(e)}`);
+          console.error(tag + `await exception: ${JSON.stringify(e)}`);
         }
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);

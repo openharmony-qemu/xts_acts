@@ -67,7 +67,7 @@ async function subscribeEvent(eventName: string, callback: (data: CommonEventMan
         return;
       }
       hilog.info(DOMAIN, 'testTag', 'subscribeEvent received event: ' + JSON.stringify(commonEventData));
-      if (commonEventData.event == eventName) {
+      if (commonEventData && commonEventData.event == eventName) {
         hilog.info(DOMAIN, 'testTag', 'subscribeEvent matched eventName: ' + eventName);
         callback(commonEventData);
       }
