@@ -85,7 +85,7 @@ export default function int32ArrayFromPart06Test(): void {
      * @tc.level LEVEL2
      */
     it('int32ArrayFromPart06TestMindmapTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Int32Array = Int32Array.from([] as number[], (v: number, k: number): number => {
+      let r: Int32Array = Int32Array.from([] as number[], (): number => {
         return 1;
       });
       expect(r.length).assertEqual(0);
@@ -136,7 +136,7 @@ export default function int32ArrayFromPart06Test(): void {
      */
     it('int32ArrayFromPart06TestMindmapTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let callCount: number = 0;
-      let r: Int32Array = Int32Array.from([] as number[], (v: number, k: number): number => {
+      let r: Int32Array = Int32Array.from([] as number[], (): number => {
         callCount = callCount + 1;
         return 0;
       });
@@ -282,6 +282,7 @@ export default function int32ArrayFromPart06Test(): void {
       let src: Array<string> = ['a', 'b', 'c', 'd'];
       let ks: Array<number> = [];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v.length).assertEqual(1);
         ks.push(k);
         return k;
       });
@@ -322,7 +323,7 @@ export default function int32ArrayFromPart06Test(): void {
      */
     it('int32ArrayFromPart06TestMindmapTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cc: number = 0;
-      let r: Int32Array = Int32Array.from([] as number[], (v: number, k: number): number => {
+      let r: Int32Array = Int32Array.from([] as number[], (): number => {
         cc = cc + 1;
         return 0;
       });
@@ -341,6 +342,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ks: Array<number> = [];
       let r: Int32Array = Int32Array.from(['x'] as string[], (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         ks.push(k);
         return 0;
       });
@@ -431,6 +433,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return Number.NaN;
       });
       expect(r.$_get(0)).assertEqual(0);
@@ -447,6 +450,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return Number.POSITIVE_INFINITY;
       });
       expect(r.$_get(0)).assertEqual(0);
@@ -463,6 +467,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return -Number.POSITIVE_INFINITY;
       });
       expect(r.$_get(0)).assertEqual(0);
@@ -479,6 +484,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return 0.5;
       });
       expect(r.$_get(0)).assertEqual(0);
@@ -495,6 +501,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return -0.9;
       });
       expect(r.$_get(0)).assertEqual(0);
@@ -511,6 +518,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return 2147483647;
       });
       expect(r.$_get(0)).assertEqual(2147483647);
@@ -527,6 +535,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return -2147483648;
       });
       expect(r.$_get(0)).assertEqual(-2147483648);
@@ -543,6 +552,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return 2147483647.9;
       });
       expect(r.$_get(0)).assertEqual(2147483647);
@@ -559,6 +569,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return 2147483648;
       });
       expect(r.$_get(0)).assertEqual(-2147483648);
@@ -575,6 +586,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return 2147483649;
       });
       expect(r.$_get(0)).assertEqual(-2147483647);
@@ -591,6 +603,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return -2147483649;
       });
       expect(r.$_get(0)).assertEqual(2147483647);
@@ -607,6 +620,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return 4294967296;
       });
       expect(r.$_get(0)).assertEqual(0);
@@ -623,6 +637,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return -1;
       });
       expect(r.$_get(0)).assertEqual(-1);
@@ -639,6 +654,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return 0;
       });
       expect(r.$_get(0)).assertEqual(0);
@@ -655,6 +671,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return 42;
       });
       expect(r.$_get(0)).assertEqual(42);
@@ -671,6 +688,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return -100;
       });
       expect(r.$_get(0)).assertEqual(-100);
@@ -687,6 +705,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return 0xFF;
       });
       expect(r.$_get(0)).assertEqual(255);
@@ -703,6 +722,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return 0b1010;
       });
       expect(r.$_get(0)).assertEqual(10);
@@ -719,6 +739,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['x'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('x');
         return 1.0e2;
       });
       expect(r.$_get(0)).assertEqual(100);
@@ -736,6 +757,7 @@ export default function int32ArrayFromPart06Test(): void {
       let base: number = 100;
       let src: Array<string> = ['a', 'b'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v.length).assertEqual(1);
         return base + k;
       });
       expect(r.$_get(0)).assertEqual(100);
@@ -754,6 +776,7 @@ export default function int32ArrayFromPart06Test(): void {
       let src: Array<string> = ['a', 'b', 'c'];
       let sum: number = 0;
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v.length).assertEqual(1);
         sum = sum + 1;
         return k;
       });
@@ -939,6 +962,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['a', 'b', 'c'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v.length).assertEqual(1);
         return k;
       });
       expect(r.byteLength).assertEqual(12);
@@ -956,6 +980,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['a', 'b'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v.length).assertEqual(1);
         return k;
       });
       expect(r.byteOffset).assertEqual(0);
@@ -972,6 +997,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['a', 'b'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v.length).assertEqual(1);
         return k;
       });
       expect(r.buffer.byteLength).assertEqual(8);
@@ -1002,8 +1028,7 @@ export default function int32ArrayFromPart06Test(): void {
      * @tc.level LEVEL2
      */
     it('int32ArrayFromPart06TestMindmapTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Int32Array = Int32Array.from([] as number[], (v: number, k: number): number => {
-        expect(v).assertEqual(0);
+      let r: Int32Array = Int32Array.from([] as number[], (): number => {
         return 0;
       });
       expect(r.length).assertEqual(0);
@@ -1023,6 +1048,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['a', 'b', 'c', 'd', 'e'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v.length).assertEqual(1);
         return k * 10;
       });
       expect(r.$_get(0)).assertEqual(0);
@@ -1064,6 +1090,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['a', 'b'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v.length).assertEqual(1);
         return k === 0 ? -0 : 0;
       });
       expect(r.$_get(0)).assertEqual(0);
@@ -1143,6 +1170,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['a'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('a');
         return Number('');
       });
       expect(r.$_get(0)).assertEqual(0);
@@ -1159,6 +1187,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['a'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('a');
         return -1000000;
       });
       expect(r.$_get(0)).assertEqual(-1000000);
@@ -1175,6 +1204,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['a'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('a');
         return 0o777;
       });
       expect(r.$_get(0)).assertEqual(511);
@@ -1191,6 +1221,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['a', 'b', 'c', 'd'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v.length).assertEqual(1);
         if (k === 0) {
           return 2147483647;
         }
@@ -1219,6 +1250,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['a', 'b', 'c', 'd'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v.length).assertEqual(1);
         if (k === 0) {
           return Number.NaN;
         }
@@ -1247,6 +1279,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['a'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('a');
         return 4294967297;
       });
       expect(r.$_get(0)).assertEqual(1);
@@ -1263,6 +1296,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['a', 'b', 'c', 'd', 'e'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v.length).assertEqual(1);
         return 0;
       });
       for (let i: int = 0; i < r.length; i = i + 1) {
@@ -1322,6 +1356,7 @@ export default function int32ArrayFromPart06Test(): void {
     it('int32ArrayFromPart06TestMindmapTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<string> = ['a'];
       let r: Int32Array = Int32Array.from<string>(src as ArrayLike<string>, (v: string, k: number): number => {
+        expect(v).assertEqual('a');
         return Number('123');
       });
       expect(r.$_get(0)).assertEqual(123);
