@@ -1381,6 +1381,7 @@ export default function int32ArrayOverviewPart08Test(): void {
       try {
         a.forEach((_v: number, _i: int, _arr: Int32Array): void => {
           calls = calls + 1;
+          expect(_v).assertEqual(1);
           throw new Error('stop');
         });
         expect().assertFail();
@@ -1424,7 +1425,8 @@ export default function int32ArrayOverviewPart08Test(): void {
     it('int32ArrayOverviewPart08TestMindmapTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: number[] = [1, 2];
       try {
-        Int32Array.from(src, (_v: number): number => {
+        Int32Array.from(src, (v: number): number => {
+          expect(v).assertEqual(1);
           throw new Error('f');
         });
         expect().assertFail();
@@ -1600,6 +1602,7 @@ export default function int32ArrayOverviewPart08Test(): void {
       let a: Int32Array = Int32Array.of(1, 2);
       try {
         a.some((v: number, _i: int, _x: Int32Array): boolean => {
+          expect(v).assertEqual(1);
           throw new Error('s');
         });
         expect().assertFail();
@@ -1620,6 +1623,7 @@ export default function int32ArrayOverviewPart08Test(): void {
       let a: Int32Array = Int32Array.of(1, 2);
       try {
         a.every((v: number, _i: int, _x: Int32Array): boolean => {
+          expect(v).assertEqual(1);
           throw new Error('e');
         });
         expect().assertFail();
@@ -1640,6 +1644,7 @@ export default function int32ArrayOverviewPart08Test(): void {
       let a: Int32Array = Int32Array.of(1, 2);
       try {
         a.find((v: number, _i: int, _x: Int32Array): boolean => {
+          expect(v).assertEqual(1);
           throw new Error('fi');
         });
         expect().assertFail();
