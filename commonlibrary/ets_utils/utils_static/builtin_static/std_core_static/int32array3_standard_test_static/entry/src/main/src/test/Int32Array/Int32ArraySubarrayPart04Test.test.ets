@@ -1391,7 +1391,8 @@ export default function int32ArraySubarrayPart04TestMindmapTestTest(): void {
       let p: Int32Array = new Int32Array([10, 20, 30, 40, 50]);
       let c: Int32Array = p.subarray(1, 4);
       let cnt: number = 0;
-      c.forEach((_v: number, _i: int, _a: Int32Array) => {
+      c.forEach((v: number, i: int, _a: Int32Array) => {
+        expect(v).assertEqual(20 + i * 10);
         cnt = cnt + 1;
       });
       expect(cnt).assertEqual(3);
