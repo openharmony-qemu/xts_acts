@@ -27,7 +27,6 @@ let path1 = path + '/ArkUI';
 let path2 = path + '/Audio';
 let path3 = path + '/Camera';
 let path4 = path + '/Player';
-let path5 = path + '/Experience';
 let path6 = path + '/Sensor';
 let path8 = path + '/Screen';
 let path9 = path + '/MultimodalInput';
@@ -37,7 +36,6 @@ let path1_2 = path + '/Wifi';
 let path1_3 = path + '/Bluetooth';
 let path1_4 = path + '/PCS';
 let picturePath = path + '/screenshot';
-let ExperienceDataPath = path + '/ExperienceData';
 let ArkUIColorBackPath = path + '/ArkUIColorBack.txt';
 let AudioColorBackPath = path + '/AudioColorBack.txt';
 let CameraColorBackPath = path + '/CameraColorBack.txt';
@@ -53,12 +51,10 @@ let PCSColorBackPath = path + '/PCSColorBack.txt'; // PCS自动化
 let PlayerNetWorkColorBackPath = path4 + '/PlayerNetWorkColorBack.txt'; // 播放网络视频
 let PlayerAudioColorBackPath = path4 + '/PlayerAudioColorBack.txt';
 let PlayerVideoColorBackPath = path4 + '/PlayerVideoColorBack.txt';
-let ExperienceColorBackPath = path + '/ExperienceColorBack.txt';
 fs.openSync(ArkUIColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
 fs.openSync(AudioColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
 fs.openSync(CameraColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
 fs.openSync(PlayerColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-fs.openSync(ExperienceColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
 fs.openSync(SensorColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
 fs.openSync(ScreenColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
 fs.openSync(MultimodalInputColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
@@ -78,7 +74,6 @@ let path44 = path4 + '/PlayerReport.txt';
 let PlayerAudioTxtPath = path4 + '/PlayerAudioReport.txt';
 let PlayerVideoTxtPath = path4 + '/PlayerVideoReport.txt';
 let PlayerNetWorkTxtPath = path4 + '/PlayerNetWorkReport.txt';
-let path55 = path5 + '/ExperienceReport.txt';
 let path66 = path6 + '/SensorReport.txt';
 let path88 = path8 + '/ScreenReport.txt'; // 屏幕
 let path99 = path9 + '/MultimodalInputReport.txt'; // 多模输入
@@ -101,7 +96,6 @@ struct IndexPage {
     { title: 'Audio', uri: 'pages/Audio/Audio_index' },
     { title: 'Camera', uri: 'pages/Camera/Camera_index' },
     { title: 'Player', uri: 'pages/Player/Player_index' },
-    { title: 'Experience', uri: 'pages/Experience/Experience_index' },
     { title: 'Sensor', uri: 'pages/Sensor/Sensor_index' },
     { title: 'Screen', uri: 'pages/Screen/Screen_index' },
     { title: 'MultimodalInput', uri: 'pages/MultimodalInput/MultimodalInput_index' },
@@ -133,7 +127,6 @@ struct IndexPage {
       fs.mkdirSync(path2);
       fs.mkdirSync(path3);
       fs.mkdirSync(path4);
-      fs.mkdirSync(path5);
       fs.mkdirSync(path6);
       // 屏幕
       fs.mkdirSync(path8);
@@ -150,7 +143,6 @@ struct IndexPage {
       // PCS
       fs.mkdirSync(path1_4);
       fs.mkdirSync(picturePath);
-      fs.mkdirSync(ExperienceDataPath);
       promise = preferences.put('index', 1);
       promise.then(() => {
         console.info("Succeeded in putting value of 'index'.");
@@ -170,7 +162,6 @@ struct IndexPage {
     fs.openSync(PlayerAudioTxtPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(PlayerVideoTxtPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(PlayerNetWorkTxtPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-    fs.openSync(path55, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(path66, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(path88, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(path99, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
@@ -305,7 +296,6 @@ struct IndexPage {
     fs.unlinkSync(PlayerAudioTxtPath);
     fs.unlinkSync(PlayerVideoTxtPath);
     fs.unlinkSync(PlayerNetWorkTxtPath);
-    fs.unlinkSync(path55);
     fs.unlinkSync(path66);
     fs.unlinkSync(path88);
     fs.unlinkSync(path99);
@@ -321,7 +311,6 @@ struct IndexPage {
     fs.unlinkSync(PlayerAudioColorBackPath);
     fs.unlinkSync(PlayerVideoColorBackPath);
     fs.unlinkSync(PlayerNetWorkColorBackPath);
-    fs.unlinkSync(ExperienceColorBackPath);
     fs.unlinkSync(SensorColorBackPath);
     fs.unlinkSync(ScreenColorBackPath);
     fs.unlinkSync(MultimodalInputColorBackPath);
@@ -332,8 +321,6 @@ struct IndexPage {
     fs.unlinkSync(PCSColorBackPath);
     fs.rmdirSync(picturePath);
     fs.mkdirSync(picturePath);
-    fs.rmdirSync(ExperienceDataPath);
-    fs.mkdirSync(ExperienceDataPath);
     fs.openSync(TimePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(xmlPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(path11, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
@@ -343,7 +330,6 @@ struct IndexPage {
     fs.openSync(PlayerAudioTxtPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(PlayerVideoTxtPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(PlayerNetWorkTxtPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-    fs.openSync(path55, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(path66, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(path88, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(path99, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
@@ -359,7 +345,6 @@ struct IndexPage {
     fs.openSync(PlayerAudioColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(PlayerVideoColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(PlayerNetWorkColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-    fs.openSync(ExperienceColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(SensorColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(ScreenColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.openSync(MultimodalInputColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
@@ -372,7 +357,7 @@ struct IndexPage {
     FlushData.ResetAudio();
     FlushData.ResetCamera();
     FlushData.ResetPlayer();
-    FlushData.ResetExperience();
+
     FlushData.ResetPlayerAudio();
     FlushData.ResetPlayerVideo();
     FlushData.ResetPlayNetworkVideo();
@@ -401,7 +386,7 @@ struct IndexPage {
     let AudioReport: string;
     let CameraReport: string;
     let PlayerReport: string;
-    let ExperienceReport: string;
+
     let SensorReport: string; // 传感器
     let ScreenReport: string; // 屏幕
     let MultimodalInputReport: string; // 多模输入
@@ -465,20 +450,6 @@ struct IndexPage {
     for (let i = 0; i < Math.floor(str4.length / 2); i++) {
       title4[i] = str4[i * 2];
       result4[i] = str4[i * 2 + 1];
-    }
-    /*
- * Experience
- */
-    let OP5 = fs.openSync(path55, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-    let buf5 = new ArrayBuffer(40960);
-    fs.readSync(OP5.fd, buf5);
-    ExperienceReport = String.fromCharCode(...new Uint8Array(buf5));
-    let str5 = ExperienceReport.split(";");
-    let title5: string[] = [];
-    let result5: string[] = [];
-    for (let i = 0; i < Math.floor(str5.length / 2); i++) {
-      title5[i] = str5[i * 2];
-      result5[i] = str5[i * 2 + 1];
     }
 
     /**
@@ -602,7 +573,7 @@ struct IndexPage {
     }
 
     let report = ArkUIReport + AudioReport + CameraReport + PlayerReport +
-      ExperienceReport + SensorReport + ScreenReport + MultimodalInputReport
+      SensorReport + ScreenReport + MultimodalInputReport
       + PowerReport + NotificationReport + BluetoothReport + WifiReport + PCSReport;
     let FailIndex = report.indexOf('false');
     let FailNum = 0;
@@ -701,26 +672,6 @@ struct IndexPage {
     }
     let PlayerTestNum = PlayerFailNum + PlayerPassNum;
     let playerTestNum = (PlayerTestNum).toString();
-    /*
-* Experience
-*/
-    let ExperienceFailIndex = ExperienceReport.indexOf('false');
-    let ExperienceFailNum = 0;
-    while (ExperienceFailIndex != -1) {
-      console.log(ExperienceFailIndex.toString());
-      ExperienceFailNum++;
-      ExperienceFailIndex = ExperienceReport.indexOf('false', ExperienceFailIndex + 1);
-    }
-    let experienceFailNum = (ExperienceFailNum).toString();
-    let ExperiencePassIndex = ExperienceReport.indexOf('true ');
-    let ExperiencePassNum = 0;
-    while (ExperiencePassIndex != -1) {
-      console.log(ExperiencePassIndex.toString());
-      ExperiencePassNum++;
-      ExperiencePassIndex = ExperienceReport.indexOf('true ', ExperiencePassIndex + 1);
-    }
-    let ExperienceTestNum = ExperienceFailNum + ExperiencePassNum;
-    let experienceTestNum = (ExperienceTestNum).toString();
 
     /**
      * Sensor
@@ -1002,31 +953,6 @@ struct IndexPage {
       serializer.setAttributes("time", "*");
       serializer.setAttributes("classname", "ActsPlayerTest");
       serializer.setAttributes("result", String(result4[i]));
-      serializer.setAttributes("level", "*");
-      serializer.setAttributes("message", "*");
-      serializer.endElement();
-    }
-    serializer.endElement();
-    /*
-* Experience
-*/
-    serializer.startElement("testsuite");
-    serializer.setAttributes("name", "ActsExperienceTest");
-    serializer.setAttributes("time", "*");
-    serializer.setAttributes("errors", "0");
-    serializer.setAttributes("disabled", "0");
-    serializer.setAttributes("failures", experienceFailNum);
-    serializer.setAttributes("ignored", "0");
-    serializer.setAttributes("tests", experienceTestNum);
-    serializer.setAttributes("message", "*");
-    serializer.setAttributes("modulename", "ActsValidator");
-    for (let i = 0; i < title5.length; i++) {
-      serializer.startElement("testcase");
-      serializer.setAttributes("name", String(title5[i]));
-      serializer.setAttributes("status", "run");
-      serializer.setAttributes("time", "*");
-      serializer.setAttributes("classname", "ActsExperienceTest");
-      serializer.setAttributes("result", String(result5[i]));
       serializer.setAttributes("level", "*");
       serializer.setAttributes("message", "*");
       serializer.endElement();
