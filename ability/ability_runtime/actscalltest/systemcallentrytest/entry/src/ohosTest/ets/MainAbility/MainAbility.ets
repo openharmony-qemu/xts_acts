@@ -13,32 +13,37 @@
  * limitations under the License.
  */
 import Ability from '@ohos.app.ability.UIAbility'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window'
+import rpc from '@ohos.rpc';
+import UIAbility from '@ohos.app.ability.UIAbility';
 
-class MySequenceable {
+class MySequenceable implements rpc.Parcelable {
     num: number = 0;
-    str: String = "";
-    result: String = "";
+    str: string = '';
+    result: string = '';
 
-    constructor(num, string, result) {
+    constructor(num: number, string: string, result: string) {
         this.num = num;
         this.str = string;
         this.result = result;
     }
 
-    setMySequence(num, string, result) {
+    setMySequence(num: number, string: string, result: string) {
         this.num = num;
         this.str = string;
         this.result = result;
     }
 
-    marshalling(messageParcel) {
+    marshalling(messageParcel: rpc.MessageSequence) {
         messageParcel.writeInt(this.num);
         messageParcel.writeString(this.str);
         messageParcel.writeString(this.result);
         return true;
     }
 
-    unmarshalling(messageParcel) {
+    unmarshalling(messageParcel: rpc.MessageSequence) {
         this.num = messageParcel.readInt();
         this.str = messageParcel.readString();
         this.result = messageParcel.readString();
@@ -47,16 +52,16 @@ class MySequenceable {
 }
 
 export default class MainAbility extends Ability {
-    test2100(data) {
-        console.log("SystemCallTest MainAbility test2100 begin");
+    test2100(data: ESObject) {
+        console.log('SystemCallTest MainAbility test2100 begin');
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);
-        return new MySequenceable(recvData.num + 1, recvData.str + "Main", recvData.result);
+        return new MySequenceable(recvData.num + 1, recvData.str + 'Main', recvData.result);
     }
 
-    onCreate(want, launchParam) {
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
         // Ability is creating, initialize resources for this ability
-        console.log("SystemCallTest MainAbility onCreate")
+        console.log('SystemCallTest MainAbility onCreate')
         globalThis.abilityWant = want;
         globalThis.callee = this.callee;
         this.callee.on('test2100', this.test2100);
@@ -64,28 +69,28 @@ export default class MainAbility extends Ability {
 
     onDestroy() {
         // Ability is destroying, release resources for this ability
-        console.log("SystemCallTest MainAbility onDestroy")
+        console.log('SystemCallTest MainAbility onDestroy')
     }
 
-    onWindowStageCreate(windowStage) {
+    onWindowStageCreate(windowStage: window.WindowStage): void {
         // Main window is created, set main page for this ability
-        console.log("SystemCallTest MainAbility onWindowStageCreate")
+        console.log('SystemCallTest MainAbility onWindowStageCreate')
         globalThis.abilityContext = this.context
-        windowStage.setUIContent(this.context, "MainAbility/pages/index/index", null)
+        windowStage.loadContent('MainAbility/pages/index/index', null)
     }
 
     onWindowStageDestroy() {
         // Main window is destroyed, release UI related resources
-        console.log("SystemCallTest MainAbility onWindowStageDestroy")
+        console.log('SystemCallTest MainAbility onWindowStageDestroy')
     }
 
     onForeground() {
         // Ability has brought to foreground
-        console.log("SystemCallTest MainAbility onForeground")
+        console.log('SystemCallTest MainAbility onForeground')
     }
 
     onBackground() {
         // Ability has back to background
-        console.log("SystemCallTest MainAbility onBackground")
+        console.log('SystemCallTest MainAbility onBackground')
     }
 };

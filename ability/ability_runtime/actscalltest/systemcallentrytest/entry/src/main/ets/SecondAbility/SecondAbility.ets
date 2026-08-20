@@ -13,15 +13,19 @@
  * limitations under the License.
  */
 import Ability from '@ohos.app.ability.UIAbility'
-import commonEvent from '@ohos.commonEvent'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window'
+import commonEvent from '@ohos.commonEventManager'
+import UIAbility from '@ohos.app.ability.UIAbility';
 
-var callerA = "SystemAppCallerA"
-var callSeqA = new Array();
-var callerB = "SystemAppCallerB"
-var callSeqB = new Array();
-var callerC = "SystemAppCallerC"
-var callSeqC = new Array();
-var seq = 0;
+let callerA = 'SystemAppCallerA'
+let callSeqA = new Array();
+let callerB = 'SystemAppCallerB'
+let callSeqB = new Array();
+let callerC = 'SystemAppCallerC'
+let callSeqC = new Array();
+let seq = 0;
 
 function isArrayEqual(a1, a2) {
   return a1.length == a2.length && a1.every(function (value, index) {
@@ -33,7 +37,7 @@ function isArrayEqualWithoutOrder(a1, a2) {
   if (a1.length != a2.length) {
     return false;
   }
-  for (let ind in a1) {
+  for (let ind of Object.keys(a1)) {
     if (a2.indexOf(a1[ind]) == -1) {
       return false;
     }
@@ -42,20 +46,20 @@ function isArrayEqualWithoutOrder(a1, a2) {
   return true;
 }
 
-var expectStressResult = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let expectStressResult = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 class MySequenceable {
   num: number = 0;
-  str: String = "";
-  result: String = "";
+  str: String = '';
+  result: String = '';
 
-  constructor(num, string, result) {
+  constructor(num: number, string: String, result: String) {
     this.num = num;
     this.str = string;
     this.result = result;
   }
 
-  setMySequence(num, string, result) {
+  setMySequence(num: number, string: String, result: String) {
     this.num = num;
     this.str = string;
     this.result = result;
@@ -80,8 +84,8 @@ function testCall(data) {
   let recvSequence = new MySequenceable(0, '', '');
   console.log('======>SystemCallTest SecondAbility on testCall <======')
   data.readParcelable(recvSequence);
-  var result = recvSequence.str + 'processed';
-  var commonEventData = {
+  let result = recvSequence.str + 'processed';
+  let commonEventData: commonEvent.CommonEventPublishData = {
     code: 0,
     data: 'calleeCheckCallParam',
     parameters: {
@@ -100,8 +104,8 @@ function testCall2(data) {
   let recvSequence = new MySequenceable(0, '', '');
   console.log('======>SystemCallTest SecondAbility on testCall <======')
   data.readParcelable(recvSequence);
-  var result = recvSequence.str + 'processed2';
-  var commonEventData = {
+  let result = recvSequence.str + 'processed2';
+  let commonEventData: commonEvent.CommonEventPublishData = {
     code: 0,
     data: 'calleeCheckCall2Param',
     parameters: {
@@ -131,20 +135,20 @@ function test2100ReleaseCallback(data) {
   test2100ReleaseFlag = data.toString();
 }
 
-var test2100ReleaseFlag = '';
+let test2100ReleaseFlag = '';
 
 export default class SecondAbility extends Ability {
   test2100(data) {
     let recvData = new MySequenceable(0, '', '');
     data.readParcelable(recvData);
-    let want = {
-      bundleName: "com.example.systemcalltest",
-      abilityName: "com.example.systemcalltest.MainAbility",
+    let want: Want = {
+      bundleName: 'com.example.systemcalltest',
+      abilityName: 'com.example.systemcalltest.MainAbility',
     };
-    console.log("SystemCallTest SecondAbility test2100 before startAbilityByCall");
+    console.log('SystemCallTest SecondAbility test2100 before startAbilityByCall');
     let resultData = new MySequenceable(0, '', '');
     globalThis.abilityContext2.startAbilityByCall(want).then((caller) => {
-      let param = new MySequenceable(recvData.num + 1, recvData.str + "Second", recvData.result);
+      let param = new MySequenceable(recvData.num + 1, recvData.str + 'Second', recvData.result);
       caller.onRelease(test2100ReleaseCallback);
         for (let start = Date.now(); Date.now() - start <= 200; ) {
             ;
@@ -156,7 +160,7 @@ export default class SecondAbility extends Ability {
               ;
           }
         resultData.result = test2100ReleaseFlag;
-        let commonEventData = {
+        let commonEventData: commonEvent.CommonEventPublishData = {
           parameters: {
             num: resultData.num,
             str: resultData.str,
@@ -198,7 +202,7 @@ export default class SecondAbility extends Ability {
       stressResult = stressResult && isArrayEqualWithoutOrder(callSeqB, expectStressResult);
       stressResult = stressResult && isArrayEqualWithoutOrder(callSeqC, expectStressResult);
       console.log('SystemCallTest SecondAbility stressMethod stressResult ' + stressResult);
-      let commonEventData = {
+      let commonEventData: commonEvent.CommonEventPublishData = {
         data: stressResult.toString(),
       };
       commonEvent.publish('com.example.systemcalltest.Test5600', commonEventData, (err) => {
@@ -218,9 +222,9 @@ export default class SecondAbility extends Ability {
     return new MySequenceable(recvData.num + 1, recvData.str, '');
   }
 
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     // Ability is creating, initialize resources for this ability
-    console.log("SystemCallTest SecondAbility onCreate")
+    console.log('SystemCallTest SecondAbility onCreate')
     globalThis.abilityWant = want;
     globalThis.secondCallee = this.callee;
     globalThis.abilityContext2 = this.context;
@@ -235,27 +239,27 @@ export default class SecondAbility extends Ability {
 
   onDestroy() {
     // Ability is destroying, release resources for this ability
-    console.log("SystemCallTest SecondAbility onDestroy")
+    console.log('SystemCallTest SecondAbility onDestroy')
   }
 
-  onWindowStageCreate(windowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
-    console.log("SystemCallTest SecondAbility onWindowStageCreate")
-    windowStage.setUIContent(this.context, "pages/second/second", null)
+    console.log('SystemCallTest SecondAbility onWindowStageCreate')
+    windowStage.loadContent('pages/second/second', null)
   }
 
   onWindowStageDestroy() {
     // Main window is destroyed, release UI related resources
-    console.log("SystemCallTest SecondAbility onWindowStageDestroy")
+    console.log('SystemCallTest SecondAbility onWindowStageDestroy')
   }
 
   onForeground() {
     // Ability has brought to foreground
-    console.log("SystemCallTest SecondAbility onForeground")
+    console.log('SystemCallTest SecondAbility onForeground')
   }
 
   onBackground() {
     // Ability has back to background
-    console.log("SystemCallTest SecondAbility onBackground")
+    console.log('SystemCallTest SecondAbility onBackground')
   }
 };

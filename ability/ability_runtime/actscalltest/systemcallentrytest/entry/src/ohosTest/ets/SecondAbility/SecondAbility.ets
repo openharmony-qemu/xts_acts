@@ -13,57 +13,63 @@
  * limitations under the License.
  */
 import Ability from '@ohos.app.ability.UIAbility'
-import commonEvent from '@ohos.commonEvent'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window'
+import commonEvent from '@ohos.commonEventManager'
+import rpc from '@ohos.rpc';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import { Caller } from '@ohos.app.ability.UIAbility';
 
-var callerA = "SystemAppCallerA"
-var callSeqA= new Array();
-var callerB = "SystemAppCallerB"
-var callSeqB= new Array();
-var callerC = "SystemAppCallerC"
-var callSeqC= new Array();
-var seq = 0;
+let callerA = 'SystemAppCallerA'
+let callSeqA: ESObject[] = new Array();
+let callerB = 'SystemAppCallerB'
+let callSeqB: ESObject[] = new Array();
+let callerC = 'SystemAppCallerC'
+let callSeqC: ESObject[] = new Array();
+let seq = 0;
 
-function isArrayEqual(a1, a2) {
-    return a1.length==a2.length && a1.every(function(value,index) { return value === a2[index]});
+function isArrayEqual(a1: ESObject[], a2: ESObject[]) {
+    return a1.length==a2.length && a1.every((value: ESObject, index: number) => { return value === (a2 as Record<string, ESObject>)[index]});
 }
-function isArrayEqualWithoutOrder(a1, a2) {
+function isArrayEqualWithoutOrder(a1: ESObject[], a2: ESObject[]) {
     if (a1.length != a2.length) {
         return false;
     }
-    for (let ind in a1) {
-        if (a2.indexOf(a1[ind]) == -1) {
+    for (let ind of Object.keys(a1)) {
+        if (a2.indexOf((a1 as Record<string, ESObject>)[ind]) == -1) {
             return false;
         };
     }
     return true;
 }
-var expectStressResult=[0,1,2,3,4,5,6,7,8,9];
+let expectStressResult=[0,1,2,3,4,5,6,7,8,9];
 
-class MySequenceable {
+class MySequenceable implements rpc.Parcelable {
     num: number = 0;
-    str: String = "";
-    result: String = "";
+    str: string = '';
+    result: string = '';
 
-    constructor(num, string, result) {
+    constructor(num: number, string: string, result: string) {
         this.num = num;
         this.str = string;
         this.result = result;
     }
 
-    setMySequence(num, string, result) {
+    setMySequence(num: number, string: string, result: string) {
         this.num = num;
         this.str = string;
         this.result = result;
     }
 
-    marshalling(messageParcel) {
+    marshalling(messageParcel: rpc.MessageSequence) {
         messageParcel.writeInt(this.num);
         messageParcel.writeString(this.str);
         messageParcel.writeString(this.result);
         return true;
     }
 
-    unmarshalling(messageParcel) {
+    unmarshalling(messageParcel: rpc.MessageSequence) {
         this.num = messageParcel.readInt();
         this.str = messageParcel.readString();
         this.result = messageParcel.readString();
@@ -71,12 +77,12 @@ class MySequenceable {
     }
 }
 
-function testCall(data) {
+function testCall(data: rpc.MessageSequence) {
     let recvSequence = new MySequenceable(0, '', '');
     console.log('======>SystemCallTest SecondAbility on testCall <======')
     data.readParcelable(recvSequence);
-    var result = recvSequence.str + 'processed';
-    var commonEventData = {
+    let result = recvSequence.str + 'processed';
+    let commonEventData: commonEvent.CommonEventPublishData = {
         code: 0,
         data: 'calleeCheckCallParam',
         parameters: {
@@ -85,18 +91,18 @@ function testCall(data) {
             result: result
         }
     }
-    commonEvent.publish('CallTest', commonEventData, (err) => {
+    commonEvent.publish('CallTest', commonEventData, (err: BusinessError) => {
         console.log('======>CallTestSysA SecondAbility Call_Finish<======')
     })
     return recvSequence;
 }
 
-function testCall2(data) {
+function testCall2(data: rpc.MessageSequence) {
     let recvSequence = new MySequenceable(0, '', '');
     console.log('======>SystemCallTest SecondAbility on testCall <======')
     data.readParcelable(recvSequence);
-    var result = recvSequence.str + 'processed2';
-    var commonEventData = {
+    let result = recvSequence.str + 'processed2';
+    let commonEventData: commonEvent.CommonEventPublishData = {
         code: 0,
         data: 'calleeCheckCall2Param',
         parameters: {
@@ -105,13 +111,13 @@ function testCall2(data) {
             result: result
         }
     }
-    commonEvent.publish('CallTest', commonEventData, (err) => {
+    commonEvent.publish('CallTest', commonEventData, (err: BusinessError) => {
         console.log('======>CallTestSysA SecondAbility Call_Finish<======')
     })
     return recvSequence;
 }
 
-function testCallWithResult(data) {
+function testCallWithResult(data: rpc.MessageSequence) {
     let recvSequence = new MySequenceable(0, '', '');
     console.log('======>SystemCallTest SecondAbility on testCall <======')
     data.readParcelable(recvSequence);
@@ -121,41 +127,41 @@ function testCallWithResult(data) {
     return recvSequence;
 }
 
-function test2100ReleaseCallback(data) {
+function test2100ReleaseCallback(data: string) {
     console.log('SystemCallTest SecondAbility test2100ReleaseCallback:' + data);
     test2100ReleaseFlag = data.toString();
 }
 
-var test2100ReleaseFlag = '';
+let test2100ReleaseFlag = '';
 
 export default class SecondAbility extends Ability {
 
-    test2100(data) {
+    test2100(data: rpc.MessageSequence) {
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);
-        let want = {
-            bundleName: "com.example.systemcalltest",
-            abilityName: "com.example.systemcalltest.MainAbility",
+        let want: Want = {
+            bundleName: 'com.example.systemcalltest',
+            abilityName: 'com.example.systemcalltest.MainAbility',
         };
-        console.log("SystemCallTest SecondAbility test2100 before startAbilityByCall");
+        console.log('SystemCallTest SecondAbility test2100 before startAbilityByCall');
         let resultData = new MySequenceable(0, '', '');
-        globalThis.abilityContext2.startAbilityByCall(want).then((caller) => {
-            let param = new MySequenceable(recvData.num + 1, recvData.str + "Second", recvData.result);
+        globalThis.abilityContext2.startAbilityByCall(want).then((caller: Caller) => {
+            let param = new MySequenceable(recvData.num + 1, recvData.str + 'Second', recvData.result);
             caller.onRelease(test2100ReleaseCallback);
             for (let start=Date.now(); Date.now() - start <= 200;);
-            caller.callWithResult('test2100', param).then((data2) => {
+            caller.callWithResult('test2100', param).then((data2: rpc.MessageSequence) => {
                 data2.readParcelable(resultData);
                 caller.release();
                 for (let start=Date.now(); Date.now() - start <= 200;);
                 resultData.result = test2100ReleaseFlag;
-                let commonEventData = {
+                let commonEventData: commonEvent.CommonEventPublishData = {
                     parameters: {
                         num: resultData.num,
                         str: resultData.str,
                         result: resultData.result,
                     }
                 };
-                commonEvent.publish('call_case2100_test_result', commonEventData, (err) => {
+                commonEvent.publish('call_case2100_test_result', commonEventData, (err: BusinessError) => {
                     console.log('SystemCallTest SecondAbility publish call_case2200_test_result event');
                 })
 
@@ -164,13 +170,13 @@ export default class SecondAbility extends Ability {
         return resultData;
     }
 
-    testOff(data) {
+    testOff(data: ESObject) {
         let recvSequence = new MySequenceable(0, '', '');
         data.readParcelable(recvSequence);
         return recvSequence;
     }
 
-    stressMethod(data) {
+    stressMethod(data: ESObject) {
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);
         console.log('SystemCallTest SecondAbility stressMethod caller ' + recvData.str);
@@ -190,10 +196,10 @@ export default class SecondAbility extends Ability {
             stressResult=stressResult&&isArrayEqualWithoutOrder(callSeqB, expectStressResult);
             stressResult=stressResult&&isArrayEqualWithoutOrder(callSeqC, expectStressResult);
             console.log('SystemCallTest SecondAbility stressMethod stressResult ' + stressResult);
-            let commonEventData = {
+            let commonEventData: commonEvent.CommonEventPublishData = {
                 data: stressResult.toString(),
             };
-            commonEvent.publish('com.example.systemcalltest.Test5600', commonEventData, (err) => {
+            commonEvent.publish('com.example.systemcalltest.Test5600', commonEventData, (err: BusinessError) => {
                 console.log('SystemCallTest SecondAbility stress test result event');
             });
             seq=0;
@@ -204,50 +210,50 @@ export default class SecondAbility extends Ability {
         return recvData;
     }
 
-    loopMethod(data) {
+    loopMethod(data: ESObject) {
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);
         return new MySequenceable(recvData.num + 1, recvData.str, '');
     }
 
-    onCreate(want, launchParam) {
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
         // Ability is creating, initialize resources for this ability
-        console.log("SystemCallTest SecondAbility onCreate")
+        console.log('SystemCallTest SecondAbility onCreate')
         globalThis.abilityWant = want;
         globalThis.secondCallee = this.callee;
         globalThis.abilityContext2 = this.context;
-        this.callee.on('test2100', this.test2100);
-        this.callee.on('testOff', this.testOff);
-        this.callee.on('stressMethod', this.stressMethod);
-        this.callee.on('loopMethod', this.loopMethod);
-        this.callee.on('testCall', testCall);
-        this.callee.on('testCall2', testCall2);
-        this.callee.on('testCallWithResult', testCallWithResult);
+        (this as ESObject).callee.on('test2100', this.test2100);
+        (this as ESObject).callee.on('testOff', this.testOff);
+        (this as ESObject).callee.on('stressMethod', this.stressMethod);
+        (this as ESObject).callee.on('loopMethod', this.loopMethod);
+        (this as ESObject).callee.on('testCall', testCall);
+        (this as ESObject).callee.on('testCall2', testCall2);
+        (this as ESObject).callee.on('testCallWithResult', testCallWithResult);
     }
 
     onDestroy() {
         // Ability is destroying, release resources for this ability
-        console.log("SystemCallTest SecondAbility onDestroy")
+        console.log('SystemCallTest SecondAbility onDestroy')
     }
 
-    onWindowStageCreate(windowStage) {
+    onWindowStageCreate(windowStage: window.WindowStage): void {
         // Main window is created, set main page for this ability
-        console.log("SystemCallTest SecondAbility onWindowStageCreate")
-        windowStage.setUIContent(this.context, "pages/second/second", null)
+        console.log('SystemCallTest SecondAbility onWindowStageCreate')
+        windowStage.loadContent('pages/second/second', null)
     }
 
     onWindowStageDestroy() {
         // Main window is destroyed, release UI related resources
-        console.log("SystemCallTest SecondAbility onWindowStageDestroy")
+        console.log('SystemCallTest SecondAbility onWindowStageDestroy')
     }
 
     onForeground() {
         // Ability has brought to foreground
-        console.log("SystemCallTest SecondAbility onForeground")
+        console.log('SystemCallTest SecondAbility onForeground')
     }
 
     onBackground() {
         // Ability has back to background
-        console.log("SystemCallTest SecondAbility onBackground")
+        console.log('SystemCallTest SecondAbility onBackground')
     }
 };

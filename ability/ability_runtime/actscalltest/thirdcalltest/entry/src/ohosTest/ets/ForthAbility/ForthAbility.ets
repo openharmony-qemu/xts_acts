@@ -13,33 +13,38 @@
  * limitations under the License.
  */
 import Ability from '@ohos.app.ability.UIAbility'
-import commonEvent from '@ohos.commonEvent'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window'
+import commonEvent from '@ohos.commonEventManager'
+import rpc from '@ohos.rpc';
+import UIAbility from '@ohos.app.ability.UIAbility';
 
-class MySequenceable {
+class MySequenceable implements rpc.Parcelable {
     num: number = 0;
-    str: String = "";
-    result: String = "";
+    str: string = '';
+    result: string = '';
 
-    constructor(num, string, result) {
+    constructor(num: number, string: string, result: string) {
         this.num = num;
         this.str = string;
         this.result = result;
     }
 
-    setMySequence(num, string, result) {
+    setMySequence(num: number, string: string, result: string) {
         this.num = num;
         this.str = string;
         this.result = result;
     }
 
-    marshalling(messageParcel) {
+    marshalling(messageParcel: rpc.MessageSequence) {
         messageParcel.writeInt(this.num);
         messageParcel.writeString(this.str);
         messageParcel.writeString(this.result);
         return true;
     }
 
-    unmarshalling(messageParcel) {
+    unmarshalling(messageParcel: rpc.MessageSequence) {
         this.num = messageParcel.readInt();
         this.str = messageParcel.readString();
         this.result = messageParcel.readString();
@@ -47,12 +52,12 @@ class MySequenceable {
     }
 }
 
-function testCall(data) {
+function testCall(data: rpc.MessageSequence) {
     let recvSequence = new MySequenceable(0, '', '');
-    console.log('======>SystemCallTest FifthAbility on testCall <======')
+    console.log('======>SystemCallTest ForthAbility on testCall <======')
     data.readParcelable(recvSequence);
-    var result = recvSequence.str + 'processed';
-    var commonEventData = {
+    let result = recvSequence.str + 'processed';
+    let commonEventData: commonEvent.CommonEventPublishData = {
         code: 0,
         data: 'calleeCheckCallParam',
         parameters: {
@@ -62,14 +67,14 @@ function testCall(data) {
         }
     }
     commonEvent.publish('CallTest', commonEventData, (err) => {
-        console.log('======>CallTestSysA FifthAbility Call_Finish<======')
+        console.log('======>CallTestSysA ForthAbility Call_Finish<======')
     })
     return recvSequence;
 }
 
-function testCallWithResult(data) {
+function testCallWithResult(data: rpc.MessageSequence) {
     let recvSequence = new MySequenceable(0, '', '');
-    console.log('======>SystemCallTest FifthAbility on testCall <======')
+    console.log('======>SystemCallTest ForthAbility on testCall <======')
     data.readParcelable(recvSequence);
     let result = recvSequence.str + 'processed';
     recvSequence.setMySequence(recvSequence.num, recvSequence.str, result);
@@ -77,10 +82,10 @@ function testCallWithResult(data) {
     return recvSequence;
 }
 
-export default class FifthAbility extends Ability {
-    onCreate(want, launchParam) {
+export default class ForthAbility extends Ability {
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
         // Ability is creating, initialize resources for this ability
-        console.log("SystemCallTest FifthAbility onCreate")
+        console.log('SystemCallTest ForthAbility onCreate')
         globalThis.abilityWant = want;
         this.callee.on('testCall', testCall);
         this.callee.on('testCallWithResult', testCallWithResult);
@@ -88,37 +93,37 @@ export default class FifthAbility extends Ability {
 
     onDestroy() {
         // Ability is destroying, release resources for this ability
-        console.log("SystemCallTest FifthAbility onDestroy")
+        console.log('SystemCallTest ForthAbility onDestroy')
     }
 
-    onWindowStageCreate(windowStage) {
+    onWindowStageCreate(windowStage: window.WindowStage): void {
         // Main window is created, set main page for this ability
-        console.log("SystemCallTest FifthAbility onWindowStageCreate")
-        windowStage.setUIContent(this.context, "MainAbility/pages/second/second", null)
+        console.log('SystemCallTest ForthAbility onWindowStageCreate')
+        windowStage.loadContent('MainAbility/pages/second/second', null)
     }
 
     onWindowStageDestroy() {
         // Main window is destroyed, release UI related resources
-        console.log("SystemCallTest FifthAbility onWindowStageDestroy")
+        console.log('SystemCallTest ForthAbility onWindowStageDestroy')
     }
 
     onForeground() {
         // Ability has brought to foreground
-        console.log("SystemCallTest FifthAbility onForeground")
-        if ((globalThis.abilityWant.parameters.case_num == "case1300") ||
-            (globalThis.abilityWant.parameters.case_num == "case1400")) {
-            var publishData = globalThis.abilityWant.parameters.case_num + "targetForeground";
-            var commonEventData = {
+        console.log('SystemCallTest ForthAbility onForeground')
+        if ((globalThis.abilityWant.parameters.case_num == 'case1300') ||
+            (globalThis.abilityWant.parameters.case_num == 'case1400')) {
+            let publishData = globalThis.abilityWant.parameters?.case_num + 'targetForeground';
+            let commonEventData: commonEvent.CommonEventPublishData = {
                 data: publishData,
             }
             commonEvent.publish('CallTest', commonEventData, (err) => {
-                console.log('======>SystemAppCallerA FifthAbility Call_Finish<======')
+                console.log('======>SystemAppCallerA ForthAbility Call_Finish<======')
             })
         }
     }
 
     onBackground() {
         // Ability has back to background
-        console.log("SystemCallTest FifthAbility onBackground")
+        console.log('SystemCallTest ForthAbility onBackground')
     }
 };

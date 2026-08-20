@@ -25,7 +25,15 @@
             "value": "demo for test"
         },
         {
-            "name": "app_name",
+            "name": "TestAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "TestAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "app_name",
             "value": "Demo"
         }
     ]

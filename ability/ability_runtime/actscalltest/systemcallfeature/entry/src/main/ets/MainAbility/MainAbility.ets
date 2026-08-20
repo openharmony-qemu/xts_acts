@@ -12,43 +12,47 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import Ability from '@ohos.app.ability.UIAbility'
+import Ability from '@ohos.app.ability.Ability'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window'
+import rpc from '@ohos.rpc';
 
 class MySequenceable {
     num: number = 0;
-    str: String = "";
-    result: String = "";
+    str: string = '';
+    result: string = '';
 
-    constructor(num, string, result) {
+    constructor(num: number, string: string, result: string) {
         this.num = num;
         this.str = string;
         this.result = result;
     }
 
-    setMySequence(num, string, result) {
+    setMySequence(num: number, string: string, result: string) {
         this.num = num;
         this.str = string;
         this.result = result;
     }
 
-    marshalling(messageParcel) {
+    marshalling(messageParcel: rpc.MessageParcel) {
         messageParcel.writeInt(this.num);
         messageParcel.writeString(this.str);
         messageParcel.writeString(this.result);
         return true;
     }
 
-    unmarshalling(messageParcel) {
+    unmarshalling(messageParcel: rpc.MessageParcel) {
         this.num = messageParcel.readInt();
         this.str = messageParcel.readString();
         this.result = messageParcel.readString();
         return true;
     }
 }
-let callSeq = "";
+let callSeq = '';
 
 export default class MainAbility extends Ability {
-    test2300(data) {
+    test2300(data: ESObject) {
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);
         let sendData = new MySequenceable(0, '', '');
@@ -61,7 +65,7 @@ export default class MainAbility extends Ability {
         return sendData;
     }
 
-    test4600(data) {
+    test4600(data: ESObject) {
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);
         let sendData = new MySequenceable(0, '', '');
@@ -74,43 +78,43 @@ export default class MainAbility extends Ability {
         return sendData;
     }
 
-    onCreate(want, launchParam) {
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
         // Ability is creating, initialize resources for this ability
-        console.log("SystemCallTest Second Hap MainAbility onCreate")
+        console.log('SystemCallTest Second Hap MainAbility onCreate')
         globalThis.abilityWant = want;
-        this.callee.on('test2300', this.test2300);
-        this.callee.on('test4600', this.test4600);
-        callSeq = callSeq + "onCreate";
+        (this as ESObject).callee.on('test2300', this.test2300);
+        (this as ESObject).callee.on('test4600', this.test4600);
+        callSeq = callSeq + 'onCreate';
     }
 
     onDestroy() {
         // Ability is destroying, release resources for this ability
-        console.log("SystemCallTest Second Hap MainAbility onDestroy")
-        callSeq = callSeq + "onDestroy";
+        console.log('SystemCallTest Second Hap MainAbility onDestroy')
+        callSeq = callSeq + 'onDestroy';
     }
 
-    onWindowStageCreate(windowStage) {
+    onWindowStageCreate(windowStage: window.WindowStage): void {
         // Main window is created, set main page for this ability
-        console.log("SystemCallTest Second Hap MainAbility onWindowStageCreate")
-        windowStage.setUIContent(this.context, "pages/index", null)
-        callSeq = callSeq + "onWindowStageCreate";
+        console.log('SystemCallTest Second Hap MainAbility onWindowStageCreate')
+        windowStage.loadContent('pages/index', null)
+        callSeq = callSeq + 'onWindowStageCreate';
     }
 
     onWindowStageDestroy() {
         // Main window is destroyed, release UI related resources
-        console.log("SystemCallTest Second Hap MainAbility onWindowStageDestroy")
+        console.log('SystemCallTest Second Hap MainAbility onWindowStageDestroy')
     }
 
     onForeground() {
         // Ability has brought to foreground
-        console.log("SystemCallTest Second Hap MainAbility onForeground")
-        callSeq = callSeq + "onForeground";
+        console.log('SystemCallTest Second Hap MainAbility onForeground')
+        callSeq = callSeq + 'onForeground';
     }
 
     onBackground() {
         // Ability has back to background
-        console.log("SystemCallTest Second Hap MainAbility onBackground")
-        callSeq = callSeq + "onBackground";
+        console.log('SystemCallTest Second Hap MainAbility onBackground')
+        callSeq = callSeq + 'onBackground';
     }
 };
 
