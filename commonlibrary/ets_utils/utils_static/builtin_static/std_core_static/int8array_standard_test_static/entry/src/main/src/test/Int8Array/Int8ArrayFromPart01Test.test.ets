@@ -1041,6 +1041,7 @@ export default function int8ArrayFromPart01Test(): void {
     it('int8ArrayFromPart01Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<string> = ['7', '8'];
       const result = Int8Array.from<string>(src, (v: string, k: number) => {
+        expect(v.length).assertEqual(1);
         return 7.0;
       });
       result[0] = -1;
@@ -1118,6 +1119,7 @@ export default function int8ArrayFromPart01Test(): void {
       const src: Array<string> = ['a'];
       try {
         Int8Array.from<string>(src, (v: string, k: number) => {
+          expect(v).assertEqual('a');
           throw new TypeError('t');
         });
         expect().assertFail();

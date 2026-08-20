@@ -574,6 +574,9 @@ export default function int8ArrayFromPart06Test(): void {
       const src: Array<number> = [1, 2, 3];
       try {
         Int8Array.from(src, (v, k) => {
+          if (k === 0) {
+            expect(v).assertEqual(1);
+          }
           throw new RangeError('r');
         });
         expect().assertFail();

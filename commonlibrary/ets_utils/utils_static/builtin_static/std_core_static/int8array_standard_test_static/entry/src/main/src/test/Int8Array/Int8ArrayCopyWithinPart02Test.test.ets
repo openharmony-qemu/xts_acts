@@ -131,7 +131,6 @@ export default function int8ArrayCopyWithinPart02Test(): void {
     it('int8ArrayCopyWithinPart02Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3, 4, 5]);
       let ret = arr.copyWithin(-1, -3, -2);
-      expect(ret).not().assertEqual(undefined);
       let r1: number = ret.$_get(4);
       let e1: int = 3;
       expect(r1).assertEqual(e1);
