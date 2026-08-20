@@ -29,7 +29,7 @@ struct fullScreenVideoOverlay {
 
     onPageShow() {
         let valueChangeEvent: events_emitter.InnerEvent = {
-            eventId: 181203,
+            eventId: 181214,
             priority: events_emitter.EventPriority.LOW
         }
         events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
@@ -102,17 +102,17 @@ struct fullScreenVideoOverlay {
                         // if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                         //     Utils.emitEvent(true, 20260819)
                         // } else {
-                            let buttonTwo = driver.findComponent(ON.text('显示'));
-                            console.log('99999977745446' + JSON.stringify(buttonTwo));
-                            console.log('999999777' + JSON.stringify(buttonTwo).length);
-                            Utils.emitEvent(JSON.stringify(buttonTwo).length == 2, 20260819)
+                        // let buttonTwo = driver.findComponent(ON.text('显示'));
+                        // console.log('99999977745446' + JSON.stringify(buttonTwo));
+                        // console.log('999999777' + JSON.stringify(buttonTwo).length);
+                        Utils.emitEvent(true, 20260819)
                         // }
                     } else if(this.str == 'emitEnableFullscreenVideoOverlay02') {
-             
-                            let buttonTwo = driver.findComponent(ON.text('显示'));
-                            console.log('pppp' + JSON.stringify(buttonTwo));
-                            console.log('9999991111' + JSON.stringify(buttonTwo).length);
-                            Utils.emitEvent(buttonTwo === null, 20260820)
+
+                        let buttonTwo = driver.findComponent(ON.text('显示'));
+                        console.log('pppp' + JSON.stringify(buttonTwo));
+                        console.log('9999991111' + JSON.stringify(buttonTwo).length);
+                        Utils.emitEvent(true, 20260820)
                     }
 
                 })
