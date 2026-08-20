@@ -169,13 +169,13 @@ export default function swiperAnimationJsunit() {
       let starty = Math.round(top + height / 2);
       let endy = Math.round(top + height / 2);
       console.info("zzzzzzzzzzzz" + startx + " " + starty);
-      await driver.swipe(startx, starty, 0, endy);
+      await driver2.swipe(startx, starty, 0, endy);
       await CommonFunc.sleep(500);
       startx = Math.round(right - width * 0.4);
       starty = Math.round(top + height / 2);
       endy = Math.round(top + height / 2);
       console.info("zzzzzzzzzzzz" + startx + " " + starty);
-      await driver.swipe(startx, starty, 0, endy);
+      await driver2.swipe(startx, starty, 0, endy);
       await CommonFunc.sleep(500);
        // check the onAnimation triggers
       let strJson = getInspectorByKey('animationStart');
