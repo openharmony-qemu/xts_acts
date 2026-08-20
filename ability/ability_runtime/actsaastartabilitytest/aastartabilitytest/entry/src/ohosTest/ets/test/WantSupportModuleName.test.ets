@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import commonEvent from '@ohos.commonEvent';
+import commonEvent from '@ohos.commonEventManager';
 import hilog from '@ohos.hilog';
 import { it, expect, describe, Level } from '@ohos/hypium';
 import Want from '@ohos.app.ability.Want';
@@ -32,7 +32,7 @@ let launcher: Want = {
   abilityName: 'MainAbility'
 }
 let startAbilityMainCmd = `aa start -b ${bundleName} -a ${mainActivity} -m ${mainModuleName}`;
-let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+let user = abilityDelegatorRegistry.getArguments().parameters['-u'];
 if(user !== undefined){
     startAbilityMainCmd += ' -u ' + user;
 }
@@ -92,7 +92,7 @@ async function createSubscriberAndSubscribe(subscribeInfo: commonEventManager.Co
 
 async function installFeatureHap(cmd: string) {
   return new Promise<abilityDelegatorRegistry.ShellCmdResult>((resolve, reject) => {
-    AppStorage.get<abilityDelegatorRegistry.AbilityDelegator>("abilityDelegator")!.executeShellCommand(cmd, (err: BusinessError, d: abilityDelegatorRegistry.ShellCmdResult) => {
+    AppStorage.get<abilityDelegatorRegistry.AbilityDelegator>('abilityDelegator')!.executeShellCommand(cmd, (err: BusinessError, d: abilityDelegatorRegistry.ShellCmdResult) => {
       hilog.info(0x0000, TAG, '%{public}s', `executeShellCommand : = ${cmd},err  : ${JSON.stringify(err)}, data: ${JSON.stringify(d)}`);
       if (err) {
         reject(err);
@@ -109,7 +109,7 @@ function sleep(time: number) {
 
 async function executeShellCmd(cmd: string) {
   return new Promise <string>((resolve, reject) => {
-    AppStorage.get<abilityDelegatorRegistry.AbilityDelegator>("abilityDelegator")!.executeShellCommand(cmd,
+    AppStorage.get<abilityDelegatorRegistry.AbilityDelegator>('abilityDelegator')!.executeShellCommand(cmd,
       (err: BusinessError, d: abilityDelegatorRegistry.ShellCmdResult) => {
         hilog.info(0x0000, 'testTag', 'executeShellCommand : err : %{public}s', JSON.stringify(err) ?? '');
         hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', d.stdResult ?? '');
@@ -134,7 +134,7 @@ export default function wantSupportModuleNameTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0100", Level.LEVEL1, async (done: Function) => {
+    it('SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0100', Level.LEVEL1, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0100';
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: [onForegroundEvent_main]
@@ -211,7 +211,7 @@ export default function wantSupportModuleNameTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0500", Level.LEVEL3, async (done: Function) => {
+    it('SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0500', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0500';
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: [onForegroundEvent_main]
@@ -275,7 +275,7 @@ export default function wantSupportModuleNameTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0400", Level.LEVEL3, async (done: Function) => {
+    it('SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0400', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0400';
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: [onForegroundEvent_main]
@@ -343,7 +343,7 @@ export default function wantSupportModuleNameTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0300", Level.LEVEL1, async (done: Function) => {
+    it('SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0300', Level.LEVEL1, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0300';
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: [onForegroundEvent_main]
