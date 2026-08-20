@@ -171,9 +171,9 @@ export default function swiperAnimationJsunit() {
       console.info("zzzzzzzzzzzz" + startx + " " + starty);
       await driver.swipe(startx, starty, 0, endy);
       await CommonFunc.sleep(500);
-      let startx = Math.round(right - width * 0.4);
-      let starty = Math.round(top + height / 2);
-      let endy = Math.round(top + height / 2);
+      startx = Math.round(right - width * 0.4);
+      starty = Math.round(top + height / 2);
+      endy = Math.round(top + height / 2);
       console.info("zzzzzzzzzzzz" + startx + " " + starty);
       await driver.swipe(startx, starty, 0, endy);
       await CommonFunc.sleep(500);
