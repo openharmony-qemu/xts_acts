@@ -767,64 +767,34 @@ export default function LocalSocketTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLocalSocketOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 ,  async (done: Function) => {
+    it('testLocalSocketOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 ,  (done: Function) => {
       const caseName: string = 'testLocalSocketOn0100';
       console.info(`${caseName}---Start`);
       let server: socket.LocalSocketServer | null = null;
       let client: socket.LocalSocket | null = null;
       let testCompleted = false;
 
+      let sandboxPath: string = getContext().filesDir + '/testSocket';
+
       try {
         server = socket.constructLocalSocketServerInstance();
-
-        let sandboxPath: string = getContext().filesDir + '/testSocket';
         client = socket.constructLocalSocketInstance();
         let localAddr: socket.LocalAddress = {
           address: sandboxPath
         };
 
-        try {
-          await server.listen(localAddr);
+        server.listen(localAddr).then(() => {
           console.log(`${caseName} listen success`);
-        } catch (err) {
-          console.info(`${caseName} fail to listen ${err.code.toString()}`);
-        }
 
-        let sendOpt: socket.LocalSendOptions = {
-          data: 'Hello world!'
-        };
+          let sendOpt: socket.LocalSendOptions = {
+            data: 'Hello world!'
+          };
 
-        server.on('connect', async (connection: socket.LocalSocketConnection) => {
-          try {
-            await connection.send(sendOpt);
-          } catch (err) {
-            console.info(`${caseName} fail to send ${err.code.toString()}`);
-          }
-        });
-
-        let callback: Callback<socket.LocalSocketMessageInfo> = (data: socket.LocalSocketMessageInfo) => {
-          try {
-            const hasMessage = data.message !== undefined;
-            const hasAddress = data.address !== undefined;
-            const hasSize = data.size !== undefined;
-
-            console.log(`${caseName} data.message: ${hasMessage}, data.address: ${hasAddress}, data.size: ${hasSize}`);
-            expectTrue(hasMessage && hasAddress && hasSize);
-            if (hasMessage) {
-              const uintArray = new Uint8Array(data.message);
-              let messageView = '';
-              for (let i = 0; i < uintArray.length; i++) {
-                messageView += String.fromCharCode(uintArray[i]);
-              }
-              console.log(`${caseName} total: ${JSON.stringify(data)}`);
-              console.log(`${caseName} message infomation: ${messageView}`);
-            }
-          } catch (err) {
-            console.info(`${caseName} callback error: ${JSON.stringify(err)}`);
-          } finally {
-            if (!testCompleted) {
-              testCompleted = true;
-              try {
+          server!.on('connect', (connection: socket.LocalSocketConnection) => {
+            connection.send(sendOpt).catch((err: BusinessError) => {
+              console.info(`${caseName} fail to send ${err.code.toString()}`);
+              if (!testCompleted) {
+                testCompleted = true;
                 if (server) {
                   server.off('connect');
                 }
@@ -833,42 +803,103 @@ export default function LocalSocketTest() {
                 }
                 console.info(`${caseName} test end`);
                 done();
-              } catch (cleanupErr) {
-                console.info(`${caseName} cleanup error: ${JSON.stringify(cleanupErr)}`);
-                done();
+              }
+            });
+          });
+
+          let callback: Callback<socket.LocalSocketMessageInfo> = (data: socket.LocalSocketMessageInfo) => {
+            try {
+              const hasMessage = data.message !== undefined;
+              const hasAddress = data.address !== undefined;
+              const hasSize = data.size !== undefined;
+
+              console.log(`${caseName} data.message: ${hasMessage}, data.address: ${hasAddress}, data.size: ${hasSize}`);
+              expectTrue(hasMessage && hasAddress && hasSize);
+              if (hasMessage) {
+                const uintArray = new Uint8Array(data.message);
+                let messageView = '';
+                for (let i = 0; i < uintArray.length; i++) {
+                  messageView += String.fromCharCode(uintArray[i]);
+                }
+                console.log(`${caseName} total: ${JSON.stringify(data)}`);
+                console.log(`${caseName} message infomation: ${messageView}`);
+              }
+            } catch (err) {
+              console.info(`${caseName} callback error: ${JSON.stringify(err)}`);
+            } finally {
+              if (!testCompleted) {
+                testCompleted = true;
+                try {
+                  if (server) {
+                    server.off('connect');
+                  }
+                  if (client) {
+                    client.close();
+                  }
+                  console.info(`${caseName} test end`);
+                  done();
+                } catch (cleanupErr) {
+                  console.info(`${caseName} cleanup error: ${JSON.stringify(cleanupErr)}`);
+                  done();
+                }
               }
             }
-          }
-        };
+          };
 
-        let connectOpt: socket.LocalConnectOptions = {
-          address: localAddr,
-          timeout: 6000
-        };
+          let connectOpt: socket.LocalConnectOptions = {
+            address: localAddr,
+            timeout: 6000
+          };
 
-        try {
-          await client.connect(connectOpt);
-          console.log(`${caseName} connect success`);
-        } catch (err) {
-          console.info(`${caseName} connect error: ${JSON.stringify(err)}`);
-        }
-
-        client.on('message', callback);
-
-        setTimeout(() => {
-          if (!testCompleted) {
-            testCompleted = true;
-            console.info(`${caseName} timeout - test end`);
-            if (server) {
-              server.off('connect');
+          client!.connect(connectOpt).then(() => {
+            console.log(`${caseName} connect success`);
+            client!.on('message', callback);
+            if (!testCompleted) {
+              testCompleted = true;
+              if (server) {
+                server.off('connect');
+              }
+              if (client) {
+                client.close();
+              }
+              console.info(`${caseName} test end`);
+              done();
             }
-            if (client) {
-              client.close();
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} connect error: ${JSON.stringify(err)}`);
+            client!.on('message', callback);
+            if (!testCompleted) {
+              testCompleted = true;
+              if (server) {
+                server.off('connect');
+              }
+              if (client) {
+                client.close();
+              }
+              console.info(`${caseName} test end`);
+              done();
             }
-            done();
-          }
-        }, 10000);
+          });
 
+          setTimeout(() => {
+            if (!testCompleted) {
+              testCompleted = true;
+              console.info(`${caseName} timeout - test end`);
+              if (server) {
+                server.off('connect');
+              }
+              if (client) {
+                client.close();
+              }
+              done();
+            }
+          }, 10000);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} fail to listen ${err.code.toString()}`);
+          expectFail();
+          console.info(`${caseName} test end`);
+          done();
+        });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         expectFail();
