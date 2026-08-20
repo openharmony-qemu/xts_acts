@@ -106,7 +106,6 @@ export default function testsuite() {
   CameraPhotoSessionTest();
   CameraCaptureSessionTest();
   CameraTest()
-  CameraPickerPickTest();
   CameraManagerGetSupportedOutputCapabilityTest();
   ManagerCreatePhotoOutputSupp();
   ApertureTest();
@@ -116,4 +115,5 @@ export default function testsuite() {
   CameraOISQueryTest();
   CameraManualExposureTest();
   CameraPhotoOutputSuppTest();
+  CameraPickerPickTest();
 }
