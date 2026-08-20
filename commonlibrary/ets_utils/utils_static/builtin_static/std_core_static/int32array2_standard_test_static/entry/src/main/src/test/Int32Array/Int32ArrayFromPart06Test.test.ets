@@ -85,9 +85,7 @@ export default function int32ArrayFromPart06Test(): void {
      * @tc.level LEVEL2
      */
     it('int32ArrayFromPart06TestMindmapTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Int32Array = Int32Array.from([] as number[], (): number => {
-        return 1;
-      });
+      let r: Int32Array = Int32Array.from([] as number[]);
       expect(r.length).assertEqual(0);
       expect(r.byteLength).assertEqual(0);
     });
@@ -136,10 +134,7 @@ export default function int32ArrayFromPart06Test(): void {
      */
     it('int32ArrayFromPart06TestMindmapTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let callCount: number = 0;
-      let r: Int32Array = Int32Array.from([] as number[], (): number => {
-        callCount = callCount + 1;
-        return 0;
-      });
+      let r: Int32Array = Int32Array.from([] as number[]);
       expect(r.length).assertEqual(0);
       expect(callCount).assertEqual(0);
     });
@@ -323,10 +318,7 @@ export default function int32ArrayFromPart06Test(): void {
      */
     it('int32ArrayFromPart06TestMindmapTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cc: number = 0;
-      let r: Int32Array = Int32Array.from([] as number[], (): number => {
-        cc = cc + 1;
-        return 0;
-      });
+      let r: Int32Array = Int32Array.from([] as number[]);
       expect(cc).assertEqual(0);
       expect(r.length).assertEqual(0);
     });
@@ -1028,9 +1020,7 @@ export default function int32ArrayFromPart06Test(): void {
      * @tc.level LEVEL2
      */
     it('int32ArrayFromPart06TestMindmapTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Int32Array = Int32Array.from([] as number[], (): number => {
-        return 0;
-      });
+      let r: Int32Array = Int32Array.from([] as number[]);
       expect(r.length).assertEqual(0);
       expect(r.byteLength).assertEqual(0);
       expect(r.byteOffset).assertEqual(0);
