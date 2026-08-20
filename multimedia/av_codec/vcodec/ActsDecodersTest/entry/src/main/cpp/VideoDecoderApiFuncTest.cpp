@@ -800,7 +800,7 @@ napi_value VideoDecCapApi0024(napi_env env, napi_callback_info info)
 {
     bool checkMimeType = true;
     checkMimeType = OH_AVCapability_CheckMimeType(nullptr, OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-    if (!checkMimeType) { return CreateIntInt32Result(env, -1); }
+    if (checkMimeType) { return CreateIntInt32Result(env, -1); }
     return CreateIntInt32Result(env, 0);
 }
 
@@ -813,7 +813,7 @@ napi_value VideoDecCapApi0025(napi_env env, napi_callback_info info)
         OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (capHevcHw == nullptr) { return CreateIntInt32Result(env, 0); }
     checkMimeType = OH_AVCapability_CheckMimeType(capHevcHw, nullptr);
-    if (!checkMimeType) { return CreateIntInt32Result(env, -1); }
+    if (checkMimeType) { return CreateIntInt32Result(env, -1); }
     return CreateIntInt32Result(env, 0);
 }
 
@@ -891,4 +891,13 @@ napi_value VideoDecCapApi0030(napi_env env, napi_callback_info info)
     } else {
         return CreateIntInt32Result(env, -1);
     }
+}
+
+napi_value VideoDecCapApi0031(napi_env env, napi_callback_info info)
+{
+    bool checkMimeType = true;
+    const char *nullString = "";
+    checkMimeType = OH_AVCapability_CheckMimeType(nullptr, nullString);
+    if (checkMimeType) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
 }
