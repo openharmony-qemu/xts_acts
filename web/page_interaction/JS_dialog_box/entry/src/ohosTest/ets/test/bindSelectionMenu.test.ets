@@ -90,14 +90,24 @@ export default function webViewSrollableJsunit() {
       });
       Utils.waitAndClickComponent(driver, "webcomponentSelectionMenu", "bindSelectionMenuType01");
       try {
-        await Utils.waitForExist((err?: Error) => pageReady, "bindSelectionMenuType01" + '_pageReady', true, 1000, 8);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('pageReady waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return pageReady;
+        }, "bindSelectionMenuType01" + '_pageReady', true, 1000, 8);
         // 长按选中文本，弹出菜单后点击"复制"（串行模拟）
         let target = await driver.findComponent(ON.id('bindSelectionMenuType'));
         await target.longClick();
         await Utils.sleep(1500);
         let copyItem = await driver.findComponent(ON.text('复制'));
         await copyItem.click();
-        await Utils.waitForExist((err?: Error) => isReturn, "bindSelectionMenuType01" + '_returnCheck', true, 1000, 8);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "bindSelectionMenuType01" + '_returnCheck', true, 1000, 8);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -123,7 +133,12 @@ export default function webViewSrollableJsunit() {
       });
       Utils.waitAndClickComponent(driver, "webcomponentSelectionMenu", "bindSelectionMenuType02");
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, "bindSelectionMenuType02" + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "bindSelectionMenuType02" + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -158,7 +173,12 @@ export default function webViewSrollableJsunit() {
       });
       Utils.waitAndClickComponent(driver, "webcomponentSelectionMenu", "bindSelectionMenuType03");
       try {
-        await Utils.waitForExist((err?: Error) => pageReady, "bindSelectionMenuType03" + '_pageReady', true, 1000, 8);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('pageReady waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return pageReady;
+        }, "bindSelectionMenuType03" + '_pageReady', true, 1000, 8);
         // 右键选中文本，弹出菜单后点击"复制"（串行模拟）
         let textNode = await driver.findComponent(ON.text('这是一段文字'));
         let point = await textNode.getBoundsCenter();
@@ -166,7 +186,12 @@ export default function webViewSrollableJsunit() {
         await Utils.sleep(2000);
         let copyItem = await driver.findComponent(ON.text('复制'));
         await copyItem.click();
-        await Utils.waitForExist((err?: Error) => isReturn, "bindSelectionMenuType03" + '_returnCheck', true, 1000, 8);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "bindSelectionMenuType03" + '_returnCheck', true, 1000, 8);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }

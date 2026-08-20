@@ -76,7 +76,12 @@ export default function webOnDataResubmitted() {
       });
       Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton", "testOnDataResubmitted001");
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, "testOnDataResubmitted001" + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "testOnDataResubmitted001" + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -103,7 +108,12 @@ export default function webOnDataResubmitted() {
       });
       Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton", "testDataResubmissionHandlerResend001");
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, "testDataResubmissionHandlerResend001" + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "testDataResubmissionHandlerResend001" + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -130,7 +140,12 @@ export default function webOnDataResubmitted() {
       });
       Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton", "testDataResubmissionHandlerCancel001");
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, "testDataResubmissionHandlerCancel001" + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "testDataResubmissionHandlerCancel001" + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }

@@ -84,7 +84,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -113,7 +118,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -142,7 +152,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -171,7 +186,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -200,7 +220,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -229,7 +254,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -258,7 +288,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -287,7 +322,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -316,7 +356,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -345,7 +390,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -375,7 +425,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -404,7 +459,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -433,7 +493,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -462,7 +527,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -491,7 +561,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -520,7 +595,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -549,7 +629,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -578,7 +663,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -607,7 +697,12 @@ export default function webViewControllerHitTest() {
       });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, tcName + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, tcName + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }

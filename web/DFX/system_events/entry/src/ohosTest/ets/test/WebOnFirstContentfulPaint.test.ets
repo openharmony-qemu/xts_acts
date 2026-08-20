@@ -77,7 +77,12 @@ export default function webOnFirstContentfulPaint() {
       });
       Utils.waitAndClickComponent(driver, "WebOnFirstContentfulPaintButton", "testOnFirstContentfulPaint001");
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, "testOnFirstContentfulPaint001" + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "testOnFirstContentfulPaint001" + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -105,7 +110,12 @@ export default function webOnFirstContentfulPaint() {
       }
       Utils.waitAndClickComponent(driver, "WebOnFirstContentfulPaintButton", "testOnFirstContentfulPaint002");
       try {
-        const isPaintFired = await Utils.waitForExist((err?: Error) => isReturn,
+        const isPaintFired = await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        },
           "testOnFirstContentfulPaint002" + '_returnCheck', true, 1000, 8);
         if (!isPaintFired) {
           console.error('onFirstContentfulPaint not fired on this device (rendering limitation)');

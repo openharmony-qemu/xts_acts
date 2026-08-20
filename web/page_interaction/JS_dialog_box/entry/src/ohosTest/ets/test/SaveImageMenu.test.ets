@@ -92,12 +92,22 @@ export default function SaveImageMenuJsunit() {
       });
       Utils.waitAndClickComponent(driver, "webSaveImageMenu", "SaveImageMenu01");
       try {
-        await Utils.waitForExist((err?: Error) => ready, "SaveImageMenu01" + '_readyCheck', true, 1000, 8);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('ready waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return ready;
+        }, "SaveImageMenu01" + '_readyCheck', true, 1000, 8);
         await driver.mouseClick({ x: pos.x, y: pos.y }, MouseButton.MOUSE_BUTTON_RIGHT);
         await Utils.sleep(1000);
         let saveItem = await driver.findComponent(ON.text('保存图片'));
         await saveItem.click();
-        await Utils.waitForExist((err?: Error) => isReturn, "SaveImageMenu01" + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "SaveImageMenu01" + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -133,12 +143,22 @@ export default function SaveImageMenuJsunit() {
       });
       Utils.waitAndClickComponent(driver, "webSaveImageMenu", "SaveImageMenu02");
       try {
-        await Utils.waitForExist((err?: Error) => ready, "SaveImageMenu02" + '_readyCheck', true, 1000, 8);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('ready waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return ready;
+        }, "SaveImageMenu02" + '_readyCheck', true, 1000, 8);
         await driver.mouseClick({ x: pos.x, y: pos.y }, MouseButton.MOUSE_BUTTON_RIGHT);
         await Utils.sleep(1000);
         let saveItem = await driver.findComponent(ON.text('保存图片'));
         await saveItem.click();
-        await Utils.waitForExist((err?: Error) => isReturn, "SaveImageMenu02" + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "SaveImageMenu02" + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -175,12 +195,22 @@ export default function SaveImageMenuJsunit() {
       });
       Utils.waitAndClickComponent(driver, "webSaveImageMenu", "SaveImageMenu03");
       try {
-        await Utils.waitForExist((err?: Error) => ready, "SaveImageMenu03" + '_readyCheck', true, 1000, 8);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('ready waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return ready;
+        }, "SaveImageMenu03" + '_readyCheck', true, 1000, 8);
         await driver.mouseClick({ x: pos.x, y: pos.y }, MouseButton.MOUSE_BUTTON_RIGHT);
         await Utils.sleep(1000);
         let saveItem = await driver.findComponent(ON.text('保存图片'));
         await saveItem.click();
-        await Utils.waitForExist((err?: Error) => isReturn, "SaveImageMenu03" + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "SaveImageMenu03" + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }

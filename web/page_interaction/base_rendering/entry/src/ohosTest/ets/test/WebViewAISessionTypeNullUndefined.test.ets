@@ -84,7 +84,12 @@ export default function WebViewAISessionTypeNullUndefinedSuite() {
       });
       Utils.waitAndClickComponent(driver, "WebViewAISessionTypeNullUndefinedButton","testWebViewAiSessionOptions01");
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, "testWebViewAiSessionOptions01" + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "testWebViewAiSessionOptions01" + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -112,7 +117,12 @@ export default function WebViewAISessionTypeNullUndefinedSuite() {
       });
       Utils.waitAndClickComponent(driver, "WebViewAISessionTypeNullUndefinedButton","testWebViewAiSessionOptions02");
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, "testWebViewAiSessionOptions02" + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "testWebViewAiSessionOptions02" + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
@@ -140,7 +150,12 @@ export default function WebViewAISessionTypeNullUndefinedSuite() {
       });
       Utils.waitAndClickComponent(driver, "WebViewAISessionTypeNullUndefinedButton","testWebViewAiSessionOptions03");
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, "testWebViewAiSessionOptions03" + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "testWebViewAiSessionOptions03" + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }

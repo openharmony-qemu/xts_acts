@@ -78,7 +78,12 @@ export default function WebElementTypeJsunit() {
       }
       Utils.waitAndClickComponent(driver, "WebElementTypeButton", "WebElementType01");
       try {
-        await Utils.waitForExist((err?: Error) => isReturn, "WebElementType01" + '_returnCheck', true, 1000);
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "WebElementType01" + '_returnCheck', true, 1000);
       } catch (err) {
         console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
       }
