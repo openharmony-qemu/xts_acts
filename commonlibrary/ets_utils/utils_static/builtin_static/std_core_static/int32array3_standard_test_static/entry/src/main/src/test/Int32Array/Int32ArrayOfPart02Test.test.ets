@@ -1103,6 +1103,7 @@ export default function int32ArrayOfPart02Test(): void {
       let a: Int32Array = Int32Array.of(1, 2, 3);
       try {
         a.forEach((v: number, _i: int, _self: Int32Array): void => {
+          expect(v).assertEqual(1);
           throw new Error('callback boom');
         });
         expect().assertFail();
@@ -1123,6 +1124,7 @@ export default function int32ArrayOfPart02Test(): void {
       let a: Int32Array = Int32Array.of(1, 2, 3);
       try {
         a.map((v: number, _i: int, _self: Int32Array): number => {
+          expect(v).assertEqual(1);
           throw new Error('map boom');
         });
         expect().assertFail();
