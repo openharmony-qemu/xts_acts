@@ -365,6 +365,7 @@ export default function int32ArrayOverviewPart03TestMindmapTestTest(): void {
       try {
         a.filter((_v: number, _i: int, _arr: Int32Array): boolean => {
           called++;
+          expect(_v).assertEqual(1);
           throw new Error('first');
         });
         expect().assertFail();
@@ -411,6 +412,7 @@ export default function int32ArrayOverviewPart03TestMindmapTestTest(): void {
       try {
         a.findLast((_v: number, _i: int, _arr: Int32Array): boolean => {
           visited++;
+          expect(_v).assertEqual(3);
           throw new Error('lastFirst');
         });
         expect().assertFail();
@@ -432,6 +434,7 @@ export default function int32ArrayOverviewPart03TestMindmapTestTest(): void {
       let a: Int32Array = new Int32Array([5, 10, 15]);
       try {
         a.findIndex((v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(v).assertEqual(5);
           throw new Error('idx');
         });
         expect().assertFail();
@@ -452,6 +455,7 @@ export default function int32ArrayOverviewPart03TestMindmapTestTest(): void {
       let a: Int32Array = new Int32Array([5, 10, 15]);
       try {
         a.findLastIndex((v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(v).assertEqual(15);
           throw new Error('lastIdx');
         });
         expect().assertFail();
@@ -521,6 +525,7 @@ export default function int32ArrayOverviewPart03TestMindmapTestTest(): void {
         a.reduce((_acc: number, _v: number, _i: int, _arr: Int32Array): number => {
           steps++;
           if (steps === 2) {
+            expect(_v).assertEqual(2);
             throw new Error('reduce step2');
           }
           return 0;
@@ -544,6 +549,7 @@ export default function int32ArrayOverviewPart03TestMindmapTestTest(): void {
       let a: Int32Array = new Int32Array([1, 2, 3]);
       try {
         a.reduceRight((acc: number, v: number, _i: int, _arr: Int32Array): number => {
+          expect(v).assertEqual(3);
           throw new Error('rr first');
         }, 0);
         expect().assertFail();
@@ -584,6 +590,7 @@ export default function int32ArrayOverviewPart03TestMindmapTestTest(): void {
       let src: number[] = [1, 2, 3];
       try {
         Int32Array.from(src, (v: number): number => {
+          expect(v).assertEqual(1);
           throw new Error('mapfn');
         });
         expect().assertFail();
