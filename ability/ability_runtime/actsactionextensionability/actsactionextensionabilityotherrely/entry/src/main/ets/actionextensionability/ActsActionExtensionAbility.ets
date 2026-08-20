@@ -44,7 +44,8 @@ export default class ActsActionExtensionAbility extends ActionExtensionAbility {
     commonEventManager.publish('ACTS_TEST_FOREGROUND', options,
       () => { })
     try {
-      let deviceSupport  = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
+      let deviceSupport = systemParameterEnhance.getSync(
+        'persist.sys.abilityms.move_ui_ability_to_background_api_enable');
       console.log(`====>ActsActionExtensionAbility deviceSupport : ${deviceSupport }`);
       if (deviceSupport === 'false') {
         console.log('====>ActsActionExtensionAbility terminateSelf start');
