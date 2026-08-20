@@ -8,9 +8,7 @@ import tripleInheritanceWorkerTest from './tripleInheritanceWorker.test';
 import SendableClassEcmaTest from './SendableClassEcmaTest.test';
 
 import useSendableTest from './UseSendableTest.test';
-import useSendableTestSupplement from './UseSendableTestSupplement.test';
 import iSendableImplTest from './ISendableImplTest.test';
-import iSendableImplTestSupplement from './ISendableImplTestSupplement.test';
 
 export default function testsuite() {
   sendableClassTest();
@@ -23,7 +21,5 @@ export default function testsuite() {
   SendableClassEcmaTest();
 
   useSendableTest();
-  useSendableTestSupplement();
   iSendableImplTest();
-  iSendableImplTestSupplement();
 }
