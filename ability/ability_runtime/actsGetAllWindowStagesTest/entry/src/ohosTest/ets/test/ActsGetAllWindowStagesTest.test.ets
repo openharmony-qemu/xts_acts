@@ -28,9 +28,8 @@ export default function ActsGetAllWindowStagesTest() {
     })
     afterEach(async () => {
       try{
-        let TestAbility1_UIAbilityContext: common.UIAbilityContext =
-          AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext')
-            as common.UIAbilityContext;
+        let TestAbility1_UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+          'TestAbility1_UIAbilityContext') as common.UIAbilityContext;
         try {
           await TestAbility1_UIAbilityContext.terminateSelf();
         } catch (e) {
@@ -517,9 +516,8 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
-        let TestAbility1_UIAbilityContext: common.UIAbilityContext =
-          AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext')
-            as common.UIAbilityContext;
+        let TestAbility1_UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+          'TestAbility1_UIAbilityContext') as common.UIAbilityContext;
         try {
           await TestAbility1_UIAbilityContext.terminateSelf();
         } catch (e) {
@@ -567,9 +565,8 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
-        let TestAbility1_UIAbilityContext: common.UIAbilityContext =
-          AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext')
-            as common.UIAbilityContext;
+        let TestAbility1_UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+          'TestAbility1_UIAbilityContext') as common.UIAbilityContext;
         try {
           await TestAbility1_UIAbilityContext.terminateSelf()
         } catch (e) {
@@ -617,9 +614,8 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
-        let TestAbility1_UIAbilityContext: common.UIAbilityContext =
-          AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext')
-            as common.UIAbilityContext;
+        let TestAbility1_UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+          'TestAbility1_UIAbilityContext') as common.UIAbilityContext;
         try {
           await TestAbility1_UIAbilityContext.terminateSelf();
         } catch (e) {
