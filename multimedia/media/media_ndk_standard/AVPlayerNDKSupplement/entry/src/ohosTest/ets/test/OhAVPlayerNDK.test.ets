@@ -379,7 +379,7 @@ export default function OhAVPlayerNDKTest() {
       let errorCode: number = avplayer.checkErrorCode(testResult.userData);
       console.info('SETTARGETVIDEOWINDOWSIZE_0100 errorCode = ${errorCode}');
       expect(errorCode == OH_AVErrCode.AV_ERR_OK ||
-        errorCode == OH_AVErrCode.AV_ERR_SUPER_RESOLUTION_UNSUPPORTED).assertEqual(0);
+        errorCode == OH_AVErrCode.AV_ERR_SUPER_RESOLUTION_UNSUPPORTED).assertEqual(true);
       done();
     });
 
