@@ -474,6 +474,7 @@ export default function int32ArrayReduceRightPart05Test(): void {
       let origin: int = arr.length;
       try {
         arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => {
+          expect(c).assertEqual(5);
           throw new Error('x');
         }, 0);
       } catch (e) {
@@ -530,6 +531,7 @@ export default function int32ArrayReduceRightPart05Test(): void {
       let origBuf: ArrayBuffer = arr.buffer;
       try {
         arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => {
+          expect(c).assertEqual(4);
           throw new Error('b');
         }, 0);
       } catch (e) {
@@ -554,6 +556,7 @@ export default function int32ArrayReduceRightPart05Test(): void {
       arr.$_set(2, 3);
       try {
         arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => {
+          expect(c).assertEqual(3);
           throw new Error('y');
         }, 0);
       } catch (e) {
@@ -574,6 +577,7 @@ export default function int32ArrayReduceRightPart05Test(): void {
       let arr: Int32Array = Int32Array.of(1, 2, 3);
       try {
         arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => {
+          expect(c).assertEqual(2);
           throw new Error('z');
         });
       } catch (e) {
@@ -594,6 +598,7 @@ export default function int32ArrayReduceRightPart05Test(): void {
       let arr: Int32Array = Int32Array.of(1, 2, 3, 4);
       try {
         arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => {
+          expect(c).assertEqual(4);
           throw new Error('e1');
         }, 0);
       } catch (e) {
@@ -641,6 +646,7 @@ export default function int32ArrayReduceRightPart05Test(): void {
       let errName: string = '';
       try {
         arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => {
+          expect(c).assertEqual(1);
           throw new RangeError('oor');
         }, 0);
       } catch (e) {
@@ -663,6 +669,7 @@ export default function int32ArrayReduceRightPart05Test(): void {
       let msg: string = '';
       try {
         arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => {
+          expect(c).assertEqual(1);
           throw new Error('marker-xyz');
         }, 0);
       } catch (e) {
