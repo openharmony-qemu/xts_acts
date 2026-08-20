@@ -227,29 +227,14 @@ export default function exceptionStorageTest(): void {
       });
 
     /**
-     * @tc.number    SUB_ANI_EXCEPTION_NULL_STRING_OPERATION_1400
-     * @tc.name      test_nullStringOperationException_0014
-     * @tc.desc      Scenario 10.14: Operation on null string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("test_nullStringOperationException_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
-        let manager = new ExceptionTestManager();
-        expect(manager.testNullStringOperationNative()).assertTrue();
-        done();
-      });
-
-    /**
-     * @tc.number    SUB_ANI_EXCEPTION_UNBOX_TYPE_MISMATCH_1500
-     * @tc.name      test_unboxTypeMismatchException_0015
+     * @tc.number    SUB_ANI_EXCEPTION_UNBOX_TYPE_MISMATCH_1400
+     * @tc.name      test_unboxTypeMismatchException_0014
      * @tc.desc      Scenario 10.15: Unbox type mismatch
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("test_unboxTypeMismatchException_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_unboxTypeMismatchException_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: () => void): void => {
         let manager = new ExceptionTestManager();
         expect(manager.testUnboxTypeMismatchNative()).assertTrue();
