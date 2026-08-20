@@ -234,6 +234,7 @@ export default function int32ArrayMapPart03TestMindmapTestTest(): void {
       let a: Int32Array = new Int32Array([1, 2, 3]);
       try {
         a.map((v: number, _i: int, _arr: Int32Array): number => {
+          expect(v).assertEqual(1);
           throw new Error('first element throw');
         });
         expect().assertFail();
@@ -304,6 +305,7 @@ export default function int32ArrayMapPart03TestMindmapTestTest(): void {
       let a: Int32Array = new Int32Array([1, 2]);
       try {
         a.map((v: number, _i: int, _arr: Int32Array): number => {
+          expect(v).assertEqual(1);
           throw new RangeError('range error');
         });
         expect().assertFail();
@@ -324,6 +326,7 @@ export default function int32ArrayMapPart03TestMindmapTestTest(): void {
       let a: Int32Array = new Int32Array([1]);
       try {
         a.map((v: number, _i: int, _arr: Int32Array): number => {
+          expect(v).assertEqual(1);
           throw new TypeError('type error');
         });
         expect().assertFail();
@@ -391,6 +394,7 @@ export default function int32ArrayMapPart03TestMindmapTestTest(): void {
       let a: Int32Array = new Int32Array([42]);
       try {
         a.map((v: number, _i: int, _arr: Int32Array): number => {
+          expect(v).assertEqual(42);
           throw new Error('single element throw');
         });
         expect().assertFail();
@@ -412,6 +416,7 @@ export default function int32ArrayMapPart03TestMindmapTestTest(): void {
       let errMsg: string = '';
       try {
         a.map((v: number, _i: int, _arr: Int32Array): number => {
+          expect(v).assertEqual(1);
           throw new Error('unique-marker-xyz');
         });
       } catch (e) {
