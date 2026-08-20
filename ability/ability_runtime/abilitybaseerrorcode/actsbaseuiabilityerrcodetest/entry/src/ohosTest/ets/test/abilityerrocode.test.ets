@@ -15,7 +15,8 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 // 加载js测试框架
-import { common, sendableContextManager, StartOptions, WantAgent, wantAgent ,wantConstant,contextConstant,startupManager,
+import { common, sendableContextManager, StartOptions, WantAgent,xtConstant,startupManager,
+import { wantAgent ,wantConstant,contextConstant,startupManager,
   Want} from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError ,systemParameterEnhance } from '@kit.BasicServicesKit';
