@@ -910,6 +910,7 @@ export default function Int32ArrayReducePart02Test(): void {
       let msg: string = '';
       try {
         arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => {
+          expect(c).assertEqual(1);
           throw new Error('first boom');
         });
         expect().assertFail();
@@ -935,6 +936,7 @@ export default function Int32ArrayReducePart02Test(): void {
         arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => {
           calls = calls + 1;
           if (calls === 2) {
+            expect(c).assertEqual(3);
             throw new Error('mid boom');
           }
           return p + c;
@@ -958,6 +960,7 @@ export default function Int32ArrayReducePart02Test(): void {
       let arr: Int32Array = Int32Array.of(1, 2, 3);
       try {
         arr.reduce((p: number, c: number): number => {
+          expect(c).assertEqual(1);
           throw new RangeError('reduce range error');
         });
         expect().assertFail();
@@ -978,6 +981,7 @@ export default function Int32ArrayReducePart02Test(): void {
       let arr: Int32Array = Int32Array.of(1, 2, 3);
       try {
         arr.reduce((p: number, c: number): number => {
+          expect(c).assertEqual(1);
           throw new TypeError('reduce type error');
         });
         expect().assertFail();
@@ -1002,6 +1006,7 @@ export default function Int32ArrayReducePart02Test(): void {
         arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => {
           calls = calls + 1;
           if (calls === 2) {
+            expect(c).assertEqual(3);
             throw new Error('stop');
           }
           afterThrow = true;
