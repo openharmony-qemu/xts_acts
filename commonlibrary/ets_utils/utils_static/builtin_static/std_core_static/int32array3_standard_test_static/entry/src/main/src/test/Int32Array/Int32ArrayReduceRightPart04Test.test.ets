@@ -52,7 +52,22 @@ export default function int32ArrayReduceRightPart04Test(): void {
      */
     it('int32ArrayReduceRightPart04Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([4, 5, 6]);
-      let r: number = arr.reduceRight(() => 99, 0);
+      let calls: int = 0;
+      let r: number = arr.reduceRight((p: number, c: number): number => {
+        if (calls === 0) {
+          expect(p).assertEqual(0);
+          expect(c).assertEqual(6);
+        } else if (calls === 1) {
+          expect(p).assertEqual(99);
+          expect(c).assertEqual(5);
+        } else {
+          expect(p).assertEqual(99);
+          expect(c).assertEqual(4);
+        }
+        calls++;
+        return 99;
+      }, 0);
+      expect(calls).assertEqual(3);
       expect(r).assertEqual(99);
     });
 
@@ -1287,6 +1302,7 @@ export default function int32ArrayReduceRightPart04Test(): void {
       let arr: Int32Array = new Int32Array([1, 2]);
       try {
         arr.reduceRight((_p: number, _c: number, _i: int, _a: Int32Array): number => {
+          expect(_c).assertEqual(2);
           throw new RangeError('r');
         }, 0);
         expect().assertFail();
@@ -1307,6 +1323,7 @@ export default function int32ArrayReduceRightPart04Test(): void {
       let arr: Int32Array = new Int32Array([1]);
       try {
         arr.reduceRight((_p: number, _c: number, _i: int, _a: Int32Array): number => {
+          expect(_c).assertEqual(1);
           throw new TypeError('t');
         }, 0);
         expect().assertFail();
@@ -1389,6 +1406,7 @@ export default function int32ArrayReduceRightPart04Test(): void {
       let msg: string = '';
       try {
         arr.reduceRight((_p: number, _c: number, _i: int, _a: Int32Array): number => {
+          expect(_c).assertEqual(1);
           throw new Error('err-msg-42');
         }, 0);
         expect().assertFail();
