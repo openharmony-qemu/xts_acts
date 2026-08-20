@@ -91,7 +91,8 @@ export default function ActsUIExtensionContextMethodTest() {
                 'case':tag
               }
             },(err, data)=>{
-              console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0100] startAbility result ' + err?.code);
+              console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0100] startAbility result ' + 
+                err?.code);
             })
           });
           } catch (e) {
@@ -1280,7 +1281,8 @@ export default function ActsUIExtensionContextMethodTest() {
               'case':tag
             }
           },(err, data)=>{
-            console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_001] startAbility result ' + err?.code);
+            console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_001] startAbility result ' + 
+              err?.code);
           })
         });
         } catch (e) {
@@ -3457,7 +3459,8 @@ export default function ActsUIExtensionContextMethodTest() {
             abilityName:'EntryAbility1',
             action:'result'
           }, null, (err, data)=>{
-            console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0100] startAbility result ' + err?.code);
+            console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0100] startAbility result ' + 
+              err?.code);
           })
         });
         } catch (e) {
@@ -3520,7 +3523,8 @@ export default function ActsUIExtensionContextMethodTest() {
             abilityName:'EntryAbility1',
             action:'result'
           }, undefined, (err, data)=>{
-            console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0200] startAbility result ' + err?.code);
+            console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0200] startAbility result ' + 
+              err?.code);
           })
         });
         } catch (e) {
@@ -3708,7 +3712,8 @@ export default function ActsUIExtensionContextMethodTest() {
             abilityName:'EntryAbility1',
             action:'result'
           }, null, (err, data)=>{
-            console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] startAbility result ' + err?.code);
+            console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] startAbility result ' + 
+              err?.code);
           })
         });
         } catch (e) {
@@ -3771,7 +3776,8 @@ export default function ActsUIExtensionContextMethodTest() {
             abilityName:'EntryAbility1',
             action:'result'
           }, undefined, (err, data)=>{
-            console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] startAbility result ' + err?.code);
+            console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] startAbility result ' + 
+              err?.code);
           })
         });
         } catch (e) {

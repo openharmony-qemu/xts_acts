@@ -268,7 +268,9 @@ export default function errorCodeTest() {
         resultCode
       };
       try {
-        await  AppStorage.get<common.UIAbilityContext>('errocode')!.backToCallerAbilityWithResult(abilityResult, callerRequestCode).then(() => {
+        await AppStorage.get<common.UIAbilityContext>('errocode')!
+          .backToCallerAbilityWithResult(abilityResult, callerRequestCode)
+          .then(() => {
           console.info('TAG backToCallerAbilityWithResult succeed');
           expect().assertFail();
           done();
@@ -585,7 +587,8 @@ export default function errorCodeTest() {
               console.info(TAG + 'SUB_Ability_AbilityBase_ErrorCode_0013 succeed');
             }).catch((err: BusinessError) => {
               // 处理业务逻辑错误
-              console.error(TAG + `SUB_Ability_AbilityBase_ErrorCode_00130 failed, code is ${err.code}, message is ${err.message}`);
+              console.error(TAG + 
+                `SUB_Ability_AbilityBase_ErrorCode_00130 failed, code is ${err.code}, message is ${err.message}`);
               expect().assertFail();
             });
         } catch(err) {

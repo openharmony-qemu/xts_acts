@@ -83,7 +83,8 @@ export default function abilityStageMonitorTest() {
           done();
         });
       } catch (error) {
-        console.info('SUB_AA_AbilityStage_0100 waitAbilityStageMonitor callback err: ' + error?.code +  ' ' + error?.message);
+        console.info('SUB_AA_AbilityStage_0100 waitAbilityStageMonitor callback err: ' + error?.code +  ' ' + 
+          error?.message);
         expect().assertFail()
         done()
       }
@@ -94,7 +95,8 @@ export default function abilityStageMonitorTest() {
       };
       try {
         abilityDelegator.startAbility(want, (err, data) => {
-          console.info('SUB_AA_AbilityStage_0100 startAbility callback err: ' + JSON.stringify(err) + 'data: ' + JSON.stringify(data));
+          console.info('SUB_AA_AbilityStage_0100 startAbility callback err: ' + JSON.stringify(err) + 'data: ' + 
+            JSON.stringify(data));
         });
       } catch (error) {
         console.info('SUB_AA_AbilityStage_0100 startAbility callback err: ' + error?.code +  ' ' + error?.message);
@@ -139,7 +141,8 @@ export default function abilityStageMonitorTest() {
             JSON.stringify(err) + 'data: ' + JSON.stringify(data));
         });
       } catch (error) {
-        console.log('SUB_AA_AbilityStageMonitor_0200 startAbility callback err: ' + error?.code +  ' ' + error?.message);
+        console.log('SUB_AA_AbilityStageMonitor_0200 startAbility callback err: ' + error?.code +  ' ' + 
+          error?.message);
         expect().assertFail()
         done()
       }
@@ -168,7 +171,8 @@ export default function abilityStageMonitorTest() {
           done();
         });
       } catch (error) {
-        console.info('SUB_AA_AbilityStageMonitor_0300 waitAbilityStageMonitor catch err: ' + error?.code +  ' ' + error?.message);
+        console.info('SUB_AA_AbilityStageMonitor_0300 waitAbilityStageMonitor catch err: ' + error?.code +  ' ' + 
+          error?.message);
         expect().assertFail()
         done()
       }
@@ -183,7 +187,8 @@ export default function abilityStageMonitorTest() {
             JSON.stringify(err) + 'data: ' + JSON.stringify(data));
         });
       } catch (error) {
-        console.info('SUB_AA_AbilityStageMonitor_0300 startAbility callback err: ' + error?.code +  ' ' + error?.message);
+        console.info('SUB_AA_AbilityStageMonitor_0300 startAbility callback err: ' + error?.code +  ' ' + 
+          error?.message);
         expect().assertFail()
         done()
       }
@@ -226,7 +231,8 @@ export default function abilityStageMonitorTest() {
             JSON.stringify(err) + 'data: ' + JSON.stringify(data));
         });
       } catch (error) {
-        console.info('SUB_AA_AbilityStageMonitor_0400 startAbility callback err: ' + error?.code +  ' ' + error?.message);
+        console.info('SUB_AA_AbilityStageMonitor_0400 startAbility callback err: ' + error?.code +  ' ' + 
+          error?.message);
         expect().assertFail()
         done()
       }
@@ -266,7 +272,8 @@ export default function abilityStageMonitorTest() {
             JSON.stringify(err) + 'data: ' + JSON.stringify(data));
         });
       } catch (error) {
-        console.info('SUB_AA_AbilityStageMonitor_0500 startAbility callback err: ' + error?.code +  ' ' + error?.message);
+        console.info('SUB_AA_AbilityStageMonitor_0500 startAbility callback err: ' + error?.code +  ' ' + 
+          error?.message);
         expect().assertFail()
         done()
       }
@@ -304,7 +311,8 @@ export default function abilityStageMonitorTest() {
             JSON.stringify(err) + 'data: ' + JSON.stringify(data));
         });
       } catch (error) {
-        console.info('SUB_AA_AbilityStageMonitor_0600 startAbility callback err: ' + error?.code +  ' ' + error?.message);
+        console.info('SUB_AA_AbilityStageMonitor_0600 startAbility callback err: ' + error?.code +  ' ' + 
+          error?.message);
         expect().assertFail()
         done()
       }
@@ -452,7 +460,8 @@ export default function abilityStageMonitorTest() {
             JSON.stringify(err) + 'data: ' + JSON.stringify(data));
         });
       } catch (error) {
-        console.info('SUB_AA_AbilityStageMonitor_0900 startAbility callback err: ' + error?.code +  ' ' + error?.message);
+        console.info('SUB_AA_AbilityStageMonitor_0900 startAbility callback err: ' + error?.code +  ' ' + 
+          error?.message);
         expect().assertFail()
         done()
       }

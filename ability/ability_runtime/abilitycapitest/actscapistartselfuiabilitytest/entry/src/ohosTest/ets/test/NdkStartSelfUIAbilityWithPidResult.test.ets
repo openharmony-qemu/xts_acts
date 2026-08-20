@@ -82,7 +82,8 @@ export default function NdkStartSelfUIAbilityWithPidResultTest() {
           done();
         });
       });
-      let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, 'StartSelfUIAbilityWithPidResult_0200');
+      let task1: taskpool.Task = new taskpool.Task(
+        StartSelfUIAbilityWithPidResult, 'StartSelfUIAbilityWithPidResult_0200');
       await taskpool.execute(task1).then((value: Object) => {
         hilog.info(0x0000, TAG, TEST_SUITE_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
         if(value == 801){
