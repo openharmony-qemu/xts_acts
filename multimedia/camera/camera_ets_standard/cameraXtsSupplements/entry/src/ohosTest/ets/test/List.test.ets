@@ -57,6 +57,7 @@ import CameraOISQueryTest from './camera/CameraOISQuery.test';
 import CameraManualExposureTest from './camera/CameraManualExposureTest.test';
 import CameraPhotoOutputSuppTest from './camera/CameraPhotoOutputSuppTest.test';
 
+
 export default function testsuite() {
   CameraSessionFlashSuppTest();
   cameraSetFocusModeTest();
