@@ -839,7 +839,10 @@ export default function int32ArrayFromPart01Test(): void {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 100);
       m.set(1, 200);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => 0);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(k === 0 ? 100 : 200);
+        return 0;
+      });
       expect(a.$_get(0)).assertEqual(0);
       expect(a.$_get(1)).assertEqual(0);
     });
@@ -857,7 +860,10 @@ export default function int32ArrayFromPart01Test(): void {
       m.set(0, 99);
       m.set(1, 88);
       m.set(2, 77);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => k);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(k === 0 ? 99 : k === 1 ? 88 : 77);
+        return k;
+      });
       expect(a.$_get(0)).assertEqual(0);
       expect(a.$_get(1)).assertEqual(1);
       expect(a.$_get(2)).assertEqual(2);
@@ -1008,7 +1014,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 10);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => 3.5);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(10);
+        return 3.5;
+      });
       expect(a.$_get(0)).assertEqual(3);
     });
 
@@ -1023,7 +1032,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 10);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => -3.5);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(10);
+        return -3.5;
+      });
       expect(a.$_get(0)).assertEqual(-3);
     });
 
@@ -1038,7 +1050,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 10);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => 0.5);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(10);
+        return 0.5;
+      });
       expect(a.$_get(0)).assertEqual(0);
     });
 
@@ -1053,7 +1068,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 10);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => -0.5);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(10);
+        return -0.5;
+      });
       expect(a.$_get(0)).assertEqual(0);
     });
 
@@ -1068,7 +1086,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 1);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => Number.NaN);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(1);
+        return Number.NaN;
+      });
       expect(a.$_get(0)).assertEqual(0);
     });
 
@@ -1083,7 +1104,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 1);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => Number.POSITIVE_INFINITY);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(1);
+        return Number.POSITIVE_INFINITY;
+      });
       expect(a.$_get(0)).assertEqual(0);
     });
 
@@ -1098,7 +1122,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 1);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => -Number.POSITIVE_INFINITY);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(1);
+        return -Number.POSITIVE_INFINITY;
+      });
       expect(a.$_get(0)).assertEqual(0);
     });
 
@@ -1113,7 +1140,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 0);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => 2147483648);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(0);
+        return 2147483648;
+      });
       expect(a.$_get(0)).assertEqual(-2147483648);
     });
 
@@ -1128,7 +1158,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 0);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => -2147483649);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(0);
+        return -2147483649;
+      });
       expect(a.$_get(0)).assertEqual(2147483647);
     });
 
@@ -1143,7 +1176,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 0);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => 4294967295);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(0);
+        return 4294967295;
+      });
       expect(a.$_get(0)).assertEqual(-1);
     });
 
@@ -1158,7 +1194,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 0);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => 4294967296);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(0);
+        return 4294967296;
+      });
       expect(a.$_get(0)).assertEqual(0);
     });
 
@@ -1173,7 +1212,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 0);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => -2147483648);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(0);
+        return -2147483648;
+      });
       expect(a.$_get(0)).assertEqual(-2147483648);
     });
 
@@ -1188,7 +1230,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 0);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => 2147483647);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(0);
+        return 2147483647;
+      });
       expect(a.$_get(0)).assertEqual(2147483647);
     });
 
@@ -1203,7 +1248,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 1);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => -0.0);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(1);
+        return -0.0;
+      });
       expect(a.$_get(0)).assertEqual(0);
     });
 
@@ -1218,7 +1266,10 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m: Map<number, number> = new Map<number, number>();
       m.set(0, 0);
-      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => 2147483647.9);
+      let a: Int32Array = Int32Array.from(m.values(), (v: number, k: number): number => {
+        expect(v).assertEqual(0);
+        return 2147483647.9;
+      });
       expect(a.$_get(0)).assertEqual(2147483647);
     });
 
@@ -1381,6 +1432,7 @@ export default function int32ArrayFromPart01Test(): void {
     it('int32ArrayFromPart01TestMindmapTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Int32Array.from([1, 2, 3] as number[], (v: number, k: number): number => {
+          expect(v).assertEqual(1);
           throw new Error('iter throw on first');
         });
         expect().assertFail();
@@ -1495,6 +1547,7 @@ export default function int32ArrayFromPart01Test(): void {
       m.set(0, 1);
       try {
         Int32Array.from(m.values(), (v: number, k: number): number => {
+          expect(v).assertEqual(1);
           throw new TypeError('bad type in mapfn');
         });
         expect().assertFail();
