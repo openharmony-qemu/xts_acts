@@ -14,21 +14,15 @@
  */
 import { beforeAll, beforeEach, describe, it , TestType, expect, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
+import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
-import { Driver } from '@ohos.UiTest';
 import wifiMg from '@ohos.wifiManager';
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function MetaViewport() {
-  let driver: Driver | null = null;
-  const getDriver = (): Driver => {
-    if (driver == null) {
-      driver = Driver.create();
-    }
-    return driver as Driver;
-  }
 
   describe('MetaViewport', () => {
     beforeAll(async (done: Function) => {
@@ -51,17 +45,44 @@ export default function MetaViewport() {
       done()
     });
     beforeEach(async (done: Function) => {
-      // Local XtsTestServer: skip WLAN (enableWifi -> Permission denied).
-      try {
-        config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-          console.info(`enable success`);
-        }).catch((err: object) => {
-          console.error(`failed to enable, ${err}`);
-        })
-      } catch (err) {
-        console.error(`enableAbility skipped: ${err}`);
+      if(!wifiMg.isWifiActive()){
+        console.info("======> wifi_test/enable wifi:" + wifiMg.enableWifi());
+        await Utils.sleep(5000);
       }
-      console.info("web beforeEach start (skip wifi for local XtsTestServer)");
+
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info("======> Internet chload : " + JSON.stringify(data.chload));
+        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info("======> WLAN connection established ");
+        } else {
+          expect().message("======> WLAN Network error").assertFail(); //方式一
+          //throw new Error("======> WLAN Network error");//方式二
+          done();
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          expect().message("======> WLAN Network error").assertFail();//方式一
+          //throw new Error("======> WLAN Network error");//方式二
+          done();
+        } else if (data.chload >= 500) {
+          console.info("======> The internet connection is poor. ");
+        }
+
+      } catch (err) {
+        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+        done();
+      }
+      await config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info(`enable success`);
+        }).catch((err: object) => {
+        console.error(`failed to enable, ${err}`);
+      })
+      console.info("web beforeEach start");
       done();
     })
 
@@ -76,7 +97,7 @@ export default function MetaViewport() {
     it('metaViewport0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0100", 150290)
       Utils.registerEvent("metaViewport0100", true, 150300, done);
-      await waitAndClickComponent('MetaViewport', getDriver());
+      waitAndClickComponent("MetaViewport",driver);
     })
 
     /**
@@ -90,7 +111,7 @@ export default function MetaViewport() {
     it('metaViewport0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0200", 150290)
       Utils.registerEvent("metaViewport0200", true, 150310, done);
-      await waitAndClickComponent('MetaViewport', getDriver());
+      waitAndClickComponent("MetaViewport",driver);
 
     })
 
@@ -105,7 +126,7 @@ export default function MetaViewport() {
     it('metaViewport0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0300", 150290)
       Utils.registerEvent("metaViewport0300", true, 150320, done);
-      await waitAndClickComponent('MetaViewport', getDriver());
+      waitAndClickComponent("MetaViewport",driver);
     })
 
     /**
@@ -119,7 +140,7 @@ export default function MetaViewport() {
     it('metaViewport0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0400", 150290)
       Utils.registerEvent("metaViewport0400", true, 150330, done);
-      await waitAndClickComponent('MetaViewport', getDriver());
+      waitAndClickComponent("MetaViewport",driver);
     })
 
    /**
@@ -133,7 +154,7 @@ export default function MetaViewport() {
    it('metaViewport0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0500", 150290)
       Utils.registerEvent("metaViewport0500", true, 150340, done);
-      await waitAndClickComponent('MetaViewport', getDriver());
+     waitAndClickComponent("MetaViewport",driver);
     })
 
     /**
@@ -147,7 +168,7 @@ export default function MetaViewport() {
     it('metaViewport0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0600", 150290)
       Utils.registerEvent("metaViewport0600", true, 150350, done);
-      await waitAndClickComponent('MetaViewport', getDriver());
+      waitAndClickComponent("MetaViewport",driver);
     })
 
     /**
@@ -161,7 +182,7 @@ export default function MetaViewport() {
     it('metaViewport0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0700", 150290)
       Utils.registerEvent("metaViewport0700", true, 150360, done);
-      await waitAndClickComponent('MetaViewport', getDriver());
+      waitAndClickComponent("MetaViewport",driver);
     })
 
     /**
@@ -175,7 +196,7 @@ export default function MetaViewport() {
     it('metaViewport0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0800", 150290)
       Utils.registerEvent("metaViewport0800", true, 150370, done);
-      await waitAndClickComponent('MetaViewport', getDriver());
+      waitAndClickComponent("MetaViewport",driver);
     })
 
     /**
@@ -189,7 +210,7 @@ export default function MetaViewport() {
     it('metaViewport0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport0900", 150290)
       Utils.registerEvent("metaViewport0900", true, 150380, done);
-      await waitAndClickComponent('MetaViewport', getDriver());
+      waitAndClickComponent("MetaViewport",driver);
     })
 
     /**
@@ -203,7 +224,7 @@ export default function MetaViewport() {
     it('metaViewport1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("metaViewport1000", 150290)
       Utils.registerEvent("metaViewport1000", true, 150390, done);
-      await waitAndClickComponent('MetaViewport', getDriver());
+      waitAndClickComponent("MetaViewport",driver);
     })
   })
 }

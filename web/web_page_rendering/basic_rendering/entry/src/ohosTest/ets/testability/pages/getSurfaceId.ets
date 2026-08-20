@@ -19,7 +19,6 @@ import web_webview from '@ohos.web.webview'
 import image from "@ohos.multimedia.image";
 import { BusinessError } from '@ohos.base';
 import { waitForExist } from '../../test/WaitTest.test';
-import { XtsTestServer } from 'library';
 
 @Entry
 @Component
@@ -28,18 +27,10 @@ struct getSurfaceId {
   @State checkResult: number = 0;
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   controllerOne: web_webview.WebviewController = new web_webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State imagePixelMap: image.PixelMap | undefined = undefined;
   @State isReceive: number = -1;
   @State isComplete: number = -1;
 
-  aboutToDisappear() {
-    try {
-      this.controller.loadUrl(this.mServer.getShutdownUrl());
-    } catch (_e) {
-      // page teardown: controller may already be unbound (17100001)
-    }
-  }
 
   onPageShow(){
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -65,7 +56,7 @@ struct getSurfaceId {
   build() {
     Column() {
       Row() {
-        Button("getSurfaceId").id('getSurfaceIdButton').key('getSurfaceIdButton').onClick(async () => {
+        Button("getSurfaceId").key('getSurfaceIdButton').onClick(async () => {
           console.info("key==>" + this.str)
           await waitForExist(() => this.isComplete, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);
@@ -112,7 +103,7 @@ struct getSurfaceId {
         .height(100)
       }
 
-      Web({src: this.mServer.getAssetUrl('index.html'), controller: this.controller, renderMode: RenderMode.ASYNC_RENDER})
+      Web({src: 'www.example.com', controller: this.controller, renderMode: RenderMode.ASYNC_RENDER})
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);
           this.isComplete = 0;

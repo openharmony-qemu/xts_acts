@@ -67,7 +67,7 @@ struct Index {
   build() {
     Column() {
       Row() {
-        Button("web click").id('webcomponent').key('webcomponent').onClick(async () => {
+        Button("web click").key('webcomponent').onClick(async () => {
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitGetWebId": {

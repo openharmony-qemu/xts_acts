@@ -57,10 +57,10 @@ struct MetaViewport {
   build() {
     Column() {
       Row() {
-        Button("MetaViewport").id('MetaViewport').key('MetaViewport').onClick(async () => {
+        Button("MetaViewport").id('MetaViewport').onClick(async () => {
           console.info("key==>" + this.str)
-          await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
-          await waitForExist(() => this.isReceive, this.str, 0, 500, 16);
+          await waitForExist(() => this.isComplete, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
           this.isReceive = -1;
           switch (this.str) {
             case "metaViewport0100": {
@@ -72,7 +72,7 @@ struct MetaViewport {
                 } else {
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile("viewport.html"))
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Initial viewport width ==> getWidth():" + res)
                     this.initInnerWidth = res;
@@ -80,19 +80,18 @@ struct MetaViewport {
                   this.isMetaViewport = true;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Modified viewport width ==> getWidth():" + res)
                     if (res != this.initInnerWidth) {
                       value = true;
                     }
                   })
-                  await waitForExist(() => '' + value, this.str, 'true', 500, 16);
+                  await waitForExist(() => '' + value, this.str, 'true');
                   Utils.emitEvent(value, 150300)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(false, 150300)
               }
               break;
             }
@@ -105,11 +104,11 @@ struct MetaViewport {
                 } else {
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile("viewport.html"))
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Initial viewport width ==> getWidth():" + res)
                     this.initInnerWidth = res;
@@ -117,19 +116,18 @@ struct MetaViewport {
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Modified viewport width ==> getWidth():" + res)
                     if (res == this.initInnerWidth) {
                       value = true;
                     }
                   })
-                  await waitForExist(() => '' + value, this.str, 'true', 500, 16);
+                  await waitForExist(() => '' + value, this.str, 'true');
                   Utils.emitEvent(value, 150310)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(false, 150310)
               }
               break;
             }
@@ -142,11 +140,11 @@ struct MetaViewport {
                 } else {
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile("viewport.html"))
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Initial viewport width ==> getWidth():" + res)
                     this.initInnerWidth = res;
@@ -154,19 +152,18 @@ struct MetaViewport {
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Modified viewport width ==> getWidth():" + res)
                     if (res == this.initInnerWidth) {
                       value = true;
                     }
                   })
-                  await waitForExist(() => '' + value, this.str, 'true', 500, 16);
+                  await waitForExist(() => '' + value, this.str, 'true');
                   Utils.emitEvent(value, 150320)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(false, 150320)
               }
               break;
             }
@@ -179,11 +176,11 @@ struct MetaViewport {
                 } else {
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile("viewport.html"))
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Initial viewport width ==> getWidth():" + res)
                     this.initInnerWidth = res;
@@ -191,19 +188,18 @@ struct MetaViewport {
                   this.isMetaViewport = true;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Modified viewport width ==> getWidth():" + res)
                     if (res != this.initInnerWidth) {
                       value = true;
                     }
                   })
-                  await waitForExist(() => '' + value, this.str, 'true', 500, 16);
+                  await waitForExist(() => '' + value, this.str, 'true');
                   Utils.emitEvent(value, 150330)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(false, 150330)
               }
               break;
             }
@@ -216,11 +212,11 @@ struct MetaViewport {
                 } else {
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile("viewport.html"))
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Initial viewport width ==> getWidth():" + res)
                     this.initInnerWidth = res;
@@ -228,19 +224,18 @@ struct MetaViewport {
                   this.isMetaViewport = true;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Modified viewport width ==> getWidth():" + res)
                     if (res != this.initInnerWidth) {
                       value = true;
                     }
                   })
-                  await waitForExist(() => '' + value, this.str, 'true', 500, 16);
+                  await waitForExist(() => '' + value, this.str, 'true');
                   Utils.emitEvent(value, 150340)
                 }
                 } catch (error) {
                   console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                  Utils.emitEvent(false, 150340)
                 }
               break;
             }
@@ -253,11 +248,11 @@ struct MetaViewport {
                 } else {
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile("viewport.html"))
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Initial viewport width ==> getWidth():" + res)
                     this.initInnerWidth = res;
@@ -265,19 +260,18 @@ struct MetaViewport {
                   this.isMetaViewport = true;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Modified viewport width ==> getWidth():" + res)
                     if (res != this.initInnerWidth) {
                       value = true;
                     }
                   })
-                  await waitForExist(() => '' + value, this.str, 'true', 500, 16);
+                  await waitForExist(() => '' + value, this.str, 'true');
                   Utils.emitEvent(value, 150350)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(false, 150350)
               }
               break;
             }
@@ -290,11 +284,11 @@ struct MetaViewport {
                 } else {
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile("viewport.html"))
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Initial viewport width ==> getWidth():" + res)
                     this.initInnerWidth = res;
@@ -302,19 +296,18 @@ struct MetaViewport {
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Modified viewport width ==> getWidth():" + res)
                     if (res == this.initInnerWidth) {
                       value = true;
                     }
                   })
-                  await waitForExist(() => '' + value, this.str, 'true', 500, 16);
+                  await waitForExist(() => '' + value, this.str, 'true');
                   Utils.emitEvent(value, 150360)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(false, 150360)
               }
               break;
             }
@@ -327,11 +320,11 @@ struct MetaViewport {
                 } else {
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile("viewport.html"))
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Initial viewport width ==> getWidth():" + res)
                     this.initInnerWidth = res;
@@ -339,19 +332,18 @@ struct MetaViewport {
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Modified viewport width ==> getWidth():" + res)
                     if (res == this.initInnerWidth) {
                       value = true;
                     }
                   })
-                  await waitForExist(() => '' + value, this.str, 'true', 500, 16);
+                  await waitForExist(() => '' + value, this.str, 'true');
                   Utils.emitEvent(value, 150370)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(false, 150370)
               }
               break;
             }
@@ -364,11 +356,11 @@ struct MetaViewport {
                 } else {
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile("viewport.html"))
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Initial viewport width ==> getWidth():" + res)
                     this.initInnerWidth = res;
@@ -376,19 +368,18 @@ struct MetaViewport {
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Modified viewport width ==> getWidth():" + res)
                     if (res == this.initInnerWidth) {
                       value = true;
                     }
                   })
-                  await waitForExist(() => '' + value, this.str, 'true', 500, 16);
+                  await waitForExist(() => '' + value, this.str, 'true');
                   Utils.emitEvent(value, 150380)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(false, 150380)
               }
               break;
             }
@@ -401,11 +392,11 @@ struct MetaViewport {
                 } else {
                   this.isComplete = -1;
                   this.controller.loadUrl($rawfile("viewport.html"))
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Initial viewport width ==> getWidth():" + res)
                     this.initInnerWidth = res;
@@ -413,19 +404,18 @@ struct MetaViewport {
                   this.isMetaViewport = false;
                   this.isComplete = -1;
                   this.controller.refresh();
-                  await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                  await waitForExist(() => this.isComplete, this.str, 0);
                   this.controller.runJavaScript("getWidth()", (err, res) => {
                     console.info("Modified viewport width ==> getWidth():" + res)
                     if (res == this.initInnerWidth) {
                       value = true;
                     }
                   })
-                  await waitForExist(() => '' + value, this.str, 'true', 500, 16);
+                  await waitForExist(() => '' + value, this.str, 'true');
                   Utils.emitEvent(value, 150390)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(false, 150390)
               }
               break;
             }

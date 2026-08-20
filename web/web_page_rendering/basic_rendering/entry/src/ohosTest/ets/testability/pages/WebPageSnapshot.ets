@@ -70,7 +70,7 @@ struct WebPageSnapshot {
   build() {
     Column() {
       Row() {
-        Button("web click").id('webWebPageSnapshot').key('webWebPageSnapshot').onClick(async () => {
+        Button("web click").key('webWebPageSnapshot').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
           await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);

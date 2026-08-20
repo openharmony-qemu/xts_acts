@@ -21,11 +21,11 @@ import router from '@ohos.router';
 import { Driver } from '@kit.TestKit';
 import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
 import { accessibility, config } from '@kit.AccessibilityKit';
+const  driver: Driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 export default function webPageSnapshotTest() {
-  const driver: Driver = Driver.create();
   describe('WebPageSnapshotTest',  () => {
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
@@ -48,17 +48,44 @@ export default function webPageSnapshotTest() {
     });
 
     beforeEach(async (done: Function) => {
-      // Local XtsTestServer: skip WLAN (enableWifi -> Permission denied).
-      try {
-        config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-          console.info(`enable success`);
-        }).catch((err: object) => {
-          console.error(`failed to enable, ${err}`);
-        })
-      } catch (err) {
-        console.error(`enableAbility skipped: ${err}`);
+      if(!wifiMg.isWifiActive()){
+        console.info("======> wifi_test/enable wifi:" + wifiMg.enableWifi());
+        await Utils.sleep(5000);
       }
-      console.info("web beforeEach start (skip wifi for local XtsTestServer)");
+
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info("======> Internet chload : " + JSON.stringify(data.chload));
+        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info("======> WLAN connection established ");
+        } else {
+          expect().message("======> WLAN Network error").assertFail(); //方式一
+          //throw new Error("======> WLAN Network error");//方式二
+          done();
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          expect().message("======> WLAN Network error").assertFail();//方式一
+          //throw new Error("======> WLAN Network error");//方式二
+          done();
+        } else if (data.chload >= 500) {
+          console.info("======> The internet connection is poor. ");
+        }
+
+      } catch (err) {
+        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+        done();
+      }
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info(`enable success`);
+      }).catch((err: object) => {
+        console.error(`failed to enable, ${err}`);
+      })
+      console.info("WebPageSnapshot beforeEach start");
       done();
     })
 

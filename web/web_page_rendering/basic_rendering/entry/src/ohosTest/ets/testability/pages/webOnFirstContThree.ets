@@ -14,17 +14,15 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import webView from '@ohos.web.webview';
+import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
+import { Hypium } from '@ohos/hypium';
+import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import { waitForExist } from '../../test/WaitTest.test';
-import { XtsTestServer } from 'library';
-import { BusinessError } from '@ohos.base';
-
 @Entry
 @Component
 struct webOnFirstContThree {
-  controller: webView.WebviewController = new webView.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
+  controller: WebController = new WebController();
   @State str: string = "emitLoadUrlOnfirstcontentfulpaintWebc";
   @State firstId: number = 151800;
   @State firstcontentfulpaint: boolean = false;
@@ -37,16 +35,7 @@ struct webOnFirstContThree {
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
   @State isComplete: number = -1;
-  private afterAction: boolean = false;
-
-  aboutToDisappear() {
-    try {
-      this.controller.loadUrl(this.mServer.getShutdownUrl());
-    } catch (_e) {
-      // page teardown: controller may already be unbound (17100001)
-    }
-  }
-
+  @State isReceive: number = -1;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 151790,
@@ -59,54 +48,39 @@ struct webOnFirstContThree {
   }
   private valueChangeCallBack = (eventData: ESObject) => {
     console.info("webOnFirstContThree page valueChangeCallBack");
-    if (eventData != null && eventData.data.ACTION != null) {
-      this.str = eventData.data.ACTION;
+    if (eventData != null) {
+      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      if (eventData.data.ACTION != null) {
+        this.str = eventData.data.ACTION;
+      }
     }
-  }
-
-  private markFcpFromUrl(url: string): void {
-    if (!this.afterAction) {
-      return;
-    }
-    if (url.indexOf('onfirstcontentfulpaint') < 0) {
-      return;
-    }
-    this.firstcontentfulpaint = true;
-    console.info('FCP marked from url=' + url);
-  }
-
-  private async runLoadUrlFcpAction(): Promise<void> {
-    await waitForExist(() => this.isComplete, this.str, 0, 1000, 10);
-    this.isComplete = -1;
-    this.firstcontentfulpaint = false;
-    this.afterAction = true;
-    this.controller.loadUrl(this.mServer.getAssetUrl('onfirstcontentfulpaint.html'));
-    console.log("action of emitLoadUrlOnfirstcontentfulpaintWebc is loadUrl");
-    await waitForExist(() => this.isComplete, this.str, 0, 1000, 15);
-    await waitForExist(() => this.firstcontentfulpaint ? 0 : -1, this.str, 0, 500, 20);
   }
 
   build() {
     Column() {
       Row() {
-        Button("web click").id('webOnFirstContThree').key('webOnFirstContThree').onClick(async () => {
+        Button("web click").key('webOnFirstContThree').onClick(async () => {
           console.info("key==>" + this.str)
-          if (this.str !== "emitLoadUrlOnfirstcontentfulpaintWebc") {
-            return;
+          await waitForExist(() => this.isComplete, this.str, 0);
+          switch (this.str) {
+            case "emitLoadUrlOnfirstcontentfulpaintWebc": {
+              try {
+                this.isComplete = -1;
+                this.controller.clearHistory();
+                this.controller.loadUrl({ url: "https://m.weibo.cn" });
+                await waitForExist(() => this.isComplete, this.str, 0);
+                console.log("action of emitLoadUrlOnfirstcontentfulpaintWebc is loadUrl");
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              Utils.emitEvent(this.firstcontentfulpaint, this.firstId);
+              break;
+            }
           }
-          try {
-            await this.runLoadUrlFcpAction();
-          } catch (error) {
-            let err = error as BusinessError;
-            console.error(`ErrorCode: ${err.code},  Message: ${err.message}`);
-          }
-          Utils.emitEvent(this.firstcontentfulpaint, this.firstId);
         })
       }
 
-      // 首屏 $rawfile 可渲染；点击后再 loadUrl Server FCP 页
-      Web({ src: $rawfile('indexCopy.html'), controller: this.controller })
-        .layoutWeight(1)
+      Web({ src: 'www.baidu.com', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
@@ -117,26 +91,14 @@ struct webOnFirstContThree {
         .onFirstContentfulPaint(event => {
           console.log("onFirstContentfulPaint:" + "[navigationStartTick]:" +
           event.navigationStartTick + ", [firstContentfulPaintMs]:" + event.firstContentfulPaintMs + this.firstId)
-          if (event.firstContentfulPaintMs > 0 && event.navigationStartTick > 0 && this.afterAction) {
+          if (event.firstContentfulPaintMs > 0 && event.navigationStartTick > 0) {
             this.firstcontentfulpaint = true;
             console.error("result of onFirstContentfulPaint is: " + this.firstcontentfulpaint + this.firstId);
           }
         })
-        .onPageVisible((event) => {
-          let url = '';
-          if (event != null && event.url != null) {
-            url = String(event.url);
-          }
-          this.markFcpFromUrl(url);
-        })
         .onPageEnd((event) => {
-          let url = '';
-          if (event != null && event.url != null) {
-            url = String(event.url);
-          }
-          console.log('web pageEnd==>' + url);
+          console.log('web pageEnd==>' + event.url);
           this.isComplete = 0;
-          this.markFcpFromUrl(url);
         })
     }
   }

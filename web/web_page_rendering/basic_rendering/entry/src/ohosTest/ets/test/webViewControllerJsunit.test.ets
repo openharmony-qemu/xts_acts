@@ -17,12 +17,8 @@ import { beforeAll, describe, beforeEach, afterEach, it, expect , TestType, Size
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import wifiMg from '@ohos.wifiManager';
-import { accessibility, config } from '@kit.AccessibilityKit';
 import router from '@ohos.router';
 import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
-
-const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
-const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "emitGetWebId";
 export default function webViewControllerJsunit() {
   describe('ActsAceWebDevWebViewControllerTest',  () => {
@@ -45,8 +41,39 @@ export default function webViewControllerJsunit() {
       await waitForComponent("webcomponent");
       done()
     });
-    afterEach(async (done: Function) => {
-      // Local XtsTestServer: skip WLAN (enableWifi/getLinkedInfo -> Permission denied).
+    afterEach(async  (done: Function) =>{
+      if(!wifiMg.isWifiActive()){
+        console.info("======> wifi_test/enable wifi:" + wifiMg.enableWifi());
+        await Utils.sleep(5000);
+      }
+
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info("======> Internet chload : " + JSON.stringify(data.chload));
+        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info("======> WLAN connection established ");
+        } else {
+          expect().message("======> WLAN Network error").assertFail(); //方式一
+          //throw new Error("======> WLAN Network error");//方式二
+          done();
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          expect().message("======> WLAN Network error").assertFail();//方式一
+          //throw new Error("======> WLAN Network error");//方式二
+          done();
+        } else if (data.chload >= 500) {
+          console.info("======> The internet connection is poor. ");
+        }
+
+      } catch (err) {
+        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+        done();
+      }
       console.info("web afterEach start:"+emitKey);
       try {
         let backData: events_emitter.EventData = {
@@ -76,8 +103,6 @@ export default function webViewControllerJsunit() {
     it('testGetWebId',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey="emitGetWebId";
       Utils.registerEvent("testGetWebId",true,154070,done);
-      // 等待页面切换动画完成后再点击，避免点击被过渡动画丢弃
-      await Utils.sleep(2000);
       sendEventByKey('webcomponent',10,'');
     })
   })

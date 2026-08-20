@@ -61,28 +61,30 @@ struct Index {
   build() {
     Column() {
       Row() {
-        Button("web click").id('webcomponent').key('webcomponent').onClick(async () => {
+        Button("web click").key('webcomponent').onClick(async () => {
           console.info("key==>" + this.str);
           await waitForExist(() => this.isComplete, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);
           this.isReceive = -1;
           switch (this.str) {
             case "emitGetWebId": {
+              this.isComplete = -1;
               Utils.emitEvent("webId", 151300);
+              await waitForExist(() => this.isComplete, this.str, 0);
               break;
             }
             case "emitOnTitleReceive": {
               this.isComplete = -1;
               this.controller.loadUrl({ url: "resource://rawfile/index.html" });
-              await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
-              Utils.emitEvent(this.titleReceive, 151310);
+              await waitForExist(() => this.isComplete, this.str, 0);
+                Utils.emitEvent(this.titleReceive, 151310);
               break;
             }
             case "emitWebVisibility": {
               this.webVisibility = Visibility.Hidden;
-              this.webVisibility = Visibility.None;
-              this.webVisibility = Visibility.Visible;
-              Utils.emitEvent(0, 151320);
+                this.webVisibility = Visibility.None;
+                  this.webVisibility = Visibility.Visible;
+                  Utils.emitEvent(0, 151320);
               break;
             }
             default:

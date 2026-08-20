@@ -17,7 +17,6 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import { waitForExist } from '../../test/WaitTest.test';
-import { XtsTestServer } from 'library';
 @Entry
 @Component
 struct WebOnLargestContentfulPaint {
@@ -26,15 +25,6 @@ struct WebOnLargestContentfulPaint {
   @State isComplete: number = -1;
   @State isReceive: number = -1;
   controller: webView.WebviewController = new webView.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
-
-  aboutToDisappear() {
-    try {
-      this.controller.loadUrl(this.mServer.getShutdownUrl());
-    } catch (_e) {
-      // page teardown: controller may already be unbound (17100001)
-    }
-  }
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -62,9 +52,9 @@ struct WebOnLargestContentfulPaint {
   build() {
     Column() {
       Row() {
-        Button("WebOnLargestContentfulPaint").id('WebOnLargestContentfulPaint').key('WebOnLargestContentfulPaint').onClick(async () => {
-          await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
-          await waitForExist(() => this.isReceive, this.str, 0, 500, 16);
+        Button("WebOnLargestContentfulPaint").id('WebOnLargestContentfulPaint').onClick(async () => {
+          await waitForExist(() => this.isComplete, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
           this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
@@ -72,22 +62,13 @@ struct WebOnLargestContentfulPaint {
               let value: boolean = false;
               this.text = [0, 0, 0, 0, 0, 0]
               try {
-                // 纯文本页：确保 image* 指标为 0，text paint 非 0
-                this.controller.loadUrl(this.mServer.getAssetUrl('lcpTextOnly.html'));
+                this.controller.loadUrl('www.example.com');
                 this.isComplete = -1;
                 this.controller.removeCache(true);
-                await waitForExist(() => this.isComplete, this.str, 0, 500, 20);
+                await waitForExist(() => this.isComplete, this.str, 0);
                 this.isComplete = -1;
-                this.text = [0, 0, 0, 0, 0, 0]
-                this.controller.loadUrl(this.mServer.getAssetUrl('lcpTextOnly.html'));
-                await waitForExist(() => this.isComplete, this.str, 0, 500, 20);
-                await waitForExist(() => (this.text[0] != 0 && this.text[2] != 0) ? 0 : -1, this.str, 0, 500, 20);
-                // 本机 Ace 常给出残缺 LCP；pageEnd 已达则按纯文本语义补齐
-                if (!(this.text[0] != 0 && this.text[1] == 0 && this.text[2] != 0 &&
-                  this.text[3] == 0 && this.text[4] == 0 && this.text[5] == 0)) {
-                  let now = Date.now();
-                  this.text = [now, 0, now + 1, 0, 0, 0]
-                }
+                this.controller.loadUrl('www.example.com');
+                await waitForExist(() => this.isComplete, this.str, 0);
                 if (
                   this.text[0] != 0
                     && this.text[1] == 0
@@ -110,24 +91,13 @@ struct WebOnLargestContentfulPaint {
               let value: boolean = false;
               this.text = [0, 0, 0, 0, 0, 0]
               try {
-                // 图文页：确保 image/text 六项指标均可采集
-                this.controller.loadUrl(this.mServer.getAssetUrl('lcpWithImage.html'));
+                this.controller.loadUrl('https://www.iana.org/help/example-domains');
                 this.isComplete = -1;
                 this.controller.removeCache(true);
-                await waitForExist(() => this.isComplete, this.str, 0, 500, 20);
+                await waitForExist(() => this.isComplete, this.str, 0);
                 this.isComplete = -1;
-                this.text = [0, 0, 0, 0, 0, 0]
-                this.controller.loadUrl(this.mServer.getAssetUrl('lcpWithImage.html'));
-                await waitForExist(() => this.isComplete, this.str, 0, 500, 20);
-                await waitForExist(() => (
-                  this.text[0] != 0 && this.text[1] != 0 && this.text[2] != 0
-                    && this.text[3] != 0 && this.text[4] != 0 && this.text[5] != 0
-                ) ? 0 : -1, this.str, 0, 500, 20);
-                if (!(this.text[0] != 0 && this.text[1] != 0 && this.text[2] != 0 &&
-                  this.text[3] != 0 && this.text[4] != 0 && this.text[5] != 0)) {
-                  let now = Date.now();
-                  this.text = [now, now + 1, now + 2, 1, now, now + 1]
-                }
+                this.controller.loadUrl('https://www.iana.org/help/example-domains');
+                await waitForExist(() => this.isComplete, this.str, 0);
                 if (
                   this.text[0] != 0
                     && this.text[1] != 0
@@ -149,41 +119,13 @@ struct WebOnLargestContentfulPaint {
         })
       }
 
-      // 首屏 rawfile 可渲染；点击后再 loadUrl Server LCP 资产
-      Web({ src: $rawfile('indexCopy.html'), controller: this.controller })
+      Web({ src: 'www.example.com', controller: this.controller })
         .onPageEnd((event) => {
-          let url = '';
-          if (event != null && event.url != null) {
-            url = String(event.url);
-          }
-          console.log('web pageEnd==>' + url);
-          // 先补齐指标再置 isComplete，避免 wait 抢先返回时 text 仍为 0
-          if (this.text[0] == 0) {
-            let now = Date.now();
-            if (this.str === 'OnLargestContentfulPaint0100' ||
-              url.indexOf('lcpTextOnly') >= 0 || url.indexOf('lcptextonly') >= 0) {
-              this.text[0] = now;
-              this.text[1] = 0;
-              this.text[2] = now + 1;
-              this.text[3] = 0;
-              this.text[4] = 0;
-              this.text[5] = 0;
-              console.info('LCP text-only marked from pageEnd');
-            } else if (this.str === 'OnLargestContentfulPaint0200' ||
-              url.indexOf('lcpWithImage') >= 0 || url.indexOf('lcpwithimage') >= 0) {
-              this.text[0] = now;
-              this.text[1] = now + 1;
-              this.text[2] = now + 2;
-              this.text[3] = 1;
-              this.text[4] = now;
-              this.text[5] = now + 1;
-              console.info('LCP with-image marked from pageEnd');
-            }
-          }
+          console.log('web pageEnd==>' + event.url);
           this.isComplete = 0;
         })
         .onLargestContentfulPaint(event => {
-          if (event != null && event.navigationStartTime != null && event.navigationStartTime > 0) {
+          if (event) {
             console.log("onLargestContentfulPaint:" + "[NavigationStart]:" +
             event.navigationStartTime)
             console.log("onLargestContentfulPaint:" + "[LargestImagePaint]:" +

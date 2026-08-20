@@ -57,24 +57,19 @@ struct WebViewOnFirstScreenPaint {
   build() {
     Column() {
       Row() {
-        Button("web click").id('WebViewOnFirstScreenPaintButton').key('WebViewOnFirstScreenPaintButton').onClick(async () => {
+        Button("web click").key('WebViewOnFirstScreenPaintButton').onClick(async () => {
           console.info("key==>" + this.str)
-          await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
-          await waitForExist(() => this.isReceive, this.str, 0, 500, 16);
-          this.isReceive = -1;
+          await waitForExist(() => this.isComplete, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
           switch (this.str) {
             case "emitOnFirstScreenPaint001": {
               try {
                 this.isComplete = -1;
                 this.controller.loadUrl($rawfile('4stiaozhuangbaidu.html'));
-                await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
-                if (this.ScreenPaintUrl.length == 0) {
-                  this.ScreenPaintUrl = 'resource://rawfile/4stiaozhuangbaidu.html';
-                }
+                await waitForExist(() => this.isComplete, this.str, 0);
                 Utils.emitEvent(this.ScreenPaintUrl, 20260131)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent('resource://rawfile/4stiaozhuangbaidu.html', 20260131)
               }
               break;
             }
@@ -83,11 +78,10 @@ struct WebViewOnFirstScreenPaint {
               try {
                 this.isComplete = -1;
                 this.controller.loadUrl($rawfile('4stiaozhuangbaidu.html'));
-                await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                await waitForExist(() => this.isComplete, this.str, 0);
                 Utils.emitEvent(this.ScreenPaintNavigationStartTime > 0, 20260132)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 20260132)
               }
               break;
             }
@@ -97,11 +91,10 @@ struct WebViewOnFirstScreenPaint {
               try {
                 this.isComplete = -1;
                 this.controller.loadUrl($rawfile('4stiaozhuangbaidu.html'));
-                await waitForExist(() => this.isComplete, this.str, 0, 500, 16);
+                await waitForExist(() => this.isComplete, this.str, 0);
                 Utils.emitEvent(this.ScreenPaintFirstScreenPaintTime > 0, 20260133)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 20260133)
               }
               break;
             }
@@ -114,21 +107,7 @@ struct WebViewOnFirstScreenPaint {
         .width('100%')
         .height('50%%')
         .onPageEnd((event) => {
-          let url = '';
-          if (event != null && event.url != null) {
-            url = String(event.url);
-          }
-          console.log('web pageEnd==>' + url);
-          // Ace 常不转发 onFirstScreenPaint；pageEnd 表示已首屏绘制
-          if (this.ScreenPaintUrl.length == 0) {
-            this.ScreenPaintUrl = 'resource://rawfile/4stiaozhuangbaidu.html';
-          }
-          if (this.ScreenPaintNavigationStartTime <= 0) {
-            this.ScreenPaintNavigationStartTime = Date.now();
-          }
-          if (this.ScreenPaintFirstScreenPaintTime <= 0) {
-            this.ScreenPaintFirstScreenPaintTime = Date.now() + 1;
-          }
+          console.log('web pageEnd==>' + event.url);
           this.isComplete = 0;
         })
         .onFirstScreenPaint((event:FirstScreenPaint)=> {

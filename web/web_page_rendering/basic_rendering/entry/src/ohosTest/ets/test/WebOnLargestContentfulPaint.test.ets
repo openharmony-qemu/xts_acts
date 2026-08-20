@@ -17,17 +17,12 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
+import wifiMg from '@ohos.wifiManager';
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webOnLargestContentfulPaint() {
-  let driver: Driver | null = null;
-  const getDriver = (): Driver => {
-    if (driver == null) {
-      driver = Driver.create();
-    }
-    return driver as Driver;
-  }
   describe('WebOnLargestContentfulPaint', () => {
      beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
@@ -45,21 +40,48 @@ export default function webOnLargestContentfulPaint() {
       } catch (err) {
         console.error("push WebOnLargestContentfulPaint page error: " + err);
       }
-      await waitForComponent("WebOnLargestContentfulPaint");
+       await driver.waitForComponent(ON.id("WebFontTestButton"), 10000);
       done()
     });
     beforeEach(async (done: Function) => {
-      // Local XtsTestServer: skip WLAN (enableWifi -> Permission denied).
-      try {
-        config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-          console.info(`enable success`);
-        }).catch((err: object) => {
-          console.error(`failed to enable, ${err}`);
-        })
-      } catch (err) {
-        console.error(`enableAbility skipped: ${err}`);
+      if(!wifiMg.isWifiActive()){
+        console.info("======> wifi_test/enable wifi:" + wifiMg.enableWifi());
+        await Utils.sleep(5000);
       }
-      console.info("web beforeEach start (skip wifi for local XtsTestServer)");
+
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info("======> Internet chload : " + JSON.stringify(data.chload));
+        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info("======> WLAN connection established ");
+        } else {
+          expect().message("======> WLAN Network error").assertFail(); //方式一
+          //throw new Error("======> WLAN Network error");//方式二
+          done();
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          expect().message("======> WLAN Network error").assertFail();//方式一
+          //throw new Error("======> WLAN Network error");//方式二
+          done();
+        } else if (data.chload >= 500) {
+          console.info("======> The internet connection is poor. ");
+        }
+
+      } catch (err) {
+        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+        done();
+      }
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info(`enable success`);
+        }).catch((err: object) => {
+        console.error(`failed to enable, ${err}`);
+      })
+      console.info("web beforeEach start");
       done();
     })
 
@@ -74,7 +96,8 @@ export default function webOnLargestContentfulPaint() {
     it('OnLargestContentfulPaint0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("OnLargestContentfulPaint0100", 152060)
       Utils.registerEvent("OnLargestContentfulPaint0100", true, 152070, done);
-      await waitAndClickComponent('WebOnLargestContentfulPaint', getDriver());
+      let component = await driver.findComponent(ON.id("WebOnLargestContentfulPaint"));
+      await component.click();
     })
 
     /**
@@ -88,7 +111,7 @@ export default function webOnLargestContentfulPaint() {
     it('OnLargestContentfulPaint0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("OnLargestContentfulPaint0200", 152060)
       Utils.registerEvent("OnLargestContentfulPaint0200", true, 152080, done);
-      await waitAndClickComponent('WebOnLargestContentfulPaint', getDriver());
+      waitAndClickComponent('WebOnLargestContentfulPaint',driver);
     })
   })
 }
