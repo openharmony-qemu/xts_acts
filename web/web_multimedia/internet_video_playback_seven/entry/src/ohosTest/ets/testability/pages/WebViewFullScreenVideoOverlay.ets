@@ -99,23 +99,20 @@ struct fullScreenVideoOverlay {
                 .onFullScreenEnter((event) => {
                     console.log('onFullScreenEnter99932545');
                     if(this.str == 'emitEnableFullscreenVideoOverlay01') {
-                        if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                            Utils.emitEvent(true, 20260819)
-                        } else {
+                        // if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                        //     Utils.emitEvent(true, 20260819)
+                        // } else {
                             let buttonTwo = driver.findComponent(ON.text('显示'));
                             console.log('99999977745446' + JSON.stringify(buttonTwo));
                             console.log('999999777' + JSON.stringify(buttonTwo).length);
                             Utils.emitEvent(JSON.stringify(buttonTwo).length == 2, 20260819)
-                        }
+                        // }
                     } else if(this.str == 'emitEnableFullscreenVideoOverlay02') {
-                        if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                            Utils.emitEvent(true, 20260820)
-                        } else {
+             
                             let buttonTwo = driver.findComponent(ON.text('显示'));
                             console.log('pppp' + JSON.stringify(buttonTwo));
                             console.log('9999991111' + JSON.stringify(buttonTwo).length);
                             Utils.emitEvent(buttonTwo === null, 20260820)
-                        }
                     }
 
                 })
