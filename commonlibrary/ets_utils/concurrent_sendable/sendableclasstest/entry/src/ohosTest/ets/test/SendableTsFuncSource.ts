@@ -14,11 +14,11 @@
  */
 
 /**
- * Sendable ('use concurrent') function defined in a .ts source file.
+ * Sendable ('use sendable') function defined in a .ts source file.
  * Imported by SendableTsFuncConsumer.ts and executed through TaskPool from
  * the .ets test suite.
  */
 export function sendableFuncInTsSource(): number {
-  'use concurrent'
+  'use sendable'
   return 100
 }

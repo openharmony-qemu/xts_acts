@@ -16,12 +16,12 @@
 import { sendableFuncInTsSource } from './SendableTsFuncSource';
 
 /**
- * Sendable ('use concurrent') function defined in a .ts file that imports and
+ * Sendable ('use sendable') function defined in a .ts file that imports and
  * calls a sendable function from another .ts file. Verifies cross-file .ts
  * module composition of sendable functions, executed through TaskPool from the
  * .ets test suite.
  */
 export function sendableFuncInTsConsumer(): number {
-  'use concurrent'
+  'use sendable'
   return sendableFuncInTsSource() + 50
 }

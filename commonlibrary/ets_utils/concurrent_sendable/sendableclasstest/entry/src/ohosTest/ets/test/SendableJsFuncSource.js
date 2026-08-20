@@ -14,10 +14,10 @@
  */
 
 /**
- * Sendable ('use concurrent') function defined in a .js source file.
- * Exercises extended support for 'use concurrent' in .js files.
+ * Sendable ('use sendable') function defined in a .js source file.
+ * Exercises extended support for 'use sendable' in .js files.
  */
 export function jsSendableFunc(input) {
-  'use concurrent'
+  'use sendable'
   return input * 2
 }
