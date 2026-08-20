@@ -96,7 +96,7 @@ export default function sendableContextManagerTest() {
       let tag = `SUB_ChildProcessManager_sendableContextManager_0200`;
       let moduleContext: common.UIAbilityContext;
       try {
-        moduleContext = context.createModuleContext('') as common.UIAbilityContext;;
+        moduleContext = context.createModuleContext('') as common.UIAbilityContext;
       } catch (error) {
         console.error(`createModuleContext failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
         expect(error.code).assertEqual(401)
@@ -775,8 +775,8 @@ export default function sendableContextManagerTest() {
     it('SUB_ChildProcessManager_sendableContextManager_2600', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2600`;
       let startupTasks: Array<string> = ['testTask'];
-      let abilityStageContext: ESObject = undefined;
-      let config: ESObject = undefined;
+      let abilityStageContext: startupManager.StartupConfig | undefined = undefined;
+      let config: startupManager.StartupConfig | undefined = undefined;
       try {
         startupManager.run(startupTasks, abilityStageContext, config).then(() => {
           console.info(`${tag} startupManager.run succeed`);
@@ -807,7 +807,7 @@ export default function sendableContextManagerTest() {
     it('SUB_ChildProcessManager_sendableContextManager_2700', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2700`;
       let startupTasks: Array<string> = ['testTask'];
-      let abilityStageContext: ESObject = undefined;
+      let abilityStageContext: startupManager.StartupConfig | undefined = undefined;
       let config = null;
       try {
         startupManager.run(startupTasks, abilityStageContext, config).then(() => {
@@ -839,8 +839,8 @@ export default function sendableContextManagerTest() {
     it('SUB_ChildProcessManager_sendableContextManager_2800', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2800`;
       let startupTasks: Array<string> = ['testTask'];
-      let abilityStageContext: ESObject = undefined;
-      let config: ESObject = undefined;
+      let abilityStageContext: startupManager.StartupConfig | undefined = undefined;
+      let config: startupManager.StartupConfig | undefined = undefined;
       try {
         startupManager.run(startupTasks, abilityStageContext, config).then(() => {
           console.info(`${tag} startupManager.run succeed`);
