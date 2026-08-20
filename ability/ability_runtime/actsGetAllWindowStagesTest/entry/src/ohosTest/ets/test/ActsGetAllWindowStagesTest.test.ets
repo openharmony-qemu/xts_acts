@@ -36,8 +36,7 @@ export default function ActsGetAllWindowStagesTest() {
         }
 
       } catch (e) {
-        const err: BusinessError = e as BusinessError;
-        hilog.error(0x0000, 'testTag', `TestAbility1_UIAbilityContext failed, code: ${err?.code}, message: ${err?.message}`);
+        hilog.error(0x0000, 'testTag', `TestAbility1_UIAbilityContext failed, code: ${JSON.stringify(e)}`);
       }
       try{
         let TestAbility2_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbility2_UIAbilityContext') as common.UIAbilityContext;
@@ -47,8 +46,7 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.error(0x0000, 'testTag', `TestAbility2_UIAbilityContext.terminateSelf() failed: ${JSON.stringify(e)}`);
         }
       } catch (e) {
-        const err: BusinessError = e as BusinessError;
-        hilog.error(0x0000, 'testTag', `TestAbility2_UIAbilityContext failed, code: ${err?.code}, message: ${err?.message}`);
+        hilog.error(0x0000, 'testTag', `TestAbility2_UIAbilityContext failed, code: ${JSON.stringify(e)}`);
       }
       try{
         let TestAbility3_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbility3_UIAbilityContext') as common.UIAbilityContext;
@@ -58,8 +56,7 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.error(0x0000, 'testTag', `TestAbility3_UIAbilityContext.terminateSelf() failed: ${JSON.stringify(e)}`);
         }
       } catch (e) {
-        const err: BusinessError = e as BusinessError;
-        hilog.error(0x0000, 'testTag', `TestAbility3_UIAbilityContext failed, code: ${err?.code}, message: ${err?.message}`);
+        hilog.error(0x0000, 'testTag', `TestAbility3_UIAbilityContext failed, code: ${JSON.stringify(e)}`);
       }
       try{
         let ApplicationModule_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('ApplicationModule_UIAbilityContext') as common.UIAbilityContext;
@@ -69,8 +66,7 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.error(0x0000, 'testTag', `ApplicationModule_UIAbilityContext.terminateSelf() failed: ${JSON.stringify(e)}`);
         }
       } catch (e) {
-        const err: BusinessError = e as BusinessError;
-        hilog.error(0x0000, 'testTag', `ApplicationModule_UIAbilityContext failed, code: ${err?.code}, message: ${err?.message}`);
+        hilog.error(0x0000, 'testTag', `ApplicationModule_UIAbilityContext failed, code: ${JSON.stringify(e)}`);
       }
 
     })
@@ -97,7 +93,6 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
@@ -155,7 +150,6 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
@@ -213,7 +207,6 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
@@ -271,7 +264,6 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
@@ -328,7 +320,6 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
@@ -377,7 +368,6 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
@@ -426,7 +416,6 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
@@ -475,7 +464,6 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(2000);
@@ -524,7 +512,6 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
@@ -573,7 +560,6 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
@@ -627,7 +613,6 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
@@ -769,7 +754,7 @@ export default function ActsGetAllWindowStagesTest() {
             if(err?.code==801) {
               done()
             }else{
-              hilog.info(0x0000,'testTag',`startAbilitycccc, code is ${err?.code}, message is ${err?.message}`);
+              hilog.info(0x0000,'testTag',`startAbilitycccc, code is ${JSON.stringify(e)}, message is ${JSON.stringify(e)}`);
               done()
             }
           } else {
@@ -828,7 +813,6 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
 
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
@@ -885,7 +869,6 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
@@ -947,12 +930,10 @@ export default function ActsGetAllWindowStagesTest() {
           await context.startAbility(want).then(() => {
             hilog.info(0x0000, 'testTag','startAbility succeed');
           }).catch((err: BusinessError) => {
-            hilog.error(0x0000, 'testTag',`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
+            hilog.error(0x0000, 'testTag',`startAbility failed, code is ${JSON.stringify(e)}, message is ${JSON.stringify(e)}`);
           });
         } catch (err) {
-          let code = (err as BusinessError).code;
-          let message = (err as BusinessError).message;
-          hilog.error(0x0000, 'testTag',`startAbility failed, code is ${code}, message is ${message}`);
+          hilog.error(0x0000, 'testTag',`startAbility failed: ${JSON.stringify(err)}`);
         }
         await Utils.sleep(1000);
         try {
@@ -1005,7 +986,6 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
@@ -1067,8 +1047,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantSpecified1).then(() => {
           hilog.info(0x0000, 'testTag', 'First: specified mode TestAbility3 (KEY_FIRST) started');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `Failed to start TestAbility3 (KEY_FIRST): ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `Failed to start TestAbility3 (KEY_FIRST): ${JSON.stringify(e)}`);
         });
         await Utils.sleep(1000);
         let wantMultiton1: Want = {
@@ -1080,8 +1059,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantMultiton1).then(() => {
           hilog.info(0x0000, 'testTag', 'First: multiton mode TestAbility1 started');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `Failed to start TestAbility1: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `Failed to start TestAbility1: ${JSON.stringify(e)}`);
         });
         await Utils.sleep(1500);
         try {
@@ -1116,8 +1094,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantSpecified2).then(() => {
           hilog.info(0x0000, 'testTag', 'Second: specified mode TestAbility3 (KEY_SECOND) started');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `Failed to start TestAbility3 (KEY_SECOND): ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `Failed to start TestAbility3 (KEY_SECOND): ${JSON.stringify(e)}`);
         });
         await Utils.sleep(1000);
         let wantMultiton2: Want = {
@@ -1130,8 +1107,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantMultiton2).then(() => {
           hilog.info(0x0000, 'testTag', 'Second: multiton mode TestAbility1 (second instance) started');
         }).catch((e: Error) => {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `Failed to start TestAbility1 (second): ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `Failed to start TestAbility1 (second): ${JSON.stringify(e)}`);
         });
 
         await Utils.sleep(1500);
