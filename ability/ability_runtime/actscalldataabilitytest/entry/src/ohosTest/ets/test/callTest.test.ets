@@ -44,39 +44,35 @@ export default function callTest() {
     it('SUB_Ability_AbilityRuntime_CallDataAbility_0100', Level.LEVEL0, async (done: Function) => {
       console.info('------------start CallTest_0100-------------');
       console.info('CallTest_0100 commonEvent.createSubscriber start!!!');
-      commonEvent.createSubscriber(subscribeInfo)
-        .then((data: commonEventManager.CommonEventSubscriber) => {
-          console.info('----CallTest_0100 commonEvent createSubscriber------');
-          subscriber = data;
-          commonEvent.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
-            if (err && err.code) {
-              console.error('CallTest_0100 commonEvent subscribe failed ' + JSON.stringify(err));
-            } else {
-              console.info('CallTest_0100 commonEvent subscribe service ' + JSON.stringify(data));
-              if (data.parameters?.assertData) {
-                dataAssert = data.parameters?.assertData
-                console.info('callTest dataAssert is : ' + dataAssert);
-              }
+      try {
+        subscriber = await commonEvent.createSubscriber(subscribeInfo);
+        commonEvent.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
+          if (err && err.code) {
+            console.error('CallTest_0100 commonEvent subscribe failed ' + JSON.stringify(err));
+          } else {
+            console.info('CallTest_0100 commonEvent subscribe service ' + JSON.stringify(data));
+            if (data.parameters?.assertData) {
+              dataAssert = data.parameters?.assertData
+              console.info('callTest dataAssert is : ' + dataAssert);
             }
-          })
+          }
         })
-        .catch((err: BusinessError) => {
-          console.error('CallTest_0100 commonEvent createSubscriber failed ' + JSON.stringify(err));
-          expect().assertFail();
-          done();
-        });
+      } catch (err) {
+        console.error('CallTest_0100 commonEvent createSubscriber failed ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
       await Utils.sleep(2000);
       TAG = 'CallTest_0100';
       let details: ability.PacMap = {};
-      dataAbilityHelper.call(URI_TEST, 'insert', '', {
-        'group_name': 'test1',
-        'ringtone_modify_time': 28
-      }).then((data) => {
-        console.info(TAG + ' call succeeded, data: ' + JSON.stringify(data));
-        details = data;
-      }).catch((error: BusinessError) => {
+      try {
+        details = await dataAbilityHelper.call(URI_TEST, 'insert', '', {
+          'group_name': 'test1',
+          'ringtone_modify_time': 28
+        });
+      } catch (error) {
         console.error(TAG + ' call failed, error: ' + JSON.stringify(error));
-      });
+      }
       await Utils.sleep(2000);
       let datas:string = JSON.stringify(details.result);
       expect(JSON.parse(JSON.parse(datas))?.group_name?.data).assertEqual('test1');

@@ -23,9 +23,9 @@ import { BusinessError } from '@ohos.base';
 import { Caller } from '@ohos.app.ability.UIAbility';
 
 class MySequenceable implements rpc.Parcelable {
-    num: number = 0;
-    str: string = '';
-    result: string = '';
+    public num: number = 0;
+    public str: string = '';
+    public result: string = '';
 
     constructor(num: number, string: string, result: string) {
         this.num = num;
@@ -53,12 +53,12 @@ class MySequenceable implements rpc.Parcelable {
         return true;
     }
 }
-let event_case2000 = 'call_case2000_test';
+let eventCase2000 = 'call_case2000_test';
 let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
-    events: [event_case2000, ],
+    events: [eventCase2000, ],
 };
-let subscriber: ESObject;
-function test2200ReleaseCallback(data: ESObject) {
+let subscriber: commonEvent.CommonEventSubscriber;
+function test2200ReleaseCallback(data: string) {
     console.log('SystemAppCalleeA MainAbility test2200ReleaseCallback:' + data);
     test2200ReleaseFlag = data.toString();
 }
@@ -98,7 +98,7 @@ function testCallWithResult(data: rpc.MessageSequence) {
 
 export default class MainAbility extends Ability {
 
-    test2200(data: ESObject) {
+    test2200(data: rpc.MessageSequence) {
         console.log('SystemAppCalleeA MainAbility test2200');
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);
@@ -133,15 +133,15 @@ export default class MainAbility extends Ability {
         return resultData;
     }
 
-    subscribeCallBack(err: BusinessError, data: ESObject) {
+    subscribeCallBack(err: BusinessError, data: commonEvent.CommonEventData) {
         console.log('SystemAppCalleeA MainAbility subscribeCallBack data:' + JSON.stringify(data));
         switch (data.event) {
-            case event_case2000:
-                globalThis.abilityContext.terminateSelf();
-                break;
-            default:
-                console.log('SystemAppCalleeA MainAbility subscribeCallBack event error:' + data.event);
-                break;
+          case eventCase2000:
+            globalThis.abilityContext.terminateSelf();
+            break;
+          default:
+            console.log('SystemAppCalleeA MainAbility subscribeCallBack event error:' + data.event);
+            break;
         }
     }
 

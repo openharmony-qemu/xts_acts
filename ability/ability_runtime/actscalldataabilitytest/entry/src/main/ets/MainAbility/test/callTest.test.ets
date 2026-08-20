@@ -58,14 +58,14 @@ export default function callTest() {
 
   describe('callTestAdapt001', Level.LEVEL0, () => {
     /**
-     * @tc.name   CallTest_0100
-     * @tc.number CallTest_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_CallDataAbility_0100
+     * @tc.number SUB_Ability_AbilityRuntime_CallDataAbility_0100
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CallTest_0100', Level.LEVEL0, async  (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_CallDataAbility_0100', Level.LEVEL0, async  (done: Function) => {
       console.info('------------start CallTest_0100-------------');
       console.info('CallTest_0100 commonEvent.createSubscriber start!!!');
       commonEvent.createSubscriber(subscribeInfo, CreateSubscriberCallBack);

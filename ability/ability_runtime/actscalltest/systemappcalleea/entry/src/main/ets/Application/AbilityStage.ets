@@ -14,7 +14,7 @@
  */
 import AbilityStage from '@ohos.app.ability.AbilityStage'
 
-let onAcceptWantCalledSeq: ESObject;
+let onAcceptWantCalledSeq: number = 0;
 
 export default class MyAbilityStage extends AbilityStage {
     onCreate() {
