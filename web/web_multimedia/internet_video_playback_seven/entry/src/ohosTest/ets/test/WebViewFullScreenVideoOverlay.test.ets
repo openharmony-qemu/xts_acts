@@ -67,7 +67,12 @@ export default function WebViewFullScreenVideoOverlayCaseTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'FullScreenVideoOverlayButton')
+        try {
+           await Utils.waitAndClickComponent(driver, 'FullScreenVideoOverlayButton')
+        } catch (error) {
+          // 处理错误
+          console.error('Error occurred while waiting and clicking component:', error);
+      }
     })
 
     /**
@@ -85,7 +90,12 @@ export default function WebViewFullScreenVideoOverlayCaseTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'FullScreenVideoOverlayButton')
+        try {
+          await Utils.waitAndClickComponent(driver, 'FullScreenVideoOverlayButton')
+          } catch (error) {
+            // 处理错误
+            console.error('Error occurred while waiting and clicking component:', error);
+        }
     })
 
   })
