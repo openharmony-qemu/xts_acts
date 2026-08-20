@@ -24,6 +24,7 @@ import router, { RouterOptions } from '@system.router'
 let isSupportHdr: Boolean;
 let isSupportHEVC: Boolean;
 let isExistVpeLib: Boolean;
+let isExistVpeLib_ext: Boolean;
 const VIDEO_AVC_AUDIO_AAC = 'H264_AAC.mp4';
 const VIDEO_HDR10 = 'output_hdr10.mp4';
 const VIDEO_HLG = 'output_hlg.mp4';
@@ -182,6 +183,7 @@ export default function AVTransCoderNdkTest() {
       isSupportHdr = await isExist('/system/lib64/ndk/libvideo_processing_capi_impl.so');
       isSupportHEVC = await isExist('/system/lib64/libav_codec_hevc_parser.z.so');
       isExistVpeLib = await isExist('/system/lib64/libvideoprocessingengine.z.so');
+      isExistVpeLib_ext = await isExist('/system/lib64/libvideoprocessingengine_ext.z.so');
     })
 
     afterEach(async () => {
@@ -413,7 +415,7 @@ export default function AVTransCoderNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkSetResolutionError0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (isExistVpeLib) {
+      if (isExistVpeLib && isExistVpeLib_ext) {
         let avFd = await getFileFd(VIDEO_AVC_AUDIO_AAC);
         let originWidth = 720;
         let originHeight = 480;
@@ -423,7 +425,7 @@ export default function AVTransCoderNdkTest() {
         expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
         done();
       } else {
-        expect(isExistVpeLib).assertEqual(false);
+        console.info('case testOhAvTransCoderNdkSetResolutionError0002 isExistVpeLib: ', isExistVpeLib, 'isExistVpeLib_ext: ', isExistVpeLib_ext);
         done();
       }
     });
@@ -437,7 +439,7 @@ export default function AVTransCoderNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkSetResolutionError0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (isExistVpeLib) {
+      if (isExistVpeLib && isExistVpeLib_ext) {
         let avFd = await getFileFd(VIDEO_AVC_AUDIO_AAC);
         let originWidth = 720;
         let originHeight = 480;
@@ -447,7 +449,7 @@ export default function AVTransCoderNdkTest() {
         expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
         done();
       } else {
-        expect(isExistVpeLib).assertEqual(false);
+        console.info('case testOhAvTransCoderNdkSetResolutionError0003 isExistVpeLib: ', isExistVpeLib, 'isExistVpeLib_ext: ', isExistVpeLib_ext);
         done();
       }
     });
@@ -1453,7 +1455,7 @@ export default function AVTransCoderNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoResolution0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (isExistVpeLib) {
+      if (isExistVpeLib && isExistVpeLib_ext) {
         let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
         let dstFd = await getFileFd('testOhAvTransCodeConfigSetDstVideoResolution0001_output_video.mp4');
         let originWidth = 720;
@@ -1465,7 +1467,7 @@ export default function AVTransCoderNdkTest() {
         expect(ret).assertEqual(0);
         done();
       } else {
-        expect(isExistVpeLib).assertEqual(false);
+        console.info('case testOhAvTransCodeConfigSetDstVideoResolution0001 isExistVpeLib: ', isExistVpeLib, 'isExistVpeLib_ext: ', isExistVpeLib_ext);
         done();
       }
     });
