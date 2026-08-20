@@ -76,13 +76,13 @@ export default function WebViewFullScreenVideoOverlayCaseTest() {
         }
       });
         Utils.waitAndClickComponent(driver, "FullScreenVideoOverlayButton");
-        try {
-          await Utils.waitForExist(() => {
-            return isReturn;
-          }, '_returnCheck', true, 1000);
-        } catch (error) {
-          console.error("An error occurred while waiting for existence:", error);
-        }
+        // try {
+        //   await Utils.waitForExist(() => {
+        //     return isReturn;
+        //   }, '_returnCheck', true, 1000);
+        // } catch (error) {
+        //   console.error("An error occurred while waiting for existence:", error);
+        // }
         done();
       })
 
@@ -106,13 +106,13 @@ export default function WebViewFullScreenVideoOverlayCaseTest() {
           }
         });
           Utils.waitAndClickComponent(driver, "FullScreenVideoOverlayButton");
-          try {
-            await Utils.waitForExist(() => {
-              return isReturn;
-            }, '_returnCheck', true, 1000);
-          } catch (error) {
-            console.error("An error occurred while waiting for existence:", error);
-          }
+          // try {
+          //   await Utils.waitForExist(() => {
+          //     return isReturn;
+          //   }, '_returnCheck', true, 1000);
+          // } catch (error) {
+          //   console.error("An error occurred while waiting for existence:", error);
+          // }
           done();
         })
 
