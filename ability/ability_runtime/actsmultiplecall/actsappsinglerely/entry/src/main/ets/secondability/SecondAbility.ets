@@ -13,37 +13,45 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import Ability from '@ohos.app.ability.UIAbility';
+import Ability from '@ohos.app.ability.UIAbility'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+
 import type Window from '@ohos.window';
 import commonEvent from '@ohos.commonEventManager';
+import { BusinessError } from '@ohos.base';
+import rpc from '@ohos.rpc';
+import window from '@ohos.window';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import { Caller } from '@ohos.app.ability.UIAbility';
 
 const TIME_OUT = 50;
 
-class MyParcelable {
+class MyParcelable implements rpc.Parcelable {
   num: number = 0;
-  str: String = "";
+  str: string = '';
   result: boolean = false;
 
-  constructor(num, string, result) {
+  constructor(num: number, string: string, result: boolean) {
     this.num = num;
     this.str = string;
     this.result = result;
   }
 
-  MyParcelable(num, string, result) {
+  MyParcelable(num: number, string: string, result: boolean) {
     this.num = num;
     this.str = string;
     this.result = result;
   }
 
-  marshalling(messageParcel) {
+  marshalling(messageParcel: rpc.MessageSequence) {
     messageParcel.writeInt(this.num);
     messageParcel.writeString(this.str);
     messageParcel.writeBoolean(this.result);
     return true;
   }
 
-  unmarshalling(messageParcel) {
+  unmarshalling(messageParcel: rpc.MessageSequence) {
     this.num = messageParcel.readInt();
     this.str = messageParcel.readString();
     this.result = messageParcel.readBoolean();
@@ -51,16 +59,16 @@ class MyParcelable {
   }
 }
 
-function sendMsgCallback(data): MyParcelable {
+function sendMsgCallback(data: rpc.MessageSequence): MyParcelable {
   console.log('====>Callee sendMsgCallback called');
   let receivedData = new MyParcelable(0, '', false);
-  data.readParcelable(receivedData);
+  data.readParcelable(receivedData as rpc.Parcelable);
   receivedData.MyParcelable(receivedData.num + 1, `${receivedData.str}`, true);
   return receivedData;
 }
 
-export default class SecondAbility extends Ability {
-  onCreate(want, launchParam) {
+export default class SecondAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
@@ -69,17 +77,17 @@ export default class SecondAbility extends Ability {
 
     let context = this.context;
 
-    function sendMsgCallbackFromCallee(data): MyParcelable {
+    const sendMsgCallbackFromCallee = (data: rpc.MessageSequence) => {
       console.log('====>Callee sendMsgCallbackFromCallee called');
       let receivedData = new MyParcelable(0, '', false);
-      data.readParcelable(receivedData);
+      data.readParcelable(receivedData as rpc.Parcelable);
       receivedData.num += 1;
       return receivedData;
     }
 
     globalThis.multipleAndSingleCallFunction_0100 = () => {
       console.info('====> secondAbility');
-      this.callee.on('call', sendMsgCallback);
+      (this as ESObject).callee.on('call', sendMsgCallback);
     };
 
     globalThis.Acts_SingleInstanceCallFunction_1000 = () => {
@@ -87,62 +95,62 @@ export default class SecondAbility extends Ability {
       context.startAbilityByCall({
         bundleName: 'com.acts.thirdpartyapprely',
         abilityName: 'SecondAbility',
-      }).then((caller) => {
+      }).then((caller: Caller) => {
         console.info('====>Acts_SingleInstanceCallFunction_1000 multiple startAbilityByCall caller:' +
         JSON.stringify(caller));
         let param = new MyParcelable(0, 'Acts_SingleInstanceCallFunction_1000 multiple', false);
-        caller.callWithResult('call', param).then((data) => {
+        caller.callWithResult('call', param).then((data: ESObject) => {
           let receivedData = new MyParcelable(0, '', false);
-          data.readParcelable(receivedData);
-          let commonEventData = {
+          data.readParcelable(receivedData as rpc.Parcelable);
+          let commonEventData: commonEvent.CommonEventPublishData = {
             parameters: {
               num: receivedData.num,
               str: receivedData.str,
             }
           };
-          commonEvent.publish('ACTS_RELEASE_EVENT', commonEventData, (err) => {
+          commonEvent.publish('ACTS_RELEASE_EVENT', commonEventData, (err: BusinessError) => {
             console.log('====>Acts_SingleInstanceCallFunction_1000 multyple publish err:' +
             JSON.stringify(err));
             this.terminate();
           });
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.info('====>Acts_SingleInstanceCallFunction_1000 callWithResult err:' + JSON.stringify(err));
         });
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.info('====>Acts_SingleInstanceCallFunction_1000 startAbilityByCall err:' + JSON.stringify(err));
       });
     };
 
     globalThis.Acts_SingleInstanceCallFunction_1100 = () => {
-      this.callee.on('call', sendMsgCallbackFromCallee);
+      (this as ESObject).callee.on('call', sendMsgCallbackFromCallee);
       context.startAbilityByCall({
         bundleName: 'com.acts.thirdpartyapprely',
         abilityName: 'SecondAbility',
-      }).then((caller) => {
+      }).then((caller: Caller) => {
         console.info('====>Acts_SingleInstanceCallFunction_1100 callappreply startAbilityByCall caller:' +
         JSON.stringify(caller));
         let param = new MyParcelable(0, 'Acts_SingleInstanceCallFunction_1100', false);
-        caller.callWithResult('call', param).then((data) => {
+        caller.callWithResult('call', param).then((data: ESObject) => {
           console.info('====>Acts_SingleInstanceCallFunction_1100 callappreply callWithResult data:' +
           JSON.stringify(data));
           let receivedData2 = new MyParcelable(0, '', false);
           data.readParcelable(receivedData2);
-          let commonEventData = {
+          let commonEventData: commonEvent.CommonEventPublishData = {
             parameters: {
               num: receivedData2.num,
               str: receivedData2.str,
             }
           };
-          commonEvent.publish('ACTS_SECOND_CALL_EVENT', commonEventData, (err) => {
+          commonEvent.publish('ACTS_SECOND_CALL_EVENT', commonEventData, (err: BusinessError) => {
             console.log('====>Acts_SingleInstanceCallFunction_1100 multyple publish err:' +
             JSON.stringify(err));
             this.terminate();
           });
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.info('====>Acts_SingleInstanceCallFunction_1100 callappreply callWithResult err:' +
           JSON.stringify(err));
         });
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.info('====>Acts_SingleInstanceCallFunction_1100 callappreply startAbilityByCall err:' +
         JSON.stringify(err));
       });
@@ -164,12 +172,12 @@ export default class SecondAbility extends Ability {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 
-  onWindowStageCreate(windowStage: Window.WindowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err, data) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: ESObject) => {
       if (err.code) {
         hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.ERROR);
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
@@ -202,7 +210,7 @@ export default class SecondAbility extends Ability {
     setTimeout(() => {
       this.context.terminateSelf().then(() => {
         console.debug('====>terminateSelf end');
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.debug('====>terminateSelf err:' + JSON.stringify(err));
       });
     }, TIME_OUT);

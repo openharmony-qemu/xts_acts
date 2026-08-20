@@ -19,64 +19,58 @@ import window from '@ohos.window';
 import { Want } from '@kit.AbilityKit';
 import { commonEventManager } from '@kit.BasicServicesKit';
 
-const TAG: string = 'testTag-MainAbility1 ';
-let num:number=0;
-export default class MainAbility1 extends UIAbility {
-    onCreate(want, launchParam): void {
-        hilog.info(0x0000, TAG, '%{public}s', 'MainAbility1 onCreate');
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
+let event = 'MainAbility2 onForeground';
+
+const TAG: string = 'testTag-MainAbility2 ';
+export default class MainAbility2 extends UIAbility {
+onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+        console.log('[Demo] MainAbility2 onCreate');
+        try {
+            console.log('js crash success');
+            JSON.parse('');
+        } catch (error) {
+            console.error('JS 崩溃:', error);
+        };
     }
-
     onDestroy(): void {
-        hilog.info(0x0000, TAG, '%{public}s', 'MainAbility1 onDestroy');
+        hilog.info(0x0000, TAG, '%{public}s', 'MainAbility2 onDestroy');
       }
 
-    onWindowStageCreate(windowStage): void {
+    onWindowStageCreate(windowStage: window.WindowStage): void {
         // Main window is created, set main page for this ability
-        console.log('[Demo] MainAbility1 onWindowStageCreate');
-        windowStage.loadContent('testability/pages/MainAbility1_pages', (err, data) => {
+        console.log('[Demo] MainAbility2 onWindowStageCreate');
+        windowStage.loadContent('testability/pages/MainAbility2_pages', (err: BusinessError, data: ESObject) => {
             if (err.code) {
-                hilog.error(0x0000, TAG, 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
+                hilog.error(0x0000, TAG, 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
                 return;
             }
             hilog.info(0x0000, TAG, 'Succeeded in loading the content. Data: %{public}s',
                 JSON.stringify(data) ?? '');
         });
     }
-
     onWindowStageDestroy(): void {
-        hilog.info(0x0000, TAG, '%{public}s', 'MainAbility1 onWindowStageDestroy');
+        hilog.info(0x0000, TAG, '%{public}s', 'MainAbility2 onWindowStageDestroy');
       }
-
-    onForeground(): void {
-        console.log('[Demo] MainAbility1 onForeground');
-            setTimeout(() => {
-                this.context.terminateSelf((err: BusinessError) => {
-                    if (err.code) {
-                        // 处理业务逻辑错误
-                        console.error(`terminateSelf failed, code is ${err.code}, message is ${err.message}`);
-                        return;
-                    }
-                    // 执行正常业务
-                    console.info('terminateSelf succeed');
-                });
-            }, 1000);
-    }
-
-    onBackground(): void {
-        hilog.info(0x0000, TAG, '%{public}s', 'MainAbility1 onBackground');
+    
+      onForeground(): void {
+        hilog.info(0x0000, TAG, '%{public}s', 'MainAbility2 onForeground');
+        commonEventManager.publish(event, (err: BusinessError) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'publish ' + event);
+         });
+      }
+    
+      onBackground(): void {
+        hilog.info(0x0000, TAG, '%{public}s', 'MainAbility2 onBackground');
       }
 
     onWindowStageWillDestroy(): void {
-        num += 1;
-        console.log('[Demo] MainAbility1 onWindowStageWillDestroy');
+        console.log('[Demo] MainAbility2 onWindowStageWillDestroy');
         let options: commonEventManager.CommonEventPublishData = {
             code: 1,
-            parameters: {
-                'result': num
-            }
         };
-        commonEventManager.publish('OnWindowStageWillDestory01', options, (err: BusinessError) => {
+        commonEventManager.publish('OnWindowStageWillDestory06', options, (err: BusinessError) => {
             if (err) {
                 hilog.info(0x0000, TAG, '[%{public}s] PublishCallBack err: %{public}s', TAG, JSON.stringify(err));
             } else {
