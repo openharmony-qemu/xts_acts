@@ -18,7 +18,6 @@ import { Component, Driver, ON } from '@ohos.UiTest';
 import i18n from '@ohos.i18n';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
-import { BusinessError } from '@ohos.base';
 import CommonEventManager from '@ohos.commonEventManager';
 import installer from '@ohos.bundle.installer';
 import fs from '@ohos.file.fs';
@@ -85,8 +84,7 @@ export default function softwareTest() {
         await driver.delayMs(2000)
         done()
       } catch (error) {
-        let err = error as BusinessError
-        console.error(`SoftwareTest async fail. code=${err.code}, message=${err.message}`)
+        console.error(`SoftwareTest async fail. ${JSON.stringify(error)}`)
         expect(false).assertTrue()
       }
       done()
@@ -136,8 +134,7 @@ export default function softwareTest() {
         expect(await lastButton.getText()).assertEqual('Next Page')
         done()
       } catch (error) {
-        let err = error as BusinessError
-        console.error(`SoftwareTest async fail. code=${err.code}, message=${err.message}`)
+        console.error(`SoftwareTest async fail. ${JSON.stringify(error)}`)
         expect(false).assertTrue()
       }
       done()
@@ -208,8 +205,7 @@ export default function softwareTest() {
         expect(await imageLoadSuccess.getText()).assertEqual("LoadSuccess")
         done()
       } catch (error) {
-        let err = error as BusinessError
-        console.error(`SoftwareTest async fail. code=${err.code}, message=${err.message}`)
+        console.error(`SoftwareTest async fail. ${JSON.stringify(error)}`)
         expect(false).assertTrue()
       }
       done()
@@ -249,8 +245,7 @@ export default function softwareTest() {
         }
         done()
       } catch (error) {
-        let err = error as BusinessError
-        console.error(`SoftwareTest async fail. code=${err.code}, message=${err.message}`)
+        console.error(`SoftwareTest async fail. ${JSON.stringify(error)}`)
         expect(false).assertTrue()
       }
       done()
@@ -272,13 +267,11 @@ export default function softwareTest() {
           await bundleInstaller.install([hapFilePath + 'bundle_fifth.hap'])
           expect(false).assertTrue()
         } catch (error) {
-          let err: BusinessError = error as BusinessError;
-          console.log(`install bundle fail: code: ${err.code}, message: ${err.message}`)
+          console.log(`install bundle fail: ${JSON.stringify(error)}`)
         }
         done()
       } catch (error) {
-        let err = error as BusinessError
-        console.error(`SoftwareTest async fail. code=${err.code}, message=${err.message}`)
+        console.error(`SoftwareTest async fail. ${JSON.stringify(error)}`)
         expect(false).assertTrue()
       }
       done()
@@ -298,8 +291,7 @@ export default function softwareTest() {
         await bundleInstaller.uninstall('com.pcs.software.bundle.second')
         expect(false).assertTrue()
       } catch (error) {
-        let err: BusinessError = error as BusinessError;
-        console.log(`uninstall bundle fail: code: ${err.code}, message: ${err.message}`)
+        console.log(`uninstall bundle fail: ${JSON.stringify(error)}`)
       }
       done()
     })
@@ -336,8 +328,7 @@ export default function softwareTest() {
         console.log(`testCommonEventNotChanged0100 end`)
         done()
       } catch (error) {
-        let err = error as BusinessError
-        console.error(`SoftwareTest async fail. code=${err.code}, message=${err.message}`)
+        console.error(`SoftwareTest async fail. ${JSON.stringify(error)}`)
         expect(false).assertTrue()
       }
       done()

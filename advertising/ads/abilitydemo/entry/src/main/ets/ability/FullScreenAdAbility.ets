@@ -28,8 +28,8 @@ export default class FullScreenAdAbility extends UIAbility {
     fullScreenAdEventPublish.publishEvents("onAdOpen");
     let name = want?.bundleName;
     Logger.i(TAG, `testTag, Ability onCreate is : ${name}`);
-    let AdDisplayOptions: Object | undefined = want?.parameters?.["AdDisplayOptions"] as Object;
-    Logger.i(TAG, `testTag, Ability onCreate is : ${AdDisplayOptions}`);
+    let adDisplayOptions: Object | undefined = want?.parameters?.['AdDisplayOptions'] as Object;
+    Logger.i(TAG, `testTag, Ability onCreate is : ${adDisplayOptions}`);
   }
 
   onDestroy(): void {

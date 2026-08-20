@@ -15,11 +15,6 @@
 import commonEvent from '@ohos.commonEventManager';
 import { EventPublish } from './EventPublish';
 
-interface RewardAdParameters {
-  reward_ad_status: string;
-  reward_ad_data?: string;
-}
-
 export class FullScreenAdEventPublish {
   private static instance: FullScreenAdEventPublish = new FullScreenAdEventPublish();
 
@@ -28,10 +23,12 @@ export class FullScreenAdEventPublish {
   }
 
   publishEvents(status: string, data?: string): void {
-    let parameters: RewardAdParameters = {
-      reward_ad_status: status,
-      reward_ad_data: data
-    };
+    // 协议字段名保持 reward_ad_*；用 Record 避免 G.NAM.03 接口属性 snake_case
+    let parameters: Record<string, Object> = {};
+    parameters['reward_ad_status'] = status;
+    if (data !== undefined) {
+      parameters['reward_ad_data'] = data;
+    }
     let options: commonEvent.CommonEventPublishData = {
       code: 1, // 公共事件的初始代码
       data: 'initial data', // 公共事件的初始数据

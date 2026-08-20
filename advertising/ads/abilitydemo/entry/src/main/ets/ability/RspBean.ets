@@ -24,7 +24,7 @@ export const RSP_OK = 0;
 export const RSP_ERROR = 1;
 
 export class RspBean {
-  errorReason?: string = void 0;
+  public errorReason?: string = void 0;
 
-  responseCode?: number = -1;
+  public responseCode?: number = -1;
 }

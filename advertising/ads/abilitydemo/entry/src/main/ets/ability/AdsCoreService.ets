@@ -48,7 +48,11 @@ export default class AdsExtensionAbility extends AdsServiceExtensionAbility {
     }
   }
 
-  onLoadAdWithMultiSlots(adParams: advertising.AdRequestParams[], adOptions: advertising.AdOptions, respCallback: RespCallback): void {
+  onLoadAdWithMultiSlots(
+    adParams: advertising.AdRequestParams[],
+    adOptions: advertising.AdOptions,
+    respCallback: RespCallback
+  ): void {
     const resMap: Map<string, advertising.Advertisement[]> = new Map();
     Logger.i(TAG, `onLoadAdWithMultiSlots, adParams is : ${adParams.length}, adid is : ${adParams[0]?.adId}`);
     if (adParams.length === 1 && adParams[0].adId === 'multiAdRequestError21800003') {

@@ -89,7 +89,11 @@ export default class AdsApiServiceRpcObj extends rpc.RemoteObject {
     return true;
   }
 
-  private checkCode(data: rpc.MessageSequence, rpcCallbackFunc: IRpcCallback, resMap: Map<string, advertising.Advertisement[]>): void {
+  private checkCode(
+    data: rpc.MessageSequence,
+    rpcCallbackFunc: IRpcCallback,
+    resMap: Map<string, advertising.Advertisement[]>
+  ): void {
     interface ReqData {
       reqParams: string;
       adOptions: string;
