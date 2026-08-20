@@ -50,6 +50,7 @@ async function Predict_fun(model_obj: mindSporeLite.Model): Promise<boolean> {
 export default function supplementTest() {
   describe('SupplementTest', () => {
     beforeAll(async () => {
+      try {
       let dir = globalThis.abilityContext.filesDir + '/';
       try {
         await copyRawfileToSandbox(globalThis.context, dir,
@@ -59,6 +60,10 @@ export default function supplementTest() {
         console.info('[rawfile_copy_to_sandbox] failed: ' + error);
       }
       console.info('[rawfile_copy_to_sandbox] sandbox path: ' + dir);
+      } catch (error) {
+        console.error('beforeAll failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     })
 
     beforeEach(() => {

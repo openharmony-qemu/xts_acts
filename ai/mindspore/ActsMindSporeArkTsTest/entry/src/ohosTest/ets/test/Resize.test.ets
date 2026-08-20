@@ -118,6 +118,7 @@ class FakeMSTensor implements mindSporeLite.MSTensor {
 export default function resizeTest() {
   describe('ResizeTest', () => {
     beforeAll(async () => {
+      try {
       console.info('[rawfile_copy_to_sandbox] start copying models');
       try {
         const dir = globalThis.abilityContext.filesDir + '/';
@@ -128,6 +129,10 @@ export default function resizeTest() {
       }
       const dir = globalThis.abilityContext.filesDir + '/';
       console.info('[rawfile_copy_to_sandbox] sandbox path: ' + dir);
+      } catch (error) {
+        console.error('beforeAll failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     })
 
     beforeEach(() => {
