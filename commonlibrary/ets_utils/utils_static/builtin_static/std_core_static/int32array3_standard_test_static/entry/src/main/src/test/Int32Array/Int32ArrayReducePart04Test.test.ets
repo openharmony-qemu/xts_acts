@@ -970,6 +970,7 @@ export default function Int32ArrayReducePart04Test(): void {
       let arr: Int32Array = Int32Array.of(1, 2, 3);
       try {
         arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => {
+          expect(c).assertEqual(1);
           throw new Error('first throw');
         }, 0);
         expect().assertFail();
@@ -993,6 +994,7 @@ export default function Int32ArrayReducePart04Test(): void {
         arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => {
           calls = calls + 1;
           if (calls === 2) {
+            expect(c).assertEqual(2);
             throw new Error('second');
           }
           return p + c;
@@ -1018,6 +1020,7 @@ export default function Int32ArrayReducePart04Test(): void {
         arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => {
           calls = calls + 1;
           if (calls === 5) {
+            expect(c).assertEqual(5);
             throw new Error('last');
           }
           return p + c;
