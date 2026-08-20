@@ -123,14 +123,17 @@ export default function ActsApi26LongTimeTaskManagerNormalTest() {
                         let flag = 1;
                         backgroundTaskManager.updateDataTransferProgress(ability.context, dataTransferProgress);
                         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2200 updateDataTransferProgress success');
-                        expect(flag).assertEqual(1);
+                        expect(flag).assertLarger(0);
                         backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
                         console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2200 stopBackgroundRunning success");
                         done();
                       } catch (err) {
                         let e: BusinessError = err as BusinessError;
                         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2200 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                        backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                        console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2200 catch stopBackgroundRunning success");
                         expect(false).assertTrue();
+                        done();
                       }
                     }).catch((err: BusinessError) => {
                       hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2200 getAllContinuousTasks error: %{public}s', JSON.stringify(err));
@@ -209,7 +212,10 @@ export default function ActsApi26LongTimeTaskManagerNormalTest() {
                   } catch (err) {
                     let e: BusinessError = err as BusinessError;
                     hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2300 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                    backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                    console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2300 catch stopBackgroundRunning success");
                     expect(false).assertTrue();
+                    done();
                   }
                 }).catch((err: BusinessError) => {
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2300 getAllContinuousTasks error: %{public}s', JSON.stringify(err));
@@ -282,6 +288,10 @@ export default function ActsApi26LongTimeTaskManagerNormalTest() {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2400 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
                   expect(false).assertTrue();
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2400 catch stopBackgroundRunning success");
+                  expect(false).assertTrue();
+                  done();
                 }
               }).catch((error: BusinessError) => {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2400 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
@@ -352,7 +362,10 @@ export default function ActsApi26LongTimeTaskManagerNormalTest() {
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2500 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2500 catch stopBackgroundRunning success");
                   expect(false).assertTrue();
+                  done();
                 }
               }).catch((error: BusinessError) => {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2500 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
@@ -416,7 +429,10 @@ export default function ActsApi26LongTimeTaskManagerNormalTest() {
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2600 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2600 catch stopBackgroundRunning success");
                   expect(false).assertTrue();
+                  done();
                 }
               }).catch((error: BusinessError) => {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2600 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
@@ -481,7 +497,10 @@ export default function ActsApi26LongTimeTaskManagerNormalTest() {
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2700 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2700 catch stopBackgroundRunning success");
                   expect(false).assertTrue();
+                  done();
                 }
               }).catch((error: BusinessError) => {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2700 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
@@ -546,7 +565,10 @@ export default function ActsApi26LongTimeTaskManagerNormalTest() {
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2800 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2800 catch stopBackgroundRunning success");
                   expect(false).assertTrue();
+                  done();
                 }
               }).catch((error: BusinessError) => {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2800 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
@@ -611,7 +633,10 @@ export default function ActsApi26LongTimeTaskManagerNormalTest() {
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2900 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2900 catch stopBackgroundRunning success");
                   expect(false).assertTrue();
+                  done();
                 }
               }).catch((error: BusinessError) => {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2900 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
@@ -677,7 +702,10 @@ export default function ActsApi26LongTimeTaskManagerNormalTest() {
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3000 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3000 catch stopBackgroundRunning success");
                   expect(false).assertTrue();
+                  done();
                 }
               }).catch((error: BusinessError) => {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3000 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
@@ -740,7 +768,10 @@ export default function ActsApi26LongTimeTaskManagerNormalTest() {
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3100 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3100 catch stopBackgroundRunning success");
                   expect(false).assertTrue();
+                  done();
                 }
               }).catch((error: BusinessError) => {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3100 startBackgroundRunning promise error: %{public}s', JSON.stringify(error));
@@ -937,6 +968,10 @@ export default function ActsApi26LongTimeTaskManagerNormalTest() {
                   } catch (err) {
                     let e: BusinessError = err as BusinessError;
                     hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3400 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                    backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                    console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3400 catch stopBackgroundRunning success");
+                    expect(false).assertTrue();
+                    done();
                   }
                 }).catch((error: BusinessError) => {
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3400 startBackgroundRunning error: %{public}s', JSON.stringify(error));
@@ -999,6 +1034,10 @@ export default function ActsApi26LongTimeTaskManagerNormalTest() {
                   } catch (err) {
                     let e: BusinessError = err as BusinessError;
                     hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3500 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
+                    backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                    console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3500 catch stopBackgroundRunning success");
+                    expect(false).assertTrue();
+                    done();
                   }
                 }).catch((error: BusinessError) => {
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3500 startBackgroundRunning error: %{public}s', JSON.stringify(error));

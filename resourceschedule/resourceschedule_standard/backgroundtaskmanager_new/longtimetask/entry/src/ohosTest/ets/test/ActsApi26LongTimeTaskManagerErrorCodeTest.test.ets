@@ -152,6 +152,10 @@ export default function ActsApi26LongTimeTaskManagerErrorCodeTest() {
                   };
                   backgroundTaskManager.updateDataTransferProgress(ability.context, dataTransferProgress);
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0300 updateDataTransferProgress unexpected success');
+                  expect(false).assertTrue();
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0300 stopBackgroundRunning success");
+                  done();
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0300 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
@@ -213,6 +217,10 @@ export default function ActsApi26LongTimeTaskManagerErrorCodeTest() {
                   };
                   backgroundTaskManager.updateDataTransferProgress(ability.context, dataTransferProgress);
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0400 updateDataTransferProgress unexpected success');
+                  expect(false).assertTrue();
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0400 stopBackgroundRunning success");
+                  done();
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0400 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
@@ -274,6 +282,10 @@ export default function ActsApi26LongTimeTaskManagerErrorCodeTest() {
                   };
                   backgroundTaskManager.updateDataTransferProgress(ability.context, dataTransferProgress);
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0500 updateDataTransferProgress unexpected success');
+                  expect(false).assertTrue();
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0500 stopBackgroundRunning success");
+                  done();
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_0500 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
@@ -308,7 +320,7 @@ export default function ActsApi26LongTimeTaskManagerErrorCodeTest() {
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400
-     * @tc.desc   Test updateDataTransferProgress with very large progressValue Number.MAX_SAFE_INTEGER returns error 401
+     * @tc.desc   Test updateDataTransferProgress with very large progressValue Number.MAX_SAFE_INTEGER returns error 98000006
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL4
@@ -336,6 +348,9 @@ export default function ActsApi26LongTimeTaskManagerErrorCodeTest() {
                   backgroundTaskManager.updateDataTransferProgress(ability.context, dataTransferProgress);
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 updateDataTransferProgress unexpected success');
                   expect(false).assertTrue();
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 stopBackgroundRunning success");
+                  done();
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
