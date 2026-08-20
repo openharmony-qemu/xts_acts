@@ -18,7 +18,7 @@ def _find_source_root():
     cur = os.path.dirname(os.path.abspath(__file__))
     for _ in range(10):
         if os.path.isfile(os.path.join(cur, "build.sh")) and \
-                os.path.isdir(os.path.join(cur, "developtools")):
+                os.path.isdir(os.path.join(cur, "developtools", "ace_js2bundle", "ace-loader")):
             return cur
         cur = os.path.dirname(cur)
     raise RuntimeError("could not locate source root (no build.sh found upward)")
@@ -42,6 +42,9 @@ def find_nodejs():
     for _ in range(10):
         prebuilts = os.path.join(cur, "prebuilts", "build-tools", "common", "nodejs")
         if os.path.isdir(prebuilts):
+            current_bin = os.path.join(prebuilts, "current", "bin", "node")
+            if os.path.isfile(current_bin):
+                return os.path.join(prebuilts, "current", "bin")
             entries = sorted(os.listdir(prebuilts), reverse=True)
             result = _find_node_bin(prebuilts, entries)
             if result:
@@ -66,8 +69,6 @@ def _run_webpack(ace_loader, src_root, tmp_build, nodejs_bin):
         ],
         cwd=ace_loader,
         check=True,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.STDOUT,
         env=env,
     )
 
