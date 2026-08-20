@@ -817,6 +817,7 @@ export default function int32ArrayMapPart04Test(): void {
       let src: Int32Array = new Int32Array([1, 2, 3]);
       try {
         src.map((_v: number, _i: int, _arr: Int32Array): number => {
+          expect(_v).assertEqual(1);
           throw new Error('first');
         });
         expect().assertFail();
@@ -862,6 +863,7 @@ export default function int32ArrayMapPart04Test(): void {
       let src: Int32Array = new Int32Array([1]);
       try {
         src.map((_v: number, _i: int, _arr: Int32Array): number => {
+          expect(_v).assertEqual(1);
           throw new RangeError('range!');
         });
         expect().assertFail();
@@ -882,6 +884,7 @@ export default function int32ArrayMapPart04Test(): void {
       let src: Int32Array = new Int32Array([1]);
       try {
         src.map((_v: number, _i: int, _arr: Int32Array): number => {
+          expect(_v).assertEqual(1);
           throw new TypeError('type!');
         });
         expect().assertFail();
