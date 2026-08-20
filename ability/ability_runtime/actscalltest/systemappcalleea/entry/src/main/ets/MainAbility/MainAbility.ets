@@ -115,7 +115,7 @@ export default class MainAbility extends Ability {
             caller.callWithResult('test2200', param).then((data2: rpc.MessageSequence) => {
                 data2.readParcelable(resultData);
                 caller.release();
-                for (let start=Date.now(); Date.now() - start <= 200;);
+                for (let start = Date.now(); Date.now() - start <= 200;) { }
                 resultData.result = test2200ReleaseFlag;
                 let commonEventData: commonEvent.CommonEventPublishData = {
                     parameters: {

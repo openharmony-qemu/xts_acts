@@ -18,8 +18,8 @@ import TestRunner from '@ohos.application.testRunner';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { BusinessError } from '@ohos.base';
 
-let abilityDelegator: ESObject;
-let abilityDelegatorArguments: ESObject;
+let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator | undefined = undefined;
+let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs | undefined = undefined;
 
 async function onAbilityCreateCallback() {
   hilog.info(0x0000, 'testTag', '%{public}s', 'onAbilityCreateCallback');

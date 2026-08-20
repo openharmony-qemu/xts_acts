@@ -25,19 +25,19 @@ import { Caller } from '@ohos.app.ability.UIAbility';
 
 let bundleNameCallee = 'com.example.systemcalltest';
 let abilityNameCallee = 'com.example.systemcalltest.SecondAbility';
-let subscriber: ESObject;
-let caller: ESObject;
-let event_getcaller = 'getcaller.com.example.systemcalltest.SecondAbility';
-let event_call = 'call.com.example.systemcalltest.SecondAbility';
-let event_release = 'release.com.example.systemcalltest.SecondAbility';
+let subscriber: commonEvent.CommonEventSubscriber;
+let caller: Caller;
+let eventGetCaller = 'getcaller.com.example.systemcalltest.SecondAbility';
+let eventCall = 'call.com.example.systemcalltest.SecondAbility';
+let eventRelease = 'release.com.example.systemcalltest.SecondAbility';
 let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
-    events: [event_getcaller, event_call, event_release, ],
+    events: [eventGetCaller, eventCall, eventRelease, ],
 };
 
 class MySequenceable implements rpc.Parcelable {
-    num: number = 0;
-    str: string = '';
-    result: string = '';
+    public num: number = 0;
+    public str: string = '';
+    public result: string = '';
 
     constructor(num: number, string: string, result: string) {
         this.num = num;
@@ -151,18 +151,18 @@ function testCallWithResult(data: rpc.MessageSequence) {
 
 export default class MainAbility extends Ability {
 
-    subscribeCallBack(err: BusinessError, data: ESObject) {
+    subscribeCallBack(err: BusinessError, data: commonEvent.CommonEventData) {
         console.log('SystemAppCallerA MainAbility subscribeCallBack data:' + JSON.stringify(data));
         switch (data.event) {
-            case event_call:
-                stressCall();
-                break;
-            case event_release:
-                releaseCallee();
-                break;
-            default:
-                console.log('SystemAppCallerA MainAbility subscribeCallBack event error:' + data.event);
-                break;
+          case eventCall:
+            stressCall();
+            break;
+          case eventRelease:
+            releaseCallee();
+            break;
+          default:
+            console.log('SystemAppCallerA MainAbility subscribeCallBack event error:' + data.event);
+            break;
         }
     }
 
@@ -194,7 +194,7 @@ export default class MainAbility extends Ability {
     onForeground() {
         // Ability has brought to foreground
         console.log('SystemAppCallerA MainAbility onForeground');
-        commonEvent.createSubscriber(subscribeInfo).then((data: ESObject) => {
+        commonEvent.createSubscriber(subscribeInfo).then((data: commonEvent.CommonEventSubscriber) => {
             console.log('SystemAppCallerA MainAbility createSubscriber');
             subscriber = data;
             commonEvent.subscribe(subscriber, this.subscribeCallBack);
