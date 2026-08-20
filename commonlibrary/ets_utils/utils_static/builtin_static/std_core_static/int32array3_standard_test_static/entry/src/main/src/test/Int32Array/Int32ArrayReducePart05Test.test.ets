@@ -461,6 +461,7 @@ export default function Int32ArrayReducePart05Test(): void {
       let arr: Int32Array = new Int32Array(buf, 4, 3);
       try {
         arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => {
+          expect(c).assertEqual(0);
           throw new Error('y');
         }, 0);
       } catch (e) {
@@ -480,6 +481,7 @@ export default function Int32ArrayReducePart05Test(): void {
       let arr: Int32Array = Int32Array.of(1, 2, 3);
       try {
         arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => {
+          expect(c).assertEqual(2);
           throw new Error('z');
         });
       } catch (e) {
@@ -499,6 +501,7 @@ export default function Int32ArrayReducePart05Test(): void {
       let arr: Int32Array = Int32Array.of(1);
       try {
         arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => {
+          expect(c).assertEqual(1);
           throw new Error('marker-xyz');
         }, 0);
         expect().assertFail();
@@ -519,6 +522,7 @@ export default function Int32ArrayReducePart05Test(): void {
       let arr: Int32Array = Int32Array.of(1, 2, 3);
       try {
         arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => {
+          expect(c).assertEqual(1);
           throw new Error('e1');
         }, 0);
       } catch (e) {
