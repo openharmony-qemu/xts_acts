@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import napispecdiffbatch1ndktest from 'libnapispecdiffbatch1ndktest.so';
 import Utils from '../../Utils';
 
@@ -22,6 +22,11 @@ function forceFullGC(): void {
 
 export default function NapiSpecDiffBatch1StablePart1Test() {
   describe('NapiSpecDiffBatch1StablePart1Test', () => {
+
+    beforeEach(async () => {
+      await Utils.sleep(20);
+    });
+
 
     /**
      * @tc.name testThrowErrorNullCodeKeepsOpenHarmonyBehavior0001
@@ -35,7 +40,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testThrowErrorNullCodeKeepsOpenHarmonyBehavior0001';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.throwErrorNullCodeKeepsOpenHarmonyBehavior()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -53,7 +57,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testThrowTypeErrorNullCodeKeepsOpenHarmonyBehavior0002';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.throwTypeErrorNullCodeKeepsOpenHarmonyBehavior()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -71,7 +74,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testThrowRangeErrorNullCodeKeepsOpenHarmonyBehavior0003';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.throwRangeErrorNullCodeKeepsOpenHarmonyBehavior()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -89,7 +91,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateErrorSupportsStringAndNumberCode0004';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.createErrorSupportsStringAndNumberCode()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -107,7 +108,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateTypeErrorNumberCodeAndObjectCodeInvalid0005';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.createTypeErrorNumberCodeAndObjectCodeInvalid()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -125,7 +125,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateRangeErrorNumberCodeAndObjectCodeInvalid0006';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.createRangeErrorNumberCodeAndObjectCodeInvalid()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -143,7 +142,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateReferenceSupportsNonObjectValues0007';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.createReferenceSupportsNonObjectValues()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -161,7 +159,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateSymbolInvalidDescriptionReturnsInvalidArg0008';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.createSymbolInvalidDescriptionReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -179,7 +176,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         const caseName = 'testCreateTypedArrayInvalidArrayBufferReturnsArrayBufferExpected0009';
         console.info(caseName + ' start');
-        await Utils.sleep(20);
         expect(napispecdiffbatch1ndktest.createTypedArrayInvalidArrayBufferReturnsArrayBufferExpected()).
         assertEqual(1);
         console.info(caseName + ' end');
@@ -198,7 +194,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateDataViewInvalidAndOverflowArrayBuffer0010';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.createDataViewInvalidAndOverflowArrayBuffer()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -216,7 +211,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testGetTypedArrayInfoLengthReturnsByteLength0011';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.getTypedArrayInfoLengthReturnsByteLength()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -234,7 +228,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCoerceUndefinedAndNullToObjectReturnsUndefined0012';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.coerceUndefinedAndNullToObjectReturnsUndefined()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -252,7 +245,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testInstanceOfInvalidArgumentsReturnExpectedStatus0013';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.instanceOfInvalidArgumentsReturnExpectedStatus()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -270,7 +262,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testPropertyApisNonObjectReturnObjectExpected0014';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.propertyApisNonObjectReturnObjectExpected()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -288,7 +279,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testTypeTagNonObjectReturnsObjectExpected0015';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.typeTagNonObjectReturnsObjectExpected()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -306,7 +296,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testDefinePropertiesClearsExceptionAndContinues0016';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.definePropertiesClearsExceptionAndContinues()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -324,7 +313,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCallFunctionInvalidFuncReturnsFunctionExpected0017';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.callFunctionInvalidFuncReturnsFunctionExpected()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -343,7 +331,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       async (done: Function) => {
         const caseName = 'testNewInstanceInvalidConstructorReturnsFunctionExpected0018';
         console.info(caseName + ' start');
-        await Utils.sleep(20);
         expect(napispecdiffbatch1ndktest.newInstanceInvalidConstructorReturnsFunctionExpected()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -361,7 +348,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testDefineClassHugeLengthReturnsObjectExpected0019';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.defineClassHugeLengthReturnsObjectExpected()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -379,7 +365,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testWrapNullFinalizerReturnsInvalidArg0020';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.wrapNullFinalizerReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -398,7 +383,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       async (done: Function) => {
         const caseName = 'testWrapUnwrapRemoveWrapNonObjectReturnObjectExpected0021';
         console.info(caseName + ' start');
-        await Utils.sleep(20);
         expect(napispecdiffbatch1ndktest.wrapUnwrapRemoveWrapNonObjectReturnObjectExpected()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -416,7 +400,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testWrapResultStrongReferenceSurvivesGc0022';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.setupWrapResultStrongReference()).assertEqual(1);
       forceFullGC();
       expect(napispecdiffbatch1ndktest.verifyWrapResultStrongReferenceAfterGc()).assertEqual(1);
@@ -437,7 +420,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       async (done: Function) => {
         const caseName = 'testAsyncInitMakeCallbackDestroyWorksWithoutAsyncHooks0023';
         console.info(caseName + ' start');
-        await Utils.sleep(20);
         expect(napispecdiffbatch1ndktest.asyncInitMakeCallbackDestroyWorksWithoutAsyncHooks()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -455,7 +437,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCancelAsyncWorkStatusLayering0024';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.cancelAsyncWorkStatusLayering()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -473,7 +454,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testGetNodeVersionDoesNotWriteVersionPointer0025';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.getNodeVersionDoesNotWriteVersionPointer()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -491,7 +471,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testResolveDeferredThenThrowCanBeCaught0026';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       let caught: boolean = false;
       napispecdiffbatch1ndktest.createResolvedPromiseWithDeferred()
         .then(() => {
@@ -518,7 +497,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       async (done: Function) => {
         const caseName = 'testResolveDeferredThenThrowWithoutCatchContinues0027';
         console.info(caseName + ' start');
-        await Utils.sleep(20);
         let callbackEntered: boolean = false;
         const unhandledPromise: Promise<number> = napispecdiffbatch1ndktest.createResolvedPromiseWithDeferred()
           .then(() => {
@@ -543,7 +521,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testRejectDeferredCatchThrowCanBeCaught0028';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       let caught: boolean = false;
       napispecdiffbatch1ndktest.createRejectedPromiseWithDeferred()
         .catch(() => {
@@ -570,7 +547,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       async (done: Function) => {
         const caseName = 'testRejectDeferredCatchThrowWithoutCatchContinues0029';
         console.info(caseName + ' start');
-        await Utils.sleep(20);
         let callbackEntered: boolean = false;
         const unhandledPromise: Promise<number> = napispecdiffbatch1ndktest.createRejectedPromiseWithDeferred()
           .catch(() => {
@@ -596,7 +572,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       async (done: Function) => {
         const caseName = 'testGetValueBigIntWordsNonBigIntReturnsObjectExpected0030';
         console.info(caseName + ' start');
-        await Utils.sleep(20);
         expect(napispecdiffbatch1ndktest.getValueBigIntWordsNonBigIntReturnsObjectExpected()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -614,7 +589,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testDuplicateEnvCleanupHookRegistrationAndRemove0031';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.duplicateEnvCleanupHookRegistrationAndRemove()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -632,7 +606,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateBufferBoundaryStatus0032';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.createBufferBoundaryStatus()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -650,7 +623,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateBufferCopyBoundaryStatus0033';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.createBufferCopyBoundaryStatus()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -668,7 +640,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateExternalBufferBoundaryStatus0034';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.createExternalBufferBoundaryStatus()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -687,7 +658,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       async (done: Function) => {
         const caseName = 'testGetBufferInfoNonBufferReturnsArrayBufferExpected0035';
         console.info(caseName + ' start');
-        await Utils.sleep(20);
         expect(napispecdiffbatch1ndktest.getBufferInfoNonBufferReturnsArrayBufferExpected()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -705,7 +675,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testDetachArrayBufferStatusLayering0036';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.detachArrayBufferStatusLayering()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -725,7 +694,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testThrowRangeErrorNullMessageReturnsInvalidArg0037';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.throwRangeErrorNullMessageReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -743,7 +711,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testThrowRangeErrorResultIsRangeErrorType0038';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       try {
         napispecdiffbatch1ndktest.throwRangeErrorResultIsRangeErrorType();
         expect(false).assertTrue();
@@ -766,7 +733,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testThrowRangeErrorWhenExceptionPending0039';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       let caught: boolean = false;
       try {
         napispecdiffbatch1ndktest.throwRangeErrorWhenPendingReturnsPendingException();
@@ -790,7 +756,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testThrowRangeErrorComboWithCreateAndThrow0040';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       try {
         napispecdiffbatch1ndktest.throwRangeErrorComboWithCreateAndThrow();
         expect(false).assertTrue();
@@ -813,7 +778,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateSymbolReturnsOkAndSymbolType0041';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.createSymbolReturnsOkAndSymbolType()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -831,7 +795,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateSymbolAsPrivatePropertyKey0042';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.createSymbolAsPrivatePropertyKey()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -849,7 +812,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateSymbolWhenExceptionPending0043';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       let caught: boolean = false;
       try {
         napispecdiffbatch1ndktest.createSymbolWhenPendingReturnsPendingException();
@@ -873,7 +835,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateSymbolPropertyFullLifecycle0044';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.createSymbolPropertyFullLifecycle()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -891,7 +852,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateTypedArrayWithDetachedBufferReturnsError0045';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.createTypedArrayWithDetachedBufferReturnsError()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -909,7 +869,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateTypedArrayMultiViewAndDetach0046';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.createTypedArrayMultiViewAndDetach()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -927,7 +886,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testDefinePropertiesReturnValueAndAttributes0047';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.definePropertiesReturnValueAndAttributes()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -945,7 +903,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testDefinePropertiesBatchMethods0048';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.definePropertiesBatchMethods()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -963,7 +920,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testDefinePropertiesComboWithClass0049';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.definePropertiesComboWithClass()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -981,7 +937,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testTypeTagObjectCheckSuccess0050';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.typeTagObjectCheckSuccess()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -999,7 +954,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testTypeTagObjectDifferentTagReturnsFalse0051';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.typeTagObjectDifferentTagReturnsFalse()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -1019,7 +973,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testAsyncInitNullFuncReturnsInvalidArg0052';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.asyncInitNullFuncReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -1037,7 +990,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testAsyncInitNullNameReturnsInvalidArg0053';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.asyncInitNullNameReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -1055,7 +1007,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCancelAsyncWorkNullWorkReturnsInvalidArg0054';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.cancelAsyncWorkNullWorkReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -1073,7 +1024,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testCreateReferenceWhenPendingReturnsPendingException0055';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       let caught: boolean = false;
       try {
         napispecdiffbatch1ndktest.createReferenceWhenPendingReturnsPendingException();
@@ -1097,7 +1047,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testResolveDeferredNullDeferredReturnsInvalidArg0056';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.resolveDeferredNullDeferredReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -1115,7 +1064,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testResolveDeferredNullValueReturnsInvalidArg0057';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.resolveDeferredNullValueReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -1133,7 +1081,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testRejectDeferredNullDeferredReturnsInvalidArg0058';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.rejectDeferredNullDeferredReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -1151,7 +1098,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testRejectDeferredNullValueReturnsInvalidArg0059';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.rejectDeferredNullValueReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -1169,7 +1115,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testGetValueBigintWordsWhenPendingReturnsPendingException0060';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       let caught: boolean = false;
       try {
         napispecdiffbatch1ndktest.getValueBigintWordsWhenPendingReturnsPendingException();
@@ -1193,7 +1138,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testAddEnvCleanupHookNullHookReturnsInvalidArg0061';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.addEnvCleanupHookNullHookReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -1211,7 +1155,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testAddEnvCleanupHookReturnsOk0062';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.addEnvCleanupHookReturnsOk()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -1229,7 +1172,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testRemoveEnvCleanupHookOpaqueMismatchReturnsInvalidArg0063';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.removeEnvCleanupHookOpaqueMismatchReturnsInvalidArg()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -1247,7 +1189,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testRemoveEnvCleanupHookNotRegisteredReturnsGenericFailure0064';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.removeEnvCleanupHookNotRegisteredReturnsGenericFailure()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -1265,7 +1206,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testDetachArrayBufferReturnsOkAndVerified0065';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.detachArrayBufferReturnsOkAndVerified()).assertEqual(1);
       console.info(caseName + ' end');
       done();
@@ -1283,7 +1223,6 @@ export default function NapiSpecDiffBatch1StablePart1Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testDetachArrayBufferWhenPendingReturnsPendingException0066';
       console.info(caseName + ' start');
-      await Utils.sleep(20);
       expect(napispecdiffbatch1ndktest.detachArrayBufferWhenPendingReturnsPendingException()).assertEqual(1);
       console.info(caseName + ' end');
       done();
