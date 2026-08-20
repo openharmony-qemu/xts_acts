@@ -47,7 +47,7 @@ import CameraSessionBandSuppTest from './camera/CameraSessionBandSupp.test';
 import CameraCaptureSessionTest from './camera/CameraCaptureSessionTest.test';
 import CameraPhotoSessionTest from './camera/CameraPhotoSessionTest.test';
 import CameraTest from './camera/CameraTest.test';
-import { CameraPickerPickTest, executePicker } from './camera/CameraPickerPickTest.test';
+import CameraPickerPickTest from './camera/CameraPickerPickTest.test';
 import ManagerCreatePhotoOutputSupp from './camera/CameraManagerSupplementTest.test';
 import ApertureTest from './camera/Aperture.test';
 import ApertureQueryGetSupportedPhysicalAperturesTest from './camera/ApertureQueryGetSupportedPhysicalApertures.test';
@@ -56,9 +56,6 @@ import ManualFocusQueryTest from './camera/ManualFocusQuery.test';
 import CameraOISQueryTest from './camera/CameraOISQuery.test';
 import CameraManualExposureTest from './camera/CameraManualExposureTest.test';
 import CameraPhotoOutputSuppTest from './camera/CameraPhotoOutputSuppTest.test';
-
-let isExecutePicker = executePicker();
-
 
 export default function testsuite() {
   CameraSessionFlashSuppTest();
@@ -108,9 +105,6 @@ export default function testsuite() {
   CameraPhotoSessionTest();
   CameraCaptureSessionTest();
   CameraTest()
-  if (isExecutePicker) {
-  CameraPickerPickTest();
-  }
   CameraManagerGetSupportedOutputCapabilityTest();
   ManagerCreatePhotoOutputSupp();
   ApertureTest();
@@ -120,4 +114,5 @@ export default function testsuite() {
   CameraOISQueryTest();
   CameraManualExposureTest();
   CameraPhotoOutputSuppTest();
+  CameraPickerPickTest();
 }
