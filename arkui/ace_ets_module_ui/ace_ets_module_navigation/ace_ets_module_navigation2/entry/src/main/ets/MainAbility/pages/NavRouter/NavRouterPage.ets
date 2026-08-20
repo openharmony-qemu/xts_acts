@@ -68,7 +68,7 @@ struct NavRouterPage {
                   .borderRadius(24)
 
                   NavDestination() {
-                    Text(`我是NavDestination第${item + 1}页内容`).fontSize(50)
+                    Text(`我是NavDestination第${item + 1}页内容`).fontSize(10)
                     Flex({ direction: FlexDirection.Row }) {
                       Row() {
                         Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 })
