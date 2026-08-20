@@ -26,7 +26,7 @@
     "abilities": [
       {
         "name": "SecondentryAbility",
-        "srcEntry": "./ets/secondentryability/SecondentryAbility.ts",
+        "srcEntry": "./ets/secondentryability/SecondentryAbility.ets",
         "description": "$string:SecondentryAbility_desc",
         "icon": "$media:icon",
         "label": "$string:SecondentryAbility_label",

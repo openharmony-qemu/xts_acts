@@ -19,16 +19,17 @@ import window from '@ohos.window';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import commonEvent from '@ohos.commonEventManager';
+import { BusinessError } from '@ohos.base';
 
 const TERMIN_TIMEOUT = 1000;
 const START_TIMEOUT = 500;
 const CLEAN_TIMEOUT = 4500;
-let param;
+let param: ESObject;
 
 export default class OtherAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    param = want.parameters.parameter;
+    param = want.parameters?.parameter;
   }
 
   onDestroy(): void {
@@ -50,7 +51,7 @@ export default class OtherAbility extends UIAbility {
       setTimeout(() => {
         this.context.terminateSelf().then(() => {
           console.info(param, 'OtherAbility terminateSelf success');
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.error(param, `OtherAbility terminateSelf failed, err is: ${JSON.stringify(err)}`);
         })
       }, CLEAN_TIMEOUT)
@@ -59,7 +60,7 @@ export default class OtherAbility extends UIAbility {
       setTimeout(() => {
         this.context.terminateSelf().then(() => {
           console.info(param, 'OtherAbility terminateSelf success');
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.error(param, `OtherAbility terminateSelf failed, err is: ${JSON.stringify(err)}`);
         })
       }, TERMIN_TIMEOUT)
@@ -76,7 +77,7 @@ export default class OtherAbility extends UIAbility {
           }
         }).then(() => {
           console.info(param, 'OtherAbility startAbility success');
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.error(param, `OtherAbility startAbility failed, err is: ${JSON.stringify(err)}`);
         })
       }, START_TIMEOUT)
@@ -86,7 +87,7 @@ export default class OtherAbility extends UIAbility {
           commonEvent.publish('Acts_OtherAbilityTerminate', (err) => {
             console.info(param, 'OtherAbility terminateSelf publish err: ' + JSON.stringify(err));
           })
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.error(param, `OtherAbility terminateSelf failed, err is: ${JSON.stringify(err)}`);
         })
       }, TERMIN_TIMEOUT)

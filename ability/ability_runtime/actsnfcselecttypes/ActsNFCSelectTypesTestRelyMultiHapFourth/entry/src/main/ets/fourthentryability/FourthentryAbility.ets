@@ -14,11 +14,13 @@
  */
 
 import hilog from '@ohos.hilog';
-import Ability from '@ohos.app.ability.UIAbility';
+import UIAbility from '@ohos.app.ability.UIAbility';
 import type Window from '@ohos.window';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import { Want } from '@kit.AbilityKit';
 
-export default class FourthEntryAbility extends Ability {
-  onCreate(want, launchParam) {
+export default class FourthentryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');

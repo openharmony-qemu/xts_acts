@@ -26,7 +26,7 @@
     "abilities": [
       {
         "name": "EntryAbility",
-        "srcEntry": "./ets/entryability/EntryAbility.ts",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:EntryAbility_desc",
         "icon": "$media:icon",
         "label": "$string:EntryAbility_label",
@@ -52,7 +52,7 @@
       },
       {
         "name": "SecondEntryAbility",
-        "srcEntry": "./ets/secondentryability/SecondEntryAbility.ts",
+        "srcEntry": "./ets/secondentryability/SecondEntryAbility.ets",
         "description": "$string:SecondEntryAbility_desc",
         "icon": "$media:icon",
         "label": "$string:SecondEntryAbility_label",
@@ -75,7 +75,7 @@
       },
       {
         "name": "ThirdEntryAbility",
-        "srcEntry": "./ets/thirdentryability/ThirdEntryAbility.ts",
+        "srcEntry": "./ets/thirdentryability/ThirdEntryAbility.ets",
         "description": "$string:ThirdEntryAbility_desc",
         "icon": "$media:icon",
         "label": "$string:ThirdEntryAbility_label",
@@ -98,7 +98,7 @@
       },
       {
         "name": "FourthEntryAbility",
-        "srcEntry": "./ets/fourthentryability/FourthEntryAbility.ts",
+        "srcEntry": "./ets/fourthentryability/FourthEntryAbility.ets",
         "description": "$string:FourthEntryAbility_desc",
         "icon": "$media:icon",
         "label": "$string:FourthEntryAbility_label",

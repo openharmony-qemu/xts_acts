@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,25 +15,21 @@
 
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
-import window from '@ohos.window';
-import Want from '@ohos.app.ability.Want';
+import type window from '@ohos.window';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
-import commonEvent from '@ohos.commonEventManager';
 
-const TERMIN_TIMEOUT = 500;
-let param;
+import { Want } from '@kit.AbilityKit';
 
-export default class SecondOtherAbility extends UIAbility {
+export default class ThirdentryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    param = want.parameters.parameter;
   }
 
-  onDestroy(): void {
+  onDestroy() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 
-  onWindowStageCreate(windowStage: window.WindowStage): void {
+  onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
@@ -46,29 +42,17 @@ export default class SecondOtherAbility extends UIAbility {
     });
   }
 
-  onWindowStageDestroy(): void {
+  onWindowStageDestroy() {
     // Main window is destroyed, release UI related resources
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
-  onForeground(): void {
+  onForeground() {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
-    if (param === 'AbilityStage_OnDestroy_0500_OtherAbility') {
-      setTimeout(() => {
-        this.context.terminateSelf().then(() => {
-          console.info(param, 'SecondOtherAbility terminateSelf success');
-          commonEvent.publish('Acts_SecondOtherAbilityTerminate', (err) => {
-            console.info(param, 'SecondOtherAbility terminateSelf publish err: ' + JSON.stringify(err));
-          })
-        }).catch((err) => {
-          console.error(param, `SecondOtherAbility terminateSelf failed, err is: ${JSON.stringify(err)}`);
-        })
-      }, TERMIN_TIMEOUT)
-    }
   }
 
-  onBackground(): void {
+  onBackground() {
     // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
   }

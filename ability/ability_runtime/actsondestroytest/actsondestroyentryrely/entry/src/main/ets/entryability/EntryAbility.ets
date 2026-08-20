@@ -19,16 +19,17 @@ import window from '@ohos.window';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import commonEvent from '@ohos.commonEventManager';
+import common from '@ohos.app.ability.common';
 
 const TERMIN_TIMEOUT = 1000;
 const START_TIMEOUT = 500;
-let param;
+let param: ESObject;
 
-function OnDestroy_0200(context): void {
+function OnDestroy_0200(context: common.UIAbilityContext): void {
   setTimeout(() => {
     context.terminateSelf().then(() => {
       hilog.info(0x0000, 'testTag', '%{public}s', `EntryAbility terminateSelf success OnDestroy_0200`);
-    }).catch((err) => {
+    }).catch((err: BusinessError) => {
       hilog.info(0x0000, 'testTag', '%{public}s', `EntryAbility terminateSelf failed, err is: ${JSON.stringify(err)}`);
     })
   }, TERMIN_TIMEOUT)
@@ -42,13 +43,13 @@ function OnDestroy_0200(context): void {
       }
     }).then(() => {
       hilog.info(0x0000, 'testTag', '%{public}s', `EntryAbility startAbility success OnDestroy_0200`);
-    }).catch((err) => {
+    }).catch((err: BusinessError) => {
       hilog.info(0x0000, 'testTag', '%{public}s', `OnDestroy_0200 EntryAbility startAbility failed, err is: ${JSON.stringify(err)}`);
     })
   }, START_TIMEOUT)
 }
 
-function OnDestroy_0300(context): void {
+function OnDestroy_0300(context: common.UIAbilityContext): void {
   setTimeout(() => {
     context.startAbility({
       bundleName: 'com.example.abilitystageondestroytest',
@@ -59,7 +60,7 @@ function OnDestroy_0300(context): void {
       }
     }).then(() => {
       hilog.info(0x0000, 'testTag', '%{public}s', `OnDestroy_0300 EntryAbility startAbility success`);
-    }).catch((err) => {
+    }).catch((err: BusinessError) => {
       console.error(param, `OnDestroy_0300 EntryAbility startAbility failed, err is: ${JSON.stringify(err)}`);
     })
   }, START_TIMEOUT)
@@ -69,13 +70,13 @@ function OnDestroy_0300(context): void {
       commonEvent.publish('Acts_EntryAbilityTerminate', (err) => {
         hilog.info(0x0000, 'testTag', '%{public}s', `OnDestroy_0300 EntryAbility terminateSelf publish err`);
       })
-    }).catch((err) => {
+    }).catch((err: BusinessError) => {
       hilog.info(0x0000, 'testTag', '%{public}s', `OnDestroy_0300 EntryAbility terminateSelf failed, err is : ${JSON.stringify(err)}`);
     })
   }, TERMIN_TIMEOUT)
 }
 
-function OnDestroy_0400(context): void {
+function OnDestroy_0400(context: common.UIAbilityContext): void {
   setTimeout(() => {
     context.startAbility({
       bundleName: 'com.example.abilitystageondestroytest',
@@ -86,14 +87,14 @@ function OnDestroy_0400(context): void {
       }
     }).then(() => {
       hilog.info(0x0000, 'testTag', '%{public}s', `OnDestroy_0500 EntryAbility startAbility success`);
-    }).catch((err) => {
+    }).catch((err: BusinessError) => {
       console.error(param, `OnDestroy_0500 EntryAbility startAbility failed, err is: ${JSON.stringify(err)}`);
     })
   }, START_TIMEOUT)
   setTimeout(() => {
     context.terminateSelf().then(() => {
       hilog.info(0x0000, 'testTag', '%{public}s', `OnDestroy_0500 EntryAbility terminateSelf success`);
-    }).catch((err) => {
+    }).catch((err: BusinessError) => {
       hilog.info(0x0000, 'testTag', '%{public}s', `OnDestroy_0500 EntryAbility terminateSelf failed, err is : ${JSON.stringify(err)}`);
     })
   }, TERMIN_TIMEOUT)
@@ -102,7 +103,7 @@ function OnDestroy_0400(context): void {
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', `Ability onCreate want: ${JSON.stringify(Want)}`);
-    param = want.parameters.param;
+    param = want.parameters?.param;
     1111
   }
 
@@ -114,7 +115,7 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err, data) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: ESObject) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
@@ -135,7 +136,7 @@ export default class EntryAbility extends UIAbility {
           }
         }).then(() => {
           hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityStage_OnDestroy_0500 Ability onDestroy');
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityStage_OnDestroy_0500 EntryAbility startAbility failed, err is: ${JSON.stringify(err)}');
         })
       }, START_TIMEOUT)
@@ -155,7 +156,7 @@ export default class EntryAbility extends UIAbility {
       setTimeout(() => {
         this.context.terminateSelf().then(() => {
           hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityStage_OnDestroy_0100 EntryAbility terminateSelf success');
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityStage_OnDestroy_0100 EntryAbility terminateSelf failed, err is: ${JSON.stringify(err)}');
         })
       }, TERMIN_TIMEOUT)

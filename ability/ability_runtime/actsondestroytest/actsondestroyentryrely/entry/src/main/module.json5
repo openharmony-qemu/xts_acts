@@ -16,7 +16,7 @@
   "module": {
     "name": "entry",
     "type": "entry",
-    "srcEntry": "./ets/application/EntryAbilityStage.ts",
+    "srcEntry": "./ets/application/EntryAbilityStage.ets",
     "description": "$string:module_desc",
     "mainElement": "EntryAbility",
     "deviceTypes": [],
@@ -26,7 +26,7 @@
     "abilities": [
       {
         "name": "EntryAbility",
-        "srcEntry": "./ets/entryability/EntryAbility.ts",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:EntryAbility_desc",
         "icon": "$media:icon",
         "label": "$string:EntryAbility_label",
@@ -46,7 +46,7 @@
       },
       {
         "name": "OtherAbility",
-        "srcEntry": "./ets/otherability/OtherAbility.ts",
+        "srcEntry": "./ets/otherability/OtherAbility.ets",
         "description": "$string:OtherAbility_desc",
         "icon": "$media:icon",
         "label": "$string:OtherAbility_label",

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,18 +15,26 @@
 
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
-import type window from '@ohos.window';
+import window from '@ohos.window';
+import Want from '@ohos.app.ability.Want';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import { BusinessError } from '@ohos.base';
 
-export default class SecondentryAbility extends UIAbility {
-  onCreate(want, launchParam) {
+const TERMIN_TIMEOUT = 1000;
+const START_TIMEOUT = 500;
+let param: ESObject;
+
+export default class SecondAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    param = want.parameters?.parameter;
   }
 
-  onDestroy() {
+  onDestroy(): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 
-  onWindowStageCreate(windowStage: window.WindowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
@@ -37,19 +45,44 @@ export default class SecondentryAbility extends UIAbility {
       }
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
+    if (param === 'AbilityStage_OnDestroy_0500_EntryAbility') {
+      setTimeout(() => {
+        this.context.startAbility({
+          bundleName: 'com.example.abilitystageondestroytest',
+          moduleName: 'entry',
+          abilityName: 'OtherAbility',
+          parameters: {
+            parameter: 'AbilityStage_OnDestroy_0500_SecondAbility'
+          }
+        }).then(() => {
+          console.info(param, 'SecondAbility startAbility success');
+        }).catch((err: BusinessError) => {
+          console.error(param, `SecondAbility startAbility failed, err is: ${JSON.stringify(err)}`);
+        })
+      }, START_TIMEOUT)
+    }
   }
 
-  onWindowStageDestroy() {
+  onWindowStageDestroy(): void {
     // Main window is destroyed, release UI related resources
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
-  onForeground() {
+  onForeground(): void {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
+    if (param === 'AbilityStage_OnDestroy_0200') {
+      setTimeout(() => {
+        this.context.terminateSelf().then(() => {
+          console.info(param, 'SecondAbility terminateSelf success');
+        }).catch((err: BusinessError) => {
+          console.error(param, `SecondAbility terminateSelf failed, err is: ${JSON.stringify(err)}`);
+        })
+      }, TERMIN_TIMEOUT)
+    }
   }
 
-  onBackground() {
+  onBackground(): void {
     // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
   }
