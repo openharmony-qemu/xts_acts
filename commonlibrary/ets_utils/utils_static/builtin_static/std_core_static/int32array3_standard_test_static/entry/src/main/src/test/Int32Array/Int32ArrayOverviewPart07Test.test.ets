@@ -828,6 +828,7 @@ export default function int32ArrayOverviewPart07Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.map((v: number, _i: int, _arr: Int32Array): number => {
+          expect(v).assertEqual(1);
           throw new Error('map boom');
         });
         expect().assertFail();
@@ -848,6 +849,7 @@ export default function int32ArrayOverviewPart07Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.filter((v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(v).assertEqual(1);
           throw new Error('filter boom');
         });
         expect().assertFail();
@@ -868,6 +870,7 @@ export default function int32ArrayOverviewPart07Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.forEach((v: number, _i: int, _arr: Int32Array): void => {
+          expect(v).assertEqual(1);
           throw new Error('forEach boom');
         });
         expect().assertFail();
@@ -888,6 +891,7 @@ export default function int32ArrayOverviewPart07Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.find((v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(v).assertEqual(1);
           throw new Error('find boom');
         });
         expect().assertFail();
@@ -908,6 +912,7 @@ export default function int32ArrayOverviewPart07Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.findIndex((v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(v).assertEqual(1);
           throw new Error('findIndex boom');
         });
         expect().assertFail();
@@ -928,6 +933,7 @@ export default function int32ArrayOverviewPart07Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.findLast((v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(v).assertEqual(3);
           throw new Error('findLast boom');
         });
         expect().assertFail();
@@ -948,6 +954,7 @@ export default function int32ArrayOverviewPart07Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.findLastIndex((v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(v).assertEqual(3);
           throw new Error('findLastIndex boom');
         });
         expect().assertFail();
@@ -968,6 +975,7 @@ export default function int32ArrayOverviewPart07Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.some((v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(v).assertEqual(1);
           throw new Error('some boom');
         });
         expect().assertFail();
@@ -988,6 +996,7 @@ export default function int32ArrayOverviewPart07Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.every((v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(v).assertEqual(1);
           throw new Error('every boom');
         });
         expect().assertFail();
@@ -1008,6 +1017,7 @@ export default function int32ArrayOverviewPart07Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.reduce((acc: number, v: number, _i: int, _arr: Int32Array): number => {
+          expect(v).assertEqual(1);
           throw new Error('reduce boom');
         }, 0);
         expect().assertFail();
@@ -1028,6 +1038,7 @@ export default function int32ArrayOverviewPart07Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
         arr.reduceRight((acc: number, v: number, _i: int, _arr: Int32Array): number => {
+          expect(v).assertEqual(3);
           throw new Error('reduceRight boom');
         }, 0);
         expect().assertFail();
@@ -1067,7 +1078,9 @@ export default function int32ArrayOverviewPart07Test(): void {
     it('int32ArrayOverviewPart07TestMindmapTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int32Array = new Int32Array([1, 2, 3]);
       try {
-        Int32Array.from(src, (_v: number, _i: number): number => {
+        Int32Array.from(src, (v: number, i: number): number => {
+          expect(v).assertEqual(1);
+          expect(i).assertEqual(0);
           throw new Error('from boom');
         });
         expect().assertFail();
