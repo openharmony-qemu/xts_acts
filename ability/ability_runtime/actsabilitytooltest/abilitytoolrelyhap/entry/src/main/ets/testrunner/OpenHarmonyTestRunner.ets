@@ -13,35 +13,34 @@
 * limitations under the License.
 */
 
+import { BusinessError } from '@ohos.base';
 import TestRunner from '@ohos.application.testRunner';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { BusinessError } from '@ohos.base';
 
-let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
+let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
+let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs;
 
-function translateParamsToString(parameters) {
+function translateParamsToString(parameters: ESObject) {
   const keySet = new Set([
     '-s class', '-s notClass', '-s suite', '-s it',
-    '-s level', '-s testType', '-s size', '-s timeout',
-    '-s dryRun'
+    '-s level', '-s testType', '-s size', '-s timeout'
   ])
   let targetParams = '';
-  for (const key in parameters) {
+  for (const key of Object.keys(parameters)) {
     if (keySet.has(key)) {
-      targetParams = `${targetParams} ${key} ${parameters[key]}`;
+      targetParams = `${targetParams} ${key} ${(parameters as Record<string, ESObject>)[key]}`;
     }
   }
   return targetParams.trim();
 }
 
 async function onAbilityCreateCallback() {
-  console.log("onAbilityCreateCallback");
+  console.log('onAbilityCreateCallback');
 }
 
 async function addAbilityMonitorCallback(err: BusinessError) {
-  console.info("addAbilityMonitorCallback : " + JSON.stringify(err));
+  console.info('addAbilityMonitorCallback : ' + JSON.stringify(err));
 }
 
 export default class OpenHarmonyTestRunner implements TestRunner {
@@ -49,21 +48,22 @@ export default class OpenHarmonyTestRunner implements TestRunner {
   }
 
   onPrepare() {
-    console.info("OpenHarmonyTestRunner OnPrepare ");
+    console.info('OpenHarmonyTestRunner OnPrepare ');
   }
 
   async onRun() {
-    console.log('OpenHarmonyTestRunner onRun run')
+    console.log('OpenHarmonyTestRunner onRun run');
     abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
     abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+    AppStorage.setOrCreate<AbilityDelegatorRegistry.AbilityDelegator>('abilityDelegator', abilityDelegator);
     let MainAbilityName = abilityDelegatorArguments.bundleName + '.MainAbility';
-    let lMonitor = {
+    let lMonitor: AbilityDelegatorRegistry.AbilityMonitor = {
       abilityName: MainAbilityName,
       onAbilityCreate: onAbilityCreateCallback,
     }
     abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback);
     let cmd = 'aa start -d 0 -a MainAbility' + ' -b ' + abilityDelegatorArguments.bundleName;
-    let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+    let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
     if(user !== undefined){
         cmd += ' -u ' + user;
     }

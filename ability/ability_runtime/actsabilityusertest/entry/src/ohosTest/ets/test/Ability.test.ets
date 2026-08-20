@@ -14,12 +14,12 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import commonEvent from '@ohos.commonEvent';
+import commonEvent from '@ohos.commonEventManager';
 import common from '@ohos.app.ability.common';
 import commonEventManager from '@ohos.commonEventManager';
 
 let subscriberInfo_MainAbility: commonEventManager.CommonEventSubscribeInfo = {
-  events: ["ACTS_StartAbility_CommonEvent"]
+  events: ['ACTS_StartAbility_CommonEvent']
 }
 let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const START_ABILITY_TIMEOUT = 4000;
@@ -28,7 +28,7 @@ export default function abilityTest() {
   describe('ACTS_StartAbility_Test', () => {
     afterEach(async (done:Function) => {
         let cmd = 'aa start -b com.example.actsabilityusertest -a MainAbility';
-        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
         if(user !== undefined){
             cmd += ' -u ' + user;
         }
@@ -50,31 +50,31 @@ export default function abilityTest() {
 
       await commonEvent.createSubscriber(subscriberInfo_MainAbility)
         .then((data) => {
-          console.log("====>Create Subscriber====>");
+          console.log('====>Create Subscriber====>');
           data.getSubscribeInfo()
             .then(async (SubscribeInfo) => {
-              console.log("====>SubscribeInfo is====>" + JSON.stringify(SubscribeInfo));
+              console.log('====>SubscribeInfo is====>' + JSON.stringify(SubscribeInfo));
               Subscriber = data;
               commonEvent.subscribe(Subscriber, (err, data) => {
-                expect(data.event == "ACTS_StartAbility_CommonEvent").assertTrue();
-                console.log("====>0100 Subscribe CallBack data:====>" + JSON.stringify(data));
-                if (data.event == "ACTS_StartAbility_CommonEvent") {
+                expect(data.event == 'ACTS_StartAbility_CommonEvent').assertTrue();
+                console.log('====>0100 Subscribe CallBack data:====>' + JSON.stringify(data));
+                if (data.event == 'ACTS_StartAbility_CommonEvent') {
                   startresult = true
                 }
                 commonEvent.unsubscribe(Subscriber, () => {
-                  console.log("====>UnSubscribeCallback====>");
+                  console.log('====>UnSubscribeCallback====>');
                   flag = false
                   expect(startresult).assertEqual(true);
                   done();
                 })
               })
-              console.log("====>start startAbility====>");
-              AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(
+              console.log('====>start startAbility====>');
+              AppStorage.get<common.UIAbilityContext>('abilityContext')!.startAbility(
                 {
                   bundleName: 'com.example.actsabilityusertest',
                   abilityName: 'MainAbility2'
                 }, () => {
-                console.log("====>startAbility end====>");
+                console.log('====>startAbility end====>');
               })
             })
         })
@@ -84,7 +84,7 @@ export default function abilityTest() {
           expect().assertFail();
           console.log('ACTS_StartAbility_Callback_Successfully_0100 - timeout')
           commonEvent.unsubscribe(Subscriber, () => {
-            console.log("====>UnSubscribeCallback====>");
+            console.log('====>UnSubscribeCallback====>');
             flag = false
             expect(startresult).assertEqual(true);
             done();
@@ -103,31 +103,31 @@ export default function abilityTest() {
      */
     it('ACTS_StartAbility_Callback_Error_0200', Level.LEVEL0, async (done: Function) => {
       let AbilityDelegatorArgs = AbilityDelegatorRegistry.getArguments();
-      console.log("====>getArguments is====>" + JSON.stringify(AbilityDelegatorArgs));
+      console.log('====>getArguments is====>' + JSON.stringify(AbilityDelegatorArgs));
       let Subscriber: commonEventManager.CommonEventSubscriber;
 
       await commonEvent.createSubscriber(subscriberInfo_MainAbility)
         .then((data) => {
-          console.log("====>Create Subscriber====>");
+          console.log('====>Create Subscriber====>');
           data.getSubscribeInfo()
             .then(async (SubscribeInfo) => {
-              console.log("====>SubscribeInfo is====>" + JSON.stringify(SubscribeInfo));
+              console.log('====>SubscribeInfo is====>' + JSON.stringify(SubscribeInfo));
               Subscriber = data;
               commonEvent.subscribe(Subscriber, (err, data) => {
                 expect().assertFail();
-                console.log("====>0200 Subscribe CallBack data:====>" + JSON.stringify(data));
+                console.log('====>0200 Subscribe CallBack data:====>' + JSON.stringify(data));
                 commonEvent.unsubscribe(Subscriber, () => {
-                  console.log("====>UnSubscribeCallback====>");
+                  console.log('====>UnSubscribeCallback====>');
                   done();
                 })
               })
-              console.log("====>start startAbility====>");
-              AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(
+              console.log('====>start startAbility====>');
+              AppStorage.get<common.UIAbilityContext>('abilityContext')!.startAbility(
                 {
                   bundleName: 'com.example.error',
                   abilityName: 'com.example.error.MainAbility2'
                 }, () => {
-                console.log("====>startAbility end====>");
+                console.log('====>startAbility end====>');
               })
             })
         })
@@ -135,7 +135,7 @@ export default function abilityTest() {
       setTimeout(() => {
         console.log('ACTS_StartAbility_Callback_Error_0200 - timeout');
         commonEvent.unsubscribe(Subscriber, () => {
-          console.log("====>UnSubscribeCallback====>");
+          console.log('====>UnSubscribeCallback====>');
           done();
         })
       }, START_ABILITY_TIMEOUT)
@@ -156,32 +156,32 @@ export default function abilityTest() {
 
       commonEvent.createSubscriber(subscriberInfo_MainAbility)
         .then((data) => {
-          console.log("====>Create Subscriber====>");
+          console.log('====>Create Subscriber====>');
           data.getSubscribeInfo()
             .then(async (SubscribeInfo) => {
-              console.log("====>SubscribeInfo is====>" + JSON.stringify(SubscribeInfo));
+              console.log('====>SubscribeInfo is====>' + JSON.stringify(SubscribeInfo));
               Subscriber = data;
               commonEvent.subscribe(Subscriber, (error, data) => {
-                expect(data.event == "ACTS_StartAbility_CommonEvent").assertTrue();
-                console.log("====>0100 Subscribe CallBack data:====>" + JSON.stringify(data));
-                if (data.event == "ACTS_StartAbility_CommonEvent") {
+                expect(data.event == 'ACTS_StartAbility_CommonEvent').assertTrue();
+                console.log('====>0100 Subscribe CallBack data:====>' + JSON.stringify(data));
+                if (data.event == 'ACTS_StartAbility_CommonEvent') {
                   startresult = true;
                 }
                 commonEvent.unsubscribe(Subscriber, () => {
-                  console.log("====>UnSubscribeCallback====>");
+                  console.log('====>UnSubscribeCallback====>');
                   flag = false;
                   expect(startresult).assertEqual(true);
                   done();
                 })
               })
-              console.log("====>start startAbility====>");
-              await AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(
+              console.log('====>start startAbility====>');
+              await AppStorage.get<common.UIAbilityContext>('abilityContext')!.startAbility(
                 {
                   bundleName: 'com.example.actsabilityusertest',
                   abilityName: 'MainAbility3'
                 })
                 .then(() => {
-                  console.log("====>startAbility end====>");
+                  console.log('====>startAbility end====>');
                 })
             })
         })
@@ -190,7 +190,7 @@ export default function abilityTest() {
           expect().assertFail();
           console.log('ACTS_StartAbility_Promise_Successfully_0100 - timeout');
           commonEvent.unsubscribe(Subscriber, () => {
-            console.log("====>UnSubscribeCallback====>");
+            console.log('====>UnSubscribeCallback====>');
             flag = false;
             expect(startresult).assertEqual(true);
             done();
@@ -209,31 +209,31 @@ export default function abilityTest() {
      */
     it('ACTS_StartAbility_Promise_Error_0200', Level.LEVEL0, async (done: Function) => {
       let AbilityDelegatorArgs = AbilityDelegatorRegistry.getArguments();
-      console.log("====>getArguments is====>" + JSON.stringify(AbilityDelegatorArgs));
+      console.log('====>getArguments is====>' + JSON.stringify(AbilityDelegatorArgs));
       let Subscriber: commonEventManager.CommonEventSubscriber;
       commonEvent.createSubscriber(subscriberInfo_MainAbility)
         .then((data) => {
-          console.log("====>Create Subscriber====>");
+          console.log('====>Create Subscriber====>');
           data.getSubscribeInfo()
             .then(async (SubscribeInfo) => {
-              console.log("====>SubscribeInfo is====>" + JSON.stringify(SubscribeInfo));
+              console.log('====>SubscribeInfo is====>' + JSON.stringify(SubscribeInfo));
               Subscriber = data;
               commonEvent.subscribe(Subscriber, (err, data) => {
                 expect().assertFail();
-                console.log("====>0200 Subscribe CallBack data:====>" + JSON.stringify(data));
+                console.log('====>0200 Subscribe CallBack data:====>' + JSON.stringify(data));
                 commonEvent.unsubscribe(Subscriber, () => {
-                  console.log("====>UnSubscribeCallback====>");
+                  console.log('====>UnSubscribeCallback====>');
                   done();
                 })
               })
-              console.log("====>start startAbility====>");
-              AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(
+              console.log('====>start startAbility====>');
+              AppStorage.get<common.UIAbilityContext>('abilityContext')!.startAbility(
                 {
                   bundleName: 'com.example.error',
                   abilityName: 'com.example.error.MainAbility2'
                 })
                 .then(() => {
-                  console.log("====>startAbility end====>");
+                  console.log('====>startAbility end====>');
                 })
             })
         })
@@ -241,7 +241,7 @@ export default function abilityTest() {
       setTimeout(() => {
         console.log('ACTS_StartAbility_Promise_Error_0200 - timeout');
         commonEvent.unsubscribe(Subscriber, () => {
-          console.log("====>UnSubscribeCallback====>");
+          console.log('====>UnSubscribeCallback====>');
           done();
         })
       }, START_ABILITY_TIMEOUT);

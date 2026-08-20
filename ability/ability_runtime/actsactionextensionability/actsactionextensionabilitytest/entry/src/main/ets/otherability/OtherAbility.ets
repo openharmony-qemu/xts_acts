@@ -15,13 +15,16 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import type window from '@ohos.window';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+
+import { Want } from '@kit.AbilityKit';
 
 const CUMULATIVE = 2;
 
 export default class OtherAbility extends UIAbility {
   circulate: number = 0;
 
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     console.log('=====> OtherAbility onCreate =====>');
   }
 

@@ -15,9 +15,12 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@ohos.base';
 
 export default class EntryAbility extends UIAbility {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     console.info('====>another EntryAbility');
 
@@ -28,7 +31,7 @@ export default class EntryAbility extends UIAbility {
         parameters: {
           'ability.want.params.uiExtensionType': 'action'
         }
-      }).catch((err)=>{
+      }).catch((err: BusinessError) =>{
         console.info('====>ActionExtensionAbility_0100 err:' + JSON.stringify(err));
       });
     }
@@ -89,7 +92,7 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err, data) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: ESObject) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

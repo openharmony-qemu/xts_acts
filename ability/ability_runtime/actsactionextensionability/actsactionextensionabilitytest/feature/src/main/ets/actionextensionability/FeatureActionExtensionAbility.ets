@@ -14,10 +14,13 @@
  */
 import ActionExtensionAbility from '@ohos.app.ability.ActionExtensionAbility';
 import commonEventManager from '@ohos.commonEventManager';
+import { UIExtensionContentSession } from '@kit.AbilityKit';
+
+
 
 export default class FeatureActionExtensionAbility extends ActionExtensionAbility {
-  storage: LocalStorage;
-  message: string;
+  storage: LocalStorage = new LocalStorage();
+  message: string = '';
   onCreate() {
   }
 
@@ -29,9 +32,9 @@ export default class FeatureActionExtensionAbility extends ActionExtensionAbilit
     console.log('====>FeatureActionExtensionAbility onBackground called');
   }
 
-  onSessionCreate(want, session) {
+onSessionCreate(want: Want, session: UIExtensionContentSession) {
     console.log('====>FeatureActionExtensionAbility onSessionCreate called');
-    commonEventManager.publish('ACTS_FEATURE_CREATE', function () {});
+    commonEventManager.publish('ACTS_FEATURE_CREATE', () => {});
     if (want.action === 'Acts_ActionExtensionAbility_0400') {
       this.context.startAbility({
         bundleName: 'com.example.actsactionextensionabilitytest',
@@ -39,12 +42,12 @@ export default class FeatureActionExtensionAbility extends ActionExtensionAbilit
         action: 'Acts_ActionExtensionAbility_0400'
       });
     }
-    this.message = want.parameters.shareMessages;
-    this.storage = new LocalStorage(
-      {
+    this.message = want.parameters?.shareMessages as string;
+    let storageParams: Record<string, Object> = {
         'session': session,
-        'messages': this.message
-      });
+        'messages': this.message};
+    this.storage = new LocalStorage(storageParams);
+
     session.loadContent('pages/Index2', this.storage);
   }
 
@@ -52,7 +55,7 @@ export default class FeatureActionExtensionAbility extends ActionExtensionAbilit
     console.log('====>FeatureActionExtensionAbility onDestroy called');
   }
 
-  onSessionDestroy(session) {
+onSessionDestroy(session: UIExtensionContentSession) {
     console.log('====>FeatureActionExtensionAbility onSessionDestroy called');
   }
 }

@@ -15,66 +15,58 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import type window from '@ohos.window';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
-export default class CalledAbility extends UIAbility {
-  onCreate(want, launchParam) {
-    hilog.info(0x0000, 'testTag', '%{public}s', 'CalledAbility onCreate');
-    console.log('=====> first app CalledAbility =====>');
+import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@ohos.base';
+
+export default class FeatureAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     const TIMEOUT = 50;
-    globalThis.terminateCalledAbility = (str) => {
+    globalThis.featureTerminate = (str: string) => {
       setTimeout(() => {
         this.context.terminateSelf().then(() => {
           console.info('====>terminateSelf' + JSON.stringify(str) + ' end');
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.info('====>terminateSelf ' + JSON.stringify(str) + ' err:' + JSON.stringify(err));
         });
       }, TIMEOUT);
     };
 
-    if (want.action === 'Acts_ActionExtensionAbility_1000') {
-      this.context.terminateSelf();
-    }
-
-    if (want.action === 'Acts_ActionExtensionAbility_1100') {
-      this.context.terminateSelf();
-    }
-
-    if (want.action === 'Acts_ActionExtensionAbility_1300') {
-      this.context.terminateSelfWithResult({
-        resultCode: 0,
-        want: {
-          parameters: {
-            action: 'ACTION'
-          }
+    if (want.action === 'Acts_ActionExtensionAbility_0400') {
+      console.info('====>FeatureAbility want.action == Acts_ActionExtensionAbility_0400');
+      AppStorage.SetOrCreate('want', {
+        action: 'Acts_ActionExtensionAbility_0400',
+        bundleName: 'com.example.actsactionextensionabilitytest',
+        abilityName: 'FeatureActionExtensionAbility',
+        parameters: {
+          'ability.want.params.uiExtensionType': 'action'
         }
-      }, (err) => {
-        console.log('=====> Acts_ActionExtensionAbility_1300 CalledAbilityCallBack terminateSelfWithResult =====>' + err.code);
       });
     }
 
-    if (want.action === 'Acts_ActionExtensionAbility_1400') {
-      this.context.terminateSelfWithResult({
-        resultCode: 0,
-        want: {
-          parameters: {
-            action: 'ACTION'
-          }
+    if (want.action === 'Acts_ActionExtensionAbility_0200') {
+      console.info('====>FeatureAbility want.action == Acts_ActionExtensionAbility_0200');
+      AppStorage.SetOrCreate('want', {
+        bundleName: 'com.example.actsactionextensionabilitytest',
+        abilityName: 'ActsActionExtensionAbility',
+        parameters: {
+          'ability.want.params.uiExtensionType': 'action'
         }
-      }, (err) => {
-        console.log('=====> Acts_ActionExtensionAbility_1400 CalledAbilityCallBack terminateSelfWithResult =====>' + err.code);
       });
     }
   }
 
   onDestroy() {
-    hilog.info(0x0000, 'testTag', '%{public}s', 'CalledAbility onDestroy');
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/PageTwo', (err, data) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: ESObject) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
@@ -85,16 +77,16 @@ export default class CalledAbility extends UIAbility {
 
   onWindowStageDestroy() {
     // Main window is destroyed, release UI related resources
-    hilog.info(0x0000, 'testTag', '%{public}s', 'CalledAbility onWindowStageDestroy');
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground() {
     // Ability has brought to foreground
-    hilog.info(0x0000, 'testTag', '%{public}s', 'CalledAbility onForeground');
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground() {
     // Ability has back to background
-    hilog.info(0x0000, 'testTag', '%{public}s', 'CalledAbility onBackground');
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
   }
 }

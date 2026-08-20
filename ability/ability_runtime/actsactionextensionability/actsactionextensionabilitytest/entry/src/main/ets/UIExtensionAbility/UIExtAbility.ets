@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 import ActionExtensionAbility from '@ohos.app.ability.ActionExtensionAbility';
+import Want from '@ohos.app.ability.Want';
+import UIExtensionContentSession from '@ohos.app.ability.UIExtensionContentSession';
+import common from '@ohos.app.ability.common';
 import wantConstant from '@ohos.app.ability.wantConstant';
 import commonEvent from '@ohos.commonEventManager';
 import hilog from '@ohos.hilog';
@@ -23,11 +26,11 @@ export default class UiExtAbility extends ActionExtensionAbility {
     console.info('=======>UIExtAbility onCreate======>');
   }
 
-  onSessionCreate(want, session) {
+  onSessionCreate(want: Want, session: UIExtensionContentSession) {
     console.log(`want: ${JSON.stringify(want)}}`);
-    let storage: LocalStorage = new LocalStorage({
+    let storage: LocalStorage = new LocalStorage(({
       'session': session
-    });
+    }) as Record<string, Object>);
     session.loadContent('pages/Page', storage);
     console.info('=======>UIExtAbility onSessionCreate======>');
 
@@ -40,9 +43,9 @@ export default class UiExtAbility extends ActionExtensionAbility {
         parameters: {
           [wantConstant.Params.ABILITY_BACK_TO_OTHER_MISSION_STACK]: true
         }
-      }, (error) => {
+      }, (error: BusinessError) => {
         console.info('=======>Acts_ActionExtensionAbility_1000 error.code ======>' + error.code);
-        let commonEventData = {
+        let commonEventData: commonEvent.CommonEventPublishData = {
           parameters: {
             num: error.code
           }
@@ -64,7 +67,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
         }
       }).then(() => {
         console.info('=======>Acts_ActionExtensionAbility_1100 UIExtAbility startAbility success ======>');
-        let commonEventData = {
+        let commonEventData: commonEvent.CommonEventPublishData = {
           parameters: {
             str: 'success'
           }
@@ -72,7 +75,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
         commonEvent.publish('ACTS_CALL_EVENT', commonEventData, (err) => {
           console.debug('====>Acts_ActionExtensionAbility_1100 publish err:' + JSON.stringify(err));
         });
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.debug('====>Acts_ActionExtensionAbility_1100 UIExtAbility startAbility err:' + JSON.stringify(err));
       });
     }
@@ -86,9 +89,9 @@ export default class UiExtAbility extends ActionExtensionAbility {
         parameters: {
           [wantConstant.Params.ABILITY_BACK_TO_OTHER_MISSION_STACK]: true
         }
-      }, (error) => {
+      }, (error: BusinessError) => {
         console.info('=======>Acts_ActionExtensionAbility_1200 error.code ======>' + error.code);
-        let commonEventData = {
+        let commonEventData: commonEvent.CommonEventPublishData = {
           parameters: {
             num: error.code
           }
@@ -108,14 +111,14 @@ export default class UiExtAbility extends ActionExtensionAbility {
         parameters: {
           [wantConstant.Params.ABILITY_BACK_TO_OTHER_MISSION_STACK]: true
         }
-      }, (error, data) => {
+      }, {}, (error: BusinessError, data: common.AbilityResult) => {
         console.info('=======>Acts_ActionExtensionAbility_1300 error.code ======>' + error.code);
         console.info('=======>Acts_ActionExtensionAbility_1300 data.resultCode ======>' + data.resultCode);
-        console.info('=======>Acts_ActionExtensionAbility_1300 data.action ======>' + data.want.parameters.action);
-        let commonEventData = {
+        console.info('=======>Acts_ActionExtensionAbility_1300 data.action ======>' + data.want?.parameters?.action);
+        let commonEventData: commonEvent.CommonEventPublishData = {
           parameters: {
             num: error.code,
-            str: data.want.parameters.action,
+            str: data.want?.parameters?.action,
             result: data.resultCode
           }
         };
@@ -134,19 +137,19 @@ export default class UiExtAbility extends ActionExtensionAbility {
         parameters: {
           [wantConstant.Params.ABILITY_BACK_TO_OTHER_MISSION_STACK]: true
         }
-      }).then((data) => {
+      }).then((data: common.AbilityResult) => {
         console.info('=======>Acts_ActionExtensionAbility_1400 data.resultCode ======>' + data.resultCode);
-        console.info('=======>Acts_ActionExtensionAbility_1400 data.action ======>' + data.want.parameters.action);
-        let commonEventData = {
+        console.info('=======>Acts_ActionExtensionAbility_1400 data.action ======>' + data.want?.parameters?.action);
+        let commonEventData: commonEvent.CommonEventPublishData = {
           parameters: {
-            str: data.want.parameters.action,
+            str: data.want?.parameters?.action,
             result: data.resultCode
           }
         };
         commonEvent.publish('ACTS_CALL_EVENT', commonEventData, (err) => {
           console.debug('====>Acts_ActionExtensionAbility_1400 publish err:' + JSON.stringify(err));
         });
-      }).catch((error) => {
+      }).catch((error: BusinessError) => {
         console.info('=======>Acts_ActionExtensionAbility_1400 error.code ======>' + error.code);
       });
     }
@@ -160,9 +163,9 @@ export default class UiExtAbility extends ActionExtensionAbility {
         parameters: {
           [wantConstant.Params.ABILITY_BACK_TO_OTHER_MISSION_STACK]: true
         }
-      }, (error, data) => {
+      }, {}, (error: BusinessError, data: common.AbilityResult) => {
         console.info('=======>Acts_ActionExtensionAbility_1500  first from own error.code ======>' + error.code);
-        let commonEventData = {
+        let commonEventData: commonEvent.CommonEventPublishData = {
           parameters: {
             num: error.code
           }
@@ -174,8 +177,8 @@ export default class UiExtAbility extends ActionExtensionAbility {
     }
 
     if (want.action === 'Acts_ActionExtensionAbility_1600') {
-      session.setReceiveDataCallback((data) => {
-        let options = {
+      session.setReceiveDataCallback((data: Record<string, Object>) => {
+        let options: commonEvent.CommonEventPublishData = {
           parameters: {
             'result': data
           }
@@ -192,9 +195,9 @@ export default class UiExtAbility extends ActionExtensionAbility {
         action: 'Acts_ActionExtensionAbility_1800',
         bundleName: 'com.example.actsactionextensionabilitytest',
         abilityName: 'ActsActionExtensionAbility'
-      }, (error, data) => {
+      }, (error: BusinessError) => {
         console.info('=======>Acts_ActionExtensionAbility_1800  first from own error.code ======>' + error.code);
-        let commonEventData = {
+        let commonEventData: commonEvent.CommonEventPublishData = {
           parameters: {
             num: error.code
           }
@@ -206,7 +209,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
     }
 
     if (want.action === 'Acts_ActionExtensionAbility_context') {
-      let options = {
+      let options: commonEvent.CommonEventPublishData = {
         parameters: {
           'context': this.context
         }
@@ -219,7 +222,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
     if (want.action === 'Acts_ActionExtensionAbility_2200') {
       console.info('=======>UIExtAbility onSessionCreate want.action == Acts_ActionExtensionAbility_2200======>');
       console.info('Acts_ActionExtensionAbility_2200 resourceManager: ' + this.context.resourceManager);
-      let commonEventData = {
+      let commonEventData: commonEvent.CommonEventPublishData = {
         parameters: {
           resourceManager: this.context.resourceManager
         }
@@ -234,7 +237,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
       console.info('Acts_ActionExtensionAbility_2300 applicationInfo: ' + this.context.applicationInfo);
       let applicationInfo = this.context.applicationInfo;
 
-      let commonEventData = {
+      let commonEventData: commonEvent.CommonEventPublishData = {
         parameters: {
           name: applicationInfo.name,
           description_length: applicationInfo.description.length,
@@ -254,7 +257,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
     if (want.action === 'Acts_ActionExtensionAbility_2400') {
       console.info('=======>UIExtAbility onSessionCreate want.action == Acts_ActionExtensionAbility_2400======>');
 
-      let commonEventData = {
+      let commonEventData: commonEvent.CommonEventPublishData = {
         parameters: {
           cacheDir: this.context.cacheDir
         }
@@ -267,7 +270,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
     if (want.action === 'Acts_ActionExtensionAbility_2500') {
       console.info('=======>UIExtAbility onSessionCreate want.action == Acts_ActionExtensionAbility_2500======>');
 
-      let commonEventData = {
+      let commonEventData: commonEvent.CommonEventPublishData = {
         parameters: {
           tempDir: this.context.tempDir
         }
@@ -280,7 +283,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
     if (want.action === 'Acts_ActionExtensionAbility_2600') {
       console.info('=======>UIExtAbility onSessionCreate want.action == Acts_ActionExtensionAbility_2600======>');
 
-      let commonEventData = {
+      let commonEventData: commonEvent.CommonEventPublishData = {
         parameters: {
           filesDir: this.context.filesDir
         }
@@ -293,7 +296,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
     if (want.action === 'Acts_ActionExtensionAbility_2700') {
       console.info('=======>UIExtAbility onSessionCreate want.action == Acts_ActionExtensionAbility_2700======>');
 
-      let commonEventData = {
+      let commonEventData: commonEvent.CommonEventPublishData = {
         parameters: {
           databaseDir: this.context.databaseDir
         }
@@ -306,7 +309,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
     if (want.action === 'Acts_ActionExtensionAbility_2800') {
       console.info('=======>UIExtAbility onSessionCreate want.action == Acts_ActionExtensionAbility_2800======>');
 
-      let commonEventData = {
+      let commonEventData: commonEvent.CommonEventPublishData = {
         parameters: {
           preferencesDir: this.context.preferencesDir
         }
@@ -319,7 +322,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
     if (want.action === 'Acts_ActionExtensionAbility_2900') {
       console.info('=======>UIExtAbility onSessionCreate want.action == Acts_ActionExtensionAbility_2900======>');
 
-      let commonEventData = {
+      let commonEventData: commonEvent.CommonEventPublishData = {
         parameters: {
           bundleCodeDir: this.context.bundleCodeDir
         }
@@ -331,7 +334,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
 
     if (want.action === 'Acts_ActionExtensionAbility_3000') {
       let moduleContext = this.context.createModuleContext('entry');
-      let options = {
+      let options: commonEvent.CommonEventPublishData = {
         parameters: {
           'bundleName': moduleContext.applicationInfo.name
         }
@@ -343,7 +346,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
 
     if (want.action === 'Acts_ActionExtensionAbility_3100') {
       let moduleContext = this.context.createModuleContext('entry_test');
-      let options = {
+      let options: commonEvent.CommonEventPublishData = {
         parameters: {
           'bundleName': moduleContext.applicationInfo.name
         }
@@ -354,13 +357,13 @@ export default class UiExtAbility extends ActionExtensionAbility {
     }
 
     if (want.action === 'Acts_ActionExtensionAbility_3200') {
-      let moduleContext;
+      let moduleContext: ESObject;
       try {
         moduleContext = this.context.createModuleContext('entry_assist');
       } catch {
         console.log('createModuleContext err');
       }
-      let options = {
+      let options: commonEvent.CommonEventPublishData = {
         parameters: {
           'moduleContext': moduleContext
         }
@@ -371,13 +374,13 @@ export default class UiExtAbility extends ActionExtensionAbility {
     }
 
     if (want.action === 'Acts_ActionExtensionAbility_3300') {
-      let moduleContext;
+      let moduleContext: ESObject;
       try {
         moduleContext = this.context.createModuleContext('abc');
       } catch {
         console.log('createModuleContext err');
       }
-      let options = {
+      let options: commonEvent.CommonEventPublishData = {
         parameters: {
           'moduleContext': moduleContext
         }
@@ -388,13 +391,13 @@ export default class UiExtAbility extends ActionExtensionAbility {
     }
 
     if (want.action === 'Acts_ActionExtensionAbility_3400') {
-      let moduleContext;
+      let moduleContext: ESObject;
       try {
         moduleContext = this.context.createModuleContext(undefined);
       } catch {
         console.log('createModuleContext err');
       }
-      let options = {
+      let options: commonEvent.CommonEventPublishData = {
         parameters: {
           'moduleContext': moduleContext
         }
@@ -406,7 +409,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
 
     if (want.action === 'Acts_ActionExtensionAbility_3500') {
       let applicationContext = this.context.getApplicationContext();
-      let options = {
+      let options: commonEvent.CommonEventPublishData = {
         parameters: {
           'applicationContext': applicationContext
         }
@@ -417,7 +420,7 @@ export default class UiExtAbility extends ActionExtensionAbility {
     }
   }
 
-  onSessionDestroy(session) {
+  onSessionDestroy(session: UIExtensionContentSession) {
     console.log('onSessionDestroy');
   }
 

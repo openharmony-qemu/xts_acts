@@ -15,6 +15,9 @@
 import ActionExtensionAbility from '@ohos.app.ability.ActionExtensionAbility';
 import commonEventManager from '@ohos.commonEventManager';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
+import { UIExtensionContentSession } from '@kit.AbilityKit';
+
+
 
 let count = 0;
 const TIME_OUT = 500;
@@ -23,8 +26,8 @@ function sleep(ms: number) {
   return new Promise<void>(resolve => setTimeout(resolve, ms));
 }
 export default class ActsActionExtensionAbility extends ActionExtensionAbility {
-  storage: LocalStorage;
-  message: string;
+  storage: LocalStorage = new LocalStorage();
+  message: string = '';
   onCreate() {
     console.log('====>ActsActionExtensionAbility onCreate called');
     count++;
@@ -33,13 +36,13 @@ export default class ActsActionExtensionAbility extends ActionExtensionAbility {
   onForeground() {
     console.log('====>ActsActionExtensionAbility onForeground called');
     count++;
-    let options = {
+    let options: commonEventManager.CommonEventPublishData = {
       parameters: {
         'count': count
       }
     }
     commonEventManager.publish('ACTS_TEST_FOREGROUND', options,
-      function () { })
+      () => { })
     try {
       let deviceSupport  = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
       console.log(`====>ActsActionExtensionAbility deviceSupport : ${deviceSupport }`);
@@ -57,21 +60,21 @@ export default class ActsActionExtensionAbility extends ActionExtensionAbility {
   onBackground() {
     console.log('====>ActsActionExtensionAbility onBackground called');
     count++;
-    commonEventManager.publish('ACTS_TEST_BACKGROUND', function () {});
+    commonEventManager.publish('ACTS_TEST_BACKGROUND', () => {});
     setTimeout(() => {
       globalThis.session.terminateSelf();
     }, TIME_OUT);
   }
 
-  onSessionCreate(want, session) {
+onSessionCreate(want: Want, session: UIExtensionContentSession) {
     console.log('====>ActsActionExtensionAbility onSessionCreate called');
     count++;
-    this.message = want.parameters.shareMessages;
-    this.storage = new LocalStorage(
-      {
-        'session': session,
-        'messages': this.message
-      });
+    this.message = want.parameters?.shareMessages as string ?? '';
+    let storageParams: Record<string, Object> = {
+      'session': session,
+      'messages': this.message
+    };
+    this.storage = new LocalStorage(storageParams);
     session.loadContent('pages/PageThree', this.storage);
     globalThis.session = session;
   }
@@ -79,16 +82,16 @@ export default class ActsActionExtensionAbility extends ActionExtensionAbility {
   async onDestroy() {
     console.log('====>ActsActionExtensionAbility onDestroy called');
     count++;
-    let options = {
+    let options: commonEventManager.CommonEventPublishData = {
       parameters: {
         'count': count
       }
     };
-    commonEventManager.publish('ACTS_TEST_DESTROY', options, function () {});
+    commonEventManager.publish('ACTS_TEST_DESTROY', options, () => {});
     await sleep(500);
   }
 
-  onSessionDestroy(session) {
+onSessionDestroy(session: UIExtensionContentSession) {
     console.log('====>ActsActionExtensionAbility onSessionDestroy called');
     count++;
   }

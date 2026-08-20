@@ -13,22 +13,25 @@
  * limitations under the License.
  */
 import ActionExtensionAbility from '@ohos.app.ability.ActionExtensionAbility';
+import { UIExtensionContentSession } from '@kit.AbilityKit';
+
+
 
 export default class UiExtAbility extends ActionExtensionAbility {
   onCreate() {
     console.info('=======>UIExtAbility onCreate======>');
   }
 
-  onSessionCreate(want, session) {
+onSessionCreate(want: Want, session: UIExtensionContentSession) {
     console.log(`want: ${JSON.stringify(want)}}`);
-    let storage: LocalStorage = new LocalStorage({
+    let storage: LocalStorage = new LocalStorage(({
       'session': session
-    });
+    }) as Record<string, Object>);
     session.loadContent('pages/Page', storage);
     console.info('=======>UIExtAbility onSessionCreate======>');
   }
 
-  onSessionDestroy(session) {
+onSessionDestroy(session: UIExtensionContentSession) {
     console.log('onSessionDestroy');
   }
 
