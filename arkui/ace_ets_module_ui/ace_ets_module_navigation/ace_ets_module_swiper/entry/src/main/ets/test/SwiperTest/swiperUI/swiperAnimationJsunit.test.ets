@@ -95,7 +95,7 @@ export default function swiperAnimationJsunit() {
       let left = swiperAnimation.left;
       let bottom = swiperAnimation.bottom;
       console.info("swiperAnimationJsunit_0024 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = top -bottom;
+      let height = bottom -top;
       let width = right - left;
       // to swiper
       let driver = await Driver.create();
@@ -160,14 +160,22 @@ export default function swiperAnimationJsunit() {
       let bottom = swiperAnimation.bottom;
       console.info("swiperAnimationJsunit_0012 value is" + left + " --" + right + "--" + top + "--" + bottom);
        
-      let height = top -bottom;
+      let height = bottom -top;
       let width = right - left;
       // to swiper
       let driver2 = await Driver.create();
       await CommonFunc.sleep(500);
-      await driver2.swipe(Math.round(right- width*0.4),Math.round(bottom + height/2),0,Math.round(bottom + height/2));
+      let startx = Math.round(right - width * 0.4);
+      let starty = Math.round(top + height / 2);
+      let endy = Math.round(top + height / 2);
+      console.info("zzzzzzzzzzzz" + startx + " " + starty);
+      await driver.swipe(startx, starty, 0, endy);
       await CommonFunc.sleep(500);
-      await driver2.swipe(Math.round(right- width*0.4),Math.round(bottom + height/2),0,Math.round(bottom + height/2));
+      let startx = Math.round(right - width * 0.4);
+      let starty = Math.round(top + height / 2);
+      let endy = Math.round(top + height / 2);
+      console.info("zzzzzzzzzzzz" + startx + " " + starty);
+      await driver.swipe(startx, starty, 0, endy);
       await CommonFunc.sleep(500);
        // check the onAnimation triggers
       let strJson = getInspectorByKey('animationStart');
@@ -223,7 +231,7 @@ export default function swiperAnimationJsunit() {
       let bottom = swiperAnimation.bottom;
       console.info("swiperAnimationJsunit_0027 value is" + left + " --" + right + "--" + top + "--" + bottom);
        
-      let height = top -bottom;
+      let height = bottom -top;
       let width = right - left;
       //to autoplay
       globalThis.value.message.notify({name:'autoPlay',value:true})
@@ -288,7 +296,7 @@ export default function swiperAnimationJsunit() {
       let bottom = swiperAnimation.bottom;
       console.info("swiperAnimationJsunit_0019 value is" + left + " --" + right + "--" + top + "--" + bottom);
        
-      let height = top -bottom;
+      let height = bottom -top;
       let width = right - left;
       //to autoplay
       globalThis.value.message.notify({name:'autoPlay',value:true})
@@ -366,7 +374,7 @@ export default function swiperAnimationJsunit() {
       let bottom = swiperAnimation.bottom;
       console.info("swiperAnimationJsunit_0022 value is" + left + " --" + right + "--" + top + "--" + bottom);
        
-      let height = top -bottom;
+      let height = bottom -top;
       let width = right - left;
       //to autoplay
       globalThis.value.message.notify({name:'autoPlay',value:true})
@@ -425,7 +433,7 @@ export default function swiperAnimationJsunit() {
       let bottom = swiperAnimation.bottom;
       console.info("swiperAnimationJsunit_0023 value is" + left + " --" + right + "--" + top + "--" + bottom);
        
-      let height = top -bottom;
+      let height = bottom -top;
       let width = right - left;
       // click the previous Button
       let driver = await Driver.create();
@@ -492,7 +500,7 @@ export default function swiperAnimationJsunit() {
       let bottom = swiperAnimation.bottom;
       console.info("swiperAnimationJsunit_0011 value is" + left + " --" + right + "--" + top + "--" + bottom);
        
-      let height = top -bottom;
+      let height = bottom -top;
       let width = right - left;
       // click the previous Button
       let driver = await Driver.create();
@@ -560,7 +568,7 @@ export default function swiperAnimationJsunit() {
       let bottom = swiperAnimation.bottom;
       console.info("swiperAnimationJsunit_0028 value is" + left + " --" + right + "--" + top + "--" + bottom);
        
-      let height = top -bottom;
+      let height = bottom -top;
       let width = right - left;
       // click the previous Button
       let driver = await Driver.create();
@@ -641,7 +649,7 @@ export default function swiperAnimationJsunit() {
       let bottom = swiperAnimation.bottom;
       console.info("swiperAnimationJsunit_0020 value is" + left + " --" + right + "--" + top + "--" + bottom);
        
-      let height = top -bottom;
+      let height = bottom -top;
       let width = right - left;
       // click the previous Button
       let driver = await Driver.create();
@@ -721,7 +729,7 @@ export default function swiperAnimationJsunit() {
       let bottom = swiperAnimation.bottom;
       console.info("swiperAnimationGestureJsunit_0016 value is" + left + " --" + right + "--" + top + "--" + bottom);
        
-      let height = top -bottom;
+      let height = bottom -top;
       let width = right - left;
     
       // to swiper
@@ -789,7 +797,7 @@ export default function swiperAnimationJsunit() {
       let bottom = swiperAnimation.bottom;
       console.info("swiperAnimationJsunit_0017 value is" + left + " --" + right + "--" + top + "--" + bottom);
        
-      let height = top -bottom;
+      let height = bottom -top;
       let width = right - left;
       // to swiper
       let driver = await Driver.create();
@@ -860,7 +868,7 @@ export default function swiperAnimationJsunit() {
       let bottom = swiperAnimation.bottom;
       console.info("swiperAnimationJsunit_0019 value is" + left + " --" + right + "--" + top + "--" + bottom);
        
-      let height = top -bottom;
+      let height = bottom -top;
       let width = right - left;
       //to autoplay
       globalThis.value.message.notify({name:'autoPlay',value:true})
@@ -934,7 +942,7 @@ export default function swiperAnimationJsunit() {
       let bottom = swiperAnimation.bottom;
       console.info("swiperAnimationJsunit_0020 value is" + left + " --" + right + "--" + top + "--" + bottom);
        
-      let height = top -bottom;
+      let height = bottom -top;
       let width = right - left;
       let driver = await Driver.create();
       await CommonFunc.sleep(500);
