@@ -882,6 +882,7 @@ export default function int32ArrayFromPart05Test(): void {
       const src: Array<number> = [1.0];
       try {
         Int32Array.from(src as ArrayLike<number>, (v: number, k: number): number => {
+          expect(v).assertEqual(1.0);
           throw new Error('accessor_err');
         });
         expect().assertFail();
