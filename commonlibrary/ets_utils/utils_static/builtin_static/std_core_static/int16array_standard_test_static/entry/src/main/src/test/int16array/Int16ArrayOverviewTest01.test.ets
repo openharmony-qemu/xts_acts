@@ -1,6 +1,5 @@
 'use static';
 
-
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1442,14 +1441,14 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0830
-     * @tc.name testInt16ArrayOverviewTestOne083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0820
+     * @tc.name testInt16ArrayOverviewTestOne082
      * @tc.desc Verify new Int16Array from existing array copies length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = Int16Array.of(10, 32767);
       const arr = new Int16Array(src);
       let actual: int = arr.length;
@@ -1458,14 +1457,14 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0850
-     * @tc.name testInt16ArrayOverviewTestOne085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0830
+     * @tc.name testInt16ArrayOverviewTestOne083
      * @tc.desc Verify Int16Array.from(src) length equals src length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = Int16Array.of(5, 32767);
       const arr = Int16Array.from(src);
       let actual: int = arr.length;
@@ -1474,14 +1473,14 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0860
-     * @tc.name testInt16ArrayOverviewTestOne086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0840
+     * @tc.name testInt16ArrayOverviewTestOne084
      * @tc.desc Verify $_get(0) returns element value 32767
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const val: int = 32767;
       const arr: Int16Array = Int16Array.of(val);
       const v = arr.$_get(0);
@@ -1491,28 +1490,28 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0870
-     * @tc.name testInt16ArrayOverviewTestOne087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0850
+     * @tc.name testInt16ArrayOverviewTestOne085
      * @tc.desc Verify at(-length-1) returns undefined when index out of range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 20);
       const idx: int = -arr.length - 1;
       expect(arr.at(idx)).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0880
-     * @tc.name testInt16ArrayOverviewTestOne088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0860
+     * @tc.name testInt16ArrayOverviewTestOne086
      * @tc.desc Verify with(0, 99) replaces index 0 value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 32767);
       const result = arr.with(0, 99);
       let actual: number = result.$_get(0);
@@ -1521,14 +1520,14 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0890
-     * @tc.name testInt16ArrayOverviewTestOne089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0870
+     * @tc.name testInt16ArrayOverviewTestOne087
      * @tc.desc Verify with(0, 99) keeps array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 32767);
       const result = arr.with(0, 99);
       let actual: int = result.length;
@@ -1537,28 +1536,28 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0900
-     * @tc.name testInt16ArrayOverviewTestOne090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0880
+     * @tc.name testInt16ArrayOverviewTestOne088
      * @tc.desc Verify with(0, 99) returns independent buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 32767);
       const result = arr.with(0, 99);
       expect(result.buffer).not().assertEqual(arr.buffer);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0910
-     * @tc.name testInt16ArrayOverviewTestOne091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0890
+     * @tc.name testInt16ArrayOverviewTestOne089
      * @tc.desc Verify copyWithin(0, 1) keeps array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 32767, 50);
       const result = arr.copyWithin(0, 1);
       let actual: int = result.length;
@@ -1567,14 +1566,14 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0920
-     * @tc.name testInt16ArrayOverviewTestOne092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0900
+     * @tc.name testInt16ArrayOverviewTestOne090
      * @tc.desc Verify fill(32767) sets all elements to the value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
       arr.fill(32767);
       let actual: number = arr.$_get(0);
@@ -1589,14 +1588,14 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0930
-     * @tc.name testInt16ArrayOverviewTestOne093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0910
+     * @tc.name testInt16ArrayOverviewTestOne091
      * @tc.desc Verify reverse() reverses element order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 32767, 50);
       const result = arr.reverse();
       let actual: number = result.$_get(0);
@@ -1605,14 +1604,14 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0940
-     * @tc.name testInt16ArrayOverviewTestOne094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0920
+     * @tc.name testInt16ArrayOverviewTestOne092
      * @tc.desc Verify toReversed() reorders elements in reverse order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 32767, 50);
       const result = arr.toReversed();
       let actual: number = result.$_get(0);
@@ -1621,14 +1620,14 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0950
-     * @tc.name testInt16ArrayOverviewTestOne095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0930
+     * @tc.name testInt16ArrayOverviewTestOne093
      * @tc.desc Verify toReversed() length equals original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 32767, 50);
       const result = arr.toReversed();
       let actual: int = result.length;
@@ -1637,28 +1636,28 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0960
-     * @tc.name testInt16ArrayOverviewTestOne096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0940
+     * @tc.name testInt16ArrayOverviewTestOne094
      * @tc.desc Verify sort() returns same this reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(32767, 10, 50);
       const result = arr.sort();
       expect(result).assertEqual(arr);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0970
-     * @tc.name testInt16ArrayOverviewTestOne097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0950
+     * @tc.name testInt16ArrayOverviewTestOne095
      * @tc.desc Verify sort() sorts in place so original array becomes [10, 50, 32767]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(32767, 10, 50);
       arr.sort();
       let actual: number = arr.$_get(0);
@@ -1673,14 +1672,14 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0980
-     * @tc.name testInt16ArrayOverviewTestOne098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0960
+     * @tc.name testInt16ArrayOverviewTestOne096
      * @tc.desc Verify toSorted() returns the complete sequence with original length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(32767, 10, 50);
       const result = arr.toSorted();
       let actual: int = result.length;
@@ -1692,14 +1691,14 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0990
-     * @tc.name testInt16ArrayOverviewTestOne099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0970
+     * @tc.name testInt16ArrayOverviewTestOne097
      * @tc.desc Verify toSorted() returns a sorted copy and keeps original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(32767, 10, 50);
       const result = arr.toSorted();
       let r_1: string = result.toString();
@@ -1714,14 +1713,14 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_1000
-     * @tc.name testInt16ArrayOverviewTestOne100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0980
+     * @tc.name testInt16ArrayOverviewTestOne098
      * @tc.desc Verify slice(0, 1) returns length 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 32767, 50);
       const result = arr.slice(0, 1);
       let actual: int = result.length;
@@ -1730,14 +1729,14 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_1010
-     * @tc.name testInt16ArrayOverviewTestOne101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0990
+     * @tc.name testInt16ArrayOverviewTestOne099
      * @tc.desc Verify subarray(0, 1) returns an Int16Array view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 32767, 50);
       const result = arr.subarray(0, 1);
       let actual: number = result.$_get(0);
@@ -1746,14 +1745,14 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_1020
-     * @tc.name testInt16ArrayOverviewTestOne102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_1000
+     * @tc.name testInt16ArrayOverviewTestOne100
      * @tc.desc Verify subarray(0, 1) returns length 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 32767, 50);
       const result = arr.subarray(0, 1);
       let actual: int = result.length;
@@ -1762,14 +1761,14 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_1030
-     * @tc.name testInt16ArrayOverviewTestOne103
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_1010
+     * @tc.name testInt16ArrayOverviewTestOne101
      * @tc.desc Verify subarray shares buffer mutation visibility
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 32767, 50);
       const sub = arr.subarray(0, 1);
       arr.$_set(0, 99);
@@ -1779,20 +1778,19 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_1040
-     * @tc.name testInt16ArrayOverviewTestOne104
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_1020
+     * @tc.name testInt16ArrayOverviewTestOne102
      * @tc.desc Verify map(fn) returns a new Int16Array with transformed values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestOne104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestOne102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 32767);
       const result = arr.map((v: number, _i: int, _a: Int16Array) => v + 1);
       let actual: number = result.$_get(0);
       let expected: int = 11;
       expect(actual).assertEqual(expected);
     });
-
   });
 }
