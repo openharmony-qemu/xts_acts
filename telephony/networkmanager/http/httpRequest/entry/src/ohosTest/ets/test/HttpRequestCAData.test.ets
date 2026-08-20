@@ -182,7 +182,7 @@ export default function HttpRequestDataCATest() {
         httpRequest.request("https://localhost:"+ port, options, (err: Error, data: http.HttpResponse) => {
           if (!err) {
             console.info(`${caseName} request success data is `+JSON.stringify(data));
-            ExpectTrue(data.responseCode == 200);
+            ExpectTrue(data.responseCode === 200);
             done();
           } else {
             console.error(`${caseName} request err is `+JSON.stringify(err));
@@ -255,7 +255,7 @@ export default function HttpRequestDataCATest() {
             done();
           } else {
             console.error(`${caseName} request err is `+JSON.stringify(err));
-            ExpectTrue(err.code == 2300060);
+            ExpectTrue(err.code === 2300060);
             done();
           }
         });
@@ -323,7 +323,7 @@ export default function HttpRequestDataCATest() {
             done();
           } else {
             console.error(`${caseName} request err is `+JSON.stringify(err));
-            ExpectTrue(err.code == 2300060);
+            ExpectTrue(err.code === 2300060);
             done();
           }
         });
@@ -392,7 +392,7 @@ export default function HttpRequestDataCATest() {
             done();
           } else {
             console.error(`${caseName} request err is `+JSON.stringify(err));
-            ExpectTrue(err.code == 2300060);
+            ExpectTrue(err.code === 2300060);
             done();
           }
         });
@@ -419,7 +419,7 @@ export default function HttpRequestDataCATest() {
       let port = 9000+Math.round(Math.random()*5000);
       let tlsSocketServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
       try{
-        let tlsConnOptions = getTlsConnOptions(port, 0);
+        let tlsConnOptions = getWrongTlsConnOptions(port);
         await tlsSocketServer.listen(tlsConnOptions).then( async ()=> {
           let listenAddr: socket.NetAddress =  await tlsSocketServer.getLocalAddress();
           console.info(`${caseName} tlsSocketServer listen address: `+JSON.stringify(listenAddr.address) +' port: '+JSON.stringify(listenAddr.port));
@@ -427,11 +427,6 @@ export default function HttpRequestDataCATest() {
           console.error(`${caseName} get err is `+JSON.stringify(err));
           ExpectFail();
           done();
-        })
-        tlsSocketServer.on('connect', async (clientSocket: socket.TLSSocketConnection)=>{
-          console.info(`${caseName}-----tlsSocketServer on connect `);
-          let clientAddr: socket.NetAddress = await clientSocket.getRemoteAddress();
-          console.info(`${caseName}----------`+JSON.stringify(clientAddr));
         })
         let httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
@@ -449,7 +444,7 @@ export default function HttpRequestDataCATest() {
             done();
           } else {
             console.error(`${caseName} request err is `+JSON.stringify(err));
-            ExpectTrue(err.code == 2300028);
+            ExpectTrue(err.code === 2300028);
             done();
           }
         });
@@ -505,7 +500,7 @@ export default function HttpRequestDataCATest() {
             done();
           } else {
             console.error(`${caseName} request err is `+JSON.stringify(err));
-            ExpectTrue(err.code == 2300028);
+            ExpectTrue(err.code === 2300028);
             done();
           }
         });
