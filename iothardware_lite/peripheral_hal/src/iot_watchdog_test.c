@@ -80,3 +80,5 @@ LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog003, Function | MediumTest |
     g_watchDogfunc = IoTWatchDogDisable;
 };
 
+RUN_TEST_SUITE(IotWatchDogTestSuite);
+

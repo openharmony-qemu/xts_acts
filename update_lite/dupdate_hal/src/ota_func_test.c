@@ -16,7 +16,6 @@
 #include "hctest.h"
 #include "hota_updater.h"
 
-
 #define ERRORCALLBACK    0
 #define STATUSCALLBACK   0
 #define USE_HOS_PKG      1
