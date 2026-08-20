@@ -103,6 +103,7 @@ export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
+      try {
       let dir = globalThis.abilityContext.filesDir + '/';
       try {
         await globalThis.context.resourceManager.getRawFileList('')
@@ -119,8 +120,13 @@ export default function abilityTest() {
       }
 
       console.info('[rawfile_copy_to_sandbox] sandbox path:' + dir);
+      } catch (error) {
+        console.error('beforeAll failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     })
     beforeEach(async () => {
+      try {
       let dir = globalThis.abilityContext.filesDir + '/';
 
       let ml_face_model = dir + 'ml_face_isface.ms';
@@ -155,6 +161,10 @@ export default function abilityTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
+      } catch (error) {
+        console.error('beforeEach failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -175,6 +185,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AI_MindSpore_ArkTS_PrecisionCompare_0001', Level.LEVEL0, async () => {
+      try {
       console.log('==========MSLITE PrecisionCompare_0001 start===========');
       let syscontext: common.Context = globalThis.context;
       let inputBuffer0: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train_infer_0.input');
@@ -238,6 +249,10 @@ export default function abilityTest() {
       let uint8SelfCmp: CompareResult = allCloseInt8(new Uint8Array([1, 2, 3]), new Uint8Array([1, 2, 3]), 3, DEFAULT_TOLERANCE, DEFAULT_TOLERANCE, false);
       expect(uint8SelfCmp.pass).assertTrue();
       console.log('==========MSLITE PrecisionCompare_0001 end===========');
+      } catch (error) {
+        console.error('SUB_AI_MindSpore_ArkTS_PrecisionCompare_0001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     })
 
     /**
@@ -286,6 +301,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_buffer_emulator', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_buffer');
       let modelName = 'ml_face_isface.ms';
       let inputName = 'ml_face_isface_0.input';
@@ -320,6 +336,10 @@ export default function abilityTest() {
         expect(output0[i].toString() !== null).assertTrue();
       }
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_buffer_emulator failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     // 正常场景：模拟器，ModelBuild，调用fd方法，正常推理
@@ -332,6 +352,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_fd_emulator', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_fd');
       let inputName = 'ml_face_isface_0.input';
       let syscontext: common.Context = globalThis.context;
@@ -360,6 +381,10 @@ export default function abilityTest() {
         expect(output0[i].toString() !== null).assertTrue();
       }
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_fd_emulator failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     // 正常场景：模拟器，ModelBuild，调用loadModelFromFile方法，正常推理
@@ -372,6 +397,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_emulator', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path');
       let inputName = 'ml_face_isface_0.input';
       let syscontext: common.Context = globalThis.context;
@@ -403,6 +429,10 @@ export default function abilityTest() {
         expect(output0[i].toString() !== null).assertTrue();
       }
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_emulator failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     //正常场景：模拟器，Context设置CPU，4线程
@@ -415,6 +445,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_settings_threads_emulator_001', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_threads_001');
       let inputName = 'ml_face_isface_0.input';
       let syscontext: common.Context = globalThis.context;
@@ -446,6 +477,10 @@ export default function abilityTest() {
         expect(output0[i].toString() !== null).assertTrue();
       }
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_settings_threads_emulator_001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     //正常场景：模拟器，Context设置CPU，2线程
@@ -458,6 +493,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_settings_threads_emulator_002', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_threads_002');
       let inputName = 'ml_face_isface_0.input';
       let syscontext: common.Context = globalThis.context;
@@ -489,6 +525,10 @@ export default function abilityTest() {
         expect(output0[i].toString() !== null).assertTrue();
       }
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_settings_threads_emulator_002 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     //正常场景：模拟器，Context设置CPU，1线程
@@ -501,6 +541,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_settings_threads_emulator_003', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_threads_003');
       let inputName = 'ml_face_isface_0.input';
       let syscontext: common.Context = globalThis.context;
@@ -532,6 +573,10 @@ export default function abilityTest() {
         expect(output0[i].toString() !== null).assertTrue();
       }
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_settings_threads_emulator_003 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     //正常场景：模拟器，Context设置CPU，0线程
@@ -544,6 +589,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_settings_threads_emulator_004', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_settings_threads_004');
       let inputName = 'ml_face_isface_0.input';
       let syscontext: common.Context = globalThis.context;
@@ -575,6 +621,10 @@ export default function abilityTest() {
         expect(output0[i].toString() !== null).assertTrue();
       }
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_settings_threads_emulator_004 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     //异常场景：模拟器，ModelBuild，调用model path方法，path为空
@@ -644,6 +694,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_resize_emulator_001', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_001');
       let inputName = 'ml_ocr_cn_0.input';
       let syscontext: common.Context = globalThis.context;
@@ -676,6 +727,10 @@ export default function abilityTest() {
         expect(output0[i].toString() !== null).assertTrue();
       }
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_resize_emulator_001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     // 正常场景：模拟器，ModelResize，shape与之前不一致
@@ -688,6 +743,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_resize_emulator_002', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_002');
       let inputName = 'ml_ocr_cn_0.input';
       let syscontext: common.Context = globalThis.context;
@@ -747,6 +803,10 @@ export default function abilityTest() {
         expect(output0[i].toString() !== null).assertTrue();
       }
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_resize_emulator_002 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     // 异常场景：模拟器，ModelResize，shape为三维
@@ -759,6 +819,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_resize_emulator_003', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_003');
       let inputName = 'ml_ocr_cn_0.input';
       let syscontext: common.Context = globalThis.context;
@@ -774,6 +835,10 @@ export default function abilityTest() {
       let resize_result = msliteModel.resize(modelInputs, new_dim);
       expect(resize_result).assertFalse;
       console.log('=========MSLITE resize failed=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_resize_emulator_003 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     // 异常场景：模拟器，ModelResize，不支持resize的模型
@@ -786,6 +851,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_resize_emulator_004', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_004');
       let inputName = 'ml_face_isface_0.input';
       let syscontext: common.Context = globalThis.context;
@@ -801,6 +867,10 @@ export default function abilityTest() {
       let resize_result = msliteModel.resize(modelInputs, new_dim);
       expect(resize_result).assertFalse();
       console.log('=========MSLITE resize failed=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_resize_emulator_004 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     // 异常场景：模拟器，ModelResize，shape值有负数
@@ -813,6 +883,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_resize_emulator_005', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_005');
       let inputName = 'ml_ocr_cn_0.input';
       let syscontext: common.Context = globalThis.context;
@@ -828,6 +899,10 @@ export default function abilityTest() {
       let resize_result = msliteModel.resize(modelInputs, new_dim);
       expect(resize_result).assertFalse();
       console.log('=========MSLITE resize failed=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_resize_emulator_005 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     // 正常场景：模拟器，ModelResize，resize动态shape模型
@@ -840,6 +915,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_resize_emulator_006', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_resize_emulator_006');
       let modelName = 'bert_tiny_dynamic.ms';
       let inputName0 = 'bert_tiny_dynamic_0.input';
@@ -886,6 +962,10 @@ export default function abilityTest() {
       const modelInputs0 = msliteModel.getInputs();
       console.log(modelInputs0[0].name.toString());
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_resize_emulator_006 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     })
     // 正常场景：模拟器，Build一次，Predict多次
     /**
@@ -897,6 +977,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_much_predict_emulator_001', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_much_predict_001');
       let inputName = 'ml_face_isface_0.input';
       let syscontext: common.Context = globalThis.context;
@@ -931,6 +1012,10 @@ export default function abilityTest() {
         console.log('=========num.toString()=====');
         console.log(num.toString());
       }
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_much_predict_emulator_001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     // 异常场景：模拟器，Build多次
@@ -943,6 +1028,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_much_build_emulator_001', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_much_build_001');
       let inputName = 'ml_face_isface_0.input';
       let syscontext: common.Context = globalThis.context;
@@ -972,6 +1058,10 @@ export default function abilityTest() {
         expect(output0[i].toString() !== null).assertTrue();
       }
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_much_build_emulator_001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     // 正常场景：模拟器，单输入模型
@@ -984,6 +1074,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_model_emulator_001', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_model_001');
       let modelName = 'ml_face_isface.ms';
       let inputName = 'ml_face_isface_0.input';
@@ -1011,6 +1102,10 @@ export default function abilityTest() {
         expect(output0[i].toString() !== null).assertTrue();
       }
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_model_emulator_001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     // 正常场景：模拟器，多输入模型
@@ -1023,6 +1118,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_model_emulator_002', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_model_002');
       let modelName = 'ml_video_edit_face_cutout_portraitSeg_deconv.ms';
       let inputName01 = 'ml_video_edit_face_cutout_portraitSeg_deconv_0.input';
@@ -1077,6 +1173,10 @@ export default function abilityTest() {
         expect(output0[i].toString() !== null).assertTrue();
       }
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_model_emulator_002 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     // 正常场景：模拟器，输入为uint8模型
@@ -1089,6 +1189,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_model_emulator_003', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_model_003');
       let modelName = 'aiy_vision_classifier_plants_V1_3.ms';
       let inputName = 'aiy_vision_classifier_plants_V1_3_0.input';
@@ -1131,6 +1232,10 @@ export default function abilityTest() {
         expect(output0[i].toString() !== null).assertTrue();
       }
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_model_emulator_003 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     // 正常场景：模拟器，多输入单输出
@@ -1143,6 +1248,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Test_load_model_param_model_path_model_emulator_004', Level.LEVEL0, async () => {
+      try {
       console.log('MSLITE api test: loadModel param model file.Test_load_model_param_model_path_model_004');
       let modelName = 'ml_headpose_pb2tflite.ms';
       let inputName01 = 'ml_headpose_pb2tflite_0.input';
@@ -1216,6 +1322,10 @@ export default function abilityTest() {
         expect(output0[i].toString() !== null).assertTrue();
       }
       console.log('=========MSLITE new Float32Array end=====');
+      } catch (error) {
+        console.error('Test_load_model_param_model_path_model_emulator_004 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
     // 正常场景：模拟器，调用loadModelFromFile callback接口设置context

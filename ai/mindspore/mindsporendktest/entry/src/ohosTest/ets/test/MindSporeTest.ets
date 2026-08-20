@@ -45,6 +45,7 @@ function getContext(): Context {
 export default function mindSporeTest() {
 
   beforeAll(async () => {
+    try {
     let context = getContext()
     let dir = context.filesDir + '/';
     try {
@@ -73,9 +74,14 @@ export default function mindSporeTest() {
 
     console.info('[rawfile_copy_to_sandbox] sandbox path:' + dir);
     await Utils.sleep(500)
+    } catch (error) {
+      console.error('beforeAll failed: ' + JSON.stringify(error));
+      expect(false).assertTrue();
+    }
   })
 
   beforeEach(async () => {
+    try {
     let dir = getContext().filesDir + '/';
 
     let ml_face_model = dir + 'ml_face_isface.ms';
@@ -99,6 +105,10 @@ export default function mindSporeTest() {
       console.info('MindSporeDemo ml_face_isface.input file does not exists! access failed with error message: ' +
       err.message + ', error code: ' + err.code);
     });
+    } catch (error) {
+      console.error('beforeEach failed: ' + JSON.stringify(error));
+      expect(false).assertTrue();
+    }
   })
 
   describe('MindSporeTest', () => {

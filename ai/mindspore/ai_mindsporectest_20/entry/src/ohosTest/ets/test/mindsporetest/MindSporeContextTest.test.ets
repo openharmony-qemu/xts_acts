@@ -61,6 +61,7 @@ export default function MindSporeContextTest() {
     });
 
     beforeEach(async () => {
+      try {
       let dir = getContext().filesDir + '/';
 
       let ml_face_model = dir + 'lenet_train.ms';
@@ -84,6 +85,10 @@ export default function MindSporeContextTest() {
         console.info('MindSporeDemo ml_face_isface.ms file does not exists! access failed with error message: ' +
         err.message + ', error code: ' + err.code);
       });
+      } catch (error) {
+        console.error('beforeEach failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     })
 
     /**

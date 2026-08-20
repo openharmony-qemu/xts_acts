@@ -72,6 +72,7 @@ const fileArr = [
 export default function MindSporeTest() {
   describe('ActsMindSporeTest', () => {
     beforeAll(async () => {
+      try {
       let context = getContext()
       for (let i = 0; i < fileArr.length; i++) {
         const fileName = fileArr[i];
@@ -79,9 +80,14 @@ export default function MindSporeTest() {
       }
       Log.info(`[rawfile_copy_to_sandbox] sandbox path: ${context.filesDir}/`);
       await Utils.sleep(500)
+      } catch (error) {
+        console.error('beforeAll failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     })
 
     beforeEach(async () => {
+      try {
       let context = getContext()
       for (let i = 0; i < fileArr.length; i++) {
         const fileName = fileArr[i];
@@ -92,6 +98,10 @@ export default function MindSporeTest() {
         }
       }
       await Utils.sleep(500)
+      } catch (error) {
+        console.error('beforeEach failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
