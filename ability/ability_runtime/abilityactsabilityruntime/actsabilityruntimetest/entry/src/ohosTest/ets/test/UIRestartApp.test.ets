@@ -17,6 +17,7 @@ import hilog from '@ohos.hilog';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import Want from '@ohos.app.ability.Want';
 import common from '@ohos.app.ability.common';
+import UIAbility from '@ohos.app.ability.UIAbility';
 
 let context:common.UIAbilityContext;
 
@@ -43,7 +44,7 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(null);
         } catch (err) {
-          if (err?.code === 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done()
           }else {
@@ -68,7 +69,7 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          if (err?.code === 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done()
           }else {
@@ -97,7 +98,7 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          if (err?.code === 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done()
           }else {
@@ -127,7 +128,7 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          if (err?.code === 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done()
           }else {
@@ -156,7 +157,7 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          if (err?.code === 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done()
           }else {
@@ -185,7 +186,7 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          if (err?.code === 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done()
           }else {
@@ -215,7 +216,7 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          if (err?.code === 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done()
           }else {
