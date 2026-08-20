@@ -65,12 +65,14 @@ export default function ActsUIExtensionContextMethodTest() {
           };
           try {
           await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-            console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0100] commonEventSubscribeInfo success: ');
+            console.info(
+              '====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0100] commonEventSubscribeInfo success: ');
             sub = subscriber;
             hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
             commonEventManager.subscribe(sub, async (err, commonEventData) => {
               hilog.info(0x0000, tag, '%{public}s', `tag  subscribecllback` + JSON.stringify(commonEventData));
-              hilog.info(0x0000, tag, '%{public}s', `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
+              hilog.info(0x0000, tag, '%{public}s', `SecondAbility want: ` +
+                `${JSON.stringify(commonEventData.parameters?.data)}`);
               try {
                 expect(commonEventData.parameters?.result).assertEqual(401);
               } catch {
@@ -91,8 +93,8 @@ export default function ActsUIExtensionContextMethodTest() {
                 'case':tag
               }
             },(err, data)=>{
-              console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0100] startAbility result ' + 
-                err?.code);
+              console.info(
+                '====> [SUB_Ability_AbilityRuntime_UIExtensionContext_0100] startAbility result ' + err?.code);
             })
           });
           } catch (e) {
@@ -133,7 +135,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -199,7 +202,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -265,7 +269,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -331,7 +336,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -397,7 +403,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -463,7 +470,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -529,7 +537,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -595,7 +604,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -661,7 +671,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -727,7 +738,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -793,7 +805,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -859,7 +872,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -925,7 +939,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -991,7 +1006,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1057,7 +1073,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1123,7 +1140,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1190,7 +1208,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag  subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `SecondAbility want: ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1251,12 +1270,15 @@ export default function ActsUIExtensionContextMethodTest() {
         };
         try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-          console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_001] commonEventSubscribeInfo success: ');
+          console.info(
+            '====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_001] commonEventSubscribeInfo'
+              + 'success: ');
           sub = subscriber;
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1281,8 +1303,9 @@ export default function ActsUIExtensionContextMethodTest() {
               'case':tag
             }
           },(err, data)=>{
-            console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_001] startAbility result ' + 
-              err?.code);
+            console.info(
+                            
+                '====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_001] startAbility result ' + 
           })
         });
         } catch (e) {
@@ -1323,7 +1346,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1389,7 +1413,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1455,7 +1480,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1521,7 +1547,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1587,7 +1614,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1653,7 +1681,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1719,7 +1748,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1785,7 +1815,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1851,7 +1882,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1917,7 +1949,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -1983,7 +2016,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -2049,7 +2083,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -2115,7 +2150,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -2181,7 +2217,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -2248,7 +2285,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -2314,7 +2352,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -2380,7 +2419,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -2446,7 +2486,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -2512,7 +2553,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -2576,7 +2618,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -2594,7 +2637,8 @@ export default function ActsUIExtensionContextMethodTest() {
             try {
               await eventBusPlue.onWait('EntryAbility1_onDestroy')
             } catch (e) {
-              hilog.error(0x0000, tag, '%{public}s', `eventBusPlue onWait EntryAbility1_onDestroy failed: ${JSON.stringify(e)}`);
+              hilog.error(0x0000, tag, '%{public}s', `eventBusPlue onWait EntryAbility1_onDestroy failed:` +
+                `${JSON.stringify(e)}`);
             }
             done();
           });
@@ -2646,7 +2690,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual('success');
               expect(commonEventData.parameters?.colorMode != -1).assertTrue(); // COLOR_MODE_NOT_SET = -1
@@ -2713,7 +2758,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual('success');
               expect(commonEventData.parameters?.colorMode).assertEqual(0); // COLOR_MODE_DARK = 0
@@ -2780,7 +2826,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual('success');
               expect(commonEventData.parameters?.colorMode).assertEqual(1); // COLOR_MODE_LIGHT = 1
@@ -2847,7 +2894,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(16000050);
             } catch {
@@ -2913,7 +2961,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -2979,7 +3028,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
@@ -3045,7 +3095,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(16000050);
             } catch {
@@ -3111,7 +3162,8 @@ export default function ActsUIExtensionContextMethodTest() {
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback ` +
+              `${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
               expect(commonEventData.parameters?.result).assertEqual(16000050);
             } catch {
@@ -3432,7 +3484,8 @@ export default function ActsUIExtensionContextMethodTest() {
         };
         try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-          console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0100] commonEventSubscribeInfo success: ');
+          console.info(
+            '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0100] commonEventSubscribeInfo success: ');
           sub = subscriber;
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
@@ -3459,8 +3512,8 @@ export default function ActsUIExtensionContextMethodTest() {
             abilityName:'EntryAbility1',
             action:'result'
           }, null, (err, data)=>{
-            console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0100] startAbility result ' + 
-              err?.code);
+            console.info(
+              '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0100] startAbility result ' + err?.code);
           })
         });
         } catch (e) {
@@ -3496,7 +3549,8 @@ export default function ActsUIExtensionContextMethodTest() {
         };
         try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-          console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0200] commonEventSubscribeInfo success: ');
+          console.info(
+            '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0200] commonEventSubscribeInfo success: ');
           sub = subscriber;
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
@@ -3523,8 +3577,8 @@ export default function ActsUIExtensionContextMethodTest() {
             abilityName:'EntryAbility1',
             action:'result'
           }, undefined, (err, data)=>{
-            console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0200] startAbility result ' + 
-              err?.code);
+            console.info(
+              '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0200] startAbility result ' + err?.code);
           })
         });
         } catch (e) {
@@ -3561,7 +3615,8 @@ export default function ActsUIExtensionContextMethodTest() {
         };
         try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-          console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0300] commonEventSubscribeInfo success: ');
+          console.info(
+            '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0300] commonEventSubscribeInfo success: ');
           sub = subscriber;
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
@@ -3622,7 +3677,8 @@ export default function ActsUIExtensionContextMethodTest() {
         };
         try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-          console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0400] commonEventSubscribeInfo success: ');
+          console.info(
+            '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_StartAbilty_0400] commonEventSubscribeInfo success: ');
           sub = subscriber;
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
@@ -3674,7 +3730,8 @@ export default function ActsUIExtensionContextMethodTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100', Level.LEVEL0, 
+      async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100';
       if (mpEnable === 'true') {
         console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] start ');
@@ -3685,7 +3742,9 @@ export default function ActsUIExtensionContextMethodTest() {
         };
         try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-          console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] commonEventSubscribeInfo success: ');
+          console.info(
+            '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] commonEventSubscribeInfo'
+              + 'success: ');
           sub = subscriber;
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
@@ -3712,8 +3771,9 @@ export default function ActsUIExtensionContextMethodTest() {
             abilityName:'EntryAbility1',
             action:'result'
           }, null, (err, data)=>{
-            console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] startAbility result ' + 
-              err?.code);
+            console.info(
+                            
+                '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] startAbility result ' + 
           })
         });
         } catch (e) {
@@ -3738,7 +3798,8 @@ export default function ActsUIExtensionContextMethodTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200', Level.LEVEL0, 
+      async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200';
       if (mpEnable === 'true') {
         console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] start ');
@@ -3749,7 +3810,9 @@ export default function ActsUIExtensionContextMethodTest() {
         };
         try {
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-          console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] commonEventSubscribeInfo success: ');
+          console.info(
+            '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] commonEventSubscribeInfo'
+              + 'success: ');
           sub = subscriber;
           hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
           commonEventManager.subscribe(sub, async (err, commonEventData) => {
@@ -3776,8 +3839,9 @@ export default function ActsUIExtensionContextMethodTest() {
             abilityName:'EntryAbility1',
             action:'result'
           }, undefined, (err, data)=>{
-            console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] startAbility result ' + 
-              err?.code);
+            console.info(
+                            
+                '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] startAbility result ' + 
           })
         });
         } catch (e) {
@@ -3805,7 +3869,8 @@ export default function ActsUIExtensionContextMethodTest() {
     it('SUB_Ability_AbilityRuntime_ContextType_0100', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ContextType_0100';
       console.info('====> [SUB_Ability_AbilityRuntime_ContextType_0100] start ');
-      let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+      let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+        'TestAbilityContext') as common.UIAbilityContext;
       let result = testAbilityContext.isContextOf(contextConstant.ContextType.UIABILITY_CONTEXT);
       expect(result).assertTrue();
       done();
@@ -3822,7 +3887,8 @@ export default function ActsUIExtensionContextMethodTest() {
     it('SUB_Ability_AbilityRuntime_ContextType_0200', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ContextType_0200';
       console.info('====> [SUB_Ability_AbilityRuntime_ContextType_0200] start ');
-      let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+      let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+        'TestAbilityContext') as common.UIAbilityContext;
       let result = testAbilityContext.isContextOf(contextConstant.ContextType.APPLICATION_CONTEXT);
       expect(result).assertFalse();
       done();
@@ -3873,7 +3939,8 @@ export default function ActsUIExtensionContextMethodTest() {
     it('SUB_Ability_AbilityRuntime_ContextType_0500', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ContextType_0500';
       console.info('====> [SUB_Ability_AbilityRuntime_ContextType_0500] start ');
-      let abilityStageContext: common.AbilityStageContext = AppStorage.get<common.AbilityStageContext>('abilityStageContext') as common.AbilityStageContext;
+      let abilityStageContext: common.AbilityStageContext = AppStorage.get<common.AbilityStageContext>(
+        'abilityStageContext') as common.AbilityStageContext;
       let result = abilityStageContext.isContextOf(contextConstant.ContextType.ABILITY_STAGE_CONTEXT);
       expect(result).assertTrue();
       done();
@@ -3890,7 +3957,8 @@ export default function ActsUIExtensionContextMethodTest() {
     it('SUB_Ability_AbilityRuntime_ContextType_0600', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ContextType_0600';
       console.info('====> [SUB_Ability_AbilityRuntime_ContextType_0600] start ');
-      let abilityStageContext: common.AbilityStageContext = AppStorage.get<common.AbilityStageContext>('abilityStageContext') as common.AbilityStageContext;
+      let abilityStageContext: common.AbilityStageContext = AppStorage.get<common.AbilityStageContext>(
+        'abilityStageContext') as common.AbilityStageContext;
       let result = abilityStageContext.isContextOf(contextConstant.ContextType.UI_SERVICE_EXTENSION_CONTEXT);
       expect(result).assertFalse();
       done();
@@ -3929,7 +3997,8 @@ export default function ActsUIExtensionContextMethodTest() {
     it('SUB_Ability_AbilityRuntime_ContextType_0800', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ContextType_0800';
       console.info('====> [SUB_Ability_AbilityRuntime_ContextType_0800] start ');
-      let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+      let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+        'TestAbilityContext') as common.UIAbilityContext;
       let result = testAbilityContext.isContextOf(contextConstant.ContextType.FORM_EXTENSION_CONTEXT);
       expect(result).assertFalse();
       done();
@@ -3946,7 +4015,8 @@ export default function ActsUIExtensionContextMethodTest() {
     it('SUB_Ability_AbilityRuntime_ContextType_0900', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ContextType_0900';
       console.info('====> [SUB_Ability_AbilityRuntime_ContextType_0900] start ');
-      let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+      let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+        'TestAbilityContext') as common.UIAbilityContext;
       let result = testAbilityContext.isContextOf(contextConstant.ContextType.APP_SERVICE_EXTENSION_CONTEXT);
       expect(result).assertFalse();
       done();
@@ -3963,7 +4033,8 @@ export default function ActsUIExtensionContextMethodTest() {
     it('SUB_Ability_AbilityRuntime_ContextType_1000', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ContextType_1000';
       console.info('====> [SUB_Ability_AbilityRuntime_ContextType_1000] start ');
-      let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+      let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+        'TestAbilityContext') as common.UIAbilityContext;
       let result = testAbilityContext.isContextOf(undefined);
       console.info('====> [SUB_Ability_AbilityRuntime_ContextType_1000] result ' + result);
       expect(result).assertFalse()
@@ -3981,7 +4052,8 @@ export default function ActsUIExtensionContextMethodTest() {
     it('SUB_Ability_AbilityRuntime_ContextType_1100', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ContextType_1100';
       console.info('====> [SUB_Ability_AbilityRuntime_ContextType_1100] start ');
-      let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+      let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+        'TestAbilityContext') as common.UIAbilityContext;
       let result = testAbilityContext.isContextOf(null);
       console.info('====> [SUB_Ability_AbilityRuntime_ContextType_1100] result ' + result);
       expect(result).assertFalse()
