@@ -22,7 +22,7 @@ import { Want } from '@kit.AbilityKit';
 const CUMULATIVE = 2;
 
 export default class OtherAbility extends UIAbility {
-  circulate: number = 0;
+  private circulate: number = 0;
 
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     console.log('=====> OtherAbility onCreate =====>');

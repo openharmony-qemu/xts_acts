@@ -19,8 +19,8 @@ import { UIExtensionContentSession } from '@kit.AbilityKit';
 
 
 export default class FeatureActionExtensionAbility extends ActionExtensionAbility {
-  storage: LocalStorage = new LocalStorage();
-  message: string = '';
+  private storage: LocalStorage = new LocalStorage();
+  private message: string = '';
   onCreate() {
   }
 

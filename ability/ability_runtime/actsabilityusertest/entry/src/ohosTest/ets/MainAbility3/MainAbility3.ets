@@ -19,7 +19,7 @@ import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
 
-function PublishCallBackOne() {
+function publishCallBackOne() {
   console.debug('====>Publish CallBack ACTS_Start_CommonEvent====>');
   console.debug('====>close this context====>4====>');
 }
@@ -48,7 +48,7 @@ export default class MainAbility3 extends Ability {
   onForeground() {
     // Ability has brought to foreground
     console.log('MainAbility3 onForeground');
-    commonEvent.publish('ACTS_StartAbility_CommonEvent', PublishCallBackOne);
+    commonEvent.publish('ACTS_StartAbility_CommonEvent', publishCallBackOne);
   }
 
   onBackground() {

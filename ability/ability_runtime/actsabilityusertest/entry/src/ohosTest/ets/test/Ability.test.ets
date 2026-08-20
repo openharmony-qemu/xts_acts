@@ -182,6 +182,8 @@ export default function abilityTest() {
                 })
                 .then(() => {
                   console.log('====>startAbility end====>');
+                }).catch((err: BusinessError) => {
+                  console.error('====>startAbility failed====>' + JSON.stringify(err));
                 })
             })
         })
@@ -234,6 +236,8 @@ export default function abilityTest() {
                 })
                 .then(() => {
                   console.log('====>startAbility end====>');
+                }).catch((err: BusinessError) => {
+                  console.error('====>startAbility failed====>' + JSON.stringify(err));
                 })
             })
         })
