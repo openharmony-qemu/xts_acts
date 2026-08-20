@@ -46,7 +46,7 @@ workerPort.onmessage = (e: MessageEvents): void => {
           try {
             workerPort.postMessage('delayed_result');
           } catch (e) {
-            // Worker may have been terminated before timer fired.
+            console.warn(`delayed_result post skipped after worker termination: ${e}`);
           }
         }, 200);
         break;
@@ -213,5 +213,4 @@ workerPort.onmessage = (e: MessageEvents): void => {
 workerPort.onmessageerror = (e: MessageEvents): void => {
   console.info('InheritanceEchoWorker onmessageerror');
 }
-
 
