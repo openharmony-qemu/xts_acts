@@ -616,7 +616,7 @@ export default function sendableContextManagerTest() {
     it('SUB_ChildProcessManager_sendableContextManager_2100', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2100`;
       let startupTasks: Array<string> = ['testTask'];
-      let config: ESObject = undefined;
+      let config: startupManager.StartupConfig | undefined = undefined;
       try {
         startupManager.run(startupTasks, config).then(() => {
           console.info(`${tag} startupManager.run succeed`);
@@ -679,8 +679,8 @@ export default function sendableContextManagerTest() {
     it('SUB_ChildProcessManager_sendableContextManager_2300', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2300`;
       let startupTasks: Array<string>|undefined = undefined;
-      let abilityStageContext: ESObject = undefined;
-      let config: ESObject = undefined;
+      let abilityStageContext: startupManager.StartupConfig | undefined = undefined;
+      let config: startupManager.StartupConfig | undefined = undefined;
       try {
         startupManager.run(startupTasks, abilityStageContext, config).then(() => {
           console.info(`${tag} startupManager.run succeed`);

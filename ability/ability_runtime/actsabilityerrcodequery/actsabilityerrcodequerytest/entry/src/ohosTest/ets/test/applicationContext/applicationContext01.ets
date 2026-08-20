@@ -64,7 +64,7 @@ onCreate(want: Want) {
     // Main window is created, set main page for this ability
     console.info('applicationContext01 onWindowStageCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-    windowStage.loadContent('testability/pages/UiAbility/UiAbility12', (err: BusinessError, data: ESObject) => {
+    windowStage.loadContent('testability/pages/UiAbility/UiAbility12', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

@@ -54,7 +54,7 @@ export default class FourthAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('testability/pages/Index', (err: BusinessError, data: ESObject) => {
+    windowStage.loadContent('testability/pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
