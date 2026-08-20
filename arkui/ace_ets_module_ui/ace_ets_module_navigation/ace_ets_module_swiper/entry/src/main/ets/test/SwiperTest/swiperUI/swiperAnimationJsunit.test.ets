@@ -820,6 +820,7 @@ export default function swiperAnimationJsunit() {
          console.error("push circle page error: " + err);
       }
             // get the rect of swiper
+      try{
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
@@ -848,7 +849,11 @@ export default function swiperAnimationJsunit() {
       let strJson2 = getInspectorByKey('GestureSwipe');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[swiperAnimationJsunit_0012'] component obj3 is: " + obj2.$attrs.content);
-      expect(obj2.$attrs.content).assertEqual('GestureSwipe index: 1');
+      expect(obj2.$attrs.content).assertEqual('GestureSwipe index: 1');}catch (error) {
+        console.error('[swiperAnimationGestureJsunit_0017] error:' + error);
+        expect().assertFail();
+        done();
+      }
       done();
     });
     
@@ -890,6 +895,7 @@ export default function swiperAnimationJsunit() {
       } catch (err) {
          console.error("push circle page error: " + err);
       }
+      try{
             // get the rect of swiper
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
@@ -922,7 +928,11 @@ export default function swiperAnimationJsunit() {
       let strJson2 = getInspectorByKey('GestureSwipe');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[swiperAnimationJsunit_0019'] component obj3 is: " + obj2.$attrs.content);
-      expect(obj2.$attrs.content).assertEqual('GestureSwipe index: 1');
+      expect(obj2.$attrs.content).assertEqual('GestureSwipe index: 1');}catch (error) {
+        console.error('[swiperAnimationJsunit_0019] error:' + error);
+        expect().assertFail();
+        done();
+      }
       done();
     });
 
@@ -988,7 +998,7 @@ export default function swiperAnimationJsunit() {
       let showNext2 = await driver.findComponent(ON.id('showNext'));
       await showNext2.click();
       await CommonFunc.sleep(1000);
-
+      try{
       // to swiper
       let startx = Math.round(right - width * 0.4);
       let starty = Math.round(top + height / 2);
@@ -1007,6 +1017,10 @@ export default function swiperAnimationJsunit() {
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[swiperAnimationJsunit_0020'] component obj3 is: " + obj2.$attrs.content);
       expect(obj2.$attrs.content).assertEqual('GestureSwipe index: 2');}catch (error) {
+        console.error('[swiperAnimationGestureJsunit_0020] error:' + error);
+        expect().assertFail();
+        done();
+      }}catch (error) {
         console.error('[swiperAnimationGestureJsunit_0020] error:' + error);
         expect().assertFail();
         done();
