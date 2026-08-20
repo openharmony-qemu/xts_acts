@@ -33,8 +33,9 @@ import { media } from '@kit.MediaKit';
 import { colorSpaceManager } from '@kit.ArkGraphics2D';
 import { fileUri } from '@kit.CoreFileKit';
 import { Driver, ON } from '@kit.TestKit';
+import { UiDriver, BY } from '@ohos.UiTest'
 
-export async function executePicker() : boolean {
+export function executePicker() : boolean {
   const cameraAvailable = canIUse('SystemCapability.Multimedia.Camera.Core');
   let context = getContext();
   console.info(TAG + 'Enter cameraAvailable is '+ cameraAvailable);
@@ -67,8 +68,8 @@ export async function executePicker() : boolean {
   } else {
     isExecute = false;
   }
-  let uidriver = await Driver.create();
-  let uiButton = await uidriver.waitForComponent(ON.id("COMPONENT_ID_SHUTTER_PHOTO_1"), COMMON_WAIT_DURATION);
+  let uidriver = UiDriver.create();
+  let uiButton = uidriver.findComponent(BY.text("COMPONENT_ID_SHUTTER_PHOTO_1"));
   console.info(TAG + 'Enter uiButton is '+ JSON.stringify(uiButton));
   if (uiButton !== null) {
       isExecute = false;
