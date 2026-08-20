@@ -157,12 +157,15 @@ static napi_value CreateReferenceSupportsNonObjectValues(napi_env env, napi_call
 {
     (void)info;
     const int32_t kTestValue42 = 42;
+    const int32_t kNullIndex4 = 4;
+    const int32_t kBooleanIndex2 = 2;
+    const int32_t kUndefinedIndex3 = 3;
     napi_value values[5] = {nullptr};
     napi_create_int32(env, kTestValue42, &values[0]);
     napi_create_string_utf8(env, "text", NAPI_AUTO_LENGTH, &values[1]);
-    napi_get_boolean(env, true, &values[2]);
-    napi_get_undefined(env, &values[3]);
-    napi_get_null(env, &values[4]);
+    napi_get_boolean(env, true, &values[kBooleanIndex2]);
+    napi_get_undefined(env, &values[kUndefinedIndex3]);
+    napi_get_null(env, &values[kNullIndex4]);
 
     for (napi_value value : values) {
         napi_ref ref = nullptr;
@@ -223,11 +226,12 @@ static napi_value GetTypedArrayInfoLengthReturnsByteLength(napi_env env, napi_ca
 {
     (void)info;
     const int32_t kTestValue16 = 16;
+    const int32_t kElementCount4 = 4;
     void *data = nullptr;
     napi_value arrayBuffer = nullptr;
-    napi_create_arraybuffer(env, 16, &data, &arrayBuffer);
+    napi_create_arraybuffer(env, kTestValue16, &data, &arrayBuffer);
     napi_value typedArray = nullptr;
-    napi_create_typedarray(env, napi_int32_array, 4, arrayBuffer, 0, &typedArray);
+    napi_create_typedarray(env, napi_int32_array, kElementCount4, arrayBuffer, 0, &typedArray);
 
     napi_typedarray_type type = napi_int8_array;
     size_t length = 0;
@@ -493,11 +497,12 @@ struct AsyncCancelData {
 static void SlowExecute(napi_env env, void *data)
 {
     (void)env;
+    const int32_t kSlowExecuteDelayMs = 80;
     auto *cancelData = reinterpret_cast<AsyncCancelData *>(data);
     if (cancelData != nullptr) {
         cancelData->started.store(true);
     }
-    std::this_thread::sleep_for(std::chrono::milliseconds(80));
+    std::this_thread::sleep_for(std::chrono::milliseconds(kSlowExecuteDelayMs));
 }
 
 static void SlowComplete(napi_env env, napi_status status, void *data)

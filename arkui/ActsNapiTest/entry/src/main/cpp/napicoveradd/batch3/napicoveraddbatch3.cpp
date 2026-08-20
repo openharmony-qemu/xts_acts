@@ -262,7 +262,8 @@ static napi_value CreateSendableArrayWithLengthAndTypedArray(napi_env env, napi_
 
     void *data = nullptr;
     napi_value arrayBuffer = nullptr;
-    napi_create_sendable_arraybuffer(env, 16, &data, &arrayBuffer);
+    const int32_t kTestValue16 = 16;
+    napi_create_sendable_arraybuffer(env, kTestValue16, &data, &arrayBuffer);
     napi_value typedArray = nullptr;
     napi_status typedArrayStatus =
         napi_create_sendable_typedarray(env, napi_int32_array, 4, arrayBuffer, 0, &typedArray);
@@ -278,7 +279,7 @@ static napi_value SendableTypedArrayInfoAndTypeCheck(napi_env env, napi_callback
     const int32_t kTestValue16 = 16;
     void *data = nullptr;
     napi_value arrayBuffer = nullptr;
-    napi_status bufferStatus = napi_create_sendable_arraybuffer(env, 16, &data, &arrayBuffer);
+    napi_status bufferStatus = napi_create_sendable_arraybuffer(env, kTestValue16, &data, &arrayBuffer);
     napi_value typedArray = nullptr;
     napi_status createStatus = napi_create_sendable_typedarray(env, napi_int32_array, 4, arrayBuffer, 0, &typedArray);
 
