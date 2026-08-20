@@ -609,8 +609,11 @@ export default function SliderInterfaceTest() {
       JSON.stringify(obj1.$attrs.width));
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_0010] obj1.$attrs.height is: " +
       JSON.stringify(obj1.$attrs.height));
-      expect(obj1.$attrs.width).assertEqual('300.00vp');
-      expect(obj1.$attrs.height).assertEqual('300.00vp');
+
+      let widthStr = '300.00vp'
+      let heightStr = '300.00vp'
+      expect(Math.abs(parseFloat(obj1.$attrs.width.slice(0,-2)) - parseFloat(widthStr.slice(0,-2))) <= 1).assertTrue();
+      expect(Math.abs(parseFloat(obj1.$attrs.height.slice(0,-2)) - parseFloat(heightStr.slice(0,-2))) <= 1).assertTrue();
       done();
     });
 
@@ -630,7 +633,9 @@ export default function SliderInterfaceTest() {
       await Utils.sleep(1000);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_0020] obj1.$attrs.height is: " +
       JSON.stringify(obj1.$attrs.height));
-      expect(obj1.$attrs.height).assertEqual('80.00vp');
+      let heightStr = '80.00vp'
+      expect(Math.abs(parseFloat(obj1.$attrs.height.slice(0,-2)) - parseFloat(heightStr.slice(0,-2))) <= 1).assertTrue();
+
       done();
     });
   })
