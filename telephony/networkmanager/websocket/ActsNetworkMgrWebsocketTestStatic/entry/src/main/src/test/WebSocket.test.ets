@@ -1674,38 +1674,38 @@ export default function WebSocketTest() {
               client.connect('ws://127.0.0.1:8099', (err: BusinessError<void> | null, value: boolean | undefined) => {
                 if (value) {
                   hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+                  let connections = server.listAllConnections()
+                  if (connections == null) {
+                    ExpectFail();
+                    server.stop();
+                    hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
+                    done();
+                  } else {
+                    let connection: webSocket.WebSocketConnection = {
+                      clientIP: '0.0.0.0',
+                      clientPort: 8099
+                    }
+                    server.send("hello client", connection).then((value: boolean | undefined) => {
+                      if (value) {
+                        ExpectTrue(value !== null);
+                        done();
+                      } else {
+                        ExpectFail();
+                        done();
+                      }
+                    }).catch((error: Error) => {
+                      hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + error.code);
+                      hilog.info(domain, tag, '%{public}s', caseName + 'error.code type is : ' + typeof error.code);
+                      ExpectTrue(String(error.code) === '2302006');
+                      server.stop();
+                      done();
+                    })
+                  }
                 } else {
                   ExpectFail();
                   done()
                 }
               });
-
-              let connections = server.listAllConnections()
-              if (connections == null) {
-                ExpectFail();
-                server.stop();
-                hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
-                done();
-              } else {
-                let connection: webSocket.WebSocketConnection = {
-                  clientIP: '0.0.0.0',
-                  clientPort: 8099
-                }
-                server.send("hello client", connection).then((value: boolean | undefined) => {
-                  if (value) {
-                    ExpectTrue(value !== null);
-                    done();
-                  } else {
-                    ExpectFail();
-                    done();
-                  }
-                }).catch((error: Error) => {
-                  hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + error.code);
-                  ExpectTrue(error.code === 2302006);
-                  server.stop();
-                  done();
-                })
-              }
             } else {
               ExpectFail();
               done();
