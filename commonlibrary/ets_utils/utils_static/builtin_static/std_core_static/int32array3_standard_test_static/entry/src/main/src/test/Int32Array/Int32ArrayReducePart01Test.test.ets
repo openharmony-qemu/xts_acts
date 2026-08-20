@@ -224,6 +224,7 @@ export default function Int32ArrayReducePart01Test(): void {
       let arr: Int32Array = Int32Array.of(1, 2, 3);
       try {
         arr.reduce((p: number, c: number): number => {
+          expect(c).assertEqual(1);
           throw new Error('callback boom');
         }, 0);
         expect().assertFail();
@@ -247,6 +248,7 @@ export default function Int32ArrayReducePart01Test(): void {
         arr.reduce((p: number, c: number): number => {
           callCount = callCount + 1;
           if (callCount === 2) {
+            expect(c).assertEqual(2);
             throw new Error('stop');
           }
           return p + c;
@@ -910,6 +912,7 @@ export default function Int32ArrayReducePart01Test(): void {
       let msg: string = '';
       try {
         arr.reduce((p: number, c: number): number => {
+          expect(c).assertEqual(1);
           throw new Error('reduceFail');
         }, 0);
         expect().assertFail();
