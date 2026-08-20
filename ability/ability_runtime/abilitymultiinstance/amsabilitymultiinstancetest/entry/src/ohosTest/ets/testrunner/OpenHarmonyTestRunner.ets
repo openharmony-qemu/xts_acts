@@ -20,7 +20,7 @@ import { BusinessError } from '@ohos.base';
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs;
 
-function translateParamsToString(parameters: ESObject) {
+function translateParamsToString(parameters: Record<string, string>) {
   const keySet = new Set([
     '-s class', '-s notClass', '-s suite', '-s it',
     '-s level', '-s testType', '-s size', '-s timeout',
