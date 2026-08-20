@@ -16,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium';
 import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-function asyncSleep(time: number): Pomise<object> {
+function asyncSleep(time: number): Promise<object> {
  	return new Promise((resolve) => {
     setTimeout(resolve, time);
   });
