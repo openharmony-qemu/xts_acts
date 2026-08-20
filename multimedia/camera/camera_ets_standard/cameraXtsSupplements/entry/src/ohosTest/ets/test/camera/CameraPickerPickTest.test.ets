@@ -67,8 +67,9 @@ export function executePicker() : boolean {
   } else {
     isExecute = false;
   }
-  let uidriver = UiDriver.create();
-  let uiButton = uidriver.findComponent(BY.text("COMPONENT_ID_SHUTTER_PHOTO_1"));
+  let uidriver = Driver.create();
+  let uiButton = driver.findComponent(ON.text("COMPONENT_ID_SHUTTER_PHOTO_1"));
+  console.info(TAG + 'Enter uiButton is '+ JSON.stringify(uiButton));
   if (uiButton !== null) {
       isExecute = false;
   } else {
