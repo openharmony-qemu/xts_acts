@@ -1,6 +1,5 @@
 'use static';
 
-
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1124,14 +1123,14 @@ export default function Int16ArrayToLocaleStringTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_6100
-     * @tc.name testInt16ArrayToLocaleStringTestOne061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_6000
+     * @tc.name testInt16ArrayToLocaleStringTestOne060
      * @tc.desc Verify Int16Array.toLocaleString with currency CNY option under 'zh-CN'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToLocaleStringTestOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToLocaleStringTestOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 500;
       let arr: Int16Array = Int16Array.of(val);
       let opts: Intl.NumberFormatOptions = {
@@ -1145,14 +1144,14 @@ export default function Int16ArrayToLocaleStringTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_6200
-     * @tc.name testInt16ArrayToLocaleStringTestOne062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_6100
+     * @tc.name testInt16ArrayToLocaleStringTestOne061
      * @tc.desc Verify Int16Array.toLocaleString with currency CNY and useGrouping false removes grouping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToLocaleStringTestOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToLocaleStringTestOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 9999;
       let arr: Int16Array = Int16Array.of(val);
       let opts: Intl.NumberFormatOptions = {
@@ -1167,14 +1166,14 @@ export default function Int16ArrayToLocaleStringTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_6300
-     * @tc.name testInt16ArrayToLocaleStringTestOne063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_6200
+     * @tc.name testInt16ArrayToLocaleStringTestOne062
      * @tc.desc Verify Int16Array.toLocaleString with invalid language tag 'xx' falls back to default
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToLocaleStringTestOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToLocaleStringTestOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1000, 2000);
       let result: string = arr.toLocaleString('xx');
       let expectedResult: string = '1,000,2,000';
@@ -1182,14 +1181,14 @@ export default function Int16ArrayToLocaleStringTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_6400
-     * @tc.name testInt16ArrayToLocaleStringTestOne064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_6300
+     * @tc.name testInt16ArrayToLocaleStringTestOne063
      * @tc.desc Verify Int16Array.toLocaleString with long valid locale tag
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToLocaleStringTestOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToLocaleStringTestOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1000, 2000);
       let result: string = arr.toLocaleString('en-US-u-ca-gregory-u-nu-latn-u-co-emoji');
       let expectedResult: string = '1,000,2,000';
@@ -1197,20 +1196,30 @@ export default function Int16ArrayToLocaleStringTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_6500
-     * @tc.name testInt16ArrayToLocaleStringTestOne065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_6400
+     * @tc.name testInt16ArrayToLocaleStringTestOne064
      * @tc.desc Verify Int16Array.toLocaleString with large locales array uses first supported tag
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToLocaleStringTestOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToLocaleStringTestOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(1000, 2000);
-      let largeLocales: string[] = ['en-US', 'zh-CN', 'ja-JP', 'ko-KR', 'fr-FR', 'de-DE', 'es-ES', 'it-IT', 'pt-BR', 'ru-RU',];
+      let largeLocales: string[] = [
+        'en-US',
+        'zh-CN',
+        'ja-JP',
+        'ko-KR',
+        'fr-FR',
+        'de-DE',
+        'es-ES',
+        'it-IT',
+        'pt-BR',
+        'ru-RU',
+      ];
       let result: string = arr.toLocaleString(largeLocales);
       let expectedResult: string = '1,000,2,000';
       expect(result).assertEqual(expectedResult);
     });
-
   });
 }

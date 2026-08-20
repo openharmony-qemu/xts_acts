@@ -1,6 +1,5 @@
 'use static';
 
-
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -171,29 +170,12 @@ export default function Int16ArrayToSortedTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_0700
      * @tc.name testInt16ArrayToSortedTestTwo007
-     * @tc.desc Verify modifying toSorted() result does not change original first element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(3, 1, 2);
-      let result: Int16Array = arr.toSorted();
-      result.$_set(0, 999);
-      let elementAt0: number = arr.$_get(0);
-      let expectedElement0: int = 3;
-      expect(elementAt0).assertEqual(expectedElement0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_0800
-     * @tc.name testInt16ArrayToSortedTestTwo008
      * @tc.desc Verify fill on toSorted() result leaves original elements unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(3, 1, 2);
       let result: Int16Array = arr.toSorted();
       result.fill(0);
@@ -209,14 +191,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_0900
-     * @tc.name testInt16ArrayToSortedTestTwo009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_0800
+     * @tc.name testInt16ArrayToSortedTestTwo008
      * @tc.desc Verify two toSorted() calls return independent objects
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(3, 1, 2);
       let sortedResultFirst: Int16Array = arr.toSorted();
       let sortedResultSecond: Int16Array = arr.toSorted();
@@ -224,33 +206,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1000
-     * @tc.name testInt16ArrayToSortedTestTwo010
-     * @tc.desc Verify toSorted() length and first sorted element on [3, 1, 2]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(3, 1, 2);
-      let result: Int16Array = arr.toSorted();
-      let actualLength: int = result.length;
-      let expectedLength: int = 3;
-      expect(actualLength).assertEqual(expectedLength);
-      let elementAt0: number = result.$_get(0);
-      let expectedElement0: int = 1;
-      expect(elementAt0).assertEqual(expectedElement0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1100
-     * @tc.name testInt16ArrayToSortedTestTwo011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_0900
+     * @tc.name testInt16ArrayToSortedTestTwo009
      * @tc.desc Verify toSorted() result supports $_set write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(3, 1, 2);
       let result: Int16Array = arr.toSorted();
       result.$_set(0, 99);
@@ -260,14 +223,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1200
-     * @tc.name testInt16ArrayToSortedTestTwo012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1000
+     * @tc.name testInt16ArrayToSortedTestTwo010
      * @tc.desc Verify toSorted() result join returns sorted string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(3, 1, 2);
       let result: Int16Array = arr.toSorted();
       let actualJoined: string = result.join(',');
@@ -276,15 +239,36 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1300
-     * @tc.name testInt16ArrayToSortedTestTwo013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1100
+     * @tc.name testInt16ArrayToSortedTestTwo011
      * @tc.desc Verify large-array toSorted() length remains 20
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(100, 50, 75, 25, 0, -50, -25, 10, 60, 90, -100, 40, 80, 20, 70, 30, -10, -75, -40, -90,);
+    it('testInt16ArrayToSortedTestTwo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = Int16Array.of(
+        100,
+        50,
+        75,
+        25,
+        0,
+        -50,
+        -25,
+        10,
+        60,
+        90,
+        -100,
+        40,
+        80,
+        20,
+        70,
+        30,
+        -10,
+        -75,
+        -40,
+        -90,
+      );
       let result: Int16Array = arr.toSorted();
       let actualLength: int = result.length;
       let expectedLength: int = 20;
@@ -292,14 +276,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1400
-     * @tc.name testInt16ArrayToSortedTestTwo014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1200
+     * @tc.name testInt16ArrayToSortedTestTwo012
      * @tc.desc Verify toSorted() deep copy has byteOffset 0 from ArrayBuffer view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(6);
       let arr: Int16Array = new Int16Array(buf, 0, 3);
       arr.$_set(0, 3);
@@ -312,14 +296,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1500
-     * @tc.name testInt16ArrayToSortedTestTwo015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1300
+     * @tc.name testInt16ArrayToSortedTestTwo013
      * @tc.desc Verify empty array toSorted() is idempotent when called twice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int16Array(0);
       let sortedOnce = arr.toSorted();
       let sortedTwice = sortedOnce.toSorted();
@@ -329,28 +313,28 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1600
-     * @tc.name testInt16ArrayToSortedTestTwo016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1400
+     * @tc.name testInt16ArrayToSortedTestTwo014
      * @tc.desc Verify empty array toSorted() result is not the original reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int16Array(0);
       let result = arr.toSorted();
       expect(result).not().assertEqual(arr);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1700
-     * @tc.name testInt16ArrayToSortedTestTwo017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1500
+     * @tc.name testInt16ArrayToSortedTestTwo015
      * @tc.desc Verify empty array toSorted() returns empty Int16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int16Array(0);
       let result = arr.toSorted();
       let actualLength: int = result.length;
@@ -359,14 +343,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1800
-     * @tc.name testInt16ArrayToSortedTestTwo018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1600
+     * @tc.name testInt16ArrayToSortedTestTwo016
      * @tc.desc Verify single element 0 toSorted() returns a copy containing 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 0;
       let arr: Int16Array = Int16Array.of(val);
       let result = arr.toSorted();
@@ -379,48 +363,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1900
-     * @tc.name testInt16ArrayToSortedTestTwo019
-     * @tc.desc Verify single element MIN toSorted() returns a copy containing MIN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = -32768;
-      let arr: Int16Array = Int16Array.of(val);
-      let result = arr.toSorted();
-      let elementAt0: number = result.$_get(0);
-      let expectedElement0: int = -32768;
-      expect(elementAt0).assertEqual(expectedElement0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2000
-     * @tc.name testInt16ArrayToSortedTestTwo020
-     * @tc.desc Verify single element MAX toSorted() returns a copy containing MAX
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 32767;
-      let arr: Int16Array = Int16Array.of(val);
-      let result = arr.toSorted();
-      let elementAt0: number = result.$_get(0);
-      let expectedElement0: int = 32767;
-      expect(elementAt0).assertEqual(expectedElement0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2100
-     * @tc.name testInt16ArrayToSortedTestTwo021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1700
+     * @tc.name testInt16ArrayToSortedTestTwo017
      * @tc.desc Verify single element toSorted() result is not the original reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 42;
       let arr: Int16Array = Int16Array.of(val);
       let result = arr.toSorted();
@@ -428,14 +378,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2200
-     * @tc.name testInt16ArrayToSortedTestTwo022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1800
+     * @tc.name testInt16ArrayToSortedTestTwo018
      * @tc.desc Verify single element toSorted() result can be modified independently
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 5;
       let arr: Int16Array = Int16Array.of(val);
       let result = arr.toSorted();
@@ -446,14 +396,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2300
-     * @tc.name testInt16ArrayToSortedTestTwo023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1900
+     * @tc.name testInt16ArrayToSortedTestTwo019
      * @tc.desc Verify all-zero array toSorted() keeps values unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int16Array(5);
       let result = arr.toSorted();
       let elementAt0: number = result.$_get(0);
@@ -465,14 +415,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2400
-     * @tc.name testInt16ArrayToSortedTestTwo024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2000
+     * @tc.name testInt16ArrayToSortedTestTwo020
      * @tc.desc Verify all-equal array toSorted() leaves original array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(9, 9, 9);
       let result = arr.toSorted();
       let actualResultString: string = result.toString();
@@ -493,33 +443,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2500
-     * @tc.name testInt16ArrayToSortedTestTwo025
-     * @tc.desc Verify MIN and MAX mixed toSorted() puts MIN first
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(32767, -32768);
-      let result = arr.toSorted();
-      let elementAt0: number = result.$_get(0);
-      let expectedElement0: int = -32768;
-      expect(elementAt0).assertEqual(expectedElement0);
-      let elementAt1: number = result.$_get(1);
-      let expectedElement1: int = 32767;
-      expect(elementAt1).assertEqual(expectedElement1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2600
-     * @tc.name testInt16ArrayToSortedTestTwo026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2100
+     * @tc.name testInt16ArrayToSortedTestTwo021
      * @tc.desc Verify MIN/0/MAX mixed toSorted() sorts ascending
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(32767, -32768, 0);
       let result = arr.toSorted();
       let elementAt0: number = result.$_get(0);
@@ -534,14 +465,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2700
-     * @tc.name testInt16ArrayToSortedTestTwo027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2200
+     * @tc.name testInt16ArrayToSortedTestTwo022
      * @tc.desc Verify alternating MIN/MAX values place all MIN before MAX after toSorted()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(32767, -32768, 32767, -32768);
       let result = arr.toSorted();
       let elementAt0: number = result.$_get(0);
@@ -559,14 +490,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2800
-     * @tc.name testInt16ArrayToSortedTestTwo028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2300
+     * @tc.name testInt16ArrayToSortedTestTwo023
      * @tc.desc Verify modifying toSorted() result does not change original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(3, 1, 2);
       let result = arr.toSorted();
       result.$_set(0, 99);
@@ -582,14 +513,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2900
-     * @tc.name testInt16ArrayToSortedTestTwo029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2400
+     * @tc.name testInt16ArrayToSortedTestTwo024
      * @tc.desc Verify fill on toSorted() result does not affect original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(5, 1, 3);
       let result = arr.toSorted();
       result.fill(0);
@@ -605,14 +536,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3000
-     * @tc.name testInt16ArrayToSortedTestTwo030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2500
+     * @tc.name testInt16ArrayToSortedTestTwo025
      * @tc.desc Verify reverse on toSorted() result does not affect original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(1, 3, 2);
       let result = arr.toSorted();
       result.reverse();
@@ -628,14 +559,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3100
-     * @tc.name testInt16ArrayToSortedTestTwo031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2600
+     * @tc.name testInt16ArrayToSortedTestTwo026
      * @tc.desc Verify set on toSorted() result does not affect original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(4, 1, 3);
       let result = arr.toSorted();
       let other = Int16Array.of(99, 99, 99);
@@ -652,14 +583,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3200
-     * @tc.name testInt16ArrayToSortedTestTwo032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2700
+     * @tc.name testInt16ArrayToSortedTestTwo027
      * @tc.desc Verify sort on toSorted() result does not affect original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(1, 3, 2);
       let result = arr.toSorted();
       result.sort();
@@ -675,14 +606,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3300
-     * @tc.name testInt16ArrayToSortedTestTwo033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2800
+     * @tc.name testInt16ArrayToSortedTestTwo028
      * @tc.desc Verify original mutations after toSorted() do not affect returned result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(10, 5, 8);
       let result = arr.toSorted();
       arr.fill(0);
@@ -700,14 +631,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3400
-     * @tc.name testInt16ArrayToSortedTestTwo034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2900
+     * @tc.name testInt16ArrayToSortedTestTwo029
      * @tc.desc Verify ascending array toSorted() twice yields same order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(1, 2, 3, 4, 5);
       let sortedOnce = arr.toSorted();
       let sortedTwice = sortedOnce.toSorted();
@@ -729,14 +660,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3500
-     * @tc.name testInt16ArrayToSortedTestTwo035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3000
+     * @tc.name testInt16ArrayToSortedTestTwo030
      * @tc.desc Verify unordered array chained toSorted() is idempotent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(7, 2, 9, 1, 5);
       let sortedOnce = arr.toSorted();
       let sortedTwice = sortedOnce.toSorted();
@@ -749,14 +680,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3600
-     * @tc.name testInt16ArrayToSortedTestTwo036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3100
+     * @tc.name testInt16ArrayToSortedTestTwo031
      * @tc.desc Verify single element toSorted() three times remains the element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 42;
       let arr: Int16Array = Int16Array.of(val);
       let sortedOnce = arr.toSorted();
@@ -768,14 +699,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3700
-     * @tc.name testInt16ArrayToSortedTestTwo037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3200
+     * @tc.name testInt16ArrayToSortedTestTwo032
      * @tc.desc Verify toSorted() result length equals original length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(9, 7, 8, 6);
       let result = arr.toSorted();
       let actualLength: int = result.length;
@@ -784,14 +715,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3800
-     * @tc.name testInt16ArrayToSortedTestTwo038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3300
+     * @tc.name testInt16ArrayToSortedTestTwo033
      * @tc.desc Verify larger-magnitude negatives sort before smaller ones with toSorted()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(-1, -100, -10);
       let result = arr.toSorted();
       let elementAt0: number = result.$_get(0);
@@ -806,14 +737,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3900
-     * @tc.name testInt16ArrayToSortedTestTwo039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3400
+     * @tc.name testInt16ArrayToSortedTestTwo034
      * @tc.desc Verify toSorted() uses numeric order not lexicographic order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(100, 20, 3);
       let result = arr.toSorted();
       let elementAt0: number = result.$_get(0);
@@ -828,14 +759,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_4000
-     * @tc.name testInt16ArrayToSortedTestTwo040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3500
+     * @tc.name testInt16ArrayToSortedTestTwo035
      * @tc.desc Verify toSorted() returns the complete sequence with duplicate values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(5, 3, 5, 1, 5);
       let result = arr.toSorted();
       let actualString: string = result.toString();
@@ -844,14 +775,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_4100
-     * @tc.name testInt16ArrayToSortedTestTwo041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3600
+     * @tc.name testInt16ArrayToSortedTestTwo036
      * @tc.desc Verify toSorted() returns the complete ascending sequence and preserves duplicate count
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int16Array(6);
       arr.$_set(0, 3);
       arr.$_set(1, 1);
@@ -866,14 +797,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_4200
-     * @tc.name testInt16ArrayToSortedTestTwo042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3700
+     * @tc.name testInt16ArrayToSortedTestTwo037
      * @tc.desc Verify symmetric opposite numbers sort correctly with toSorted()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(5, -5, 3, -3, 1, -1);
       let result = arr.toSorted();
       let elementAt0: number = result.$_get(0);
@@ -897,14 +828,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_4300
-     * @tc.name testInt16ArrayToSortedTestTwo043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3800
+     * @tc.name testInt16ArrayToSortedTestTwo038
      * @tc.desc Verify length-1000 reverse array remains unchanged after toSorted()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int16Array(1000);
       for (let i = 0; i < 1000; i++) {
         arr.$_set(i, 1000 - i);
@@ -924,14 +855,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_4400
-     * @tc.name testInt16ArrayToSortedTestTwo044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3900
+     * @tc.name testInt16ArrayToSortedTestTwo039
      * @tc.desc Verify original length is unchanged after toSorted()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(30, 10, 20);
       let lenBefore = arr.length;
       let result = arr.toSorted();
@@ -944,14 +875,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_4500
-     * @tc.name testInt16ArrayToSortedTestTwo045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_4000
+     * @tc.name testInt16ArrayToSortedTestTwo040
      * @tc.desc Verify toSorted() result supports $_set to modify elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(3, 1, 2);
       let result = arr.toSorted();
       result.$_set(1, 88);
@@ -961,14 +892,14 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_4600
-     * @tc.name testInt16ArrayToSortedTestTwo046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_4100
+     * @tc.name testInt16ArrayToSortedTestTwo041
      * @tc.desc Verify toSorted() result can reconstruct via Int16Array.from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayToSortedTestTwo046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayToSortedTestTwo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int16Array.of(3, 1, 2);
       let result = arr.toSorted();
       let copy = Int16Array.from(result);
@@ -982,6 +913,5 @@ export default function Int16ArrayToSortedTest02(): void {
       let expectedElement2: int = 3;
       expect(elementAt2).assertEqual(expectedElement2);
     });
-
   });
 }
