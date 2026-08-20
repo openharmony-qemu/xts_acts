@@ -1128,6 +1128,7 @@ export default function int32ArrayOfPart03Test(): void {
       let a: Int32Array = Int32Array.of(1, 2, 3);
       try {
         a.filter((_v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(_v).assertEqual(1);
           throw new Error('filter boom');
         });
         expect().assertFail();
@@ -1148,6 +1149,7 @@ export default function int32ArrayOfPart03Test(): void {
       let a: Int32Array = Int32Array.of(1, 2, 3);
       try {
         a.reduce((_acc: number, _v: number, _i: int, _arr: Int32Array): number => {
+          expect(_v).assertEqual(1);
           throw new Error('reduce boom');
         }, 0);
         expect().assertFail();
@@ -1255,6 +1257,7 @@ export default function int32ArrayOfPart03Test(): void {
       let a: Int32Array = Int32Array.of(1, 2, 3);
       try {
         a.every((_v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(_v).assertEqual(1);
           throw new Error('every boom');
         });
         expect().assertFail();
@@ -1275,6 +1278,7 @@ export default function int32ArrayOfPart03Test(): void {
       let a: Int32Array = Int32Array.of(1, 2, 3);
       try {
         a.some((_v: number, _i: int, _arr: Int32Array): boolean => {
+          expect(_v).assertEqual(1);
           throw new Error('some boom');
         });
         expect().assertFail();
