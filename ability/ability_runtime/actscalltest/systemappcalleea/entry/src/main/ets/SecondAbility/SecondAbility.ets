@@ -84,7 +84,7 @@ function testCallWithResult(data: rpc.MessageSequence) {
 }
 
 export default class SecondAbility extends Ability {
-    test2200(data: ESObject) {
+    test2200(data: rpc.MessageSequence) {
         console.log('SystemAppCalleeA SecondAbility test2200');
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);

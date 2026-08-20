@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import featureAbility from '@ohos.ability.featureAbility';
 import commonEvent from '@ohos.commonEventManager';
+import ability from '@ohos.ability.ability';
 import Utils from './Utils';
 
 export default function callTest() {
@@ -27,7 +28,7 @@ export default function callTest() {
     'ringtone_modify_time': 28
   };
   let dataAssert = '';
-  let subscriber: ESObject;
+  let subscriber: commonEvent.CommonEventSubscriber;
   let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
     events: ['call_event']
   };
@@ -71,7 +72,7 @@ export default function callTest() {
       commonEvent.createSubscriber(subscribeInfo, CreateSubscriberCallBack);
       await Utils.sleep(2000);
       TAG = 'CallTest_0100';
-      let details: ESObject;
+      let details: ability.PacMap = {};
       dataAbilityHelper.call(URI_TEST, 'insert', '', pacMap).then((data) => {
         console.info(TAG + ' call succeeded, data: ' + JSON.stringify(data));
         details = data;

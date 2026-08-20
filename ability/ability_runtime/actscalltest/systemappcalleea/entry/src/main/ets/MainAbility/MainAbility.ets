@@ -153,7 +153,7 @@ export default class MainAbility extends Ability {
         this.callee.on('test2200', this.test2200);
         this.callee.on('testCall', testCall);
         this.callee.on('testCallWithResult', testCallWithResult);
-        commonEvent.createSubscriber(subscribeInfo).then((data: ESObject) => {
+        commonEvent.createSubscriber(subscribeInfo).then((data: commonEvent.CommonEventSubscriber) => {
             console.log('SystemAppCalleeA MainAbility createSubscriber');
             subscriber = data;
             commonEvent.subscribe(subscriber, this.subscribeCallBack);
