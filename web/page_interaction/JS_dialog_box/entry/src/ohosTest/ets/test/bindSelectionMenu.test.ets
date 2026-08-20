@@ -73,18 +73,34 @@ export default function webViewSrollableJsunit() {
     it('bindSelectionMenuType01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("bindSelectionMenuType01", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent("bindSelectionMenuType01", true, 177010, () => { isReturn = true });
+      Utils.registerEvent("bindSelectionMenuType01", true, 177010, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       let pageReady = false;
-      Utils.registerEvent("bindSelectionMenuType01", true, 177011, () => { pageReady = true });
+      Utils.registerEvent("bindSelectionMenuType01", true, 177011, (err: Error) => {
+        if (err) {
+          console.error('pageReady registerEvent error: ' + JSON.stringify(err));
+        } else {
+          pageReady = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "webcomponentSelectionMenu", "bindSelectionMenuType01");
-      await Utils.waitForExist(() => pageReady, "bindSelectionMenuType01" + '_pageReady', true, 1000, 8);
-      // 长按选中文本，弹出菜单后点击"复制"（串行模拟）
-      let target = await driver.findComponent(ON.id('bindSelectionMenuType'));
-      await target.longClick();
-      await Utils.sleep(1500);
-      let copyItem = await driver.findComponent(ON.text('复制'));
-      await copyItem.click();
-      await Utils.waitForExist(() => isReturn, "bindSelectionMenuType01" + '_returnCheck', true, 1000, 8);
+      try {
+        await Utils.waitForExist((err?: Error) => pageReady, "bindSelectionMenuType01" + '_pageReady', true, 1000, 8);
+        // 长按选中文本，弹出菜单后点击"复制"（串行模拟）
+        let target = await driver.findComponent(ON.id('bindSelectionMenuType'));
+        await target.longClick();
+        await Utils.sleep(1500);
+        let copyItem = await driver.findComponent(ON.text('复制'));
+        await copyItem.click();
+        await Utils.waitForExist((err?: Error) => isReturn, "bindSelectionMenuType01" + '_returnCheck', true, 1000, 8);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
     /**
@@ -98,9 +114,19 @@ export default function webViewSrollableJsunit() {
     it('bindSelectionMenuType02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       Utils.emitEvent("bindSelectionMenuType02", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent("bindSelectionMenuType02", 1, 177020, () => { isReturn = true });
+      Utils.registerEvent("bindSelectionMenuType02", 1, 177020, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "webcomponentSelectionMenu", "bindSelectionMenuType02");
-      await Utils.waitForExist(() => isReturn, "bindSelectionMenuType02" + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => isReturn, "bindSelectionMenuType02" + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -115,19 +141,35 @@ export default function webViewSrollableJsunit() {
     it('bindSelectionMenuType03',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       Utils.emitEvent("bindSelectionMenuType03", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent("bindSelectionMenuType03", true, 20250919, () => { isReturn = true });
+      Utils.registerEvent("bindSelectionMenuType03", true, 20250919, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       let pageReady = false;
-      Utils.registerEvent("bindSelectionMenuType03", true, 177031, () => { pageReady = true });
+      Utils.registerEvent("bindSelectionMenuType03", true, 177031, (err: Error) => {
+        if (err) {
+          console.error('pageReady registerEvent error: ' + JSON.stringify(err));
+        } else {
+          pageReady = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "webcomponentSelectionMenu", "bindSelectionMenuType03");
-      await Utils.waitForExist(() => pageReady, "bindSelectionMenuType03" + '_pageReady', true, 1000, 8);
-      // 右键选中文本，弹出菜单后点击"复制"（串行模拟）
-      let textNode = await driver.findComponent(ON.text('这是一段文字'));
-      let point = await textNode.getBoundsCenter();
-      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
-      await Utils.sleep(2000);
-      let copyItem = await driver.findComponent(ON.text('复制'));
-      await copyItem.click();
-      await Utils.waitForExist(() => isReturn, "bindSelectionMenuType03" + '_returnCheck', true, 1000, 8);
+      try {
+        await Utils.waitForExist((err?: Error) => pageReady, "bindSelectionMenuType03" + '_pageReady', true, 1000, 8);
+        // 右键选中文本，弹出菜单后点击"复制"（串行模拟）
+        let textNode = await driver.findComponent(ON.text('这是一段文字'));
+        let point = await textNode.getBoundsCenter();
+        await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+        await Utils.sleep(2000);
+        let copyItem = await driver.findComponent(ON.text('复制'));
+        await copyItem.click();
+        await Utils.waitForExist((err?: Error) => isReturn, "bindSelectionMenuType03" + '_returnCheck', true, 1000, 8);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 

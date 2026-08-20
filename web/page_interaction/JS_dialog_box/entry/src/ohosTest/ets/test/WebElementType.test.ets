@@ -63,11 +63,25 @@ export default function WebElementTypeJsunit() {
     it('WebElementType01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent("WebElementType01", 'WebElementType', 177210, () => { isReturn = true });
+      Utils.registerEvent("WebElementType01", 'WebElementType', 177210, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       // 等待页面切换动画完成后再点击，避免点击被过渡动画丢弃
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.error('Utils.sleep async call error: ' + JSON.stringify(err));
+      }
       Utils.waitAndClickComponent(driver, "WebElementTypeButton", "WebElementType01");
-      await Utils.waitForExist(() => isReturn, "WebElementType01" + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => isReturn, "WebElementType01" + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 

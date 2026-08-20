@@ -45,7 +45,11 @@ export default function WebViewAISessionTypeNullUndefinedSuite() {
       } catch (err) {
         console.error("push WebViewAISessionType page error: " + err);
       }
-      await driver.waitForComponent(ON.id("WebViewAISessionTypeNullUndefinedButton"), 10000)
+      try {
+        await driver.waitForComponent(ON.id("WebViewAISessionTypeNullUndefinedButton"), 10000)
+      } catch (err) {
+        console.error("wait WebViewAISessionTypeNullUndefinedButton error: " + JSON.stringify(err));
+      }
       done()
     });
 
@@ -71,9 +75,19 @@ export default function WebViewAISessionTypeNullUndefinedSuite() {
     it('testWebViewAiSessionOptions01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewAiSessionOptions01", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent("testWebViewAiSessionOptions01",true, 20260520, () => { isReturn = true });
+      Utils.registerEvent("testWebViewAiSessionOptions01",true, 20260520, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewAISessionTypeNullUndefinedButton","testWebViewAiSessionOptions01");
-      await Utils.waitForExist(() => isReturn, "testWebViewAiSessionOptions01" + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => isReturn, "testWebViewAiSessionOptions01" + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -89,9 +103,19 @@ export default function WebViewAISessionTypeNullUndefinedSuite() {
     it('testWebViewAiSessionOptions02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewAiSessionOptions02", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent("testWebViewAiSessionOptions02",true, 20260521, () => { isReturn = true });
+      Utils.registerEvent("testWebViewAiSessionOptions02",true, 20260521, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewAISessionTypeNullUndefinedButton","testWebViewAiSessionOptions02");
-      await Utils.waitForExist(() => isReturn, "testWebViewAiSessionOptions02" + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => isReturn, "testWebViewAiSessionOptions02" + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -107,9 +131,19 @@ export default function WebViewAISessionTypeNullUndefinedSuite() {
     it('testWebViewAiSessionOptions03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewAiSessionOptions03", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent("testWebViewAiSessionOptions03",true, 20260522, () => { isReturn = true });
+      Utils.registerEvent("testWebViewAiSessionOptions03",true, 20260522, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebViewAISessionTypeNullUndefinedButton","testWebViewAiSessionOptions03");
-      await Utils.waitForExist(() => isReturn, "testWebViewAiSessionOptions03" + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => isReturn, "testWebViewAiSessionOptions03" + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
   })

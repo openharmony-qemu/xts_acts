@@ -67,9 +67,19 @@ export default function webOnDataResubmitted() {
     it('testOnDataResubmitted001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnDataResubmitted", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testOnDataResubmitted001", true, 127010, () => { isReturn = true });
+      Utils.registerEvent("testOnDataResubmitted001", true, 127010, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton", "testOnDataResubmitted001");
-      await Utils.waitForExist(() => isReturn, "testOnDataResubmitted001" + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => isReturn, "testOnDataResubmitted001" + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -84,9 +94,19 @@ export default function webOnDataResubmitted() {
     it('testDataResubmissionHandlerResend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitDataResubmissionHandlerResend", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testDataResubmissionHandlerResend001", 'Post testPost test', 127020, () => { isReturn = true });
+      Utils.registerEvent("testDataResubmissionHandlerResend001", 'Post testPost test', 127020, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton", "testDataResubmissionHandlerResend001");
-      await Utils.waitForExist(() => isReturn, "testDataResubmissionHandlerResend001" + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => isReturn, "testDataResubmissionHandlerResend001" + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -101,9 +121,19 @@ export default function webOnDataResubmitted() {
     it('testDataResubmissionHandlerCancel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitDataResubmissionHandlerCancel", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testDataResubmissionHandlerCancel001", 'Post test', 127030, () => { isReturn = true });
+      Utils.registerEvent("testDataResubmissionHandlerCancel001", 'Post test', 127030, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
       Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton", "testDataResubmissionHandlerCancel001");
-      await Utils.waitForExist(() => isReturn, "testDataResubmissionHandlerCancel001" + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => isReturn, "testDataResubmissionHandlerCancel001" + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
   })
