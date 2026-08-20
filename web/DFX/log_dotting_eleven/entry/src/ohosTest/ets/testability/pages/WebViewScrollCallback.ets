@@ -22,7 +22,6 @@ import testsuite from '../../test/List.test';
 import { Driver, ON, On  } from '@ohos.UiTest';
 import testNapi from 'libentry.so';
 import web_webview from '@ohos.web.webview'
-import { XtsTestServer } from 'library';
 @Entry
 @Component
 struct Index {
@@ -33,9 +32,6 @@ struct Index {
   @State str: string = "";
   webTag: string = 'ArkWeb1';
   controller: web_webview.WebviewController = new web_webview.WebviewController(this.webTag);
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
-  scrollPageUrl: string = this.mServer.getAssetUrl('index.html');
-  keyboardPageUrl: string = this.mServer.getAssetUrl('keyboardAvoid.html');
   scrollCallback: (result: string) => void = (result: string) => {
     console.info("test result: " + result);
     this.scrollResult = true;
@@ -63,10 +59,6 @@ struct Index {
     events_emitter.off(10)
   }
 
-  aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
-  }
-
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
@@ -91,7 +83,7 @@ struct Index {
                 try {
 
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.scrollPageUrl)
+                  this.controller.loadUrl('https://www.baidu.com')
                   testNapi.setScrollCallback(this.scrollCallback);
                   await Utils.waitForExist(() => this.isPageEnd, this.str, 1, 500);
                   this.controller.scrollTo(0, 1000);
@@ -111,7 +103,7 @@ struct Index {
                 try {
                   this.scrollResult = false;
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.keyboardPageUrl);
+                  this.controller.loadUrl($rawfile('keyboardAvoid.html'));
                   await Utils.waitForExist(() => this.isPageEnd, this.str, 1, 500);
                   testNapi.setScrollCallback(this.scrollCallback);
                   this.controller.scrollTo(0, 1000)
@@ -129,7 +121,7 @@ struct Index {
                 try {
                   this.scrollResult = false;
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.keyboardPageUrl);
+                  this.controller.loadUrl($rawfile('keyboardAvoid.html'));
                   await Utils.waitForExist(() => this.isPageEnd, this.str, 1, 500);
                   let res1 = testNapi.nativeWebInitFalse();
                   setTimeout(() => {
@@ -146,7 +138,7 @@ struct Index {
                 try {
                   this.scrollResult = false;
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.keyboardPageUrl);
+                  this.controller.loadUrl($rawfile('keyboardAvoid.html'));
                   await Utils.waitForExist(() => this.isPageEnd, this.str, 1, 500);
                   let res2 = testNapi.nativeWebInitTrue(this.webTag);
                   setTimeout(() => {
@@ -164,7 +156,7 @@ struct Index {
 
 
         Row() {
-          Web({ src: this.keyboardPageUrl, controller: this.controller })
+          Web({ src: $rawfile('keyboardAvoid.html'), controller: this.controller })
             .javaScriptAccess(true)
             .fileAccess(true)
             .borderRadius(10)

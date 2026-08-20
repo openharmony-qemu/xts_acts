@@ -23,18 +23,16 @@ import testsuite from '../../test/List.test';
 import { Driver, ON, On, MouseButton  } from '@ohos.UiTest';
 import testNapi from 'libentry.so';
 import web_webview from '@ohos.web.webview'
-import { XtsTestServer } from 'library';
 let driver = Driver.create()
 
 @CustomDialog
 struct NewWebViewComp {
   controller?: CustomDialogController;
   webviewController1: web_webview.WebviewController = new web_webview.WebviewController();
-  webSrc: string = '';
 
   build() {
     Column() {
-      Web({ src: this.webSrc, controller: this.webviewController1 })
+      Web({ src: "www.example.com", controller: this.webviewController1 })
         .javaScriptAccess(true)
         .multiWindowAccess(true)
         .allowWindowOpenMethod(true)
@@ -61,9 +59,6 @@ struct Index {
   webTag: string = 'ArkWeb1';
   dialogController: CustomDialogController | null = null;
   controller: web_webview.WebviewController = new web_webview.WebviewController(this.webTag);
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
-  windowOpenPageUrl: string = this.mServer.getAssetUrl('window.open.html');
-  windowTargetUrl: string = this.mServer.getAssetUrl('index.html');
   scrollCallback: (result: string) => void = (result: string) => {
     console.info("test result: " + result);
     this.scrollResult = true;
@@ -80,10 +75,6 @@ struct Index {
 
   onPageHide() {
     events_emitter.off(101008)
-  }
-
-  aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -113,7 +104,6 @@ struct Index {
                   console.log('pbbbnetment');
                   Utils.emitEvent(0, 20260113)
                 } else {
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   Utils.sleep(1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   let point = await buttonOne.getBoundsCenter();
@@ -143,7 +133,7 @@ struct Index {
                   Utils.emitEvent(1, 20260114)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.windowOpenPageUrl)
+                  this.controller.loadUrl($rawfile("window.open.html"))
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   console.log('ppbb' + buttonOne)
@@ -204,7 +194,7 @@ struct Index {
                   Utils.emitEvent(2, 20260116)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.windowOpenPageUrl)
+                  this.controller.loadUrl($rawfile("window.open.html"))
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   let point = await buttonOne.getBoundsCenter();
@@ -235,7 +225,7 @@ struct Index {
                   Utils.emitEvent(3, 20260117)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.windowOpenPageUrl)
+                  this.controller.loadUrl($rawfile("window.open.html"))
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   let point = await buttonOne.getBoundsCenter();
@@ -263,7 +253,7 @@ struct Index {
 
 
       Row() {
-        Web({ src: this.windowOpenPageUrl, controller: this.controller })
+        Web({ src: $rawfile("window.open.html"), controller: this.controller })
           .key('WebViewNavigationPolicyWeb')
           .javaScriptAccess(true)
           .multiWindowAccess(true)
@@ -279,7 +269,7 @@ struct Index {
 
             let popController: web_webview.WebviewController = new web_webview.WebviewController();
             this.dialogController = new CustomDialogController({
-              builder: NewWebViewComp({ webviewController1: popController, webSrc: this.windowTargetUrl })
+              builder: NewWebViewComp({ webviewController1: popController })
             })
             this.dialogController?.open();
 
@@ -306,7 +296,7 @@ struct Index {
 
             let popController: web_webview.WebviewController = new web_webview.WebviewController();
             this.dialogController = new CustomDialogController({
-              builder: NewWebViewComp({ webviewController1: popController, webSrc: this.windowTargetUrl })
+              builder: NewWebViewComp({ webviewController1: popController })
             })
             this.dialogController?.open();
 

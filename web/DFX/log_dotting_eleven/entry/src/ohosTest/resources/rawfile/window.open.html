@@ -34,17 +34,17 @@
 </head>
 <body>
 <h1>点击链接打开新窗口</h1>
-<a href="#" onclick="openNewWindow('./index.html')">打开新窗口</a>
-<a href="#" onclick="openNewTab('./index.html')">打开新标签</a>
+<a href="#" onclick="openNewWindow('https://www.baidu.com')">打开新窗口</a>
+<a href="#" onclick="openNewTab('https://www.baidu.com')">打开新标签</a>
 <div class="close-btn" onclick="closeWindow()">关闭窗口</div>
 
 <script>
     function openNewWindow(url) {
-        window.open(url, 'xtsWindow', 'width=500,height=600,left=10,top=20');
+        window.open(url, 'baiduWindow', 'width=500,height=600,left=10,top=20');
         return false;
     }
     function openNewTab(url) {
-        window.open(url, 'xtsTab');
+        window.open(url, 'baiduTab');
         return false;
     }
    function closeWindow() {
