@@ -64,7 +64,11 @@ export default function areaChangeJsunit() {
      */
 it('areaChangeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('areaChangeTest_0300 START');
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
+      } catch (err) {
+        console.info('areaChangeTest_0300 sleep err: ' + JSON.stringify(err));
+      }
       let callback = (backData: emitter.EventData) => {
         const data: Record<String,RecordData> =
           backData.data as Record<String,RecordData>
@@ -83,7 +87,11 @@ it('areaChangeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise
       }
 
       console.info('areaChangeTest_0400 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('areaChangeTest_0400 sleep err: ' + JSON.stringify(err));
+      }
       let callback1 = (eventData: emitter.EventData) => {
         const data: Record<String,RecordData> =
           eventData.data as Record<String,RecordData>
