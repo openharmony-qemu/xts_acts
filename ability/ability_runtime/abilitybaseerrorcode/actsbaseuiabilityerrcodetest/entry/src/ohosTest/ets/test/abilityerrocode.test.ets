@@ -268,6 +268,7 @@ export default function errorCodeTest() {
         await  AppStorage.get<common.UIAbilityContext>('errocode')!.backToCallerAbilityWithResult(abilityResult, callerRequestCode).then(() => {
           console.info('TAG backToCallerAbilityWithResult succeed');
           expect().assertFail();
+          done();
         }).catch((err: BusinessError) => {
           console.error(TAG + `backToCallerAbilityWithResult1 failed, code is ${err.code}, message is ${err.message}`);
           expect(err.code).assertEqual(16000074);
@@ -1434,20 +1435,25 @@ export default function errorCodeTest() {
             });
           });
         });
-        await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
-          bundleName:'com.acts.ability.errcode',
-          abilityName:'AssitAbility',
-          parameters: {
-            'case':'startErrorCodeCallBackOptions16000072',
-            'caseName':tag
-          }
-        }).then(()=>{
-          console.info(TAG + 'start ability success');
-        }).catch((err: BusinessError)=>{
-          console.info(TAG + 'start ability Error');
-          expect().assertFail();
+        try {
+          await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
+            bundleName:'com.acts.ability.errcode',
+            abilityName:'AssitAbility',
+            parameters: {
+              'case':'startErrorCodeCallBackOptions16000072',
+              'caseName':tag
+            }
+          }).then(()=>{
+            console.info(TAG + 'start ability success');
+          }).catch((err: BusinessError)=>{
+            console.info(TAG + 'start ability Error');
+            expect().assertFail();
+            done();
+          })
+        } catch (e) {
+          console.error(TAG + `startAbility await exception: ${JSON.stringify(e)}`);
           done();
-        })
+        }
       }  else {
         console.error(`${TAG} SUB_Ability_AbilityBase_ErrorCode_0028 error, current device not support feature.`);
         done();

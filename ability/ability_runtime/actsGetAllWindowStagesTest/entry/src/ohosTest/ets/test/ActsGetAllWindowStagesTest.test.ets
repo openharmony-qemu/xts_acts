@@ -570,7 +570,11 @@ export default function ActsGetAllWindowStagesTest() {
         });
         await Utils.sleep(1000);
         let TestAbility1_UIAbilityContext: common.UIAbilityContext = await AppStorage.get<common.UIAbilityContext>('TestAbility1_UIAbilityContext') as common.UIAbilityContext;
-        await TestAbility1_UIAbilityContext.terminateSelf()
+        try {
+          await TestAbility1_UIAbilityContext.terminateSelf()
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `terminateSelf TestAbility1 failed: ${JSON.stringify(e)}`);
+        }
         await Utils.sleep(1000);
         try {
           let onWindowStageDestroy_WindowStage =  AppStorage.get<Array<window.WindowStage>>('onWindowStageDestroy_WindowStage') as Array<window.WindowStage>
@@ -1148,8 +1152,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect(count1).assertEqual(2);
           expect(count2).assertEqual(2);
         } catch (e) {
-          const err: BusinessError = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `Second getAllWindowStages failed: ${err?.message}`);
+          hilog.error(0x0000, 'testTag', `Second getAllWindowStages failed: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
         done();

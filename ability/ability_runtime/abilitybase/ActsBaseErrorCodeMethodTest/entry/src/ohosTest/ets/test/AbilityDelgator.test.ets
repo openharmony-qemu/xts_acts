@@ -549,6 +549,9 @@ export default function openLinkTest() {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_2200 start');
       try {
         abilityDelegator.finishTest('FINISH TEST', undefined, (err, data)=>{
+          if (err) {
+            hilog.info(0x0000, `${TAG}`, '%{public}s', `finishTest callback err code: ${err?.code}`);
+          }
           try{expect().assertFail();}catch(e){}
           done();
         })
@@ -1050,6 +1053,9 @@ export default function openLinkTest() {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4400 start');
       try {
         abilityDelegator.finishTest('FINISH TEST', null, (err, data)=>{
+          if (err) {
+            hilog.info(0x0000, `${TAG}`, '%{public}s', `finishTest callback err code: ${err?.code}`);
+          }
           try{expect().assertFail();}catch(e){}
           done();
         })

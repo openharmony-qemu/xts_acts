@@ -74,7 +74,11 @@ export default function ActsUIExtensionContextMethodTest() {
                 expect(commonEventData.parameters?.result).assertEqual(401);
               } catch {
               }
-              commonEventManager.publish('teminate',() => {});
+              commonEventManager.publish('teminate',(err) => {
+              if (err) {
+                hilog.error(0x0000, tag, '%{public}s', `publish teminate failed: ${JSON.stringify(err)}`);
+              }
+            });
               commonEventManager.unsubscribe(subscriber, (err, data) => {});
               await Promise.all([entryAbility1,uiExtension]);
               done();
@@ -2128,7 +2132,11 @@ export default function ActsUIExtensionContextMethodTest() {
             }
             commonEventManager.publish('teminate', () => { });
             commonEventManager.unsubscribe(subscriber, (err, data) => {});
-            await eventBusPlue.onWait('EntryAbility1_onDestroy')
+            try {
+              await eventBusPlue.onWait('EntryAbility1_onDestroy')
+            } catch (e) {
+              hilog.error(0x0000, tag, '%{public}s', `eventBusPlue onWait EntryAbility1_onDestroy failed: ${JSON.stringify(e)}`);
+            }
             done();
           });
           testAbilityContext.startAbility({

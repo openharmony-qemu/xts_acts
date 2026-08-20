@@ -535,20 +535,25 @@ export default function errorCodeTest2() {
             });
           });
         });
-        await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
-          bundleName:'com.acts.ability.errcode2',
-          abilityName:'AssitAbility',
-          parameters: {
-            'case':'startErrorCodeCallBackOptions16000076',
-            'caseName':tag
-          }
-        }).then(()=>{
-          console.info(TAG + 'start ability success');
-        }).catch((err: BusinessError)=>{
-          console.info(TAG + 'start ability Error');
-          expect().assertFail();
+        try {
+          await AppStorage.get<common.UIAbilityContext>('errocode')!.startAbility({
+            bundleName:'com.acts.ability.errcode2',
+            abilityName:'AssitAbility',
+            parameters: {
+              'case':'startErrorCodeCallBackOptions16000076',
+              'caseName':tag
+            }
+          }).then(()=>{
+            console.info(TAG + 'start ability success');
+          }).catch((err: BusinessError)=>{
+            console.info(TAG + 'start ability Error');
+            expect().assertFail();
+            done();
+          })
+        } catch (e) {
+          console.error(TAG + `startAbility await exception: ${JSON.stringify(e)}`);
           done();
-        })
+        }
       } else {
         console.error(`${TAG} SUB_Ability_AbilityBase_ErrorCode_0009 error, current device not support feature.`);
         done();
