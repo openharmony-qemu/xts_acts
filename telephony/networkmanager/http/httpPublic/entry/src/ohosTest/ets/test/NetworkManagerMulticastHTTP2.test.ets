@@ -91,13 +91,13 @@ export default function NetworkManagerMulticast2HTTP2Test() {
                     done();
                 }).catch((err: BusinessError) => {
                     console.log(`${caseName} request failed, err: ${JSON.stringify(err)}`);
-                    expectFalse();
+                    expectTrue(err.code === 2300999);
                     console.info(`${caseName}---End`);
                     done();
                 })
             }catch (error) {
                 console.log(`${caseName}  request failed, error: ${JSON.stringify(error)}`);
-                expectTrue(error.code === 2300999);
+                expectFalse();
                 console.info(`${caseName}---End`);
                 done();
             }
