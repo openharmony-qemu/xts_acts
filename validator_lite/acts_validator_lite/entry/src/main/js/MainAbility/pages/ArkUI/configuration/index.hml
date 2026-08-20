@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="content-title">
+        <text style="width:150px;height:50px;text-align: center;font-size:16px;">configuration</text>
+        <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
+    </div>
+
+    <div class="content">
+        <text class="info-text">状态: {{statusMsg}}</text>
+        <text class="result-text">{{resultText}}</text>
+    </div>
+
+    <div class="bottom-bt">
+        <input type="button" value="获取信息" class="button-operate" onclick="getInfo" />
+    </div>
+
+    <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>
