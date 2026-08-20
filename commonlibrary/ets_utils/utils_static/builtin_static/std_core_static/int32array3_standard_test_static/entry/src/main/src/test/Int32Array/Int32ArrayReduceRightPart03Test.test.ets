@@ -1143,6 +1143,7 @@ export default function int32ArrayReduceRightPart03Test(): void {
       try {
         arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => {
           cnt++;
+          expect(c).assertEqual(3);
           throw new Error('first-boom');
         }, 0);
         expect().assertFail();
@@ -1191,6 +1192,7 @@ export default function int32ArrayReduceRightPart03Test(): void {
       let msg: string = '';
       try {
         arr.reduceRight((_p: number, _c: number, _i: int, _a: Int32Array): number => {
+          expect(_c).assertEqual(1);
           throw new Error('marker-msg');
         }, 0);
         expect().assertFail();
@@ -1232,6 +1234,7 @@ export default function int32ArrayReduceRightPart03Test(): void {
       let arr: Int32Array = new Int32Array([1, 2]);
       try {
         arr.reduceRight((_p: number, _c: number, _i: int, _a: Int32Array): number => {
+          expect(_c).assertEqual(2);
           throw new RangeError('r-err');
         }, 0);
         expect().assertFail();
@@ -1252,6 +1255,7 @@ export default function int32ArrayReduceRightPart03Test(): void {
       let arr: Int32Array = new Int32Array([1]);
       try {
         arr.reduceRight((_p: number, _c: number, _i: int, _a: Int32Array): number => {
+          expect(_c).assertEqual(1);
           throw new TypeError('t-err');
         }, 0);
         expect().assertFail();
