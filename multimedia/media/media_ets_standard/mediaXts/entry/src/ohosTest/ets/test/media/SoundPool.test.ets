@@ -1982,7 +1982,7 @@ async function playFinishedWithStreamIdListen(usage: audio.StreamUsage, maxStrea
         expect(streamId).assertEqual(playStreamId);
       });
       loadSoundId = await soundPool.load(rawFileDescriptor.fd, rawFileDescriptor.offset, rawFileDescriptor.length);
-      await sleep(SLEEP_TIME_500);
+      await sleep(SLEEP_TIME_500 * 10);
       playStreamId = await soundPool.play(loadSoundId, playParameters);
       soundPool.off('playFinishedWithStreamId');
       done();
@@ -2015,7 +2015,7 @@ async function playFinishedListen(usage: audio.StreamUsage, maxStreams: number, 
         console.info(TAG, 'Succeeded in playFinished');
       });
       loadSoundId = await soundPool.load(rawFileDescriptor.fd, rawFileDescriptor.offset, rawFileDescriptor.length);
-      await sleep(SLEEP_TIME_500);
+      await sleep(SLEEP_TIME_500 * 10);
       await soundPool.play(loadSoundId, playParameters);
       soundPool.off('playFinished');
       done();
