@@ -1272,6 +1272,7 @@ export default function abilityTest() {
                         })
                     }
                 })
+                await Utils.msSleep(1000);
             } catch (err) {
                 console.info(`TestLog: Set loopMode error: code: ${err?.code}, message: ${err?.message}`);
                 expect(true).assertFalse();
@@ -1311,6 +1312,7 @@ export default function abilityTest() {
                         })
                     }
                 })
+                await Utils.msSleep(1000);
             } catch (err) {
                 console.info(`TestLog: Set maxVolume error: code: ${err?.code}, message: ${err?.message}`);
                 expect(true).assertFalse();
@@ -1351,6 +1353,7 @@ export default function abilityTest() {
                         })
                     }
                 })
+                await Utils.msSleep(1000);
             } catch (err) {
                 console.info(`TestLog: Set muted error: code: ${err?.code}, message: ${err?.message}`);
                 expect(true).assertFalse();
@@ -1392,6 +1395,7 @@ export default function abilityTest() {
                         })
                     }
                 })
+                await Utils.msSleep(1000);
             } catch (err) {
                 console.info(`TestLog: Set videoWidth & videoHeight error: code: ${err?.code}, message: ${err?.message}`);
                 expect(true).assertFalse();
@@ -1431,6 +1435,7 @@ export default function abilityTest() {
                         })
                     }
                 })
+                await Utils.msSleep(2000);
             } catch (err) {
                 console.info(`TestLog: Set duration error: code: ${err?.code}, message: ${err?.message}`);
                 expect(true).assertFalse();
