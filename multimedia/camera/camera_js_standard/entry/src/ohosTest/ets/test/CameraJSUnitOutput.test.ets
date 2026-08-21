@@ -1621,16 +1621,15 @@ export default function cameraJSUnitOutput() {
         console.info(TAG +
           " --------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_0100--------------");
         createPhotoSession(1);
-        addCommit(0, 1);
+        await addCommit(0, 1);
         await cameraSession.commitConfig();
-        await sleep();
         await cameraSession.start();
         if (isEmpty(photoOutput)) {
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_0100 photoOutput == null || undefined")
           expect().assertFail();
         } else {
-          photoOutput.capture(captureSetting, async (err) => {
+          photoOutput.capture(captureSetting, (err) => {
             if (!err) {
               expect(true).assertTrue();
               console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_0100 success");
@@ -1640,12 +1639,9 @@ export default function cameraJSUnitOutput() {
               err.message);
             }
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_0100 ends here");
-            await sleep(1000);
             done();
           })
         }
-        await sleep(1000);
-        done();
       } catch (err) {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_0100 ends here");
         done();
