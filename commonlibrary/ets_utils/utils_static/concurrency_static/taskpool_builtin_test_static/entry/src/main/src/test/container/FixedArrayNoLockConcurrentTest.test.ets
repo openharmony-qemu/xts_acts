@@ -46,11 +46,11 @@ export default function FixedArrayNoLockConcurrentTest(): void {
     it('testFixedArrayNoLockConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let count: AtomicInt = new AtomicInt(0);
-        let arr: FixedArray<number> = new FixedArray<number>(100);
+        let arr: FixedArray<number> = new FixedArray<number>(100, 0);
         let totalTasks: number = 10;
         let tasks: Promise<Any>[] = [];
         for (let i: number = 0; i < totalTasks; i++) {
-          tasks.push(taskpool.execute(testFixedArrayIndexRW, new FixedArray<number>(100)));
+          tasks.push(taskpool.execute(testFixedArrayIndexRW, new FixedArray<number>(100, 0)));
         }
         testFixedArrayIndexRW(arr);
         count.fetchAdd(1);

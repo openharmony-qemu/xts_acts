@@ -235,7 +235,7 @@ class NumericReturnOwnerClass {
 class FixedArrayOwnerClass {
   public static faIntParam(x: FixedArray<int>): void {}
   public static faStringParam(x: FixedArray<string>): void {}
-  public static faReturnInt(): FixedArray<int> { return new FixedArray<int>(0); }
+  public static faReturnInt(): FixedArray<int> { return new FixedArray<int>(0, 0); }
 }
 
 class EnumMethodOwnerClass {

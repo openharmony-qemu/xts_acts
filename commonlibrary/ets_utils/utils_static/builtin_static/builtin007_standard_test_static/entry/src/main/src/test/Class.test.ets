@@ -729,7 +729,7 @@ export default function classTest(): void {
         it('testClassIsFixedArray0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
             const TAG = 'testClassIsFixedArray0001';
             try {
-                let arr = new FixedArray<int>(1);
+                let arr = new FixedArray<int>(1, 0);
                 let cls = Class.of(arr);
                 expect(cls.isFixedArray()).assertTrue();
             } catch (err) {

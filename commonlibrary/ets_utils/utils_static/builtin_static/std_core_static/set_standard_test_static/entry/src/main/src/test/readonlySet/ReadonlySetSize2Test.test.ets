@@ -455,8 +455,8 @@ export default function ReadonlySetSize2Test(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetSize026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa1: FixedArray<int> = new FixedArray<int>(2);
-      let fa2: FixedArray<int> = new FixedArray<int>(2);
+      let fa1: FixedArray<int> = new FixedArray<int>(2, 0);
+      let fa2: FixedArray<int> = new FixedArray<int>(2, 0);
       const set: ReadonlySet<FixedArray<int>> = new Set<FixedArray<int>>([fa1, fa2]);
       expect(set.size).assertEqual(2);
     });
@@ -601,8 +601,8 @@ export default function ReadonlySetSize2Test(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetSize036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let va1: ValueArray<int> = new ValueArray<int>(2);
-      let va2: ValueArray<int> = new ValueArray<int>(2);
+      let va1: ValueArray<int> = new ValueArray<int>(2, 0);
+      let va2: ValueArray<int> = new ValueArray<int>(2, 0);
       const set: ReadonlySet<ValueArray<int>> = new Set<ValueArray<int>>([va1, va2, va1]);
       expect(set.size).assertEqual(2);
     });

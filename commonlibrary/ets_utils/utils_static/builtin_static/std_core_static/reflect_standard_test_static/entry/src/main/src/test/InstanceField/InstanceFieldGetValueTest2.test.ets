@@ -114,7 +114,7 @@ class ObjectFieldClass044 {
 }
 
 class FixedArrayFieldClass045 {
-  public fixedArr: FixedArray<int> = new FixedArray<int>(3);
+  public fixedArr: FixedArray<int> = new FixedArray<int>(3, 0);
 }
 
 class MapFieldClass046 {
@@ -196,7 +196,7 @@ class ValueOfAny_063 {
 }
 
 class ValueFixedArr_064 {
-  public fa: FixedArray<int> = new FixedArray<int>(3)
+  public fa: FixedArray<int> = new FixedArray<int>(3, 0)
 }
 
 class ValueMultiDim_065 {
@@ -1017,7 +1017,7 @@ export default function InstanceFieldGetValueTest2(): void {
       let cls = Class.from<FixedArrayFieldClass045>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('fixedArr')!;
-      let arr: FixedArray<int> = new FixedArray<int>(3);
+      let arr: FixedArray<int> = new FixedArray<int>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;

@@ -191,7 +191,7 @@ class EqOfAny_063 {
 }
 
 class EqFixedArr_064 {
-  public fa: FixedArray<int> = new FixedArray<int>(3)
+  public fa: FixedArray<int> = new FixedArray<int>(3, 0)
 }
 
 interface EqIfaceX_065 { xfield: string }
@@ -248,7 +248,7 @@ class EqMultiShared_073 implements EqIFA_073, EqIFB_073 {
 }
 
 class EqFixedArr2_074 {
-  public fa2: FixedArray<string> = new FixedArray<string>(2)
+  public fa2: FixedArray<string> = new FixedArray<string>(2, '')
 }
 
 interface EIFBase_075 { baseField: string }
