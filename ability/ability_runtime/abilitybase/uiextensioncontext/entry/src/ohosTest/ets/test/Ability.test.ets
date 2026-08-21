@@ -26,7 +26,7 @@ function sleep(ms: number): Promise<void> {
 }
 let sub : commonEventManager.CommonEventSubscriber;
 let testAbilityContext: common.UIAbilityContext;
-let mpEnable: string;
+let mpEnable: string = '';
 export default function ActsUIExtensionContextMethodTest() {
   describe('ActsUIExtensionContextMethodTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -1302,11 +1302,13 @@ export default function ActsUIExtensionContextMethodTest() {
             parameters:{
               'case':tag
             }
-          },(err, data)=>{
-            console.info(
-
-                '====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_001] startAbility result ' +
-          })
+}, (err, data) => {
+          if (err) {
+            console.error(tag + `startAbility failed: ${JSON.stringify(err)}`);
+          }
+          console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_001] startAbility result ' +
+          JSON.stringify(data));
+        })
         });
         } catch (e) {
           console.error(tag + `await exception: ${JSON.stringify(e)}`);
@@ -3770,11 +3772,13 @@ export default function ActsUIExtensionContextMethodTest() {
             bundleName:'com.acts.uiextensioncontexttest',
             abilityName:'EntryAbility1',
             action:'result'
-          }, null, (err, data)=>{
-            console.info(
-
-                '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] startAbility result ' +
-          })
+}, (err, data) => {
+          if (err) {
+            console.error(tag + `startAbilityForResult failed: ${JSON.stringify(err)}`);
+          }
+          console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] startAbility result ' +
+          JSON.stringify(data));
+        })
         });
         } catch (e) {
           console.error(tag + `await exception: ${JSON.stringify(e)}`);
@@ -3838,11 +3842,13 @@ export default function ActsUIExtensionContextMethodTest() {
             bundleName:'com.acts.uiextensioncontexttest',
             abilityName:'EntryAbility1',
             action:'result'
-          }, undefined, (err, data)=>{
-            console.info(
-
-                '====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] startAbility result ' +
-          })
+}, (err, data) => {
+          if (err) {
+            console.error(tag + `startAbilityForResult failed: ${JSON.stringify(err)}`);
+          }
+          console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] startAbility result ' +
+          JSON.stringify(data));
+        })
         });
         } catch (e) {
           console.error(tag + `await exception: ${JSON.stringify(e)}`);
