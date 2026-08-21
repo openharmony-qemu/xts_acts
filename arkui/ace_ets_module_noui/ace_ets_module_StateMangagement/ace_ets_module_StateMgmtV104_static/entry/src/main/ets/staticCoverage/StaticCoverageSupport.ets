@@ -97,7 +97,7 @@ export class CoverageLifecycle implements CustomComponentLifecycle {
 }
 
 export class CoverageDecoratedVariable implements IDecoratedVariable {
-  readonly varName: string = 'staticCoverage';
+  public readonly varName: string = 'staticCoverage';
 }
 
 export function inspectMonitor(monitor: IMonitor): boolean {
