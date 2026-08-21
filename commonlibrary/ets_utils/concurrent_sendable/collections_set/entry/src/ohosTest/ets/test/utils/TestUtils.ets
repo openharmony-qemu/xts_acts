@@ -670,7 +670,7 @@ export async function setEntriesTraverseTask(
     }
     return '{"status":"ok","role":"entriesTraverse","count":' + count + '}';
   } catch (err) {
-    if ((err as BusinessError).code === 10200201) {
+    if (err.code === 10200201) {
       return '{"status":"err10200201","role":"entriesTraverse","count":' + count + '}';
     }
     return '{"status":"errUnknown","role":"entriesTraverse","count":' + count + '}';
@@ -697,7 +697,7 @@ export async function setAddModifyTask(
     }
     return '{"status":"ok","role":"addModify","ops":' + ops + '}';
   } catch (err) {
-    if ((err as BusinessError).code === 10200201) {
+    if (err.code === 10200201) {
       return '{"status":"err10200201","role":"addModify","ops":' + ops + '}';
     }
     return '{"status":"errUnknown","role":"addModify","ops":' + ops + '}';
@@ -725,7 +725,7 @@ export async function setKeysTraverseTask(
     }
     return '{"status":"ok","role":"keysTraverse","count":' + count + '}';
   } catch (err) {
-    if ((err as BusinessError).code === 10200201) {
+    if (err.code === 10200201) {
       return '{"status":"err10200201","role":"keysTraverse","count":' + count + '}';
     }
     return '{"status":"errUnknown","role":"keysTraverse","count":' + count + '}';
@@ -752,7 +752,7 @@ export async function setDeleteModifyTask(
     }
     return '{"status":"ok","role":"deleteModify","ops":' + ops + '}';
   } catch (err) {
-    if ((err as BusinessError).code === 10200201) {
+    if (err.code === 10200201) {
       return '{"status":"err10200201","role":"deleteModify","ops":' + ops + '}';
     }
     return '{"status":"errUnknown","role":"deleteModify","ops":' + ops + '}';
@@ -781,7 +781,7 @@ export async function setValuesTraverseTask(
     }
     return '{"status":"ok","role":"valuesTraverse","count":' + count + '}';
   } catch (err) {
-    if ((err as BusinessError).code === 10200201) {
+    if (err.code === 10200201) {
       return '{"status":"err10200201","role":"valuesTraverse","count":' + count + '}';
     }
     return '{"status":"errUnknown","role":"valuesTraverse","count":' + count + '}';
@@ -807,7 +807,7 @@ export async function setClearModifyTask(
     notifySharedSignal(signal, 1);
     return '{"status":"ok","role":"clearModify","ops":1}';
   } catch (err) {
-    if ((err as BusinessError).code === 10200201) {
+    if (err.code === 10200201) {
       return '{"status":"err10200201","role":"clearModify","ops":1}';
     }
     return '{"status":"errUnknown","role":"clearModify","ops":1}';
@@ -841,7 +841,7 @@ export async function runModifyTest(
         }
       }
     } catch (err) {
-      const errorCode: number = (err as BusinessError).code;
+      const errorCode: number = err.code;
       details.push("  catchCode=" + errorCode);
       roundResult = errorCode === 10200201;
     }

@@ -43,7 +43,7 @@ async function entriesTraverse(arr: collections.Array<number>, barrier: SharedAr
     }
     return "success";
   } catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -67,7 +67,7 @@ async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArr
     }
     return "success";
   } catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -83,7 +83,7 @@ async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBu
     arr.fill(0);
     return "success";
   } catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -99,7 +99,7 @@ async function modifyUnshift(arr: collections.Array<number>, barrier: SharedArra
     arr.unshift(9999);
     return "success";
   } catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -125,7 +125,7 @@ async function runModifyTest(arr: collections.Array<number>,
     }
     return true;
   } catch (err) {
-    return (err as BusinessError).code === 10200201;
+    return err.code === 10200201;
   }
 }
 

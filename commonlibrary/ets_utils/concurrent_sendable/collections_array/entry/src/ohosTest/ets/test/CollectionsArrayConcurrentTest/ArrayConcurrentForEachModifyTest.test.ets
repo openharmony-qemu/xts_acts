@@ -37,7 +37,7 @@ async function forEachTraverse(arr: collections.Array<number>, barrier: SharedAr
     });
     return "success";
   } catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -49,7 +49,7 @@ async function modifyPush(arr: collections.Array<number>, barrier: SharedArrayBu
   if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.push(9999); return "success"; }
   catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -61,7 +61,7 @@ async function modifyPop(arr: collections.Array<number>, barrier: SharedArrayBuf
   if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.pop(); return "success"; }
   catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -73,7 +73,7 @@ async function modifySplice(arr: collections.Array<number>, barrier: SharedArray
   if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.splice(100, 10); return "success"; }
   catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -95,7 +95,7 @@ async function forEachTraverseWithShift(arr: collections.Array<number>, signal: 
     if (timedOut) { return "error:timeout"; }
     return "success";
   } catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -111,7 +111,7 @@ async function modifyShiftAfterTraverseStarted(arr: collections.Array<number>,
     arr.shift();
     return "success";
   } catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   } finally {
     notifySharedSignal(signal, 1);
@@ -125,7 +125,7 @@ async function modifyUnshift(arr: collections.Array<number>, barrier: SharedArra
   if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.unshift(9999); return "success"; }
   catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -137,7 +137,7 @@ async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBu
   if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.fill(0); return "success"; }
   catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -149,7 +149,7 @@ async function modifyCopyWithin(arr: collections.Array<number>, barrier: SharedA
   if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.copyWithin(0, 200, 300); return "success"; }
   catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -161,7 +161,7 @@ async function modifySort(arr: collections.Array<number>, barrier: SharedArrayBu
   if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.sort((a: number, b: number): number => a - b); return "success"; }
   catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -173,7 +173,7 @@ async function modifyReverse(arr: collections.Array<number>, barrier: SharedArra
   if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.reverse(); return "success"; }
   catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -198,7 +198,7 @@ async function runTest(arr: collections.Array<number>, modifyTask: Function): Pr
     }
     return true;
   } catch (err) {
-    return (err as BusinessError).code === 10200201;
+    return err.code === 10200201;
   }
 }
 
@@ -215,7 +215,7 @@ async function runShiftOverlapTest(arr: collections.Array<number>): Promise<bool
     }
     return true;
   } catch (err) {
-    return (err as BusinessError).code === 10200201;
+    return err.code === 10200201;
   }
 }
 

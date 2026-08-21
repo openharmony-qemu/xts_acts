@@ -833,7 +833,7 @@ export default function collectionsSetConcurrentTest() {
         // 已知运行时限制: clear 终止迭代器，next() 返回 done:true，不抛异常
         console.info(`[${caseName}] no exception thrown (known runtime limitation)`);
       } catch (e) {
-        errorCode = (e as BusinessError).code;
+        errorCode = e.code;
       }
       expect(errorCode === 0 || errorCode === 10200201).assertTrue();
       console.info(`[${caseName}] end`);

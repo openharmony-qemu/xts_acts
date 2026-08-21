@@ -43,7 +43,7 @@ async function entriesTraverse(arr: collections.Array<number>, barrier: SharedAr
     }
     return "success";
   } catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -71,7 +71,7 @@ async function keysTraverse(arr: collections.Array<number>, barrier: SharedArray
     }
     return "success";
   } catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -95,7 +95,7 @@ async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArr
     }
     return "success";
   } catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -116,7 +116,7 @@ async function modPush(arr: collections.Array<number>, barrier: SharedArrayBuffe
     }
     return "success";
   } catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -139,7 +139,7 @@ async function modPushForKeys(arr: collections.Array<number>, barrier: SharedArr
     return "success";
   } catch (err) {
     notifySharedSignal(signal, 3);
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -160,7 +160,7 @@ async function modPop(arr: collections.Array<number>, barrier: SharedArrayBuffer
     }
     return "success";
   } catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -183,7 +183,7 @@ async function modSplice(arr: collections.Array<number>, barrier: SharedArrayBuf
     return "success";
   } catch (err) {
     notifySharedSignal(signal, 3);
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -204,7 +204,7 @@ async function modFill(arr: collections.Array<number>, barrier: SharedArrayBuffe
     }
     return "success";
   } catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -230,7 +230,7 @@ async function runTest(arr: collections.Array<number>, traverseTask: Function,
     }
     return true;
   } catch (err) {
-    return (err as BusinessError).code === 10200201;
+    return err.code === 10200201;
   }
 }
 

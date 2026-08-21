@@ -39,7 +39,7 @@ async function noLockEntries(
     while (!entry.done) { count++; entry = iterator.next(); }
     return "success";
   } catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -54,7 +54,7 @@ async function noLockSplice(
   if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.splice(10, 5); return "success"; }
   catch (err) {
-    const errorCode: number = (err as BusinessError).code;
+    const errorCode: number = err.code;
     return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
@@ -83,7 +83,7 @@ async function runNoLockTest(
     }
     return true;
   } catch (err) {
-    return (err as BusinessError).code === 10200201;
+    return err.code === 10200201;
   }
 }
 
