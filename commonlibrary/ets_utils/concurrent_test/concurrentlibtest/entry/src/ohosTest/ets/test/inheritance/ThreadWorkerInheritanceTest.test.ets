@@ -54,6 +54,26 @@ async function waitForEvent(promise: Promise<void>): Promise<void> {
   clearTimeout(timeoutId);
 }
 
+interface TaskTimeoutHandle {
+  timeoutPromise: Promise<string>;
+  cancel: () => void;
+}
+
+function createTaskTimeout(timeoutMs: number, timeoutValue: string): TaskTimeoutHandle {
+  let timeoutId: number = -1;
+  const timeoutPromise = new Promise<string>((resolve: (v: string) => void): void => {
+    timeoutId = setTimeout((): void => {
+      resolve(timeoutValue);
+    }, timeoutMs);
+  });
+  const cancel = (): void => {
+    if (timeoutId !== -1) {
+      clearTimeout(timeoutId);
+    }
+  };
+  return { timeoutPromise: timeoutPromise, cancel: cancel };
+}
+
 interface TestWorkerEvent {
   type: string;
   timeStamp: number;
@@ -808,14 +828,16 @@ export default function ThreadWorkerInheritanceTest(): void {
       try {
         const task = new taskpool.Task(createWorkerInTask);
         const taskResultPromise = taskpool.execute(task);
-        let timeoutId1600: number = -1;
-        let taskResult: string = (await Promise.race([
-          taskResultPromise,
-          new Promise<string>((resolve: (v: string) => void) => {
-            timeoutId1600 = setTimeout(() => resolve('timeout'), 5000);
-          })
-        ])) as string;
-        clearTimeout(timeoutId1600);
+        const taskTimeout = createTaskTimeout(5000, 'timeout');
+        let taskResult: string = '';
+        try {
+          taskResult = (await Promise.race([
+            taskResultPromise,
+            taskTimeout.timeoutPromise
+          ])) as string;
+        } finally {
+          taskTimeout.cancel();
+        }
         expect(taskResult).assertEqual('done');
       } catch (err) {
         console.error(`ThreadWorkerInheritanceTest1600 failed, error: ${err}`);
@@ -897,7 +919,12 @@ export default function ThreadWorkerInheritanceTest(): void {
         console.error(`ThreadWorkerInheritanceTest1800 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });

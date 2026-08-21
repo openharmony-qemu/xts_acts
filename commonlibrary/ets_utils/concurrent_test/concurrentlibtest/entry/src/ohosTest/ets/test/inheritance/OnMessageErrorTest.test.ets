@@ -602,7 +602,7 @@ export default function OnMessageErrorTest(): void {
           };
         });
         try {
-          workerInstance.postMessage(() => {});
+          workerInstance.postMessage(unserializableFunctionPayload);
         } catch (e) {
           errorDetected = true;
         }
@@ -1187,7 +1187,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest2700 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });

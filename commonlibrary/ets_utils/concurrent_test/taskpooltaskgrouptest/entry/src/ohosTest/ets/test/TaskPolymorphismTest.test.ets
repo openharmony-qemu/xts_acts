@@ -17,6 +17,26 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { taskpool } from '@kit.ArkTS';
 import { ConcurrentData } from '../testability/pages/ConcurrentTestData';
 
+interface DataReceiveTimeout {
+  timeoutPromise: Promise<never>;
+  cancel: () => void;
+}
+
+function createDataReceiveTimeout(timeoutMs: number, message: string): DataReceiveTimeout {
+  let timeoutId: number = -1;
+  const timeoutPromise = new Promise<never>((resolve: (value?: never) => void, reject: (reason?: Object) => void): void => {
+    timeoutId = setTimeout((): void => {
+      reject(new Error(message));
+    }, timeoutMs);
+  });
+  const cancel = (): void => {
+    if (timeoutId !== -1) {
+      clearTimeout(timeoutId);
+    }
+  };
+  return { timeoutPromise: timeoutPromise, cancel: cancel };
+}
+
 function simpleAdd(a: number, b: number): number {
   'use concurrent'
   return a + b
@@ -172,6 +192,11 @@ export default function TaskPolymorphismTest(): void {
       try {
         let result = await taskpool.execute(longTask)
         expect(String(result)).assertEqual(String(3))
+      } catch (error) {
+        console.error(`TaskPolymorphismTest0400 failed: ${error}`)
+        expect().assertFail()
+        done()
+        return
       } finally {
         // Cleanup-only: terminateTask() may throw if the task already finished
         // or was never scheduled. This is best-effort cleanup, not a test
@@ -234,19 +259,17 @@ export default function TaskPolymorphismTest(): void {
         let genericsTask = new taskpool.GenericsTask<[], void>(sendProgress)
         let task: taskpool.Task = genericsTask
         let received: string = ''
-        let dataPromise = new Promise<void>((resolve: () => void, reject: (reason?: Object) => void) => {
-          let timer: number = setTimeout((): void => {
-            reject(new Error('receive data timeout'))
-          }, 10000)
+        const dataTimeout = createDataReceiveTimeout(10000, 'receive data timeout')
+        let dataPromise = new Promise<void>((resolve: () => void) => {
           task.onReceiveData((data: Object): void => {
             received = String(data)
-            clearTimeout(timer)
+            dataTimeout.cancel()
             resolve()
           })
         })
 
         await taskpool.execute(task)
-        await dataPromise
+        await Promise.race<void>([dataPromise, dataTimeout.timeoutPromise as Promise<void>])
 
         expect(received).assertEqual('progress: 50%')
         done()
@@ -280,6 +303,11 @@ export default function TaskPolymorphismTest(): void {
         expect(String(results[0])).assertEqual(String(1))
         expect(String(results[1])).assertEqual(String(1))
         expect(String(results[2])).assertEqual(String(1))
+      } catch (error) {
+        console.error(`TaskPolymorphismTest0800 failed: ${error}`)
+        expect().assertFail()
+        done()
+        return
       } finally {
         // Cleanup-only: terminateTask() may throw if the task already finished
         // or was never scheduled. This is best-effort cleanup, not a test

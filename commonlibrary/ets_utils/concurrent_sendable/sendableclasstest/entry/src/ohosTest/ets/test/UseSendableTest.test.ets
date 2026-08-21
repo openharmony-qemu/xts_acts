@@ -35,6 +35,26 @@ import {
   processSharedSendableDataDispatch
 } from './UseSendableDispatchers';
 
+interface WorkerReplyTimeout {
+  timeoutPromise: Promise<void>;
+  cancel: () => void;
+}
+
+function createWorkerReplyTimeout(timeoutMs: number, message: string): WorkerReplyTimeout {
+  let timeoutId: number = -1;
+  const timeoutPromise = new Promise<void>((resolve: () => void, reject: (reason?: Object) => void): void => {
+    timeoutId = setTimeout((): void => {
+      reject(new Error(message));
+    }, timeoutMs);
+  });
+  const cancel = (): void => {
+    if (timeoutId !== -1) {
+      clearTimeout(timeoutId);
+    }
+  };
+  return { timeoutPromise: timeoutPromise, cancel: cancel };
+}
+
 export default function UseSendableTest(): void {
   describe('UseSendableTest', (): void => {
     beforeAll((): void => {})
@@ -564,7 +584,15 @@ export default function UseSendableTest(): void {
      */
     it('UseSendableTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(sendableCorrectPositionDispatch)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`UseSendableTest1800 failed: ${error}`)
+        expect().assertFail()
+        done()
+        return
+      }
 
       expect(result as number).assertEqual(42)
       done()
@@ -643,10 +671,18 @@ export default function UseSendableTest(): void {
     it('UseSendableTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task1 = new taskpool.Task(jsSendableFuncDispatch, 10.0)
       let task2 = new taskpool.Task(jsSendableFuncDispatch, 20.0)
-      let results = await Promise.all([
-        taskpool.execute(task1),
-        taskpool.execute(task2)
-      ])
+      let results: Object[] = []
+      try {
+        results = await Promise.all([
+          taskpool.execute(task1),
+          taskpool.execute(task2)
+        ]) as Object[]
+      } catch (error) {
+        console.error(`UseSendableTest2200 failed: ${error}`)
+        expect().assertFail()
+        done()
+        return
+      }
 
       expect(results[0] as number).assertEqual(20)
       expect(results[1] as number).assertEqual(40)
@@ -767,7 +803,7 @@ export default function UseSendableTest(): void {
         let inputValue: number = 50
         let receivedValue: number = -1
         let myWorker = new worker.ThreadWorker('../workers/SendableTsFuncWorker.ets')
-        let timeoutId: number = -1
+        const replyTimeout = createWorkerReplyTimeout(5000, 'UseSendableTest2700: worker reply timeout')
         try {
           await Promise.race([
             new Promise<void>((resolve, reject): void => {
@@ -780,16 +816,10 @@ export default function UseSendableTest(): void {
               }
               myWorker.postMessage(inputValue)
             }),
-            new Promise<void>((resolve, reject): void => {
-              timeoutId = setTimeout((): void => {
-                reject(new Error('UseSendableTest2700: worker reply timeout'))
-              }, 5000)
-            })
+            replyTimeout.timeoutPromise
           ])
         } finally {
-          if (timeoutId !== -1) {
-            clearTimeout(timeoutId)
-          }
+          replyTimeout.cancel()
           try {
             myWorker.terminate()
           } catch (e) {

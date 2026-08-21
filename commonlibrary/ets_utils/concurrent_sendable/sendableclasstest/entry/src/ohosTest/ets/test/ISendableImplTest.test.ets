@@ -31,6 +31,48 @@ import {
   readInstanceOwnValueDispatch, readBigDispatch, readMultiCountDispatch
 } from './ISendableImplDispatchers';
 
+interface CvWaitResult {
+  notified: boolean;
+}
+
+async function waitConditionVariable(cv: utils.locks.ConditionVariable, notifyDelay: number, timeout: number): Promise<CvWaitResult> {
+  const notifyTimer = setTimeout((): void => {
+    cv.notifyOne()
+  }, notifyDelay)
+  let waitTimer: number = -1
+  const waitResult = await Promise.race<boolean>([
+    cv.wait().then((): boolean => true),
+    new Promise<boolean>((resolve): void => {
+      waitTimer = setTimeout((): void => { resolve(false) }, timeout)
+    })
+  ])
+  clearTimeout(notifyTimer)
+  if (waitTimer !== -1) {
+    clearTimeout(waitTimer)
+  }
+  return { notified: waitResult }
+}
+
+interface WorkerReplyTimeout {
+  timeoutPromise: Promise<void>;
+  cancel: () => void;
+}
+
+function createWorkerReplyTimeout(timeoutMs: number, message: string): WorkerReplyTimeout {
+  let timeoutId: number = -1;
+  const timeoutPromise = new Promise<void>((resolve: () => void, reject: (reason?: Object) => void): void => {
+    timeoutId = setTimeout((): void => {
+      reject(new Error(message));
+    }, timeoutMs);
+  });
+  const cancel = (): void => {
+    if (timeoutId !== -1) {
+      clearTimeout(timeoutId);
+    }
+  };
+  return { timeoutPromise: timeoutPromise, cancel: cancel };
+}
+
 @Sendable
 class BasicTypes {
   public numValue_: number = 0
@@ -783,22 +825,8 @@ export default function ISendableImplTest(): void {
         expect(typeof cv.wait).assertEqual('function')
         expect(typeof cv.notifyOne).assertEqual('function')
 
-        const notifyTimer = setTimeout((): void => {
-          cv.notifyOne()
-        }, 500)
-        let waitTimer: number = -1
-        // Race wait() against a timeout so the test cannot hang indefinitely.
-        const waitResult = await Promise.race<boolean>([
-          cv.wait().then((): boolean => true),
-          new Promise<boolean>((resolve): void => {
-            waitTimer = setTimeout((): void => { resolve(false) }, 3000)
-          })
-        ])
-        clearTimeout(notifyTimer)
-        if (waitTimer !== -1) {
-          clearTimeout(waitTimer)
-        }
-        expect(waitResult).assertTrue()
+        const cvResult = await waitConditionVariable(cv, 500, 3000)
+        expect(cvResult.notified).assertTrue()
         done()
       } catch (error) {
         console.error(`ISendableImplTest3100 failed: ${error}`)
@@ -1085,7 +1113,15 @@ export default function ISendableImplTest(): void {
       instance.bigValue_ = BigInt(999)
 
       let task = new taskpool.Task(readBigDispatch, instance)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`ISendableImplTest4400 failed: ${error}`)
+        expect().assertFail()
+        done()
+        return
+      }
 
       expect(result as bigint).assertEqual(BigInt(999))
       done()
@@ -1135,7 +1171,7 @@ export default function ISendableImplTest(): void {
 
         let receivedValue: number = -1
         let myWorker = new worker.ThreadWorker('../workers/SendablePassWorker.ets')
-        let timeoutId: number = -1
+        const replyTimeout = createWorkerReplyTimeout(5000, 'ISendableImplTest4600: worker reply timeout')
         try {
           await Promise.race([
             new Promise<void>((resolve, reject): void => {
@@ -1148,16 +1184,10 @@ export default function ISendableImplTest(): void {
               }
               myWorker.postMessage(instance)
             }),
-            new Promise<void>((resolve, reject): void => {
-              timeoutId = setTimeout((): void => {
-                reject(new Error('ISendableImplTest4600: worker reply timeout'))
-              }, 5000)
-            })
+            replyTimeout.timeoutPromise
           ])
         } finally {
-          if (timeoutId !== -1) {
-            clearTimeout(timeoutId)
-          }
+          replyTimeout.cancel()
           try {
             myWorker.terminate()
           } catch (e) {
@@ -1187,15 +1217,22 @@ export default function ISendableImplTest(): void {
       let data = new CustomSendable()
       data.value_ = 0
 
-      await lock.lockAsync((): number => {
-        data.value_ = data.value_ + 15
-        return data.value_
-      })
+      try {
+        await lock.lockAsync((): number => {
+          data.value_ = data.value_ + 15
+          return data.value_
+        })
 
-      await lock.lockAsync((): number => {
-        data.value_ = data.value_ + 35
-        return data.value_
-      })
+        await lock.lockAsync((): number => {
+          data.value_ = data.value_ + 35
+          return data.value_
+        })
+      } catch (error) {
+        console.error(`ISendableImplTest4700 failed: ${error}`)
+        expect().assertFail()
+        done()
+        return
+      }
 
       expect(data.value_).assertEqual(50)
       done()
@@ -1214,20 +1251,27 @@ export default function ISendableImplTest(): void {
       let data = new CustomSendable()
       data.value_ = 0
 
-      await lock.lockAsync((): number => {
-        data.value_ = data.value_ + 10
-        return data.value_
-      })
+      try {
+        await lock.lockAsync((): number => {
+          data.value_ = data.value_ + 10
+          return data.value_
+        })
 
-      await lock.lockAsync((): number => {
-        data.value_ = data.value_ + 20
-        return data.value_
-      })
+        await lock.lockAsync((): number => {
+          data.value_ = data.value_ + 20
+          return data.value_
+        })
 
-      await lock.lockAsync((): number => {
-        data.value_ = data.value_ + 30
-        return data.value_
-      })
+        await lock.lockAsync((): number => {
+          data.value_ = data.value_ + 30
+          return data.value_
+        })
+      } catch (error) {
+        console.error(`ISendableImplTest4800 failed: ${error}`)
+        expect().assertFail()
+        done()
+        return
+      }
 
       expect(data.value_).assertEqual(60)
       done()

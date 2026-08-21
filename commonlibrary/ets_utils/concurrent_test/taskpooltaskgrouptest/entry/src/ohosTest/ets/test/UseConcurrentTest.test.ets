@@ -19,6 +19,26 @@ import { ConcurrentData, ResultData } from '../testability/pages/ConcurrentTestD
 import { tsConcurrentAdd, tsConcurrentMultiply, tsConcurrentIdentity, tsConcurrentStringLength, tsComboConcurrent, ucComboSendableMainDispatch } from './ConcurrentTsFuncSource';
 import { jsConcurrentDouble, jsConcurrentAdd } from './ConcurrentJsFuncSource';
 
+interface WorkerTimeout {
+  timeoutPromise: Promise<never>;
+  cancel: () => void;
+}
+
+function createWorkerTimeout(timeoutMs: number, message: string): WorkerTimeout {
+  let timeoutId: number = -1;
+  const timeoutPromise = new Promise<never>((resolve: (value?: never) => void, reject: (reason?: Object) => void): void => {
+    timeoutId = setTimeout((): void => {
+      reject(new Error(message));
+    }, timeoutMs);
+  });
+  const cancel = (): void => {
+    if (timeoutId !== -1) {
+      clearTimeout(timeoutId);
+    }
+  };
+  return { timeoutPromise: timeoutPromise, cancel: cancel };
+}
+
 /*
  * Local 'use concurrent' functions that use collections sendable containers.
  * These cannot live in .ts files (which cannot import collections from
@@ -610,7 +630,15 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(ucNestedTaskPool)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`UseConcurrentTest2400 failed: ${error}`)
+        expect().assertFail()
+        done()
+        return
+      }
 
       expect(String(result)).assertEqual(String(150))
       done()
@@ -659,20 +687,24 @@ export default function UseConcurrentTest(): void {
       let work: worker.ThreadWorker | null = null
       try {
         work = new worker.ThreadWorker('../workers/WorkerConcurrentTs.ets')
-        let workerResult = await new Promise<string>((resolve: (v: string) => void, reject: (reason?: Object) => void) => {
-          let timer: number = setTimeout((): void => {
-            reject(new Error('worker response timeout'))
-          }, 10000)
-          work!.onmessage = (e: MessageEvents): void => {
-            clearTimeout(timer)
-            resolve(String(e.data))
-          }
-          work!.onerror = (e: ErrorEvent): void => {
-            clearTimeout(timer)
-            reject(new Error('worker error occurred'))
-          }
-          work!.postMessage(32)
-        })
+        const replyTimeout = createWorkerTimeout(10000, 'worker response timeout')
+        let workerResult = ''
+        try {
+          workerResult = await Promise.race<string>([
+            new Promise<string>((resolve: (v: string) => void, reject: (reason?: Object) => void) => {
+              work!.onmessage = (e: MessageEvents): void => {
+                resolve(String(e.data))
+              }
+              work!.onerror = (e: ErrorEvent): void => {
+                reject(new Error('worker error occurred'))
+              }
+              work!.postMessage(32)
+            }),
+            replyTimeout.timeoutPromise
+          ])
+        } finally {
+          replyTimeout.cancel()
+        }
 
         expect(workerResult).assertEqual('42')
       } catch (e) {
@@ -702,20 +734,24 @@ export default function UseConcurrentTest(): void {
         expect(String(taskResult)).assertEqual(String(42))
 
         work = new worker.ThreadWorker('../workers/WorkerConcurrentTs.ets')
-        let workerResult = await new Promise<string>((resolve: (v: string) => void, reject: (reason?: Object) => void) => {
-          let timer: number = setTimeout((): void => {
-            reject(new Error('worker response timeout'))
-          }, 10000)
-          work!.onmessage = (e: MessageEvents): void => {
-            clearTimeout(timer)
-            resolve(String(e.data))
-          }
-          work!.onerror = (e: ErrorEvent): void => {
-            clearTimeout(timer)
-            reject(new Error('worker error occurred'))
-          }
-          work!.postMessage(Number(taskResult))
-        })
+        const replyTimeout = createWorkerTimeout(10000, 'worker response timeout')
+        let workerResult = ''
+        try {
+          workerResult = await Promise.race<string>([
+            new Promise<string>((resolve: (v: string) => void, reject: (reason?: Object) => void) => {
+              work!.onmessage = (e: MessageEvents): void => {
+                resolve(String(e.data))
+              }
+              work!.onerror = (e: ErrorEvent): void => {
+                reject(new Error('worker error occurred'))
+              }
+              work!.postMessage(Number(taskResult))
+            }),
+            replyTimeout.timeoutPromise
+          ])
+        } finally {
+          replyTimeout.cancel()
+        }
 
         expect(workerResult).assertEqual('52')
       } catch (e) {

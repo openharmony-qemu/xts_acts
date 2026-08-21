@@ -199,7 +199,15 @@ export default function TaskGroupInheritanceTest(): void {
       }
       expect(registered).assertTrue()
 
-      let results = await taskpool.execute(myGroup) as Object[]
+      let results: Object[] = []
+      try {
+        results = await taskpool.execute(myGroup) as Object[]
+      } catch (error) {
+        console.error(`TaskGroupInheritanceTest0500 failed: ${error}`)
+        expect().assertFail()
+        done()
+        return
+      }
 
       expect(results.length).assertEqual(2)
       expect(String(results[0])).assertEqual(String(3))
