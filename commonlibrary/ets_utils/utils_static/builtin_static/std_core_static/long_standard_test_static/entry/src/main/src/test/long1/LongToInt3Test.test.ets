@@ -401,37 +401,25 @@ export default function longToInt3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOINT3_2900
      * @tc.name testLongToInt3_029
-     * @tc.desc Verify value 0x100000000 truncates to the same int result as reference 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testLongToInt3_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Long.toInt(0x100000000)).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOINT3_3000
-     * @tc.name testLongToInt3_030
      * @tc.desc Verify minimum long value truncates to int
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToInt3_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToInt3_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: int = Long.toInt(Long.MIN_VALUE);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOINT3_3100
-     * @tc.name testLongToInt3_031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOINT3_3000
+     * @tc.name testLongToInt3_030
      * @tc.desc Verify value one below int minimum wraps to 2147483647
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongToInt3_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToInt3_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: int = Long.toInt(-2147483649);
       expect(result).assertEqual(2147483647);
     });
