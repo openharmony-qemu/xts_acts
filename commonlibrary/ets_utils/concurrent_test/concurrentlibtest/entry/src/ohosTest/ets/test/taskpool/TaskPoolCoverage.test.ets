@@ -1968,8 +1968,10 @@ export default function taskPoolCoverageTest() {
         }
         let tasks1 = [task2]
         task1.addDependency(...tasks1);
-        await taskpool.execute(task2);
-        const result = await taskpool.execute(task1);
+        const dependentResult = taskpool.execute(task1);
+        const dependencyResult = taskpool.executeDelayed(500, task2);
+        expect(await dependencyResult).assertEqual(42);
+        const result = await dependentResult;
         expect(result).assertEqual(42);
         try {
           let tasks = []
