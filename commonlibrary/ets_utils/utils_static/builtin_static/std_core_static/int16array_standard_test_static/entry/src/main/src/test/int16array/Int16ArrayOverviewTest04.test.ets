@@ -113,9 +113,7 @@ export default function Int16ArrayOverviewTest04(): void {
     it('testInt16ArrayOverviewTestFour004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 0x7fff, 50);
       const sliced = arr.slice(0, 1);
-      expect(sliced.buffer)
-        .not()
-        .assertEqual(arr.buffer as object);
+      expect(sliced.buffer).not().assertEqual(arr.buffer as object);
     });
 
     /**
@@ -520,104 +518,40 @@ export default function Int16ArrayOverviewTest04(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_2800
      * @tc.name testInt16ArrayOverviewTestFour028
-     * @tc.desc Verify some on empty array
+     * @tc.desc Verify find returns undefined on empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testInt16ArrayOverviewTestFour028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array();
-      let result = arr.some((v: number): boolean => v > 0);
-      expect(result).assertFalse();
+      let result = arr.find((v: number): boolean => v > 0);
+      expect(result).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_2900
      * @tc.name testInt16ArrayOverviewTestFour029
-     * @tc.desc Verify reduce throws TypeError on empty array
+     * @tc.desc Verify findLastIndex on empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testInt16ArrayOverviewTestFour029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array();
-      try {
-        arr.reduce((acc: number, v: number): number => acc + v);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3000
-     * @tc.name testInt16ArrayOverviewTestFour030
-     * @tc.desc Verify find returns undefined on empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array();
-      let result = arr.find((v: number): boolean => v > 0);
-      expect(result).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3100
-     * @tc.name testInt16ArrayOverviewTestFour031
-     * @tc.desc Verify findIndex on empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array();
-      let result = arr.findIndex((v: number): boolean => v > 0);
-      expect(result).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3200
-     * @tc.name testInt16ArrayOverviewTestFour032
-     * @tc.desc Verify findLast throws Error on empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array();
-      try {
-        arr.findLast((v: number): boolean => v > 0);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('Error');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3300
-     * @tc.name testInt16ArrayOverviewTestFour033
-     * @tc.desc Verify findLastIndex on empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array();
       let result = arr.findLastIndex((v: number): boolean => v > 0);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3400
-     * @tc.name testInt16ArrayOverviewTestFour034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3000
+     * @tc.name testInt16ArrayOverviewTestFour030
      * @tc.desc Verify filter on empty array does not invoke callback and returns an empty result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array();
       let callbackCount: int = 0;
       let result: Int16Array = arr.filter((v: number): boolean => {
@@ -629,21 +563,21 @@ export default function Int16ArrayOverviewTest04(): void {
       expect(actualValue1).assertEqual(expectedValue1);
       let expectedCallbackCount: int = 0;
       expect(callbackCount).assertEqual(expectedCallbackCount);
-      let r_1: int = result.byteLength;
-      let e_1: int = 0;
-      expect(r_1).assertEqual(e_1);
+      let result1: int = result.byteLength;
+      let expect1: int = 0;
+      expect(result1).assertEqual(expect1);
       expect(result.buffer).not().assertEqual(arr.buffer);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3500
-     * @tc.name testInt16ArrayOverviewTestFour035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3100
+     * @tc.name testInt16ArrayOverviewTestFour031
      * @tc.desc Verify map, length on empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array();
       let result = arr.map((v: number): number => v * 2);
       let actualValue1: int = result.length;
@@ -652,14 +586,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3600
-     * @tc.name testInt16ArrayOverviewTestFour036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3200
+     * @tc.name testInt16ArrayOverviewTestFour032
      * @tc.desc Verify reduce single element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 5;
       let arr: Int16Array = Int16Array.of(val);
       let result = arr.reduce((acc: number, v: number): number => acc + v);
@@ -667,14 +601,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3700
-     * @tc.name testInt16ArrayOverviewTestFour037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3300
+     * @tc.name testInt16ArrayOverviewTestFour033
      * @tc.desc Verify lastIndexOf all-equal elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(0, 0, 0);
       let actualValue1: int = arr.lastIndexOf(0);
       let expectedValue1: int = 2;
@@ -682,14 +616,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3800
-     * @tc.name testInt16ArrayOverviewTestFour038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3400
+     * @tc.name testInt16ArrayOverviewTestFour034
      * @tc.desc Verify filter preserves all equal elements and their order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(7, 7, 7);
       let callbackCount: int = 0;
       let result: Int16Array = arr.filter((v: number): boolean => {
@@ -708,20 +642,20 @@ export default function Int16ArrayOverviewTest04(): void {
       expect(resultElement2).assertEqual(expectedElement);
       let expectedCallbackCount: int = 3;
       expect(callbackCount).assertEqual(expectedCallbackCount);
-      let r_1: string = result.toString();
-      let e_1: string = '7,7,7';
-      expect(r_1).assertEqual(e_1);
+      let result1: string = result.toString();
+      let expect1: string = '7,7,7';
+      expect(result1).assertEqual(expect1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3900
-     * @tc.name testInt16ArrayOverviewTestFour039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3500
+     * @tc.name testInt16ArrayOverviewTestFour035
      * @tc.desc Verify includes zero equality
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = -0;
       let arr: Int16Array = Int16Array.of(val);
       let actualValue1: boolean = arr.includes(0);
@@ -729,14 +663,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4000
-     * @tc.name testInt16ArrayOverviewTestFour040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3600
+     * @tc.name testInt16ArrayOverviewTestFour036
      * @tc.desc Verify indexOf zero equality
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 0;
       let arr: Int16Array = Int16Array.of(val);
       let actualValue1: int = arr.indexOf(-0);
@@ -745,214 +679,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4100
-     * @tc.name testInt16ArrayOverviewTestFour041
-     * @tc.desc Verify Int16Array.of callback error propagation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3);
-      try {
-        arr.find((v: number): boolean => {
-          if (v === 2) {
-            throw new TypeError('callback error');
-          }
-          return false;
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4200
-     * @tc.name testInt16ArrayOverviewTestFour042
-     * @tc.desc Verify forEach callback error propagation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3);
-      try {
-        arr.forEach((v: number) => {
-          if (v === 2) {
-            throw new TypeError('callback error');
-          }
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4300
-     * @tc.name testInt16ArrayOverviewTestFour043
-     * @tc.desc Verify map callback error propagation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3);
-      try {
-        arr.map((v: number): number => {
-          if (v === 2) {
-            throw new TypeError('callback error');
-          }
-          return v;
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4400
-     * @tc.name testInt16ArrayOverviewTestFour044
-     * @tc.desc Verify filter callback error propagation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3);
-      try {
-        arr.filter((v: number): boolean => {
-          if (v === 2) {
-            throw new TypeError('callback error');
-          }
-          return true;
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4500
-     * @tc.name testInt16ArrayOverviewTestFour045
-     * @tc.desc Verify some callback error propagation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3);
-      try {
-        arr.some((v: number): boolean => {
-          if (v === 2) {
-            throw new TypeError('callback error');
-          }
-          return false;
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4600
-     * @tc.name testInt16ArrayOverviewTestFour046
-     * @tc.desc Verify every callback error propagation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3);
-      try {
-        arr.every((v: number): boolean => {
-          if (v === 2) {
-            throw new TypeError('callback error');
-          }
-          return true;
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4700
-     * @tc.name testInt16ArrayOverviewTestFour047
-     * @tc.desc Verify reduce callback error propagation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3);
-      try {
-        arr.reduce((acc: number, v: number): number => {
-          if (v === 2) {
-            throw new TypeError('callback error');
-          }
-          return acc + v;
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4800
-     * @tc.name testInt16ArrayOverviewTestFour048
-     * @tc.desc Verify sort callback error propagation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(3, 1, 2);
-      try {
-        arr.sort((a: number, b: number): int => {
-          if (a === 2 || b === 2) {
-            throw new TypeError('callback error');
-          }
-          return (a - b).toInt();
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4900
-     * @tc.name testInt16ArrayOverviewTestFour049
-     * @tc.desc Verify new Int16Array with negative length -5 throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let arr: Int16Array = new Int16Array(-5);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5000
-     * @tc.name testInt16ArrayOverviewTestFour050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3700
+     * @tc.name testInt16ArrayOverviewTestFour037
      * @tc.desc Verify new Int16Array throws RangeError float truncation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let arr: Int16Array = new Int16Array(-3.7);
         expect().assertFail();
@@ -962,14 +696,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5100
-     * @tc.name testInt16ArrayOverviewTestFour051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3800
+     * @tc.name testInt16ArrayOverviewTestFour038
      * @tc.desc Verify new Int16Array with unaligned byteOffset 1 on 8-byte buffer throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(8);
       try {
         let arr: Int16Array = new Int16Array(buf, 1);
@@ -980,14 +714,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5200
-     * @tc.name testInt16ArrayOverviewTestFour052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3900
+     * @tc.name testInt16ArrayOverviewTestFour039
      * @tc.desc Verify new Int16Array with 3-byte buffer and length 2 throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(3);
       try {
         let arr: Int16Array = new Int16Array(buf, 0, 2);
@@ -998,14 +732,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5300
-     * @tc.name testInt16ArrayOverviewTestFour053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4000
+     * @tc.name testInt16ArrayOverviewTestFour040
      * @tc.desc Verify map, $_get float truncation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 0;
       let arr: Int16Array = Int16Array.of(val);
       let result = arr.map((v: number): number => 3.7);
@@ -1015,14 +749,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5400
-     * @tc.name testInt16ArrayOverviewTestFour054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4100
+     * @tc.name testInt16ArrayOverviewTestFour041
      * @tc.desc Verify set, $_get overflow wrap
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 0;
       let arr: Int16Array = Int16Array.of(val);
       let inputValue: int = -32769;
@@ -1033,14 +767,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5500
-     * @tc.name testInt16ArrayOverviewTestFour055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4200
+     * @tc.name testInt16ArrayOverviewTestFour042
      * @tc.desc Verify fill, $_get overflow wrap out-of-range clamp
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(0, 0);
       arr.fill(-32769);
       let actualValue1: number = arr.$_get(0);
@@ -1052,14 +786,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5600
-     * @tc.name testInt16ArrayOverviewTestFour056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4300
+     * @tc.name testInt16ArrayOverviewTestFour043
      * @tc.desc Verify keys behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 0;
       let arr: Int16Array = Int16Array.of(val);
       let found: boolean = false;
@@ -1072,14 +806,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5700
-     * @tc.name testInt16ArrayOverviewTestFour057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4400
+     * @tc.name testInt16ArrayOverviewTestFour044
      * @tc.desc Verify entries behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(10, 20);
       let count: int = 0;
       for (let entry of arr.entries()) {
@@ -1101,14 +835,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5800
-     * @tc.name testInt16ArrayOverviewTestFour058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4500
+     * @tc.name testInt16ArrayOverviewTestFour045
      * @tc.desc Verify new Int16Array throws RangeError zero-byte ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(0);
       try {
         let arr: Int16Array = new Int16Array(buf, 0, 1);
@@ -1119,14 +853,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5900
-     * @tc.name testInt16ArrayOverviewTestFour059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4600
+     * @tc.name testInt16ArrayOverviewTestFour046
      * @tc.desc Verify Int16Array.from(Uint16Array) wraps unsigned values to signed values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source: Uint16Array = Uint16Array.of(0, 32767, 32768, 65535);
       const result: Int16Array = Int16Array.from(source);
       const actualValues: string = result.join(',');
@@ -1135,14 +869,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6000
-     * @tc.name testInt16ArrayOverviewTestFour060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4700
+     * @tc.name testInt16ArrayOverviewTestFour047
      * @tc.desc Verify set(ArrayLike) rejects a negative offset with RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const target: Int16Array = Int16Array.of(5, 6);
       const source: Float64Array = Float64Array.of(1);
       try {
@@ -1154,14 +888,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6100
-     * @tc.name testInt16ArrayOverviewTestFour061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4800
+     * @tc.name testInt16ArrayOverviewTestFour048
      * @tc.desc Verify set(ArrayLike) rejects a nonempty source at target length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const target: Int16Array = Int16Array.of(5, 6);
       const source: Float64Array = Float64Array.of(1);
       try {
@@ -1173,14 +907,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6200
-     * @tc.name testInt16ArrayOverviewTestFour062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4900
+     * @tc.name testInt16ArrayOverviewTestFour049
      * @tc.desc Verify set(ArrayLike) rejects a source exceeding remaining space
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const target: Int16Array = Int16Array.of(5, 6);
       const source: Float64Array = Float64Array.of(1, 2);
       try {
@@ -1195,14 +929,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6300
-     * @tc.name testInt16ArrayOverviewTestFour063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5000
+     * @tc.name testInt16ArrayOverviewTestFour050
      * @tc.desc Verify includes(number, undefined) searches from index zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const array: Int16Array = Int16Array.of(10, 20, 30);
       const searchValue: number = 10;
       const actualResult: boolean = array.includes(searchValue, undefined);
@@ -1210,14 +944,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6400
-     * @tc.name testInt16ArrayOverviewTestFour064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5100
+     * @tc.name testInt16ArrayOverviewTestFour051
      * @tc.desc Verify includes(number, negative fromIndex) normalizes from the end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const array: Int16Array = Int16Array.of(10, 20, 30);
       const searchValue: number = 10;
       const fromIndex: int = -2;
@@ -1226,14 +960,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6500
-     * @tc.name testInt16ArrayOverviewTestFour065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5200
+     * @tc.name testInt16ArrayOverviewTestFour052
      * @tc.desc Verify lastIndexOf(number, undefined) uses the SDK start index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const array: Int16Array = Int16Array.of(7, 7, 9);
       const searchValue: number = 7;
       const actualIndex: int = array.lastIndexOf(searchValue, undefined);
@@ -1242,14 +976,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6600
-     * @tc.name testInt16ArrayOverviewTestFour066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5300
+     * @tc.name testInt16ArrayOverviewTestFour053
      * @tc.desc Verify copyWithin overlapping ranges copy from a stable source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const array: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
       const result: Int16Array = array.copyWithin(2, 0, 4);
       const actualValues: string = result.join(',');
@@ -1259,14 +993,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6700
-     * @tc.name testInt16ArrayOverviewTestFour067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5400
+     * @tc.name testInt16ArrayOverviewTestFour054
      * @tc.desc Verify slice copies and subarray shares a nonzero-offset view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const backing: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
       const parent: Int16Array = new Int16Array(backing.buffer, 2, 3);
       const copied: Int16Array = parent.slice(1, 3);
@@ -1286,14 +1020,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6800
-     * @tc.name testInt16ArrayOverviewTestFour068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5500
+     * @tc.name testInt16ArrayOverviewTestFour055
      * @tc.desc Verify Int16Array constructor rejects an object cast to int with ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const unsupported: Object = new Object();
       try {
         const invalidLength: int = unsupported as object as int;
@@ -1305,14 +1039,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6900
-     * @tc.name testInt16ArrayOverviewTestFour069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5600
+     * @tc.name testInt16ArrayOverviewTestFour056
      * @tc.desc Verify Int16Array constructor rejects an object cast to ArrayBuffer with ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const unsupported: Object = new Object();
       try {
         const invalidBuffer: ArrayBuffer = unsupported as object as ArrayBuffer;
@@ -1324,14 +1058,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_7000
-     * @tc.name testInt16ArrayOverviewTestFour070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5700
+     * @tc.name testInt16ArrayOverviewTestFour057
      * @tc.desc Verify Int16Array.from rejects an object cast to Array with ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const unsupported: Object = new Object();
       try {
         const invalidSource: Array<int> = unsupported as object as Array<int>;
@@ -1343,14 +1077,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_7100
-     * @tc.name testInt16ArrayOverviewTestFour071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5800
+     * @tc.name testInt16ArrayOverviewTestFour058
      * @tc.desc Verify Int16Array.from rejects an object cast to map function with ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const unsupported: Object = new Object();
       try {
         const invalidMapFn: (v: number, k: number) => number = unsupported as object as (
@@ -1365,14 +1099,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_7200
-     * @tc.name testInt16ArrayOverviewTestFour072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5900
+     * @tc.name testInt16ArrayOverviewTestFour059
      * @tc.desc Verify Int16Array.of rejects an object cast to number with ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const unsupported: Object = new Object();
       try {
         const invalidItem: number = unsupported as object as number;
@@ -1384,14 +1118,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_7300
-     * @tc.name testInt16ArrayOverviewTestFour073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6000
+     * @tc.name testInt16ArrayOverviewTestFour060
      * @tc.desc Verify set rejects an object cast to ArrayLike with ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Int16Array = Int16Array.of(1, 2, 3);
       const unsupported: Object = new Object();
       try {
@@ -1404,14 +1138,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_7400
-     * @tc.name testInt16ArrayOverviewTestFour074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6100
+     * @tc.name testInt16ArrayOverviewTestFour061
      * @tc.desc Verify includes rejects an object cast to number with ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Int16Array = Int16Array.of(1, 2, 3);
       const unsupported: Object = new Object();
       try {
@@ -1424,14 +1158,14 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_7500
-     * @tc.name testInt16ArrayOverviewTestFour075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6200
+     * @tc.name testInt16ArrayOverviewTestFour062
      * @tc.desc Verify indexOf rejects an object cast to int fromIndex with ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayOverviewTestFour075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayOverviewTestFour062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Int16Array = Int16Array.of(1, 2, 3);
       const unsupported: Object = new Object();
       try {
