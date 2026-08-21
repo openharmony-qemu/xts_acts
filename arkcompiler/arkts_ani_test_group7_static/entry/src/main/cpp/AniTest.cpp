@@ -14,6 +14,7 @@
  */
 
 #include "Common.h"
+#include "NativeObjectStorageTest.h"
 #include "TcBindTest.h"
 #include "TcManglingTest.h"
 #include "TcTypeTest.h"
@@ -1144,6 +1145,20 @@ ANI_EXPORT ani_status ANI_Constructor(ani_vm *vm, uint32_t *result)
     if (!AssertEqMsg(status, ANI_OK, "bindCase failed")) {
         return status;
     }
+
+    ani_env *env = nullptr;
+    if (vm->GetEnv(ANI_VERSION_1, &env) != ANI_OK) {
+        *result = ANI_VERSION_1;
+        return ANI_OK;
+    }
+    BindClassStorageTest(vm);
+    BindContainerStorageTest(vm);
+    BindThreadSafeStorageTest(vm);
+    BindAniObjectTypeTest(vm);
+    BindConcurrentStorageTest(vm);
+    BindMapKeyStorageTest(vm);
+    BindExceptionStorageTest(vm);
+
     *result = ANI_VERSION_1;
     return ANI_OK;
 }
