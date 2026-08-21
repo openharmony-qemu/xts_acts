@@ -1976,8 +1976,9 @@ export default function taskPoolCoverageTest() {
           console.error(`async await failed: ${error}`)
           expect().assertFail()
         }
+        let result: number = 0;
         try {
-          const result = await dependentResult;
+          result = await dependentResult as number;
         } catch (error) {
           console.error(`async await failed: ${error}`)
           expect().assertFail()
