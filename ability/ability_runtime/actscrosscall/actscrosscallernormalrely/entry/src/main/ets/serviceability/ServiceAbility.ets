@@ -35,9 +35,9 @@ class StubTest extends rpc.RemoteObject {
     return true;
   }
 }
-let actionStr: ESObject;
-let accountId: ESObject;
-let message: ESObject;
+let actionStr: string = '';
+let accountId: number = 0;
+let message: string = '';
 let commonEventData: commonEvent.CommonEventPublishData = {
   parameters:{
     message:message,
@@ -46,8 +46,8 @@ let commonEventData: commonEvent.CommonEventPublishData = {
 let remoteOBJ = new StubTest('test');
 export default class ServiceAbility extends ServiceExtensionAbility {
   onCreate(want: Want) {
-    actionStr = want.parameters?.action;
-    accountId = want.parameters?.accountId;
+    actionStr = want.parameters?.action as string;
+    accountId = want.parameters?.accountId as number;
     console.info('ServiceAbility onCreate want:' + JSON.stringify(want));
     globalThis.terminate = () => {
       setTimeout(() => {
@@ -63,7 +63,7 @@ export default class ServiceAbility extends ServiceExtensionAbility {
       this.context.startAbilityByCallWithAccount({
         bundleName: 'com.acts.calleeabilityrely',
         abilityName: 'EntryAbility',
-      }, accountId).then((data: ESObject) => {
+      }, accountId).then((data: Caller) => {
         console.info('====>' + actionStr + ' startAbilityByCall data:' + JSON.stringify(data));
       }).catch((err: BusinessError) => {
         console.info('====>' + actionStr + ' startAbilityByCall err:' + JSON.stringify(err));

@@ -21,18 +21,18 @@ import window from '@ohos.window'
 import commonEvent from '@ohos.commonEventManager'
 import UIAbility from '@ohos.app.ability.UIAbility';
 
-let message: ESObject;
+let message: string = '';
 let commonEventData: commonEvent.CommonEventPublishData = {
   parameters:{
     message:message,
   }
 }
-let actionStr: ESObject;
-let accountId: ESObject;
+let actionStr: string = '';
+let accountId: number = 0;
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    actionStr = want.parameters?.action;
-    accountId = want.parameters?.accountId;
+    actionStr = want.parameters?.action as string;
+    accountId = want.parameters?.accountId as number;
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
@@ -75,7 +75,7 @@ export default class EntryAbility extends UIAbility {
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err: BusinessError, data: ESObject) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.ERROR);
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');

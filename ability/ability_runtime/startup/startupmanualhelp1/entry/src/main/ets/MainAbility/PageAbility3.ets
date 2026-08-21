@@ -77,7 +77,7 @@ export default class PageAbility3 extends UIAbility {
         if (event === 'StartupSample_004') {
           startupSampleInit4 = true;
           startOrder.push(['startupSampleInit4']);
-          let message: string;
+          let message: string = '';
           if (!customConfig) {
             message = '默认配置 StartupSample_004加载完毕';
           } else {
@@ -94,7 +94,7 @@ export default class PageAbility3 extends UIAbility {
         if (event === 'StartupSample_005') {
           startupSampleInit5 = true;
           startOrder.push(['startupSampleInit5']);
-          let message: string;
+          let message: string = '';
           if (!customConfig) {
             message = '默认配置 StartupSample_005加载完毕';
           } else {
@@ -111,7 +111,7 @@ export default class PageAbility3 extends UIAbility {
         if (event === 'StartupSample_006') {
           startupSampleInit6 = true;
           startOrder.push(['startupSampleInit6']);
-          let message: string;
+          let message: string = '';
           if (!customConfig) {
             message = '默认配置 StartupSample_006加载完毕';
           } else {
@@ -128,7 +128,7 @@ export default class PageAbility3 extends UIAbility {
         if (event === 'StartupSample_007') {
           startupSampleInit7 = true;
           startOrder.push(['startupSampleInit7']);
-          let message: string;
+          let message: string = '';
           if (!customConfig) {
             message = '默认配置 StartupSample_007加载完毕';
           } else {
@@ -145,7 +145,7 @@ export default class PageAbility3 extends UIAbility {
         if (event === 'StartupSample_008') {
           startupSampleInit8 = true;
           startOrder.push(['startupSampleInit8']);
-          let message: string;
+          let message: string = '';
           if (!customConfig) {
             message = '默认配置 StartupSample_008加载完毕';
           } else {
@@ -161,7 +161,7 @@ export default class PageAbility3 extends UIAbility {
         }
         if (event === 'StartupTestDefaultConfig') {
           startupDefaultConfig = true;
-          let message: string;
+          let message: string = '';
           if (!customConfig) {
             message = '默认配置 监听到测试框架加载完毕';
           } else {

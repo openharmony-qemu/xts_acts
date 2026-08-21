@@ -21,9 +21,9 @@ import Want from '@ohos.app.ability.Want';
 import { Caller } from '@ohos.app.ability.UIAbility';
 
 class MyParcelAble implements rpc.Parcelable {
-  num: number = 0;
-  str: string = '';
-  result: boolean = false;
+  public num: number = 0;
+  public str: string = '';
+  public result: boolean = false;
 
   constructor(num: number, string: string, result: boolean) {
     this.num = num;
@@ -68,9 +68,9 @@ class StubTest extends rpc.RemoteObject {
     return true;
   }
 }
-let actionStr: ESObject;
-let accountId: ESObject;
-let message: ESObject;
+let actionStr: string = '';
+let accountId: number = 0;
+let message: string = '';
 let commonEventData: commonEvent.CommonEventPublishData = {
   parameters:{
     message:message,
@@ -79,8 +79,8 @@ let commonEventData: commonEvent.CommonEventPublishData = {
 let remoteOBJ = new StubTest('test');
 export default class ServiceAbility extends ServiceExtensionAbility {
   onCreate(want: Want) {
-    actionStr = want.parameters?.action;
-    accountId = want.parameters?.accountId;
+    actionStr = want.parameters?.action as string;
+    accountId = want.parameters?.accountId as number;
     console.info('ServiceAbility onCreate want:' + JSON.stringify(want));
     globalThis.terminate = () => {
       setTimeout(() => {
@@ -194,7 +194,7 @@ export default class ServiceAbility extends ServiceExtensionAbility {
       this.context.startAbilityByCallWithAccount({
         bundleName: 'com.acts.calleeabilityrely',
         abilityName: 'EntryAbility',
-      }, accountId).then((data: ESObject) => {
+      }, accountId).then((data: Caller) => {
         console.info('====>' + actionStr + ' startAbilityByCall data:' + JSON.stringify(data));
         commonEventData.parameters!.message = data;
         commonEvent.publish('ACTS_CROSS_CALL_EVENT', commonEventData, (err) => {
@@ -212,8 +212,8 @@ export default class ServiceAbility extends ServiceExtensionAbility {
     }
 
     if (actionStr == 'Acts_CrossUserCall_3000') {
-      let caller: ESObject;
-      const releaseCallback = (data: ESObject) => {
+      let caller: Caller;
+      const releaseCallback = (data: string) => {
         console.info('====>' + actionStr + ' releaseCallBack:' + data);
         commonEventData.parameters!.message = data;
         commonEvent.publish('ACTS_CROSS_RELEASE_EVENT', commonEventData, (err) => {
@@ -223,11 +223,11 @@ export default class ServiceAbility extends ServiceExtensionAbility {
       this.context.startAbilityByCallWithAccount({
         bundleName: 'com.acts.calleeabilityrely',
         abilityName: 'EntryAbility',
-      }, accountId).then((data: ESObject) => {
+      }, accountId).then((data: Caller) => {
         caller = data;
         caller.onRelease(releaseCallback);
         let param = new MyParcelAble(3000, 'Acts_CrossUserCall_3000', false);
-        caller.callWithResult('call', param).then((data: ESObject) => {
+        caller.callWithResult('call', param).then((data: rpc.MessageSequence) => {
           let result = new MyParcelAble(0, '', false);
           data.readParcelable(result);
           console.info('====>' + actionStr + ' callWithResult result:' + JSON.stringify(result));
@@ -284,7 +284,7 @@ export default class ServiceAbility extends ServiceExtensionAbility {
     console.info('ServiceAbility onConfigurationUpdate');
   }
 
-  onDump(params: ESObject) {
+  onDump(params: string[]) {
     console.info('ServiceAbility onDump');
     return [];
   }

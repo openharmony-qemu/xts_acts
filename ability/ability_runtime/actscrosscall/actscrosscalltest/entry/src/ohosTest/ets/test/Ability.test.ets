@@ -19,7 +19,7 @@ import Want from '@ohos.app.ability.Want';
 import { Caller } from '@ohos.app.ability.UIAbility';
 
 const CASE_TIME_OUT = 5000;
-let ACTS_CrossCallFunction:commonEvent.CommonEventSubscribeInfo = {
+let actsCrossCallFunction:commonEvent.CommonEventSubscribeInfo = {
   events: ['ACTS_CROSS_CALL_EVENT', 'ACTS_CROSS_RELEASE_EVENT']
 };
 
@@ -33,18 +33,18 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_0100
-     * @tc.number Acts_CrossUserCall_0100
-     * @tc.desc   Under the same account, UIAbility can call the current account Ability application with Call.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_0100
+     * @tc.number : Acts_CrossUserCall_0100
+     * @tc.desc : Under the same account, UIAbility can call the current account Ability application with Call.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_0100', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0100 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0100 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -83,18 +83,18 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_0200
-     * @tc.number Acts_CrossUserCall_0200
-     * @tc.desc   Under the same account, ServiceExtension can call the current account Ability application with Call.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_0200
+     * @tc.number : Acts_CrossUserCall_0200
+     * @tc.desc : Under the same account, ServiceExtension can call the current account Ability application with Call.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_0200', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0200 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0200 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -133,18 +133,18 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_0300
-     * @tc.number Acts_CrossUserCall_0300
-     * @tc.desc   System applications UIAbility can Call call other account Ability applications under cross-account.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_0300
+     * @tc.number : Acts_CrossUserCall_0300
+     * @tc.desc : System applications UIAbility can Call call other account Ability applications under cross-account.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_0300', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0300 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0300 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -183,18 +183,18 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_0400
-     * @tc.number Acts_CrossUserCall_0400
-     * @tc.desc   System applications ServiceExtension can Call call other account Ability applications under
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_0400
+     * @tc.number : Acts_CrossUserCall_0400
+     * @tc.desc : System applications ServiceExtension can Call call other account Ability applications under
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_0400', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0400 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0400 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -233,18 +233,18 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_0500
-     * @tc.number Acts_CrossUserCall_0500
-     * @tc.desc   Normal applications UIAbility cannot Call call other account Ability applications under cross-account.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_0500
+     * @tc.number : Acts_CrossUserCall_0500
+     * @tc.desc : Normal applications UIAbility cannot Call call other account Ability applications under cross-account.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_0500', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0500 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0500 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -283,18 +283,18 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_0600
-     * @tc.number Acts_CrossUserCall_0600
-     * @tc.desc   Normal applications ServiceExtension cannot Call call other account Ability applications
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_0600
+     * @tc.number : Acts_CrossUserCall_0600
+     * @tc.desc : Normal applications ServiceExtension cannot Call call other account Ability applications
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_0600', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0600 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0600 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -333,18 +333,18 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_0700
-     * @tc.number Acts_CrossUserCall_0700
-     * @tc.desc   System applications without permission under cross-account UIAbility cannot Call to call
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_0700
+     * @tc.number : Acts_CrossUserCall_0700
+     * @tc.desc : System applications without permission under cross-account UIAbility cannot Call to call
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_0700', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0700 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0700 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -383,18 +383,18 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_0800
-     * @tc.number Acts_CrossUserCall_0800
-     * @tc.desc   System applications without permission under cross-account ServiceExtension cannot Call
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_0800
+     * @tc.number : Acts_CrossUserCall_0800
+     * @tc.desc : System applications without permission under cross-account ServiceExtension cannot Call
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_0800', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info('====>Acts_CrossUserCall_0800 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_0600 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -433,12 +433,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_0900
-     * @tc.number Acts_CrossUserCall_0900
-     * @tc.desc   UIAbility uses a Call call with the want parameter null.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_0900
+     * @tc.number : Acts_CrossUserCall_0900
+     * @tc.desc : UIAbility uses a Call call with the want parameter null.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_0900', Level.LEVEL0, async (done: Function) => {
       globalThis.abilityContext.startAbilityByCallWithAccount(null, -1).then((caller:Caller) => {
@@ -452,18 +452,18 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_1000
-     * @tc.number Acts_CrossUserCall_1000
-     * @tc.desc   ServiceExtension uses a Call call with the want parameter null.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_1000
+     * @tc.number : Acts_CrossUserCall_1000
+     * @tc.desc : ServiceExtension uses a Call call with the want parameter null.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_1000', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
       console.info("====>Acts_CrossUserCall_1000");
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_1000 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -502,12 +502,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_1100
-     * @tc.number Acts_CrossUserCall_1100
-     * @tc.desc   UIAbility uses a Call call with the want parameter undefined.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_1100
+     * @tc.number : Acts_CrossUserCall_1100
+     * @tc.desc : UIAbility uses a Call call with the want parameter undefined.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_1100', Level.LEVEL0, (done:Function) => {
       globalThis.abilityContext.startAbilityByCallWithAccount(undefined, -1).then((caller:Caller) => {
@@ -521,17 +521,17 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_1200
-     * @tc.number Acts_CrossUserCall_1200
-     * @tc.desc   ServiceExtension uses a Call call with the want parameter undefined.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_1200
+     * @tc.number : Acts_CrossUserCall_1200
+     * @tc.desc : ServiceExtension uses a Call call with the want parameter undefined.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_1200', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then((data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then((data) => {
         console.info('====>Acts_CrossUserCall_1200 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -571,12 +571,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_1300
-     * @tc.number Acts_CrossUserCall_1300
-     * @tc.desc   UIAbility uses the want parameter to start a Call call with error information.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_1300
+     * @tc.number : Acts_CrossUserCall_1300
+     * @tc.desc : UIAbility uses the want parameter to start a Call call with error information.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_1300', Level.LEVEL0, () => {
       let want:Want = {
@@ -593,17 +593,17 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_1400
-     * @tc.number Acts_CrossUserCall_1400
-     * @tc.desc   ServiceExtension uses the want parameter to start a Call call with error information.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_1400
+     * @tc.number : Acts_CrossUserCall_1400
+     * @tc.desc : ServiceExtension uses the want parameter to start a Call call with error information.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_1400', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then((data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then((data) => {
         console.info('====>Acts_CrossUserCall_1400 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -642,12 +642,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_1500
-     * @tc.number Acts_CrossUserCall_1500
-     * @tc.desc   UIAbility uses a Call call with the accountId parameter null.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_1500
+     * @tc.number : Acts_CrossUserCall_1500
+     * @tc.desc : UIAbility uses a Call call with the accountId parameter null.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_1500', Level.LEVEL0, async (done: Function) => {
       let want:Want = {
@@ -668,17 +668,17 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_1600
-     * @tc.number Acts_CrossUserCall_1600
-     * @tc.desc   ServiceExtension uses a Call call with the accountId parameter null.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_1600
+     * @tc.number : Acts_CrossUserCall_1600
+     * @tc.desc : ServiceExtension uses a Call call with the accountId parameter null.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_1600', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then((data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then((data) => {
         console.info('====>Acts_CrossUserCall_1600 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -718,12 +718,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_1700
-     * @tc.number Acts_CrossUserCall_1700
-     * @tc.desc   UIAbility uses a Call call with the accountId parameter undefined.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_1700
+     * @tc.number : Acts_CrossUserCall_1700
+     * @tc.desc : UIAbility uses a Call call with the accountId parameter undefined.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_1700', Level.LEVEL0, async (done: Function) => {
       let want:Want = {
@@ -744,17 +744,17 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_1800
-     * @tc.number Acts_CrossUserCall_1800
-     * @tc.desc   ServiceExtension uses a Call call with the accountId parameter undefined.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_1800
+     * @tc.number : Acts_CrossUserCall_1800
+     * @tc.desc : ServiceExtension uses a Call call with the accountId parameter undefined.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_1800', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false;
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then((data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then((data) => {
         console.info('====>Acts_CrossUserCall_1800 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -794,12 +794,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_1900
-     * @tc.number Acts_CrossUserCall_1900
-     * @tc.desc   UIAbility uses the accountId parameter to call Call for which an ID value does not exist.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_1900
+     * @tc.number : Acts_CrossUserCall_1900
+     * @tc.desc : UIAbility uses the accountId parameter to call Call for which an ID value does not exist.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_1900', Level.LEVEL0, async (done: Function) => {
       let want:Want = {
@@ -820,17 +820,17 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_2000
-     * @tc.number Acts_CrossUserCall_2000
-     * @tc.desc   ServiceExtension uses the accountId parameter to call Call for which an ID value does not exist.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_2000
+     * @tc.number : Acts_CrossUserCall_2000
+     * @tc.desc : ServiceExtension uses the accountId parameter to call Call for which an ID value does not exist.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_2000', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let flag = false
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then((data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then((data) => {
         console.info('====>Acts_CrossUserCall_2000 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -869,18 +869,18 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_2900
-     * @tc.number Acts_CrossUserCall_2900
-     * @tc.desc   The Caller.release interface of UIAbility under the same account executes normally.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_2900
+     * @tc.number : Acts_CrossUserCall_2900
+     * @tc.desc : The Caller.release interface of UIAbility under the same account executes normally.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_2900', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let eventCount = 0;
       console.info('====>Acts_CrossUserCall_2900 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_2900 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -927,18 +927,18 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   Acts_CrossUserCall_3000
-     * @tc.number Acts_CrossUserCall_3000
-     * @tc.desc   The Caller.release interface of ServiceExtension under the same account executes normally.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : Acts_CrossUserCall_3000
+     * @tc.number : Acts_CrossUserCall_3000
+     * @tc.desc : The Caller.release interface of ServiceExtension under the same account executes normally.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('Acts_CrossUserCall_3000', Level.LEVEL0, async (done: Function) => {
       let subscriber:commonEvent.CommonEventSubscriber;
       let eventCount = 0;
       console.info('====>Acts_CrossUserCall_3000 start');
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         console.info('====>Acts_CrossUserCall_3000 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {

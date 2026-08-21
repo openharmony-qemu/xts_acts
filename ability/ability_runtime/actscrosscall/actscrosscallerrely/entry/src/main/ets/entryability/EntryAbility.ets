@@ -21,12 +21,12 @@ import window from '@ohos.window'
 import commonEvent from '@ohos.commonEventManager'
 import { BusinessError } from '@ohos.base';
 import rpc from '@ohos.rpc';
-import UIAbility from '@ohos.app.ability.UIAbility';
+import UIAbility, { Caller } from '@ohos.app.ability.UIAbility';
 
 class MyParcelAble implements rpc.Parcelable {
-  num: number = 0;
-  str: string = '';
-  result: boolean = false;
+  public num: number = 0;
+  public str: string = '';
+  public result: boolean = false;
 
   constructor(num: number, string: string, result: boolean) {
     this.num = num;
@@ -55,18 +55,18 @@ class MyParcelAble implements rpc.Parcelable {
   }
 }
 
-let message: ESObject;
+let message: string = '';
 let commonEventData: commonEvent.CommonEventPublishData = {
   parameters:{
     message:message,
   }
 }
-let actionStr: ESObject;
-let accountId: ESObject;
+let actionStr: string = '';
+let accountId: number = 0;
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    actionStr = want.parameters?.action;
-    accountId = want.parameters?.accountId;
+    actionStr = want.parameters?.action as string;
+    accountId = want.parameters?.accountId as number;
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
@@ -86,7 +86,7 @@ export default class EntryAbility extends UIAbility {
       this.context.startAbilityByCallWithAccount({
         bundleName: 'com.acts.calleeabilityrely',
         abilityName: 'EntryAbility',
-      }, accountId).then((data: ESObject) => {
+      }, accountId).then((data: Caller) => {
         console.info('====>' + actionStr + ' startAbilityByCall data:' + JSON.stringify(data));
         commonEventData.parameters!.message = data;
         commonEvent.publish('ACTS_CROSS_CALL_EVENT', commonEventData, (err) => {
@@ -104,8 +104,8 @@ export default class EntryAbility extends UIAbility {
     }
 
     if (actionStr === 'Acts_CrossUserCall_2900') {
-      let caller: ESObject;
-      const releaseCallback = (data: ESObject) => {
+      let caller: Caller;
+      const releaseCallback = (data: string) => {
         console.info('====>' + actionStr + ' releaseCallBack:' + data);
         commonEventData.parameters!.message = data;
         commonEvent.publish('ACTS_CROSS_RELEASE_EVENT', commonEventData, (err) => {
@@ -115,11 +115,11 @@ export default class EntryAbility extends UIAbility {
       this.context.startAbilityByCallWithAccount({
         bundleName: 'com.acts.calleeabilityrely',
         abilityName: 'EntryAbility',
-      }, accountId).then((data: ESObject) => {
+      }, accountId).then((data: Caller) => {
         caller = data;
         caller.onRelease(releaseCallback);
         let param = new MyParcelAble(2900, 'Acts_CrossUserCall_2900', false);
-        caller.callWithResult('call', param).then((data: ESObject) => {
+        caller.callWithResult('call', param).then((data: rpc.MessageSequence) => {
           let result = new MyParcelAble(0, '', false);
           data.readParcelable(result);
           console.info('====>' + actionStr + '  callWithResult result:' + JSON.stringify(result));
@@ -146,7 +146,7 @@ export default class EntryAbility extends UIAbility {
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err: BusinessError, data: ESObject) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.ERROR);
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');

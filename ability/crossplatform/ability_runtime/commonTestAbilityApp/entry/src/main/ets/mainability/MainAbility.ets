@@ -41,7 +41,7 @@ export default class MainAbility extends UIAbility {
     globalThis.commonList1.push('common MainAbility onWindowStageCreate');
     globalThis.commonAbilityContext = this.context;
 
-    windowStage.loadContent('pages/Index', (err: BusinessError) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         console.log('testTag', '%{public}s', 'Ability onWindowStageCreate');
         return;

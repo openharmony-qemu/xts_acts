@@ -22,9 +22,9 @@ import { BusinessError } from '@ohos.base';
 
 
 class MyParcelAble implements rpc.Parcelable {
-  num: number = 0;
-  str: string = '';
-  result: boolean = false;
+  public num: number = 0;
+  public str: string = '';
+  public result: boolean = false;
 
   constructor(num: number, string: string, result: boolean) {
     this.num = num;
@@ -81,7 +81,7 @@ export default class EntryAbility extends UIAbility {
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err: BusinessError, data: ESObject) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.ERROR);
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
