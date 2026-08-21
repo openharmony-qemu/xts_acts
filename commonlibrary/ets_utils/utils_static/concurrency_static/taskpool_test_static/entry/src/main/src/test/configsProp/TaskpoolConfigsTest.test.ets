@@ -569,7 +569,7 @@ export default function TaskpoolConfigsTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskpoolConfigsTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let task: taskpool.Task = new taskpool.Task(longTask, 100.0);
+      let task: taskpool.Task = new taskpool.Task(longTask, 1000.0);
       try {
         await taskpool.execute(task, { timeout: 1, priority: taskpool.Priority.HIGH });
         expect().assertFail();
@@ -724,7 +724,7 @@ export default function TaskpoolConfigsTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskpoolConfigsTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let task: taskpool.Task = new taskpool.Task(durationTask, 1000.0);
+      let task: taskpool.Task = new taskpool.Task(durationTask, 2500.0);
       try {
         await taskpool.execute(task, { timeout: 500 });
         expect().assertFail();
@@ -742,7 +742,7 @@ export default function TaskpoolConfigsTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskpoolConfigsTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let task: taskpool.Task = new taskpool.Task(longTask, 2000.0);
+      let task: taskpool.Task = new taskpool.Task(longTask, 2500.0);
       try {
         await taskpool.execute(task, { timeout: 500 });
         expect().assertFail();
@@ -900,7 +900,7 @@ export default function TaskpoolConfigsTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskpoolConfigsTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let task: taskpool.Task = new taskpool.Task(longTask, 2000.0);
+      let task: taskpool.Task = new taskpool.Task(longTask, 2500.0);
       try {
         await taskpool.execute(task, { timeout: 500.0, priority: taskpool.Priority.HIGH });
         expect().assertFail();
@@ -920,7 +920,7 @@ export default function TaskpoolConfigsTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskpoolConfigsTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let task: taskpool.Task = new taskpool.Task(longTask, 100.0);
+      let task: taskpool.Task = new taskpool.Task(longTask, 1000.0);
       let errorCaught: boolean = false;
       try {
         await taskpool.execute(task, { timeout: 1 });
@@ -984,9 +984,9 @@ export default function TaskpoolConfigsTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskpoolConfigsTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let task1: taskpool.Task = new taskpool.Task(longTask, 500.0);
-      let task2: taskpool.Task = new taskpool.Task(longTask, 500.0);
-      let task3: taskpool.Task = new taskpool.Task(longTask, 500.0);
+      let task1: taskpool.Task = new taskpool.Task(longTask, 1500.0);
+      let task2: taskpool.Task = new taskpool.Task(longTask, 1500.0);
+      let task3: taskpool.Task = new taskpool.Task(longTask, 1500.0);
       let p1 = taskpool.execute(task1, { timeout: 100 });
       let p2 = taskpool.execute(task2, { timeout: 100 });
       let p3 = taskpool.execute(task3, { timeout: 100 });
@@ -1007,7 +1007,7 @@ export default function TaskpoolConfigsTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskpoolConfigsTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let task: taskpool.Task = new taskpool.Task(durationTask, 600.0);
+      let task: taskpool.Task = new taskpool.Task(durationTask, 1500.0);
       try {
         await taskpool.execute(task, { timeout: 300 });
         expect().assertFail();

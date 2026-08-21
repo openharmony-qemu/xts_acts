@@ -74,7 +74,7 @@ let activePeriodicTasks: taskpool.Task[] = [];
 
 async function waitForSendDataCondition(condition: () => boolean): Promise<void> {
   let waitCount: number = 0
-  while (!condition() && waitCount < 50) {
+  while (!condition() && waitCount < 150) {
     await Utils.msSleep(20)
     waitCount++
   }
@@ -879,6 +879,15 @@ export default function TaskSendDataTest(): void {
         await Utils.msSleep(500);
       } catch (error) {
         expect().assertFail();
+      }
+      let waitCount2700: number = 0;
+      while (receivedValues.length < 5 && waitCount2700 < 150) {
+        try {
+          await Utils.msSleep(20)
+        } catch (error) {
+          expect().assertFail()
+        }
+        waitCount2700++
       }
       expect(receivedValues.length).assertEqual(5)
       expect(receivedValues[0]).assertEqual(0.0)

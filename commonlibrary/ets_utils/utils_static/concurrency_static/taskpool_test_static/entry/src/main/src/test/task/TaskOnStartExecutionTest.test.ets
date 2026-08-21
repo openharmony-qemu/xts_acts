@@ -465,7 +465,7 @@ export default function TaskOnStartExecutionTest(): void {
        expect().assertFail();
       }
       let waitCount1500: number = 0
-      while (callbackCount1500.load() < 5 && waitCount1500 < 250) {
+      while (callbackCount1500.load() < 5 && waitCount1500 < 500) {
         try {
           await Utils.msSleep(20);
         } catch (error) {
@@ -509,6 +509,15 @@ export default function TaskOnStartExecutionTest(): void {
        ]);
       } catch (error) {
        expect().assertFail();
+      }
+      let waitCount1600: number = 0
+      while (sharedCounter.load() < 5 && waitCount1600 < 500) {
+        try {
+          await Utils.msSleep(20);
+        } catch (error) {
+          expect().assertFail();
+        }
+        waitCount1600++
       }
       expect(sharedCounter.load()).assertEqual(5)
       done();

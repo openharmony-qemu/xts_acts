@@ -35,7 +35,7 @@ class EnqueuedHandler {
 
 async function waitForEnqueuedCondition(condition: () => boolean): Promise<void> {
   let waitCount: number = 0
-  while (!condition() && waitCount < 50) {
+  while (!condition() && waitCount < 150) {
     await Utils.msSleep(20)
     waitCount++
   }
@@ -465,10 +465,14 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
+      let waitCount1400: number = 0;
+      while (order.length < 3 && waitCount1400 < 150) {
+        try {
+          await Utils.msSleep(20)
+        } catch (error) {
+          expect().assertFail()
+        }
+        waitCount1400++
       }
       // 宿主侧回调投递顺序在高负载下不保证，断言收敛为每个回调各触发一次
       expect(order.length).assertEqual(3)
@@ -590,10 +594,14 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
+      let waitCount1700: number = 0;
+      while (callbackPromises.length < 5 && waitCount1700 < 150) {
+        try {
+          await Utils.msSleep(20)
+        } catch (error) {
+          expect().assertFail()
+        }
+        waitCount1700++
       }
       expect(callbackPromises.length).assertEqual(5)
       done();

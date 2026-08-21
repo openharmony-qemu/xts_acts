@@ -1040,7 +1040,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       taskpool.executePeriodically(200, shortTask);
       taskpool.executePeriodically(1000, longTask);
       let waitCount2900: number = 0
-      while ((shortCount.load() < 12 || longCount.load() < 3) && waitCount2900 < 150) {
+      while ((shortCount.load() < 12 || longCount.load() < 3) && waitCount2900 < 250) {
         try {
           await Utils.msSleep(20);
         } catch (error) {

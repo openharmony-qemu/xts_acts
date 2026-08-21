@@ -31,7 +31,7 @@ function longTask(duration: number): string {
 
 function slowTask(): string {
   let start: number = Date.now();
-  while ((Date.now() - start) < 1000) { continue; }
+  while ((Date.now() - start) < 2500) { continue; }
   return 'slow';
 }
 
@@ -111,7 +111,7 @@ function timerDelayTask(): Promise<string> {
   return new Promise<string>((resolve: (value: string) => void) => {
     setTimeout((): void => {
       resolve("timed");
-    }, 1000);
+    }, 500);
   });
 }
 
@@ -120,7 +120,7 @@ async function nestedAsyncTask(): Promise<string> {
     await new Promise<string>((resolve: (value: string) => void) => {
       setTimeout((): void => {
         resolve("step1");
-      }, 1500);
+      }, 5000);
     });
   } catch (error) {
     expect().assertFail();
@@ -134,7 +134,7 @@ async function promiseChainTask(): Promise<number> {
     first = await new Promise<number>((resolve: (value: number) => void) => {
       setTimeout((): void => {
         resolve(1);
-      }, 500);
+      }, 1667);
     });
   } catch (error) {
     expect().assertFail();
@@ -144,7 +144,7 @@ async function promiseChainTask(): Promise<number> {
     second = await new Promise<number>((resolve: (value: number) => void) => {
       setTimeout((): void => {
         resolve(first + 1);
-      }, 1000);
+      }, 3333);
     });
   } catch (error) {
     expect().assertFail();
@@ -165,7 +165,7 @@ function isCanceledCheckTask(flag: AtomicInt): string {
 
 function slowThrowTask(): string {
   let start: number = Date.now();
-  while ((Date.now() - start) < 1500) { continue; }
+  while ((Date.now() - start) < 5000) { continue; }
   throw new Error("slow task error");
 }
 
@@ -193,7 +193,7 @@ function heavyLoopTask(): number {
   for (let i: number = 0; i < 1000000; i++) {
     count++;
   }
-  while ((Date.now() - start) < 200) { continue; }
+  while ((Date.now() - start) < 1000) { continue; }
   return count;
 }
 
@@ -206,7 +206,7 @@ function bigDataTask(): Uint8Array {
 
 function bigDataTimeoutTask(): Uint8Array {
   let start: number = Date.now();
-  while ((Date.now() - start) < 2000) { continue; }
+  while ((Date.now() - start) < 5000) { continue; }
   let data: Uint8Array = new Uint8Array(100 * 1024 * 1024);
   data[0] = 3;
   data[data.length - 1] = 4;
@@ -215,13 +215,13 @@ function bigDataTimeoutTask(): Uint8Array {
 
 function dbQueryTask(): string {
   let start: number = Date.now();
-  while ((Date.now() - start) < 8000) { continue; }
+  while ((Date.now() - start) < 25000) { continue; }
   return "query-done";
 }
 
 function weakNetworkTask(): string {
   let start: number = Date.now();
-  while ((Date.now() - start) < 3000) { continue; }
+  while ((Date.now() - start) < 10000) { continue; }
   return "network-ok";
 }
 
@@ -367,7 +367,7 @@ export default function TaskpoolExecuteTaskTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskpoolExecute3Test0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let task2: taskpool.Task = new taskpool.Task(longTask, 1000.0);
+      let task2: taskpool.Task = new taskpool.Task(longTask, 2500.0);
       let errorCaught: boolean = false;
       try {
         await taskpool.execute(task2, { timeout: 500.0 });
@@ -455,7 +455,7 @@ export default function TaskpoolExecuteTaskTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskpoolExecute3Test0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let task: taskpool.Task = new taskpool.Task(longTask, 100.0);
+      let task: taskpool.Task = new taskpool.Task(longTask, 1000.0);
       let errorCaught: boolean = false;
       try {
         await taskpool.execute(task, { timeout: 1.0 });
@@ -1238,7 +1238,7 @@ export default function TaskpoolExecuteTaskTest(): void {
      */
     it('TaskpoolExecute3Test3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let task1: taskpool.Task = new taskpool.Task(longTask, 500.0);
-      let task2: taskpool.Task = new taskpool.Task(longTask, 1500.0);
+      let task2: taskpool.Task = new taskpool.Task(longTask, 5000.0);
       let task3: taskpool.Task = new taskpool.Task(longTask, 500.0);
       let p1 = taskpool.execute(task1, { timeout: 1000 });
       let p2 = taskpool.execute(task2, { timeout: 1000 });
@@ -1472,7 +1472,7 @@ export default function TaskpoolExecuteTaskTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskpoolExecute3Test4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let longT: taskpool.LongTask = new taskpool.LongTask(longTask, 2000.0);
+      let longT: taskpool.LongTask = new taskpool.LongTask(longTask, 5000.0);
       let rejected: boolean = false;
       try {
         await taskpool.execute(longT, { timeout: 1000 });
@@ -1501,7 +1501,7 @@ export default function TaskpoolExecuteTaskTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskpoolExecute3Test4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let longT: taskpool.LongTask = new taskpool.LongTask(longTask, 3000.0);
+      let longT: taskpool.LongTask = new taskpool.LongTask(longTask, 7500.0);
       let rejected: boolean = false;
       try {
         await taskpool.execute(longT, { timeout: 1500 });

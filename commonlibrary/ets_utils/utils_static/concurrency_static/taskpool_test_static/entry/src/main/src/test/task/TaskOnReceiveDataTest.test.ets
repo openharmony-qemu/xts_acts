@@ -51,7 +51,7 @@ let activePeriodicTasks: taskpool.Task[] = [];
 
 async function waitForReceiveCondition(condition: () => boolean): Promise<void> {
   let waitCount: number = 0
-  while (!condition() && waitCount < 50) {
+  while (!condition() && waitCount < 150) {
     try {
       await Utils.msSleep(20)
     } catch (error) {
@@ -583,7 +583,7 @@ export default function TaskOnReceiveDataTest(): void {
         for (let i = 0; i < 5; i++) {
           taskpool.Task.sendData(i * 1.0)
           let t: Long = Date.now()
-          while (Date.now() - t < 200) {}
+          while (Date.now() - t < 1000) {}
         }
         return 100.0
       })

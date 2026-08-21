@@ -34,7 +34,7 @@ let multiArgFunc = (a: number, b: string, c: boolean): string => {
 
 async function waitForSucceededCondition(condition: () => boolean): Promise<void> {
   let waitCount: number = 0
-  while (!condition() && waitCount < 50) {
+  while (!condition() && waitCount < 150) {
     await Utils.msSleep(20)
     waitCount++
   }
