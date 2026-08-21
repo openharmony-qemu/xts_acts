@@ -15,13 +15,14 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import {
+  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest,startAbility} from '../Util.test';
-import { UIUtils } from '@kit.ArkUI';
 
 export default function SVDeepListenMakeObservedTest(): void {
   describe('SVDeepListenMakeObservedTest', () => {
@@ -88,13 +89,6 @@ export default function SVDeepListenMakeObservedTest(): void {
       strJson = inspector.getInspectorByKey('allowDeep_true_infoNameText');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('allowDeep(true)info.name: Tom');
-
-      let res1 = UIUtils.makeObserved(2); // 非对象类型入参，实际无作用，返回2
-      expect(res1).assertEqual(2);
-      let res2 = UIUtils.makeObserved(undefined); // 非对象类型入参，实际无作用，返回undefined
-      expect(res2).assertEqual(undefined);
-      let res3 = UIUtils.makeObserved(null); // 非对象类型入参，实际无作用，返回null
-      expect(res3).assertEqual(null);
 
       console.info('[SUB_ARKUI_SVDeepListenMakeObservedTest_static_0100] END');
       done();

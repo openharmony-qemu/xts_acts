@@ -24,6 +24,7 @@ import {
   ReusePoolOwnership, State, StorageLink, StoragePropRef, SyncMonitor, Text,
   Trace, Track, Watch
 } from '@kit.ArkUI';
+import { referenceCoverageTypes } from './StaticCoverageSupport';
 
 const staticCoverageCustomEnv = CustomEnvKey.create<int>();
 
@@ -176,5 +177,5 @@ struct StaticCoverageV2Child {
 export function staticCoverageFixtureReady(): boolean {
   const model: StaticCoverageObservedModel = new StaticCoverageObservedModel();
   const modelV2: StaticCoverageObservedV2Model = new StaticCoverageObservedV2Model();
-  return model.value === 1 && modelV2.total === 3;
+  return model.value === 1 && modelV2.total === 3 && referenceCoverageTypes();
 }
