@@ -360,7 +360,7 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onCreate_WindowStage] Data: ` +
             JSON.stringify(onCreate_WindowStage));
           for (let i = 0; i < onCreate_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag',,
+            hilog.info(0x0000, 'testTag',
               `${TESTCASE} ${NAME} [onCreate_WindowStage] getAllWindowStages successfully. Data: ` +
               (onCreate_WindowStage[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                 .abilityInfo.name);
@@ -410,13 +410,13 @@ export default function ActsGetAllWindowStagesTest() {
         let onWindowStageCreate_WindowStage = AppStorage.get<Array<window.WindowStage>>(
           'onWindowStageCreate_WindowStage') as Array<window.WindowStage>
         try {
-          hilog.info(0x0000, 'testTag',,
+          hilog.info(0x0000, 'testTag',
             `${TESTCASE} ${NAME} [onWindowStageCreate_WindowStage] getAllWindowStages size` +
             `${onWindowStageCreate_WindowStage.length}`);
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageCreate_WindowStage] Data: ` +
             JSON.stringify(onWindowStageCreate_WindowStage));
           for (let i = 0; i < onWindowStageCreate_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag',,
+            hilog.info(0x0000, 'testTag',
               `${TESTCASE} ${NAME} [onWindowStageCreate_WindowStage] getAllWindowStages successfully. Data: ` +
               (onWindowStageCreate_WindowStage[i].getMainWindowSync().getUIContext()
                 .getHostContext() as common.UIAbilityContext)
@@ -472,7 +472,7 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onForeground_WindowStage] Data: ` +
             JSON.stringify(onForeground_WindowStage));
           for (let i = 0; i < onForeground_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag',,
+            hilog.info(0x0000, 'testTag',
               `${TESTCASE} ${NAME} [onForeground_WindowStage] getAllWindowStages successfully. Data: ` +
               (onForeground_WindowStage[i].getMainWindowSync().getUIContext()
                 .getHostContext() as common.UIAbilityContext)
@@ -528,7 +528,7 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onBackground_WindowStage] Data: ` +
             JSON.stringify(onBackground_WindowStage));
           for (let i = 0; i < onBackground_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag',,
+            hilog.info(0x0000, 'testTag',
               `${TESTCASE} ${NAME} [onBackground_WindowStage] getAllWindowStages successfully. Data: ` +
               (onBackground_WindowStage[i].getMainWindowSync().getUIContext()
                 .getHostContext() as common.UIAbilityContext)
@@ -592,7 +592,7 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onDestroy_WindowStage] Data: ` +
             JSON.stringify(onDestroy_WindowStage));
           for (let i = 0; i < onDestroy_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag',,
+            hilog.info(0x0000, 'testTag',
               `${TESTCASE} ${NAME} [onDestroy_WindowStage] getAllWindowStages successfully. Data: ` +
               (onDestroy_WindowStage[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                 .abilityInfo.name);
@@ -644,13 +644,13 @@ export default function ActsGetAllWindowStagesTest() {
         try {
           let onWindowStageDestroy_WindowStage = AppStorage.get<Array<window.WindowStage>>(
             'onWindowStageDestroy_WindowStage') as Array<window.WindowStage>
-          hilog.info(0x0000, 'testTag',,
+          hilog.info(0x0000, 'testTag',
             `${TESTCASE} ${NAME} [onWindowStageDestroy_WindowStage] getAllWindowStages size` +
             `${onWindowStageDestroy_WindowStage.length}`);
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageDestroy_WindowStage] Data: ` +
             JSON.stringify(onWindowStageDestroy_WindowStage));
           for (let i = 0; i < onWindowStageDestroy_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag',,
+            hilog.info(0x0000, 'testTag',
               `${TESTCASE} ${NAME} [onWindowStageDestroy_WindowStage] getAllWindowStages successfully. Data: ` +
               (onWindowStageDestroy_WindowStage[i].getMainWindowSync().getUIContext()
                 .getHostContext() as common.UIAbilityContext)
@@ -703,13 +703,13 @@ export default function ActsGetAllWindowStagesTest() {
         try {
           let onWindowStageWillDestroy_WindowStage = AppStorage.get<Array<window.WindowStage>>(
             'onWindowStageWillDestroy_WindowStage') as Array<window.WindowStage>
-          hilog.info(0x0000, 'testTag',,
+          hilog.info(0x0000, 'testTag',
             `${TESTCASE} ${NAME} [onWindowStageWillDestroy_WindowStage] getAllWindowStages size` +
             `${onWindowStageWillDestroy_WindowStage.length}`);
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageWillDestroy_WindowStage] Data: ` +
             JSON.stringify(onWindowStageWillDestroy_WindowStage));
           for (let i = 0; i < onWindowStageWillDestroy_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag',,
+            hilog.info(0x0000, 'testTag',
               `${TESTCASE} ${NAME} [onWindowStageWillDestroy_WindowStage] getAllWindowStages successfully. Data: ` +
               (onWindowStageWillDestroy_WindowStage[i].getMainWindowSync().getUIContext()
                 .getHostContext() as common.UIAbilityContext)
@@ -747,7 +747,7 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [[AbilityStage]] Data: ` +
             JSON.stringify(AbilityStage_WindowStage));
           for (let i = 0; i < AbilityStage_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag',,
+            hilog.info(0x0000, 'testTag',
               `${TESTCASE} ${NAME} [[AbilityStage]] getAllWindowStages successfully. Data: ` +
               (AbilityStage_WindowStage[i].getMainWindowSync().getUIContext()
                 .getHostContext() as common.UIAbilityContext)
@@ -870,7 +870,7 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
               for (let i = 0; i < data.length; i++) {
-                hilog.info(0x0000, 'testTag',,
+                hilog.info(0x0000, 'testTag',
                   `${TESTCASE} ${NAME} [[AbilityStage]] getAllWindowStages successfully. Data: ` +
                   (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
                     .abilityInfo.name);
