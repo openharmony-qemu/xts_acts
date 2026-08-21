@@ -706,39 +706,25 @@ export default function mathExpTest2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4200
      * @tc.name testMathExp042
-     * @tc.desc Verify exp: exp(byte 0) returns 1.0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathExp042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: byte = 0
-      let result: double = Math.exp(val)
-      expect(result).assertClose(1.0, 1e-6)
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4300
-     * @tc.name testMathExp043
      * @tc.desc Verify exp: exp(log(x)) = x for x>0 holds
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 5.0
       expect(Math.exp(Math.log(x))).assertClose(x, 1e-6)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4400
-     * @tc.name testMathExp044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4300
+     * @tc.name testMathExp043
      * @tc.desc Verify Math.exp double overload with 2.0 returns Math.E squared
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.exp(2.0)
       let expected: double = Math.E * Math.E
       let exprResult: boolean = Math.abs(result - expected) < 1e-6
@@ -746,14 +732,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4500
-     * @tc.name testMathExp045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4400
+     * @tc.name testMathExp044
      * @tc.desc Verify exp: exp(-1.0e-10) approximately 1 - 1.0e-10
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = -1.0e-10
       let r: double = Math.exp(x)
       let isClose: boolean = Math.abs(r - 1.0 + 1.0e-10) < 1e-9
@@ -761,14 +747,14 @@ export default function mathExpTest2(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4600
-     * @tc.name testMathExp046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4500
+     * @tc.name testMathExp045
      * @tc.desc Verify exp: exp(the same input) consistent across three calls
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let n: int = 3
       let f: double = Math.exp(n)
       let s: double = Math.exp(n)
@@ -779,14 +765,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4700
-     * @tc.name testMathExp047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4600
+     * @tc.name testMathExp046
      * @tc.desc Verify exp cross-type consistency: exp(float 0.0f) and exp(double 0.0) cross-type consistency
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val1: float = 0.0f
       let val2: double = 0.0
       let result1: double = Math.exp(val1)
@@ -796,14 +782,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4800
-     * @tc.name testMathExp048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4700
+     * @tc.name testMathExp047
      * @tc.desc Verify exp throws ClassCastError with undefined parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let u: Object | undefined = undefined
       Math.exp(u as Object as double)
@@ -814,14 +800,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4900
-     * @tc.name testMathExp049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4800
+     * @tc.name testMathExp048
      * @tc.desc Verify exp throws ClassCastError with char 'a' parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let c: char = c'a'
         Math.exp(c as Object as double)
@@ -832,14 +818,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5000
-     * @tc.name testMathExp050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_4900
+     * @tc.name testMathExp049
      * @tc.desc Verify exp throws ClassCastError with Map parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let map: Map<string, int> = new Map<string, int>()
       Math.exp(map as Object as double)
@@ -850,14 +836,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5100
-     * @tc.name testMathExp051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5000
+     * @tc.name testMathExp050
      * @tc.desc Verify exp cross-type consistency: exp(byte 1) and exp(double 1.0) cross-type consistency
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val1: byte = 1
       let val2: double = 1.0
       let result1: double = Math.exp(val1)
@@ -867,28 +853,28 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5200
-     * @tc.name testMathExp052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5100
+     * @tc.name testMathExp051
      * @tc.desc Verify Math.exp with 1 required parameter returns correct value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.exp(1.0)
       let exprResult: boolean = Math.abs(result - Math.E) < 1e-6
       expect(exprResult).assertTrue()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5300
-     * @tc.name testMathExp053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5200
+     * @tc.name testMathExp052
      * @tc.desc Verify exp: exp(1.0e-10) approximately 1 + 1.0e-10 (small value)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 1.0e-10
       let r: double = Math.exp(x)
       let isClose: boolean = Math.abs(r - 1.0 - 1.0e-10) < 1e-9
@@ -896,28 +882,28 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5400
-     * @tc.name testMathExp054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5300
+     * @tc.name testMathExp053
      * @tc.desc Verify exp: exp(a-b) = exp(a)/exp(b)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: double = 3.0
       let b: double = 1.0
       expect(Math.exp(a - b)).assertClose(Math.exp(a) / Math.exp(b), 1e-9)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5500
-     * @tc.name testMathExp055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5400
+     * @tc.name testMathExp054
      * @tc.desc Verify exp: exp(x) > x for all x holds
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let xs2: double[] = [-5.0, -1.0, 0.0, 1.0, 2.0, 5.0]
       for (let i: int = 0; i < xs2.length; i++) {
         expect(Math.exp(xs2[i]) > xs2[i]).assertTrue()
@@ -925,14 +911,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5600
-     * @tc.name testMathExp056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5500
+     * @tc.name testMathExp055
      * @tc.desc Verify exp(int 0) and exp(double 0.0) both return 1.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-        it('testMathExp056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMathExp055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val1: int = 0
       let val2: double = 0.0
       let result1: double = Math.exp(val1)
@@ -942,14 +928,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5700
-     * @tc.name testMathExp057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5600
+     * @tc.name testMathExp056
      * @tc.desc Verify exp: exp(1.0) returns Math.E across repeated calls
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i: int = 0; i < 10; i++) {
         let val: double = 1.0
         let result: double = Math.exp(val as Object as double)
@@ -958,14 +944,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5800
-     * @tc.name testMathExp058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5700
+     * @tc.name testMathExp057
      * @tc.desc Verify exp: exp(0.0) returns 1.0 across repeated calls
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i: int = 0; i < 10; i++) {
         let val: double = 0.0
         let result: double = Math.exp(val as Object as double)
@@ -974,27 +960,27 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5900
-     * @tc.name testMathExp059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5800
+     * @tc.name testMathExp058
      * @tc.desc Verify exp: exp(0.5*log(x)) = sqrt(x)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 4.0
       expect(Math.exp(0.5 * Math.log(x))).assertClose(Math.sqrt(x), 1e-9)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6000
-     * @tc.name testMathExp060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_5900
+     * @tc.name testMathExp059
      * @tc.desc Verify exp cross-type consistency: exp(byte 0) and exp(float 0.0f) cross-type consistency
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val1: byte = 0
       let val2: float = 0.0f
       let result1: double = Math.exp(val1)
@@ -1004,14 +990,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6100
-     * @tc.name testMathExp061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6000
+     * @tc.name testMathExp060
      * @tc.desc Verify exp throws ClassCastError with Object instance parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let obj: Object = new Object()
         Math.exp(obj as Object as double)
@@ -1022,14 +1008,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6200
-     * @tc.name testMathExp062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6100
+     * @tc.name testMathExp061
      * @tc.desc Verify Math.exp double overload with 10.0 returns approximately 22026.4658
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.exp(10.0)
       let expected: double = 22026.465794806718
       let diff: double = Math.abs(result - expected)
@@ -1038,14 +1024,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6300
-     * @tc.name testMathExp063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6200
+     * @tc.name testMathExp062
      * @tc.desc Verify Math.exp consistency: exp(6 / 2) equals exp(3)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val1: double = 6.0 / 2.0;
       let val2: double = 3.0;
       let result1: double = Math.exp(val1);
@@ -1054,28 +1040,28 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6400
-     * @tc.name testMathExp064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6300
+     * @tc.name testMathExp063
      * @tc.desc Verify exp: exp(-10.0) returns approximately 4.5399929762484854e-5
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: number = Math.exp(-10.0)
       let expected: number = 4.5399929762484854e-5
       expect(Math.abs(result - expected) < 0.00000001).assertTrue()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6500
-     * @tc.name testMathExp065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6400
+     * @tc.name testMathExp064
      * @tc.desc Verify exp cross-type consistency: exp(short -30) and exp(long -30) cross-type consistency
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val1: short = -30
       let val2: long = -30
       let result1: double = Math.exp(val1)
@@ -1085,14 +1071,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6600
-     * @tc.name testMathExp066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6500
+     * @tc.name testMathExp065
      * @tc.desc Verify exp cross-type consistency: exp(int 1) and exp(float 1.0f) cross-type consistency
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val1: int = 1
       let val2: float = 1.0f
       let result1: double = Math.exp(val1)
@@ -1102,14 +1088,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6700
-     * @tc.name testMathExp067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6600
+     * @tc.name testMathExp066
      * @tc.desc Verify exp throws ClassCastError with 2D int array parameter
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let matrix: int[][] = [[1, 2], [3, 4]]
       Math.exp(matrix as Object as double)
@@ -1120,27 +1106,27 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6800
-     * @tc.name testMathExp068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6700
+     * @tc.name testMathExp067
      * @tc.desc Verify exp: exp(Number.MIN_VALUE) returns approximately 1.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: number = Math.exp(Number.MIN_VALUE)
       expect(Math.abs(result - 1.0) < 0.0000001).assertTrue()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6900
-     * @tc.name testMathExp069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6800
+     * @tc.name testMathExp068
      * @tc.desc Verify exp cross-type consistency: exp(short 1) and exp(double 1.0) cross-type consistency
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val1: short = 1
       let val2: double = 1.0
       let result1: double = Math.exp(val1)
@@ -1150,28 +1136,28 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7000
-     * @tc.name testMathExp070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_6900
+     * @tc.name testMathExp069
      * @tc.desc Verify exp returns 20.085536923187668 with input double 3
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: double = 3
       let result: double = Math.exp(val)
       expect(result).assertClose(20.085536923187668, 1e-6)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7100
-     * @tc.name testMathExp071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7000
+     * @tc.name testMathExp070
      * @tc.desc Verify Math.exp float overload with 1.0f returns Math.E
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: float = 1.0f
       let result: float = Math.exp(value)
       let exprResult: boolean = Math.abs(result - Math.E) < 1e-6
@@ -1179,41 +1165,41 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7200
-     * @tc.name testMathExp072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7100
+     * @tc.name testMathExp071
      * @tc.desc Verify exp: exp(sinh(1)) and exp(1.1752) approximately
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = Math.sinh(1.0)
       expect(Math.exp(x)).assertClose(Math.exp(1.1752011936438014), 1e-6)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7300
-     * @tc.name testMathExp073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7200
+     * @tc.name testMathExp072
      * @tc.desc Verify exp returns 22026.465794806718 with input long 10
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: long = 10
       let result: double = Math.exp(val)
       expect(result).assertClose(22026.465794806718, 1e-6)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7400
-     * @tc.name testMathExp074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7300
+     * @tc.name testMathExp073
      * @tc.desc Verify exp: exp(0.5) and sqrt(E) equivalent
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val1: double = 0.5
       let result1: double = Math.exp(val1)
       let expected: double = Math.sqrt(Math.E)
@@ -1221,42 +1207,42 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7500
-     * @tc.name testMathExp075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7400
+     * @tc.name testMathExp074
      * @tc.desc Verify exp overflow behavior: float value 89.0f returns float positive infinity
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 89.0f
       let r: float = Math.exp(x)
       expect(r).assertEqual(Float.POSITIVE_INFINITY)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7600
-     * @tc.name testMathExp076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7500
+     * @tc.name testMathExp075
      * @tc.desc Verify exp returns 7.38905609893065 with input float 2
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: float = 2
       let result: double = Math.exp(val)
       expect(result).assertClose(7.38905609893065, 1e-6)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7700
-     * @tc.name testMathExp077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7600
+     * @tc.name testMathExp076
      * @tc.desc Verify exp: exp(x) > 0 for all x holds
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let xs: double[] = [-100.0, -10.0, -1.0, 0.0, 1.0, 10.0, 100.0]
       for (let i: int = 0; i < xs.length; i++) {
         expect(Math.exp(xs[i]) > 0.0).assertTrue()
@@ -1264,14 +1250,14 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7800
-     * @tc.name testMathExp078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7700
+     * @tc.name testMathExp077
      * @tc.desc Verify exp cross-type consistency: exp(short 15) and exp(int 15) cross-type consistency
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val1: short = 15
       let val2: int = 15
       let result1: double = Math.exp(val1)
@@ -1281,28 +1267,28 @@ export default function mathExpTest2(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7900
-     * @tc.name testMathExp079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7800
+     * @tc.name testMathExp078
      * @tc.desc Verify exp returns 0.36787944117144233 with input int -1
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = -1
       let result: double = Math.exp(val)
       expect(result).assertClose(0.36787944117144233, 1e-6)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_8000
-     * @tc.name testMathExp080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_EXP_7900
+     * @tc.name testMathExp079
      * @tc.desc Verify exp cross-type consistency: exp(byte 1) and exp(int 1) cross-type consistency
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathExp080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathExp079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val1: byte = 1
       let val2: int = 1
       let result1: double = Math.exp(val1)
