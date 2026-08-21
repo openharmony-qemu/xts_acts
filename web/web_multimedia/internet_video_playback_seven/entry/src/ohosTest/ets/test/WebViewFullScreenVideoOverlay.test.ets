@@ -60,7 +60,7 @@ export default function WebViewFullScreenVideoOverlayCaseTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testEnableFullscreenVideoOverlay01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEnableFullscreenVideoOverlay01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitEnableFullscreenVideoOverlay01"
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
       Utils.registerBaseEvent("testEnableFullscreenVideoOverlay01", true, 20260819, done,
@@ -69,6 +69,7 @@ export default function WebViewFullScreenVideoOverlayCaseTest() {
         });
         try {
            await Utils.waitAndClickComponent(driver, 'FullScreenVideoOverlayButton')
+           done();
         } catch (error) {
           // 处理错误
           console.error('Error occurred while waiting and clicking component:', error);
@@ -83,7 +84,7 @@ export default function WebViewFullScreenVideoOverlayCaseTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testEnableFullscreenVideoOverlay02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEnableFullscreenVideoOverlay02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitEnableFullscreenVideoOverlay02"
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
       Utils.registerBaseEvent("testEnableFullscreenVideoOverlay02", true, 20260820, done,
@@ -92,6 +93,7 @@ export default function WebViewFullScreenVideoOverlayCaseTest() {
         });
         try {
           await Utils.waitAndClickComponent(driver, 'FullScreenVideoOverlayButton')
+          done();
           } catch (error) {
             // 处理错误
             console.error('Error occurred while waiting and clicking component:', error);
