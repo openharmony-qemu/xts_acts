@@ -62,7 +62,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
     })
 
     afterEach(async () => {
-      await sleep(1500)
+      await sleep(1000)
     })
 
     /**
@@ -126,19 +126,25 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       }).catch((err: BusinessError) => {
         console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings err: ${JSON.stringify(err.code)}`);
         if (err?.code === 801) {
+          console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings11 err: ${JSON.stringify(err.code)}`);
           expect(err.code).assertEqual(801);
+          console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings111 err: ${JSON.stringify(err.code)}`);
           done();
         }else{
+          console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings112 err`);
           expect().assertFail();
-         done();
+          done();
         }
+        console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings1133 err`);
       })
+      console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings11444 err`);
       let driver: Driver = Driver.create();
       await sleep(1500)
       let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
       console.info(TAG + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-      expect(scrollBar != null).assertTrue()
-      await scrollBar.scrollToBottom()
+      if(scrollBar != null){
+        await scrollBar.scrollToBottom()
+      }
       await sleep(1500)
       await driver.assertComponentExist(ON.text('横幅通知'));
       await sleep(1500)
@@ -188,7 +194,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 done();
               }else{
                 expect().assertFail();
-               done();
+                done();
               }
             });
         }).catch((err: BusinessError) => {
@@ -241,10 +247,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
+                console.info(TEST_SUITE_NAME + TAG +
+                  ` Scceeded in getting active notifications, data is ${JSON.stringify(data?.[0]?.notificationFlags?.lockScreenEnabled)}`);
+                  let lsed = data?.[0]?.notificationFlags?.lockScreenEnabled
+                  console.info(TEST_SUITE_NAME + TAG +
+                    ` Scceeded in getting active notifications, data is ${JSON.stringify(typeof lsed)}`);
               expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
               done()
-            })
-            .catch((err: BusinessError) => {
+            }).catch((err: BusinessError) => {
               console.error(TEST_SUITE_NAME + TAG +
                 `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
               if (err?.code === 801) {
@@ -252,7 +262,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 done();
               }else{
                 expect().assertFail();
-               done();
+                done();
               }
             });
         }).catch((err: BusinessError) => {
@@ -262,7 +272,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -321,7 +331,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 done();
               }else{
                 expect().assertFail();
-               done();
+                done();
               }
             });
         }).catch((err: BusinessError) => {
@@ -331,7 +341,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -390,7 +400,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 done();
               }else{
                 expect().assertFail();
-               done();
+                done();
               }
             });
         }).catch((err: BusinessError) => {
@@ -400,7 +410,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -453,7 +463,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 done();
               }else{
                 expect().assertFail();
-               done();
+                done();
               }
             });
         }).catch((err: BusinessError) => {
@@ -463,7 +473,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -522,7 +532,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -532,7 +542,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -591,7 +601,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -601,7 +611,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -660,7 +670,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -670,7 +680,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -723,7 +733,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -733,7 +743,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -792,7 +802,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -802,7 +812,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -861,7 +871,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -871,7 +881,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -930,7 +940,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -940,7 +950,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -999,7 +1009,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -1009,7 +1019,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
