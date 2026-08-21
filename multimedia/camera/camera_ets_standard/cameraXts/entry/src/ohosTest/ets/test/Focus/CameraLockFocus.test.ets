@@ -297,8 +297,7 @@ export default function CameraLockFocusTest() {
           mPhotoSession.unlockFocusTracking();
           await releasePhotoSession();
         }
-      } catch (err) {
-        let error = err;
+      } catch (error) {
         console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
         try {
           await releasePhotoSession();
@@ -347,8 +346,7 @@ export default function CameraLockFocusTest() {
           mPhotoSession.unlockFocusTracking();
           console.info(`${caseName} unlockFocusTracking`);
         }
-      } catch (err) {
-        let error = err;
+      } catch (error) {
         console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
         expect().assertFail();
       }
@@ -382,8 +380,7 @@ export default function CameraLockFocusTest() {
           let isSupported = await mPhotoSession.isLockFocusTrackingSupported();
           console.info(`${caseName} isSupported is: ${isSupported}`);
           expect().assertFail();
-        } catch (err) {
-          let error = err;
+        } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect(err.code).assertEqual(SESSION_NOT_CONFIG_CODE);
         }
@@ -425,8 +422,7 @@ export default function CameraLockFocusTest() {
           }
           mVideoSession.lockFocusTracking({ x: 0.0, y: 0.0 });
           mVideoSession.unlockFocusTracking();
-        } catch (err) {
-          let error = err;
+        } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect().assertFail();
         }
@@ -475,8 +471,7 @@ export default function CameraLockFocusTest() {
           }
           mVideoSession.unlockFocusTracking();
           await releaseVideoSession();
-        } catch (err) {
-          let error = err;
+        } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           try {
             await releaseVideoSession();
@@ -512,8 +507,7 @@ export default function CameraLockFocusTest() {
           console.info(`${caseName} isSupported is: ${isSupported}`);
           await mVideoSession?.release();
           expect().assertFail();
-        } catch (err) {
-          let error = err;
+        } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           try {
             await mVideoSession?.release();
@@ -564,8 +558,7 @@ export default function CameraLockFocusTest() {
             }
           }
           mPhotoSession.unlockFocusTracking();
-        } catch (err) {
-          let error = err;
+        } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect().assertFail();
         }
@@ -607,8 +600,7 @@ export default function CameraLockFocusTest() {
           mPhotoSession.lockFocusTracking(null);
           mPhotoSession.unlockFocusTracking();
           expect().assertFail();
-        } catch (err) {
-          let error = err;
+        } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect(err.code).assertEqual(INVALID_PARAMETER_CODE);
         }
@@ -650,8 +642,7 @@ export default function CameraLockFocusTest() {
           mPhotoSession.lockFocusTracking(undefined);
           mPhotoSession.unlockFocusTracking();
           expect().assertFail();
-        } catch (err) {
-          let error = err;
+        } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect(err.code).assertEqual(INVALID_PARAMETER_CODE);
         }
@@ -685,8 +676,7 @@ export default function CameraLockFocusTest() {
           console.info(`${caseName} start`);
           mPhotoSession.lockFocusTracking({ x: 0.0, y: 0.0 });
           expect().assertFail();
-        } catch (err) {
-          let error = err;
+        } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect(err.code).assertEqual(SESSION_NOT_CONFIG_CODE);
         }
@@ -732,8 +722,7 @@ export default function CameraLockFocusTest() {
               console.info(`${caseName} focus point is {${x}, ${y}}`);
               mPhotoSession.lockFocusTracking({x, y});
                 expect().assertFail();
-              } catch (err) {
-                let error = err;
+              } catch (error) {
                 console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
                 expect(err.code).assertEqual(INVALID_PARAMETER_CODE);
               }
@@ -782,8 +771,7 @@ export default function CameraLockFocusTest() {
           mPhotoSession.lockFocusTracking({ x: 0.0, y: 0.0 });
           mPhotoSession.lockFocusTracking({ x: 0.0, y: 0.0 });
           mPhotoSession.unlockFocusTracking();
-        } catch (err) {
-          let error = err;
+        } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect().assertFail();
         }
@@ -829,8 +817,7 @@ export default function CameraLockFocusTest() {
           }
           mPhotoSession.lockFocusTracking({ x: 0.0, y: 0.0 });
           mPhotoSession.unlockFocusTracking();
-        } catch (err) {
-          let error = err;
+        } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect().assertFail();
         }
@@ -864,8 +851,7 @@ export default function CameraLockFocusTest() {
           await mPhotoSession.start();
           console.info(`${caseName} start`);
           mPhotoSession.unlockFocusTracking();
-        } catch (err) {
-          let error = err;
+        } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect().assertFail();
         }
@@ -908,8 +894,7 @@ export default function CameraLockFocusTest() {
           mPhotoSession.lockFocusTracking({ x: 0.0, y: 0.0 });
           mPhotoSession.unlockFocusTracking();
           mPhotoSession.unlockFocusTracking();
-        } catch (err) {
-          let error = err;
+        } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           expect().assertFail();
         }
@@ -944,8 +929,7 @@ export default function CameraLockFocusTest() {
           mPhotoSession.unlockFocusTracking();
           await releasePhotoSession();
           expect().assertFail();
-        } catch (err) {
-          let error = err;
+        } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
           try {
             await releasePhotoSession();
