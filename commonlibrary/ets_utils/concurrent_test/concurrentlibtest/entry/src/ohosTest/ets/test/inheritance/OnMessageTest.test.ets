@@ -87,7 +87,11 @@ export default function OnMessageTest(): void {
         console.error(`OnMessageTest0100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (cleanupError) {
+          console.warn(`cleanup failed: ${cleanupError}`);
+        }
       }
       done();
     });
@@ -1350,9 +1354,14 @@ export default function OnMessageTest(): void {
       } catch (err) {
         console.error(`OnMessageTest3500 failed, error: ${err}`);
         expect().assertFail();
+        done()
       } finally {
         for (const w of workers) {
-          await terminateAndAwait(w);
+          try {
+            await terminateAndAwait(w);
+          } catch (cleanupError) {
+            console.warn(`cleanup failed: ${cleanupError}`);
+          }
         }
       }
       done();

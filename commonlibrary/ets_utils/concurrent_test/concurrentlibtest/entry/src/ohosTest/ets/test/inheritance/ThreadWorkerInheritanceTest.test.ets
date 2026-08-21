@@ -292,7 +292,11 @@ export default function ThreadWorkerInheritanceTest(): void {
         console.error(`ThreadWorkerInheritanceTest0100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (cleanupError) {
+          console.warn(`cleanup failed: ${cleanupError}`);
+        }
       }
       done();
     });
@@ -378,7 +382,11 @@ export default function ThreadWorkerInheritanceTest(): void {
         expect(typeof restrictedWorker.on).assertEqual('function');
         expect(typeof restrictedWorker.once).assertEqual('function');
         expect(typeof restrictedWorker.off).assertEqual('function');
-        await terminateAndAwait(restrictedWorker);
+        try {
+          await terminateAndAwait(restrictedWorker);
+        } catch (cleanupError) {
+          console.warn(`cleanup failed: ${cleanupError}`);
+        }
       }
       done();
     });
@@ -848,9 +856,14 @@ export default function ThreadWorkerInheritanceTest(): void {
       } catch (err) {
         console.error(`ThreadWorkerInheritanceTest1700 failed, error: ${err}`);
         expect().assertFail();
+        done()
       } finally {
         for (const w of workers) {
-          await terminateAndAwait(w);
+          try {
+            await terminateAndAwait(w);
+          } catch (cleanupError) {
+            console.warn(`cleanup failed: ${cleanupError}`);
+          }
         }
       }
       done();
@@ -873,6 +886,7 @@ export default function ThreadWorkerInheritanceTest(): void {
         try {
           workerInstance.postMessage('test');
           expect().assertFail();
+          done()
         } catch (err) {
           expect(err.code).assertEqual(10200004);
           caught = true;

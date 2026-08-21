@@ -667,6 +667,7 @@ export default function UseConcurrentTest(): void {
         expect(workerResult).assertEqual('42')
       } catch (e) {
         expect().assertFail()
+        done()
       } finally {
         if (work) {
           try { work.terminate() } catch (e) { /* best-effort cleanup */ }
@@ -709,6 +710,7 @@ export default function UseConcurrentTest(): void {
         expect(workerResult).assertEqual('52')
       } catch (e) {
         expect().assertFail()
+        done()
       } finally {
         if (work) {
           try { work.terminate() } catch (e) { /* best-effort cleanup */ }

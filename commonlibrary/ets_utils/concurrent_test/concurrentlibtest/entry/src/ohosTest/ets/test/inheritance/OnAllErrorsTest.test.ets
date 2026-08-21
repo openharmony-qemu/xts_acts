@@ -81,7 +81,11 @@ export default function OnAllErrorsTest(): void {
         console.error(`OnAllErrorsTest0100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (cleanupError) {
+          console.warn(`cleanup failed: ${cleanupError}`);
+        }
       }
       done();
     });
@@ -799,9 +803,18 @@ export default function OnAllErrorsTest(): void {
       } catch (err) {
         console.error(`OnAllErrorsTest2000 failed, error: ${err}`);
         expect().assertFail();
+        done()
       } finally {
-        await terminateAndAwait(worker1);
-        await terminateAndAwait(worker2);
+        try {
+          await terminateAndAwait(worker1);
+        } catch (cleanupError) {
+          console.warn(`cleanup failed: ${cleanupError}`);
+        }
+        try {
+          await terminateAndAwait(worker2);
+        } catch (cleanupError) {
+          console.warn(`cleanup failed: ${cleanupError}`);
+        }
       }
       done();
     });
@@ -881,9 +894,14 @@ export default function OnAllErrorsTest(): void {
       } catch (err) {
         console.error(`OnAllErrorsTest2200 failed, error: ${err}`);
         expect().assertFail();
+        done()
       } finally {
         for (const w of workers) {
-          await terminateAndAwait(w);
+          try {
+            await terminateAndAwait(w);
+          } catch (cleanupError) {
+            console.warn(`cleanup failed: ${cleanupError}`);
+          }
         }
       }
       done();

@@ -78,7 +78,11 @@ export default function OnExitTest(): void {
         console.error(`OnExitTest0100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (cleanupError) {
+          console.warn(`cleanup failed: ${cleanupError}`);
+        }
       }
       done();
     });
@@ -485,9 +489,14 @@ export default function OnExitTest(): void {
       } catch (err) {
         console.error(`OnExitTest1200 failed, error: ${err}`);
         expect().assertFail();
+        done()
       } finally {
         for (const w of workers) {
-          await terminateAndAwait(w);
+          try {
+            await terminateAndAwait(w);
+          } catch (cleanupError) {
+            console.warn(`cleanup failed: ${cleanupError}`);
+          }
         }
       }
       done();
