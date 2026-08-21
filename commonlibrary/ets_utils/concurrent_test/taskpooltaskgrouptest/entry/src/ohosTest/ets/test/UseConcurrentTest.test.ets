@@ -422,6 +422,7 @@ export default function UseConcurrentTest(): void {
       } catch (error) {
         console.error(`UseConcurrentTest1500 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
 
@@ -446,6 +447,7 @@ export default function UseConcurrentTest(): void {
       } catch (error) {
         console.error(`UseConcurrentTest1600 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
 
@@ -469,6 +471,7 @@ export default function UseConcurrentTest(): void {
       } catch (error) {
         console.error(`UseConcurrentTest1700 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
 
@@ -490,6 +493,7 @@ export default function UseConcurrentTest(): void {
       } catch (error) {
         console.error(`UseConcurrentTest1800 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
 
@@ -582,6 +586,7 @@ export default function UseConcurrentTest(): void {
       } catch (error) {
         console.error(`UseConcurrentTest2300 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
 
@@ -628,6 +633,7 @@ export default function UseConcurrentTest(): void {
       } catch (error) {
         console.error(`UseConcurrentTest2500 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
 
@@ -761,6 +767,7 @@ export default function UseConcurrentTest(): void {
       } catch (error) {
         console.error(`UseConcurrentTest3000 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
   })
