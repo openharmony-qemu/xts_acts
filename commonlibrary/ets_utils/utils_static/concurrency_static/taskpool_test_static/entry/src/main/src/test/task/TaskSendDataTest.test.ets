@@ -72,6 +72,14 @@ let sendDataInTimeoutFunc = (duration: number): string => {
 // Module-level array to track active periodic tasks for cleanup
 let activePeriodicTasks: taskpool.Task[] = [];
 
+async function waitForSendDataCondition(condition: () => boolean): Promise<void> {
+  let waitCount: number = 0
+  while (!condition() && waitCount < 50) {
+    await Utils.msSleep(20)
+    waitCount++
+  }
+}
+
 export default function TaskSendDataTest(): void {
   describe('TaskSendDataTest', (): void => {
     beforeAll((): void => {
@@ -103,11 +111,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => callbackTriggered)
       expect(callbackTriggered).assertTrue()
       done();
     })
@@ -131,11 +135,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedValue === 100.0)
       expect(receivedValue).assertEqual(100.0)
       done();
     })
@@ -159,11 +159,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedValue === "hello")
       expect(receivedValue).assertEqual("hello")
       done();
     })
@@ -187,11 +183,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedValue)
       expect(receivedValue).assertTrue()
       done();
     })
@@ -217,11 +209,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedArg1 === 1.0)
       expect(receivedArg1).assertEqual(1.0)
       expect(receivedArg2).assertEqual("two")
       done();
@@ -254,11 +242,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedArg1 === 1.0)
       expect(receivedArg1).assertEqual(1.0)
       expect(receivedArg2).assertEqual("two")
       expect(receivedArg3).assertTrue()
@@ -286,11 +270,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedValue === Number.MAX_VALUE)
       expect(receivedValue).assertEqual(Number.MAX_VALUE)
       done();
     })
@@ -512,11 +492,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedLength === 100)
       expect(receivedLength).assertEqual(100)
       done();
     })
@@ -540,11 +516,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedLength === 100)
       expect(receivedLength).assertEqual(100)
       done();
     })
@@ -568,11 +540,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedValue)
       expect(receivedValue).assertTrue()
       done();
     })
@@ -624,11 +592,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedValue === 0.0)
       expect(receivedValue).assertEqual(0.0)
       done();
     })
@@ -652,11 +616,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedValue === -100.0)
       expect(receivedValue).assertEqual(-100.0)
       done();
     })
@@ -685,11 +645,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => callbackTriggered)
       expect(callbackTriggered).assertTrue()
       expect(result).assertEqual(100.0)
       done();
@@ -715,11 +671,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedValue === "data")
       expect(receivedValue).assertEqual("data")
       expect(result).assertEqual(100.0)
       done();
@@ -823,11 +775,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedValue === 5.0)
       expect(receivedValue).assertEqual(5.0)
       expect(result).assertEqual(5.0)
       done();
@@ -875,11 +823,11 @@ export default function TaskSendDataTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskSendDataTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let receivedCount: number = 0
+      let receivedCount: AtomicInt = new AtomicInt(0)
       let task: taskpool.Task = new taskpool.Task(highFreqSendFunc)
       task.onReceiveData((data: number): void => {
         if (data !== undefined) {
-          receivedCount = receivedCount + 1
+          receivedCount.fetchAdd(1)
         }
       })
       try {
@@ -887,12 +835,8 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
-      expect(receivedCount).assertEqual(100)
+      await waitForSendDataCondition((): boolean => receivedCount.load() === 100)
+      expect(receivedCount.load()).assertEqual(100)
       done();
     })
 
@@ -915,11 +859,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedValue === 200.0)
       expect(receivedValue).assertEqual(200.0)
       done();
     })
@@ -947,11 +887,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedValue1 === 0.0)
       expect(receivedValue1).assertEqual(0.0)
       expect(receivedValue2).assertEqual(300.0)
       done();
@@ -1037,11 +973,7 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedValue === 50.0)
       expect(receivedValue).assertEqual(50.0)
       done();
     })
@@ -1055,28 +987,23 @@ export default function TaskSendDataTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskSendDataTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
-      let receivedCount: number = 0
+      let receivedCount: AtomicInt = new AtomicInt(0)
       let task: taskpool.Task = new taskpool.Task(sendDataForPeriodicFunc, 200.0)
       activePeriodicTasks.push(task)
       task.onReceiveData((data: number): void => {
         if (data >= 0) {
-          receivedCount = receivedCount + 1
+          receivedCount.fetchAdd(1)
         }
       })
       taskpool.executePeriodically(200, task)
       try {
         let maxWait: number = 0
-        while (receivedCount < 2 && maxWait < 3000) {
+        while (receivedCount.load() < 2 && maxWait < 3000) {
           await Utils.msSleep(500)
           maxWait += 500
         }
         // two successive deliveries prove the periodic task actually re-fires
-        expect(receivedCount).assertLargerOrEqual(2)
+        expect(receivedCount.load()).assertLargerOrEqual(2)
       } catch (error) {
         expect().assertFail();
       } finally {
@@ -1086,11 +1013,6 @@ export default function TaskSendDataTest(): void {
           // cancel may throw if task already finished
         }
         activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task)
-      }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
       }
       done();
     })
@@ -1119,10 +1041,14 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
+      let waitCount3500: number = 0
+      while ((receivedData1.length < 3 || receivedData2.length < 3) && waitCount3500 < 50) {
+        try {
+          await Utils.msSleep(20);
+        } catch (error) {
+          expect().assertFail();
+        }
+        waitCount3500++
       }
       expect(receivedData1.length).assertEqual(3)
       expect(receivedData2.length).assertEqual(3)
@@ -1140,25 +1066,25 @@ export default function TaskSendDataTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskSendDataTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let receivedCount1: number = 0
-      let receivedCount2: number = 0
-      let receivedCount3: number = 0
+      let receivedCount1: AtomicInt = new AtomicInt(0)
+      let receivedCount2: AtomicInt = new AtomicInt(0)
+      let receivedCount3: AtomicInt = new AtomicInt(0)
       let task1: taskpool.Task = new taskpool.Task(multiSendLoopFunc)
       task1.onReceiveData((data: number): void => {
         if (data >= 0) {
-          receivedCount1 = receivedCount1 + 1
+          receivedCount1.fetchAdd(1)
         }
       })
       let task2: taskpool.Task = new taskpool.Task(multiSendLoopFunc)
       task2.onReceiveData((data: number): void => {
         if (data >= 0) {
-          receivedCount2 = receivedCount2 + 1
+          receivedCount2.fetchAdd(1)
         }
       })
       let task3: taskpool.Task = new taskpool.Task(multiSendLoopFunc)
       task3.onReceiveData((data: number): void => {
         if (data >= 0) {
-          receivedCount3 = receivedCount3 + 1
+          receivedCount3.fetchAdd(1)
         }
       })
       try {
@@ -1166,14 +1092,19 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
+      let waitCount3600: number = 0
+      while ((receivedCount1.load() < 5 || receivedCount2.load() < 5 || receivedCount3.load() < 5) &&
+        waitCount3600 < 50) {
+        try {
+          await Utils.msSleep(20);
+        } catch (error) {
+          expect().assertFail();
+        }
+        waitCount3600++
       }
-      expect(receivedCount1).assertEqual(5)
-      expect(receivedCount2).assertEqual(5)
-      expect(receivedCount3).assertEqual(5)
+      expect(receivedCount1.load()).assertEqual(5)
+      expect(receivedCount2.load()).assertEqual(5)
+      expect(receivedCount3.load()).assertEqual(5)
       done();
     })
 
@@ -1204,11 +1135,7 @@ export default function TaskSendDataTest(): void {
       } catch (e) {
         // cancel may throw if task already finished
       }
-      try {
-        await Utils.msSleep(500);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSendDataCondition((): boolean => receivedValue === 0.0)
       expect(receivedValue).assertEqual(0.0)
       done();
     })

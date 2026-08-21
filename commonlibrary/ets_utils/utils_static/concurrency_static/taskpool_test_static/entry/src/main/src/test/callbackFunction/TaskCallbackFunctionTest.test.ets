@@ -472,11 +472,11 @@ export default function TaskCallbackFunctionTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskCallbackFunctionTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let counter: number = 0;
+      let counter: AtomicInt = new AtomicInt(0);
       let tasks: taskpool.Task[] = [];
       for (let i: number = 0; i < 5; i++) {
         let t: taskpool.Task = new taskpool.Task(simpleReturnTask, i + 0.0);
-        let cbEnq11: () => void = (): void => {          counter = counter + 1;}
+        let cbEnq11: () => void = (): void => {          counter.fetchAdd(1);}
         t.onEnqueued(cbEnq11);
         tasks.push(t);
       }
@@ -484,7 +484,7 @@ export default function TaskCallbackFunctionTest(): void {
         await Promise.all(tasks.map((t: taskpool.Task) => {
           return taskpool.execute(t);
         }));
-        expect(counter).assertEqual(5);
+        expect(counter.load()).assertEqual(5);
       } catch (error) {
         expect().assertFail();
       }

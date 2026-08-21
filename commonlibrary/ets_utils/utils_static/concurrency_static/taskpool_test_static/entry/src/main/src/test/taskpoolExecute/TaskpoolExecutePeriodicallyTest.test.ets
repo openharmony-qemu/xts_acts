@@ -104,17 +104,17 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskpoolExecutePeriodicallyTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task);
       let maxWait: number = 0;
-      while (executeCount < 3 && maxWait < 3000) {
+      while (executeCount.load() < 3 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -124,7 +124,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(executeCount >= 3).assertTrue();
+      expect(executeCount.load() >= 3).assertTrue();
       done();
     })
 
@@ -139,17 +139,17 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskpoolExecutePeriodicallyTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task);
       let maxWait: number = 0;
-      while (executeCount < 2 && maxWait < 3000) {
+      while (executeCount.load() < 2 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -159,7 +159,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(executeCount >= 2).assertTrue();
+      expect(executeCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -174,17 +174,17 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskpoolExecutePeriodicallyTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task, taskpool.Priority.HIGH);
       let maxWait: number = 0;
-      while (executeCount < 2 && maxWait < 3000) {
+      while (executeCount.load() < 2 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -194,7 +194,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(executeCount >= 2).assertTrue();
+      expect(executeCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -209,17 +209,17 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskpoolExecutePeriodicallyTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(1, task);
       let maxWait: number = 0;
-      while (executeCount < 2 && maxWait < 3000) {
+      while (executeCount.load() < 2 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -229,7 +229,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(executeCount >= 2).assertTrue();
+      expect(executeCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -244,12 +244,12 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskpoolExecutePeriodicallyTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task);
@@ -260,7 +260,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(executeCount >= 1).assertTrue();
+      expect(executeCount.load() >= 1).assertTrue();
       done();
     })
 
@@ -338,12 +338,12 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskpoolExecutePeriodicallyTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(periodicTaskWithArg, 100.0);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task);
@@ -354,7 +354,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(executeCount >= 2).assertTrue();
+      expect(executeCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -369,12 +369,12 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskpoolExecutePeriodicallyTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(multiArgPeriodicTask, 10.0, 20.0);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task);
@@ -385,7 +385,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(executeCount >= 2).assertTrue();
+      expect(executeCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -400,18 +400,18 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskpoolExecutePeriodicallyTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task("myPeriodicTask", namedPeriodicTask);
       activePeriodicTasks.push(task);
       expect(task.name).assertEqual("myPeriodicTask");
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task);
       let maxWait: number = 0;
-      while (executeCount < 2 && maxWait < 3000) {
+      while (executeCount.load() < 2 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -421,7 +421,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(executeCount >= 2).assertTrue();
+      expect(executeCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -436,16 +436,16 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskpoolExecutePeriodicallyTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let successCount: number = 0;
+      let successCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(objectPeriodicTask);
       activePeriodicTasks.push(task);
       let cbSucc0: () => void = (): void => {
-        successCount++;
+        successCount.fetchAdd(1);
       }
       task.onExecutionSucceeded(cbSucc0);
       taskpool.executePeriodically(200, task);
       let maxWait: number = 0;
-      while (successCount < 2 && maxWait < 3000) {
+      while (successCount.load() < 2 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -455,7 +455,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(successCount >= 2).assertTrue();
+      expect(successCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -470,16 +470,16 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskpoolExecutePeriodicallyTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let successCount: number = 0;
+      let successCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(arrayPeriodicTask);
       activePeriodicTasks.push(task);
       let cbSucc1: () => void = (): void => {
-        successCount++;
+        successCount.fetchAdd(1);
       }
       task.onExecutionSucceeded(cbSucc1);
       taskpool.executePeriodically(200, task);
       let maxWait: number = 0;
-      while (successCount < 2 && maxWait < 3000) {
+      while (successCount.load() < 2 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -489,7 +489,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(successCount >= 2).assertTrue();
+      expect(successCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -504,14 +504,14 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskpoolExecutePeriodicallyTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let successCount: number = 0;
+      let successCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(voidPeriodicTask);
       activePeriodicTasks.push(task);
-      let cbSucc2: () => void = (): void => {        successCount++;}
+      let cbSucc2: () => void = (): void => {        successCount.fetchAdd(1);}
       task.onExecutionSucceeded(cbSucc2);
       taskpool.executePeriodically(200, task);
       let maxWait: number = 0;
-      while (successCount < 2 && maxWait < 3000) {
+      while (successCount.load() < 2 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -521,7 +521,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(successCount >= 2).assertTrue();
+      expect(successCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -536,17 +536,17 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskpoolExecutePeriodicallyTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task, taskpool.Priority.MEDIUM);
       let maxWait: number = 0;
-      while (executeCount < 2 && maxWait < 3000) {
+      while (executeCount.load() < 2 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -556,7 +556,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(executeCount >= 2).assertTrue();
+      expect(executeCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -571,17 +571,17 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskpoolExecutePeriodicallyTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task, taskpool.Priority.LOW);
       let maxWait: number = 0;
-      while (executeCount < 2 && maxWait < 3000) {
+      while (executeCount.load() < 2 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -591,7 +591,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(executeCount >= 2).assertTrue();
+      expect(executeCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -606,17 +606,17 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskpoolExecutePeriodicallyTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task, taskpool.Priority.IDLE);
       let maxWait: number = 0;
-      while (executeCount < 2 && maxWait < 3000) {
+      while (executeCount.load() < 2 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -626,7 +626,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(executeCount >= 2).assertTrue();
+      expect(executeCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -768,17 +768,17 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskpoolExecutePeriodicallyTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task);
       let maxWait: number = 0;
-      while (executeCount < 5 && maxWait < 3000) {
+      while (executeCount.load() < 5 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -788,7 +788,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(executeCount >= 5).assertTrue();
+      expect(executeCount.load() >= 5).assertTrue();
       done();
     })
 
@@ -803,12 +803,12 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskpoolExecutePeriodicallyTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task);
@@ -819,7 +819,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(executeCount >= 2).assertTrue();
+      expect(executeCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -834,17 +834,17 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskpoolExecutePeriodicallyTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task);
       let maxWait: number = 0;
-      while (executeCount < 1 && maxWait < 3000) {
+      while (executeCount.load() < 1 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -852,7 +852,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
         }
         maxWait += 100;
       }
-      let countBeforeCancel: number = executeCount;
+      let countBeforeCancel: number = executeCount.load();
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
       try {
@@ -860,7 +860,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      expect(executeCount <= countBeforeCancel + 1).assertTrue();
+      expect(executeCount.load() <= countBeforeCancel + 1).assertTrue();
       done();
     })
 
@@ -875,17 +875,17 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskpoolExecutePeriodicallyTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let receivedCount: number = 0;
+      let receivedCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          receivedCount++;
+          receivedCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task);
       let maxWait: number = 0;
-      while (receivedCount < 1 && maxWait < 3000) {
+      while (receivedCount.load() < 1 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -893,15 +893,22 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
         }
         maxWait += 100;
       }
-      expect(receivedCount >= 1).assertTrue();
+      expect(receivedCount.load() >= 1).assertTrue();
       task.onReceiveData();
-      let countAfterUnregister: number = receivedCount;
+      // unregister can race with one callback already dispatched. First drain the in-flight delivery,
+      // then take an exact quiescent snapshot and prove it remains unchanged across later periods.
+      try {
+        await Utils.msSleep(300);
+      } catch (error) {
+        expect().assertFail();
+      }
+      let countAfterDrain: number = receivedCount.load();
       try {
         await Utils.msSleep(500);
       } catch (error) {
         expect().assertFail();
       }
-      expect(receivedCount).assertEqual(countAfterUnregister);
+      expect(receivedCount.load()).assertEqual(countAfterDrain);
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
       done();
@@ -918,17 +925,17 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskpoolExecutePeriodicallyTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let successCount: number = 0;
+      let successCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          successCount++;
+          successCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task);
       let maxWait: number = 0;
-      while (successCount < 2 && maxWait < 3000) {
+      while (successCount.load() < 2 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -943,7 +950,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      expect(successCount >= 2).assertTrue();
+      expect(successCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -958,9 +965,9 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskpoolExecutePeriodicallyTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let task1Count: number = 0;
-      let task2Count: number = 0;
-      let task3Count: number = 0;
+      let task1Count: AtomicInt = new AtomicInt(0);
+      let task2Count: AtomicInt = new AtomicInt(0);
+      let task3Count: AtomicInt = new AtomicInt(0);
       let task1: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       let task2: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       let task3: taskpool.Task = new taskpool.Task(simplePeriodicTask);
@@ -969,24 +976,24 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       activePeriodicTasks.push(task3);
       task1.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          task1Count++;
+          task1Count.fetchAdd(1);
         }
       });
       task2.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          task2Count++;
+          task2Count.fetchAdd(1);
         }
       });
       task3.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          task3Count++;
+          task3Count.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task1);
       taskpool.executePeriodically(200, task2);
       taskpool.executePeriodically(200, task3);
       let maxWait: number = 0;
-      while ((task1Count < 2 || task2Count < 2 || task3Count < 2) && maxWait < 3000) {
+      while ((task1Count.load() < 2 || task2Count.load() < 2 || task3Count.load() < 2) && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -997,9 +1004,9 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       taskpool.cancel(task1);
       taskpool.cancel(task2);
       taskpool.cancel(task3);
-      expect(task1Count >= 2).assertTrue();
-      expect(task2Count >= 2).assertTrue();
-      expect(task3Count >= 2).assertTrue();
+      expect(task1Count.load() >= 2).assertTrue();
+      expect(task2Count.load() >= 2).assertTrue();
+      expect(task3Count.load() >= 2).assertTrue();
       done();
     })
 
@@ -1014,32 +1021,45 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskpoolExecutePeriodicallyTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let shortCount: number = 0;
-      let longCount: number = 0;
+      let shortCount: AtomicInt = new AtomicInt(0);
+      let longCount: AtomicInt = new AtomicInt(0);
       let shortTask: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       let longTask: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(shortTask);
       activePeriodicTasks.push(longTask);
       shortTask.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          shortCount++;
+          shortCount.fetchAdd(1);
         }
       });
       longTask.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          longCount++;
+          longCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, shortTask);
       taskpool.executePeriodically(1000, longTask);
+      let waitCount2900: number = 0
+      while ((shortCount.load() < 12 || longCount.load() < 3) && waitCount2900 < 150) {
+        try {
+          await Utils.msSleep(20);
+        } catch (error) {
+          expect().assertFail();
+        }
+        waitCount2900++
+      }
+      expect(shortCount.load()).assertLargerOrEqual(12);
+      expect(longCount.load()).assertLargerOrEqual(3);
+      taskpool.cancel(shortTask);
+      taskpool.cancel(longTask);
       try {
-        await Utils.msSleep(2500);
+        await Utils.msSleep(100);
       } catch (error) {
         expect().assertFail();
       }
-      taskpool.cancel(shortTask);
-      taskpool.cancel(longTask);
-      expect(shortCount > longCount).assertTrue();
+      // cancel is asynchronous; in-flight callback delivery may complete after cancel.
+      expect(shortCount.load()).assertLargerOrEqual(12);
+      expect(longCount.load()).assertLargerOrEqual(3);
       done();
     })
 
@@ -1054,12 +1074,12 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskpoolExecutePeriodicallyTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       try {
@@ -1075,7 +1095,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(task);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      expect(executeCount >= 2).assertTrue();
+      expect(executeCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -1090,12 +1110,12 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskpoolExecutePeriodicallyTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       let task: taskpool.Task = new taskpool.Task(simplePeriodicTask);
       activePeriodicTasks.push(task);
       task.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, task);
@@ -1110,13 +1130,13 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
         expect().assertFail();
       }
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task);
-      let countBeforeCheck: number = executeCount;
+      let countBeforeCheck: number = executeCount.load();
       try {
         await Utils.msSleep(100);
       } catch (error) {
         expect().assertFail();
       }
-      expect(executeCount - countBeforeCheck <= 1).assertTrue();
+      expect(executeCount.load() - countBeforeCheck <= 1).assertTrue();
       done();
     })
 
@@ -1140,16 +1160,16 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       expect(result as number).assertEqual(1);
       let periodicTask: taskpool.Task = new taskpool.Task(simplePeriodicTask);
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       activePeriodicTasks.push(periodicTask);
       periodicTask.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, periodicTask);
       let maxWait: number = 0;
-      while (executeCount < 2 && maxWait < 3000) {
+      while (executeCount.load() < 2 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -1158,7 +1178,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
         maxWait += 100;
       }
       taskpool.cancel(periodicTask);
-      expect(executeCount >= 2).assertTrue();
+      expect(executeCount.load() >= 2).assertTrue();
       done();
     })
 
@@ -1187,16 +1207,16 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       expect(shouldStartPeriodic).assertTrue();
       if (shouldStartPeriodic) {
         let periodicTask: taskpool.Task = new taskpool.Task(simplePeriodicTask);
-        let executeCount: number = 0;
+        let executeCount: AtomicInt = new AtomicInt(0);
         activePeriodicTasks.push(periodicTask);
         periodicTask.onReceiveData((data: Object) => {
           if (data !== undefined) {
-            executeCount++;
+            executeCount.fetchAdd(1);
           }
         });
         taskpool.executePeriodically(200, periodicTask);
         let maxWait: number = 0;
-        while (executeCount < 2 && maxWait < 3000) {
+        while (executeCount.load() < 2 && maxWait < 3000) {
           try {
             await Utils.msSleep(100);
           } catch (error) {
@@ -1206,7 +1226,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
         }
         taskpool.cancel(periodicTask);
         activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== periodicTask);
-        expect(executeCount >= 2).assertTrue();
+        expect(executeCount.load() >= 2).assertTrue();
       }
       done();
     })
@@ -1231,16 +1251,16 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       expect(errorCaught).assertTrue();
       let newTask: taskpool.Task = new taskpool.Task(simplePeriodicTask);
-      let executeCount: number = 0;
+      let executeCount: AtomicInt = new AtomicInt(0);
       activePeriodicTasks.push(newTask);
       newTask.onReceiveData((data: Object) => {
         if (data !== undefined) {
-          executeCount++;
+          executeCount.fetchAdd(1);
         }
       });
       taskpool.executePeriodically(200, newTask);
       let maxWait: number = 0;
-      while (executeCount < 2 && maxWait < 3000) {
+      while (executeCount.load() < 2 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
@@ -1250,7 +1270,7 @@ export default function TaskpoolExecutePeriodicallyTest(): void {
       }
       taskpool.cancel(newTask);
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== newTask);
-      expect(executeCount >= 2).assertTrue();
+      expect(executeCount.load() >= 2).assertTrue();
       done();
     })
 

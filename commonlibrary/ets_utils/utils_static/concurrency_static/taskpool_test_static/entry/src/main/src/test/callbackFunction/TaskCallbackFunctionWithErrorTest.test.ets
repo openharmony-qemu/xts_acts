@@ -41,6 +41,14 @@ function sendDataAndFail(): void {
   throw new Error("failed after sendData");
 }
 
+async function waitForErrorCallbackCondition(condition: () => boolean): Promise<void> {
+  let waitCount: number = 0
+  while (!condition() && waitCount < 50) {
+    await Utils.msSleep(20)
+    waitCount++
+  }
+}
+
 export default function TaskCallbackFunctionWithErrorTest(): void {
   describe('TaskCallbackFunctionWithErrorTest', (): void => {
     beforeAll((): void => {
@@ -69,12 +77,8 @@ export default function TaskCallbackFunctionWithErrorTest(): void {
         await taskpool.execute(task);
       } catch (e) {
         }
-      try {
-        await Utils.msSleep(100);
+      await waitForErrorCallbackCondition((): boolean => callbackFired)
         expect(callbackFired).assertTrue();
-      } catch (error) {
-        expect().assertFail();
-      }
       done();
     })
 
@@ -151,12 +155,8 @@ export default function TaskCallbackFunctionWithErrorTest(): void {
         await taskpool.execute(task);
       } catch (e) {
         }
-      try {
-        await Utils.msSleep(100);
+      await waitForErrorCallbackCondition((): boolean => callbackFired)
         expect(callbackFired).assertTrue();
-      } catch (error) {
-        expect().assertFail();
-      }
       done();
     })
 
@@ -190,14 +190,10 @@ export default function TaskCallbackFunctionWithErrorTest(): void {
         await taskpool.execute(task);
       } catch (e) {
         }
-      try {
-        await Utils.msSleep(100);
+      await waitForErrorCallbackCondition((): boolean => lastMessage === "third")
         expect(firstFired).assertFalse();
         expect(secondFired).assertFalse();
         expect(lastMessage).assertEqual("third");
-      } catch (error) {
-        expect().assertFail();
-      }
       done();
     })
 

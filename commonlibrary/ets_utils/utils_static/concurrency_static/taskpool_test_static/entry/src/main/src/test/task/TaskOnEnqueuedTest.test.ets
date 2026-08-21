@@ -33,6 +33,14 @@ class EnqueuedHandler {
   }
 }
 
+async function waitForEnqueuedCondition(condition: () => boolean): Promise<void> {
+  let waitCount: number = 0
+  while (!condition() && waitCount < 50) {
+    await Utils.msSleep(20)
+    waitCount++
+  }
+}
+
 export default function TaskOnEnqueuedTest(): void {
   describe('TaskOnEnqueuedTest', (): void => {
     beforeAll((): void => {
@@ -61,11 +69,7 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForEnqueuedCondition((): boolean => callbackExecuted)
       expect(callbackExecuted).assertTrue()
       done();
     })
@@ -117,11 +121,7 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForEnqueuedCondition((): boolean => callbackExecuted)
       expect(callbackExecuted).assertTrue()
       expect(result).assertEqual(100)
       done();
@@ -135,9 +135,9 @@ export default function TaskOnEnqueuedTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskOnEnqueuedTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let callbackCount: number = 0
+      let callbackCount: AtomicInt = new AtomicInt(0)
       let handler = (): void => {
-        callbackCount++
+        callbackCount.fetchAdd(1)
       }
       let task: taskpool.Task = new taskpool.Task(simpleFunc)
       task.onEnqueued(handler)
@@ -146,12 +146,16 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
+      let waitCount0400: number = 0
+      while (callbackCount.load() < 1 && waitCount0400 < 50) {
+        try {
+          await Utils.msSleep(20);
+        } catch (error) {
+          expect().assertFail();
+        }
+        waitCount0400++
       }
-      expect(callbackCount).assertEqual(1)
+      expect(callbackCount.load()).assertEqual(1)
       done();
     })
     /**
@@ -223,11 +227,7 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForEnqueuedCondition((): boolean => callbackExecuted)
       expect(callbackExecuted).assertTrue()
       done();
     })
@@ -542,11 +542,7 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForEnqueuedCondition((): boolean => callbackExecuted)
       expect(callbackExecuted).assertTrue()
       done();
     })
@@ -612,11 +608,7 @@ export default function TaskOnEnqueuedTest(): void {
         await executePromise;
       } catch (error) {
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForEnqueuedCondition((): boolean => callbackExecuted)
       expect(callbackExecuted).assertTrue()
       expect(task.isDone()).assertTrue()
       done();
@@ -642,11 +634,7 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForEnqueuedCondition((): boolean => enqueuedCallbackExecuted)
       expect(enqueuedCallbackExecuted).assertTrue()
       done();
     })
@@ -675,11 +663,7 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForEnqueuedCondition((): boolean => enqueuedCallbackExecuted)
       expect(enqueuedCallbackExecuted).assertTrue()
       done();
     })
@@ -703,11 +687,7 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForEnqueuedCondition((): boolean => callbackExecuted)
       expect(callbackExecuted).assertTrue()
       expect(task.isDone()).assertTrue()
       let errorThrown: boolean = false

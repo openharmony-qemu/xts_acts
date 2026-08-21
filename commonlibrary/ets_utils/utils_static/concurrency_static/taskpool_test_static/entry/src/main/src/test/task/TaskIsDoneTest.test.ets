@@ -439,9 +439,9 @@ export default function TaskIsDoneTest(): void {
      */
     it('TaskIsDoneTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let task: taskpool.Task = new taskpool.Task(simpleFunc)
-      let callCount: number = 0
+      let callCount: AtomicInt = new AtomicInt(0)
       let cbSucc2: () => void = (): void => {
-        callCount++
+        callCount.fetchAdd(1)
         expect(task.isDone()).assertTrue()
         expect(task.isDone()).assertTrue()
         expect(task.isDone()).assertTrue()
@@ -452,12 +452,16 @@ export default function TaskIsDoneTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
+      let waitCount1500: number = 0
+      while (callCount.load() < 1 && waitCount1500 < 50) {
+        try {
+          await Utils.msSleep(20);
+        } catch (error) {
+          expect().assertFail();
+        }
+        waitCount1500++
       }
-      expect(callCount).assertEqual(1)
+      expect(callCount.load()).assertEqual(1)
       done();
     })
 

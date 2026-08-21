@@ -65,7 +65,7 @@ export default function TaskpoolStateTest(): void {
       let tasks: taskpool.Task[] = [];
       let promises: Array<Promise<Any>> = [];
       for (let i: number = 0; i < 20; i++) {
-        let t: taskpool.Task = new taskpool.Task(longRunningTask, 3000.0);
+        let t: taskpool.Task = new taskpool.Task(longRunningTask, 300.0);
         tasks.push(t);
         promises.push(taskpool.execute(t));
       }

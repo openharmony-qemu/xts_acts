@@ -136,19 +136,15 @@ let quickCancelCheckFunc = (): number => {
   }
   return -1
 }
-let delayedCancelCheckFunc = (): number => {
-  let cancelDetectedAt: number = -1
+let delayedCancelCheckFunc = (cancelCheckpoint: AtomicInt): number => {
   let start: number = Date.now()
-  let elapsed: number = 0
-  elapsed = Date.now() - start
-  while (elapsed < 500) {
+  while (Date.now() - start < 500) {
     if (taskpool.Task.isCanceled()) {
-      cancelDetectedAt = elapsed
-      break
+      cancelCheckpoint.store(1)
+      return 0
     }
-    elapsed = Date.now() - start
   }
-  return cancelDetectedAt
+  return -1
 }
 let outerTaskFunc = (): string => {
   if (taskpool.Task.isCanceled()) {
@@ -156,10 +152,11 @@ let outerTaskFunc = (): string => {
   }
   return "outer_normal"
 }
-let loopTaskFunc = (): number => {
+let loopTaskFunc = (cancelCheckpoint: AtomicInt): number => {
   let iterations: number = 0
   for (let i = 0; i < 100; i++) {
     if (taskpool.Task.isCanceled()) {
+      cancelCheckpoint.store(1)
       return iterations
     }
     iterations++
@@ -759,7 +756,8 @@ export default function TaskIsCanceledTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskIsCanceledTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let task: taskpool.Task = new taskpool.Task(delayedCancelCheckFunc)
+      let cancelCheckpoint1600: AtomicInt = new AtomicInt(0)
+      let task: taskpool.Task = new taskpool.Task(delayedCancelCheckFunc, cancelCheckpoint1600)
       let executePromise: Promise<number> = taskpool.execute(task) as Promise<number>
       // 轮询确认任务已 RUNNING 再取消（setTimeout 固定延迟在负载下可能早于任务启动，导致 cancel 落在启动前而 reject）
       let running1600: boolean = false
@@ -792,11 +790,20 @@ export default function TaskIsCanceledTest(): void {
         // cancel may throw
       }
       try {
-        let result: number = await executePromise
-        expect(result >= 0 && result < 500).assertTrue()
+        await executePromise
       } catch (e) {
-        expect().assertFail()
+        // cancel may reject execute promise; cancellation checkpoint is the observable result
       }
+      let waitCount1600: number = 0
+      while (cancelCheckpoint1600.load() < 1 && waitCount1600 < 50) {
+        try {
+          await Utils.msSleep(20)
+        } catch (error) {
+          expect().assertFail()
+        }
+        waitCount1600++
+      }
+      expect(cancelCheckpoint1600.load()).assertEqual(1)
       done();
     })
 
@@ -842,7 +849,8 @@ export default function TaskIsCanceledTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskIsCanceledTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let task: taskpool.Task = new taskpool.Task(loopTaskFunc)
+      let cancelCheckpoint1900: AtomicInt = new AtomicInt(0)
+      let task: taskpool.Task = new taskpool.Task(loopTaskFunc, cancelCheckpoint1900)
       let executePromise: Promise<number> = taskpool.execute(task) as Promise<number>
       // 轮询确认任务已 RUNNING 再取消（setTimeout 固定延迟在负载下可能早于任务启动，导致 cancel 落在启动前而 reject）
       let running1900: boolean = false
@@ -875,11 +883,20 @@ export default function TaskIsCanceledTest(): void {
         // cancel may throw
       }
       try {
-        let result: number = await executePromise
-        expect(result).assertLess(100)
+        await executePromise
       } catch (e) {
-        expect().assertFail()
+        // cancel may reject execute promise; cancellation checkpoint is the observable result
       }
+      let waitCount1900: number = 0
+      while (cancelCheckpoint1900.load() < 1 && waitCount1900 < 50) {
+        try {
+          await Utils.msSleep(20)
+        } catch (error) {
+          expect().assertFail()
+        }
+        waitCount1900++
+      }
+      expect(cancelCheckpoint1900.load()).assertEqual(1)
       done();
     })
 

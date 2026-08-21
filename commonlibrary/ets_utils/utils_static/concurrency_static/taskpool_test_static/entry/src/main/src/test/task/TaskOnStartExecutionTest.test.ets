@@ -89,9 +89,9 @@ export default function TaskOnStartExecutionTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskOnStartExecutionTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let callbackCount: number = 0
+      let callbackCount: AtomicInt = new AtomicInt(0)
       let handler = (): void => {
-        callbackCount++
+        callbackCount.fetchAdd(1)
       }
       let task: taskpool.Task = new taskpool.Task(simpleFunc)
       task.onStartExecution(handler)
@@ -100,7 +100,7 @@ export default function TaskOnStartExecutionTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      expect(callbackCount).assertEqual(1)
+      expect(callbackCount.load()).assertEqual(1)
       done();
     })
 
@@ -440,20 +440,21 @@ export default function TaskOnStartExecutionTest(): void {
      */
     it('TaskOnStartExecutionTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let results: number[] = []
+      let callbackCount1500: AtomicInt = new AtomicInt(0)
       let task1: taskpool.Task = new taskpool.Task(multiplyFunc, 1.0)
       let task2: taskpool.Task = new taskpool.Task(multiplyFunc, 2.0)
       let task3: taskpool.Task = new taskpool.Task(multiplyFunc, 3.0)
       let task4: taskpool.Task = new taskpool.Task(multiplyFunc, 4.0)
       let task5: taskpool.Task = new taskpool.Task(multiplyFunc, 5.0)
-      let cbStart14: () => void = (): void => {        results.push(1)}
+      let cbStart14: () => void = (): void => {        results.push(1); callbackCount1500.fetchAdd(1)}
       task1.onStartExecution(cbStart14)
-      let cbStart15: () => void = (): void => {        results.push(2)}
+      let cbStart15: () => void = (): void => {        results.push(2); callbackCount1500.fetchAdd(1)}
       task2.onStartExecution(cbStart15)
-      let cbStart16: () => void = (): void => {        results.push(3)}
+      let cbStart16: () => void = (): void => {        results.push(3); callbackCount1500.fetchAdd(1)}
       task3.onStartExecution(cbStart16)
-      let cbStart17: () => void = (): void => {        results.push(4)}
+      let cbStart17: () => void = (): void => {        results.push(4); callbackCount1500.fetchAdd(1)}
       task4.onStartExecution(cbStart17)
-      let cbStart18: () => void = (): void => {        results.push(5)}
+      let cbStart18: () => void = (): void => {        results.push(5); callbackCount1500.fetchAdd(1)}
       task5.onStartExecution(cbStart18)
       try {
         await Promise.all([
@@ -463,7 +464,16 @@ export default function TaskOnStartExecutionTest(): void {
       } catch (error) {
        expect().assertFail();
       }
-      expect(results.length >= 1).assertTrue()
+      let waitCount1500: number = 0
+      while (callbackCount1500.load() < 5 && waitCount1500 < 250) {
+        try {
+          await Utils.msSleep(20);
+        } catch (error) {
+          expect().assertFail();
+        }
+        waitCount1500++
+      }
+      expect(callbackCount1500.load()).assertEqual(5)
       done();
     })
 
@@ -476,21 +486,21 @@ export default function TaskOnStartExecutionTest(): void {
      * @tc.level  LEVEL3
      */
     it('TaskOnStartExecutionTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let sharedCounter: number = 0
+      let sharedCounter: AtomicInt = new AtomicInt(0)
       let task1: taskpool.Task = new taskpool.Task(simpleFunc)
       let task2: taskpool.Task = new taskpool.Task(simpleFunc)
       let task3: taskpool.Task = new taskpool.Task(simpleFunc)
       let task4: taskpool.Task = new taskpool.Task(simpleFunc)
       let task5: taskpool.Task = new taskpool.Task(simpleFunc)
-      let cbStart19: () => void = (): void => {        sharedCounter++}
+      let cbStart19: () => void = (): void => {        sharedCounter.fetchAdd(1)}
       task1.onStartExecution(cbStart19)
-      let cbStart20: () => void = (): void => {        sharedCounter++}
+      let cbStart20: () => void = (): void => {        sharedCounter.fetchAdd(1)}
       task2.onStartExecution(cbStart20)
-      let cbStart21: () => void = (): void => {        sharedCounter++}
+      let cbStart21: () => void = (): void => {        sharedCounter.fetchAdd(1)}
       task3.onStartExecution(cbStart21)
-      let cbStart22: () => void = (): void => {        sharedCounter++}
+      let cbStart22: () => void = (): void => {        sharedCounter.fetchAdd(1)}
       task4.onStartExecution(cbStart22)
-      let cbStart23: () => void = (): void => {        sharedCounter++}
+      let cbStart23: () => void = (): void => {        sharedCounter.fetchAdd(1)}
       task5.onStartExecution(cbStart23)
       try {
         await Promise.all([
@@ -500,7 +510,7 @@ export default function TaskOnStartExecutionTest(): void {
       } catch (error) {
        expect().assertFail();
       }
-      expect(sharedCounter >= 1 && sharedCounter <= 5).assertTrue()
+      expect(sharedCounter.load()).assertEqual(5)
       done();
     })
   })

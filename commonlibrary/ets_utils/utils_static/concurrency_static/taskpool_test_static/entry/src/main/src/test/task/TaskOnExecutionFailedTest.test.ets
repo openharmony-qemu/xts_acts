@@ -28,6 +28,14 @@ function longSuccessFunc(): number {
 function specificErrorFunc(): number { throw new Error("specific error message") }
 function typeErrorFunc(): number { throw new TypeError("type error occurred") }
 
+async function waitForFailedCondition(condition: () => boolean): Promise<void> {
+  let waitCount: number = 0
+  while (!condition() && waitCount < 50) {
+    await Utils.msSleep(20)
+    waitCount++
+  }
+}
+
 export default function TaskOnExecutionFailedTest(): void {
   describe('TaskOnExecutionFailedTest', (): void => {
     beforeAll((): void => {
@@ -56,11 +64,7 @@ export default function TaskOnExecutionFailedTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForFailedCondition((): boolean => callbackCalled)
       expect(callbackCalled).assertTrue()
       done();
     })
@@ -104,11 +108,7 @@ export default function TaskOnExecutionFailedTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForFailedCondition((): boolean => receivedMessage === "task failed")
       expect(receivedMessage).assertEqual("task failed")
       done();
     })
@@ -264,11 +264,7 @@ export default function TaskOnExecutionFailedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForFailedCondition((): boolean => successCalled)
       expect(successCalled).assertTrue()
       expect(failedCalled).assertFalse()
       done();
@@ -509,11 +505,7 @@ export default function TaskOnExecutionFailedTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForFailedCondition((): boolean => callbackExecuted)
       expect(callbackExecuted).assertTrue()
       done();
     })
@@ -536,11 +528,7 @@ export default function TaskOnExecutionFailedTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForFailedCondition((): boolean => callbackTriggered)
       expect(callbackTriggered).assertTrue()
       done();
     })
@@ -575,11 +563,7 @@ export default function TaskOnExecutionFailedTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForFailedCondition((): boolean => callbackTriggered)
       expect(callbackTriggered).assertTrue()
       done();
     })

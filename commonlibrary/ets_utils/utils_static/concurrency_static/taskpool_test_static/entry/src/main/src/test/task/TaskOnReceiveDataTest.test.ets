@@ -49,6 +49,14 @@ let sendDataForPeriodicFunc = (args: number): number => { taskpool.Task.sendData
 // Module-level array to track active periodic tasks for cleanup
 let activePeriodicTasks: taskpool.Task[] = [];
 
+async function waitForReceiveCondition(condition: () => boolean): Promise<void> {
+  let waitCount: number = 0
+  while (!condition() && waitCount < 50) {
+    await Utils.msSleep(20)
+    waitCount++
+  }
+}
+
 export default function TaskOnReceiveDataTest(): void {
   describe('TaskOnReceiveDataTest', (): void => {
     beforeAll((): void => {
@@ -82,11 +90,6 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (e) {
         hasError = true
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
       expect(hasError).assertTrue()
       expect(received).assertFalse()
       done();
@@ -111,10 +114,10 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
+      let waitCount: number = 0
+      while (received !== 100.0 && waitCount < 50) {
+        await Utils.msSleep(20)
+        waitCount++
       }
       expect(received).assertEqual(100.0)
       done();
@@ -140,10 +143,10 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
+      let waitCount: number = 0
+      while (received !== 42.0 && waitCount < 50) {
+        await Utils.msSleep(20)
+        waitCount++
       }
       expect(received).assertEqual(42.0)
       done();
@@ -171,10 +174,10 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
+      let waitCount: number = 0
+      while (receivedStr !== "hello" && waitCount < 50) {
+        await Utils.msSleep(20)
+        waitCount++
       }
       expect(receivedStr).assertEqual("hello")
       done();
@@ -203,10 +206,10 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
+      let waitCount: number = 0
+      while (!receivedC && waitCount < 50) {
+        await Utils.msSleep(20)
+        waitCount++
       }
       expect(receivedA).assertEqual(1.0)
       expect(receivedB).assertEqual("test")
@@ -240,11 +243,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => asyncCompleted)
       expect(asyncCompleted).assertTrue()
       done();
     })
@@ -274,11 +273,6 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (e) {
         hasError = true
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
       expect(hasError).assertTrue()
       expect(received).assertFalse()
       done();
@@ -306,11 +300,6 @@ export default function TaskOnReceiveDataTest(): void {
         await taskpool.execute(task)
       } catch (e) {
         hasError = true
-      }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
       }
       expect(hasError).assertTrue()
       done();
@@ -347,11 +336,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => callback2Called)
       expect(callback1Called).assertFalse()
       expect(callback2Called).assertTrue()
       done();
@@ -421,11 +406,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => errorCaughtInCallback)
       expect(result).assertEqual(100.0)
       expect(errorCaughtInCallback).assertTrue()
       done();
@@ -481,11 +462,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => received.length === 3)
       expect(received.length).assertEqual(3)
       expect(received[0]).assertEqual(1.0)
       expect(received[1]).assertEqual(2.0)
@@ -502,7 +479,7 @@ export default function TaskOnReceiveDataTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskOnReceiveDataTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let receivedCount: number = 0
+      let receivedCount: AtomicInt = new AtomicInt(0)
       let task: taskpool.Task = new taskpool.Task((): number => {
         for (let i = 0; i < 10; i++) {
           if (taskpool.Task.isCanceled()) {
@@ -515,18 +492,31 @@ export default function TaskOnReceiveDataTest(): void {
         return 100.0
       })
       let cbRecv6: (data: Object) => void = (data: Object): void => {
-        receivedCount++
+        receivedCount.fetchAdd(1)
         if (data !== undefined) {
           // data payload received from taskpool worker
         }
       }
       task.onReceiveData(cbRecv6)
       let executePromise: Promise<Any> = taskpool.execute(task, { timeout: 5000 })
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
+      let running1500: boolean = false
+      let begin1500: number = Date.now()
+      while (!running1500 && Date.now() - begin1500 < 10000) {
+        try {
+          let info1500: taskpool.TaskPoolInfo = taskpool.getTaskPoolInfo()
+          for (let taskInfo of info1500.taskInfos) {
+            if (taskInfo.taskId === task.taskId && taskInfo.state === taskpool.State.RUNNING) {
+              running1500 = true
+            }
+          }
+          if (!running1500) {
+            await Utils.msSleep(20)
+          }
+        } catch (error) {
+          expect().assertFail();
+        }
       }
+      expect(running1500).assertTrue()
       try {
         taskpool.cancel(task)
       } catch (e) {
@@ -535,12 +525,7 @@ export default function TaskOnReceiveDataTest(): void {
         await executePromise
       } catch (e) {
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
-      expect(receivedCount).assertLess(10)
+      expect(receivedCount.load()).assertLess(10)
       done();
     })
 
@@ -553,7 +538,7 @@ export default function TaskOnReceiveDataTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskOnReceiveDataTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let receivedCount: number = 0
+      let receivedCount: AtomicInt = new AtomicInt(0)
       let task: taskpool.Task = new taskpool.Task((): number => {
         for (let i = 0; i < 5; i++) {
           taskpool.Task.sendData(i * 1.0)
@@ -563,7 +548,7 @@ export default function TaskOnReceiveDataTest(): void {
         return 100.0
       })
       let cbRecv7: (data: Object) => void = (data: Object): void => {
-        receivedCount++
+        receivedCount.fetchAdd(1)
         if (data !== undefined) {
           // data payload received from taskpool worker
         }
@@ -573,12 +558,7 @@ export default function TaskOnReceiveDataTest(): void {
         await taskpool.execute(task, { timeout: 500 })
       } catch (e) {
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
-      expect(receivedCount).assertLess(5)
+      expect(receivedCount.load()).assertLess(5)
       done();
     })
 
@@ -601,11 +581,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => eventQueue.length === 3)
       expect(eventQueue.length).assertEqual(3)
       expect(eventQueue[0]).assertEqual("processed:1")
       expect(eventQueue[1]).assertEqual("processed:2")
@@ -622,7 +598,7 @@ export default function TaskOnReceiveDataTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskOnReceiveDataTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let callbackCount: number = 0
+      let callbackCount: AtomicInt = new AtomicInt(0)
       let task1: taskpool.Task = new taskpool.Task(sendDataNumFunc, 1.0)
       let task2: taskpool.Task = new taskpool.Task(sendDataNumFunc, 2.0)
       let task3: taskpool.Task = new taskpool.Task(sendDataNumFunc, 3.0)
@@ -630,33 +606,21 @@ export default function TaskOnReceiveDataTest(): void {
       let task2Fired1800: boolean = false
       let task3Fired1800: boolean = false
       let cbRecv8: (data: Object) => void = (data: Object): void => {
-        try {
-        callbackCount++; task1Fired1800 = true
-        } catch (error) {
-        expect().assertFail();
-        }
+        callbackCount.fetchAdd(1); task1Fired1800 = true
         if (data !== undefined) {
           // data payload received from taskpool worker
         }
       }
       task1.onReceiveData(cbRecv8)
       let cbRecv9: (data: Object) => void = (data: Object): void => {
-        try {
-        callbackCount++; task2Fired1800 = true
-        } catch (error) {
-        expect().assertFail();
-        }
+        callbackCount.fetchAdd(1); task2Fired1800 = true
         if (data !== undefined) {
           // data payload received from taskpool worker
         }
       }
       task2.onReceiveData(cbRecv9)
       let cbRecv10: (data: Object) => void = (data: Object): void => {
-        try {
-        callbackCount++; task3Fired1800 = true
-        } catch (error) {
-        expect().assertFail();
-        }
+        callbackCount.fetchAdd(1); task3Fired1800 = true
         if (data !== undefined) {
           // data payload received from taskpool worker
         }
@@ -667,13 +631,8 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
-      // 平台可能重复投递宿主回调，按任务去重断言并保留计数下限
-      expect(callbackCount >= 3).assertTrue()
+      await waitForReceiveCondition((): boolean => task1Fired1800 && task2Fired1800 && task3Fired1800)
+      expect(callbackCount.load()).assertEqual(3)
       expect(task1Fired1800).assertTrue()
       expect(task2Fired1800).assertTrue()
       expect(task3Fired1800).assertTrue()
@@ -723,7 +682,7 @@ export default function TaskOnReceiveDataTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskOnReceiveDataTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let callbackPromises: Promise<void>[] = []
+      let callbackCount: AtomicInt = new AtomicInt(0)
       let totalCount: number = 5
       let task1: taskpool.Task = new taskpool.Task(sendDataNumFunc, 1.0)
       let task2: taskpool.Task = new taskpool.Task(sendDataNumFunc, 2.0)
@@ -731,55 +690,35 @@ export default function TaskOnReceiveDataTest(): void {
       let task4: taskpool.Task = new taskpool.Task(sendDataNumFunc, 4.0)
       let task5: taskpool.Task = new taskpool.Task(sendDataNumFunc, 5.0)
       let cbRecv11: (data: Object) => void = (data: Object): void => {
-        try {
-        callbackPromises.push(Promise.resolve())
-        } catch (error) {
-        expect().assertFail();
-        }
+        callbackCount.fetchAdd(1)
         if (data !== undefined) {
           // data payload received from taskpool worker
         }
       }
       task1.onReceiveData(cbRecv11)
       let cbRecv12: (data: Object) => void = (data: Object): void => {
-        try {
-        callbackPromises.push(Promise.resolve())
-        } catch (error) {
-        expect().assertFail();
-        }
+        callbackCount.fetchAdd(1)
         if (data !== undefined) {
           // data payload received from taskpool worker
         }
       }
       task2.onReceiveData(cbRecv12)
       let cbRecv13: (data: Object) => void = (data: Object): void => {
-        try {
-        callbackPromises.push(Promise.resolve())
-        } catch (error) {
-        expect().assertFail();
-        }
+        callbackCount.fetchAdd(1)
         if (data !== undefined) {
           // data payload received from taskpool worker
         }
       }
       task3.onReceiveData(cbRecv13)
       let cbRecv14: (data: Object) => void = (data: Object): void => {
-        try {
-        callbackPromises.push(Promise.resolve())
-        } catch (error) {
-        expect().assertFail();
-        }
+        callbackCount.fetchAdd(1)
         if (data !== undefined) {
           // data payload received from taskpool worker
         }
       }
       task4.onReceiveData(cbRecv14)
       let cbRecv15: (data: Object) => void = (data: Object): void => {
-        try {
-        callbackPromises.push(Promise.resolve())
-        } catch (error) {
-        expect().assertFail();
-        }
+        callbackCount.fetchAdd(1)
         if (data !== undefined) {
           // data payload received from taskpool worker
         }
@@ -793,12 +732,8 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
        expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
-      expect(callbackPromises.length).assertEqual(totalCount)
+      await waitForReceiveCondition((): boolean => callbackCount.load() >= totalCount)
+      expect(callbackCount.load()).assertEqual(totalCount)
       done();
     })
 
@@ -818,12 +753,12 @@ export default function TaskOnReceiveDataTest(): void {
       let callbackPromises: Promise<void>[] = []
       let expectedCount: number = 3
       let allCallbacksCompleted: Promise<void> = new Promise<void>((resolve: (value: void | PromiseLike<void>) => void, reject: (reason: Error) => void) => {
-        let completedCount: number = 0
+        let completedCount: AtomicInt = new AtomicInt(0)
         let sharedHandler = (data: number): void => {
           receivedData.push(data)
-          completedCount++
+          let countAfterAdd: number = completedCount.fetchAdd(1) + 1
           callbackPromises.push(Promise.resolve())
-          if (completedCount === expectedCount) {
+          if (countAfterAdd === expectedCount) {
             resolve(undefined)
           }
         }
@@ -876,11 +811,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => received === 100.0)
       expect(received).assertEqual(100.0)
       expect(result).assertEqual(100.0)
       done();
@@ -947,11 +878,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => received === "second")
       expect(received).assertEqual("second")
       done();
     })
@@ -965,9 +892,9 @@ export default function TaskOnReceiveDataTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskOnReceiveDataTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let callCount: number = 0
+      let callCount: AtomicInt = new AtomicInt(0)
       let handler = (data: number): void => {
-        callCount++
+        callCount.fetchAdd(1)
       }
       let task: taskpool.Task = new taskpool.Task(sendDataNumFunc, 100.0)
       task.onReceiveData(handler)
@@ -978,12 +905,8 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
-      expect(callCount).assertEqual(1)
+      await waitForReceiveCondition((): boolean => callCount.load() >= 1)
+      expect(callCount.load()).assertEqual(1)
       done();
     })
 
@@ -1004,11 +927,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => receivedBool)
       expect(receivedBool).assertTrue()
       done();
     })
@@ -1030,11 +949,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => receivedArr.length === 3)
       expect(receivedArr.length).assertEqual(3)
       expect(receivedArr[0]).assertEqual(1.0)
       expect(receivedArr[1]).assertEqual(2.0)
@@ -1061,11 +976,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => received.length === 5)
       expect(received.length).assertEqual(5)
       done();
     })
@@ -1093,11 +1004,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => received === "called")
       expect(received).assertEqual("called")
       done();
     })
@@ -1111,16 +1018,11 @@ export default function TaskOnReceiveDataTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskOnReceiveDataTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
-      let receivedCount: number = 0
+      let receivedCount: AtomicInt = new AtomicInt(0)
       let task: taskpool.Task = new taskpool.Task(sendDataForPeriodicFunc, 100.0)
       activePeriodicTasks.push(task)
       let cbRecv19: (data: Object) => void = (data: Object): void => {
-        receivedCount++
+        receivedCount.fetchAdd(1)
         if (data !== undefined) {
           // data payload received from taskpool worker
         }
@@ -1128,22 +1030,17 @@ export default function TaskOnReceiveDataTest(): void {
       task.onReceiveData(cbRecv19)
       taskpool.executePeriodically(200, task)
       let maxWait: number = 0
-      while (receivedCount < 1 && maxWait < 3000) {
+      while (receivedCount.load() < 1 && maxWait < 3000) {
         try {
           await Utils.msSleep(100);
         } catch (error) {
           expect().assertFail();
         }
-        maxWait += 200
+        maxWait += 100
       }
-      expect(receivedCount).assertLarger(0)
+      expect(receivedCount.load()).assertLarger(0)
       taskpool.cancel(task)
       activePeriodicTasks = activePeriodicTasks.filter((t: taskpool.Task): boolean => t !== task)
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
       done();
     })
 
@@ -1156,28 +1053,20 @@ export default function TaskOnReceiveDataTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskOnReceiveDataTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let callbackCount: number = 0
+      let callbackCount: AtomicInt = new AtomicInt(0)
       let task1: taskpool.Task = new taskpool.Task(sendDataNumFunc, 1.0)
       let task2: taskpool.Task = new taskpool.Task(sendDataNumFunc, 2.0)
       let task1Fired3100: boolean = false
       let task2Fired3100: boolean = false
       let cbRecv20: (data: Object) => void = (data: Object): void => {
-        try {
-        callbackCount++; task1Fired3100 = true
-        } catch (error) {
-        expect().assertFail();
-        }
+        callbackCount.fetchAdd(1); task1Fired3100 = true
         if (data !== undefined) {
           // data payload received from taskpool worker
         }
       }
       task1.onReceiveData(cbRecv20)
       let cbRecv21: (data: Object) => void = (data: Object): void => {
-        try {
-        callbackCount++; task2Fired3100 = true
-        } catch (error) {
-        expect().assertFail();
-        }
+        callbackCount.fetchAdd(1); task2Fired3100 = true
         if (data !== undefined) {
           // data payload received from taskpool worker
         }
@@ -1191,13 +1080,8 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
-      // 平台可能重复投递宿主回调，按任务去重断言并保留计数下限
-      expect(callbackCount >= 2).assertTrue()
+      await waitForReceiveCondition((): boolean => task1Fired3100 && task2Fired3100)
+      expect(callbackCount.load()).assertEqual(2)
       expect(task1Fired3100).assertTrue()
       expect(task2Fired3100).assertTrue()
       done();
@@ -1228,11 +1112,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => results.length === 2)
       expect(results.length).assertEqual(2)
       expect(results[0]).assertEqual(10.0)
       expect(results[1]).assertEqual(20.0)
@@ -1260,11 +1140,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => received === 100.0)
       expect(received).assertEqual(100.0)
       done();
     })
@@ -1291,11 +1167,7 @@ export default function TaskOnReceiveDataTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => received)
       expect(received).assertTrue()
       done();
     })
@@ -1319,11 +1191,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => received === 100.0)
       expect(received).assertEqual(100.0)
       task.onReceiveData()
       expect(received).assertEqual(100.0)
@@ -1357,11 +1225,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => sendDataErrorCaught)
       expect(sendDataErrorCaught).assertTrue()
       done();
     })
@@ -1389,11 +1253,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => called)
       expect(called).assertTrue()
       done();
     })
@@ -1420,11 +1280,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => received === 3.0)
       expect(received).assertEqual(3.0)
       done();
     })
@@ -1448,11 +1304,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => receivedLength === 100)
       expect(receivedLength).assertEqual(100)
       done();
     })
@@ -1466,14 +1318,10 @@ export default function TaskOnReceiveDataTest(): void {
      * @tc.level  LEVEL2
      */
     it('TaskOnReceiveDataTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let receivedCount: number = 0
+      let receivedCount: AtomicInt = new AtomicInt(0)
       let task: taskpool.Task = new taskpool.Task(highFreqSendFunc)
       let cbRecv25: (data: Object) => void = (data: Object): void => {
-        try {
-        receivedCount++
-        } catch (error) {
-        expect().assertFail();
-        }
+        receivedCount.fetchAdd(1)
         if (data !== undefined) {
           // data payload received from taskpool worker
         }
@@ -1484,12 +1332,8 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
-      expect(receivedCount).assertEqual(100)
+      await waitForReceiveCondition((): boolean => receivedCount.load() >= 100)
+      expect(receivedCount.load()).assertEqual(100)
       done();
     })
 
@@ -1503,12 +1347,13 @@ export default function TaskOnReceiveDataTest(): void {
      */
     it('TaskOnReceiveDataTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let noException: boolean = true
+      let callbackExecuted: boolean = false
       let task: taskpool.Task = new taskpool.Task(sendDataNumFunc, 100.0)
       try {
         task.onReceiveData((data: Object) => {
           try {
             if (data !== undefined) {
-              // empty callback body: registration and delivery succeed without error
+              callbackExecuted = true
             }
           } catch (error) {
             expect().assertFail();
@@ -1524,11 +1369,8 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => callbackExecuted)
+      expect(callbackExecuted).assertTrue()
       expect(result).assertEqual(100.0)
       done();
     })
@@ -1542,8 +1384,10 @@ export default function TaskOnReceiveDataTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskOnReceiveDataTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let callbackCalled: boolean = false
       let task: taskpool.Task = new taskpool.Task(sendDataNumFunc, 100.0)
       task.onReceiveData((data: number): number => {
+        callbackCalled = true
         return data * 2
       })
       let result: number = 0;
@@ -1552,11 +1396,8 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => callbackCalled)
+      expect(callbackCalled).assertTrue()
       expect(result).assertEqual(100.0)
       done();
     })
@@ -1581,11 +1422,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => result === 50.0)
       expect(result).assertEqual(50.0)
       done();
     })
@@ -1609,11 +1446,7 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForReceiveCondition((): boolean => receivedLength === 100)
       expect(receivedLength).assertEqual(100)
       done();
     })

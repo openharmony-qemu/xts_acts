@@ -82,7 +82,8 @@ export default function AsyncRunnerExecuteTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2, 0);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 42.0);
       try {
-        await runner.execute(task);
+        let result: number = await runner.execute(task) as number;
+        expect(result).assertEqual(42.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -104,7 +105,8 @@ export default function AsyncRunnerExecuteTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2, 0);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 100.0);
       try {
-        await runner.execute(task, taskpool.Priority.HIGH);
+        let result: number = await runner.execute(task, taskpool.Priority.HIGH) as number;
+        expect(result).assertEqual(100.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -126,7 +128,8 @@ export default function AsyncRunnerExecuteTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2, 0);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 200.0);
       try {
-        await runner.execute(task, taskpool.Priority.MEDIUM);
+        let result: number = await runner.execute(task, taskpool.Priority.MEDIUM) as number;
+        expect(result).assertEqual(200.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -148,7 +151,8 @@ export default function AsyncRunnerExecuteTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2, 0);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 300.0);
       try {
-        await runner.execute(task, taskpool.Priority.LOW);
+        let result: number = await runner.execute(task, taskpool.Priority.LOW) as number;
+        expect(result).assertEqual(300.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -170,7 +174,8 @@ export default function AsyncRunnerExecuteTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2, 0);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 400.0);
       try {
-        await runner.execute(task, taskpool.Priority.IDLE);
+        let result: number = await runner.execute(task, taskpool.Priority.IDLE) as number;
+        expect(result).assertEqual(400.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -192,7 +197,8 @@ export default function AsyncRunnerExecuteTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2, 0);
       let task: taskpool.Task = new taskpool.Task("myTask", simpleReturnTask, 500.0);
       try {
-        await runner.execute(task);
+        let result: number = await runner.execute(task) as number;
+        expect(result).assertEqual(500.0);
         expect(task.isDone()).assertTrue();
         expect(task.name).assertEqual("myTask");
       } catch (error) {
@@ -215,7 +221,8 @@ export default function AsyncRunnerExecuteTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2, 0);
       let task: taskpool.Task = new taskpool.Task(multiArgTask, 1.0, 2.0, 3.0);
       try {
-        await runner.execute(task);
+        let result: number = await runner.execute(task) as number;
+        expect(result).assertEqual(6.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -284,7 +291,8 @@ export default function AsyncRunnerExecuteTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2, 0);
       let task: taskpool.Task = new taskpool.Task(voidTask);
       try {
-        await runner.execute(task);
+        let result: Object | undefined = await runner.execute(task) as Object | undefined;
+        expect(result === undefined).assertTrue();
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -793,7 +801,8 @@ export default function AsyncRunnerExecuteTest(): void {
           rejectedCount++;
         }
       }
-      expect(rejectedCount > 0).assertTrue();
+      expect(completedCount).assertEqual(6);
+      expect(rejectedCount).assertEqual(5);
       done();
     })
 

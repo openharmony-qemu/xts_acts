@@ -32,6 +32,14 @@ let multiArgFunc = (a: number, b: string, c: boolean): string => {
   return a.toString() + '-' + b + '-' + c.toString()
 }
 
+async function waitForSucceededCondition(condition: () => boolean): Promise<void> {
+  let waitCount: number = 0
+  while (!condition() && waitCount < 50) {
+    await Utils.msSleep(20)
+    waitCount++
+  }
+}
+
 export default function TaskOnExecutionSucceededTest(): void {
   describe('TaskOnExecutionSucceededTest', (): void => {
     beforeAll((): void => {
@@ -60,11 +68,7 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSucceededCondition((): boolean => callbackCalled)
       expect(callbackCalled).assertTrue()
       done();
     })
@@ -88,11 +92,7 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSucceededCondition((): boolean => externalValue === "success")
       expect(externalValue).assertEqual("success")
       done();
     })
@@ -121,11 +121,7 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSucceededCondition((): boolean => callback2Called)
       // Chain calling not supported, second registration overrides first
       expect(callback1Called).assertFalse()
       expect(callback2Called).assertTrue()
@@ -202,7 +198,7 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      let errorMessage: string = ''
+      let errorThrown: boolean = false
       try {
         let cbSucc6: () => void = (): void => {
           try {
@@ -213,9 +209,9 @@ export default function TaskOnExecutionSucceededTest(): void {
         }
         task.onExecutionSucceeded(cbSucc6)
       } catch (e) {
-        errorMessage = e.message
+        errorThrown = true
       }
-      expect(errorMessage.length > 0).assertTrue()
+      expect(errorThrown).assertTrue()
       done();
     })
     /**
@@ -236,11 +232,6 @@ export default function TaskOnExecutionSucceededTest(): void {
       try {
         await taskpool.execute(task)
       } catch (e) {
-      }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
       }
       expect(successCallbackExecuted).assertFalse()
       done();
@@ -274,11 +265,6 @@ export default function TaskOnExecutionSucceededTest(): void {
         await executePromise
       } catch (e) {
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
       expect(callbackExecuted).assertFalse()
       done();
     })
@@ -302,11 +288,7 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSucceededCondition((): boolean => externalData === 100)
       expect(externalData).assertEqual(100)
       done();
     })
@@ -321,7 +303,9 @@ export default function TaskOnExecutionSucceededTest(): void {
     it('TaskOnExecutionSucceededTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let task: taskpool.Task = new taskpool.Task(simpleSuccessFunc)
       let taskResult: number = 0
+      let callbackCalled: boolean = false
       let cbSucc10: () => void = (): void => {
+        callbackCalled = true
         try {
           throw new Error("callback error")
         } catch (innerError) {
@@ -334,11 +318,8 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSucceededCondition((): boolean => callbackCalled)
+      expect(callbackCalled).assertTrue()
       expect(taskResult).assertEqual(100)
       done();
     })
@@ -366,11 +347,7 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSucceededCondition((): boolean => errorCaught)
       expect(errorCaught).assertTrue()
       done();
     })
@@ -400,11 +377,7 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSucceededCondition((): boolean => successCalled)
       expect(successCalled).assertTrue()
       done();
     })
@@ -428,11 +401,7 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSucceededCondition((): boolean => isDoneInCallback)
       expect(isDoneInCallback).assertTrue()
       done();
     })
@@ -447,12 +416,12 @@ export default function TaskOnExecutionSucceededTest(): void {
     it('TaskOnExecutionSucceededTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let task1: taskpool.Task = new taskpool.Task(simpleSuccessFunc)
       let task2: taskpool.Task = new taskpool.Task(simpleSuccessFunc)
-      let callbackCount: number = 0
+      let callbackCount: AtomicInt = new AtomicInt(0)
       let task1Fired: boolean = false
       let task2Fired: boolean = false
-      let cbSucc14: () => void = (): void => {        callbackCount++; task1Fired = true}
+      let cbSucc14: () => void = (): void => {        callbackCount.fetchAdd(1); task1Fired = true}
       task1.onExecutionSucceeded(cbSucc14)
-      let cbSucc15: () => void = (): void => {        callbackCount++; task2Fired = true}
+      let cbSucc15: () => void = (): void => {        callbackCount.fetchAdd(1); task2Fired = true}
       task2.onExecutionSucceeded(cbSucc15)
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup()
       taskGroup.addTask(task1)
@@ -462,14 +431,8 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
-      // 平台在特定调度下可能对同一任务重复投递宿主回调（压测实测 callbackCount=4），
-      // 语义核心是"组内每个任务的回调均被触发"，按任务去重断言并保留计数下限
-      expect(callbackCount >= 2).assertTrue()
+      await waitForSucceededCondition((): boolean => task1Fired && task2Fired)
+      expect(callbackCount.load()).assertEqual(2)
       expect(task1Fired).assertTrue()
       expect(task2Fired).assertTrue()
       done();
@@ -503,13 +466,8 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
-      // 平台可能重复投递宿主回调，按任务去重断言并保留计数下限
-      expect(executionOrder.length >= 2).assertTrue()
+      await waitForSucceededCondition((): boolean => task1Fired1500 && task2Fired1500)
+      expect(executionOrder.length).assertEqual(2)
       expect(task1Fired1500).assertTrue()
       expect(task2Fired1500).assertTrue()
       expect(executionOrder[0]).assertEqual(1)
@@ -538,11 +496,7 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(200);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSucceededCondition((): boolean => completed)
       expect(completed).assertTrue()
       done();
     })
@@ -567,11 +521,7 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSucceededCondition((): boolean => callbackExecuted)
       expect(callbackExecuted).assertTrue()
       expect(result).assertEqual(100)
       done();
@@ -597,11 +547,7 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSucceededCondition((): boolean => callbackExecuted)
       expect(callbackExecuted).assertTrue()
       expect(result).assertEqual("hello")
       done();
@@ -621,17 +567,15 @@ export default function TaskOnExecutionSucceededTest(): void {
         callbackExecuted = true
       }
       task.onExecutionSucceeded(cbSucc21)
+      let result: Object | undefined = undefined
       try {
-        await taskpool.execute(task);
+        result = await taskpool.execute(task) as Object | undefined;
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSucceededCondition((): boolean => callbackExecuted)
       expect(callbackExecuted).assertTrue()
+      expect(result === undefined).assertTrue()
       done();
     })
     /**
@@ -653,11 +597,7 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSucceededCondition((): boolean => callbackExecuted)
       expect(callbackExecuted).assertTrue()
       expect(result).assertEqual("1-test-true")
       done();
@@ -688,11 +628,7 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      try {
-        await Utils.msSleep(100);
-      } catch (error) {
-        expect().assertFail();
-      }
+      await waitForSucceededCondition((): boolean => task1Callback && task2Callback)
       expect(task1Callback).assertTrue()
       expect(task2Callback).assertTrue()
       done();
