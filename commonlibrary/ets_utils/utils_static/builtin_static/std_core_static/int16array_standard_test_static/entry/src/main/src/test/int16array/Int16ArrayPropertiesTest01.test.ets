@@ -1,6 +1,5 @@
 'use static';
 
-
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -222,30 +221,28 @@ export default function Int16ArrayPropertiesTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_1200
      * @tc.name testInt16ArrayPropertiesTestOne012
-     * @tc.desc Verify new Int16Array(buf,number offset2.0) buffer same reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(4);
-      const offset: number = 2.0;
-      const arr = new Int16Array(buf, offset);
-      let actualBuffer: ArrayBuffer = arr.buffer;
-      let expectedBuffer: ArrayBuffer = buf;
-      expect(actualBuffer).assertEqual(expectedBuffer);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_1300
-     * @tc.name testInt16ArrayPropertiesTestOne013
      * @tc.desc Verify new Int16Array() byteOffset equals 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array();
+      let actualByteOffset: int = arr.byteOffset;
+      let expectedByteOffset: int = 0;
+      expect(actualByteOffset).assertEqual(expectedByteOffset);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_1300
+     * @tc.name testInt16ArrayPropertiesTestOne013
+     * @tc.desc Verify new Int16Array(int length) byteOffset equals 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayPropertiesTestOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Int16Array(3);
       let actualByteOffset: int = arr.byteOffset;
       let expectedByteOffset: int = 0;
       expect(actualByteOffset).assertEqual(expectedByteOffset);
@@ -254,27 +251,12 @@ export default function Int16ArrayPropertiesTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_1400
      * @tc.name testInt16ArrayPropertiesTestOne014
-     * @tc.desc Verify new Int16Array(int length) byteOffset equals 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array(3);
-      let actualByteOffset: int = arr.byteOffset;
-      let expectedByteOffset: int = 0;
-      expect(actualByteOffset).assertEqual(expectedByteOffset);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_1500
-     * @tc.name testInt16ArrayPropertiesTestOne015
      * @tc.desc Verify Int16Array byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = Int16Array.of(1, 2);
       const arr = new Int16Array(src);
       let actualByteOffset: int = arr.byteOffset;
@@ -283,14 +265,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_1600
-     * @tc.name testInt16ArrayPropertiesTestOne016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_1500
+     * @tc.name testInt16ArrayPropertiesTestOne015
      * @tc.desc Verify ArrayBuffer + undefined + undefined byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const arr = new Int16Array(buf, undefined, undefined);
       let actualByteOffset: int = arr.byteOffset;
@@ -299,14 +281,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_1700
-     * @tc.name testInt16ArrayPropertiesTestOne017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_1600
+     * @tc.name testInt16ArrayPropertiesTestOne016
      * @tc.desc Verify int byteOffset = 0 byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const offset: int = 0;
       const arr = new Int16Array(buf, offset);
@@ -316,14 +298,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_1800
-     * @tc.name testInt16ArrayPropertiesTestOne018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_1700
+     * @tc.name testInt16ArrayPropertiesTestOne017
      * @tc.desc Verify Int16Array.of byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 20, 30);
       let actualByteOffset: int = arr.byteOffset;
       let expectedByteOffset: int = 0;
@@ -331,14 +313,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_1900
-     * @tc.name testInt16ArrayPropertiesTestOne019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_1800
+     * @tc.name testInt16ArrayPropertiesTestOne018
      * @tc.desc Verify Int16Array.from byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = Int16Array.of(5, 6);
       const arr = Int16Array.from(src);
       let actualByteOffset: int = arr.byteOffset;
@@ -347,14 +329,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2000
-     * @tc.name testInt16ArrayPropertiesTestOne020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_1900
+     * @tc.name testInt16ArrayPropertiesTestOne019
      * @tc.desc Verify ArrayBuffer + number byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const offset: number = 4.0;
       const arr = new Int16Array(buf, offset);
@@ -364,14 +346,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2100
-     * @tc.name testInt16ArrayPropertiesTestOne021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2000
+     * @tc.name testInt16ArrayPropertiesTestOne020
      * @tc.desc Verify length = 0 byteLength 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const arr = new Int16Array(buf, 0, 0);
       let actualByteLength: int = arr.byteLength;
@@ -380,14 +362,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2200
-     * @tc.name testInt16ArrayPropertiesTestOne022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2100
+     * @tc.name testInt16ArrayPropertiesTestOne021
      * @tc.desc Verify length = 1 byteLength 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const arr = new Int16Array(buf, 0, 1);
       let actualByteLength: int = arr.byteLength;
@@ -396,14 +378,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2300
-     * @tc.name testInt16ArrayPropertiesTestOne023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2200
+     * @tc.name testInt16ArrayPropertiesTestOne022
      * @tc.desc Verify number 3.7 3 byteLength 6
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(10);
       const length: number = 3.7;
       const arr = new Int16Array(buf, 0, length);
@@ -413,14 +395,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2400
-     * @tc.name testInt16ArrayPropertiesTestOne024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2300
+     * @tc.name testInt16ArrayPropertiesTestOne023
      * @tc.desc Verify Int16Array.of byteLength = length 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 20);
       let actualByteLength: int = arr.byteLength;
       let expectedByteLength: int = 4;
@@ -428,14 +410,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2500
-     * @tc.name testInt16ArrayPropertiesTestOne025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2400
+     * @tc.name testInt16ArrayPropertiesTestOne024
      * @tc.desc Verify Int16Array length length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = Int16Array.of(1, 2, 3, 4);
       const arr = new Int16Array(src);
       let actualLength: int = arr.length;
@@ -444,14 +426,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2600
-     * @tc.name testInt16ArrayPropertiesTestOne026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2500
+     * @tc.name testInt16ArrayPropertiesTestOne025
      * @tc.desc Verify ArrayBuffer + int length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const arr = new Int16Array(buf, 0);
       let actualLength: int = arr.length;
@@ -460,14 +442,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2700
-     * @tc.name testInt16ArrayPropertiesTestOne027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2600
+     * @tc.name testInt16ArrayPropertiesTestOne026
      * @tc.desc Verify ArrayBuffer + number length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(6);
       const offset: number = 2.0;
       const arr = new Int16Array(buf, offset);
@@ -477,14 +459,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2800
-     * @tc.name testInt16ArrayPropertiesTestOne028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2700
+     * @tc.name testInt16ArrayPropertiesTestOne027
      * @tc.desc Verify ArrayBuffer + int + int length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Int16Array(buf, 2, 2);
       let actualLength: int = arr.length;
@@ -493,14 +475,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2900
-     * @tc.name testInt16ArrayPropertiesTestOne029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2800
+     * @tc.name testInt16ArrayPropertiesTestOne028
      * @tc.desc Verify int length = 0 length 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(0);
       let actualLength: int = arr.length;
       let expectedLength: int = 0;
@@ -508,14 +490,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3000
-     * @tc.name testInt16ArrayPropertiesTestOne030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_2900
+     * @tc.name testInt16ArrayPropertiesTestOne029
      * @tc.desc Verify int length = 32767 int16 length 32767
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(32767);
       let actualLength: int = arr.length;
       let expectedLength: int = 32767;
@@ -523,14 +505,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3100
-     * @tc.name testInt16ArrayPropertiesTestOne031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3000
+     * @tc.name testInt16ArrayPropertiesTestOne030
      * @tc.desc Verify Int16Array.of factory length equals element count
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int16Array.of(10, 20, 30, 40);
       let actualLength: int = arr.length;
       let expectedLength: int = 4;
@@ -538,14 +520,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3200
-     * @tc.name testInt16ArrayPropertiesTestOne032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3100
+     * @tc.name testInt16ArrayPropertiesTestOne031
      * @tc.desc Verify Int16Array name 'Int16Array'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = Int16Array.of(1, 2);
       const arr = new Int16Array(src);
       let actualName: string = arr.name;
@@ -554,14 +536,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3300
-     * @tc.name testInt16ArrayPropertiesTestOne033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3200
+     * @tc.name testInt16ArrayPropertiesTestOne032
      * @tc.desc Verify empty arr.byteLength equals length times BYTES_PER_ELEMENT
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array(0);
       let expected: int = arr.length * Int16Array.BYTES_PER_ELEMENT;
       let actualByteLength: int = arr.byteLength;
@@ -570,15 +552,30 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3400
-     * @tc.name testInt16ArrayPropertiesTestOne034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3300
+     * @tc.name testInt16ArrayPropertiesTestOne033
      * @tc.desc Verify zero-length Int16Array buffer is not null
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array(0);
+      let actualByteLength: int = arr.buffer.byteLength;
+      let expectedBuffer: int = arr.byteLength;
+      expect(actualByteLength).assertEqual(expectedBuffer);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3400
+     * @tc.name testInt16ArrayPropertiesTestOne034
+     * @tc.desc Verify Int16Array.of buffer is not null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayPropertiesTestOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = Int16Array.of(1, 2);
       let actualByteLength: int = arr.buffer.byteLength;
       let expectedBuffer: int = arr.byteLength;
       expect(actualByteLength).assertEqual(expectedBuffer);
@@ -587,27 +584,12 @@ export default function Int16ArrayPropertiesTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3500
      * @tc.name testInt16ArrayPropertiesTestOne035
-     * @tc.desc Verify Int16Array.of buffer is not null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2);
-      let actualByteLength: int = arr.buffer.byteLength;
-      let expectedBuffer: int = arr.byteLength;
-      expect(actualByteLength).assertEqual(expectedBuffer);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3600
-     * @tc.name testInt16ArrayPropertiesTestOne036
      * @tc.desc Verify Int16Array.from buffer is not null
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: number[] = [1, 2, 3];
       let arr: Int16Array = Int16Array.from(src);
       let actualByteLength: int = arr.buffer.byteLength;
@@ -616,14 +598,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3700
-     * @tc.name testInt16ArrayPropertiesTestOne037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3600
+     * @tc.name testInt16ArrayPropertiesTestOne036
      * @tc.desc Verify subarray view buffer shares parent buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parent: Int16Array = new Int16Array([1, 2, 3, 4, 5]);
       let child: Int16Array = parent.subarray(1, 3);
       let actualBuffer: ArrayBuffer = child.buffer;
@@ -632,14 +614,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3800
-     * @tc.name testInt16ArrayPropertiesTestOne038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3700
+     * @tc.name testInt16ArrayPropertiesTestOne037
      * @tc.desc Verify shared buffer views see $_set writes via buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(4);
       let view1: Int16Array = new Int16Array(buf, 0);
       let view2: Int16Array = new Int16Array(buf, 0);
@@ -650,14 +632,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3900
-     * @tc.name testInt16ArrayPropertiesTestOne039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3800
+     * @tc.name testInt16ArrayPropertiesTestOne038
      * @tc.desc Verify different byteOffset views on same buffer are independent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(8);
       let view1: Int16Array = new Int16Array(buf, 0, 2);
       let view2: Int16Array = new Int16Array(buf, 4, 2);
@@ -672,14 +654,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4000
-     * @tc.name testInt16ArrayPropertiesTestOne040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_3900
+     * @tc.name testInt16ArrayPropertiesTestOne039
      * @tc.desc Verify fill keeps the same buffer reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([1, 2, 3]);
       let bufBefore: ArrayBuffer = arr.buffer;
       arr.fill(0);
@@ -689,14 +671,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4100
-     * @tc.name testInt16ArrayPropertiesTestOne041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4000
+     * @tc.name testInt16ArrayPropertiesTestOne040
      * @tc.desc Verify reverse keeps the same buffer reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([1, 2, 3]);
       let bufBefore: ArrayBuffer = arr.buffer;
       arr.reverse();
@@ -706,14 +688,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4200
-     * @tc.name testInt16ArrayPropertiesTestOne042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4100
+     * @tc.name testInt16ArrayPropertiesTestOne041
      * @tc.desc Verify sort keeps the same buffer reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([3, 1, 2]);
       let bufBefore: ArrayBuffer = arr.buffer;
       arr.sort();
@@ -723,42 +705,42 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4300
-     * @tc.name testInt16ArrayPropertiesTestOne043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4200
+     * @tc.name testInt16ArrayPropertiesTestOne042
      * @tc.desc Verify independent Int16Array instances have different buffer references
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1: Int16Array = new Int16Array([1, 2]);
       let arr2: Int16Array = new Int16Array([1, 2]);
       expect(arr1.buffer).not().assertEqual(arr2.buffer);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4400
-     * @tc.name testInt16ArrayPropertiesTestOne044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4300
+     * @tc.name testInt16ArrayPropertiesTestOne043
      * @tc.desc Verify independent Int16Array.of instances have different buffer references
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1: Int16Array = Int16Array.of(1, 2);
       let arr2: Int16Array = Int16Array.of(1, 2);
       expect(arr1.buffer).not().assertEqual(arr2.buffer);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4500
-     * @tc.name testInt16ArrayPropertiesTestOne045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4400
+     * @tc.name testInt16ArrayPropertiesTestOne044
      * @tc.desc Verify arr.byteOffset equals 0 for whole-buffer view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([1, 2]);
       let offset: int = arr.byteOffset;
       let expectedValue: int = 0;
@@ -766,14 +748,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4600
-     * @tc.name testInt16ArrayPropertiesTestOne046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4500
+     * @tc.name testInt16ArrayPropertiesTestOne045
      * @tc.desc Verify subarray(0) byteOffset equals 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parent: Int16Array = new Int16Array([1, 2, 3]);
       let child: Int16Array = parent.subarray(0);
       let actualByteOffset: int = child.byteOffset;
@@ -782,14 +764,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4700
-     * @tc.name testInt16ArrayPropertiesTestOne047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4600
+     * @tc.name testInt16ArrayPropertiesTestOne046
      * @tc.desc Verify $_set does not change byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([1, 2, 3]);
       let offsetBefore: int = arr.byteOffset;
       arr.$_set(0, 99);
@@ -799,14 +781,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4800
-     * @tc.name testInt16ArrayPropertiesTestOne048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4700
+     * @tc.name testInt16ArrayPropertiesTestOne047
      * @tc.desc Verify zero-length Int16Array byteLength is 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array(0);
       let actualByteLength: int = arr.byteLength;
       let expectedByteLength: int = 0;
@@ -814,14 +796,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4900
-     * @tc.name testInt16ArrayPropertiesTestOne049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4800
+     * @tc.name testInt16ArrayPropertiesTestOne048
      * @tc.desc Verify byteLength equals length times BYTES_PER_ELEMENT at offset zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array(3);
       let actualByteLength: int = arr.byteLength;
       let expectedByteLength: int = 6;
@@ -838,14 +820,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5000
-     * @tc.name testInt16ArrayPropertiesTestOne050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_4900
+     * @tc.name testInt16ArrayPropertiesTestOne049
      * @tc.desc Verify Int16Array.of() empty call has byteLength 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of();
       let actualByteLength: int = arr.byteLength;
       let expectedByteLength: int = 0;
@@ -853,14 +835,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5100
-     * @tc.name testInt16ArrayPropertiesTestOne051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5000
+     * @tc.name testInt16ArrayPropertiesTestOne050
      * @tc.desc Verify Int16Array.from empty source has length 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: number[] = [];
       let arr: Int16Array = Int16Array.from(src);
       let actualLength: int = arr.length;
@@ -869,14 +851,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5200
-     * @tc.name testInt16ArrayPropertiesTestOne052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5100
+     * @tc.name testInt16ArrayPropertiesTestOne051
      * @tc.desc Verify subarray(0, 2) length is 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parent: Int16Array = new Int16Array([1, 2, 3, 4, 5]);
       let child: Int16Array = parent.subarray(0, 2);
       let actualLength: int = child.length;
@@ -885,14 +867,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5300
-     * @tc.name testInt16ArrayPropertiesTestOne053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5200
+     * @tc.name testInt16ArrayPropertiesTestOne052
      * @tc.desc Verify fill does not change length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([1, 2, 3]);
       let lenBefore: int = arr.length;
       arr.fill(0);
@@ -902,14 +884,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5400
-     * @tc.name testInt16ArrayPropertiesTestOne054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5300
+     * @tc.name testInt16ArrayPropertiesTestOne053
      * @tc.desc Verify reverse does not change length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([1, 2, 3]);
       let lenBefore: int = arr.length;
       arr.reverse();
@@ -919,14 +901,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5500
-     * @tc.name testInt16ArrayPropertiesTestOne055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5400
+     * @tc.name testInt16ArrayPropertiesTestOne054
      * @tc.desc Verify sort does not change length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([3, 1, 2]);
       let lenBefore: int = arr.length;
       arr.sort();
@@ -936,14 +918,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5600
-     * @tc.name testInt16ArrayPropertiesTestOne056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5500
+     * @tc.name testInt16ArrayPropertiesTestOne055
      * @tc.desc Verify copyWithin does not change length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([1, 2, 3, 4]);
       let lenBefore: int = arr.length;
       arr.copyWithin(0, 2);
@@ -953,15 +935,30 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5700
-     * @tc.name testInt16ArrayPropertiesTestOne057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5600
+     * @tc.name testInt16ArrayPropertiesTestOne056
      * @tc.desc Verify Int16Array.of() empty call has length 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of();
+      let actualLength: int = arr.length;
+      let expectedLength: int = 0;
+      expect(actualLength).assertEqual(expectedLength);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5700
+     * @tc.name testInt16ArrayPropertiesTestOne057
+     * @tc.desc Verify new Int16Array([]) length is 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayPropertiesTestOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int16Array = new Int16Array([]);
       let actualLength: int = arr.length;
       let expectedLength: int = 0;
       expect(actualLength).assertEqual(expectedLength);
@@ -970,27 +967,12 @@ export default function Int16ArrayPropertiesTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5800
      * @tc.name testInt16ArrayPropertiesTestOne058
-     * @tc.desc Verify new Int16Array([]) length is 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([]);
-      let actualLength: int = arr.length;
-      let expectedLength: int = 0;
-      expect(actualLength).assertEqual(expectedLength);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5900
-     * @tc.name testInt16ArrayPropertiesTestOne059
      * @tc.desc Verify Int16Array instance name equals Int16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array();
       let nameStr: string = arr.name;
       let expectedValue: string = 'Int16Array';
@@ -998,14 +980,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6000
-     * @tc.name testInt16ArrayPropertiesTestOne060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_5900
+     * @tc.name testInt16ArrayPropertiesTestOne059
      * @tc.desc Verify $_set(-1) OOB write leaves length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
       arr.$_set(0, 10);
       const lenBefore: int = arr.length;
@@ -1021,14 +1003,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6100
-     * @tc.name testInt16ArrayPropertiesTestOne061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6000
+     * @tc.name testInt16ArrayPropertiesTestOne060
      * @tc.desc Verify $_set(-1) OOB write leaves byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
       arr.$_set(0, 10);
       const blBefore: int = arr.byteLength;
@@ -1044,14 +1026,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6200
-     * @tc.name testInt16ArrayPropertiesTestOne062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6100
+     * @tc.name testInt16ArrayPropertiesTestOne061
      * @tc.desc Verify $_set(-1) OOB write leaves byteOffset unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
       const boBefore: int = arr.byteOffset;
       try {
@@ -1066,14 +1048,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6300
-     * @tc.name testInt16ArrayPropertiesTestOne063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6200
+     * @tc.name testInt16ArrayPropertiesTestOne062
      * @tc.desc Verify $_set(length) OOB write leaves length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
       const lenBefore: int = arr.length;
       try {
@@ -1088,14 +1070,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6400
-     * @tc.name testInt16ArrayPropertiesTestOne064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6300
+     * @tc.name testInt16ArrayPropertiesTestOne063
      * @tc.desc Verify $_set(length) OOB write leaves byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
       const blBefore: int = arr.byteLength;
       try {
@@ -1110,14 +1092,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6500
-     * @tc.name testInt16ArrayPropertiesTestOne065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6400
+     * @tc.name testInt16ArrayPropertiesTestOne064
      * @tc.desc Verify $_set(length+1) OOB write leaves length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
       const lenBefore: int = arr.length;
       try {
@@ -1132,14 +1114,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6600
-     * @tc.name testInt16ArrayPropertiesTestOne066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6500
+     * @tc.name testInt16ArrayPropertiesTestOne065
      * @tc.desc Verify $_set(length+1) OOB write leaves byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
       const blBefore: int = arr.byteLength;
       try {
@@ -1154,14 +1136,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6700
-     * @tc.name testInt16ArrayPropertiesTestOne067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6600
+     * @tc.name testInt16ArrayPropertiesTestOne066
      * @tc.desc Verify $_set(-length-1) OOB write leaves length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
       const lenBefore: int = arr.length;
       try {
@@ -1176,14 +1158,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6800
-     * @tc.name testInt16ArrayPropertiesTestOne068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6700
+     * @tc.name testInt16ArrayPropertiesTestOne067
      * @tc.desc Verify $_set(-length-1) OOB write leaves byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
       const blBefore: int = arr.byteLength;
       try {
@@ -1198,14 +1180,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6900
-     * @tc.name testInt16ArrayPropertiesTestOne069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6800
+     * @tc.name testInt16ArrayPropertiesTestOne068
      * @tc.desc Verify $_set(-length-1) OOB write keeps buffer reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
       const bufBefore: ArrayBuffer = arr.buffer;
       try {
@@ -1220,37 +1202,37 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_6900
+     * @tc.name testInt16ArrayPropertiesTestOne069
+     * @tc.desc Verify $_set(2147483647) OOB write leaves length unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayPropertiesTestOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Int16Array(2);
+      const lenBefore: int = arr.length;
+      try {
+        arr.$_set(2147483647, 99);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      let actualLength: int = arr.length;
+      let expectedLength: int = lenBefore;
+      expect(actualLength).assertEqual(expectedLength);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_7000
      * @tc.name testInt16ArrayPropertiesTestOne070
-     * @tc.desc Verify $_set(2147483647) OOB write leaves length unchanged
+     * @tc.desc Verify $_set(2147483647) OOB write leaves byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testInt16ArrayPropertiesTestOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(2);
-      const lenBefore: int = arr.length;
-      try {
-        arr.$_set(2147483647, 99);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      let actualLength: int = arr.length;
-      let expectedLength: int = lenBefore;
-      expect(actualLength).assertEqual(expectedLength);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_7100
-     * @tc.name testInt16ArrayPropertiesTestOne071
-     * @tc.desc Verify $_set(2147483647) OOB write leaves byteLength unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array(2);
       const blBefore: int = arr.byteLength;
       try {
         arr.$_set(2147483647, 99);
@@ -1264,37 +1246,37 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_7100
+     * @tc.name testInt16ArrayPropertiesTestOne071
+     * @tc.desc Verify $_get(-1) throws RangeError and length unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInt16ArrayPropertiesTestOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Int16Array(3);
+      const lenBefore: int = arr.length;
+      try {
+        arr.$_get(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      let actualLength: int = arr.length;
+      let expectedLength: int = lenBefore;
+      expect(actualLength).assertEqual(expectedLength);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_7200
      * @tc.name testInt16ArrayPropertiesTestOne072
-     * @tc.desc Verify $_get(-1) throws RangeError and length unchanged
+     * @tc.desc Verify $_get(-1) throws RangeError and byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testInt16ArrayPropertiesTestOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
-      const lenBefore: int = arr.length;
-      try {
-        arr.$_get(-1);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      let actualLength: int = arr.length;
-      let expectedLength: int = lenBefore;
-      expect(actualLength).assertEqual(expectedLength);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_7300
-     * @tc.name testInt16ArrayPropertiesTestOne073
-     * @tc.desc Verify $_get(-1) throws RangeError and byteLength unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array(3);
       const blBefore: int = arr.byteLength;
       try {
         arr.$_get(-1);
@@ -1308,14 +1290,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_7400
-     * @tc.name testInt16ArrayPropertiesTestOne074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_7300
+     * @tc.name testInt16ArrayPropertiesTestOne073
      * @tc.desc Verify $_get(length) throws RangeError and length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
       const lenBefore: int = arr.length;
       try {
@@ -1330,14 +1312,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_7500
-     * @tc.name testInt16ArrayPropertiesTestOne075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_7400
+     * @tc.name testInt16ArrayPropertiesTestOne074
      * @tc.desc Verify $_get(length) throws RangeError and byteOffset unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
       const boBefore: int = arr.byteOffset;
       try {
@@ -1352,14 +1334,14 @@ export default function Int16ArrayPropertiesTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_7600
-     * @tc.name testInt16ArrayPropertiesTestOne076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_ONE_7500
+     * @tc.name testInt16ArrayPropertiesTestOne075
      * @tc.desc Verify $_get(length+1) throws RangeError and length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testInt16ArrayPropertiesTestOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInt16ArrayPropertiesTestOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array(3);
       const lenBefore: int = arr.length;
       try {
@@ -1372,6 +1354,5 @@ export default function Int16ArrayPropertiesTest01(): void {
       let expectedLength: int = lenBefore;
       expect(actualLength).assertEqual(expectedLength);
     });
-
   });
 }

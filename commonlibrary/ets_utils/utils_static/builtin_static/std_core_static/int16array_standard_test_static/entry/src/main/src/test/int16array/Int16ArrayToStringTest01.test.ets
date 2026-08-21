@@ -1,5 +1,6 @@
 'use static';
 
+
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -722,7 +723,7 @@ export default function Int16ArrayToStringTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSTRING_ONE_4200
      * @tc.name testInt16ArrayToStringTestOne042
-     * @tc.desc Verify toString().length for zero-element array assertEqual 1
+     * @tc.desc Verify toString().length for single-element zero array equals 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
