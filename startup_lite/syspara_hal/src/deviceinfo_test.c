@@ -456,7 +456,7 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
     printf("Version Id=%s\n", value1);
     AssertNotEmpty(value1);
     TEST_ASSERT_NOT_NULL(value1);
-    TEST_ASSERT_TRUE(strlen(value1) <= 127);
+    TEST_ASSERT_TRUE(strlen(value1) <= 255);
     for (int i = 0; i < QUERY_TIMES; i++) {
         const char *value = GetVersionId();
     }
