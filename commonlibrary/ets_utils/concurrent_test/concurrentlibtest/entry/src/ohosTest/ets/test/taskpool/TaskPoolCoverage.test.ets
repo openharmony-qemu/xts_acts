@@ -1970,8 +1970,18 @@ export default function taskPoolCoverageTest() {
         task1.addDependency(...tasks1);
         const dependentResult = taskpool.execute(task1);
         const dependencyResult = taskpool.executeDelayed(500, task2);
-        expect(await dependencyResult).assertEqual(42);
-        const result = await dependentResult;
+        try {
+          expect(await dependencyResult).assertEqual(42);
+        } catch (error) {
+          console.error(`async await failed: ${error}`)
+          expect().assertFail()
+        }
+        try {
+          const result = await dependentResult;
+        } catch (error) {
+          console.error(`async await failed: ${error}`)
+          expect().assertFail()
+        }
         expect(result).assertEqual(42);
         try {
           let tasks = []

@@ -245,8 +245,18 @@ export default function UseConcurrentTest(): void {
       let task1 = new taskpool.Task(concurrentBoolToInt, true)
       let task2 = new taskpool.Task(concurrentBoolToInt, false)
 
-      let result1 = await taskpool.execute(task1)
-      let result2 = await taskpool.execute(task2)
+      try {
+        let result1 = await taskpool.execute(task1)
+      } catch (error) {
+        console.error(`async await failed: ${error}`)
+        expect().assertFail()
+      }
+      try {
+        let result2 = await taskpool.execute(task2)
+      } catch (error) {
+        console.error(`async await failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result1)).assertEqual(String(1))
       expect(String(result2)).assertEqual(String(0))

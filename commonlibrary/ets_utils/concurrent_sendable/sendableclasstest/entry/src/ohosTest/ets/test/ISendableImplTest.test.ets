@@ -617,7 +617,12 @@ export default function ISendableImplTest(): void {
       let task1 = new taskpool.Task(incrementSendableValueDispatch, data1)
       let task2 = new taskpool.Task(incrementSendableValueDispatch, data2)
 
-      let results = await Promise.all([
+      try {
+        let results = await Promise.all([
+      } catch (error) {
+        console.error(`async await failed: ${error}`)
+        expect().assertFail()
+      }
         taskpool.execute(task1),
         taskpool.execute(task2)
       ])
