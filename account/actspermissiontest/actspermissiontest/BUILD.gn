@@ -20,5 +20,5 @@ ohos_js_app_suite("ActsAccountOnlyOnePermissionTest") {
   subsystem_name = "account"
   part_name = "os_account"
   hap_name = "ActsAccountOnlyOnePermissionTest"
-  certificate_profile = "signature/openharmony_sx.p7b"
+  certificate_profile = "./signature/openharmony_sx.p7b"
 }

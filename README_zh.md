@@ -906,7 +906,7 @@ ohos_js_hap_suite("ActsDemoTest") {
     ":edm_resources",
   ]
   ets2abc = true
-  certificate_profile = "signature/openharmony_sx.p7b"     //签名文件
+  certificate_profile = "./signature/openharmony_sx.p7b"     //签名文件
   hap_name = "ActsDemoTest"                                //测试套件，以Acts开头，以Test结尾，采用驼峰式命名
   subsystem_name = "customization"                         //子系统
   part_name = "enterprise_device_management"               //部件

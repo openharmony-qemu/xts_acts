@@ -15,7 +15,7 @@ ohos_js_app_suite("ActsCloudAdTest") {
   test_hap = true
   testonly = true
   js_build_mode = "debug"
-  certificate_profile = "signature/openharmony_sx.p7b"
+  certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsCloudAdTest"
   subsystem_name = "advertising"
   part_name = "advertising"

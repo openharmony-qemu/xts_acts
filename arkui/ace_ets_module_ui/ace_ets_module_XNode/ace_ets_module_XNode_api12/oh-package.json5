@@ -19,7 +19,7 @@
     "@ohos/hypium": "1.0.26"
   },
   "author": "",
-  "modelVersion": "6.0.0",
+  "modelVersion": "26.0.0",
   "name": "com.arkui.ace.XNode.api12",
   "description": "XTS",
   "main": "",

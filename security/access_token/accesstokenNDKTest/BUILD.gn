@@ -28,7 +28,7 @@ ohos_app_assist_suite("demo_ndk_main") {
 ohos_js_app_suite("ActsAccessTokenNDKTest") {
   test_hap = true
   testonly = true
-  certificate_profile = "signature/ActsAccessTokenNDKTest.p7b"
+  certificate_profile = "./signature/ActsAccessTokenNDKTest.p7b"
   hap_name = "ActsAccessTokenNDKTest"
 
   # 部件名称，真实数据，需要子系统对应

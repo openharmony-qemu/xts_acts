@@ -16,7 +16,7 @@ import("//test/xts/tools/build/suite.gni")
 ohos_js_app_suite("ActsNotificationEmitterNewTest") {
   test_hap = true
   testonly = true
-  certificate_profile = "signature/openharmony_sx.p7b"
+  certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsNotificationEmitterNewTest"
   subsystem_name = "notification"
   part_name = "eventhandler"
