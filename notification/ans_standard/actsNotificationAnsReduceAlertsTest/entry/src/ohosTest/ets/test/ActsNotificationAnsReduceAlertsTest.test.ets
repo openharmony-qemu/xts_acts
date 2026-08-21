@@ -126,13 +126,17 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       }).catch((err: BusinessError) => {
         console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings err: ${JSON.stringify(err.code)}`);
         if (err?.code === 801) {
+          console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings11 err: ${JSON.stringify(err.code)}`);
           expect(err.code).assertEqual(801);
           done();
         }else{
+          console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings112 err: ${JSON.stringify(err.code)}`);
           expect().assertFail();
-         done();
+          done();
         }
+        console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings1133 err: ${JSON.stringify(err.code)}`);
       })
+      console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings11444 err: ${JSON.stringify(err.code)}`);
       let driver: Driver = Driver.create();
       await sleep(1500)
       let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
