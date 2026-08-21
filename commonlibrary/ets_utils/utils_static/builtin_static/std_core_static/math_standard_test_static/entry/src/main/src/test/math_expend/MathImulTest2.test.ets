@@ -811,7 +811,7 @@ export default function mathImulTest2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_IMUL_5000
      * @tc.name testMathImul050
-     * @tc.desc Verify Math.imul with 1 argument treats missing second param as 0
+     * @tc.desc Verify Math.imul with 1 argument throws ClassCastError for mismatched arity cast
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -820,6 +820,7 @@ export default function mathImulTest2(): void {
       try {
         let result: number = (Math.imul as Object as (x: number) => number)(3)
         expect(result).assertEqual(0)
+        expect().assertFail()
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError')
       }

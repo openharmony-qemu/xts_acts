@@ -418,6 +418,7 @@ export default function mathAbsTest2(): void {
       try {
         let positive1: number = Math.abs(null as number)
         expect(positive1).assertEqual(0)
+        expect().assertFail()
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError')
       }
