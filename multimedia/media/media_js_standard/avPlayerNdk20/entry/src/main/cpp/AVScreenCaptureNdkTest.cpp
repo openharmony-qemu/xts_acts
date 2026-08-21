@@ -1714,10 +1714,10 @@ static napi_value OH_CaptureModeEnum(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     int32_t screen = 0;
-    int32_t extended_screen = 3;
+    int32_t extendedScreen = 3;
     int32_t res = 1;
     if (OH_CaptureMode::OH_CAPTURE_HOME_SCREEN == screen &&
-        OH_CaptureMode::OH_CAPTURE_VIRTUAL_EXTENDED_SCREEN == extended_screen) {
+        OH_CaptureMode::OH_CAPTURE_VIRTUAL_EXTENDED_SCREEN == extendedScreen) {
         res = 0;
     }
     napi_create_int32(env, res, &result);
