@@ -528,8 +528,8 @@ export default function cameraSessionZoomRatioTest() {
       }
     })
 
-    beforeEach(() => {
-      sleep(5000);
+    beforeEach(async () => {
+      await sleep(1000);
       console.info('beforeEach case');
     })
 
