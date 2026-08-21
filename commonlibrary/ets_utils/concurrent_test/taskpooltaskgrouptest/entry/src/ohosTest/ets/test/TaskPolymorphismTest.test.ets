@@ -155,6 +155,7 @@ export default function TaskPolymorphismTest(): void {
       } catch (error) {
         console.error(`TaskPolymorphismTest0300 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
 
@@ -247,6 +248,7 @@ export default function TaskPolymorphismTest(): void {
       } catch (error) {
         console.error(`TaskPolymorphismTest0700 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
 
@@ -306,6 +308,7 @@ export default function TaskPolymorphismTest(): void {
       } catch (error) {
         console.error(`TaskPolymorphismTest0900 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
 
@@ -341,6 +344,7 @@ export default function TaskPolymorphismTest(): void {
       } catch (error) {
         console.error(`TaskPolymorphismTest1000 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
 
@@ -418,6 +422,7 @@ export default function TaskPolymorphismTest(): void {
       } catch (error) {
         console.error(`TaskPolymorphismTest1400 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
 
@@ -440,6 +445,7 @@ export default function TaskPolymorphismTest(): void {
       } catch (error) {
         console.error(`TaskPolymorphismTest1500 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
   })

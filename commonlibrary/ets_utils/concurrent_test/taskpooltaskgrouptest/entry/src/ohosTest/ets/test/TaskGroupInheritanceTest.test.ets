@@ -195,6 +195,7 @@ export default function TaskGroupInheritanceTest(): void {
         registered = true
       } catch (e) {
         expect().assertFail()
+      done()
       }
       expect(registered).assertTrue()
 
@@ -322,6 +323,7 @@ export default function TaskGroupInheritanceTest(): void {
       } catch (error) {
         console.error(`TaskGroupInheritanceTest1100 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
 
@@ -358,6 +360,7 @@ export default function TaskGroupInheritanceTest(): void {
       } catch (error) {
         console.error(`TaskGroupInheritanceTest1200 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
 
@@ -379,6 +382,7 @@ export default function TaskGroupInheritanceTest(): void {
         try {
           myGroup.addTask(task)
           expect().assertFail()
+        done()
         } catch (e) {
           caught = true
         }
@@ -387,6 +391,7 @@ export default function TaskGroupInheritanceTest(): void {
       } catch (error) {
         console.error(`TaskGroupInheritanceTest1300 failed: ${error}`)
         expect().assertFail()
+      done()
       }
     })
   })
