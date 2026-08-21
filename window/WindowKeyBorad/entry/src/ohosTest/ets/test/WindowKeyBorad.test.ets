@@ -433,6 +433,9 @@ export default function windowKeyBorad() {
         if( deviceType ==='2in1'){
           console.info(`${caseName} on keyboardDidShow succeed,  deviceType: ${JSON.stringify(deviceType)},can not show`);
           done();
+        }else if(deviceType === '2in1' || deviceType === 'wearable' || deviceType === 'tv' || deviceType === 'car'){
+          console.info(`${caseName} on keyboardDidShow 不生效不报错,  deviceType: ${JSON.stringify(deviceType)},can not show`);
+          done();
         }else{
           let input = await driver.findComponent(ON.id('textInput'));
           await sleep(1000);
@@ -502,6 +505,9 @@ export default function windowKeyBorad() {
         await sleep(1000);
         if( deviceType ==='2in1'){
           console.info(`${caseName} on keyboardDidHide succeed, deviceType: ${JSON.stringify(deviceType)},can not show`);
+          done();
+        }else if(deviceType === '2in1' || deviceType === 'wearable' || deviceType === 'tv' || deviceType === 'car'){
+          console.info(`${caseName} on keyboardDidShow 不生效不报错,  deviceType: ${JSON.stringify(deviceType)},can not show`);
           done();
         }else{
           let input = await driver.findComponent(ON.id('textInput'));
