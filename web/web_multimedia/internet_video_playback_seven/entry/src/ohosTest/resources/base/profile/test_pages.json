@@ -1,6 +1,7 @@
 {
   "src": [
     "testability/pages/Index",
-    "testability/pages/WebViewNativeMediaPlayerHandler3"
+    "testability/pages/WebViewNativeMediaPlayerHandler3",
+    "testability/pages/WebViewFullScreenVideoOverlay"
   ]
 }
