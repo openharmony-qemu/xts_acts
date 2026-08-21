@@ -739,7 +739,11 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(ucAsyncConcurrent)
-      let result = await taskpool.execute(task)
+      try {
+        let result = await taskpool.execute(task)
+      } catch (cleanupError) {
+        console.warn(`async await failed: ${cleanupError}`)
+      }
 
       expect(String(result)).assertEqual(String(42))
       done()

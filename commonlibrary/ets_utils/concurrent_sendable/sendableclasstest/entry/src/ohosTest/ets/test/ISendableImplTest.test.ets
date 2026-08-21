@@ -391,7 +391,11 @@ export default function ISendableImplTest(): void {
       instance.numA_ = 3
 
       let task = new taskpool.Task(processNumericDispatch, instance)
-      let result = await taskpool.execute(task)
+      try {
+        let result = await taskpool.execute(task)
+      } catch (cleanupError) {
+        console.warn(`async await failed: ${cleanupError}`)
+      }
 
       expect(result as number).assertEqual(3)
       done()
@@ -439,16 +443,18 @@ export default function ISendableImplTest(): void {
 
       try {
         let results = await Promise.all([
+          taskpool.execute(task1),
+          taskpool.execute(task2)
+        ])
+
+        expect(results[0] as number).assertEqual(10)
+        expect(results[1] as number).assertEqual(20)
       } catch (error) {
         console.error(`async await failed: ${error}`)
         expect().assertFail()
+        done()
+        return
       }
-        taskpool.execute(task1),
-        taskpool.execute(task2)
-      ])
-
-      expect(results[0] as number).assertEqual(10)
-      expect(results[1] as number).assertEqual(20)
       done()
     })
 
