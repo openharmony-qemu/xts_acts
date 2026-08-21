@@ -194,7 +194,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 done();
               }else{
                 expect().assertFail();
-               done();
+                done();
               }
             });
         }).catch((err: BusinessError) => {
@@ -262,7 +262,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 done();
               }else{
                 expect().assertFail();
-               done();
+                done();
               }
             });
         }).catch((err: BusinessError) => {
@@ -272,7 +272,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -331,7 +331,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 done();
               }else{
                 expect().assertFail();
-               done();
+                done();
               }
             });
         }).catch((err: BusinessError) => {
@@ -341,7 +341,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -400,7 +400,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 done();
               }else{
                 expect().assertFail();
-               done();
+                done();
               }
             });
         }).catch((err: BusinessError) => {
@@ -410,7 +410,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -463,7 +463,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 done();
               }else{
                 expect().assertFail();
-               done();
+                done();
               }
             });
         }).catch((err: BusinessError) => {
@@ -473,7 +473,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -532,7 +532,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -542,7 +542,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -601,7 +601,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -611,7 +611,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -670,7 +670,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -680,7 +680,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -733,7 +733,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -743,7 +743,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -802,7 +802,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -812,7 +812,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -871,7 +871,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -881,7 +881,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -940,7 +940,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -950,7 +950,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -1009,7 +1009,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   done();
                 }else{
                   expect().assertFail();
-                 done();
+                  done();
                 }
             });
         }).catch((err: BusinessError) => {
@@ -1019,7 +1019,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
