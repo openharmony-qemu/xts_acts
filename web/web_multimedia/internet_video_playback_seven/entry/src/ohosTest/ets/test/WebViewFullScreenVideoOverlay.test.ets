@@ -73,6 +73,7 @@ export default function WebViewFullScreenVideoOverlayCaseTest() {
         } catch (error) {
           // 处理错误
           console.error('Error occurred while waiting and clicking component:', error);
+          done();
       }
     })
 
@@ -97,6 +98,7 @@ export default function WebViewFullScreenVideoOverlayCaseTest() {
           } catch (error) {
             // 处理错误
             console.error('Error occurred while waiting and clicking component:', error);
+            done();
         }
     
     })
