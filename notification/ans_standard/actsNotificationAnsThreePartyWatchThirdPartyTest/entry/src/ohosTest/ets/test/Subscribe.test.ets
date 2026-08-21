@@ -19,7 +19,7 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
       } catch (err) {
       }
     })
-    
+
     /**
       * @tc.number    Sub_Notification_Ans_ThreePartyWatch_1011
       * @tc.name      Sub_Notification_Ans_ThreePartyWatch_1011

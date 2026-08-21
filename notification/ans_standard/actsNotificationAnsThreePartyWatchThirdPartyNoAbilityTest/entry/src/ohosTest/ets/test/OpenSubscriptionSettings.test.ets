@@ -23,7 +23,7 @@ export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTes
       } catch (err) {
       }
     })
-   
+
     /**
       * @tc.number    Sub_Notification_Ans_ThreePartyWatch_1002
       * @tc.name      Sub_Notification_Ans_ThreePartyWatch_1002

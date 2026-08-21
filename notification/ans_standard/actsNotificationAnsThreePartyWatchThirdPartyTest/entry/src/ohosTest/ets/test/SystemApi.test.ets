@@ -16,7 +16,7 @@ export default function actsNotificationAnsThreePartySystemApiTest() {
   let uiAbilityContext: common.UIAbilityContext | undefined =
     AppStorage.get<common.UIAbilityContext>('uiAbilityContext');
   describe('actsNotificationAnsThreePartySystemApiTest', () => {
-   
+
     /**
       * @tc.number     Sub_Notification_Ans_ThreePartyWatch_1019
       * @tc.name       Sub_Notification_Ans_ThreePartyWatch_1019
@@ -43,7 +43,7 @@ export default function actsNotificationAnsThreePartySystemApiTest() {
               expect(e.code === 202).assertTrue();
               done();
             }
-            
+
           })
       } catch (e) {
         console.error(TAG + 'getAllSubscriptionBundles err:' + JSON.stringify(e));
