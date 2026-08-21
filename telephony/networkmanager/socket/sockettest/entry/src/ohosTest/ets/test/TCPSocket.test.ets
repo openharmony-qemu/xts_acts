@@ -4706,7 +4706,6 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
           });
           console.info(`${caseName} test end`);
           done();
-        });
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         expectFail();
