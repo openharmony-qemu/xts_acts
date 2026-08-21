@@ -40,17 +40,17 @@ const ERROR_CODE_INNER_ERROR = 16000050;
 const ERROR_CODE_TYPE_ERROR = 16000002;
 
 class MySequenceable {
-  num: number = 0;
-  str: String = 'default';
-  result: String = 'default';
+  public num: number = 0;
+  public str: string = 'default';
+  public result: string = 'default';
 
-  constructor(num: number, string: String, result: String) {
+  constructor(num: number, string: string, result: string) {
     this.num = num;
     this.str = string;
     this.result = result;
   }
 
-  setMySequence(num: number, string: String, result: String) {
+  setMySequence(num: number, string: string, result: string) {
     this.num = num;
     this.str = string;
     this.result = result;
@@ -87,12 +87,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_0100
-     * @tc.number ACTS_CommonComponent_Call_0100
-     * @tc.desc   Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_0100
+     * @tc.number : ACTS_CommonComponent_Call_0100
+     * @tc.desc : Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_0100', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_0100 begin');
@@ -114,12 +114,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_0300
-     * @tc.number ACTS_CommonComponent_Call_0300
-     * @tc.desc   Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_0300
+     * @tc.number : ACTS_CommonComponent_Call_0300
+     * @tc.desc : Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_0300', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_0300 begin');
@@ -131,13 +131,13 @@ export default function abilityTest() {
         done();
       }
 
-      let releaseCallback = (data: ESObject) => {
+      let releaseCallback = (data: string) => {
         expect(data).assertEqual('release');
         console.log('ACTS_CommonComponent_Call_0300 releaseCallBack' + data);
         commonEvent.unsubscribe(subscriber, unSubscribeCallBack);
       }
 
-      let subscribeCallBack = (err: ESObject, data: ESObject) =>  {
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) =>  {
         console.log('ACTS_CommonComponent_Call_0300 subscribeCallBack data:' + JSON.stringify(data))
         expect(data.data).assertEqual('calleeCheckCallParam');
         expect(data.parameters?.num).assertEqual(300);
@@ -166,18 +166,18 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_0400
-     * @tc.number ACTS_CommonComponent_Call_0400
-     * @tc.desc   Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_0400
+     * @tc.number : ACTS_CommonComponent_Call_0400
+     * @tc.desc : Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_0400', Level.LEVEL0, async (done : Function) => {
       caseDepBundles = [systemAppCalleeABundleName];
       console.log('ACTS_CommonComponent_Call_0400 begin');
 
-      let releaseCallback = (data: ESObject) => {
+      let releaseCallback = (data: string) => {
         expect(data).assertEqual('release');
         console.log('ACTS_CommonComponent_Call_0400 releaseCallBack' + data);
         done();
@@ -206,17 +206,17 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_0500
-     * @tc.number ACTS_CommonComponent_Call_0500
-     * @tc.desc   Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_0500
+     * @tc.number : ACTS_CommonComponent_Call_0500
+     * @tc.desc : Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_0500', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_0500 begin');
-      let caller1: ESObject;
-      let caller2: ESObject;
+      let caller1: Caller;
+      let caller2: Caller;
       caseDepBundles = [systemAppCalleeABundleName];
 
       let unSubscribeCallBack = () => {
@@ -226,13 +226,13 @@ export default function abilityTest() {
         done();
       }
 
-      let releaseCallback = (data: ESObject) => {
+      let releaseCallback = (data: string) => {
         expect(data).assertEqual('release');
         console.log('ACTS_CommonComponent_Call_0500 releaseCallBack' + data);
         commonEvent.unsubscribe(subscriber, unSubscribeCallBack);
       }
 
-      let subscribeCallBack = (err: ESObject, data: ESObject) =>  {
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) =>  {
         console.log('ACTS_CommonComponent_Call_0500 subscribeCallBack data:' + JSON.stringify(data))
         expect(data.data).assertEqual('calleeCheckCallParam');
         expect(data.parameters?.num).assertEqual(500);
@@ -266,18 +266,18 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_0600
-     * @tc.number ACTS_CommonComponent_Call_0600
-     * @tc.desc   Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_0600
+     * @tc.number : ACTS_CommonComponent_Call_0600
+     * @tc.desc : Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_0600', Level.LEVEL0, async (done : Function) => {
       caseDepBundles = [systemAppCalleeABundleName];
       console.log('ACTS_CommonComponent_Call_0600 begin');
 
-      let releaseCallback = (data: ESObject) => {
+      let releaseCallback = (data: string) => {
         expect(data).assertEqual('release');
         console.log('ACTS_CommonComponent_Call_0600 releaseCallBack' + data);
         caller1.release();
@@ -311,16 +311,16 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_0700
-     * @tc.number ACTS_CommonComponent_Call_0700
-     * @tc.desc   Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_0700
+     * @tc.number : ACTS_CommonComponent_Call_0700
+     * @tc.desc : Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_0700', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_0700 begin');
-      let caller: ESObject;
+      let caller: Caller;
       caseDepBundles = [systemAppCalleeABundleName];
 
       let unSubscribeCallBack = () => {
@@ -329,13 +329,13 @@ export default function abilityTest() {
         done();
       }
 
-      let releaseCallback = (data: ESObject) => {
+      let releaseCallback = (data: string) => {
         expect(data).assertEqual('release');
         console.log('ACTS_CommonComponent_Call_0700 releaseCallBack' + data);
         commonEvent.unsubscribe(subscriber, unSubscribeCallBack);
       }
 
-      let releaseCallback1 = (data: ESObject) => {
+      let releaseCallback1 = (data: string) => {
         expect(data).assertEqual('release');
         console.log('ACTS_CommonComponent_Call_0700 releaseCallBack1' + data);
         setTimeout(() => {
@@ -357,7 +357,7 @@ export default function abilityTest() {
         }, 100);
       }
 
-      let subscribeCallBack = (err: ESObject, data: ESObject) =>  {
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) =>  {
         console.log('ACTS_CommonComponent_Call_0700 subscribeCallBack data:' + JSON.stringify(data))
         expect(data.data).assertEqual('calleeCheckCallParam');
         expect(data.parameters?.num).assertEqual(700);
@@ -382,25 +382,25 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_0800
-     * @tc.number ACTS_CommonComponent_Call_0800
-     * @tc.desc   Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_0800
+     * @tc.number : ACTS_CommonComponent_Call_0800
+     * @tc.desc : Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_0800', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_0800 begin');
-      let caller: ESObject;
+      let caller: Caller;
       caseDepBundles = [systemAppCalleeABundleName];
 
-      let releaseCallback = (data: ESObject) => {
+      let releaseCallback = (data: string) => {
         expect(data).assertEqual('release');
         console.log('ACTS_CommonComponent_Call_0800 releaseCallBack' + data);
         done();
       }
 
-      let releaseCallback1 = (data: ESObject) => {
+      let releaseCallback1 = (data: string) => {
         expect(data).assertEqual('release');
         console.log('ACTS_CommonComponent_Call_0800 releaseCallBack' + data);
         setTimeout(() => {
@@ -440,17 +440,17 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_0900
-     * @tc.number ACTS_CommonComponent_Call_0900
-     * @tc.desc   Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_0900
+     * @tc.number : ACTS_CommonComponent_Call_0900
+     * @tc.desc : Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_0900', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_0900 begin');
       caseDepBundles = [thirdAppABundleName];
-      let caller: ESObject;
+      let caller: Caller;
 
       let unSubscribeCallBack = () => {
         console.log('ACTS_CommonComponent_Call_0900 unSubscribeCallBack')
@@ -458,13 +458,13 @@ export default function abilityTest() {
         done();
       }
 
-      let releaseCallback = (data: ESObject) => {
+      let releaseCallback = (data: string) => {
         expect(data).assertEqual('release');
         console.log('ACTS_CommonComponent_Call_0900 releaseCallBack' + data);
         commonEvent.unsubscribe(subscriber, unSubscribeCallBack);
       }
 
-      let subscribeCallBack = (err: ESObject, data: ESObject) =>  {
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) =>  {
         console.log('ACTS_CommonComponent_Call_0900 subscribeCallBack data:' + JSON.stringify(data))
         expect(data.data).assertEqual('calleeCheckCallParam');
         expect(data.parameters?.num).assertEqual(900);
@@ -492,19 +492,19 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_1000
-     * @tc.number ACTS_CommonComponent_Call_1000
-     * @tc.desc   Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_1000
+     * @tc.number : ACTS_CommonComponent_Call_1000
+     * @tc.desc : Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_1000', Level.LEVEL0, async (done : Function) => {
       caseDepBundles = [thirdAppABundleName];
       console.log('ACTS_CommonComponent_Call_1000 begin');
-      let caller: ESObject;
+      let caller: Caller;
 
-      let releaseCallback = (data: ESObject) => {
+      let releaseCallback = (data: string) => {
         expect(data).assertEqual('release');
         console.log('ACTS_CommonComponent_Call_1000 releaseCallBack' + data);
         done();
@@ -533,12 +533,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_1700
-     * @tc.number ACTS_CommonComponent_Call_1700
-     * @tc.desc   Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_1700
+     * @tc.number : ACTS_CommonComponent_Call_1700
+     * @tc.desc : Verify that the parameter "method" of the Caller.callWithResult function is an empty string.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_1700', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_1700 begin');
@@ -564,17 +564,17 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_3100
-     * @tc.number ACTS_CommonComponent_Call_3100
-     * @tc.desc   Verify that the parameter method of the Callee.on function is an empty string.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_3100
+     * @tc.number : ACTS_CommonComponent_Call_3100
+     * @tc.desc : Verify that the parameter method of the Callee.on function is an empty string.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_3100', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_3100 begin');
 
-      let onTest = (data: ESObject) => {
+      let onTest = (data: rpc.MessageSequence) => {
         console.log('ACTS_CommonComponent_Call_3100 onTest');
       }
 
@@ -593,17 +593,17 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_3200
-     * @tc.number ACTS_CommonComponent_Call_3200
-     * @tc.desc   Verify that the parameter method of the Callee.on function is null.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_3200
+     * @tc.number : ACTS_CommonComponent_Call_3200
+     * @tc.desc : Verify that the parameter method of the Callee.on function is null.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_3200', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_3200 begin');
 
-      let onTest = (data: ESObject) => {
+      let onTest = (data: rpc.MessageSequence) => {
         console.log('ACTS_CommonComponent_Call_3200 onTest');
       }
 
@@ -622,17 +622,17 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_3300
-     * @tc.number ACTS_CommonComponent_Call_3300
-     * @tc.desc   Verify that the parameter method of the Caller.callWithResult function is undefined.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_3300
+     * @tc.number : ACTS_CommonComponent_Call_3300
+     * @tc.desc : Verify that the parameter method of the Caller.callWithResult function is undefined.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_3300', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_3300 begin');
 
-      let onTest = (data: ESObject) => {
+      let onTest = (data: rpc.MessageSequence) => {
         console.log('ACTS_CommonComponent_Call_3300 onTest');
       }
 
@@ -651,12 +651,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_3400
-     * @tc.number ACTS_CommonComponent_Call_3400
-     * @tc.desc   Verify that the parameter "method" of the Callee.off function is an empty string.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_3400
+     * @tc.number : ACTS_CommonComponent_Call_3400
+     * @tc.desc : Verify that the parameter "method" of the Callee.off function is an empty string.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_3400', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_3400 begin');
@@ -676,12 +676,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_3500
-     * @tc.number ACTS_CommonComponent_Call_3500
-     * @tc.desc   Verify that the parameter "method" of the Callee.off function is null.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_3500
+     * @tc.number : ACTS_CommonComponent_Call_3500
+     * @tc.desc : Verify that the parameter "method" of the Callee.off function is null.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_3500', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_3500 begin');
@@ -701,12 +701,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_3600
-     * @tc.number ACTS_CommonComponent_Call_3600
-     * @tc.desc   Verify that the parameter “method” of the Callee.off function is undefined.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_3600
+     * @tc.number : ACTS_CommonComponent_Call_3600
+     * @tc.desc : Verify that the parameter “method” of the Callee.off function is undefined.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_3600', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_3600 begin');
@@ -726,12 +726,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_4300
-     * @tc.number ACTS_CommonComponent_Call_4300
-     * @tc.desc   Check the event data of executor page ability publishes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_4300
+     * @tc.number : ACTS_CommonComponent_Call_4300
+     * @tc.desc : Check the event data of executor page ability publishes
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_4300', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_4300 begin');
@@ -750,12 +750,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_4400
-     * @tc.number ACTS_CommonComponent_Call_4400
-     * @tc.desc   Check the event data of executor page ability publishes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_4400
+     * @tc.number : ACTS_CommonComponent_Call_4400
+     * @tc.desc : Check the event data of executor page ability publishes
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_4400', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_4400 begin');
@@ -774,12 +774,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_4500
-     * @tc.number ACTS_CommonComponent_Call_4500
-     * @tc.desc   Check the event data of executor page ability publishes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_4500
+     * @tc.number : ACTS_CommonComponent_Call_4500
+     * @tc.desc : Check the event data of executor page ability publishes
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_4500', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_4500 begin');
@@ -798,23 +798,23 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_5000
-     * @tc.number ACTS_CommonComponent_Call_5000
-     * @tc.desc   Check the event data of executor page ability publishes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_5000
+     * @tc.number : ACTS_CommonComponent_Call_5000
+     * @tc.desc : Check the event data of executor page ability publishes
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_5000', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_5000 begin');
       let finishFlag = 0;
 
-      let testCallback_5100 = () => {
+      let testcallback5100 = () => {
         console.log('ACTS_CommonComponent_Call_5000 testCallback');
       }
 
       try {
-        globalThis.callee.on('ACTS_CommonComponent_Call_5000', testCallback_5100);
+        globalThis.callee.on('ACTS_CommonComponent_Call_5000', testcallback5100);
       } catch (err) {
         console.log('ACTS_CommonComponent_Call_5000 call err' + err);
         expect().assertFail();
@@ -822,7 +822,7 @@ export default function abilityTest() {
         done();
       }
       try {
-        globalThis.callee.on('ACTS_CommonComponent_Call_5000', testCallback_5100);
+        globalThis.callee.on('ACTS_CommonComponent_Call_5000', testcallback5100);
       } catch (err) {
         console.log('ACTS_CommonComponent_Call_5000 call err.code: ' + JSON.stringify(err.code) +
           ' err.msg: ' + JSON.stringify(err.message));
@@ -837,23 +837,23 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_5100
-     * @tc.number ACTS_CommonComponent_Call_5100
-     * @tc.desc   Check the event data of executor page ability publishes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_5100
+     * @tc.number : ACTS_CommonComponent_Call_5100
+     * @tc.desc : Check the event data of executor page ability publishes
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_5100', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_5100 begin');
       let finishFlag = 0;
 
-      let testCallback_5100 = () => {
+      let testcallback5100 = () => {
         console.log('ACTS_CommonComponent_Call_5100 testCallback');
       }
 
       try {
-        globalThis.callee.on('ACTS_CommonComponent_Call_5100', testCallback_5100);
+        globalThis.callee.on('ACTS_CommonComponent_Call_5100', testcallback5100);
         globalThis.callee.off('ACTS_CommonComponent_Call_5100');
       } catch (err) {
         console.log('ACTS_CommonComponent_Call_5100 first step err' + err);
@@ -876,12 +876,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_5200
-     * @tc.number ACTS_CommonComponent_Call_5200
-     * @tc.desc   Check the event data of executor page ability publishes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_5200
+     * @tc.number : ACTS_CommonComponent_Call_5200
+     * @tc.desc : Check the event data of executor page ability publishes
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_5200', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_5200 begin');
@@ -905,12 +905,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_5300
-     * @tc.number ACTS_CommonComponent_Call_5300
-     * @tc.desc   Check the event data of executor page ability publishes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_5300
+     * @tc.number : ACTS_CommonComponent_Call_5300
+     * @tc.desc : Check the event data of executor page ability publishes
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_5300', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_5300 begin');
@@ -936,12 +936,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_5400
-     * @tc.number ACTS_CommonComponent_Call_5400
-     * @tc.desc   Check the event data of executor page ability publishes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_5400
+     * @tc.number : ACTS_CommonComponent_Call_5400
+     * @tc.desc : Check the event data of executor page ability publishes
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_5400', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_5400 begin');
@@ -964,17 +964,17 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_5600
-     * @tc.number ACTS_CommonComponent_Call_5600
-     * @tc.desc   Verify that the caller can unregister the server's death listener.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_5600
+     * @tc.number : ACTS_CommonComponent_Call_5600
+     * @tc.desc : Verify that the caller can unregister the server's death listener.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_5600', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_5600 begin');
 
-      let releaseCallback = (data: ESObject) => {
+      let releaseCallback = (data: string) => {
         console.log('ACTS_CommonComponent_Call_5600 releaseCallBack:' + data);
         expect(data).assertEqual('died');
         done();
@@ -1002,12 +1002,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_5700
-     * @tc.number ACTS_CommonComponent_Call_5700
-     * @tc.desc   Verify that the caller can unregister the server's death listener.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_5700
+     * @tc.number : ACTS_CommonComponent_Call_5700
+     * @tc.desc : Verify that the caller can unregister the server's death listener.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_5700', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_5700 begin');
@@ -1034,17 +1034,17 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_5800
-     * @tc.number ACTS_CommonComponent_Call_5800
-     * @tc.desc   Verify that the caller can unregister the server's death listener.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_5800
+     * @tc.number : ACTS_CommonComponent_Call_5800
+     * @tc.desc : Verify that the caller can unregister the server's death listener.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_5800', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_5800 begin');
 
-      let releaseCallback = (data: ESObject) => {
+      let releaseCallback = (data: string) => {
         console.log('ACTS_CommonComponent_Call_5800 releaseCallBack:' + data);
         expect(data).assertEqual('died');
         done();
@@ -1072,12 +1072,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_5900
-     * @tc.number ACTS_CommonComponent_Call_5900
-     * @tc.desc   Verify that the caller can unregister the server's death listener.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_5900
+     * @tc.number : ACTS_CommonComponent_Call_5900
+     * @tc.desc : Verify that the caller can unregister the server's death listener.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_5900', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_5900 begin');
@@ -1104,12 +1104,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_6000
-     * @tc.number ACTS_CommonComponent_Call_6000
-     * @tc.desc   Verify that the caller can unregister the server's death listener.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_6000
+     * @tc.number : ACTS_CommonComponent_Call_6000
+     * @tc.desc : Verify that the caller can unregister the server's death listener.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_6000', Level.LEVEL0, async (done : Function) => {
       console.log('ACTS_CommonComponent_Call_6000 begin');

@@ -34,9 +34,9 @@ let subscriberInfo:CommonEventManager.CommonEventSubscribeInfo = {
 };
 
 class MySequenceable {
-  num: number = 0;
-  str: string = "default";
-  result: string = "default";
+  public num: number = 0;
+  public str: string = "default";
+  public result: string = "default";
 
   constructor(num:number, string:string, result:string) {
     this.num = num;
@@ -72,7 +72,7 @@ function delay(time:number) {
   } else {
     delta = Math.round(time);
   }
-  for (let start = Date.now(); Date.now() - start <= delta; );
+  for (let start = Date.now(); Date.now() - start <= delta; ) { }
 }
 
 export default function abilityTest() {
@@ -89,12 +89,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_1100
-     * @tc.number ACTS_CommonComponent_Call_1100
-     * @tc.desc   Verify that the thirdApp is not allowed to startAbilityByCall.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_1100
+     * @tc.number : ACTS_CommonComponent_Call_1100
+     * @tc.desc : Verify that the thirdApp is not allowed to startAbilityByCall.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_1100', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_CommonComponent_Call_1100 begin');
@@ -115,12 +115,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_1500
-     * @tc.number ACTS_CommonComponent_Call_1500
-     * @tc.desc   Verify that the thirdApp is not allowed to startAbilityByCall.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_1500
+     * @tc.number : ACTS_CommonComponent_Call_1500
+     * @tc.desc : Verify that the thirdApp is not allowed to startAbilityByCall.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_1500', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_CommonComponent_Call_1500 begin');
@@ -141,12 +141,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_CommonComponent_Call_1600
-     * @tc.number ACTS_CommonComponent_Call_1600
-     * @tc.desc   Verify that the thirdApp is not allowed to startAbilityByCall.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_CommonComponent_Call_1600
+     * @tc.number : ACTS_CommonComponent_Call_1600
+     * @tc.desc : Verify that the thirdApp is not allowed to startAbilityByCall.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_CommonComponent_Call_1600', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_CommonComponent_Call_1600 begin');

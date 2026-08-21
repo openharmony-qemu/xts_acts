@@ -26,9 +26,9 @@ const BUFSIZE = 1024;
 let DELAY_TIME = 100;
 let OFFSETNUMBER = 0;
 
-let message: ESObject;
-let result: ESObject;
-let files: ESObject;
+let message: string = '';
+let result: string = '';
+let files: number = 0;
 let commonEventData: commonEvent.CommonEventPublishData = {
   parameters: {
     message: message,
@@ -36,7 +36,7 @@ let commonEventData: commonEvent.CommonEventPublishData = {
     files: files
   }
 };
-let actionStr: ESObject;
+let actionStr: string = '';
 
 function getListFile(dir: string): number {
   class ListFileOption {
@@ -49,7 +49,7 @@ function getListFile(dir: string): number {
   option.filter.displayName = ['temp_useless*'];
   let files = fs.listFileSync(dir, option);
   for (let i = 0; i < files.length; i++) {
-    console.info(`The name of file: ${(files as Record<string, ESObject>)[i]}`);
+    console.info(`The name of file: ${files[i]}`);
   }
   return files.length;
 }
@@ -99,7 +99,7 @@ function onForegroundInner(actionStr: string, tempDir: string, context: common.U
 export default class SecondAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    actionStr = want.parameters?.key;
+    actionStr = want.parameters?.key as string;
   }
 
   onDestroy(): void {
@@ -112,7 +112,7 @@ export default class SecondAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err: BusinessError, data: ESObject) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

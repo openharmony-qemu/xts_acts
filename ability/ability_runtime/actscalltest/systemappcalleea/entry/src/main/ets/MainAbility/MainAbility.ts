@@ -16,9 +16,9 @@ import Ability from '@ohos.app.ability.UIAbility'
 import commonEvent from '@ohos.commonEvent'
 
 class MySequenceable {
-    num: number = 0;
-    str: String = "";
-    result: String = "";
+    public num: number = 0;
+    public str: string = "";
+    public result: string = "";
 
     constructor(num, string, result) {
         this.num = num;
@@ -46,9 +46,9 @@ class MySequenceable {
         return true;
     }
 }
-var event_case2000 = "call_case2000_test";
+var eventCase2000 = "call_case2000_test";
 var subscribeInfo = {
-    events: [event_case2000, ],
+    events: [eventCase2000, ],
 };
 var subscriber;
 function test2200ReleaseCallback(data) {
@@ -108,7 +108,7 @@ export default class MainAbility extends Ability {
             caller.callWithResult('test2200', param).then((data2) => {
                 data2.readParcelable(resultData);
                 caller.release();
-                for (let start=Date.now(); Date.now() - start <= 200;);
+                for (let start=Date.now(); Date.now() - start <= 200;) { }
                 resultData.result = test2200ReleaseFlag;
                 let commonEventData = {
                     parameters: {
@@ -129,10 +129,10 @@ export default class MainAbility extends Ability {
     subscribeCallBack(err, data) {
         console.log('SystemAppCalleeA MainAbility subscribeCallBack data:' + JSON.stringify(data));
         switch (data.event) {
-            case event_case2000:
+          case eventCase2000:
                 globalThis.abilityContext.terminateSelf();
                 break;
-            default:
+          default:
                 console.log('SystemAppCalleeA MainAbility subscribeCallBack event error:' + data.event);
                 break;
         }

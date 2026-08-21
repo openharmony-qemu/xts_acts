@@ -22,22 +22,23 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { Caller } from '@ohos.app.ability.UIAbility';
 
 let callerA = 'SystemAppCallerA'
-let callSeqA: ESObject[] = new Array();
+let callSeqA: number[] = [];
 let callerB = 'SystemAppCallerB'
-let callSeqB: ESObject[] = new Array();
+let callSeqB: number[] = [];
 let callerC = 'SystemAppCallerC'
-let callSeqC: ESObject[] = new Array();
+let callSeqC: number[] = [];
 let seq = 0;
 
-function isArrayEqual(a1: ESObject[], a2: ESObject[]) {
-    return a1.length==a2.length && a1.every((value: ESObject, index: number) => { return value === (a2 as Record<string, ESObject>)[index]});
+function isArrayEqual(a1: number[], a2: number[]) {
+    return a1.length == a2.length && a1.every(
+      (value: number, index: number) => { return value === a2[index] });
 }
-function isArrayEqualWithoutOrder(a1: ESObject[], a2: ESObject[]) {
+function isArrayEqualWithoutOrder(a1: number[], a2: number[]) {
     if (a1.length != a2.length) {
         return false;
     }
     for (let ind of Object.keys(a1)) {
-        if (a2.indexOf((a1 as Record<string, ESObject>)[ind]) == -1) {
+        if (a2.indexOf(a1[Number(ind)]) == -1) {
             return false;
         };
     }
@@ -46,9 +47,9 @@ function isArrayEqualWithoutOrder(a1: ESObject[], a2: ESObject[]) {
 let expectStressResult=[0,1,2,3,4,5,6,7,8,9];
 
 class MySequenceable implements rpc.Parcelable {
-    num: number = 0;
-    str: string = '';
-    result: string = '';
+    public num: number = 0;
+    public str: string = '';
+    public result: string = '';
 
     constructor(num: number, string: string, result: string) {
         this.num = num;
@@ -148,11 +149,11 @@ export default class SecondAbility extends Ability {
         globalThis.abilityContext2.startAbilityByCall(want).then((caller: Caller) => {
             let param = new MySequenceable(recvData.num + 1, recvData.str + 'Second', recvData.result);
             caller.onRelease(test2100ReleaseCallback);
-            for (let start=Date.now(); Date.now() - start <= 200;);
+            for (let start=Date.now(); Date.now() - start <= 200;) { }
             caller.callWithResult('test2100', param).then((data2: rpc.MessageSequence) => {
                 data2.readParcelable(resultData);
                 caller.release();
-                for (let start=Date.now(); Date.now() - start <= 200;);
+                for (let start=Date.now(); Date.now() - start <= 200;) { }
                 resultData.result = test2100ReleaseFlag;
                 let commonEventData: commonEvent.CommonEventPublishData = {
                     parameters: {
@@ -170,13 +171,13 @@ export default class SecondAbility extends Ability {
         return resultData;
     }
 
-    testOff(data: ESObject) {
+    testOff(data: rpc.MessageSequence) {
         let recvSequence = new MySequenceable(0, '', '');
         data.readParcelable(recvSequence);
         return recvSequence;
     }
 
-    stressMethod(data: ESObject) {
+    stressMethod(data: rpc.MessageSequence) {
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);
         console.log('SystemCallTest SecondAbility stressMethod caller ' + recvData.str);
@@ -210,7 +211,7 @@ export default class SecondAbility extends Ability {
         return recvData;
     }
 
-    loopMethod(data: ESObject) {
+    loopMethod(data: rpc.MessageSequence) {
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);
         return new MySequenceable(recvData.num + 1, recvData.str, '');

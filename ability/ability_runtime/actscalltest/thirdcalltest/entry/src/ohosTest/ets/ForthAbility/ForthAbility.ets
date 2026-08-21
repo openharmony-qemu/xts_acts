@@ -21,9 +21,9 @@ import rpc from '@ohos.rpc';
 import UIAbility from '@ohos.app.ability.UIAbility';
 
 class MySequenceable implements rpc.Parcelable {
-    num: number = 0;
-    str: string = '';
-    result: string = '';
+    public num: number = 0;
+    public str: string = '';
+    public result: string = '';
 
     constructor(num: number, string: string, result: string) {
         this.num = num;

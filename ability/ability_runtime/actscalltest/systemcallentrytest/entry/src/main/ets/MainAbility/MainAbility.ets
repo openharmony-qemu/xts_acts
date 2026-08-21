@@ -19,17 +19,17 @@ import window from '@ohos.window'
 import UIAbility from '@ohos.app.ability.UIAbility';
 
 class MySequenceable {
-  num: number = 0;
-  str: String = '';
-  result: String = '';
+  public num: number = 0;
+  public str: string = '';
+  public result: string = '';
 
-  constructor(num: number, string: String, result: String) {
+  constructor(num: number, string: string, result: string) {
     this.num = num;
     this.str = string;
     this.result = result;
   }
 
-  setMySequence(num: number, string: String, result: String) {
+  setMySequence(num: number, string: string, result: string) {
     this.num = num;
     this.str = string;
     this.result = result;

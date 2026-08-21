@@ -19,17 +19,17 @@ var bundleNameCallee = "com.example.systemcalltest";
 var abilityNameCallee = "com.example.systemcalltest.SecondAbility";
 var subscriber;
 var caller;
-var event_getcaller = "getcaller.com.example.systemcalltest.SecondAbility";
-var event_call = "call.com.example.systemcalltest.SecondAbility";
-var event_release = "release.com.example.systemcalltest.SecondAbility";
+var eventGetcaller = "getcaller.com.example.systemcalltest.SecondAbility";
+var eventCall = "call.com.example.systemcalltest.SecondAbility";
+var eventRelease = "release.com.example.systemcalltest.SecondAbility";
 var subscribeInfo = {
-    events: [event_getcaller, event_call, event_release, ],
+    events: [eventGetcaller, eventCall, eventRelease, ],
 };
 
 class MySequenceable {
-    num: number = 0;
-    str: String = "";
-    result: String = "";
+    public num: number = 0;
+    public str: string = "";
+    public result: string = "";
 
     constructor(num, string, result) {
         this.num = num;
@@ -146,13 +146,13 @@ export default class MainAbility extends Ability {
     subscribeCallBack(err, data) {
         console.log('SystemAppCallerA MainAbility subscribeCallBack data:' + JSON.stringify(data));
         switch (data.event) {
-            case event_call:
+          case eventCall:
                 stressCall();
                 break;
-            case event_release:
+          case eventRelease:
                 releaseCallee();
                 break;
-            default:
+          default:
                 console.log('SystemAppCallerA MainAbility subscribeCallBack event error:' + data.event);
                 break;
         }

@@ -25,20 +25,20 @@ import { Caller } from '@ohos.app.ability.UIAbility';
 
 let bundleNameCallee = 'com.example.systemcalltest';
 let abilityNameCallee = 'com.example.systemcalltest.SecondAbility';
-let subscriber: ESObject;
-let caller: ESObject;
-let event_getcaller = 'getcaller.com.example.systemcalltest.SecondAbility';
-let event_call = 'call.com.example.systemcalltest.SecondAbility';
-let event_release = 'release.com.example.systemcalltest.SecondAbility';
-let event_onRemoteStateChangeCall = 'onRemoteStateChangeCall.com.example.systemcalltest.SecondAbility';
+let subscriber: commonEvent.CommonEventSubscriber;
+let caller: Caller;
+let eventGetcaller = 'getcaller.com.example.systemcalltest.SecondAbility';
+let eventCall = 'call.com.example.systemcalltest.SecondAbility';
+let eventRelease = 'release.com.example.systemcalltest.SecondAbility';
+let eventOnRemoteStateChangeCall = 'onRemoteStateChangeCall.com.example.systemcalltest.SecondAbility';
 let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
-    events: [event_getcaller, event_call, event_release, event_onRemoteStateChangeCall],
+    events: [eventGetcaller, eventCall, eventRelease, eventOnRemoteStateChangeCall],
 };
 
 class MySequenceable implements rpc.Parcelable {
-    num: number = 0;
-    str: string = '';
-    result: string = '';
+    public num: number = 0;
+    public str: string = '';
+    public result: string = '';
 
     constructor(num: number, string: string, result: string) {
         this.num = num;
@@ -99,7 +99,7 @@ function unsubscribeCallback() {
 
 function releaseCallee() {
     try {
-        caller.onRelease((data: Caller) => {
+        caller.onRelease((data: string) => {
             console.log('SystemAppCallerB MainAbility releaseCallBack:' + data);
         });
         caller.release();
@@ -110,10 +110,10 @@ function releaseCallee() {
 }
 
 function onRemoteStateChangeCall(){
-  const OnRemoteStateChangeCallback = (msg: string) => {
+  const onRemoteStateChangeCallback = (msg: string) => {
     console.log('SystemAppCallerB MainAbility onRemoteStateChange  ' + msg);
   }
-  caller.onRemoteStateChange(OnRemoteStateChangeCallback)
+  caller.onRemoteStateChange(onRemoteStateChangeCallback)
 }
 
 function startNext(context: common.UIAbilityContext) {
@@ -129,19 +129,19 @@ function startNext(context: common.UIAbilityContext) {
 
 export default class MainAbility extends Ability {
 
-    subscribeCallBack(err: BusinessError, data: ESObject) {
+    subscribeCallBack(err: BusinessError, data: commonEvent.CommonEventData) {
         console.log('SystemAppCallerB MainAbility subscribeCallBack data:' + JSON.stringify(data));
         switch (data.event) {
-            case event_call:
+          case eventCall:
                 stressCall();
                 break;
-            case event_release:
+          case eventRelease:
                 releaseCallee();
                 break;
-            case event_onRemoteStateChangeCall:
+          case eventOnRemoteStateChangeCall:
                 onRemoteStateChangeCall();
                 break;
-            default:
+          default:
                 console.log('SystemAppCallerB MainAbility subscribeCallBack event error:' + data.event);
                 break;
         }
@@ -172,7 +172,7 @@ export default class MainAbility extends Ability {
     onForeground() {
         // Ability has brought to foreground
         console.log('SystemAppCallerB MainAbility onForeground');
-        commonEvent.createSubscriber(subscribeInfo).then((data: ESObject) => {
+        commonEvent.createSubscriber(subscribeInfo).then((data: commonEvent.CommonEventSubscriber) => {
             console.log('SystemAppCallerB MainAbility createSubscriber');
             subscriber = data;
             commonEvent.subscribe(subscriber, this.subscribeCallBack);

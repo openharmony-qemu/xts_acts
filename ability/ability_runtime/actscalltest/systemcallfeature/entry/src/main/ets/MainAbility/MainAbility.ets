@@ -19,9 +19,9 @@ import window from '@ohos.window'
 import rpc from '@ohos.rpc';
 
 class MySequenceable {
-    num: number = 0;
-    str: string = '';
-    result: string = '';
+    public num: number = 0;
+    public str: string = '';
+    public result: string = '';
 
     constructor(num: number, string: string, result: string) {
         this.num = num;
@@ -52,7 +52,7 @@ class MySequenceable {
 let callSeq = '';
 
 export default class MainAbility extends Ability {
-    test2300(data: ESObject) {
+    test2300(data: rpc.MessageSequence) {
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);
         let sendData = new MySequenceable(0, '', '');
@@ -65,7 +65,7 @@ export default class MainAbility extends Ability {
         return sendData;
     }
 
-    test4600(data: ESObject) {
+    test4600(data: rpc.MessageSequence) {
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);
         let sendData = new MySequenceable(0, '', '');

@@ -16,9 +16,9 @@ import Ability from '@ohos.app.ability.UIAbility'
 import commonEvent from '@ohos.commonEvent'
 
 class MySequenceable {
-    num: number = 0;
-    str: String = "";
-    result: String = "";
+    public num: number = 0;
+    public str: string = "";
+    public result: string = "";
 
     constructor(num, string, result) {
         this.num = num;

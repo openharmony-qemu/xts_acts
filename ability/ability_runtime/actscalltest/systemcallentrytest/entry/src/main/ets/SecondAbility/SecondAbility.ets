@@ -20,11 +20,11 @@ import commonEvent from '@ohos.commonEventManager'
 import UIAbility from '@ohos.app.ability.UIAbility';
 
 let callerA = 'SystemAppCallerA'
-let callSeqA = new Array();
+let callSeqA = [];
 let callerB = 'SystemAppCallerB'
-let callSeqB = new Array();
+let callSeqB = [];
 let callerC = 'SystemAppCallerC'
-let callSeqC = new Array();
+let callSeqC = [];
 let seq = 0;
 
 function isArrayEqual(a1, a2) {
@@ -49,17 +49,17 @@ function isArrayEqualWithoutOrder(a1, a2) {
 let expectStressResult = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 class MySequenceable {
-  num: number = 0;
-  str: String = '';
-  result: String = '';
+  public num: number = 0;
+  public str: string = '';
+  public result: string = '';
 
-  constructor(num: number, string: String, result: String) {
+  constructor(num: number, string: string, result: string) {
     this.num = num;
     this.str = string;
     this.result = result;
   }
 
-  setMySequence(num: number, string: String, result: String) {
+  setMySequence(num: number, string: string, result: string) {
     this.num = num;
     this.str = string;
     this.result = result;

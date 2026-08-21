@@ -39,13 +39,13 @@ class StubTest extends rpc.RemoteObject {
 const BUFSIZE = 1024;
 let DELAY_TIME = 100;
 let OFFSETNUMBER = 0;
-let message: ESObject;
+let message: string = '';
 let commonEventData: commonEvent.CommonEventPublishData = {
   parameters: {
     message: message
   }
 };
-let actionStr: ESObject;
+let actionStr: string = '';
 let remoteOBJ = new StubTest('test');
 
 export default class ServiceAbility extends ServiceExtensionAbility {
@@ -63,7 +63,7 @@ export default class ServiceAbility extends ServiceExtensionAbility {
 
   onConnect(want: Want): rpc.RemoteObject {
     console.info('ServiceAbility onConnect');
-    actionStr = want.parameters?.key;
+    actionStr = want.parameters?.key as string;
     let tempDir = this.context.tempDir;
     console.log('create virable end');
     if (actionStr === 'Acts_CleanTempFiles_0401') {
@@ -118,7 +118,7 @@ export default class ServiceAbility extends ServiceExtensionAbility {
     console.info('ServiceAbility onConfigurationUpdate');
   }
 
-  onDump(params: ESObject): Array<string> {
+  onDump(params: string[]): string[] {
     console.info('ServiceAbility onDump');
     return params;
   }

@@ -20,9 +20,9 @@ import rpc from '@ohos.rpc';
 import UIAbility from '@ohos.app.ability.UIAbility';
 
 class MySequenceable implements rpc.Parcelable {
-    num: number = 0;
-    str: string = '';
-    result: string = '';
+    public num: number = 0;
+    public str: string = '';
+    public result: string = '';
 
     constructor(num: number, string: string, result: string) {
         this.num = num;
@@ -52,7 +52,7 @@ class MySequenceable implements rpc.Parcelable {
 }
 
 export default class MainAbility extends Ability {
-    test2100(data: ESObject) {
+    test2100(data: rpc.MessageSequence) {
         console.log('SystemCallTest MainAbility test2100 begin');
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);
