@@ -38,13 +38,15 @@ export default class EntryAbility1 extends UIAbility {
             console.error(`openAtomicService failed, code is ${err.code}, message is ${err.message}`);
           });
       } catch (err) {
-        console.log('SUB_Ability_AbilityRuntime_UIExtensionContext_3800' + `openAtomicService catch failed, code is ${err}`);
+        console.log('SUB_Ability_AbilityRuntime_UIExtensionContext_3800' +
+          `openAtomicService catch failed, code is ${err}`);
         let commonEventData: commonEventManager.CommonEventPublishData = {
           parameters: {
             'result': err?.code,
           }
         }
-        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_3800_event', commonEventData, (result) => {
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_3800_event', commonEventData,
+          (result) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `onConnect, 50==: ${JSON.stringify(result)}`);
           this.context.terminateSelf()
         });
@@ -52,7 +54,8 @@ export default class EntryAbility1 extends UIAbility {
     };
     if(want.action == 'result'){
       commonEventManager.publish('AbilityRuntime_OptionResult', (result) => {
-        hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_5500: ${JSON.stringify(result)}`);
+        hilog.info(0x0000, 'testTag', '%{public}s',
+          `SUB_Ability_AbilityRuntime_UIExtensionContext_5500: ${JSON.stringify(result)}`);
         this.context.terminateSelf()
       });
     }
@@ -60,7 +63,11 @@ export default class EntryAbility1 extends UIAbility {
 
   async onDestroy(): Promise<void>{
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'EntryAbility1 onDestroy');
-    await eventBusPlue.emit('EntryAbility1_onDestroy');
+    try {
+      await eventBusPlue.emit('EntryAbility1_onDestroy');
+    } catch (err) {
+      console.error(`onDestroy emit failed: ${JSON.stringify(err)}`);
+    }
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -90,8 +97,16 @@ export default class EntryAbility1 extends UIAbility {
     commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
       sub2 = subscriber;
       commonEventManager.subscribe(sub2, (err, commonEventData) => {
+          if (err) {
+            console.error(`subscribe failed: ${JSON.stringify(err)}`);
+            return;
+          }
         this.context.terminateSelf(() => {});
-        commonEventManager.unsubscribe(subscriber, (err, data) => {});
+        commonEventManager.unsubscribe(subscriber, (err) => {
+            if (err) {
+              console.error(`unsubscribe failed: ${JSON.stringify(err)}`);
+            }
+          });
       });
     });
   }
