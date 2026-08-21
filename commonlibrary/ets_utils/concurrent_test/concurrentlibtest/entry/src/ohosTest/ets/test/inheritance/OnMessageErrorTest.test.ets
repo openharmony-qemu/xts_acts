@@ -55,6 +55,10 @@ async function waitForEvent(promise: Promise<void>): Promise<void> {
 
 const WORKER_SERIALIZE_ERROR = '__worker_serialize_error__';
 
+function unserializableFunctionPayload(): void {
+  // Function values cannot cross the structured-clone boundary of postMessage.
+}
+
 interface FlagValue {
   value: boolean;
 }
