@@ -1008,18 +1008,15 @@ export default function mathTruncTest2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_TRUNC_6100
      * @tc.name testMathTrunc061
-     * @tc.desc Verify trunc: trunc and ceil relation holds for negative numbers
+     * @tc.desc Verify trunc returns -1.0 for negative double -1.2
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathTrunc061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val1: double = -1.2
-      let val2: double = -1.2
-      let result1: double = Math.trunc(val1)
-      let result2: double = Math.trunc(val2)
-      let isEqual: boolean = result1 === result2
-      expect(isEqual).assertTrue()
+      let val: double = -1.2
+      let truncResult: double = Math.trunc(val)
+      expect(truncResult).assertEqual(-1.0)
     });
 
     /**
