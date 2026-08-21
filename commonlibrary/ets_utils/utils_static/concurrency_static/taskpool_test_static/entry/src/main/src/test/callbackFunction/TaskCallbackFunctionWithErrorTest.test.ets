@@ -77,7 +77,12 @@ export default function TaskCallbackFunctionWithErrorTest(): void {
         await taskpool.execute(task);
       } catch (e) {
         }
-      await waitForErrorCallbackCondition((): boolean => callbackFired)
+      const condition0100: () => boolean = (): boolean => callbackFired
+      try {
+        await waitForErrorCallbackCondition(condition0100)
+      } catch (error) {
+        expect().assertFail()
+      }
         expect(callbackFired).assertTrue();
       done();
     })
@@ -155,7 +160,12 @@ export default function TaskCallbackFunctionWithErrorTest(): void {
         await taskpool.execute(task);
       } catch (e) {
         }
-      await waitForErrorCallbackCondition((): boolean => callbackFired)
+      const condition0400: () => boolean = (): boolean => callbackFired
+      try {
+        await waitForErrorCallbackCondition(condition0400)
+      } catch (error) {
+        expect().assertFail()
+      }
         expect(callbackFired).assertTrue();
       done();
     })
@@ -190,7 +200,12 @@ export default function TaskCallbackFunctionWithErrorTest(): void {
         await taskpool.execute(task);
       } catch (e) {
         }
-      await waitForErrorCallbackCondition((): boolean => lastMessage === "third")
+      const condition0500: () => boolean = (): boolean => lastMessage === "third"
+      try {
+        await waitForErrorCallbackCondition(condition0500)
+      } catch (error) {
+        expect().assertFail()
+      }
         expect(firstFired).assertFalse();
         expect(secondFired).assertFalse();
         expect(lastMessage).assertEqual("third");

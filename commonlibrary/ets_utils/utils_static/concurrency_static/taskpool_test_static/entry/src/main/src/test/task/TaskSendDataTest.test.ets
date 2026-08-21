@@ -111,7 +111,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => callbackTriggered)
+      const condition0100: () => boolean = (): boolean => callbackTriggered
+      try {
+        await waitForSendDataCondition(condition0100)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackTriggered).assertTrue()
       done();
     })
@@ -135,7 +140,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedValue === 100.0)
+      const condition0200: () => boolean = (): boolean => receivedValue === 100.0
+      try {
+        await waitForSendDataCondition(condition0200)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedValue).assertEqual(100.0)
       done();
     })
@@ -159,7 +169,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedValue === "hello")
+      const condition0300: () => boolean = (): boolean => receivedValue === "hello"
+      try {
+        await waitForSendDataCondition(condition0300)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedValue).assertEqual("hello")
       done();
     })
@@ -183,7 +198,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedValue)
+      const condition0400: () => boolean = (): boolean => receivedValue
+      try {
+        await waitForSendDataCondition(condition0400)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedValue).assertTrue()
       done();
     })
@@ -209,7 +229,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedArg1 === 1.0)
+      const condition0500: () => boolean = (): boolean => receivedArg1 === 1.0
+      try {
+        await waitForSendDataCondition(condition0500)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedArg1).assertEqual(1.0)
       expect(receivedArg2).assertEqual("two")
       done();
@@ -242,7 +267,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedArg1 === 1.0)
+      const condition0600: () => boolean = (): boolean => receivedArg1 === 1.0
+      try {
+        await waitForSendDataCondition(condition0600)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedArg1).assertEqual(1.0)
       expect(receivedArg2).assertEqual("two")
       expect(receivedArg3).assertTrue()
@@ -270,7 +300,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedValue === Number.MAX_VALUE)
+      const condition0700: () => boolean = (): boolean => receivedValue === Number.MAX_VALUE
+      try {
+        await waitForSendDataCondition(condition0700)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedValue).assertEqual(Number.MAX_VALUE)
       done();
     })
@@ -492,7 +527,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedLength === 100)
+      const condition1400: () => boolean = (): boolean => receivedLength === 100
+      try {
+        await waitForSendDataCondition(condition1400)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedLength).assertEqual(100)
       done();
     })
@@ -516,7 +556,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedLength === 100)
+      const condition1500: () => boolean = (): boolean => receivedLength === 100
+      try {
+        await waitForSendDataCondition(condition1500)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedLength).assertEqual(100)
       done();
     })
@@ -540,7 +585,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedValue)
+      const condition1600: () => boolean = (): boolean => receivedValue
+      try {
+        await waitForSendDataCondition(condition1600)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedValue).assertTrue()
       done();
     })
@@ -592,7 +642,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedValue === 0.0)
+      const condition1800: () => boolean = (): boolean => receivedValue === 0.0
+      try {
+        await waitForSendDataCondition(condition1800)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedValue).assertEqual(0.0)
       done();
     })
@@ -616,7 +671,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedValue === -100.0)
+      const condition1900: () => boolean = (): boolean => receivedValue === -100.0
+      try {
+        await waitForSendDataCondition(condition1900)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedValue).assertEqual(-100.0)
       done();
     })
@@ -645,7 +705,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => callbackTriggered)
+      const condition2000: () => boolean = (): boolean => callbackTriggered
+      try {
+        await waitForSendDataCondition(condition2000)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackTriggered).assertTrue()
       expect(result).assertEqual(100.0)
       done();
@@ -671,7 +736,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedValue === "data")
+      const condition2100: () => boolean = (): boolean => receivedValue === "data"
+      try {
+        await waitForSendDataCondition(condition2100)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedValue).assertEqual("data")
       expect(result).assertEqual(100.0)
       done();
@@ -775,7 +845,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedValue === 5.0)
+      const condition2600: () => boolean = (): boolean => receivedValue === 5.0
+      try {
+        await waitForSendDataCondition(condition2600)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedValue).assertEqual(5.0)
       expect(result).assertEqual(5.0)
       done();
@@ -835,7 +910,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedCount.load() === 100)
+      const condition2800: () => boolean = (): boolean => receivedCount.load() === 100
+      try {
+        await waitForSendDataCondition(condition2800)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedCount.load()).assertEqual(100)
       done();
     })
@@ -859,7 +939,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedValue === 200.0)
+      const condition2900: () => boolean = (): boolean => receivedValue === 200.0
+      try {
+        await waitForSendDataCondition(condition2900)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedValue).assertEqual(200.0)
       done();
     })
@@ -887,7 +972,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedValue1 === 0.0)
+      const condition3000: () => boolean = (): boolean => receivedValue1 === 0.0
+      try {
+        await waitForSendDataCondition(condition3000)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedValue1).assertEqual(0.0)
       expect(receivedValue2).assertEqual(300.0)
       done();
@@ -973,7 +1063,12 @@ export default function TaskSendDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSendDataCondition((): boolean => receivedValue === 50.0)
+      const condition3300: () => boolean = (): boolean => receivedValue === 50.0
+      try {
+        await waitForSendDataCondition(condition3300)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedValue).assertEqual(50.0)
       done();
     })
@@ -1135,7 +1230,12 @@ export default function TaskSendDataTest(): void {
       } catch (e) {
         // cancel may throw if task already finished
       }
-      await waitForSendDataCondition((): boolean => receivedValue === 0.0)
+      const condition3700: () => boolean = (): boolean => receivedValue === 0.0
+      try {
+        await waitForSendDataCondition(condition3700)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedValue).assertEqual(0.0)
       done();
     })

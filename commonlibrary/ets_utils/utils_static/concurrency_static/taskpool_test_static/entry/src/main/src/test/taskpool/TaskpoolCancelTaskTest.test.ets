@@ -173,10 +173,14 @@ export default function TaskpoolCancelTaskTest(): void {
             running0200 = true
           }
         }
-        if (!running0200) { await Utils.msSleep(20) }
+        if (!running0200) { try { await Utils.msSleep(20) } catch (error) { expect().assertFail() } }
       }
       expect(running0200).assertTrue()
-      await Utils.msSleep(50)
+      try {
+        await Utils.msSleep(50)
+      } catch (error) {
+        expect().assertFail()
+      }
       try {
         taskpool.cancel(task)
       } catch (e) {
@@ -613,7 +617,11 @@ export default function TaskpoolCancelTaskTest(): void {
       }
       let begin: number = Date.now()
       while (!task.isDone() && Date.now() - begin < 15000) {
-        await Utils.msSleep(100)
+        try {
+          await Utils.msSleep(100)
+        } catch (error) {
+          expect().assertFail()
+        }
       }
       expect(task.isDone()).assertTrue()
       let caught: boolean = false
@@ -871,10 +879,14 @@ export default function TaskpoolCancelTaskTest(): void {
             running2200 = true
           }
         }
-        if (!running2200) { await Utils.msSleep(20) }
+        if (!running2200) { try { await Utils.msSleep(20) } catch (error) { expect().assertFail() } }
       }
       expect(running2200).assertTrue()
-      await Utils.msSleep(50)
+      try {
+        await Utils.msSleep(50)
+      } catch (error) {
+        expect().assertFail()
+      }
       try {
         taskpool.cancel(task)
       } catch (e) {

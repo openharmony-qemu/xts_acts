@@ -69,7 +69,12 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForEnqueuedCondition((): boolean => callbackExecuted)
+      const condition0100: () => boolean = (): boolean => callbackExecuted
+      try {
+        await waitForEnqueuedCondition(condition0100)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackExecuted).assertTrue()
       done();
     })
@@ -121,7 +126,12 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForEnqueuedCondition((): boolean => callbackExecuted)
+      const condition0300: () => boolean = (): boolean => callbackExecuted
+      try {
+        await waitForEnqueuedCondition(condition0300)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackExecuted).assertTrue()
       expect(result).assertEqual(100)
       done();
@@ -227,7 +237,12 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForEnqueuedCondition((): boolean => callbackExecuted)
+      const condition0700: () => boolean = (): boolean => callbackExecuted
+      try {
+        await waitForEnqueuedCondition(condition0700)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackExecuted).assertTrue()
       done();
     })
@@ -542,7 +557,12 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForEnqueuedCondition((): boolean => callbackExecuted)
+      const condition1600: () => boolean = (): boolean => callbackExecuted
+      try {
+        await waitForEnqueuedCondition(condition1600)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackExecuted).assertTrue()
       done();
     })
@@ -608,7 +628,12 @@ export default function TaskOnEnqueuedTest(): void {
         await executePromise;
       } catch (error) {
       }
-      await waitForEnqueuedCondition((): boolean => callbackExecuted)
+      const condition1800: () => boolean = (): boolean => callbackExecuted
+      try {
+        await waitForEnqueuedCondition(condition1800)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackExecuted).assertTrue()
       expect(task.isDone()).assertTrue()
       done();
@@ -634,7 +659,12 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForEnqueuedCondition((): boolean => enqueuedCallbackExecuted)
+      const condition1900: () => boolean = (): boolean => enqueuedCallbackExecuted
+      try {
+        await waitForEnqueuedCondition(condition1900)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(enqueuedCallbackExecuted).assertTrue()
       done();
     })
@@ -663,7 +693,12 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForEnqueuedCondition((): boolean => enqueuedCallbackExecuted)
+      const condition2000: () => boolean = (): boolean => enqueuedCallbackExecuted
+      try {
+        await waitForEnqueuedCondition(condition2000)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(enqueuedCallbackExecuted).assertTrue()
       done();
     })
@@ -687,7 +722,12 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForEnqueuedCondition((): boolean => callbackExecuted)
+      const condition2100: () => boolean = (): boolean => callbackExecuted
+      try {
+        await waitForEnqueuedCondition(condition2100)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackExecuted).assertTrue()
       expect(task.isDone()).assertTrue()
       let errorThrown: boolean = false

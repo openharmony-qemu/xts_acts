@@ -68,7 +68,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => callbackCalled)
+      const condition0100: () => boolean = (): boolean => callbackCalled
+      try {
+        await waitForSucceededCondition(condition0100)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackCalled).assertTrue()
       done();
     })
@@ -92,7 +97,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => externalValue === "success")
+      const condition0200: () => boolean = (): boolean => externalValue === "success"
+      try {
+        await waitForSucceededCondition(condition0200)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(externalValue).assertEqual("success")
       done();
     })
@@ -121,7 +131,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => callback2Called)
+      const condition0300: () => boolean = (): boolean => callback2Called
+      try {
+        await waitForSucceededCondition(condition0300)
+      } catch (error) {
+        expect().assertFail()
+      }
       // Chain calling not supported, second registration overrides first
       expect(callback1Called).assertFalse()
       expect(callback2Called).assertTrue()
@@ -288,7 +303,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => externalData === 100)
+      const condition0900: () => boolean = (): boolean => externalData === 100
+      try {
+        await waitForSucceededCondition(condition0900)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(externalData).assertEqual(100)
       done();
     })
@@ -318,7 +338,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => callbackCalled)
+      const condition1000: () => boolean = (): boolean => callbackCalled
+      try {
+        await waitForSucceededCondition(condition1000)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackCalled).assertTrue()
       expect(taskResult).assertEqual(100)
       done();
@@ -347,7 +372,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => errorCaught)
+      const condition1100: () => boolean = (): boolean => errorCaught
+      try {
+        await waitForSucceededCondition(condition1100)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(errorCaught).assertTrue()
       done();
     })
@@ -377,7 +407,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => successCalled)
+      const condition1200: () => boolean = (): boolean => successCalled
+      try {
+        await waitForSucceededCondition(condition1200)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(successCalled).assertTrue()
       done();
     })
@@ -401,7 +436,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => isDoneInCallback)
+      const condition1300: () => boolean = (): boolean => isDoneInCallback
+      try {
+        await waitForSucceededCondition(condition1300)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(isDoneInCallback).assertTrue()
       done();
     })
@@ -431,7 +471,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => task1Fired && task2Fired)
+      const condition1400: () => boolean = (): boolean => task1Fired && task2Fired
+      try {
+        await waitForSucceededCondition(condition1400)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackCount.load()).assertEqual(2)
       expect(task1Fired).assertTrue()
       expect(task2Fired).assertTrue()
@@ -466,7 +511,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => task1Fired1500 && task2Fired1500)
+      const condition1500: () => boolean = (): boolean => task1Fired1500 && task2Fired1500
+      try {
+        await waitForSucceededCondition(condition1500)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(executionOrder.length).assertEqual(2)
       expect(task1Fired1500).assertTrue()
       expect(task2Fired1500).assertTrue()
@@ -496,7 +546,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => completed)
+      const condition1600: () => boolean = (): boolean => completed
+      try {
+        await waitForSucceededCondition(condition1600)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(completed).assertTrue()
       done();
     })
@@ -521,7 +576,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => callbackExecuted)
+      const condition1700: () => boolean = (): boolean => callbackExecuted
+      try {
+        await waitForSucceededCondition(condition1700)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackExecuted).assertTrue()
       expect(result).assertEqual(100)
       done();
@@ -547,7 +607,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => callbackExecuted)
+      const condition1800: () => boolean = (): boolean => callbackExecuted
+      try {
+        await waitForSucceededCondition(condition1800)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackExecuted).assertTrue()
       expect(result).assertEqual("hello")
       done();
@@ -573,7 +638,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => callbackExecuted)
+      const condition1900: () => boolean = (): boolean => callbackExecuted
+      try {
+        await waitForSucceededCondition(condition1900)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackExecuted).assertTrue()
       expect(result === undefined).assertTrue()
       done();
@@ -597,7 +667,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => callbackExecuted)
+      const condition2000: () => boolean = (): boolean => callbackExecuted
+      try {
+        await waitForSucceededCondition(condition2000)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackExecuted).assertTrue()
       expect(result).assertEqual("1-test-true")
       done();
@@ -628,7 +703,12 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForSucceededCondition((): boolean => task1Callback && task2Callback)
+      const condition2700: () => boolean = (): boolean => task1Callback && task2Callback
+      try {
+        await waitForSucceededCondition(condition2700)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(task1Callback).assertTrue()
       expect(task2Callback).assertTrue()
       done();

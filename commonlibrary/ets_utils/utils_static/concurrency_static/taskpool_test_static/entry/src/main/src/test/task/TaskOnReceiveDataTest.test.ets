@@ -52,7 +52,11 @@ let activePeriodicTasks: taskpool.Task[] = [];
 async function waitForReceiveCondition(condition: () => boolean): Promise<void> {
   let waitCount: number = 0
   while (!condition() && waitCount < 50) {
-    await Utils.msSleep(20)
+    try {
+      await Utils.msSleep(20)
+    } catch (error) {
+      expect().assertFail()
+    }
     waitCount++
   }
 }
@@ -116,7 +120,11 @@ export default function TaskOnReceiveDataTest(): void {
       }
       let waitCount: number = 0
       while (received !== 100.0 && waitCount < 50) {
-        await Utils.msSleep(20)
+        try {
+          await Utils.msSleep(20)
+        } catch (error) {
+          expect().assertFail()
+        }
         waitCount++
       }
       expect(received).assertEqual(100.0)
@@ -145,7 +153,11 @@ export default function TaskOnReceiveDataTest(): void {
       }
       let waitCount: number = 0
       while (received !== 42.0 && waitCount < 50) {
-        await Utils.msSleep(20)
+        try {
+          await Utils.msSleep(20)
+        } catch (error) {
+          expect().assertFail()
+        }
         waitCount++
       }
       expect(received).assertEqual(42.0)
@@ -176,7 +188,11 @@ export default function TaskOnReceiveDataTest(): void {
       }
       let waitCount: number = 0
       while (receivedStr !== "hello" && waitCount < 50) {
-        await Utils.msSleep(20)
+        try {
+          await Utils.msSleep(20)
+        } catch (error) {
+          expect().assertFail()
+        }
         waitCount++
       }
       expect(receivedStr).assertEqual("hello")
@@ -208,7 +224,11 @@ export default function TaskOnReceiveDataTest(): void {
       }
       let waitCount: number = 0
       while (!receivedC && waitCount < 50) {
-        await Utils.msSleep(20)
+        try {
+          await Utils.msSleep(20)
+        } catch (error) {
+          expect().assertFail()
+        }
         waitCount++
       }
       expect(receivedA).assertEqual(1.0)
@@ -243,7 +263,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => asyncCompleted)
+      const condition0600: () => boolean = (): boolean => asyncCompleted
+      try {
+        await waitForReceiveCondition(condition0600)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(asyncCompleted).assertTrue()
       done();
     })
@@ -336,7 +361,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => callback2Called)
+      const condition0900: () => boolean = (): boolean => callback2Called
+      try {
+        await waitForReceiveCondition(condition0900)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callback1Called).assertFalse()
       expect(callback2Called).assertTrue()
       done();
@@ -406,7 +436,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => errorCaughtInCallback)
+      const condition1200: () => boolean = (): boolean => errorCaughtInCallback
+      try {
+        await waitForReceiveCondition(condition1200)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(result).assertEqual(100.0)
       expect(errorCaughtInCallback).assertTrue()
       done();
@@ -462,7 +497,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => received.length === 3)
+      const condition1400: () => boolean = (): boolean => received.length === 3
+      try {
+        await waitForReceiveCondition(condition1400)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(received.length).assertEqual(3)
       expect(received[0]).assertEqual(1.0)
       expect(received[1]).assertEqual(2.0)
@@ -581,7 +621,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => eventQueue.length === 3)
+      const condition1700: () => boolean = (): boolean => eventQueue.length === 3
+      try {
+        await waitForReceiveCondition(condition1700)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(eventQueue.length).assertEqual(3)
       expect(eventQueue[0]).assertEqual("processed:1")
       expect(eventQueue[1]).assertEqual("processed:2")
@@ -631,7 +676,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => task1Fired1800 && task2Fired1800 && task3Fired1800)
+      const condition1800: () => boolean = (): boolean => task1Fired1800 && task2Fired1800 && task3Fired1800
+      try {
+        await waitForReceiveCondition(condition1800)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackCount.load()).assertEqual(3)
       expect(task1Fired1800).assertTrue()
       expect(task2Fired1800).assertTrue()
@@ -732,7 +782,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
        expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => callbackCount.load() >= totalCount)
+      const condition2000: () => boolean = (): boolean => callbackCount.load() >= totalCount
+      try {
+        await waitForReceiveCondition(condition2000)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackCount.load()).assertEqual(totalCount)
       done();
     })
@@ -811,7 +866,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => received === 100.0)
+      const condition2200: () => boolean = (): boolean => received === 100.0
+      try {
+        await waitForReceiveCondition(condition2200)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(received).assertEqual(100.0)
       expect(result).assertEqual(100.0)
       done();
@@ -878,7 +938,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => received === "second")
+      const condition2400: () => boolean = (): boolean => received === "second"
+      try {
+        await waitForReceiveCondition(condition2400)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(received).assertEqual("second")
       done();
     })
@@ -905,7 +970,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => callCount.load() >= 1)
+      const condition2500: () => boolean = (): boolean => callCount.load() >= 1
+      try {
+        await waitForReceiveCondition(condition2500)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callCount.load()).assertEqual(1)
       done();
     })
@@ -927,7 +997,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => receivedBool)
+      const condition2600: () => boolean = (): boolean => receivedBool
+      try {
+        await waitForReceiveCondition(condition2600)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedBool).assertTrue()
       done();
     })
@@ -949,7 +1024,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => receivedArr.length === 3)
+      const condition2700: () => boolean = (): boolean => receivedArr.length === 3
+      try {
+        await waitForReceiveCondition(condition2700)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedArr.length).assertEqual(3)
       expect(receivedArr[0]).assertEqual(1.0)
       expect(receivedArr[1]).assertEqual(2.0)
@@ -976,7 +1056,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => received.length === 5)
+      const condition2800: () => boolean = (): boolean => received.length === 5
+      try {
+        await waitForReceiveCondition(condition2800)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(received.length).assertEqual(5)
       done();
     })
@@ -1004,7 +1089,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => received === "called")
+      const condition2900: () => boolean = (): boolean => received === "called"
+      try {
+        await waitForReceiveCondition(condition2900)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(received).assertEqual("called")
       done();
     })
@@ -1080,7 +1170,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => task1Fired3100 && task2Fired3100)
+      const condition3100: () => boolean = (): boolean => task1Fired3100 && task2Fired3100
+      try {
+        await waitForReceiveCondition(condition3100)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackCount.load()).assertEqual(2)
       expect(task1Fired3100).assertTrue()
       expect(task2Fired3100).assertTrue()
@@ -1112,7 +1207,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => results.length === 2)
+      const condition3200: () => boolean = (): boolean => results.length === 2
+      try {
+        await waitForReceiveCondition(condition3200)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(results.length).assertEqual(2)
       expect(results[0]).assertEqual(10.0)
       expect(results[1]).assertEqual(20.0)
@@ -1140,7 +1240,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => received === 100.0)
+      const condition3300: () => boolean = (): boolean => received === 100.0
+      try {
+        await waitForReceiveCondition(condition3300)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(received).assertEqual(100.0)
       done();
     })
@@ -1167,7 +1272,12 @@ export default function TaskOnReceiveDataTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
-      await waitForReceiveCondition((): boolean => received)
+      const condition3400: () => boolean = (): boolean => received
+      try {
+        await waitForReceiveCondition(condition3400)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(received).assertTrue()
       done();
     })
@@ -1191,7 +1301,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => received === 100.0)
+      const condition3500: () => boolean = (): boolean => received === 100.0
+      try {
+        await waitForReceiveCondition(condition3500)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(received).assertEqual(100.0)
       task.onReceiveData()
       expect(received).assertEqual(100.0)
@@ -1225,7 +1340,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => sendDataErrorCaught)
+      const condition3600: () => boolean = (): boolean => sendDataErrorCaught
+      try {
+        await waitForReceiveCondition(condition3600)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(sendDataErrorCaught).assertTrue()
       done();
     })
@@ -1253,7 +1373,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => called)
+      const condition3700: () => boolean = (): boolean => called
+      try {
+        await waitForReceiveCondition(condition3700)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(called).assertTrue()
       done();
     })
@@ -1280,7 +1405,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => received === 3.0)
+      const condition3800: () => boolean = (): boolean => received === 3.0
+      try {
+        await waitForReceiveCondition(condition3800)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(received).assertEqual(3.0)
       done();
     })
@@ -1304,7 +1434,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => receivedLength === 100)
+      const condition3900: () => boolean = (): boolean => receivedLength === 100
+      try {
+        await waitForReceiveCondition(condition3900)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedLength).assertEqual(100)
       done();
     })
@@ -1332,7 +1467,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => receivedCount.load() >= 100)
+      const condition4000: () => boolean = (): boolean => receivedCount.load() >= 100
+      try {
+        await waitForReceiveCondition(condition4000)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedCount.load()).assertEqual(100)
       done();
     })
@@ -1369,7 +1509,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => callbackExecuted)
+      const condition4100: () => boolean = (): boolean => callbackExecuted
+      try {
+        await waitForReceiveCondition(condition4100)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackExecuted).assertTrue()
       expect(result).assertEqual(100.0)
       done();
@@ -1396,7 +1541,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => callbackCalled)
+      const condition4200: () => boolean = (): boolean => callbackCalled
+      try {
+        await waitForReceiveCondition(condition4200)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackCalled).assertTrue()
       expect(result).assertEqual(100.0)
       done();
@@ -1422,7 +1572,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => result === 50.0)
+      const condition4300: () => boolean = (): boolean => result === 50.0
+      try {
+        await waitForReceiveCondition(condition4300)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(result).assertEqual(50.0)
       done();
     })
@@ -1446,7 +1601,12 @@ export default function TaskOnReceiveDataTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForReceiveCondition((): boolean => receivedLength === 100)
+      const condition4400: () => boolean = (): boolean => receivedLength === 100
+      try {
+        await waitForReceiveCondition(condition4400)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedLength).assertEqual(100)
       done();
     })

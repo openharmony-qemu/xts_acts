@@ -64,7 +64,12 @@ export default function TaskOnExecutionFailedTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
-      await waitForFailedCondition((): boolean => callbackCalled)
+      const condition0100: () => boolean = (): boolean => callbackCalled
+      try {
+        await waitForFailedCondition(condition0100)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackCalled).assertTrue()
       done();
     })
@@ -108,7 +113,12 @@ export default function TaskOnExecutionFailedTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
-      await waitForFailedCondition((): boolean => receivedMessage === "task failed")
+      const condition0300: () => boolean = (): boolean => receivedMessage === "task failed"
+      try {
+        await waitForFailedCondition(condition0300)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(receivedMessage).assertEqual("task failed")
       done();
     })
@@ -264,7 +274,12 @@ export default function TaskOnExecutionFailedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      await waitForFailedCondition((): boolean => successCalled)
+      const condition0800: () => boolean = (): boolean => successCalled
+      try {
+        await waitForFailedCondition(condition0800)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(successCalled).assertTrue()
       expect(failedCalled).assertFalse()
       done();
@@ -505,7 +520,12 @@ export default function TaskOnExecutionFailedTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
-      await waitForFailedCondition((): boolean => callbackExecuted)
+      const condition1400: () => boolean = (): boolean => callbackExecuted
+      try {
+        await waitForFailedCondition(condition1400)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackExecuted).assertTrue()
       done();
     })
@@ -528,7 +548,12 @@ export default function TaskOnExecutionFailedTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
-      await waitForFailedCondition((): boolean => callbackTriggered)
+      const condition1500: () => boolean = (): boolean => callbackTriggered
+      try {
+        await waitForFailedCondition(condition1500)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackTriggered).assertTrue()
       done();
     })
@@ -563,7 +588,12 @@ export default function TaskOnExecutionFailedTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
-      await waitForFailedCondition((): boolean => callbackTriggered)
+      const condition1600: () => boolean = (): boolean => callbackTriggered
+      try {
+        await waitForFailedCondition(condition1600)
+      } catch (error) {
+        expect().assertFail()
+      }
       expect(callbackTriggered).assertTrue()
       done();
     })
