@@ -1,0 +1,799 @@
+'use static';
+/*
+ * Copyright (c) 2026 RKH Corp.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+
+class WithLength {
+  public length: number = 0;
+}
+
+class TestObj {
+  public id: number = 0;
+  public name: string = '';
+}
+
+class User {
+  public id: number = 0;
+  public name: string = '';
+  public age: number = 0;
+  public email: string = '';
+  public password: string = '';
+}
+
+class UserSummary {
+  public id: number = 0;
+  public name: string = '';
+}
+
+class PublicUser {
+  public id: number = 0;
+  public name: string = '';
+}
+
+class Container<T> {
+  private value: T;
+
+  constructor(value: T) {
+    this.value = value;
+  }
+
+  public async getValue(): Promise<T> {
+    return this.value;
+  }
+
+  public async setValue(value: T): Promise<void> {
+    this.value = value;
+  }
+}
+
+interface Repository<T> {
+  findById(id: number): Promise<T | undefined>;
+  save(item: T): Promise<void>;
+}
+
+class UserRepository implements Repository<User> {
+  private data: Map<number, User> = new Map<number, User>();
+
+  public async findById(id: number): Promise<User | undefined> {
+    return this.data.get(id);
+  }
+
+  public async save(item: User): Promise<void> {
+    this.data.set(item.id, item);
+  }
+}
+
+class AsyncQueue<T> {
+  private items: T[] = [];
+
+  public async enqueue(item: T): Promise<void> {
+    this.items.push(item);
+  }
+
+  public async dequeue(): Promise<T | undefined> {
+    return this.items.shift();
+  }
+
+  public async size(): Promise<number> {
+    return this.items.length;
+  }
+}
+
+class AsyncCache<K, V> {
+  private cache: Map<K, V> = new Map<K, V>();
+
+  public async getValue(key: K): Promise<V | undefined> {
+    return this.cache.get(key);
+  }
+
+  public async setValue(key: K, value: V): Promise<void> {
+    this.cache.set(key, value);
+  }
+
+  public async has(key: K): Promise<boolean> {
+    return this.cache.has(key);
+  }
+}
+
+async function identity<T>(value: T): Promise<T> {
+  try {
+    return (await Promise.resolve(value)) as T;
+  } catch (e) {
+    console.info(`identity catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
+
+async function identityInferred<T>(value: T): Promise<T> {
+  return value;
+}
+
+async function combine<T, U>(first: T, second: U): Promise<[T, U]> {
+  return [first, second];
+}
+
+async function getLength<T extends WithLength>(item: T): Promise<number> {
+  return item.length;
+}
+
+async function first<T>(items: T[]): Promise<T | undefined> {
+  return items[0];
+}
+
+async function wrapInPromise<T>(value: T): Promise<T> {
+  try {
+    return (await Promise.resolve(value)) as T;
+  } catch (e) {
+    console.info(`wrapInPromise catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
+
+async function withDefault<T = string>(value: T): Promise<T> {
+  return value;
+}
+
+async function asyncMap<T, U>(
+  items: T[],
+  mapper: (item: T) => Promise<U>
+): Promise<Awaited<U>[]> {
+  const results: Awaited<U>[] = [];
+  try {
+    for (const item of items) {
+      results.push(await mapper(item));
+    }
+  } catch (e) {
+    console.info(`asyncMap catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+  return results;
+}
+
+async function asyncFilter<T>(
+  items: T[],
+  predicate: (item: T) => Promise<boolean>
+): Promise<T[]> {
+  const results: T[] = [];
+  try {
+    for (const item of items) {
+      if (await predicate(item)) {
+        results.push(item);
+      }
+    }
+  } catch (e) {
+    console.info(`asyncFilter catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+  return results;
+}
+
+async function asyncReduce<T, U>(
+  items: T[],
+  initial: Awaited<U>,
+  reducer: (acc: Awaited<U>, item: T) => Promise<U>
+): Promise<Awaited<U>> {
+  let accumulator: Awaited<U> = initial;
+  try {
+    for (const item of items) {
+      accumulator = await reducer(accumulator, item);
+    }
+  } catch (e) {
+    console.info(`asyncReduce catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+  return accumulator;
+}
+
+async function processGeneric<T extends string | number>(value: T): Promise<string> {
+  if (typeof value === 'string') {
+    return 'string: ' + value;
+  }
+  return 'number: ' + value.toString();
+}
+
+async function fetchGeneric<T>(url: string, defaultValue: T): Promise<T> {
+  try {
+    return (await Promise.resolve(defaultValue)) as T;
+  } catch (e) {
+    console.info(`fetchGeneric catch error: ${JSON.stringify(e)}`);
+    throw e;
+  }
+}
+
+async function makeCopy<T>(obj: T): Promise<T> {
+  return obj;
+}
+
+async function createMap<V>(
+  keys: string[],
+  value: V
+): Promise<Map<string, V>> {
+  const map: Map<string, V> = new Map<string, V>();
+  for (const key of keys) {
+    map.set(key, value);
+  }
+  return map;
+}
+
+export default function asyncGenericsTest(): void {
+  describe('asyncGenericsTest', (): void => {
+    afterEach((): void => { });
+
+    /**
+     * @tc.name   asyncGenericsTest001
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0001
+     * @tc.desc   Test async function with single generic type parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const numResult = await identity<number>(42);
+        const strResult = await identity<string>('hello');
+        const boolResult = await identity<boolean>(true);
+
+        expect(numResult).assertEqual(42);
+        expect(strResult).assertEqual('hello');
+        expect(boolResult).assertEqual(true);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest002
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0002
+     * @tc.desc   Test async function with generic type inference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const result1 = await identityInferred<number>(42);
+        const result2 = await identityInferred<string>('test');
+        const result3 = await identityInferred<number[]>([1, 2, 3]);
+
+        expect(result1).assertEqual(42);
+        expect(result2).assertEqual('test');
+        expect(result3).assertDeepEquals([1.0, 2.0, 3.0]);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest003
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0003
+     * @tc.desc   Test async function with multiple generic type parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const result = await combine<number, string>(42, 'hello');
+        expect(result[0]).assertEqual(42);
+        expect(result[1]).assertEqual('hello');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest004
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0004
+     * @tc.desc   Test async function with generic constraint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const str: WithLength = new WithLength();
+        str.length = 5;
+        const strResult = await getLength<WithLength>(str);
+
+        const arr: WithLength = new WithLength();
+        arr.length = 3;
+        const arrResult = await getLength<WithLength>(arr);
+
+        expect(strResult).assertEqual(5);
+        expect(arrResult).assertEqual(3);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest005
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0005
+     * @tc.desc   Test async function with generic array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const numResult = await first<number>([1, 2, 3]);
+        const strResult = await first<string>(['a', 'b', 'c']);
+
+        expect(numResult).assertEqual(1);
+        expect(strResult).assertEqual('a');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest006
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0006
+     * @tc.desc   Test async function with generic promise wrapper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const obj: TestObj = new TestObj();
+        obj.id = 1;
+        obj.name = 'test';
+        const result = await wrapInPromise<TestObj>(obj);
+        expect(result.id).assertEqual(1);
+        expect(result.name).assertEqual('test');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest007
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0007
+     * @tc.desc   Test async function with generic default type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const result1 = await withDefault<string>('hello');
+        const result2 = await withDefault<number>(42);
+
+        expect(result1).assertEqual('hello');
+        expect(result2).assertEqual(42);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest008
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0008
+     * @tc.desc   Test async function with generic map operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const result = await asyncMap<number, number>([1, 2, 3], async (x: number): Promise<number> => x * 2);
+        expect(result).assertDeepEquals([2.0, 4.0, 6.0]);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest009
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0009
+     * @tc.desc   Test async function with generic filter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const result = await asyncFilter<number>([1, 2, 3, 4, 5], async (x: number): Promise<boolean> => x % 2 === 0);
+        expect(result).assertDeepEquals([2.0, 4.0]);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest010
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0010
+     * @tc.desc   Test async function with generic reduce
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const result = await asyncReduce<number, number>(
+          [1, 2, 3, 4],
+          0,
+          async (sum: number, x: number): Promise<number> => sum + x
+        );
+        expect(result).assertEqual(10);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest011
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0011
+     * @tc.desc   Test async function with generic class method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const container = new Container<number>(42);
+        const result1 = await container.getValue();
+
+        await container.setValue(100);
+        const result2 = await container.getValue();
+
+        expect(result1).assertEqual(42);
+        expect(result2).assertEqual(100);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest012
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0012
+     * @tc.desc   Test async function with generic interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const repo = new UserRepository();
+        const user: User = new User();
+        user.id = 1;
+        user.name = 'Alice';
+        await repo.save(user);
+        const result = await repo.findById(1);
+
+        expect(result !== undefined).assertTrue();
+        expect(result!.id).assertEqual(1);
+        expect(result!.name).assertEqual('Alice');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest013
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0013
+     * @tc.desc   Test async function with conditional generic type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const result1 = await processGeneric<string>('hello');
+        const result2 = await processGeneric<number>(42);
+
+        expect(result1).assertEqual('string: hello');
+        expect(result2).assertEqual('number: 42');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest014
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0014
+     * @tc.desc   Test async function returning generic promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const defaultUser: User = new User();
+        const result = await fetchGeneric<User>('/api/user', defaultUser);
+
+        expect(result instanceof User).assertTrue();
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest015
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0015
+     * @tc.desc   Test async function with generic object properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const getUser = async (): Promise<User> => {
+          const user: User = new User();
+          user.id = 1;
+          user.name = 'Bob';
+          user.age = 30;
+          return user;
+        };
+
+        const user = await getUser();
+        expect(user.name).assertEqual('Bob');
+        expect(user.age).assertEqual(30);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest016
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0016
+     * @tc.desc   Test async function with generic object update
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const updateUser = async (
+          obj: User,
+          newAge: number
+        ): Promise<User> => {
+          obj.age = newAge;
+          return obj;
+        };
+
+        const user: User = new User();
+        user.id = 1;
+        user.name = 'Alice';
+        user.age = 25;
+        const result = await updateUser(user, 26);
+
+        expect(result.id).assertEqual(1);
+        expect(result.name).assertEqual('Alice');
+        expect(result.age).assertEqual(26);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest017
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0017
+     * @tc.desc   Test async function with generic object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const obj: TestObj = new TestObj();
+        obj.id = 1;
+        obj.name = 'test';
+        const result = await makeCopy<TestObj>(obj);
+        expect(result.id).assertEqual(1);
+        expect(result.name).assertEqual('test');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest018
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0018
+     * @tc.desc   Test async function with generic map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const result = await createMap<number>(['a', 'b', 'c'], 1);
+        expect(result.get('a')).assertEqual(1);
+        expect(result.get('b')).assertEqual(1);
+        expect(result.get('c')).assertEqual(1);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest019
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0019
+     * @tc.desc   Test async function with generic selection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const selectProperties = async (
+          obj: User
+        ): Promise<UserSummary> => {
+          const summary: UserSummary = new UserSummary();
+          summary.id = obj.id;
+          summary.name = obj.name;
+          return summary;
+        };
+
+        const user: User = new User();
+        user.id = 1;
+        user.name = 'Alice';
+        user.email = 'alice@test.com';
+        user.age = 30;
+
+        const result = await selectProperties(user);
+
+        expect(result.id).assertEqual(1);
+        expect(result.name).assertEqual('Alice');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest020
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0020
+     * @tc.desc   Test async function with generic object transformation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const toPublicUser = async (obj: User): Promise<PublicUser> => {
+          const publicUser: PublicUser = new PublicUser();
+          publicUser.id = obj.id;
+          publicUser.name = obj.name;
+          return publicUser;
+        };
+
+        const user: User = new User();
+        user.id = 1;
+        user.name = 'Alice';
+        user.password = 'secret';
+
+        const result = await toPublicUser(user);
+
+        expect(result.id).assertEqual(1);
+        expect(result.name).assertEqual('Alice');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest022
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0022
+     * @tc.desc   Test async function with generic async queue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new AsyncQueue<number>();
+        await queue.enqueue(1);
+        await queue.enqueue(2);
+        await queue.enqueue(3);
+
+        const size = await queue.size();
+        expect(size).assertEqual(3);
+
+        const item1 = await queue.dequeue();
+        expect(item1).assertEqual(1);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest023
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0023
+     * @tc.desc   Test async function with generic async cache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const cache = new AsyncCache<string, number>();
+        await cache.setValue('a', 1);
+        await cache.setValue('b', 2);
+
+        const result1 = await cache.getValue('a');
+        const result2 = await cache.has('c');
+
+        expect(result1).assertEqual(1);
+        expect(result2).assertEqual(false);
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   asyncGenericsTest024
+     * @tc.number SUB_BUILTINS_asyncGenerics_TEST_0024
+     * @tc.desc   Test async function with generic pipeline
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncGenericsTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        const pipe = async (
+          value: number,
+          ...fns: Array<(input: number) => Promise<number | string>>
+        ): Promise<number | string> => {
+          try {
+            let result: number | string = value;
+            for (const fn of fns) {
+              result = await fn(result as number);
+            }
+            return result;
+          } catch (e) {
+            console.info(`asyncGenericsTest024 pipe catch error: ${JSON.stringify(e)}`);
+            throw e;
+          }
+        };
+
+        const result = await pipe(
+          5,
+          async (x: number): Promise<number> => x * 2,
+          async (x: number): Promise<number> => x + 10,
+          async (x: number): Promise<string> => x.toString()
+        );
+
+        expect(result).assertEqual('20');
+      } catch (err) {
+        expect().assertFail();
+      }
+      done();
+    });
+
+  });
+}
