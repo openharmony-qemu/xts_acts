@@ -1,0 +1,6 @@
+{
+  name: "libnapicoveraddbatch3ndktest.so",
+  types: "./Index.d.ts",
+  version: "1.0.0",
+  description: "NAPI cover add batch3 XTS native library"
+}

@@ -14,13 +14,13 @@ aux_source_directory(${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_functi
 add_library(securec SHARED ${SECUREC_SRCS})
 
 add_library(napiBuffer SHARED ./napi/napiBuffer.cpp)
-target_link_libraries(napiBuffer PUBLIC securec libace_napi.z.so libuv.so)
+target_link_libraries(napiBuffer PUBLIC securec libace_napi.z.so libuv.so libhilog_ndk.z.so)
 
 add_library(napiData SHARED ./napi/napiData.cpp)
-target_link_libraries(napiData PUBLIC securec libace_napi.z.so libuv.so)
+target_link_libraries(napiData PUBLIC securec libace_napi.z.so libuv.so libhilog_ndk.z.so)
 
 add_library(napiString SHARED ./napi/napiString.cpp)
-target_link_libraries(napiString PUBLIC securec libace_napi.z.so libuv.so)
+target_link_libraries(napiString PUBLIC securec libace_napi.z.so libuv.so libhilog_ndk.z.so)
 
 add_library(napiComplexScenarios SHARED ./napi/napiComplexScenarios.cpp)
 target_link_libraries(napiComplexScenarios PUBLIC securec libace_napi.z.so libuv.so)
@@ -48,6 +48,30 @@ target_link_libraries(napispecdiffbatch3ndktest PUBLIC libace_napi.z.so libhilog
 
 add_library(napispecdiffbatch4ndktest SHARED napispecdiff/batch4/napispecdiffbatch4.cpp common/native_common.h)
 target_link_libraries(napispecdiffbatch4ndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+
+
+add_library(napicoveraddbatch1ndktest SHARED
+    napicoveradd/batch1/napicoveraddbatch1.cpp
+    napicoveradd/batch1/napicoveraddbatch1_extra.cpp
+    common/native_common.h)
+target_link_libraries(napicoveraddbatch1ndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+
+
+add_library(napicoveraddbatch2ndktest SHARED
+    napicoveradd/batch2/napicoveraddbatch2.cpp
+    napicoveradd/batch2/napicoveraddbatch2_extra.cpp
+    common/native_common.h)
+target_link_libraries(napicoveraddbatch2ndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+
+add_library(napicoveraddbatch3ndktest SHARED napicoveradd/batch3/napicoveraddbatch3.cpp common/native_common.h)
+target_link_libraries(napicoveraddbatch3ndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+
+
+add_library(napicoveraddbatch4ndktest SHARED
+    napicoveradd/batch4/napicoveraddbatch4.cpp
+    napicoveradd/batch4/napicoveraddbatch4_extra.cpp
+    common/native_common.h)
+target_link_libraries(napicoveraddbatch4ndktest PUBLIC securec libace_napi.z.so libhilog_ndk.z.so)
 
 add_library(napicoveragesamplendktest SHARED napi_coverage_sample/napi_coverage_sample.cpp common/native_common.h)
 target_link_libraries(napicoveragesamplendktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)

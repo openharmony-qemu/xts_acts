@@ -12,6 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import napiCoverAddBatch1StablePart1Test from './NapiCoverAdd/batch1/NapiCoverAddBatch1StablePart1.test';
+import napiCoverAddBatch1StablePart2Test from './NapiCoverAdd/batch1/NapiCoverAddBatch1StablePart2.test';
+import napiCoverAddBatch2LifecycleTest from './NapiCoverAdd/batch2/NapiCoverAddBatch2Lifecycle.test';
+import napiCoverAddBatch3RuntimeSendableTest from './NapiCoverAdd/batch3/NapiCoverAddBatch3RuntimeSendable.test';
+import napiCoverAddBatch4StressProbeTest from './NapiCoverAdd/batch4/NapiCoverAddBatch4StressProbe.test';
 import bufferTest from './NapiBuffer.test';
 import dataTest from './NapiData.test';
 import stringTest from './NapiString.test';
@@ -45,6 +50,11 @@ export default function testsuite() {
   napiSpecDiffBatch2LifecycleTest();
   napiSpecDiffBatch3RuntimeSendableTest();
   napiSpecDiffBatch4StressProbeTest();
+  napiCoverAddBatch1StablePart1Test();
+  napiCoverAddBatch1StablePart2Test();
+  napiCoverAddBatch2LifecycleTest();
+  napiCoverAddBatch3RuntimeSendableTest();
+  napiCoverAddBatch4StressProbeTest();
 
   napiCoverageSampleTest();
   mallocCoverageSampleTest();
