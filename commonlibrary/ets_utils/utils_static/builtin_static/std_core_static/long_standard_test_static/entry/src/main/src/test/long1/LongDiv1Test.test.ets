@@ -195,117 +195,91 @@ export default function longDiv1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1100
      * @tc.name testLongDiv1_011
-     * @tc.desc Verify positive division returns the expected quotient
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testLongDiv1_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result: Long = new Long(120).div(new Long(6));
-      expect(result.equals(20)).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1200
-     * @tc.name testLongDiv1_012
      * @tc.desc Verify chained division 720/6/5 compared equal to 24 via compareTo
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongDiv1_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongDiv1_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(720).div(new Long(6)).div(5);
       expect(result.compareTo(24)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1300
-     * @tc.name testLongDiv1_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1200
+     * @tc.name testLongDiv1_012
      * @tc.desc Verify chained division 4096/2/2/2 equals 512
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongDiv1_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongDiv1_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(4096).div(new Long(2)).div(2).div(2);
       expect(result.compareTo(512)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1400
-     * @tc.name testLongDiv1_014
-     * @tc.desc Verify chained division 720/6/5 equals 24 via equals
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testLongDiv1_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result: Long = new Long(720).div(new Long(6)).div(5);
-      expect(result.equals(24)).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1500
-     * @tc.name testLongDiv1_015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1300
+     * @tc.name testLongDiv1_013
      * @tc.desc Verify chained division (-720)/6/(-5) equals 24
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongDiv1_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongDiv1_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = (-720).div(6).div(-5);
       expect(result.compareTo(24)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1600
-     * @tc.name testLongDiv1_016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1400
+     * @tc.name testLongDiv1_014
      * @tc.desc Verify chained division of large values 10000000000/100/100 equals 1000000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongDiv1_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongDiv1_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(10000000000).div(new Long(100)).div(100);
       expect(result.compareTo(1000000)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1700
-     * @tc.name testLongDiv1_017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1500
+     * @tc.name testLongDiv1_015
      * @tc.desc Verify different division orders produce equivalent result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongDiv1_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongDiv1_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r1: Long = new Long(120).div(new Long(6));
       const r2: Long = new Long(120).div(new Long(3)).div(2);
       expect(r1.compareTo(r2)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1800
-     * @tc.name testLongDiv1_018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1600
+     * @tc.name testLongDiv1_016
      * @tc.desc Verify hex literal operands divide correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongDiv1_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongDiv1_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = (0xff).div(0xf);
       expect(result.compareTo(0x11)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1900
-     * @tc.name testLongDiv1_019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1700
+     * @tc.name testLongDiv1_017
      * @tc.desc Verify division with negative operand truncates correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongDiv1_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongDiv1_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       {
         const a: Long = new Long(-(-1));
         const b: Long = new Long(-1);
@@ -315,14 +289,14 @@ export default function longDiv1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_2000
-     * @tc.name testLongDiv1_020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1800
+     * @tc.name testLongDiv1_018
      * @tc.desc Verify div does not mutate original Long value via toInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongDiv1_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongDiv1_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       {
         const a: Long = new Long(2147483647);
         const b: Long = new Long(2);
@@ -335,14 +309,14 @@ export default function longDiv1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_2100
-     * @tc.name testLongDiv1_021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_1900
+     * @tc.name testLongDiv1_019
      * @tc.desc Verify minimum long value divided by large divisor truncates
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongDiv1_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongDiv1_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       {
         const a: Long = new Long(Long.MIN_VALUE);
         const b: Long = new Long(999999);
@@ -352,14 +326,14 @@ export default function longDiv1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_2200
-     * @tc.name testLongDiv1_022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_2000
+     * @tc.name testLongDiv1_020
      * @tc.desc Verify division by zero throws an exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongDiv1_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongDiv1_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Long = 100;
       try {
         const result: Long = a.div(0);
@@ -370,14 +344,14 @@ export default function longDiv1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_2300
-     * @tc.name testLongDiv1_023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_2100
+     * @tc.name testLongDiv1_021
      * @tc.desc Verify Long.MIN_VALUE divided by zero throws an exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongDiv1_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongDiv1_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Long = Long.MIN_VALUE;
       try {
         const result: Long = a.div(0);
@@ -388,14 +362,14 @@ export default function longDiv1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_2400
-     * @tc.name testLongDiv1_024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV1_2200
+     * @tc.name testLongDiv1_022
      * @tc.desc Verify Long.MIN_VALUE divided by -1 overflows and wraps
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testLongDiv1_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongDiv1_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Long = Long.MIN_VALUE;
       const result: Long = a.div(-1);
       const q: long = result.toLong();
