@@ -73,6 +73,10 @@ function createWorkerReplyTimeout(timeoutMs: number, message: string): WorkerRep
   return { timeoutPromise: timeoutPromise, cancel: cancel };
 }
 
+async function runLockedUpdate(lock: utils.locks.AsyncLock, fn: () => number): Promise<number> {
+  return await lock.lockAsync(fn);
+}
+
 @Sendable
 class BasicTypes {
   public numValue_: number = 0
@@ -591,7 +595,7 @@ export default function ISendableImplTest(): void {
       let counter: number = 0
 
       try {
-        await lock.lockAsync((): number => {
+        await runLockedUpdate(lock, (): number => {
         counter = 1
         return counter
         })
@@ -642,7 +646,7 @@ export default function ISendableImplTest(): void {
       let counter: number = 0
 
       try {
-        await lock.lockAsync((): number => {
+        await runLockedUpdate(lock, (): number => {
         counter = 50
         return counter
         })
@@ -652,7 +656,7 @@ export default function ISendableImplTest(): void {
       }
 
       try {
-        await lock.lockAsync((): number => {
+        await runLockedUpdate(lock, (): number => {
         counter = counter + 50
         return counter
         })
@@ -679,7 +683,7 @@ export default function ISendableImplTest(): void {
       data.value_ = 0
 
       try {
-        await lock.lockAsync((): number => {
+        await runLockedUpdate(lock, (): number => {
         data.value_ = data.value_ + 10
         return data.value_
         })
@@ -689,7 +693,7 @@ export default function ISendableImplTest(): void {
       }
 
       try {
-        await lock.lockAsync((): number => {
+        await runLockedUpdate(lock, (): number => {
         data.value_ = data.value_ + 20
         return data.value_
         })
@@ -858,7 +862,7 @@ export default function ISendableImplTest(): void {
       data.value_ = 0
 
       try {
-        await lock.lockAsync((): number => {
+        await runLockedUpdate(lock, (): number => {
         data.value_ = 42
         return data.value_
         })
@@ -1332,13 +1336,13 @@ export default function ISendableImplTest(): void {
       data.value_ = 0
 
       try {
-        await lock.lockAsync((): number => {
+        await runLockedUpdate(lock, (): number => {
           data.value_ = data.value_ + 15
           return data.value_
         })
 
         try {
-          await lock.lockAsync((): number => {
+          await runLockedUpdate(lock, (): number => {
           data.value_ = data.value_ + 35
           return data.value_
           })
@@ -1371,13 +1375,13 @@ export default function ISendableImplTest(): void {
       data.value_ = 0
 
       try {
-        await lock.lockAsync((): number => {
+        await runLockedUpdate(lock, (): number => {
           data.value_ = data.value_ + 10
           return data.value_
         })
 
         try {
-          await lock.lockAsync((): number => {
+          await runLockedUpdate(lock, (): number => {
           data.value_ = data.value_ + 20
           return data.value_
           })
@@ -1387,7 +1391,7 @@ export default function ISendableImplTest(): void {
         }
 
         try {
-          await lock.lockAsync((): number => {
+          await runLockedUpdate(lock, (): number => {
           data.value_ = data.value_ + 30
           return data.value_
           })

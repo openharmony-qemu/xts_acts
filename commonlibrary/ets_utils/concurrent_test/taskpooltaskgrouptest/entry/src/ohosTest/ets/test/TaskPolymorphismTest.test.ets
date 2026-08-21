@@ -139,6 +139,11 @@ export default function TaskPolymorphismTest(): void {
       try {
         let result = await taskpool.execute(longTask)
         expect(String(result)).assertEqual(String(30))
+      } catch (error) {
+        console.error(`TaskPolymorphismTest0200 failed: ${error}`)
+        expect().assertFail()
+        done()
+        return
       } finally {
         // Cleanup-only: terminateTask() may throw if the task already finished
         // or was never scheduled. This is best-effort cleanup, not a test
