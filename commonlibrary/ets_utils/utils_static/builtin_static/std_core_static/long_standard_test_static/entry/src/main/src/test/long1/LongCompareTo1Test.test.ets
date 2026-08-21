@@ -97,7 +97,7 @@ export default function longCompareTo1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_COMPARETO1_0500
      * @tc.name testLongCompareTo1_005
-     * @tc.desc Verify compareTo returns consistent results for boundary operands
+     * @tc.desc Verify compareTo returns positive for Long.MAX_VALUE compared to Long.MIN_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -108,12 +108,13 @@ export default function longCompareTo1Test(): void {
       const r1 = a.compareTo(b);
       const r2 = a.compareTo(b);
       expect(r1).assertEqual(r2);
+      expect(r1 > 0).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_COMPARETO1_0600
      * @tc.name testLongCompareTo1_006
-     * @tc.desc Verify compareTo returns consistent results for opposite sign operands
+     * @tc.desc Verify compareTo returns negative for negative operand compared to positive operand
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -124,6 +125,7 @@ export default function longCompareTo1Test(): void {
       const r1 = a.compareTo(b);
       const r2 = a.compareTo(b);
       expect(r1).assertEqual(r2);
+      expect(r1 < 0).assertTrue();
     });
 
     /**

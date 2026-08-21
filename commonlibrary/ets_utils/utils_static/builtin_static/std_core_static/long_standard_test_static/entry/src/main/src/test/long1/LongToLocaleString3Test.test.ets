@@ -220,7 +220,7 @@ export default function longToLocaleString3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOLOCALESTRING3_1300
      * @tc.name testLongToLocaleString3_013
-     * @tc.desc Verify toLocaleString MAX_VALUE output length exceeds 10 digits
+     * @tc.desc Verify toLocaleString en-US formats Long.MAX_VALUE with grouping separators
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -228,7 +228,7 @@ export default function longToLocaleString3Test(): void {
     it('testLongToLocaleString3_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(9223372036854775807);
       const result: String = value.toLocaleString('en-US');
-      expect(result.toString().length).assertLarger(10);
+      expect(result).assertEqual('9,223,372,036,854,775,807');
     });
 
     /**
@@ -264,7 +264,7 @@ export default function longToLocaleString3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOLOCALESTRING3_1600
      * @tc.name testLongToLocaleString3_016
-     * @tc.desc Verify toLocaleString zh-CN is deterministic with and without empty options for 888888 Long
+     * @tc.desc Verify toLocaleString zh-CN formats 888888 as 888,888 and is deterministic
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -274,12 +274,13 @@ export default function longToLocaleString3Test(): void {
       let r1: String = v.toLocaleString('zh-CN');
       let r2: String = v.toLocaleString('zh-CN', {});
       expect(r1).assertEqual(r2);
+      expect(r1).assertEqual('888,888');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOLOCALESTRING3_1700
      * @tc.name testLongToLocaleString3_017
-     * @tc.desc Verify toLocaleString en-GB is deterministic across repeated calls for 999999 Long
+     * @tc.desc Verify toLocaleString en-GB formats 999999 as 999,999 and is deterministic
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -289,6 +290,7 @@ export default function longToLocaleString3Test(): void {
       let r1: String = v.toLocaleString('en-GB');
       let r2: String = v.toLocaleString('en-GB');
       expect(r1).assertEqual(r2);
+      expect(r1).assertEqual('999,999');
     });
 
     /**
@@ -369,7 +371,7 @@ export default function longToLocaleString3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOLOCALESTRING3_2300
      * @tc.name testLongToLocaleString3_023
-     * @tc.desc Verify toLocaleString en-US minimumFractionDigits 3 is deterministic for 555555 Long
+     * @tc.desc Verify toLocaleString en-US minimumFractionDigits 3 formats 555555 as 555,555.000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -379,6 +381,7 @@ export default function longToLocaleString3Test(): void {
       let r1: String = v.toLocaleString('en-US', { minimumFractionDigits: 3 });
       let r2: String = v.toLocaleString('en-US', { minimumFractionDigits: 3 });
       expect(r1).assertEqual(r2);
+      expect(r1).assertEqual('555,555.000');
     });
 
     /**
@@ -602,7 +605,7 @@ export default function longToLocaleString3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOLOCALESTRING3_3700
      * @tc.name testLongToLocaleString3_037
-     * @tc.desc Verify toLocaleString en-US percent style is deterministic for 55555 Long
+     * @tc.desc Verify toLocaleString en-US percent style formats 55555 as 5,555,500%
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -613,6 +616,7 @@ export default function longToLocaleString3Test(): void {
       expect(v1.toLocaleString('en-US', { style: 'percent' })).assertEqual(
         v2.toLocaleString('en-US', { style: 'percent' }),
       );
+      expect(v1.toLocaleString('en-US', { style: 'percent' })).assertEqual('5,555,500%');
     });
 
     /**
@@ -633,7 +637,7 @@ export default function longToLocaleString3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOLOCALESTRING3_3900
      * @tc.name testLongToLocaleString3_039
-     * @tc.desc Verify toLocaleString en-US is deterministic for MIN_VALUE-plus-one Long
+     * @tc.desc Verify toLocaleString en-US formats MIN_VALUE-plus-one as -9,223,372,036,854,775,807
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -643,6 +647,7 @@ export default function longToLocaleString3Test(): void {
       let v1: Long = new Long(val);
       let v2: Long = new Long(val);
       expect(v1.toLocaleString('en-US')).assertEqual(v2.toLocaleString('en-US'));
+      expect(v1.toLocaleString('en-US')).assertEqual('-9,223,372,036,854,775,807');
     });
 
     /**

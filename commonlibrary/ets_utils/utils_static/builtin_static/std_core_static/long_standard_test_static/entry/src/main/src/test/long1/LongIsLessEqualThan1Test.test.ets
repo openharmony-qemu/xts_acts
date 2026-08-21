@@ -196,14 +196,14 @@ export default function longIsLessEqualThan1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISLESSEQUALTHAN1_1100
      * @tc.name testLongIsLessEqualThan1_011
-     * @tc.desc Verify isLessEqualThan returns true for same object reference
+     * @tc.desc Verify isLessEqualThan returns true for independent objects with equal value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testLongIsLessEqualThan1_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Long = new Long(12345);
-      const b: Long = a;
+      const b: Long = new Long(12345);
       const result: boolean = a.isLessEqualThan(b);
       expect(result).assertTrue();
     });

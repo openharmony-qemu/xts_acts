@@ -65,7 +65,7 @@ export default function longAdd1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD1_0300
      * @tc.name testLongAdd1_003
-     * @tc.desc Verify add does not mutate original Long.MIN_VALUE and -1 operands
+     * @tc.desc Verify add does not mutate operands and Long.MIN_VALUE plus negative one wraps to Long.MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -76,6 +76,7 @@ export default function longAdd1Test(): void {
       const c: Long = a.add(b);
       expect(a.toLong()).assertEqual(Long.MIN_VALUE);
       expect(b.toLong()).assertEqual(-1);
+      expect(c.toLong()).assertEqual(Long.MAX_VALUE);
     });
 
     /**

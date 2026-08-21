@@ -178,11 +178,10 @@ export default function longIsGreaterThan1Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongIsGreaterThan1_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Long = new Long(9223372036854775807);
-      let r1: boolean = a.isGreaterThan(a);
-      let r2: boolean = a.isGreaterThan(a);
-      expect(r1).assertEqual(r2);
-      expect(r1).assertFalse();
+      const a: Long = new Long(9223372036854775807);
+      const b: Long = new Long(9223372036854775807);
+      const r: boolean = a.isGreaterThan(b);
+      expect(r).assertFalse();
     });
 
     /**
@@ -237,7 +236,7 @@ export default function longIsGreaterThan1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISGREATERTHAN1_1400
      * @tc.name testLongIsGreaterThan1_014
-     * @tc.desc Verify wrapped Long.MAX_VALUE multiplied by three not ordered after itself
+     * @tc.desc Verify wrapped Long.MAX_VALUE multiplied by three not ordered after Long.MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -246,7 +245,7 @@ export default function longIsGreaterThan1Test(): void {
       const a: Long = new Long(9223372036854775807);
       const b: Long = new Long(3);
       const product: Long = new Long(a.toLong() * b.toLong());
-      const r: boolean = product.isGreaterThan(product);
+      const r: boolean = product.isGreaterThan(a);
       expect(r).assertFalse();
     });
 
