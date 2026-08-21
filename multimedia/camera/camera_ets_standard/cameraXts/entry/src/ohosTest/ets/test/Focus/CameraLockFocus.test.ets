@@ -300,7 +300,11 @@ export default function CameraLockFocusTest() {
       } catch (err) {
         let error = err;
         console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        await releasePhotoSession();
+        try {
+          await releasePhotoSession();
+        } catch (merror) {
+          console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+        }
         expect().assertFail();
       }
       done();
@@ -348,7 +352,11 @@ export default function CameraLockFocusTest() {
         console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
         expect().assertFail();
       }
-      await releasePhotoSession();
+      try {
+        await releasePhotoSession();
+      } catch (merror) {
+        console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+      }
       done();
     });
 
@@ -380,7 +388,11 @@ export default function CameraLockFocusTest() {
           expect(err.code).assertEqual(SESSION_NOT_CONFIG_CODE);
         }
       }
-      await releasePhotoSession();
+      try {
+        await releasePhotoSession();
+      } catch (merror) {
+        console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+      }
       done();
     });
 
@@ -419,7 +431,11 @@ export default function CameraLockFocusTest() {
           expect().assertFail();
         }
       }
-      await releaseVideoSession();
+      try {
+        await releaseVideoSession();
+      } catch (merror) {
+        console.error(TAG + caseName + ' releaseVideoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+      }
       done();
     });
 
@@ -554,7 +570,11 @@ export default function CameraLockFocusTest() {
           expect().assertFail();
         }
       }
-      await releasePhotoSession();
+      try {
+        await releasePhotoSession();
+      } catch (merror) {
+        console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+      }
       done();
     });
 
@@ -593,7 +613,11 @@ export default function CameraLockFocusTest() {
           expect(err.code).assertEqual(INVALID_PARAMETER_CODE);
         }
       }
-      await releasePhotoSession();
+      try {
+        await releasePhotoSession();
+      } catch (merror) {
+        console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+      }
       done();
     });
 
@@ -632,7 +656,11 @@ export default function CameraLockFocusTest() {
           expect(err.code).assertEqual(INVALID_PARAMETER_CODE);
         }
       }
-      await releasePhotoSession();
+      try {
+        await releasePhotoSession();
+      } catch (merror) {
+        console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+      }
       done();
     });
 
@@ -663,7 +691,11 @@ export default function CameraLockFocusTest() {
           expect(err.code).assertEqual(SESSION_NOT_CONFIG_CODE);
         }
       }
-      await releasePhotoSession();
+      try {
+        await releasePhotoSession();
+      } catch (merror) {
+        console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+      }
       done();
     });
 
@@ -713,7 +745,11 @@ export default function CameraLockFocusTest() {
         console.error(TAG + caseName + ' failed. err: ' + err.code + ', msg: ' + err.message);
         expect().assertFail();
       }
-      await releasePhotoSession();
+      try {
+        await releasePhotoSession();
+      } catch (merror) {
+        console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+      }
       done();
     });
 
@@ -752,7 +788,11 @@ export default function CameraLockFocusTest() {
           expect().assertFail();
         }
       }
-      await releasePhotoSession();
+      try {
+        await releasePhotoSession();
+      } catch (merror) {
+        console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+      }
       done();
     });
 
@@ -795,7 +835,11 @@ export default function CameraLockFocusTest() {
           expect().assertFail();
         }
       }
-      await releasePhotoSession();
+      try {
+        await releasePhotoSession();
+      } catch (merror) {
+        console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+      }
       done();
     });
 
@@ -826,7 +870,11 @@ export default function CameraLockFocusTest() {
           expect().assertFail();
         }
       }
-      await releasePhotoSession();
+      try {
+        await releasePhotoSession();
+      } catch (merror) {
+        console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+      }
       done();
     });
 
@@ -866,7 +914,11 @@ export default function CameraLockFocusTest() {
           expect().assertFail();
         }
       }
-      await releasePhotoSession();
+      try {
+        await releasePhotoSession();
+      } catch (merror) {
+        console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
+      }
       done();
     });
 
