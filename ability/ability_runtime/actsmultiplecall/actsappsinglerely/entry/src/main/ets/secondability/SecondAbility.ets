@@ -28,9 +28,9 @@ import { Caller } from '@ohos.app.ability.UIAbility';
 const TIME_OUT = 50;
 
 class MyParcelable implements rpc.Parcelable {
-  num: number = 0;
-  str: string = '';
-  result: boolean = false;
+  public num: number = 0;
+  public str: string = '';
+  public result: boolean = false;
 
   constructor(num: number, string: string, result: boolean) {
     this.num = num;
@@ -99,7 +99,7 @@ export default class SecondAbility extends UIAbility {
         console.info('====>Acts_SingleInstanceCallFunction_1000 multiple startAbilityByCall caller:' +
         JSON.stringify(caller));
         let param = new MyParcelable(0, 'Acts_SingleInstanceCallFunction_1000 multiple', false);
-        caller.callWithResult('call', param).then((data: ESObject) => {
+        caller.callWithResult('call', param).then((data: rpc.MessageSequence) => {
           let receivedData = new MyParcelable(0, '', false);
           data.readParcelable(receivedData as rpc.Parcelable);
           let commonEventData: commonEvent.CommonEventPublishData = {
@@ -130,7 +130,7 @@ export default class SecondAbility extends UIAbility {
         console.info('====>Acts_SingleInstanceCallFunction_1100 callappreply startAbilityByCall caller:' +
         JSON.stringify(caller));
         let param = new MyParcelable(0, 'Acts_SingleInstanceCallFunction_1100', false);
-        caller.callWithResult('call', param).then((data: ESObject) => {
+        caller.callWithResult('call', param).then((data: rpc.MessageSequence) => {
           console.info('====>Acts_SingleInstanceCallFunction_1100 callappreply callWithResult data:' +
           JSON.stringify(data));
           let receivedData2 = new MyParcelable(0, '', false);
@@ -177,7 +177,7 @@ export default class SecondAbility extends UIAbility {
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err: BusinessError, data: ESObject) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.ERROR);
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');

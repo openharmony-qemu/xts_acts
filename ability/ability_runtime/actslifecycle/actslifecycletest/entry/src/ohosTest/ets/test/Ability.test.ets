@@ -25,14 +25,14 @@ let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 function sleep(ms: number) {
   return new Promise<string>(resolve => setTimeout(resolve, ms));
 }
-let TestAbilityContext:common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
-      TestAbilityContext = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -50,12 +50,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0100
-     * @tc.number SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0100
-     * @tc.desc   Callback verification for getTopAbility interface
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0100
+     * @tc.number : SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0100
+     * @tc.desc : Callback verification for getTopAbility interface
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0100';
@@ -92,12 +92,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0600
-     * @tc.number SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0600
-     * @tc.desc   Callback verification for getTopAbility interface
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0600
+     * @tc.number : SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0600
+     * @tc.desc : Callback verification for getTopAbility interface
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0600', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0600';
@@ -142,12 +142,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0500
-     * @tc.number SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0500
-     * @tc.desc   Callback verification for getTopAbility interface
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0500
+     * @tc.number : SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0500
+     * @tc.desc : Callback verification for getTopAbility interface
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0500', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0500';

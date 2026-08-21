@@ -21,7 +21,7 @@ import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
 import { Want } from '@kit.AbilityKit';
 
-let message: ESObject;
+let message: string = '';
 let commonEventData: commonEvent.CommonEventPublishData = {
   parameters: {
     message: message,
@@ -61,7 +61,7 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability4 onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err: BusinessError, data: ESObject) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

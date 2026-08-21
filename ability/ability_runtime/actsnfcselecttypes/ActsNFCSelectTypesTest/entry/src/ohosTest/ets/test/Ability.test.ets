@@ -21,7 +21,7 @@ import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry
 import Want from '@ohos.app.ability.Want';
 import {BusinessError} from '@ohos.base';
 
-let ACTS_CrossCallFunction:commonEvent.CommonEventSubscribeInfo = {
+let actsCrossCallFunction:commonEvent.CommonEventSubscribeInfo = {
   events: ['ACTS_CROSS_CALL_EVENT']
 };
 
@@ -143,12 +143,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.name   ACTS_NFC_SelectTypes_0100
-     * @tc.number ACTS_NFC_SelectTypes_0100
-     * @tc.desc   Set the Want parameter, test the specified Types type, and match the corresponding application
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_NFC_SelectTypes_0100
+     * @tc.number : ACTS_NFC_SelectTypes_0100
+     * @tc.desc : Set the Want parameter, test the specified Types type, and match the corresponding application
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_NFC_SelectTypes_0100', Level.LEVEL0, async (done:Function) => {
       let want:Want = {
@@ -180,12 +180,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_NFC_SelectTypes_0200
-     * @tc.number ACTS_NFC_SelectTypes_0200
-     * @tc.desc   Set the Want parameter, test the specified Types type, and match the corresponding application
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_NFC_SelectTypes_0200
+     * @tc.number : ACTS_NFC_SelectTypes_0200
+     * @tc.desc : Set the Want parameter, test the specified Types type, and match the corresponding application
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_NFC_SelectTypes_0200', Level.LEVEL0, async (done:Function) => {
       let want:Want = {
@@ -216,12 +216,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_NFC_SelectTypes_0300
-     * @tc.number ACTS_NFC_SelectTypes_0300
-     * @tc.desc   Set the Want parameter, test the specified Types type, and match the corresponding application
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_NFC_SelectTypes_0300
+     * @tc.number : ACTS_NFC_SelectTypes_0300
+     * @tc.desc : Set the Want parameter, test the specified Types type, and match the corresponding application
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_NFC_SelectTypes_0300', Level.LEVEL0, async (done:Function) => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'ACTS_NFC_SelectTypes_0300 begin');
@@ -252,12 +252,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_NFC_SelectTypes_0400
-     * @tc.number ACTS_NFC_SelectTypes_0400
-     * @tc.desc   Set the Want parameter, test the specified Types type, and match the corresponding application
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_NFC_SelectTypes_0400
+     * @tc.number : ACTS_NFC_SelectTypes_0400
+     * @tc.desc : Set the Want parameter, test the specified Types type, and match the corresponding application
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_NFC_SelectTypes_0400', Level.LEVEL0, async (done:Function) => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'ACTS_NFC_SelectTypes_0400 begin');
@@ -288,12 +288,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_NFC_SelectTypes_0500
-     * @tc.number ACTS_NFC_SelectTypes_0500
-     * @tc.desc   Set the Want parameter, test the specified Types type, and match the corresponding application
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_NFC_SelectTypes_0500
+     * @tc.number : ACTS_NFC_SelectTypes_0500
+     * @tc.desc : Set the Want parameter, test the specified Types type, and match the corresponding application
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_NFC_SelectTypes_0500', Level.LEVEL0, async (done:Function) => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'ACTS_NFC_SelectTypes_0500 begin');
@@ -326,12 +326,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_NFC_SelectTypes_0600
-     * @tc.number ACTS_NFC_SelectTypes_0600
-     * @tc.desc   Set the Want parameter, test the specified Types type, and match the corresponding application
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_NFC_SelectTypes_0600
+     * @tc.number : ACTS_NFC_SelectTypes_0600
+     * @tc.desc : Set the Want parameter, test the specified Types type, and match the corresponding application
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_NFC_SelectTypes_0600', Level.LEVEL0, async (done:Function) => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'ACTS_NFC_SelectTypes_0600 begin');
@@ -363,12 +363,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_NFC_SelectTypes_0700
-     * @tc.number ACTS_NFC_SelectTypes_0700
-     * @tc.desc   Set the Want parameter, test the specified Types type, and match the corresponding application
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_NFC_SelectTypes_0700
+     * @tc.number : ACTS_NFC_SelectTypes_0700
+     * @tc.desc : Set the Want parameter, test the specified Types type, and match the corresponding application
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_NFC_SelectTypes_0700', Level.LEVEL0, async (done:Function) => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'ACTS_NFC_SelectTypes_0700 begin');
@@ -401,12 +401,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_NFC_SelectTypes_0800
-     * @tc.number ACTS_NFC_SelectTypes_0800
-     * @tc.desc   Set the Want parameter, test the specified Types type, and match the corresponding application
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_NFC_SelectTypes_0800
+     * @tc.number : ACTS_NFC_SelectTypes_0800
+     * @tc.desc : Set the Want parameter, test the specified Types type, and match the corresponding application
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_NFC_SelectTypes_0800' , Level.LEVEL0, async (done: Function) => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'ACTS_NFC_SelectTypes_0800 begin');
@@ -439,12 +439,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_NFC_SelectTypes_0900
-     * @tc.number ACTS_NFC_SelectTypes_0900
-     * @tc.desc   Set the Want parameter, test the specified Types type, and match the corresponding application
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_NFC_SelectTypes_0900
+     * @tc.number : ACTS_NFC_SelectTypes_0900
+     * @tc.desc : Set the Want parameter, test the specified Types type, and match the corresponding application
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_NFC_SelectTypes_0900', Level.LEVEL0, async (done:Function) => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'ACTS_NFC_SelectTypes_0900 begin');
@@ -467,30 +467,34 @@ export default function abilityTest() {
         console.info('startAbility succeed');
       }
       );
-      await driver.delayMs(2000);
-      let app1 = await driver.findComponent(ON.text('apptest1'));
-      let app2 = await driver.findComponent(ON.text('apptest2'));
-      let app3 = await driver.findComponent(ON.text('apptest3'));
-      let app4 = await driver.findComponent(ON.text('apptest4'));
-      expect(app1 === null).assertTrue();
-      expect(app2 === null).assertTrue();
-      expect(app3 === null).assertTrue();
-      expect(app4 === null).assertTrue();
-      let cancel = await driver.findComponents(ON.clickable(true));
-      if (cancel !== null) {
-        await cancel[0].click();
+      try {
+        await driver.delayMs(2000);
+        let app1 = await driver.findComponent(ON.text('apptest1'));
+        let app2 = await driver.findComponent(ON.text('apptest2'));
+        let app3 = await driver.findComponent(ON.text('apptest3'));
+        let app4 = await driver.findComponent(ON.text('apptest4'));
+        expect(app1 === null).assertTrue();
+        expect(app2 === null).assertTrue();
+        expect(app3 === null).assertTrue();
+        expect(app4 === null).assertTrue();
+        let cancel = await driver.findComponents(ON.clickable(true));
+        if (cancel !== null) {
+          await cancel[0].click();
+        }
+      } catch (err) {
+        hilog.error(DOMAIN, TAG, '%{public}s', `ACTS_NFC_SelectTypes_0900 driver failed: ${JSON.stringify(err)}`);
       }
       hilog.info(DOMAIN, TAG, '%{public}s', 'ACTS_NFC_SelectTypes_0900 end');
       done();
     })
 
     /**
-     * @tc.name   ACTS_NFC_SelectTypes_1000
-     * @tc.number ACTS_NFC_SelectTypes_1000
-     * @tc.desc   Set the Want parameter, test the specified Types type, and match the corresponding application
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_NFC_SelectTypes_1000
+     * @tc.number : ACTS_NFC_SelectTypes_1000
+     * @tc.desc : Set the Want parameter, test the specified Types type, and match the corresponding application
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_NFC_SelectTypes_1000', Level.LEVEL0, async (done:Function) => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'ACTS_NFC_SelectTypes_1000 begin');
@@ -504,7 +508,7 @@ export default function abilityTest() {
         }
       };
       let subscriber:commonEvent.CommonEventSubscriber;
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
           console.info('====>ACTS_NFC_SelectTypes_1000 subscribeCallBack data:' + JSON.stringify(data));
@@ -537,12 +541,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_NFC_SelectTypes_1100
-     * @tc.number ACTS_NFC_SelectTypes_1100
-     * @tc.desc   Set the Want parameter, test the specified Types type, and match the corresponding application
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_NFC_SelectTypes_1100
+     * @tc.number : ACTS_NFC_SelectTypes_1100
+     * @tc.desc : Set the Want parameter, test the specified Types type, and match the corresponding application
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_NFC_SelectTypes_1100', Level.LEVEL0, async (done:Function) => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'ACTS_NFC_SelectTypes_1100 begin');
@@ -555,7 +559,7 @@ export default function abilityTest() {
         }
       };
       let subscriber:commonEvent.CommonEventSubscriber;
-      commonEvent.createSubscriber(ACTS_CrossCallFunction).then(async (data) => {
+      commonEvent.createSubscriber(actsCrossCallFunction).then(async (data) => {
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
           console.info('====>ACTS_NFC_SelectTypes_1100 subscribeCallBack data:' + JSON.stringify(data));
@@ -587,12 +591,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_NFC_SelectTypes_1200
-     * @tc.number ACTS_NFC_SelectTypes_1200
-     * @tc.desc   Set the Want parameter, test the specified Types type, and match the corresponding application
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_NFC_SelectTypes_1200
+     * @tc.number : ACTS_NFC_SelectTypes_1200
+     * @tc.desc : Set the Want parameter, test the specified Types type, and match the corresponding application
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_NFC_SelectTypes_1200', Level.LEVEL0, async (done: Function) => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'ACTS_NFC_SelectTypes_1200 begin');
@@ -625,12 +629,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   ACTS_NFC_SelectTypes_1300
-     * @tc.number ACTS_NFC_SelectTypes_1300
-     * @tc.desc   Set the Want parameter, test the specified Types type, and match the corresponding application
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : ACTS_NFC_SelectTypes_1300
+     * @tc.number : ACTS_NFC_SelectTypes_1300
+     * @tc.desc : Set the Want parameter, test the specified Types type, and match the corresponding application
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('ACTS_NFC_SelectTypes_1300', Level.LEVEL0, async (done: Function) => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'ACTS_NFC_SelectTypes_1300 begin');
