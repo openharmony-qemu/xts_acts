@@ -596,7 +596,12 @@ export default function UseSendableTest(): void {
      */
     it('UseSendableTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(sendableNestedFunctionDispatch)
-      let result = await taskpool.execute(task)
+      try {
+        let result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`async await failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(result as number).assertEqual(100)
       done()

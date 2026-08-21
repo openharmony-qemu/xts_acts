@@ -437,7 +437,12 @@ export default function ISendableImplTest(): void {
       let task1 = new taskpool.Task(readSendableValueDispatch, instance1)
       let task2 = new taskpool.Task(readSendableValueDispatch, instance2)
 
-      let results = await Promise.all([
+      try {
+        let results = await Promise.all([
+      } catch (error) {
+        console.error(`async await failed: ${error}`)
+        expect().assertFail()
+      }
         taskpool.execute(task1),
         taskpool.execute(task2)
       ])
@@ -619,16 +624,18 @@ export default function ISendableImplTest(): void {
 
       try {
         let results = await Promise.all([
+          taskpool.execute(task1),
+          taskpool.execute(task2)
+        ])
+
+        expect(results[0] as number).assertEqual(51)
+        expect(results[1] as number).assertEqual(101)
       } catch (error) {
         console.error(`async await failed: ${error}`)
         expect().assertFail()
+        done()
+        return
       }
-        taskpool.execute(task1),
-        taskpool.execute(task2)
-      ])
-
-      expect(results[0] as number).assertEqual(51)
-      expect(results[1] as number).assertEqual(101)
       done()
     })
 
