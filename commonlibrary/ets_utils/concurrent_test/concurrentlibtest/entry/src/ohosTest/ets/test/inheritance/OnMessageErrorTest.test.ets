@@ -148,7 +148,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest0200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -185,7 +190,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest0300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -213,7 +223,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest0400 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -241,7 +256,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest0500 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -286,7 +306,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest0600 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -314,7 +339,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest0700 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -342,7 +372,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest0800 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -387,7 +422,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest0900 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -435,7 +475,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest1000 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -483,7 +528,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest1100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -531,7 +581,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest1200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -579,7 +634,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest1300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -618,7 +678,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest1400 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -660,7 +725,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest1500 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -688,7 +758,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest1600 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -716,7 +791,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest1700 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -759,7 +839,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest1800 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -792,7 +877,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest1900 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -845,7 +935,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest2000 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -889,7 +984,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest2100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -936,7 +1036,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest2200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -979,7 +1084,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest2300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -1149,7 +1259,12 @@ export default function OnMessageErrorTest(): void {
         console.error(`OnMessageErrorTest2600 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });

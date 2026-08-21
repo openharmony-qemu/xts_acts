@@ -470,7 +470,13 @@ export default function TaskPolymorphismTest(): void {
     it('TaskPolymorphismTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let genericsTask = new taskpool.GenericsTask<[number], string>(stringFunc, 100)
-        let result = await taskpool.execute(genericsTask)
+        let result: Object = undefined
+        try {
+          result = await taskpool.execute(genericsTask)
+        } catch (error) {
+          console.error(`taskpool execute failed: ${error}`)
+          expect().assertFail()
+        }
 
         expect(result as string).assertEqual('value: 100')
         expect(typeof result).assertEqual('string')

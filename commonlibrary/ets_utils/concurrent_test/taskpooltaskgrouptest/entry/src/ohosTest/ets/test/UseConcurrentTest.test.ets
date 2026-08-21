@@ -156,7 +156,13 @@ function ucBlankLineFirst(): number {
 async function ucNestedTaskPool(): Promise<number> {
   'use concurrent'
   let innerTaskObj = new taskpool.Task(tsConcurrentIdentity, 100.0)
-  let result = await taskpool.execute(innerTaskObj)
+  let result: Object = undefined
+  try {
+    result = await taskpool.execute(innerTaskObj)
+  } catch (error) {
+    console.error(`taskpool execute failed: ${error}`)
+    expect().assertFail()
+  }
   return Number(result) + 50
 }
 
@@ -183,7 +189,13 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(concurrentNoArgs)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(100))
       done()
@@ -199,7 +211,13 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(tsConcurrentAdd, 15.0, 27.0)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(42))
       done()
@@ -215,7 +233,13 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(jsConcurrentDouble, 21.0)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(42))
       done()
@@ -231,7 +255,13 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(concurrentAdd, 8.0, 2.0)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(10))
       done()
@@ -247,7 +277,13 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(concurrentStringLen, 'hello')
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(5))
       done()
@@ -298,7 +334,13 @@ export default function UseConcurrentTest(): void {
       arr.push(3)
 
       let task = new taskpool.Task(ucArrayModify, arr)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(4))
       done()
@@ -317,7 +359,13 @@ export default function UseConcurrentTest(): void {
       map.set('existing', 1)
 
       let task = new taskpool.Task(ucMapModify, map)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(2))
       done()
@@ -337,7 +385,13 @@ export default function UseConcurrentTest(): void {
       set.add(2)
 
       let task = new taskpool.Task(ucSetModify, set)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(3))
       done()
@@ -355,7 +409,13 @@ export default function UseConcurrentTest(): void {
       let bv = new collections.BitVector(16)
 
       let task = new taskpool.Task(ucBitVectorLength, bv)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(18))
       done()
@@ -373,7 +433,13 @@ export default function UseConcurrentTest(): void {
       let ab = new ArrayBuffer(32)
 
       let task = new taskpool.Task(concurrentWithArrayBuffer, ab)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(32))
       done()
@@ -392,7 +458,13 @@ export default function UseConcurrentTest(): void {
       data.input_ = 30
 
       let task = new taskpool.Task(concurrentProcessSendable, data)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(60))
       done()
@@ -408,7 +480,13 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(concurrentReturnNumber)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(42))
       done()
@@ -424,7 +502,13 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(concurrentReturnString)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(result as string).assertEqual('result')
       done()
@@ -443,8 +527,20 @@ export default function UseConcurrentTest(): void {
         let task1 = new taskpool.Task(concurrentReturnBoolean, 42.0)
         let task2 = new taskpool.Task(concurrentReturnBoolean, -1.0)
 
-        let result1 = await taskpool.execute(task1)
-        let result2 = await taskpool.execute(task2)
+        let result1: Object = undefined
+        try {
+          result1 = await taskpool.execute(task1)
+        } catch (error) {
+          console.error(`taskpool execute failed: ${error}`)
+          expect().assertFail()
+        }
+        let result2: Object = undefined
+        try {
+          result2 = await taskpool.execute(task2)
+        } catch (error) {
+          console.error(`taskpool execute failed: ${error}`)
+          expect().assertFail()
+        }
 
         expect(result1 as boolean).assertTrue()
         expect(result2 as boolean).assertFalse()
@@ -537,7 +633,13 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(ucAdd, 15.0, 25.0)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(40))
       done()
@@ -553,7 +655,13 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(ucBlankLineFirst)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(100))
       done()
@@ -569,7 +677,13 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(tsConcurrentStringLength, 'cross_file')
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(10))
       done()
@@ -585,7 +699,13 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(jsConcurrentAdd, 15.0, 27.0)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(String(result)).assertEqual(String(42))
       done()
@@ -730,7 +850,13 @@ export default function UseConcurrentTest(): void {
       let work: worker.ThreadWorker | null = null
       try {
         let task = new taskpool.Task(jsConcurrentDouble, 21.0)
-        let taskResult = await taskpool.execute(task)
+        let taskResult: Object = undefined
+        try {
+          taskResult = await taskpool.execute(task)
+        } catch (error) {
+          console.error(`taskpool execute failed: ${error}`)
+          expect().assertFail()
+        }
         expect(String(taskResult)).assertEqual(String(42))
 
         work = new worker.ThreadWorker('../workers/WorkerConcurrentTs.ets')
@@ -817,7 +943,13 @@ export default function UseConcurrentTest(): void {
     it('UseConcurrentTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let task = new taskpool.Task(tsComboConcurrent, 7)
-        let result = await taskpool.execute(task)
+        let result: Object = undefined
+        try {
+          result = await taskpool.execute(task)
+        } catch (error) {
+          console.error(`taskpool execute failed: ${error}`)
+          expect().assertFail()
+        }
 
         expect(String(result)).assertEqual(String(120))
         done()

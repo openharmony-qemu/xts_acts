@@ -164,7 +164,12 @@ export default function ErrorEventInheritanceTest(): void {
         console.error(`ErrorEventInheritanceTest0200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -203,7 +208,12 @@ export default function ErrorEventInheritanceTest(): void {
         console.error(`ErrorEventInheritanceTest0300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -238,7 +248,12 @@ export default function ErrorEventInheritanceTest(): void {
         console.error(`ErrorEventInheritanceTest0400 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -273,7 +288,12 @@ export default function ErrorEventInheritanceTest(): void {
         console.error(`ErrorEventInheritanceTest0500 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -308,7 +328,12 @@ export default function ErrorEventInheritanceTest(): void {
         console.error(`ErrorEventInheritanceTest0600 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -343,7 +368,12 @@ export default function ErrorEventInheritanceTest(): void {
         console.error(`ErrorEventInheritanceTest0700 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -377,7 +407,12 @@ export default function ErrorEventInheritanceTest(): void {
         console.error(`ErrorEventInheritanceTest0800 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -431,7 +466,12 @@ export default function ErrorEventInheritanceTest(): void {
         console.error(`ErrorEventInheritanceTest0900 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -486,7 +526,12 @@ export default function ErrorEventInheritanceTest(): void {
         console.error(`ErrorEventInheritanceTest1000 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -520,7 +565,12 @@ export default function ErrorEventInheritanceTest(): void {
         console.error(`ErrorEventInheritanceTest1100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });

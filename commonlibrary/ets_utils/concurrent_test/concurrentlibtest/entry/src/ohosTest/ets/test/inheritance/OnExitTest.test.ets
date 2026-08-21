@@ -106,7 +106,12 @@ export default function OnExitTest(): void {
         console.error(`OnExitTest0200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -142,7 +147,12 @@ export default function OnExitTest(): void {
         console.error(`OnExitTest0300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -181,7 +191,12 @@ export default function OnExitTest(): void {
         console.error(`OnExitTest0400 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -214,7 +229,12 @@ export default function OnExitTest(): void {
         console.error(`OnExitTest0500 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -248,7 +268,12 @@ export default function OnExitTest(): void {
         console.error(`OnExitTest0600 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -281,7 +306,12 @@ export default function OnExitTest(): void {
         console.error(`OnExitTest0700 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -317,7 +347,12 @@ export default function OnExitTest(): void {
         console.error(`OnExitTest0800 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -355,7 +390,12 @@ export default function OnExitTest(): void {
         console.error(`OnExitTest0900 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -389,7 +429,12 @@ export default function OnExitTest(): void {
         console.error(`OnExitTest1000 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -443,7 +488,12 @@ export default function OnExitTest(): void {
           await waitForEvent(receivedPromise);
           expect(received).assertTrue();
         } finally {
-          await terminateAndAwait(secondWorker);
+          try {
+            await terminateAndAwait(secondWorker);
+          } catch (error) {
+            console.error(`terminate cleanup failed: ${error}`);
+            expect().assertFail();
+          }
         }
       } catch (err) {
         console.error(`OnExitTest1100 failed, error: ${err}`);

@@ -351,7 +351,13 @@ export default function ISendableImplTest(): void {
       instance.value_ = 55
 
       let task = new taskpool.Task(readSendableValueDispatch, instance)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(result as number).assertEqual(55)
       done()
@@ -370,7 +376,13 @@ export default function ISendableImplTest(): void {
       instance.value_ = 20
 
       let task = new taskpool.Task(modifySendableValueDispatch, instance, 88.0)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(result as number).assertEqual(88)
       expect(instance.value_).assertEqual(88)
@@ -390,7 +402,13 @@ export default function ISendableImplTest(): void {
       outer.setNestedValue(77)
 
       let task = new taskpool.Task(nestedSendableAccessDispatch, outer)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(result as number).assertEqual(77)
       done()
@@ -572,10 +590,15 @@ export default function ISendableImplTest(): void {
       let lock = new utils.locks.AsyncLock()
       let counter: number = 0
 
-      await lock.lockAsync((): number => {
+      try {
+        await lock.lockAsync((): number => {
         counter = 1
         return counter
-      })
+        })
+      } catch (error) {
+        console.error(`lockAsync failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(counter).assertEqual(1)
       done()
@@ -594,7 +617,13 @@ export default function ISendableImplTest(): void {
       data.value_ = 10
 
       let task = new taskpool.Task(incrementSendableValueDispatch, data)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(result as number).assertEqual(11)
       done()
@@ -612,15 +641,25 @@ export default function ISendableImplTest(): void {
       let lock = new utils.locks.AsyncLock()
       let counter: number = 0
 
-      await lock.lockAsync((): number => {
+      try {
+        await lock.lockAsync((): number => {
         counter = 50
         return counter
-      })
+        })
+      } catch (error) {
+        console.error(`lockAsync failed: ${error}`)
+        expect().assertFail()
+      }
 
-      await lock.lockAsync((): number => {
+      try {
+        await lock.lockAsync((): number => {
         counter = counter + 50
         return counter
-      })
+        })
+      } catch (error) {
+        console.error(`lockAsync failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(counter).assertEqual(100)
       done()
@@ -639,15 +678,25 @@ export default function ISendableImplTest(): void {
       let data = new CustomSendable()
       data.value_ = 0
 
-      await lock.lockAsync((): number => {
+      try {
+        await lock.lockAsync((): number => {
         data.value_ = data.value_ + 10
         return data.value_
-      })
+        })
+      } catch (error) {
+        console.error(`lockAsync failed: ${error}`)
+        expect().assertFail()
+      }
 
-      await lock.lockAsync((): number => {
+      try {
+        await lock.lockAsync((): number => {
         data.value_ = data.value_ + 20
         return data.value_
-      })
+        })
+      } catch (error) {
+        console.error(`lockAsync failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(data.value_).assertEqual(30)
       done()
@@ -704,7 +753,13 @@ export default function ISendableImplTest(): void {
         await taskpool.execute(task1)
 
         let task2 = new taskpool.Task(readSendableValueDispatch, data)
-        let result = await taskpool.execute(task2)
+        let result: Object = undefined
+        try {
+          result = await taskpool.execute(task2)
+        } catch (error) {
+          console.error(`taskpool execute failed: ${error}`)
+          expect().assertFail()
+        }
 
         expect(result as number).assertEqual(25)
         done()
@@ -802,10 +857,15 @@ export default function ISendableImplTest(): void {
       let data = new CustomSendable()
       data.value_ = 0
 
-      await lock.lockAsync((): number => {
+      try {
+        await lock.lockAsync((): number => {
         data.value_ = 42
         return data.value_
-      })
+        })
+      } catch (error) {
+        console.error(`lockAsync failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(data.value_).assertEqual(42)
       done()
@@ -848,7 +908,13 @@ export default function ISendableImplTest(): void {
       instance.validatedValue_ = 88
 
       let task = new taskpool.Task(readValidatedDispatch, instance)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(result as number).assertEqual(88)
       expect(instance.validatedValue_).assertEqual(88)
@@ -869,7 +935,13 @@ export default function ISendableImplTest(): void {
       instance.childValue_ = 'child'
 
       let task = new taskpool.Task(readInheritedDispatch, instance)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(result as number).assertEqual(77)
       expect(instance.baseValue_).assertEqual(77)
@@ -891,7 +963,13 @@ export default function ISendableImplTest(): void {
       data.counter_ = 0
 
       let task = new taskpool.Task(asyncLockCrossThreadDispatch, lock, data)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(result as number).assertEqual(1)
       expect(data.counter_).assertEqual(1)
@@ -969,12 +1047,24 @@ export default function ISendableImplTest(): void {
         instance.value_ = 10
 
         let task1 = new taskpool.Task(readCalculatedDispatch, instance, 3.0)
-        let result1 = await taskpool.execute(task1)
+        let result1: Object = undefined
+        try {
+          result1 = await taskpool.execute(task1)
+        } catch (error) {
+          console.error(`taskpool execute failed: ${error}`)
+          expect().assertFail()
+        }
 
         expect(result1 as number).assertEqual(30)
 
         let task2 = new taskpool.Task(readIsValidDispatch, instance)
-        let result2 = await taskpool.execute(task2)
+        let result2: Object = undefined
+        try {
+          result2 = await taskpool.execute(task2)
+        } catch (error) {
+          console.error(`taskpool execute failed: ${error}`)
+          expect().assertFail()
+        }
 
         expect(result2 as boolean).assertTrue()
         done()
@@ -998,7 +1088,13 @@ export default function ISendableImplTest(): void {
       instance.value_ = 99
 
       let task = new taskpool.Task(readFormatValueDispatch, instance)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(result as string).assertEqual('Extended(99)')
       done()
@@ -1016,7 +1112,13 @@ export default function ISendableImplTest(): void {
       let instance = new ExtendedSendable()
 
       let task = new taskpool.Task(modifyAndCalculateDispatch, instance, 7.0, 6.0)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(result as number).assertEqual(42)
       expect(instance.value_).assertEqual(7)
@@ -1092,7 +1194,13 @@ export default function ISendableImplTest(): void {
       expect(instance.getOwnValue()).assertEqual(99)
 
       let task = new taskpool.Task(readInstanceOwnValueDispatch, instance)
-      let result = await taskpool.execute(task)
+      let result: Object = undefined
+      try {
+        result = await taskpool.execute(task)
+      } catch (error) {
+        console.error(`taskpool execute failed: ${error}`)
+        expect().assertFail()
+      }
 
       expect(result as number).assertEqual(99)
       done()
@@ -1145,7 +1253,13 @@ export default function ISendableImplTest(): void {
         expect(instance.getCount()).assertEqual(2)
 
         let task = new taskpool.Task(readMultiCountDispatch, instance)
-        let result = await taskpool.execute(task)
+        let result: Object = undefined
+        try {
+          result = await taskpool.execute(task)
+        } catch (error) {
+          console.error(`taskpool execute failed: ${error}`)
+          expect().assertFail()
+        }
 
         expect(result as number).assertEqual(2)
         done()
@@ -1223,10 +1337,15 @@ export default function ISendableImplTest(): void {
           return data.value_
         })
 
-        await lock.lockAsync((): number => {
+        try {
+          await lock.lockAsync((): number => {
           data.value_ = data.value_ + 35
           return data.value_
-        })
+          })
+        } catch (error) {
+          console.error(`lockAsync failed: ${error}`)
+          expect().assertFail()
+        }
       } catch (error) {
         console.error(`ISendableImplTest4700 failed: ${error}`)
         expect().assertFail()
@@ -1257,15 +1376,25 @@ export default function ISendableImplTest(): void {
           return data.value_
         })
 
-        await lock.lockAsync((): number => {
+        try {
+          await lock.lockAsync((): number => {
           data.value_ = data.value_ + 20
           return data.value_
-        })
+          })
+        } catch (error) {
+          console.error(`lockAsync failed: ${error}`)
+          expect().assertFail()
+        }
 
-        await lock.lockAsync((): number => {
+        try {
+          await lock.lockAsync((): number => {
           data.value_ = data.value_ + 30
           return data.value_
-        })
+          })
+        } catch (error) {
+          console.error(`lockAsync failed: ${error}`)
+          expect().assertFail()
+        }
       } catch (error) {
         console.error(`ISendableImplTest4800 failed: ${error}`)
         expect().assertFail()

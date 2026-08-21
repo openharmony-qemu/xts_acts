@@ -361,7 +361,12 @@ export default function ThreadWorkerInheritanceTest(): void {
         console.error(`ThreadWorkerInheritanceTest0200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -573,7 +578,12 @@ export default function ThreadWorkerInheritanceTest(): void {
         console.error(`ThreadWorkerInheritanceTest0900 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -618,7 +628,12 @@ export default function ThreadWorkerInheritanceTest(): void {
         console.error(`ThreadWorkerInheritanceTest1000 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -656,7 +671,12 @@ export default function ThreadWorkerInheritanceTest(): void {
         console.error(`ThreadWorkerInheritanceTest1100 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -698,7 +718,12 @@ export default function ThreadWorkerInheritanceTest(): void {
         console.error(`ThreadWorkerInheritanceTest1200 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -741,7 +766,12 @@ export default function ThreadWorkerInheritanceTest(): void {
         console.error(`ThreadWorkerInheritanceTest1300 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -776,7 +806,12 @@ export default function ThreadWorkerInheritanceTest(): void {
         console.error(`ThreadWorkerInheritanceTest1400 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -811,7 +846,12 @@ export default function ThreadWorkerInheritanceTest(): void {
         console.error(`ThreadWorkerInheritanceTest1500 failed, error: ${err}`);
         expect().assertFail();
       } finally {
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -903,7 +943,12 @@ export default function ThreadWorkerInheritanceTest(): void {
       let workerInstance: worker.ThreadWorker | null = null;
       try {
         workerInstance = new worker.ThreadWorker('entry_test/ets/workers/inheritance/InheritanceEchoWorker.ets');
-        await terminateAndAwait(workerInstance);
+        try {
+          await terminateAndAwait(workerInstance);
+        } catch (error) {
+          console.error(`terminate cleanup failed: ${error}`);
+          expect().assertFail();
+        }
         let caught: boolean = false;
         try {
           workerInstance.postMessage('test');
