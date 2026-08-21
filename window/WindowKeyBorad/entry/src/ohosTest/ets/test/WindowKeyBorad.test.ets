@@ -430,11 +430,8 @@ export default function windowKeyBorad() {
         mainWindow.on('keyboardDidShow', callback1);
         
         await sleep(1000);
-        if( deviceType ==='2in1'){
-          console.info(`${caseName} on keyboardDidShow succeed,  deviceType: ${JSON.stringify(deviceType)},can not show`);
-          done();
-        }else if(deviceType === '2in1' || deviceType === 'wearable' || deviceType === 'tv' || deviceType === 'car'){
-          console.info(`${caseName} on keyboardDidShow 不生效不报错,  deviceType: ${JSON.stringify(deviceType)},can not show`);
+        if(deviceType === '2in1' || deviceType === 'wearable' || deviceType === 'tv' || deviceType === 'car'){
+          console.info(`${caseName} on keyboardDidShow 不生效不报错 or succeed but not show,  deviceType: ${JSON.stringify(deviceType)},can not show`);
           done();
         }else{
           let input = await driver.findComponent(ON.id('textInput'));
@@ -503,11 +500,8 @@ export default function windowKeyBorad() {
         
         mainWindow.on('keyboardDidHide', callback);
         await sleep(1000);
-        if( deviceType ==='2in1'){
-          console.info(`${caseName} on keyboardDidHide succeed, deviceType: ${JSON.stringify(deviceType)},can not show`);
-          done();
-        }else if(deviceType === '2in1' || deviceType === 'wearable' || deviceType === 'tv' || deviceType === 'car'){
-          console.info(`${caseName} on keyboardDidShow 不生效不报错,  deviceType: ${JSON.stringify(deviceType)},can not show`);
+        if(deviceType === '2in1' || deviceType === 'wearable' || deviceType === 'tv' || deviceType === 'car'){
+          console.info(`${caseName} on keyboardDidShow 不生效不报错 or succeed but not show,  deviceType: ${JSON.stringify(deviceType)},can not show`);
           done();
         }else{
           let input = await driver.findComponent(ON.id('textInput'));
