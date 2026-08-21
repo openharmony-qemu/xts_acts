@@ -15,9 +15,10 @@
 
 
 import WebViewNativeMediaPlayerHandler3 from './WebViewNativeMediaPlayerHandler3.test';
+import WebViewFullScreenVideoOverlay from './WebViewFullScreenVideoOverlay.test'
 
 export default function testsuite() {
 
   WebViewNativeMediaPlayerHandler3()
-
+  WebViewFullScreenVideoOverlay()
 }
