@@ -18,13 +18,13 @@ import featureAbility from '@ohos.ability.featureAbility';
 import bundle from '@ohos.bundle';
 import commonEvent from '@ohos.commonEventManager';
 
-const Event_FA_DisplayOrientation_1000 = 'Event_FA_DisplayOrientation_1000';
+const eventFaDisplayOrientation1000 = 'eventFaDisplayOrientation1000';
 
-let publishEvent = (event: string, value: ESObject) => {
+let publishEvent = (event: string, parameter: boolean) => {
   commonEvent.publish(event,
     {
       parameters: {
-        data: value
+        data: parameter
       }
     }, (err, data) => {
       hilog.info(0x0000, 'testTag', '%{public}s', `publish event: ${event}`);
@@ -49,9 +49,9 @@ class SecondAbility {
               hilog.info(0x0000, 'testTag', '%{public}s', `getDisplayOrientation main-2 data: ${value},
                             orientation: ${bundle.DisplayOrientation.UNSPECIFIED}`);
               if (bundle.DisplayOrientation.UNSPECIFIED == value) {
-                publishEvent(Event_FA_DisplayOrientation_1000, true);
+                publishEvent(eventFaDisplayOrientation1000, true);
               } else {
-                publishEvent(Event_FA_DisplayOrientation_1000, false);
+                publishEvent(eventFaDisplayOrientation1000, false);
               }
               featureAbility.terminateSelf();
             })

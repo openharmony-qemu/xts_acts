@@ -49,12 +49,12 @@ let testTag: string = 'testTag';
 export default function getWantAgentWithUserIdTest() {
   describe('getWantAgentWithUserIdTest', () => {
     /**
-     * @tc.number    SUB_Ability_GetWantAgent_Test_0100
-     * @tc.name      SUB_Ability_GetWantAgent_Test_0100
-     * @tc.desc      test GetWantAgent promise with userID 100 success
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.number : SUB_Ability_GetWantAgent_Test_0100
+     * @tc.name : SUB_Ability_GetWantAgent_Test_0100
+     * @tc.desc : test GetWantAgent promise with userID 100 success
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
      */
     it("SUB_Ability_GetWantAgent_Test_0100", Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0100';
@@ -107,12 +107,12 @@ export default function getWantAgentWithUserIdTest() {
     })
 
     /**
-     * @tc.number SUB_Ability_GetWantAgent_Test_0200
-     * @tc.name SUB_Ability_GetWantAgent_Test_0200
-     * @tc.desc test GetWantAgent CallBack with userID success
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.number : SUB_Ability_GetWantAgent_Test_0200
+     * @tc.name : SUB_Ability_GetWantAgent_Test_0200
+     * @tc.desc : test GetWantAgent CallBack with userID success
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
      */
     it("SUB_Ability_GetWantAgent_Test_0200", Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0200';
@@ -165,12 +165,12 @@ export default function getWantAgentWithUserIdTest() {
       })
     })
     /**
-     * @tc.number    SUB_Ability_GetWantAgent_Test_0300
-     * @tc.name      SUB_Ability_GetWantAgent_Test_0300
-     * @tc.desc      test GetWantAgent promise  with not contain userID
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.number : SUB_Ability_GetWantAgent_Test_0300
+     * @tc.name : SUB_Ability_GetWantAgent_Test_0300
+     * @tc.desc : test GetWantAgent promise  with not contain userID
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
      */
     it("SUB_Ability_GetWantAgent_Test_0300", Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0300';
@@ -223,12 +223,12 @@ export default function getWantAgentWithUserIdTest() {
       hilog.info(0x0000, testTag, `${TEST_CASE_NAME} End`);
     })
     /**
-     * @tc.number   SUB_Ability_GetWantAgent_Test_0400
-     * @tc.name     SUB_Ability_GetWantAgent_Test_0400
-     * @tc.desc     test GetWantAgent callback  with not contain userID
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.number : SUB_Ability_GetWantAgent_Test_0400
+     * @tc.name : SUB_Ability_GetWantAgent_Test_0400
+     * @tc.desc : test GetWantAgent callback  with not contain userID
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
      */
     it("SUB_Ability_GetWantAgent_Test_0400", Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0400';
@@ -284,12 +284,12 @@ export default function getWantAgentWithUserIdTest() {
     })
 
     /**
-     * @tc.number    SUB_Ability_GetWantAgent_Test_0500
-     * @tc.name      SUB_Ability_GetWantAgent_Test_0500
-     * @tc.desc      test GetWantAgent promise with userID -1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.number : SUB_Ability_GetWantAgent_Test_0500
+     * @tc.name : SUB_Ability_GetWantAgent_Test_0500
+     * @tc.desc : test GetWantAgent promise with userID -1
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
      */
     it("SUB_Ability_GetWantAgent_Test_0500", Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0500';
@@ -353,13 +353,13 @@ export default function getWantAgentWithUserIdTest() {
     })
 
     /**
-     * @tc.number    SUB_Ability_GetWantAgent_Test_0600
-     * @tc.name      SUB_Ability_GetWantAgent_Test_0600
-     * @tc.desc      test GetWantAgent promise with third-party applications use the package names
+     * @tc.number : SUB_Ability_GetWantAgent_Test_0600
+     * @tc.name : SUB_Ability_GetWantAgent_Test_0600
+     * @tc.desc : test GetWantAgent promise with third-party applications use the package names
      * of other applications return errcode 16000151
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 2
      */
     it("SUB_Ability_GetWantAgent_Test_0600", Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0600';
@@ -378,13 +378,13 @@ export default function getWantAgentWithUserIdTest() {
       hilog.info(0x0000, testTag, `${TEST_CASE_NAME} End`);
     })
     /**
-     * @tc.number    SUB_Ability_GetWantAgent_Test_0700
-     * @tc.name      SUB_Ability_GetWantAgent_Test_0700
-     * @tc.desc      test GetWantAgent CallBack with third-party applications use the package names
+     * @tc.number : SUB_Ability_GetWantAgent_Test_0700
+     * @tc.name : SUB_Ability_GetWantAgent_Test_0700
+     * @tc.desc : test GetWantAgent CallBack with third-party applications use the package names
      * of other applications return errcode 16000151
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 2
      */
     it("SUB_Ability_GetWantAgent_Test_0700", Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0700';
@@ -406,12 +406,12 @@ export default function getWantAgentWithUserIdTest() {
       hilog.info(0x0000, testTag, `${TEST_CASE_NAME} End`);
     })
     /**
-     * @tc.number    SUB_Ability_GetWantAgent_Test_0800
-     * @tc.name      SUB_Ability_GetWantAgent_Test_0800
-     * @tc.desc      test GetWantAgent promise with userID undefined
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.number : SUB_Ability_GetWantAgent_Test_0800
+     * @tc.name : SUB_Ability_GetWantAgent_Test_0800
+     * @tc.desc : test GetWantAgent promise with userID undefined
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
      */
     it("SUB_Ability_GetWantAgent_Test_0800", Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0800';

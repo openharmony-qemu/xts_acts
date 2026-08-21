@@ -18,13 +18,13 @@ import featureAbility from '@ohos.ability.featureAbility';
 import bundle from '@ohos.bundle';
 import commonEvent from '@ohos.commonEventManager';
 
-const Event_FA_DisplayOrientation_0500 = 'Event_FA_DisplayOrientation_0500';
-const Event_FA_DisplayOrientation_0500_LifeCircle = 'Event_FA_DisplayOrientation_0500_LifeCircle';
-const Event_FA_DisplayOrientation_0600 = 'Event_FA_DisplayOrientation_0600';
-const Event_FA_DisplayOrientation_0600_LifeCircle = 'Event_FA_DisplayOrientation_0600_LifeCircle';
+const eventFaDisplayOrientation0500 = 'eventFaDisplayOrientation0500';
+const eventFaDisplayOrientation0500LifeCircle = 'eventFaDisplayOrientation0500LifeCircle';
+const eventFaDisplayOrientation0600 = 'eventFaDisplayOrientation0600';
+const eventFaDisplayOrientation0600LifeCircle = 'eventFaDisplayOrientation0600LifeCircle';
 let lifeCircleData: string[] = [];
 
-let publishEvent = (event: string, parameter: ESObject) => {
+let publishEvent = (event: string, parameter: boolean) => {
   commonEvent.publish(event,
     {
       parameters: {
@@ -50,7 +50,7 @@ class MainAbility {
 
       featureAbility.getWant((err, want) => {
         hilog.info(0x0000, 'testTag', '%{public}s', `get want: ${JSON.stringify(want)}`);
-        let number = want.parameters?.data;
+        let number = want.parameters?.data as number;
         switch (number) {
           case 3:
             hilog.info(0x0000, 'testTag', '%{public}s', `case 3 ----->`);
@@ -65,9 +65,9 @@ class MainAbility {
                         hilog.info(0x0000, 'testTag', '%{public}s', `getDisplayOrientation main-2 data: ${data},
                             orientation: ${bundle.DisplayOrientation.LANDSCAPE}`);
                         if (bundle.DisplayOrientation.LANDSCAPE == data && lifeCircleData.length == 2) {
-                          publishEvent(Event_FA_DisplayOrientation_0500, true);
+                          publishEvent(eventFaDisplayOrientation0500, true);
                         } else {
-                          publishEvent(Event_FA_DisplayOrientation_0500, false);
+                          publishEvent(eventFaDisplayOrientation0500, false);
                         }
                         featureAbility.terminateSelf();
                       })
@@ -88,9 +88,9 @@ class MainAbility {
                         hilog.info(0x0000, 'testTag', '%{public}s', `getDisplayOrientation main-2 data: ${data},
                             orientation: ${bundle.DisplayOrientation.PORTRAIT}`);
                         if (bundle.DisplayOrientation.PORTRAIT == data && lifeCircleData.length == 2) {
-                          publishEvent(Event_FA_DisplayOrientation_0600, true);
+                          publishEvent(eventFaDisplayOrientation0600, true);
                         } else {
-                          publishEvent(Event_FA_DisplayOrientation_0600, false);
+                          publishEvent(eventFaDisplayOrientation0600, false);
                         }
                         featureAbility.terminateSelf();
                       })

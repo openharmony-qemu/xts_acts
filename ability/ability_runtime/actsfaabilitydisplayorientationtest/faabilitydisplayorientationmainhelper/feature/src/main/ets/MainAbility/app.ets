@@ -18,17 +18,17 @@ import featureAbility from '@ohos.ability.featureAbility';
 import bundle from '@ohos.bundle';
 import commonEvent from '@ohos.commonEventManager';
 
-const Event_FA_DisplayOrientation_0100 = 'Event_FA_DisplayOrientation_0100';
-const Event_FA_DisplayOrientation_0100_LifeCircle = 'Event_FA_DisplayOrientation_0100_LifeCircle';
-const Event_FA_DisplayOrientation_0200 = 'Event_FA_DisplayOrientation_0200';
-const Event_FA_DisplayOrientation_0200_LifeCircle = 'Event_FA_DisplayOrientation_0200_LifeCircle';
-const Event_FA_DisplayOrientation_0300 = 'Event_FA_DisplayOrientation_0300';
-const Event_FA_DisplayOrientation_0300_LifeCircle = 'Event_FA_DisplayOrientation_0300_LifeCircle';
-const Event_FA_DisplayOrientation_0400 = 'Event_FA_DisplayOrientation_0400';
-const Event_FA_DisplayOrientation_0400_LifeCircle = 'Event_FA_DisplayOrientation_0400_LifeCircle';
+const eventFaDisplayOrientation0100 = 'eventFaDisplayOrientation0100';
+const eventFaDisplayOrientation0100LifeCircle = 'eventFaDisplayOrientation0100LifeCircle';
+const eventFaDisplayOrientation0200 = 'eventFaDisplayOrientation0200';
+const eventFaDisplayOrientation0200LifeCircle = 'eventFaDisplayOrientation0200LifeCircle';
+const eventFaDisplayOrientation0300 = 'eventFaDisplayOrientation0300';
+const eventFaDisplayOrientation0300LifeCircle = 'eventFaDisplayOrientation0300LifeCircle';
+const eventFaDisplayOrientation0400 = 'eventFaDisplayOrientation0400';
+const eventFaDisplayOrientation0400LifeCircle = 'eventFaDisplayOrientation0400LifeCircle';
 let lifeCircleData: string[] = [];
 
-let publishEvent = (event: string, parameter: ESObject) => {
+let publishEvent = (event: string, parameter: boolean) => {
   commonEvent.publish(event,
     {
       parameters: {
@@ -54,11 +54,11 @@ class MainAbility {
 
       featureAbility.getWant((err, want) => {
         hilog.info(0x0000, 'testTag', '%{public}s', `get want: ${JSON.stringify(want)}`);
-        let number = want.parameters?.data;
+        let number = want.parameters?.data as number;
         switch (number) {
           case 5:
             hilog.info(0x0000, 'testTag', '%{public}s', `case 5 ----->`);
-            publishEvent(Event_FA_DisplayOrientation_0100_LifeCircle, lifeCircleData);
+            publishEvent(eventFaDisplayOrientation0100LifeCircle, lifeCircleData);
             setTimeout(() => {
               featureAbility.getContext().getDisplayOrientation((error, data) => {
                 hilog.info(0x0000, 'testTag', '%{public}s', `getDisplayOrientation main data: ${data}, err: ${JSON.stringify(error)}`);
@@ -71,9 +71,9 @@ class MainAbility {
                           hilog.info(0x0000, 'testTag', '%{public}s', `getDisplayOrientation main-2 data: ${data},
                             orientation: ${bundle.DisplayOrientation.LANDSCAPE}`);
                           if (bundle.DisplayOrientation.LANDSCAPE == data) {
-                            publishEvent(Event_FA_DisplayOrientation_0100, true);
+                            publishEvent(eventFaDisplayOrientation0100, true);
                           } else {
-                            publishEvent(Event_FA_DisplayOrientation_0100, false);
+                            publishEvent(eventFaDisplayOrientation0100, false);
                           }
                           featureAbility.terminateSelf();
                         })
@@ -84,7 +84,7 @@ class MainAbility {
             break;
           case 6:
             hilog.info(0x0000, 'testTag', '%{public}s', `case 6 ----->`);
-            publishEvent(Event_FA_DisplayOrientation_0200_LifeCircle, lifeCircleData);
+            publishEvent(eventFaDisplayOrientation0200LifeCircle, lifeCircleData);
             setTimeout(() => {
               featureAbility.getContext().getDisplayOrientation((error, data) => {
                 hilog.info(0x0000, 'testTag', '%{public}s', `getDisplayOrientation main data: ${data}, err: ${JSON.stringify(error)}`);
@@ -97,9 +97,9 @@ class MainAbility {
                           hilog.info(0x0000, 'testTag', '%{public}s', `getDisplayOrientation main-2 data: ${data},
                             orientation: ${bundle.DisplayOrientation.PORTRAIT}`);
                           if (bundle.DisplayOrientation.PORTRAIT == data) {
-                            publishEvent(Event_FA_DisplayOrientation_0200, true);
+                            publishEvent(eventFaDisplayOrientation0200, true);
                           } else {
-                            publishEvent(Event_FA_DisplayOrientation_0200, false);
+                            publishEvent(eventFaDisplayOrientation0200, false);
                           }
                           featureAbility.terminateSelf();
                         })
