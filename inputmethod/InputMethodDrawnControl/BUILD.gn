@@ -17,7 +17,7 @@ ohos_js_app_suite("ActsInputMethodDrawnControlTest") {
   test_hap = true
   testonly = true
   js_build_mode = "debug"
-  certificate_profile = "signature/ActsInputMethodDrawnControlTest.p7b"
+  certificate_profile = "./signature/ActsInputMethodDrawnControlTest.p7b"
   hap_name = "ActsInputMethodDrawnControlTest"
   subsystem_name = "inputmethod"
   part_name = "imf"

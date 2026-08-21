@@ -20,5 +20,5 @@ ohos_js_app_suite("ActsInputMethodEditBoxTest") {
   subsystem_name = "inputmethod"
   part_name = "imf"
   hap_name = "ActsInputMethodEditBoxTest"
-  certificate_profile = "signature/ActsInputMethodEditBoxTest.p7b"
+  certificate_profile = "./signature/ActsInputMethodEditBoxTest.p7b"
 }
