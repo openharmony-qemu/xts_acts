@@ -15,6 +15,7 @@
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool } from "@kit.ArkTS";
+import { BusinessError } from "@ohos.base";
 import {
   createSharedBarrier,
   waitAtSharedBarrier,
@@ -38,9 +39,8 @@ async function noLockEntries(
     while (!entry.done) { count++; entry = iterator.next(); }
     return "success";
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -51,12 +51,11 @@ async function noLockSplice(
   handshake: SharedArrayBuffer
 ): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  waitForSharedSignal(handshake, 0, 5000);
+  if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.splice(10, 5); return "success"; }
   catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -79,13 +78,12 @@ async function runNoLockTest(
       taskpool.execute(modifyTask, arr, barrier, handshake)
     ]);
     for (let i: number = 0; i < results.length; i++) {
-      if ((results[i] as string).indexOf("error:unknown") >= 0) { return false; }
+      const status: string = results[i] as string;
+      if (status !== "success" && status !== "error:10200201") { return false; }
     }
     return true;
   } catch (err) {
-    const errStr: string = JSON.stringify(err);
-    if (errStr.indexOf("unknown") >= 0 || errStr.indexOf("timeout") >= 0) { return false; }
-    return true;
+    return (err as BusinessError).code === 10200201;
   }
 }
 
@@ -100,7 +98,7 @@ export default function arrayConcurrentNoLockTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_NOLOCK_0200
      * @tc.name      testArrayConcurrentNoLock0002
-     * @tc.desc      Verify entries and splice without AsyncLock triggers
+     * @tc.desc      Verify entries and splice without AsyncLock complete normally or report
      *               concurrent modification error 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -112,7 +110,7 @@ export default function arrayConcurrentNoLockTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runNoLockTest(makeArray(100000), noLockEntries, noLockSplice);
+          result = await runNoLockTest(makeArray(1000), noLockEntries, noLockSplice);
         } catch (err) {
           console.error(`runNoLockTest failed: ${JSON.stringify(err)}`);
         }

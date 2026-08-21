@@ -642,8 +642,12 @@ export async function spreadToStringArrayTask(set: collections.Set<string>,
 
 /*
  * ====== 并发修改错误检测 — signal 协调 + 强化断言诊断 ======
- * 返回 JSON: {"status":"ok|err10200201|errUnknown", "count":N, ...}
+ * 返回 JSON: {"status":"ok|err10200201|errTimeout|errUnknown", "count":N, ...}
  */
+
+interface ConcurrentTaskResult {
+  status: string;
+}
 
 @Concurrent
 export async function setEntriesTraverseTask(
@@ -658,7 +662,7 @@ export async function setEntriesTraverseTask(
     let item = iter.next();
     notifySharedSignal(signal, 0);
     if (!waitForSharedSignal(signal, 1, 5000)) {
-      return '{"status":"errUnknown","msg":"waitSignal timeout"}';
+      return '{"status":"errTimeout"}';
     }
     while (!item.done) {
       count++;
@@ -666,11 +670,10 @@ export async function setEntriesTraverseTask(
     }
     return '{"status":"ok","role":"entriesTraverse","count":' + count + '}';
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return '{"status":"err10200201","role":"entriesTraverse","count":' + count + ',"err":"' + e + '"}';
+    if ((err as BusinessError).code === 10200201) {
+      return '{"status":"err10200201","role":"entriesTraverse","count":' + count + '}';
     }
-    return '{"status":"errUnknown","role":"entriesTraverse","count":' + count + ',"err":"' + e + '"}';
+    return '{"status":"errUnknown","role":"entriesTraverse","count":' + count + '}';
   }
 }
 
@@ -682,7 +685,7 @@ export async function setAddModifyTask(
 ): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   if (!waitForSharedSignal(signal, 0, 3000)) {
-    return '{"status":"errUnknown","msg":"waitSignal timeout"}';
+    return '{"status":"errTimeout"}';
   }
   notifySharedSignal(signal, 1);
   let ops: number = 0;
@@ -694,11 +697,10 @@ export async function setAddModifyTask(
     }
     return '{"status":"ok","role":"addModify","ops":' + ops + '}';
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return '{"status":"err10200201","role":"addModify","ops":' + ops + ',"err":"' + e + '"}';
+    if ((err as BusinessError).code === 10200201) {
+      return '{"status":"err10200201","role":"addModify","ops":' + ops + '}';
     }
-    return '{"status":"errUnknown","role":"addModify","ops":' + ops + ',"err":"' + e + '"}';
+    return '{"status":"errUnknown","role":"addModify","ops":' + ops + '}';
   }
 }
 
@@ -715,7 +717,7 @@ export async function setKeysTraverseTask(
     let item = iter.next();
     notifySharedSignal(signal, 0);
     if (!waitForSharedSignal(signal, 1, 5000)) {
-      return '{"status":"errUnknown","msg":"waitSignal timeout"}';
+      return '{"status":"errTimeout"}';
     }
     while (!item.done) {
       count++;
@@ -723,11 +725,10 @@ export async function setKeysTraverseTask(
     }
     return '{"status":"ok","role":"keysTraverse","count":' + count + '}';
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return '{"status":"err10200201","role":"keysTraverse","count":' + count + ',"err":"' + e + '"}';
+    if ((err as BusinessError).code === 10200201) {
+      return '{"status":"err10200201","role":"keysTraverse","count":' + count + '}';
     }
-    return '{"status":"errUnknown","role":"keysTraverse","count":' + count + ',"err":"' + e + '"}';
+    return '{"status":"errUnknown","role":"keysTraverse","count":' + count + '}';
   }
 }
 
@@ -739,7 +740,7 @@ export async function setDeleteModifyTask(
 ): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   if (!waitForSharedSignal(signal, 0, 3000)) {
-    return '{"status":"errUnknown","msg":"waitSignal timeout"}';
+    return '{"status":"errTimeout"}';
   }
   notifySharedSignal(signal, 1);
   let ops: number = 0;
@@ -751,11 +752,10 @@ export async function setDeleteModifyTask(
     }
     return '{"status":"ok","role":"deleteModify","ops":' + ops + '}';
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return '{"status":"err10200201","role":"deleteModify","ops":' + ops + ',"err":"' + e + '"}';
+    if ((err as BusinessError).code === 10200201) {
+      return '{"status":"err10200201","role":"deleteModify","ops":' + ops + '}';
     }
-    return '{"status":"errUnknown","role":"deleteModify","ops":' + ops + ',"err":"' + e + '"}';
+    return '{"status":"errUnknown","role":"deleteModify","ops":' + ops + '}';
   }
 }
 
@@ -772,7 +772,7 @@ export async function setValuesTraverseTask(
     let first = iter.next();
     notifySharedSignal(signal, 0);
     if (!waitForSharedSignal(signal, 1, 5000)) {
-      return '{"status":"errUnknown","msg":"waitSignal timeout"}';
+      return '{"status":"errTimeout"}';
     }
     // clear+回填已完成，继续用旧迭代器 → 期待 10200201
     while (!first.done) {
@@ -781,11 +781,10 @@ export async function setValuesTraverseTask(
     }
     return '{"status":"ok","role":"valuesTraverse","count":' + count + '}';
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return '{"status":"err10200201","role":"valuesTraverse","count":' + count + ',"err":"' + e + '"}';
+    if ((err as BusinessError).code === 10200201) {
+      return '{"status":"err10200201","role":"valuesTraverse","count":' + count + '}';
     }
-    return '{"status":"errUnknown","role":"valuesTraverse","count":' + count + ',"err":"' + e + '"}';
+    return '{"status":"errUnknown","role":"valuesTraverse","count":' + count + '}';
   }
 }
 
@@ -797,7 +796,7 @@ export async function setClearModifyTask(
 ): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   if (!waitForSharedSignal(signal, 0, 5000)) {
-    return '{"status":"errUnknown","role":"clearModify","msg":"wait values timeout"}';
+    return '{"status":"errTimeout"}';
   }
   try {
     // clear + 回填大量元素：确保迭代器 next() 穿过 size 检查，撞到 epoch 检查
@@ -808,11 +807,10 @@ export async function setClearModifyTask(
     notifySharedSignal(signal, 1);
     return '{"status":"ok","role":"clearModify","ops":1}';
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return '{"status":"err10200201","role":"clearModify","ops":1,"err":"' + e + '"}';
+    if ((err as BusinessError).code === 10200201) {
+      return '{"status":"err10200201","role":"clearModify","ops":1}';
     }
-    return '{"status":"errUnknown","role":"clearModify","ops":1,"err":"' + e + '"}';
+    return '{"status":"errUnknown","role":"clearModify","ops":1}';
   }
 }
 
@@ -836,20 +834,16 @@ export async function runModifyTest(
       ]);
       roundResult = true;
       for (let i = 0; i < results.length; i++) {
-        const s: string = results[i] as string;
-        details.push("  task" + i + "=" + s);
-        if (s.indexOf('"errUnknown"') >= 0) {
+        const result = JSON.parse(results[i] as string) as ConcurrentTaskResult;
+        details.push("  task" + i + " status=" + result.status);
+        if (result.status !== "ok" && result.status !== "err10200201") {
           roundResult = false;
         }
       }
     } catch (err) {
-      const e: string = JSON.stringify(err);
-      details.push("  catch=" + e);
-      if (e.indexOf("errUnknown") >= 0 || e.indexOf("timeout") >= 0) {
-        roundResult = false;
-      } else {
-        roundResult = true;
-      }
+      const errorCode: number = (err as BusinessError).code;
+      details.push("  catchCode=" + errorCode);
+      roundResult = errorCode === 10200201;
     }
     console.info("[runModifyTest] round " + round + " detectedError=" + roundResult);
     for (let k = 0; k < details.length; k++) {

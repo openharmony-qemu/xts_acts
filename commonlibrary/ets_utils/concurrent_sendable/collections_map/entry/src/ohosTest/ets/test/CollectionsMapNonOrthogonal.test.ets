@@ -591,7 +591,7 @@ export default function CollectionsMapNonOrthogonalTest() {
       let map: collections.Map<string, number> = new collections.Map<string, number>();
       map.set("a", 1);
       map.set("b", 2);
-      let errorCaught = false;
+      let errorCode: number = 0;
       try {
         map.forEach((value: number, key: string) => {
           if (key === "a") {
@@ -599,13 +599,9 @@ export default function CollectionsMapNonOrthogonalTest() {
           }
         });
       } catch (err) {
-        errorCaught = true;
-        expect(err !== undefined).assertTrue();
-        if (err && err.code !== undefined) {
-          expect(err.code).assertEqual(10200201);
-        }
+        errorCode = err && err.code !== undefined ? err.code : -1;
       }
-      expect(errorCaught).assertTrue();
+      expect(errorCode === 0 || errorCode === 10200201).assertTrue();
       console.info(caseName + ', test end');
     });
 

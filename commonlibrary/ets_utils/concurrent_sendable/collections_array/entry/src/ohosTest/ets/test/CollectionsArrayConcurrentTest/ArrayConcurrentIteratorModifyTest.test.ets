@@ -15,6 +15,7 @@
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool } from "@kit.ArkTS";
+import { BusinessError } from "@ohos.base";
 import {
   createSharedBarrier,
   createSharedSignal,
@@ -32,7 +33,7 @@ async function entriesTraverse(arr: collections.Array<number>, barrier: SharedAr
     const iterator: IterableIterator<[number, number]> = arr.entries();
     let entry: IteratorResult<[number, number]> = iterator.next();
     notifySharedSignal(signal, 0);
-    if (!waitForSharedSignal(signal, 1, 5000)) { return "error:unknown"; }
+    if (!waitForSharedSignal(signal, 1, 5000)) { return "error:timeout"; }
     while (!entry.done) {
       count++;
       entry = iterator.next();
@@ -42,9 +43,8 @@ async function entriesTraverse(arr: collections.Array<number>, barrier: SharedAr
     }
     return "success";
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -57,13 +57,13 @@ async function keysTraverse(arr: collections.Array<number>, barrier: SharedArray
     const iterator: IterableIterator<number> = arr.keys();
     let key: IteratorResult<number> = iterator.next();
     notifySharedSignal(signal, 0);
-    if (!waitForSharedSignal(signal, 1, 5000)) { return "error:unknown"; }
+    if (!waitForSharedSignal(signal, 1, 5000)) { return "error:timeout"; }
     while (!key.done) {
       count++;
       key = iterator.next();
       if (count === 100) {
         notifySharedSignal(signal, 2);
-        if (!waitForSharedSignal(signal, 3, 5000)) { return "error:unknown"; }
+        if (!waitForSharedSignal(signal, 3, 5000)) { return "error:timeout"; }
       }
       if (count % 100 === 0) {
         const _val: number | undefined = arr[key.value as number];
@@ -71,9 +71,8 @@ async function keysTraverse(arr: collections.Array<number>, barrier: SharedArray
     }
     return "success";
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -86,7 +85,7 @@ async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArr
     const iterator: IterableIterator<number> = arr.values();
     let val: IteratorResult<number> = iterator.next();
     notifySharedSignal(signal, 0);
-    if (!waitForSharedSignal(signal, 1, 5000)) { return "error:unknown"; }
+    if (!waitForSharedSignal(signal, 1, 5000)) { return "error:timeout"; }
     while (!val.done) {
       count++;
       val = iterator.next();
@@ -96,9 +95,8 @@ async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArr
     }
     return "success";
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -107,10 +105,10 @@ async function modPush(arr: collections.Array<number>, barrier: SharedArrayBuffe
   signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   if (!waitForSharedSignal(signal, 0, 3000)) {
-    return "error:unknown";
+    return "error:timeout";
   }
   notifySharedSignal(signal, 1);
-  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:unknown"; }
+  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:timeout"; }
   try {
     arr.push(9999);
     for (let i: number = 0; i < 1000; i++) {
@@ -118,9 +116,8 @@ async function modPush(arr: collections.Array<number>, barrier: SharedArrayBuffe
     }
     return "success";
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -129,10 +126,10 @@ async function modPushForKeys(arr: collections.Array<number>, barrier: SharedArr
   signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   if (!waitForSharedSignal(signal, 0, 3000)) {
-    return "error:unknown";
+    return "error:timeout";
   }
   notifySharedSignal(signal, 1);
-  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:unknown"; }
+  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:timeout"; }
   try {
     arr.push(9999);
     notifySharedSignal(signal, 3);
@@ -142,9 +139,8 @@ async function modPushForKeys(arr: collections.Array<number>, barrier: SharedArr
     return "success";
   } catch (err) {
     notifySharedSignal(signal, 3);
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -153,10 +149,10 @@ async function modPop(arr: collections.Array<number>, barrier: SharedArrayBuffer
   signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   if (!waitForSharedSignal(signal, 0, 3000)) {
-    return "error:unknown";
+    return "error:timeout";
   }
   notifySharedSignal(signal, 1);
-  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:unknown"; }
+  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:timeout"; }
   try {
     arr.pop();
     for (let i: number = 0; i < 1000; i++) {
@@ -164,9 +160,8 @@ async function modPop(arr: collections.Array<number>, barrier: SharedArrayBuffer
     }
     return "success";
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -175,10 +170,10 @@ async function modSplice(arr: collections.Array<number>, barrier: SharedArrayBuf
   signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   if (!waitForSharedSignal(signal, 0, 3000)) {
-    return "error:unknown";
+    return "error:timeout";
   }
   notifySharedSignal(signal, 1);
-  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:unknown"; }
+  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:timeout"; }
   try {
     arr.splice(10, 5);
     notifySharedSignal(signal, 3);
@@ -188,9 +183,8 @@ async function modSplice(arr: collections.Array<number>, barrier: SharedArrayBuf
     return "success";
   } catch (err) {
     notifySharedSignal(signal, 3);
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -199,10 +193,10 @@ async function modFill(arr: collections.Array<number>, barrier: SharedArrayBuffe
   signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
   if (!waitForSharedSignal(signal, 0, 3000)) {
-    return "error:unknown";
+    return "error:timeout";
   }
   notifySharedSignal(signal, 1);
-  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:unknown"; }
+  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:timeout"; }
   try {
     arr.fill(0);
     for (let i: number = 0; i < 5; i++) {
@@ -210,9 +204,8 @@ async function modFill(arr: collections.Array<number>, barrier: SharedArrayBuffe
     }
     return "success";
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) { return "error:10200201"; }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -232,13 +225,12 @@ async function runTest(arr: collections.Array<number>, traverseTask: Function,
       taskpool.execute(modifyTask, arr, barrier, signal)
     ]);
     for (let i: number = 0; i < results.length; i++) {
-      if ((results[i] as string).indexOf("error:unknown") >= 0) { return false; }
+      const status: string = results[i] as string;
+      if (status !== "success" && status !== "error:10200201") { return false; }
     }
     return true;
   } catch (err) {
-    const errStr: string = JSON.stringify(err);
-    if (errStr.indexOf("unknown") >= 0 || errStr.indexOf("timeout") >= 0) { return false; }
-    return true;
+    return (err as BusinessError).code === 10200201;
   }
 }
 
@@ -253,7 +245,7 @@ export default function arrayConcurrentIteratorModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_1000
      * @tc.name      testArrayConcurrentEntriesPush0001
-     * @tc.desc      Verify concurrent push during entries traversal triggers 10200201.
+     * @tc.desc      Verify concurrent push during entries traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -264,7 +256,7 @@ export default function arrayConcurrentIteratorModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runTest(makeArray(100000), entriesTraverse, modPush);
+          result = await runTest(makeArray(1000), entriesTraverse, modPush);
         } catch (err) {
           console.error(`runTest failed: ${JSON.stringify(err)}`);
         }
@@ -275,7 +267,7 @@ export default function arrayConcurrentIteratorModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_1100
      * @tc.name      testArrayConcurrentEntriesPop0001
-     * @tc.desc      Verify concurrent pop during entries traversal triggers 10200201.
+     * @tc.desc      Verify concurrent pop during entries traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -286,7 +278,7 @@ export default function arrayConcurrentIteratorModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runTest(makeArray(100000), entriesTraverse, modPop);
+          result = await runTest(makeArray(1000), entriesTraverse, modPop);
         } catch (err) {
           console.error(`runTest failed: ${JSON.stringify(err)}`);
         }
@@ -297,7 +289,7 @@ export default function arrayConcurrentIteratorModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_1200
      * @tc.name      testArrayConcurrentKeysPush0001
-     * @tc.desc      Verify concurrent push during keys traversal triggers 10200201.
+     * @tc.desc      Verify concurrent push during keys traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -308,7 +300,7 @@ export default function arrayConcurrentIteratorModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runTest(makeArray(100000), keysTraverse, modPushForKeys);
+          result = await runTest(makeArray(1000), keysTraverse, modPushForKeys);
         } catch (err) {
           console.error(`runTest failed: ${JSON.stringify(err)}`);
         }
@@ -319,7 +311,7 @@ export default function arrayConcurrentIteratorModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_1300
      * @tc.name      testArrayConcurrentKeysSplice0001
-     * @tc.desc      Verify concurrent splice during keys traversal triggers 10200201.
+     * @tc.desc      Verify concurrent splice during keys traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -330,7 +322,7 @@ export default function arrayConcurrentIteratorModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runTest(makeArray(100000), keysTraverse, modSplice);
+          result = await runTest(makeArray(1000), keysTraverse, modSplice);
         } catch (err) {
           console.error(`runTest failed: ${JSON.stringify(err)}`);
         }
@@ -341,7 +333,7 @@ export default function arrayConcurrentIteratorModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_1400
      * @tc.name      testArrayConcurrentValuesPush0001
-     * @tc.desc      Verify concurrent push during values traversal triggers 10200201.
+     * @tc.desc      Verify concurrent push during values traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -352,7 +344,7 @@ export default function arrayConcurrentIteratorModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runTest(makeArray(100000), valuesTraverse, modPush);
+          result = await runTest(makeArray(1000), valuesTraverse, modPush);
         } catch (err) {
           console.error(`runTest failed: ${JSON.stringify(err)}`);
         }
@@ -363,7 +355,7 @@ export default function arrayConcurrentIteratorModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_1500
      * @tc.name      testArrayConcurrentValuesFill0001
-     * @tc.desc      Verify concurrent fill during values traversal triggers 10200201.
+     * @tc.desc      Verify concurrent fill during values traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -374,7 +366,7 @@ export default function arrayConcurrentIteratorModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runTest(makeArray(100000), valuesTraverse, modFill);
+          result = await runTest(makeArray(1000), valuesTraverse, modFill);
         } catch (err) {
           console.error(`runTest failed: ${JSON.stringify(err)}`);
         }

@@ -821,20 +821,21 @@ export default function collectionsSetConcurrentTest() {
       const caseName = 'testSetConcurrentValuesClearError0001';
       console.info(`[${caseName}] start`);
       let set = createNumberSet(100);
+      let errorCode: number = 0;
       try {
-        // 按设�?MODIFY_008: 遍历 values 迭代器时 clear
+        // 按设计 MODIFY_008: 遍历 values 迭代器时 clear
         let iter = set.values();
         let item = iter.next();
         while (!item.done) {
           set.clear();
           item = iter.next();
         }
-        // 已知运行时限�? clear 终止迭代器，next() 返回 done:true，不抛异�?
+        // 已知运行时限制: clear 终止迭代器，next() 返回 done:true，不抛异常
         console.info(`[${caseName}] no exception thrown (known runtime limitation)`);
       } catch (e) {
-        // 运行时修复后: 此处会抛出异常，必须断言错误码正�?
-        expect(e.code).assertEqual(10200201);
+        errorCode = (e as BusinessError).code;
       }
+      expect(errorCode === 0 || errorCode === 10200201).assertTrue();
       console.info(`[${caseName}] end`);
       done();
     });
@@ -850,7 +851,8 @@ export default function collectionsSetConcurrentTest() {
     it('testSetConcurrentKeysDeleteError0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetConcurrentKeysDeleteError0001';
       console.info(`[${caseName}] start`);
-      // 使用 100000 元素大集合：delete 是批量操作，需要足够大的集�?      // 保证遍历任务在修改任务执行期间仍在迭代，扩大冲突窗口以稳定触�?10200201
+      // 使用 100000 元素大集合：delete 是批量操作，需要足够大的集合
+      // 保证遍历任务在修改任务执行期间仍在迭代，扩大冲突窗口以稳定触发 10200201
       let set = createNumberSet(100000);
       let result: boolean = false;
       try {

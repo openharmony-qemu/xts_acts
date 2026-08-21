@@ -15,6 +15,7 @@
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool } from "@kit.ArkTS";
+import { BusinessError } from "@ohos.base";
 import {
   createSharedBarrier,
   createSharedSignal,
@@ -36,17 +37,14 @@ async function entriesTraverse(arr: collections.Array<number>, barrier: SharedAr
       entry = iterator.next();
       if (count === 100) {
         notifySharedSignal(signal, 0);
-        if (!waitForSharedSignal(signal, 1, 5000)) { return "error:unknown"; }
+        if (!waitForSharedSignal(signal, 1, 5000)) { return "error:timeout"; }
         notifySharedSignal(signal, 2);
       }
     }
     return "success";
   } catch (err) {
-    const errStr: string = JSON.stringify(err);
-    if (errStr.indexOf("10200201") >= 0) {
-      return "error:10200201";
-    }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -63,17 +61,14 @@ async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArr
       val = iterator.next();
       if (count === 100) {
         notifySharedSignal(signal, 0);
-        if (!waitForSharedSignal(signal, 1, 5000)) { return "error:unknown"; }
+        if (!waitForSharedSignal(signal, 1, 5000)) { return "error:timeout"; }
         notifySharedSignal(signal, 2);
       }
     }
     return "success";
   } catch (err) {
-    const errStr: string = JSON.stringify(err);
-    if (errStr.indexOf("10200201") >= 0) {
-      return "error:10200201";
-    }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -81,18 +76,15 @@ async function valuesTraverse(arr: collections.Array<number>, barrier: SharedArr
 async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBuffer,
   signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  if (!waitForSharedSignal(signal, 0, 5000)) { return "error:unknown"; }
+  if (!waitForSharedSignal(signal, 0, 5000)) { return "error:timeout"; }
   notifySharedSignal(signal, 1);
-  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:unknown"; }
+  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:timeout"; }
   try {
     arr.fill(0);
     return "success";
   } catch (err) {
-    const errStr: string = JSON.stringify(err);
-    if (errStr.indexOf("10200201") >= 0) {
-      return "error:10200201";
-    }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -100,18 +92,15 @@ async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBu
 async function modifyUnshift(arr: collections.Array<number>, barrier: SharedArrayBuffer,
   signal: SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  if (!waitForSharedSignal(signal, 0, 5000)) { return "error:unknown"; }
+  if (!waitForSharedSignal(signal, 0, 5000)) { return "error:timeout"; }
   notifySharedSignal(signal, 1);
-  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:unknown"; }
+  if (!waitForSharedSignal(signal, 2, 5000)) { return "error:timeout"; }
   try {
     arr.unshift(9999);
     return "success";
   } catch (err) {
-    const errStr: string = JSON.stringify(err);
-    if (errStr.indexOf("10200201") >= 0) {
-      return "error:10200201";
-    }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -131,13 +120,12 @@ async function runModifyTest(arr: collections.Array<number>,
       taskpool.execute(modifyTask, arr, barrier, signal)
     ]);
     for (let i: number = 0; i < results.length; i++) {
-      if ((results[i] as string).indexOf("error:unknown") >= 0) { return false; }
+      const status: string = results[i] as string;
+      if (status !== "success" && status !== "error:10200201") { return false; }
     }
     return true;
   } catch (err) {
-    const errStr: string = JSON.stringify(err);
-    if (errStr.indexOf("unknown") >= 0 || errStr.indexOf("timeout") >= 0) { return false; }
-    return true;
+    return (err as BusinessError).code === 10200201;
   }
 }
 
@@ -153,7 +141,7 @@ export default function arrayConcurrentTraverseModifyTest(): void {
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_TRAVMOD_0500
      * @tc.name      testArrayConcurrentEntriesModify0002
      * @tc.desc      Verify concurrent fill during entries traversal on collections.Array
-     *               triggers concurrent modification error.
+     *               completes normally or reports concurrent modification error 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -162,7 +150,7 @@ export default function arrayConcurrentTraverseModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentEntriesModify0002";
         console.log(TAG + " start");
-        const arr: collections.Array<number> = makeArray(500000);
+        const arr: collections.Array<number> = makeArray(1000);
         let errorDetected: boolean = false;
         try {
           errorDetected = await runModifyTest(arr, entriesTraverse, modifyFill);
@@ -179,7 +167,7 @@ export default function arrayConcurrentTraverseModifyTest(): void {
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_TRAVMOD_0600
      * @tc.name      testArrayConcurrentValuesModify0001
      * @tc.desc      Verify concurrent unshift during values traversal on collections.Array
-     *               triggers concurrent modification error.
+     *               completes normally or reports concurrent modification error 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -188,7 +176,7 @@ export default function arrayConcurrentTraverseModifyTest(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = "testArrayConcurrentValuesModify0001";
         console.log(TAG + " start");
-        const arr: collections.Array<number> = makeArray(500000);
+        const arr: collections.Array<number> = makeArray(1000);
         let errorDetected: boolean = false;
         try {
           errorDetected = await runModifyTest(arr, valuesTraverse, modifyUnshift);

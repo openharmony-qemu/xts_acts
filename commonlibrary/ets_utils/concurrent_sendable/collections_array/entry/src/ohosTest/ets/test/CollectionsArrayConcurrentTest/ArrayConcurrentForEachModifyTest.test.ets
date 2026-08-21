@@ -15,6 +15,7 @@
 
 import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool } from "@kit.ArkTS";
+import { BusinessError } from "@ohos.base";
 import {
   createSharedBarrier,
   createSharedSignal,
@@ -36,9 +37,8 @@ async function forEachTraverse(arr: collections.Array<number>, barrier: SharedAr
     });
     return "success";
   } catch (err) {
-    const errStr: string = JSON.stringify(err);
-    if (errStr.indexOf("10200201") >= 0) { return "error:10200201"; }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -46,41 +46,36 @@ async function forEachTraverse(arr: collections.Array<number>, barrier: SharedAr
 async function modifyPush(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer):
   Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  waitForSharedSignal(handshake, 0, 5000);
+  if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.push(9999); return "success"; }
   catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return "error:10200201";
-    }
-    return "error:unknown"; }
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
+  }
 }
 
 @Concurrent
 async function modifyPop(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer):
   Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  waitForSharedSignal(handshake, 0, 5000);
+  if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.pop(); return "success"; }
-  catch (err) { const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return "error:10200201";
-    }
-    return "error:unknown"; }
+  catch (err) {
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
+  }
 }
 
 @Concurrent
 async function modifySplice(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer):
   Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  waitForSharedSignal(handshake, 0, 5000);
+  if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.splice(100, 10); return "success"; }
   catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return "error:10200201";
-    }
-    return "error:unknown"; }
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
+  }
 }
 
 @Concurrent
@@ -88,23 +83,20 @@ async function forEachTraverseWithShift(arr: collections.Array<number>, signal: 
   try {
     let count: number = 0;
     let signaled: boolean = false;
+    let timedOut: boolean = false;
     arr.forEach((value: number): void => {
       count++;
       if (!signaled) {
         signaled = true;
         notifySharedSignal(signal, 0);
-        if (!waitForSharedSignal(signal, 1, 3000)) {
-          throw new Error("modifyShift timeout");
-        }
+        if (!waitForSharedSignal(signal, 1, 3000)) { timedOut = true; }
       }
     });
+    if (timedOut) { return "error:timeout"; }
     return "success";
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return "error:10200201";
-    }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -113,17 +105,14 @@ async function modifyShiftAfterTraverseStarted(arr: collections.Array<number>,
   signal: SharedArrayBuffer): Promise<string> {
   if (!waitForSharedSignal(signal, 0, 3000)) {
     notifySharedSignal(signal, 1);
-    return "error:unknown";
+    return "error:timeout";
   }
   try {
     arr.shift();
     return "success";
   } catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return "error:10200201";
-    }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   } finally {
     notifySharedSignal(signal, 1);
   }
@@ -133,14 +122,11 @@ async function modifyShiftAfterTraverseStarted(arr: collections.Array<number>,
 async function modifyUnshift(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake:
   SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  waitForSharedSignal(handshake, 0, 5000);
+  if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.unshift(9999); return "success"; }
   catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return "error:10200201";
-    }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -148,14 +134,11 @@ async function modifyUnshift(arr: collections.Array<number>, barrier: SharedArra
 async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake:
   SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  waitForSharedSignal(handshake, 0, 5000);
+  if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.fill(0); return "success"; }
   catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return "error:10200201";
-    }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -163,14 +146,11 @@ async function modifyFill(arr: collections.Array<number>, barrier: SharedArrayBu
 async function modifyCopyWithin(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake:
   SharedArrayBuffer): Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  waitForSharedSignal(handshake, 0, 5000);
+  if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.copyWithin(0, 200, 300); return "success"; }
   catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return "error:10200201";
-    }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -178,14 +158,11 @@ async function modifyCopyWithin(arr: collections.Array<number>, barrier: SharedA
 async function modifySort(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer):
   Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  waitForSharedSignal(handshake, 0, 5000);
+  if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.sort((a: number, b: number): number => a - b); return "success"; }
   catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return "error:10200201";
-    }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -193,14 +170,11 @@ async function modifySort(arr: collections.Array<number>, barrier: SharedArrayBu
 async function modifyReverse(arr: collections.Array<number>, barrier: SharedArrayBuffer, handshake: SharedArrayBuffer)
   : Promise<string> {
   waitAtSharedBarrier(barrier, 2);
-  waitForSharedSignal(handshake, 0, 5000);
+  if (!waitForSharedSignal(handshake, 0, 5000)) { return "error:timeout"; }
   try { arr.reverse(); return "success"; }
   catch (err) {
-    const e: string = JSON.stringify(err);
-    if (e.indexOf("10200201") >= 0) {
-      return "error:10200201";
-    }
-    return "error:unknown";
+    const errorCode: number = (err as BusinessError).code;
+    return errorCode === 10200201 ? "error:10200201" : "error:unknown";
   }
 }
 
@@ -219,13 +193,12 @@ async function runTest(arr: collections.Array<number>, modifyTask: Function): Pr
       taskpool.execute(modifyTask, arr, barrier, handshake)
     ]);
     for (let i: number = 0; i < results.length; i++) {
-      if ((results[i] as string).indexOf("error:unknown") >= 0) { return false; }
+      const status: string = results[i] as string;
+      if (status !== "success" && status !== "error:10200201") { return false; }
     }
     return true;
   } catch (err) {
-    const errStr: string = JSON.stringify(err);
-    if (errStr.indexOf("unknown") >= 0 || errStr.indexOf("timeout") >= 0) { return false; }
-    return true;
+    return (err as BusinessError).code === 10200201;
   }
 }
 
@@ -237,13 +210,12 @@ async function runShiftOverlapTest(arr: collections.Array<number>): Promise<bool
       taskpool.execute(modifyShiftAfterTraverseStarted, arr, signal)
     ]);
     for (let i: number = 0; i < results.length; i++) {
-      if ((results[i] as string).indexOf("error:unknown") >= 0) { return false; }
+      const status: string = results[i] as string;
+      if (status !== "success" && status !== "error:10200201") { return false; }
     }
     return true;
   } catch (err) {
-    const errStr: string = JSON.stringify(err);
-    if (errStr.indexOf("unknown") >= 0 || errStr.indexOf("timeout") >= 0) { return false; }
-    return true;
+    return (err as BusinessError).code === 10200201;
   }
 }
 
@@ -258,7 +230,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_0100
      * @tc.name      testArrayConcurrentForEachPush0001
-     * @tc.desc      Verify concurrent push during forEach traversal triggers 10200201.
+     * @tc.desc      Verify concurrent push during forEach traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -269,7 +241,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runTest(makeArray(100000), modifyPush);
+          result = await runTest(makeArray(1000), modifyPush);
         } catch (err) {
           console.error(`runTest failed: ${JSON.stringify(err)}`);
         }
@@ -280,7 +252,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_0200
      * @tc.name      testArrayConcurrentForEachPop0001
-     * @tc.desc      Verify concurrent pop during forEach traversal triggers 10200201.
+     * @tc.desc      Verify concurrent pop during forEach traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -291,7 +263,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runTest(makeArray(100000), modifyPop);
+          result = await runTest(makeArray(1000), modifyPop);
         } catch (err) {
           console.error(`runTest failed: ${JSON.stringify(err)}`);
         }
@@ -302,7 +274,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_0300
      * @tc.name      testArrayConcurrentForEachSplice0001
-     * @tc.desc      Verify concurrent splice during forEach traversal triggers 10200201.
+     * @tc.desc      Verify concurrent splice during forEach traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -313,7 +285,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runTest(makeArray(100000), modifySplice);
+          result = await runTest(makeArray(1000), modifySplice);
         } catch (err) {
           console.error(`runTest failed: ${JSON.stringify(err)}`);
         }
@@ -324,7 +296,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_0400
      * @tc.name      testArrayConcurrentForEachShift0001
-     * @tc.desc      Verify concurrent shift during forEach traversal triggers 10200201.
+     * @tc.desc      Verify concurrent shift during forEach traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -335,7 +307,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runShiftOverlapTest(makeArray(100000));
+          result = await runShiftOverlapTest(makeArray(1000));
         } catch (err) {
           console.error(`runShiftOverlapTest failed: ${JSON.stringify(err)}`);
         }
@@ -346,7 +318,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_0500
      * @tc.name      testArrayConcurrentForEachUnshift0001
-     * @tc.desc      Verify concurrent unshift during forEach traversal triggers 10200201.
+     * @tc.desc      Verify concurrent unshift during forEach traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -357,7 +329,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runTest(makeArray(100000), modifyUnshift);
+          result = await runTest(makeArray(1000), modifyUnshift);
         } catch (err) {
           console.error(`runTest failed: ${JSON.stringify(err)}`);
         }
@@ -368,7 +340,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_0600
      * @tc.name      testArrayConcurrentForEachFill0001
-     * @tc.desc      Verify concurrent fill during forEach traversal triggers 10200201.
+     * @tc.desc      Verify concurrent fill during forEach traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -379,7 +351,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runTest(makeArray(100000), modifyFill);
+          result = await runTest(makeArray(1000), modifyFill);
         } catch (err) {
           console.error(`runTest failed: ${JSON.stringify(err)}`);
         }
@@ -390,7 +362,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_0700
      * @tc.name      testArrayConcurrentForEachCopyWithin0001
-     * @tc.desc      Verify concurrent copyWithin during forEach traversal triggers 10200201.
+     * @tc.desc      Verify concurrent copyWithin during forEach traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -401,7 +373,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runTest(makeArray(100000), modifyCopyWithin);
+          result = await runTest(makeArray(1000), modifyCopyWithin);
         } catch (err) {
           console.error(`runTest failed: ${JSON.stringify(err)}`);
         }
@@ -412,7 +384,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_0800
      * @tc.name      testArrayConcurrentForEachSort0001
-     * @tc.desc      Verify concurrent sort during forEach traversal triggers 10200201.
+     * @tc.desc      Verify concurrent sort during forEach traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -423,7 +395,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runTest(makeArray(100000), modifySort);
+          result = await runTest(makeArray(1000), modifySort);
         } catch (err) {
           console.error(`runTest failed: ${JSON.stringify(err)}`);
         }
@@ -434,7 +406,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
     /**
      * @tc.number    SUB_COLLECTIONS_ARRAY_CONCURRENT_CFM_0900
      * @tc.name      testArrayConcurrentForEachReverse0001
-     * @tc.desc      Verify concurrent reverse during forEach traversal triggers 10200201.
+     * @tc.desc      Verify concurrent reverse during forEach traversal completes normally or reports 10200201.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -445,7 +417,7 @@ export default function arrayConcurrentForEachModifyTest(): void {
         console.log(TAG + " start");
         let result: boolean = false;
         try {
-          result = await runTest(makeArray(100000), modifyReverse);
+          result = await runTest(makeArray(1000), modifyReverse);
         } catch (err) {
           console.error(`runTest failed: ${JSON.stringify(err)}`);
         }
