@@ -22,12 +22,12 @@ import { BusinessError } from '@ohos.base';
 
 const TERMIN_TIMEOUT = 1000;
 const START_TIMEOUT = 500;
-let param: ESObject;
+let param: string = '';
 
 export default class SecondAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    param = want.parameters?.parameter;
+    param = want.parameters?.parameter as string;
   }
 
   onDestroy(): void {

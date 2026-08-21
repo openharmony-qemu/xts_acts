@@ -26,7 +26,7 @@ const TAG = 'SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy';
 const CASE_TIMEOUT = 5000;
 const MULTIPLE_CASE_TIMEOUT = 6000;
 const AFTER_EACH_CASE_TIMEOUT = 1500;
-let ACTS_OnDestroy: commonEvent.CommonEventSubscribeInfo = {
+let actsOnDestroy: commonEvent.CommonEventSubscribeInfo = {
   events: ['Acts_EntryOnDestroy', 'Acts_SecondOnDestroy', 'Acts_EntryAbilityTerminate', 'Acts_OtherAbilityTerminate',
     'Acts_SecondOtherAbilityTerminate']
 };
@@ -48,12 +48,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0100
-     * @tc.number SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0100
-     * @tc.desc   Normal exit under a single module can trigger the OnDestroy of AbilityStage.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0100
+     * @tc.number : SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0100
+     * @tc.desc : Normal exit under a single module can trigger the OnDestroy of AbilityStage.
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0100', Level.LEVEL0, async (done: () => void) => {
 
@@ -80,7 +80,7 @@ export default function abilityTest() {
         }
       })
 
-      commonEvent.createSubscriber(ACTS_OnDestroy).then(async (data) => {
+      commonEvent.createSubscriber(actsOnDestroy).then(async (data) => {
         subscriber = data;
         commonEvent.subscribe(subscriber, subscribeCallBack);
         console.info(TAG + '_0100 startAbility');
@@ -110,12 +110,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0200
-     * @tc.number SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0200
-     * @tc.desc   Normal exit in multiple modules can trigger OnDestroy of all AbilityStage
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0200
+     * @tc.number : SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0200
+     * @tc.desc : Normal exit in multiple modules can trigger OnDestroy of all AbilityStage
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0200', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + '_0200 start');
@@ -150,7 +150,7 @@ export default function abilityTest() {
         }
       })
 
-      commonEvent.createSubscriber(ACTS_OnDestroy).then(async (data) => {
+      commonEvent.createSubscriber(actsOnDestroy).then(async (data) => {
         subscriber = data;
         commonEvent.subscribe(subscriber, subscribeCallBack);
         console.info(TAG + '_0200 startAbility');
@@ -179,12 +179,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0300
-     * @tc.number SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0300
-     * @tc.desc   Under multiple ability of a single module, only a normal exit from a single ability cannot trigger
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0300
+     * @tc.number : SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0300
+     * @tc.desc : Under multiple ability of a single module, only a normal exit from a single ability cannot trigger
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0300', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + '_0300 start');
@@ -215,7 +215,7 @@ export default function abilityTest() {
         }
       })
 
-      commonEvent.createSubscriber(ACTS_OnDestroy).then(async (data) => {
+      commonEvent.createSubscriber(actsOnDestroy).then(async (data) => {
         subscriber = data;
         commonEvent.subscribe(subscriber, subscribeCallBack);
         console.info(TAG + '_0300 startAbility');
@@ -244,12 +244,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0400
-     * @tc.number SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0400
-     * @tc.desc   Normal exit in multiple modules can trigger OnDestroy of all AbilityStage
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0400
+     * @tc.number : SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0400
+     * @tc.desc : Normal exit in multiple modules can trigger OnDestroy of all AbilityStage
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0400', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + '_0400 start');
@@ -276,7 +276,7 @@ export default function abilityTest() {
         }
       })
 
-      commonEvent.createSubscriber(ACTS_OnDestroy).then(async (data) => {
+      commonEvent.createSubscriber(actsOnDestroy).then(async (data) => {
         subscriber = data;
         commonEvent.subscribe(subscriber, subscribeCallBack);
         console.info(TAG + '_0500 startAbility');
@@ -312,12 +312,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0500
-     * @tc.number SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0500
-     * @tc.desc   Under multiple ability of a single module, only a normal exit from a single ability cannot trigger
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name : SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0500
+     * @tc.number : SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0500
+     * @tc.desc : Under multiple ability of a single module, only a normal exit from a single ability cannot trigger
+     * @tc.type : FUNCTION
+     * @tc.size : MEDIUMTEST
+     * @tc.level : LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0500', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + '_0500 start');
@@ -358,7 +358,7 @@ export default function abilityTest() {
         }
       })
 
-      commonEvent.createSubscriber(ACTS_OnDestroy).then(async (data) => {
+      commonEvent.createSubscriber(actsOnDestroy).then(async (data) => {
         subscriber = data;
         commonEvent.subscribe(subscriber, subscribeCallBack);
         console.info(TAG + '_0500 startAbility');

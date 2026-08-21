@@ -51,7 +51,7 @@ class FourthAbility {
     lifeCircleData[1] = 'onActive';
     featureAbility.getWant((error, want) => {
       hilog.info(0x0000, 'testTag', '%{public}s', `get want: ${JSON.stringify(want)}`);
-      let number = want.parameters?.number;
+      let number = want.parameters?.number as number;
       switch (number) {
         case 1:
           hilog.info(0x0000, 'testTag', '%{public}s', 'case 1 ---->');

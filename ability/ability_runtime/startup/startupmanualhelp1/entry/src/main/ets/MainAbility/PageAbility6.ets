@@ -61,7 +61,7 @@ export default class PageAbility6 extends UIAbility {
           if (data.parameters?.name == 'Sample_001') {
             hasInit001 = true;
           }
-          let message: string;
+          let message: string = '';
           if (!customConfig) {
             message = '默认配置 Sample_003收到StartupSample_001加载完毕';
           } else {
@@ -79,7 +79,7 @@ export default class PageAbility6 extends UIAbility {
           if (data.parameters?.name == 'Sample_003') {
             hasInit003 = true;
           }
-          let message: string;
+          let message: string = '';
           if (!customConfig) {
             message = '默认配置 StartupSample_002收到Sample_003加载完毕';
           } else {

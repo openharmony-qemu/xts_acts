@@ -63,7 +63,7 @@ export default class PageAbility4 extends UIAbility {
         if (event === 'StartupSample_009') {
           startupSampleInit9 = true;
           startOrder.push(['startupSampleInit9']);
-          let message: string;
+          let message: string = '';
           if (!customConfig) {
             message = '默认配置 StartupSample_009加载完毕';
           } else {
@@ -80,7 +80,7 @@ export default class PageAbility4 extends UIAbility {
         if (event === 'StartupSample_010') {
           startupSampleInit10 = true;
           startOrder.push(['startupSampleInit10']);
-          let message: string;
+          let message: string = '';
           if (!customConfig) {
             message = '默认配置 StartupSample_004加载完毕';
           } else {
@@ -97,7 +97,7 @@ export default class PageAbility4 extends UIAbility {
         if (event === 'StartupSample_011') {
           startupSampleInit11 = true;
           startOrder.push(['startupSampleInit11']);
-          let message: string;
+          let message: string = '';
           if (!customConfig) {
             message = '默认配置 StartupSample_005加载完毕';
           } else {
@@ -113,7 +113,7 @@ export default class PageAbility4 extends UIAbility {
         }
         if (event === 'StartupTestDefaultConfig') {
           startupDefaultConfig = true;
-          let message: string;
+          let message: string = '';
           if (!customConfig) {
             message = '默认配置 配置监听到测试框架加载完毕';
           } else {
