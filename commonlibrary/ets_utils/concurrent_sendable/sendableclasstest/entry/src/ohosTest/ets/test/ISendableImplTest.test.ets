@@ -595,10 +595,11 @@ export default function ISendableImplTest(): void {
       let counter: number = 0
 
       try {
-        await runLockedUpdate(lock, (): number => {
+        const lockUpdateFn1 = (): number => {
         counter = 1
         return counter
-        })
+        }
+        await runLockedUpdate(lock, lockUpdateFn1)
       } catch (error) {
         console.error(`lockAsync failed: ${error}`)
         expect().assertFail()
@@ -646,20 +647,22 @@ export default function ISendableImplTest(): void {
       let counter: number = 0
 
       try {
-        await runLockedUpdate(lock, (): number => {
+        const lockUpdateFn2 = (): number => {
         counter = 50
         return counter
-        })
+        }
+        await runLockedUpdate(lock, lockUpdateFn2)
       } catch (error) {
         console.error(`lockAsync failed: ${error}`)
         expect().assertFail()
       }
 
       try {
-        await runLockedUpdate(lock, (): number => {
+        const lockUpdateFn3 = (): number => {
         counter = counter + 50
         return counter
-        })
+        }
+        await runLockedUpdate(lock, lockUpdateFn3)
       } catch (error) {
         console.error(`lockAsync failed: ${error}`)
         expect().assertFail()
@@ -683,20 +686,22 @@ export default function ISendableImplTest(): void {
       data.value_ = 0
 
       try {
-        await runLockedUpdate(lock, (): number => {
+        const lockUpdateFn4 = (): number => {
         data.value_ = data.value_ + 10
         return data.value_
-        })
+        }
+        await runLockedUpdate(lock, lockUpdateFn4)
       } catch (error) {
         console.error(`lockAsync failed: ${error}`)
         expect().assertFail()
       }
 
       try {
-        await runLockedUpdate(lock, (): number => {
+        const lockUpdateFn5 = (): number => {
         data.value_ = data.value_ + 20
         return data.value_
-        })
+        }
+        await runLockedUpdate(lock, lockUpdateFn5)
       } catch (error) {
         console.error(`lockAsync failed: ${error}`)
         expect().assertFail()
@@ -862,10 +867,11 @@ export default function ISendableImplTest(): void {
       data.value_ = 0
 
       try {
-        await runLockedUpdate(lock, (): number => {
+        const lockUpdateFn6 = (): number => {
         data.value_ = 42
         return data.value_
-        })
+        }
+        await runLockedUpdate(lock, lockUpdateFn6)
       } catch (error) {
         console.error(`lockAsync failed: ${error}`)
         expect().assertFail()
@@ -1336,16 +1342,18 @@ export default function ISendableImplTest(): void {
       data.value_ = 0
 
       try {
-        await runLockedUpdate(lock, (): number => {
+        const lockUpdateFn7 = (): number => {
           data.value_ = data.value_ + 15
           return data.value_
-        })
+        }
+        await runLockedUpdate(lock, lockUpdateFn7)
 
         try {
-          await runLockedUpdate(lock, (): number => {
+          const lockUpdateFn8 = (): number => {
           data.value_ = data.value_ + 35
           return data.value_
-          })
+          }
+          await runLockedUpdate(lock, lockUpdateFn8)
         } catch (error) {
           console.error(`lockAsync failed: ${error}`)
           expect().assertFail()
@@ -1375,26 +1383,29 @@ export default function ISendableImplTest(): void {
       data.value_ = 0
 
       try {
-        await runLockedUpdate(lock, (): number => {
+        const lockUpdateFn9 = (): number => {
           data.value_ = data.value_ + 10
           return data.value_
-        })
+        }
+        await runLockedUpdate(lock, lockUpdateFn9)
 
         try {
-          await runLockedUpdate(lock, (): number => {
+          const lockUpdateFn10 = (): number => {
           data.value_ = data.value_ + 20
           return data.value_
-          })
+          }
+          await runLockedUpdate(lock, lockUpdateFn10)
         } catch (error) {
           console.error(`lockAsync failed: ${error}`)
           expect().assertFail()
         }
 
         try {
-          await runLockedUpdate(lock, (): number => {
+          const lockUpdateFn11 = (): number => {
           data.value_ = data.value_ + 30
           return data.value_
-          })
+          }
+          await runLockedUpdate(lock, lockUpdateFn11)
         } catch (error) {
           console.error(`lockAsync failed: ${error}`)
           expect().assertFail()
