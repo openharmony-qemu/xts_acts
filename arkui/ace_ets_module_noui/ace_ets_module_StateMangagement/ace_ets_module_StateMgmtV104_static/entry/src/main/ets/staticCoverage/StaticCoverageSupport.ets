@@ -45,7 +45,7 @@ export class CoverageOwner implements IVariableOwner {
 }
 
 export class CoverageReadableState implements ReadableState<int> {
-  readonly value: int = 26;
+  public readonly value: int = 26;
 }
 
 export class CoverageStateContext implements StateContext {
