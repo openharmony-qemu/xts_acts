@@ -11371,15 +11371,14 @@ function testGetUserRestrictedPolicy() {
   * @tc.level  LEVEL2
   */
   it("test_get_user_restricted_set_biometrics_and_screen_lock_null_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      restrictions.getUserRestricted(null, restrictions.SettingsForDevice.SET_BIOMETRICS_AND_SCREEN_LOCK);
-      expect(false).assertTrue();
+      let ret = restrictions.getUserRestricted(null, restrictions.SettingsForDevice.SET_BIOMETRICS_AND_SCREEN_LOCK);
+      expect(ret).assertFalse();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
-      } else {
-        expect(Number(error.code) === 401).assertTrue();
-      }
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
