@@ -1711,7 +1711,6 @@ export default function cameraJSUnitOutput() {
         createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO);
         await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
         await cameraSession!.commitConfig();
-        await Utils.msSleep(500);
         await cameraSession!.start();
         if (isEmpty15(photoOutput!)) {
           hilog.info(domain, tag,
@@ -1727,12 +1726,9 @@ export default function cameraJSUnitOutput() {
               err.message);
             }
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_STATIC_0100 ends here");
-            waitForCompletion(async () => {await Utils.msSleep(1000);})
             done();
           })
         }
-        await Utils.msSleep(1000);
-        done();
       } catch (err) {
         hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_STATIC_0100 ends here");
         done();
