@@ -1902,7 +1902,7 @@ export default function TCPSocketConnectionTest() {
             done();
           } catch (err) {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
-            expectTrue(err.code == 201);
+            expectTrue(err.code === 201);
             done();
           } finally {
             tcpServer.off('connect');
