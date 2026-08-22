@@ -259,7 +259,7 @@ export default function BuiltinArrayAt02Test(): void {
       const TAG: string = "testBuiltinArraycopyOf4004";
       try {
         const size = 1000;
-        const source: FixedArray<double> = new FixedArray<double>(size);
+        const source: FixedArray<double> = new FixedArray<double>(size, 0);
         for (let i = 0; i < size; i++) {
           source[i] = i * 0.1;
         }
@@ -671,7 +671,7 @@ export default function BuiltinArrayAt02Test(): void {
       const TAG: string = "testBuiltinArraycopyOf6004";
       try {
         const size = 1000;
-        const source: FixedArray<int> = new FixedArray<int>(size);
+        const source: FixedArray<int> = new FixedArray<int>(size, 0);
         for (let i = 0; i < size; i++) {
           source[i] = i;
         }
@@ -791,7 +791,7 @@ export default function BuiltinArrayAt02Test(): void {
       const TAG = "testBuiltinArraycopyOf6009";
       try {
         const size = 1024;
-        const src: FixedArray<boolean> = new FixedArray<boolean>(size);
+        const src: FixedArray<boolean> = new FixedArray<boolean>(size, false);
         for (let i = 0; i < size; i++) {
           src[i] = (i % 2 === 0);
         }
@@ -2189,8 +2189,8 @@ export default function BuiltinArrayAt02Test(): void {
     it('test_array_concat_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
         const TAG = "test_array_concat_039";
         try {
-            const arr1: FixedArray<long> = new FixedArray<long>(500);
-            const arr2: FixedArray<long> = new FixedArray<long>(500);
+            const arr1: FixedArray<long> = new FixedArray<long>(500, 0);
+            const arr2: FixedArray<long> = new FixedArray<long>(500, 0);
             for (let i = 0; i < 500; i++) {
                 arr1[i] = i;
                 arr2[i] = i + 500;

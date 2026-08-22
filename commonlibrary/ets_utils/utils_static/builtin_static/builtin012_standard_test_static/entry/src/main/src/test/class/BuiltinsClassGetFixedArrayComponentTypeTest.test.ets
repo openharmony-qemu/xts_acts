@@ -295,7 +295,7 @@ export default function BuiltinsClassGetFixedArrayComponentTypeTest(): void {
      * @tc.level   LEVEL0
      */
     it('BuiltinsClassGetFixedArrayComponentTypeTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const fixedArr = new FixedArray<string>(5);
+      const fixedArr = new FixedArray<string>(5, '');
       const arrClass = Class.of(fixedArr);
       const componentType = arrClass.getFixedArrayComponentType();
       const stringClass = Class.of('');
@@ -313,7 +313,7 @@ export default function BuiltinsClassGetFixedArrayComponentTypeTest(): void {
      * @tc.level   LEVEL1
      */
     it('BuiltinsClassGetFixedArrayComponentTypeTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const fixedArr = new FixedArray<TestClass>(3);
+      const fixedArr = new FixedArray<TestClass>(3, new TestClass());
       const arrClass = Class.of(fixedArr);
       const componentType = arrClass.getFixedArrayComponentType();
 

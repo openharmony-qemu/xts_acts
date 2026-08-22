@@ -78,7 +78,7 @@ class SameIntType029 {
 }
 
 class FixedArrayType030 {
-  public fixedArr: FixedArray<int> = new FixedArray<int>(3);
+  public fixedArr: FixedArray<int> = new FixedArray<int>(3, 0);
 }
 
 class MultiUnionType031 {
@@ -223,7 +223,7 @@ class TypeNullable_067 {
 }
 
 class TypeFixedArr_068 {
-  public fa: FixedArray<int> = new FixedArray<int>(3)
+  public fa: FixedArray<int> = new FixedArray<int>(3, 0)
 }
 
 

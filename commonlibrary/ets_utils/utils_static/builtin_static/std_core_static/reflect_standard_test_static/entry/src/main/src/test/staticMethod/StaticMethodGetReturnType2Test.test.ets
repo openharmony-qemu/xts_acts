@@ -227,9 +227,9 @@ class NumericReturnRTClass {
 }
 
 class FixedArrayRTClass {
-  public static faReturnInt(): FixedArray<int> { return new FixedArray<int>(0); }
-  public static faReturnString(): FixedArray<string> { return new FixedArray<string>(0); }
-  public static faReturnBoolean(): FixedArray<boolean> { return new FixedArray<boolean>(0); }
+  public static faReturnInt(): FixedArray<int> { return new FixedArray<int>(0, 0); }
+  public static faReturnString(): FixedArray<string> { return new FixedArray<string>(0, ''); }
+  public static faReturnBoolean(): FixedArray<boolean> { return new FixedArray<boolean>(0, false); }
 }
 
 class EnumMethodRTClass {

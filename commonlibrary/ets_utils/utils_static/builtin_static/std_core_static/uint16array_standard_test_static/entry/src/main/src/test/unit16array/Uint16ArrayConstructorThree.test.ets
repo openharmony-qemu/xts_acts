@@ -560,7 +560,7 @@ export default function uint16ArrayConstructor03Test(): void {
      * @tc.level Level 2
      */
     it('testUint16ArrayConstructorThree038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let src: FixedArray<number> = new FixedArray<number>(100);
+      let src: FixedArray<number> = new FixedArray<number>(100, 0);
       for (let i: int = 0; i < 100; i++) {
         src[i] = 1.0 * i;
       }

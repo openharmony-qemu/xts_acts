@@ -141,7 +141,7 @@ export default function BoxGenericConstructorTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericConstructorD007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fixed: FixedArray<int> = new FixedArray<int>(3);
+      let fixed: FixedArray<int> = new FixedArray<int>(3, 0);
       fixed[0] = 10;
       fixed[1] = 20;
       fixed[2] = 30;
@@ -394,7 +394,7 @@ export default function BoxGenericConstructorTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericConstructorD024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fixed: FixedArray<int> = new FixedArray<int>(3);
+      let fixed: FixedArray<int> = new FixedArray<int>(3, 0);
       fixed[0] = 100;
       fixed[1] = 200;
       fixed[2] = 300;
@@ -412,7 +412,7 @@ export default function BoxGenericConstructorTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericConstructorD025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fixed: FixedArray<int> = new FixedArray<int>(5);
+      let fixed: FixedArray<int> = new FixedArray<int>(5, 0);
       fixed[0] = 42;
       let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(fixed);
       expect(box.get()[0]).assertEqual(42);
@@ -428,7 +428,7 @@ export default function BoxGenericConstructorTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericConstructorD026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fixed: FixedArray<int> = new FixedArray<int>(2);
+      let fixed: FixedArray<int> = new FixedArray<int>(2, 0);
       fixed[0] = -10;
       fixed[1] = -20;
       let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(fixed);
@@ -519,7 +519,7 @@ export default function BoxGenericConstructorTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericConstructorD032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fixed: FixedArray<int> = new FixedArray<int>(3);
+      let fixed: FixedArray<int> = new FixedArray<int>(3, 0);
       let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(fixed);
       expect(box.get()[0]).assertEqual(0);
       expect(box.get()[1]).assertEqual(0);
@@ -818,7 +818,7 @@ export default function BoxGenericConstructorTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericConstructorD052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fixed: FixedArray<int> = new FixedArray<int>(4);
+      let fixed: FixedArray<int> = new FixedArray<int>(4, 0);
       fixed[0] = 1;
       fixed[1] = 2;
       fixed[2] = 3;
@@ -837,7 +837,7 @@ export default function BoxGenericConstructorTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericConstructorD053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fixed: FixedArray<int> = new FixedArray<int>(3);
+      let fixed: FixedArray<int> = new FixedArray<int>(3, 0);
       fixed[0] = 7;
       fixed[1] = 7;
       fixed[2] = 7;
@@ -855,7 +855,7 @@ export default function BoxGenericConstructorTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericConstructorD054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fixed: FixedArray<int> = new FixedArray<int>(4);
+      let fixed: FixedArray<int> = new FixedArray<int>(4, 0);
       fixed[0] = 10;
       fixed[1] = 20;
       fixed[2] = 10;
@@ -874,7 +874,7 @@ export default function BoxGenericConstructorTest4(): void {
      * @tc.level Level 2
      */
     it('testBoxGenericConstructorD055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fixed: FixedArray<int> = new FixedArray<int>(2);
+      let fixed: FixedArray<int> = new FixedArray<int>(2, 0);
       fixed[0] = 10000;
       fixed[1] = 20000;
       let box: Box<FixedArray<int>> = new Box<FixedArray<int>>(fixed);

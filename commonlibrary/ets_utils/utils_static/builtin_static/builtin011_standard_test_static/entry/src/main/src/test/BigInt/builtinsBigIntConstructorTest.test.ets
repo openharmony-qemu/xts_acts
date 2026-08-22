@@ -1641,7 +1641,7 @@ export default function BuiltinsBigIntConstructorTest(): void {
      * @tc.level LEVEL0
      */
     it('bigIntConstructorFixedArrayTest8600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const bytes: FixedArray<int> = new FixedArray<int>(1);
+      const bytes: FixedArray<int> = new FixedArray<int>(1, 0);
       bytes[0] = 42;
       const bigIntValue: BigInt = new BigInt(bytes, 1);
 
@@ -1659,7 +1659,7 @@ export default function BuiltinsBigIntConstructorTest(): void {
      * @tc.level LEVEL0
      */
     it('bigIntConstructorFixedArrayTest8700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const bytes: FixedArray<int> = new FixedArray<int>(1);
+      const bytes: FixedArray<int> = new FixedArray<int>(1, 0);
       bytes[0] = 42;
       const bigIntValue: BigInt = new BigInt(bytes, -1);
 
@@ -1677,7 +1677,7 @@ export default function BuiltinsBigIntConstructorTest(): void {
      * @tc.level LEVEL0
      */
     it('bigIntConstructorFixedArrayTest8800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const bytes: FixedArray<int> = new FixedArray<int>(0);
+      const bytes: FixedArray<int> = new FixedArray<int>(0, 0);
       const bigIntValue: BigInt = new BigInt(bytes, 0);
 
       expect(bigIntValue.equals(new BigInt(0))).assertTrue();
@@ -1694,7 +1694,7 @@ export default function BuiltinsBigIntConstructorTest(): void {
      * @tc.level LEVEL0
      */
     it('bigIntConstructorFixedArrayTest8900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const bytes: FixedArray<int> = new FixedArray<int>(3);
+      const bytes: FixedArray<int> = new FixedArray<int>(3, 0);
       bytes[0] = 42;
       bytes[1] = 0;
       bytes[2] = 0;
@@ -1713,7 +1713,7 @@ export default function BuiltinsBigIntConstructorTest(): void {
      * @tc.level LEVEL0
      */
     it('bigIntConstructorFixedArrayTest9000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const bytes: FixedArray<int> = new FixedArray<int>(2);
+      const bytes: FixedArray<int> = new FixedArray<int>(2, 0);
       bytes[0] = 0;
       bytes[1] = 0;
       const bigIntValue: BigInt = new BigInt(bytes, 1);
@@ -1732,7 +1732,7 @@ export default function BuiltinsBigIntConstructorTest(): void {
      * @tc.level LEVEL0
      */
     it('bigIntConstructorFixedArrayTest9100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const bytes: FixedArray<int> = new FixedArray<int>(2);
+      const bytes: FixedArray<int> = new FixedArray<int>(2, 0);
       bytes[0] = 1;
       bytes[1] = 2;
       const bigIntValue: BigInt = new BigInt(bytes, 1);
@@ -1751,7 +1751,7 @@ export default function BuiltinsBigIntConstructorTest(): void {
      * @tc.level LEVEL0
      */
     it('bigIntConstructorFixedArrayTest9200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const bytes: FixedArray<int> = new FixedArray<int>(1);
+      const bytes: FixedArray<int> = new FixedArray<int>(1, 0);
       bytes[0] = -1;
       const bigIntValue: BigInt = new BigInt(bytes, -1);
 

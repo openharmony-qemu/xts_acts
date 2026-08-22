@@ -448,7 +448,7 @@ class ReflectionUtils050 {
       if (args.length === 0) {
         return method.invoke(this);
       }
-      const buf: FixedArray<Any> = new FixedArray<Any>(args.length);
+      const buf: FixedArray<Any> = new FixedArray<Any>(args.length, undefined);
       for (let i = 0; i < args.length; i++) {
         buf[i] = args[i];
       }
