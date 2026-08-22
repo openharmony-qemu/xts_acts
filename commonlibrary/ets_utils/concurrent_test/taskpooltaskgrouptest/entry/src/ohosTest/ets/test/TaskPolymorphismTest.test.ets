@@ -24,7 +24,7 @@ interface DataReceiveTimeout {
 
 function createDataReceiveTimeout(timeoutMs: number, message: string): DataReceiveTimeout {
   let timeoutId: number = -1;
-  const timeoutPromise = new Promise<never>((resolve: (value?: never) => void, reject: (reason?: Object) => void): void => {
+  const timeoutPromise = new Promise<never>((resolve: (value: PromiseLike<never>) => void, reject: (reason?: Object) => void): void => {
     timeoutId = setTimeout((): void => {
       reject(new Error(message));
     }, timeoutMs);
@@ -136,8 +136,9 @@ export default function TaskPolymorphismTest(): void {
      */
     it('TaskPolymorphismTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let longTask = new taskpool.LongTask(simpleAdd, 10.0, 20.0)
-      try {
-        let result = await taskpool.execute(longTask)
+      let result: Object | undefined = undefined
+        try {
+          result = await taskpool.execute(longTask)
         expect(String(result)).assertEqual(String(30))
       } catch (error) {
         console.error(`TaskPolymorphismTest0200 failed: ${error}`)
@@ -167,8 +168,9 @@ export default function TaskPolymorphismTest(): void {
         let longTask = new taskpool.LongTask(processArrayBuffer, buffer)
         let task: taskpool.Task = longTask
         task.setTransferList([buffer])
-        try {
-          let result = await taskpool.execute(task)
+        let result: Object | undefined = undefined
+          try {
+            result = await taskpool.execute(task)
           expect(String(result)).assertEqual(String(64))
         } finally {
           // Cleanup-only: terminateTask() may throw if the task already finished
@@ -194,8 +196,9 @@ export default function TaskPolymorphismTest(): void {
      */
     it('TaskPolymorphismTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let longTask = new taskpool.LongTask(simpleAdd, 1.0, 2.0)
-      try {
-        let result = await taskpool.execute(longTask)
+      let result: Object | undefined = undefined
+        try {
+          result = await taskpool.execute(longTask)
         expect(String(result)).assertEqual(String(3))
       } catch (error) {
         console.error(`TaskPolymorphismTest0400 failed: ${error}`)
@@ -240,8 +243,9 @@ export default function TaskPolymorphismTest(): void {
      */
     it('TaskPolymorphismTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let genericsTask = new taskpool.GenericsTask<[number, number], number>(typedAdd, 10.0, 20.0)
-      try {
-        let result = await taskpool.execute(genericsTask)
+      let result: Object | undefined = undefined
+        try {
+          result = await taskpool.execute(genericsTask)
       } catch (error) {
         console.error(`async await failed: ${error}`)
         expect().assertFail()
@@ -274,7 +278,7 @@ export default function TaskPolymorphismTest(): void {
         })
 
         await taskpool.execute(task)
-        await Promise.race<void>([dataPromise, dataTimeout.timeoutPromise as Promise<void>])
+        await Promise.race<void>([dataPromise, dataTimeout.timeoutPromise])
 
         expect(received).assertEqual('progress: 50%')
         done()
@@ -333,8 +337,9 @@ export default function TaskPolymorphismTest(): void {
     it('TaskPolymorphismTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let longTask = new taskpool.LongTask(identityFunc, 100.0)
-        try {
-          let result = await taskpool.executeDelayed(1000, longTask)
+        let result: Object | undefined = undefined
+          try {
+            result = await taskpool.executeDelayed(1000, longTask)
           expect(String(result)).assertEqual(String(100))
         } finally {
           // Cleanup-only: terminateTask() may throw if the task already finished
@@ -447,8 +452,9 @@ export default function TaskPolymorphismTest(): void {
     it('TaskPolymorphismTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let longTask = new taskpool.LongTask(longRunningTask)
-        try {
-          let result = await taskpool.execute(longTask)
+        let result: Object | undefined = undefined
+          try {
+            result = await taskpool.execute(longTask)
           expect(String(result)).assertEqual(String(499999500000))
         } finally {
           // Cleanup-only: terminateTask() may throw if the task already finished
@@ -475,7 +481,7 @@ export default function TaskPolymorphismTest(): void {
     it('TaskPolymorphismTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let genericsTask = new taskpool.GenericsTask<[number], string>(stringFunc, 100)
-        let result: Object = undefined
+        let result: Object | undefined = undefined
         try {
           result = await taskpool.execute(genericsTask)
         } catch (error) {

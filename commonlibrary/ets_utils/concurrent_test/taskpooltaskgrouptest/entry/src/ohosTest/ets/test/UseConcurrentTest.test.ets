@@ -26,7 +26,7 @@ interface WorkerTimeout {
 
 function createWorkerTimeout(timeoutMs: number, message: string): WorkerTimeout {
   let timeoutId: number = -1;
-  const timeoutPromise = new Promise<never>((resolve: (value?: never) => void, reject: (reason?: Object) => void): void => {
+  const timeoutPromise = new Promise<never>((resolve: (value: PromiseLike<never>) => void, reject: (reason?: Object) => void): void => {
     timeoutId = setTimeout((): void => {
       reject(new Error(message));
     }, timeoutMs);
@@ -156,7 +156,7 @@ function ucBlankLineFirst(): number {
 async function ucNestedTaskPool(): Promise<number> {
   'use concurrent'
   let innerTaskObj = new taskpool.Task(tsConcurrentIdentity, 100.0)
-  let result: Object = undefined
+  let result: Object | undefined = undefined
   try {
     result = await taskpool.execute(innerTaskObj)
   } catch (error) {
@@ -189,7 +189,7 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(concurrentNoArgs)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -211,7 +211,7 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(tsConcurrentAdd, 15.0, 27.0)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -233,7 +233,7 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(jsConcurrentDouble, 21.0)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -255,7 +255,7 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(concurrentAdd, 8.0, 2.0)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -277,7 +277,7 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(concurrentStringLen, 'hello')
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -301,14 +301,16 @@ export default function UseConcurrentTest(): void {
       let task1 = new taskpool.Task(concurrentBoolToInt, true)
       let task2 = new taskpool.Task(concurrentBoolToInt, false)
 
-      try {
-        let result1 = await taskpool.execute(task1)
+      let result1: Object | undefined = undefined
+        try {
+          result1 = await taskpool.execute(task1)
       } catch (error) {
         console.error(`async await failed: ${error}`)
         expect().assertFail()
       }
-      try {
-        let result2 = await taskpool.execute(task2)
+      let result2: Object | undefined = undefined
+        try {
+          result2 = await taskpool.execute(task2)
       } catch (error) {
         console.error(`async await failed: ${error}`)
         expect().assertFail()
@@ -334,7 +336,7 @@ export default function UseConcurrentTest(): void {
       arr.push(3)
 
       let task = new taskpool.Task(ucArrayModify, arr)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -359,7 +361,7 @@ export default function UseConcurrentTest(): void {
       map.set('existing', 1)
 
       let task = new taskpool.Task(ucMapModify, map)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -385,7 +387,7 @@ export default function UseConcurrentTest(): void {
       set.add(2)
 
       let task = new taskpool.Task(ucSetModify, set)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -409,7 +411,7 @@ export default function UseConcurrentTest(): void {
       let bv = new collections.BitVector(16)
 
       let task = new taskpool.Task(ucBitVectorLength, bv)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -433,7 +435,7 @@ export default function UseConcurrentTest(): void {
       let ab = new ArrayBuffer(32)
 
       let task = new taskpool.Task(concurrentWithArrayBuffer, ab)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -458,7 +460,7 @@ export default function UseConcurrentTest(): void {
       data.input_ = 30
 
       let task = new taskpool.Task(concurrentProcessSendable, data)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -480,7 +482,7 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(concurrentReturnNumber)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -502,7 +504,7 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(concurrentReturnString)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -527,14 +529,14 @@ export default function UseConcurrentTest(): void {
         let task1 = new taskpool.Task(concurrentReturnBoolean, 42.0)
         let task2 = new taskpool.Task(concurrentReturnBoolean, -1.0)
 
-        let result1: Object = undefined
+        let result1: Object | undefined = undefined
         try {
           result1 = await taskpool.execute(task1)
         } catch (error) {
           console.error(`taskpool execute failed: ${error}`)
           expect().assertFail()
         }
-        let result2: Object = undefined
+        let result2: Object | undefined = undefined
         try {
           result2 = await taskpool.execute(task2)
         } catch (error) {
@@ -633,7 +635,7 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(ucAdd, 15.0, 25.0)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -655,7 +657,7 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(ucBlankLineFirst)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -677,7 +679,7 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(tsConcurrentStringLength, 'cross_file')
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -699,7 +701,7 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(jsConcurrentAdd, 15.0, 27.0)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -750,7 +752,7 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(ucNestedTaskPool)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -850,7 +852,7 @@ export default function UseConcurrentTest(): void {
       let work: worker.ThreadWorker | null = null
       try {
         let task = new taskpool.Task(jsConcurrentDouble, 21.0)
-        let taskResult: Object = undefined
+        let taskResult: Object | undefined = undefined
         try {
           taskResult = await taskpool.execute(task)
         } catch (error) {
@@ -901,8 +903,9 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(ucAsyncConcurrent)
-      try {
-        let result = await taskpool.execute(task)
+      let result: Object | undefined = undefined
+        try {
+          result = await taskpool.execute(task)
       } catch (cleanupError) {
         console.warn(`async await failed: ${cleanupError}`)
       }
@@ -921,8 +924,9 @@ export default function UseConcurrentTest(): void {
      */
     it('UseConcurrentTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(ucComboSendableMainDispatch, 20)
-      try {
-        let result = await taskpool.execute(task)
+      let result: Object | undefined = undefined
+        try {
+          result = await taskpool.execute(task)
       } catch (error) {
         console.error(`async await failed: ${error}`)
         expect().assertFail()
@@ -943,7 +947,7 @@ export default function UseConcurrentTest(): void {
     it('UseConcurrentTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let task = new taskpool.Task(tsComboConcurrent, 7)
-        let result: Object = undefined
+        let result: Object | undefined = undefined
         try {
           result = await taskpool.execute(task)
         } catch (error) {

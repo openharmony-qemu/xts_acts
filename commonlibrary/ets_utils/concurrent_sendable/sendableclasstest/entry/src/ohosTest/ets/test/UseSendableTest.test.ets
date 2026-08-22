@@ -75,7 +75,7 @@ export default function UseSendableTest(): void {
       arr.push(1); arr.push(2); arr.push(3); arr.push(4); arr.push(5)
 
       let task = new taskpool.Task(arraySumDispatch, arr)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -97,7 +97,7 @@ export default function UseSendableTest(): void {
      */
     it('UseSendableTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(sendableFuncInTsSourceDispatch)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -142,7 +142,7 @@ export default function UseSendableTest(): void {
     it('UseSendableTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let task = new taskpool.Task(sendableWithNumberParamDispatch, 21.0)
-        let result: Object = undefined
+        let result: Object | undefined = undefined
         try {
           result = await taskpool.execute(task)
         } catch (error) {
@@ -153,7 +153,7 @@ export default function UseSendableTest(): void {
         expect(result as number).assertEqual(42)
 
         let squareTask = new taskpool.Task(sendableSquareDispatch, 8.0)
-        let squareResult: Object = undefined
+        let squareResult: Object | undefined = undefined
         try {
           squareResult = await taskpool.execute(squareTask)
         } catch (error) {
@@ -180,7 +180,7 @@ export default function UseSendableTest(): void {
      */
     it('UseSendableTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(sendableWithStringParamDispatch, 'hello')
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -205,14 +205,14 @@ export default function UseSendableTest(): void {
         let task1 = new taskpool.Task(sendableWithBooleanParamDispatch, true)
         let task2 = new taskpool.Task(sendableWithBooleanParamDispatch, false)
 
-        let result1: Object = undefined
+        let result1: Object | undefined = undefined
         try {
           result1 = await taskpool.execute(task1)
         } catch (error) {
           console.error(`taskpool execute failed: ${error}`)
           expect().assertFail()
         }
-        let result2: Object = undefined
+        let result2: Object | undefined = undefined
         try {
           result2 = await taskpool.execute(task2)
         } catch (error) {
@@ -226,14 +226,14 @@ export default function UseSendableTest(): void {
         let boolTask1 = new taskpool.Task(sendableReturnBooleanDispatch, 42.0)
         let boolTask2 = new taskpool.Task(sendableReturnBooleanDispatch, -1.0)
 
-        let boolResult1: Object = undefined
+        let boolResult1: Object | undefined = undefined
         try {
           boolResult1 = await taskpool.execute(boolTask1)
         } catch (error) {
           console.error(`taskpool execute failed: ${error}`)
           expect().assertFail()
         }
-        let boolResult2: Object = undefined
+        let boolResult2: Object | undefined = undefined
         try {
           boolResult2 = await taskpool.execute(boolTask2)
         } catch (error) {
@@ -264,7 +264,7 @@ export default function UseSendableTest(): void {
       arr.push(1); arr.push(2); arr.push(3)
 
       let task = new taskpool.Task(sendableArrayOpDispatch, arr)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -291,7 +291,7 @@ export default function UseSendableTest(): void {
         map.set('a', 1)
 
         let task = new taskpool.Task(sendableMapOpDispatch, map)
-        let result: Object = undefined
+        let result: Object | undefined = undefined
         try {
           result = await taskpool.execute(task)
         } catch (error) {
@@ -308,7 +308,7 @@ export default function UseSendableTest(): void {
         countMap.set('c', 30)
 
         let countTask = new taskpool.Task(mapCountDispatch, countMap)
-        let countResult: Object = undefined
+        let countResult: Object | undefined = undefined
         try {
           countResult = await taskpool.execute(countTask)
         } catch (error) {
@@ -340,7 +340,7 @@ export default function UseSendableTest(): void {
         set.add(2)
 
         let task = new taskpool.Task(sendableSetOpDispatch, set)
-        let result: Object = undefined
+        let result: Object | undefined = undefined
         try {
           result = await taskpool.execute(task)
         } catch (error) {
@@ -355,7 +355,7 @@ export default function UseSendableTest(): void {
         deleteSet.add(1); deleteSet.add(2); deleteSet.add(3)
 
         let deleteTask = new taskpool.Task(setDeleteOpDispatch, deleteSet)
-        let deleteResult: Object = undefined
+        let deleteResult: Object | undefined = undefined
         try {
           deleteResult = await taskpool.execute(deleteTask)
         } catch (error) {
@@ -395,7 +395,7 @@ export default function UseSendableTest(): void {
       bv.push(1)
 
       let task = new taskpool.Task(sendableBitVectorOpDispatch, bv)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -420,7 +420,7 @@ export default function UseSendableTest(): void {
       let ab = new ArrayBuffer(16)
 
       let task = new taskpool.Task(sendableWithArrayBufferDispatch, ab)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -455,7 +455,7 @@ export default function UseSendableTest(): void {
         instance.value_ = 42
 
         let readTask = new taskpool.Task(sendableReadValueDispatch, instance)
-        let readResult: Object = undefined
+        let readResult: Object | undefined = undefined
         try {
           readResult = await taskpool.execute(readTask)
         } catch (error) {
@@ -466,7 +466,7 @@ export default function UseSendableTest(): void {
         expect(readResult as number).assertEqual(42)
 
         let modifyTask = new taskpool.Task(sendableModifyValueDispatch, instance, 99.0)
-        let modifyResult: Object = undefined
+        let modifyResult: Object | undefined = undefined
         try {
           modifyResult = await taskpool.execute(modifyTask)
         } catch (error) {
@@ -483,7 +483,7 @@ export default function UseSendableTest(): void {
         container.numC_ = 1
 
         let numericTask = new taskpool.Task(readNumericDataDispatch, container)
-        let numericResult: Object = undefined
+        let numericResult: Object | undefined = undefined
         try {
           numericResult = await taskpool.execute(numericTask)
         } catch (error) {
@@ -497,7 +497,7 @@ export default function UseSendableTest(): void {
         outer.setNestedValue(99)
 
         let nestedReadTask = new taskpool.Task(readNestedSendableDispatch, outer)
-        let nestedReadResult: Object = undefined
+        let nestedReadResult: Object | undefined = undefined
         try {
           nestedReadResult = await taskpool.execute(nestedReadTask)
         } catch (error) {
@@ -519,7 +519,7 @@ export default function UseSendableTest(): void {
         await taskpool.execute(roundTripTask1)
 
         let roundTripTask2 = new taskpool.Task(sendableReadValueDispatch, roundTrip)
-        let roundTripResult: Object = undefined
+        let roundTripResult: Object | undefined = undefined
         try {
           roundTripResult = await taskpool.execute(roundTripTask2)
         } catch (error) {
@@ -534,7 +534,7 @@ export default function UseSendableTest(): void {
         isolation.setValue(10)
 
         let isolationTask1 = new taskpool.Task(sendableReadValueDispatch, isolation)
-        let isolationResult1: Object = undefined
+        let isolationResult1: Object | undefined = undefined
         try {
           isolationResult1 = await taskpool.execute(isolationTask1)
         } catch (error) {
@@ -545,7 +545,7 @@ export default function UseSendableTest(): void {
         isolation.addData(5)
 
         let isolationTask2 = new taskpool.Task(sendableReadValueDispatch, isolation)
-        let isolationResult2: Object = undefined
+        let isolationResult2: Object | undefined = undefined
         try {
           isolationResult2 = await taskpool.execute(isolationTask2)
         } catch (error) {
@@ -611,7 +611,7 @@ export default function UseSendableTest(): void {
      */
     it('UseSendableTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(sendableReturnNumberDispatch)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -633,7 +633,7 @@ export default function UseSendableTest(): void {
      */
     it('UseSendableTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(sendableReturnStringDispatch)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -734,7 +734,7 @@ export default function UseSendableTest(): void {
      */
     it('UseSendableTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(sendableCorrectPositionDispatch)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -758,8 +758,9 @@ export default function UseSendableTest(): void {
      */
     it('UseSendableTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(sendableFuncWithLeadingBlankLineDispatch)
-      try {
-        let result = await taskpool.execute(task)
+      let result: Object | undefined = undefined
+        try {
+          result = await taskpool.execute(task)
       } catch (cleanupError) {
         console.warn(`async await failed: ${cleanupError}`)
       }
@@ -778,8 +779,9 @@ export default function UseSendableTest(): void {
      */
     it('UseSendableTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(sendableNestedFunctionDispatch)
-      try {
-        let result = await taskpool.execute(task)
+      let result: Object | undefined = undefined
+        try {
+          result = await taskpool.execute(task)
       } catch (error) {
         console.error(`async await failed: ${error}`)
         expect().assertFail()
@@ -799,8 +801,9 @@ export default function UseSendableTest(): void {
      */
     it('UseSendableTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task = new taskpool.Task(sendableFuncInTsConsumerDispatch)
-      try {
-        let result = await taskpool.execute(task)
+      let result: Object | undefined = undefined
+        try {
+          result = await taskpool.execute(task)
       } catch (error) {
         console.error(`async await failed: ${error}`)
         expect().assertFail()
@@ -866,7 +869,7 @@ export default function UseSendableTest(): void {
         let instance = new CustomSendable()
 
         let task = new taskpool.Task(callSendableMethodDispatch, instance)
-        let result: Object = undefined
+        let result: Object | undefined = undefined
         try {
           result = await taskpool.execute(task)
         } catch (error) {
@@ -881,7 +884,7 @@ export default function UseSendableTest(): void {
         outerInstance.setValue(77)
 
         let outerTask = new taskpool.Task(readOuterValueDispatch, outerInstance)
-        let outerResult: Object = undefined
+        let outerResult: Object | undefined = undefined
         try {
           outerResult = await taskpool.execute(outerTask)
         } catch (error) {
@@ -912,7 +915,7 @@ export default function UseSendableTest(): void {
         shared.value_ = 77
 
         let task = new taskpool.Task(processSharedSendableDataDispatch, shared)
-        let result: Object = undefined
+        let result: Object | undefined = undefined
         try {
           result = await taskpool.execute(task)
         } catch (error) {

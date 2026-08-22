@@ -355,7 +355,7 @@ export default function ISendableImplTest(): void {
       instance.value_ = 55
 
       let task = new taskpool.Task(readSendableValueDispatch, instance)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -380,7 +380,7 @@ export default function ISendableImplTest(): void {
       instance.value_ = 20
 
       let task = new taskpool.Task(modifySendableValueDispatch, instance, 88.0)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -406,7 +406,7 @@ export default function ISendableImplTest(): void {
       outer.setNestedValue(77)
 
       let task = new taskpool.Task(nestedSendableAccessDispatch, outer)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -455,8 +455,9 @@ export default function ISendableImplTest(): void {
       instance.numA_ = 3
 
       let task = new taskpool.Task(processNumericDispatch, instance)
-      try {
-        let result = await taskpool.execute(task)
+      let result: Object | undefined = undefined
+        try {
+          result = await taskpool.execute(task)
       } catch (cleanupError) {
         console.warn(`async await failed: ${cleanupError}`)
       }
@@ -622,7 +623,7 @@ export default function ISendableImplTest(): void {
       data.value_ = 10
 
       let task = new taskpool.Task(incrementSendableValueDispatch, data)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -762,7 +763,7 @@ export default function ISendableImplTest(): void {
         await taskpool.execute(task1)
 
         let task2 = new taskpool.Task(readSendableValueDispatch, data)
-        let result: Object = undefined
+        let result: Object | undefined = undefined
         try {
           result = await taskpool.execute(task2)
         } catch (error) {
@@ -918,7 +919,7 @@ export default function ISendableImplTest(): void {
       instance.validatedValue_ = 88
 
       let task = new taskpool.Task(readValidatedDispatch, instance)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -945,7 +946,7 @@ export default function ISendableImplTest(): void {
       instance.childValue_ = 'child'
 
       let task = new taskpool.Task(readInheritedDispatch, instance)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -973,7 +974,7 @@ export default function ISendableImplTest(): void {
       data.counter_ = 0
 
       let task = new taskpool.Task(asyncLockCrossThreadDispatch, lock, data)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -1057,7 +1058,7 @@ export default function ISendableImplTest(): void {
         instance.value_ = 10
 
         let task1 = new taskpool.Task(readCalculatedDispatch, instance, 3.0)
-        let result1: Object = undefined
+        let result1: Object | undefined = undefined
         try {
           result1 = await taskpool.execute(task1)
         } catch (error) {
@@ -1068,7 +1069,7 @@ export default function ISendableImplTest(): void {
         expect(result1 as number).assertEqual(30)
 
         let task2 = new taskpool.Task(readIsValidDispatch, instance)
-        let result2: Object = undefined
+        let result2: Object | undefined = undefined
         try {
           result2 = await taskpool.execute(task2)
         } catch (error) {
@@ -1098,7 +1099,7 @@ export default function ISendableImplTest(): void {
       instance.value_ = 99
 
       let task = new taskpool.Task(readFormatValueDispatch, instance)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -1122,7 +1123,7 @@ export default function ISendableImplTest(): void {
       let instance = new ExtendedSendable()
 
       let task = new taskpool.Task(modifyAndCalculateDispatch, instance, 7.0, 6.0)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -1204,7 +1205,7 @@ export default function ISendableImplTest(): void {
       expect(instance.getOwnValue()).assertEqual(99)
 
       let task = new taskpool.Task(readInstanceOwnValueDispatch, instance)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -1231,7 +1232,7 @@ export default function ISendableImplTest(): void {
       instance.bigValue_ = BigInt(999)
 
       let task = new taskpool.Task(readBigDispatch, instance)
-      let result: Object = undefined
+      let result: Object | undefined = undefined
       try {
         result = await taskpool.execute(task)
       } catch (error) {
@@ -1263,7 +1264,7 @@ export default function ISendableImplTest(): void {
         expect(instance.getCount()).assertEqual(2)
 
         let task = new taskpool.Task(readMultiCountDispatch, instance)
-        let result: Object = undefined
+        let result: Object | undefined = undefined
         try {
           result = await taskpool.execute(task)
         } catch (error) {

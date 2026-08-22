@@ -228,8 +228,9 @@ export default function TaskGroupInheritanceTest(): void {
       let myGroup = new MyTaskGroup()
       myGroup.addTask(task)
 
-      try {
-        let results = await taskpool.execute(myGroup) as Object[]
+      let results: Object[] = []
+        try {
+          results = await taskpool.execute(myGroup) as Object[]
       } catch (cleanupError) {
         console.warn(`async await failed: ${cleanupError}`)
       }
@@ -254,8 +255,9 @@ export default function TaskGroupInheritanceTest(): void {
 
       expect(myGroup.getTaskCount()).assertEqual(2)
 
-      try {
-        let results = await taskpool.execute(myGroup) as Object[]
+      let results: Object[] = []
+        try {
+          results = await taskpool.execute(myGroup) as Object[]
       } catch (error) {
         console.error(`async await failed: ${error}`)
         expect().assertFail()
@@ -310,8 +312,9 @@ export default function TaskGroupInheritanceTest(): void {
 
       expect(myGroup.getTaskNames().length).assertEqual(2)
 
-      try {
-        let results = await taskpool.execute(myGroup) as Object[]
+      let results: Object[] = []
+        try {
+          results = await taskpool.execute(myGroup) as Object[]
       } catch (error) {
         console.error(`async await failed: ${error}`)
         expect().assertFail()
