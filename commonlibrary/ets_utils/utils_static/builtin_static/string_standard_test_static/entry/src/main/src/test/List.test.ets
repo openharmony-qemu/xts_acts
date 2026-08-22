@@ -16,6 +16,7 @@ import StringReplaceAllTest from "./StringReplaceAllTest.test";
 import StringSearchTest from "./StringSearchTest.test";
 import StringStartsWithTest from "./StringStartsWithTest.test";
 import StringGetValueArrayCharsTest from "./StringGetValueArrayCharsTest.test";
+import StringGetValueArrayCharsTest2 from "./StringGetValueArrayCharsTest2.test";
 
 import stringAtTest from './String_At/StringAtTest';
 import StringBasicTest from './String_Basic/StringBasicTest';
@@ -58,6 +59,7 @@ export default function testsuite(): void {
   StringSearchTest();
   StringStartsWithTest();
   StringGetValueArrayCharsTest();
+  StringGetValueArrayCharsTest2();
 
   stringAtTest();
   StringBasicTest();
