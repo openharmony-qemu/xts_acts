@@ -31,7 +31,7 @@ import hilog from '@ohos.hilog';
 export default function StringGetValueArrayCharsTest():void {
   describe('StringGetValueArrayCharsTest', (): void => {
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_0100
      * @tc.name testStringGetValueArrayChars001
      * @tc.desc Verify getValueArrayChars with required parameters begin and end
      * @tc.size MediumTest
@@ -46,7 +46,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_0200
      * @tc.name testStringGetValueArrayChars002
      * @tc.desc Verify getValueArrayChars extracts middle substring with correct elements and order
      * @tc.size MediumTest
@@ -64,7 +64,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_0300
      * @tc.name testStringGetValueArrayChars003
      * @tc.desc Verify getValueArrayChars extracts entire string from begin zero to length
      * @tc.size MediumTest
@@ -81,7 +81,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_0400
      * @tc.name testStringGetValueArrayChars004
      * @tc.desc Verify extracting first character with begin zero and end one
      * @tc.size MediumTest
@@ -96,7 +96,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_0500
      * @tc.name testStringGetValueArrayChars005
      * @tc.desc Verify begin and end parameters accept hexadecimal octal and binary number formats
      * @tc.size MediumTest
@@ -127,7 +127,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_0600
      * @tc.name testStringGetValueArrayChars006
      * @tc.desc Verify begin equals end at various positions returns empty ValueArray
      * @tc.size MediumTest
@@ -151,7 +151,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_0700
      * @tc.name testStringGetValueArrayChars007
      * @tc.desc Verify negative begin or end values throw StringIndexOutOfBoundsError
      * @tc.size MediumTest
@@ -191,7 +191,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_0800
      * @tc.name testStringGetValueArrayChars008
      * @tc.desc Verify begin or end exceeding string length throws StringIndexOutOfBoundsError
      * @tc.size MediumTest
@@ -231,7 +231,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_0900
      * @tc.name testStringGetValueArrayChars009
      * @tc.desc Verify begin greater than end throws StringIndexOutOfBoundsError
      * @tc.size MediumTest
@@ -249,7 +249,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_1000
      * @tc.name testStringGetValueArrayChars010
      * @tc.desc Verify Chinese string extraction with multi-byte characters
      * @tc.size MediumTest
@@ -265,7 +265,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_1100
      * @tc.name testStringGetValueArrayChars011
      * @tc.desc Verify mixed language string extraction
      * @tc.size MediumTest
@@ -279,7 +279,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_1200
      * @tc.name testStringGetValueArrayChars012
      * @tc.desc Verify emoji string extraction with surrogate pairs
      * @tc.size MediumTest
@@ -293,7 +293,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_1300
      * @tc.name testStringGetValueArrayChars013
      * @tc.desc Verify escape characters string extraction
      * @tc.size MediumTest
@@ -308,7 +308,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_1400
      * @tc.name testStringGetValueArrayChars014
      * @tc.desc Verify special symbols string extraction
      * @tc.size MediumTest
@@ -323,7 +323,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_1500
      * @tc.name testStringGetValueArrayChars015
      * @tc.desc Verify script tag string extraction without execution
      * @tc.size MediumTest
@@ -338,7 +338,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_1600
      * @tc.name testStringGetValueArrayChars016
      * @tc.desc Verify Unicode boundary characters string extraction
      * @tc.size MediumTest
@@ -354,7 +354,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_1700
      * @tc.name testStringGetValueArrayChars017
      * @tc.desc Verify zero-width space string extraction
      * @tc.size MediumTest
@@ -369,7 +369,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_1800
      * @tc.name testStringGetValueArrayChars018
      * @tc.desc Verify long string of 10000 characters extraction
      * @tc.size MediumTest
@@ -383,7 +383,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_1900
      * @tc.name testStringGetValueArrayChars019
      * @tc.desc Verify 65535 characters string boundary extraction
      * @tc.size MediumTest
@@ -397,7 +397,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_2000
      * @tc.name testStringGetValueArrayChars020
      * @tc.desc Verify new String constructor object extraction
      * @tc.size MediumTest
@@ -411,7 +411,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_2100
      * @tc.name testStringGetValueArrayChars021
      * @tc.desc Verify returned array elements order matches original string
      * @tc.size MediumTest
@@ -427,7 +427,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_2200
      * @tc.name testStringGetValueArrayChars022
      * @tc.desc Verify array elements are char type assignable to char variable
      * @tc.size MediumTest
@@ -442,7 +442,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_2300
      * @tc.name testStringGetValueArrayChars023
      * @tc.desc Verify multiple concurrent calls return independent ValueArray instances
      * @tc.size MediumTest
@@ -460,7 +460,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_2400
      * @tc.name testStringGetValueArrayChars024
      * @tc.desc Verify empty string extraction returns empty ValueArray
      * @tc.size MediumTest
@@ -475,7 +475,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_2500
      * @tc.name testStringGetValueArrayChars025
      * @tc.desc Verify extracting last character with begin equals length minus one
      * @tc.size MediumTest
@@ -490,7 +490,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_2600
      * @tc.name testStringGetValueArrayChars026
      * @tc.desc Verify numeric digit string extraction
      * @tc.size MediumTest
@@ -506,7 +506,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_2700
      * @tc.name testStringGetValueArrayChars027
      * @tc.desc Verify whitespace-only string extraction
      * @tc.size MediumTest
@@ -522,7 +522,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_2800
      * @tc.name testStringGetValueArrayChars028
      * @tc.desc Verify original string remains unchanged after extraction
      * @tc.size MediumTest
@@ -537,7 +537,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_2900
      * @tc.name testStringGetValueArrayChars029
      * @tc.desc Verify repeated same character string extraction
      * @tc.size MediumTest
@@ -553,7 +553,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_3000
      * @tc.name testStringGetValueArrayChars030
      * @tc.desc Verify extracting single character from middle position
      * @tc.size MediumTest
@@ -568,7 +568,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_3100
      * @tc.name testStringGetValueArrayChars031
      * @tc.desc Verify minimal two character extraction from begin zero
      * @tc.size MediumTest
@@ -584,7 +584,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_3200
      * @tc.name testStringGetValueArrayChars032
      * @tc.desc Verify string with double quotes and backslash extraction
      * @tc.size MediumTest
@@ -600,7 +600,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_3300
      * @tc.name testStringGetValueArrayChars033
      * @tc.desc Verify overlapping intervals return correct and independent results
      * @tc.size MediumTest
@@ -620,7 +620,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_3400
      * @tc.name testStringGetValueArrayChars034
      * @tc.desc Verify result length equals end minus begin across multiple intervals
      * @tc.size MediumTest
@@ -640,7 +640,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_3500
      * @tc.name testStringGetValueArrayChars035
      * @tc.desc Verify URL string extraction in business scenario
      * @tc.size MediumTest
@@ -656,7 +656,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_3600
      * @tc.name testStringGetValueArrayChars036
      * @tc.desc Verify trailing whitespace string extraction
      * @tc.size MediumTest
@@ -672,7 +672,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_3700
      * @tc.name testStringGetValueArrayChars037
      * @tc.desc Verify extracting last two characters from string end boundary
      * @tc.size MediumTest
@@ -688,7 +688,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_3800
      * @tc.name testStringGetValueArrayChars038
      * @tc.desc Verify mixed alphanumeric letters and digits string extraction
      * @tc.size MediumTest
@@ -704,7 +704,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_3900
      * @tc.name testStringGetValueArrayChars039
      * @tc.desc Verify control characters form feed and vertical tab extraction
      * @tc.size MediumTest
@@ -720,7 +720,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_4000
      * @tc.name testStringGetValueArrayChars040
      * @tc.desc Verify string containing commas with correct element extraction
      * @tc.size MediumTest
@@ -738,7 +738,7 @@ export default function StringGetValueArrayCharsTest():void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUEARRAYCHARS_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETVALUE1CHAR_4100
      * @tc.name testStringGetValueArrayChars041
      * @tc.desc Verify empty string with end exceeding length throws StringIndexOutOfBoundsError
      * @tc.size MediumTest
