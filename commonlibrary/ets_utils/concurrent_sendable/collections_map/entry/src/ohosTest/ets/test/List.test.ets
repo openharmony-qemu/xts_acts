@@ -20,6 +20,7 @@ import CollectionsMapEntriesTest from "./CollectionsMapEntriesTest.test";
 import CollectionsMapForeachTest from "./CollectionsMapForeachTest.test";
 import CollectionsMapGetTest from "./CollectionsMapGetTest.test";
 import CollectionsMapHasTest from "./CollectionsMapHasTest.test";
+import CollectionsMapApisTest from "./CollectionsMapApisTest.test";
 import CollectionsMapValuesTest from "./CollectionsMapValuesTest.test";
 
 export default function testsuite() {
@@ -30,5 +31,6 @@ export default function testsuite() {
   CollectionsMapForeachTest();
   CollectionsMapGetTest();
   CollectionsMapHasTest();
+  CollectionsMapApisTest();
   CollectionsMapValuesTest();
 };

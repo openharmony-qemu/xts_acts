@@ -18,6 +18,7 @@ import CollectionsArrayCombinationSecondTest from './CollectionsArrayCombination
 import CollectionsArrayCombinationThirdTest from './CollectionsArrayCombinationThirdTest.test';
 import CollectionsArrayCombinationFourthTest from './CollectionsArrayCombinationFourthTest.test';
 import CollectionsArraySupplementTest from './CollectionsArraySupplementTest.test';
+import CollectionsArrayApisTest from './CollectionsArrayApisTest.test';
 
 export default function testsuite() {
   CollectionsArrayCombinationTest();
@@ -25,6 +26,7 @@ export default function testsuite() {
   CollectionsArrayCombinationThirdTest();
   CollectionsArrayCombinationFourthTest();
   CollectionsArraySupplementTest();
+  CollectionsArrayApisTest();
   
 };
 
