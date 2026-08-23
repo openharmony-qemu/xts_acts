@@ -20,7 +20,6 @@ import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import osAccount from '@ohos.account.osAccount';
 import intelligence from '@ohos.data.intelligence'
 import { BusinessError } from '@kit.BasicServicesKit';
-// import { config } from '@kit.AccessibilityKit';
 import { ErrorCode } from '@kit.AbilityKit';
 import deviceInfo from '@ohos.deviceInfo';
 import { connection } from '@kit.NetworkKit';
