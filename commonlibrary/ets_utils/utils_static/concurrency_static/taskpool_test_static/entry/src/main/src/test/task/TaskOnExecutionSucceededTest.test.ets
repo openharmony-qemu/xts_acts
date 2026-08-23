@@ -457,11 +457,19 @@ export default function TaskOnExecutionSucceededTest(): void {
       let task1: taskpool.Task = new taskpool.Task(simpleSuccessFunc)
       let task2: taskpool.Task = new taskpool.Task(simpleSuccessFunc)
       let callbackCount: AtomicInt = new AtomicInt(0)
-      let task1Fired: boolean = false
-      let task2Fired: boolean = false
-      let cbSucc14: () => void = (): void => {        callbackCount.fetchAdd(1); task1Fired = true}
+      let task1Fired: AtomicBoolean = new AtomicBoolean(false)
+      let task2Fired: AtomicBoolean = new AtomicBoolean(false)
+      let cbSucc14: () => void = (): void => {
+        if (task1Fired.compareAndSwap(false, true) === false) {
+          callbackCount.fetchAdd(1)
+        }
+      }
       task1.onExecutionSucceeded(cbSucc14)
-      let cbSucc15: () => void = (): void => {        callbackCount.fetchAdd(1); task2Fired = true}
+      let cbSucc15: () => void = (): void => {
+        if (task2Fired.compareAndSwap(false, true) === false) {
+          callbackCount.fetchAdd(1)
+        }
+      }
       task2.onExecutionSucceeded(cbSucc15)
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup()
       taskGroup.addTask(task1)
@@ -471,15 +479,15 @@ export default function TaskOnExecutionSucceededTest(): void {
       } catch (error) {
         expect().assertFail();
       }
-      const condition1400: () => boolean = (): boolean => task1Fired && task2Fired
+      const condition1400: () => boolean = (): boolean => task1Fired.load() && task2Fired.load()
       try {
         await waitForSucceededCondition(condition1400)
       } catch (error) {
         expect().assertFail()
       }
       expect(callbackCount.load()).assertEqual(2)
-      expect(task1Fired).assertTrue()
-      expect(task2Fired).assertTrue()
+      expect(task1Fired.load()).assertTrue()
+      expect(task2Fired.load()).assertTrue()
       done();
     })
     /**
