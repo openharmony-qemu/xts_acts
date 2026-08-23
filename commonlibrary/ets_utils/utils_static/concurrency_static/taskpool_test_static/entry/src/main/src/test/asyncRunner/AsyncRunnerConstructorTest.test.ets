@@ -54,7 +54,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 1.0);
       try {
-        await runner.execute(task);
+        let result0100: number = await runner.execute(task) as number;
+        expect(result0100).assertEqual(1.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -76,7 +77,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2, 10);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 1.0);
       try {
-        await runner.execute(task);
+        let result0200: number = await runner.execute(task) as number;
+        expect(result0200).assertEqual(1.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -98,7 +100,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(1);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 1.0);
       try {
-        await runner.execute(task);
+        let result0300: number = await runner.execute(task) as number;
+        expect(result0300).assertEqual(1.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -120,7 +123,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 1.0);
       try {
-        await runner.execute(task);
+        let result0400: number = await runner.execute(task) as number;
+        expect(result0400).assertEqual(1.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -142,7 +146,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(1000);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 1.0);
       try {
-        await runner.execute(task);
+        let result0500: number = await runner.execute(task) as number;
+        expect(result0500).assertEqual(1.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -164,7 +169,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2147483647);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 1.0);
       try {
-        await runner.execute(task);
+        let result0600: number = await runner.execute(task) as number;
+        expect(result0600).assertEqual(1.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -266,7 +272,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2);
       let task1: taskpool.Task = new taskpool.Task(simpleReturnTask, 1.0);
       try {
-        await runner.execute(task1);
+        let result1100: number = await runner.execute(task1) as number;
+        expect(result1100).assertEqual(1.0);
         expect(task1.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -288,7 +295,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2, 0);
       let task1: taskpool.Task = new taskpool.Task(simpleReturnTask, 1.0);
       try {
-        await runner.execute(task1);
+        let result1200: number = await runner.execute(task1) as number;
+        expect(result1200).assertEqual(1.0);
         expect(task1.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -310,7 +318,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2, 1);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 1.0);
       try {
-        await runner.execute(task);
+        let result1300: number = await runner.execute(task) as number;
+        expect(result1300).assertEqual(1.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -332,7 +341,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2, 5);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 1.0);
       try {
-        await runner.execute(task);
+        let result1400: number = await runner.execute(task) as number;
+        expect(result1400).assertEqual(1.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -354,7 +364,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2, 100);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 1.0);
       try {
-        await runner.execute(task);
+        let result1500: number = await runner.execute(task) as number;
+        expect(result1500).assertEqual(1.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -376,7 +387,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(2, 2147483647);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 1.0);
       try {
-        await runner.execute(task);
+        let result1600: number = await runner.execute(task) as number;
+        expect(result1600).assertEqual(1.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -458,7 +470,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(1, 0);
       let task1: taskpool.Task = new taskpool.Task(simpleReturnTask, 42.0);
       try {
-        await runner.execute(task1);
+        let result2000: number = await runner.execute(task1) as number;
+        expect(result2000).assertEqual(42.0);
         expect(task1.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -480,7 +493,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(1, 5);
       let task1: taskpool.Task = new taskpool.Task(simpleReturnTask, 100.0);
       try {
-        await runner.execute(task1);
+        let result2100: number = await runner.execute(task1) as number;
+        expect(result2100).assertEqual(100.0);
         expect(task1.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -502,7 +516,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 0);
       let task1: taskpool.Task = new taskpool.Task(simpleReturnTask, 200.0);
       try {
-        await runner.execute(task1);
+        let result2200: number = await runner.execute(task1) as number;
+        expect(result2200).assertEqual(200.0);
         expect(task1.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -524,7 +539,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 10);
       let task1: taskpool.Task = new taskpool.Task(simpleReturnTask, 300.0);
       try {
-        await runner.execute(task1);
+        let result2300: number = await runner.execute(task1) as number;
+        expect(result2300).assertEqual(300.0);
         expect(task1.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -546,7 +562,8 @@ export default function AsyncRunnerConstructorTest(): void {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 20);
       let task: taskpool.Task = new taskpool.Task(simpleReturnTask, 1.0);
       try {
-        await runner.execute(task);
+        let result2400: number = await runner.execute(task) as number;
+        expect(result2400).assertEqual(1.0);
         expect(task.isDone()).assertTrue();
       } catch (error) {
         expect().assertFail();

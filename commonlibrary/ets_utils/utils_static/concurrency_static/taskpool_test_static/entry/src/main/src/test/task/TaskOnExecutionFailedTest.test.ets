@@ -143,10 +143,11 @@ export default function TaskOnExecutionFailedTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
+      const condition0400: () => boolean = (): boolean => receivedError !== null
       try {
-        await Utils.msSleep(100);
+        await waitForFailedCondition(condition0400)
       } catch (error) {
-        expect().assertFail();
+        expect().assertFail()
       }
       expect(receivedError !== null).assertTrue()
       expect(receivedError instanceof Error).assertTrue()
@@ -308,10 +309,11 @@ export default function TaskOnExecutionFailedTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
+      const condition0900: () => boolean = (): boolean => failedCalled
       try {
-        await Utils.msSleep(100);
+        await waitForFailedCondition(condition0900)
       } catch (error) {
-        expect().assertFail();
+        expect().assertFail()
       }
       expect(successCalled).assertFalse()
       expect(failedCalled).assertTrue()
@@ -403,10 +405,11 @@ export default function TaskOnExecutionFailedTest(): void {
         await taskpool.execute(task)
       } catch (e) {
       }
+      const condition1100: () => boolean = (): boolean => callOrder.length >= 1
       try {
-        await Utils.msSleep(100);
+        await waitForFailedCondition(condition1100)
       } catch (error) {
-        expect().assertFail();
+        expect().assertFail()
       }
       expect(callOrder.length).assertEqual(1)
       expect(callOrder[0]).assertEqual(3)

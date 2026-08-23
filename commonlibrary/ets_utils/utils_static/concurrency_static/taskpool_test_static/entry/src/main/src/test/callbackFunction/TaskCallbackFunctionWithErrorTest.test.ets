@@ -378,8 +378,9 @@ export default function TaskCallbackFunctionWithErrorTest(): void {
         await taskpool.execute(task);
       } catch (e) {
         }
+      const condition1000: () => boolean = (): boolean => dataReceived === "progress data" && errorCallbackFired
       try {
-        await Utils.msSleep(100);
+        await waitForErrorCallbackCondition(condition1000)
         expect(dataReceived).assertEqual("progress data");
         expect(errorCallbackFired).assertTrue();
       } catch (error) {

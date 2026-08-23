@@ -457,8 +457,9 @@ export default function TaskOnReceiveDataTest(): void {
      */
     it('TaskOnReceiveDataTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let task: taskpool.Task = new taskpool.Task(simpleFunc)
+      let result1300: number = 0;
       try {
-        await taskpool.execute(task);
+        result1300 = (await taskpool.execute(task)) as number;
       } catch (error) {
         expect().assertFail();
       }
@@ -473,6 +474,7 @@ export default function TaskOnReceiveDataTest(): void {
         registered = true
       } catch (e) {
       }
+      expect(result1300).assertEqual(100.0)
       expect(registered).assertTrue()
       expect(task.isDone()).assertTrue()
       done();

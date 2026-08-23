@@ -189,10 +189,11 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
+      const condition0500: () => boolean = (): boolean => resultValue === 42
       try {
-        await Utils.msSleep(100);
+        await waitForEnqueuedCondition(condition0500)
       } catch (error) {
-        expect().assertFail();
+        expect().assertFail()
       }
       expect(resultValue).assertEqual(42)
       done();
@@ -270,10 +271,11 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
+      const condition0800: () => boolean = (): boolean => result === 'second'
       try {
-        await Utils.msSleep(100);
+        await waitForEnqueuedCondition(condition0800)
       } catch (error) {
-        expect().assertFail();
+        expect().assertFail()
       }
       expect(result).assertEqual('second')
       done();
@@ -395,10 +397,11 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
+      const condition1200: () => boolean = (): boolean => callbackExecuted
       try {
-        await Utils.msSleep(100);
+        await waitForEnqueuedCondition(condition1200)
       } catch (error) {
-        expect().assertFail();
+        expect().assertFail()
       }
       expect(result).assertEqual(10)
       expect(callbackExecuted).assertTrue()
@@ -426,10 +429,11 @@ export default function TaskOnEnqueuedTest(): void {
         expect().assertFail();
       }
       callbackOrder.push('afterExecute')
+      const condition1300: () => boolean = (): boolean => callbackOrder.includes('enqueued')
       try {
-        await Utils.msSleep(100);
+        await waitForEnqueuedCondition(condition1300)
       } catch (error) {
-        expect().assertFail();
+        expect().assertFail()
       }
       expect(callbackOrder[0]).assertEqual('beforeExecute')
       let hasEnqueued: boolean = false
@@ -516,10 +520,11 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
+      const condition1500: () => boolean = (): boolean => results.length >= 2
       try {
-        await Utils.msSleep(100);
+        await waitForEnqueuedCondition(condition1500)
       } catch (error) {
-        expect().assertFail();
+        expect().assertFail()
       }
       expect(results.length).assertEqual(2)
       let hasTask1: boolean = false
@@ -774,10 +779,11 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
+      const condition2200: () => boolean = (): boolean => handler.count >= 1
       try {
-        await Utils.msSleep(100);
+        await waitForEnqueuedCondition(condition2200)
       } catch (error) {
-        expect().assertFail();
+        expect().assertFail()
       }
       expect(handler.count).assertEqual(1)
       done();
@@ -805,10 +811,11 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
+      const condition2300: () => boolean = (): boolean => capturedValue === 42
       try {
-        await Utils.msSleep(100);
+        await waitForEnqueuedCondition(condition2300)
       } catch (error) {
-        expect().assertFail();
+        expect().assertFail()
       }
       expect(capturedValue).assertEqual(42)
       done();
@@ -862,10 +869,11 @@ export default function TaskOnEnqueuedTest(): void {
       } catch (error) {
         expect().assertFail();
       }
+      const condition2500: () => boolean = (): boolean => computedValue === 50
       try {
-        await Utils.msSleep(100);
+        await waitForEnqueuedCondition(condition2500)
       } catch (error) {
-        expect().assertFail();
+        expect().assertFail()
       }
       expect(result).assertEqual(100)
       expect(computedValue).assertEqual(50)

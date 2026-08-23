@@ -39,6 +39,18 @@ function notifyStartTask(duration: number): number {
   return duration + 0.0;
 }
 
+async function waitForCallbackCondition(condition: () => boolean): Promise<void> {
+  let waitCount: number = 0
+  while (!condition() && waitCount < 150) {
+    try {
+      await Utils.msSleep(20)
+    } catch (error) {
+      expect().assertFail()
+    }
+    waitCount++
+  }
+}
+
 export default function TaskCallbackFunctionTest(): void {
   describe('TaskCallbackFunctionTest', (): void => {
     beforeAll((): void => {
@@ -797,8 +809,9 @@ export default function TaskCallbackFunctionTest(): void {
       let cbEnq13: () => void = (): void => {        enqueuedFlag = true;}
       task.onEnqueued(cbEnq13);
       let delayedPromise: Promise<Any> = taskpool.executeDelayed(100, task);
+      const condition2700: () => boolean = (): boolean => enqueuedFlag
       try {
-        await Utils.msSleep(200);
+        await waitForCallbackCondition(condition2700)
         try {
           await delayedPromise;
         } catch (error) {
