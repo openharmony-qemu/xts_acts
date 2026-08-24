@@ -587,8 +587,10 @@ static napi_value AddPacketRuleNapi(napi_env env, napi_callback_info info)
 
     uint32_t id = -1;
     napi_get_value_uint32(env, args[0], &id);
+    napi_value configObj = args[1];
+
     OH_TrafficFilter_PacketController* controller = controllerMap_[id];
-    if (controller == nullptr) {
+    if (controller == nullptr || configObj == nullptr) {
         napi_value result;
         napi_create_int32(env, CONTROLLER_NULL_ERROR_CODE, &result);
         return result;
@@ -596,7 +598,6 @@ static napi_value AddPacketRuleNapi(napi_env env, napi_callback_info info)
 
     OH_TrafficFilter_FilterRule rule = {0};
     rule.size = sizeof(OH_TrafficFilter_FilterRule);
-    napi_value configObj = args[1];
     ParseRuleBasicFields(env, configObj, &rule);
     ParseRuleAddressAndPortMatches(env, configObj, &rule);
     ParseRuleInterfaceAndUid(env, configObj, &rule);

@@ -1318,58 +1318,6 @@ export default function PacketFilterTest() {
 
 
     /**
-     * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule2300
-     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_2300
-     * @tc.desc   Add packet rule to redirector instance_source address MULTI type, set address count exceeds max 16
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("testNetworkMgrNetfirewallTrafficFilterAddPacketRule2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterAddPacketRule2300';
-      hilog.info(domain, tag, `${caseName}---Start`);
-      try {
-        const info: packetFilterSdk.createPacketInfo = packetFilterSdk.createPacketController(100, 500);
-        hilog.info(domain, tag, `${caseName} create ret: ${JSON.stringify(info.ret)}`);
-        let rule: packetFilterSdk.Rule = getBaseRule();
-        rule.srcIp = {
-          type: IPType.IP_MULTI,
-          invert: false,
-          value: { ips: [
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.1']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.2']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.3']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.4']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.5']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.6']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.7']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.8']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.9']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.10']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.11']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.12']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.13']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.14']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.15']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.16']},
-            {family: IPFamilyType.FAMILY_V4,addr:['192.168.1.17']},
-          ] }
-        };
-        const ret: number = packetFilterSdk.addPacketRule(info.id, rule);
-        hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
-        ExpectTrue(ret === 29410101);
-        packetFilterSdk.destroyPacketController(info.id);
-        done();
-
-      } catch (err) {
-        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-    })
-
-
-    /**
      * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule2400
      * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_2400
      * @tc.desc   Add packet rule to redirector instance_source address type is ANY
@@ -1494,40 +1442,6 @@ export default function PacketFilterTest() {
 
 
     /**
-     * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule2800
-     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_2800
-     * @tc.desc   Add packet rule to redirector instance_source port RANGE type, set port range startPort > endPort
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("testNetworkMgrNetfirewallTrafficFilterAddPacketRule2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterAddPacketRule2800';
-      hilog.info(domain, tag, `${caseName}---Start`);
-      try {
-        const info: packetFilterSdk.createPacketInfo = packetFilterSdk.createPacketController(100, 500);
-        hilog.info(domain, tag, `${caseName} create ret: ${JSON.stringify(info.ret)}`);
-        let rule: packetFilterSdk.Rule = getBaseRule();
-        rule.srcPort = {
-          type: PortType.PORT_RANGE,
-          invert: false,
-          value: { startPort: 2000, endPort: 1000 }
-        };
-        const ret: number = packetFilterSdk.addPacketRule(info.id, rule);
-        hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
-        ExpectTrue(ret === 29410101);
-        packetFilterSdk.destroyPacketController(info.id);
-        done();
-
-      } catch (err) {
-        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-    })
-
-
-    /**
      * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule2900
      * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_2900
      * @tc.desc   Add packet rule to redirector instance_source port MULTI type, set single port
@@ -1588,36 +1502,6 @@ export default function PacketFilterTest() {
 
 
     /**
-     * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule3100
-     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_3100
-     * @tc.desc   Add packet rule to redirector instance_source port MULTI type, set port count exceeds max 64
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("testNetworkMgrNetfirewallTrafficFilterAddPacketRule3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterAddPacketRule3100';
-      hilog.info(domain, tag, `${caseName}---Start`);
-      try {
-        const info: packetFilterSdk.createPacketInfo = packetFilterSdk.createPacketController(100, 500);
-        hilog.info(domain, tag, `${caseName} create ret: ${JSON.stringify(info.ret)}`);
-        let rule: packetFilterSdk.Rule = getBaseRule();
-        rule.srcPort = { type: PortType.PORT_MULTI, invert: false, value: { ports: [8080,8081,8082,8083,8084,8085,8086,8087,8088,8089,8090,8091,8092,8093,8094,8095,8096,8097,8098,8099,8100,8101,8102,8103,8104,8105,8106,8107,8108,8109,8110,8111,8112,8113,8114,8115,8116,8117,8118,8119,8120,8121,8122,8123,8124,8125,8126,8127,8128,8129,8130,8131,8132,8133,8134,8135,8136,8137,8138,8139,8140,8141,8142,8143,8144] } };
-        const ret: number = packetFilterSdk.addPacketRule(info.id, rule);
-        hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
-        ExpectTrue(ret === 29410101);
-        packetFilterSdk.destroyPacketController(info.id);
-        done();
-
-      } catch (err) {
-        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-    })
-
-
-    /**
      * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule3200
      * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_3200
      * @tc.desc   Add packet rule to redirector instance_source port type is ANY
@@ -1666,36 +1550,6 @@ export default function PacketFilterTest() {
         const ret: number = packetFilterSdk.addPacketRule(info.id, rule);
         hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
         ExpectTrue(ret === 0);
-        packetFilterSdk.destroyPacketController(info.id);
-        done();
-
-      } catch (err) {
-        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-    })
-
-
-    /**
-     * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule3400
-     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_3400
-     * @tc.desc   Add packet rule to redirector instance_destination address single IP, invalid IP address
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("testNetworkMgrNetfirewallTrafficFilterAddPacketRule3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterAddPacketRule3400';
-      hilog.info(domain, tag, `${caseName}---Start`);
-      try {
-        const info: packetFilterSdk.createPacketInfo = packetFilterSdk.createPacketController(100, 500);
-        hilog.info(domain, tag, `${caseName} create ret: ${JSON.stringify(info.ret)}`);
-        let rule: packetFilterSdk.Rule = getBaseRule();
-        rule.dstIp = { type: IPType.IP_SINGLE, invert: false, value: {family: IPFamilyType.FAMILY_V4, addr: ['invalid']} };
-        const ret: number = packetFilterSdk.addPacketRule(info.id, rule);
-        hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
-        ExpectTrue(ret === 29410101);
         packetFilterSdk.destroyPacketController(info.id);
         done();
 
@@ -1995,57 +1849,6 @@ export default function PacketFilterTest() {
 
 
     /**
-     * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule4400
-     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_4400
-     * @tc.desc   Add packet rule to redirector instance_destination address MULTI type, set address count exceeds max 16
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("testNetworkMgrNetfirewallTrafficFilterAddPacketRule4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterAddPacketRule4400';
-      hilog.info(domain, tag, `${caseName}---Start`);
-      try {
-        const info: packetFilterSdk.createPacketInfo = packetFilterSdk.createPacketController(100, 500);
-        hilog.info(domain, tag, `${caseName} create ret: ${JSON.stringify(info.ret)}`);
-        let rule: packetFilterSdk.Rule = getBaseRule();
-        rule.dstIp = {
-          type: IPType.IP_MULTI, invert: false,
-          value: { ips: [
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.1']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.2']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.3']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.4']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.5']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.6']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.7']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.8']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.9']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.10']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.11']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.12']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.13']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.14']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.15']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.16']},
-            {family:IPFamilyType.FAMILY_V4,addr:['192.168.1.17']},
-          ]}
-        };
-        const ret: number = packetFilterSdk.addPacketRule(info.id, rule);
-        hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
-        ExpectTrue(ret === 29410101);
-        packetFilterSdk.destroyPacketController(info.id);
-        done();
-
-      } catch (err) {
-        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-    })
-
-
-    /**
      * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule4500
      * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_4500
      * @tc.desc   Add packet rule to redirector instance_destination address type is ANY
@@ -2170,40 +1973,6 @@ export default function PacketFilterTest() {
 
 
     /**
-     * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule4900
-     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_4900
-     * @tc.desc   Add packet rule to redirector instance_destination port RANGE type, set port range startPort > endPort
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("testNetworkMgrNetfirewallTrafficFilterAddPacketRule4900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterAddPacketRule4900';
-      hilog.info(domain, tag, `${caseName}---Start`);
-      try {
-        const info: packetFilterSdk.createPacketInfo = packetFilterSdk.createPacketController(100, 500);
-        hilog.info(domain, tag, `${caseName} create ret: ${JSON.stringify(info.ret)}`);
-        let rule: packetFilterSdk.Rule = getBaseRule();
-        rule.dstPort = {
-          type: PortType.PORT_RANGE,
-          invert: false,
-          value: { startPort: 2000, endPort: 1000 }
-        };
-        const ret: number = packetFilterSdk.addPacketRule(info.id, rule);
-        hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
-        ExpectTrue(ret === 29410101);
-        packetFilterSdk.destroyPacketController(info.id);
-        done();
-
-      } catch (err) {
-        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-    })
-
-
-    /**
      * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule5000
      * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_5000
      * @tc.desc   Add packet rule to redirector instance_destination port MULTI type, set single port
@@ -2252,36 +2021,6 @@ export default function PacketFilterTest() {
         const ret: number = packetFilterSdk.addPacketRule(info.id, rule);
         hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
         ExpectTrue(ret === 0);
-        packetFilterSdk.destroyPacketController(info.id);
-        done();
-
-      } catch (err) {
-        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-    })
-
-
-    /**
-     * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule5200
-     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_5200
-     * @tc.desc   Add packet rule to redirector instance_destination port MULTI type, set port count exceeds max 64
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("testNetworkMgrNetfirewallTrafficFilterAddPacketRule5200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterAddPacketRule5200';
-      hilog.info(domain, tag, `${caseName}---Start`);
-      try {
-        const info: packetFilterSdk.createPacketInfo = packetFilterSdk.createPacketController(100, 500);
-        hilog.info(domain, tag, `${caseName} create ret: ${JSON.stringify(info.ret)}`);
-        let rule: packetFilterSdk.Rule = getBaseRule();
-        rule.dstPort = { type: PortType.PORT_MULTI, invert: false, value: { ports: [8080,8081,8082,8083,8084,8085,8086,8087,8088,8089,8090,8091,8092,8093,8094,8095,8096,8097,8098,8099,8100,8101,8102,8103,8104,8105,8106,8107,8108,8109,8110,8111,8112,8113,8114,8115,8116,8117,8118,8119,8120,8121,8122,8123,8124,8125,8126,8127,8128,8129,8130,8131,8132,8133,8134,8135,8136,8137,8138,8139,8140,8141,8142,8143,8144] } };
-        const ret: number = packetFilterSdk.addPacketRule(info.id, rule);
-        hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
-        ExpectTrue(ret === 29410101);
         packetFilterSdk.destroyPacketController(info.id);
         done();
 
@@ -2383,38 +2122,7 @@ export default function PacketFilterTest() {
         done();
       }
     })
-
-
-    /**
-     * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule5600
-     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_5600
-     * @tc.desc   Add packet rule to redirector instance_srcIp and dstIp family inconsistent
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("testNetworkMgrNetfirewallTrafficFilterAddPacketRule5600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterAddPacketRule5600';
-      hilog.info(domain, tag, `${caseName}---Start`);
-      try {
-        const info: packetFilterSdk.createPacketInfo = packetFilterSdk.createPacketController(100, 500);
-        hilog.info(domain, tag, `${caseName} create ret: ${JSON.stringify(info.ret)}`);
-        let rule: packetFilterSdk.Rule = getBaseRule();
-        rule.srcIp = { type: IPType.IP_SINGLE, invert: false, value: { family: IPFamilyType.FAMILY_V4, addr: ['192.168.1.1'] } };
-        rule.dstIp = { type: IPType.IP_SINGLE, invert: false, value: { family: IPFamilyType.FAMILY_V6, addr: ['fe80::22b1:da93:1050:36e8'] } };
-        const ret: number = packetFilterSdk.addPacketRule(info.id, rule);
-        hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
-        ExpectTrue(ret === 29410101);
-        packetFilterSdk.destroyPacketController(info.id);
-        done();
-
-      } catch (err) {
-        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-    })
-
+    
 
     /**
      * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule5700
