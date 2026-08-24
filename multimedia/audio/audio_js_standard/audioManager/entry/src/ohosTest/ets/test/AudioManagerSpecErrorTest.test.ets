@@ -1797,8 +1797,9 @@ export default function AudioManagerSpecErrorTest() {
         expect().assertFail();
         done();
       } catch (error) {
-        console.error(`${TAG} testIsDeviceActiveEnumOutOfRange0300 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800104);
+        const err = error as BusinessError;
+        console.error(`${TAG} testIsDeviceActiveEnumOutOfRange0300 error: ${err.code}, ${err.message}`);
+        expect(err.code).assertEqual(6800104);
         done();
       }
     });
@@ -1821,7 +1822,7 @@ export default function AudioManagerSpecErrorTest() {
         audioManager!.on('interrupt', interrupt, () => {});
         audioManager!.off('interrupt', interrupt);
       } catch (error) {
-        console.error(`${TAG} testOnInterruptStreamUsageIllegal0100 error: ${error.code}, ${error.message}`);
+        console.info(`${TAG} testOnInterruptStreamUsageIllegal0100 error: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(6800104);
       }
     });
@@ -1844,7 +1845,7 @@ export default function AudioManagerSpecErrorTest() {
         audioManager!.on('interrupt', interrupt, () => {});
         audioManager!.off('interrupt', interrupt);
       } catch (error) {
-        console.error(`${TAG} testOnInterruptContentTypeIllegal0200 error: ${error.code}, ${error.message}`);
+        console.info(`${TAG} testOnInterruptContentTypeIllegal0200 error: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(6800104);
       }
     });

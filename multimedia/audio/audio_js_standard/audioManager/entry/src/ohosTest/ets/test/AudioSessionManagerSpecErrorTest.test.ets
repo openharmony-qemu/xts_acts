@@ -52,7 +52,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_SET_AUDIO_SESSION_SCENE_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('setAudioSessionScene_Null_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       try {
         sessionManager!.setAudioSessionScene(null);
         expect().assertFail();
@@ -72,7 +72,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_SET_AUDIO_SESSION_SCENE_UNDEFINED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('setAudioSessionScene_Undefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       try {
         sessionManager!.setAudioSessionScene(undefined);
         expect().assertFail();
@@ -92,7 +92,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_SET_CAPTURER_MUTE_HINT_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('setCapturerMuteHint_Null_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await sessionManager!.setCapturerMuteHint(null);
         expect().assertFail();
@@ -112,7 +112,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_SET_CAPTURER_MUTE_HINT_UNDEFINED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('setCapturerMuteHint_Undefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await sessionManager!.setCapturerMuteHint(undefined);
         expect().assertFail();
@@ -132,7 +132,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('setDefaultOutputDevice_Null_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await sessionManager!.setDefaultOutputDevice(null);
         expect().assertFail();
@@ -152,7 +152,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_UNDEFINED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('setDefaultOutputDevice_Undefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await sessionManager!.setDefaultOutputDevice(undefined);
         expect().assertFail();
@@ -172,7 +172,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_GET_AVAILABLE_DEVICES_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('getAvailableDevices_Null_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       try {
         sessionManager!.getAvailableDevices(null);
         expect().assertFail();
@@ -192,7 +192,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_GET_AVAILABLE_DEVICES_UNDEFINED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('getAvailableDevices_Undefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       try {
         sessionManager!.getAvailableDevices(undefined);
         expect().assertFail();
@@ -212,7 +212,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_GET_AVAILABLE_DEVICES_ENUM_OUT_OF_RANGE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('getAvailableDevices_EnumOutOfRange_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       try {
         sessionManager!.getAvailableDevices(999 as audio.DeviceUsage);
         expect().assertFail();
@@ -232,7 +232,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_ON_AVAILABLE_DEVICE_CHANGE_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('on_availableDeviceChange_Null_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       try {
         sessionManager!.on('availableDeviceChange', null, (action: audio.DeviceChangeAction) => {});
         expect().assertFail();
@@ -252,7 +252,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_ON_AVAILABLE_DEVICE_CHANGE_UNDEFINED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('on_availableDeviceChange_Undefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       try {
         sessionManager!.on('availableDeviceChange', undefined, (action: audio.DeviceChangeAction) => {});
         expect().assertFail();
@@ -272,7 +272,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_ON_AVAILABLE_DEVICE_CHANGE_ENUM_OUT_OF_RANGE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('on_availableDeviceChange_EnumOutOfRange_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       try {
         sessionManager!.on('availableDeviceChange', 999, (action: audio.DeviceChangeAction) => {});
         expect().assertFail();
@@ -292,7 +292,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_SET_BLUETOOTH_AND_NEARLINK_PREFERRED_RECORD_CATEGORY_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('setBluetoothAndNearlinkPreferredRecordCategory_Null_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await sessionManager!.setBluetoothAndNearlinkPreferredRecordCategory(null);
         expect().assertFail();
@@ -312,7 +312,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_SET_BLUETOOTH_AND_NEARLINK_PREFERRED_RECORD_CATEGORY_UNDEFINED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('setBluetoothAndNearlinkPreferredRecordCategory_Undefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await sessionManager!.setBluetoothAndNearlinkPreferredRecordCategory(undefined);
         expect().assertFail();
@@ -332,7 +332,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_ENABLE_MUTE_SUGGESTION_WHEN_MIX_WITH_OTHERS_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('enableMuteSuggestionWhenMixWithOthers_Null_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       try {
         sessionManager!.enableMuteSuggestionWhenMixWithOthers(null);
         expect().assertFail();
@@ -352,7 +352,7 @@ export default function AudioSessionManagerSpecErrorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_SESSION_MANAGER_ENABLE_MUTE_SUGGESTION_WHEN_MIX_WITH_OTHERS_UNDEFINED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('enableMuteSuggestionWhenMixWithOthers_Undefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       try {
         sessionManager!.enableMuteSuggestionWhenMixWithOthers(undefined);
         expect().assertFail();
