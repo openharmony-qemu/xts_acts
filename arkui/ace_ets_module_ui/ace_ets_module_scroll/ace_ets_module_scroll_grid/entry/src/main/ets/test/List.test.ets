@@ -89,6 +89,7 @@ import onGetIrregular6 from "./Grid_iiregular/onGetIrregular6.test";
 import onGetIrregular7 from "./Grid_iiregular/onGetIrregular7.test";
 import onGetIrregular8 from "./Grid_iiregular/onGetIrregular8.test";
 import onGetIrregular9 from "./Grid_iiregular/onGetIrregular9.test";
+import GridLayoutOptionsUn from "./Grid_iiregular/GridLayoutOptionsUn.test";
 import ScrollToIndexForGridJsunit01 from './ScrollToIndex/ScrollToIndexForGridJsunit01.test';
 import ScrollToIndexForGridJsunit02 from './ScrollToIndex/ScrollToIndexForGridJsunit02.test';
 import ScrollToIndexForGridJsunit03 from './ScrollToIndex/ScrollToIndexForGridJsunit03.test';
@@ -173,6 +174,7 @@ export default function testsuite() {
   onGetIrregular7()
   onGetIrregular8()
   onGetIrregular9()
+  GridLayoutOptionsUn()
   ScrollToIndexForGridJsunit01()
   ScrollToIndexForGridJsunit02()
   ScrollToIndexForGridJsunit03()
