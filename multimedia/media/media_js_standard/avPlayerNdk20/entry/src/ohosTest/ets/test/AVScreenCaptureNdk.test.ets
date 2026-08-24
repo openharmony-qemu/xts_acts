@@ -1522,23 +1522,23 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.name   SUB_MULTIMEIDA_OH_CaptureMode0200
-     * @tc.number SUB_MULTIMEIDA_OH_CaptureMode0200
+     * @tc.name   SUB_MULTIMEIDA_OH_ScreenCapture_CaptureMode_0200
+     * @tc.number SUB_MULTIMEIDA_OH_ScreenCapture_CaptureMode_0200
      * @tc.desc   test OH_AVScreenCapture
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEIDA_OH_CaptureMode0200',
+    it('SUB_MULTIMEIDA_OH_ScreenCapture_CaptureMode_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>SUB_MULTIMEIDA_OH_CaptureMode0200 start====");
+          console.info("====>SUB_MULTIMEIDA_OH_ScreenCapture_CaptureMode_0200 start====");
           let result: number = avscreencapture.OH_CaptureMode0103();
           expect(0).assertEqual(result);
           done()
         } catch (err) {
-          console.error("====>SUB_MULTIMEIDA_OH_CaptureMode0200 catch err: " + err);
+          console.error("====>SUB_MULTIMEIDA_OH_ScreenCapture_CaptureMode_0200 catch err: " + err);
           expect(false).assertEqual(true);
           done()
         }
