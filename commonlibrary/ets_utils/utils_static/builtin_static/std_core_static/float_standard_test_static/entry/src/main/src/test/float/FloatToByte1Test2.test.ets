@@ -263,7 +263,7 @@ export default function FloatToByte1Test2(): void {
     it('testFloatToByte016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = new Float(Float.MAX_SAFE_INTEGER).toByte();
       expect(result).assertLargerOrEqual(-128);
-        expect(result).assertLessOrEqual(127);
+      expect(result).assertLessOrEqual(127);
     });
 
     /**
@@ -389,10 +389,10 @@ export default function FloatToByte1Test2(): void {
       let matched: boolean = false;
       switch (result) {
         case 1:
-          matched = true;
-          break;
+        matched = true;
+        break;
         default:
-          break;
+        break;
       }
       expect(matched).assertTrue();
     });
