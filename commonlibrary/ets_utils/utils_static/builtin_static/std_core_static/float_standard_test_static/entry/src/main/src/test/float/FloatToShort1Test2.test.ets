@@ -379,8 +379,8 @@ export default function FloatToShort1Test2(): void {
       for (let i = 0; i < 5; i++) {
         const s: short = f.toShort();
         expect(s).assertEqual(-555);
-      expect(f.toFloat()).assertEqual(initialFloat);
-    }
+        expect(f.toFloat()).assertEqual(initialFloat);
+      }
     });
 
     /**
