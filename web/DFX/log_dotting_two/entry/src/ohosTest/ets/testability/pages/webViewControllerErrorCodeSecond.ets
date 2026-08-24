@@ -17,7 +17,6 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import business_error from '@ohos.base';
-import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 115550;
 
@@ -26,7 +25,6 @@ const EVENT_ID_SET_EMIT_KEY = 115550;
 struct Index {
   controller: webView.WebviewController = new webView.WebviewController();
   controllerNull: webView.WebviewController = new webView.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   schemeHandler: webView.WebSchemeHandler = new webView.WebSchemeHandler();
   nativePort: webView.WebMessagePort | null = null;
   responseWeb: WebResourceResponse = new WebResourceResponse();
@@ -47,14 +45,6 @@ struct Index {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_EMIT_KEY)
-  }
-
-  aboutToDisappear() {
-    try {
-      this.controller.loadUrl(this.mServer.getShutdownUrl());
-    } catch (_e) {
-      // page teardown: controller may already be unbound (17100001)
-    }
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -81,8 +71,8 @@ struct Index {
                 this.controllerNull.loadData('<html><body bgcolor=\"white\">Source:<pre>source</pre></body></html>',
                   'text/html',
                   'UTF-8',
-                  this.mServer.getAssetUrl('index.html'),
-                  this.mServer.getAssetUrl('second.html')
+                  'www.example.com',
+                  'www.baidu.com'
                 );
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;

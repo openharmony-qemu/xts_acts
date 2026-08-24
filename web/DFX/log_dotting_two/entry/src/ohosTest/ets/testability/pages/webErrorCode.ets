@@ -22,7 +22,6 @@ import events_emitter from '@ohos.events.emitter';
 import fs from '@ohos.file.fs';
 import { JsProxyObject } from '../../test/Interfaces';
 import business_error from '@ohos.base';
-import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 114080;
 
@@ -44,7 +43,6 @@ class testObj {
 struct Index {
   controller: webView.WebviewController = new webView.WebviewController();
   controllerNull: webView.WebviewController = new webView.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   responseWeb: WebResourceResponse = new WebResourceResponse()
   @State webResult: string = ' ';
   @State str: string = ""
@@ -123,24 +121,10 @@ struct Index {
     }
   }
 
-  aboutToDisappear() {
-    try {
-      this.controller.loadUrl(this.mServer.getShutdownUrl());
-    } catch (_e) {
-      // page teardown: controller may already be unbound (17100001)
-    }
-  }
-
   build() {
     Column() {
       Row() {
-        Button("WebErrorCode click").id('ErrorCodeTestSuiteButton').key('ErrorCodeTestSuiteButton').onClick(async () => {
-          // SearchAllAsync：未绑定 controller 会挂起；先上报再 return，避免卡在 isPageEnd 等待
-          if (this.str === "emitSearchAllAsync") {
-            Utils.emitEvent('17100001', 114090);
-            this.isReceive = -1;
-            return;
-          }
+        Button("WebErrorCode click").key('ErrorCodeTestSuiteButton').onClick(async () => {
           await Utils.waitForExist(()=>this.isPageEnd, 'ErrorCodeTestSuiteButtonIsPageEnd', 1, 1000);
           await Utils.waitForExist(()=>this.isReceive, 'ErrorCodeTestSuiteButtonIsReceive', 1, 1000);
           console.info("key==>" + this.str)
@@ -148,7 +132,11 @@ struct Index {
           switch (this.str) {
 
             case "emitSearchAllAsync": {
-              Utils.emitEvent('17100001', 114090);
+              try {
+                this.controllerNull.searchAllAsync(this.searchString);
+              } catch (error) {
+                Utils.emitEvent(error.code, 114090)
+              }
               break;
             }
             case "emitGetUserAgent": {
@@ -295,7 +283,7 @@ struct Index {
             }
             case "emitLoadUrl": {
               try {
-                this.controllerNull.loadUrl(this.mServer.getAssetUrl('index.html'));
+                this.controllerNull.loadUrl('https://docs.openharmony.cn/');
               } catch (error) {
                 Utils.emitEvent(error.code, 114230)
               }
@@ -650,7 +638,7 @@ struct Index {
 
             case "testPrepareForPageLoadError001": {
               try {
-                webView.WebviewController.prepareForPageLoad(this.mServer.getAssetUrl('index.html'), true, 7);
+                webView.WebviewController.prepareForPageLoad("https://www.huawei.com/cn/", true, 7);
                 Utils.emitEvent(this.no_error, 114590)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

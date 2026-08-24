@@ -23,7 +23,6 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import { AbilityConstant, Configuration, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { Driver, ON } from '@kit.TestKit';
-import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 183101;
 let driver = Driver.create();
@@ -32,7 +31,6 @@ let driver = Driver.create();
 @Component
 struct webViewController {
   controller: webView.WebviewController = new webView.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = ""
   @State onScrollCallBack: boolean = false
   @State javaScriptAccess: boolean = true
@@ -97,21 +95,13 @@ struct webViewController {
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
   }
 
-  aboutToDisappear() {
-    try {
-      this.controller.loadUrl(this.mServer.getShutdownUrl());
-    } catch (_e) {
-      // page teardown: controller may already be unbound (17100001)
-    }
-  }
-
   build() {
     Column() {
       Row() {
         Button("WebViewController click").key('WebViewControllerButton').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           let webRect = Utils.getComponentRect('RowSize');
           let X = Utils.getRectHorizontalCenterX(webRect)
           let Y = Utils.getRectVerticalCenterY(webRect)
@@ -265,7 +255,7 @@ struct webViewController {
                 this.onShowFileSelectorCallBack = false
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
@@ -286,7 +276,7 @@ struct webViewController {
                 this.FileSelectorParamGetTitle = ''
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
@@ -306,7 +296,7 @@ struct webViewController {
                 this.FileSelectorParamGetGetMode = 100
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
@@ -326,7 +316,7 @@ struct webViewController {
                 this.FileSelectorParamGetGetAcceptType = []
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
@@ -346,7 +336,7 @@ struct webViewController {
                 this.FileSelectorParamGetIsCapture = true
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
@@ -366,7 +356,7 @@ struct webViewController {
                 this.FileSelectorParamGetTitle = ''
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
@@ -397,7 +387,7 @@ struct webViewController {
                 this.FileSelectorParamGetTitle = ''
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
                 await buttonOne.click()
                 await Utils.sleep(2000);
@@ -416,7 +406,7 @@ struct webViewController {
                 this.FileSelectorParamGetTitle = ''
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
                 await buttonOne.click()
                 await Utils.sleep(2000);
@@ -433,9 +423,9 @@ struct webViewController {
               try {
                 this.isPageEnd = -1;
                 webView.WebviewController.setHttpDns(webView.SecureDnsMode.OFF,
-                  this.mServer.getBaseUri() + "/dns-query{?dns}")
-                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                  "https://httpdns-browser.platform.dbankcloud.cn/dns-query{?dns}")
+                this.controller.loadUrl("https://www.example.com/");
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 Utils.emitEvent(this.controller.getTitle(), 31035)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -448,9 +438,9 @@ struct webViewController {
               try {
                 this.isPageEnd = -1;
                 webView.WebviewController.setHttpDns(webView.SecureDnsMode.AUTO,
-                  this.mServer.getBaseUri() + "/dns-query{?dns}")
-                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                  "https://httpdns-browser.platform.dbankcloud.cn/dns-query{?dns}")
+                this.controller.loadUrl("https://www.example.com/");
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 Utils.emitEvent(this.controller.getTitle(), 31036)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -463,8 +453,8 @@ struct webViewController {
               try {
                 this.enterPageEnd = false
                 webView.WebviewController.setHttpDns(webView.SecureDnsMode.AUTO,
-                  this.mServer.getBaseUri() + "/dns-query{?dns}")
-                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
+                  "https://httpdns-browser.platform.dbankcloud.cn/dns-query{?dns}")
+                this.controller.loadUrl("https://www.example.com/");
                 await Utils.sleep(2000);
                 Utils.emitEvent(this.enterPageEnd, 31037)
                 this.enterPageEnd = true
@@ -477,7 +467,7 @@ struct webViewController {
 
             case "testOnOverScroll001": {
               try {
-                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
+                this.controller.loadUrl("https://www.example.com/");
                 await Utils.sleep(2000);
                 this.onOverScrollCallBack = false
                 let driver = Driver.create();
@@ -498,7 +488,7 @@ struct webViewController {
 
             case "testOnOverScroll002": {
               try {
-                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
+                this.controller.loadUrl("https://www.example.com/");
                 await Utils.sleep(2000);
                 this.onOverScrollCallBack = false
                 let driver = Driver.create();
@@ -519,7 +509,7 @@ struct webViewController {
 
             case "testOnOverScroll003": {
               try {
-                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
+                this.controller.loadUrl("https://www.example.com/");
                 await Utils.sleep(2000);
                 this.onOverScrollCallBack = false
                 let driver = Driver.create();
@@ -540,7 +530,7 @@ struct webViewController {
 
             case "testOnOverScroll004": {
               try {
-                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
+                this.controller.loadUrl("https://www.example.com/");
                 await Utils.sleep(2000);
                 this.onOverScrollCallBack = false
                 let driver = Driver.create();

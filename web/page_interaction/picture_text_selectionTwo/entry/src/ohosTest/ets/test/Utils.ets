@@ -248,7 +248,7 @@ export default class Utils {
   }
 
   static async waitForExist<T> (
-    stateGetter: (err?: Error) => T,
+    stateGetter: () => T,
     testsuite: string,
     expectValue: string | number | boolean | null = null,
     interval=3000,

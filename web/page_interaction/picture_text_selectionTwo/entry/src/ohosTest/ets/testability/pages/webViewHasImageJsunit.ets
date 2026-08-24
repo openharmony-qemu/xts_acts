@@ -19,7 +19,6 @@ import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 import { BusinessError } from '@ohos.base';
-import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 183501;
 
@@ -27,7 +26,6 @@ const EVENT_ID_SET_SUITE_KEY = 183501;
 @Component
 struct webViewHasImage {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "emitHasImagePm";
   @State webId: number = 0;
   @State hasImagePm: boolean = true;
@@ -69,14 +67,6 @@ struct webViewHasImage {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
-  aboutToDisappear() {
-    try {
-      this.controller.loadUrl(this.mServer.getShutdownUrl());
-    } catch (_e) {
-      // page teardown: controller may already be unbound (17100001)
-    }
-  }
-
   build() {
     Column() {
       Row() {
@@ -84,7 +74,7 @@ struct webViewHasImage {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
           console.info("key==>after isReceive " + this.str)
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           console.info("key==>after isPageEnd " + this.str)
           switch (this.str) {
             case "emitHasImagePm": {
@@ -105,7 +95,7 @@ struct webViewHasImage {
             case "emitHasImagePmSvg": {
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('hasImageTwo.html'))
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               console.info("after isPageEnd111 " + this.str)
               try {
                 this.controller.hasImage().then((data) => {
@@ -123,8 +113,8 @@ struct webViewHasImage {
             }
             case "emitHasImagePmOnline": {
               this.isPageEnd = -1;
-              this.controller.loadUrl(this.mServer.getAssetUrl('onlineImageAccess.html'))
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+              this.controller.loadUrl($rawfile('onlineImageAccess.html'))
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               try {
                 this.controller.hasImage().then((data) => {
                   console.info('HasImagePmOnline: ' + data);
@@ -141,7 +131,7 @@ struct webViewHasImage {
             case "emitHasImageCb": {
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('hasImageOne.html'))
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               try {
                 this.controller.hasImage((error, data) => {
                   if (error) {
@@ -159,7 +149,7 @@ struct webViewHasImage {
             case "emitHasImageCbSvg": {
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('hasImageTwo.html'))
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               try {
                 this.controller.hasImage((error, data) => {
                   if (error) {
@@ -176,8 +166,8 @@ struct webViewHasImage {
             }
             case "emitHasImageCbOnline": {
               this.isPageEnd = -1;
-              this.controller.loadUrl(this.mServer.getAssetUrl('onlineImageAccess.html'))
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+              this.controller.loadUrl($rawfile('onlineImageAccess.html'))
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               try {
                 this.controller.hasImage((error, data) => {
                   if (error) {

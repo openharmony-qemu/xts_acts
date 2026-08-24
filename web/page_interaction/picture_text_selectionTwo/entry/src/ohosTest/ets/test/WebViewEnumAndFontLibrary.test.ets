@@ -70,24 +70,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamX001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamX", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamX001", true, 183210, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testWebContextMenuParamX001", true, 183210, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamX001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamX" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamX" + '_returnCheck', true, 500);
       done();
     })
 
@@ -102,24 +87,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamY001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamY", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamY001", true, 183220, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testWebContextMenuParamY001", true, 183220, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamY001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamY" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamY" + '_returnCheck', true, 500);
       done();
     })
 
@@ -134,24 +104,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamGetLinkUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetLinkUrl", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamGetLinkUrl001", "http://localhost:8080/assets/second.html", 183230, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testWebContextMenuParamGetLinkUrl001", "http://www.baidu.com/", 183230, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "emitWebContextMenuParamGetLinkUrl");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamGetLinkUrl" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamGetLinkUrl" + '_returnCheck', true, 500);
       done();
     })
 
@@ -166,24 +121,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamGetUnfilteredLinkUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetUnfilteredLinkUrl", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamGetUnfilteredLinkUrl001", "http://localhost:8080/assets/second.html", 183240,  (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testWebContextMenuParamGetUnfilteredLinkUrl001", "http://www.baidu.com/", 183240,  () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamGetUnfilteredLinkUrl001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamGetUnfilteredLinkUrl" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamGetUnfilteredLinkUrl" + '_returnCheck', true, 500);
       done();
     })
 
@@ -198,24 +138,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamGetSourceUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetSourceUrl", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamGetSourceUrl001", "", 183250,  (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testWebContextMenuParamGetSourceUrl001", "", 183250,  () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamGetSourceUrl001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamGetSourceUrl" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamGetSourceUrl" + '_returnCheck', true, 500);
       done();
     })
 
@@ -230,24 +155,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamExistsImageContents001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamExistsImageContents", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamExistsImageContents001", false, 183260, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testWebContextMenuParamExistsImageContents001", false, 183260, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamExistsImageContents001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamExistsImageContents" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamExistsImageContents" + '_returnCheck', true, 500);
       done();
     })
 
@@ -262,24 +172,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamExistsImageContents002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamExistsImageTrueContents", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamExistsImageContents002", true, 20251017, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testWebContextMenuParamExistsImageContents002", true, 20251017, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamExistsImageContents002");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamExistsImageContents" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamExistsImageContents" + '_returnCheck', true, 500);
       done();
     })
 
@@ -294,24 +189,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamGetMediaType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetMediaType", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamGetMediaType001", ContextMenuMediaType.None, 183270, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testWebContextMenuParamGetMediaType001", ContextMenuMediaType.None, 183270, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamGetMediaType001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamGetMediaType" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamGetMediaType" + '_returnCheck', true, 500);
       done();
     })
 
@@ -326,24 +206,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamGetSelectionText001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetSelectionText", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamGetSelectionText001", "", 183280,  (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testWebContextMenuParamGetSelectionText001", "", 183280,  () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamGetSelectionText001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamGetSelectionText" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamGetSelectionText" + '_returnCheck', true, 500);
       done();
     })
 
@@ -358,24 +223,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamGetSourceType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetSourceType", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamGetSourceType001", ContextMenuSourceType.LongPress, 183290, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testWebContextMenuParamGetSourceType001", ContextMenuSourceType.LongPress, 183290, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamGetSourceType001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamGetSourceType" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamGetSourceType" + '_returnCheck', true, 500);
       done();
     })
 
@@ -390,24 +240,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamGetSourceType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetSourceTypeNone", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamGetSourceType002", ContextMenuSourceType.None, 183300, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testWebContextMenuParamGetSourceType002", ContextMenuSourceType.None, 183300, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamGetSourceType002");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamGetSourceTypeNone" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamGetSourceTypeNone" + '_returnCheck', true, 500);
       done();
     })
 
@@ -422,24 +257,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamGetInputFieldType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetInputFieldType", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamGetInputFieldType001", ContextMenuInputFieldType.None, 183310, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testWebContextMenuParamGetInputFieldType001", ContextMenuInputFieldType.None, 183310, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamGetInputFieldType001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamGetInputFieldType" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamGetInputFieldType" + '_returnCheck', true, 500);
       done();
     })
 
@@ -454,24 +274,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamIsEditable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamIsEditable", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamIsEditable001", false, 183320, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testWebContextMenuParamIsEditable001", false, 183320, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamIsEditable001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamIsEditable" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamIsEditable" + '_returnCheck', true, 500);
       done();
     })
 
@@ -486,24 +291,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('emitWebContextMenuParamIsEditableTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamIsEditableTrue", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("emitWebContextMenuParamIsEditableTrue", true, 20251016, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("emitWebContextMenuParamIsEditableTrue", true, 20251016, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamIsEditable001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamIsEditableTrue" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamIsEditableTrue" + '_returnCheck', true, 500);
       done();
     })
 
@@ -518,24 +308,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamGetEditStateFlags001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetEditStateFlags", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamGetEditStateFlags", 8, 183330, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testWebContextMenuParamGetEditStateFlags", 8, 183330, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamGetEditStateFlags001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitWebContextMenuParamGetEditStateFlags" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamGetEditStateFlags" + '_returnCheck', true, 500);
       done();
     })
 
@@ -550,24 +325,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testContextMenuInputFieldTypeNone001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuInputFieldTypeNone", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testContextMenuInputFieldTypeNone001", ContextMenuInputFieldType.None, 183340,  (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testContextMenuInputFieldTypeNone001", ContextMenuInputFieldType.None, 183340,  () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testContextMenuInputFieldTypeNone001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitContextMenuInputFieldTypeNone" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitContextMenuInputFieldTypeNone" + '_returnCheck', true, 500);
       done();
     })
 
@@ -582,24 +342,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testContextMenuSourceTypeLongPress001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuSourceTypeLongPress", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testContextMenuSourceTypeLongPress001", ContextMenuSourceType.LongPress, 183350, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testContextMenuSourceTypeLongPress001", ContextMenuSourceType.LongPress, 183350, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testContextMenuSourceTypeLongPress001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitContextMenuInputFieldTypeNone" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitContextMenuInputFieldTypeNone" + '_returnCheck', true, 500);
       done();
     })
 
@@ -614,24 +359,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testContextMenuEditStateFlags001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuEditStateFlags", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testContextMenuEditStateFlags001", 8, 183360, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testContextMenuEditStateFlags001", 8, 183360, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testContextMenuEditStateFlags001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitContextMenuEditStateFlags" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitContextMenuEditStateFlags" + '_returnCheck', true, 500);
       done();
     })
 
@@ -646,24 +376,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testContextMenuMediaType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuMediaTypeNone", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testContextMenuMediaType001", ContextMenuMediaType.None, 183370, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testContextMenuMediaType001", ContextMenuMediaType.None, 183370, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testContextMenuMediaType001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "emitContextMenuMediaTypeNone" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "emitContextMenuMediaTypeNone" + '_returnCheck', true, 500);
       done();
     })
 
@@ -679,24 +394,9 @@ export default function WebViewEnumAndFontLibrary() {
     it('testOnContextMenuShow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("onContextMenuShow", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testOnContextMenuShow001", true, 183380, (err: Error) => {
-        if (err) {
-          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
-        } else {
-          isReturn = true;
-        }
-      });
+      Utils.registerEvent("testOnContextMenuShow001", true, 183380, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testOnContextMenuShow001");
-      try {
-        await Utils.waitForExist((err?: Error) => {
-          if (err) {
-            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
-          }
-          return isReturn;
-        }, "onContextMenuShow" + '_returnCheck', true, 500);
-      } catch (err) {
-        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
-      }
+      await Utils.waitForExist(() => isReturn, "onContextMenuShow" + '_returnCheck', true, 500);
       done();
     })
   })

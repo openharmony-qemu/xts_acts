@@ -24,7 +24,6 @@ import { image } from '@kit.ImageKit';
 import { fileIo, fileUri } from '@kit.CoreFileKit';
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { http } from '@kit.NetworkKit';
-import { XtsTestServer } from 'library';
 const EVENT_ID_SET_SUITE_KEY = 177009;
 const driver = Driver.create();
 
@@ -35,7 +34,6 @@ const driver = Driver.create();
   @State enableContextMenuShow: boolean  = false
   pageInfos: NavPathStack = new NavPathStack();
   controller: webview.WebviewController = new webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   private result: WebContextMenuResult | undefined = undefined;
   @State linkUrl: string = '';
   @State offsetX: number = 0;
@@ -61,14 +59,6 @@ const driver = Driver.create();
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
-  aboutToDisappear() {
-    try {
-      this.controller.loadUrl(this.mServer.getShutdownUrl());
-    } catch (_e) {
-      // page teardown: controller may already be unbound (17100001)
-    }
-  }
-
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("web page bindSelectionMenuType01");
     if (eventData != null) {
@@ -86,13 +76,13 @@ const driver = Driver.create();
             Button("web test").key('webEnableDefaultContextMenu').onClick(async () => {
               console.info("key==>" + this.str)
               await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               switch (this.str) {
                 case "EnableDefaultContextMenu01": {
                   this.isPageEnd = -1;
                   this.enableDefaultMenu = true;
                   this.controller.loadUrl("resource://rawfile/LocalImage.html");
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let webRect = Utils.getComponentRect('enableDefaultContextMenuButton');
                   let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                   let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
@@ -113,7 +103,7 @@ const driver = Driver.create();
                   // 设为 false则禁用默认菜单
                   this.enableDefaultMenu = false;
                   this.controller.loadUrl("resource://rawfile/LocalImage.html");
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let webRect = Utils.getComponentRect('enableDefaultContextMenuButton');
                   let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                   let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
@@ -134,7 +124,7 @@ const driver = Driver.create();
                   // 设为 truee则可以用默认菜单
                   this.enableDefaultMenu = true;
                   this.controller.loadUrl("resource://rawfile/canvas.html");
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let webRect = Utils.getComponentRect('enableDefaultContextMenuButton');
                   let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                   let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
@@ -156,7 +146,7 @@ const driver = Driver.create();
                   // 设为 false则禁用默认菜单
                   this.enableDefaultMenu = false;
                   this.controller.loadUrl("resource://rawfile/canvas.html");
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let webRect = Utils.getComponentRect('enableDefaultContextMenuButton');
                   let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                   let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
@@ -176,8 +166,8 @@ const driver = Driver.create();
                   this.isPageEnd = -1;
                   // 设为 true则可以默认菜单
                   this.enableDefaultMenu = true;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('videoOnline.html'));
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                  this.controller.loadUrl("resource://rawfile/videoOnline.html");
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let webRect = Utils.getComponentRect('enableDefaultContextMenuButton');
                   let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                   let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
@@ -198,8 +188,8 @@ const driver = Driver.create();
                   this.isPageEnd = -1;
                   // 设为 false则禁用默认菜单
                   this.enableDefaultMenu = false;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('videoOnline.html'));
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                  this.controller.loadUrl("resource://rawfile/videoOnline.html");
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let webRect = Utils.getComponentRect('enableDefaultContextMenuButton');
                   let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                   let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
@@ -220,8 +210,8 @@ const driver = Driver.create();
                   this.isPageEnd = -1;
                   // 设为 true则可以默认菜单
                   this.enableDefaultMenu = true;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('audioOnline.html'));
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                  this.controller.loadUrl("resource://rawfile/audioOnline.html");
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let webRect = Utils.getComponentRect('enableDefaultContextMenuButton');
                   let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                   let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
@@ -241,8 +231,8 @@ const driver = Driver.create();
                   this.isPageEnd = -1;
                   // 设为 false则禁用默认菜单
                   this.enableDefaultMenu = false;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('audioOnline.html'));
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                  this.controller.loadUrl("resource://rawfile/audioOnline.html");
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let webRect = Utils.getComponentRect('enableDefaultContextMenuButton');
                   let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                   let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
@@ -262,7 +252,7 @@ const driver = Driver.create();
                   // 设为 true则可以默认菜单
                   this.enableDefaultMenu = true;
                   this.controller.loadUrl("resource://rawfile/Hyperlinks.html");
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let webRect = Utils.getComponentRect('enableDefaultContextMenuButton');
                   let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                   let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
@@ -282,7 +272,7 @@ const driver = Driver.create();
                   // 设为 false则禁用默认菜单
                   this.enableDefaultMenu = false;
                   this.controller.loadUrl("resource://rawfile/Hyperlinks.html");
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let webRect = Utils.getComponentRect('enableDefaultContextMenuButton');
                   let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                   let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);

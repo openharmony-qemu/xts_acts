@@ -16,7 +16,6 @@
 import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
-import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 115670;
 
@@ -40,7 +39,6 @@ class testObj {
 struct WebViewControllerPostUrlErrorCode {
   controller: webView.WebviewController = new webView.WebviewController();
   controllerNull: webView.WebviewController = new webView.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   nativePort: webView.WebMessagePort | null = null;
   message: webView.WebMessageExt = new webView.WebMessageExt();
   @State str: string = ""
@@ -61,14 +59,6 @@ struct WebViewControllerPostUrlErrorCode {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_EMIT_KEY)
-  }
-
-  aboutToDisappear() {
-    try {
-      this.controller.loadUrl(this.mServer.getShutdownUrl());
-    } catch (_e) {
-      // page teardown: controller may already be unbound (17100001)
-    }
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -96,7 +86,7 @@ struct WebViewControllerPostUrlErrorCode {
               case "testWebViewControllerPostUrl001": {
                 try {
                   let postData = this.testObjTest.test("Name=test&Password=test");
-                  this.controllerNull.postUrl(this.mServer.getAssetUrl('index.html'), postData);
+                  this.controllerNull.postUrl('www.example.com', postData);
                   Utils.emitEvent(this.no_error, 115680)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

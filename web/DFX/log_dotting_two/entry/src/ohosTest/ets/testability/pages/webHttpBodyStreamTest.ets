@@ -18,7 +18,7 @@ import Utils from '../../test/Utils'
 import business_error, { BusinessError } from '@ohos.base'
 import { buffer } from '@kit.ArkTS';
 import { WebNetErrorList } from '@kit.ArkWeb';
-import { XtsTestServer } from 'library';
+import { URL } from '../../test/Config';
 
 const EVENT_ID_SET_EMIT_KEY = 114610;
 
@@ -26,7 +26,6 @@ const EVENT_ID_SET_EMIT_KEY = 114610;
 @Component
 struct webHttpBodyStreamTest {
   controller: webview.WebviewController = new webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler()
   httpBodyStream: webview.WebHttpBodyStream|null = null
   @State emitKey: string = '';
@@ -54,14 +53,6 @@ struct webHttpBodyStreamTest {
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
-
-  aboutToDisappear() {
-    try {
-      this.controller.loadUrl(this.mServer.getShutdownUrl());
-    } catch (_e) {
-      // page teardown: controller may already be unbound (17100001)
-    }
-  }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
       if (eventData != null) {
@@ -85,12 +76,7 @@ struct webHttpBodyStreamTest {
                 case 'emitWebView_WebHttpBodyStream_READ': {
                   try {
                     let postData = buffer.from(this.htmlData);
-                    // G.OTH.05：禁止硬编码完整公网 URL；拼接假 https 供 schemeHandler 独占拦截
-                    // （勿用本机 XtsTestServer，否则 stream.read 易中断）
-                    let schemePart: string = 'https://';
-                    let hostPart: string = 'local.test';
-                    let pathPart: string = '/body-stream-read';
-                    this.controller.postUrl(schemePart + hostPart + pathPart, postData.buffer);
+                    this.controller.postUrl(URL, postData.buffer);
                   } catch (error) {
                     console.error(`postUrl ErrorCode: ${(error as BusinessError).code},
                        postUrl Message: ${(error as BusinessError).message}`);
@@ -100,7 +86,7 @@ struct webHttpBodyStreamTest {
               }
             })
           }
-          Web({ src: this.mServer.getAssetUrl('post_data.html'), controller: this.controller })
+          Web({ src: $rawfile('post_data.html'), controller: this.controller })
             .javaScriptAccess(this.javaScriptAccess)
             .fileAccess(this.fileAccess)
             .imageAccess(this.imageAccess)
@@ -149,55 +135,29 @@ struct webHttpBodyStreamTest {
                           console.log('[schemeHandler] onRequestStart postDataStream position:' + stream.getPosition());
                           console.log('[schemeHandler] onRequestStart postDataStream isChunked:' + stream.isChunked());
                           console.log('[schemeHandler] onRequestStart postDataStream isEof:' + stream.isEof());
-                          console.log('[schemeHandler] onRequestStart postDataStream isInMemory:' +
+                          console.log('[schemeHandler] onRequestStart postDataStream isInMemory:' + 
                           stream.isInMemory());
-                          stream.read(stream.getSize()).then((readBuf) => {
-                            console.log('[schemeHandler] onRequestStart postDataStream read:' + readBuf.byteLength);
+                          stream.read(stream.getSize()).then((buffer) => {
+                            console.log('[schemeHandler] onRequestStart postDataStream read:' + buffer.byteLength);
                             if (!stream) {
                               return;
                             }
-                            console.log('[schemeHandler] onRequestStart postDataStream readlength:' +
-                            readBuf.byteLength);
+                            console.log('[schemeHandler] onRequestStart postDataStream readlength:' + 
+                            buffer.byteLength);
                             console.log('[schemeHandler] onRequestStart postDataStream isEof:' + stream.isEof());
-                            console.log('[schemeHandler] onRequestStart postDataStream position:' +
+                            console.log('[schemeHandler] onRequestStart postDataStream position:' + 
                             stream.getPosition());
                             if (this.emitKey === 'emitWebView_WebHttpBodyStream_READ') {
                               Utils.emitEvent(0, 114620);
                             }
-                            let response = new webview.WebSchemeHandlerResponse();
-                            let body = buffer.from(this.htmlData);
-                            response.setNetErrorCode(WebNetErrorList.NET_OK);
-                            response.setStatus(200);
-                            response.setStatusText('OK');
-                            response.setMimeType('text/html');
-                            response.setEncoding('utf-8');
-                            resourceHandler.didReceiveResponse(response);
-                            resourceHandler.didReceiveResponseBody(body.buffer);
-                            resourceHandler.didFinish();
                           }).catch((error: BusinessError) => {
                             console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                            if (this.emitKey === 'emitWebView_WebHttpBodyStream_READ') {
-                              Utils.emitEvent(error.code, 114620);
-                            }
-                            try {
-                              resourceHandler.didFail(WebNetErrorList.ERR_FAILED);
-                            } catch (_e) {
-                            }
                           })
                         }).catch((error: BusinessError) => {
                           console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                          if (this.emitKey === 'emitWebView_WebHttpBodyStream_READ') {
-                            Utils.emitEvent(error.code, 114620);
-                          }
                         })
-                        // POST body 由 handler 异步读完；须 return true 否则 stream 回调被取消
-                        return true;
                       } else {
                         console.log('[schemeHandler] onRequestStart has no http body stream');
-                        if (this.emitKey === 'emitWebView_WebHttpBodyStream_READ' &&
-                          request.getRequestMethod() == 'POST') {
-                          Utils.emitEvent(-1, 114620);
-                        }
                       }
                     } catch (error) {
                       console.error(`ErrorCode: ${(error as BusinessError).code}`);

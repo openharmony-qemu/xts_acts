@@ -19,7 +19,6 @@ import business_error, { BusinessError } from '@ohos.base'
 import { buffer } from '@kit.ArkTS';
 import { WebNetErrorList } from '@ohos.web.netErrorList';
 import { URL } from '../../test/Config';
-import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 114990;
 
@@ -27,7 +26,6 @@ const EVENT_ID_SET_EMIT_KEY = 114990;
 @Component
 struct webResourceHandlerTest {
   controller: webview.WebviewController = new webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler()
   httpBodyStream: webview.WebHttpBodyStream|null = null
   @State emitKey: string = '';
@@ -63,14 +61,6 @@ struct webResourceHandlerTest {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_EMIT_KEY)
-  }
-
-  aboutToDisappear() {
-    try {
-      this.controller.loadUrl(this.mServer.getShutdownUrl());
-    } catch (_e) {
-      // page teardown: controller may already be unbound (17100001)
-    }
   }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -139,7 +129,6 @@ struct webResourceHandlerTest {
                 }
                 case 'testWebNavigationType003': {
                   try {
-                    // 须走 rawfile 保留 iframe1→iframe2；server+schemeHandler 会换成无 iframe 占位页
                     this.controller.loadUrl($rawfile('iframe1.html'));
                   } catch (error) {
                     let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -150,7 +139,7 @@ struct webResourceHandlerTest {
               }
             })
           }
-          Web({ src: this.mServer.getAbsoluteUrl(URL), controller: this.controller })
+          Web({ src: URL, controller: this.controller })
             .javaScriptAccess(this.javaScriptAccess)
             .fileAccess(this.fileAccess)
             .imageAccess(this.imageAccess)

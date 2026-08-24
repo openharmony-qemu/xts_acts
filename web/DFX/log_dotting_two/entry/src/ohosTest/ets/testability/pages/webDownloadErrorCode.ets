@@ -17,7 +17,6 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import business_error from '@ohos.base';
-import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 113920;
 
@@ -28,9 +27,11 @@ struct webDownloadErrorCode {
   controllerNull: webView.WebviewController = new webView.WebviewController();
   @State str: string = ""
   delegate: webView.WebDownloadDelegate = new webView.WebDownloadDelegate();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
-  @State downloadUrl: string = '';
-  @State downloadUrlImg: string = '';
+  @State downloadUrl: string = 'https://consumer.huawei.com/content/dam/' +
+    'huawei-cbg-site/cn/mkt/mobileservices/2022/download/' +
+    'PC107f1b3947c942ffaa14334a879065d8.2107261020.exe'
+  @State downloadUrlImg: string = 'https://consumer.huawei.com/content/dam/huawei-cbg-site/cn/mkt/pdp/tablets/' +
+    'matepad-pro-11-2024/assets/imgs/pc/huawei-matepad-11-inch-Huawei-sound.png';
   @State hasSetDownloadDelegate: boolean = false;
   @State savePath: string = Utils.getSandboxFileDir() + 'testDownloadFile';
   downloadItem: webView.WebDownloadItem | null = null
@@ -50,21 +51,6 @@ struct webDownloadErrorCode {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_EMIT_KEY)
-  }
-
-  aboutToAppear() {
-    // 长下载链接用于暂停/恢复等中途状态场景。
-    this.downloadUrl = this.mServer.getRangeDownloadUrl('dottingtwo_range', 25 * 1024 * 1024, 512 * 1024, 150);
-    // 短下载链接用于快速完成后的状态场景。
-    this.downloadUrlImg = this.mServer.getTestDownloadUrl('dottingtwo_small', 32 * 1024);
-  }
-
-  aboutToDisappear() {
-    try {
-      this.controller.loadUrl(this.mServer.getShutdownUrl());
-    } catch (_e) {
-      // page teardown: controller may already be unbound (17100001)
-    }
   }
 
   private cancelDownloadItem() {
