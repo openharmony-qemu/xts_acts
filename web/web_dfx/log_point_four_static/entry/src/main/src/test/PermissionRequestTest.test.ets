@@ -56,108 +56,129 @@ export default function permissionRequestTest():void {
 
     /**
     * @tc.name        testPermissionRequestConstructorStatic001
-    * @tc.number      SUB_WEB_PERMISSIONREQUEST_CONSTRUCTOR_001
+    * @tc.number      SUB_WEB_PERMISSIONREQUEST_CONSTRUCTOR_0100
     * @tc.desc        test interface of PermissionRequest constructor with static call
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testPermissionRequestConstructorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('emitPermissionRequestConstructor', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent("testPermissionRequestConstructorStatic001", true, 112000, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('PermissionRequestTestButton', 10, '');
-      await Utils.msSleep(6000);
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitPermissionRequestConstructor', 10)
+        await Utils.msSleep(3000);
+        Utils.registerEvent("testPermissionRequestConstructorStatic001", true, 112000, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('PermissionRequestTestButton', 10, '');
+        await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testPermissionRequestInstanceTypeStatic002
-    * @tc.number      SUB_WEB_PERMISSIONREQUEST_INSTANCE_TYPE_002
+    * @tc.number      SUB_WEB_PERMISSIONREQUEST_INSTANCE_TYPE_0200
     * @tc.desc        test PermissionRequest constructor return value is instance of PermissionRequest
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testPermissionRequestInstanceTypeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('emitPermissionRequestInstanceType', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent("testPermissionRequestInstanceTypeStatic002", true, 112020, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('PermissionRequestTestButton', 10, '');
-      await Utils.msSleep(6000);
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitPermissionRequestInstanceType', 10)
+        await Utils.msSleep(3000);
+        Utils.registerEvent("testPermissionRequestInstanceTypeStatic002", true, 112020, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('PermissionRequestTestButton', 10, '');
+        await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testPermissionRequestGetOriginStatic003
-    * @tc.number      SUB_WEB_PERMISSIONREQUEST_GET_ORIGIN_003
+    * @tc.number      SUB_WEB_PERMISSIONREQUEST_GET_ORIGIN_0300
     * @tc.desc        test PermissionRequest getOrigin return value on constructor-created instance
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testPermissionRequestGetOriginStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('emitPermissionRequestGetOrigin', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent("testPermissionRequestGetOriginStatic003", '', 112040, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('PermissionRequestTestButton', 10, '');
-      await Utils.msSleep(6000);
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitPermissionRequestGetOrigin', 10)
+        await Utils.msSleep(3000);
+        Utils.registerEvent("testPermissionRequestGetOriginStatic003", '', 112040, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('PermissionRequestTestButton', 10, '');
+        await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testPermissionRequestGetAccessibleResourceStatic004
-    * @tc.number      SUB_WEB_PERMISSIONREQUEST_GET_ACCESSIBLE_RESOURCE_004
+    * @tc.number      SUB_WEB_PERMISSIONREQUEST_GET_ACCESSIBLE_RESOURCE_0400
     * @tc.desc        test PermissionRequest getAccessibleResource return value on constructor-created instance
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testPermissionRequestGetAccessibleResourceStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('emitPermissionRequestGetAccessibleResource', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent("testPermissionRequestGetAccessibleResourceStatic004", '[]', 112060, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('PermissionRequestTestButton', 10, '');
-      await Utils.msSleep(6000);
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitPermissionRequestGetAccessibleResource', 10)
+        await Utils.msSleep(3000);
+        Utils.registerEvent("testPermissionRequestGetAccessibleResourceStatic004", '[]', 112060, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('PermissionRequestTestButton', 10, '');
+        await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testPermissionRequestDenyStatic005
-    * @tc.number      SUB_WEB_PERMISSIONREQUEST_DENY_005
+    * @tc.number      SUB_WEB_PERMISSIONREQUEST_DENY_0500
     * @tc.desc        test PermissionRequest deny method on constructor-created instance
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testPermissionRequestDenyStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('emitPermissionRequestDeny', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent("testPermissionRequestDenyStatic005", true, 112080, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('PermissionRequestTestButton', 10, '');
-      await Utils.msSleep(6000);
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitPermissionRequestDeny', 10)
+        await Utils.msSleep(3000);
+        Utils.registerEvent("testPermissionRequestDenyStatic005", true, 112080, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('PermissionRequestTestButton', 10, '');
+        await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testPermissionRequestGrantEmptyStatic006
-    * @tc.number      SUB_WEB_PERMISSIONREQUEST_GRANT_EMPTY_006
+    * @tc.number      SUB_WEB_PERMISSIONREQUEST_GRANT_EMPTY_0600
     * @tc.desc        test PermissionRequest grant method with empty array on constructor-created instance
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testPermissionRequestGrantEmptyStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitPermissionRequestGrantEmpty', 10)
       await Utils.msSleep(3000);
@@ -165,18 +186,22 @@ export default function permissionRequestTest():void {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('PermissionRequestTestButton', 10, '');
       await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testPermissionRequestGrantResourcesStatic007
-    * @tc.number      SUB_WEB_PERMISSIONREQUEST_GRANT_RESOURCES_007
+    * @tc.number      SUB_WEB_PERMISSIONREQUEST_GRANT_RESOURCES_0700
     * @tc.desc        test PermissionRequest grant method with resource types on constructor-created instance
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testPermissionRequestGrantResourcesStatic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitPermissionRequestGrantResources', 10)
       await Utils.msSleep(3000);
@@ -184,18 +209,22 @@ export default function permissionRequestTest():void {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('PermissionRequestTestButton', 10, '');
       await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testPermissionRequestMultipleInstancesStatic008
-    * @tc.number      SUB_WEB_PERMISSIONREQUEST_MULTIPLE_INSTANCES_008
+    * @tc.number      SUB_WEB_PERMISSIONREQUEST_MULTIPLE_INSTANCES_0800
     * @tc.desc        test PermissionRequest constructor creates independent instances
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testPermissionRequestMultipleInstancesStatic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitPermissionRequestMultipleInstances', 10)
       await Utils.msSleep(3000);
@@ -203,13 +232,16 @@ export default function permissionRequestTest():void {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('PermissionRequestTestButton', 10, '');
       await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
 
     /**
      * @tc.name        testSwitchNextPageVerifyPinHandlerTest
-     * @tc.number      SUB_WEB_NEXT_PAGE_0200
+     * @tc.number      SUB_WEB_NEXT_PAGE_0900
      * @tc.desc        onWindowNewExt
      * @tc.size        MediumTest
      * @tc.type        Function
@@ -229,5 +261,3 @@ export default function permissionRequestTest():void {
       })
   })
 }
-
-
