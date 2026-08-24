@@ -264,6 +264,12 @@ export default function getHapModuleInfoJsunit() {
         let context = ability_featureAbility.getContext();
         console.info('[context_getAbilityInfo_test_0200] START');
         let timeOldStamp = await Utils.getNowTime();
+        context.getAbilityInfo((error, data) => {
+          let timeNewStamp = Utils.getNowTime();
+          Utils.getDurationTime('context_getAbilityInfo_test_0200', timeOldStamp, timeNewStamp);
+          console.info('[context_getAbilityInfo_test_0200] data is:' + JSON.stringify(data));
+          expect(typeof (data)).assertEqual("object");
+        })
         let callback = await context.getAbilityInfo();
         console.info('---[context_getAbilityInfo_test_0200] check---');
         checkAbilityInfo('context_getAbilityInfo_test_0200', callback);
