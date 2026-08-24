@@ -34,12 +34,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name : Acts_SingleInstanceCallFunction_0100
-     * @tc.number : Acts_SingleInstanceCallFunction_0100
-     * @tc.desc : Caller application can call other application Ability by Call (single instance).
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL0
+     * @tc.name   Acts_SingleInstanceCallFunction_0100
+     * @tc.number Acts_SingleInstanceCallFunction_0100
+     * @tc.desc   Caller application can call other application Ability by Call (single instance).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_SingleInstanceCallFunction_0100', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -71,12 +71,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name : Acts_SingleInstanceCallFunction_0200
-     * @tc.number : Acts_SingleInstanceCallFunction_0200
-     * @tc.desc : Caller application cannot call its own Ability by Call (single instance).
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL0
+     * @tc.name   Acts_SingleInstanceCallFunction_0200
+     * @tc.number Acts_SingleInstanceCallFunction_0200
+     * @tc.desc   Caller application cannot call its own Ability by Call (single instance).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_SingleInstanceCallFunction_0200', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -107,12 +107,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name : Acts_SingleInstanceCallFunction_0300
-     * @tc.number : Acts_SingleInstanceCallFunction_0300
-     * @tc.desc : Caller applications can actively release AbilityCaller (single instance).
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL0
+     * @tc.name   Acts_SingleInstanceCallFunction_0300
+     * @tc.number Acts_SingleInstanceCallFunction_0300
+     * @tc.desc   Caller applications can actively release AbilityCaller (single instance).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_SingleInstanceCallFunction_0300', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -153,12 +153,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name : Acts_SingleInstanceCallFunction_0400
-     * @tc.number : Acts_SingleInstanceCallFunction_0400
-     * @tc.desc : The caller application can passively perceive the callee death notification of the called
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL0
+     * @tc.name   Acts_SingleInstanceCallFunction_0400
+     * @tc.number Acts_SingleInstanceCallFunction_0400
+     * @tc.desc   The caller application can passively perceive the callee death notification of the called
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_SingleInstanceCallFunction_0400', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -199,12 +199,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name : Acts_SingleInstanceCallFunction_0500
-     * @tc.number : Acts_SingleInstanceCallFunction_0500
-     * @tc.desc : The Calling application can call the multi-instance Ability of other applications.
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL0
+     * @tc.name   Acts_SingleInstanceCallFunction_0500
+     * @tc.number Acts_SingleInstanceCallFunction_0500
+     * @tc.desc   The Calling application can call the multi-instance Ability of other applications.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_SingleInstanceCallFunction_0500', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -235,12 +235,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name : Acts_SingleInstanceCallFunction_0600
-     * @tc.number : Acts_SingleInstanceCallFunction_0600
-     * @tc.desc : The Calling application cannot call its own multi-instance Ability.
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL0
+     * @tc.name   Acts_SingleInstanceCallFunction_0600
+     * @tc.number Acts_SingleInstanceCallFunction_0600
+     * @tc.desc   The Calling application cannot call its own multi-instance Ability.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_SingleInstanceCallFunction_0600', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -271,12 +271,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name : Acts_SingleInstanceCallFunction_0700
-     * @tc.number : Acts_SingleInstanceCallFunction_0700
-     * @tc.desc : The caller application can actively release the multi-instance AbilityCaller.
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL0
+     * @tc.name   Acts_SingleInstanceCallFunction_0700
+     * @tc.number Acts_SingleInstanceCallFunction_0700
+     * @tc.desc   The caller application can actively release the multi-instance AbilityCaller.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_SingleInstanceCallFunction_0700', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -310,12 +310,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name : Acts_SingleInstanceCallFunction_0800
-     * @tc.number : Acts_SingleInstanceCallFunction_0800
-     * @tc.desc : The caller application can passively perceive the service provider multi-instance callee death
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL0
+     * @tc.name   Acts_SingleInstanceCallFunction_0800
+     * @tc.number Acts_SingleInstanceCallFunction_0800
+     * @tc.desc   The caller application can passively perceive the service provider multi-instance callee death
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_SingleInstanceCallFunction_0800', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -346,12 +346,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name : Acts_SingleInstanceCallFunction_0900
-     * @tc.number : Acts_SingleInstanceCallFunction_0900
-     * @tc.desc : Caller application can call other application Ability by Call (multiple instance and single instance).
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL0
+     * @tc.name   Acts_SingleInstanceCallFunction_0900
+     * @tc.number Acts_SingleInstanceCallFunction_0900
+     * @tc.desc   Caller application can call other application Ability by Call (multiple instance and single instance).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_SingleInstanceCallFunction_0900', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -393,12 +393,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name : Acts_SingleInstanceCallFunction_1000
-     * @tc.number : Acts_SingleInstanceCallFunction_1000
-     * @tc.desc : Multiple Callers Call multiple instances of the same application at the same time, which does not
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL0
+     * @tc.name   Acts_SingleInstanceCallFunction_1000
+     * @tc.number Acts_SingleInstanceCallFunction_1000
+     * @tc.desc   Multiple Callers Call multiple instances of the same application at the same time, which does not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_SingleInstanceCallFunction_1000', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -451,12 +451,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name : Acts_SingleInstanceCallFunction_1100
-     * @tc.number : Acts_SingleInstanceCallFunction_1100
-     * @tc.desc : Indirect Call Calls multi-instance Ability, which does not affect the call communication function.
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL0
+     * @tc.name   Acts_SingleInstanceCallFunction_1100
+     * @tc.number Acts_SingleInstanceCallFunction_1100
+     * @tc.desc   Indirect Call Calls multi-instance Ability, which does not affect the call communication function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_SingleInstanceCallFunction_1100', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -496,12 +496,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name : Acts_SingleInstanceCallFunction_1200
-     * @tc.number : Acts_SingleInstanceCallFunction_1200
-     * @tc.desc : Call calls the SPECIFIED type Ability, which can return an error message.
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL0
+     * @tc.name   Acts_SingleInstanceCallFunction_1200
+     * @tc.number Acts_SingleInstanceCallFunction_1200
+     * @tc.desc   Call calls the SPECIFIED type Ability, which can return an error message.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_SingleInstanceCallFunction_1200', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
