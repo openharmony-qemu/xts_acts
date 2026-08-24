@@ -264,28 +264,11 @@ export default function cameraSessionExposureTest() {
     console.info('Enter getCameraSupportDevicesArray');
 
     mCameraDevicesArray = mCameraManager.getSupportedCameras();
-    /*
-    mCameraManager.getSupportedCameras(async (err, data) => {
-        console.info(TAG + "Entering getCameraSupportDevicesArray callback");
-        if (!err) {
-            if (data != null || data != undefined) {
-                mCameraDevicesArray = data;
-                console.info(TAG + "Entering getCameraSupportDevicesArray PASSED with CameraDevicesArray is: " + data);
-            } else {
-                console.info(TAG + "Entering getCameraSupportDevicesArray FAILED with CameraDevicesArray is: " + data);
-            }
-        } else {
-            console.info(TAG + "Entering getCameraSupportDevicesArray FAILED : " + err.message);
-        }
-    })
-    await sleep(3000);
-    */
     if (isEmpty(mCameraDevicesArray)) {
       console.info(TAG + "getSupportedCameras FAILED");
       return false;
     }
 
-    //mCameraNum = 1;
     mCameraNum = mCameraDevicesArray.length;
 
     console.info(TAG + "getCameraSupportDevicesArray is: " + mCameraNum);
@@ -401,28 +384,6 @@ export default function cameraSessionExposureTest() {
 
         console.info(TAG + "createPhotoOutput: " + mPhotoOutput);
       }
-      /*
-      if (!isEmpty(cameraOutputCap.videoProfiles)) {
-          console.info(TAG + "cameraOutputCap.videoProfiles.length: " + cameraOutputCap.videoProfiles.length);
-          for (let i = 0; i < cameraOutputCap.videoProfiles.length; i++) {
-              try {
-                  mVideoOutput = await mCameraManager.createVideoOutput(cameraOutputCap.videoProfiles[i], mVideoSurface);
-                  if (!isEmpty(mVideoOutput)) {
-                      break;
-                  }
-              }
-              catch {
-                  console.info(TAG + "createVideoOutput FAILED");
-              }
-          }
-
-          if (isEmpty(mVideoOutput)) {
-              console.info(TAG + "createVideoOutput FAILED");
-          }
-
-          console.info(TAG + "createVideoOutput: " + mVideoOutput);
-      }
-      */
     }
 
     console.info('Exit createOutputs');
@@ -440,12 +401,6 @@ export default function cameraSessionExposureTest() {
     if (!isEmpty(mPhotoOutput)) {
       await mPhotoOutput.release();
     }
-    /*
-    if (!isEmpty(mVideoOutput)) {
-        await mVideoOutput.stop();
-        await mVideoOutput.release();
-    }
-    */
     console.info('Exit releaseOutput');
 
     return true;
@@ -490,19 +445,6 @@ export default function cameraSessionExposureTest() {
 
     mCameraSession.beginConfig();
 
-    /*
-    mCameraSession.stop(async (err) => {
-        console.info(TAG + "Entering mCameraSession stop callback");
-        if (!err) {
-            console.info(TAG + "Entering mCameraSession stop PASSED ");
-        } else {
-            console.info(TAG + "Entering mCameraSession stop FAILED : " + err.message);
-        }
-    })
-
-    await sleep(100);
-    */
-
     if (!isEmpty(mCameraInput)) {
       console.info(TAG + "Start to removeInput input");
       mCameraSession.removeInput(mCameraInput);
@@ -517,12 +459,6 @@ export default function cameraSessionExposureTest() {
       console.info(TAG + "Start to removeOutput mPhotoOutput");
       mCameraSession.removeOutput(mPhotoOutput);
     }
-    /*
-    if (!isEmpty(mVideoOutput)) {
-        console.info(TAG + "Start to removeOutput mVideoOutput");
-        await mCameraSession.removeOutput(mVideoOutput);
-    }
-    */
     await releaseInput();
     await releaseOutput();
 
