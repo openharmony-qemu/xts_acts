@@ -66,7 +66,7 @@ struct WebComponent {
   build(){
     Column() {
       Button('setConnectionTimeOut')
-        .key('001')
+        .key('SetConnectionTimeOut3_setConnectionTimeOut')
         .onClick(async () => {
           console.info('key==>' + this.emitKey);
           await waitForExist(()=>this.isPageEnd, this.emitKey, 0);

@@ -82,7 +82,7 @@ struct WebComponent {
   build(){
     Column() {
       Button('GetPercentComplete')
-        .key('001')
+        .key('GetPercentComplete5_GetPercentComplete')
         .onClick(async () => {
           console.info('key==>' + this.emitKey)
           await waitForExist(() => this.isPageEnd, this.emitKey, 0);

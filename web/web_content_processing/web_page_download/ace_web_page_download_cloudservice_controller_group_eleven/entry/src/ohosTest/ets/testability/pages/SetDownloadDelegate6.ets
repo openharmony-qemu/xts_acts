@@ -68,7 +68,7 @@ struct WebComponent {
   build(){
     Column() {
       Button('getCurrentSpeed')
-        .key('001')
+        .key('SetDownloadDelegate6_getCurrentSpeed')
         .onClick(async () => {
           console.info('key==>' + this.emitKey);
           await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
