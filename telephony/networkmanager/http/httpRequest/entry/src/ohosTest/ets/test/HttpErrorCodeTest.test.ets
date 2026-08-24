@@ -1358,7 +1358,7 @@ export default function HttpErrorCodeTest() {
           } else {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
-            httpRequest.request('https://hao123.com', {method: http.RequestMethod.POST}, (err: BusinessError, data: http.HttpResponse) => {
+            httpRequest.request('https://self-signed.badssl.com', {method: http.RequestMethod.POST}, (err: BusinessError, data: http.HttpResponse) => {
               console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
               ExpectTrue(err.code == 2300060);
               httpRequest.destroy();
@@ -1394,7 +1394,7 @@ export default function HttpErrorCodeTest() {
           } else {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
-            let promise = httpRequest.request('https://hao123.com', {
+            let promise = httpRequest.request('https://self-signed.badssl.com', {
               method: http.RequestMethod.GET,
             });
             promise.then((data:http.HttpResponse) => {
@@ -1435,7 +1435,7 @@ export default function HttpErrorCodeTest() {
           } else {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
-            httpRequest.requestInStream('https://hao123.com', (err: BusinessError, data: number) => {
+            httpRequest.requestInStream('https://self-signed.badssl.com', (err: BusinessError, data: number) => {
               console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
               ExpectTrue(err.code == 2300060);
               httpRequest.destroy();
@@ -1471,7 +1471,7 @@ export default function HttpErrorCodeTest() {
           } else {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
-            httpRequest.requestInStream('https://hao123.com', {method: http.RequestMethod.POST}, (err: BusinessError, data: number) => {
+            httpRequest.requestInStream('https://self-signed.badssl.com', {method: http.RequestMethod.POST}, (err: BusinessError, data: number) => {
               console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
               ExpectTrue(err.code == 2300060);
               httpRequest.destroy();
@@ -1507,7 +1507,7 @@ export default function HttpErrorCodeTest() {
           } else {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
-            let promise = httpRequest.requestInStream('https://hao123.com', {
+            let promise = httpRequest.requestInStream('https://self-signed.badssl.com', {
               method: http.RequestMethod.GET,
             });
             promise.then((data) => {
@@ -1548,7 +1548,7 @@ export default function HttpErrorCodeTest() {
           } else {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
-            httpRequest.request('https://hao123.com', (err: BusinessError, data: http.HttpResponse) => {
+            httpRequest.request('https://self-signed.badssl.com', (err: BusinessError, data: http.HttpResponse) => {
               console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
               ExpectTrue(err.code == 2300060);
               httpRequest.destroy();
