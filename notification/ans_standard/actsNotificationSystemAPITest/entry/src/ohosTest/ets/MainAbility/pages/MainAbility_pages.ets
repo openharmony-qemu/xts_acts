@@ -23,7 +23,7 @@ struct Index {
   @State message: string = 'MainAbility';
 
   aboutToAppear() {
-    console.info("start run testcase!!!!");
+    console.info('start run testcase!!!!');
     let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
     let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     console.info('start run testcase!!!');

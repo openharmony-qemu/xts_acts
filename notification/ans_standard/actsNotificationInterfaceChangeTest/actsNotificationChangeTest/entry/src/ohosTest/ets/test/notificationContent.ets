@@ -60,7 +60,7 @@ export default function notificationContentTest() {
         if (err) {
           console.error(`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
         } else {
-          console.info("requestEnableNotification success");
+          console.info('requestEnableNotification success');
         }
       });
 
@@ -160,9 +160,9 @@ export default function notificationContentTest() {
         .createPixelMap(color, opts)
         .then(async (pixelmap) => {
           await pixelmap.getImageInfo().then(imageInfo => {
-            console.log("=====size: ====" + JSON.stringify(imageInfo.size));
+            console.log('=====size: ====' + JSON.stringify(imageInfo.size));
           }).catch((err: BusinessError) => {
-            console.error("Failed to obtain the image pixel map information." + JSON.stringify(err));
+            console.error('Failed to obtain the image pixel map information.' + JSON.stringify(err));
             return;
           })
           let notificationRequest: notificationManager.NotificationRequest = {
@@ -205,7 +205,7 @@ export default function notificationContentTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(" Acts_NotificationContent_0400", Level.LEVEL2, async (done: Function) => {
+    it(' Acts_NotificationContent_0400', Level.LEVEL2, async (done: Function) => {
       const TEST_CASE_NAME = 'Acts_NotificationContent_0400';
 
       let notificationRequest: notificationManager.NotificationRequest = {
