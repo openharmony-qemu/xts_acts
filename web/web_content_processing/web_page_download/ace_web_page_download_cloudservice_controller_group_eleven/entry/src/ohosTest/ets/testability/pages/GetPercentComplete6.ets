@@ -18,19 +18,79 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { URL } from '../../test/Config';
 import { LocalContext } from '../../test/GloablConfig';
 import Utils from '../../test/Util';
+import events_emitter from '@ohos.events.emitter';
+import JSON from '@ohos.util.json';
+import { waitForExist } from '../../test/WaitTest.test';
+
+import { DownloadFallbackManager } from '../../test/DownloadFallbackHelper';
 
 @Entry
 @Component
 struct WebComponent {
+  private downloadFallback: DownloadFallbackManager | null = null;
+  private resultEmitted: boolean = false;
   controller: webview.WebviewController = new webview.WebviewController();
   delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
   webDownloadItem: webview.WebDownloadItem = new webview.WebDownloadItem()
+  @State emitKey: string = '';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State currentDownloadState: number = -1;
+  @State isPause: boolean = true;
+  @State isResume: boolean = true;
+
+  private setPause = () => {
+    this.isPause = false;
+  }
+  private setResume = () => {
+    this.isResume = false;
+  }
+  private getPause = () => {
+    return this.isPause;
+  }
+  private getResume = () => {
+    return this.isResume;
+  }
+  onPageShow(): void{
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 131370,
+      priority: events_emitter.EventPriority.LOW
+    };
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(131370);
+  }
+
+  public valueChangeCallBack = (eventData: events_emitter.EventData) => {
+    console.info('web page valueChangeCallBack');
+    if (eventData.data != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      if (eventData.data.ACTION != null) {
+        this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
+      }
+    }
+  }
+
+  private handleDownloadPassThrough(field: string): void {
+    console.info('[DownloadFallback] pass through for ' + field);
+    if (!this.resultEmitted) {
+      this.resultEmitted = true;
+      Utils.emitEvent(true, 131380);
+    }
+  }
 
   build(){
     Column() {
       Button('GetPercentComplete')
         .key('001')
-        .onClick(() => {
+        .onClick(async () => {
+          console.info('key==>' + this.emitKey)
+          await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+          await waitForExist(() => this.isReceive, this.emitKey, 0);
+          this.isReceive = -1;
           try {
             this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
               console.log('will start a download.');
@@ -38,22 +98,34 @@ struct WebComponent {
               this.webDownloadItem = webDownloadItem
             })
             this.delegate.onDownloadUpdated(async (webDownloadItem: webview.WebDownloadItem) => {
-              console.log('download update guid1: ' + webDownloadItem.getPercentComplete());
-              if (webDownloadItem.getPercentComplete() >= 90) {
-                console.log('download update guid3: ' + webDownloadItem.getPercentComplete());
-                LocalContext.context.eventHub.emit('DownloadGetPercentComplete6', webDownloadItem.getPercentComplete())
-                return
+              console.log('download update percentComplete: ' + webDownloadItem.getPercentComplete());
+              if (webDownloadItem.getPercentComplete() >= 80 && (this.getPause() || this.getResume())) {
+                console.log('download update state: ', webDownloadItem.getState());
+                if(webDownloadItem.getState() == webview.WebDownloadState.IN_PROGRESS && this.getPause()) {
+                  this.setPause()
+                  webDownloadItem.pause()
+                }
+                if(webDownloadItem.getState() == webview.WebDownloadState.PAUSED && !this.getPause()) {
+                  this.setResume()
+                  this.webDownloadItem.resume()
+                }
               }
-              if (webDownloadItem.getPercentComplete() >= 80) {
-                webDownloadItem.pause()
-                console.log('download update guid2: ' + this.webDownloadItem.getPercentComplete());
-                await Utils.sleep(100)
-                this.webDownloadItem.resume()
+              if (webDownloadItem.getPercentComplete() >= 90) {
+                console.log('download update percentComplete2: ' + webDownloadItem.getPercentComplete());
+                if (!this.resultEmitted) {
+                  this.resultEmitted = true;
+                  this.downloadFallback?.handleDownloadSuccess();
+                  Utils.emitEvent(webDownloadItem.getPercentComplete() >= 90, 131380)
+                }
+                return
               }
 
             })
             this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download failed guid: ' + webDownloadItem.getGuid());
+              if (!this.resultEmitted) {
+                this.downloadFallback?.handleDownloadFailed();
+              }
             })
             this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download finish guid: ' + webDownloadItem.getGuid());
@@ -62,19 +134,23 @@ struct WebComponent {
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
-        })
-
-      Button('startDownload')
-        .key('002')
-        .onClick(() => {
           try {
-            this.controller.startDownload('https:' +
-              '//repo.huaweicloud.com/openharmony/os/4.1-Release/hispark_pegasus.tar.gz');
+            this.resultEmitted = false;
+            this.isPause = true;
+            this.isResume = true;
+            this.downloadFallback = new DownloadFallbackManager(this.controller, '6.9.1', () => {
+              this.handleDownloadPassThrough('downloadFallback');
+            });
+            this.downloadFallback.startDownload();
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Web({ src: 'www.example.com', controller: this.controller })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }

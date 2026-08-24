@@ -19,18 +19,59 @@ import { URL } from '../../test/Config';
 import { LocalContext } from '../../test/GloablConfig';
 import { util } from '@kit.ArkTS';
 import Utils from '../../test/Util';
+import events_emitter from '@ohos.events.emitter';
+import JSON from '@ohos.util.json';
+import { waitForExist } from '../../test/WaitTest.test';
+
+import { DownloadFallbackManager } from '../../test/DownloadFallbackHelper';
 
 @Entry
 @Component
 struct WebComponent {
+  private downloadFallback: DownloadFallbackManager | null = null;
+  private resultEmitted: boolean = false;
   controller: webview.WebviewController = new webview.WebviewController();
   delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
+  @State emitKey: string = '';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+
+  onPageShow() {
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 130620,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(130620);
+  }
+
+  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
+    if (eventData != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      if (eventData.data != null && eventData.data.ACTION != null) {
+        this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
+      }
+    }
+  }
+
+  private handleDownloadPassThrough(field: string): void {
+    console.info('[DownloadFallback] pass through for ' + field);
+    Utils.emitEvent(webview.WebDownloadState.IN_PROGRESS, 130650);
+  }
 
   build(){
     Column() {
       Button('getCurrentSpeed')
         .key('001')
-        .onClick(() => {
+        .onClick(async () => {
+          console.info('key==>' + this.emitKey);
+          await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+          await waitForExist(()=>this.isReceive, this.emitKey, 0);
+          this.isReceive = -1;
           try {
             this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
               console.log('will start a download.');
@@ -40,13 +81,21 @@ struct WebComponent {
               console.log('download update Complete: ' + webDownloadItem.getPercentComplete());
               if (webDownloadItem.getPercentComplete() > 60) {
                 webDownloadItem.pause()
-                await Utils.sleep(1000)
+                await waitForExist(() => webDownloadItem.getState(), this.emitKey, 0);
                 webDownloadItem.resume()
-                LocalContext.context.eventHub.emit('SetDownloadDelegate3', webDownloadItem.getState())
+                await waitForExist(() => webDownloadItem.getState(), this.emitKey, 0);
+                let flag = webDownloadItem.getState();
+                webDownloadItem.cancel()
+                this.resultEmitted = true;
+                this.downloadFallback?.handleDownloadSuccess();
+                Utils.emitEvent(flag, 130650);
               }
             })
             this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download failed Complete: ' + webDownloadItem.getGuid());
+              if (!this.resultEmitted) {
+                this.downloadFallback?.handleDownloadFailed();
+              }
             })
             this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download finish Complete: ' + webDownloadItem.getGuid());
@@ -55,18 +104,21 @@ struct WebComponent {
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
           }
-        })
-      Button('startDownload')
-        .key('002')
-        .onClick(() => {
           try {
-            this.controller.startDownload('https:' +
-              '//mirrors.huaweicloud.com/npm-software/v6.14.16.tar.gz');
+            this.resultEmitted = false;
+            this.downloadFallback = new DownloadFallbackManager(this.controller, '6.9.1', () => {
+              this.handleDownloadPassThrough('downloadFallback');
+            });
+            this.downloadFallback.startDownload();
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
         })
       Web({ src: 'www.example.com', controller: this.controller })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }

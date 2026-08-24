@@ -15,29 +15,62 @@
 
 import { webview } from '@kit.ArkWeb';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { URL } from '../../test/Config';
-import { LocalContext } from '../../test/GloablConfig';
+import Utils from '../../test/Util';
+import events_emitter from '@ohos.events.emitter';
+import JSON from '@ohos.util.json';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
-  delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
+  @State emitKey: string = '';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+
+  onPageShow(): void {
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 131470,
+      priority: events_emitter.EventPriority.LOW
+    };
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(131470);
+  }
+
+  public valueChangeCallBack = (eventData: events_emitter.EventData) => {
+    if (eventData.data != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      if (eventData.data.ACTION != null) {
+        this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
+      }
+    }
+  }
 
   build(){
     Column() {
-      Button('startDownload')
-        .key('0022')
-        .onClick(() => {
+      Button('GetPercentComplete')
+        .key('001')
+        .onClick(async () => {
+          console.info('key==>' + this.emitKey)
+          await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+          await waitForExist(() => this.isReceive, this.emitKey, 0);
+          this.isReceive = -1;
           try {
             this.controller.startDownload('123')
           } catch (error) {
-            LocalContext.context.eventHub.emit('DownloadGetPercentComplete1',
-              new webview.WebDownloadItem().getPercentComplete())
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            Utils.emitEvent(0, 131480);
           }
         })
       Web({ src: 'www.example.com', controller: this.controller })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }
