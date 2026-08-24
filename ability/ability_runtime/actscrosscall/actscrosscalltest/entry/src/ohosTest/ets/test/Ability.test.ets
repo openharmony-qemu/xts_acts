@@ -69,7 +69,9 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0100 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(() => {
         if (flag === false){
@@ -119,7 +121,9 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0200 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(() => {
         if (flag === false){
@@ -169,7 +173,9 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0300 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(() => {
         if (flag === false){
@@ -219,7 +225,9 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0400 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(() => {
         if (flag === false){
@@ -269,7 +277,9 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0500 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(() => {
         if (flag === false){
@@ -319,7 +329,9 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0600 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(() => {
         if (flag === false){
@@ -369,7 +381,9 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0700 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(() => {
         if (flag === false) {
@@ -419,7 +433,9 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0800 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(() => {
         if (flag === false) {
@@ -488,7 +504,9 @@ export default function abilityTest() {
         }).catch((err:BusinessError) => {
           console.info("====>Acts_CrossUserCall_1000 StartServiceAbility err:" + JSON.stringify(err));
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(() => {
         if (flag === false) {
@@ -557,7 +575,9 @@ export default function abilityTest() {
         }).catch((err:BusinessError) => {
           console.info("====>Acts_CrossUserCall_1200 StartServiceAbility err:  " + JSON.stringify((err.code)));
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(()=>{
         if (flag === false) {
@@ -628,7 +648,9 @@ export default function abilityTest() {
         }).catch((err:BusinessError) => {
           console.info("====>Acts_CrossUserCall_1400 StartServiceAbility err: " + JSON.stringify((err.code)));
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(()=>{
         if (flag === false) {
@@ -704,7 +726,9 @@ export default function abilityTest() {
         }).catch((err:BusinessError) => {
           console.info("====>Acts_CrossUserCall_1600 StartServiceAbility err: " + JSON.stringify((err.code)));
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(() => {
         if (flag === false) {
@@ -780,7 +804,9 @@ export default function abilityTest() {
         }).catch((err:BusinessError) => {
           console.info("====>Acts_CrossUserCall_1800 StartServiceAbility err: " + JSON.stringify((err.code)));
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(()=>{
         if (flag === false) {
@@ -855,7 +881,9 @@ export default function abilityTest() {
         }).catch((err:BusinessError) => {
           console.info("====>Acts_CrossUserCall_2000 StartServiceAbility err: " + JSON.stringify((err.code)));
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(() => {
         if (flag === false) {
@@ -913,7 +941,9 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_2900 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(() => {
         if (eventCount !== 2){
@@ -971,7 +1001,9 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_3000 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(() => {
         if (eventCount !== 2){
