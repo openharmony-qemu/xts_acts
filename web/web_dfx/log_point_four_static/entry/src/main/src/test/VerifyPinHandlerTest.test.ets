@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -56,45 +56,53 @@ export default function verifyPinHandlerTest():void {
 
     /**
     * @tc.name        testVerifyPinHandlerConstructorStatic001
-    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CONSTRUCTOR_001
+    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CONSTRUCTOR_0100
     * @tc.desc        test interface of VerifyPinHandler constructor with static call
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testVerifyPinHandlerConstructorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('emitVerifyPinHandlerConstructor', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent("testVerifyPinHandlerConstructorStatic001", true, 112200, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
-      await Utils.msSleep(6000);
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitVerifyPinHandlerConstructor', 10)
+        await Utils.msSleep(3000);
+        Utils.registerEvent("testVerifyPinHandlerConstructorStatic001", true, 112200, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
+        await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testVerifyPinHandlerInstanceTypeStatic002
-    * @tc.number      SUB_WEB_VERIFYPINHANDLER_INSTANCE_TYPE_002
+    * @tc.number      SUB_WEB_VERIFYPINHANDLER_INSTANCE_TYPE_0200
     * @tc.desc        test VerifyPinHandler constructor return value is instance of VerifyPinHandler
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testVerifyPinHandlerInstanceTypeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('emitVerifyPinHandlerInstanceType', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent("testVerifyPinHandlerInstanceTypeStatic002", true, 112220, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
-      await Utils.msSleep(6000);
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitVerifyPinHandlerInstanceType', 10)
+        await Utils.msSleep(3000);
+        Utils.registerEvent("testVerifyPinHandlerInstanceTypeStatic002", true, 112220, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
+        await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testVerifyPinHandlerConfirmSuccessStatic003
-    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CONFIRM_SUCCESS_003
+    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CONFIRM_SUCCESS_0300
     * @tc.desc        test VerifyPinHandler confirm method with PinVerifyResult.PIN_VERIFICATION_SUCCESS
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -102,19 +110,23 @@ export default function verifyPinHandlerTest():void {
     */
     //失败
     it('testVerifyPinHandlerConfirmSuccessStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('emitVerifyPinHandlerConfirmSuccess', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent("testVerifyPinHandlerConfirmSuccessStatic003", true, 112240, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
-      await Utils.msSleep(6000);
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitVerifyPinHandlerConfirmSuccess', 10)
+        await Utils.msSleep(3000);
+        Utils.registerEvent("testVerifyPinHandlerConfirmSuccessStatic003", true, 112240, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
+        await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testVerifyPinHandlerConfirmFailedStatic004
-    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CONFIRM_FAILED_004
+    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CONFIRM_FAILED_0400
     * @tc.desc        test VerifyPinHandler confirm method with PinVerifyResult.PIN_VERIFICATION_FAILED
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -122,63 +134,76 @@ export default function verifyPinHandlerTest():void {
     */
     //失败
     it('testVerifyPinHandlerConfirmFailedStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('emitVerifyPinHandlerConfirmFailed', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent("testVerifyPinHandlerConfirmFailedStatic004", true, 112260, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
-      await Utils.msSleep(6000);
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitVerifyPinHandlerConfirmFailed', 10)
+        await Utils.msSleep(3000);
+        Utils.registerEvent("testVerifyPinHandlerConfirmFailedStatic004", true, 112260, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
+        await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testVerifyPinHandlerMultipleInstancesStatic005
-    * @tc.number      SUB_WEB_VERIFYPINHANDLER_MULTIPLE_INSTANCES_005
+    * @tc.number      SUB_WEB_VERIFYPINHANDLER_MULTIPLE_INSTANCES_0500
     * @tc.desc        test VerifyPinHandler constructor creates independent instances
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testVerifyPinHandlerMultipleInstancesStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('emitVerifyPinHandlerMultipleInstances', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent("testVerifyPinHandlerMultipleInstancesStatic005", true, 112280, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
-      await Utils.msSleep(6000);
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitVerifyPinHandlerMultipleInstances', 10)
+        await Utils.msSleep(3000);
+        Utils.registerEvent("testVerifyPinHandlerMultipleInstancesStatic005", true, 112280, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
+        await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testVerifyPinHandlerPinVerifyResultSuccessValueStatic006
-    * @tc.number      SUB_WEB_VERIFYPINHANDLER_PINVERIFYRESULT_SUCCESS_006
+    * @tc.number      SUB_WEB_VERIFYPINHANDLER_PINVERIFYRESULT_SUCCESS_0600
     * @tc.desc        test PinVerifyResult.PIN_VERIFICATION_SUCCESS enum value
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testVerifyPinHandlerPinVerifyResultSuccessValueStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('emitVerifyPinHandlerPinVerifyResultSuccessValue', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent("testVerifyPinHandlerPinVerifyResultSuccessValueStatic006", 0, 112300, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
-      await Utils.msSleep(6000);
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitVerifyPinHandlerPinVerifyResultSuccessValue', 10)
+        await Utils.msSleep(3000);
+        Utils.registerEvent("testVerifyPinHandlerPinVerifyResultSuccessValueStatic006", 0, 112300, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
+        await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testVerifyPinHandlerPinVerifyResultFailedValueStatic007
-    * @tc.number      SUB_WEB_VERIFYPINHANDLER_PINVERIFYRESULT_FAILED_007
+    * @tc.number      SUB_WEB_VERIFYPINHANDLER_PINVERIFYRESULT_FAILED_0700
     * @tc.desc        test PinVerifyResult.PIN_VERIFICATION_FAILED enum value
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testVerifyPinHandlerPinVerifyResultFailedValueStatic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitVerifyPinHandlerPinVerifyResultFailedValue', 10)
       await Utils.msSleep(3000);
@@ -186,18 +211,22 @@ export default function verifyPinHandlerTest():void {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
       await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testVerifyPinHandlerClassExportTypeofStatic008
-    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CLASS_EXPORT_TYPEOF_008
+    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CLASS_EXPORT_TYPEOF_0800
     * @tc.desc        test export declare class VerifyPinHandler constructor returns object type
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testVerifyPinHandlerClassExportTypeofStatic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitVerifyPinHandlerClassExportTypeof', 10)
       await Utils.msSleep(3000);
@@ -205,18 +234,22 @@ export default function verifyPinHandlerTest():void {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
       await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testVerifyPinHandlerClassExportConfirmMethodExistsStatic009
-    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CLASS_EXPORT_CONFIRM_EXISTS_009
+    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CLASS_EXPORT_CONFIRM_EXISTS_0900
     * @tc.desc        test export declare class VerifyPinHandler instance has confirm method of type function
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testVerifyPinHandlerClassExportConfirmMethodExistsStatic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitVerifyPinHandlerClassExportConfirmMethodExists', 10)
       await Utils.msSleep(3000);
@@ -224,18 +257,22 @@ export default function verifyPinHandlerTest():void {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
       await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testVerifyPinHandlerClassExportSharedPrototypeStatic010
-    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CLASS_EXPORT_SHARED_PROTO_010
+    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CLASS_EXPORT_SHARED_PROTO_1000
     * @tc.desc        test export declare class VerifyPinHandler instances share the same confirm method
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testVerifyPinHandlerClassExportSharedPrototypeStatic010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitVerifyPinHandlerClassExportSharedPrototype', 10)
       await Utils.msSleep(3000);
@@ -243,18 +280,22 @@ export default function verifyPinHandlerTest():void {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
       await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testVerifyPinHandlerClassExportInstanceObjectStatic011
-    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CLASS_EXPORT_INSTANCE_OBJECT_011
+    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CLASS_EXPORT_INSTANCE_OBJECT_1100
     * @tc.desc        test export declare class VerifyPinHandler instance is an Object
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testVerifyPinHandlerClassExportInstanceObjectStatic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitVerifyPinHandlerClassExportInstanceObject', 10)
       await Utils.msSleep(3000);
@@ -262,12 +303,15 @@ export default function verifyPinHandlerTest():void {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
       await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testVerifyPinHandlerClassExportConfirmBothEnumsStatic012
-    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CLASS_EXPORT_CONFIRM_BOTH_ENUMS_012
+    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CLASS_EXPORT_CONFIRM_BOTH_ENUMS_1200
     * @tc.desc        test export declare class VerifyPinHandler confirm with both PinVerifyResult enum values
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -275,6 +319,7 @@ export default function verifyPinHandlerTest():void {
     */
     // 失败
     it('testVerifyPinHandlerClassExportConfirmBothEnumsStatic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitVerifyPinHandlerClassExportConfirmBothEnums', 10)
       await Utils.msSleep(3000);
@@ -282,18 +327,22 @@ export default function verifyPinHandlerTest():void {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
       await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testVerifyPinHandlerClassExportClassAccessibleStatic013
-    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CLASS_EXPORT_ACCESSIBLE_013
+    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CLASS_EXPORT_ACCESSIBLE_1300
     * @tc.desc        test export declare class VerifyPinHandler class reference is accessible and not undefined
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testVerifyPinHandlerClassExportClassAccessibleStatic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitVerifyPinHandlerClassExportClassAccessible', 10)
       await Utils.msSleep(3000);
@@ -301,18 +350,22 @@ export default function verifyPinHandlerTest():void {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
       await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
 
     /**
     * @tc.name        testVerifyPinHandlerClassExportPrototypeHasConfirmStatic014
-    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CLASS_EXPORT_PROTO_HAS_CONFIRM_014
+    * @tc.number      SUB_WEB_VERIFYPINHANDLER_CLASS_EXPORT_PROTO_HAS_CONFIRM_1400
     * @tc.desc        test export declare class VerifyPinHandler instance has confirm property via in operator
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
     it('testVerifyPinHandlerClassExportPrototypeHasConfirmStatic014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitVerifyPinHandlerClassExportPrototypeHasConfirm', 10)
       await Utils.msSleep(3000);
@@ -320,9 +373,10 @@ export default function verifyPinHandlerTest():void {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('VerifyPinHandlerTestButton', 10, '');
       await Utils.msSleep(6000);
+      } catch(err) {
+        expect().assertFail();
+      }
       done()
     })
   })
 }
-
-
