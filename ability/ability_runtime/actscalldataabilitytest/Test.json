@@ -6,7 +6,7 @@
         "shell-timeout": "600000",
         "testcase-timeout": "10000",
         "bundle-name": "ohos.acts.aafwk.test.fasupplement",
-        "package-name": "ohos.acts.aafwk.test.fasupplement_test",
+        "package-name": "ohos.acts.aafwk.test.fasupplement_test"
     },
     "kits": [
         {
