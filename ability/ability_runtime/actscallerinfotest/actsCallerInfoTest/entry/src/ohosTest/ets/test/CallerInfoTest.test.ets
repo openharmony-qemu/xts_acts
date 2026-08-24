@@ -96,7 +96,7 @@ export default function callerInfoTest() {
         expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
         expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
         expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BNtg4JBClbl92Rgc3jm/RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
         expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
       }catch{}
 
@@ -125,7 +125,7 @@ export default function callerInfoTest() {
         expect(data.parameters?.result['moduleName']).assertEqual('entry');
         expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('callerInfo01');
         expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BNtg4JBClbl92Rgc3jm/RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
         expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
       }catch{}
 
@@ -162,7 +162,7 @@ export default function callerInfoTest() {
         expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
         expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('callerInfo02');
         expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BNtg4JBClbl92Rgc3jm/RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
         expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
       }catch{}
 
@@ -218,7 +218,7 @@ export default function callerInfoTest() {
         expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
         expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
         expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BNtg4JBClbl92Rgc3jm/RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
         expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
       }catch{}
 
@@ -275,7 +275,7 @@ export default function callerInfoTest() {
         expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
         expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
         expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BNtg4JBClbl92Rgc3jm/RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
         expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
       }catch{}
 
@@ -332,7 +332,7 @@ export default function callerInfoTest() {
         expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
         expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
         expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BNtg4JBClbl92Rgc3jm/RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
         expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
       }catch{}
 
@@ -384,7 +384,7 @@ export default function callerInfoTest() {
         expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
         expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
         expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BNtg4JBClbl92Rgc3jm/RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
         expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
       }catch{}
 
