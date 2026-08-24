@@ -42,7 +42,7 @@ export default function permissionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sec_SAF_AgentFence0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async() => {
+    it('Sec_SAF_AgentFence0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
       let permissionQuery: abilityToolAccessCtrl.PermissionQuery = {
         operationInfo: [{
           operationType: abilityToolAccessCtrl.OperationType.CLI,
@@ -70,7 +70,7 @@ export default function permissionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sec_SAF_AgentFence034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async() => {
+    it('Sec_SAF_AgentFence034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
       let userAuthResult: Array<abilityToolAccessCtrl.UserAuthResult> = [{
         permissionInfo: [{
           permission: 'ohos.permission.CAMERA',
