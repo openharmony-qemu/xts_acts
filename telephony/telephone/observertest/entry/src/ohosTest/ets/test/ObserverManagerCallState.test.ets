@@ -53,9 +53,9 @@ export default function observerManagerCallStateTest() {
         // Indicates that there is no call in progress
         let hasSim: boolean = await sim.hasSimCard(0);
         if (hasSim) {
-          class Value {
-            state: call.CallState = call.CallState.CALL_STATE_UNKNOWN
-            number: string = ""
+          interface Value {
+            state: call.CallState;
+            number: string;
           };
           observer.on('callStateChange', (value: Value) => {
             console.info(`${caseName} data ${JSON.stringify(value)}}`);
@@ -91,9 +91,9 @@ export default function observerManagerCallStateTest() {
         // Indicates that there is no call in progress
         let hasSim: boolean = await sim.hasSimCard(0);
         if (hasSim) {
-          class Value {
-            state: call.CallState = call.CallState.CALL_STATE_UNKNOWN
-            number: string = ""
+          interface Value {
+            state: call.CallState;
+            number: string;
           };
           let callback: (value: Value) => void = (value: Value) => {
             console.info(`${caseName} data ${JSON.stringify(value)}}`);
@@ -130,9 +130,9 @@ export default function observerManagerCallStateTest() {
         // Indicates that there is no call in progress
         let hasSim: boolean = await sim.hasSimCard(0);
         if (hasSim) {
-          class Value {
-            state: call.CallState = call.CallState.CALL_STATE_UNKNOWN
-            number: string = ""
+          interface Value {
+            state: call.CallState;
+            number: string;
           };
           let callback: (value: Value) => void = (value: Value) => {
             console.info(`${caseName} data ${JSON.stringify(value)}}`);
@@ -245,9 +245,9 @@ export default function observerManagerCallStateTest() {
         // Indicates that there is no call in progress
         let hasSim: boolean = await sim.hasSimCard(0);
         if (hasSim) {
-          class Value {
-            state: call.CallState = call.CallState.CALL_STATE_UNKNOWN
-            number: string = ""
+          interface Value {
+            state: call.CallState;
+            number: string;
           };
           observer.on('callStateChange', (value: Value) => {
             console.info(`${caseName} data ${JSON.stringify(value)}}`);
@@ -283,9 +283,9 @@ export default function observerManagerCallStateTest() {
         // Indicates that there is no call in progress
         let hasSim: boolean = await sim.hasSimCard(0);
         if (hasSim) {
-          class Value {
-            state: call.CallState = call.CallState.CALL_STATE_UNKNOWN
-            number: string = ""
+          interface Value {
+            state: call.CallState;
+            number: string;
           };
           observer.on('callStateChange', (value: Value) => {
             console.info(`${caseName} data ${JSON.stringify(value)}}`);

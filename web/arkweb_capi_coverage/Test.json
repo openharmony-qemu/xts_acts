@@ -5,7 +5,7 @@
     "test-timeout": "600000",
     "shell-timeout": "600000",
     "bundle-name": "com.acts.weberrorcode",
-    "module-name": "entry_test",
+    "module-name": "entry",
     "testcase-timeout": "70000"
   },
   "kits": [

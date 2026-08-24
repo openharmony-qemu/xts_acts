@@ -83,9 +83,9 @@ let pathWifi = path1_2 + '/WifiReport.txt';
 let pathBluetooth = path1_3 + '/BluetoothReport.txt';
 let pathPCS = path1_4 + '/PCSReport.txt';
 
-class TestCase {
-  title: string = '';
-  uri: string = '';
+interface TestCase {
+  title: string;
+  uri: string;
 }
 
 @Entry
