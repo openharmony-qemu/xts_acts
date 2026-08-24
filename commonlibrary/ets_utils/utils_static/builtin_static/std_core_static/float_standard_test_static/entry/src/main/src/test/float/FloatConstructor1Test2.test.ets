@@ -1193,11 +1193,11 @@ export default function FloatConstructor1Test2(): void {
      */
     it('testFloatConstructorNoparam083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = new Float()
-        .add(new Float(1.0f))
-        .add(new Float(2.0f))
-        .add(new Float(4.0f))
-        .add(new Float(8.0f))
-        .toFloat();
+      .add(new Float(1.0f))
+      .add(new Float(2.0f))
+      .add(new Float(4.0f))
+      .add(new Float(8.0f))
+      .toFloat();
       expect(result).assertEqual(15.0f);
     });
 

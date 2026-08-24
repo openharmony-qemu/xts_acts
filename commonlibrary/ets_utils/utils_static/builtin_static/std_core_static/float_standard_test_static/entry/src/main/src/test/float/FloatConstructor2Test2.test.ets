@@ -372,8 +372,8 @@ export default function FloatConstructor2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatConstructorFloat024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        try {
-          const methodFunc: Object = new Object();
+      try {
+        const methodFunc: Object = new Object();
         const objFunc: Object = methodFunc as Object;
         new Float('😀' as Object as float);
         expect().assertFail();
@@ -390,7 +390,7 @@ export default function FloatConstructor2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatConstructorFloat025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const longStr: string = 'x'.repeat(65535);
+      const longStr: string = 'x'.repeat(65535);
       try {
         const methodFunc: Object = new Object();
         const objFunc: Object = methodFunc as Object;
@@ -410,7 +410,7 @@ export default function FloatConstructor2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatConstructorFloat026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: int[] = [];
+      let arr: int[] = [];
       try {
         const methodFunc: Object = new Object();
         const objFunc: Object = methodFunc as Object;
@@ -430,7 +430,7 @@ export default function FloatConstructor2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatConstructorFloat027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Object[] = [1, 'test', true];
+      let arr: Object[] = [1, 'test', true];
       try {
         const methodFunc: Object = new Object();
         const objFunc: Object = methodFunc as Object;
@@ -450,7 +450,7 @@ export default function FloatConstructor2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatConstructorFloat028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let matrix: int[][] = [];
+      let matrix: int[][] = [];
       try {
         const methodFunc: Object = new Object();
         const objFunc: Object = methodFunc as Object;
@@ -470,7 +470,7 @@ export default function FloatConstructor2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatConstructorFloat029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const list: Array<string> = new Array<string>('a', 'b');
+      const list: Array<string> = new Array<string>('a', 'b');
       try {
         const methodFunc: Object = new Object();
         const objFunc: Object = methodFunc as Object;
@@ -490,8 +490,8 @@ export default function FloatConstructor2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatConstructorFloat030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        try {
-          const methodFunc: Object = new Object();
+      try {
+        const methodFunc: Object = new Object();
         const objFunc: Object = methodFunc as Object;
         new Float(123n as Object as float);
         expect().assertFail();
@@ -599,7 +599,7 @@ export default function FloatConstructor2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatConstructorFloat036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const rec: Record<string, number> = {'key': 1};
+      const rec: Record<string, number> = {'key': 1};
       try {
         new Float(rec as Object as float);
         expect().assertFail();
@@ -617,7 +617,7 @@ export default function FloatConstructor2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatConstructorFloat037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const keyObj: Object = new Object();
+      const keyObj: Object = new Object();
       const wm: WeakMap<Object, int> = new WeakMap<Object, int>();
       wm.set(keyObj, 1);
       try {
@@ -637,7 +637,7 @@ export default function FloatConstructor2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatConstructorFloat038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const wsObj: Object = new Object();
+      const wsObj: Object = new Object();
       const ws: WeakSet<Object> = new WeakSet<Object>();
       ws.add(wsObj);
       try {
