@@ -23,6 +23,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '../../../hypium/index';
 import testsuite from '../../src/test/List.test';
 import Utils from '../../src/test/Util.test';
+import { waitForAssert } from '../../src/test/WaitTest.test';
 import image from '@ohos.multimedia.image';
 import emitter from '@ohos.events.emitter';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -43,6 +44,8 @@ struct webConfigCookieCharacter {
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
+  private cookieCheck = (v1: string, v2: string): boolean => v1 === v2;
+
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
@@ -61,11 +64,7 @@ struct webConfigCookieCharacter {
         Button('ConfigCookie click').key('webConfigCookieCharacterButton').onClick((e:ClickEvent) => {
           this.isReceive = -1;
           console.info('key==>' + this.str);
-          webView.WebCookieManager.clearAllCookies((error) => {
-            if (error) {
-              console.log(this.str + 'clearAllCookies error: ' + JSON.stringify(error));
-            }
-          })
+          webView.WebCookieManager.clearAllCookiesSync(false);
           switch (this.str) {
             case 'emitConfigCookieCharacter001': {
               try {
@@ -119,11 +118,15 @@ struct webConfigCookieCharacter {
             case 'emitConfigCookieCharacter003': {
               try {
                 webView.WebCookieManager.configCookie("https://www.baidu.com", 'a=b\rc')
-                  .then(() => {
+                  .then(async () => {
                     console.log('configCookie success!');
-                    let value = webView.WebCookieManager.fetchCookieSync("https://www.baidu.com");
-                    console.log(this.str + 'fetchCookieSync cookie = ' + value);
-                    Utils.emitEvent(value,133480);
+                    await waitForAssert(
+                      () => webView.WebCookieManager.fetchCookieSync("https://www.baidu.com"),
+                      this.cookieCheck,
+                      'a=b',
+                      133480,
+                      this.str
+                    );
                   })
                   .catch((error) => {
                     console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
@@ -142,11 +145,15 @@ struct webConfigCookieCharacter {
             case 'emitConfigCookieCharacter004': {
               try {
                 webView.WebCookieManager.configCookie("https://www.baidu.com", 'a=b\0c')
-                  .then(() => {
+                  .then(async () => {
                     console.log('configCookie success!');
-                    let value = webView.WebCookieManager.fetchCookieSync("https://www.baidu.com");
-                    console.log(this.str + 'fetchCookieSync cookie = ' + value);
-                    Utils.emitEvent(value,133490);
+                    await waitForAssert(
+                      () => webView.WebCookieManager.fetchCookieSync("https://www.baidu.com"),
+                      this.cookieCheck,
+                      'a=b',
+                      133490,
+                      this.str
+                    );
                   })
                   .catch((error) => {
                     console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
@@ -214,11 +221,15 @@ struct webConfigCookieCharacter {
             case 'emitConfigCookieIncludeHttpOnlyCharacter003': {
               try {
                 webView.WebCookieManager.configCookie("https://www.baidu.com", 'a=b,HttpOnly\rc', false, true)
-                  .then(() => {
+                  .then(async () => {
                     console.log('configCookie success!');
-                    let value = webView.WebCookieManager.fetchCookieSync("https://www.baidu.com");
-                    console.log(this.str + 'fetchCookieSync cookie = ' + value);
-                    Utils.emitEvent(value,133520);
+                    await waitForAssert(
+                      () => webView.WebCookieManager.fetchCookieSync("https://www.baidu.com"),
+                      this.cookieCheck,
+                      'a=b,HttpOnly',
+                      133520,
+                      this.str
+                    );
                   })
                   .catch((error) => {
                     console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
@@ -237,11 +248,15 @@ struct webConfigCookieCharacter {
             case 'emitConfigCookieIncludeHttpOnlyCharacter004': {
               try {
                 webView.WebCookieManager.configCookie("https://www.baidu.com", 'a=b,HttpOnly\0c', false, true)
-                  .then(() => {
+                  .then(async () => {
                     console.log('configCookie success!');
-                    let value = webView.WebCookieManager.fetchCookieSync("https://www.baidu.com");
-                    console.log(this.str + 'fetchCookieSync cookie = ' + value);
-                    Utils.emitEvent(value,133530);
+                    await waitForAssert(
+                      () => webView.WebCookieManager.fetchCookieSync("https://www.baidu.com"),
+                      this.cookieCheck,
+                      'a=b,HttpOnly',
+                      133530,
+                      this.str
+                    );
                   })
                   .catch((error) => {
                     console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
@@ -287,11 +302,15 @@ struct webConfigCookieCharacter {
             case 'emitConfigCookieIncognitoCharacter001': {
               try {
                 webView.WebCookieManager.configCookie("https://www.baidu.com", 'a=b\nc', true, false)
-                  .then(() => {
+                  .then(async () => {
                     console.log('configCookie success!');
-                    let value = webView.WebCookieManager.fetchCookieSync("https://www.baidu.com", true);
-                    console.log(this.str + 'fetchCookieSync cookie = ' + value);
-                    Utils.emitEvent(value,133550);
+                    await waitForAssert(
+                      () => webView.WebCookieManager.fetchCookieSync("https://www.baidu.com", true),
+                      this.cookieCheck,
+                      'a=b',
+                      133550,
+                      this.str
+                    );
                   })
                   .catch((error) => {
                     console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
@@ -310,11 +329,15 @@ struct webConfigCookieCharacter {
             case 'emitConfigCookieIncognitoIncludeHttpOnlyCharacter001': {
               try {
                 webView.WebCookieManager.configCookie("https://www.baidu.com", 'a=b,HttpOnly\nc', true, true)
-                  .then(() => {
+                  .then(async () => {
                     console.log('configCookie success!');
-                    let value = webView.WebCookieManager.fetchCookieSync("https://www.baidu.com", true);
-                    console.log(this.str + 'fetchCookieSync cookie = ' + value);
-                    Utils.emitEvent(value,133560);
+                    await waitForAssert(
+                      () => webView.WebCookieManager.fetchCookieSync("https://www.baidu.com", true),
+                      this.cookieCheck,
+                      'a=b,HttpOnly',
+                      133560,
+                      this.str
+                    );
                   })
                   .catch((error) => {
                     console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
