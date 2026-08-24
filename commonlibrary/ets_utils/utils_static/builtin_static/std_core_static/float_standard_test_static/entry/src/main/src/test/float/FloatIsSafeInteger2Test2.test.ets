@@ -238,13 +238,13 @@ export default function FloatIsSafeInteger2Test2(): void {
      */
     it('testFloatIsSafeIntegerInstance014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const testCases = [
-        10.0f,
-        100.0f,
-        1000.0f,
-        10000.0f,
-        100000.0f,
-        1000000.0f,
-        10000000.0f
+      10.0f,
+      100.0f,
+      1000.0f,
+      10000.0f,
+      100000.0f,
+      1000000.0f,
+      10000000.0f
       ];
 
       for (const val of testCases) {
@@ -433,10 +433,10 @@ export default function FloatIsSafeInteger2Test2(): void {
      */
     it('testFloatIsSafeIntegerInstance027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const testCases = [
-        4.0f, 8.0f, 16.0f, 32.0f, 64.0f, 128.0f,
-        256.0f, 512.0f, 1024.0f, 2048.0f, 4096.0f, 8192.0f,
-        16384.0f, 32768.0f, 65536.0f, 131072.0f, 262144.0f, 524288.0f,
-        1048576.0f, 2097152.0f, 4194304.0f, 8388608.0f
+      4.0f, 8.0f, 16.0f, 32.0f, 64.0f, 128.0f,
+      256.0f, 512.0f, 1024.0f, 2048.0f, 4096.0f, 8192.0f,
+      16384.0f, 32768.0f, 65536.0f, 131072.0f, 262144.0f, 524288.0f,
+      1048576.0f, 2097152.0f, 4194304.0f, 8388608.0f
       ];
 
       for (const val of testCases) {

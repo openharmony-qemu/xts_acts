@@ -281,7 +281,7 @@ export default function FloatIsSafeInteger1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatIsSafeIntegerStatic017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const longStr: string = 'x'.repeat(65535);
+      const longStr: string = 'x'.repeat(65535);
       try {
         Float.isSafeInteger(longStr as Object as float);
         expect().assertFail();
@@ -299,7 +299,7 @@ export default function FloatIsSafeInteger1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatIsSafeIntegerStatic018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: int[] = [];
+      let arr: int[] = [];
       try {
         Float.isSafeInteger(arr as Object as float);
         expect().assertFail();
@@ -317,7 +317,7 @@ export default function FloatIsSafeInteger1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatIsSafeIntegerStatic019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Object[] = [1, 'test', true];
+      let arr: Object[] = [1, 'test', true];
       try {
         Float.isSafeInteger(arr as Object as float);
         expect().assertFail();
@@ -335,7 +335,7 @@ export default function FloatIsSafeInteger1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatIsSafeIntegerStatic020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let matrix: int[][] = [];
+      let matrix: int[][] = [];
       try {
         Float.isSafeInteger(matrix as Object as float);
         expect().assertFail();
@@ -353,7 +353,7 @@ export default function FloatIsSafeInteger1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatIsSafeIntegerStatic021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const list: Array<string> = new Array<string>('a', 'b');
+      const list: Array<string> = new Array<string>('a', 'b');
       try {
         Float.isSafeInteger(list as Object as float);
         expect().assertFail();
@@ -442,7 +442,7 @@ export default function FloatIsSafeInteger1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatIsSafeIntegerStatic027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const jsonData: JsonData = new JsonData();
+      const jsonData: JsonData = new JsonData();
       jsonData.key = 123;
       try {
         Float.isSafeInteger(jsonData as Object as float);
@@ -574,12 +574,12 @@ export default function FloatIsSafeInteger1Test2(): void {
      */
     it('testFloatIsSafeIntegerStatic034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const testCases = [
-        100.0f,
-        1000.0f,
-        10000.0f,
-        100000.0f,
-        1000000.0f,
-        10000000.0f
+      100.0f,
+      1000.0f,
+      10000.0f,
+      100000.0f,
+      1000000.0f,
+      10000000.0f
       ];
 
       for (const val of testCases) {
@@ -625,10 +625,10 @@ export default function FloatIsSafeInteger1Test2(): void {
      */
     it('testFloatIsSafeIntegerStatic037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const testValues: float[] = [
-        4.0f, 8.0f, 16.0f, 32.0f, 64.0f, 128.0f,
-        256.0f, 512.0f, 1024.0f, 2048.0f, 4096.0f, 8192.0f,
-        16384.0f, 32768.0f, 65536.0f, 131072.0f, 262144.0f, 524288.0f,
-        1048576.0f, 2097152.0f, 4194304.0f, 8388608.0f
+      4.0f, 8.0f, 16.0f, 32.0f, 64.0f, 128.0f,
+      256.0f, 512.0f, 1024.0f, 2048.0f, 4096.0f, 8192.0f,
+      16384.0f, 32768.0f, 65536.0f, 131072.0f, 262144.0f, 524288.0f,
+      1048576.0f, 2097152.0f, 4194304.0f, 8388608.0f
       ];
 
       for (const val of testValues) {
@@ -731,9 +731,9 @@ export default function FloatIsSafeInteger1Test2(): void {
      */
     it('testFloatIsSafeIntegerStatic044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const testCases: SafeIntegerTestCase[] = [
-        { input: 1.0e3f, expectSafe: true },
-        { input: 1.0e7f, expectSafe: true },
-        { input: -1.0e7f, expectSafe: true }
+      { input: 1.0e3f, expectSafe: true },
+      { input: 1.0e7f, expectSafe: true },
+      { input: -1.0e7f, expectSafe: true }
       ];
 
       for (const item of testCases) {
