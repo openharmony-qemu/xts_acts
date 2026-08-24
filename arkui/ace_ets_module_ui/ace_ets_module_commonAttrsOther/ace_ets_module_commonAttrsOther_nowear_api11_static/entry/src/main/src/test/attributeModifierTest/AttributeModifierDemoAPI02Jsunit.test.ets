@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -31,17 +31,10 @@ import { Callback, MessageManager } from '../../../ets/MainAbility/common/Messag
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function AttributeModifierDemoAPI02Jsunit() {
   describe('AttributeModifierDemoAPI02Jsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("AttributeModifierDemoAPI02Jsunit beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.nowear.api11.static", "EntryAbility")
-
-    });
     beforeEach(async (): Promise<void> => {
       console.info("AttributeModifierDemoAPI02Jsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -80,7 +73,7 @@ it('AttributeModifierDemoAPI02Jsunit_static_0100', Level.LEVEL0, async (done: ()
       await CommonFunc.sleep(5000);
 
       let strcontent = inspector.getInspectorByKey('AttributeModifierDemoAPI02ButtonFocus');
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strcontent);
       console.info('AttributeModifierDemoAPI02Jsunit_static_0100 component obj.backgroundColor is: ' +
       obj.getElement('$attrs').getString('backgroundColor'));

@@ -14,24 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { BusinessError } from '@ohos.base';
-import {UtilsTest} from '../Util.test'
 
 export default function SwipeGestureHandlerAllowedTypesTest() {
   describe('SwipeGestureHandlerAllowedTypesTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-
-      await UtilsTest.startAbility("com.open.harmony.nowearevent.static", "EntryAbility")
-
-    });
     beforeEach(async (): Promise<void> => {
         let options: router.RouterOptions = {
         url: 'MainAbility/pages/GestureHandlerAllowedTypes/SwipeGestureHandlerAllowedTypes',
@@ -55,7 +47,11 @@ export default function SwipeGestureHandlerAllowedTypesTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error("SwipeGestureHandlerAllowedTypesTest after each error: " + err);
+      }
       console.info("SwipeGestureHandlerAllowedTypesTest after each called");
     });
 
@@ -69,7 +65,7 @@ export default function SwipeGestureHandlerAllowedTypesTest() {
      */
 it('SwipeGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SwipeGestureHandlerAllowedTypesTest_static_0010 START');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       let windowOffsetX:number = AppStorage.get<number>("winLeft") as number;
       let windowOffsetY:number = AppStorage.get<number>("winTop") as number;
       console.log('SwipeGestureHandlerAllowedTypesTest_static_0010 windowOffsetX and windowOffsetY',windowOffsetX, windowOffsetY)
@@ -83,7 +79,7 @@ it('SwipeGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done:
       // trigger gesture with finger
       let driver = Driver.create();
       let speed = (Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000).toInt()
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(), speed)
       await CommonFunc.sleep(200);
       let text1 = inspector.getInspectorByKey('SwipeGestureHandlerAllowedTypes_result');
@@ -101,7 +97,7 @@ it('SwipeGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done:
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // trigger gesture again with finger
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(), speed)
       await CommonFunc.sleep(200);
       let text3 = inspector.getInspectorByKey('SwipeGestureHandlerAllowedTypes_result');
@@ -119,7 +115,7 @@ it('SwipeGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done:
       expect(obj4.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // trigger gesture again with finger
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(), speed)
       await CommonFunc.sleep(200);
       let text5 = inspector.getInspectorByKey('SwipeGestureHandlerAllowedTypes_result');
@@ -128,7 +124,7 @@ it('SwipeGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done:
       expect(obj5.getElement('$attrs').getString('content')).assertEqual('allowed types success');
 
       // change types to invalid types
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       let button3 = await driver.findComponent(ON.id('Invalid_type'));
       await (button3?.click() as Promise<void>);
       await CommonFunc.sleep(200);

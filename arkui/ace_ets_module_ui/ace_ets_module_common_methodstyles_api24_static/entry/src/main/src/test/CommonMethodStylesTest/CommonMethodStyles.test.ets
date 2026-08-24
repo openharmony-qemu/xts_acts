@@ -14,19 +14,14 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll } from '../../../../hypium/index';
+import { describe, it, expect, Level } from '../../../../hypium/index';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
 
 export default function CommonMethodStylesTest(): void {
   describe('CommonMethodStylesTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.commonMethodStyles.api24.static', 'EntryAbility');
-    });
-
     const openCommonMethodProbe = async (): Promise<void> => {
       let ro: router.RouterOptions = { url: 'MainAbility/pages/CommonMethodApiProbe/CommonMethodApiProbe' };
       let r = AppStorage.get<Router>('router') as Router;

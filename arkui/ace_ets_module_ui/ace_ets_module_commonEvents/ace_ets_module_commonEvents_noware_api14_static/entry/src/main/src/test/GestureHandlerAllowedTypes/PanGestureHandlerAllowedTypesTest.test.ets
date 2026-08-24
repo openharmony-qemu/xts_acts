@@ -14,24 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON, Point } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { BusinessError } from '@ohos.base';
-import {UtilsTest} from '../Util.test'
 
 export default function PanGestureHandlerAllowedTypesTest() {
   describe('PanGestureHandlerAllowedTypesTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-
-      await UtilsTest.startAbility("com.open.harmony.nowearevent.static", "EntryAbility")
-
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/GestureHandlerAllowedTypes/PanGestureHandlerAllowedTypes',
@@ -55,7 +47,11 @@ export default function PanGestureHandlerAllowedTypesTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error("PanGestureHandlerAllowedTypesTest after each error: " + err);
+      }
       console.info("PanGestureHandlerAllowedTypesTest after each called");
     });
 
@@ -69,7 +65,7 @@ export default function PanGestureHandlerAllowedTypesTest() {
      */
 it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PanGestureHandlerAllowedTypesTest_static_0010 START');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       let windowOffsetX:number = AppStorage.get<number>("winLeft") as number;
       let windowOffsetY:number = AppStorage.get<number>("winTop") as number;
       console.log('PanGestureHandlerAllowedTypesTest_static_0010 windowOffsetX and windowOffsetY',windowOffsetX, windowOffsetY)
@@ -82,20 +78,20 @@ it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: (
 
       // trigger gesture with finger
       let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt())
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
       let text1 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
       let obj1 = JSON.parseJsonElement(text1);
       console.log('PanGestureHandlerAllowedTypesTest_static_0010 obj1 $attrs content',obj1.getElement('$attrs').getString('content'),obj1)
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('allowed types success');
 
       // trigger gesture with mouse
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       console.log('1111----willmouseDrag')
       await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point)
       console.log('1111----didmouseDrag')
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
       let text2 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
       let obj2 = JSON.parseJsonElement(text2);
       console.log('PanGestureHandlerAllowedTypesTest_static_0010 obj2 $attrs content',obj2.getElement('$attrs').getString('content'),obj2)
@@ -106,7 +102,7 @@ it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: (
       let button1 = await driver.findComponent(ON.id('Mouse_Type'));
   console.log('1111----' + button1)
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
   console.log('1111----')
       let text3 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
   console.log('1111----' + text3)
@@ -115,18 +111,18 @@ it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: (
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // trigger gesture again with finger
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt())
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
       let text4 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
       let obj4 = JSON.parseJsonElement(text4);
       console.log('PanGestureHandlerAllowedTypesTest_static_0010 obj4 $attrs content',obj4.getElement('$attrs').getString('content'),obj4)
       expect(obj4.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // trigger gesture again with mouse
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point)
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
       let text5 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
       let obj5 = JSON.parseJsonElement(text5);
       console.log('PanGestureHandlerAllowedTypesTest_static_0010 obj5 $attrs content',obj5.getElement('$attrs').getString('content'),obj5)
@@ -135,35 +131,35 @@ it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: (
       // click button to change types to [SourceTool.Finger]
       let button2 = await driver.findComponent(ON.id('Finger_Type'));
       await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
       let text6 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
       let obj6 = JSON.parseJsonElement(text6);
       console.log('PanGestureHandlerAllowedTypesTest_static_0010 obj6 $attrs content',obj6.getElement('$attrs').getString('content'),obj6)
       expect(obj6.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // trigger gesture again with mouse
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point)
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
       let text7 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
       let obj7 = JSON.parseJsonElement(text7);
       console.log('PanGestureHandlerAllowedTypesTest_static_0010 obj7 $attrs content',obj7.getElement('$attrs').getString('content'),obj7)
       expect(obj7.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // trigger gesture again with finger
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt())
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
       let text8 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
       let obj8 = JSON.parseJsonElement(text8);
       console.log('PanGestureHandlerAllowedTypesTest_static_0010 obj8 $attrs content',obj8.getElement('$attrs').getString('content'),obj8)
       expect(obj8.getElement('$attrs').getString('content')).assertEqual('allowed types success');
 
       // change types to invalid types
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       let button3 = await driver.findComponent(ON.id('Invalid_type'));
       await (button3?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
       let text9 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
       let obj9 = JSON.parseJsonElement(text9);
       console.log('PanGestureHandlerAllowedTypesTest_static_0010 obj9 $attrs content',obj9.getElement('$attrs').getString('content'),obj9)

@@ -13,25 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
+
 import { Driver, ON } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { BusinessError } from '@ohos.base';
+
 import inspector from '@ohos.arkui.inspector';
 
 export default function shouldRecognizerParallelWith_undefined(): void{
   describe('shouldRecognizerParallelWith_undefined', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api24.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("==============================");
@@ -54,8 +48,12 @@ export default function shouldRecognizerParallelWith_undefined(): void{
     });
 
     afterEach(async (): Promise<void> => {
+      try {
       await CommonFunc.sleep(1000);
       console.info('getCurrentLocalPosition after each called');
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+      }
     });
 
     /**
@@ -67,6 +65,7 @@ export default function shouldRecognizerParallelWith_undefined(): void{
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_undefined_0100', Level.LEVEL0, async (): Promise<void> => {
+      try {
       console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_undefined_0100] START');
       await CommonFunc.sleep(1000);
 
@@ -96,6 +95,10 @@ export default function shouldRecognizerParallelWith_undefined(): void{
 
       await CommonFunc.sleep(1000);
       console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_undefined_0100] END');
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      }
     });
   })
 }

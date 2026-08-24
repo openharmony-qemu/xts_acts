@@ -14,27 +14,28 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, Level, beforeEach } from '../../../../hypium/index';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
-import { UtilsTest } from '../Util.test';
+
 import { Driver, ON } from '@kit.TestKit';
 
 export default function CommonKeyEventTest(): void {
   describe('CommonKeyEventTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.commonEvents.api24.static', 'EntryAbility');
-    });
 
     beforeEach(async (): Promise<void> => {
+      try {
       let r = await waitForMainRouterForStaticTest();
       expect(r !== undefined && r !== null).assertTrue();
       let ro: router.RouterOptions = { url: 'MainAbility/pages/CommonKeyEventProbe/CommonKeyEventProbe' };
       r!.clear();
       await r!.replaceUrl(ro);
       await Utils.sleep(600);
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+      }
     });
 
     const focusInputAndCommitText = async (): Promise<void> => {
@@ -64,11 +65,17 @@ export default function CommonKeyEventTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Common_KeyEvent_IsNumLockOn_2900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       await focusInputAndCommitText();
       expect(AppStorage.get<string>('ke_any')).assertEqual('1');
       let n = AppStorage.get<string>('ke_numlock');
       expect(n === '0' || n === '1').assertTrue();
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -80,12 +87,18 @@ export default function CommonKeyEventTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Common_KeyEvent_IsCapsLockOn_3000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       await focusInputAndCommitText();
       expect(AppStorage.get<string>('ke_any')).assertEqual('1');
       let c = AppStorage.get<string>('ke_capslock');
       let capsOk: boolean = c === '0' || c === '1';
       expect(capsOk).assertTrue();
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -97,12 +110,18 @@ export default function CommonKeyEventTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Common_KeyEvent_IsScrollLockOn_3100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       await focusInputAndCommitText();
       expect(AppStorage.get<string>('ke_any')).assertEqual('1');
       let s = AppStorage.get<string>('ke_scrolllock');
       let scrollOk: boolean = s === '0' || s === '1';
       expect(scrollOk).assertTrue();
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
   });
 }

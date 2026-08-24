@@ -16,7 +16,6 @@
 import {
   afterAll,
   afterEach,
-  beforeAll,
   beforeEach,
   describe,
   expect,
@@ -31,25 +30,9 @@ import { Driver, ON } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function nextFocus() {
   describe('Button', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      
-      await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi18.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/nextFocus/nextFocus',
@@ -82,6 +65,7 @@ export default function nextFocus() {
      * @tc.level    Level.LEVEL0
      */
 it('Button_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('[Button_static_0100] START');
       let driver: Driver = Driver.create();
       await driver.triggerKey(2049);
@@ -96,6 +80,10 @@ it('Button_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> =
       expect(obj.getElement('$attrs').getString('label')).assertEqual('suc');
 
       console.info('[Button_static_0100] END');
+      } catch (err) {
+        console.error('[Button_static_0100] error: ' + err);
+        expect().assertFail();
+      }
       done();
     });
   })
