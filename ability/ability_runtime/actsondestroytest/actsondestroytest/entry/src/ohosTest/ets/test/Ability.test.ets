@@ -105,7 +105,9 @@ export default function abilityTest() {
           console.error('waitForComponent error' + JSON.stringify(err));
           done();
         }
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
     })
 
@@ -175,7 +177,9 @@ export default function abilityTest() {
           console.error('waitForComponent error' + JSON.stringify(err));
           done();
         }
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -240,7 +244,9 @@ export default function abilityTest() {
           console.error('waitForComponent error' + JSON.stringify(err));
           done();
         }
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -308,7 +314,9 @@ export default function abilityTest() {
           console.error('waitForComponent error' + JSON.stringify(err));
           done();
         }
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -383,7 +391,9 @@ export default function abilityTest() {
           console.error('waitForComponent error' + JSON.stringify(err));
           done();
         }
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
   })
 }
