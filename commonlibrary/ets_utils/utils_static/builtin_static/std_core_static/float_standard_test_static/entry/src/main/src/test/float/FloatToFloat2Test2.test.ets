@@ -196,7 +196,7 @@ export default function FloatToFloat2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToFloat011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const longStr: string = 'x'.repeat(65535);
+      const longStr: string = 'x'.repeat(65535);
       try {
         Float.toFloat(longStr as Object as float);
         expect().assertFail();
@@ -214,7 +214,7 @@ export default function FloatToFloat2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToFloat012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: int[] = [];
+      let arr: int[] = [];
       try {
         Float.toFloat(arr as Object as float);
         expect().assertFail();
@@ -232,7 +232,7 @@ export default function FloatToFloat2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToFloat013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Object[] = [1, 'test', true];
+      let arr: Object[] = [1, 'test', true];
       try {
         Float.toFloat(arr as Object as float);
         expect().assertFail();
@@ -250,7 +250,7 @@ export default function FloatToFloat2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToFloat014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let matrix: int[][] = [];
+      let matrix: int[][] = [];
       try {
         Float.toFloat(matrix as Object as float);
         expect().assertFail();
@@ -268,7 +268,7 @@ export default function FloatToFloat2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToFloat015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const list: Array<string> = new Array<string>('a', 'b');
+      const list: Array<string> = new Array<string>('a', 'b');
       try {
         Float.toFloat(list as Object as float);
         expect().assertFail();
@@ -303,7 +303,7 @@ export default function FloatToFloat2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToFloat017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const jsonData: JsonData = new JsonData();
+      const jsonData: JsonData = new JsonData();
       jsonData.key = 123;
       try {
         Float.toFloat(jsonData as Object as float);
