@@ -211,7 +211,7 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const longStr: string = 'x'.repeat(65535);
+      const longStr: string = 'x'.repeat(65535);
       try {
         Float.bitCastToInt(longStr as Object as float);
         expect().assertFail();
@@ -229,7 +229,7 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: int[] = [];
+      let arr: int[] = [];
       try {
         Float.bitCastToInt(arr as Object as float);
         expect().assertFail();
@@ -247,7 +247,7 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Object[] = [1, 'test', true];
+      let arr: Object[] = [1, 'test', true];
       try {
         Float.bitCastToInt(arr as Object as float);
         expect().assertFail();
@@ -265,7 +265,7 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let matrix: int[][] = [];
+      let matrix: int[][] = [];
       try {
         Float.bitCastToInt(matrix as Object as float);
         expect().assertFail();
@@ -283,7 +283,7 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const list: Array<string> = new Array<string>('a', 'b');
+      const list: Array<string> = new Array<string>('a', 'b');
       try {
         Float.bitCastToInt(list as Object as float);
         expect().assertFail();
@@ -301,8 +301,8 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        try {
-          const bigIntVal: bigint = 123n;
+      try {
+        const bigIntVal: bigint = 123n;
         Float.bitCastToInt(bigIntVal as Object as float);
         expect().assertFail();
       } catch (error) {
@@ -450,7 +450,7 @@ export default function FloatBitCastToIntTest2(): void {
      */
     it('testFloatBitCastToInt024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const bits1: int = Float.bitCastToInt(10.0f);
-        expect(bits1).assertEqual(0x41200000);
+      expect(bits1).assertEqual(0x41200000);
       const bits2: int = Float.bitCastToInt(100.0f);
       expect(bits2).assertEqual(0x42c80000);
       const bits3: int = Float.bitCastToInt(1000.0f);
@@ -468,9 +468,9 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const val: float = Float.MIN_VALUE * 2.0f;
-        const bits: int = Float.bitCastToInt(val);
-        expect(bits).assertEqual(0x00000002);
+      const val: float = Float.MIN_VALUE * 2.0f;
+      const bits: int = Float.bitCastToInt(val);
+      expect(bits).assertEqual(0x00000002);
     });
 
     /**
@@ -482,8 +482,8 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const bits: int = Float.bitCastToInt(-Float.MIN_VALUE);
-        expect(bits).assertEqual(-2147483647);
+      const bits: int = Float.bitCastToInt(-Float.MIN_VALUE);
+      expect(bits).assertEqual(-2147483647);
     });
 
     /**
@@ -495,10 +495,10 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const original: int = 0x3f800000;
-        const f: float = Float.bitCastFromInt(original);
-        const back: int = Float.bitCastToInt(f);
-        expect(back).assertEqual(original);
+      const original: int = 0x3f800000;
+      const f: float = Float.bitCastFromInt(original);
+      const back: int = Float.bitCastToInt(f);
+      expect(back).assertEqual(original);
     });
 
     /**
@@ -510,9 +510,9 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const bits1: int = Float.bitCastToInt(123.456f);
-        const bits2: int = Float.bitCastToInt(123.456f);
-        expect(bits1).assertEqual(bits2);
+      const bits1: int = Float.bitCastToInt(123.456f);
+      const bits2: int = Float.bitCastToInt(123.456f);
+      expect(bits1).assertEqual(bits2);
     });
 
     /**
@@ -524,11 +524,11 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const posZeroBits: int = Float.bitCastToInt(0.0f);
-        const negZeroBits: int = Float.bitCastToInt(-0.0f);
-        expect(posZeroBits).not().assertEqual(negZeroBits);
-        expect(posZeroBits).assertEqual(0x00000000);
-        expect(negZeroBits).assertEqual(-2147483648);
+      const posZeroBits: int = Float.bitCastToInt(0.0f);
+      const negZeroBits: int = Float.bitCastToInt(-0.0f);
+      expect(posZeroBits).not().assertEqual(negZeroBits);
+      expect(posZeroBits).assertEqual(0x00000000);
+      expect(negZeroBits).assertEqual(-2147483648);
     });
 
     /**
@@ -540,11 +540,11 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const posInfBits: int = Float.bitCastToInt(Float.POSITIVE_INFINITY);
-        const negInfBits: int = Float.bitCastToInt(Float.NEGATIVE_INFINITY);
-        expect(posInfBits).not().assertEqual(negInfBits);
-        expect(posInfBits).assertEqual(0x7f800000);
-        expect(negInfBits).assertEqual(-8388608);
+      const posInfBits: int = Float.bitCastToInt(Float.POSITIVE_INFINITY);
+      const negInfBits: int = Float.bitCastToInt(Float.NEGATIVE_INFINITY);
+      expect(posInfBits).not().assertEqual(negInfBits);
+      expect(posInfBits).assertEqual(0x7f800000);
+      expect(negInfBits).assertEqual(-8388608);
     });
 
     /**
@@ -556,8 +556,8 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const bits: int = Float.bitCastToInt(Float.MAX_SAFE_INTEGER);
-        expect(bits).assertEqual(1266679807);
+      const bits: int = Float.bitCastToInt(Float.MAX_SAFE_INTEGER);
+      expect(bits).assertEqual(1266679807);
     });
 
     /**
@@ -569,8 +569,8 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const bits: int = Float.bitCastToInt(-Float.MAX_SAFE_INTEGER);
-        expect(bits).assertEqual(-880803841);
+      const bits: int = Float.bitCastToInt(-Float.MAX_SAFE_INTEGER);
+      expect(bits).assertEqual(-880803841);
     });
 
     /**
@@ -582,8 +582,8 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const bits: int = Float.bitCastToInt(Float.EPSILON);
-        expect(bits).assertEqual(872415232);
+      const bits: int = Float.bitCastToInt(Float.EPSILON);
+      expect(bits).assertEqual(872415232);
     });
 
     /**
@@ -595,10 +595,10 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const bits: int = Float.bitCastToInt(Float.DELTA);
-        expect(bits).assertEqual(872415232);
-        expect(bits).assertLargerOrEqual(-2147483648);
-        expect(bits).assertLessOrEqual(2147483647);
+      const bits: int = Float.bitCastToInt(Float.DELTA);
+      expect(bits).assertEqual(872415232);
+      expect(bits).assertLargerOrEqual(-2147483648);
+      expect(bits).assertLessOrEqual(2147483647);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_BITCASTTOINT_2_3500
@@ -609,9 +609,9 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const bits: int = Float.bitCastToInt(1.0f);
-        let result = bits + 1;
-        expect(result).assertEqual(0x3f800001);
+      const bits: int = Float.bitCastToInt(1.0f);
+      let result = bits + 1;
+      expect(result).assertEqual(0x3f800001);
     });
 
     /**
@@ -624,8 +624,8 @@ export default function FloatBitCastToIntTest2(): void {
      */
     it('testFloatBitCastToInt036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const bits: int = Float.bitCastToInt(1.0f);
-        let magnitude = bits & 0x7fffffff;
-        expect(magnitude).assertEqual(1065353216);
+      let magnitude = bits & 0x7fffffff;
+      expect(magnitude).assertEqual(1065353216);
     });
 
     /**
@@ -637,10 +637,10 @@ export default function FloatBitCastToIntTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatBitCastToInt037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let original = 2.5f;
-        const bits: int = Float.bitCastToInt(original);
-        const restored: float = Float.bitCastFromInt(bits);
-        expect(restored).assertEqual(original);
+      let original = 2.5f;
+      const bits: int = Float.bitCastToInt(original);
+      const restored: float = Float.bitCastFromInt(bits);
+      expect(restored).assertEqual(original);
     });
 
     /**
@@ -653,11 +653,11 @@ export default function FloatBitCastToIntTest2(): void {
      */
     it('testFloatBitCastToInt038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const posBits: int = Float.bitCastToInt(1.0f);
-        const negBits: int = Float.bitCastToInt(-1.0f);
-        let posSign = (posBits >>> 31) & 1;
-        let negSign = (negBits >>> 31) & 1;
-        expect(posSign).assertEqual(0);
-        expect(negSign).assertEqual(1);
+      const negBits: int = Float.bitCastToInt(-1.0f);
+      let posSign = (posBits >>> 31) & 1;
+      let negSign = (negBits >>> 31) & 1;
+      expect(posSign).assertEqual(0);
+      expect(negSign).assertEqual(1);
     });
 
     /**
@@ -670,8 +670,8 @@ export default function FloatBitCastToIntTest2(): void {
      */
     it('testFloatBitCastToInt039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const bits: int = Float.bitCastToInt(2.0f);
-        let exponent = (bits >>> 23) & 0xff;
-        expect(exponent).assertEqual(128);
+      let exponent = (bits >>> 23) & 0xff;
+      expect(exponent).assertEqual(128);
     });
 
     /**
@@ -684,8 +684,8 @@ export default function FloatBitCastToIntTest2(): void {
      */
     it('testFloatBitCastToInt040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const bits: int = Float.bitCastToInt(1.5f);
-        let mantissa = bits & 0x007fffff;
-        expect(mantissa).assertEqual(0x400000);
+      let mantissa = bits & 0x007fffff;
+      expect(mantissa).assertEqual(0x400000);
     });
 
     /**
@@ -698,8 +698,8 @@ export default function FloatBitCastToIntTest2(): void {
      */
     it('testFloatBitCastToInt041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val = -Float.MIN_VALUE * 2.0f;
-        const bits: int = Float.bitCastToInt(val);
-        expect(bits).assertEqual(-2147483646);
+      const bits: int = Float.bitCastToInt(val);
+      expect(bits).assertEqual(-2147483646);
     });
 
     /**
@@ -712,9 +712,9 @@ export default function FloatBitCastToIntTest2(): void {
      */
     it('testFloatBitCastToInt042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(3.14f);
-        const bits: int = Float.bitCastToInt(f.toFloat());
-        const expectedBits: int = Float.bitCastToInt(3.14f);
-        expect(bits).assertEqual(expectedBits);
+      const bits: int = Float.bitCastToInt(f.toFloat());
+      const expectedBits: int = Float.bitCastToInt(3.14f);
+      expect(bits).assertEqual(expectedBits);
     });
 
     /**
@@ -727,8 +727,8 @@ export default function FloatBitCastToIntTest2(): void {
      */
     it('testFloatBitCastToInt043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float();
-        const bits: int = Float.bitCastToInt(f.toFloat());
-        expect(bits).assertEqual(0x00000000);
+      const bits: int = Float.bitCastToInt(f.toFloat());
+      expect(bits).assertEqual(0x00000000);
     });
 
     /**
