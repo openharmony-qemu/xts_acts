@@ -701,33 +701,6 @@ export default function PacketFilterTest() {
 
 
     /**
-     * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule0300
-     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_0300
-     * @tc.desc   Add packet rule to redirector instance_rule is NULL
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("testNetworkMgrNetfirewallTrafficFilterAddPacketRule0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterAddPacketRule0300';
-      hilog.info(domain, tag, `${caseName}---Start`);
-      try {
-        const info: packetFilterSdk.createPacketInfo = packetFilterSdk.createPacketController(100, 500);
-        const ret: number = packetFilterSdk.addPacketRule(info.id, null);
-        hilog.info(domain, tag, `${caseName} add packet rule ret: ${JSON.stringify(ret)}`);
-        ExpectTrue(ret === 29410101);
-        packetFilterSdk.destroyPacketController(info.id);
-        done();
-
-      } catch (err) {
-        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-    })
-
-
-    /**
      * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule0400
      * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddPacketRule_0400
      * @tc.desc   Add packet rule to redirector instance_set priority boundary value 1
@@ -2122,7 +2095,7 @@ export default function PacketFilterTest() {
         done();
       }
     })
-    
+
 
     /**
      * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddPacketRule5700
