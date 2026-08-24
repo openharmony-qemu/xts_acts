@@ -60,12 +60,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
     })
 
     /**
-     * @tc.name : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0200
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0200
-     * @tc.desc : Set orientation in different ability and get the result
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL3
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0200
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0200
+     * @tc.desc   Set orientation in different ability and get the result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0200", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0200';
@@ -103,12 +103,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
     })
 
     /**
-     * @tc.name : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0400
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0400
-     * @tc.desc : Set orientation in different ability and get the result
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL3
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0400
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0400
+     * @tc.desc   Set orientation in different ability and get the result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0400", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0400';
@@ -146,12 +146,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
     })
 
     /**
-     * @tc.name : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0500
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0500
-     * @tc.desc : Set orientation in different ability and get the result
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL3
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0500
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0500
+     * @tc.desc   Set orientation in different ability and get the result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0500", Level.LEVEL3, async (done: Function) => {
       await sleep(1000);
@@ -189,12 +189,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
     })
 
     /**
-     * @tc.name : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0100
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0100
-     * @tc.desc : Set orientation in different ability and get the result
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL3
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0100
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0100
+     * @tc.desc   Set orientation in different ability and get the result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0100", Level.LEVEL3, async (done: Function) => {
       await sleep(1000);
@@ -233,12 +233,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
 
 
     /**
-     * @tc.name : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0300
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0300
-     * @tc.desc : Set orientation in different ability and get the result
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL3
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0300
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0300
+     * @tc.desc   Set orientation in different ability and get the result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0300", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0300';
@@ -277,12 +277,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
 
 
     /**
-     * @tc.name : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0600
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0600
-     * @tc.desc : Set orientation in different ability and get the result
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL3
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0600
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0600
+     * @tc.desc   Set orientation in different ability and get the result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0600", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0600';
@@ -320,12 +320,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
     })
 
     /**
-     * @tc.name : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0700
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0700
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0700
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0700
      * @tc.desc : Start FA ability to obtain enumerated values of UNSPECIFIED, LANDSCAPE, PORTRAIT, and FOLLOW_RECENT
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0700", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0700';
@@ -363,12 +363,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
     })
 
     /**
-     * @tc.name : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0800
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0800
-     * @tc.desc : Start FA ability to set the landscape and portrait status of the ability to LANDSCAPE
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL3
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0800
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0800
+     * @tc.desc   Start FA ability to set the landscape and portrait status of the ability to LANDSCAPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0800", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0700';
@@ -406,12 +406,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
     })
 
     /**
-     * @tc.name : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0900
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0900
-     * @tc.desc : Start FA ability to set the landscape and portrait status of ability to PORTRAIT
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL3
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0900
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0900
+     * @tc.desc   Start FA ability to set the landscape and portrait status of ability to PORTRAIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0900", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0900';
@@ -449,12 +449,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
     })
 
     /**
-     * @tc.name : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_1000
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_1000
-     * @tc.desc : Start FA ability to set the landscape and portrait status of ability to UNSPECIFIED
-     * @tc.type : FUNCTION
-     * @tc.size : MEDIUMTEST
-     * @tc.level : LEVEL3
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_1000
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_1000
+     * @tc.desc   Start FA ability to set the landscape and portrait status of ability to UNSPECIFIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_1000", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_1000';
