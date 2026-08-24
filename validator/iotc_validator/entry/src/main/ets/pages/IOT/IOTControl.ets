@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -141,6 +141,7 @@ struct IOTControl {
     }, 500);
     IotHelper.getInstance().registerMessageReceivers('IOTControl', (list: InfDeviceState[]) => {
       this.queryText = JSON.stringify(list);
+      Logger.info(`registerMessageReceivers queryText ${JSON.stringify(list)}`);
     })
     IotHelper.getInstance().registerConnectStateChanged('IOTControl', (state: number) => {
       if (state == ConnectType.OFFLINE && this.clickSwitchOff) {
@@ -167,9 +168,18 @@ struct IOTControl {
           let index = value.findIndex((item) => item.sid == 'switch');
           if (index >= 0) {
             this.isVue = true;
+            AlertDialog.show({
+              title: '查询成功',
+              message: '全部服务查询成功，已获取设备所有服务信息',
+              confirm: { value: '确定', action: () => {} }
+            });
           }
-        }).catch(() => {
-          console.log('queryDeviceState error');
+        }).catch((error: BusinessError) => {
+          AlertDialog.show({
+            title: '查询失败',
+            message: `全部服务查询失败，错误码: ${error.code}`,
+            confirm: { value: '确定', action: () => {} }
+          });
         });
       } else {
         this.queryDeviceAllServices();
@@ -191,9 +201,18 @@ struct IOTControl {
       let index = value.findIndex((item) => item.sid == 'switch');
       if (index >= 0) {
         this.isVue = true;
+        AlertDialog.show({
+          title: '查询成功',
+          message: '全部服务查询成功，已获取设备所有服务信息',
+          confirm: { value: '确定', action: () => {} }
+        });
       }
     }).catch((error: BusinessError) => {
-
+      AlertDialog.show({
+        title: '查询失败',
+        message: `全部服务查询失败，错误码: ${error.code}`,
+        confirm: { value: '确定', action: () => {} }
+      });
     })
   }
 
