@@ -4,7 +4,7 @@
         "type": "OHJSUnitTest",
         "test-timeout": "600000",
         "bundle-name": "com.acts.childprocessmanagertest",
-        "module-name": "entry_test",
+        "module-name": "entry",
         "shell-timeout": "30000",
         "testcase-timeout": 60000
     },
