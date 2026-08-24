@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -24,7 +24,7 @@ import { Driver, ON } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 let testAbilityContext:common.UIAbilityContext;
-export default function webInitTest() {
+export default function webInitTest():void {
   describe('webInitTest', (): void => {
     beforeAll(async (): Promise<void> => {
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -372,5 +372,28 @@ export default function webInitTest() {
       await Utils.msSleep(6000);
       done()
     })
+
+    /**
+     * @tc.name        testSwitchNextPagePermissionRequestTest
+     * @tc.number      SUB_WEB_NEXT_PAGE_0200
+     * @tc.desc        onWindowNewExt
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
+     */
+    it('testSwitchNextPagePermissionRequestTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          Utils.emitEvent("emitSwitchNextPagePermissionRequestTest", 10)
+          await Utils.msSleep(3000);
+          inspector.sendEventByKey('webViewContCreatePdfAndOthersErrorButton', 10, '');
+          await Utils.msSleep(2000);
+        } catch(err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
   })
 }
+
