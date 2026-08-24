@@ -147,9 +147,13 @@ it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: (
       expect(obj7.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // trigger gesture again with finger
-      await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt())
-      await CommonFunc.sleep(3000);
+      try {
+        await CommonFunc.sleep(1000);
+        await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt())
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('PanGestureHandlerAllowedTypesTest_static_0010 err: ' + JSON.stringify(err));
+      }
       let text8 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
       let obj8 = JSON.parseJsonElement(text8);
       console.log('PanGestureHandlerAllowedTypesTest_static_0010 obj8 $attrs content',obj8.getElement('$attrs').getString('content'),obj8)

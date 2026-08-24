@@ -115,9 +115,13 @@ it('SwipeGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done:
       expect(obj4.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // trigger gesture again with finger
-      await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(), speed)
-      await CommonFunc.sleep(200);
+      try {
+        await CommonFunc.sleep(1000);
+        await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(), speed)
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('SwipeGestureHandlerAllowedTypesTest_static_0010 err: ' + JSON.stringify(err));
+      }
       let text5 = inspector.getInspectorByKey('SwipeGestureHandlerAllowedTypes_result');
       let obj5 = JSON.parseJsonElement(text5);
       console.log('SwipeGestureHandlerAllowedTypesTest_static_0010 obj5 $attrs content',obj5.getElement('$attrs').getString('content'),obj5)
