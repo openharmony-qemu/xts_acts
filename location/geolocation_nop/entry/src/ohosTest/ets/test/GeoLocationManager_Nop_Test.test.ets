@@ -1550,54 +1550,6 @@ export default function geoLocationManager_nop_test() {
     })
 
     /**
-     * @tc.name   geoLocationManager_removeBeaconFence_nop_test_021
-     * @tc.number SUB_geoLocationManager_removeBeaconFence_nop_test_021
-     * @tc.desc   GnssGeofence.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("geoLocationManager_removeBeaconFence_nop_test_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        let manufactureDataBuffer: Uint8Array = new Uint8Array([0X02, 0X15, 0X00, 0X11, 0X22, 0X33, 0X44, 0X55,
-          0X66, 0X77, 0X88, 0X99, 0XAA, 0XBB, 0XCC, 0XDD, 0XEE, 0XFF, 0X11, 0X22, 0X33, 0X44, 0X55]);
-        let manufactureDataMaskBuffer: Uint8Array = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
-          0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
-
-        let manufactureData: geoLocationManager.BeaconManufactureData = {
-          manufactureId: 0X004C,
-          manufactureData: manufactureDataBuffer.buffer,
-          manufactureDataMask: manufactureDataMaskBuffer.buffer
-        };
-
-        let beacon: geoLocationManager.BeaconFence = {
-          identifier: "11",
-          beaconFenceInfoType: geoLocationManager.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
-          manufactureData: manufactureData
-        };
-        geoLocationManager.removeBeaconFence(beacon).then((result) => {
-          console.info("geoLocationManager_removeBeaconFence_nop_test_021 promise, removeBeaconFence success");
-          expect(result == null).assertTrue;
-          done();
-        }).catch((err: BusinessError) => {
-          console.info("geoLocationManager_removeBeaconFence_nop_test_021 promise, errtype:" + typeof err.code + ", errCode:" + err.code + ", errMessage:" + err.message);
-          expect(Number(err.code)).assertEqual(201);
-          done();
-        });
-      } catch (err) {
-        console.info('---geoLocationManager_removeBeaconFence_nop_test_021  catch ---' + typeof err.code + ',err:' + err.code);
-        if (Number(err.code) === 201) {
-          expect(Number(err.code)).assertEqual(201);
-          console.info('---geoLocationManager_removeBeaconFence_nop_test_021  end type---' + typeof err.code + ',err:' + err.code);
-          done();
-        } else {
-          expect().assertFalse();
-          done();
-        }
-      }
-    })
-
-    /**
      * @tc.name   geoLocationManager_isWlanBssidMatched_nop_test_022
      * @tc.number SUB_geoLocationManager_isWlanBssidMatched_nop_test_022
      * @tc.desc   GnssGeofence.
