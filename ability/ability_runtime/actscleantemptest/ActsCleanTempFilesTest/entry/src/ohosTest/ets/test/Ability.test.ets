@@ -118,6 +118,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
     })
 
@@ -207,6 +208,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
     })
 
@@ -276,6 +278,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
     })
 
@@ -354,6 +357,7 @@ export default function abilityTest() {
           }, options)
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
     })
   })
