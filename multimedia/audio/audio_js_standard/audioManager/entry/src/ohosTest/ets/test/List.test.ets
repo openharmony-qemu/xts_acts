@@ -25,6 +25,8 @@ import audioDeviceEnhanceManager from './AudioDeviceEnhanceManagerTest.test';
 import audioDebuggingManager from './AudioDebuggingManager.test';
 import audioManagerSpecError from './AudioManagerSpecErrorTest.test';
 import audioRoutingManagerSpecErrorTest from './AudioRoutingManagerSpecErrorTest.test';
+import audioSessionManagerSpecErrorTest from './AudioSessionManagerSpecErrorTest.test';
+import audioStreamManagerSpecErrorTest from './AudioStreamManagerSpecErrorTest.test';
 import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
@@ -63,6 +65,9 @@ async function driveFn() {
 
 export default function testsuite() {
   audioManagerSpecError();
+  audioRoutingManagerSpecErrorTest();
+  audioSessionManagerSpecErrorTest();
+  audioStreamManagerSpecErrorTest();
   audioSessionManagerTest();
   audioDeviceEnhanceManager();
   audioDebuggingManager();

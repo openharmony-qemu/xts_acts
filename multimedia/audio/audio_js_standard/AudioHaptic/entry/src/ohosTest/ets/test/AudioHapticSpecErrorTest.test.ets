@@ -43,6 +43,9 @@ export default function AudioHapticSpecErrorTest() {
      * @tc.number SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_HAPTIC_SET_AUDIO_LATENCY_MODE_NULL_0100
      * @tc.name setAudioLatencyMode_null_0100
      * @tc.desc Test setAudioLatencyMode with null parameter, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setAudioLatencyMode_null_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       try {
@@ -60,6 +63,9 @@ export default function AudioHapticSpecErrorTest() {
      * @tc.number SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_HAPTIC_SET_AUDIO_LATENCY_MODE_UNDEFINED_0200
      * @tc.name setAudioLatencyMode_undefined_0200
      * @tc.desc Test setAudioLatencyMode with undefined parameter, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setAudioLatencyMode_undefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       try {
@@ -77,6 +83,9 @@ export default function AudioHapticSpecErrorTest() {
      * @tc.number SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_HAPTIC_SET_STREAM_USAGE_NULL_0100
      * @tc.name setStreamUsage_null_0100
      * @tc.desc Test setStreamUsage with null parameter, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setStreamUsage_null_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       try {
@@ -94,6 +103,9 @@ export default function AudioHapticSpecErrorTest() {
      * @tc.number SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_HAPTIC_SET_STREAM_USAGE_UNDEFINED_0200
      * @tc.name setStreamUsage_undefined_0200
      * @tc.desc Test setStreamUsage with undefined parameter, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setStreamUsage_undefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       try {
@@ -111,6 +123,9 @@ export default function AudioHapticSpecErrorTest() {
      * @tc.number SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_HAPTIC_SET_LOOP_NULL_0100
      * @tc.name setLoop_null_0100
      * @tc.desc Test setLoop with null parameter, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setLoop_null_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       if (audioHapticPlayer === null) {
@@ -133,6 +148,9 @@ export default function AudioHapticSpecErrorTest() {
      * @tc.number SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_HAPTIC_SET_LOOP_UNDEFINED_0200
      * @tc.name setLoop_undefined_0200
      * @tc.desc Test setLoop with undefined parameter, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setLoop_undefined_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       if (audioHapticPlayer === null) {
