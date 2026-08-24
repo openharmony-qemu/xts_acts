@@ -56,7 +56,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testPrefetchPageInitErrStatic
-    * @tc.number      SUB_WEB_PREFETCH_PAGE
+    * @tc.number      SUB_WEB_PREFETCH_PAGE_0100
     * @tc.desc        test interface of prefetchPage with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -76,7 +76,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testPrefetchPageInitErrStatic002
-    * @tc.number      SUB_WEB_PREFETCH_PAGE_002
+    * @tc.number      SUB_WEB_PREFETCH_PAGE_0200
     * @tc.desc        test interface of prefetchPage with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -96,7 +96,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testCreateWebPrintDocumentAdapterInitErrStatic
-    * @tc.number      SUB_WEB_CREATE_WEB_PRINT_DOCUMENT_ADAPTER_ERR
+    * @tc.number      SUB_WEB_CREATE_WEB_PRINT_DOCUMENT_ADAPTER_ERR_0300
     * @tc.desc        test interface of createWebPrintDocumentAdapter with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -116,7 +116,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testSetScrollableInitErrStatic
-    * @tc.number      SUB_WEB_SET_SCROLLABLE
+    * @tc.number      SUB_WEB_SET_SCROLLABLE_0400
     * @tc.desc        test interface of setScrollable with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -136,7 +136,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testGetScrollableInitErrStatic
-    * @tc.number      SUB_WEB_GET_SCROLLABLE
+    * @tc.number      SUB_WEB_GET_SCROLLABLE_0500
     * @tc.desc        test interface of getScrollable with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -156,7 +156,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testGetPrintBackgroundInitErrStatic
-    * @tc.number      SUB_WEB_GET_PRINT_BACKGROUND
+    * @tc.number      SUB_WEB_GET_PRINT_BACKGROUND_0600
     * @tc.desc        test interface of getPrintBackground with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -176,7 +176,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testCloseCameraInitErrStatic
-    * @tc.number      SUB_WEB_CLOSE_CAMERA
+    * @tc.number      SUB_WEB_CLOSE_CAMERA_0700
     * @tc.desc        test interface of closeCamera with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -196,7 +196,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testStopAllMediaInitErrStatic
-    * @tc.number      SUB_WEB_STOP_ALL_MEDIA
+    * @tc.number      SUB_WEB_STOP_ALL_MEDIA_0800
     * @tc.desc        test interface of stopAllMedia with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -216,7 +216,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testResumeAllMediaInitErrStatic
-    * @tc.number      SUB_WEB_RESUME_ALL_MEDIA
+    * @tc.number      SUB_WEB_RESUME_ALL_MEDIA_0900
     * @tc.desc        test interface of resumeAllMedia with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -236,7 +236,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testPauseAllMediaInitErrStatic
-    * @tc.number      SUB_WEB_PAUSE_ALL_MEDIA_001
+    * @tc.number      SUB_WEB_PAUSE_ALL_MEDIA_1000
     * @tc.desc        test interface of pauseAllMedia with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -256,7 +256,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testCloseAllMediaPresentationsInitErrStatic
-    * @tc.number      SUB_WEB_CLOSE_ALL_MEDIA_PRESENTATIONS
+    * @tc.number      SUB_WEB_CLOSE_ALL_MEDIA_PRESENTATIONS_1100
     * @tc.desc        test interface of closeAllMediaPresentations with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -276,7 +276,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testGetMediaPlaybackStateInitErrStatic
-    * @tc.number      SUB_WEB_GET_MEDIA_PLAYBACK_STATE
+    * @tc.number      SUB_WEB_GET_MEDIA_PLAYBACK_STATE_1200
     * @tc.desc        test interface of getMediaPlaybackState with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -296,7 +296,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testPrecompileJavaScriptInitErrStatic
-    * @tc.number      SUB_WEB_PRECOMPILE_JAVA_SCRIPT_Err
+    * @tc.number      SUB_WEB_PRECOMPILE_JAVA_SCRIPT_Err_1300
     * @tc.desc        test interface of precompileJavaScript with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -315,7 +315,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testSetPathAllowingUniversalAccessInitErrStatic
-    * @tc.number      SUB_WEB_SET_PATH_ALLOWING_UNIVERSAL_ACCESS
+    * @tc.number      SUB_WEB_SET_PATH_ALLOWING_UNIVERSAL_ACCESS_1300
     * @tc.desc        test interface of setPathAllowingUniversalAccess with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -335,7 +335,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testGetLastHitTestInitErrStatic
-    * @tc.number      SUB_WEB_GET_LAST_HIT_TEST
+    * @tc.number      SUB_WEB_GET_LAST_HIT_TEST_1400
     * @tc.desc        test interface of getLastHitTest with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -355,7 +355,7 @@ export default function webInitTest():void {
 
     /**
     * @tc.name        testGetPageOffsetTestInitErrStatic
-    * @tc.number      SUB_WEB_GET_PAGE_OFFSET
+    * @tc.number      SUB_WEB_GET_PAGE_OFFSET_1500
     * @tc.desc        test interface of getPageOffset with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -375,7 +375,7 @@ export default function webInitTest():void {
 
     /**
      * @tc.name        testSwitchNextPagePermissionRequestTest
-     * @tc.number      SUB_WEB_NEXT_PAGE_0200
+     * @tc.number      SUB_WEB_NEXT_PAGE_1600
      * @tc.desc        onWindowNewExt
      * @tc.size        MediumTest
      * @tc.type        Function
@@ -396,4 +396,3 @@ export default function webInitTest():void {
 
   })
 }
-
