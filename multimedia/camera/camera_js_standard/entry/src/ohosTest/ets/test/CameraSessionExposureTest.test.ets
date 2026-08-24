@@ -473,28 +473,13 @@ export default function cameraSessionExposureTest() {
       console.info(TAG + "Start to addOutput mPhotoOutput");
       mCameraSession.addOutput(mPhotoOutput);
     }
-    /*
-    if (!isEmpty(mVideoOutput)) {
-        console.info(TAG + "Start to addOutput mVideoOutput");
-        await mCameraSession.addOutput(mVideoOutput);
-    }
-    */
-    await sleep(1);
 
     await mCameraSession.commitConfig();
+    console.info(TAG + "commitConfig end");
+    await mCameraSession.start();
+    console.info(TAG + "start end");
 
-    /*
-    await mCameraSession.start(async (err) => {
-        console.info(TAG + "Entering mCameraSession start callback");
-        if (!err) {
-            console.info(TAG + "Entering mCameraSession start PASSED ");
-        } else {
-            console.info(TAG + "Entering mCameraSession start FAILED : " + err.message);
-        }
-    })
-
-    await sleep(100);
-    */
+    await sleep(1000);
     console.info(TAG + "Exit startCameraSession");
 
     return true;
@@ -571,7 +556,7 @@ export default function cameraSessionExposureTest() {
       console.info('beforeAll case');
     })
 
-    beforeEach(() => {
+    beforeEach(async () => {
       sleep(1000);
       console.info('beforeEach case');
     })
