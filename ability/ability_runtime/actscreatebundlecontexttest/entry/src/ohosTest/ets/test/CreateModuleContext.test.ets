@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { application, appManager, common } from '@kit.AbilityKit';
+import { application, appManager, common, Configuration } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { resourceManager } from '@kit.LocalizationKit'
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { Configuration } from '@kit.AbilityKit';
+
 
 
 let context = getContext(this) as common.UIAbilityContext;

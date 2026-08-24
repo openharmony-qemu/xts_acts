@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { fileIo, picker } from '@kit.CoreFileKit';
+import { fileIo, picker, fileUri } from '@kit.CoreFileKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import CommonFunc, { ClickInfo } from '../MainAbility/common/Common';
@@ -51,7 +51,7 @@ import {
   RecentPhotoOptions,
   PhotoSource,RecentPhotoInfo
 } from '@ohos.file.RecentPhotoComponent';
-import { fileUri } from '@kit.CoreFileKit';
+
 import { BusinessError } from '@kit.BasicServicesKit';
 import fs, { ReadOptions, WriteOptions } from '@ohos.file.fs';
 
