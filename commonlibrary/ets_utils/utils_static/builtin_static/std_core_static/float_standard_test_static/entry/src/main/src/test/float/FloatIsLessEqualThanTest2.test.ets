@@ -137,7 +137,7 @@ export default function FloatIsLessEqualThanTest2(): void {
       const f: Float = new Float(val);
       expect(f.isLessEqualThan(new Float(4.0))).assertTrue();
     });
-    
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ISLESSEQUALTHAN_2_0800
      * @tc.name testFloatIsLessEqualThan008
@@ -439,7 +439,7 @@ export default function FloatIsLessEqualThanTest2(): void {
       const r: boolean = a.isLessEqualThan(b);
       expect(r).assertFalse();
     });
-    
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ISLESSEQUALTHAN_2_2600
      * @tc.name testFloatIsLessEqualThan026
