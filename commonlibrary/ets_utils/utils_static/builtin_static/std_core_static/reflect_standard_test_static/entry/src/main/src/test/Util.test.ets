@@ -1990,3 +1990,1926 @@ export class ExtPcD {
   public g: byte;
   public h: float;
   public i: char;
+  public j: string;
+  public k: int;
+  public l: boolean;
+
+  public constructor(strVal: string, intVal: int, boolVal: boolean, dblVal: double, lngVal: long, shtVal: short, bytVal: byte, fltVal: float, chrVal: char, strVal2: string, intVal2: int, boolVal2: boolean) {
+    this.a = strVal;
+    this.b = intVal;
+    this.c = boolVal;
+    this.d = dblVal;
+    this.e = lngVal;
+    this.f = shtVal;
+    this.g = bytVal;
+    this.h = fltVal;
+    this.i = chrVal;
+    this.j = strVal2;
+    this.k = intVal2;
+    this.l = boolVal2;
+  }
+}
+
+export class ExtPcE {
+  public a: string;
+  public b: int;
+  public c: boolean;
+  public d: double;
+  public e: long;
+  public f: short;
+  public g: byte;
+  public h: float;
+  public i: char;
+  public j: string;
+  public k: int;
+  public l: boolean;
+  public m: double;
+  public n: long;
+  public o: short;
+
+  public constructor(strVal: string, intVal: int, boolVal: boolean, dblVal: double, lngVal: long, shtVal: short, bytVal: byte, fltVal: float, chrVal: char, strVal2: string, intVal2: int, boolVal2: boolean, dblVal2: double, lngVal2: long, shtVal2: short) {
+    this.a = strVal;
+    this.b = intVal;
+    this.c = boolVal;
+    this.d = dblVal;
+    this.e = lngVal;
+    this.f = shtVal;
+    this.g = bytVal;
+    this.h = fltVal;
+    this.i = chrVal;
+    this.j = strVal2;
+    this.k = intVal2;
+    this.l = boolVal2;
+    this.m = dblVal2;
+    this.n = lngVal2;
+    this.o = shtVal2;
+  }
+}
+
+export class ExtPcF {
+  public a: string;
+  public b: int;
+  public c: boolean;
+  public d: double;
+  public e: long;
+  public f: short;
+  public g: byte;
+  public h: float;
+  public i: char;
+  public j: string;
+  public k: int;
+  public l: boolean;
+  public m: double;
+  public n: long;
+  public o: short;
+  public p: byte;
+  public q: float;
+  public r: char;
+  public s: string;
+  public t: int;
+
+  public constructor(strVal: string, intVal: int, boolVal: boolean, dblVal: double, lngVal: long, shtVal: short, bytVal: byte, fltVal: float, chrVal: char, strVal2: string, intVal2: int, boolVal2: boolean, dblVal2: double, lngVal2: long, shtVal2: short, bytVal2: byte, fltVal2: float, chrVal2: char, strVal3: string, intVal3: int) {
+    this.a = strVal;
+    this.b = intVal;
+    this.c = boolVal;
+    this.d = dblVal;
+    this.e = lngVal;
+    this.f = shtVal;
+    this.g = bytVal;
+    this.h = fltVal;
+    this.i = chrVal;
+    this.j = strVal2;
+    this.k = intVal2;
+    this.l = boolVal2;
+    this.m = dblVal2;
+    this.n = lngVal2;
+    this.o = shtVal2;
+    this.p = bytVal2;
+    this.q = fltVal2;
+    this.r = chrVal2;
+    this.s = strVal3;
+    this.t = intVal3;
+  }
+}
+
+export class FuncParamCtorCls {
+  public cb: Function;
+  public constructor(f: Function) {
+    this.cb = f;
+  }
+}
+
+export class Ext2_ThreeGeneric<A, B, C> {
+  a: A;
+  b: B;
+  c: C;
+  public constructor(a: A, b: B, c: C) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+  }
+}
+
+export class MultiArrCtorCls {
+  public a: string[];
+  public b: double[];
+  public c: byte[];
+  public constructor(v1: string[], v2: double[], v3: byte[]) {
+    this.a = v1;
+    this.b = v2;
+    this.c = v3;
+  }
+}
+
+export class SetMapMixedCtorCls {
+  public setData: Set<byte>;
+  public mapData: Map<int, boolean>;
+  public constructor(s: Set<byte>, m: Map<int, boolean>) {
+    this.setData = s;
+    this.mapData = m;
+  }
+}
+
+export class BoolIntArrCtorCls {
+  public flags: boolean[];
+  public matrix: int[][];
+  public constructor(f: boolean[], m: int[][]) {
+    this.flags = f;
+    this.matrix = m;
+  }
+}
+
+export abstract class AbsDblParamCtor {
+  public rate: double;
+  public constructor(d: double) {
+    this.rate = d;
+  }
+}
+
+export class MultiImplParamCtor {
+  public a: float;
+  public b: byte;
+  public constructor(f: float, g: byte) {
+    this.a = f;
+    this.b = g;
+  }
+  public step1(): void {}
+  public step2(): void {}
+}
+
+export class NestedDeepGenericCtor {
+  public data: Map<string, Array<FixedArray<int>>>;
+  public constructor(m: Map<string, Array<FixedArray<int>>>) {
+    this.data = m;
+  }
+}
+
+export class CollectionPairCtor {
+  public keys: Array<string>;
+  public values: Array<int>;
+  public constructor(k: Array<string>, v: Array<int>) {
+    this.keys = k;
+    this.values = v;
+  }
+}
+
+export class CtorMulti {
+  public constructor(a: number, b: string, c: boolean) {}
+}
+
+export class Over3Idx0 {
+  public constructor(v?: number | string) {}
+}
+
+export class Over5Idx0 {
+  public constructor(a?: number, b?: string, c?: boolean, d?: number) {}
+}
+
+export class IN_EightParamCtor {
+  public constructor(a: int, b: string, c: boolean, d: double, e: int, f: string, g: boolean, h: double) {}
+}
+
+export class IN_RefOuterCtor {
+  public constructor(ref: EmptyCls) {}
+}
+
+export class Ext_MixedNumTypes {
+  a: int = 0;
+  b: long = 0;
+  c: double = 0.0;
+  d: double = 0.0;
+  e: byte = 0;
+  f: short = 0;
+  public constructor(a: int, b: long, c: float, d: double, e: byte, f: short) {
+    this.a = a; this.b = b; this.c = c; this.d = d; this.e = e; this.f = f;
+  }
+}
+
+export class Ext2_TwoFloatCtor {
+  a: double = 0.0;
+  b: double = 0.0;
+  public constructor(a: float, b: float) {
+    this.a = a;
+    this.b = b;
+  }
+}
+
+export class Ext2_FifteenParamCtor {
+  p0: int = 0; p1: int = 0; p2: int = 0; p3: int = 0; p4: int = 0;
+  p5: string = ''; p6: string = ''; p7: string = ''; p8: string = '';
+  p9: boolean = false; p10: boolean = false; p11: double = 0.0;
+  p12: double = 0.0; p13: long = 0; p14: long = 0;
+  public constructor(p0: int, p1: int, p2: int, p3: int, p4: int,
+    p5: string, p6: string, p7: string, p8: string,
+    p9: boolean, p10: boolean, p11: float, p12: float, p13: long, p14: long) {
+    this.p0 = p0; this.p1 = p1; this.p2 = p2; this.p3 = p3; this.p4 = p4;
+    this.p5 = p5; this.p6 = p6; this.p7 = p7; this.p8 = p8;
+    this.p9 = p9; this.p10 = p10; this.p11 = p11; this.p12 = p12;
+    this.p13 = p13; this.p14 = p14;
+  }
+}
+
+export class Ext2_LongDoubleCtor {
+  a: long = 0;
+  b: double = 0.0;
+  public constructor(a: long, b: double) {
+    this.a = a;
+    this.b = b;
+  }
+}
+
+export class Ext2_MultiContainer {
+  list: Array<int> = [];
+  map: Map<string, int> = new Map<string, int>();
+  public constructor(list: Array<int>, map: Map<string, int>) {
+    this.list = list;
+    this.map = map;
+  }
+}
+
+export class Ext2_ByteShortIntCtor {
+  a: byte = 0;
+  b: short = 0;
+  c: int = 0;
+  public constructor(a: byte, b: short, c: int) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+  }
+}
+
+export class Ext4_CharFixedArrMix {
+  a: char = c'a';
+  b: FixedArray<int>;
+  c: int = 0;
+  public constructor(a: char, b: FixedArray<int>, c: int) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+  }
+}
+
+export class Ext4_MixedQuadParam {
+  a: char = c'a';
+  b: FixedArray<int>;
+  c: int = 0;
+  d: boolean = false;
+  public constructor(a: char, b: FixedArray<int>, c: int, d: boolean) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+    this.d = d;
+  }
+}
+
+export class PrivateCtorTwoParams {
+  x: int = 0;
+  y: string = "";
+  private constructor(a: int, b: string) {
+    this.x = a;
+    this.y = b;
+  }
+  static create(a: int, b: string): PrivateCtorTwoParams {
+    return new PrivateCtorTwoParams(a, b);
+  }
+}
+
+export class PrivateCtorThreeParams {
+  a: int = 0;
+  b: int = 0;
+  c: int = 0;
+  private constructor(x: int, y: int, z: int) {
+    this.a = x;
+    this.b = y;
+    this.c = z;
+  }
+  static create(x: int, y: int, z: int): PrivateCtorThreeParams {
+    return new PrivateCtorThreeParams(x, y, z);
+  }
+}
+
+export class Priv3IntStrBoolExt2 {
+  private constructor(a: int, b: string, c: boolean) {}
+}
+
+export class IP5_278_PrivDefBool {
+  private constructor(b: boolean = true) {}
+}
+
+export class IP2_136_PrivIntArr { private constructor(arr: int[]) {} }
+
+export class ThreeOverloadPrivateCtor {
+  sum: int = 0;
+  private constructor(a?: int, b?: int) {
+    if (a !== undefined && b !== undefined) {
+      this.sum = a + b;
+    } else if (a !== undefined) {
+      this.sum = a;
+    }
+  }
+  static createDefault(): ThreeOverloadPrivateCtor {
+    return new ThreeOverloadPrivateCtor();
+  }
+  static createOne(a: int): ThreeOverloadPrivateCtor {
+    return new ThreeOverloadPrivateCtor(a);
+  }
+  static createTwo(a: int, b: int): ThreeOverloadPrivateCtor {
+    return new ThreeOverloadPrivateCtor(a, b);
+  }
+}
+
+export class FiveCallPub_L4434 {
+  public constructorl(): void {}
+}
+
+export class Pub6IntExt {
+  public constructor(a: int, b: int, c: int, d: int, e: int, f: int) {}
+}
+
+export class Pub7IntExt {
+  public constructor(a: int, b: int, c: int, d: int, e: int, f: int, g: int) {}
+}
+
+export class Pub9IntExt {
+  public constructor(a: int, b: int, c: int, d: int, e: int, f: int, g: int, h: int, i: int) {}
+}
+
+export class TcPriv5 {
+  private constructor(a: double) {}
+}
+
+export class Priv2StrBoolExt {
+  private constructor(a: string, b: boolean) {}
+}
+
+export class Priv2IntDoubleExt {
+  private constructor(a: int, b: double) {}
+}
+
+export class Priv2BoolIntExt {
+  private constructor(a: boolean, b: int) {}
+}
+
+export class Priv2StrDoubleExt {
+  private constructor(a: string, b: double) {}
+}
+
+export class Priv2IntBoolExt {
+  private constructor(a: int, b: boolean) {}
+}
+
+export class Priv2DoubleStrExt {
+  private constructor(a: double, b: string) {}
+}
+
+export class Priv2LongIntExt {
+  private constructor(a: long, b: int) {}
+}
+
+export class Priv2ShortByteExt {
+  private constructor(a: short, b: byte) {}
+}
+
+export class Priv2FloatBoolExt {
+  private constructor(a: float, b: boolean) {}
+}
+
+export class IP3_218_PubIntDbl { public constructor(a: int, d: double) {} }
+
+export class Pub2DoubleStrExt {
+  public constructor(a: double, b: string) {}
+}
+
+export class Pub2LongIntExt {
+  public constructor(a: long, b: int) {}
+}
+
+export class Pub2FloatBoolExt {
+  public constructor(a: float, b: boolean) {}
+}
+
+export class MultiPrivPubExt {
+  private constructor(a: int) {}
+  public constructor(a: string) {}
+}
+
+export class MultiPrivProtExt {
+  private constructor(a: int) {}
+  protected constructor(a: string) {}
+}
+
+export class MultiPubProtExt {
+  public constructor(a: int) {}
+  protected constructor(a: string) {}
+}
+
+export class Priv3IntStrDoubleExt2 {
+  private constructor(a: int, b: string, c: double) {}
+}
+
+export class Priv3StrDoubleIntExt2 {
+  private constructor(a: string, b: double, c: int) {}
+}
+
+export class Priv3BoolIntFloatExt2 {
+  private constructor(a: boolean, b: int, c: float) {}
+}
+
+export class Priv3ShortIntDoubleExt2 {
+  private constructor(a: short, b: int, c: double) {}
+}
+
+export class Priv3LongIntShortExt2 {
+  private constructor(a: long, b: int, c: short) {}
+}
+
+export class Priv3ByteFloatBoolExt2 {
+  private constructor(a: byte, b: float, c: boolean) {}
+}
+
+export class Pub3StrDoubleIntExt2 {
+  public constructor(a: string, b: double, c: int) {}
+}
+
+export class Pub3BoolIntFloatExt2 {
+  public constructor(a: boolean, b: int, c: float) {}
+}
+
+export class Pub3ShortIntDoubleExt2 {
+  public constructor(a: short, b: int, c: double) {}
+}
+
+export class Pub3LongIntShortExt2 {
+  public constructor(a: long, b: int, c: short) {}
+}
+
+export class Pub3ByteFloatBoolExt2 {
+  public constructor(a: byte, b: float, c: boolean) {}
+}
+
+export class TcGapPriv4Param {
+  private constructor(a: int, b: string, c: boolean, d: double) {}
+}
+
+export class Priv5IntStrBoolDoubleFloatExt2 {
+  private constructor(a: int, b: string, c: boolean, d: double, e: float) {}
+}
+
+export class Pub5IntStrBoolDoubleFloatExt2 {
+  public constructor(a: int, b: string, c: boolean, d: double, e: float) {}
+}
+
+export class Priv6IntStrBoolDoubleFloatLongExt2 {
+  private constructor(a: int, b: string, c: boolean, d: double, e: float, f: long) {}
+}
+
+export class Pub6IntStrBoolDoubleFloatLongExt2 {
+  public constructor(a: int, b: string, c: boolean, d: double, e: float, f: long) {}
+}
+
+export class Priv4StrBoolDoubleFloatExt {
+  private constructor(a: string, b: boolean, c: double, d: float) {}
+}
+
+export class Pub4StrBoolDoubleFloatExt {
+  public constructor(a: string, b: boolean, c: double, d: float) {}
+}
+
+export class Priv5LongIntShortByteBoolExt {
+  private constructor(a: long, b: int, c: short, d: byte, e: boolean) {}
+}
+
+export class Pub5LongIntShortByteBoolExt {
+  public constructor(a: long, b: int, c: short, d: byte, e: boolean) {}
+}
+
+export class Priv7IntStrBoolDoubleFloatLongShortExt {
+  private constructor(a: int, b: string, c: boolean, d: double, e: float, f: long, g: short) {}
+}
+
+export class Pub7IntStrBoolDoubleFloatLongShortExt {
+  public constructor(a: int, b: string, c: boolean, d: double, e: float, f: long, g: short) {}
+}
+
+export class MultiAllExt {
+  private constructor(a: int) {}
+  public constructor(a: string) {}
+  protected constructor(a: double) {}
+}
+
+export class MultiPrivPrivExt {
+  private constructor(a: int) {}
+  private constructor(a: string) {}
+}
+
+export class MultiPrivTripleExt {
+  private constructor(a: int) {}
+  private constructor(a: string) {}
+  private constructor(a: double) {}
+}
+
+export class MultiPubTripleExt {
+  public constructor(a: int) {}
+  public constructor(a: string) {}
+  public constructor(a: double) {}
+}
+
+export class PrivObjParam {
+  private constructor(a: Object) {}
+  static create(a: Object): PrivObjParam {
+    return new PrivObjParam(a);
+  }
+}
+
+export class ProtObjParam {
+  protected constructor(a: Object) {}
+  static create(a: Object): ProtObjParam {
+    return new ProtObjParam(a);
+  }
+}
+
+export class PubCustomParam {
+  public constructor(a: OrdRef) {}
+}
+
+export class PrivCustomParam {
+  private constructor(a: OrdRef) {}
+  static create(a: OrdRef): PrivCustomParam {
+    return new PrivCustomParam(a);
+  }
+}
+
+export class PrivFixedArrParam {
+  private constructor(a: FixedArray<int>) {}
+  static create(a: FixedArray<int>): PrivFixedArrParam {
+    return new PrivFixedArrParam(a);
+  }
+}
+
+export class ProtFixedArrParam {
+  protected constructor(a: FixedArray<int>) {}
+  static create(a: FixedArray<int>): ProtFixedArrParam {
+    return new ProtFixedArrParam(a);
+  }
+}
+
+export class PubObjIntParam {
+  public constructor(a: Object, b: int) {}
+}
+
+export class PrivObjIntParam {
+  private constructor(a: Object, b: int) {}
+  static create(a: Object, b: int): PrivObjIntParam {
+    return new PrivObjIntParam(a, b);
+  }
+}
+
+export class PubCustomStrParam {
+  public constructor(a: OrdRef, b: string) {}
+}
+
+export class PrivCustomStrParam {
+  private constructor(a: OrdRef, b: string) {}
+  static create(a: OrdRef, b: string): PrivCustomStrParam {
+    return new PrivCustomStrParam(a, b);
+  }
+}
+
+export class PubObjIntDoubleParam {
+  public constructor(a: Object, b: int, c: double) {}
+}
+
+export class PrivObjIntDoubleParam {
+  private constructor(a: Object, b: int, c: double) {}
+  static create(a: Object, b: int, c: double): PrivObjIntDoubleParam {
+    return new PrivObjIntDoubleParam(a, b, c);
+  }
+}
+export class TcPub23 {
+  public constructor(a: BigInt) {}
+}
+
+export class TcPub24 {
+  public constructor(a: double[][]) {}
+}
+
+export class TcPub33 {
+  public constructor(a: Date) {}
+}
+
+export class TcPub34 {
+  public constructor(a: RegExp) {}
+}
+
+export class TcPubProtA {
+  public constructor() {}
+  protected constructor(x: int) {}
+}
+
+export class TcPubPrivA { public constructor() {} private constructor(x: int) {} }
+
+export class TcAllVisA {
+  public constructor() {}
+  protected constructor(x: int) {}
+  private constructor(y: string) {}
+}
+
+export class TcAllOpt5 {
+  public constructor(a?: int, b?: string, c?: boolean, d?: double, e?: short) {}
+}
+
+export class TcMapSS {
+  public constructor(m: Map<string, string>) {}
+}
+
+export class TcStrIntArr {
+  public constructor(s: string, a: int[][]) {}
+}
+
+export class TcIntMap {
+  public constructor(i: int, m: Map<int, string>) {}
+}
+
+export class TcGapCustArr {
+  public constructor(a: EmptyCls[]) {}
+}
+
+export class TcGapMapII {
+  public constructor(a: Map<int, int>) {}
+}
+
+export class TcGapFnParam {
+  public constructor(a: () => void) {}
+}
+
+export class TcGapUniNB {
+  public constructor(a: number | boolean) {}
+}
+
+export class TcGapShort2D {
+  public constructor(a: short[][]) {}
+}
+
+export class TcGapFloat2D {
+  public constructor(a: float[][]) {}
+}
+
+export class IP5_268_ProChar {
+  protected constructor(c: char) {}
+}
+
+export abstract class C1Char {
+  public constructor(a: char) {}
+}
+
+export class IsPublicCtorRefParam {
+  public constructor(inner: MyData) {}
+}
+
+export class IsPublicThenPrivateCtor {
+  public constructor(x: int) {}
+  private constructor(s: string) {}
+  public static createStr(): IsPublicThenPrivateCtor { return new IsPublicThenPrivateCtor(''); }
+}
+
+export class IsPrivateThenPublicCtor {
+  private constructor() {}
+  public constructor(x: int) {}
+  public static createDefault(): IsPrivateThenPublicCtor { return new IsPrivateThenPublicCtor(); }
+}
+export class IP2_128_5CIdx0 { public constructor() {} public constructor(a: int) {} public constructor(s: string) {} public constructor(b: boolean) {} public constructor(d: double) {} }
+
+export class IP3_181_PubDblInt { public constructor(d: double, a: int) {} }
+
+export class IP3_191_ArrIdx4 { public constructor() {} public constructor(a: int) {} public constructor(s: string) {} public constructor(d: double) {} }
+
+export class IP3_198_PubMap { public constructor(m: Map<String, int>) {} }
+
+export class IP3_200_PubDblFixedArr { public constructor(arr: FixedArray<double>) {} }
+
+export class IP3_209_7Overload { public constructor() {} public constructor(a: int) {} public constructor(s: string) {} public constructor(b: boolean) {} public constructor(d: double) {} public constructor(f: float) {} public constructor(l: long) {} }
+
+export class IP3_211_PubObjArr { public constructor(arr: Object[]) {} }
+
+export class IP3_214_PubCtorArr { public constructor(arr: reflect.Constructor[]) {} }
+
+export class IP3_216_All6Idx2 { public constructor() {} public constructor(a: int) {} public constructor(s: string) {} public constructor(b: boolean) {} public constructor(d: double) {} public constructor(f: float) {} }
+
+export class IP3_217_PubClsArr { public constructor(arr: Class[]) {} }
+
+export class ZeroParamCons {
+  id_: number = 0;
+  public constructor() {}
+}
+
+export class SingleParamCons {
+  val_: number = 0;
+  public constructor(v: number) {
+    this.val_ = v;
+  }
+}
+
+export class MultiCtorTarget {
+  numVal: int = 0;
+  strVal: string = '';
+  public constructor(x?: int, s?: string) {
+    if (x !== undefined) {
+      this.numVal = x;
+    }
+    if (s !== undefined) {
+      this.strVal = s;
+    }
+  }
+}
+
+export class Eq04_StrP {
+  val: int = 0;
+  public constructor(s?: string) {}
+}
+export class EqOneParam {
+  val: int = 0;
+  public constructor(v: int) { this.val = v; }
+}
+
+export class EqTwoParam {
+  a: int = 0;
+  b: string = '';
+  public constructor(x: int, s: string) { this.a = x; this.b = s; }
+}
+
+export class S1 { constructor() {} }
+
+export class RecovOne {
+  val: number = 0;
+  public constructor(v: number) { this.val = v; }
+}
+
+export class S2 { constructor(a: int) {} }
+
+export class S3 { constructor(a: int, b: string) {} }
+
+export class S4 { constructor(a: int, b: string, c: boolean) {} }
+export class IntCtor {
+  public v: int;
+  public constructor(v: int) {
+    this.v = v;
+  }
+}
+
+export class TwoParamCtor {
+  public s: string;
+  public n: int;
+  public constructor(s: string, n: int) {
+    this.s = s;
+    this.n = n;
+  }
+}
+
+export class ThreeParamCtor {
+  public a: int;
+  public b: string;
+  public c: boolean;
+  public constructor(a: int, b: string, c: boolean) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+  }
+}
+
+export class StringCtor {
+  public v: string;
+  public constructor(v: string) {
+    this.v = v;
+  }
+}
+
+export class BoolCtor {
+  public v: boolean;
+  public constructor(v: boolean) {
+    this.v = v;
+  }
+}
+
+export class NumberCtor {
+  public v: number;
+  public constructor(v: number) {
+    this.v = v;
+  }
+}
+
+export class ArrayCtor {
+  public v: int[];
+  public constructor(v: int[]) {
+    this.v = v;
+  }
+}
+export class NoArgClass {
+  public constructor() {}
+  public name: string = "default";
+}
+
+export class IntFieldClass {
+  public value: int = 0;
+  public constructor(v: int) {
+    this.value = v;
+  }
+}
+
+export class StringFieldClass {
+  public value: string = "";
+  public constructor(v: string) {
+    this.value = v;
+  }
+}
+
+export class BoolFieldClass {
+  public value: boolean = false;
+  public constructor(v: boolean) {
+    this.value = v;
+  }
+}
+
+export class ParentClass {
+  public parentField: string = "parent";
+  public parentDouble:double=Double.MAX_VALUE;
+  public constructor() {}
+}
+
+export class ChildClass extends ParentClass {
+  public childField: string = "child";
+  public childInt:int=Int.MAX_VALUE;
+  public constructor() {
+    super();
+  }
+}
+
+export class ArrayWrapClass {
+  public items: int[] = [];
+  public constructor(arr: int[]) {
+    this.items = arr;
+  }
+}
+
+export class ManyFieldsClass {
+  public f0: int = 0;
+  public f1: int = 0;
+  public f2: int = 0;
+  public f3: int = 0;
+  public f4: int = 0;
+  public f5: int = 0;
+  public constructor() {}
+}
+
+export class CI_ThisChain0 {
+  public value: string;
+  public count: int;
+  public constructor() {
+    this.value = "default";
+    this.count = 0;
+  }
+}
+
+export class CI_SuperBase {
+  public baseVal: string;
+  public constructor(v: string) {
+    this.baseVal = v;
+  }
+}
+
+export class CI_SuperChild extends CI_SuperBase {
+  public childVal: int;
+  public constructor(v: string, n: int) {
+    super(v);
+    this.childVal = n;
+  }
+}
+
+export class CI_ThreeLevel {
+  public l1: string;
+  public constructor(v: string) {
+    this.l1 = v;
+  }
+}
+
+export class CI_ThreeMid extends CI_ThreeLevel {
+  public l2: string;
+  public constructor(v: string) {
+    super(v);
+    this.l2 = v;
+  }
+}
+
+export class CI_ThreeLeaf extends CI_ThreeMid {
+  public l3: string;
+  public constructor(v: string) {
+    super(v);
+    this.l3 = v;
+  }
+}
+
+export class CI_Default1 {
+  public x: int;
+  public constructor() {
+    this.x = 10;
+  }
+  public constructor(x: int) {
+    this.x = x;
+  }
+}
+
+export class CI_DefaultZero {
+  public n: int;
+  public constructor() {
+    this.n = 0;
+  }
+  public constructor(n: int) {
+    this.n = n;
+  }
+}
+export class CI_20Params {
+  public items: int[];
+  public constructor(p1: int, p2: int, p3: int, p4: int, p5: int, p6: int, p7: int, p8: int, p9: int, p10: int,
+    p11: int, p12: int, p13: int, p14: int, p15: int, p16: int, p17: int, p18: int, p19: int, p20: int) {
+    this.items = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20];
+  }
+}
+export class CI02_OneInt {
+  public val: int = 0;
+  public constructor(v: int) {
+    this.val = v;
+  }
+}
+
+export class CI02_TwoStrBool {
+  public a: string = "";
+  public b: boolean = false;
+  public constructor(a: string, b: boolean) {
+    this.a = a;
+    this.b = b;
+  }
+}
+
+export class CI02_TwoIntStr {
+  public a: int = 0;
+  public b: string = "";
+  public constructor(x: int, y: string) {
+    this.a = x;
+    this.b = y;
+  }
+}
+
+export class CI02_Multi {
+  public a: int = 0;
+  public b: string = "";
+  public c: boolean = false;
+  public d: number = 0.0;
+  public constructor(w: int, x: string, y: boolean, z: number) {
+    this.a = w;
+    this.b = x;
+    this.c = y;
+    this.d = z;
+  }
+}
+
+export class CI02_Overload {
+  public val: int = 0;
+  public tag: string = "";
+  public constructor() {}
+  public constructor(v: int) {
+    this.val = v;
+  }
+  public constructor(v: int, t: string) {
+    this.val = v;
+    this.tag = t;
+  }
+}
+
+export class CI02_Default {
+  public x: int = 100;
+  public y: string = "def";
+  public constructor() {}
+  public constructor(a: int) {
+    this.x = a;
+  }
+  public constructor(a: int, b: string) {
+    this.x = a;
+    this.y = b;
+  }
+}
+
+export class CI02_Inner {
+  public data: int = 0;
+  public constructor(d: int) {
+    this.data = d;
+  }
+}
+
+export class CI02_WithMethod {
+  public base: int = 0;
+  public constructor(v: int) {
+    this.base = v;
+  }
+  public getDouble(): int {
+    return this.base * 2;
+  }
+  public isPositive(): boolean {
+    return this.base > 0;
+  }
+}
+
+export interface Computable_Ext {
+  compute(): int;
+}
+
+export class InterfaceImplClass implements Computable_Ext {
+  public base: int;
+  public constructor(base: int) {
+    this.base = base;
+  }
+  public compute(): int {
+    return this.base * 2;
+  }
+}
+export class ConcreteFromAbstract_Ext extends EmptyCls {
+  public val: string;
+  public constructor(val: string) {
+    super();
+    this.val = val;
+  }
+}
+
+export interface IAlpha_Ext {
+  alpha(): string;
+}
+
+export interface IBeta_Ext {
+  beta(): int;
+}
+
+export class MultiInterface_Ext implements IAlpha_Ext, IBeta_Ext {
+  public name: string;
+  public count: int;
+  public constructor(name: string, count: int) {
+    this.name = name;
+    this.count = count;
+  }
+  public alpha(): string {
+    return "prefix_" + this.name;
+  }
+  public beta(): int {
+    return this.count + 100;
+  }
+}
+export class GenCls<T> {
+  public constructor(val: T) {}
+}
+export class Eq02_B {
+  public constructor(x: number) {}
+}
+export class Eq02_E {
+  public constructor(x: number = 10) {}
+}
+
+export class Eq02_F<T> {
+  public constructor(val: T) {}
+}
+export class TcPub3 {
+  public constructor(a: double) {}
+}
+
+export class PubFixedArrParam {
+  public constructor(a: FixedArray<int>) {}
+}
+
+export class Eq03_FixedStrCls {
+  public constructor(a: FixedArray<string>) {}
+}
+
+export class TcGapObj {
+  public constructor(a: Object) {}
+}
+export class BooleanArg {
+  public constructor(b: boolean) {}
+}
+export class GN_P2 {
+  public constructor(a: int, b: string) {}
+}
+export class Eq03_ImmC {
+  public constructor(a: string, b: boolean) {}
+}
+
+export class Eq03_ImmE {
+  public constructor(a: int, b: string, c: double) {}
+}
+
+export class Eq03_ImmG {
+  public constructor(x: long) {}
+}
+
+export class Eq03_ImmI {
+  public constructor(x: short, y: float) {}
+}
+export class Eq03_ImmL {
+  public constructor(x: double) {}
+}
+export interface EqExt_IFace {
+  doIt(): void;
+}
+
+export class EqExt_ImplEmpty implements EqExt_IFace {
+  public constructor() {}
+  doIt(): void {}
+}
+export class EqExt_ImplInt implements EqExt_IFace {
+  public constructor(a: int) {}
+  doIt(): void {}
+}
+
+export class EqExt_ImplStr implements EqExt_IFace {
+  public constructor(a: string) {}
+  doIt(): void {}
+}
+
+export class EqExt_ImplBool implements EqExt_IFace {
+  public constructor(a: boolean) {}
+  doIt(): void {}
+}
+
+export class EqExt_ImplTwoParams implements EqExt_IFace {
+  public constructor(a: string, b: int) {}
+  doIt(): void {}
+}
+
+export interface EqExt_GenericIFace<T> {
+  process(val: T): void;
+}
+
+export class EqExt_GenericImpl<T> implements EqExt_GenericIFace<T> {
+  public constructor(val: T) {}
+  process(val: T): void {}
+}
+export class SingleField {
+  public val: int = 0;
+  public constructor() {}
+}
+
+export class MixedArgs {
+  public constructor(a: int, b?: string) {}
+}
+
+export class ChildWithSuper extends ParentWithParam {
+  public constructor(a: int) {
+    super(a);
+  }
+}
+
+export interface IfaceMethod {
+  exec(): void;
+}
+
+export class ImplIfaceMethod implements IfaceMethod {
+  public exec(): void {}
+  public constructor() {}
+}
+export class GenericOne<T> {
+  public val: T;
+  public constructor(v: T) {
+    this.val = v;
+  }
+}
+
+export class GenericTwo<T, U> {
+  public a: T;
+  public b: U;
+  public constructor(x: T, y: U) {
+    this.a = x;
+    this.b = y;
+  }
+}
+
+export class GenericBound<T extends int> {
+  public val: T;
+  public constructor(v: T) {
+    this.val = v;
+  }
+}
+
+export class GenericArrayField<T> {
+  public items: T[] = [];
+  public constructor() {}
+}
+
+export class GenParent<T> {
+  public val: T;
+  public constructor(v: T) {
+    this.val = v;
+  }
+}
+
+export class GenParentBase<T> {
+  public val: T;
+  public constructor(v: T) {
+    this.val = v;
+  }
+}
+
+export class GenChild<T> extends GenParentBase<T> {
+  public childVal: T;
+  public constructor(v: T) {
+    super(v);
+    this.childVal = v;
+  }
+}
+
+export class TripleOverload {
+  public constructor(x?: int, y?: string) {}
+}
+
+export interface IMarker {
+}
+
+export class GenBaseCombo<T> {
+  public val: T;
+  public constructor(v: T) {
+    this.val = v;
+  }
+}
+
+export class ComboChild<T> extends GenBaseCombo<T> implements IMarker {
+  public constructor(v: T) {
+    super(v);
+  }
+}
+
+export class GN_4Ctor {
+  public constructor(x?: int, y?: string, z?: boolean) {}
+}
+
+export class GN_6Ctor {
+  public constructor(x?: int, y?: string, z?: boolean, w?: double, v?: byte) {}
+}
+
+export class GN_LoopUpper {
+  public constructor(a: int, b: string, c: boolean, d: double) {}
+}
+
+export class GN_NoThrowGen<T> {
+  public constructor(val: T) {}
+}
+
+export class GN_P10 {
+  public constructor(a: int, b: int, c: int, d: int, e: int, f: int, g: int, h: int, i: int, j: int) {}
+}
+
+export class GN_P15 {
+  public constructor(p1: int, p2: int, p3: int, p4: int, p5: int, p6: int, p7: int, p8: int, p9: int, p10: int, p11: int, p12: int, p13: int, p14: int, p15: int) {}
+}
+
+export class GN_P20 {
+  public constructor(p1: int, p2: int, p3: int, p4: int, p5: int, p6: int, p7: int, p8: int, p9: int, p10: int, p11: int, p12: int, p13: int, p14: int, p15: int, p16: int, p17: int, p18: int, p19: int, p20: int) {}
+}
+export class GN_GenGen<T> {
+  public constructor(val: T) {}
+}
+
+export class MethodCls {
+  public foo(): int {
+    return 42;
+  }
+  public bar(a: int): int {
+    return a;
+  }
+  public constructor() {}
+}
+export interface InterA {
+  foo(): void;
+}
+
+export interface InterB {
+  bar(): void;
+}
+
+export class SingleIF implements InterA {
+  public x: int = 0;
+  public foo(): void {}
+  public constructor() {}
+}
+
+export class MultiIF implements InterA, InterB {
+  public x: int = 0;
+  public foo(): void {}
+  public bar(): void {}
+  public constructor() {}
+}
+
+export abstract class AbsCls {
+  public abstract foo(): void;
+  public constructor() {}
+}
+
+export class RealCls extends AbsCls {
+  public foo(): void {}
+  public constructor() {
+    super();
+  }
+}
+export class BoxCls<T> {
+  public val: T;
+  public constructor(v: T) {
+    this.val = v;
+  }
+}
+
+export class GetSetCls {
+  private p: string = '';
+  public get prop(): string {
+    return this.p;
+  }
+  public set prop(v: string) {
+    this.p = v;
+  }
+  public constructor() {}
+}
+export enum GO_Color { RED, GREEN, BLUE }
+
+export interface GO_MyIface { foo(): void; }
+
+export interface GO_IfaceA { methodA(): void; }
+
+export interface GO_IfaceB { methodB(): void; }
+
+export class GO_ImplIface implements GO_MyIface {
+  public constructor() {}
+  public foo(): void {}
+}
+
+export class GO_ImplMultiIface implements GO_IfaceA, GO_IfaceB {
+  public constructor() {}
+  public methodA(): void {}
+  public methodB(): void {}
+}
+export interface OT_MyInterface {
+  foo(): void;
+}
+
+export interface OT_ExtendsInterface extends OT_MyInterface {
+  bar(): void;
+}
+export class MultiIfaceCtorCls implements OT_ExtendsInterface {
+  public constructor() {}
+  public foo(): void {}
+  public bar(): void {}
+}
+export class OT_GenericOne<T> {
+  public constructor(val: T) {}
+}
+
+export class OT_GenericTwo<T, U> {
+  public constructor(a: T, b: U) {}
+}
+
+export class OT_GenericThree<T, U, V> {
+  public constructor(a: T, b: U, c: V) {}
+}
+
+export class OT_GenericBound<T extends EmptyCls> {
+  public constructor(val: T) {}
+}
+
+export class OT_GenericNested<T> {
+  public constructor(val: T) {}
+}
+
+export class OT_GenericExtends<T> extends OT_GenericNested<T> {
+  public constructor(val: T) { super(val); }
+}
+
+export class OT_GenericContainer<T> {
+  public constructor() {}
+  public foo(): T {
+    return undefined as T;
+  }
+}
+
+export enum OT_Color {
+  RED, GREEN, BLUE
+}
+
+export enum OT_Season {
+  SPRING = "SPRING",
+  SUMMER = "SUMMER",
+  AUTUMN = "AUTUMN",
+  WINTER = "WINTER"
+}
+
+export class OT_DataPoint {
+  x: int = 0;
+  y: int = 0;
+  public constructor() {}
+}
+
+export class OT_DataPerson {
+  name: string = "";
+  age: int = 0;
+  public constructor() {}
+}
+
+export class OT_ReflectTarget {
+  public constructor() {}
+  public value: int = 42;
+  public greet(): string {
+    return "hello";
+  }
+}
+
+export class OT_ReflectWithFields {
+  public constructor() {}
+  public name: string = "test";
+  public count: int = 100;
+  public active: boolean = true;
+}
+
+export class OT_ReflectWithMethods {
+  public constructor() {}
+  public add(a: int, b: int): int {
+    return a + b;
+  }
+  public multiply(a: int, b: int): int {
+    return a * b;
+  }
+}
+
+export class OT_DerivedWithParam extends ParentWithParam {
+  public constructor(x: int) { super(x); }
+}
+export class G01_TenParams {
+  public constructor(p0: int, p1: int, p2: int, p3: int, p4: int, p5: int, p6: int, p7: int, p8: int, p9: int) {}
+}
+
+export class G01_OnlyMethods {
+  public foo(): int {
+    return 42;
+  }
+  public bar(s: string): string {
+    return s;
+  }
+  public constructor() {}
+}
+
+export class G01_ManyFields {
+  public f0: int = 0;
+  public f1: int = 0;
+  public f2: int = 0;
+  public f3: int = 0;
+  public f4: int = 0;
+  public f5: int = 0;
+  public f6: int = 0;
+  public f7: int = 0;
+  public f8: int = 0;
+  public f9: int = 0;
+  public constructor() {}
+}
+
+export class G01_AllFieldTypes {
+  public fi: int = 0;
+  public fs: string = '';
+  public fb: boolean = false;
+  public fd: double = 0.0;
+  public fa: int[] = [0];
+  public constructor() {}
+}
+
+export class G01_FieldExtremes {
+  public maxInt: int = 2147483647;
+  public minInt: int = -2147483648;
+  public zeroInt: int = 0;
+  public emptyStr: string = '';
+  public trueVal: boolean = true;
+  public falseVal: boolean = false;
+  public constructor() {}
+}
+export class G01_StaticMembers {
+  public static s: int = 0;
+  public static t: string = '';
+  public constructor() {}
+}
+export class GO2_Ext_ConcreteGeneric extends GO2_Ext_AbstractGeneric<int> {
+  public process(val: int): int { return val; }
+  public constructor() { super(); }
+}
+
+export class EW_FloatParam {
+  public val: float;
+  public constructor(v: float) {
+    this.val = v;
+  }
+}
+
+export class EW_ByteParam {
+  public val: byte;
+  public constructor(v: byte) {
+    this.val = v;
+  }
+}
+
+export class EW_ShortParam {
+  public val: short;
+  public constructor(v: short) {
+    this.val = v;
+  }
+}
+
+export class EW_LongParam {
+  public val: long;
+  public constructor(v: long) {
+    this.val = v;
+  }
+}
+
+export class EW_CharParam {
+  public val: char;
+  public constructor(v: char) {
+    this.val = v;
+  }
+}
+
+export class EW_ObjectParam {
+  public val: Object;
+  public constructor(v: Object) {
+    this.val = v;
+  }
+}
+
+export class EW_FixedArrayParam {
+  public val: FixedArray<int>;
+  public constructor(v: FixedArray<int>) {
+    this.val = v;
+  }
+}
+
+export class EW_IntBoundary {
+  public val: int;
+  public constructor(v: int) {
+    this.val = v;
+  }
+}
+export class MyData {
+  public constructor() {}
+  public value: int = 0;
+}
+export class CtorOverload {
+  public constructor(a?: string) {}
+}
+export class CtorGeneric<T> {
+  public constructor(a: T) {}
+}
+
+export interface ITestable {
+}
+export class ExtInheritChild extends Eq04_StrP {
+  public constructor(a: int, b: string) { super(b); }
+}
+
+export enum TestColor {
+  RED = 0, GREEN = 1, BLUE = 2
+}
+
+export enum TestFlag {
+  YES = 1, NO = 0
+}
+
+export class DataWrap {
+  public constructor(val: int) {}
+}
+
+export class BaseNum<T> {
+  public constructor(v: T) {}
+}
+
+export class ExtGenChild extends BaseNum<int> {
+  public constructor(v: int) { super(v); }
+}
+
+export class GenBox<T> {
+  public constructor(item: T) {}
+}
+export class FieldsAndMethods {
+  public constructor() {}
+  x: int = 0;
+  y: string = "";
+  calc(): int {
+    return this.x;
+  }
+}
+export class CustomType {
+  public constructor() {}
+  value: int = 0;
+}
+
+export enum TestEnum {
+  A, B, C
+}
+export class OrdRef {
+  public constructor() {}
+  id: int = 0;
+}
+
+export class TypeA {
+  public constructor() {}
+  a: int = 0;
+}
+
+export class TypeB {
+  public constructor() {}
+  b: string = "";
+}
+
+export enum MixEnum {
+  X, Y, Z
+}
+export class AfterGetName {
+  public constructor(msg: string, code: int) {
+  }
+}
+export class GenericClass_Ext<T> {
+  public constructor(a: T) {
+  }
+}
+
+export class GenericMulti_Ext<T, U> {
+  public constructor(a: T, b: U) {
+  }
+}
+
+export interface MyInterface_Ext {
+  doSomething(): void;
+}
+
+export class ImplInterface_Ext implements MyInterface_Ext {
+  doSomething(): void {
+  }
+
+  public constructor(a: string) {
+  }
+}
+
+export class Base_Ext {
+  public constructor() {}
+  baseVal: int = 0;
+}
+
+export interface Action_Ext {
+  run(): void;
+}
+
+export class ExtendsAndImplements_Ext extends Base_Ext implements Action_Ext {
+  run(): void {
+  }
+
+  public constructor(a: int, b: string) {
+    super();
+  }
+}
+
+export interface IA_Ext {
+  foo(): void;
+}
+
+export class MyCustomClass2 {
+  id: int = 0;
+  public constructor(id: int) { this.id = id; }
+}
+
+export class Base {
+  x: int = 0;
+  public constructor(x: int) { this.x = x; }
+}
+export class Derived2 extends Base {
+  y: string = "";
+  z: boolean = false;
+  public constructor(x: int, y: string, z: boolean) { super(x); this.y = y; this.z = z; }
+}
+
+export class Ctor3int {
+  a: int = 0; b: int = 0; c: int = 0;
+  public constructor(a: int, b: int, c: int) { this.a = a; this.b = b; this.c = c; }
+}
+
+export class Ctor3str {
+  a: string = ""; b: string = ""; c: string = "";
+  public constructor(a: string, b: string, c: string) { this.a = a; this.b = b; this.c = c; }
+}
+export class NoExplicitCtor {
+  public constructor() {}
+  x: int = 0;
+  y: string = "";
+}
+export class GenericEmptyCtorExt<T> {
+  public constructor() {}
+}
+
+export interface IF_Single {
+  doWork(): void;
+}
+
+export interface IF_A {
+  taskA(): void;
+}
+
+export interface IF_B {
+  taskB(): void;
+}
+
+export interface IF_WithProp {
+  id: int;
+  process(): void;
+}
+
+export enum PGN_TestColor { RED, GREEN, BLUE }
+export class PGN_SingleDefault {
+  public constructor(value: int = 0) {}
+}
+export class PGN_TwoDefault {
+  public constructor(a: int = 0, b: string = "hello") {}
+}
+export class PGN_MultiDefaultMand {
+  public constructor(a: int, b: string = "hello", c: boolean = true) {}
+}
+export class PGN_InheritChild extends ParentWithParam {
+  public constructor(a: int, b: string) {
+    super(a);
+  }
+}
+export class PGN_Level2 extends ParentWithParam {
+  public constructor(a: int, b: int) {
+    super(a);
+  }
+}
+
+export class PGN_Level3 extends PGN_Level2 {
+  public constructor(a: int, b: int, c: int) {
+    super(a, b);
+  }
+}
+
+export class PGN_Level4 extends PGN_Level3 {
+  public constructor(a: int, b: int, c: int, d: int) {
+    super(a, b, c);
+  }
+}
+
+export class PGN_Level5 extends PGN_Level4 {
+  public constructor(a: int, b: int, c: int, d: int, e: int) {
+    super(a, b, c, d);
+  }
+}
+export class PGN_ThreeLevelC extends EmptyCls {
+  public constructor(a: int) {
+    super();
+  }
+}
+export class PGN_SuperCallTwoParamChild extends TwoSameInt {
+  public constructor(a: int, b: int) {
+    super(a, b);
+  }
+}
+export class PGN_ImplSingleInterface implements IF_Single {
+  public constructor(a: int) {}
+  doWork(): void {}
+}
+
+export class PGN_ImplMultiInterface implements IF_A, IF_B {
+  public constructor(a: int) {}
+  taskA(): void {}
+  taskB(): void {}
+}
+
+export class PGN_ImplInterfaceProp implements IF_WithProp {
+  id: int = 0;
+  public constructor(a: int) {}
+  process(): void {}
+}
+
+export class PGN_InheritAndInterface extends EmptyCls implements IF_Single {
+  public constructor(a: int) {
+    super();
+  }
+  doWork(): void {}
+}
+
+export class PGN_MultiInheritMultiInterface extends EmptyCls implements IF_A, IF_B {
+  public constructor(a: int) {
+    super();
+  }
+  taskA(): void {}
+  taskB(): void {}
+}
+
+export class PGN_InterfaceNoCtor implements IF_Single {
+  public constructor() {}
+  doWork(): void {}
+}
+
+export class PGN_InterfaceTwoParam implements IF_Single {
+  public constructor(a: int, b: string) {}
+  doWork(): void {}
+}
+
+export class PGN_InterfaceThreeParam implements IF_Single {
+  public constructor(a: int, b: string, c: boolean) {}
+  doWork(): void {}
+}
+
+export interface IF_Generic<T> {
+  getData(): T;
+}
+
+export class PGN_GenericInterfaceImpl<T> implements IF_Generic<T> {
+  public constructor(a: int) {}
+  getData(): T { return undefined!; }
+}
+export class PGN_AbstractGenericInterface<T> extends EmptyCls implements IF_Generic<T> {
+  public constructor(a: int) {
+    super();
+  }
+  getData(): T { return undefined!; }
+}
+
+export class PGN_GenericSingle<T> {
+  public constructor(value: T) {}
+}
+
+export class PGN_GenericTwo<T, U> {
+  public constructor(a: T, b: U) {}
+}
+
+export class PGN_GenericConstrained<T extends number> {
+  public constructor(value: T) {}
+}
+
+export class PGN_GenericDefault<T = string> {
+  public constructor(value: T) {}
+}
+
+export class PGN_GenericChild<T> extends PGN_GenericSingle<T> {
+  public constructor(value: T) {
+    super(value);
+  }
+}
+
+export class PGN_GenericImplInterface<T> implements IF_Generic<T> {
+  public constructor(value: T) {}
+  getData(): T { return undefined!; }
+}
+
+export class PGN_ComplexGenericInherit<T> extends PGN_GenericSingle<T> implements IF_Single {
+  public constructor(value: T) {
+    super(value);
+  }
+  doWork(): void {}
+}
+export class PGN_Config {
+  public constructor(host: string, port: int) {}
+}
+
+export class GN2_B1P {
+  public constructor(p1: int) {}
+}
+
+export class GN2_D2P extends GN2_B1P {
+  public constructor(p1: int, p2: string) { super(p1); }
+}
+
+export class GN2_B2P {
+  public constructor(p1: int, p2: int) {}
+}
+
+export class GN2_D0P extends GN2_B2P {
+  public constructor() { super(0, 0); }
+}
+export class GN2_LvlB extends EmptyCls {
+  public constructor(p1: int) { super(); }
+}
+
+export class GN2_LvlC extends GN2_LvlB {
+
