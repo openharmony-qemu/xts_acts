@@ -1059,7 +1059,6 @@ export default function containerSerializeTest() {
             if (receivedCount === 36) {
               workerInstance.terminate();
               console.info(`${caseName} test end`);
-              done();
             }
           };
 

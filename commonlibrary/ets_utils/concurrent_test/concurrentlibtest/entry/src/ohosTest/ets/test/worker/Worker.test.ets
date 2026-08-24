@@ -4171,18 +4171,10 @@ export default function workerTest() {
       }
       ;
       done()
-    }); /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_0200
-     * @tc.name      : testOnce0002
-     * @tc.desc      : Add an event listener to the Worker. The event listener is executed only once and is
-     *                 automatically deleted
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
+    });
     /**
      * @tc.name   testOnce0002
-     * @tc.number testOnce0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_0200
      * @tc.desc   testOnce0002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5799,6 +5791,8 @@ export default function workerTest() {
       const caseName: string = 'testUnRegisterGlobalCallObject0009';
       try {
         let state: boolean = false;
+        let messageReceived: boolean = false;
+        let callSucceeded: boolean = false;
         const workerInstance = new worker.ThreadWorker("../../workers/WorkerGlobalCallObject.ets");
         let registerObj = new TestObj();
         const instanceName = "obj";
@@ -5806,20 +5800,29 @@ export default function workerTest() {
         await Sleep(50);
         workerInstance.unregisterGlobalCallObject(caseName);
         await Sleep(50);
-        let message = new TestCallObject(instanceName, "func1", 1);
-        workerInstance.postMessage(message);
+        let message = new TestCallObject(instanceName, "func1", 200);
         workerInstance.onmessage = (e) => {
           console.log(`${caseName} main onmessage result:` + JSON.stringify(e));
-          expect(e.data).assertTrue();
+          callSucceeded = e.data as boolean;
+          messageReceived = true;
           workerInstance.terminate();
         }
         workerInstance.onexit = (code) => {
           console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
           state = true;
         }
-        while (!state) {
+        workerInstance.postMessage(message);
+        let waitCount: number = 0;
+        while (!state && waitCount < 50) {
           await Sleep(100);
+          waitCount++;
         }
+        if (!state) {
+          workerInstance.terminate();
+        }
+        expect(messageReceived).assertTrue();
+        expect(state).assertTrue();
+        expect(callSucceeded).assertTrue();
       } catch (error) {
         console.error(`${caseName} catch error: ${error}`);
         expect().assertFail();
