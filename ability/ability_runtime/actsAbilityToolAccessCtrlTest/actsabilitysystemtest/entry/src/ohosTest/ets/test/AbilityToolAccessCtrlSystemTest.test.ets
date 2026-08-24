@@ -35,14 +35,14 @@ export default function systemTest() {
     });
 
     /**
-     * @tc.name   Sec_SAF_AgentFence0011
-     * @tc.number Sec_SAF_AgentFence0011
+     * @tc.name   SUB_Security_Asset_Sec_SAF_AgentFence_0011
+     * @tc.number SUB_Security_Asset_Sec_SAF_AgentFence_0011
      * @tc.desc   requestToolPermissions by non-system app returns error 202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sec_SAF_AgentFence0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) =>{
+    it('SUB_Security_Asset_Sec_SAF_AgentFence_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) =>{
       let permissionQuery: abilityToolAccessCtrl.PermissionQuery = {
         operationInfo: [{
           operationType: abilityToolAccessCtrl.OperationType.CLI,
@@ -63,14 +63,14 @@ export default function systemTest() {
     });
 
     /**
-     * @tc.name   Sec_SAF_AgentFence035
-     * @tc.number Sec_SAF_AgentFence035
+     * @tc.name   SUB_Security_Asset_Sec_SAF_AgentFence_0035
+     * @tc.number SUB_Security_Asset_Sec_SAF_AgentFence_0035
      * @tc.desc   grantToolPermissionsByUser by non-system app returns error 202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sec_SAF_AgentFence035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
+    it('SUB_Security_Asset_Sec_SAF_AgentFence_0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
       let userAuthResult: Array<abilityToolAccessCtrl.UserAuthResult> = [{
         permissionInfo: [{
           permission: 'ohos.permission.CAMERA',
