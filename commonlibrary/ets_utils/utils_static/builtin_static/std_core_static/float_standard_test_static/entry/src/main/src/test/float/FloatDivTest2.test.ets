@@ -204,8 +204,8 @@ export default function FloatDivTest2(): void {
     it('testFloatDiv010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(6.0);
       try {
-      
-      f.div(2 as long as Object as Float);
+
+        f.div(2 as long as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -279,7 +279,7 @@ export default function FloatDivTest2(): void {
     it('testFloatDiv014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(10.0);
       try {
-      f.div([1.0, 2.0] as Object as Float);
+        f.div([1.0, 2.0] as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -318,7 +318,7 @@ export default function FloatDivTest2(): void {
       const map: Map<string, int> = new Map<string, int>();
       map.set('key', 1);
       try {
-      f.div(map as Object as Float);
+        f.div(map as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -334,9 +334,9 @@ export default function FloatDivTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatDiv017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const f: Float = new Float(6.0);
+      const f: Float = new Float(6.0);
       try {
-      f.div(Color.RED as Object as Float);
+        f.div(Color.RED as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -453,7 +453,7 @@ export default function FloatDivTest2(): void {
     it('testFloatDiv025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(1.0);
       try {
-      f.div(new Object() as Object as Float);
+        f.div(new Object() as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -472,7 +472,7 @@ export default function FloatDivTest2(): void {
       const f: Float = new Float(1.0);
       const longStr: string = 'x'.repeat(65535);
       try {
-      f.div(longStr as Object as Float);
+        f.div(longStr as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -491,7 +491,7 @@ export default function FloatDivTest2(): void {
       const f: Float = new Float(1.0);
       let arr: int[] = [];
       try {
-      f.div(arr as Object as Float);
+        f.div(arr as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -510,7 +510,7 @@ export default function FloatDivTest2(): void {
       const f: Float = new Float(1.0);
       let arr: Object[] = [1, 'test', true];
       try {
-      f.div(arr as Object as Float);
+        f.div(arr as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -529,7 +529,7 @@ export default function FloatDivTest2(): void {
       const f: Float = new Float(1.0);
       let matrix: int[][] = [];
       try {
-      f.div(matrix as Object as Float);
+        f.div(matrix as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -548,13 +548,13 @@ export default function FloatDivTest2(): void {
       const f: Float = new Float(1.0);
       const list: Array<string> = new Array<string>('a', 'b');
       try {
-      f.div(list as Object as Float);
+        f.div(list as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
       }
     });
-    
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_DIV_2_0310
      * @tc.name testFloatDiv031
@@ -1012,11 +1012,11 @@ export default function FloatDivTest2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatDiv057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const jsonData: JsonData = new JsonData();
+      const jsonData: JsonData = new JsonData();
       jsonData.key = 123;
       const f: Float = new Float(1.0);
       try {
-      f.div(jsonData as Object as Float);
+        f.div(jsonData as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -1035,7 +1035,7 @@ export default function FloatDivTest2(): void {
       const f: Float = new Float(1.0);
       const dateVal: Date = new Date();
       try {
-      f.div(dateVal as Object as Float);
+        f.div(dateVal as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -1054,13 +1054,13 @@ export default function FloatDivTest2(): void {
       const f: Float = new Float(1.0);
       const regVal: RegExp = new RegExp('test');
       try {
-      f.div(regVal as Object as Float);
+        f.div(regVal as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
       }
     });
-    
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_DIV_2_0600
      * @tc.name testFloatDiv060
@@ -1073,7 +1073,7 @@ export default function FloatDivTest2(): void {
       const f: Float = new Float(1.0);
       const rec: Record<string, number> = {'key': 1};
       try {
-      f.div(rec as Object as Float);
+        f.div(rec as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -1094,7 +1094,7 @@ export default function FloatDivTest2(): void {
       const wm: WeakMap<Object, int> = new WeakMap<Object, int>();
       wm.set(keyObj, 1);
       try {
-      f.div(wm as Object as Float);
+        f.div(wm as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -1115,7 +1115,7 @@ export default function FloatDivTest2(): void {
       const ws: WeakSet<Object> = new WeakSet<Object>();
       ws.add(wsObj);
       try {
-      f.div(ws as Object as Float);
+        f.div(ws as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -1132,8 +1132,8 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(-5.0f);
-        const result: Float = a.div(a);
-        expect(result.toFloat()).assertEqual(1.0f);
+      const result: Float = a.div(a);
+      expect(result.toFloat()).assertEqual(1.0f);
     });
 
     /**
@@ -1146,8 +1146,8 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(-42.0f);
-        const one: Float = new Float(1.0f);
-        expect(a.div(one).toFloat()).assertEqual(a.toFloat());
+      const one: Float = new Float(1.0f);
+      expect(a.div(one).toFloat()).assertEqual(a.toFloat());
     });
 
     /**
@@ -1160,8 +1160,8 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(0.123456f);
-        const one: Float = new Float(1.0f);
-        expect(a.div(one).toFloat()).assertEqual(a.toFloat());
+      const one: Float = new Float(1.0f);
+      expect(a.div(one).toFloat()).assertEqual(a.toFloat());
     });
 
     /**
@@ -1174,11 +1174,11 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(10.0f);
-        const b: Float = new Float(2.0f);
-        const reciprocal: Float = new Float(1.0f / b.toFloat());
-        const left: Float = a.div(b);
-        const right: Float = a.mul(reciprocal);
-        expect(left.toFloat()).assertClose(right.toFloat(), 0.000001f);
+      const b: Float = new Float(2.0f);
+      const reciprocal: Float = new Float(1.0f / b.toFloat());
+      const left: Float = a.div(b);
+      const right: Float = a.mul(reciprocal);
+      expect(left.toFloat()).assertClose(right.toFloat(), 0.000001f);
     });
 
     /**
@@ -1191,10 +1191,10 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const minVal: Float = new Float(Float.MIN_VALUE);
-        const two: Float = new Float(2.0f);
-        const result: Float = minVal.div(two);
-        expect(result.toFloat()).assertLargerOrEqual(0.0f);
-        expect(result.toFloat()).assertLess(Float.MIN_VALUE);
+      const two: Float = new Float(2.0f);
+      const result: Float = minVal.div(two);
+      expect(result.toFloat()).assertLargerOrEqual(0.0f);
+      expect(result.toFloat()).assertLess(Float.MIN_VALUE);
     });
 
     /**
@@ -1207,9 +1207,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const minVal: Float = new Float(Float.MIN_VALUE);
-        const half: Float = new Float(0.5f);
-        const result: Float = minVal.div(half);
-        expect(result.toFloat()).assertEqual(Float.MIN_VALUE * 2.0f);
+      const half: Float = new Float(0.5f);
+      const result: Float = minVal.div(half);
+      expect(result.toFloat()).assertEqual(Float.MIN_VALUE * 2.0f);
     });
 
     /**
@@ -1222,9 +1222,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const large: Float = new Float(1.0e10f);
-        const small: Float = new Float(0.5f);
-        const result: Float = large.div(small);
-        expect(result.toFloat()).assertEqual(2.0e10f);
+      const small: Float = new Float(0.5f);
+      const result: Float = large.div(small);
+      expect(result.toFloat()).assertEqual(2.0e10f);
     });
 
     /**
@@ -1237,9 +1237,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(0.3f);
-        const b: Float = new Float(0.1f);
-        const result: Float = a.div(b);
-        expect(result.toFloat()).assertClose(3.0f, 0.000001f);
+      const b: Float = new Float(0.1f);
+      const result: Float = a.div(b);
+      expect(result.toFloat()).assertClose(3.0f, 0.000001f);
     });
 
     /**
@@ -1252,9 +1252,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(-6.0f);
-        const b: Float = new Float(-2.0f);
-        const result: Float = a.div(b);
-        expect(result.toFloat()).assertEqual(3.0f);
+      const b: Float = new Float(-2.0f);
+      const result: Float = a.div(b);
+      expect(result.toFloat()).assertEqual(3.0f);
     });
 
     /**
@@ -1267,9 +1267,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(6.0f);
-        const b: Float = new Float(-2.0f);
-        const result: Float = a.div(b);
-        expect(result.toFloat()).assertEqual(-3.0f);
+      const b: Float = new Float(-2.0f);
+      const result: Float = a.div(b);
+      expect(result.toFloat()).assertEqual(-3.0f);
     });
 
     /**
@@ -1282,9 +1282,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(-6.0f);
-        const b: Float = new Float(2.0f);
-        const result: Float = a.div(b);
-        expect(result.toFloat()).assertEqual(-3.0f);
+      const b: Float = new Float(2.0f);
+      const result: Float = a.div(b);
+      expect(result.toFloat()).assertEqual(-3.0f);
     });
 
     /**
@@ -1297,9 +1297,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const maxVal: Float = new Float(Float.MAX_VALUE);
-        const half: Float = new Float(0.5f);
-        const result: Float = maxVal.div(half);
-        expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
+      const half: Float = new Float(0.5f);
+      const result: Float = maxVal.div(half);
+      expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
     });
 
     /**
@@ -1312,9 +1312,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const maxVal: Float = new Float(Float.MAX_VALUE);
-        const nearOne: Float = new Float(0.999f);
-        const result: Float = maxVal.div(nearOne);
-        expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
+      const nearOne: Float = new Float(0.999f);
+      const result: Float = maxVal.div(nearOne);
+      expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
     });
 
     /**
@@ -1327,9 +1327,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(1.0f);
-        const zero: Float = new Float(0.0f);
-        const result: Float = a.div(zero);
-        expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
+      const zero: Float = new Float(0.0f);
+      const result: Float = a.div(zero);
+      expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
     });
 
     /**
@@ -1342,9 +1342,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(1.0f);
-        const negZero: Float = new Float(-0.0f);
-        const result: Float = a.div(negZero);
-        expect(result.toFloat()).assertEqual(Float.NEGATIVE_INFINITY);
+      const negZero: Float = new Float(-0.0f);
+      const result: Float = a.div(negZero);
+      expect(result.toFloat()).assertEqual(Float.NEGATIVE_INFINITY);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_DIV_2_0780
@@ -1356,12 +1356,12 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(10.0f);
-        const b: Float = new Float(2.0f);
-        const aOrig: float = a.toFloat();
-        const bOrig: float = b.toFloat();
-        const result: Float = a.div(b);
-        expect(a.toFloat()).assertEqual(aOrig);
-        expect(b.toFloat()).assertEqual(bOrig);
+      const b: Float = new Float(2.0f);
+      const aOrig: float = a.toFloat();
+      const bOrig: float = b.toFloat();
+      const result: Float = a.div(b);
+      expect(a.toFloat()).assertEqual(aOrig);
+      expect(b.toFloat()).assertEqual(bOrig);
     });
 
     /**
@@ -1374,10 +1374,10 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(6.0f);
-        const b: Float = new Float(2.0f);
-        const result: Float = a.div(b);
-        expect(result).not().assertEqual(a);
-        expect(result).not().assertEqual(b);
+      const b: Float = new Float(2.0f);
+      const result: Float = a.div(b);
+      expect(result).not().assertEqual(a);
+      expect(result).not().assertEqual(b);
     });
 
     /**
@@ -1390,8 +1390,8 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(10.0f);
-        const b: Float = new Float(3.0f);
-        expect(a.div(b).toFloat()).assertEqual(a.toFloat() / b.toFloat());
+      const b: Float = new Float(3.0f);
+      expect(a.div(b).toFloat()).assertEqual(a.toFloat() / b.toFloat());
     });
 
     /**
@@ -1404,11 +1404,11 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float | null = new Float(10.0f);
-        const b: Float | null = new Float(2.0f);
-        if (a !== null && b !== null) {
-          const result: Float = a.div(b);
-          expect(result.toFloat()).assertEqual(5.0f);
-        }
+      const b: Float | null = new Float(2.0f);
+      if (a !== null && b !== null) {
+        const result: Float = a.div(b);
+        expect(result.toFloat()).assertEqual(5.0f);
+      }
     });
 
     /**
@@ -1421,9 +1421,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const defaultVal: Float = new Float();
-        const five: Float = new Float(5.0f);
-        const result: Float = defaultVal.div(five);
-        expect(result.toFloat()).assertEqual(0.0f);
+      const five: Float = new Float(5.0f);
+      const result: Float = defaultVal.div(five);
+      expect(result.toFloat()).assertEqual(0.0f);
     });
 
     /**
@@ -1436,11 +1436,11 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(3.0f);
-        const half: Float = new Float(0.5f);
-        const two: Float = new Float(2.0f);
-        const left: Float = a.div(half);
-        const right: Float = a.mul(two);
-        expect(left.toFloat()).assertEqual(right.toFloat());
+      const half: Float = new Float(0.5f);
+      const two: Float = new Float(2.0f);
+      const left: Float = a.div(half);
+      const right: Float = a.mul(two);
+      expect(left.toFloat()).assertEqual(right.toFloat());
     });
 
     /**
@@ -1453,9 +1453,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(6.0f);
-        const b: Float = new Float(2.0);
-        const result: Float = a.div(b);
-        expect(result.toFloat()).assertEqual(3.0f);
+      const b: Float = new Float(2.0);
+      const result: Float = a.div(b);
+      expect(result.toFloat()).assertEqual(3.0f);
     });
 
     /**
@@ -1468,9 +1468,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const maxSafe: Float = new Float(Float.MAX_SAFE_INTEGER);
-        const one: Float = new Float(1.0f);
-        const result: Float = maxSafe.div(one);
-        expect(result.toFloat()).assertEqual(Float.MAX_SAFE_INTEGER);
+      const one: Float = new Float(1.0f);
+      const result: Float = maxSafe.div(one);
+      expect(result.toFloat()).assertEqual(Float.MAX_SAFE_INTEGER);
     });
 
     /**
@@ -1483,7 +1483,7 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Float = new Float(120.0f).div(new Float(2.0f)).div(new Float(3.0f)).div(new Float(5.0f));
-        expect(result.toFloat()).assertEqual(4.0f);
+      expect(result.toFloat()).assertEqual(4.0f);
     });
 
     /**
@@ -1496,11 +1496,11 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(64.0f);
-        const b: Float = new Float(4.0f);
-        const c: Float = new Float(2.0f);
-        const step1: Float = a.div(b);
-        const result: Float = step1.div(c);
-        expect(result.toFloat()).assertEqual(8.0f);
+      const b: Float = new Float(4.0f);
+      const c: Float = new Float(2.0f);
+      const step1: Float = a.div(b);
+      const result: Float = step1.div(c);
+      expect(result.toFloat()).assertEqual(8.0f);
     });
 
     /**
@@ -1513,9 +1513,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inf: Float = new Float(Float.POSITIVE_INFINITY);
-        const val: Float = new Float(2.0f);
-        const result: Float = inf.div(val);
-        expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
+      const val: Float = new Float(2.0f);
+      const result: Float = inf.div(val);
+      expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
     });
 
     /**
@@ -1528,9 +1528,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negInf: Float = new Float(Float.NEGATIVE_INFINITY);
-        const val: Float = new Float(2.0f);
-        const result: Float = negInf.div(val);
-        expect(result.toFloat()).assertEqual(Float.NEGATIVE_INFINITY);
+      const val: Float = new Float(2.0f);
+      const result: Float = negInf.div(val);
+      expect(result.toFloat()).assertEqual(Float.NEGATIVE_INFINITY);
     });
 
     /**
@@ -1543,9 +1543,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nan: Float = new Float(Float.NaN);
-        const val: Float = new Float(1.0f);
-        const result: Float = nan.div(val);
-        expect(result.isNaN()).assertTrue();
+      const val: Float = new Float(1.0f);
+      const result: Float = nan.div(val);
+      expect(result.isNaN()).assertTrue();
     });
 
     /**
@@ -1558,9 +1558,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const val: Float = new Float(1.0f);
-        const nan: Float = new Float(Float.NaN);
-        const result: Float = val.div(nan);
-        expect(result.isNaN()).assertTrue();
+      const nan: Float = new Float(Float.NaN);
+      const result: Float = val.div(nan);
+      expect(result.isNaN()).assertTrue();
     });
 
     /**
@@ -1573,7 +1573,7 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Float = new Float(20.0f).div(new Float(4.0f)).add(new Float(3.0f));
-        expect(result.toFloat()).assertEqual(8.0f);
+      expect(result.toFloat()).assertEqual(8.0f);
     });
 
     /**
@@ -1586,7 +1586,7 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Float = new Float(20.0f).div(new Float(4.0f)).sub(new Float(2.0f));
-        expect(result.toFloat()).assertEqual(3.0f);
+      expect(result.toFloat()).assertEqual(3.0f);
     });
 
     /**
@@ -1599,7 +1599,7 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Float = new Float(20.0f).div(new Float(4.0f)).mul(new Float(3.0f));
-        expect(result.toFloat()).assertEqual(15.0f);
+      expect(result.toFloat()).assertEqual(15.0f);
     });
 
     /**
@@ -1612,7 +1612,7 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Float = new Float(6.0f).div(new Float(2.0f));
-        expect(result.isFinite()).assertTrue();
+      expect(result.isFinite()).assertTrue();
     });
 
     /**
@@ -1625,7 +1625,7 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Float = new Float(6.0f).div(new Float(2.0f));
-        expect(result.isNaN()).assertFalse();
+      expect(result.isNaN()).assertFalse();
     });
 
     /**
@@ -1638,8 +1638,8 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Float = new Float(12.0f).div(new Float(4.0f));
-        const floatVal: float = result.toFloat();
-        expect(floatVal).assertEqual(3.0f);
+      const floatVal: float = result.toFloat();
+      expect(floatVal).assertEqual(3.0f);
     });
 
     /**
@@ -1652,10 +1652,10 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(1.0f);
-        const eps: Float = new Float(Float.EPSILON);
-        const result: Float = a.div(eps);
-        expect(result.isFinite()).assertTrue();
-        expect(result.toFloat()).assertLarger(1.0f);
+      const eps: Float = new Float(Float.EPSILON);
+      const result: Float = a.div(eps);
+      expect(result.isFinite()).assertTrue();
+      expect(result.toFloat()).assertLarger(1.0f);
     });
 
     /**
@@ -1668,9 +1668,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(1.0f);
-        const delta: Float = new Float(Float.DELTA);
-        const result: Float = a.div(delta);
-        expect(result.isFinite()).assertTrue();
+      const delta: Float = new Float(Float.DELTA);
+      const result: Float = a.div(delta);
+      expect(result.isFinite()).assertTrue();
     });
 
     /**
@@ -1683,7 +1683,7 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Float = new Float(120.0f).div(new Float(-2.0f)).div(new Float(3.0f)).div(new Float(-5.0f));
-        expect(result.toFloat()).assertEqual(4.0f);
+      expect(result.toFloat()).assertEqual(4.0f);
     });
 
     /**
@@ -1696,11 +1696,11 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: Float = new Float(32.0f);
-        const divisor: Float = new Float(2.0f);
-        for (let i = 0; i < 5; i++) {
-          val = val.div(divisor);
-        }
-        expect(val.toFloat()).assertEqual(1.0f);
+      const divisor: Float = new Float(2.0f);
+      for (let i = 0; i < 5; i++) {
+        val = val.div(divisor);
+      }
+      expect(val.toFloat()).assertEqual(1.0f);
     });
 
     /**
@@ -1713,9 +1713,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const val: Float = new Float(100.0f);
-        const inf: Float = new Float(Float.POSITIVE_INFINITY);
-        const result: Float = val.div(inf);
-        expect(result.toFloat()).assertEqual(0.0f);
+      const inf: Float = new Float(Float.POSITIVE_INFINITY);
+      const result: Float = val.div(inf);
+      expect(result.toFloat()).assertEqual(0.0f);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_DIV_2_1030
@@ -1727,9 +1727,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negInf: Float = new Float(Float.NEGATIVE_INFINITY);
-        const posInf: Float = new Float(Float.POSITIVE_INFINITY);
-        const result: Float = negInf.div(posInf);
-        expect(result.isNaN()).assertTrue();
+      const posInf: Float = new Float(Float.POSITIVE_INFINITY);
+      const result: Float = negInf.div(posInf);
+      expect(result.isNaN()).assertTrue();
     });
 
     /**
@@ -1742,9 +1742,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(7.0f);
-        const negOne: Float = new Float(-1.0f);
-        const result: Float = a.div(negOne);
-        expect(result.toFloat()).assertEqual(-7.0f);
+      const negOne: Float = new Float(-1.0f);
+      const result: Float = a.div(negOne);
+      expect(result.toFloat()).assertEqual(-7.0f);
     });
 
     /**
@@ -1757,17 +1757,17 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(24.0f);
-        const b: Float = new Float(2.0f);
-        const c: Float = new Float(3.0f);
-        const aOrig: float = a.toFloat();
-        const bOrig: float = b.toFloat();
-        const cOrig: float = c.toFloat();
-        const step1: Float = a.div(b);
-        const result: Float = step1.div(c);
-        expect(a.toFloat()).assertEqual(aOrig);
-        expect(b.toFloat()).assertEqual(bOrig);
-        expect(c.toFloat()).assertEqual(cOrig);
-        expect(result.toFloat()).assertEqual(4.0f);
+      const b: Float = new Float(2.0f);
+      const c: Float = new Float(3.0f);
+      const aOrig: float = a.toFloat();
+      const bOrig: float = b.toFloat();
+      const cOrig: float = c.toFloat();
+      const step1: Float = a.div(b);
+      const result: Float = step1.div(c);
+      expect(a.toFloat()).assertEqual(aOrig);
+      expect(b.toFloat()).assertEqual(bOrig);
+      expect(c.toFloat()).assertEqual(cOrig);
+      expect(result.toFloat()).assertEqual(4.0f);
     });
 
     /**
@@ -1780,12 +1780,12 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Float = new Float(720.0f)
-          .div(new Float(2.0f))
-          .div(new Float(3.0f))
-          .div(new Float(4.0f))
-          .div(new Float(5.0f))
-          .div(new Float(6.0f));
-        expect(result.toFloat()).assertEqual(1.0f);
+      .div(new Float(2.0f))
+      .div(new Float(3.0f))
+      .div(new Float(4.0f))
+      .div(new Float(5.0f))
+      .div(new Float(6.0f));
+      expect(result.toFloat()).assertEqual(1.0f);
     });
 
     /**
@@ -1798,9 +1798,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float();
-        const b: Float = new Float();
-        const result: Float = a.div(b);
-        expect(result.isNaN()).assertTrue();
+      const b: Float = new Float();
+      const result: Float = a.div(b);
+      expect(result.isNaN()).assertTrue();
     });
 
     /**
@@ -1813,11 +1813,11 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(5.0f);
-        const quarter: Float = new Float(0.25f);
-        const four: Float = new Float(4.0f);
-        const left: Float = a.div(quarter);
-        const right: Float = a.mul(four);
-        expect(left.toFloat()).assertEqual(right.toFloat());
+      const quarter: Float = new Float(0.25f);
+      const four: Float = new Float(4.0f);
+      const left: Float = a.div(quarter);
+      const right: Float = a.mul(four);
+      expect(left.toFloat()).assertEqual(right.toFloat());
     });
 
     /**
@@ -1830,11 +1830,11 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(3.0f);
-        const eighth: Float = new Float(0.125f);
-        const eight: Float = new Float(8.0f);
-        const left: Float = a.div(eighth);
-        const right: Float = a.mul(eight);
-        expect(left.toFloat()).assertEqual(right.toFloat());
+      const eighth: Float = new Float(0.125f);
+      const eight: Float = new Float(8.0f);
+      const left: Float = a.div(eighth);
+      const right: Float = a.mul(eight);
+      expect(left.toFloat()).assertEqual(right.toFloat());
     });
 
     /**
@@ -1847,8 +1847,8 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(Float.MAX_VALUE);
-        const result: Float = a.div(a);
-        expect(result.toFloat()).assertEqual(1.0f);
+      const result: Float = a.div(a);
+      expect(result.toFloat()).assertEqual(1.0f);
     });
 
     /**
@@ -1861,8 +1861,8 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(Float.MIN_VALUE);
-        const result: Float = a.div(a);
-        expect(result.toFloat()).assertEqual(1.0f);
+      const result: Float = a.div(a);
+      expect(result.toFloat()).assertEqual(1.0f);
     });
 
     /**
@@ -1875,9 +1875,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(-1.0f);
-        const negZero: Float = new Float(-0.0f);
-        const result: Float = a.div(negZero);
-        expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
+      const negZero: Float = new Float(-0.0f);
+      const result: Float = a.div(negZero);
+      expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
     });
 
     /**
@@ -1890,9 +1890,9 @@ export default function FloatDivTest2(): void {
      */
     it('testFloatDiv113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Float = new Float(-1.0f);
-        const zero: Float = new Float(0.0f);
-        const result: Float = a.div(zero);
-        expect(result.toFloat()).assertEqual(Float.NEGATIVE_INFINITY);
+      const zero: Float = new Float(0.0f);
+      const result: Float = a.div(zero);
+      expect(result.toFloat()).assertEqual(Float.NEGATIVE_INFINITY);
     });
 
     /**
@@ -2030,9 +2030,9 @@ export default function FloatDivTest2(): void {
       expect(result.isFinite()).assertFalse();
     });
 
-  /**
-   * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_DIV_2_1230
-   * @tc.name testFloatDiv123
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_DIV_2_1230
+     * @tc.name testFloatDiv123
      * @tc.desc Verify NaN propagation: NaN / NaN returns NaN
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
