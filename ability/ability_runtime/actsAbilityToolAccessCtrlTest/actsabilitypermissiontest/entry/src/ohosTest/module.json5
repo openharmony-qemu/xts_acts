@@ -49,6 +49,12 @@
     "extensionAbilities": [
     ],
     "requestPermissions": [
+      {
+        "name": "ohos.permission.cli.START_ABILITY"
+      },
+      {
+        "name": "ohos.permission.CAMERA"
+      }
     ]
   }
 }

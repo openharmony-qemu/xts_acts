@@ -47,21 +47,19 @@ export default function permissionTest() {
         operationInfo: [{
           operationType: abilityToolAccessCtrl.OperationType.CLI,
           info: {
-            cliCmdName: 'testCmd',
-            subCliCmdName: 'testSubCmd'
+            cliCmdName: 'ohos-aa',
+            subCliCmdName: 'start'
           }
         }],
         needTicket: false
       };
       try {
-        abilityToolAccessCtrl.requestToolPermissions(permissionQuery).then((data: abilityToolAccessCtrl.PermissionQueryResult) => {
-          expect(false).assertTrue();
-        }).catch((err: BusinessError): void => {
-          expect(err.code).assertEqual(201);
-        });
-      } catch (error) {
+        await abilityToolAccessCtrl.requestToolPermissions(permissionQuery);
         expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code).assertEqual(201);
       }
+      done();
     });
 
     /**
@@ -87,14 +85,12 @@ export default function permissionTest() {
         }
       }];
       try {
-        abilityToolAccessCtrl.grantToolPermissionsByUser(userAuthResult).then((data: Array<abilityToolAccessCtrl.TicketInfo>) => {
-          expect(false).assertTrue();
-        }).catch((err: BusinessError): void => {
-          expect(err.code).assertEqual(201);
-        });
-      } catch (error) {
+        await abilityToolAccessCtrl.grantToolPermissionsByUser(userAuthResult);
         expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code).assertEqual(201);
       }
+      done();
     });
   });
 }
