@@ -1797,9 +1797,8 @@ export default function AudioManagerSpecErrorTest() {
         expect().assertFail();
         done();
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(`${TAG} testIsDeviceActiveEnumOutOfRange0300 error: ${err.code}, ${err.message}`);
-        expect(err.code).assertEqual(6800104);
+        console.error(`${TAG} testIsDeviceActiveEnumOutOfRange0300 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
