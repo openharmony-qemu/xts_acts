@@ -97,7 +97,6 @@ export default function imagePixelmap() {
 
     afterEach(async () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'afterEach case');
-      await sleep(3000);
     });
 
     const getBuffer = (fileName: string) => {
