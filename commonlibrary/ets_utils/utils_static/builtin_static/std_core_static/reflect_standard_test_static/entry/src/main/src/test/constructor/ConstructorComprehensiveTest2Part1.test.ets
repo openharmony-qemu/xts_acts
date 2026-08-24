@@ -1975,5 +1975,117 @@ export default function ConstructorComprehensiveTest2Part1(): void {
       let c3 = Class.from<GetParamTypeABC>().getConstructors()[0];
       expect(c3.getName()).assertEqual("constructor");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_COMPREHENSIVE_ExtP1_1200
+     * @tc.name testConstructorComprehensive2P1Test120
+     * @tc.desc Verify 10 different constructors batch getName all return constructor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testConstructorComprehensive2P1Test120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cS1 = Class.from<EmptyCls>().getConstructors()[0];
+      expect(cS1.getName()).assertEqual("constructor");
+      let cS2 = Class.from<TcTwoPubA>().getConstructors()[0];
+      expect(cS2.getName()).assertEqual("constructor");
+      let cS3 = Class.from<ParamCountCls>().getConstructors()[0];
+      expect(cS3.getName()).assertEqual("constructor");
+      let cS4 = Class.from<GetParamTypeABC>().getConstructors()[0];
+      expect(cS4.getName()).assertEqual("constructor");
+      let cS5 = Class.from<S5>().getConstructors()[0];
+      expect(cS5.getName()).assertEqual("constructor");
+      let cS6 = Class.from<S6>().getConstructors()[0];
+      expect(cS6.getName()).assertEqual("constructor");
+      let cS7 = Class.from<S7>().getConstructors()[0];
+      expect(cS7.getName()).assertEqual("constructor");
+      let cS8 = Class.from<S8>().getConstructors()[0];
+      expect(cS8.getName()).assertEqual("constructor");
+      let cS9 = Class.from<S9>().getConstructors()[0];
+      expect(cS9.getName()).assertEqual("constructor");
+      let cS10 = Class.from<S10>().getConstructors()[0];
+      expect(cS10.getName()).assertEqual("constructor");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_COMPREHENSIVE_ExtP1_1210
+     * @tc.name testConstructorComprehensive2P1Test121
+     * @tc.desc Verify 10 different constructors batch getOwner returns distinct class names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testConstructorComprehensive2P1Test121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cS1 = Class.from<S1>().getConstructors()[0];
+      expect(cS1.getOwner().getName().includes("S1")).assertTrue();
+      let cS2 = Class.from<S2>().getConstructors()[0];
+      expect(cS2.getOwner().getName().includes("S2")).assertTrue();
+      let cS3 = Class.from<S3>().getConstructors()[0];
+      expect(cS3.getOwner().getName().includes("S3")).assertTrue();
+      let cS4 = Class.from<S4>().getConstructors()[0];
+      expect(cS4.getOwner().getName().includes("S4")).assertTrue();
+      let cS5 = Class.from<S5>().getConstructors()[0];
+      expect(cS5.getOwner().getName().includes("S5")).assertTrue();
+      let cS6 = Class.from<S6>().getConstructors()[0];
+      expect(cS6.getOwner().getName().includes("S6")).assertTrue();
+      let cS7 = Class.from<S7>().getConstructors()[0];
+      expect(cS7.getOwner().getName().includes("S7")).assertTrue();
+      let cS8 = Class.from<S8>().getConstructors()[0];
+      expect(cS8.getOwner().getName().includes("S8")).assertTrue();
+      let cS9 = Class.from<S9>().getConstructors()[0];
+      expect(cS9.getOwner().getName().includes("S9")).assertTrue();
+      let cS10 = Class.from<S10>().getConstructors()[0];
+      expect(cS10.getOwner().getName().includes("S10")).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_COMPREHENSIVE_ExtP1_1220
+     * @tc.name testConstructorComprehensive2P1Test122
+     * @tc.desc Verify 10 different constructors batch getParametersNum returns 0 through 9
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testConstructorComprehensive2P1Test122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ctorS1 = Class.from<EmptyCls>().getConstructors()[0];
+      expect(ctorS1.getParametersNum()).assertEqual(0);
+      let ctorS2 = Class.from<TcTwoPubA>().getConstructors()[0];
+      expect(ctorS2.getParametersNum()).assertEqual(1);
+      let ctorS3 = Class.from<ParamCountCls>().getConstructors()[0];
+      expect(ctorS3.getParametersNum()).assertEqual(2);
+      let ctorS4 = Class.from<GetParamTypeABC>().getConstructors()[0];
+      expect(ctorS4.getParametersNum()).assertEqual(3);
+      let ctorS5 = Class.from<S5>().getConstructors()[0];
+      expect(ctorS5.getParametersNum()).assertEqual(4);
+      let ctorS6 = Class.from<S6>().getConstructors()[0];
+      expect(ctorS6.getParametersNum()).assertEqual(5);
+      let ctorS7 = Class.from<S7>().getConstructors()[0];
+      expect(ctorS7.getParametersNum()).assertEqual(6);
+      let ctorS8 = Class.from<S8>().getConstructors()[0];
+      expect(ctorS8.getParametersNum()).assertEqual(7);
+      let ctorS9 = Class.from<S9>().getConstructors()[0];
+      expect(ctorS9.getParametersNum()).assertEqual(8);
+      let ctorS10 = Class.from<S10>().getConstructors()[0];
+      expect(ctorS10.getParametersNum()).assertEqual(9);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_COMPREHENSIVE_ExtP1_1230
+     * @tc.name testConstructorComprehensive2P1Test123
+     * @tc.desc Verify multiple constructors getName/getReturnType/getParametersNum/getParameterTypes stable
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testConstructorComprehensive2P1Test123", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ctors = Utils.fixedArrayToArray(Class.from<S5>().getConstructors());
+      for (let i: int = 0; i < ctors.length; i++) {
+        let c = ctors[i];
+        expect(c.getName()).assertEqual("constructor");
+        expect(c.getReturnType().getName()).assertEqual("void");
+        let typesLen: int = c.getParameterTypes().length;
+        expect(c.getParametersNum()).assertEqual(typesLen);
+      }
+    });
   });
 }
