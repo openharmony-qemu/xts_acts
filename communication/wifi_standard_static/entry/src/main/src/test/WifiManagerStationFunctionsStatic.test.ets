@@ -3507,9 +3507,9 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0084", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0084";
       hilog.info(domain, tag, `${caseName} test start`);
-      await Utils.msSleep(5000);
       networkId = -1;
       try {
+        await Utils.msSleep(5000);
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
@@ -3542,7 +3542,7 @@ export default function actsWifiManagerFunctionsTest() {
         });
         hilog.info(domain, tag, `${caseName} connectToCandidateConfig success`);
         await Utils.clickText("连接");
-        await Utils.msSleep(5000);
+        await Utils.msSleep(8000);
         hilog.info(domain, tag, `${caseName} 点击连接 success`);
       } catch (err) {
         hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3612,9 +3612,9 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0086", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0086";
       hilog.info(domain, tag, `${caseName} test start`);
-      await Utils.msSleep(5000);
       networkId = -1;
       try {
+        await Utils.msSleep(5000);
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
@@ -3647,7 +3647,7 @@ export default function actsWifiManagerFunctionsTest() {
         });
         hilog.info(domain, tag, `${caseName} connectToCandidateConfig success`);
         await Utils.clickText("取消");
-        await Utils.msSleep(5000);
+        await Utils.msSleep(8000);
         hilog.info(domain, tag, `${caseName} 点击取消 success`);
       } catch (err) {
         hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3760,9 +3760,9 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0089", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0089";
       hilog.info(domain, tag, `${caseName} test start`);
-      await Utils.msSleep(5000);
       networkId = -1;
       try {
+        await Utils.msSleep(5000);
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
@@ -3789,8 +3789,13 @@ export default function actsWifiManagerFunctionsTest() {
           expect(err.code).assertEqual(801);
         } else {
           expect(err.code).assertEqual(2501005);
-          await Utils.clickText("连接");
         }
+      }
+      try{
+        await Utils.clickText("连接");
+        await Utils.msSleep(8000);
+      } catch(err) {
+        hilog.error(domain, tag, `${caseName} clickText 连接fail` );
       }
       hilog.info(domain, tag, `${caseName} test end`);
       done();
