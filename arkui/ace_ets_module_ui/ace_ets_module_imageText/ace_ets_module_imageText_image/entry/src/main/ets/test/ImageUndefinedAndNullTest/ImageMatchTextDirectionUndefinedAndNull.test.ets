@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,7 +44,7 @@ export default function ImageMatchTextDirectionUndefinedAndNullTest() {
 
     /**
      * @tc.name   ImageMatchTextDirectionUndefinedAndNullTest_0100
-     * @tc.number ImageMatchTextDirectionUndefinedAndNullTest_0100
+     * @tc.number SUB_ARKUI_IMAGE_MATCHTEXTDIRECTION_UNDEFINEDANDNULL_0100
      * @tc.desc   test the Image matchTextDirection with true value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -70,7 +70,7 @@ export default function ImageMatchTextDirectionUndefinedAndNullTest() {
 
     /**
      * @tc.name   ImageMatchTextDirectionUndefinedAndNullTest_0200
-     * @tc.number ImageMatchTextDirectionUndefinedAndNullTest_0200
+     * @tc.number SUB_ARKUI_IMAGE_MATCHTEXTDIRECTION_UNDEFINEDANDNULL_0200
      * @tc.desc   test the Image matchTextDirection with false value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -96,7 +96,7 @@ export default function ImageMatchTextDirectionUndefinedAndNullTest() {
 
     /**
      * @tc.name   ImageMatchTextDirectionUndefinedAndNullTest_0300
-     * @tc.number ImageMatchTextDirectionUndefinedAndNullTest_0300
+     * @tc.number SUB_ARKUI_IMAGE_MATCHTEXTDIRECTION_UNDEFINEDANDNULL_0300
      * @tc.desc   test the Image matchTextDirection with undefined value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function ImageMatchTextDirectionUndefinedAndNullTest() {
 
     /**
      * @tc.name   ImageMatchTextDirectionUndefinedAndNullTest_0400
-     * @tc.number ImageMatchTextDirectionUndefinedAndNullTest_0400
+     * @tc.number SUB_ARKUI_IMAGE_MATCHTEXTDIRECTION_UNDEFINEDANDNULL_0400
      * @tc.desc   test the Image matchTextDirection with null value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

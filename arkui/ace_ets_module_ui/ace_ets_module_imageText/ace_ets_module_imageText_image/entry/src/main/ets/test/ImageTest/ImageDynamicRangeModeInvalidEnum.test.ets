@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ export default function ImageDynamicRangeModeInvalidEnumTest() {
 
     /**
      * @tc.name   ImageDynamicRangeModeInvalidEnumTest_0100
-     * @tc.number ImageDynamicRangeModeInvalidEnumTest_0100
+     * @tc.number SUB_ARKUI_IMAGE_DYNAMICRANGEMODE_INVALIDENUM_0100
      * @tc.desc   test the Image dynamicRangeMode with default value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -72,7 +72,7 @@ export default function ImageDynamicRangeModeInvalidEnumTest() {
 
     /**
      * @tc.name   ImageDynamicRangeModeInvalidEnumTest_0200
-     * @tc.number ImageDynamicRangeModeInvalidEnumTest_0200
+     * @tc.number SUB_ARKUI_IMAGE_DYNAMICRANGEMODE_INVALIDENUM_0200
      * @tc.desc   test the Image dynamicRangeMode with invalid enum value -1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -101,7 +101,7 @@ export default function ImageDynamicRangeModeInvalidEnumTest() {
 
     /**
      * @tc.name   ImageDynamicRangeModeInvalidEnumTest_0300
-     * @tc.number ImageDynamicRangeModeInvalidEnumTest_0300
+     * @tc.number SUB_ARKUI_IMAGE_DYNAMICRANGEMODE_INVALIDENUM_0300
      * @tc.desc   test the Image dynamicRangeMode with invalid enum value 3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_0100
-     * @tc.number ImageAnimatorAttributeModifierTest_0100
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_0100
      * @tc.desc   Test state property set via applyNormalAttribute of AttributeModifier
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -81,7 +81,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_0200
-     * @tc.number ImageAnimatorAttributeModifierTest_0200
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_0200
      * @tc.desc   Test duration property set via applyNormalAttribute of AttributeModifier
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -114,7 +114,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_0300
-     * @tc.number ImageAnimatorAttributeModifierTest_0300
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_0300
      * @tc.desc   Test reverse property set via applyNormalAttribute of AttributeModifier
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -147,7 +147,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_0400
-     * @tc.number ImageAnimatorAttributeModifierTest_0400
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_0400
      * @tc.desc   Test fixedSize property set via applyNormalAttribute of AttributeModifier
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -180,7 +180,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_0500
-     * @tc.number ImageAnimatorAttributeModifierTest_0500
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_0500
      * @tc.desc   Test fillMode property set via applyNormalAttribute of AttributeModifier
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -213,7 +213,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_0600
-     * @tc.number ImageAnimatorAttributeModifierTest_0600
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_0600
      * @tc.desc   Test iterations property set via applyNormalAttribute of AttributeModifier
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -246,7 +246,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_0700
-     * @tc.number ImageAnimatorAttributeModifierTest_0700
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_0700
      * @tc.desc   Test monitorInvisibleArea property set via applyNormalAttribute of AttributeModifier
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -279,7 +279,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_0800
-     * @tc.number ImageAnimatorAttributeModifierTest_0800
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_0800
      * @tc.desc   Test multiple properties change simultaneously via applyNormalAttribute of AttributeModifier
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -338,7 +338,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_0900
-     * @tc.number ImageAnimatorAttributeModifierTest_0900
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_0900
      * @tc.desc   Test state change to Paused via applyNormalAttribute of AttributeModifier
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -375,7 +375,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_1000
-     * @tc.number ImageAnimatorAttributeModifierTest_1000
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_1000
      * @tc.desc   Test state change to Stopped via applyNormalAttribute of AttributeModifier
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -412,7 +412,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_1100
-     * @tc.number ImageAnimatorAttributeModifierTest_1100
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_1100
      * @tc.desc   Test fillMode change to Backwards via applyNormalAttribute of AttributeModifier
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -445,7 +445,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_1200
-     * @tc.number ImageAnimatorAttributeModifierTest_1200
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_1200
      * @tc.desc   Test button click triggers modifier state change to Running
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -479,7 +479,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_1300
-     * @tc.number ImageAnimatorAttributeModifierTest_1300
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_1300
      * @tc.desc   Test button click triggers modifier reverse change
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -513,7 +513,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_1400
-     * @tc.number ImageAnimatorAttributeModifierTest_1400
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_1400
      * @tc.desc   Test button click triggers modifier fixedSize change
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -547,7 +547,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_1500
-     * @tc.number ImageAnimatorAttributeModifierTest_1500
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_1500
      * @tc.desc   Test button click triggers modifier iterations change to infinite
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -581,7 +581,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_1600
-     * @tc.number ImageAnimatorAttributeModifierTest_1600
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_1600
      * @tc.desc   Test button click triggers modifier fillMode change to None
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -615,7 +615,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_1700
-     * @tc.number ImageAnimatorAttributeModifierTest_1700
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_1700
      * @tc.desc   Test button click triggers modifier duration change to 5000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -649,7 +649,7 @@ export default function ImageAnimatorAttributeModifierTest() {
 
     /**
      * @tc.name   ImageAnimatorAttributeModifierTest_1800
-     * @tc.number ImageAnimatorAttributeModifierTest_1800
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_ATTRIBUTEMODIFIER_1800
      * @tc.desc   Test button click triggers modifier monitorInvisibleArea change to true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
