@@ -181,7 +181,7 @@ export default function FloatToDouble2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToDouble010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const longStr: string = 'x'.repeat(65535);
+      const longStr: string = 'x'.repeat(65535);
       try {
         Float.toDouble(longStr as Object as float);
         expect().assertFail();
@@ -199,7 +199,7 @@ export default function FloatToDouble2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToDouble011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: int[] = [];
+      let arr: int[] = [];
       try {
         Float.toDouble(arr as Object as float);
         expect().assertFail();
@@ -217,7 +217,7 @@ export default function FloatToDouble2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToDouble012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Object[] = [1, 'test', true];
+      let arr: Object[] = [1, 'test', true];
       try {
         Float.toDouble(arr as Object as float);
         expect().assertFail();
@@ -235,7 +235,7 @@ export default function FloatToDouble2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToDouble013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let matrix: int[][] = [];
+      let matrix: int[][] = [];
       try {
         Float.toDouble(matrix as Object as float);
         expect().assertFail();
