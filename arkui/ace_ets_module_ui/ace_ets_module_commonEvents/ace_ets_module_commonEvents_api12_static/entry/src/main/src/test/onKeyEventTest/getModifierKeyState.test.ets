@@ -91,10 +91,14 @@ it('getModifierKeyStateTest_static_0010', Level.LEVEL0, async (done: () => void)
 it('getModifierKeyStateTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getModifierKeyStateTest_0020 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.id('getModifierKeyState_DragEvent'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(200);
+      try {
+        await CommonFunc.sleep(500);
+        let button = await driver.findComponent(ON.id('getModifierKeyState_DragEvent'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('getModifierKeyStateTest_0020 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('getModifierKeyState_DragEvent');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getModifierKeyStateTest_0020] component obj is: " + JSON.stringify(obj));

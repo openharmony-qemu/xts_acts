@@ -21,18 +21,10 @@ import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageMa
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-// import config from '@ohos.accessibility.config'
-import accessibility from '@ohos.accessibility';
-//const CAPABILITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 
 export default function onKeyPreImeTest() {
   describe('onKeyPreImeTest', () => {
     beforeEach(async ():Promise<void> => {
-      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-      // console.info('enable success');
-      // }).catch((err: object) => {
-      //   console.error('failed to enable, ${err}');
-      // })
       console.info("onKeyPreImeTest beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/onKeyEvent/OnKeyPreIme",

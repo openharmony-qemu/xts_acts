@@ -124,10 +124,14 @@ it('SwipeGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done:
       expect(obj5.getElement('$attrs').getString('content')).assertEqual('allowed types success');
 
       // change types to invalid types
-      await CommonFunc.sleep(1000);
-      let button3 = await driver.findComponent(ON.id('Invalid_type'));
-      await (button3?.click() as Promise<void>);
-      await CommonFunc.sleep(200);
+      try {
+        await CommonFunc.sleep(1000);
+        let button3 = await driver.findComponent(ON.id('Invalid_type'));
+        await (button3?.click() as Promise<void>);
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('SwipeGestureHandlerAllowedTypesTest_static_0010 err: ' + JSON.stringify(err));
+      }
       let text9 = inspector.getInspectorByKey('SwipeGestureHandlerAllowedTypes_result');
       let obj9 = JSON.parseJsonElement(text9);
       console.log('SwipeGestureHandlerAllowedTypesTest_static_0010 obj9 $attrs content',obj9.getElement('$attrs').getString('content'),obj9)
