@@ -175,7 +175,7 @@ export default function FloatIsInteger1Test2(): void {
       const val: float = Float.MAX_VALUE;
       expect(Float.isInteger(val)).assertTrue();
     });
-    
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ISINTEGER_STATIC_ONE_1200
      * @tc.name testFloatIsIntegerStatic012
