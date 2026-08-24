@@ -15,9 +15,10 @@
 
 import batteryStats from '@ohos.batteryStatistics';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { BusinessError } from '@ohos.base';
 
-export default function BatteryStatisticsTest() {
-  describe('BatteryStatisticsTest', function () {
+export default function BatteryStatisticsTest(): void {
+  describe('BatteryStatisticsTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -47,23 +48,26 @@ export default function BatteryStatisticsTest() {
      * @tc.level  LEVEL3
      */
     it('System_API_Test_batteryStats_Manager_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async function (done) {
+      async (done: Function) => {
         let TAG = 'System_API_Test_batteryStats_Manager_0100';
         let isSupport = canIUse('SystemCapability.PowerManager.BatteryStatistics');
         if (isSupport) {
           try {
             batteryStats.getBatteryStats()
-              .then((data) => {
+              .then((data: ESObject) => {
                 console.info(`${TAG} BatteryStatsInfo: ${JSON.stringify(data)}`);
+                expect().assertFail();
+                done();
               })
-              .catch((error) => {
+              .catch((error: BusinessError) => {
                 console.error(`${TAG} error: ${JSON.stringify(error)}`);
                 expect(error.code).assertEqual(202);
                 done();
               });
           } catch (error) {
-            console.error(`${TAG} error: ${JSON.stringify(error)}`);
-            expect(error.code).assertEqual(202);
+            let err = error as BusinessError;
+            console.error(`${TAG} error: ${JSON.stringify(err)}`);
+            expect(err.code).assertEqual(202);
             done();
           }
         } else {
@@ -82,11 +86,11 @@ export default function BatteryStatisticsTest() {
      * @tc.level  LEVEL3
      */
     it('System_API_Test_batteryStats_Manager_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async function (done) {
+      async (done: Function) => {
         let TAG = 'System_API_Test_batteryStats_Manager_0200';
         let isSupport = canIUse('SystemCapability.PowerManager.BatteryStatistics');
         if (isSupport) {
-          batteryStats.getBatteryStats((error, data) => {
+          batteryStats.getBatteryStats((error: BusinessError, data: ESObject) => {
             if (error) {
               console.error(`${TAG} error: ${JSON.stringify(error)}`);
               expect(error.code).assertEqual(202);
@@ -113,7 +117,7 @@ export default function BatteryStatisticsTest() {
      * @tc.level  LEVEL3
      */
     it('System_API_Test_batteryStats_Manager_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async function (done) {
+      async (done: Function) => {
         let TAG = 'System_API_Test_batteryStats_Manager_0300';
         let isSupport = canIUse('SystemCapability.PowerManager.BatteryStatistics');
         if (isSupport) {
@@ -121,8 +125,9 @@ export default function BatteryStatisticsTest() {
             let value = batteryStats.getAppPowerValue(10021);
             console.info(`${TAG} value: ${value}`);
           } catch (error) {
-            console.error(`${TAG} error: ${JSON.stringify(error)}`);
-            expect(error.code).assertEqual(202);
+            let err = error as BusinessError;
+            console.error(`${TAG} error: ${JSON.stringify(err)}`);
+            expect(err.code).assertEqual(202);
             done();
           }
         } else {
@@ -141,7 +146,7 @@ export default function BatteryStatisticsTest() {
      * @tc.level  LEVEL3
      */
     it('System_API_Test_batteryStats_Manager_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async function (done) {
+      async (done: Function) => {
         let TAG = 'System_API_Test_batteryStats_Manager_0400';
         let isSupport = canIUse('SystemCapability.PowerManager.BatteryStatistics');
         if (isSupport) {
@@ -149,8 +154,9 @@ export default function BatteryStatisticsTest() {
             let percent = batteryStats.getAppPowerPercent(10021);
             console.info(`${TAG} percent: ${percent}`);
           } catch (error) {
-            console.error(`${TAG} error: ${JSON.stringify(error)}`);
-            expect(error.code).assertEqual(202);
+            let err = error as BusinessError;
+            console.error(`${TAG} error: ${JSON.stringify(err)}`);
+            expect(err.code).assertEqual(202);
             done();
           }
         } else {
@@ -169,7 +175,7 @@ export default function BatteryStatisticsTest() {
      * @tc.level  LEVEL3
      */
     it('System_API_Test_batteryStats_Manager_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async function (done) {
+      async (done: Function) => {
         let TAG = 'System_API_Test_batteryStats_Manager_0500';
         let isSupport = canIUse('SystemCapability.PowerManager.BatteryStatistics');
         if (isSupport) {
@@ -177,8 +183,9 @@ export default function BatteryStatisticsTest() {
             let value = batteryStats.getHardwareUnitPowerValue(batteryStats.ConsumptionType.CONSUMPTION_TYPE_USER);
             console.info(`${TAG} value: ${value}`);
           } catch (error) {
-            console.error(`${TAG} error: ${JSON.stringify(error)}`);
-            expect(error.code).assertEqual(202);
+            let err = error as BusinessError;
+            console.error(`${TAG} error: ${JSON.stringify(err)}`);
+            expect(err.code).assertEqual(202);
             done();
           }
         } else {
@@ -197,7 +204,7 @@ export default function BatteryStatisticsTest() {
      * @tc.level  LEVEL3
      */
     it('System_API_Test_batteryStats_Manager_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async function (done) {
+      async (done: Function) => {
         let TAG = 'System_API_Test_batteryStats_Manager_0600';
         let isSupport = canIUse('SystemCapability.PowerManager.BatteryStatistics');
         if (isSupport) {
@@ -205,8 +212,9 @@ export default function BatteryStatisticsTest() {
             let percent = batteryStats.getHardwareUnitPowerPercent(batteryStats.ConsumptionType.CONSUMPTION_TYPE_WIFI);
             console.info(`${TAG} percent: ${percent}`);
           } catch (error) {
-            console.error(`${TAG} error: ${JSON.stringify(error)}`);
-            expect(error.code).assertEqual(202);
+            let err = error as BusinessError;
+            console.error(`${TAG} error: ${JSON.stringify(err)}`);
+            expect(err.code).assertEqual(202);
             done();
           }
         } else {

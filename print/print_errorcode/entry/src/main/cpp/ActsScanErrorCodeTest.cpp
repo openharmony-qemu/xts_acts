@@ -104,7 +104,7 @@ napi_value OH_Scan_StartScannerDiscovery1(napi_env env, napi_callback_info info)
 napi_value OH_Scan_OpenScanner1(napi_env env, napi_callback_info info)
 {
     OH_Scan_Init();
-    const char *scannerId;
+    const char *scannerId = nullptr;
     int32_t errorCode = OH_Scan_OpenScanner(scannerId);
     napi_value result = nullptr;
     napi_create_int32(env, errorCode == SCAN_ERROR_INVALID_PARAMETER ? 0 : -1, &result);
@@ -114,7 +114,7 @@ napi_value OH_Scan_OpenScanner1(napi_env env, napi_callback_info info)
 napi_value OH_Scan_CloseScanner1(napi_env env, napi_callback_info info)
 {
     OH_Scan_Init();
-    const char *scannerId;
+    const char *scannerId = nullptr;
     int32_t errorCode = OH_Scan_CloseScanner(scannerId);
     napi_value result = nullptr;
     napi_create_int32(env, errorCode == SCAN_ERROR_INVALID_PARAMETER ? 0 : -1, &result);

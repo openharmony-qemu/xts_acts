@@ -22,6 +22,8 @@
 #define TEST_PRINTER "testPrinter"
 
 static uint32_t g_singleFd = 100;
+static void JobStateChangedCallback(const char *jobId, OH_Print_JobState state) {}
+static void PrinterDiscoveryCallback(Print_DiscoveryEvent event, const Print_PrinterInfo *printerInfo) {}
 static napi_value OH_Print_Init1(napi_env env, napi_callback_info info)
 {
     Print_ErrorCode errorCode = OH_Print_Init();
@@ -31,8 +33,7 @@ static napi_value OH_Print_Init1(napi_env env, napi_callback_info info)
 }
 static napi_value OH_Print_StartPrinterDiscovery1(napi_env env, napi_callback_info info)
 {
-    Print_PrinterDiscoveryCallback callback;
-    Print_ErrorCode errorCode = OH_Print_StartPrinterDiscovery(callback);
+    Print_ErrorCode errorCode = OH_Print_StartPrinterDiscovery(PrinterDiscoveryCallback);
     napi_value result = nullptr;
     napi_create_int32(env, errorCode == PRINT_ERROR_NO_PERMISSION ? PRINT_ERROR_NO_PERMISSION : 0, &result);
     return result;
@@ -57,8 +58,8 @@ napi_value OH_Print_StartPrintWithJobStateCallback(napi_env env, napi_callback_i
                                .colorMode = COLOR_MODE_COLOR,
                                .paperSource = strdup("Auto"),
                                .pageSizeId = strdup("A4")};
-    OH_Print_OnJobStateChanged cb;
-    Print_ErrorCode errorCode = OH_Print_StartPrintWithJobStateCallback(&printJob, cb);
+    Print_ErrorCode errorCode =
+        OH_Print_StartPrintWithJobStateCallback(&printJob, JobStateChangedCallback);
     napi_value result = nullptr;
     napi_create_int32(env, errorCode == PRINT_ERROR_NO_PERMISSION ? PRINT_ERROR_NO_PERMISSION : 0, &result);
     return result;
