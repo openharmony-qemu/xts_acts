@@ -169,7 +169,7 @@ export default function FloatIsGreaterEqualThanTest2(): void {
     it('testFloatIsGreaterEqualThan008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(3.0);
       try {
-      f.isGreaterEqualThan([1.0, 2.0] as Object as Float);
+        f.isGreaterEqualThan([1.0, 2.0] as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -189,7 +189,7 @@ export default function FloatIsGreaterEqualThanTest2(): void {
       const map: Map<string, int> = new Map<string, int>();
       map.set('key', 1);
       try {
-      f.isGreaterEqualThan(map as Object as Float);
+        f.isGreaterEqualThan(map as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -266,7 +266,7 @@ export default function FloatIsGreaterEqualThanTest2(): void {
       const f: Float = new Float(1.0);
       const longStr: string = 'x'.repeat(65535);
       try {
-      f.isGreaterEqualThan(longStr as Object as Float);
+        f.isGreaterEqualThan(longStr as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -285,7 +285,7 @@ export default function FloatIsGreaterEqualThanTest2(): void {
       const f: Float = new Float(1.0);
       let arr: int[] = [];
       try {
-      f.isGreaterEqualThan(arr as Object as Float);
+        f.isGreaterEqualThan(arr as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -304,7 +304,7 @@ export default function FloatIsGreaterEqualThanTest2(): void {
       const f: Float = new Float(1.0);
       let arr: Object[] = [1, 'test', true];
       try {
-      f.isGreaterEqualThan(arr as Object as Float);
+        f.isGreaterEqualThan(arr as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -323,7 +323,7 @@ export default function FloatIsGreaterEqualThanTest2(): void {
       const f: Float = new Float(1.0);
       let matrix: int[][] = [];
       try {
-      f.isGreaterEqualThan(matrix as Object as Float);
+        f.isGreaterEqualThan(matrix as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -342,7 +342,7 @@ export default function FloatIsGreaterEqualThanTest2(): void {
       const f: Float = new Float(1.0);
       const list: Array<string> = new Array<string>('a', 'b');
       try {
-      f.isGreaterEqualThan(list as Object as Float);
+        f.isGreaterEqualThan(list as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -631,7 +631,7 @@ export default function FloatIsGreaterEqualThanTest2(): void {
       const jsonData: JsonData = new JsonData();
       jsonData.key = 123;
       try {
-      f.isGreaterEqualThan(jsonData as Object as Float);
+        f.isGreaterEqualThan(jsonData as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -650,7 +650,7 @@ export default function FloatIsGreaterEqualThanTest2(): void {
       const f: Float = new Float(1.0);
       const bigVal: bigint = 123n;
       try {
-      f.isGreaterEqualThan(bigVal as Object as Float);
+        f.isGreaterEqualThan(bigVal as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -669,7 +669,7 @@ export default function FloatIsGreaterEqualThanTest2(): void {
       const f: Float = new Float(1.0);
       const dateVal: Date = new Date();
       try {
-      f.isGreaterEqualThan(dateVal as Object as Float);
+        f.isGreaterEqualThan(dateVal as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -688,7 +688,7 @@ export default function FloatIsGreaterEqualThanTest2(): void {
       const f: Float = new Float(1.0);
       const regVal: RegExp = new RegExp('test');
       try {
-      f.isGreaterEqualThan(regVal as Object as Float);
+        f.isGreaterEqualThan(regVal as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -707,7 +707,7 @@ export default function FloatIsGreaterEqualThanTest2(): void {
       const f: Float = new Float(1.0);
       const rec: Record<string, number> = {'key': 1};
       try {
-      f.isGreaterEqualThan(rec as Object as Float);
+        f.isGreaterEqualThan(rec as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -728,7 +728,7 @@ export default function FloatIsGreaterEqualThanTest2(): void {
       const wm: WeakMap<Object, int> = new WeakMap<Object, int>();
       wm.set(keyObj, 1);
       try {
-      f.isGreaterEqualThan(wm as Object as Float);
+        f.isGreaterEqualThan(wm as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -749,7 +749,7 @@ export default function FloatIsGreaterEqualThanTest2(): void {
       const ws: WeakSet<Object> = new WeakSet<Object>();
       ws.add(wsObj);
       try {
-      f.isGreaterEqualThan(ws as Object as Float);
+        f.isGreaterEqualThan(ws as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');

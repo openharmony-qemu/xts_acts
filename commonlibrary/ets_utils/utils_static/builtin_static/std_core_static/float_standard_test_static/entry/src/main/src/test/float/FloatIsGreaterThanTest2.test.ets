@@ -1176,10 +1176,10 @@ export default function FloatIsGreaterThanTest2(): void {
         for (let j = 0; j < values.length; j++) {
           const a: Float = new Float(values[i]);
           const b: Float = new Float(values[j]);
-      if (a.isGreaterThan(b) !== b.isLessThan(a)) {
-        allSymmetric = false;
-        expect(allSymmetric).assertTrue();
-      }
+          if (a.isGreaterThan(b) !== b.isLessThan(a)) {
+            allSymmetric = false;
+            expect(allSymmetric).assertTrue();
+          }
         }
       }
     });
