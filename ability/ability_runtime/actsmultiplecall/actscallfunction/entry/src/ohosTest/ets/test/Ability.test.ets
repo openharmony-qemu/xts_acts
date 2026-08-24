@@ -67,7 +67,9 @@ export default function abilityTest() {
           console.debug('====>Acts_SingleInstanceCallFunction_0100 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -103,7 +105,9 @@ export default function abilityTest() {
           console.debug('====>Acts_SingleInstanceCallFunction_0200 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -149,7 +153,9 @@ export default function abilityTest() {
           console.debug('====>Acts_SingleInstanceCallFunction_0300 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -195,7 +201,9 @@ export default function abilityTest() {
           console.debug('====>Acts_SingleInstanceCallFunction_0400 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -231,7 +239,9 @@ export default function abilityTest() {
           console.info('====>Acts_SingleInstanceCallFunction_0500 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -267,7 +277,9 @@ export default function abilityTest() {
           console.info('====>Acts_SingleInstanceCallFunction_0600 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -306,7 +318,9 @@ export default function abilityTest() {
           console.info('====>Acts_SingleInstanceCallFunction_0700 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -342,7 +356,9 @@ export default function abilityTest() {
           console.info('====>Acts_SingleInstanceCallFunction_0800 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -389,7 +405,9 @@ export default function abilityTest() {
           JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -447,7 +465,9 @@ export default function abilityTest() {
           console.debug('====>Acts_SingleInstanceCallFunction_1000 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -492,7 +512,9 @@ export default function abilityTest() {
           console.debug('====>Acts_SingleInstanceCallFunction_1100 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -530,7 +552,9 @@ export default function abilityTest() {
           console.debug('====>Acts_SingleInstanceCallFunction_1200 startAbility err:' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
   })
 }

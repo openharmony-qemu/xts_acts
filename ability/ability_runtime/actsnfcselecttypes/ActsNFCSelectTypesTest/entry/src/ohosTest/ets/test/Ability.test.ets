@@ -533,7 +533,9 @@ export default function abilityTest() {
         }
         );
 
-      });
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });;
 
       setTimeout(() => {
       }, CASE_TIME_OUT);
@@ -583,7 +585,9 @@ export default function abilityTest() {
           console.info('startAbility succeed');
         }
         );
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
 
       setTimeout(() => {
       }, CASE_TIME_OUT);
