@@ -71,6 +71,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(() => {
@@ -123,6 +124,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(() => {
@@ -175,6 +177,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(() => {
@@ -227,6 +230,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(() => {
@@ -279,6 +283,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(() => {
@@ -331,6 +336,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(() => {
@@ -383,6 +389,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(() => {
@@ -435,6 +442,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(() => {
@@ -506,6 +514,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(() => {
@@ -577,6 +586,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(()=>{
@@ -650,6 +660,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(()=>{
@@ -728,6 +739,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(() => {
@@ -806,6 +818,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(()=>{
@@ -883,6 +896,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(() => {
@@ -943,6 +957,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(() => {
@@ -1003,6 +1018,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        done();
       });
 
       setTimeout(() => {
