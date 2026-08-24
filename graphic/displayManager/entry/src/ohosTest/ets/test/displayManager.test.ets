@@ -592,12 +592,12 @@ export default function displayTest() {
       try {
         display.on('add', callback);
         console.info(msgStr + 'on add registered');
-        class VirtualScreenOptions {
-          name: string = '';
-          width: number = 0;
-          height: number = 0;
-          density: number = 0;
-          surfaceId: string = '';
+        interface VirtualScreenOptions {
+          name: string;
+          width: number;
+          height: number;
+          density: number;
+          surfaceId: string;
         }
         let option: VirtualScreenOptions = {
           name: 'screenOnAdd',
@@ -655,12 +655,12 @@ export default function displayTest() {
       try {
         display.on('remove', callback);
         console.info(msgStr + 'on remove registered');
-        class VirtualScreenOptions {
-          name: string = '';
-          width: number = 0;
-          height: number = 0;
-          density: number = 0;
-          surfaceId: string = '';
+        interface VirtualScreenOptions {
+          name: string;
+          width: number;
+          height: number;
+          density: number;
+          surfaceId: string;
         }
         let option: VirtualScreenOptions = {
           name: 'screenOnRemove',
@@ -795,13 +795,13 @@ try {
 let status = display.isCaptured();
 console.log(msgStr + 'status:' + status);
 expect(status).assertFalse();
-class VirtualScreenConfig {
-name : string = '';
-width : number = 0;
-height : number = 0;
-density : number = 0;
-surfaceId : string = '';
-supportsFocus ?: boolean = true;
+interface VirtualScreenConfig {
+name: string;
+width: number;
+height: number;
+density: number;
+surfaceId: string;
+supportsFocus?: boolean;
 }
 
     let config : VirtualScreenConfig = {
@@ -846,13 +846,13 @@ supportsFocus ?: boolean = true;
     let status = display.isCaptured(bundleList);
     console.log(msgStr + 'status:' + status);
     expect(status).assertFalse();
-    class VirtualScreenConfig {
-      name : string = '';
-      width : number = 0;
-      height : number = 0;
-      density : number = 0;
-      surfaceId : string = '';
-      supportsFocus ?: boolean = true;
+    interface VirtualScreenConfig {
+      name: string;
+      width: number;
+      height: number;
+      density: number;
+      surfaceId: string;
+      supportsFocus?: boolean;
     }
     
     let config : VirtualScreenConfig = {
@@ -897,13 +897,13 @@ it('testIsCapturedByBundleName_empty_array', TestType.FUNCTION | Size.MEDIUMTEST
     let status = display.isCaptured(bundleList);
     console.log(msgStr + 'status:' + status);
     expect(status).assertFalse();
-    class VirtualScreenConfig {
-      name : string = '';
-      width : number = 0;
-      height : number = 0;
-      density : number = 0;
-      surfaceId : string = '';
-      supportsFocus ?: boolean = true;
+    interface VirtualScreenConfig {
+      name: string;
+      width: number;
+      height: number;
+      density: number;
+      surfaceId: string;
+      supportsFocus?: boolean;
     }
     
     let config : VirtualScreenConfig = {
@@ -1297,12 +1297,12 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
      */
     it('test_CreateVirtualScreen_ErrorCode1400001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_CreateVirtualScreen_ErrorCode1400001 ';
-      class VirtualScreenOptions {
-        name: string = '';
-        width: number = 0;
-        height: number = 0;
-        density: number = 0;
-        surfaceId: string = '';
+      interface VirtualScreenOptions {
+        name: string;
+        width: number;
+        height: number;
+        density: number;
+        surfaceId: string;
       }
       let option: VirtualScreenOptions = {
         name: 'screen01',
@@ -1367,12 +1367,12 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
      */
     it('test_CreateVirtualScreen01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_CreateVirtualScreen01 ';
-      class VirtualScreenOptions {
-        name: string = '';
-        width: number = 0;
-        height: number = 0;
-        density: number = 0;
-        surfaceId: string = '';
+      interface VirtualScreenOptions {
+        name: string;
+        width: number;
+        height: number;
+        density: number;
+        surfaceId: string;
       }
       let option: VirtualScreenOptions = {
         name: 'screen01',
@@ -1471,12 +1471,12 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
      */
     it('test_DestroyVirtualScreenErrorcode401_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_DestroyVirtualScreenErrorcode401_02 ';
-      class VirtualScreenOptions {
-        name: string = '';
-        width: number = 0;
-        height: number = 0;
-        density: number = 0;
-        surfaceId: string = '';
+      interface VirtualScreenOptions {
+        name: string;
+        width: number;
+        height: number;
+        density: number;
+        surfaceId: string;
       }
       let option: VirtualScreenOptions = {
         name: 'screen01',
@@ -1547,12 +1547,12 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
      */
     it('test_MakeUniqueErrorcode_1400001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_MakeUniqueErrorcode_1400001 ';
-      class VirtualScreenOptions {
-        name: string = '';
-        width: number = 0;
-        height: number = 0;
-        density: number = 0;
-        surfaceId: string = '';
+      interface VirtualScreenOptions {
+        name: string;
+        width: number;
+        height: number;
+        density: number;
+        surfaceId: string;
       }
       let option: VirtualScreenOptions = {
         name: 'screen01',
@@ -1668,12 +1668,12 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
     it('test_setVirtualScreenSurface_ErrorCode401_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_setVirtualScreenSurface_ErrorCode401_02 ';
       let outDisplayId: number = -1;
-      class VirtualScreenOptions {
-        name: string = '';
-        width: number = 0;
-        height: number = 0;
-        density: number = 0;
-        surfaceId: string = '';
+      interface VirtualScreenOptions {
+        name: string;
+        width: number;
+        height: number;
+        density: number;
+        surfaceId: string;
       }
       let option: VirtualScreenOptions = {
         name: 'screen01',
@@ -2269,12 +2269,12 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
       let caseName = "testVirtualScreenSupportRefreshRate";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      class VirtualScreenOptions {
-        name: string = '';
-        width: number = 0;
-        height: number = 0;
-        density: number = 0;
-        surfaceId: string = '';
+      interface VirtualScreenOptions {
+        name: string;
+        width: number;
+        height: number;
+        density: number;
+        surfaceId: string;
       }
       let option: VirtualScreenOptions = {
         name: 'screen01',
@@ -2402,12 +2402,12 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
       let msgStr = 'jsunittest ' + caseName + ' ';
       let outDisplayId = -1;
       console.log(msgStr + 'begin.');
-      class VirtualScreenOptions {
-        name: string = '';
-        width: number = 0;
-        height: number = 0;
-        density: number = 0;
-        surfaceId: string = '';
+      interface VirtualScreenOptions {
+        name: string;
+        width: number;
+        height: number;
+        density: number;
+        surfaceId: string;
       }
       let option: VirtualScreenOptions = {
         name: 'screen01',
@@ -2571,12 +2571,12 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       let outDisplayId = -1;
-      class VirtualScreenOptions {
-        name: string = '';
-        width: number = 0;
-        height: number = 0;
-        density: number = 0;
-        surfaceId: string = '';
+      interface VirtualScreenOptions {
+        name: string;
+        width: number;
+        height: number;
+        density: number;
+        surfaceId: string;
       }
       let option: VirtualScreenOptions = {
         name: 'screen01',
@@ -2781,12 +2781,12 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
       let caseName = "testGetLiveCreaseRegionwithVirtualScreen";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      class VirtualScreenOptions {
-        name: string = '';
-        width: number = 0;
-        height: number = 0;
-        density: number = 0;
-        surfaceId: string = '';
+      interface VirtualScreenOptions {
+        name: string;
+        width: number;
+        height: number;
+        density: number;
+        surfaceId: string;
       }
       let option: VirtualScreenOptions = {
         name: 'screen01',

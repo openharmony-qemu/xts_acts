@@ -14,9 +14,9 @@
  */
 
 import { describe, expect, it, Size, Level, TestType, beforeAll, afterAll } from '@ohos/hypium';
-import { http } from '@kit.NetworkKit';
+import { http, socket } from '@kit.NetworkKit';
 import testNetManager from 'libentry.so';
-import { socket } from '@kit.NetworkKit';
+
 
 const ExpectFail = () => {
   try {
