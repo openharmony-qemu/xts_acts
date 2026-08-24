@@ -382,7 +382,7 @@ export default function CameraLockFocusTest() {
           expect().assertFail();
         } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-          expect(err.code).assertEqual(SESSION_NOT_CONFIG_CODE);
+          expect(error.code).assertEqual(SESSION_NOT_CONFIG_CODE);
         }
       }
       try {
@@ -514,7 +514,7 @@ export default function CameraLockFocusTest() {
           } catch (merror) {
             console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
           }
-          expect(err.code).assertEqual(SESSION_NOT_CONFIG_CODE);
+          expect(error.code).assertEqual(SESSION_NOT_CONFIG_CODE);
         }
       }    
       done();
@@ -602,7 +602,7 @@ export default function CameraLockFocusTest() {
           expect().assertFail();
         } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-          expect(err.code).assertEqual(INVALID_PARAMETER_CODE);
+          expect(error.code).assertEqual(INVALID_PARAMETER_CODE);
         }
       }
       try {
@@ -644,7 +644,7 @@ export default function CameraLockFocusTest() {
           expect().assertFail();
         } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-          expect(err.code).assertEqual(INVALID_PARAMETER_CODE);
+          expect(error.code).assertEqual(INVALID_PARAMETER_CODE);
         }
       }
       try {
@@ -678,7 +678,7 @@ export default function CameraLockFocusTest() {
           expect().assertFail();
         } catch (error) {
           console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-          expect(err.code).assertEqual(SESSION_NOT_CONFIG_CODE);
+          expect(error.code).assertEqual(SESSION_NOT_CONFIG_CODE);
         }
       }
       try {
@@ -724,7 +724,7 @@ export default function CameraLockFocusTest() {
                 expect().assertFail();
               } catch (error) {
                 console.error(TAG + caseName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-                expect(err.code).assertEqual(INVALID_PARAMETER_CODE);
+                expect(error.code).assertEqual(INVALID_PARAMETER_CODE);
               }
             }
           }
@@ -936,7 +936,7 @@ export default function CameraLockFocusTest() {
           } catch (merror) {
             console.error(TAG + caseName + ' releasePhotoSession failed. err: ' + merror.code + ', msg: ' + merror.message);
           }
-          expect(err.code).assertEqual(SESSION_NOT_CONFIG_CODE)
+          expect(error.code).assertEqual(SESSION_NOT_CONFIG_CODE)
         }
       }
       done();
