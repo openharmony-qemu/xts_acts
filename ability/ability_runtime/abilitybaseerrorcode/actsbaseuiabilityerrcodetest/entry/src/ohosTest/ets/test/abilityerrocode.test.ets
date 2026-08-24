@@ -18,10 +18,10 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import { common, sendableContextManager, StartOptions, WantAgent, wantAgent ,wantConstant,contextConstant,startupManager,
   Want} from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { BusinessError ,systemParameterEnhance } from '@kit.BasicServicesKit';
+import { BusinessError, systemParameterEnhance, commonEventManager } from '@kit.BasicServicesKit';
 import { rpc } from '@kit.IPCKit';
 import Utils from './Utils';
-import { commonEventManager } from '@kit.BasicServicesKit';
+
 import { fileUri } from '@kit.CoreFileKit';
 import {Driver,ON, Component} from '@ohos.UiTest'
 
