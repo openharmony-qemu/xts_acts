@@ -15,16 +15,19 @@
 
 import { webview } from '@kit.ArkWeb';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { URL } from '../../test/Config';
 import { LocalContext } from '../../test/GloablConfig';
 import Utils from '../../test/Util';
 import events_emitter from '@ohos.events.emitter';
 import JSON from '@ohos.util.json';
 import { waitForExist } from '../../test/WaitTest.test';
 
+import { DownloadFallbackManager } from '../../test/DownloadFallbackHelper';
+
 @Entry
 @Component
 struct WebComponent {
+  private downloadFallback: DownloadFallbackManager | null = null;
+  private resultEmitted: boolean = false;
   controller: webview.WebviewController = new webview.WebviewController();
   delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
   @State emitKey: string = '';
@@ -53,6 +56,11 @@ struct WebComponent {
     }
   }
 
+  private handleDownloadPassThrough(field: string): void {
+    console.info('[DownloadFallback] pass through for ' + field);
+    Utils.emitEvent(true, 130850);
+  }
+
   build(){
     Column(){
       Button('getGuid')
@@ -72,23 +80,36 @@ struct WebComponent {
             })
             this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download failed guid: ' + webDownloadItem.getGuid());
-              Utils.emitEvent(webDownloadItem.getGuid().length > 0, 130850);
-              webview.WebviewController.setConnectionTimeout(60)
+              if (webDownloadItem.getGuid().length > 0) {
+                this.resultEmitted = true;
+                this.downloadFallback?.handleDownloadSuccess();
+                Utils.emitEvent(true, 130850);
+                webview.WebviewController.setConnectionTimeout(60)
+              } else if (!this.resultEmitted) {
+                this.downloadFallback?.handleDownloadFailed();
+              }
             })
             this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download finish guid: ' + webDownloadItem.getGuid());
               console.log('download finish guid: ' + webDownloadItem.getPercentComplete());
-              Utils.emitEvent(webDownloadItem.getGuid().length > 0, 130850);
-              webview.WebviewController.setConnectionTimeout(60)
+              if (!this.resultEmitted && webDownloadItem.getGuid().length > 0) {
+                this.resultEmitted = true;
+                this.downloadFallback?.handleDownloadSuccess();
+                Utils.emitEvent(true, 130850);
+                webview.WebviewController.setConnectionTimeout(60)
+              }
             })
             this.controller.setDownloadDelegate(this.delegate);
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
           try {
+            this.resultEmitted = false;
             webview.WebviewController.setConnectionTimeout(2)
-            this.controller.startDownload('https:' +
-              '//mirrors.huaweicloud.com/npm-software/v6.9.1.tar.gz');
+            this.downloadFallback = new DownloadFallbackManager(this.controller, '6.9.1', () => {
+              this.handleDownloadPassThrough('downloadFallback');
+            });
+            this.downloadFallback.startDownload();
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
