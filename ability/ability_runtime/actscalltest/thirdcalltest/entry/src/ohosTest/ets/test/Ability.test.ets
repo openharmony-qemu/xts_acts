@@ -50,17 +50,17 @@ class MySequenceable {
     this.result = result;
   }
 
-  marshalling(messageParcel:rpc.MessageParcel) {
-    messageParcel.writeInt(this.num);
-    messageParcel.writeString(this.str);
-    messageParcel.writeString(this.result);
+  marshalling(dataOut: rpc.MessageSequence) {
+    dataOut.writeInt(this.num);
+    dataOut.writeString(this.str);
+    dataOut.writeString(this.result);
     return true;
   }
 
-  unmarshalling(messageParcel:rpc.MessageParcel) {
-    this.num = messageParcel.readInt();
-    this.str = messageParcel.readString();
-    this.result = messageParcel.readString();
+  unmarshalling(dataOut: rpc.MessageSequence) {
+    this.num = dataOut.readInt();
+    this.str = dataOut.readString();
+    this.result = dataOut.readString();
     return true;
   }
 }
