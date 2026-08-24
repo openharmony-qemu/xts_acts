@@ -28,7 +28,7 @@ const eventFaDisplayOrientation0400 = 'eventFaDisplayOrientation0400';
 const eventFaDisplayOrientation0400LifeCircle = 'eventFaDisplayOrientation0400LifeCircle';
 let lifeCircleData: string[] = [];
 
-let publishEvent = (event: string, parameter: boolean) => {
+let publishEvent = (event: string, parameter: boolean | string[]) => {
   commonEvent.publish(event,
     {
       parameters: {
