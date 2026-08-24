@@ -259,8 +259,8 @@ export default function FloatCompareTest2(): void {
      */
     it('testFloatCompare013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(1.0);
-        try {
-          const s: string = '中文';
+      try {
+        const s: string = '中文';
         Float.compare(f, s as Object as float);
         expect().assertFail();
       } catch (error) {

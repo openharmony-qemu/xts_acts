@@ -269,7 +269,7 @@ export default function FloatCompareToTest2(): void {
     it('testFloatCompareTo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(1.0);
       try {
-      f.compareTo(null as Object as Float);
+        f.compareTo(null as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -325,7 +325,7 @@ export default function FloatCompareToTest2(): void {
     it('testFloatCompareTo017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(1.0);
       try {
-      f.compareTo([1.0, 2.0] as Object as Float);
+        f.compareTo([1.0, 2.0] as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -364,7 +364,7 @@ export default function FloatCompareToTest2(): void {
       const map: Map<string, int> = new Map<string, int>();
       map.set('key', 1);
       try {
-      f.compareTo(map as Object as Float);
+        f.compareTo(map as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -382,7 +382,7 @@ export default function FloatCompareToTest2(): void {
     it('testFloatCompareTo020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(1.0);
       try {
-      f.compareTo(Color.RED as Object as Float);
+        f.compareTo(Color.RED as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -431,7 +431,7 @@ export default function FloatCompareToTest2(): void {
       const f: Float = new Float(1.0);
       const longStr: string = 'x'.repeat(65535);
       try {
-      f.compareTo(longStr as Object as Float);
+        f.compareTo(longStr as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -450,7 +450,7 @@ export default function FloatCompareToTest2(): void {
       const f: Float = new Float(1.0);
       let arr: int[] = [];
       try {
-      f.compareTo(arr as Object as Float);
+        f.compareTo(arr as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -469,7 +469,7 @@ export default function FloatCompareToTest2(): void {
       const f: Float = new Float(1.0);
       let arr: Object[] = [1, 'test', true];
       try {
-      f.compareTo(arr as Object as Float);
+        f.compareTo(arr as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -488,7 +488,7 @@ export default function FloatCompareToTest2(): void {
       const f: Float = new Float(1.0);
       let matrix: int[][] = [];
       try {
-      f.compareTo(matrix as Object as Float);
+        f.compareTo(matrix as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -507,7 +507,7 @@ export default function FloatCompareToTest2(): void {
       const f: Float = new Float(1.0);
       const list: Array<string> = new Array<string>('a', 'b');
       try {
-      f.compareTo(list as Object as Float);
+        f.compareTo(list as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -796,7 +796,7 @@ export default function FloatCompareToTest2(): void {
       const jsonData: JsonData = new JsonData();
       jsonData.key = 123;
       try {
-      f.compareTo(jsonData as Object as Float);
+        f.compareTo(jsonData as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -815,7 +815,7 @@ export default function FloatCompareToTest2(): void {
       const f: Float = new Float(1.0);
       const bigVal: bigint = 123n;
       try {
-      f.compareTo(bigVal as Object as Float);
+        f.compareTo(bigVal as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -834,7 +834,7 @@ export default function FloatCompareToTest2(): void {
       const f: Float = new Float(1.0);
       const dateVal: Date = new Date();
       try {
-      f.compareTo(dateVal as Object as Float);
+        f.compareTo(dateVal as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -853,7 +853,7 @@ export default function FloatCompareToTest2(): void {
       const f: Float = new Float(1.0);
       const regVal: RegExp = new RegExp('test');
       try {
-      f.compareTo(regVal as Object as Float);
+        f.compareTo(regVal as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -872,7 +872,7 @@ export default function FloatCompareToTest2(): void {
       const f: Float = new Float(1.0);
       const rec: Record<string, number> = {'key': 1};
       try {
-      f.compareTo(rec as Object as Float);
+        f.compareTo(rec as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -893,7 +893,7 @@ export default function FloatCompareToTest2(): void {
       const wm: WeakMap<Object, int> = new WeakMap<Object, int>();
       wm.set(keyObj, 1);
       try {
-      f.compareTo(wm as Object as Float);
+        f.compareTo(wm as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -914,7 +914,7 @@ export default function FloatCompareToTest2(): void {
       const ws: WeakSet<Object> = new WeakSet<Object>();
       ws.add(wsObj);
       try {
-      f.compareTo(ws as Object as Float);
+        f.compareTo(ws as Object as Float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
