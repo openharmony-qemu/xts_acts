@@ -16,11 +16,10 @@
  
  
  
-import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, afterAll, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
  
@@ -30,13 +29,6 @@ const PAGE = 'MainAbility/pages/accessibility/AccessibilityTest';
 export default function AccessibilityTest() {
   describe('AccessibilityTest', () => {
     
-    beforeAll(async (): Promise<void> => {
-      console.info('AccessibilityTest beforeAll start');
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility('com.arkui.ace.xComponent.static', 'EntryAbility');
-      await UtilsTest.msSleep(4000);
-    });
- 
     beforeEach(async (): Promise<void> => {
       console.info('AccessibilityTest beforeEach start');
       let options: router.RouterOptions = {
@@ -58,7 +50,11 @@ export default function AccessibilityTest() {
     });
  
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(200);
+      try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('AccessibilityTest afterEach sleep err: ' + JSON.stringify(err));
+      }
     });
  
     afterAll(async (): Promise<void> => {

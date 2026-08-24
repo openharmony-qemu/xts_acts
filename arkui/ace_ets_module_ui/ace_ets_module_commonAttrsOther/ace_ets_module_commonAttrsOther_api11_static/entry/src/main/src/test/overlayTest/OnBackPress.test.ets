@@ -13,24 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Driver,
   ON
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function onBackPress(): void {
   describe('onBackPress', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("onBackPress beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("onBackPress beforeEach start");
       let options: router.RouterOptions = {
@@ -52,7 +46,11 @@ export default function onBackPress(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('onBackPress afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("overlay after each called");
     });
 

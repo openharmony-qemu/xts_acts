@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -29,10 +28,6 @@ import { BusinessError } from '@ohos.base';
 import { PlaybackSpeed } from '@ohos.arkui.component';
 export default function XComponentNodeChageJsSuit() {
   describe('XComponentNodeChageJsSuit', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.platform.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("XComponentNodeChageJsSuit beforeEach start");
       let options: router.RouterOptions = {
@@ -53,7 +48,7 @@ export default function XComponentNodeChageJsSuit() {
       }
     });
 
-    
+
 
     /**
      * @tc.number   XComponentNodeChageJsSuit_0100
@@ -64,10 +59,23 @@ export default function XComponentNodeChageJsSuit() {
 it('XComponentNodeChageJsSuit_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[XComponentNodeChageJsSuit_0100] START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button_Bottom = await (driver.findComponent(ON.id('xComponentNode_change')) as Promise<Component>);
-      await button_Bottom.click();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XComponentNodeChageJsSuit_0100 sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        let button_Bottom = await (driver.findComponent(ON.id('xComponentNode_change')) as Promise<Component>);
+        await button_Bottom.click();
+      } catch (err) {
+        console.info('XComponentNodeChageJsSuit_0100 click err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XComponentNodeChageJsSuit_0100 sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('xComponent_RenderType');
       console.info("[XComponentNodeChageJsSuit_0100] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[XComponentNodeChageJsSuit_0100] obj content is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));

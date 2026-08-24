@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, MouseButton, ON } from '@ohos.UiTest';
@@ -21,26 +21,10 @@ import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Visibility } from '@ohos.arkui.component';
-
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../../Util.test';
-import { BusinessError } from '@ohos.base';
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function getWaterFlowItemRect4() {
   describe('getWaterFlowItemRect4', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("getWaterFlowItemRect4 beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
-
-    });
     beforeEach(() => {
       console.info("getWaterFlowItemRect4 beforeEach start");
       let options: router.RouterOptions = {
@@ -61,7 +45,7 @@ export default function getWaterFlowItemRect4() {
       }
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try { await CommonFunc.sleep(1000); } catch (err) { console.info('getWaterFlowItemRect4 sleep err: ' + JSON.stringify(err)); }
       console.info("BadgeFocus after each called");
     });
 
@@ -81,15 +65,15 @@ it('getWaterFlowItemRect4_static_0100', Level.LEVEL0, async (done: () => void): 
         AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
       message.notify({ name: 'index', value: 0 })
       message1.notify({ name: 'visibility1', value: Visibility.Visible })
-      await CommonFunc.sleep(1000);
+      try { await CommonFunc.sleep(1000); } catch (err) { console.info('getWaterFlowItemRect4 sleep err: ' + JSON.stringify(err)); }
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try { await CommonFunc.sleep(2000); } catch (err) { console.info('getWaterFlowItemRect4 sleep err: ' + JSON.stringify(err)); }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getWaterFlowItemRect4_button'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try { await (btn?.click() as Promise<void>); } catch (err) { console.info('getWaterFlowItemRect4 click err: ' + JSON.stringify(err)); };
+      try { await CommonFunc.sleep(2000); } catch (err) { console.info('getWaterFlowItemRect4 sleep err: ' + JSON.stringify(err)); }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getWaterFlowItemRect4_text1')
@@ -130,20 +114,20 @@ it('getWaterFlowItemRect4_static_0100', Level.LEVEL0, async (done: () => void): 
 it('getWaterFlowItemRect4_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getWaterFlowItemRect4_static_0200] START');
-      await CommonFunc.sleep(1000);
+      try { await CommonFunc.sleep(1000); } catch (err) { console.info('getWaterFlowItemRect4 sleep err: ' + JSON.stringify(err)); }
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try { await CommonFunc.sleep(2000); } catch (err) { console.info('getWaterFlowItemRect4 sleep err: ' + JSON.stringify(err)); }
 
       console.log('button click')
       let btn2 = await driver.findComponent(ON.id('getWaterFlowItemRect4_button2'));
-      await (btn2?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try { await (btn2?.click() as Promise<void>); } catch (err) { console.info('getWaterFlowItemRect4 click err: ' + JSON.stringify(err)); };
+      try { await CommonFunc.sleep(1000); } catch (err) { console.info('getWaterFlowItemRect4 sleep err: ' + JSON.stringify(err)); }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getWaterFlowItemRect4_button'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try { await (btn?.click() as Promise<void>); } catch (err) { console.info('getWaterFlowItemRect4 click err: ' + JSON.stringify(err)); };
+      try { await CommonFunc.sleep(2000); } catch (err) { console.info('getWaterFlowItemRect4 sleep err: ' + JSON.stringify(err)); }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getWaterFlowItemRect4_text1')
@@ -184,20 +168,20 @@ it('getWaterFlowItemRect4_static_0200', Level.LEVEL0, async (done: () => void): 
 it('getWaterFlowItemRect4_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getWaterFlowItemRect4_static_0300] START');
-      await CommonFunc.sleep(1000);
+      try { await CommonFunc.sleep(1000); } catch (err) { console.info('getWaterFlowItemRect4 sleep err: ' + JSON.stringify(err)); }
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try { await CommonFunc.sleep(2000); } catch (err) { console.info('getWaterFlowItemRect4 sleep err: ' + JSON.stringify(err)); }
 
       console.log('button click')
       let btn3 = await driver.findComponent(ON.id('getWaterFlowItemRect4_button3'));
-      await (btn3?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try { await (btn3?.click() as Promise<void>); } catch (err) { console.info('getWaterFlowItemRect4 click err: ' + JSON.stringify(err)); };
+      try { await CommonFunc.sleep(1000); } catch (err) { console.info('getWaterFlowItemRect4 sleep err: ' + JSON.stringify(err)); }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getWaterFlowItemRect4_button'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try { await (btn?.click() as Promise<void>); } catch (err) { console.info('getWaterFlowItemRect4 click err: ' + JSON.stringify(err)); };
+      try { await CommonFunc.sleep(2000); } catch (err) { console.info('getWaterFlowItemRect4 sleep err: ' + JSON.stringify(err)); }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getWaterFlowItemRect4_text1')

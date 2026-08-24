@@ -14,51 +14,17 @@
  * limitations under the License.
  */
 import emitter from '@ohos.events.emitter';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,Level } from '../../../../hypium/index'
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
-import {
-  Component,
-  DisplayRotation,
-  Driver,
-  MatchPattern,
-  ON,
-  Point,
-  PointerMatrix,
-  Rect,
-  ResizeDirection,
-  UiWindow,
-  WindowMode
-} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Callback, MessageManager } from '../../../ets/MainAbility/utils/MessageManager';
-import window from '@ohos.window';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
-import display from '@ohos.display'
-import { $r, Alignment } from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../Util.test';
+import { Alignment } from '@ohos.arkui.component'
 import { RecordData } from '@ohos.base';
-
-let domain: number = 0x0000;
-let tag: String = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
-
 
 export default function overLayJsunit(): void {
   describe('overLayTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("overLayJsunit beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("overLayTest beforeEach start");
       let options: router.RouterOptions = {
@@ -82,7 +48,11 @@ export default function overLayJsunit(): void {
 
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('overLayTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       const routerInstance = AppStorage.get<Router>("router") as Router
       // routerInstance.back();
       console.info("overlay after each called");
@@ -96,33 +66,38 @@ export default function overLayJsunit(): void {
      * @tc.level    Level.LEVEL0
      */
 it('testOverlay_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[testOverlay01] START');
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('overlay_overlay');
-      await CommonFunc.sleep(2000);
+      try {
+        console.info('[testOverlay01] START');
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('overlay_overlay');
+        await CommonFunc.sleep(2000);
 
-      console.info("[testOverlay01] JSON.parseJsonElement(strJson) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay').getString('title'))
-        .assertEqual("old title");
-      expect(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('overlay')
-        .getElement('options')
-        .getString('align')).assertEqual("Alignment.Bottom");
-      expect(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('overlay')
-        .getElement('options')
-        .getElement('offset')
-        .getString('x')).assertEqual('0.00vp');
-      expect(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('overlay')
-        .getElement('options')
-        .getElement('offset')
-        .getString('y')).assertEqual('-15.00vp');
-      console.info('[testOverlay01] END');
+        console.info("[testOverlay01] JSON.parseJsonElement(strJson) is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay').getString('title'))
+          .assertEqual("old title");
+        expect(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('overlay')
+          .getElement('options')
+          .getString('align')).assertEqual("Alignment.Bottom");
+        expect(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('overlay')
+          .getElement('options')
+          .getElement('offset')
+          .getString('x')).assertEqual('0.00vp');
+        expect(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('overlay')
+          .getElement('options')
+          .getElement('offset')
+          .getString('y')).assertEqual('-15.00vp');
+        console.info('[testOverlay01] END');
+      } catch (err) {
+        console.info('testOverlay01 err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       done()
     });
 
@@ -150,16 +125,21 @@ it('testOverlay_static_02', Level.LEVEL0, async (done: () => void): Promise<void
       } catch (err) {
         console.log("[testOverlay02] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('overlay_overlay');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+        let strJson = inspector.getInspectorByKey('overlay_overlay');
+        await CommonFunc.sleep(2000);
 
-      console.info("[testOverlay02] JSON.parseJsonElement(strJson) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay').getString('title'))
-        .assertEqual("new title");
-      await CommonFunc.sleep(1000);
-      console.info('testOverlay02 END');
+        console.info("[testOverlay02] JSON.parseJsonElement(strJson) is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay').getString('title'))
+          .assertEqual("new title");
+        await CommonFunc.sleep(1000);
+        console.info('testOverlay02 END');
+      } catch (err) {
+        console.info('testOverlay02 err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       done()
     });
 
@@ -189,30 +169,35 @@ it('testOverlay_static_03', Level.LEVEL0, async (done: () => void): Promise<void
       } catch (err) {
         console.log("[testOverlay03] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('overlay_overlay');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+        let strJson = inspector.getInspectorByKey('overlay_overlay');
+        await CommonFunc.sleep(2000);
 
-      console.info("[testOverlay03] JSON.parseJsonElement(strJson) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
-      expect(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('overlay')
-        .getElement('options')
-        .getString('align')).assertEqual("Alignment.TopStart");
-      expect(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('overlay')
-        .getElement('options')
-        .getElement('offset')
-        .getString('x')).assertEqual('30.00vp');
-      expect(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('overlay')
-        .getElement('options')
-        .getElement('offset')
-        .getString('y')).assertEqual('-30.00vp');
-      console.info('testOverlay03 END');
+        console.info("[testOverlay03] JSON.parseJsonElement(strJson) is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
+        expect(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('overlay')
+          .getElement('options')
+          .getString('align')).assertEqual("Alignment.TopStart");
+        expect(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('overlay')
+          .getElement('options')
+          .getElement('offset')
+          .getString('x')).assertEqual('30.00vp');
+        expect(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('overlay')
+          .getElement('options')
+          .getElement('offset')
+          .getString('y')).assertEqual('-30.00vp');
+        console.info('testOverlay03 END');
+      } catch (err) {
+        console.info('testOverlay03 err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       done()
     });
 
@@ -225,7 +210,11 @@ it('testOverlay_static_03', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('testOverlay_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testOverlay04] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('testOverlay04 sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -241,18 +230,23 @@ it('testOverlay_static_04', Level.LEVEL0, async (done: () => void): Promise<void
       } catch (err) {
         console.log("[testOverlay04] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('overlay_overlay');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+        let strJson = inspector.getInspectorByKey('overlay_overlay');
+        await CommonFunc.sleep(2000);
 
-      console.info("[testOverlay04] JSON.parseJsonElement(strJson) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
-      expect(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('overlay')
-        .getElement('options')
-        .getString('align')).assertEqual("Alignment.TopStart");
-      console.info('testOverlay04 END');
+        console.info("[testOverlay04] JSON.parseJsonElement(strJson) is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
+        expect(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('overlay')
+          .getElement('options')
+          .getString('align')).assertEqual("Alignment.TopStart");
+        console.info('testOverlay04 END');
+      } catch (err) {
+        console.info('testOverlay04 err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       done()
     });
 
@@ -280,18 +274,23 @@ it('testOverlay_static_05', Level.LEVEL0, async (done: () => void): Promise<void
       } catch (err) {
         console.log("[testOverlay05] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('overlay_overlay');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+        let strJson = inspector.getInspectorByKey('overlay_overlay');
+        await CommonFunc.sleep(2000);
 
-      console.info("[testOverlay05] JSON.parseJsonElement(strJson) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
-      expect(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('overlay')
-        .getElement('options')
-        .getString('align')).assertEqual("Alignment.TopStart");
-      console.info('testOverlay05 END');
+        console.info("[testOverlay05] JSON.parseJsonElement(strJson) is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
+        expect(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('overlay')
+          .getElement('options')
+          .getString('align')).assertEqual("Alignment.TopStart");
+        console.info('testOverlay05 END');
+      } catch (err) {
+        console.info('testOverlay05 err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       done()
     });
 
@@ -320,25 +319,30 @@ it('testOverlay_static_06', Level.LEVEL0, async (done: () => void): Promise<void
       } catch (err) {
         console.log("[testOverlay06] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('overlay_overlay');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+        let strJson = inspector.getInspectorByKey('overlay_overlay');
+        await CommonFunc.sleep(2000);
 
-      console.info("[testOverlay06] JSON.parseJsonElement(strJson) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
-      expect(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('overlay')
-        .getElement('options')
-        .getElement('offset')
-        .getString('x')).assertEqual('-30.00vp');
-      expect(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('overlay')
-        .getElement('options')
-        .getElement('offset')
-        .getString('y')).assertEqual('30.00vp');
-      console.info('testOverlay06 END');
+        console.info("[testOverlay06] JSON.parseJsonElement(strJson) is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
+        expect(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('overlay')
+          .getElement('options')
+          .getElement('offset')
+          .getString('x')).assertEqual('-30.00vp');
+        expect(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('overlay')
+          .getElement('options')
+          .getElement('offset')
+          .getString('y')).assertEqual('30.00vp');
+        console.info('testOverlay06 END');
+      } catch (err) {
+        console.info('testOverlay06 err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       done()
     });
 
@@ -366,19 +370,24 @@ it('testOverlay_static_07', Level.LEVEL0, async (done: () => void): Promise<void
       } catch (err) {
         console.log("[testOverlay07] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('overlay_overlay');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+        let strJson = inspector.getInspectorByKey('overlay_overlay');
+        await CommonFunc.sleep(2000);
 
-      console.info("[testOverlay07] JSON.parseJsonElement(strJson) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
-      expect(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('overlay')
-        .getElement('options')
-        .getElement('offset')
-        .getString('x')).assertEqual('1111111111.00vp');
-      console.info('testOverlay07 END');
+        console.info("[testOverlay07] JSON.parseJsonElement(strJson) is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
+        expect(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('overlay')
+          .getElement('options')
+          .getElement('offset')
+          .getString('x')).assertEqual('1111111111.00vp');
+        console.info('testOverlay07 END');
+      } catch (err) {
+        console.info('testOverlay07 err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       done()
     });
 
@@ -406,18 +415,23 @@ it('testOverlay_static_08', Level.LEVEL0, async (done: () => void): Promise<void
       } catch (err) {
         console.log("[testOverlay08] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('overlay_overlay');
-      await CommonFunc.sleep(2000);
-      console.info("[testOverlay08] JSON.parseJsonElement(strJson) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
-      expect(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('overlay')
-        .getElement('options')
-        .getElement('offset')
-        .getString('x')).assertEqual('1111111111.00vp');
-      console.info('testOverlay08 END');
+      try {
+        await CommonFunc.sleep(2000);
+        let strJson = inspector.getInspectorByKey('overlay_overlay');
+        await CommonFunc.sleep(2000);
+        console.info("[testOverlay08] JSON.parseJsonElement(strJson) is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));
+        expect(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('overlay')
+          .getElement('options')
+          .getElement('offset')
+          .getString('x')).assertEqual('1111111111.00vp');
+        console.info('testOverlay08 END');
+      } catch (err) {
+        console.info('testOverlay08 err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       done()
     });
   })

@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -32,10 +31,6 @@ interface EventMessage {
 }
 export default function xcomponentGetXComponentContextJsunit() {
   describe('xcomponentGetXComponentContextTest', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.platform.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
@@ -57,11 +52,15 @@ export default function xcomponentGetXComponentContextJsunit() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xcomponentGetXComponentContextTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("xcomponentGetXComponentContext after each called");
     });
 
-    
+
     /**
      * @tc.number   testxcomponentGetXComponentContextStatic0010
      * @tc.name     testxcomponentGetXComponentContextStatic0010
@@ -70,7 +69,11 @@ export default function xcomponentGetXComponentContextJsunit() {
      */
 it('testxcomponentGetXComponentContextStatic0010', Level.LEVEL1, async () => {
       console.info('xcomponentGetXComponentContext testxcomponentGetXComponentContextStatic0010 START');
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('testxcomponentGetXComponentContextStatic0010 sleep err: ' + JSON.stringify(err));
+      }
       try {
         let innerEventOne: events_emitter.InnerEvent = {
           eventId: 60228,
@@ -91,7 +94,7 @@ it('testxcomponentGetXComponentContextStatic0010', Level.LEVEL1, async () => {
 
     });
 
-    
+
     /**
      * @tc.number   testxcomponentSetXComponentSurfaceSizeStatic0001
      * @tc.name     testxcomponentSetXComponentSurfaceSizeStatic0001
@@ -100,9 +103,17 @@ it('testxcomponentGetXComponentContextStatic0010', Level.LEVEL1, async () => {
      */
 it('testxcomponentSetXComponentSurfaceSizeStatic0001', Level.LEVEL1, async () => {
       console.info('testxcomponentSetXComponentSurfaceSizeStatic0001 testxcomponentSetXComponentSurfaceSize0001 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testxcomponentSetXComponentSurfaceSizeStatic0001 sleep err: ' + JSON.stringify(err));
+      }
       console.info("setXComponentSurfaceSize0001 click result is: " + JSON.stringify(inspector.sendEventByKey('setXComponentSurfaceSizeText', 10, "")));
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testxcomponentSetXComponentSurfaceSizeStatic0001 sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('setXComponentSurfaceSizeText');
       //console
       let obj = JSON.parseJsonElement(strJson);
@@ -115,7 +126,7 @@ it('testxcomponentSetXComponentSurfaceSizeStatic0001', Level.LEVEL1, async () =>
 
     });
 
-    
+
     /**
      * @tc.number   testxcomponentSetXComponentSurfaceSizeStatic0002
      * @tc.name     testxcomponentSetXComponentSurfaceSizeStatic0002
@@ -124,9 +135,17 @@ it('testxcomponentSetXComponentSurfaceSizeStatic0001', Level.LEVEL1, async () =>
      */
 it('testxcomponentSetXComponentSurfaceSizeStatic0002', Level.LEVEL1, async () => {
       console.info('testxcomponentSetXComponentSurfaceSizeStatic0002 testxcomponentSetXComponentSurfaceSize0002 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testxcomponentSetXComponentSurfaceSizeStatic0002 sleep err: ' + JSON.stringify(err));
+      }
       console.info("testxcomponentSetXComponentSurfaceSize0002 click result is: " + JSON.stringify(inspector.sendEventByKey('setXComponentSurfaceSizeText', 10, "")))
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testxcomponentSetXComponentSurfaceSizeStatic0002 sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('setXComponentSurfaceSizeText');
       //console
       let obj = JSON.parseJsonElement(strJson);

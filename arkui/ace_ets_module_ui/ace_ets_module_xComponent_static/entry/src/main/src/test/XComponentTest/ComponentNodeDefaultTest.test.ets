@@ -15,13 +15,12 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { XComponentController, SurfaceConfig } from '@ohos.arkui.component';
 
@@ -29,13 +28,6 @@ const SLEEP_TIME = 1000;
 
 export default function ComponentNodeDefaultTest() {
   describe('ComponentNodeDefaultTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("themePageToggleTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.xComponent.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("themePageToggleTest beforeEach start");

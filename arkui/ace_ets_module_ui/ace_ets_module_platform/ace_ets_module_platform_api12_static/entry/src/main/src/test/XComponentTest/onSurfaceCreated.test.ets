@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -25,15 +24,8 @@ import { Driver, ON, Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
 export default function onSurfaceCreatedJsunit() {
   describe('onSurfaceCreatedJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      
-      await UtilsTest.startAbility("com.arkui.ace.platform.api12.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info("onSurfaceCreated beforeEach start");
       let options: router.RouterOptions = {

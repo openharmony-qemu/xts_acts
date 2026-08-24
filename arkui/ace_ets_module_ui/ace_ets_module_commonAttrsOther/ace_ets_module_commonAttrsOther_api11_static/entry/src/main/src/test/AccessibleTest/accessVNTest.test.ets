@@ -13,48 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,Level } from '../../../../hypium/index'
+import { beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
-import {
-  Component,
-  DisplayRotation,
-  Driver,
-  MatchPattern,
-  ON,
-  Point,
-  PointerMatrix,
-  Rect,
-  ResizeDirection,
-  UiWindow,
-  WindowMode
-} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Callback, MessageManager } from '../../../ets/MainAbility/utils/MessageManager';
-import window from '@ohos.window';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
-import display from '@ohos.display'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../Util.test';
-
-let domain: number = 0x0000;
-let tag: String = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 
 export default function accessVnTest(): void {
   describe('accessVnTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("accessVnTest beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("accessVnTest beforeEach start");
       let options: router.RouterOptions = {
@@ -87,9 +54,17 @@ export default function accessVnTest(): void {
      */
 it('accessVnTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('accessVnTest_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('accessVnTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('accessVn_1');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('accessVnTest sleep err: ' + JSON.stringify(err));
+      }
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Row');
       console.info('[accessVnTest_static_0100] END');
