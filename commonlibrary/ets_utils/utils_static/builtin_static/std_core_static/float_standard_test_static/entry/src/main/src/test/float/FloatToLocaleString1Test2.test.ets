@@ -163,7 +163,7 @@ export default function FloatToLocaleString1Test2(): void {
     it('testFloatToLocaleString009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(42.0);
       try {
-      f.toLocaleString('en-US', 'extra' as Object as float);
+        f.toLocaleString('en-US', 'extra' as Object as float);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
@@ -307,8 +307,8 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(-500.0f);
-        const result: string = f.toLocaleString('de-DE', {style:'currency', currency:'EUR'});
-        expect(result).assertContain('-');
+      const result: string = f.toLocaleString('de-DE', {style:'currency', currency:'EUR'});
+      expect(result).assertContain('-');
     });
 
     /**
@@ -321,9 +321,9 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(0.5f);
-        const result: string = f.toLocaleString('en-US', {style:'percent'});
-        expect(result).assertContain('50');
-        expect(result).assertContain('%');
+      const result: string = f.toLocaleString('en-US', {style:'percent'});
+      expect(result).assertContain('50');
+      expect(result).assertContain('%');
     });
 
     /**
@@ -336,9 +336,9 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(-0.5f);
-        const result: string = f.toLocaleString('en-US', {style:'percent'});
-        expect(result).assertContain('-');
-        expect(result).assertContain('%');
+      const result: string = f.toLocaleString('en-US', {style:'percent'});
+      expect(result).assertContain('-');
+      expect(result).assertContain('%');
     });
 
     /**
@@ -351,8 +351,8 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(1.5f);
-        const result: string = f.toLocaleString('en-US', {minimumFractionDigits:3});
-        expect(result).assertContain('1.500');
+      const result: string = f.toLocaleString('en-US', {minimumFractionDigits:3});
+      expect(result).assertContain('1.500');
     });
 
     /**
@@ -365,8 +365,8 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(1.2345f);
-        const result: string = f.toLocaleString('en-US', {maximumFractionDigits:2});
-        expect(result).assertContain('1.23');
+      const result: string = f.toLocaleString('en-US', {maximumFractionDigits:2});
+      expect(result).assertContain('1.23');
     });
 
     /**
@@ -379,8 +379,8 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(1.9999f);
-        const result: string = f.toLocaleString('en-US', {maximumFractionDigits:1});
-        expect(result).assertContain('2');
+      const result: string = f.toLocaleString('en-US', {maximumFractionDigits:1});
+      expect(result).assertContain('2');
     });
 
     /**
@@ -393,9 +393,9 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(3.14159f);
-        const result: string = f.toLocaleString('en-US', {maximumFractionDigits:0});
-        expect(result).assertContain('3');
-        expect(result.includes('.')).assertFalse();
+      const result: string = f.toLocaleString('en-US', {maximumFractionDigits:0});
+      expect(result).assertContain('3');
+      expect(result.includes('.')).assertFalse();
     });
 
     /**
@@ -408,8 +408,8 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(1.234567f);
-        const result: string = f.toLocaleString('en-US', {maximumFractionDigits:3});
-        expect(result).assertContain('1.235');
+      const result: string = f.toLocaleString('en-US', {maximumFractionDigits:3});
+      expect(result).assertContain('1.235');
     });
 
     /**
@@ -422,9 +422,9 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(1000000.0f);
-        const result: string = f.toLocaleString('en-US', {useGrouping:false});
-        expect(result).assertContain('1000000');
-        expect(result.includes(',')).assertFalse();
+      const result: string = f.toLocaleString('en-US', {useGrouping:false});
+      expect(result).assertContain('1000000');
+      expect(result.includes(',')).assertFalse();
     });
 
     /**
@@ -437,9 +437,9 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(0.0f);
-        const result: string = f.toLocaleString('en-US');
-        expect(result).assertContain('0');
-        expect(result.includes('-')).assertFalse();
+      const result: string = f.toLocaleString('en-US');
+      expect(result).assertContain('0');
+      expect(result.includes('-')).assertFalse();
     });
 
     /**
@@ -452,8 +452,8 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(-0.0f);
-        const result: string = f.toLocaleString('en-US');
-        expect(result).assertContain('0');
+      const result: string = f.toLocaleString('en-US');
+      expect(result).assertContain('0');
     });
 
     /**
@@ -466,9 +466,9 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(1234.5f);
-        const localeResult: string = f.toLocaleString('en-US');
-        const toStringResult: string = f.toString();
-        expect(localeResult).not().assertEqual(toStringResult);
+      const localeResult: string = f.toLocaleString('en-US');
+      const toStringResult: string = f.toString();
+      expect(localeResult).not().assertEqual(toStringResult);
     });
 
     /**
@@ -481,9 +481,9 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(1234.5f);
-        const firstResult: string = f.toLocaleString('en-US');
-        const secondResult: string = f.toLocaleString('en-US');
-        expect(firstResult).assertEqual(secondResult);
+      const firstResult: string = f.toLocaleString('en-US');
+      const secondResult: string = f.toLocaleString('en-US');
+      expect(firstResult).assertEqual(secondResult);
     });
 
     /**
@@ -496,10 +496,10 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f1: Float = new Float(5678.9f);
-        const f2: Float = new Float(5678.9f);
-        const firstResult: string = f1.toLocaleString('zh-CN', {minimumFractionDigits:2});
-        const secondResult: string = f2.toLocaleString('zh-CN', {minimumFractionDigits:2});
-        expect(firstResult).assertEqual(secondResult);
+      const f2: Float = new Float(5678.9f);
+      const firstResult: string = f1.toLocaleString('zh-CN', {minimumFractionDigits:2});
+      const secondResult: string = f2.toLocaleString('zh-CN', {minimumFractionDigits:2});
+      expect(firstResult).assertEqual(secondResult);
     });
 
     /**
@@ -512,8 +512,8 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(1234.0f);
-        const result: string = f.toLocaleString('en-US');
-        expect(result).assertContain('1,234');
+      const result: string = f.toLocaleString('en-US');
+      expect(result).assertContain('1,234');
     });
 
     /**
@@ -526,8 +526,8 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(1234567.0f);
-        const result: string = f.toLocaleString('en-US');
-        expect(result).assertContain('1,234,567');
+      const result: string = f.toLocaleString('en-US');
+      expect(result).assertContain('1,234,567');
     });
 
     /**
@@ -540,8 +540,8 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(0.001f);
-        const result: string = f.toLocaleString('en-US');
-        expect(result).assertContain('0.001');
+      const result: string = f.toLocaleString('en-US');
+      expect(result).assertContain('0.001');
     });
 
     /**
@@ -554,9 +554,9 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(-1234.5f);
-        const result: string = f.toLocaleString('en-US');
-        expect(result).assertContain('-');
-        expect(result).assertContain('1,234');
+      const result: string = f.toLocaleString('en-US');
+      expect(result).assertContain('-');
+      expect(result).assertContain('1,234');
     });
 
     /**
@@ -569,8 +569,8 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(Float.NaN);
-        const result: string = f.toLocaleString('en-US');
-        expect(result).assertContain('NaN');
+      const result: string = f.toLocaleString('en-US');
+      expect(result).assertContain('NaN');
     });
 
     /**
@@ -583,9 +583,9 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(Float.POSITIVE_INFINITY);
-        const result: string = f.toLocaleString('en-US');
-        expect(result).assertContain('∞');
-        expect(result).assertContain('∞');
+      const result: string = f.toLocaleString('en-US');
+      expect(result).assertContain('∞');
+      expect(result).assertContain('∞');
     });
 
     /**
@@ -598,9 +598,9 @@ export default function FloatToLocaleString1Test2(): void {
      */
     it('testFloatToLocaleString039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f: Float = new Float(Float.NEGATIVE_INFINITY);
-        const result: string = f.toLocaleString('en-US');
-        expect(result).assertContain('∞');
-        expect(result).assertContain('-∞');
+      const result: string = f.toLocaleString('en-US');
+      expect(result).assertContain('∞');
+      expect(result).assertContain('-∞');
     });
 
     /**
