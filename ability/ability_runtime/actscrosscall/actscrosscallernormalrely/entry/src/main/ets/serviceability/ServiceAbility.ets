@@ -15,6 +15,7 @@
 import commonEvent from '@ohos.commonEventManager'
 import rpc from '@ohos.rpc';
 import ServiceExtensionAbility from '@ohos.app.ability.ServiceExtensionAbility'
+import { Caller } from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import { Configuration } from '@kit.AbilityKit';
 import Want from '@ohos.app.ability.Want';

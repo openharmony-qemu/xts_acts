@@ -47,7 +47,7 @@ workerPort.onmessage = (e: MessageEvents) => {
   if (object.contextName == 'BaseContext') {
     hilog.info(0x0000, 'DisplayContextTest', '%{public}s', 'convert to context.');
     try {
-      let context: common.UIAbilityContext = sendableContextManager.convertToContext(sendableContext);
+      let context: common.Context | undefined = sendableContextManager.convertToContext(sendableContext);
       areaDirTest(context);
       console.log(`DisplayContextTest Worker DisplayDirTest end`);
     } catch (error) {
