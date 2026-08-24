@@ -30,33 +30,40 @@ async function sleep(time: number) {
 }
 
 
-function buttonClick(buttonText: string, msgStr: string) {
+let driver: UiDriver | null = null;
+
+async function buttonClick(buttonText: string, msgStr: string): Promise<string> {
   console.info(msgStr + `case come in buttonClick fun`)
-  return new Promise<string>(async (resolve, reject) => {
-    let driver = await UiDriver.create()
-    console.info(msgStr + `case come in buttonClick fun`)
-    console.info(msgStr + `driver is ${JSON.stringify(driver)}`)
-    await sleep(900)
-    console.info(msgStr + `UiDriver start`)
-    let button: UiComponent = await driver.findComponent(BY.text(buttonText))
-    console.info(msgStr + `button is ${JSON.stringify(button)}`)
-    await sleep(900)
-    if (button) {
-      console.info(msgStr + `button click begin`)
-      await button.click()
-      console.info(msgStr + `button click end`)
-      resolve(msgStr + 'get button successed')
-    } else {
-      console.info(msgStr + `inter else: button is null`)
-      reject(msgStr + 'get button failed')
-    }
-  })
+  if (!driver) {
+    throw new Error(msgStr + 'UiDriver is not initialized');
+  }
+  console.info(msgStr + `driver is ${JSON.stringify(driver)}`)
+  await sleep(900)
+  console.info(msgStr + `UiDriver start`)
+  let button: UiComponent = await driver.findComponent(BY.text(buttonText))
+  console.info(msgStr + `button is ${JSON.stringify(button)}`)
+  await sleep(900)
+  if (button) {
+    console.info(msgStr + `button click begin`)
+    await button.click()
+    console.info(msgStr + `button click end`)
+    return msgStr + 'get button successed'
+  } else {
+    console.info(msgStr + `inter else: button is null`)
+    throw new Error(msgStr + 'get button failed');
+  }
 }
 export default function windowEventTest(context: common.UIAbilityContext, windowStage: window.WindowStage) {
   describe('window_event_test', () => {
     console.log('describe window_event_test start!!!')
     let tempWnd: window.Window | void;
     let subWin: window.Window | void;
+
+    beforeAll(async () => {
+      console.info('window_event_test beforeAll start!!!');
+      driver = await UiDriver.create();
+      console.info('window_event_test UiDriver created');
+    })
 
     beforeEach(async ()=>{
       let msg = 'window_event_test';
