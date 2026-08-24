@@ -72,8 +72,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
         cmd += ' -u ' + user;
     }
     let debug = abilityDelegatorArguments.parameters['-D']
-    if (debug == 'true')
-    {
+    if (debug == 'true') {
       cmd += ' -D'
     }
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
