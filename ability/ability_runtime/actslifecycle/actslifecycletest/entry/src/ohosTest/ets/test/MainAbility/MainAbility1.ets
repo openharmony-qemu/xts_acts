@@ -36,7 +36,7 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
 onWindowStageCreate(windowStage: window.WindowStage): void {
         // Main window is created, set main page for this ability
         console.log('[Demo] MainAbility1 onWindowStageCreate');
-        windowStage.loadContent('testability/pages/MainAbility1_pages', (err: BusinessError) => {
+        windowStage.loadContent('testability/pages/MainAbility1_pages', (err: BusinessError, data: void) => {
             if (err.code) {
                 hilog.error(0x0000, TAG, 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
                 return;
