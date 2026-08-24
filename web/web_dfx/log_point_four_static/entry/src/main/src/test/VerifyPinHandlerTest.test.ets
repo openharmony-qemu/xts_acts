@@ -108,7 +108,6 @@ export default function verifyPinHandlerTest():void {
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
-    //失败
     it('testVerifyPinHandlerConfirmSuccessStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await Utils.msSleep(2000);
@@ -132,7 +131,6 @@ export default function verifyPinHandlerTest():void {
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
-    //失败
     it('testVerifyPinHandlerConfirmFailedStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await Utils.msSleep(2000);
@@ -317,7 +315,6 @@ export default function verifyPinHandlerTest():void {
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
-    // 失败
     it('testVerifyPinHandlerClassExportConfirmBothEnumsStatic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       await Utils.msSleep(2000);
