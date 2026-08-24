@@ -1363,3 +1363,1352 @@ export default function FloatAddTest2(): void {
       expect(r.toFloat()).assertEqual(8.0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0760
+     * @tc.name testFloatAdd076
+     * @tc.desc Verify Float.add with double 0.5 and int 2 returns float 2.5
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valA: double = 0.5;
+      const valB: int = 2;
+      const a: Float = new Float(valA);
+      const b: Float = new Float(valB);
+      const r: Float = a.add(b);
+      expect(r.toFloat()).assertEqual(2.5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0770
+     * @tc.name testFloatAdd077
+     * @tc.desc Verify Float.add with float 10.0f values long and 20 returns float 30.0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valA: float = 10.0f;
+      const valB: long = 20;
+      const a: Float = new Float(valA);
+      const b: Float = new Float(valB);
+      const r: Float = a.add(b);
+      expect(r.toFloat()).assertEqual(30.0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0780
+     * @tc.name testFloatAdd078
+     * @tc.desc Verify Float.add with byte 3 values int and 7 returns float 10.0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valA: byte = 3;
+      const valB: int = 7;
+      const a: Float = new Float(valA);
+      const b: Float = new Float(valB);
+      const r: Float = a.add(b);
+      expect(r.toFloat()).assertEqual(10.0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0790
+     * @tc.name testFloatAdd079
+     * @tc.desc Verify Float.add with int 100 values double and 0.5 returns float 100.5
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valA: int = 100;
+      const valB: double = 0.5;
+      const a: Float = new Float(valA);
+      const b: Float = new Float(valB);
+      const r: Float = a.add(b);
+      expect(r.toFloat()).assertEqual(100.5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0800
+     * @tc.name testFloatAdd080
+     * @tc.desc Verify Float.add with long 1000 values float and 0.5f returns float 1000.5
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valA: long = 1000;
+      const valB: float = 0.5f;
+      const a: Float = new Float(valA);
+      const b: Float = new Float(valB);
+      const r: Float = a.add(b);
+      expect(r.toFloat()).assertEqual(1000.5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0810
+     * @tc.name testFloatAdd081
+     * @tc.desc Verify associativity of Float.add: (a.add(b)).add(c) equals a.add(b.add(c)) for float values 1.5f, 2.5f, 3.5f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(1.5f);
+      const b: Float = new Float(2.5f);
+      const c: Float = new Float(3.5f);
+      let left = (a.add(b)).add(c);
+      const right: Float = a.add(b.add(c));
+      expect(left.toFloat()).assertEqual(right.toFloat());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0820
+     * @tc.name testFloatAdd082
+     * @tc.desc Verify associativity of Float.add: (a.add(b)).add(c) equals a.add(b.add(c)) for float values -1.5f, 2.5f, -3.5f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(-1.5f);
+      const b: Float = new Float(2.5f);
+      const c: Float = new Float(-3.5f);
+      let left = (a.add(b)).add(c);
+      const right: Float = a.add(b.add(c));
+      expect(left.toFloat()).assertEqual(right.toFloat());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0830
+     * @tc.name testFloatAdd083
+     * @tc.desc Verify associativity of Float.add: (a.add(b)).add(c) equals a.add(b.add(c)) for float values 0.1f, 0.2f, 0.3f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(0.1f);
+      const b: Float = new Float(0.2f);
+      const c: Float = new Float(0.3f);
+      let left = (a.add(b)).add(c);
+      const right: Float = a.add(b.add(c));
+      expect(left.toFloat()).assertClose(right.toFloat(), 0.000001f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0840
+     * @tc.name testFloatAdd084
+     * @tc.desc Verify addition commutative property of Float.add, a.add(b) equals b.add(a) for 3.14f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(3.14f);
+      const b: Float = new Float(2.86f);
+      expect(a.add(b).toFloat()).assertEqual(b.add(a).toFloat());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0850
+     * @tc.name testFloatAdd085
+     * @tc.desc Verify addition commutative property of Float.add, a.add(b) equals b.add(a) for -5.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(-5.0f);
+        const b: Float = new Float(3.0f);
+        expect(a.add(b).toFloat()).assertEqual(b.add(a).toFloat());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0860
+     * @tc.name testFloatAdd086
+     * @tc.desc Verify Float.add result equals sum of operands for float values 42.0f and 0.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(42.0f);
+        const zero: Float = new Float(0.0f);
+        expect(a.add(zero).toFloat()).assertEqual(a.toFloat());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0870
+     * @tc.name testFloatAdd087
+     * @tc.desc Verify Float.add result equals sum of operands for float values -42.0f and 0.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(-42.0f);
+        const zero: Float = new Float(0.0f);
+        expect(a.add(zero).toFloat()).assertEqual(a.toFloat());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0880
+     * @tc.name testFloatAdd088
+     * @tc.desc Verify additive inverse: float 7.5f + (-7.5f) equals float 0.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(7.5f);
+        const negA: Float = new Float(-a.toFloat());
+        expect(a.add(negA).toFloat()).assertEqual(0.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0890
+     * @tc.name testFloatAdd089
+     * @tc.desc Verify additive inverse: float -7.5f + 7.5f equals float 0.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(-7.5f);
+        const negA: Float = new Float(-a.toFloat());
+        expect(a.add(negA).toFloat()).assertEqual(0.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0900
+     * @tc.name testFloatAdd090
+     * @tc.desc Verify additive inverse: float 0.125f + (-0.125f) equals float 0.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(0.125f);
+        const negA: Float = new Float(-0.125f);
+        expect(a.add(negA).toFloat()).assertEqual(0.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0910
+     * @tc.name testFloatAdd091
+     * @tc.desc Verify calculation rule of Float.add when param is subnormal number Float.MIN_VALUE, result is finite
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const minVal: Float = new Float(Float.MIN_VALUE);
+        const result: Float = minVal.add(minVal);
+        expect(result.toFloat()).assertLarger(0.0f);
+        expect(result.isFinite()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0920
+     * @tc.name testFloatAdd092
+     * @tc.desc Verify Float.add with subnormal float value MIN_VALUE/2.0f plus float 0.0f returns original value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const smallVal: Float = new Float(Float.MIN_VALUE / 2.0f);
+        const zero: Float = new Float(0.0f);
+        const result: Float = smallVal.add(zero);
+        expect(result.toFloat()).assertEqual(smallVal.toFloat());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0930
+     * @tc.name testFloatAdd093
+     * @tc.desc Verify Float.add with subnormal number: 1.0f plus Float.MIN_VALUE approximates to 1.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const one: Float = new Float(1.0f);
+        const minVal: Float = new Float(Float.MIN_VALUE);
+        const result: Float = one.add(minVal);
+        expect(result.toFloat()).assertClose(1.0f, 0.000001f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0940
+     * @tc.name testFloatAdd094
+     * @tc.desc Verify Float.add floating-point precision tolerance, 0.1 add 0.2 use approximate comparison with error threshold 0.000001
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(0.1f);
+        const b: Float = new Float(0.2f);
+        const result: Float = a.add(b);
+        expect(result.toFloat()).assertClose(0.3f, 0.000001f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0950
+     * @tc.name testFloatAdd095
+     * @tc.desc Verify Float.add: 1.0e10f add 1.0f preserves original value (precision limit)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const large: Float = new Float(1.0e10f);
+        const small: Float = new Float(1.0f);
+        const result: Float = large.add(small);
+        expect(result.toFloat()).assertEqual(1.0e10f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0960
+     * @tc.name testFloatAdd096
+     * @tc.desc Verify additive inverse: float -1.0e10f + 1.0e10f equals float 0.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negLarge: Float = new Float(-1.0e10f);
+        const posLarge: Float = new Float(1.0e10f);
+        const result: Float = negLarge.add(posLarge);
+        expect(result.toFloat()).assertEqual(0.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0970
+     * @tc.name testFloatAdd097
+     * @tc.desc Verify calculation rule of Float.add when param is Float.POSITIVE_INFINITY, result is positive infinity
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inf: Float = new Float(Float.POSITIVE_INFINITY);
+        const zero: Float = new Float(0.0f);
+        const result: Float = inf.add(zero);
+        expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0980
+     * @tc.name testFloatAdd098
+     * @tc.desc Verify calculation rule of Float.add when param is Float.NEGATIVE_INFINITY, result is negative infinity
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negInf: Float = new Float(Float.NEGATIVE_INFINITY);
+        const zero: Float = new Float(0.0f);
+        const result: Float = negInf.add(zero);
+        expect(result.toFloat()).assertEqual(Float.NEGATIVE_INFINITY);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_0990
+     * @tc.name testFloatAdd099
+     * @tc.desc Verify calculation rule of Float.add when param is half Float.MAX_VALUE, result overflows to positive infinity
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const maxVal: Float = new Float(Float.MAX_VALUE);
+        const halfMax: Float = new Float(Float.MAX_VALUE * 0.5f);
+        const result: Float = maxVal.add(halfMax);
+        expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1000
+     * @tc.name testFloatAdd100
+     * @tc.desc Verify Float.add is immutable operation, original Float instance value will not be changed after calculation
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(5.0f);
+        const b: Float = new Float(3.0f);
+        const aOrig: float = a.toFloat();
+        const bOrig: float = b.toFloat();
+        const result: Float = a.add(b);
+        expect(a.toFloat()).assertEqual(aOrig);
+        expect(b.toFloat()).assertEqual(bOrig);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1010
+     * @tc.name testFloatAdd101
+     * @tc.desc Verify Float.add returns a new Float instance, not the same reference as input
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(1.0f);
+        const b: Float = new Float(2.0f);
+        const result: Float = a.add(b);
+        expect(result).not().assertEqual(a);
+        expect(result).not().assertEqual(b);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1020
+     * @tc.name testFloatAdd102
+     * @tc.desc Verify Float.add result equals sum of operands for float values 3.5f and 2.5f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(3.5f);
+        const b: Float = new Float(2.5f);
+        expect(a.add(b).toFloat()).assertEqual(a.toFloat() + b.toFloat());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1030
+     * @tc.name testFloatAdd103
+     * @tc.desc Verify Float.add with float 5.0 values float and 0.0 returns float 5.0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const defaultVal: Float = new Float();
+        const five: Float = new Float(5.0f);
+        const result: Float = defaultVal.add(five);
+        expect(result.toFloat()).assertEqual(5.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1040
+     * @tc.name testFloatAdd104
+     * @tc.desc Verify Float.add with float 1.0 values float and 1.0 returns float 2.0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(1.0f);
+        const result: Float = a.add(new Float(1.0f));
+        expect(result.toFloat()).assertEqual(2.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1050
+     * @tc.name testFloatAdd105
+     * @tc.desc Verify loop accumulation by Float.add, ten times add 1.5 get total 15.0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: Float = new Float(0.0f);
+        const increment: Float = new Float(1.5f);
+        for (let i = 0; i < 10; i++) {
+          sum = sum.add(increment);
+        }
+        expect(sum.toFloat()).assertEqual(15.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1060
+     * @tc.name testFloatAdd106
+     * @tc.desc Verify Float.add with float 1.5f values float and 2.5f returns float 4.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(1.5f);
+        const b: Float = new Float(2.5);
+        const result: Float = a.add(b);
+        expect(result.toFloat()).assertEqual(4.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1070
+     * @tc.name testFloatAdd107
+     * @tc.desc Verify Float.add chain: add 2.0f, 3.0f, 4.0f to float 1.0f returns float 10.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Float = new Float(1.0f).add(new Float(2.0f)).add(new Float(3.0f)).add(new Float(4.0f));
+        expect(result.toFloat()).assertEqual(10.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1080
+     * @tc.name testFloatAdd108
+     * @tc.desc Verify addition chain operation of Float.add, chain add 2.0 and 4.0 then add self, result 30.0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(2.0f);
+        const b: Float = new Float(4.0f);
+        const c: Float = new Float(8.0f);
+        const d: Float = new Float(16.0f);
+        const step1: Float = a.add(b);
+        const step2: Float = step1.add(c);
+        const step3: Float = step2.add(d);
+        expect(step3.toFloat()).assertEqual(30.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1090
+     * @tc.name testFloatAdd109
+     * @tc.desc Verify calculation rule of Float.add when param is large positive value, result overflows to positive infinity
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inf: Float = new Float(Float.POSITIVE_INFINITY);
+        const val: Float = new Float(100.0f);
+        const result: Float = inf.add(val);
+        expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1100
+     * @tc.name testFloatAdd110
+     * @tc.desc Verify calculation rule of Float.add when param is large negative value, result overflows to negative infinity
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negInf: Float = new Float(Float.NEGATIVE_INFINITY);
+        const val: Float = new Float(100.0f);
+        const result: Float = negInf.add(val);
+        expect(result.toFloat()).assertEqual(Float.NEGATIVE_INFINITY);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1110
+     * @tc.name testFloatAdd111
+     * @tc.desc Verify chained composite calculation: Float.add followed by Float.sub on Float(10.0f) returns 12.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Float = new Float(10.0f).add(new Float(5.0f)).sub(new Float(3.0f));
+        expect(result.toFloat()).assertEqual(12.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1120
+     * @tc.name testFloatAdd112
+     * @tc.desc Verify chained composite calculation: Float.add followed by Float.mul on Float(2.0f) returns 20.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Float = new Float(2.0f).add(new Float(3.0f)).mul(new Float(4.0f));
+        expect(result.toFloat()).assertEqual(20.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1130
+     * @tc.name testFloatAdd113
+     * @tc.desc Verify chained composite calculation: Float.add followed by Float.div on Float(6.0f) returns 5.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Float = new Float(6.0f).add(new Float(4.0f)).div(new Float(2.0f));
+        expect(result.toFloat()).assertEqual(5.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1140
+     * @tc.name testFloatAdd114
+     * @tc.desc Verify Float.add: new Float(3.0f).add(new Float(4.0f)) returns 7.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Float = new Float(3.0f).add(new Float(4.0f));
+        const floatVal: float = result.toFloat();
+        expect(floatVal).assertEqual(7.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1150
+     * @tc.name testFloatAdd115
+     * @tc.desc Verify Float.add with float 1.0f plus Float.EPSILON, result is larger than 1.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(1.0f);
+        const eps: Float = new Float(Float.EPSILON);
+        const result: Float = a.add(eps);
+        expect(result.toFloat()).assertLarger(1.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1160
+     * @tc.name testFloatAdd116
+     * @tc.desc Verify Float.add is immutable operation, original Float instance value will not be changed
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(1.0f);
+        const delta: Float = new Float(Float.DELTA);
+        const result: Float = a.add(delta);
+        const diff: float = result.toFloat() - 1.0f;
+        expect(diff).assertLargerOrEqual(0.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1170
+     * @tc.name testFloatAdd117
+     * @tc.desc Verify Float.add with float 10.0f values float and -3.0f returns float 10.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(10.0f);
+        const b: Float = new Float(-3.0f);
+        const c: Float = new Float(-4.0f);
+        const d: Float = new Float(7.0f);
+        const step1: Float = a.add(b);
+        const step2: Float = step1.add(c);
+        const step3: Float = step2.add(d);
+        expect(step3.toFloat()).assertEqual(10.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1180
+     * @tc.name testFloatAdd118
+     * @tc.desc Verify Float.add array reduction: sum of float array [1.0f, 2.0f, 3.0f, 4.0f, 5.0f] equals float 15.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let acc: Float = new Float(0.0f);
+        let values: float[] = [1.0f, 2.0f, 3.0f, 4.0f, 5.0f];
+        for (let v of values) {
+          acc = acc.add(new Float(v));
+        }
+        expect(acc.toFloat()).assertEqual(15.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1190
+     * @tc.name testFloatAdd119
+     * @tc.desc Verify loop accumulation by Float.add, multiple times add 1.0 get total 36.0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Float = new Float(0.0f)
+          .add(new Float(1.0f))
+          .add(new Float(2.0f))
+          .add(new Float(3.0f))
+          .add(new Float(4.0f))
+          .add(new Float(5.0f))
+          .add(new Float(6.0f))
+          .add(new Float(7.0f))
+          .add(new Float(8.0f));
+        expect(result.toFloat()).assertEqual(36.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1200
+     * @tc.name testFloatAdd120
+     * @tc.desc Verify NaN propagation rule of Float.add, NaN plus 999.0f gets NaN
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nan: Float = new Float(Float.NaN);
+        const val: Float = new Float(999.0f);
+        const result: Float = nan.add(val);
+        expect(result.isNaN()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1210
+     * @tc.name testFloatAdd121
+     * @tc.desc Verify float precision boundary of Float.add, 16777216.0f add 1.0f returns 16777217.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const large: Float = new Float(16777216.0f);
+        const small: Float = new Float(1.0f);
+        const result: Float = large.add(small);
+        expect(result.toFloat()).assertEqual(16777217.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1220
+     * @tc.name testFloatAdd122
+     * @tc.desc Verify calculation rule of Float.add when param is subnormal number, sum of 10 repeated MIN_VALUE additions is larger than 0.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const minVal: Float = new Float(Float.MIN_VALUE);
+      let sum: Float = new Float(0.0f);
+        for (let i = 0; i < 10; i++) {
+          sum = sum.add(minVal);
+        }
+        expect(sum.toFloat()).assertLarger(0.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1230
+     * @tc.name testFloatAdd123
+     * @tc.desc Verify additive identity: default Float(0.0f) + default Float(0.0f) equals float 0.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float();
+        const b: Float = new Float();
+        const result: Float = a.add(b);
+        expect(result.toFloat()).assertEqual(0.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1240
+     * @tc.name testFloatAdd124
+     * @tc.desc Verify additive identity: Float(0.0f) + Float(0.0f) equals float 0.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(0.0f);
+        const b: Float = new Float(0.0f);
+        const result: Float = a.add(b);
+        expect(result.toFloat()).assertEqual(0.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1250
+     * @tc.name testFloatAdd125
+     * @tc.desc Verify Float.add result: float 1.0f plus Float.POSITIVE_INFINITY, result is not finite float
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(1.0f);
+        const inf: Float = new Float(Float.POSITIVE_INFINITY);
+        const result: Float = a.add(inf);
+        expect(result.isFinite()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1260
+     * @tc.name testFloatAdd126
+     * @tc.desc Verify Float.add is immutable operation, repeated calls on Float(1.0f) return the same result
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(1.0f);
+        const b: Float = new Float(2.0f);
+        const c: Float = new Float(3.0f);
+        const aOrig: float = a.toFloat();
+        const bOrig: float = b.toFloat();
+        const cOrig: float = c.toFloat();
+        const step1: Float = a.add(b);
+        const result: Float = step1.add(c);
+        expect(a.toFloat()).assertEqual(aOrig);
+        expect(b.toFloat()).assertEqual(bOrig);
+        expect(c.toFloat()).assertEqual(cOrig);
+        expect(result.toFloat()).assertEqual(6.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1270
+     * @tc.name testFloatAdd127
+     * @tc.desc Verify Float.add(9.0f, 0.0f) result is finite
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(9.0f);
+      const b: Float = new Float(0.0f);
+      const result: Float = a.add(b);
+      expect(result.isFinite()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1280
+     * @tc.name testFloatAdd128
+     * @tc.desc Verify Float.add(-48.0f, 0.0f) result is finite
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(-48.0f);
+      const b: Float = new Float(0.0f);
+      const result: Float = a.add(b);
+      expect(result.isFinite()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1290
+     * @tc.name testFloatAdd129
+     * @tc.desc Verify Float.add(1.0e-5f, 0.0f) result is finite
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(1.0e-5f);
+      const b: Float = new Float(0.0f);
+      const result: Float = a.add(b);
+      expect(result.isFinite()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1300
+     * @tc.name testFloatAdd130
+     * @tc.desc Verify Float.add(-1.0e3f, 0.0f) result is finite
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(-1.0e3f);
+      const b: Float = new Float(0.0f);
+      const result: Float = a.add(b);
+      expect(result.isFinite()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1310
+     * @tc.name testFloatAdd131
+     * @tc.desc Verify Float.add with boundary int value 2147483647 plus float 0.0f result is finite float
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(2147483647 as int);
+      const b: Float = new Float(0.0f);
+      const result: Float = a.add(b);
+      expect(result.isFinite()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1320
+     * @tc.name testFloatAdd132
+     * @tc.desc Verify Float.add with boundary int value -2147483648 plus float 0.0f result is finite float
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(-2147483648 as int);
+      const b: Float = new Float(0.0f);
+      const result: Float = a.add(b);
+      expect(result.isFinite()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1330
+     * @tc.name testFloatAdd133
+     * @tc.desc Verify Float.add with boundary int value 127 plus float 0.0f result is finite float
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(127 as byte);
+      const b: Float = new Float(0.0f);
+      const result: Float = a.add(b);
+      expect(result.isFinite()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1340
+     * @tc.name testFloatAdd134
+     * @tc.desc Verify Float.add with boundary int value -128 plus float 0.0f result is finite float
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(-128 as byte);
+      const b: Float = new Float(0.0f);
+      const result: Float = a.add(b);
+      expect(result.isFinite()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1350
+     * @tc.name testFloatAdd135
+     * @tc.desc Verify Float.add with boundary int value 32767 plus float 0.0f result is finite float
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(32767 as short);
+      const b: Float = new Float(0.0f);
+      const result: Float = a.add(b);
+      expect(result.isFinite()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1360
+     * @tc.name testFloatAdd136
+     * @tc.desc Verify Float.add with boundary int value -32768 plus float 0.0f result is finite float
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(-32768 as short);
+      const b: Float = new Float(0.0f);
+      const result: Float = a.add(b);
+      expect(result.isFinite()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1370
+     * @tc.name testFloatAdd137
+     * @tc.desc Verify Float.add with bitCastFromInt(0x007fffff) constructed float plus zero, result is finite float
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(Float.bitCastFromInt(0x007fffff));
+      const b: Float = new Float(0.0f);
+      const result: Float = a.add(b);
+      expect(result.isFinite()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1380
+     * @tc.name testFloatAdd138
+     * @tc.desc Verify NaN propagation rule of Float.add, NaN plus 0.0f gets NaN, isNaN result is true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(Float.NaN);
+      const b: Float = new Float(0.0f);
+      const result: Float = a.add(b);
+      expect(result.isFinite()).assertFalse();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1390
+     * @tc.name testFloatAdd139
+     * @tc.desc Verify NaN propagation: 1.0f + NaN returns NaN
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(1.0f);
+      const b: Float = new Float(Float.NaN);
+      const result: Float = a.add(b);
+      expect(result.isNaN()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1400
+     * @tc.name testFloatAdd140
+     * @tc.desc Verify Infinity addition: Infinity + 1.0f returns Infinity
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(Float.POSITIVE_INFINITY);
+      const b: Float = new Float(1.0f);
+      const result: Float = a.add(b);
+      expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1410
+     * @tc.name testFloatAdd141
+     * @tc.desc Verify Infinity addition: Infinity + Infinity returns Infinity
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(Float.POSITIVE_INFINITY);
+      const b: Float = new Float(Float.POSITIVE_INFINITY);
+      const result: Float = a.add(b);
+      expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1420
+     * @tc.name testFloatAdd142
+     * @tc.desc Verify Infinity addition: -Infinity + (-Infinity) returns -Infinity
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(Float.NEGATIVE_INFINITY);
+      const b: Float = new Float(Float.NEGATIVE_INFINITY);
+      const result: Float = a.add(b);
+      expect(result.toFloat()).assertEqual(Float.NEGATIVE_INFINITY);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1430
+     * @tc.name testFloatAdd143
+     * @tc.desc Verify signed zero addition: -0.0f + 0.0f equals 0.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(-0.0f);
+      const b: Float = new Float(0.0f);
+      const result: Float = a.add(b);
+      expect(result.toFloat()).assertEqual(0.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1440
+     * @tc.name testFloatAdd144
+     * @tc.desc Verify signed zero addition: -0.0f + (-0.0f) equals -0.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(-0.0f);
+      const b: Float = new Float(-0.0f);
+      const result: Float = a.add(b);
+
+      expect(1.0f / result.toFloat()).assertEqual(Float.NEGATIVE_INFINITY);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1450
+     * @tc.name testFloatAdd145
+     * @tc.desc Verify commutativity property of Float.add: a.add(b) equals b.add(a)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(3.14f);
+      const b: Float = new Float(2.71f);
+      const left: float = a.add(b).toFloat();
+      const right: float = b.add(a).toFloat();
+      expect(left).assertEqual(right);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1460
+     * @tc.name testFloatAdd146
+     * @tc.desc Verify additive identity: a.add(new Float(0.0f)) equals a
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(42.0f);
+      const zero: Float = new Float(0.0f);
+      const result: Float = a.add(zero);
+      expect(result.toFloat()).assertEqual(a.toFloat());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1470
+     * @tc.name testFloatAdd147
+     * @tc.desc Verify additive identity with negative value: (-5.0f).add(new Float(0.0f)) equals -5.0f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(-5.0f);
+      const zero: Float = new Float(0.0f);
+      const result: Float = a.add(zero);
+      expect(result.toFloat()).assertEqual(-5.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1480
+     * @tc.name testFloatAdd148
+     * @tc.desc Verify range extremes addition: Float.MAX_VALUE + Float.MIN_VALUE returns MAX_VALUE
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(Float.MAX_VALUE);
+      const b: Float = new Float(Float.MIN_VALUE);
+      const result: Float = a.add(b);
+      expect(result.toFloat()).assertEqual(Float.MAX_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1490
+     * @tc.name testFloatAdd149
+     * @tc.desc Verify large plus tiny: 1.0e10f + 1.0e-10f returns 1.0e10f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(1.0e10f);
+      const b: Float = new Float(1.0e-10f);
+      const result: Float = a.add(b);
+      expect(result.toFloat()).assertEqual(1.0e10f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1500
+     * @tc.name testFloatAdd150
+     * @tc.desc Verify additive inverse: a + (-a) equals 0.0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(3.5f);
+      const negA: Float = new Float(-3.5f);
+      const result: Float = a.add(negA);
+      expect(result.toFloat()).assertEqual(0.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1510
+     * @tc.name testFloatAdd151
+     * @tc.desc Verify -0.0f + Float.MIN_VALUE returns Float.MIN_VALUE
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(-0.0f);
+      const b: Float = new Float(Float.MIN_VALUE);
+      const result: Float = a.add(b);
+      expect(result.toFloat()).assertEqual(Float.MIN_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1520
+     * @tc.name testFloatAdd152
+     * @tc.desc Verify Float constructed by bitCastFromInt(0x7f800000) plus 1.0f returns Infinity
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(Float.bitCastFromInt(0x7f800000));
+      const b: Float = new Float(1.0f);
+      const result: Float = a.add(b);
+      expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1530
+     * @tc.name testFloatAdd153
+     * @tc.desc Verify Float constructed by bitCastFromInt(0x7fc00000) plus 1.0f returns NaN
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(Float.bitCastFromInt(0x7fc00000));
+      const b: Float = new Float(1.0f);
+      const result: Float = a.add(b);
+      expect(result.isNaN()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1540
+     * @tc.name testFloatAdd154
+     * @tc.desc Verify Float.add throws ClassCastError when passing null value as parameter
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const f: Float = new Float(1.0);
+      try {
+        f.add(null as Object as Float);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('ClassCastError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1550
+     * @tc.name testFloatAdd155
+     * @tc.desc Verify Float.add throws ClassCastError when passing Function as parameter
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const f: Float = new Float(1.0);
+      try {
+        let fn: () => void = () => {};
+        f.add(fn as Object as Float);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('ClassCastError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1560
+     * @tc.name testFloatAdd156
+     * @tc.desc Verify Float.add throws ClassCastError when passing undefined as parameter
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const f: Float = new Float(1.0);
+      try {
+        const u: Object | undefined = undefined;
+        f.add(u as Object as Float);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('ClassCastError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1570
+     * @tc.name testFloatAdd157
+     * @tc.desc Verify 1.0e-5f + 2.0e-5f returns 3.0e-5f
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(1.0e-5f);
+      const b: Float = new Float(2.0e-5f);
+      const result: Float = a.add(b);
+      expect(result.toFloat()).assertClose(3.0e-5f, 0.000001f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1580
+     * @tc.name testFloatAdd158
+     * @tc.desc Verify float double boundary: 3.4e38f + 1.0e38f exceeds MAX_VALUE and results in Infinity
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(3.4e38f);
+      const b: Float = new Float(1.0e38f);
+      const result: Float = a.add(b);
+      expect(result.toFloat()).assertEqual(Float.POSITIVE_INFINITY);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1590
+     * @tc.name testFloatAdd159
+     * @tc.desc Verify cross-type addition: float Float.DELTA + int 0 via Float.add, result equals Float.DELTA
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(Float.DELTA);
+      const b: Float = new Float(0);
+      const result: Float = a.add(b);
+      expect(result.toFloat()).assertEqual(Float.DELTA);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1600
+     * @tc.name testFloatAdd160
+     * @tc.desc Verify cross-type addition: float Float.EPSILON + int 0 via Float.add, result equals Float.EPSILON
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(Float.EPSILON);
+      const b: Float = new Float(0);
+      const result: Float = a.add(b);
+      expect(result.toFloat()).assertEqual(Float.EPSILON);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1610
+     * @tc.name testFloatAdd161
+     * @tc.desc Verify float 0.1f + 0.2f is approximately 0.3f within Float.DELTA tolerance
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(0.1f);
+      const b: Float = new Float(0.2f);
+      const result: Float = a.add(b);
+      expect(Float.compare(result.toFloat(), 0.3f)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT_ADD_2_1620
+     * @tc.name testFloatAdd162
+     * @tc.desc Verify clamp addition: Float.MAX_SAFE_INTEGER + 1.0f via Float.add, result is finite
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testFloatAdd162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Float = new Float(Float.MAX_SAFE_INTEGER);
+      const b: Float = new Float(1.0f);
+      const result: Float = a.add(b);
+      expect(result.isFinite()).assertTrue();
+    });
+
+    });
+}
