@@ -195,7 +195,7 @@ export default function FloatToInt2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToInt011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const longStr: string = 'x'.repeat(65535);
+      const longStr: string = 'x'.repeat(65535);
       try {
         Float.toInt(longStr as Object as float);
         expect().assertFail();
@@ -213,7 +213,7 @@ export default function FloatToInt2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToInt012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: int[] = [];
+      let arr: int[] = [];
       try {
         Float.toInt(arr as Object as float);
         expect().assertFail();
@@ -231,7 +231,7 @@ export default function FloatToInt2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToInt013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Object[] = [1, 'test', true];
+      let arr: Object[] = [1, 'test', true];
       try {
         Float.toInt(arr as Object as float);
         expect().assertFail();
@@ -249,7 +249,7 @@ export default function FloatToInt2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToInt014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let matrix: int[][] = [];
+      let matrix: int[][] = [];
       try {
         Float.toInt(matrix as Object as float);
         expect().assertFail();
@@ -267,7 +267,7 @@ export default function FloatToInt2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToInt015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const list: Array<string> = new Array<string>('a', 'b');
+      const list: Array<string> = new Array<string>('a', 'b');
       try {
         Float.toInt(list as Object as float);
         expect().assertFail();
@@ -285,8 +285,8 @@ export default function FloatToInt2Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatToInt016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        try {
-          const bigIntVal: bigint = 123n;
+      try {
+        const bigIntVal: bigint = 123n;
         Float.toInt(bigIntVal as Object as float);
         expect().assertFail();
       } catch (error) {
