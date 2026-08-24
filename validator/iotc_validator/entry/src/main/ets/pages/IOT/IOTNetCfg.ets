@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ struct IOTNetCfg {
     '\n2、点击<重新扫描设备>按钮开始扫描' +
     '\n3、可用设备列表显示设备信息后，点击设备进行连接' +
     '\n4、设备连接成功后，点击<下一步>按钮' +
-    '\n5、设备连接上网络后，弹出配网成功，点击Pass按钮' +
+    '\n5、设备连接上网络后，弹出"配网成功"，点击Pass按钮' +
     '\n6、弹出配网超时或失败时，点击Fail按钮';
   @State name: string = '';
   @State stepTips: string = '';
@@ -156,6 +156,7 @@ struct IOTNetCfg {
       return;
     }
     this.isProvisioning = true;
+    this.isVue = false;
     try {
       let result = await IotHelper.getInstance().configureNetwork(ssid, password);
       if (!result) {
@@ -167,14 +168,26 @@ struct IOTNetCfg {
       setTimeout(() => {
         if (this.isProvisioning) {
           this.isProvisioning = false;
-          promptAction.showToast({ message: '配网超时，设备未响应，请检查WiFi参数是否正确', duration: 3000 });
+          this.isVue = false;
+          AlertDialog.show({
+            title: '配网超时',
+            message: '配网超时，设备未响应，请检查WiFi参数是否正确',
+            confirm: { value: '确定', action: () => {} }
+          });
         }
       }, 30000);
     } catch (error) {
       Logger.info(TAG, `configureNetwork error ${JSON.stringify(error)}`);
-      promptAction.showToast({ message: '配网失败', duration: 2000 });
-    } finally {
+      if (!this.isProvisioning) {
+        return;
+      }
       this.isProvisioning = false;
+      this.isVue = false;
+      AlertDialog.show({
+        title: '配网失败',
+        message: `配网失败，请检查设备连接参数`,
+        confirm: { value: '确定', action: () => {} }
+      });
     }
   }
 
@@ -197,11 +210,30 @@ struct IOTNetCfg {
       if (status === 104) {
         promptAction.showToast({ message: '发送命令成功', duration: 2000 });
       } else if (status === 100) {
-        this.isVue = true;
-        promptAction.showToast({ message: '配网成功', duration: 2000 });
-      } else {
+        if (!this.isProvisioning) {
+          return;
+        }
         this.isProvisioning = false;
-        promptAction.showToast({ message: `配网失败，错误码: ${status}`, duration: 3000 });
+        this.isVue = true;
+        AlertDialog.show({
+          title: '配网成功',
+          message: '设备已成功连接网络',
+          confirm: {
+            value: '确定', action: () => {
+            }
+          }
+        });
+      } else {
+        if (!this.isProvisioning) {
+          return;
+        }
+        this.isProvisioning = false;
+        this.isVue = false;
+        AlertDialog.show({
+          title: '配网失败',
+          message: `配网失败，错误码: ${status}`,
+          confirm: { value: '确定', action: () => {} }
+        });
       }
     });
   }

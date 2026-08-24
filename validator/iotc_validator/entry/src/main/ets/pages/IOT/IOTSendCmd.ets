@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -146,10 +146,18 @@ struct IOTSendCmd {
     try {
       let result = await IotHelper.getInstance().sendDeviceCommand(sid, data);
       this.isVue = true;
-      promptAction.showToast({ message: '指令发送成功，已收到设备上报数据', duration: 2000 });
+      AlertDialog.show({
+        title: '指令发送成功',
+        message: '指令发送成功，已收到设备上报数据',
+        confirm: { value: '确定', action: () => {} }
+      });
     } catch (error) {
       Logger.info(TAG, `sendCommand error ${JSON.stringify(error)}`);
-      promptAction.showToast({ message: '指令发送失败或设备未响应', duration: 2000 });
+      AlertDialog.show({
+        title: '指令发送失败',
+        message: '指令发送失败或设备未响应',
+        confirm: { value: '确定', action: () => {} }
+      });
     } finally {
       this.isSending = false;
     }
