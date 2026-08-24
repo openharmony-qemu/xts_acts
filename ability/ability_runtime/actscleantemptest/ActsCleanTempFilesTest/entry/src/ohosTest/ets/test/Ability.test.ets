@@ -116,7 +116,9 @@ export default function abilityTest() {
           console.log('Acts_CleanTempFiles_0102 startAbility err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -203,7 +205,9 @@ export default function abilityTest() {
           console.log('Acts_CleanTempFiles_0202 startAbility err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -270,7 +274,9 @@ export default function abilityTest() {
           console.log('Acts_CleanTempFiles_0302 startAbility err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
 
     /**
@@ -346,7 +352,9 @@ export default function abilityTest() {
               key: 'Acts_CleanTempFiles_0402'
             }
           }, options)
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+      });
     })
   })
 }
