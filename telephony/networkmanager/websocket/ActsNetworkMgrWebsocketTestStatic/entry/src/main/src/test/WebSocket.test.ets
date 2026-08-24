@@ -1695,8 +1695,7 @@ export default function WebSocketTest() {
                       }
                     }).catch((error: Error) => {
                       hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + error.code);
-                      hilog.info(domain, tag, '%{public}s', caseName + 'error.code type is : ' + typeof error.code);
-                      ExpectTrue(String(error.code) === '2302006');
+                      ExpectTrue(error.code === 2302006);
                       server.stop();
                       done();
                     })
