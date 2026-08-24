@@ -242,7 +242,7 @@ export default function FloatIsFinite1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatIsFiniteStatic014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const longStr: string = 'x'.repeat(65535);
+      const longStr: string = 'x'.repeat(65535);
       try {
         Float.isFinite(longStr as Object as float);
         expect().assertFail();
@@ -260,7 +260,7 @@ export default function FloatIsFinite1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatIsFiniteStatic015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: int[] = [];
+      let arr: int[] = [];
       try {
         Float.isFinite(arr as Object as float);
         expect().assertFail();
@@ -278,7 +278,7 @@ export default function FloatIsFinite1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatIsFiniteStatic016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr: Object[] = [1, 'test', true];
+      let arr: Object[] = [1, 'test', true];
       try {
         Float.isFinite(arr as Object as float);
         expect().assertFail();
@@ -296,7 +296,7 @@ export default function FloatIsFinite1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatIsFiniteStatic017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let matrix: int[][] = [];
+      let matrix: int[][] = [];
       try {
         Float.isFinite(matrix as Object as float);
         expect().assertFail();
@@ -314,7 +314,7 @@ export default function FloatIsFinite1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatIsFiniteStatic018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const list: Array<string> = new Array<string>('a', 'b');
+      const list: Array<string> = new Array<string>('a', 'b');
       try {
         Float.isFinite(list as Object as float);
         expect().assertFail();
@@ -390,7 +390,7 @@ export default function FloatIsFinite1Test2(): void {
      * @tc.level LEVEL2
      */
     it('testFloatIsFiniteStatic023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const jsonData: JsonData = new JsonData();
+      const jsonData: JsonData = new JsonData();
       jsonData.key = 123;
       try {
         Float.isFinite(jsonData as Object as float);
