@@ -227,7 +227,7 @@ export default function ndkModularObjectExtensionManagerTest() {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_ReleaseAllExtensionInfos_0100';
       hilog.info(0x0000, TAG, '%{public}s', `begin of ${TEST_SUITE_NAME}`);
       let result = testNapi.ndkReleaseAllExtensionInfos_0100();
-      expect(result).assertEqual(0);
+      expect(result).assertEqual(PARAM_INVALID_CODE);
       hilog.info(0x0000, TAG, '%{public}s', `end of ${TEST_SUITE_NAME}`);
       done();
     })
