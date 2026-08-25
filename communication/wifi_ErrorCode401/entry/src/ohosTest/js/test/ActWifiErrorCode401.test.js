@@ -604,15 +604,15 @@ export default function actsWifiErrorCode401Test() {
     })
 
     /**
-     * @tc.name   Sub_Communication_WiFi_GetSignalLevel_Null_Nop_0001
-     * @tc.number Sub_Communication_WiFi_GetSignalLevel_Null_Nop_0001
+     * @tc.name   SUB_Communication_WiFi_GetSignalLevel_Null_Nop_0001
+     * @tc.number SUB_Communication_WiFi_GetSignalLevel_Null_Nop_0001
      * @tc.desc   Test getSignalLevel API with null rssi parameter(已废弃接口，无错误码，结果返回false)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_GetSignalLevel_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_GetSignalLevel_Null_Nop_0001';
+    it('SUB_Communication_WiFi_GetSignalLevel_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_GetSignalLevel_Null_Nop_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifi.getSignalLevel(null, null);
@@ -627,15 +627,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFi_GetSignalLevel_Undefined_Nop_0001
-     * @tc.number Sub_Communication_WiFi_GetSignalLevel_Undefined_Nop_0001
+     * @tc.name   SUB_Communication_WiFi_GetSignalLevel_Undefined_Nop_0001
+     * @tc.number SUB_Communication_WiFi_GetSignalLevel_Undefined_Nop_0001
      * @tc.desc   Test getSignalLevel API with undefined rssi parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_GetSignalLevel_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_GetSignalLevel_Undefined_Nop_0001';
+    it('SUB_Communication_WiFi_GetSignalLevel_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_GetSignalLevel_Undefined_Nop_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifi.getSignalLevel(undefined, undefined);
@@ -650,15 +650,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFi_IsFeatureSupported_Null_Nop_0001
-     * @tc.number Sub_Communication_WiFi_IsFeatureSupported_Null_Nop_0001
+     * @tc.name   SUB_Communication_WiFi_IsFeatureSupported_Null_Nop_0001
+     * @tc.number SUB_Communication_WiFi_IsFeatureSupported_Null_Nop_0001
      * @tc.desc   Test isFeatureSupported API with null featureId parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_IsFeatureSupported_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_IsFeatureSupported_Null_Nop_0001';
+    it('SUB_Communication_WiFi_IsFeatureSupported_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_IsFeatureSupported_Null_Nop_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifi.isFeatureSupported(null);
@@ -673,15 +673,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFi_IsFeatureSupported_Undefined_Nop_0001
-     * @tc.number Sub_Communication_WiFi_IsFeatureSupported_Undefined_Nop_0001
+     * @tc.name   SUB_Communication_WiFi_IsFeatureSupported_Undefined_Nop_0001
+     * @tc.number SUB_Communication_WiFi_IsFeatureSupported_Undefined_Nop_0001
      * @tc.desc   Test isFeatureSupported API with undefined featureId parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_IsFeatureSupported_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_IsFeatureSupported_Undefined_Nop_0001';
+    it('SUB_Communication_WiFi_IsFeatureSupported_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_IsFeatureSupported_Undefined_Nop_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifi.isFeatureSupported(undefined);
@@ -697,15 +697,15 @@ export default function actsWifiErrorCode401Test() {
 
 
     /**
-     * @tc.name   Sub_Communication_WiFi_AddUntrustedConfig_Null_0001
-     * @tc.number Sub_Communication_WiFi_AddUntrustedConfig_Null_0001
+     * @tc.name   SUB_Communication_WiFi_AddUntrustedConfig_Null_0001
+     * @tc.number SUB_Communication_WiFi_AddUntrustedConfig_Null_0001
      * @tc.desc   Test addUntrustedConfig API with null parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_AddUntrustedConfig_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_AddUntrustedConfig_Null_0001';
+    it('SUB_Communication_WiFi_AddUntrustedConfig_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_AddUntrustedConfig_Null_0001';
       console.info(`${caseName} test start`);
       try {
         let result = await wifi.addUntrustedConfig(null);
@@ -720,15 +720,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFi_AddUntrustedConfig_Undefined_0001
-     * @tc.number Sub_Communication_WiFi_AddUntrustedConfig_Undefined_0001
+     * @tc.name   SUB_Communication_WiFi_AddUntrustedConfig_Undefined_0001
+     * @tc.number SUB_Communication_WiFi_AddUntrustedConfig_Undefined_0001
      * @tc.desc   Test addUntrustedConfig API with undefined parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_AddUntrustedConfig_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_AddUntrustedConfig_Undefined_0001';
+    it('SUB_Communication_WiFi_AddUntrustedConfig_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_AddUntrustedConfig_Undefined_0001';
       console.info(`${caseName} test start`);
       try {
         let result = await wifi.addUntrustedConfig(undefined);
@@ -744,15 +744,15 @@ export default function actsWifiErrorCode401Test() {
 
 
     /**
-     * @tc.name   Sub_Communication_WiFi_RemoveUntrustedConfig_Null_0001
-     * @tc.number Sub_Communication_WiFi_RemoveUntrustedConfig_Null_0001
+     * @tc.name   SUB_Communication_WiFi_RemoveUntrustedConfig_Null_0001
+     * @tc.number SUB_Communication_WiFi_RemoveUntrustedConfig_Null_0001
      * @tc.desc   Test removeUntrustedConfig API with null parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_RemoveUntrustedConfig_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_RemoveUntrustedConfig_Null_0001';
+    it('SUB_Communication_WiFi_RemoveUntrustedConfig_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_RemoveUntrustedConfig_Null_0001';
       console.info(`${caseName} test start`);
       try {
         let result = await wifi.removeUntrustedConfig(null);
@@ -767,15 +767,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFi_RemoveUntrustedConfig_Undefined_0001
-     * @tc.number Sub_Communication_WiFi_RemoveUntrustedConfig_Undefined_0001
+     * @tc.name   SUB_Communication_WiFi_RemoveUntrustedConfig_Undefined_0001
+     * @tc.number SUB_Communication_WiFi_RemoveUntrustedConfig_Undefined_0001
      * @tc.desc   Test removeUntrustedConfig API with undefined parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_RemoveUntrustedConfig_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_RemoveUntrustedConfig_Undefined_0001';
+    it('SUB_Communication_WiFi_RemoveUntrustedConfig_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_RemoveUntrustedConfig_Undefined_0001';
       console.info(`${caseName} test start`);
       try {
         let result = await wifi.removeUntrustedConfig(undefined);
@@ -790,15 +790,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFi_CreateGroup_Null_0001
-     * @tc.number Sub_Communication_WiFi_CreateGroup_Null_0001
+     * @tc.name   SUB_Communication_WiFi_CreateGroup_Null_0001
+     * @tc.number SUB_Communication_WiFi_CreateGroup_Null_0001
      * @tc.desc   Test createGroup API with null parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_CreateGroup_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_CreateGroup_Null_0001';
+    it('SUB_Communication_WiFi_CreateGroup_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_CreateGroup_Null_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifi.createGroup(null);
@@ -813,15 +813,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFi_CreateGroup_Undefined_0001
-     * @tc.number Sub_Communication_WiFi_CreateGroup_Undefined_0001
+     * @tc.name   SUB_Communication_WiFi_CreateGroup_Undefined_0001
+     * @tc.number SUB_Communication_WiFi_CreateGroup_Undefined_0001
      * @tc.desc   Test createGroup API with undefined parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_CreateGroup_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_CreateGroup_Undefined_0001';
+    it('SUB_Communication_WiFi_CreateGroup_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_CreateGroup_Undefined_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifi.createGroup(undefined);
@@ -837,15 +837,15 @@ export default function actsWifiErrorCode401Test() {
 
 
     /**
-     * @tc.name   Sub_Communication_WiFi_P2pConnect_Null_0001
-     * @tc.number Sub_Communication_WiFi_P2pConnect_Null_0001
+     * @tc.name   SUB_Communication_WiFi_P2pConnect_Null_0001
+     * @tc.number SUB_Communication_WiFi_P2pConnect_Null_0001
      * @tc.desc   Test p2pConnect API with null parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_P2pConnect_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_P2pConnect_Null_0001';
+    it('SUB_Communication_WiFi_P2pConnect_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_P2pConnect_Null_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifi.p2pConnect(null);
@@ -860,15 +860,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFi_P2pConnect_Undefined_0001
-     * @tc.number Sub_Communication_WiFi_P2pConnect_Undefined_0001
+     * @tc.name   SUB_Communication_WiFi_P2pConnect_Undefined_0001
+     * @tc.number SUB_Communication_WiFi_P2pConnect_Undefined_0001
      * @tc.desc   Test p2pConnect API with undefined parameter
      * @tc.type   FUNCTION
      * @tc.size   M
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_P2pConnect_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_P2pConnect_Undefined_0001';
+    it('SUB_Communication_WiFi_P2pConnect_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_P2pConnect_Undefined_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifi.p2pConnect(undefined);
@@ -883,15 +883,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_GetSignalLevel_Null_Nop_0001
-     * @tc.number Sub_Communication_WiFiManager_GetSignalLevel_Null_Nop_0001
+     * @tc.name   SUB_Communication_WiFiManager_GetSignalLevel_Null_Nop_0001
+     * @tc.number SUB_Communication_WiFiManager_GetSignalLevel_Null_Nop_0001
      * @tc.desc   Test getSignalLevel API with null rssi parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_GetSignalLevel_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManagerManager_GetSignalLevel_Null_Nop_0001'
+    it('SUB_Communication_WiFiManager_GetSignalLevel_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManagerManager_GetSignalLevel_Null_Nop_0001'
       console.info(`${caseName} test start`);
       try {
         let result = wifiMg.getSignalLevel(null, null);
@@ -906,15 +906,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_GetSignalLevel_Undefined_Nop_0001
-     * @tc.number Sub_Communication_WiFiManager_GetSignalLevel_Undefined_Nop_0001
+     * @tc.name   SUB_Communication_WiFiManager_GetSignalLevel_Undefined_Nop_0001
+     * @tc.number SUB_Communication_WiFiManager_GetSignalLevel_Undefined_Nop_0001
      * @tc.desc   Test getSignalLevel API with undefined rssi parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_GetSignalLevel_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_GetSignalLevel_Undefined_Nop_0001'
+    it('SUB_Communication_WiFiManager_GetSignalLevel_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_GetSignalLevel_Undefined_Nop_0001'
       console.info(`${caseName} test start`);
       try {
         let result = wifiMg.getSignalLevel(undefined, undefined);
@@ -929,15 +929,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_IsFeatureSupported_Null_Nop_0001
-     * @tc.number Sub_Communication_WiFiManager_IsFeatureSupported_Null_Nop_0001
+     * @tc.name   SUB_Communication_WiFiManager_IsFeatureSupported_Null_Nop_0001
+     * @tc.number SUB_Communication_WiFiManager_IsFeatureSupported_Null_Nop_0001
      * @tc.desc   Test isFeatureSupported API with null featureId parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_IsFeatureSupported_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_IsFeatureSupported_Null_Nop_0001'
+    it('SUB_Communication_WiFiManager_IsFeatureSupported_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_IsFeatureSupported_Null_Nop_0001'
       console.info(`${caseName} test start`);
       try {
         let result = wifiMg.isFeatureSupported(null);
@@ -952,15 +952,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_IsFeatureSupported_Undefined_Nop_0001
-     * @tc.number Sub_Communication_WiFiManager_IsFeatureSupported_Undefined_Nop_0001
+     * @tc.name   SUB_Communication_WiFiManager_IsFeatureSupported_Undefined_Nop_0001
+     * @tc.number SUB_Communication_WiFiManager_IsFeatureSupported_Undefined_Nop_0001
      * @tc.desc   Test isFeatureSupported API with undefined featureId parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_IsFeatureSupported_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_IsFeatureSupported_Undefined_Nop_0001'
+    it('SUB_Communication_WiFiManager_IsFeatureSupported_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_IsFeatureSupported_Undefined_Nop_0001'
       console.info(`${caseName} test start`);
       try {
         let result = wifiMg.isFeatureSupported(undefined);
@@ -975,15 +975,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0001
-     * @tc.number Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0001
+     * @tc.name   SUB_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0001
+     * @tc.number SUB_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0001
      * @tc.desc   Test removeCandidateConfig Promise API with null networkId parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0001'
+    it('SUB_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0001'
       console.info(`${caseName} test start`);
       try {
         let result = await wifiMg.removeCandidateConfig(null);
@@ -998,15 +998,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0001
-     * @tc.number Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0001
+     * @tc.name   SUB_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0001
+     * @tc.number SUB_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0001
      * @tc.desc   Test removeCandidateConfig Promise API with undefined networkId parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0001'
+    it('SUB_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0001'
       console.info(`${caseName} test start`);
       try {
         let result = await wifiMg.removeCandidateConfig(undefined);
@@ -1021,15 +1021,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0002
-     * @tc.number Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0002
+     * @tc.name   SUB_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0002
+     * @tc.number SUB_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0002
      * @tc.desc   Test removeCandidateConfig callback API with null networkId parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0002'
+    it('SUB_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_0002'
       console.info(`${caseName} test start`);
       try {
         wifiMg.removeCandidateConfig(null, (err, data) => {
@@ -1051,15 +1051,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0002
-     * @tc.number Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0002
+     * @tc.name   SUB_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0002
+     * @tc.number SUB_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0002
      * @tc.desc   Test removeCandidateConfig callback API with undefined networkId parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0002'
+    it('SUB_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_0002'
       console.info(`${caseName} test start`);
       try {
         wifiMg.removeCandidateConfig(undefined, (err, data) => {
@@ -1081,15 +1081,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_ConnectToCandidateConfig_Null_Nop_0001
-     * @tc.number Sub_Communication_WiFiManager_ConnectToCandidateConfig_Null_Nop_0001
+     * @tc.name   SUB_Communication_WiFiManager_ConnectToCandidateConfig_Null_Nop_0001
+     * @tc.number SUB_Communication_WiFiManager_ConnectToCandidateConfig_Null_Nop_0001
      * @tc.desc   Test connectToCandidateConfig API with null networkId parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_ConnectToCandidateConfig_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_ConnectToCandidateConfig_Null_Nop_0001'
+    it('SUB_Communication_WiFiManager_ConnectToCandidateConfig_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_ConnectToCandidateConfig_Null_Nop_0001'
       console.info(`${caseName} test start`);
       try {
         wifiMg.connectToCandidateConfig(null);
@@ -1104,15 +1104,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_ConnectToCandidateConfig_Undefined_Nop_0001
-     * @tc.number Sub_Communication_WiFiManager_ConnectToCandidateConfig_Undefined_Nop_0001
+     * @tc.name   SUB_Communication_WiFiManager_ConnectToCandidateConfig_Undefined_Nop_0001
+     * @tc.number SUB_Communication_WiFiManager_ConnectToCandidateConfig_Undefined_Nop_0001
      * @tc.desc   Test connectToCandidateConfig API with undefined networkId parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_ConnectToCandidateConfig_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_ConnectToCandidateConfig_Undefined_Nop_0001'
+    it('SUB_Communication_WiFiManager_ConnectToCandidateConfig_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_ConnectToCandidateConfig_Undefined_Nop_0001'
       console.info(`${caseName} test start`);
       try {
         wifiMg.connectToCandidateConfig(undefined);
@@ -1127,15 +1127,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Null_Nop_0001
-     * @tc.number Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Null_Nop_0001
+     * @tc.name   SUB_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Null_Nop_0001
+     * @tc.number SUB_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Null_Nop_0001
      * @tc.desc   Test connectToCandidateConfigWithUserAction API with null networkId parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Null_Nop_0001'
+    it('SUB_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Null_Nop_0001'
       console.info(`${caseName} test start`);
       try {
         wifiMg.connectToCandidateConfigWithUserAction(null);
@@ -1150,15 +1150,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Undefined_Nop_0001
-     * @tc.number Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Undefined_Nop_0001
+     * @tc.name   SUB_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Undefined_Nop_0001
+     * @tc.number SUB_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Undefined_Nop_0001
      * @tc.desc   Test connectToCandidateConfigWithUserAction API with undefined networkId parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Undefined_Nop_0001'
+    it('SUB_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Undefined_Nop_0001'
       console.info(`${caseName} test start`);
       try {
         wifiMg.connectToCandidateConfigWithUserAction(undefined);
@@ -1173,15 +1173,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_ConnectToNetwork_Null_Nop_0001
-     * @tc.number Sub_Communication_WiFiManager_ConnectToNetwork_Null_Nop_0001
+     * @tc.name   SUB_Communication_WiFiManager_ConnectToNetwork_Null_Nop_0001
+     * @tc.number SUB_Communication_WiFiManager_ConnectToNetwork_Null_Nop_0001
      * @tc.desc   Test connectToNetwork API with null networkId parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_ConnectToNetwork_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_ConnectToNetwork_Null_Nop_0001'
+    it('SUB_Communication_WiFiManager_ConnectToNetwork_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_ConnectToNetwork_Null_Nop_0001'
       console.info(`${caseName} test start`);
       try {
         wifiMg.connectToNetwork(null);
@@ -1196,15 +1196,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_ConnectToNetwork_Undefined_Nop_0001
-     * @tc.number Sub_Communication_WiFiManager_ConnectToNetwork_Undefined_Nop_0001
+     * @tc.name   SUB_Communication_WiFiManager_ConnectToNetwork_Undefined_Nop_0001
+     * @tc.number SUB_Communication_WiFiManager_ConnectToNetwork_Undefined_Nop_0001
      * @tc.desc   Test connectToNetwork API with undefined networkId parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_ConnectToNetwork_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_ConnectToNetwork_Undefined_Nop_0001'
+    it('SUB_Communication_WiFiManager_ConnectToNetwork_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_ConnectToNetwork_Undefined_Nop_0001'
       console.info(`${caseName} test start`);
       try {
         wifiMg.connectToNetwork(undefined);
@@ -1219,15 +1219,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_RemoveDevice_Null_Nop_0001
-     * @tc.number Sub_Communication_WiFiManager_RemoveDevice_Null_Nop_0001
+     * @tc.name   SUB_Communication_WiFiManager_RemoveDevice_Null_Nop_0001
+     * @tc.number SUB_Communication_WiFiManager_RemoveDevice_Null_Nop_0001
      * @tc.desc   Test removeDevice API with null id parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_RemoveDevice_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_RemoveDevice_Null_Nop_0001'
+    it('SUB_Communication_WiFiManager_RemoveDevice_Null_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_RemoveDevice_Null_Nop_0001'
       console.info(`${caseName} test start`);
       try {
         wifiMg.removeDevice(null);
@@ -1242,15 +1242,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_RemoveDevice_Undefined_Nop_0001
-     * @tc.number Sub_Communication_WiFiManager_RemoveDevice_Undefined_Nop_0001
+     * @tc.name   SUB_Communication_WiFiManager_RemoveDevice_Undefined_Nop_0001
+     * @tc.number SUB_Communication_WiFiManager_RemoveDevice_Undefined_Nop_0001
      * @tc.desc   Test removeDevice API with undefined id parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_RemoveDevice_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_RemoveDevice_Undefined_Nop_0001'
+    it('SUB_Communication_WiFiManager_RemoveDevice_Undefined_Nop_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_RemoveDevice_Undefined_Nop_0001'
       console.info(`${caseName} test start`);
       try {
         wifiMg.removeDevice(undefined);
@@ -1266,15 +1266,15 @@ export default function actsWifiErrorCode401Test() {
 
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_AddDeviceConfig_Null_0001
-     * @tc.number Sub_Communication_WiFiManager_AddDeviceConfig_Null_0001
+     * @tc.name   SUB_Communication_WiFiManager_AddDeviceConfig_Null_0001
+     * @tc.number SUB_Communication_WiFiManager_AddDeviceConfig_Null_0001
      * @tc.desc   Test addDeviceConfig API with null parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_AddDeviceConfig_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_AddDeviceConfig_Null_0001';
+    it('SUB_Communication_WiFiManager_AddDeviceConfig_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_AddDeviceConfig_Null_0001';
       console.info(`${caseName} test start`);
       try {
         let result = await wifiMg.addDeviceConfig(null);
@@ -1289,15 +1289,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_AddDeviceConfig_Undefined_0001
-     * @tc.number Sub_Communication_WiFiManager_AddDeviceConfig_Undefined_0001
+     * @tc.name   SUB_Communication_WiFiManager_AddDeviceConfig_Undefined_0001
+     * @tc.number SUB_Communication_WiFiManager_AddDeviceConfig_Undefined_0001
      * @tc.desc   Test addDeviceConfig API with undefined parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_AddDeviceConfig_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_AddDeviceConfig_Undefined_0001';
+    it('SUB_Communication_WiFiManager_AddDeviceConfig_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_AddDeviceConfig_Undefined_0001';
       console.info(`${caseName} test start`);
       try {
         let result = await wifiMg.addDeviceConfig(undefined);
@@ -1313,15 +1313,15 @@ export default function actsWifiErrorCode401Test() {
 
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_AddCandidateConfig_Null_0001
-     * @tc.number Sub_Communication_WiFiManager_AddCandidateConfig_Null_0001
+     * @tc.name   SUB_Communication_WiFiManager_AddCandidateConfig_Null_0001
+     * @tc.number SUB_Communication_WiFiManager_AddCandidateConfig_Null_0001
      * @tc.desc   Test addCandidateConfig API with null parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_AddCandidateConfig_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_AddCandidateConfig_Null_0001';
+    it('SUB_Communication_WiFiManager_AddCandidateConfig_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_AddCandidateConfig_Null_0001';
       console.info(`${caseName} test start`);
       try {
         let result = await wifiMg.addCandidateConfig(null);
@@ -1336,15 +1336,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_AddCandidateConfig_Undefined_0001
-     * @tc.number Sub_Communication_WiFiManager_AddCandidateConfig_Undefined_0001
+     * @tc.name   SUB_Communication_WiFiManager_AddCandidateConfig_Undefined_0001
+     * @tc.number SUB_Communication_WiFiManager_AddCandidateConfig_Undefined_0001
      * @tc.desc   Test addCandidateConfig API with undefined parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_AddCandidateConfig_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_AddCandidateConfig_Undefined_0001';
+    it('SUB_Communication_WiFiManager_AddCandidateConfig_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_AddCandidateConfig_Undefined_0001';
       console.info(`${caseName} test start`);
       try {
         let result = await wifiMg.addCandidateConfig(undefined);
@@ -1360,15 +1360,15 @@ export default function actsWifiErrorCode401Test() {
 
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_CreateGroup_Null_0001
-     * @tc.number Sub_Communication_WiFiManager_CreateGroup_Null_0001
+     * @tc.name   SUB_Communication_WiFiManager_CreateGroup_Null_0001
+     * @tc.number SUB_Communication_WiFiManager_CreateGroup_Null_0001
      * @tc.desc   Test createGroup API with null parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_CreateGroup_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_CreateGroup_Null_0001';
+    it('SUB_Communication_WiFiManager_CreateGroup_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_CreateGroup_Null_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifiMg.createGroup(null);
@@ -1383,15 +1383,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_CreateGroup_Undefined_0001
-     * @tc.number Sub_Communication_WiFiManager_CreateGroup_Undefined_0001
+     * @tc.name   SUB_Communication_WiFiManager_CreateGroup_Undefined_0001
+     * @tc.number SUB_Communication_WiFiManager_CreateGroup_Undefined_0001
      * @tc.desc   Test createGroup API with undefined parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_CreateGroup_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_CreateGroup_Undefined_0001';
+    it('SUB_Communication_WiFiManager_CreateGroup_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_CreateGroup_Undefined_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifiMg.createGroup(undefined);
@@ -1407,15 +1407,15 @@ export default function actsWifiErrorCode401Test() {
 
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_P2pConnect_Null_0001
-     * @tc.number Sub_Communication_WiFiManager_P2pConnect_Null_0001
+     * @tc.name   SUB_Communication_WiFiManager_P2pConnect_Null_0001
+     * @tc.number SUB_Communication_WiFiManager_P2pConnect_Null_0001
      * @tc.desc   Test p2pConnect API with null parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_P2pConnect_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_P2pConnect_Null_0001';
+    it('SUB_Communication_WiFiManager_P2pConnect_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_P2pConnect_Null_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifiMg.p2pConnect(null);
@@ -1430,15 +1430,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_P2pConnect_Undefined_0001
-     * @tc.number Sub_Communication_WiFiManager_P2pConnect_Undefined_0001
+     * @tc.name   SUB_Communication_WiFiManager_P2pConnect_Undefined_0001
+     * @tc.number SUB_Communication_WiFiManager_P2pConnect_Undefined_0001
      * @tc.desc   Test p2pConnect API with undefined parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_P2pConnect_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_P2pConnect_Undefined_0001';
+    it('SUB_Communication_WiFiManager_P2pConnect_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_P2pConnect_Undefined_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifiMg.p2pConnect(undefined);
@@ -1452,15 +1452,15 @@ export default function actsWifiErrorCode401Test() {
       done();
     });
     /**
-     * @tc.name   Sub_Communication_WiFi_AddUntrustedConfig_SecurityType_InvalidEnum_0001
-     * @tc.number Sub_Communication_WiFi_AddUntrustedConfig_SecurityType_InvalidEnum_0001
+     * @tc.name   SUB_Communication_WiFi_AddUntrustedConfig_SecurityType_InvalidEnum_0001
+     * @tc.number SUB_Communication_WiFi_AddUntrustedConfig_SecurityType_InvalidEnum_0001
      * @tc.desc   Test addUntrustedConfig API with invalid securityType enum value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_AddUntrustedConfig_SecurityType_InvalidEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_AddUntrustedConfig_SecurityType_InvalidEnum_0001';
+    it('SUB_Communication_WiFi_AddUntrustedConfig_SecurityType_InvalidEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_AddUntrustedConfig_SecurityType_InvalidEnum_0001';
       console.info(`${caseName} test start`);
       try {
         let config = {
@@ -1494,15 +1494,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFi_AddUntrustedConfig_SecurityType_NegativeEnum_0001
-     * @tc.number Sub_Communication_WiFi_AddUntrustedConfig_SecurityType_NegativeEnum_0001
+     * @tc.name   SUB_Communication_WiFi_AddUntrustedConfig_SecurityType_NegativeEnum_0001
+     * @tc.number SUB_Communication_WiFi_AddUntrustedConfig_SecurityType_NegativeEnum_0001
      * @tc.desc   Test addUntrustedConfig API with negative securityType enum value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_AddUntrustedConfig_SecurityType_NegativeEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_AddUntrustedConfig_SecurityType_NegativeEnum_0001';
+    it('SUB_Communication_WiFi_AddUntrustedConfig_SecurityType_NegativeEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_AddUntrustedConfig_SecurityType_NegativeEnum_0001';
       console.info(`${caseName} test start`);
       try {
         let config = {
@@ -1535,15 +1535,15 @@ export default function actsWifiErrorCode401Test() {
       done();
     });
     /**
-     * @tc.name   Sub_Communication_WiFi_RemoveUntrustedConfig_SecurityType_InvalidEnum_0001
-     * @tc.number Sub_Communication_WiFi_RemoveUntrustedConfig_SecurityType_InvalidEnum_0001
+     * @tc.name   SUB_Communication_WiFi_RemoveUntrustedConfig_SecurityType_InvalidEnum_0001
+     * @tc.number SUB_Communication_WiFi_RemoveUntrustedConfig_SecurityType_InvalidEnum_0001
      * @tc.desc   Test removeUntrustedConfig API with invalid securityType enum value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_RemoveUntrustedConfig_SecurityType_InvalidEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_RemoveUntrustedConfig_SecurityType_InvalidEnum_0001';
+    it('SUB_Communication_WiFi_RemoveUntrustedConfig_SecurityType_InvalidEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_RemoveUntrustedConfig_SecurityType_InvalidEnum_0001';
       console.info(`${caseName} test start`);
       try {
         let config = {
@@ -1577,15 +1577,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFi_RemoveUntrustedConfig_SecurityType_NegativeEnum_0001
-     * @tc.number Sub_Communication_WiFi_RemoveUntrustedConfig_SecurityType_NegativeEnum_0001
+     * @tc.name   SUB_Communication_WiFi_RemoveUntrustedConfig_SecurityType_NegativeEnum_0001
+     * @tc.number SUB_Communication_WiFi_RemoveUntrustedConfig_SecurityType_NegativeEnum_0001
      * @tc.desc   Test removeUntrustedConfig API with negative securityType enum value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_RemoveUntrustedConfig_SecurityType_NegativeEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_RemoveUntrustedConfig_SecurityType_NegativeEnum_0001';
+    it('SUB_Communication_WiFi_RemoveUntrustedConfig_SecurityType_NegativeEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_RemoveUntrustedConfig_SecurityType_NegativeEnum_0001';
       console.info(`${caseName} test start`);
       try {
         let config = {
@@ -1618,15 +1618,15 @@ export default function actsWifiErrorCode401Test() {
       done();
     });
     /**
-     * @tc.name   Sub_Communication_WiFi_CreateGroup_GoBand_InvalidEnum_0001
-     * @tc.number Sub_Communication_WiFi_CreateGroup_GoBand_InvalidEnum_0001
+     * @tc.name   SUB_Communication_WiFi_CreateGroup_GoBand_InvalidEnum_0001
+     * @tc.number SUB_Communication_WiFi_CreateGroup_GoBand_InvalidEnum_0001
      * @tc.desc   Test createGroup API with invalid goBand enum value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_CreateGroup_GoBand_InvalidEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_CreateGroup_GoBand_InvalidEnum_0001';
+    it('SUB_Communication_WiFi_CreateGroup_GoBand_InvalidEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_CreateGroup_GoBand_InvalidEnum_0001';
       console.info(`${caseName} test start`);
       try {
         let config = {
@@ -1649,15 +1649,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFi_CreateGroup_GoBand_NegativeEnum_0001
-     * @tc.number Sub_Communication_WiFi_CreateGroup_GoBand_NegativeEnum_0001
+     * @tc.name   SUB_Communication_WiFi_CreateGroup_GoBand_NegativeEnum_0001
+     * @tc.number SUB_Communication_WiFi_CreateGroup_GoBand_NegativeEnum_0001
      * @tc.desc   Test createGroup API with negative goBand enum value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFi_CreateGroup_GoBand_NegativeEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFi_CreateGroup_GoBand_NegativeEnum_0001';
+    it('SUB_Communication_WiFi_CreateGroup_GoBand_NegativeEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFi_CreateGroup_GoBand_NegativeEnum_0001';
       console.info(`${caseName} test start`);
       try {
         let config = {
@@ -1679,15 +1679,15 @@ export default function actsWifiErrorCode401Test() {
       done();
     });
     /**
-     * @tc.name   Sub_Communication_WiFiManager_IsBandTypeSupported_Null_0001
-     * @tc.number Sub_Communication_WiFiManager_IsBandTypeSupported_Null_0001
+     * @tc.name   SUB_Communication_WiFiManager_IsBandTypeSupported_Null_0001
+     * @tc.number SUB_Communication_WiFiManager_IsBandTypeSupported_Null_0001
      * @tc.desc   Test isBandTypeSupported API with null parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_IsBandTypeSupported_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_IsBandTypeSupported_Null_0001';
+    it('SUB_Communication_WiFiManager_IsBandTypeSupported_Null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_IsBandTypeSupported_Null_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifiMg.isBandTypeSupported(null);
@@ -1702,15 +1702,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_IsBandTypeSupported_Undefined_0001
-     * @tc.number Sub_Communication_WiFiManager_IsBandTypeSupported_Undefined_0001
+     * @tc.name   SUB_Communication_WiFiManager_IsBandTypeSupported_Undefined_0001
+     * @tc.number SUB_Communication_WiFiManager_IsBandTypeSupported_Undefined_0001
      * @tc.desc   Test isBandTypeSupported API with undefined parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_IsBandTypeSupported_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_IsBandTypeSupported_Undefined_0001';
+    it('SUB_Communication_WiFiManager_IsBandTypeSupported_Undefined_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_IsBandTypeSupported_Undefined_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifiMg.isBandTypeSupported(undefined);
@@ -1725,15 +1725,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_IsBandTypeSupported_InvalidEnum_0001
-     * @tc.number Sub_Communication_WiFiManager_IsBandTypeSupported_InvalidEnum_0001
+     * @tc.name   SUB_Communication_WiFiManager_IsBandTypeSupported_InvalidEnum_0001
+     * @tc.number SUB_Communication_WiFiManager_IsBandTypeSupported_InvalidEnum_0001
      * @tc.desc   Test isBandTypeSupported API with invalid enum value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_IsBandTypeSupported_InvalidEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_IsBandTypeSupported_InvalidEnum_0001';
+    it('SUB_Communication_WiFiManager_IsBandTypeSupported_InvalidEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_IsBandTypeSupported_InvalidEnum_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifiMg.isBandTypeSupported(99);
@@ -1748,15 +1748,15 @@ export default function actsWifiErrorCode401Test() {
     });
 
     /**
-     * @tc.name   Sub_Communication_WiFiManager_IsBandTypeSupported_NegativeEnum_0001
-     * @tc.number Sub_Communication_WiFiManager_IsBandTypeSupported_NegativeEnum_0001
+     * @tc.name   SUB_Communication_WiFiManager_IsBandTypeSupported_NegativeEnum_0001
+     * @tc.number SUB_Communication_WiFiManager_IsBandTypeSupported_NegativeEnum_0001
      * @tc.desc   Test isBandTypeSupported API with negative enum value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManager_IsBandTypeSupported_NegativeEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
-      let caseName = 'Sub_Communication_WiFiManager_IsBandTypeSupported_NegativeEnum_0001';
+    it('SUB_Communication_WiFiManager_IsBandTypeSupported_NegativeEnum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+      let caseName = 'SUB_Communication_WiFiManager_IsBandTypeSupported_NegativeEnum_0001';
       console.info(`${caseName} test start`);
       try {
         let result = wifiMg.isBandTypeSupported(-1);
