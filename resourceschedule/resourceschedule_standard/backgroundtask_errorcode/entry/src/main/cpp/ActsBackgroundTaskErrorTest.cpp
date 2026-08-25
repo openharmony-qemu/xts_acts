@@ -36,7 +36,8 @@ static napi_value BackgroundProcessManagerInvalidParam(napi_env env, napi_callba
     napi_value result;
     int ret = 0;
     int pid = 12;
-    BackgroundProcessManager_ProcessPriority priority;
+    BackgroundProcessManager_ProcessPriority priority =
+        static_cast<BackgroundProcessManager_ProcessPriority>(0);
     ret = OH_BackgroundProcessManager_SetProcessPriority(pid, priority);
     napi_create_int32(env, ret == ERR_BACKGROUND_PROCESS_MANAGER_INVALID_PARAM ? 0 : -1, &result);
     return result;
@@ -47,7 +48,8 @@ static napi_value SetProcessPriorityInvalidParam(napi_env env, napi_callback_inf
     napi_value result;
     int ret = 0;
     int pid = 12;
-    BackgroundProcessManager_ProcessPriority priority;
+    BackgroundProcessManager_ProcessPriority priority =
+        static_cast<BackgroundProcessManager_ProcessPriority>(0);
     ret = OH_BackgroundProcessManager_SetProcessPriority(pid, priority);
     napi_create_int32(env, ret == ERR_BACKGROUND_PROCESS_MANAGER_INVALID_PARAM ? 0 : -1, &result);
     return result;
@@ -85,7 +87,7 @@ static napi_value RequestSuspendDelaySVFailed(napi_env env, napi_callback_info i
             OH_BackgroundTaskManager_RequestSuspendDelay("Quota Test", OnCallbackCompleted, &delaySuspendInfo);
         if (res == ERR_TRANSIENT_TASK_OK) {
             successCount++;
-            int32_t intTime = 15;
+            int32_t intTime = 1;
             sleep(intTime);
             OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "BackgroundTask",
                          "=======  RequestSuspendDelay requestId = %{public}d", delaySuspendInfo.requestId);
