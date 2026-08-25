@@ -69,8 +69,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
             cmd += ' -u ' + user;
         }
         let debug: string | undefined = abilityDelegatorArguments.parameters['-D']
-        if (debug == 'true')
-        {
+        if (debug == 'true'){
             cmd += ' -D'
         }
         hilog.info(0x0000, 'testTag', 'cmd : %{public}s', cmd);
