@@ -76,12 +76,7 @@ export default function DividerTest() {
         console.info('xxxTest sleep err: ' + JSON.stringify(err));
       }
       const driver = Driver.create();
-      let comp;
-      try {
-        comp = await driver.findComponent(ON.id('dividerDefault'));
-      } catch (err) {
-        console.info('xxxTest findComponent err: ' + JSON.stringify(err));
-      }
+      const comp = await driver.findComponent(ON.id('dividerDefault'));
       expect(!!comp).assertEqual(true);
       let strJson = inspector.getInspectorByKey('dividerDefault');
       let node = JSON.parseJsonElement(strJson);
@@ -108,12 +103,7 @@ export default function DividerTest() {
         console.info('xxxTest sleep err: ' + JSON.stringify(err));
       }
       const driver = Driver.create();
-      let comp;
-      try {
-        comp = await driver.findComponent(ON.id('dividerVerticalTrue'));
-      } catch (err) {
-        console.info('xxxTest findComponent err: ' + JSON.stringify(err));
-      }
+      const comp = await driver.findComponent(ON.id('dividerVerticalTrue'));
       expect(!!comp).assertEqual(true);
       let strJson = inspector.getInspectorByKey('dividerVerticalTrue');
       let node = JSON.parseJsonElement(strJson);
@@ -143,12 +133,7 @@ export default function DividerTest() {
         console.info('xxxTest sleep err: ' + JSON.stringify(err));
       }
       const driver = Driver.create();
-      let comp;
-      try {
-        comp = await driver.findComponent(ON.id('dividerVerticalFalse'));
-      } catch (err) {
-        console.info('xxxTest findComponent err: ' + JSON.stringify(err));
-      }
+      const comp = await driver.findComponent(ON.id('dividerVerticalFalse'));
       expect(!!comp).assertEqual(true);
       let strJson = inspector.getInspectorByKey('dividerVerticalFalse');
       let node = JSON.parseJsonElement(strJson);
@@ -178,12 +163,7 @@ export default function DividerTest() {
         console.info('xxxTest sleep err: ' + JSON.stringify(err));
       }
       const driver = Driver.create();
-      let comp;
-      try {
-        comp = await driver.findComponent(ON.id('dividerColorRed'));
-      } catch (err) {
-        console.info('xxxTest findComponent err: ' + JSON.stringify(err));
-      }
+      const comp = await driver.findComponent(ON.id('dividerColorRed'));
       expect(!!comp).assertEqual(true);
       let strJson = inspector.getInspectorByKey('dividerColorRed');
       let node = JSON.parseJsonElement(strJson);
@@ -213,12 +193,7 @@ export default function DividerTest() {
         console.info('xxxTest sleep err: ' + JSON.stringify(err));
       }
       const driver = Driver.create();
-      let comp;
-      try {
-        comp = await driver.findComponent(ON.id('dividerStrokeWidth5'));
-      } catch (err) {
-        console.info('xxxTest findComponent err: ' + JSON.stringify(err));
-      }
+      const comp = await driver.findComponent(ON.id('dividerStrokeWidth5'));
       expect(!!comp).assertEqual(true);
       let strJson = inspector.getInspectorByKey('dividerStrokeWidth5');
       let node = JSON.parseJsonElement(strJson);
@@ -248,12 +223,7 @@ export default function DividerTest() {
         console.info('xxxTest sleep err: ' + JSON.stringify(err));
       }
       const driver = Driver.create();
-      let comp;
-      try {
-        comp = await driver.findComponent(ON.id('dividerStrokeWidth10px'));
-      } catch (err) {
-        console.info('xxxTest findComponent err: ' + JSON.stringify(err));
-      }
+      const comp = await driver.findComponent(ON.id('dividerStrokeWidth10px'));
       expect(!!comp).assertEqual(true);
       let strJson = inspector.getInspectorByKey('dividerStrokeWidth10px');
       let node = JSON.parseJsonElement(strJson);
@@ -284,12 +254,7 @@ export default function DividerTest() {
       }
       expect(LineCapStyle.Butt).assertEqual(0);
       const driver = Driver.create();
-      let comp;
-      try {
-        comp = await driver.findComponent(ON.id('dividerLineCapButt'));
-      } catch (err) {
-        console.info('xxxTest findComponent err: ' + JSON.stringify(err));
-      }
+      const comp = await driver.findComponent(ON.id('dividerLineCapButt'));
       expect(!!comp).assertEqual(true);
       let strJson = inspector.getInspectorByKey('dividerLineCapButt');
       let node = JSON.parseJsonElement(strJson);
@@ -320,12 +285,7 @@ export default function DividerTest() {
       }
       expect(LineCapStyle.Round).assertEqual(1);
       const driver = Driver.create();
-      let comp;
-      try {
-        comp = await driver.findComponent(ON.id('dividerLineCapRound'));
-      } catch (err) {
-        console.info('xxxTest findComponent err: ' + JSON.stringify(err));
-      }
+      const comp = await driver.findComponent(ON.id('dividerLineCapRound'));
       expect(!!comp).assertEqual(true);
       let strJson = inspector.getInspectorByKey('dividerLineCapRound');
       let node = JSON.parseJsonElement(strJson);
@@ -356,12 +316,7 @@ export default function DividerTest() {
       }
       expect(LineCapStyle.Square).assertEqual(2);
       const driver = Driver.create();
-      let comp;
-      try {
-        comp = await driver.findComponent(ON.id('dividerLineCapSquare'));
-      } catch (err) {
-        console.info('xxxTest findComponent err: ' + JSON.stringify(err));
-      }
+      const comp = await driver.findComponent(ON.id('dividerLineCapSquare'));
       expect(!!comp).assertEqual(true);
       let strJson = inspector.getInspectorByKey('dividerLineCapSquare');
       let node = JSON.parseJsonElement(strJson);
