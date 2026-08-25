@@ -3841,7 +3841,7 @@ export default function cameraJSUnitOutput() {
           expect().assertFail()
         } catch (error) {
           console.error(`setLogViewAssistEnable failed, ${JSON.stringify(error)}`)
-          expect(error.code == 801).assertTrue()
+          expect(error.code).assertEqual(801)
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -3881,7 +3881,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (error) {
             console.error(`setLogViewAssistEnable failed, ${JSON.stringify(error)}`)
-            expect(error.code == cameraObj.CameraErrorCode.SERVICE_FATAL_ERROR).assertTrue()
+            expect(error.code).assertEqual(cameraObj.CameraErrorCode.SERVICE_FATAL_ERROR)
           }
         }
         console.info(`${caseName} PASSED`)
@@ -3922,7 +3922,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (error) {
             console.error(`setLogViewAssistEnable failed, ${JSON.stringify(error)}`)
-            expect(error.code == cameraObj.CameraErrorCode.SERVICE_FATAL_ERROR).assertTrue()
+            expect(error.code).assertEqual(cameraObj.CameraErrorCode.SERVICE_FATAL_ERROR)
           }
         }
         console.info(`${caseName} PASSED`)
@@ -3972,7 +3972,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (error) {
             console.error(`setLogViewAssistEnable failed, ${JSON.stringify(error)}`)
-            expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue()
+            expect(error.code).assertEqual(cameraObj.CameraErrorCode.SESSION_NOT_CONFIG)
           }
         }
         console.info(`${caseName} PASSED`)

@@ -608,7 +608,7 @@ export default function cameraPhotoSessionTest() {
         expect().assertFail()
       } catch (error) {
         console.error(`getColorTintRange failed, ${JSON.stringify(error)}`)
-        expect(error.code == camera.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue()
+        expect(error.code).assertEqual(camera.CameraErrorCode.SESSION_NOT_CONFIG)
       } finally {
       //--------------------------------------------后置处理------------------------------------------------------
         console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0200")
@@ -730,7 +730,7 @@ export default function cameraPhotoSessionTest() {
           expect().assertFail()
         } catch (error) {
           console.error(`setColorTint failed, value: ${val}, ${JSON.stringify(error)}`)
-          expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue()
+          expect(error.code).assertEqual(camera.CameraErrorCode.INVALID_ARGUMENT)
         }
       }
 
@@ -773,7 +773,7 @@ export default function cameraPhotoSessionTest() {
         expect().assertFail()
       } catch (error) {
         console.error(`setColorTint failed, value: ${val}, ${JSON.stringify(error)}`)
-        expect(error.code == camera.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue()
+        expect(error.code).assertEqual(camera.CameraErrorCode.SESSION_NOT_CONFIG)
       } finally {
       //--------------------------------------------后置处理------------------------------------------------------
         console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0900")
@@ -809,7 +809,7 @@ export default function cameraPhotoSessionTest() {
         expect().assertFail()
       } catch (error) {
         console.error(`getColorTint failed, ${JSON.stringify(error)}`)
-        expect(error.code == camera.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue()
+        expect(error.code).assertEqual(camera.CameraErrorCode.SESSION_NOT_CONFIG)
       } finally {
       //--------------------------------------------后置处理------------------------------------------------------
         console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_1000")
@@ -873,7 +873,7 @@ export default function cameraPhotoSessionTest() {
           expect().assertFail()
         } catch (error) {
           console.info(`camera session getZoomPointInfos failed: ${JSON.stringify(error)}`);
-          expect(error.code == camera.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue()
+          expect(error.code).assertEqual(camera.CameraErrorCode.SESSION_NOT_CONFIG)
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {
