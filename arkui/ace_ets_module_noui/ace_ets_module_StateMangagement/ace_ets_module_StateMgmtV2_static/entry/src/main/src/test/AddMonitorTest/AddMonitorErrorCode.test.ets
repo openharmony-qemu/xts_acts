@@ -77,7 +77,7 @@ export default function AddMonitorErrorCode(): void {
       try{
         let driver = await Driver.create();
         let btn_true = await driver.findComponent(ON.id('ErrorCodeButton'));
-        await btn_true.click();
+        await (btn_true?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
         let strJsonNew = inspector.getInspectorByKey('ErrorCodeText');
         console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)

@@ -77,7 +77,7 @@ export default function AddMonitorObservedV2Map(): void {
       try{
         let driver = await Driver.create();
         let btn_true = await driver.findComponent(ON.id('ObservedMap1'));
-        await btn_true.click();
+        await (btn_true?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
         let strJsonNew = inspector.getInspectorByKey('ObservedMap');
         console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
@@ -85,10 +85,10 @@ export default function AddMonitorObservedV2Map(): void {
           .getString('content')));
         expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] Map has changed from 0,a,1,b,3,c to 0,a,1,b,3,c');
         let btn_true1 = await driver.findComponent(ON.id('ObservedMapClear'));
-        await btn_true1.click();
+        await (btn_true1?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
         let btn_true2 = await driver.findComponent(ON.id('ObservedMap2'));
-        await btn_true2.click();
+        await (btn_true2?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
         let strJsonNew1 = inspector.getInspectorByKey('ObservedMap');
         console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
