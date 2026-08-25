@@ -2210,18 +2210,18 @@ export default function wifiManagerCoverage() {
       done();
     });
     /**
-     * @tc.name   Sub_Communication_WiFiManagerExt_SetPowerMode_Null_0017
-     * @tc.number Sub_Communication_WiFiManagerExt_SetPowerMode_Null_0017
+     * @tc.name   SUB_Communication_WiFiManagerExt_SetPowerMode_Null_0017
+     * @tc.number SUB_Communication_WiFiManagerExt_SetPowerMode_Null_0017
      * @tc.desc   Test setPowerMode API with null parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManagerExt_SetPowerMode_Null_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      console.info('Sub_Communication_WiFiManagerExt_SetPowerMode_Null_0017 start');
+    it('SUB_Communication_WiFiManagerExt_SetPowerMode_Null_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Communication_WiFiManagerExt_SetPowerMode_Null_0017 start');
       try {
         let isAccessToken = canIUse("SystemCapability.Communication.wifiMg.AP.Extension");
-        console.info("Sub_Communication_WiFiManagerExt_SetPowerMode_Null_0017 test.syscap.param.001 : " + isAccessToken);
+        console.info("SUB_Communication_WiFiManagerExt_SetPowerMode_Null_0017 test.syscap.param.001 : " + isAccessToken);
         if (isAccessToken) {
           wifiManagerExt.setPowerMode(null);
           console.info("[wifi_test] wifiManagerExt setPowerMode success");
@@ -2229,7 +2229,7 @@ export default function wifiManagerCoverage() {
           expect(isAccessToken).assertFalse();
         }
       } catch (e) {
-        console.info("Sub_Communication_WiFiManagerExt_SetPowerMode_Null_0017 canIUse isAccessToken error: " + e);
+        console.info("SUB_Communication_WiFiManagerExt_SetPowerMode_Null_0017 canIUse isAccessToken error: " + e);
         if (e.code === 801) { 
           console.info('[wifi_js]wifiManagerExt enableHotspot is not support'); 
           expect(e.code).assertEqual(801); 
@@ -2237,22 +2237,22 @@ export default function wifiManagerCoverage() {
           expect(e.code).assertEqual(401); 
         }
       }
-      console.info('Sub_Communication_WiFiManagerExt_SetPowerMode_Null_0017 end');
+      console.info('SUB_Communication_WiFiManagerExt_SetPowerMode_Null_0017 end');
       done();
     });
     /**
-     * @tc.name   Sub_Communication_WiFiManagerExt_SetPowerMode_Undefined_0018
-     * @tc.number Sub_Communication_WiFiManagerExt_SetPowerMode_Undefined_0018
+     * @tc.name   SUB_Communication_WiFiManagerExt_SetPowerMode_Undefined_0018
+     * @tc.number SUB_Communication_WiFiManagerExt_SetPowerMode_Undefined_0018
      * @tc.desc   Test setPowerMode API with undefined parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManagerExt_SetPowerMode_Undefined_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      console.info('Sub_Communication_WiFiManagerExt_SetPowerMode_Undefined_0018 start');
+    it('SUB_Communication_WiFiManagerExt_SetPowerMode_Undefined_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Communication_WiFiManagerExt_SetPowerMode_Undefined_0018 start');
       try {
         let isAccessToken = canIUse("SystemCapability.Communication.wifiMg.AP.Extension");
-        console.info("Sub_Communication_WiFiManagerExt_SetPowerMode_Undefined_0018 test.syscap.param.001 : " + isAccessToken);
+        console.info("SUB_Communication_WiFiManagerExt_SetPowerMode_Undefined_0018 test.syscap.param.001 : " + isAccessToken);
         if (isAccessToken) {
           wifiManagerExt.setPowerMode(undefined);
           console.info("[wifi_test] wifiManagerExt setPowerMode success");
@@ -2260,7 +2260,7 @@ export default function wifiManagerCoverage() {
           expect(isAccessToken).assertFalse();
         }
       } catch (e) {
-        console.info("Sub_Communication_WiFiManagerExt_SetPowerMode_Undefined_0018 canIUse isAccessToken error: " + e);
+        console.info("SUB_Communication_WiFiManagerExt_SetPowerMode_Undefined_0018 canIUse isAccessToken error: " + e);
         if (e.code === 801) { 
           console.info('[wifi_js]wifiManagerExt enableHotspot is not support'); 
           expect(e.code).assertEqual(801); 
@@ -2268,22 +2268,22 @@ export default function wifiManagerCoverage() {
           expect(e.code).assertEqual(401); 
         }
       }
-      console.info('Sub_Communication_WiFiManagerExt_SetPowerMode_Undefined_0018 end');
+      console.info('SUB_Communication_WiFiManagerExt_SetPowerMode_Undefined_0018 end');
       done();
     });
     /**
-     * @tc.name   Sub_Communication_WiFiManagerExt_SetPowerMode_InvalidEnum_0019
-     * @tc.number Sub_Communication_WiFiManagerExt_SetPowerMode_InvalidEnum_0019
+     * @tc.name   SUB_Communication_WiFiManagerExt_SetPowerMode_InvalidEnum_0019
+     * @tc.number SUB_Communication_WiFiManagerExt_SetPowerMode_InvalidEnum_0019
      * @tc.desc   Test setPowerMode API with invalid enum value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManagerExt_SetPowerMode_InvalidEnum_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      console.info('Sub_Communication_WiFiManagerExt_SetPowerMode_InvalidEnum_0019 start');
+    it('SUB_Communication_WiFiManagerExt_SetPowerMode_InvalidEnum_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Communication_WiFiManagerExt_SetPowerMode_InvalidEnum_0019 start');
       try {
         let isAccessToken = canIUse("SystemCapability.Communication.wifiMg.AP.Extension");
-        console.info("Sub_Communication_WiFiManagerExt_SetPowerMode_InvalidEnum_0019 test.syscap.param.001 : " + isAccessToken);
+        console.info("SUB_Communication_WiFiManagerExt_SetPowerMode_InvalidEnum_0019 test.syscap.param.001 : " + isAccessToken);
         if (isAccessToken) {
           wifiManagerExt.setPowerMode(99);
           console.info("[wifi_test] wifiManagerExt setPowerMode success");
@@ -2291,7 +2291,7 @@ export default function wifiManagerCoverage() {
           expect(isAccessToken).assertFalse();
         }
       } catch (e) {
-        console.info("Sub_Communication_WiFiManagerExt_SetPowerMode_InvalidEnum_0019 canIUse isAccessToken error: " + e);
+        console.info("SUB_Communication_WiFiManagerExt_SetPowerMode_InvalidEnum_0019 canIUse isAccessToken error: " + e);
         if (e.code === 801) { 
           console.info('[wifi_js]wifiManagerExt enableHotspot is not support'); 
           expect(e.code).assertEqual(801); 
@@ -2299,22 +2299,22 @@ export default function wifiManagerCoverage() {
           expect(e.code).assertEqual(401); 
         }
       }
-      console.info('Sub_Communication_WiFiManagerExt_SetPowerMode_InvalidEnum_0019 end');
+      console.info('SUB_Communication_WiFiManagerExt_SetPowerMode_InvalidEnum_0019 end');
       done();
     });
     /**
-     * @tc.name   Sub_Communication_WiFiManagerExt_SetPowerMode_NegativeEnum_0020
-     * @tc.number Sub_Communication_WiFiManagerExt_SetPowerMode_NegativeEnum_0020
+     * @tc.name   SUB_Communication_WiFiManagerExt_SetPowerMode_NegativeEnum_0020
+     * @tc.number SUB_Communication_WiFiManagerExt_SetPowerMode_NegativeEnum_0020
      * @tc.desc   Test setPowerMode API with negative enum value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Communication_WiFiManagerExt_SetPowerMode_NegativeEnum_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      console.info('Sub_Communication_WiFiManagerExt_SetPowerMode_NegativeEnum_0020 start');
+    it('SUB_Communication_WiFiManagerExt_SetPowerMode_NegativeEnum_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Communication_WiFiManagerExt_SetPowerMode_NegativeEnum_0020 start');
       try {
         let isAccessToken = canIUse("SystemCapability.Communication.wifiMg.AP.Extension");
-        console.info("Sub_Communication_WiFiManagerExt_SetPowerMode_NegativeEnum_0020 test.syscap.param.001 : " + isAccessToken);
+        console.info("SUB_Communication_WiFiManagerExt_SetPowerMode_NegativeEnum_0020 test.syscap.param.001 : " + isAccessToken);
         if (isAccessToken) {
           wifiManagerExt.setPowerMode(-1);
           console.info("[wifi_test] wifiManagerExt setPowerMode success");
@@ -2322,7 +2322,7 @@ export default function wifiManagerCoverage() {
           expect(isAccessToken).assertFalse();
         }
       } catch (e) {
-        console.info("Sub_Communication_WiFiManagerExt_SetPowerMode_NegativeEnum_0020 canIUse isAccessToken error: " + e);
+        console.info("SUB_Communication_WiFiManagerExt_SetPowerMode_NegativeEnum_0020 canIUse isAccessToken error: " + e);
         if (e.code === 801) { 
           console.info('[wifi_js]wifiManagerExt enableHotspot is not support'); 
           expect(e.code).assertEqual(801); 
@@ -2330,7 +2330,7 @@ export default function wifiManagerCoverage() {
           expect(e.code).assertEqual(401); 
         }
       }
-      console.info('Sub_Communication_WiFiManagerExt_SetPowerMode_NegativeEnum_0020 end');
+      console.info('SUB_Communication_WiFiManagerExt_SetPowerMode_NegativeEnum_0020 end');
       done();
     });
     /**
