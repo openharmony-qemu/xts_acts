@@ -3881,7 +3881,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (error) {
             console.error(`setLogViewAssistEnable failed, ${JSON.stringify(error)}`)
-            expect(error.code).assertEqual(cameraObj.CameraErrorCode.SERVICE_FATAL_ERROR)
+            expect(error.code == cameraObj.CameraErrorCode.SERVICE_FATAL_ERROR).assertTrue()
           }
         }
         console.info(`${caseName} PASSED`)
@@ -3922,7 +3922,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (error) {
             console.error(`setLogViewAssistEnable failed, ${JSON.stringify(error)}`)
-            expect(error.code).assertEqual(cameraObj.CameraErrorCode.SERVICE_FATAL_ERROR)
+            expect(error.code == cameraObj.CameraErrorCode.SERVICE_FATAL_ERROR).assertTrue()
           }
         }
         console.info(`${caseName} PASSED`)
