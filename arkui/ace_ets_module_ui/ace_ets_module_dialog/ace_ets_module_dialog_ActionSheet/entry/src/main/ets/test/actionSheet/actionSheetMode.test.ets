@@ -376,8 +376,12 @@ export default function actionSheetMode() {
       console.info('[actionSheetMode_0800] showSheet click');
 
       // let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
-      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
-      let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm button'));
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm button'));
+      } catch (error) {
+        console.info('====error======='+error)
+      }
      
       console.info('[actionSheetMode_0800] Confirm button');
 

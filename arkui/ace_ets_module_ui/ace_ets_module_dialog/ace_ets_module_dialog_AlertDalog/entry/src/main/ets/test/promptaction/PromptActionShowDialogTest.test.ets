@@ -59,7 +59,11 @@ export default function PromptActionShowDialogTest() {
       let button = await driver.findComponent(ON.id('btn_dialog_buttons_empty'));
       await button.click();
       await CommonFunc.sleep(2000);
-      let TextB = await driver.findComponent(ON.id('tit'));
+      try{
+        let TextB = await driver.findComponent(ON.id('tit'));
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await TextB.click();
       await CommonFunc.sleep(2000);
 

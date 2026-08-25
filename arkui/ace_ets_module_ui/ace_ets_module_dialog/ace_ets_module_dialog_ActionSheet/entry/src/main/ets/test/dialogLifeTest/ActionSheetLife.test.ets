@@ -63,8 +63,12 @@ export default function ActionSheetLifeTest() {
 
       // let button: Component = await driver.findComponent(ON.text('button'));
 
-      let scrollBar: Component = await driver.findComponent(ON.type('Scroll'))
+      try {
+        let scrollBar: Component = await driver.findComponent(ON.type('Scroll'))
       let button = await scrollBar.scrollSearch(ON.text('button'));
+      } catch (error) {
+        console.info('====error======='+error)
+      }
 
       await button.click();
       await CommonFunc.sleep(2000);

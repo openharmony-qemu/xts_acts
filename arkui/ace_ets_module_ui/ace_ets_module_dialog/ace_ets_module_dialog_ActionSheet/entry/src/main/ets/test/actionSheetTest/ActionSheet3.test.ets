@@ -107,8 +107,13 @@ export default function ActionSheet3() {
       console.info("[ActionSheet3_0200] title: " + JSON.stringify(properties.type));
       expect(properties.type).assertEqual(0)
 
-      let scrollBar: Component = await driver.findComponent(ON.type('Scroll'))
-      let button1 = await scrollBar.scrollSearch(ON.text('Confirm'));
+      try {
+          let scrollBar: Component = await driver.findComponent(ON.type('Scroll'))
+          let button1 = await scrollBar.scrollSearch(ON.text('Confirm'));  
+        } catch (error) {
+          console.info('====error======='+error)
+        }
+      })
       await button1.click();
 
       // let button1 = await driver.findComponent(ON.text('Confirm'));

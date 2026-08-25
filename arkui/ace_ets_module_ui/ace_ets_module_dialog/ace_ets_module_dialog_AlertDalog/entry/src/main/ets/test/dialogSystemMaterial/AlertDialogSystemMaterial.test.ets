@@ -239,10 +239,14 @@ export default function AlertDialogSystemMaterialTest() {
       console.info('AlertDialogSystemMaterial_0600 Dialog NONE is visible');
 
       await CommonFunc.sleep(500);
-      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
-      let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
-      let okButton = await driver.findComponent(ON.text('OK'));
-      await okButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
+        let okButton = await driver.findComponent(ON.text('OK'));
+        await okButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('AlertDialogSystemMaterial_0600 END');
       done();

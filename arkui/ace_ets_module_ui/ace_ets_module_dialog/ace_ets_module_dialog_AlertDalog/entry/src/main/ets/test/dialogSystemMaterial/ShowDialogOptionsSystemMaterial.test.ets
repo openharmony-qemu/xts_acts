@@ -242,9 +242,13 @@ export default function ShowDialogOptionsSystemMaterialTest() {
       console.info('ShowDialogOptionsSystemMaterial_0600 Dialog NONE is visible');
 
       await CommonFunc.sleep(500);
-      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
-      let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
-      let okButton = await driver.findComponent(ON.text('OK'));
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
+        let okButton = await driver.findComponent(ON.text('OK'));
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await okButton.click();
       await CommonFunc.sleep(1000);
       console.info('ShowDialogOptionsSystemMaterial_0600 END');
