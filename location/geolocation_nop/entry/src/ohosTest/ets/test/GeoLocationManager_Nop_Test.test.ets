@@ -1860,5 +1860,62 @@ export default function geoLocationManager_nop_test() {
         }
       })
 
+    /**
+     * @tc.name   SUB_Location_nop_addFusionFence_point_0100
+     * @tc.number SUB_Location_nop_addFusionFence_point_0100
+     * @tc.desc   Using geoLocationManager.addFusionFence with valid Point params but no permission (201).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Location_nop_addFusionFence_point_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let latitude: number = 30.07;
+      let longitude: number = 119.98;
+      let point: geoLocationManager.Point = {
+        latitude: latitude,
+        longitude: longitude
+      };
+      let geofence: geoLocationManager.Geofence = {
+        latitude: latitude,
+        longitude: longitude,
+        radius: 2000,
+        expiration: 500000000
+      };
+      let polygon: Array<geoLocationManager.Point> = [point];
+      let gnssFence: geoLocationManager.GnssFence = {
+        gnssFenceType: geoLocationManager.GnssFenceType.CIRCULAR,
+        circularFence: geofence,
+        polygon: polygon
+      };
+      let gnssFences: Array<geoLocationManager.GnssFence> = [gnssFence];
+      let fenceRequestParams: geoLocationManager.FusionFenceRequestParams = {
+        identifier: 'nop_point_test_0100',
+        scene: geoLocationManager.FusionFenceScene.AIRPORT,
+        fenceType: geoLocationManager.FusionFenceType.GNSS,
+        poiType: '1',
+        poiLocation: point,
+        monitorTransitionEvents: 63,
+        loiterTimeMs: 10000,
+        gnssFences: gnssFences,
+        expirationMs: 100000000,
+        fenceTransitionCallback: (transition: geoLocationManager.FusionFenceTransition) => {
+          console.info('SUB_Location_nop_addFusionFence_point_0100 transition: ' + JSON.stringify(transition));
+        }
+      };
+      try {
+        await geoLocationManager.addFusionFence(fenceRequestParams);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info('SUB_Location_nop_addFusionFence_point_0100 catch err: ' + JSON.stringify(err));
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(201);
+        }
+        done();
+      }
+    })
+
   })
 }

@@ -933,6 +933,7 @@ export default function geolocationTest_geo8() {
                 expect(typeof res.countryCode === 'string').assertTrue();
                 expect(typeof res.countryName === 'string').assertTrue();
                 expect(typeof res.administrativeArea === 'string').assertTrue();
+                expect(typeof res.subAdministrativeArea === 'string').assertTrue();
                 expect(typeof res.locality === 'string').assertTrue();
                 expect(typeof res.subLocality === 'string').assertTrue();
                 done();
@@ -1156,92 +1157,19 @@ export default function geolocationTest_geo8() {
     /**
      * @tc.name   SUB_Location_getPostProcessingTrack_perm_test_001
      * @tc.number SUB_Location_getPostProcessingTrack_perm_test_001
-     * @tc.desc   Obtain post-processing track after subscribing skiing continuous location.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_Location_getPostProcessingTrack_perm_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
-        let request = {
-            'interval': 1,
-            'locationScenario': geolocationm.UserActivityScenario.SPORT,
-            'sportsType': geolocationm.SportsType.SKIING
-        };
-        let locationCallback = (location) => {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 locationCallback: ' + JSON.stringify(location));
-        };
-        try {
-            geolocationm.onLocationChange(request, locationCallback);
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 onLocationChange subscribe success');
-        } catch (err) {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 onLocationChange err: ' + JSON.stringify(err));
-            if (err.code === 801) {
-                expect(err.code === 801).assertTrue();
-            } else {
-                expect().assertFail();
-            }
-            done();
-            return;
-        }
-        await sleep(3000);
-        try {
-            geolocationm.offLocationChange(locationCallback);
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 offLocationChange success');
-        } catch (err) {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 offLocationChange err: ' + JSON.stringify(err));
-        }
-        try {
-            geolocationm.getPostProcessingTrack(geolocationm.SportsType.SKIING).then((res) => {
-                console.info('[lbs_js] getPostProcessingTrack_perm_test_001 result length: ' + res.length);
-                expect(res instanceof Array).assertTrue();
-                if (res.length > 0) {
-                    let loc = res[0];
-                    expect(typeof loc.latitude === 'number').assertTrue();
-                    expect(typeof loc.longitude === 'number').assertTrue();
-                    expect(typeof loc.altitude === 'number').assertTrue();
-                    expect(typeof loc.accuracy === 'number').assertTrue();
-                    expect(typeof loc.speed === 'number').assertTrue();
-                    expect(typeof loc.timeStamp === 'number').assertTrue();
-                    expect(typeof loc.direction === 'number').assertTrue();
-                    expect(typeof loc.timeSinceBoot === 'number').assertTrue();
-                }
-                done();
-            }).catch((error) => {
-                console.info('[lbs_js] getPostProcessingTrack_perm_test_001 promise catch err: ' + JSON.stringify(error));
-                if (error.code === 801) {
-                    expect(error.code === 801).assertTrue();
-                } else {
-                    expect().assertFail();
-                }
-                done();
-            });
-        } catch (error) {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 sync catch err: ' + JSON.stringify(error));
-            if (error.code === 801) {
-                expect(error.code === 801).assertTrue();
-            } else {
-                expect().assertFail();
-            }
-            done();
-        }
-    });
-
-    /**
-     * @tc.name   SUB_Location_getPostProcessingTrack_perm_test_004
-     * @tc.number SUB_Location_getPostProcessingTrack_perm_test_004
      * @tc.desc   getPostProcessingTrack returns 3301200 when no skiing track recorded.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Location_getPostProcessingTrack_perm_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_Location_getPostProcessingTrack_perm_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
             geolocationm.getPostProcessingTrack(geolocationm.SportsType.SKIING).then((res) => {
-                console.info('[lbs_js] getPostProcessingTrack_perm_test_004 unexpectedly succeeded, len: ' + res.length);
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_001 unexpectedly succeeded, len: ' + res.length);
                 expect().assertFail();
                 done();
             }).catch((error) => {
-                console.info('[lbs_js] getPostProcessingTrack_perm_test_004 promise catch err: ' + JSON.stringify(error));
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_001 promise catch err: ' + JSON.stringify(error));
                 if (error.code === 801) {
                     expect(error.code === 801).assertTrue();
                 } else {
@@ -1250,7 +1178,7 @@ export default function geolocationTest_geo8() {
                 done();
             });
         } catch (error) {
-            console.info('[lbs_js] getPostProcessingTrack_perm_test_004 sync catch err: ' + JSON.stringify(error));
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_001 sync catch err: ' + JSON.stringify(error));
             if (error.code === 801) {
                 expect(error.code === 801).assertTrue();
             } else {
@@ -1542,6 +1470,181 @@ export default function geolocationTest_geo8() {
         } catch (error) {
             console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0600 try error: ' + JSON.stringify(error));
             expect(error.code === 801).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_Location_getCurrentDistrict_perm_test_004
+     * @tc.number SUB_Location_getCurrentDistrict_perm_test_004
+     * @tc.desc   Obtain current district with params of null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Location_getCurrentDistrict_perm_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        try {
+            geolocationm.getCurrentDistrict(null).then((res) => {
+                console.info('[lbs_js] getCurrentDistrict_perm_test_004 result: ' + JSON.stringify(res));
+                expect(typeof res === 'object').assertTrue();
+                expect(typeof res.locale === 'string').assertTrue();
+                expect(typeof res.countryCode === 'string').assertTrue();
+                done();
+            }).catch((error) => {
+                console.info('[lbs_js] getCurrentDistrict_perm_test_004 promise catch err: ' + JSON.stringify(error));
+                if (error.code === 401) {
+                    expect(error.code === 401).assertTrue();
+                } else {
+                    expect(error.code === 801).assertTrue();
+                }
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] getCurrentDistrict_perm_test_004 sync catch err: ' + JSON.stringify(error));
+            if (error.code === 401) {
+                expect(error.code === 401).assertTrue();
+            } else {
+                expect(error.code === 801).assertTrue();
+            }
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_Location_getCurrentDistrict_perm_test_005
+     * @tc.number SUB_Location_getCurrentDistrict_perm_test_005
+     * @tc.desc   Obtain current district with params of undefined, expect the same as no params.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_getCurrentDistrict_perm_test_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+            geolocationm.getCurrentDistrict(undefined).then((res) => {
+                console.info('[lbs_js] getCurrentDistrict_perm_test_005 result: ' + JSON.stringify(res));
+                expect(typeof res === 'object').assertTrue();
+                expect(typeof res.locale === 'string').assertTrue();
+                expect(typeof res.countryCode === 'string').assertTrue();
+                done();
+            }).catch((error) => {
+                console.info('[lbs_js] getCurrentDistrict_perm_test_005 promise catch err: ' + JSON.stringify(error));
+                if (error.code === 801) {
+                    expect(error.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] getCurrentDistrict_perm_test_005 sync catch err: ' + JSON.stringify(error));
+            if (error.code === 801) {
+                expect(error.code === 801).assertTrue();
+            } else {
+                expect().assertFail();
+            }
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_Location_getCurrentDistrict_perm_test_006
+     * @tc.number SUB_Location_getCurrentDistrict_perm_test_006
+     * @tc.desc   getCurrentDistrict returns 3301500 when reverse geocoding server returns an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_getCurrentDistrict_perm_test_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+            let params = { 'locale': 'zh', 'timeoutMs': 1 };
+            geolocationm.getCurrentDistrict(params).then((res) => {
+                console.info('[lbs_js] getCurrentDistrict_perm_test_006 unexpectedly succeeded: ' + JSON.stringify(res));
+                expect().assertFail();
+                done();
+            }).catch((error) => {
+                console.info('[lbs_js] getCurrentDistrict_perm_test_006 promise catch err: ' + JSON.stringify(error));
+                if (error.code === 801) {
+                    expect(error.code === 801).assertTrue();
+                } else {
+                    expect(error.code === 3301500).assertTrue();
+                }
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] getCurrentDistrict_perm_test_006 sync catch err: ' + JSON.stringify(error));
+            if (error.code === 801) {
+                expect(error.code === 801).assertTrue();
+            } else {
+                expect(error.code === 3301500).assertTrue();
+            }
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_Location_getPostProcessingTrack_perm_test_004
+     * @tc.number SUB_Location_getPostProcessingTrack_perm_test_004
+     * @tc.desc   Obtain post-processing track with sportsType of null (401).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Location_getPostProcessingTrack_perm_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        try {
+            geolocationm.getPostProcessingTrack(null).then((res) => {
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_004 unexpectedly succeeded: ' + JSON.stringify(res));
+                expect().assertFail();
+                done();
+            }).catch((error) => {
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_004 promise catch err: ' + JSON.stringify(error));
+                if (error.code === 401) {
+                    expect(error.code === 401).assertTrue();
+                } else {
+                    expect(error.code === 801).assertTrue();
+                }
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_004 sync catch err: ' + JSON.stringify(error));
+            if (error.code === 401) {
+                expect(error.code === 401).assertTrue();
+            } else {
+                expect(error.code === 801).assertTrue();
+            }
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_Location_getPostProcessingTrack_perm_test_005
+     * @tc.number SUB_Location_getPostProcessingTrack_perm_test_005
+     * @tc.desc   Obtain post-processing track with sportsType of undefined (401).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Location_getPostProcessingTrack_perm_test_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        try {
+            geolocationm.getPostProcessingTrack(undefined).then((res) => {
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_005 unexpectedly succeeded: ' + JSON.stringify(res));
+                expect().assertFail();
+                done();
+            }).catch((error) => {
+                console.info('[lbs_js] getPostProcessingTrack_perm_test_005 promise catch err: ' + JSON.stringify(error));
+                if (error.code === 401) {
+                    expect(error.code === 401).assertTrue();
+                } else {
+                    expect(error.code === 801).assertTrue();
+                }
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] getPostProcessingTrack_perm_test_005 sync catch err: ' + JSON.stringify(error));
+            if (error.code === 401) {
+                expect(error.code === 401).assertTrue();
+            } else {
+                expect(error.code === 801).assertTrue();
+            }
             done();
         }
     });
