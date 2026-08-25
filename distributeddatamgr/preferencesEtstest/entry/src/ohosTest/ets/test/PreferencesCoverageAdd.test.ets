@@ -63,7 +63,7 @@ export default function preferencesCoverageAddTest() {
         dataPreferences.getPreferences(context, invalidOptions, (err: BusinessError, pref: dataPreferences.Preferences) => {
           if (err) {
             console.info("testGetPreferencesCallbackStorageTypeInvalid0100 err code: " + err.code + ", message: " + err.message);
-            expect("401").assertEqual(err.code.toString());
+            expect("401").assertEqual(err.code);
             done();
           } else {
             console.info("testGetPreferencesCallbackStorageTypeInvalid0100 unexpected success");
@@ -73,7 +73,7 @@ export default function preferencesCoverageAddTest() {
         });
       } catch (err) {
         console.info("testGetPreferencesCallbackStorageTypeInvalid0100 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
@@ -91,7 +91,7 @@ export default function preferencesCoverageAddTest() {
         dataPreferences.getPreferences(context, invalidOptions, (err: BusinessError, pref: dataPreferences.Preferences) => {
           if (err) {
             console.info("testGetPreferencesCallbackStorageTypeInvalid0200 err code: " + err.code + ", message: " + err.message);
-            expect("401").assertEqual(err.code.toString());
+            expect("401").assertEqual(err.code);
             done();
           } else {
             console.info("testGetPreferencesCallbackStorageTypeInvalid0200 unexpected success");
@@ -101,7 +101,7 @@ export default function preferencesCoverageAddTest() {
         });
       } catch (err) {
         console.info("testGetPreferencesCallbackStorageTypeInvalid0200 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
@@ -123,7 +123,7 @@ export default function preferencesCoverageAddTest() {
         done();
       } catch (err) {
         console.info("testGetPreferencesSyncStorageTypeInvalid0100 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
@@ -144,7 +144,7 @@ export default function preferencesCoverageAddTest() {
         done();
       } catch (err) {
         console.info("testGetPreferencesSyncStorageTypeInvalid0200 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
@@ -165,7 +165,7 @@ export default function preferencesCoverageAddTest() {
         done();
       } catch (err) {
         console.info("testIsStorageTypeSupportedUndefined0100 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
@@ -184,7 +184,7 @@ export default function preferencesCoverageAddTest() {
         dataPreferences.deletePreferences(context, invalidOptions, (err: BusinessError) => {
           if (err) {
             console.info("testDeletePreferencesCallbackStorageTypeInvalid0100 err code: " + err.code + ", message: " + err.message);
-            expect("401").assertEqual(err.code.toString());
+            expect("401").assertEqual(err.code);
             done();
           } else {
             console.info("testDeletePreferencesCallbackStorageTypeInvalid0100 unexpected success");
@@ -194,7 +194,7 @@ export default function preferencesCoverageAddTest() {
         });
       } catch (err) {
         console.info("testDeletePreferencesCallbackStorageTypeInvalid0100 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
@@ -212,7 +212,7 @@ export default function preferencesCoverageAddTest() {
         dataPreferences.deletePreferences(context, invalidOptions, (err: BusinessError) => {
           if (err) {
             console.info("testDeletePreferencesCallbackStorageTypeInvalid0200 err code: " + err.code + ", message: " + err.message);
-            expect("401").assertEqual(err.code.toString());
+            expect("401").assertEqual(err.code);
             done();
           } else {
             console.info("testDeletePreferencesCallbackStorageTypeInvalid0200 unexpected success");
@@ -222,7 +222,7 @@ export default function preferencesCoverageAddTest() {
         });
       } catch (err) {
         console.info("testDeletePreferencesCallbackStorageTypeInvalid0200 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
@@ -244,7 +244,7 @@ export default function preferencesCoverageAddTest() {
         done();
       } catch (err) {
         console.info("testDeletePreferencesPromiseStorageTypeInvalid0100 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
@@ -265,7 +265,7 @@ export default function preferencesCoverageAddTest() {
         done();
       } catch (err) {
         console.info("testDeletePreferencesPromiseStorageTypeInvalid0200 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
@@ -284,7 +284,7 @@ export default function preferencesCoverageAddTest() {
         dataPreferences.removePreferencesFromCache(context, invalidOptions, (err: BusinessError) => {
           if (err) {
             console.info("testRemovePreferencesFromCacheCallbackStorageTypeInvalid0100 err code: " + err.code + ", message: " + err.message);
-            expect("401").assertEqual(err.code.toString());
+            expect("401").assertEqual(err.code);
             done();
           } else {
             console.info("testRemovePreferencesFromCacheCallbackStorageTypeInvalid0100 unexpected success");
@@ -294,7 +294,7 @@ export default function preferencesCoverageAddTest() {
         });
       } catch (err) {
         console.info("testRemovePreferencesFromCacheCallbackStorageTypeInvalid0100 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
@@ -312,7 +312,7 @@ export default function preferencesCoverageAddTest() {
         dataPreferences.removePreferencesFromCache(context, invalidOptions, (err: BusinessError) => {
           if (err) {
             console.info("testRemovePreferencesFromCacheCallbackStorageTypeInvalid0200 err code: " + err.code + ", message: " + err.message);
-            expect("401").assertEqual(err.code.toString());
+            expect("401").assertEqual(err.code);
             done();
           } else {
             console.info("testRemovePreferencesFromCacheCallbackStorageTypeInvalid0200 unexpected success");
@@ -322,7 +322,7 @@ export default function preferencesCoverageAddTest() {
         });
       } catch (err) {
         console.info("testRemovePreferencesFromCacheCallbackStorageTypeInvalid0200 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
@@ -344,7 +344,7 @@ export default function preferencesCoverageAddTest() {
         done();
       } catch (err) {
         console.info("testRemovePreferencesFromCachePromiseStorageTypeInvalid0100 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
@@ -365,7 +365,7 @@ export default function preferencesCoverageAddTest() {
         done();
       } catch (err) {
         console.info("testRemovePreferencesFromCachePromiseStorageTypeInvalid0200 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
@@ -395,7 +395,7 @@ export default function preferencesCoverageAddTest() {
         done();
       } catch (err) {
         console.info("testOffDataChangeEmptyKeys0100 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
@@ -451,7 +451,7 @@ export default function preferencesCoverageAddTest() {
         done();
       } catch (err) {
         console.info("testOffDataChangeKeysUndefined0100 catch err code: " + err.code + ", message: " + err.message);
-        expect("401").assertEqual(err.code.toString());
+        expect("401").assertEqual(err.code);
         done();
       }
     });
