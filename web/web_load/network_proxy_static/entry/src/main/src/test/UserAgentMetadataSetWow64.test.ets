@@ -33,7 +33,7 @@ export default function userAgentMetadataSetWow64():void {
 
     /**
      * @tc.name   testSetWow64TrueStatic
-     * @tc.number SUB_WEB_SETWOW64_0100
+     * @tc.number SUB_WEB_SET_WOW64_0100
      * @tc.desc   setWow64 true test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function userAgentMetadataSetWow64():void {
 
     /**
      * @tc.name   testSetWow64FalseStatic
-     * @tc.number SUB_WEB_SETWOW64_0200
+     * @tc.number SUB_WEB_SET_WOW64_0200
      * @tc.desc   setWow64 false test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -81,7 +81,7 @@ export default function userAgentMetadataSetWow64():void {
 
     /**
      * @tc.name   testSetWow64NullStatic
-     * @tc.number SUB_WEB_SETWOW64_0300
+     * @tc.number SUB_WEB_SET_WOW64_0300
      * @tc.desc   setWow64 null 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function userAgentMetadataSetWow64():void {
 
     /**
      * @tc.name   testSetWow64UndefinedStatic
-     * @tc.number SUB_WEB_SETWOW64_0400
+     * @tc.number SUB_WEB_SET_WOW64_0400
      * @tc.desc   setWow64 undefined 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -129,7 +129,7 @@ export default function userAgentMetadataSetWow64():void {
 
     /**
      * @tc.name   testSetWow64StringStatic
-     * @tc.number SUB_WEB_SETWOW64_0500
+     * @tc.number SUB_WEB_SET_WOW64_0500
      * @tc.desc   setWow64 string 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -153,7 +153,7 @@ export default function userAgentMetadataSetWow64():void {
 
     /**
      * @tc.name   testSetWow64NumberStatic
-     * @tc.number SUB_WEB_SETWOW64_0600
+     * @tc.number SUB_WEB_SET_WOW64_0600
      * @tc.desc   setWow64 number 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -177,7 +177,7 @@ export default function userAgentMetadataSetWow64():void {
 
     /**
      * @tc.name   testSetWow64ObjectStatic
-     * @tc.number SUB_WEB_SETWOW64_0700
+     * @tc.number SUB_WEB_SET_WOW64_0700
      * @tc.desc   setWow64 object 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -201,7 +201,7 @@ export default function userAgentMetadataSetWow64():void {
 
     /**
      * @tc.name   testSetWow64ReturnVoidStatic
-     * @tc.number SUB_WEB_SETWOW64_0800
+     * @tc.number SUB_WEB_SET_WOW64_0800
      * @tc.desc   setWow64 return void test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
