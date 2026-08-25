@@ -75,7 +75,7 @@ export default function AddMonitorObservedV2Boolean(): void {
       let tagName = 'AddMonitorObservedV2Boolean_static_0100';
       console.info('[' + tagName + '] START============================');
       let driver = await Driver.create();
-      let btn_true = await driver.findComponent(ON.id('ObservedButtonFalse')) as Component;
+      let btn_true = await driver.findComponent(ON.id('ObservedButtonFalse'));
       await btn_true.click();
       await CommonFunc.sleep(1000);
       let strJsonNew = inspector.getInspectorByKey('ObservedText1');
@@ -83,10 +83,10 @@ export default function AddMonitorObservedV2Boolean(): void {
         .getElement('$attrs')
         .getString('content')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] isActive has changed from true to false');
-      let btn_true1 = await driver.findComponent(ON.id('ObservedClear1')) as Component;
+      let btn_true1 = await driver.findComponent(ON.id('ObservedClear1'));
       await btn_true1.click();
       await CommonFunc.sleep(1000);
-      let btn_true2 = await driver.findComponent(ON.id('ObservedButtonTrue')) as Component;
+      let btn_true2 = await driver.findComponent(ON.id('ObservedButtonTrue'));
       await btn_true2.click();
       await CommonFunc.sleep(1000);
       let strJsonNew1 = inspector.getInspectorByKey('ObservedText1');

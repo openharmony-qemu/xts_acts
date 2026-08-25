@@ -75,7 +75,7 @@ export default function AddMonitorObservedV2Int(): void {
       let tagName = 'AddMonitorObservedV2Int_static_0100';
       console.info('[' + tagName + '] START============================');
       let driver = await Driver.create();
-      let btn_true = await driver.findComponent(ON.id('ObservedButton')) as Component;
+      let btn_true = await driver.findComponent(ON.id('ObservedButton'));
       await btn_true.click();
       await CommonFunc.sleep(1000);
       let strJsonNew = inspector.getInspectorByKey('ObservedText');
@@ -83,7 +83,7 @@ export default function AddMonitorObservedV2Int(): void {
         .getElement('$attrs')
         .getString('content')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] age has changed from 10 to 11');
-      let btn_true1 = await driver.findComponent(ON.id('ObservedClear')) as Component;
+      let btn_true1 = await driver.findComponent(ON.id('ObservedClear'));
       await btn_true1.click();
       await CommonFunc.sleep(1000);
       await btn_true.click();

@@ -75,7 +75,7 @@ export default function AddMonitorParentChild(): void {
       let tagName = 'AddMonitorParentChild_static_0100';
       console.info('[' + tagName + '] START============================');
       let driver = await Driver.create();
-      let btn_true = await driver.findComponent(ON.id('ParentButton')) as Component;
+      let btn_true = await driver.findComponent(ON.id('ParentButton'));
       await btn_true.click();
       await CommonFunc.sleep(1000);
       let strJsonNew = inspector.getInspectorByKey('ParentText');
@@ -83,7 +83,7 @@ export default function AddMonitorParentChild(): void {
         .getElement('$attrs')
         .getString('content')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] ParentComponent message changed from Hello from Parent to Parent Value: 2');
-      let btn_true1 = await driver.findComponent(ON.id('ClearParentMonitor')) as Component;
+      let btn_true1 = await driver.findComponent(ON.id('ClearParentMonitor'));
       await btn_true1.click();
       await CommonFunc.sleep(1000);
       await btn_true.click();
@@ -107,7 +107,7 @@ export default function AddMonitorParentChild(): void {
       let tagName = 'AddMonitorParentChild_static_0200';
       console.info('[' + tagName + '] START============================');
       let driver = await Driver.create();
-      let btn_true = await driver.findComponent(ON.id('ChildButton')) as Component;
+      let btn_true = await driver.findComponent(ON.id('ChildButton'));
       await btn_true.click();
       await CommonFunc.sleep(1000);
       let strJsonNew = inspector.getInspectorByKey('ChildText');
@@ -115,7 +115,7 @@ export default function AddMonitorParentChild(): void {
         .getElement('$attrs')
         .getString('content')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] ChildComponent childMsg changed from Parent Value: 3 to Message from Child');
-      let btn_true1 = await driver.findComponent(ON.id('ClearChildMonitor')) as Component;
+      let btn_true1 = await driver.findComponent(ON.id('ClearChildMonitor'));
       await btn_true1.click();
       await CommonFunc.sleep(1000);
       await btn_true.click();

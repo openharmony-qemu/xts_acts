@@ -75,7 +75,7 @@ export default function AddMonitorObservedV2Array(): void {
       let tagName = 'AddMonitorObservedV2Array_static_0100';
       console.info('[' + tagName + '] START============================');
       let driver = await Driver.create();
-      let btn_true = await driver.findComponent(ON.id('ObservedArray1')) as Component;
+      let btn_true = await driver.findComponent(ON.id('ObservedArray1'));
       await btn_true.click();
       await CommonFunc.sleep(1000);
       let strJsonNew = inspector.getInspectorByKey('ObservedArray');
@@ -83,10 +83,10 @@ export default function AddMonitorObservedV2Array(): void {
         .getElement('$attrs')
         .getString('content')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] Array5 value has changed from 5 to 6');
-      let btn_true1 = await driver.findComponent(ON.id('ObservedArrayClear')) as Component;
+      let btn_true1 = await driver.findComponent(ON.id('ObservedArrayClear'));
       await btn_true1.click();
       await CommonFunc.sleep(1000);
-      let btn_true2 = await driver.findComponent(ON.id('ObservedArray1')) as Component;
+      let btn_true2 = await driver.findComponent(ON.id('ObservedArray1'));
       await btn_true2.click();
       await CommonFunc.sleep(1000);
       let strJsonNew1 = inspector.getInspectorByKey('ObservedArray');

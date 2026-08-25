@@ -75,7 +75,7 @@ export default function AddMonitorNoPath(): void {
       let tagName = 'AddMonitorNoPath_static_0100';
       console.info('[' + tagName + '] START============================');
       let driver = await Driver.create();
-      let NoPathButton = await driver.findComponent(ON.id('NoPathButton')) as Component;
+      let NoPathButton = await driver.findComponent(ON.id('NoPathButton'));
       await NoPathButton.click();
       await CommonFunc.sleep(1000);
       let strJsonNew = inspector.getInspectorByKey('text');

@@ -75,7 +75,7 @@ export default function AddMonitorObservedV2Date(): void {
       let tagName = 'AddMonitorObservedV2Date_static_0100';
       console.info('[' + tagName + '] START============================');
       let driver = await Driver.create();
-      let btn_true = await driver.findComponent(ON.id('ObservedDate1')) as Component;
+      let btn_true = await driver.findComponent(ON.id('ObservedDate1'));
       await btn_true.click();
       await CommonFunc.sleep(1000);
       let strJsonNew = inspector.getInspectorByKey('ObservedDate');
@@ -83,10 +83,10 @@ export default function AddMonitorObservedV2Date(): void {
         .getElement('$attrs')
         .getString('content')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] Date has changed to Fri Sep 19 2025 08:00:00 GMT+0800');
-      let btn_true1 = await driver.findComponent(ON.id('ObservedDateClear')) as Component;
+      let btn_true1 = await driver.findComponent(ON.id('ObservedDateClear'));
       await btn_true1.click();
       await CommonFunc.sleep(1000);
-      let btn_true2 = await driver.findComponent(ON.id('ObservedDate2')) as Component;
+      let btn_true2 = await driver.findComponent(ON.id('ObservedDate2'));
       await btn_true2.click();
       await CommonFunc.sleep(1000);
       let strJsonNew1 = inspector.getInspectorByKey('ObservedDate');
