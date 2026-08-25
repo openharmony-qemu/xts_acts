@@ -18,6 +18,7 @@ import {
   afterAll,
   afterEach,
   beforeAll,
+  beforeEach,
   describe,
   expect,
   it,
@@ -311,6 +312,11 @@ class FlushOnEnd extends TransformTestBase {
 
 export default function StreamTransformDoFlushTest(): void {
   describe('StreamTransformDoFlushTest', (): void => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: (value: void) => void): void => {
+        setTimeout((): void => resolve(undefined as void), 0);
+      });
+    });
     beforeAll((): void => {
     });
     afterEach((): void => {

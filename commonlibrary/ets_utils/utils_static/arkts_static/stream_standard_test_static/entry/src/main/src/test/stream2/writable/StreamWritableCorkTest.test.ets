@@ -165,7 +165,7 @@ export default function StreamWritableCorkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_0400
      * @tc.name testStreamWritableCork004
-     * @tc.desc Verify cork after end is accepted and increments the cork count
+     * @tc.desc Verify cork after the finish event is accepted and increments the cork count
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -188,7 +188,7 @@ export default function StreamWritableCorkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_0500
      * @tc.name testStreamWritableCork005
-     * @tc.desc Verify cork after end is accepted and increments the cork count
+     * @tc.desc Verify nested cork calls after end accumulate and uncork calls decrement the cork count to zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

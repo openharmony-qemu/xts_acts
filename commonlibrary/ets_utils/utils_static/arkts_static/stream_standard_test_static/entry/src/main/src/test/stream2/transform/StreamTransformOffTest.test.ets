@@ -18,6 +18,7 @@ import {
   afterAll,
   afterEach,
   beforeAll,
+  beforeEach,
   describe,
   expect,
   it,
@@ -61,6 +62,11 @@ function regularDataListener(): void {
 
 export default function StreamTransformOffTest(): void {
   describe('StreamTransformOffTest', (): void => {
+    beforeEach(async (): Promise<void> => {
+      await new Promise<void>((resolve: (value: void) => void): void => {
+        setTimeout((): void => resolve(undefined as void), 0);
+      });
+    });
     beforeAll((): void => {
     });
     afterEach((): void => {
