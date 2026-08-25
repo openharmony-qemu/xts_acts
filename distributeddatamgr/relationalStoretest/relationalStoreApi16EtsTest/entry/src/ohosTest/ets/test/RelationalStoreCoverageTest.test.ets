@@ -2065,7 +2065,7 @@ export default function relationalStoreCoverageTest() {
       expect(data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_CLOUD_DETAILS).assertEqual(2);
       console.info(TAG + "----- SUB_DistributedData_RelationalStore_SDK_SubscribeType_0100 end-----");
     });
-    // ==================== 20260817setDistributedTables=====================================================================================================================================
+    // ==================== setDistributedTables======================================
     /**
      * @tc.name   setCloudDistributedTableTest1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1100
