@@ -35,6 +35,7 @@
     "pages/ArkUI/Rating",
     "pages/ArkUI/Search",
     "pages/ArkUI/SharedTransition",
+    "pages/ArkUI/SharedTransitionTo",
     "pages/ArkUI/Swiper",
     "pages/ArkUI/Gauge",
     "pages/ArkUI/ImageAnimator",
