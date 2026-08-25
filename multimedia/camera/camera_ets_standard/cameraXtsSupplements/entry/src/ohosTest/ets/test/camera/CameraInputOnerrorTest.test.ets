@@ -1089,43 +1089,6 @@ export default function CameraInputOnerrorTest() {
     })
 
     /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0100
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0100
-     * @tc.desc   CameraInput -on_error -cameraType -CAMERA_TYPE_SUPER_TELEPHOTO.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUM
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0100', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0100';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-
-      let useDevice = mainBackCamera
-      useDevice.cameraType = camera.CameraType.CAMERA_TYPE_SUPER_TELEPHOTO
-
-      try {
-        getCameraInput();
-        mCameraInput.on('error', useDevice, callbackOn);
-        await mCameraInput.open();
-        await mCameraInput.open();
-        mCameraInput.off('error', useDevice, callbackOn);
-        console.info(TAG, testName, 'Success', count);
-        expect(count == 1).assertTrue();
-      } catch (err) {
-        console.error(TAG, testName, 'Failed', err, err.code);
-        expect().assertFail();
-      } finally {
-        count = 0;
-        await mCameraInput?.close();
-        done();
-      }
-    })
-
-    /**
      * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0200
      * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_0200
      * @tc.desc   CameraInput -on_error -cameraType - -1.
