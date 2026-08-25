@@ -18,6 +18,7 @@ import { pasteboard } from '@kit.BasicServicesKit';
 import { waitForExist } from '../../test/WaitTest.test';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
+import { XtsTestServer } from 'library';
 interface PreviewBuilderParam {
   previewImage: Resource | string | undefined;
   width: number;
@@ -33,6 +34,7 @@ const EVENT_ID_SET_SUITE_KEY = 177201;
 @Component
 struct SelectionMenuLongPress {
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @Builder PreviewBuilder($$: PreviewBuilderParam){
     Column() {
       Stack(){
@@ -130,13 +132,21 @@ struct SelectionMenuLongPress {
     }
   }
 
+  aboutToDisappear() {
+    try {
+      this.controller.loadUrl(this.mServer.getShutdownUrl());
+    } catch (_e) {
+      // page teardown: controller may already be unbound (17100001)
+    }
+  }
+
   build() {
     Column() {
       Row() {
         Button("web test").key('WebElementTypeButton').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
           switch (this.str) {
             case "WebElementType01": {
               let strJson = getInspectorByKey('WebElementTypeLink');
@@ -150,7 +160,7 @@ struct SelectionMenuLongPress {
         })
       }
       Text('WebElementType').id('WebElementTypeLink').fontSize(18)
-      Web({ src: $rawfile("newbee.html"), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('newbee.html'), controller: this.controller })
         .height('90%')
         .scale({x:this.scaleValue, y:this.scaleValue, z:1})
         .enableHapticFeedback(this.enableWebHapticFeedback)

@@ -18,9 +18,14 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { Driver, ON } from "@kit.TestKit";
+import { Driver, ON, MouseButton } from "@kit.TestKit";
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+interface Point {
+  x: number;
+  y: number;
+}
+
 const EVENT_ID_SET_SUITE_KEY = 177008;
 let driver = Driver.create();
 
@@ -69,9 +74,43 @@ export default function SaveImageMenuJsunit() {
     it('SaveImageMenu01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("SaveImageMenu01", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent("SaveImageMenu01","image", 20230319, () => { isReturn = true });
+      Utils.registerEvent("SaveImageMenu01","image", 20230319, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
+      // 等页面就绪并获取右键坐标（页面计算），串行执行右键与菜单点击（避免与页面并发使用 UiTest）
+      let pos: Point = { x: 0, y: 0 };
+      let ready = false;
+      let readyEvent: events_emitter.InnerEvent = { eventId: 20230330, priority: events_emitter.EventPriority.LOW };
+      events_emitter.once(readyEvent, (data: events_emitter.EventData) => {
+        let action = data.data?.ACTION as Point;
+        if (action) { pos = action; }
+        ready = true;
+      });
       Utils.waitAndClickComponent(driver, "webSaveImageMenu", "SaveImageMenu01");
-      await Utils.waitForExist(() => isReturn, "SaveImageMenu01" + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('ready waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return ready;
+        }, "SaveImageMenu01" + '_readyCheck', true, 1000, 8);
+        await driver.mouseClick({ x: pos.x, y: pos.y }, MouseButton.MOUSE_BUTTON_RIGHT);
+        await Utils.sleep(1000);
+        let saveItem = await driver.findComponent(ON.text('保存图片'));
+        await saveItem.click();
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "SaveImageMenu01" + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -86,9 +125,43 @@ export default function SaveImageMenuJsunit() {
     it('SaveImageMenu02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("SaveImageMenu02", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent("SaveImageMenu02","onLineImage", 20230320, () => { isReturn = true });
+      Utils.registerEvent("SaveImageMenu02","onLineImage", 20230320, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
+      // 等页面就绪并获取右键坐标（页面计算），串行执行右键与菜单点击（避免与页面并发使用 UiTest）
+      let pos: Point = { x: 0, y: 0 };
+      let ready = false;
+      let readyEvent: events_emitter.InnerEvent = { eventId: 20230331, priority: events_emitter.EventPriority.LOW };
+      events_emitter.once(readyEvent, (data: events_emitter.EventData) => {
+        let action = data.data?.ACTION as Point;
+        if (action) { pos = action; }
+        ready = true;
+      });
       Utils.waitAndClickComponent(driver, "webSaveImageMenu", "SaveImageMenu02");
-      await Utils.waitForExist(() => isReturn, "SaveImageMenu02" + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('ready waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return ready;
+        }, "SaveImageMenu02" + '_readyCheck', true, 1000, 8);
+        await driver.mouseClick({ x: pos.x, y: pos.y }, MouseButton.MOUSE_BUTTON_RIGHT);
+        await Utils.sleep(1000);
+        let saveItem = await driver.findComponent(ON.text('保存图片'));
+        await saveItem.click();
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "SaveImageMenu02" + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 
@@ -104,9 +177,43 @@ export default function SaveImageMenuJsunit() {
     it('SaveImageMenu03',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("SaveImageMenu03", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent("SaveImageMenu03","canvas", 20230321, () => { isReturn = true });
+      Utils.registerEvent("SaveImageMenu03","canvas", 20230321, (err: Error) => {
+        if (err) {
+          console.error('isReturn registerEvent error: ' + JSON.stringify(err));
+        } else {
+          isReturn = true;
+        }
+      });
+      // 等页面就绪并获取右键坐标（页面计算），串行执行右键与菜单点击（避免与页面并发使用 UiTest）
+      let pos: Point = { x: 0, y: 0 };
+      let ready = false;
+      let readyEvent: events_emitter.InnerEvent = { eventId: 20230332, priority: events_emitter.EventPriority.LOW };
+      events_emitter.once(readyEvent, (data: events_emitter.EventData) => {
+        let action = data.data?.ACTION as Point;
+        if (action) { pos = action; }
+        ready = true;
+      });
       Utils.waitAndClickComponent(driver, "webSaveImageMenu", "SaveImageMenu03");
-      await Utils.waitForExist(() => isReturn, "SaveImageMenu03" + '_returnCheck', true, 1000);
+      try {
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('ready waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return ready;
+        }, "SaveImageMenu03" + '_readyCheck', true, 1000, 8);
+        await driver.mouseClick({ x: pos.x, y: pos.y }, MouseButton.MOUSE_BUTTON_RIGHT);
+        await Utils.sleep(1000);
+        let saveItem = await driver.findComponent(ON.text('保存图片'));
+        await saveItem.click();
+        await Utils.waitForExist((err?: Error) => {
+          if (err) {
+            console.error('isReturn waitForExist callback error: ' + JSON.stringify(err));
+          }
+          return isReturn;
+        }, "SaveImageMenu03" + '_returnCheck', true, 1000);
+      } catch (err) {
+        console.error('Utils.waitForExist async call error: ' + JSON.stringify(err));
+      }
       done();
     })
 

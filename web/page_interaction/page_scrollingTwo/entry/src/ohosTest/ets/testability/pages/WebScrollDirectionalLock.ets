@@ -57,7 +57,7 @@ struct WebScrollDirectionalLock {
         Button("web click").key('WebScrollDirectionalLockButton').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
-          await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+          await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
           switch (this.str) {
             case "emitScrollDirectionalLock001": {
               try {

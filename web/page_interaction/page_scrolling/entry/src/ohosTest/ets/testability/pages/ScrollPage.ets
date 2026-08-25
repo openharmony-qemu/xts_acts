@@ -85,13 +85,13 @@ struct setPathAllowingUniversalAccess {
         Button("setPathAllowingUniversalAccess").key('setPathAllowingUniversalAccessButton').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
           switch (this.str) {
             case "testScrollTo001": {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/theScroll.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.scrollTo(-10, -10);
                 await Utils.waitForReleaseDriver(this.str,driver)
                 this.controller.runJavaScript("getScroll()", (error, result) => {
@@ -115,7 +115,7 @@ struct setPathAllowingUniversalAccess {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/theScroll.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.scrollTo(-10, 3500);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.runJavaScript("getScroll()", (error, result) => {
@@ -143,7 +143,7 @@ struct setPathAllowingUniversalAccess {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/theScroll.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.scrollTo(-10, 100);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.runJavaScript("getScroll()", (error, result) => {
@@ -167,7 +167,7 @@ struct setPathAllowingUniversalAccess {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/theScroll.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.scrollTo(100, -10);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webYOffset');
                 this.controller.runJavaScript("getScroll()", (error, result) => {
@@ -191,7 +191,7 @@ struct setPathAllowingUniversalAccess {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/theScroll.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.scrollTo(4000, -10);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webYOffset');
                 this.controller.runJavaScript("getScroll()", (error, result) => {
@@ -219,7 +219,7 @@ struct setPathAllowingUniversalAccess {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/theScroll.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.scrollTo(100, 100);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webYOffset');
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
@@ -245,7 +245,7 @@ struct setPathAllowingUniversalAccess {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/theScroll.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.scrollTo(4000, 3500);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webYOffset');
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
@@ -279,7 +279,7 @@ struct setPathAllowingUniversalAccess {
                 }
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('indexCopyTwo.html'))
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
                   if (error) {
                     console.error(`The checkVIsible() return value is: error`);
@@ -319,11 +319,11 @@ struct setPathAllowingUniversalAccess {
                 if ((this.userAgentPC).includes("Tablet")) {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('indexCopyTablet.html'))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 }else{
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('indexCopyTwo.html'))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 }
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
                   if (error) {
@@ -365,7 +365,7 @@ struct setPathAllowingUniversalAccess {
                 }
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('indexCopyTwo.html'))
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.pageDown(false);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
@@ -405,11 +405,11 @@ struct setPathAllowingUniversalAccess {
                 if ((this.userAgentPC).includes("Tablet")) {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('indexCopyTablet.html'))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 }else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('indexCopyTwo.html'))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 }
                 this.controller.pageDown(true);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
@@ -449,7 +449,7 @@ struct setPathAllowingUniversalAccess {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/index.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.onScrollCallBack = false
                 this.controller.slideScroll(-500, 200);
                 await Utils.waitForExist(()=>this.onScrollCallBack, this.str+' onScrollCallBack', true, 1000);
