@@ -17,6 +17,7 @@
 #include "iot_errno.h"
 #include "lowpower.h"
 
+
 unsigned int (*g_lpcInit)(void);
 unsigned int (*g_lpcSetType)(LpcType type);
 
@@ -67,5 +68,38 @@ LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower002, Function | MediumTest |
     g_lpcSetType = LpcSetType;
 };
 
-RUN_TEST_SUITE(IotLowPowerTestSuite);
 
+/**
+ * @tc.name   testIotLowPower003
+ * @tc.number SUB_UTILS_WIFIIOT_API_7200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower003, Function | MediumTest | Level1)
+{
+    unsigned int ret = LpcInit();
+    printf("LpcInit return = %d\r\n", ret);
+    TEST_ASSERT_EQUAL_INT(IOT_SUCCESS, ret);
+};
+
+/**
+ * @tc.name   testIotLowPower004
+ * @tc.number SUB_UTILS_WIFIIOT_API_7300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(IotLowPowerTestSuite, testIotLowPower004, Function | MediumTest | Level1)
+{
+    unsigned int ret = LpcSetType(NO_SLEEP);
+    printf("LpcSetType(NO_SLEEP) return = %d\r\n", ret);
+    TEST_ASSERT_EQUAL_INT(IOT_SUCCESS, ret);
+    ret = LpcSetType((LpcType)99);
+    printf("LpcSetType(invalid) return = %d\r\n", ret);
+    TEST_ASSERT_EQUAL_INT(IOT_SUCCESS, ret);
+};
+
+RUN_TEST_SUITE(IotLowPowerTestSuite);
