@@ -2,6 +2,10 @@
   "src": [
     "pages/webviewNetworkProxy",
     "pages/webCookieManager",
-    "pages/webViewController"
+    "pages/webViewController",
+	"pages/proxyConfigEnableReverseBypass",
+	"pages/proxyConfigInsertDirectRuleParam",
+	"pages/userAgentMetadataSetWow64"
+	"pages/webOnVerifyPinCallback"
   ]
 }

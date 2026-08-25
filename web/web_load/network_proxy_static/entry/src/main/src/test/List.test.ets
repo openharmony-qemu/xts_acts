@@ -17,10 +17,16 @@
 import  webviewNetworkProxy from './WebviewNetworkProxy.test'
 import webCookieManager from './WebCookieManager.test'
 import webviewController from './WebViewController.test'
-
-
+import ProxyConfigEnableReverseBypass from './ProxyConfigEnableReverseBypass.test'
+import UserAgentMetadataSetWow64 from './UserAgentMetadataSetWow64.test'
+import WebOnVerifyPinCallback from './WebOnVerifyPinCallback.test'
+import ProxyConfigInsertDirectRuleParam from './ProxyConfigInsertDirectRuleParam.test'
 export default function testsuite() {
   webviewNetworkProxy();
   webCookieManager();
   webviewController();
+  ProxyConfigEnableReverseBypass()
+  UserAgentMetadataSetWow64()
+  WebOnVerifyPinCallback()
+  ProxyConfigInsertDirectRuleParam()
 }

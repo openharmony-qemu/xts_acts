@@ -169,6 +169,12 @@ struct webviewController {
               break;
             }
 
+            case 'emitOnSwitchNextPageBypass': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: "pages/proxyConfigEnableReverseBypass" })
+            }
+
           }
         })
       }
