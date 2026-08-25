@@ -3792,7 +3792,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (err) {
             console.info(`previewOutPut setLogViewAssistEnable enable failed: ${JSON.stringify(err)}`);
-            expect(err.code == 801).assertTrue()
+            expect(err.code).assertEqual(801)
           }
           try {
             previewOutput.setLogViewAssistEnable(false)
@@ -3800,7 +3800,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (err) {
             console.info(`previewOutPut setLogViewAssistEnable diaable failed: ${JSON.stringify(err)}`);
-            expect(err.code == 801).assertTrue()
+            expect(err.code).assertEqual(801)
           }
         }
         console.info(`${caseName} PASSED`)
