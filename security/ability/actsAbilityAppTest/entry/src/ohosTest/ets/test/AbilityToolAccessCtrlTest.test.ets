@@ -85,11 +85,7 @@ export default function abilityTest() {
           expect(false).assertTrue();
         } catch (error) {
           console.error(`Sec_SAF_AgentFence_0012 fail, code: ${error.code}, message: ${error.message}`);
-          if (checkDeviceIsDevBoard()) {
-            expect(error.code).assertEqual(24010002);
-          } else {
-            expect(error.code).assertEqual(401);
-          }
+		  expect(error.code).assertEqual(401);
         }
         done();
       });
@@ -922,11 +918,7 @@ export default function abilityTest() {
           expect(false).assertTrue();
         } catch (error) {
           console.error(`Sec_SAF_AgentFence_0036 fail, code: ${error.code}, message: ${error.message}`);
-          if (checkDeviceIsDevBoard()) {
-            expect(error.code).assertEqual(24010002);
-          } else {
-            expect(error.code).assertEqual(401);
-          }
+		  expect(error.code).assertEqual(401);
         }
         done();
       });
@@ -962,11 +954,7 @@ export default function abilityTest() {
           expect(false).assertTrue();
         } catch (error) {
           console.error(`Sec_SAF_AgentFence_0037 fail, code: ${error.code}, message: ${error.message}`);
-          if (checkDeviceIsDevBoard()) {
-            expect(error.code).assertEqual(24010002);
-          } else {
-            expect(error.code).assertEqual(24010000);
-          }
+		  expect(error.code).assertEqual(24010000);
         }
         done();
       });
@@ -1236,11 +1224,7 @@ export default function abilityTest() {
           expect(false).assertTrue();
         } catch (error) {
           console.error(`Sec_SAF_AgentFence_0047 fail, code: ${error.code}, message: ${error.message}`);
-          if (checkDeviceIsDevBoard()) {
-            expect(error.code).assertEqual(24010002);
-          } else {
-            expect(error.code).assertEqual(401);
-          }
+		  expect(error.code).assertEqual(401);
         }
         done();
       });
