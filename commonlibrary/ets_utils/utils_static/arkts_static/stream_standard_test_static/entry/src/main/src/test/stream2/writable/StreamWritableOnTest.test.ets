@@ -793,29 +793,12 @@ export default function StreamWritableOnTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_2900
      * @tc.name testStreamWritableOn029
-     * @tc.desc Verify a finish listener does not fire while the stream has not been ended
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testStreamWritableOn029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new WritableTestBase();
-      let finishFired: boolean = false;
-      ws.on('finish', (): void => {
-        finishFired = true;
-      });
-      expect(finishFired).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3000
-     * @tc.name testStreamWritableOn030
      * @tc.desc Verify event name is a zero-width space
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableOn029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       ws.on("​", (): void => {
       });
@@ -823,14 +806,14 @@ export default function StreamWritableOnTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3100
-     * @tc.name testStreamWritableOn031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3000
+     * @tc.name testStreamWritableOn030
      * @tc.desc Verify unsupported emoji event name is not emitted when writable ends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableOn030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         let upperFired: boolean = false;
@@ -855,14 +838,14 @@ export default function StreamWritableOnTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3200
-     * @tc.name testStreamWritableOn032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3100
+     * @tc.name testStreamWritableOn031
      * @tc.desc Verify unsupported mixed emoji event name is not emitted when writable ends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableOn031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         let fn1Fired: boolean = false;
@@ -889,14 +872,14 @@ export default function StreamWritableOnTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3300
-     * @tc.name testStreamWritableOn033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3200
+     * @tc.name testStreamWritableOn032
      * @tc.desc Verify unsupported script event name is not emitted when writable ends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableOn032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         let endedAtFinish: boolean = false;
@@ -918,14 +901,14 @@ export default function StreamWritableOnTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3400
-     * @tc.name testStreamWritableOn034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3300
+     * @tc.name testStreamWritableOn033
      * @tc.desc Verify unsupported Japanese event name is not emitted when writable ends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableOn033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         ws.write("data");
@@ -944,14 +927,14 @@ export default function StreamWritableOnTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3500
-     * @tc.name testStreamWritableOn035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3400
+     * @tc.name testStreamWritableOn034
      * @tc.desc Verify unsupported Russian event name is not emitted when writable ends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableOn034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         let errorFired: boolean = false;
@@ -972,14 +955,14 @@ export default function StreamWritableOnTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3600
-     * @tc.name testStreamWritableOn036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3500
+     * @tc.name testStreamWritableOn035
      * @tc.desc Verify unsupported Arabic event name is not emitted when writable ends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableOn035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         let eventFired: boolean = false;
@@ -1004,14 +987,14 @@ export default function StreamWritableOnTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3700
-     * @tc.name testStreamWritableOn037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3600
+     * @tc.name testStreamWritableOn036
      * @tc.desc Verify listeners for unsupported event names including replacement, lone surrogate, invalid UTF-8, literal undefined, hexadecimal and readable-only data are never invoked while finish still fires
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableOn036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let events: string[] = ['�', '\udc04', '\xe4', 'undefined', '0x123', 'data'];
         for (let i = 0; i < events.length; i++) {
@@ -1038,14 +1021,14 @@ export default function StreamWritableOnTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3800
-     * @tc.name testStreamWritableOn038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3700
+     * @tc.name testStreamWritableOn037
      * @tc.desc Verify unsupported literal-null event name is not emitted when writable ends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableOn037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         let unsupportedFired: boolean = false;
@@ -1071,14 +1054,14 @@ export default function StreamWritableOnTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3900
-     * @tc.name testStreamWritableOn039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3800
+     * @tc.name testStreamWritableOn038
      * @tc.desc Verify unsupported date-format event name is not emitted when writable ends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableOn038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         let dateFired: boolean = false;
@@ -1103,14 +1086,14 @@ export default function StreamWritableOnTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_4000
-     * @tc.name testStreamWritableOn040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_3900
+     * @tc.name testStreamWritableOn039
      * @tc.desc Verify on with a number, string or plain object callback throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableOn039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let callbacks: Object[] = [123 as Object, 'string' as Object, {} as Object];
       for (let i = 0; i < callbacks.length; i++) {
         let ws = new WritableTestBase();
@@ -1124,14 +1107,14 @@ export default function StreamWritableOnTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_4100
-     * @tc.name testStreamWritableOn041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_4000
+     * @tc.name testStreamWritableOn040
      * @tc.desc Verify event is null
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableOn040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       try {
         ws.on(null as Object as string, (): void => {
@@ -1143,14 +1126,14 @@ export default function StreamWritableOnTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_4200
-     * @tc.name testStreamWritableOn042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_4100
+     * @tc.name testStreamWritableOn041
      * @tc.desc Verify event is undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableOn041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       try {
         ws.on(undefined as string, (): void => {
@@ -1162,14 +1145,14 @@ export default function StreamWritableOnTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_4300
-     * @tc.name testStreamWritableOn043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_4200
+     * @tc.name testStreamWritableOn042
      * @tc.desc Verify callback is null
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableOn042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       try {
         ws.on('finish', null as Object as Function);
@@ -1180,14 +1163,14 @@ export default function StreamWritableOnTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_4400
-     * @tc.name testStreamWritableOn044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_4300
+     * @tc.name testStreamWritableOn043
      * @tc.desc Verify callback is undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableOn043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       try {
         ws.on('finish', undefined as Object as Function);
@@ -1198,14 +1181,14 @@ export default function StreamWritableOnTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_4500
-     * @tc.name testStreamWritableOn045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_4400
+     * @tc.name testStreamWritableOn044
      * @tc.desc Verify on called detached from stream instance (no this context)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableOn044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let onFn: Function = ws.on;
       onFn('finish', (err?: Error): void => {
@@ -1214,14 +1197,14 @@ export default function StreamWritableOnTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_4600
-     * @tc.name testStreamWritableOn046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_ON_4500
+     * @tc.name testStreamWritableOn045
      * @tc.desc Verify finish listener registered by on observes end completion and final state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableOn046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableOn045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         let endedAtFinish: boolean = false;

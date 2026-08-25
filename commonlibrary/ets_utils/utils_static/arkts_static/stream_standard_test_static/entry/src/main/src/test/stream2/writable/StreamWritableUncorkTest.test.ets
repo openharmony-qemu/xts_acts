@@ -241,28 +241,12 @@ export default function StreamWritableUncorkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_0800
      * @tc.name testStreamWritableUncork008
-     * @tc.desc Verify uncork without prior cork or write leaves the count at zero
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testStreamWritableUncork008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new UncorkBase();
-      let r = ws.uncork();
-      expect(r).assertTrue();
-      expect(ws.writableCorked).assertEqual(0);
-      expect(ws.writeCalled).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_0900
-     * @tc.name testStreamWritableUncork009
      * @tc.desc Verify uncork on Duplex subclass inherits Writable behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableUncork009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableUncork008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new DuplexUncork();
       ws.cork();
       ws.write("x");
@@ -272,14 +256,14 @@ export default function StreamWritableUncorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1000
-     * @tc.name testStreamWritableUncork010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_0900
+     * @tc.name testStreamWritableUncork009
      * @tc.desc Verify single uncork with buffered data leaves one nested cork level
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableUncork010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableUncork009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new UncorkBase();
       ws.cork();
       ws.cork();
@@ -291,14 +275,14 @@ export default function StreamWritableUncorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1100
-     * @tc.name testStreamWritableUncork011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1000
+     * @tc.name testStreamWritableUncork010
      * @tc.desc Verify 5 and 100 nested cork calls are fully released by the same number of uncork calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableUncork011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableUncork010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let counts: int[] = [5, 100];
       for (let n = 0; n < counts.length; n++) {
         let ws = new UncorkBase();
@@ -315,14 +299,14 @@ export default function StreamWritableUncorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1200
-     * @tc.name testStreamWritableUncork012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1100
+     * @tc.name testStreamWritableUncork011
      * @tc.desc Verify uncork flushes buffered data that exceeds the default high water mark
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableUncork012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableUncork011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new UncorkBase();
       ws.cork();
       let data: string = 'a'.repeat(16001);
@@ -334,14 +318,14 @@ export default function StreamWritableUncorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1300
-     * @tc.name testStreamWritableUncork013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1200
+     * @tc.name testStreamWritableUncork012
      * @tc.desc Verify cork+write large data (10KB)+uncork fully flushes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableUncork013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableUncork012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new UncorkBase();
       ws.cork();
       ws.write(new Uint8Array(10240));
@@ -351,14 +335,14 @@ export default function StreamWritableUncorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1400
-     * @tc.name testStreamWritableUncork014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1300
+     * @tc.name testStreamWritableUncork013
      * @tc.desc Verify uncork to zero triggers drain event
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableUncork014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableUncork013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new UncorkBase();
         ws.cork();
@@ -382,14 +366,14 @@ export default function StreamWritableUncorkTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1500
-     * @tc.name testStreamWritableUncork015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1400
+     * @tc.name testStreamWritableUncork014
      * @tc.desc Verify cork+write Chinese data+gbk encoding+uncork flushes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableUncork015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableUncork014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new UncorkBase();
       ws.cork();
       ws.write("测试工程师", "gbk");
@@ -399,14 +383,14 @@ export default function StreamWritableUncorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1600
-     * @tc.name testStreamWritableUncork016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1500
+     * @tc.name testStreamWritableUncork015
      * @tc.desc Verify uncork releases buffered emoji, XSS and embedded-null writes and resets writableCorked
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableUncork016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableUncork015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let chunks: string[] = ['😀测试🔥', '<script>alert(1)</script>', 'data\x00null'];
       for (let i = 0; i < chunks.length; i++) {
         let ws = new UncorkBase();
@@ -419,14 +403,14 @@ export default function StreamWritableUncorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1700
-     * @tc.name testStreamWritableUncork017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1600
+     * @tc.name testStreamWritableUncork016
      * @tc.desc Verify cork without write then uncork resets writableCorked to zero without invoking doWrite
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableUncork017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableUncork016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new UncorkBase();
       ws.cork();
       let r = ws.uncork();
@@ -436,14 +420,14 @@ export default function StreamWritableUncorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1800
-     * @tc.name testStreamWritableUncork018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1700
+     * @tc.name testStreamWritableUncork017
      * @tc.desc Verify one uncork releases one empty nested cork level
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableUncork018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableUncork017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new UncorkBase();
       ws.cork();
       ws.cork();
@@ -453,14 +437,14 @@ export default function StreamWritableUncorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1900
-     * @tc.name testStreamWritableUncork019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1800
+     * @tc.name testStreamWritableUncork018
      * @tc.desc Verify uncork flushes a buffered Uint8Array write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableUncork019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableUncork018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new UncorkBase();
       ws.cork();
       ws.write(new Uint8Array([0x78, 0x79]));
@@ -471,14 +455,14 @@ export default function StreamWritableUncorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_2000
-     * @tc.name testStreamWritableUncork020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_1900
+     * @tc.name testStreamWritableUncork019
      * @tc.desc Verify uncork without prior cork is accepted and leaves the count at zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableUncork020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableUncork019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new UncorkBase();
       let r0 = ws.uncork();
       expect(r0).assertTrue();
@@ -494,14 +478,14 @@ export default function StreamWritableUncorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_2100
-     * @tc.name testStreamWritableUncork021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_2000
+     * @tc.name testStreamWritableUncork020
      * @tc.desc Verify uncork after end is accepted and leaves the count at zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableUncork021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableUncork020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new UncorkBase();
       ws.cork();
       ws.end();
@@ -511,14 +495,14 @@ export default function StreamWritableUncorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_2200
-     * @tc.name testStreamWritableUncork022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_UNCORK_2100
+     * @tc.name testStreamWritableUncork021
      * @tc.desc Verify repeated uncork at zero remains accepted and leaves the count at zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableUncork022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableUncork021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new UncorkBase();
       let first = ws.uncork();
       let second = ws.uncork();

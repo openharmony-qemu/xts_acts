@@ -162,28 +162,12 @@ export default function StreamWritableDoWriteTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_0400
      * @tc.name testStreamWritableDoWrite004
-     * @tc.desc Verify write does not trigger doWrite in corked state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testStreamWritableDoWrite004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new WritableTestBase();
-      ws.cork();
-      ws.write("buffered");
-      expect(ws.dataChunk).assertEqual('');
-      expect(ws.writableCorked).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_0500
-     * @tc.name testStreamWritableDoWrite005
      * @tc.desc Verify a string or Uint8Array write after end() reports 10200036 without reaching doWrite
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableDoWrite004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let chunks: (string | Uint8Array)[] = ["x", new Uint8Array([0x6c, 0x61, 0x74, 0x65])];
         for (let i = 0; i < chunks.length; i++) {
@@ -209,14 +193,14 @@ export default function StreamWritableDoWriteTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_0600
-     * @tc.name testStreamWritableDoWrite006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_0500
+     * @tc.name testStreamWritableDoWrite005
      * @tc.desc Verify normal doWrite does not trigger error event
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let errCaught: boolean = false;
       ws.on('error', (err: Error): void => {
@@ -227,14 +211,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_0700
-     * @tc.name testStreamWritableDoWrite007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_0600
+     * @tc.name testStreamWritableDoWrite006
      * @tc.desc Verify doWrite receives the chunk and gb18030, gb2312 or gbk encoding unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let chunks: string[] = ['测试工程师', '你好', 'Hello World'];
       let encodings: string[] = ['gb18030', 'gb2312', 'gbk'];
       for (let i = 0; i < chunks.length; i++) {
@@ -247,14 +231,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_0800
-     * @tc.name testStreamWritableDoWrite008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_0700
+     * @tc.name testStreamWritableDoWrite007
      * @tc.desc Verify Uint8Array + utf8 encoding, doWrite receives correct parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let data = new Uint8Array([49, 50, 51]);
       let result = ws.write(data);
@@ -266,14 +250,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_0900
-     * @tc.name testStreamWritableDoWrite009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_0800
+     * @tc.name testStreamWritableDoWrite008
      * @tc.desc Verify empty string (0 bytes)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let errorCaught: boolean = false;
       try {
@@ -287,14 +271,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1000
-     * @tc.name testStreamWritableDoWrite010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_0900
+     * @tc.name testStreamWritableDoWrite009
      * @tc.desc Verify doWrite receives multi-language, emoji, symbol and control-character chunks unchanged with default utf-8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let chunks: string[] = ['a', '\0', '﻿', '😀测试', '<script>alert(1)</script>',
         'тест', '�', '\uDC04', '!@#$%^&*()', '\t', '😀',
         'テスト', 'الاختبار'];
@@ -310,14 +294,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1100
-     * @tc.name testStreamWritableDoWrite011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1000
+     * @tc.name testStreamWritableDoWrite010
      * @tc.desc Verify 16384-byte ASCII string (equal to high water mark)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let chunk: string = 'a'.repeat(16384);
       let result = ws.write(chunk);
@@ -325,14 +309,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1200
-     * @tc.name testStreamWritableDoWrite012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1100
+     * @tc.name testStreamWritableDoWrite011
      * @tc.desc Verify write returns false for strings of 16385, 65535 and 100000 characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let lengths: int[] = [16385, 65535, 100000];
       for (let i = 0; i < lengths.length; i++) {
         let ws = new WritableTestBase();
@@ -343,14 +327,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1300
-     * @tc.name testStreamWritableDoWrite013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1200
+     * @tc.name testStreamWritableDoWrite012
      * @tc.desc Verify Uint8Array(0) construction (0 bytes)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let data = new Uint8Array(0);
       let result = ws.write(data);
@@ -359,14 +343,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1400
-     * @tc.name testStreamWritableDoWrite014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1300
+     * @tc.name testStreamWritableDoWrite013
      * @tc.desc Verify Uint8Array(1) single zero byte
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let data = new Uint8Array(1);
       let result = ws.write(data);
@@ -376,14 +360,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1500
-     * @tc.name testStreamWritableDoWrite015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1400
+     * @tc.name testStreamWritableDoWrite014
      * @tc.desc Verify Uint8Array(16384) equal to high water mark
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let data = new Uint8Array(16384);
       let result = ws.write(data);
@@ -392,14 +376,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1600
-     * @tc.name testStreamWritableDoWrite016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1500
+     * @tc.name testStreamWritableDoWrite015
      * @tc.desc Verify write returns false for Uint8Array of 16385, 65536 and 102400 bytes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sizes: int[] = [16385, 65536, 102400];
       for (let i = 0; i < sizes.length; i++) {
         let ws = new WritableTestBase();
@@ -410,14 +394,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1700
-     * @tc.name testStreamWritableDoWrite017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1600
+     * @tc.name testStreamWritableDoWrite016
      * @tc.desc Verify Error passed to the doWrite callback reaches the write callback error parameter with default encoding
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableDoWrite016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WriteErrorCallbackBase();
         let errReported: boolean = false;
@@ -441,14 +425,14 @@ export default function StreamWritableDoWriteTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1800
-     * @tc.name testStreamWritableDoWrite018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1700
+     * @tc.name testStreamWritableDoWrite017
      * @tc.desc Verify doWrite receives the GB series, empty, ascii and utf-8 encoding values unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let chunks: string[] = ['测试', '测试', '测试', '测试', 'test',
         'test', 'test', 'test'];
       let encodings: string[] = ['gbk', 'gb18030', 'gb2312', 'GBK', '', 'ascii', 'UTF-8', 'utf-8'];
@@ -461,14 +445,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1900
-     * @tc.name testStreamWritableDoWrite019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1800
+     * @tc.name testStreamWritableDoWrite018
      * @tc.desc Verify callback as arrow function
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WriteCountBase();
       ws.write("data", "utf8", (err?: Error): void => {
       });
@@ -476,14 +460,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2000
-     * @tc.name testStreamWritableDoWrite020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_1900
+     * @tc.name testStreamWritableDoWrite019
      * @tc.desc Verify callback as regular function
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableDoWrite019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WriteCountBase();
         let writeCount: int = 0;
@@ -502,14 +486,14 @@ export default function StreamWritableDoWriteTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2100
-     * @tc.name testStreamWritableDoWrite021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2000
+     * @tc.name testStreamWritableDoWrite020
      * @tc.desc Verify write in corked state does not trigger doWrite
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WriteCountBase();
       ws.cork();
       ws.write("data1");
@@ -527,14 +511,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2200
-     * @tc.name testStreamWritableDoWrite022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2100
+     * @tc.name testStreamWritableDoWrite021
      * @tc.desc Verify cork nested x2 then uncork gradually resets to zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       ws.cork();
       ws.cork();
@@ -548,14 +532,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2300
-     * @tc.name testStreamWritableDoWrite023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2200
+     * @tc.name testStreamWritableDoWrite022
      * @tc.desc Verify end(chunk) triggers doWrite then stream ends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       ws.end("final chunk", "utf8");
       expect(ws.dataChunk as string).assertEqual("final chunk");
@@ -563,14 +547,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2400
-     * @tc.name testStreamWritableDoWrite024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2300
+     * @tc.name testStreamWritableDoWrite023
      * @tc.desc Verify callback passing Error in doWrite triggers error event
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableDoWrite023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WriteErrorCallbackBase();
         let errName: string = '';
@@ -589,14 +573,14 @@ export default function StreamWritableDoWriteTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2500
-     * @tc.name testStreamWritableDoWrite025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2400
+     * @tc.name testStreamWritableDoWrite024
      * @tc.desc Verify doWrite receives all-zero, all-0xFF, control-character and UTF-8 encoded CJK Uint8Array chunks byte for byte
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let datas: Uint8Array[] = [new Uint8Array([0x00, 0x00, 0x00, 0x00, 0x00]),
         new Uint8Array([0xFF, 0xFF, 0xFF, 0xFF, 0xFF]), new Uint8Array([0x0A, 0x0D]),
         new Uint8Array([0xE4, 0xB8, 0xAD])];
@@ -613,14 +597,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2600
-     * @tc.name testStreamWritableDoWrite026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2500
+     * @tc.name testStreamWritableDoWrite025
      * @tc.desc Verify doWrite subclass implementation throws error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WriteThrowBase();
       let errCaught: boolean = false;
       ws.on('error', (err: Error): void => {
@@ -636,14 +620,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2700
-     * @tc.name testStreamWritableDoWrite027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2600
+     * @tc.name testStreamWritableDoWrite026
      * @tc.desc Verify doWrite subclass implementation does not call callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WriteNoCallbackBase();
       ws.write("test");
       expect(ws.dataChunk as string).assertEqual("test");
@@ -651,14 +635,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2800
-     * @tc.name testStreamWritableDoWrite028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2700
+     * @tc.name testStreamWritableDoWrite027
      * @tc.desc Verify chunk of number type (type error)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       try {
         ws.write(123 as Object as string);
@@ -669,14 +653,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2900
-     * @tc.name testStreamWritableDoWrite029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2800
+     * @tc.name testStreamWritableDoWrite028
      * @tc.desc Verify encoding is invalid "xyz123"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       try {
         ws.write("test", "xyz123");
@@ -688,14 +672,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_3000
-     * @tc.name testStreamWritableDoWrite030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_2900
+     * @tc.name testStreamWritableDoWrite029
      * @tc.desc Verify calling write without doWrite implementation triggers 10200035
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WriteNoImplBase();
       try {
         ws.write("data");
@@ -707,14 +691,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_3100
-     * @tc.name testStreamWritableDoWrite031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_3000
+     * @tc.name testStreamWritableDoWrite030
      * @tc.desc Verify calling end(chunk) without doWrite implementation triggers 10200035
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableDoWrite030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WriteNoImplBase();
       try {
         ws.end("data");
@@ -726,14 +710,14 @@ export default function StreamWritableDoWriteTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_3200
-     * @tc.name testStreamWritableDoWrite032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_3100
+     * @tc.name testStreamWritableDoWrite031
      * @tc.desc Verify calling callback synchronously twice in doWrite triggers 10200037
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableDoWrite031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WriteDoubleCallbackBase();
         let errName: string = '';
@@ -752,14 +736,14 @@ export default function StreamWritableDoWriteTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_3300
-     * @tc.name testStreamWritableDoWrite033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_DO_WRITE_3200
+     * @tc.name testStreamWritableDoWrite032
      * @tc.desc Verify doWrite receives Uint8Array length and both boundary byte values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableDoWrite033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableDoWrite032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         let dataChunk: Uint8Array = new Uint8Array(0);

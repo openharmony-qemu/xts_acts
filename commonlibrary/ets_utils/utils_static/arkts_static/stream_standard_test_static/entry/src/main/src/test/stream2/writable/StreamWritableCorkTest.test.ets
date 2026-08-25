@@ -354,28 +354,12 @@ export default function StreamWritableCorkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_1400
      * @tc.name testStreamWritableCork014
-     * @tc.desc Verify corked is 5 after 5 consecutive corks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testStreamWritableCork014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new WritableTestBase();
-      for (let i = 0; i < 5; i++) {
-        ws.cork();
-      }
-      expect(ws.writableCorked).assertEqual(5);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_1500
-     * @tc.name testStreamWritableCork015
      * @tc.desc Verify 100 corks require 100 uncorks before the buffered chunk reaches doWrite
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       for (let i = 0; i < 100; i++) {
         ws.cork();
@@ -392,14 +376,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_1600
-     * @tc.name testStreamWritableCork016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_1500
+     * @tc.name testStreamWritableCork015
      * @tc.desc Verify cork takes effect when writableLength is 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       expect(ws.writableLength).assertEqual(0);
       ws.cork();
@@ -407,14 +391,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_1700
-     * @tc.name testStreamWritableCork017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_1600
+     * @tc.name testStreamWritableCork016
      * @tc.desc Verify cork takes effect when writableLength reaches highWaterMark
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       ws.write(new Uint8Array(16384));
       ws.cork();
@@ -422,14 +406,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_1800
-     * @tc.name testStreamWritableCork018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_1700
+     * @tc.name testStreamWritableCork017
      * @tc.desc Verify cork takes effect under default highWaterMark (16384)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       expect(ws.writableHighWatermark).assertEqual(16384);
       ws.cork();
@@ -437,14 +421,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_1900
-     * @tc.name testStreamWritableCork019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_1800
+     * @tc.name testStreamWritableCork018
      * @tc.desc Verify a corked stream buffers plain, emoji, XSS and embedded-null writes without forwarding them to doWrite
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let chunks: string[] = ['buffered', '😀🚀', '<script>alert(1)</script>', '\x00'];
       for (let i = 0; i < chunks.length; i++) {
         let ws = new WritableTestBase();
@@ -455,14 +439,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2000
-     * @tc.name testStreamWritableCork020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_1900
+     * @tc.name testStreamWritableCork019
      * @tc.desc Verify multiple consecutive writes are all buffered in corked state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       ws.cork();
       ws.write("a");
@@ -472,14 +456,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2100
-     * @tc.name testStreamWritableCork021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2000
+     * @tc.name testStreamWritableCork020
      * @tc.desc Verify cork count resets to zero after cork and uncork, then cork counts anew
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       ws.cork();
       expect(ws.writableCorked).assertEqual(1);
@@ -490,14 +474,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2200
-     * @tc.name testStreamWritableCork022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2100
+     * @tc.name testStreamWritableCork021
      * @tc.desc Verify writing large data (10KB) in corked state is fully buffered
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       ws.cork();
       ws.write(new Uint8Array(10240));
@@ -505,14 +489,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2300
-     * @tc.name testStreamWritableCork023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2200
+     * @tc.name testStreamWritableCork022
      * @tc.desc Verify end forcibly flushes and resets cork count to zero under multi-level cork nesting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       ws.cork();
       ws.cork();
@@ -523,14 +507,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2400
-     * @tc.name testStreamWritableCork024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2300
+     * @tc.name testStreamWritableCork023
      * @tc.desc Verify drain event behavior in corked state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let drainFired: boolean = false;
       ws.on('drain', (): void => {
@@ -543,14 +527,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2500
-     * @tc.name testStreamWritableCork025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2400
+     * @tc.name testStreamWritableCork024
      * @tc.desc Verify writing Chinese data with gbk encoding in corked state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       ws.cork();
       ws.write("测试", "gbk");
@@ -558,14 +542,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2600
-     * @tc.name testStreamWritableCork026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2500
+     * @tc.name testStreamWritableCork025
      * @tc.desc Verify writing data with different encodings multiple times in corked state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       ws.cork();
       ws.write("hello", "utf-8");
@@ -574,14 +558,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2700
-     * @tc.name testStreamWritableCork027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2600
+     * @tc.name testStreamWritableCork026
      * @tc.desc Verify uncork reverses one cork level and leaves one level buffered
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       expect(ws.cork()).assertTrue();
       expect(ws.cork()).assertTrue();
@@ -590,14 +574,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2800
-     * @tc.name testStreamWritableCork028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2700
+     * @tc.name testStreamWritableCork027
      * @tc.desc Verify cork after end in a corked state is accepted and increments the cleared count
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       ws.cork();
       expect(ws.writableCorked).assertEqual(1);
@@ -608,14 +592,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2900
-     * @tc.name testStreamWritableCork029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2800
+     * @tc.name testStreamWritableCork028
      * @tc.desc Verify uncork clears the only cork level
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       expect(ws.cork()).assertTrue();
       expect(ws.uncork()).assertTrue();
@@ -623,14 +607,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_3000
-     * @tc.name testStreamWritableCork030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_2900
+     * @tc.name testStreamWritableCork029
      * @tc.desc Verify cork called as a plain function (this binding lost)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let corkFn: Function = ws.cork;
       try {
@@ -643,14 +627,14 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_3100
-     * @tc.name testStreamWritableCork031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_3000
+     * @tc.name testStreamWritableCork030
      * @tc.desc Verify cork called via call bound to non-Writable plain object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let corkFn: Function = ws.cork;
       let ret: boolean = corkFn.unsafeCall({} as Object) as boolean;
@@ -658,28 +642,28 @@ export default function StreamWritableCorkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_3200
-     * @tc.name testStreamWritableCork032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_3100
+     * @tc.name testStreamWritableCork031
      * @tc.desc Verify cork called through unsafeCall with a null argument
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let result: boolean = ws.cork.unsafeCall(null) as boolean;
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_3300
-     * @tc.name testStreamWritableCork033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CORK_3200
+     * @tc.name testStreamWritableCork032
      * @tc.desc Verify nested cork and uncork use reference counting before flushing writes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableCork033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableCork032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       ws.cork();
       ws.cork();

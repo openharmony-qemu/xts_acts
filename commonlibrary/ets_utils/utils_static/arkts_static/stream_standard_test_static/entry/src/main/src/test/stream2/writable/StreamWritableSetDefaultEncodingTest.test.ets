@@ -92,26 +92,12 @@ export default function StreamWritableSetDefaultEncodingTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0200
      * @tc.name testStreamWritableSetDefaultEncoding002
-     * @tc.desc Verify setting empty string returns false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testStreamWritableSetDefaultEncoding002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new SetDefaultEncodingTestBase();
-      let result = ws.setDefaultEncoding("");
-      expect(result).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0300
-     * @tc.name testStreamWritableSetDefaultEncoding003
      * @tc.desc Verify setDefaultEncoding rejects unsupported single letter, space, tab, Japanese and base64 encodings with BusinessError 401
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableSetDefaultEncoding003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableSetDefaultEncoding002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let encodings: string[] = ['a', ' ', '\t', 'テスト', 'base64'];
       for (let i = 0; i < encodings.length; i++) {
         let ws = new SetDefaultEncodingTestBase();
@@ -128,14 +114,14 @@ export default function StreamWritableSetDefaultEncodingTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0400
-     * @tc.name testStreamWritableSetDefaultEncoding004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0300
+     * @tc.name testStreamWritableSetDefaultEncoding003
      * @tc.desc Verify null parameter is rejected with ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableSetDefaultEncoding004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableSetDefaultEncoding003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new SetDefaultEncodingTestBase();
       let result: boolean = false;
       try {
@@ -148,14 +134,14 @@ export default function StreamWritableSetDefaultEncodingTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0500
-     * @tc.name testStreamWritableSetDefaultEncoding005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0400
+     * @tc.name testStreamWritableSetDefaultEncoding004
      * @tc.desc Verify setDefaultEncoding remains usable after end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableSetDefaultEncoding005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableSetDefaultEncoding004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new SetDefaultEncodingTestBase();
       ws.end();
       let result = ws.setDefaultEncoding("utf8");
@@ -163,14 +149,14 @@ export default function StreamWritableSetDefaultEncodingTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0600
-     * @tc.name testStreamWritableSetDefaultEncoding006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0500
+     * @tc.name testStreamWritableSetDefaultEncoding005
      * @tc.desc Verify 65536-character long string is rejected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableSetDefaultEncoding006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableSetDefaultEncoding005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new SetDefaultEncodingTestBase();
       let longStr = 'x'.repeat(65536);
       let result: boolean = false;
@@ -185,14 +171,14 @@ export default function StreamWritableSetDefaultEncodingTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0700
-     * @tc.name testStreamWritableSetDefaultEncoding007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0600
+     * @tc.name testStreamWritableSetDefaultEncoding006
      * @tc.desc Verify set encoding before write is used during write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableSetDefaultEncoding007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableSetDefaultEncoding006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new SetDefaultEncodingTestBase();
       let setResult = ws.setDefaultEncoding("gbk");
       expect(setResult).assertTrue();
@@ -201,14 +187,14 @@ export default function StreamWritableSetDefaultEncodingTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0800
-     * @tc.name testStreamWritableSetDefaultEncoding008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0700
+     * @tc.name testStreamWritableSetDefaultEncoding007
      * @tc.desc Verify switching encoding after write does not affect already written data
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableSetDefaultEncoding008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableSetDefaultEncoding007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new MultiEncodingTestBase();
       ws.write("hello", "utf8");
       ws.setDefaultEncoding("gbk");
@@ -218,14 +204,14 @@ export default function StreamWritableSetDefaultEncodingTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0900
-     * @tc.name testStreamWritableSetDefaultEncoding009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0800
+     * @tc.name testStreamWritableSetDefaultEncoding008
      * @tc.desc Verify set encoding in corked state takes effect after uncork
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableSetDefaultEncoding009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableSetDefaultEncoding008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new SetDefaultEncodingTestBase();
       ws.cork();
       let setResult = ws.setDefaultEncoding("gbk");
@@ -236,14 +222,14 @@ export default function StreamWritableSetDefaultEncodingTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1000
-     * @tc.name testStreamWritableSetDefaultEncoding010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_0900
+     * @tc.name testStreamWritableSetDefaultEncoding009
      * @tc.desc Verify repeated setDefaultEncoding is idempotent and last wins
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableSetDefaultEncoding010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableSetDefaultEncoding009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new SetDefaultEncodingTestBase();
       expect(ws.setDefaultEncoding("utf8")).assertTrue();
       expect(ws.setDefaultEncoding("gbk")).assertTrue();
@@ -252,14 +238,14 @@ export default function StreamWritableSetDefaultEncodingTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1100
-     * @tc.name testStreamWritableSetDefaultEncoding011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1000
+     * @tc.name testStreamWritableSetDefaultEncoding010
      * @tc.desc Verify setDefaultEncoding("utf8") returns the boolean value true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableSetDefaultEncoding011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableSetDefaultEncoding010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new SetDefaultEncodingTestBase();
       let result = ws.setDefaultEncoding("utf8");
       expect(result).assertTrue();
@@ -267,14 +253,14 @@ export default function StreamWritableSetDefaultEncodingTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1200
-     * @tc.name testStreamWritableSetDefaultEncoding012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1100
+     * @tc.name testStreamWritableSetDefaultEncoding011
      * @tc.desc Verify explicit per-write encoding overrides default encoding
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableSetDefaultEncoding012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableSetDefaultEncoding011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new MultiEncodingTestBase();
       ws.setDefaultEncoding("gbk");
       ws.write("hello", "utf8");
@@ -282,28 +268,28 @@ export default function StreamWritableSetDefaultEncodingTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1300
-     * @tc.name testStreamWritableSetDefaultEncoding013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1200
+     * @tc.name testStreamWritableSetDefaultEncoding012
      * @tc.desc Verify empty string is still rejected after a valid set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableSetDefaultEncoding013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableSetDefaultEncoding012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new SetDefaultEncodingTestBase();
       expect(ws.setDefaultEncoding("utf8")).assertTrue();
       expect(ws.setDefaultEncoding("")).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1400
-     * @tc.name testStreamWritableSetDefaultEncoding014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1300
+     * @tc.name testStreamWritableSetDefaultEncoding013
      * @tc.desc Verify boolean parameter is rejected with ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableSetDefaultEncoding014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableSetDefaultEncoding013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new SetDefaultEncodingTestBase();
       let result: boolean = false;
       try {
@@ -316,14 +302,14 @@ export default function StreamWritableSetDefaultEncodingTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1500
-     * @tc.name testStreamWritableSetDefaultEncoding015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1400
+     * @tc.name testStreamWritableSetDefaultEncoding014
      * @tc.desc Verify multibyte content write still uses the default encoding
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableSetDefaultEncoding015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableSetDefaultEncoding014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new SetDefaultEncodingTestBase();
       let setResult = ws.setDefaultEncoding("utf8");
       expect(setResult).assertTrue();
@@ -332,9 +318,23 @@ export default function StreamWritableSetDefaultEncodingTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1500
+     * @tc.name testStreamWritableSetDefaultEncoding015
+     * @tc.desc Verify setting the same encoding twice returns true each time
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testStreamWritableSetDefaultEncoding015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ws = new SetDefaultEncodingTestBase();
+      expect(ws.setDefaultEncoding("utf8")).assertTrue();
+      expect(ws.setDefaultEncoding("utf8")).assertTrue();
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1600
      * @tc.name testStreamWritableSetDefaultEncoding016
-     * @tc.desc Verify setting the same encoding twice returns true each time
+     * @tc.desc Verify multiple distinct valid encodings can be set sequentially
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -342,33 +342,19 @@ export default function StreamWritableSetDefaultEncodingTest(): void {
     it('testStreamWritableSetDefaultEncoding016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new SetDefaultEncodingTestBase();
       expect(ws.setDefaultEncoding("utf8")).assertTrue();
-      expect(ws.setDefaultEncoding("utf8")).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1700
-     * @tc.name testStreamWritableSetDefaultEncoding017
-     * @tc.desc Verify multiple distinct valid encodings can be set sequentially
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testStreamWritableSetDefaultEncoding017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new SetDefaultEncodingTestBase();
-      expect(ws.setDefaultEncoding("utf8")).assertTrue();
       expect(ws.setDefaultEncoding("gb2312")).assertTrue();
       expect(ws.setDefaultEncoding("gb18030")).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1800
-     * @tc.name testStreamWritableSetDefaultEncoding018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_SET_DEFAULT_ENCODING_1700
+     * @tc.name testStreamWritableSetDefaultEncoding017
      * @tc.desc Verify mixed-case uTf-8 encoding name is accepted
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableSetDefaultEncoding018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableSetDefaultEncoding017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new SetDefaultEncodingTestBase();
       let result: boolean = false;
       result = ws.setDefaultEncoding('uTf-8');

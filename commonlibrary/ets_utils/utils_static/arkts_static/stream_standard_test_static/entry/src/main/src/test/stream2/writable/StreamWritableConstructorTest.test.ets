@@ -352,45 +352,73 @@ export default function StreamWritableConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1100
      * @tc.name testStreamWritableConstructor011
-     * @tc.desc Verify three distinct subclasses exhibit polymorphic write behavior differences while sharing Writable base type
+     * @tc.desc Verify doWrite and doWritev subclasses dispatch writes differently while sharing Writable base type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testStreamWritableConstructor011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let withDoWrite = new WritableTestBase();
-      let withoutDoWrite = new WritableNoDoWrite();
       let withDoWritev = new WritableWithDoWritev();
       expect(withDoWrite.writable).assertTrue();
-      expect(withoutDoWrite.writable).assertTrue();
       expect(withDoWritev.writable).assertTrue();
       withDoWrite.write('polymorphism-a');
       expect(withDoWrite.dataChunk).assertEqual('polymorphism-a');
-      try {
-        withoutDoWrite.write('polymorphism-b');
-        expect().assertFail();
-      } catch (e) {
-        expect(e.code).assertEqual(10200035);
-      }
       withDoWritev.cork();
       withDoWritev.write('batch-first');
       withDoWritev.write('batch-second');
       withDoWritev.uncork();
       expect(withDoWritev.chunks).assertEqual('batch-first');
       expect(withDoWrite.writable).assertTrue();
-      expect(withoutDoWrite.writable).assertFalse();
       expect(withDoWritev.writable).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1200
      * @tc.name testStreamWritableConstructor012
-     * @tc.desc Verify 100 independently constructed instances maintain per-instance write data isolation with no cross-instance contamination
+     * @tc.desc Verify writing to a subclass without doWrite reports 10200035 and clears writable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testStreamWritableConstructor012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let withoutDoWrite = new WritableNoDoWrite();
+      expect(withoutDoWrite.writable).assertTrue();
+      try {
+        withoutDoWrite.write('polymorphism-b');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200035);
+      }
+      expect(withoutDoWrite.writable).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1300
+     * @tc.name testStreamWritableConstructor013
+     * @tc.desc Verify every constructed subclass reports writableObjectMode false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testStreamWritableConstructor013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let withDoWrite = new WritableTestBase();
+      let withoutDoWrite = new WritableNoDoWrite();
+      let withDoWritev = new WritableWithDoWritev();
+      expect(withDoWrite.writableObjectMode).assertFalse();
+      expect(withoutDoWrite.writableObjectMode).assertFalse();
+      expect(withDoWritev.writableObjectMode).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1400
+     * @tc.name testStreamWritableConstructor014
+     * @tc.desc Verify 100 independently constructed instances maintain per-instance write data isolation with no cross-instance contamination
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testStreamWritableConstructor014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let instances: Array<WritableTestBase> = [];
       for (let i = 0; i < 100; i++) {
         let ws = new WritableTestBase();
@@ -408,14 +436,14 @@ export default function StreamWritableConstructorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1300
-     * @tc.name testStreamWritableConstructor013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1500
+     * @tc.name testStreamWritableConstructor015
      * @tc.desc Verify end immediately after construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableConstructor015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         let writableAtFinish: boolean = true;
@@ -431,14 +459,14 @@ export default function StreamWritableConstructorTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1400
-     * @tc.name testStreamWritableConstructor014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1600
+     * @tc.name testStreamWritableConstructor016
      * @tc.desc Verify end after construction then construct a new instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableConstructor016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws1 = new WritableTestBase();
         let finishedAtFinish: boolean = false;
@@ -458,14 +486,14 @@ export default function StreamWritableConstructorTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1500
-     * @tc.name testStreamWritableConstructor015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1700
+     * @tc.name testStreamWritableConstructor017
      * @tc.desc Verify a locally constructed writable inside a closure completes full write-cork-uncork-end-finish lifecycle and returns collected data
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableConstructor017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let createAndUse = (): WritableTestBase => {
           let ws = new WritableTestBase();
@@ -490,14 +518,14 @@ export default function StreamWritableConstructorTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1600
-     * @tc.name testStreamWritableConstructor016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1800
+     * @tc.name testStreamWritableConstructor018
      * @tc.desc Verify writableCorked counter state machine increments on cork, decrements on uncork, and clamps at 0 on underflow
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableConstructor018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       expect(ws.writableCorked).assertEqual(0);
       ws.cork();
@@ -517,14 +545,14 @@ export default function StreamWritableConstructorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1700
-     * @tc.name testStreamWritableConstructor017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1900
+     * @tc.name testStreamWritableConstructor019
      * @tc.desc Verify writableLength tracks buffered bytes under cork, resets to 0 on uncork, and stays 0 after async doWrite consumption
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableConstructor019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         expect(ws.writableLength).assertEqual(0);
@@ -550,14 +578,14 @@ export default function StreamWritableConstructorTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1800
-     * @tc.name testStreamWritableConstructor018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2000
+     * @tc.name testStreamWritableConstructor020
      * @tc.desc Verify writing data immediately after construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableConstructor020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let result = ws.write("hello");
       expect(result).assertTrue();
@@ -566,14 +594,14 @@ export default function StreamWritableConstructorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_1900
-     * @tc.name testStreamWritableConstructor019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2100
+     * @tc.name testStreamWritableConstructor021
      * @tc.desc Verify a newly constructed writable enters the ended state after end() without data
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableConstructor021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         expect(ws.writableEnded).assertFalse();
@@ -598,28 +626,28 @@ export default function StreamWritableConstructorTest(): void {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2000
-     * @tc.name testStreamWritableConstructor020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2200
+     * @tc.name testStreamWritableConstructor022
      * @tc.desc Verify corking into buffered mode immediately after construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableConstructor022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       expect(ws.cork()).assertTrue();
       expect(ws.writableCorked).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2100
-     * @tc.name testStreamWritableConstructor021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2300
+     * @tc.name testStreamWritableConstructor023
      * @tc.desc Verify registering event listeners with on immediately after construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableConstructor023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let drainCalled: boolean = false;
       ws.on('drain', (): void => {
@@ -629,14 +657,14 @@ export default function StreamWritableConstructorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2200
-     * @tc.name testStreamWritableConstructor022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2400
+     * @tc.name testStreamWritableConstructor024
      * @tc.desc Verify setDefaultEncoding immediately after construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableConstructor024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       ws.setDefaultEncoding('utf-8');
       let result = ws.write("test");
@@ -644,14 +672,14 @@ export default function StreamWritableConstructorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2300
-     * @tc.name testStreamWritableConstructor023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2500
+     * @tc.name testStreamWritableConstructor025
      * @tc.desc Verify instanceof inheritance hierarchy: subclass is Writable and Object, but not Readable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableConstructor025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       let isWritable: boolean = isInstanceOfStreamWritable(ws);
       expect(isWritable).assertTrue();
@@ -662,31 +690,14 @@ export default function StreamWritableConstructorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2400
-     * @tc.name testStreamWritableConstructor024
-     * @tc.desc Verify every constructed subclass reports writableObjectMode false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testStreamWritableConstructor024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let withDoWrite = new WritableTestBase();
-      let withoutDoWrite = new WritableNoDoWrite();
-      let withDoWritev = new WritableWithDoWritev();
-      expect(withDoWrite.writableObjectMode).assertFalse();
-      expect(withoutDoWrite.writableObjectMode).assertFalse();
-      expect(withDoWritev.writableObjectMode).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2500
-     * @tc.name testStreamWritableConstructor025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2600
+     * @tc.name testStreamWritableConstructor026
      * @tc.desc Verify writableHighWatermark is always 16384
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableConstructor026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableTestBase();
       expect(ws.writableHighWatermark).assertEqual(16384);
       ws.write('highwatermark-test');
@@ -703,14 +714,14 @@ export default function StreamWritableConstructorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2600
-     * @tc.name testStreamWritableConstructor026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2700
+     * @tc.name testStreamWritableConstructor027
      * @tc.desc Verify stream instances stored in collections maintain reference identity, typeof classification and constructor.name consistency
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableConstructor027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws1 = new WritableTestBase();
       let ws2 = new WritableTestBase();
       let map = new Map<WritableTestBase, string>();
@@ -729,14 +740,14 @@ export default function StreamWritableConstructorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2700
-     * @tc.name testStreamWritableConstructor027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2800
+     * @tc.name testStreamWritableConstructor028
      * @tc.desc Verify a constructed subclass batches payloads through its write-vector hook
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableConstructor028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableWithDoWritev();
       ws.cork();
       expect(ws.write('constructor-first')).assertTrue();
@@ -747,14 +758,14 @@ export default function StreamWritableConstructorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2800
-     * @tc.name testStreamWritableConstructor028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2900
+     * @tc.name testStreamWritableConstructor029
      * @tc.desc Verify doInitialize in subclass throws an error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableConstructor029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let ws = new WritableInitThrow();
         ws.write("test");
@@ -765,14 +776,14 @@ export default function StreamWritableConstructorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_2900
-     * @tc.name testStreamWritableConstructor029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_3000
+     * @tc.name testStreamWritableConstructor030
      * @tc.desc Verify subclass doInitialize is invoked during construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableConstructor030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       WritableInitNoCallback.initStarted = false;
       let ws = new WritableInitNoCallback();
       expect(WritableInitNoCallback.initStarted).assertTrue();
@@ -780,28 +791,28 @@ export default function StreamWritableConstructorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_3000
-     * @tc.name testStreamWritableConstructor030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_3100
+     * @tc.name testStreamWritableConstructor031
      * @tc.desc Verify construction remains writable after doInitialize reports an Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStreamWritableConstructor031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WritableInitError();
       expect(ws.writable).assertTrue();
       expect(ws.writableEnded).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_3100
-     * @tc.name testStreamWritableConstructor031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_CONSTRUCTOR_3200
+     * @tc.name testStreamWritableConstructor032
      * @tc.desc Verify a constructed writable accepts final data and completes the finish lifecycle
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableConstructor031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testStreamWritableConstructor032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         let dataChunkAtFinish: string = '';
