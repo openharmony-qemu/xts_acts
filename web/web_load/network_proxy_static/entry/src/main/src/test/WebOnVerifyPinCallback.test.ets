@@ -33,7 +33,7 @@ export default function webOnVerifyPinCallback():void {
 
     /**
      * @tc.name   testOnVerifyPinCallbackInterfaceCallStatic
-     * @tc.number SUB_WEB_ONVERIFYPINCALLBACK_0100
+     * @tc.number SUB_WEB_ONVERIFYPIN_CALLBACK_0100
      * @tc.desc   OnVerifyPinCallback interface call test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function webOnVerifyPinCallback():void {
 
     /**
      * @tc.name   testOnVerifyPinEventHandlerStatic
-     * @tc.number SUB_WEB_ONVERIFYPINCALLBACK_0200
+     * @tc.number SUB_WEB_ONVERIFYPIN_CALLBACK_0200
      * @tc.desc   OnVerifyPinCallback event handler test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -81,7 +81,7 @@ export default function webOnVerifyPinCallback():void {
 
     /**
      * @tc.name   testOnVerifyPinEventIdentityStatic
-     * @tc.number SUB_WEB_ONVERIFYPINCALLBACK_0300
+     * @tc.number SUB_WEB_ONVERIFYPIN_CALLBACK_0300
      * @tc.desc   OnVerifyPinCallback event identity test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function webOnVerifyPinCallback():void {
 
     /**
      * @tc.name   testOnVerifyPinHandlerConfirmSuccessStatic
-     * @tc.number SUB_WEB_ONVERIFYPINCALLBACK_0400
+     * @tc.number SUB_WEB_ONVERIFYPIN_CALLBACK_0400
      * @tc.desc   VerifyPinHandler confirm PIN_VERIFICATION_SUCCESS test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -129,7 +129,7 @@ export default function webOnVerifyPinCallback():void {
 
     /**
      * @tc.name   testOnVerifyPinHandlerConfirmFailedStatic
-     * @tc.number SUB_WEB_ONVERIFYPINCALLBACK_0500
+     * @tc.number SUB_WEB_ONVERIFYPIN_CALLBACK_0500
      * @tc.desc   VerifyPinHandler confirm PIN_VERIFICATION_FAILED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -201,7 +201,7 @@ export default function webOnVerifyPinCallback():void {
 
     /**
      * @tc.name   testOnVerifyPinCallbackReturnVoidStatic
-     * @tc.number SUB_WEB_ONVERIFYPINCALLBACK_0800
+     * @tc.number SUB_WEB_ONVERIFYPIN_CALLBACK_0800
      * @tc.desc   OnVerifyPinCallback return void test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -225,7 +225,7 @@ export default function webOnVerifyPinCallback():void {
 
     /**
      * @tc.name   testOnVerifyPinChainedReturnStatic
-     * @tc.number SUB_WEB_ONVERIFYPINCALLBACK_0900
+     * @tc.number SUB_WEB_ONVERIFYPIN_CALLBACK_0900
      * @tc.desc   onVerifyPin chained return this test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -249,7 +249,7 @@ export default function webOnVerifyPinCallback():void {
 
     /**
      * @tc.name   emitOnSwitchNextPageStatic
-     * @tc.number SUB_WEB_ONVERIFYPINCALLBACK_1000
+     * @tc.number SUB_WEB_ONVERIFYPIN_CALLBACK_1000
      * @tc.desc   emitonSwitchNextPage test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
