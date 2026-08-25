@@ -57,8 +57,10 @@ function dataReceive_on_callback(data: ArrayBuffer) {
 
 function dataEnd_on_callback() {
   isONEventDataEnd +=1;
+  dataEnd_on_callback.isONEventDataEnd += 1;
   console.log(" dataEnd_on_callback callback function");
 }
+dataEnd_on_callback.isONEventDataEnd = 0;
 
 function dataReceiveProgress_on_callback(data: http.DataReceiveProgressInfo) {
   isONEventDataReceiveProgress +=1;
@@ -69,12 +71,20 @@ function dataReceiveProgress_on_callback(data: http.DataReceiveProgressInfo) {
     " , dataReceiveProgress_on_callback totalSize: " + JSON.stringify(totalSize));
 }
 
+let isONEventDataEnd2 = 0;
+function dataEnd2_on_callback() {
+  isONEventDataEnd2 += 1;
+  console.log(" dataEnd2_on_callback callback function");
+}
+
 export default function HttpRequestInStreamTest() {
   describe("HttpRequestInStreamTest", () => {
     beforeEach((done: Function)=>{
        isONEventDataReceive = 0;
        isONEventDataReceiveProgress = 0;
        isONEventDataEnd = 0;
+       dataEnd_on_callback.isONEventDataEnd = 0;
+       isONEventDataEnd2 = 0;
       done();
     })
 
@@ -398,7 +408,7 @@ export default function HttpRequestInStreamTest() {
           done();
         });
       } catch (error) {
-        console.log(caseName + " : error = " + JSON.stringify(error));
+        console.log(`${caseName} : error = ${JSON.stringify(error)}`);
         ExpectFail();
         done();
       }
@@ -432,7 +442,7 @@ export default function HttpRequestInStreamTest() {
           done();
         });
       } catch (error) {
-        console.log(caseName + " : error = " + JSON.stringify(error));
+        console.log(`${caseName} : error = ${JSON.stringify(error)}`);
         ExpectFail();
         done();
       }
@@ -536,6 +546,66 @@ export default function HttpRequestInStreamTest() {
         console.error(`${caseName} outer catch err is ` + JSON.stringify(error));
         ExpectFail();
         console.info(`${caseName}---end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyHttpRequestOnDataEndReturnValue0100
+     * @tc.number SUB_Telephony_HttpRequest_On_dataEnd_ReturnValue_0100
+     * @tc.desc   Test on(type: \"dataEnd\", callback: Callback<void>): void; return value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testTelephonyHttpRequestOnDataEndReturnValue0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
+      let caseName = "testTelephonyHttpRequestOnDataEndReturnValue0100";
+      console.info(`${caseName}---start`);
+      try {
+        let httpRequest = http.createHttp();
+        let ret = httpRequest.on("dataEnd", dataEnd_on_callback);
+        ExpectTrue(ret === undefined);
+        httpRequest.off("dataEnd");
+        httpRequest.destroy();
+        console.info(`${caseName}---end`);
+        done();
+      } catch (error) {
+        console.log(`${caseName} : error = ${JSON.stringify(error)}`);
+        ExpectFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyHttpRequestOnDataEndMultiCallback0100
+     * @tc.number SUB_Telephony_HttpRequest_On_dataEnd_MultiCallback_0100
+     * @tc.desc   Test on(type: \"dataEnd\", callback: Callback<void>): void; with multiple callbacks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testTelephonyHttpRequestOnDataEndMultiCallback0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
+      let caseName = "testTelephonyHttpRequestOnDataEndMultiCallback0100";
+      console.info(`${caseName}---start`);
+      try {
+        let httpRequest = http.createHttp();
+        httpRequest.on("dataEnd", dataEnd_on_callback);
+        httpRequest.requestInStream(Address_Baidu).then(async (data) =>{
+          console.info(`${caseName} isONEventDataEnd: ${isONEventDataEnd}, dataEnd_on_callback.isONEventDataEnd: ${dataEnd_on_callback.isONEventDataEnd}, data: ${data}`);
+          await sleep(200);
+          ExpectTrue(data == 200 && dataEnd_on_callback.isONEventDataEnd > 0);
+          httpRequest.off("dataEnd");
+          httpRequest.destroy();
+          console.info(`${caseName}---end`);
+          done();
+        }).catch( (err:Error)=> {
+          console.error(`${caseName} get err is `+JSON.stringify(err));
+          ExpectFail();
+          done();
+        });
+      } catch (error) {
+        console.error(`${caseName} catch err is `+JSON.stringify(error));
+        ExpectFail();
         done();
       }
     });
