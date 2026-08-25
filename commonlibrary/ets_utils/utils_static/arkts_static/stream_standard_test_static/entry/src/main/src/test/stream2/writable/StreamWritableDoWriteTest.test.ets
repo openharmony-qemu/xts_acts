@@ -420,20 +420,20 @@ export default function StreamWritableDoWriteTest(): void {
     it('testStreamWritableDoWrite017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let ws = new WriteErrorCallbackBase();
+        let errReported: boolean = false;
         let errName: string = '';
         let errMessage: string = '';
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+        await new Promise<void>((resolve: (value: void) => void): void => {
           ws.write("test", undefined, (err?: Error): void => {
             if (err !== undefined) {
+              errReported = true;
               errName = err.name;
               errMessage = err.message;
-              resolve(undefined as void);
-              return;
             }
-            reject(new Error('expected doWrite to report an error'));
-            return;
+            resolve(undefined as void);
           });
         });
+        expect(errReported).assertTrue();
         expect(errName).assertEqual("Error");
         expect(errMessage).assertEqual("write failed");
         expect(ws.dataEncoding).assertEqual("utf-8");

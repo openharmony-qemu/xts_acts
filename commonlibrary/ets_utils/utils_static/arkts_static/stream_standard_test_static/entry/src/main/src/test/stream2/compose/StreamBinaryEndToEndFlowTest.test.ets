@@ -560,7 +560,7 @@ export default function StreamBinaryEndToEndFlowTest(): void {
           expect(healthyFinished).assertTrue();
           expect(healthyText.length).assertEqual(20004);
         } catch (e) {
-          expect(false).assertFail();
+          expect().assertFail();
         }
         done();
       });

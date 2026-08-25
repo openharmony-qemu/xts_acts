@@ -336,23 +336,21 @@ export default function StreamDuplexEndTest(): void {
     it('testStreamDuplexEnd010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let d = new DuplexEndTestBase();
-        let callbackPromise =
-          new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
-            d.end("测试工程师", "gbk", (err?: Error): void => {
-              if (err !== undefined) {
-                reject(err);
-                return;
-              }
-            });
-            setTimeout((): void => {
-              resolve(undefined as void);
-            }, 0);
+        let callbackErr: boolean = false;
+        await new Promise<void>((resolve: (value: void) => void): void => {
+          d.end("测试工程师", "gbk", (err?: Error): void => {
+            if (err !== undefined) {
+              callbackErr = true;
+            }
           });
+          setTimeout((): void => {
+            resolve(undefined as void);
+          }, 0);
+        });
+        expect(callbackErr).assertFalse();
         expect(d.dataChunk).assertEqual("测试工程师");
         expect(d.dataEncoding).assertEqual("gbk");
         expect(d.writableEnded).assertTrue();
-        await callbackPromise;
-        expect(d.dataEncoding).assertEqual("gbk");
         done();
       });
 
