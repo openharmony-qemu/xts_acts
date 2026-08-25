@@ -1475,14 +1475,14 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_Location_getCurrentDistrict_perm_test_004
-     * @tc.number SUB_Location_Location_getCurrentDistrict_perm_test_004
+     * @tc.name   SUB_Location_Location_getCurrentDistrict_perm_test_0400
+     * @tc.number SUB_Location_Location_getCurrentDistrict_perm_test_0400
      * @tc.desc   Obtain current district with params of null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Location_Location_getCurrentDistrict_perm_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('SUB_Location_Location_getCurrentDistrict_perm_test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.getCurrentDistrict(null).then((res) => {
                 console.info('[lbs_js] getCurrentDistrict_perm_test_004 result: ' + JSON.stringify(res));
@@ -1511,14 +1511,14 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_Location_getCurrentDistrict_perm_test_005
-     * @tc.number SUB_Location_Location_getCurrentDistrict_perm_test_005
+     * @tc.name   SUB_Location_Location_getCurrentDistrict_perm_test_0500
+     * @tc.number SUB_Location_Location_getCurrentDistrict_perm_test_0500
      * @tc.desc   Obtain current district with params of undefined, expect the same as no params.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Location_Location_getCurrentDistrict_perm_test_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_Location_Location_getCurrentDistrict_perm_test_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
             geolocationm.getCurrentDistrict(undefined).then((res) => {
                 console.info('[lbs_js] getCurrentDistrict_perm_test_005 result: ' + JSON.stringify(res));
@@ -1547,14 +1547,14 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_Location_getCurrentDistrict_perm_test_006
-     * @tc.number SUB_Location_Location_getCurrentDistrict_perm_test_006
+     * @tc.name   SUB_Location_Location_getCurrentDistrict_perm_test_0600
+     * @tc.number SUB_Location_Location_getCurrentDistrict_perm_test_0600
      * @tc.desc   getCurrentDistrict returns 3301500 when reverse geocoding server returns an error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Location_Location_getCurrentDistrict_perm_test_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_Location_Location_getCurrentDistrict_perm_test_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
             let params = { 'locale': 'zh', 'timeoutMs': 1 };
             geolocationm.getCurrentDistrict(params).then((res) => {
@@ -1582,14 +1582,14 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_Location_getPostProcessingTrack_perm_test_004
-     * @tc.number SUB_Location_Location_getPostProcessingTrack_perm_test_004
+     * @tc.name   SUB_Location_Location_getPostProcessingTrack_perm_test_0400
+     * @tc.number SUB_Location_Location_getPostProcessingTrack_perm_test_0400
      * @tc.desc   Obtain post-processing track with sportsType of null (401).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Location_Location_getPostProcessingTrack_perm_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('SUB_Location_Location_getPostProcessingTrack_perm_test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.getPostProcessingTrack(null).then((res) => {
                 console.info('[lbs_js] getPostProcessingTrack_perm_test_004 unexpectedly succeeded: ' + JSON.stringify(res));
@@ -1616,14 +1616,14 @@ export default function geolocationTest_geo8() {
     });
 
     /**
-     * @tc.name   SUB_Location_Location_getPostProcessingTrack_perm_test_005
-     * @tc.number SUB_Location_Location_getPostProcessingTrack_perm_test_005
+     * @tc.name   SUB_Location_Location_getPostProcessingTrack_perm_test_0500
+     * @tc.number SUB_Location_Location_getPostProcessingTrack_perm_test_0500
      * @tc.desc   Obtain post-processing track with sportsType of undefined (401).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Location_Location_getPostProcessingTrack_perm_test_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('SUB_Location_Location_getPostProcessingTrack_perm_test_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
             geolocationm.getPostProcessingTrack(undefined).then((res) => {
                 console.info('[lbs_js] getPostProcessingTrack_perm_test_005 unexpectedly succeeded: ' + JSON.stringify(res));
