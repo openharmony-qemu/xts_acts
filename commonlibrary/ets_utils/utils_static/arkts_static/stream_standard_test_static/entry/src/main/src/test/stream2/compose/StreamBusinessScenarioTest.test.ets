@@ -1997,3 +1997,74 @@ export default function StreamBusinessScenarioTest(): void {
             capturedCollected = w.collected;
             resolve(undefined as void);
           });
+          connectReadableToTransform(r, t);
+          t.pipe(w);
+        });
+        expect(capturedWriteCount).assertEqual(3);
+        expect(capturedCollected).assertEqual('abc');
+        done();
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_BUSINESS_SCENARIO_4300
+     * @tc.name testStreamBusinessScenario043
+     * @tc.desc Verify pipe returns the target Writable that observes ordered completion data
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testStreamBusinessScenario043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let r = new BizSingleReadable('chain');
+        let w = new BizCollectWritable();
+        let sameTarget: boolean = false;
+        let observedText: string = '';
+        let observedWrites: int = 0;
+        await new Promise<void>((resolve: (value: void) => void): void => {
+          w.on('finish', (): void => {
+            observedText = w.received[0] as string;
+            observedWrites = w.writeCount;
+            resolve(undefined as void);
+          });
+          let result = r.pipe(w);
+          sameTarget = result === w;
+        });
+        expect(sameTarget).assertTrue();
+        expect(observedWrites).assertEqual(1);
+        expect(observedText).assertEqual('chain');
+        done();
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_BUSINESS_SCENARIO_4400
+     * @tc.name testStreamBusinessScenario044
+     * @tc.desc Verify all API combination Readable+Transform+Duplex+Writable full chain
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testStreamBusinessScenario044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let r = new BizSingleReadable('full chain test');
+        let t = new EdgeUppercaseTransform();
+        let d = new BizTransportDuplex();
+        let w = new BizCollectWritable();
+        let capturedWriteCount: int = 0;
+        let capturedReceived0: string = '';
+        await new Promise<void>((resolve: (value: void) => void): void => {
+          w.on('finish', (): void => {
+            capturedWriteCount = w.writeCount;
+            capturedReceived0 = w.received[0] as string;
+            resolve(undefined as void);
+          });
+          connectReadableToTransform(r, t);
+          connectReadableToTransform(t, d);
+          d.pipe(w);
+        });
+        expect(capturedWriteCount).assertEqual(1);
+        expect(capturedReceived0).assertEqual('FULL CHAIN TEST');
+
+        done();
+      });
+  });
+}
