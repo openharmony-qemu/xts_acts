@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { UIState, FrameNodeOptions } from 'arkui.FrameNode';
 
@@ -27,12 +26,6 @@ const SLEEP_TIME = 1000;
 
 export default function FrameNodeTest() {
   describe('FrameNodeTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      console.info('[ARKUI_NEW] FrameNodeTest beforeAll start');
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility("com.arkui.ace.frameNode.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = { url: 'MainAbility/pages/FrameNode/FrameNodeIndex' };
       try {
@@ -40,7 +33,7 @@ export default function FrameNodeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         if (pages.name !== "FrameNodeIndex") {
-          routerInstance.replaceUrl(options);
+          await routerInstance.replaceUrl(options);
         }
         await Utils.sleep(500);
       } catch (err) {
@@ -50,7 +43,13 @@ export default function FrameNodeTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(SLEEP_TIME);
+      console.info("[ARKUI_NEW] FrameNodeTest afterEach start");
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('FrameNodeTest afterEach sleep err: ' + JSON.stringify(err));
+      }
+      console.info("[ARKUI_NEW] FrameNodeTest afterEach end");
     });
 
     /**
