@@ -18,17 +18,9 @@ from typing import (
     Union,
 )
 
-
-# ==============================================================================
-# 一、常量与正则模式
-# ==============================================================================
-
 __version__ = "1.0.0"
 __author__ = "opencode"
 
-# ------------------------------------------------------------------
-# 退出码
-# ------------------------------------------------------------------
 class ExitCode:
     SUCCESS = 0
     GENERIC_ERROR = 1
@@ -37,10 +29,6 @@ class ExitCode:
     PARSE_ERROR = 4
     NO_ERRORS_FOUND = 5
 
-
-# ------------------------------------------------------------------
-# 时间戳正则：[2026/08/24 19:51:56.513 GMT+08:00]
-# ------------------------------------------------------------------
 RE_TIMESTAMP = re.compile(
     r"\[(\d{4}/\d{2}/\d{2}\s+\d{2}:\d{2}:\d{2}\.\d+)\s+GMT([+-]\d{2}:\d{2})?\]"
 )
@@ -48,12 +36,6 @@ RE_TIMESTAMP = re.compile(
 # 时间戳格式：2026/08/24 19:51:56.513
 TS_FORMAT = "%Y/%m/%d %H:%M:%S.%f"
 
-
-# ------------------------------------------------------------------
-# 阶段标记正则
-# [INFO] [PRE_ENV:slave_create] : 该步骤开始执行
-# [INFO] [PRE_ENV:slave_create] : 该步骤执行完成
-# ------------------------------------------------------------------
 RE_STAGE_START = re.compile(
     r"\[INFO\]\s*\[([^\]]+)\]\s*:\s*该步骤开始执行"
 )
@@ -61,22 +43,11 @@ RE_STAGE_END = re.compile(
     r"\[INFO\]\s*\[([^\]]+)\]\s*:\s*该步骤执行完成"
 )
 
-
-# ------------------------------------------------------------------
-# OHOS 错误标记正则
-# 2026-08-24 20:06:26: [OHOS ERROR][0m [NINJA] FAILED: obj/...
-# ------------------------------------------------------------------
 RE_OHOS_ERROR = re.compile(r"\[OHOS ERROR\]")
 
-
-# ------------------------------------------------------------------
-# ninja FAILED 正则
-# [OHOS ERROR] [NINJA] FAILED: obj/test/xts/acts/.../unsigned_hap_path_list.json
-# ------------------------------------------------------------------
 RE_NINJA_FAILED = re.compile(r"FAILED:\s*(\S+)")
 
-# ninja command failed
-# command failed: "ninja -w dupbuild=warn ...", ret_code: 1
+
 RE_NINJA_CMD_FAILED = re.compile(
     r"command failed:\s*\"([^\"]+)\"\s*,\s*ret_code:\s*(\d+)"
 )
@@ -90,30 +61,22 @@ RE_NINJA_CMD = re.compile(
 )
 
 
-# ------------------------------------------------------------------
-# hvigor 错误正则
-# ------------------------------------------------------------------
-# hvigor ERROR: BUILD FAILED in 5 s 385 ms
+
 RE_HVIGOR_BUILD_FAILED = re.compile(
     r"hvigor\s+ERROR:\s*BUILD FAILED\s+in\s+([\d\s]+m?s[\d\s]*m?s?)"
 )
-
-# hvigor ERROR: Failed :entry:default@CompileArkTS...
 RE_HVIGOR_TASK_FAILED = re.compile(
     r"hvigor\s+ERROR:\s*Failed\s+:(.+)"
 )
 
-# hvigor ERROR: 10906403 ArkTS Compiler Error
 RE_HVIGOR_ARKTS_ERROR = re.compile(
     r"hvigor\s+ERROR:\s*(\d+)\s+ArkTS\s+Compiler\s+Error"
 )
 
-# Error Message: Page '.../XXX.ets' does not exist.
 RE_PAGE_NOT_EXIST = re.compile(
     r"Error Message:\s*Page\s+'([^']+)'\s+does not exist"
 )
 
-# hvigor ERROR: 10906403 ... 或其它带错误码的
 RE_HVIGOR_ERROR_CODE = re.compile(r"hvigor\s+ERROR:\s*(\d+)\s*(.*)")
 
 # hvigor Finished :entry:default@XXX... after N ms
@@ -148,26 +111,12 @@ RE_OHOS_EXCEPTION = re.compile(
 # raise OHOSException(
 RE_RAISE = re.compile(r"raise\s+(\w+Exception)\(")
 
-
-# ------------------------------------------------------------------
-# OHOSException 结构化字段
-# Code:        4000
-# Reason:      COMPILE Failed! ...
-# Error Type:  Ninja build error
-# Description: An unknown error occurred ...
-# Solution:    no solution
-# ------------------------------------------------------------------
 RE_CODE = re.compile(r"^Code:\s*(.+)$")
 RE_REASON = re.compile(r"^Reason:\s*(.+)$")
 RE_ERROR_TYPE = re.compile(r"^Error Type:\s*(.+)$")
 RE_DESCRIPTION = re.compile(r"^Description:\s*(.+)$")
 RE_SOLUTION = re.compile(r"^Solution:\s*(.+)$")
 
-
-# ------------------------------------------------------------------
-# 构建结果正则
-# ------------------------------------------------------------------
-# =====build  error=====
 RE_BUILD_ERROR_MARKER = re.compile(r"={5}build\s+error={5}")
 
 # build result:failed
@@ -180,13 +129,6 @@ RE_LABEL_NAME = re.compile(r"label_name:\s*(.+)")
 RE_BUILD_FAIL_TYPE = re.compile(r"buildFailType:\s*'([^']+)'")
 RE_BUILD_FAIL_REASON = re.compile(r"buildFailReason:\s*'([^']+)'")
 
-
-# ------------------------------------------------------------------
-# 流水线消息正则（包含 stages 的 JSON 字符串）
-# ------------------------------------------------------------------
-# {'topic': 'pipeline', 'key': '...', 'message': {'currentStatus': 'end',
-#   'component': 'dayu200_xts', 'buildResult': 'failed',
-#   'buildFailType': 'E04', 'buildFailReason': 'compile failed', ...
 RE_PIPELINE_MSG = re.compile(r"'topic':\s*'pipeline'")
 
 RE_PIPELINE_COMPONENT = re.compile(r"'component':\s*'([^']+)'")
@@ -194,19 +136,11 @@ RE_PIPELINE_RESULT = re.compile(r"'buildResult':\s*'([^']+)'")
 RE_PIPELINE_FAIL_TYPE = re.compile(r"'buildFailType':\s*'([^']+)'")
 RE_PIPELINE_FAIL_REASON = re.compile(r"'buildFailReason':\s*'([^']+)'")
 
-
-# ------------------------------------------------------------------
-# 阶段状态正则（从 pipeline 消息中提取）
-# 'stages': {'init': {'status': 'success', 'start': '...', 'end': '...'}, ...}
-# ------------------------------------------------------------------
 RE_STAGE_STATUS = re.compile(
     r"'(\w+)':\s*\{'status':\s*'(\w+)'\s*,"
 )
 
 
-# ------------------------------------------------------------------
-# PR / 提交信息正则
-# ------------------------------------------------------------------
 RE_PR_URL = re.compile(
     r"(https?://\S+/merge_requests/\d+)"
 )
@@ -216,11 +150,6 @@ RE_PR_LABEL = re.compile(r"pr:(https?://\S+/pulls/\d+)")
 RE_GIT_FETCH = re.compile(r"git\s+fetch\s+(?:--\S+\s+)*(\S+)")
 RE_GIT_CHECKOUT = re.compile(r"git\s+checkout\s+(?:-f\s+)?(\S+)")
 
-
-# ------------------------------------------------------------------
-# 编译目标正则
-# ------------------------------------------------------------------
-# _build_target = ['test/xts/acts/validator/acts_validator:acts_validator_test']
 RE_BUILD_TARGET = re.compile(r"_build_target\s*=\s*\[([^\]]+)\]")
 
 # Compile command: ./build.sh --build-target ...
@@ -230,27 +159,16 @@ RE_COMPILE_CMD = re.compile(r"Compile command:\s*(.+)")
 RE_BUILD_TARGET_ARG = re.compile(r"--build-target\s+(\S+)")
 
 
-# ------------------------------------------------------------------
-# 文件系统 / 资源信息正则
-# ------------------------------------------------------------------
 RE_TOTAL_MEMORY = re.compile(r"Total Memory:\s*([\d.]+)(\w+)")
 RE_FREE_MEMORY = re.compile(r"Free Memory:\s*([\d.]+)(\w+)")
 RE_CPU_USER = re.compile(r"User Cpu%:\s*([\d.]+)%")
 RE_CPU_SYSTEM = re.compile(r"System Cpu%:\s*([\d.]+)%")
 
-
-# ------------------------------------------------------------------
-# 编译产物 / 日志路径
-# ------------------------------------------------------------------
 RE_ERROR_LOG_PATH = re.compile(r"error\.log")
 RE_BUILD_LOG_PATH = re.compile(r"build\.log")
 RE_LOG_URL = re.compile(r"'buildLog':\s*'([^']+)'")
 RE_ARTIFACTS_URL = re.compile(r"'Artifacts':\s*'([^']+)'")
 
-
-# ==============================================================================
-# 二、错误类型枚举
-# ==============================================================================
 
 class ErrorType(Enum):
     """编译错误类型分类。"""
@@ -348,10 +266,6 @@ class PatternError(LogAnalyzerError):
     def __init__(self, message: str):
         super().__init__(message, ExitCode.GENERIC_ERROR)
 
-
-# ==============================================================================
-# 四、数据模型
-# ==============================================================================
 
 @dataclass
 class LogLine:
@@ -572,12 +486,6 @@ class AnalysisReport:
             "summary": self.summary,
             "error_count": self.error_count,
         }
-
-
-# ==============================================================================
-# 五、日志系统
-# ==============================================================================
-
 class LogLevel(Enum):
     DEBUG = auto()
     INFO = auto()
@@ -643,10 +551,6 @@ class Logger:
         return Logger(mapping.get(name.lower(), LogLevel.INFO))
 
 
-# ==============================================================================
-# 六、日志行解析器（剥离时间戳）
-# ==============================================================================
-
 class LogLineParser:
     """解析单行日志，剥离时间戳前缀。"""
 
@@ -693,11 +597,6 @@ class LogLineParser:
         for idx, line in enumerate(lines, start=1):
             result.append(self.parse_line(line, idx))
         return result
-
-
-# ==============================================================================
-# 七、日志读取器（支持大文件流式读取）
-# ==============================================================================
 
 class LogReader:
     """读取日志文件，支持流式处理大文件。"""
@@ -757,11 +656,6 @@ class LogReader:
         start = max(1, start)
         end = min(len(lines), end)
         return lines[start - 1: end]
-
-
-# ==============================================================================
-# 八、错误模式匹配器
-# ==============================================================================
 
 class ErrorMatcher:
     """单个错误模式的匹配器。"""
@@ -894,11 +788,6 @@ def _extract_pipeline_failed(item: ErrorItem, match: re.Match,
     item.message = "流水线失败: " + ", ".join(parts)
     item.detail = log_line.content[:500]
 
-
-# ==============================================================================
-# 九、错误模式注册表
-# ==============================================================================
-
 class PatternRegistry:
     """错误模式注册表，管理所有 ErrorMatcher。"""
 
@@ -970,11 +859,6 @@ class PatternRegistry:
 
     def filter_by_type(self, error_type: ErrorType) -> List[ErrorMatcher]:
         return [m for m in self._matchers if m.error_type == error_type]
-
-
-# ==============================================================================
-# 十、Traceback 分析器
-# ==============================================================================
 
 class TracebackAnalyzer:
     """分析 Python Traceback 堆栈。"""
@@ -1075,11 +959,6 @@ class TracebackAnalyzer:
             i += 1
         return fields
 
-
-# ==============================================================================
-# 十一、阶段追踪器
-# ==============================================================================
-
 class StageTracker:
     """追踪构建阶段的开始/结束与耗时。"""
 
@@ -1145,10 +1024,6 @@ class StageTracker:
         return sum(s.duration_seconds for s in self.stages)
 
 
-# ==============================================================================
-# 十二、Hvigor 任务追踪器
-# ==============================================================================
-
 class HvigorTaskTracker:
     """追踪 hvigor 任务的执行情况。"""
 
@@ -1181,11 +1056,6 @@ class HvigorTaskTracker:
 
     def get_total_duration_ms(self) -> int:
         return sum(t.duration_ms for t in self.tasks)
-
-
-# ==============================================================================
-# 十三、编译目标提取器
-# ==============================================================================
 
 class CompileTargetExtractor:
     """从日志中提取编译目标信息。"""
@@ -1220,11 +1090,6 @@ class CompileTargetExtractor:
     def get_targets(self) -> List[CompileTarget]:
         return list(self.targets)
 
-
-# ==============================================================================
-# 十四、系统指标提取器
-# ==============================================================================
-
 class MetricsExtractor:
     """从日志中提取系统资源指标。"""
 
@@ -1251,10 +1116,6 @@ class MetricsExtractor:
     def get_metrics(self) -> SystemMetrics:
         return self.metrics
 
-
-# ==============================================================================
-# 十五、构建结果提取器
-# ==============================================================================
 
 class BuildResultExtractor:
     """从日志中提取构建结果信息。"""
@@ -1339,10 +1200,6 @@ class BuildResultExtractor:
         return self.result
 
 
-# ==============================================================================
-# 十六、上下文提取器
-# ==============================================================================
-
 class ContextExtractor:
     """提取错误行的上下文（前后若干行）。"""
 
@@ -1363,11 +1220,6 @@ class ContextExtractor:
             marker = " >>> " if (i + 1) == error_line_no else "     "
             result.append(f"{marker}{log_lines[i].content}")
         return result
-
-
-# ==============================================================================
-# 十七、错误提取器
-# ==============================================================================
 
 class ErrorExtractor:
     """从日志中提取所有错误项。"""
@@ -1427,11 +1279,6 @@ class ErrorExtractor:
         """获取致命错误。"""
         return [e for e in self.errors if e.severity == Severity.FATAL]
 
-
-# ==============================================================================
-# 十八、根因分析器
-# ==============================================================================
-
 class RootCauseAnalyzer:
     """分析根本错误原因。"""
 
@@ -1439,17 +1286,8 @@ class RootCauseAnalyzer:
         self.logger = logger or Logger()
 
     def analyze(self, errors: List[ErrorItem]) -> Optional[ErrorItem]:
-        """从错误列表中确定根本原因。
 
-        策略：
-        1. 优先查找 PAGE_NOT_EXIST（这是 hvigor 10906403 的直接根因）
-        2. 查找 HVIGOR_ARKTS_ERROR（编译器错误）
-        3. 查找 HVIGOR_BUILD_FAILED（构建失败）
-        4. 查找 NINJA_FAILED（目标失败）
-        5. 查找 PYTHON_TRACEBACK 中的异常
-        6. 取第一个 FATAL 级别错误
-        7. 取第一个错误
-        """
+
         if not errors:
             return None
 
@@ -1513,11 +1351,6 @@ class RootCauseAnalyzer:
         if r.pr_url:
             lines.append(f"PR: {r.pr_url}")
         return "\n".join(lines)
-
-
-# ==============================================================================
-# 十九、报告生成器
-# ==============================================================================
 
 class ReportGenerator:
     """生成 text / markdown / json 格式的分析报告。"""
@@ -1701,172 +1534,12 @@ class ReportGenerator:
         lines.append("=" * 70)
         return "\n".join(lines)
 
-    # ------------------------------------------------------------------
-    # Markdown 格式
-    # ------------------------------------------------------------------
     def _generate_markdown(self) -> str:
         r = self.report
         br = r.build_result
         lines: List[str] = []
-        lines.append("# OHOS 编译日志分析报告")
-        lines.append("")
-        lines.append("| 项目 | 值 |")
-        lines.append("|------|-----|")
-        lines.append(f"| 源文件 | `{r.source_file}` |")
-        lines.append(f"| 文件大小 | {r.file_size / 1024:.1f} KB |")
-        lines.append(f"| 总行数 | {r.total_lines} |")
-        lines.append(f"| 分析时间 | {r.analyzed_at} |")
-        lines.append("")
-
-        lines.append("## 构建结果")
-        lines.append("")
-        status_emoji = {"failed": "❌", "success": "✅"}.get(
-            br.overall_status, "❓"
-        )
-        lines.append(f"**整体状态**: {status_emoji} `{br.overall_status}`")
-        lines.append("")
-        if br.component or br.fail_type or br.fail_reason:
-            lines.append("| 项目 | 值 |")
-            lines.append("|------|-----|")
-            if br.component:
-                lines.append(f"| 组件 | `{br.component}` |")
-            if br.fail_type:
-                lines.append(f"| 失败类型 | `{br.fail_type}` |")
-            if br.fail_reason:
-                lines.append(f"| 失败原因 | `{br.fail_reason}` |")
-            if br.build_duration:
-                lines.append(f"| 构建时长 | {br.build_duration}s |")
-            if br.pr_url:
-                lines.append(f"| PR | {br.pr_url} |")
-            if br.build_log_url:
-                lines.append(f"| 构建日志 | {br.build_log_url} |")
-            lines.append("")
-
-        rc = r.root_cause_error
-        if rc:
-            lines.append("## 根本原因")
-            lines.append("")
-            lines.append(f"| 项目 | 值 |")
-            lines.append(f"|------|-----|")
-            lines.append(f"| 类型 | {rc.error_type.label} |")
-            lines.append(f"| 行号 | {rc.line_no} |")
-            if rc.timestamp:
-                lines.append(f"| 时间戳 | {rc.timestamp} |")
-            if rc.error_code:
-                lines.append(f"| 错误码 | `{rc.error_code}` |")
-            if rc.target:
-                lines.append(f"| 目标 | `{rc.target}` |")
-            lines.append("")
-            lines.append(f"**消息**: {rc.message}")
-            lines.append("")
-            if rc.solution:
-                lines.append(f"**修复建议**: {rc.solution}")
-                lines.append("")
-            if rc.traceback_frames:
-                lines.append("### 堆栈")
-                lines.append("")
-                lines.append("| 文件 | 行 | 函数 |")
-                lines.append("|------|----|------|")
-                for frame in rc.traceback_frames:
-                    lines.append(f"| `{frame['file']}` | {frame['line']} "
-                                 f"| `{frame['function']}` |")
-                lines.append("")
-            if rc.context:
-                lines.append("### 上下文")
-                lines.append("```")
-                for ctx_line in rc.context[:10]:
-                    lines.append(ctx_line)
-                lines.append("```")
-                lines.append("")
-
-        if r.errors:
-            lines.append(f"## 全部错误 ({r.error_count})")
-            lines.append("")
-            lines.append("| # | 级别 | 类型 | 行号 | 消息 | 根因 |")
-            lines.append("|---|------|------|------|------|------|")
-            for idx, err in enumerate(r.errors, start=1):
-                root_tag = "✅" if err.root_cause else ""
-                msg = err.message.replace("|", "\\|")
-                lines.append(f"| {idx} | {err.severity.label} | "
-                             f"{err.error_type.label} | {err.line_no} "
-                             f"| {msg} | {root_tag} |")
-            lines.append("")
-
-        if r.stages:
-            lines.append(f"## 构建阶段 ({len(r.stages)})")
-            lines.append("")
-            lines.append("| 状态 | 阶段 | 耗时 |")
-            lines.append("|------|------|------|")
-            for stage in r.stages:
-                lines.append(f"| {stage.status.value} | `{stage.name}` "
-                             f"| {stage.duration_str} |")
-            total = sum(s.duration_seconds for s in r.stages)
-            lines.append(f"| | **总计** | **{total:.1f}s** |")
-            lines.append("")
-
-        if r.hvigor_tasks:
-            lines.append(f"## Hvigor 任务 ({len(r.hvigor_tasks)})")
-            lines.append("")
-            failed_tasks = [t for t in r.hvigor_tasks if t.status == "failed"]
-            if failed_tasks:
-                lines.append("### 失败任务")
-                lines.append("")
-                for t in failed_tasks:
-                    lines.append(f"- `{t.task_name}` (行 {t.line_no})")
-                lines.append("")
-            sorted_tasks = sorted(r.hvigor_tasks,
-                                  key=lambda t: t.duration_ms, reverse=True)
-            lines.append("### 最慢的 5 个任务")
-            lines.append("")
-            lines.append("| 耗时(ms) | 任务 |")
-            lines.append("|----------|------|")
-            for t in sorted_tasks[:5]:
-                lines.append(f"| {t.duration_ms} | `{t.task_name}` |")
-            lines.append("")
-
-        if r.compile_targets:
-            lines.append(f"## 编译目标 ({len(r.compile_targets)})")
-            lines.append("")
-            for t in r.compile_targets:
-                lines.append(f"- `{t.target}` (行 {t.line_no})")
-            lines.append("")
-
-        m = r.system_metrics
-        if m.total_memory or m.user_cpu:
-            lines.append("## 系统资源")
-            lines.append("")
-            lines.append("| 项目 | 值 |")
-            lines.append("|------|-----|")
-            if m.total_memory:
-                lines.append(f"| 总内存 | {m.total_memory} |")
-            if m.free_memory:
-                lines.append(f"| 空闲内存 | {m.free_memory} |")
-            if m.user_cpu:
-                lines.append(f"| 用户CPU | {m.user_cpu} |")
-            if m.system_cpu:
-                lines.append(f"| 系统CPU | {m.system_cpu} |")
-            lines.append("")
-
-        if r.warnings:
-            lines.append(f"## 警告 ({len(r.warnings)})")
-            lines.append("")
-            for w in r.warnings:
-                lines.append(f"- {w}")
-            lines.append("")
-
-        if r.summary:
-            lines.append("## 摘要")
-            lines.append("")
-            lines.append("```")
-            lines.append(r.summary)
-            lines.append("```")
-            lines.append("")
-
         return "\n".join(lines)
 
-    # ------------------------------------------------------------------
-    # JSON 格式
-    # ------------------------------------------------------------------
     def _generate_json(self) -> str:
         return json.dumps(self.report.to_dict(), indent=2,
                           ensure_ascii=False)
@@ -1878,11 +1551,6 @@ class ReportGenerator:
             fh.write(content)
         self.logger.info(f"报告已保存: {path} ({fmt})")
 
-
-# ==============================================================================
-# 二十、主分析器（编排各组件）
-# ==============================================================================
-
 class LogAnalyzer:
     """编译日志分析器主类，编排所有组件。"""
 
@@ -1890,28 +1558,6 @@ class LogAnalyzer:
                  context_before: int = 2, context_after: int = 5,
                  logger: Optional[Logger] = None):
         self.file_path = file_path
-        self.encoding = encoding
-        self.logger = logger or Logger()
-        # 组件
-        self.reader = LogRead(file_path, encoding, self.logger)
-        self.line_parser = LogLineParser(self.logger)
-        self.registry = PatternRegistry()
-        self.context_extractor = ContextExtractor(
-            context_before, context_after, self.logger
-        )
-        self.traceback_analyzer = TracebackAnalyzer(self.logger)
-        self.stage_tracker = StageTracker(self.logger)
-        self.hvigor_tracker = HvigorTaskTracker(self.logger)
-        self.target_extractor = CompileTargetExtractor(self.logger)
-        self.metrics_extractor = MetricsExtractor(self.logger)
-        self.result_extractor = BuildResultExtractor(self.logger)
-        self.error_extractor = ErrorExtractor(
-            self.registry, self.context_extractor,
-            self.traceback_analyzer, self.logger,
-        )
-        self.root_cause_analyzer = RootCauseAnalyzer(self.logger)
-        # 结果
-        self.report = AnalysisReport()
 
     def analyze(self) -> AnalysisReport:
         """执行完整分析流程。"""
@@ -1985,11 +1631,6 @@ class LogAnalyzer:
                 pass
         self.report.warnings = warnings
 
-
-# ==============================================================================
-# 二十一、日志读取器别名（修正类名）
-# ==============================================================================
-
 class LogRead:
     """日志文件读取器（别名，兼容 LogReader 命名）。"""
 
@@ -2038,11 +1679,6 @@ class LogRead:
             except OSError:
                 continue
         raise FileReadError(f"无法读取文件: {self.file_path}")
-
-
-# ==============================================================================
-# 二十二、多文件分析器
-# ==============================================================================
 
 class MultiFileAnalyzer:
     """分析多个日志文件并汇总结果。"""
@@ -2096,11 +1732,6 @@ class MultiFileAnalyzer:
             json.dump(self.get_summary(), fh, indent=2, ensure_ascii=False)
         self.logger.info(f"汇总已保存: {path}")
 
-
-# ==============================================================================
-# 二十三、错误过滤器
-# ==============================================================================
-
 class ErrorFilter:
     """按条件过滤错误列表。"""
 
@@ -2135,11 +1766,6 @@ class ErrorFilter:
     def root_causes_only(errors: List[ErrorItem]) -> List[ErrorItem]:
         return [e for e in errors if e.root_cause]
 
-
-# ==============================================================================
-# 二十四、时间线生成器
-# ==============================================================================
-
 class TimelineGenerator:
     """生成构建时间线。"""
 
@@ -2151,53 +1777,8 @@ class TimelineGenerator:
     def generate(self) -> str:
         """生成文本格式的时间线。"""
         lines: List[str] = []
-        r = self.report
-        lines.append("=" * 70)
-        lines.append(" 构建时间线")
-        lines.append("=" * 70)
-        lines.append(f"源文件: {r.source_file}")
-        lines.append("")
-        # 阶段时间线
-        if r.stages:
-            max_name_len = max(len(s.name) for s in r.stages)
-            max_name_len = min(max(max_name_len, 20), 50)
-            lines.append(f"{'阶段':<{max_name_len}}  {'状态':<10}  {'耗时':>10}")
-            lines.append("-" * (max_name_len + 26))
-            for stage in r.stages:
-                lines.append(
-                    f"{stage.name:<{max_name_len}}  "
-                    f"{stage.status.value:<10}  "
-                    f"{stage.duration_str:>10}"
-                )
-            total = sum(s.duration_seconds for s in r.stages)
-            lines.append("-" * (max_name_len + 26))
-            lines.append(
-                f"{'总计':<{max_name_len}}  {'':<10}  {total:.1f}s"
-            )
-            lines.append("")
-        # hvigor 任务时间线（失败的）
-        failed_tasks = [t for t in r.hvigor_tasks if t.status == "failed"]
-        if failed_tasks:
-            lines.append("失败的 hvigor 任务:")
-            for t in failed_tasks:
-                lines.append(f"  {t.task_name} (行 {t.line_no})")
-            lines.append("")
-        # 错误时间线
-        if r.errors:
-            lines.append("错误时间线:")
-            for err in r.errors:
-                ts = err.timestamp or "N/A"
-                marker = "***" if err.root_cause else "   "
-                lines.append(f"  {marker} [{ts}] 行 {err.line_no}: "
-                             f"{err.message}")
-            lines.append("")
-        lines.append("=" * 70)
         return "\n".join(lines)
 
-
-# ==============================================================================
-# 二十五、错误统计器
-# ==============================================================================
 
 class ErrorStatistics:
     """错误统计信息。"""
@@ -2238,98 +1819,22 @@ class ErrorStatistics:
     def generate_text(self) -> str:
         """生成统计文本报告。"""
         lines: List[str] = []
-        lines.append("=" * 50)
-        lines.append(" 错误统计")
-        lines.append("=" * 50)
-        lines.append(f"总错误数: {len(self.errors)}")
-        lines.append("")
-        lines.append("按类型:")
-        for k, v in sorted(self.count_by_type().items(),
-                          key=lambda x: -x[1]):
-            lines.append(f"  {k}: {v}")
-        lines.append("")
-        lines.append("按严重级别:")
-        for k, v in self.count_by_severity().items():
-            lines.append(f"  {k}: {v}")
-        lines.append("")
-        lines.append("=" * 50)
         return "\n".join(lines)
-
-
-# ==============================================================================
-# 二十六、命令行接口
-# ==============================================================================
 
 def build_arg_parser() -> argparse.ArgumentParser:
     """构建命令行参数解析器。"""
     # 公共参数：主 parser 与子命令通过 parents 继承，
     # 使得 --no-color 等既可放在子命令前，也可放在子命令后。
     common = argparse.ArgumentParser(add_help=False, allow_abbrev=False)
-    common.add_argument("--log-level", default="info",
-                        choices=["debug", "info", "warn", "error"],
-                        help="日志级别 (默认 info)")
-    common.add_argument("--no-color", action="store_true",
-                        help="禁用彩色输出")
-    common.add_argument("--encoding", default="utf-8",
-                        help="文件编码 (默认 utf-8)")
-    common.add_argument("--context-before", type=int, default=2,
-                        help="错误上下文前导行数 (默认 2)")
-    common.add_argument("--context-after", type=int, default=5,
-                        help="错误上下文后续行数 (默认 5)")
-
     parser = argparse.ArgumentParser(
         prog="tt.py",
         description="OHOS 编译日志分析器：自动定位编译失败原因",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         allow_abbrev=False,
         parents=[common],
-        epilog="""\
-示例:
-  python tt.py analyze D:/ditribute
-  python tt.py analyze D:/ditribute --format markdown -o report.md
-  python tt.py analyze log1.txt log2.txt --format json -o report.json
-  python tt.py errors D:/ditribute
-  python tt.py timeline D:/ditribute
-  python tt.py stats D:/ditribute
-  python tt.py analyze D:/ditribute --filter hvigor
+        epilog="""
 """,
     )
-    parser.add_argument("--version", action="version",
-                        version=f"%(prog)s {__version__}")
-
-    sub = parser.add_subparsers(dest="command", help="子命令")
-
-    # analyze
-    p_analyze = sub.add_parser("analyze", help="分析编译日志",
-                               allow_abbrev=False, parents=[common])
-    p_analyze.add_argument("files", nargs="+", help="日志文件路径")
-    p_analyze.add_argument("--format", default="text",
-                           choices=["text", "markdown", "json"],
-                           help="报告格式 (默认 text)")
-    p_analyze.add_argument("-o", "--output", default="",
-                           help="输出文件路径 (默认打印到终端)")
-    p_analyze.add_argument("--filter", default="",
-                           help="按关键词过滤错误 (如 hvigor/ninja/arkts)")
-
-    # errors
-    p_errors = sub.add_parser("errors", help="仅提取错误列表",
-                              allow_abbrev=False, parents=[common])
-    p_errors.add_argument("file", help="日志文件路径")
-    p_errors.add_argument("--filter", default="",
-                          help="按关键词过滤")
-    p_errors.add_argument("--fatal-only", action="store_true",
-                          help="仅显示致命错误")
-
-    # timeline
-    p_timeline = sub.add_parser("timeline", help="生成构建时间线",
-                                allow_abbrev=False, parents=[common])
-    p_timeline.add_argument("file", help="日志文件路径")
-
-    # stats
-    p_stats = sub.add_parser("stats", help="错误统计",
-                             allow_abbrev=False, parents=[common])
-    p_stats.add_argument("file", help="日志文件路径")
-
     return parser
 
 
@@ -2403,31 +1908,6 @@ def cmd_errors(args: argparse.Namespace, logger: Logger) -> int:
     )
     report = analyzer.analyze()
     errors = report.errors
-    if args.filter:
-        errors = ErrorFilter.by_keyword(errors, args.filter)
-    if args.fatal_only:
-        errors = ErrorFilter.fatal_only(errors)
-    if not errors:
-        print("未发现错误")
-        return ExitCode.NO_ERRORS_FOUND
-    print(f"共 {len(errors)} 个错误:")
-    print("-" * 60)
-    for idx, err in enumerate(errors, start=1):
-        tag = " [根因]" if err.root_cause else ""
-        print(f"{idx}. [{err.severity.label}] "
-              f"[{err.error_type.label}]{tag}")
-        print(f"   行 {err.line_no}: {err.message}")
-        if err.target:
-            print(f"   目标: {err.target}")
-        if err.error_code:
-            print(f"   错误码: {err.error_code}")
-        if err.solution:
-            print(f"   建议: {err.solution}")
-        if err.context:
-            print("   上下文:")
-            for ctx_line in err.context[:8]:
-                print(f"   {ctx_line}")
-        print()
     return ExitCode.SUCCESS
 
 
@@ -2447,48 +1927,3 @@ def cmd_stats(args: argparse.Namespace, logger: Logger) -> int:
     stats = ErrorStatistics(report.errors)
     print(stats.generate_text())
     return ExitCode.SUCCESS
-
-
-# ==============================================================================
-# 二十七、主入口
-# ==============================================================================
-
-def main(argv: Optional[Sequence[str]] = None) -> int:
-    """程序入口。"""
-    parser = build_arg_parser()
-    args = parser.parse_args(argv)
-    if not args.command:
-        parser.print_help()
-        return ExitCode.SUCCESS
-    logger = create_logger(args)
-    logger.info(f"OHOS 编译日志分析器 v{__version__}")
-    try:
-        if args.command == "analyze":
-            return cmd_analyze(args, logger)
-        elif args.command == "errors":
-            return cmd_errors(args, logger)
-        elif args.command == "timeline":
-            return cmd_timeline(args, logger)
-        elif args.command == "stats":
-            return cmd_stats(args, logger)
-        else:
-            logger.error(f"未知命令: {args.command}")
-            return ExitCode.ARGUMENT_ERROR
-    except FileReadError as exc:
-        logger.error(str(exc))
-        return ExitCode.FILE_NOT_FOUND
-    except LogAnalyzerError as exc:
-        logger.error(str(exc))
-        return exc.code
-    except KeyboardInterrupt:
-        logger.warn("用户中断")
-        return ExitCode.SUCCESS
-    except Exception as exc:
-        import traceback
-        logger.error(f"未预期错误: {exc}")
-        logger.error(traceback.format_exc())
-        return ExitCode.GENERIC_ERROR
-
-
-if __name__ == "__main__":
-    sys.exit(main())
