@@ -164,7 +164,6 @@ export default function showActionSheetMode() {
       console.info('[showActionSheetMode_0300] showActionSheet click');
 
       // let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
-      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
       try{
         let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
         let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm button'));
