@@ -479,18 +479,18 @@ export default function actsWifiEventTest() {
             done();
         })
       /**
-       * @tc.name   Sub_Communication_WiFiExt_SetPowerModel_Null_0011
-       * @tc.number Sub_Communication_WiFiExt_SetPowerModel_Null_0011
+       * @tc.name   SUB_Communication_WiFiExt_SetPowerModel_Null_0011
+       * @tc.number SUB_Communication_WiFiExt_SetPowerModel_Null_0011
        * @tc.desc   Test setPowerModel API with null parameter
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL2
        */
-      it('Sub_Communication_WiFiExt_SetPowerModel_Null_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-        console.info('Sub_Communication_WiFiExt_SetPowerModel_Null_0011 start');
+      it('SUB_Communication_WiFiExt_SetPowerModel_Null_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        console.info('SUB_Communication_WiFiExt_SetPowerModel_Null_0011 start');
         try {
           let isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
-          console.info("Sub_Communication_WiFiExt_SetPowerModel_Null_0011 test.syscap.param.001 : " + isAccessToken);
+          console.info("SUB_Communication_WiFiExt_SetPowerModel_Null_0011 test.syscap.param.001 : " + isAccessToken);
           if (isAccessToken) {
             let return_value = wifiext.setPowerModel(null);
             console.info("[wifi_test] wifiext setPowerModel success");
@@ -499,25 +499,25 @@ export default function actsWifiEventTest() {
             expect(isAccessToken).assertFalse();
           }
         } catch (e) {
-          console.info("Sub_Communication_WiFiExt_SetPowerModel_Null_0011 canIUse isAccessToken error: " + e);
+          console.info("SUB_Communication_WiFiExt_SetPowerModel_Null_0011 canIUse isAccessToken error: " + e);
           expect().assertFail();
         }
-        console.info('Sub_Communication_WiFiExt_SetPowerModel_Null_0011 end');
+        console.info('SUB_Communication_WiFiExt_SetPowerModel_Null_0011 end');
         done();
       });
       /**
-       * @tc.name   Sub_Communication_WiFiExt_SetPowerModel_Undefined_0012
-       * @tc.number Sub_Communication_WiFiExt_SetPowerModel_Undefined_0012
+       * @tc.name   SUB_Communication_WiFiExt_SetPowerModel_Undefined_0012
+       * @tc.number SUB_Communication_WiFiExt_SetPowerModel_Undefined_0012
        * @tc.desc   Test setPowerModel API with undefined parameter
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL2
        */
-      it('Sub_Communication_WiFiExt_SetPowerModel_Undefined_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-        console.info('Sub_Communication_WiFiExt_SetPowerModel_Undefined_0012 start');
+      it('SUB_Communication_WiFiExt_SetPowerModel_Undefined_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        console.info('SUB_Communication_WiFiExt_SetPowerModel_Undefined_0012 start');
         try {
           let isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
-          console.info("Sub_Communication_WiFiExt_SetPowerModel_Undefined_0012 test.syscap.param.001 : " + isAccessToken);
+          console.info("SUB_Communication_WiFiExt_SetPowerModel_Undefined_0012 test.syscap.param.001 : " + isAccessToken);
           if (isAccessToken) {
             let return_value = wifiext.setPowerModel(undefined);
             console.info("[wifi_test] wifiext setPowerModel success");
@@ -526,25 +526,25 @@ export default function actsWifiEventTest() {
             expect(isAccessToken).assertFalse();
           }
         } catch (e) {
-          console.info("Sub_Communication_WiFiExt_SetPowerModel_Undefined_0012 canIUse isAccessToken error: " + e);
+          console.info("SUB_Communication_WiFiExt_SetPowerModel_Undefined_0012 canIUse isAccessToken error: " + e);
           expect().assertFail();
         }
-        console.info('Sub_Communication_WiFiExt_SetPowerModel_Undefined_0012 end');
+        console.info('SUB_Communication_WiFiExt_SetPowerModel_Undefined_0012 end');
         done();
       });
       /**
-       * @tc.name   Sub_Communication_WiFiExt_SetPowerModel_InvalidEnum_0013
-       * @tc.number Sub_Communication_WiFiExt_SetPowerModel_InvalidEnum_0013
+       * @tc.name   SUB_Communication_WiFiExt_SetPowerModel_InvalidEnum_0013
+       * @tc.number SUB_Communication_WiFiExt_SetPowerModel_InvalidEnum_0013
        * @tc.desc   Test setPowerModel API with invalid enum value
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL2
        */
-      it('Sub_Communication_WiFiExt_SetPowerModel_InvalidEnum_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-        console.info('Sub_Communication_WiFiExt_SetPowerModel_InvalidEnum_0013 start');
+      it('SUB_Communication_WiFiExt_SetPowerModel_InvalidEnum_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        console.info('SUB_Communication_WiFiExt_SetPowerModel_InvalidEnum_0013 start');
         try {
           let isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
-          console.info("Sub_Communication_WiFiExt_SetPowerModel_InvalidEnum_0013 test.syscap.param.001 : " + isAccessToken);
+          console.info("SUB_Communication_WiFiExt_SetPowerModel_InvalidEnum_0013 test.syscap.param.001 : " + isAccessToken);
           if (isAccessToken) {
             let return_value = wifiext.setPowerModel(99);
             console.info("[wifi_test] wifiext setPowerModel success");
@@ -553,25 +553,25 @@ export default function actsWifiEventTest() {
             expect(isAccessToken).assertFalse();
           }
         } catch (e) {
-          console.info("Sub_Communication_WiFiExt_SetPowerModel_InvalidEnum_0013 canIUse isAccessToken error: " + e);
+          console.info("SUB_Communication_WiFiExt_SetPowerModel_InvalidEnum_0013 canIUse isAccessToken error: " + e);
           expect().assertFail();
         }
-        console.info('Sub_Communication_WiFiExt_SetPowerModel_InvalidEnum_0013 end');
+        console.info('SUB_Communication_WiFiExt_SetPowerModel_InvalidEnum_0013 end');
         done();
       });
       /**
-       * @tc.name   Sub_Communication_WiFiExt_SetPowerModel_NegativeEnum_0014
-       * @tc.number Sub_Communication_WiFiExt_SetPowerModel_NegativeEnum_0014
+       * @tc.name   SUB_Communication_WiFiExt_SetPowerModel_NegativeEnum_0014
+       * @tc.number SUB_Communication_WiFiExt_SetPowerModel_NegativeEnum_0014
        * @tc.desc   Test setPowerModel API with negative enum value
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL2
        */
-      it('Sub_Communication_WiFiExt_SetPowerModel_NegativeEnum_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-        console.info('Sub_Communication_WiFiExt_SetPowerModel_NegativeEnum_0014 start');
+      it('SUB_Communication_WiFiExt_SetPowerModel_NegativeEnum_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        console.info('SUB_Communication_WiFiExt_SetPowerModel_NegativeEnum_0014 start');
         try {
           let isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
-          console.info("Sub_Communication_WiFiExt_SetPowerModel_NegativeEnum_0014 test.syscap.param.001 : " + isAccessToken);
+          console.info("SUB_Communication_WiFiExt_SetPowerModel_NegativeEnum_0014 test.syscap.param.001 : " + isAccessToken);
           if (isAccessToken) {
             let return_value = wifiext.setPowerModel(-1);
             console.info("[wifi_test] wifiext setPowerModel success");
@@ -580,10 +580,10 @@ export default function actsWifiEventTest() {
             expect(isAccessToken).assertFalse();
           }
         } catch (e) {
-          console.info("Sub_Communication_WiFiExt_SetPowerModel_NegativeEnum_0014 canIUse isAccessToken error: " + e);
+          console.info("SUB_Communication_WiFiExt_SetPowerModel_NegativeEnum_0014 canIUse isAccessToken error: " + e);
           expect().assertFail();
         }
-        console.info('Sub_Communication_WiFiExt_SetPowerModel_NegativeEnum_0014 end');
+        console.info('SUB_Communication_WiFiExt_SetPowerModel_NegativeEnum_0014 end');
         done();
       });
       /**
