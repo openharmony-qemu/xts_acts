@@ -65,12 +65,12 @@ export default function ActionSheetLifeTest() {
 
       try {
         let scrollBar: Component = await driver.findComponent(ON.type('Scroll'))
-      let button = await scrollBar.scrollSearch(ON.text('button'));
+        let button = await scrollBar.scrollSearch(ON.text('button'));
+        await button.click();
       } catch (error) {
         console.info('====error======='+error)
       }
 
-      await button.click();
       await CommonFunc.sleep(2000);
       let actionSheetFlag3 = getInspectorByKey('actionSheetFlag3');
       expect(JSON.parse(actionSheetFlag3).$attrs.content).assertEqual('true');
