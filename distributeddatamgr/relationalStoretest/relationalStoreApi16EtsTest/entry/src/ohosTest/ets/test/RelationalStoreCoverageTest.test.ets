@@ -2108,7 +2108,7 @@ export default function relationalStoreCoverageTest() {
             }
           });
         } catch (err) {
-          console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+          console.error(TAG + `setCloudDistributedTables EMPLOYEE failed, code: ${err.code}, messege: ${err.message}`);
           expect(err.code).assertEqual("401");
         }
       }
@@ -2117,7 +2117,7 @@ export default function relationalStoreCoverageTest() {
     // ==================== RdbStore.createTransaction ====================
     /**
      * @tc.name   testCreateTransaction0001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_CreateTransaction_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testCreateTransaction0001
      * @tc.desc   RdbStore createTransaction with out of range transactionType enum value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
