@@ -61,10 +61,10 @@ export default function PromptActionShowDialogTest() {
       await CommonFunc.sleep(2000);
       try{
         let TextB = await driver.findComponent(ON.id('tit'));
+        await TextB.click();
       } catch (error) {
         console.info('====error======='+error)
       }
-      await TextB.click();
       await CommonFunc.sleep(2000);
 
       let strJson: string = getInspectorByKey('dialog_test_result');

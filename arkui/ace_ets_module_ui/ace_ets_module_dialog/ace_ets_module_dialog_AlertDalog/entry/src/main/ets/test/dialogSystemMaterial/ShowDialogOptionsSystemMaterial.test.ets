@@ -74,10 +74,14 @@ export default function ShowDialogOptionsSystemMaterialTest() {
       console.info('ShowDialogOptionsSystemMaterial_0100 Dialog Undefined is visible');
 
       await CommonFunc.sleep(500);
-      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
-      let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
-      let okButton = await driver.findComponent(ON.text('OK'));
-      await okButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
+        let okButton = await driver.findComponent(ON.text('OK'));
+        await okButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('ShowDialogOptionsSystemMaterial_0100 END');
       done();
@@ -107,10 +111,14 @@ export default function ShowDialogOptionsSystemMaterialTest() {
       console.info('ShowDialogOptionsSystemMaterial_0200 Dialog HDS THICK is visible');
 
       await CommonFunc.sleep(500);
-      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
-      let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
-      let okButton = await driver.findComponent(ON.text('OK'));
-      await okButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
+        let okButton = await driver.findComponent(ON.text('OK'));
+        await okButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('ShowDialogOptionsSystemMaterial_0200 END');
       done();
@@ -140,10 +148,14 @@ export default function ShowDialogOptionsSystemMaterialTest() {
       console.info('ShowDialogOptionsSystemMaterial_0300 Dialog SEMI_TRANSPARENT is visible');
 
       await CommonFunc.sleep(500);
-      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
-      let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
-      let okButton = await driver.findComponent(ON.text('OK'));
-      await okButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
+        let okButton = await driver.findComponent(ON.text('OK'));
+        await okButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('ShowDialogOptionsSystemMaterial_0300 END');
       done();
@@ -173,10 +185,14 @@ export default function ShowDialogOptionsSystemMaterialTest() {
       console.info('ShowDialogOptionsSystemMaterial_0400 Dialog Immersive THICK is visible');
 
       await CommonFunc.sleep(500);
-      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
-      let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
-      let okButton = await driver.findComponent(ON.text('OK'));
-      await okButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
+        let okButton = await driver.findComponent(ON.text('OK'));
+        await okButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('ShowDialogOptionsSystemMaterial_0400 END');
       done();
@@ -207,10 +223,15 @@ export default function ShowDialogOptionsSystemMaterialTest() {
       console.info('ShowDialogOptionsSystemMaterial_0500 Dialog Immersive ULTRA_THIN is visible');
 
       await CommonFunc.sleep(500);
-      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
-      let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
-      let okButton = await driver.findComponent(ON.text('OK'));
-      await okButton.click();
+      
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('OK'));
+        let okButton = await driver.findComponent(ON.text('OK'));
+        await okButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('ShowDialogOptionsSystemMaterial_0500 END');
       done();

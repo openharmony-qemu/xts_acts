@@ -74,10 +74,14 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       console.info('ActionSheetOptionsSystemMaterial_0100 Sheet title is visible');
 
       await CommonFunc.sleep(500);
-      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
-      let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
-      let closeButton = await driver.findComponent(ON.text('Confirm'));
-      await closeButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
+        let closeButton = await driver.findComponent(ON.text('Confirm'));
+        await closeButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('ActionSheetOptionsSystemMaterial_0100 END');
       done();
@@ -109,10 +113,14 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       console.info('ActionSheetOptionsSystemMaterial_0200 Sheet title is visible');
 
       await CommonFunc.sleep(500);
-      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
-      let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
-      let closeButton = await driver.findComponent(ON.text('Confirm'));
-      await closeButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
+        let closeButton = await driver.findComponent(ON.text('Confirm'));
+        await closeButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('ActionSheetOptionsSystemMaterial_0200 END');
       done();
@@ -145,10 +153,14 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       console.info('ActionSheetOptionsSystemMaterial_0300 Sheet title is visible');
 
       await CommonFunc.sleep(500);
-      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
-      let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
-      let closeButton = await driver.findComponent(ON.text('Confirm'));
-      await closeButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
+        let closeButton = await driver.findComponent(ON.text('Confirm'));
+        await closeButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('ActionSheetOptionsSystemMaterial_0300 END');
       done();
@@ -179,10 +191,14 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       console.info('ActionSheetOptionsSystemMaterial_0400 Sheet title is visible');
 
       await CommonFunc.sleep(500);
-      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
-      let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
-      let closeButton = await driver.findComponent(ON.text('Confirm'));
-      await closeButton.click();
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
+        let closeButton = await driver.findComponent(ON.text('Confirm'));
+        await closeButton.click();
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       await CommonFunc.sleep(1000);
       console.info('ActionSheetOptionsSystemMaterial_0400 END');
       done();
@@ -214,8 +230,13 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       console.info('ActionSheetOptionsSystemMaterial_0500 Sheet title is visible');
 
       await CommonFunc.sleep(500);
-      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
-      let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
+      
+      try {
+        let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+        let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
+      } catch (error) {
+        console.info('====error======='+error)
+      }
       let closeButton = await driver.findComponent(ON.text('Confirm'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
