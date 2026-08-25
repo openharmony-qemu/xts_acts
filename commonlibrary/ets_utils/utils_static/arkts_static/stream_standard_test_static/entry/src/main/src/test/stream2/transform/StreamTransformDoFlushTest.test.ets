@@ -715,7 +715,7 @@ export default function StreamTransformDoFlushTest(): void {
       expect(ws.flushTriggered).assertTrue();
       expect(ws.writableEnded).assertTrue();
       let data = ws.read();
-      expect(data).not().assertEqual(null);
+      expect(data?.toString()).assertEqual("test");
       expect(ws.readable).assertTrue();
     });
 
