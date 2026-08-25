@@ -16,6 +16,7 @@
 import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import ethernet from '@ohos.net.ethernet';
 import { BusinessError } from '@ohos.base';
+import connection from '@ohos.net.connection';
 
 
 const ExpectTrue: (n: boolean) => void = (n: boolean) => {
@@ -50,8 +51,7 @@ export default function EtherNetTest() {
         done();
       });
       console.info(`${caseName} test end `)
-    })
-
+    });
     /**
      * @tc.name   testNetworkMgrGetMacAddress0200
      * @tc.number SUB_NetworkMgr_GetMacAddress_0200
@@ -73,7 +73,112 @@ export default function EtherNetTest() {
         done();
       });
       console.info(`${caseName} test end `)
-    })
+    });
+    /**
+     * @tc.number: testNetworkEthernetHttpproxy0100
+     * @tc.name: SUB_NetworkEthernet_Httpproxy_0100
+     * @tc.desc: Verify that ethernet.HttpProxy type is consistent with connection.HttpProxy structure
+     * @tc.type: Type
+     * @tc.size: MediumTest
+     * @tc.level: Level1
+     */
+    it('testNetworkEthernetHttpproxy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testNetworkEthernetHttpproxy0100';
+      console.info(`${caseName} test start`);
+      try {
+        const httpProxy: ethernet.HttpProxy = {
+          host: '192.168.1.100',
+          port: 8080,
+          exclusionList: ['192.168', 'localhost', '*.example.com']
+        } as ethernet.HttpProxy;
+        ExpectTrue(httpProxy !== null && httpProxy !== undefined);
+        ExpectTrue(typeof httpProxy.host === 'string');
+        ExpectTrue(typeof httpProxy.port === 'number');
+        ExpectTrue(Array.isArray(httpProxy.exclusionList));
+        ExpectTrue(httpProxy.host === '192.168.1.100');
+        ExpectTrue(httpProxy.port === 8080);
+        ExpectTrue(httpProxy.exclusionList.length === 3);
+        ExpectTrue(httpProxy.exclusionList[0] === '192.168');
+        ExpectTrue(httpProxy.exclusionList[1] === 'localhost');
+        ExpectTrue(httpProxy.exclusionList[2] === '*.example.com');
+        console.info(`${caseName} test end`);
+        done();
+      } catch (err) {
+        console.error(`${caseName} error: ` + JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(`${caseName} test end `)
+    });
 
+    /**
+     * @tc.number: testNetworkEthernetHttpproxy0200
+     * @tc.name: SUB_NetworkEthernet_Httpproxy_0200
+     * @tc.desc: Verify ethernet.HttpProxy is type-equivalent to connection.HttpProxy by cross-assignment
+     * @tc.type: Type
+     * @tc.size: MediumTest
+     * @tc.level: Level1
+     */
+    it('testNetworkEthernetHttpproxy0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testNetworkEthernetHttpproxy0200';
+      console.info(`${caseName} test start`);
+      try {
+        const connectionProxy: connection.HttpProxy = {
+          host: 'proxy.example.com',
+          port: 3128,
+          exclusionList: ['127.0.0.1', '*.internal.com']
+        } as connection.HttpProxy;
+        ExpectTrue(connectionProxy !== null && connectionProxy !== undefined);
+        ExpectTrue(connectionProxy.host === 'proxy.example.com');
+        ExpectTrue(connectionProxy.port === 3128);
+        ExpectTrue(connectionProxy.exclusionList.length === 2);
+        const ethernetProxy: ethernet.HttpProxy = {
+          host: connectionProxy.host,
+          port: connectionProxy.port,
+          exclusionList: connectionProxy.exclusionList
+        } as ethernet.HttpProxy;
+        ExpectTrue(ethernetProxy.host === connectionProxy.host);
+        ExpectTrue(ethernetProxy.port === connectionProxy.port);
+        ExpectTrue(ethernetProxy.exclusionList.length === connectionProxy.exclusionList.length);
+        done();
+      } catch (err) {
+        console.error(`${caseName} error: ` + JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(`${caseName} test end `)
+    });
+
+    /**
+     * @tc.number: testNetworkEthernetHttpproxy0300
+     * @tc.name: SUB_NetworkEthernet_Httpproxy_0300
+     * @tc.desc: Verify HttpProxy works with an empty exclusion list
+     * @tc.type: Type
+     * @tc.size: MediumTest
+     * @tc.level: Level2
+     */
+    it('testNetworkEthernetHttpproxy0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      const caseName: string = 'testNetworkEthernetHttpproxy0300';
+      console.info(`${caseName} test start`);
+      try {
+        const httpProxy: ethernet.HttpProxy = {
+          host: '10.0.0.1',
+          port: 8888,
+          exclusionList: []
+        } as ethernet.HttpProxy;
+
+        ExpectTrue(httpProxy.host === '10.0.0.1');
+        ExpectTrue(httpProxy.port === 8888);
+        ExpectTrue(httpProxy.exclusionList !== null && httpProxy.exclusionList !== undefined);
+        ExpectTrue(Array.isArray(httpProxy.exclusionList));
+        ExpectTrue(httpProxy.exclusionList.length === 0);
+        done();
+      } catch (err) {
+        console.error(`${caseName} error: ` + JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
   })
 }
