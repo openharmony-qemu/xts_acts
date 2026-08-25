@@ -2542,19 +2542,20 @@ export default function UDPSocketTest() {
         await udp.bind(UDPAddr1).catch((err: BusinessError) => {
           console.info('fail to bind' + err.code.toString());
         });
-        await udp.getSocketFd().then((fd: number) => {
+        try {
+          let fd: number = await udp.getSocketFd();
           console.info(`${caseName} get Socket FD: ${fd}`);
           expectTrue(fd !== -1);
           udp.close();
           console.info(`${caseName} test end`);
           done();
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} getSocketFd err: ${JSON.stringify(err)}`);
           udp.close();
           expectFail();
           console.info(`${caseName} test end`);
           done();
-        });
+        }
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
@@ -2576,19 +2577,20 @@ export default function UDPSocketTest() {
       console.info(`${caseName} test start`);
       try {
         let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-        await udp.getSocketFd().then((fd: number) => {
+        try {
+          let fd: number = await udp.getSocketFd();
           console.info(`${caseName} get Socket FD: ${fd}`);
           expectTrue(fd === -1);
           udp.close();
           console.info(`${caseName} test end`);
           done();
-        }).catch((err: BusinessError) => {
+        } catch (err) {
           console.info(`${caseName} getSocketFd err: ${JSON.stringify(err)}`);
           udp.close();
           expectFail();
           console.info(`${caseName} test end`);
           done();
-        });
+        }
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
