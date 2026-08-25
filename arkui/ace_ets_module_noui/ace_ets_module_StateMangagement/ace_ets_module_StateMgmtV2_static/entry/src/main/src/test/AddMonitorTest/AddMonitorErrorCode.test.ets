@@ -74,15 +74,20 @@ export default function AddMonitorErrorCode(): void {
     it('AddMonitorErrorCode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorErrorCode_static_0100';
       console.info('[' + tagName + '] START============================');
-      let driver = await Driver.create();
-      let btn_true = await driver.findComponent(ON.id('ErrorCodeButton'));
-      await btn_true.click();
-      await CommonFunc.sleep(1000);
-      let strJsonNew = inspector.getInspectorByKey('ErrorCodeText');
-      console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
-        .getElement('$attrs')
-        .getString('content')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('130000');
+      try{
+        let driver = await Driver.create();
+        let btn_true = await driver.findComponent(ON.id('ErrorCodeButton'));
+        await btn_true.click();
+        await CommonFunc.sleep(1000);
+        let strJsonNew = inspector.getInspectorByKey('ErrorCodeText');
+        console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
+          .getElement('$attrs')
+          .getString('content')));
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('130000');
+      } catch (err) {
+        console.error('AddMonitorErrorCode_static_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[' + tagName + '] END ===========================');
       done();
     });

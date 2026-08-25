@@ -74,15 +74,20 @@ export default function AddMonitorNoPath(): void {
     it('AddMonitorNoPath_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorNoPath_static_0100';
       console.info('[' + tagName + '] START============================');
-      let driver = await Driver.create();
-      let NoPathButton = await driver.findComponent(ON.id('NoPathButton'));
-      await NoPathButton.click();
-      await CommonFunc.sleep(1000);
-      let strJsonNew = inspector.getInspectorByKey('text');
-      console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
-        .getElement('$attrs')
-        .getString('content')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] value MONITOR_0 has changed from 5 to 6');
+      try{
+        let driver = await Driver.create();
+        let NoPathButton = await driver.findComponent(ON.id('NoPathButton'));
+        await NoPathButton.click();
+        await CommonFunc.sleep(1000);
+        let strJsonNew = inspector.getInspectorByKey('text');
+        console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
+          .getElement('$attrs')
+          .getString('content')));
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] value MONITOR_0 has changed from 5 to 6');
+      } catch (err) {
+        console.error('AddMonitorNoPath_static_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[' + tagName + '] END ===========================');
       done();
     });

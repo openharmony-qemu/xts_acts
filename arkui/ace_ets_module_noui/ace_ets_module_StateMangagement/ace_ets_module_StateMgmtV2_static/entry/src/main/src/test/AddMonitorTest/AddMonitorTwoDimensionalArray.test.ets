@@ -74,29 +74,34 @@ export default function AddMonitorTwoDimensionalArray(): void {
     it('AddMonitorTwoDimensionalArray_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorTwoDimensionalArray_static_0100';
       console.info('[' + tagName + '] START============================');
-      let driver = await Driver.create();
-      let btn_true = await driver.findComponent(ON.id('change1'));
-      await btn_true.click();
-      await CommonFunc.sleep(1000);
-      let strJsonNew = inspector.getInspectorByKey('matrixText1');
-      console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
-        .getElement('$attrs')
-        .getString('content')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] 二维数组 value has changed from 1,2,3,4,5,6,7,8,9 to 12,23,34,44,55,66,77,88,99');
-      let btn_true1 = await driver.findComponent(ON.id('clearArrayMonitor1'));
-      await btn_true1.click();
-      await CommonFunc.sleep(1000);
-      let btn_true2 = await driver.findComponent(ON.id('change2'));
-      await btn_true2.click();
-      await CommonFunc.sleep(1000);
-      let strJsonNew1 = inspector.getInspectorByKey('matrixText1');
-      console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
-        .getElement('$attrs')
-        .getString('content')));
-      expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] 二维数组 value has changed from 1,2,3,4,5,6,7,8,9 to 12,23,34,44,55,66,77,88,99');
+      try{
+        let driver = await Driver.create();
+        let btn_true = await driver.findComponent(ON.id('change1'));
+        await btn_true.click();
+        await CommonFunc.sleep(1000);
+        let strJsonNew = inspector.getInspectorByKey('matrixText1');
+        console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
+          .getElement('$attrs')
+          .getString('content')));
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] 二维数组 value has changed from 1,2,3,4,5,6,7,8,9 to 12,23,34,44,55,66,77,88,99');
+        let btn_true1 = await driver.findComponent(ON.id('clearArrayMonitor1'));
+        await btn_true1.click();
+        await CommonFunc.sleep(1000);
+        let btn_true2 = await driver.findComponent(ON.id('change2'));
+        await btn_true2.click();
+        await CommonFunc.sleep(1000);
+        let strJsonNew1 = inspector.getInspectorByKey('matrixText1');
+        console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
+          .getElement('$attrs')
+          .getString('content')));
+        expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] 二维数组 value has changed from 1,2,3,4,5,6,7,8,9 to 12,23,34,44,55,66,77,88,99');
+      } catch (err) {
+        console.error('AddMonitorTwoDimensionalArray_static_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[' + tagName + '] END ===========================');
       done();
-      });
+    });
 
     /**
      * @tc.number   AddMonitorTwoDimensionalArray_static_0200
@@ -107,26 +112,31 @@ export default function AddMonitorTwoDimensionalArray(): void {
     it('AddMonitorTwoDimensionalArray_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorTwoDimensionalArray_static_0200';
       console.info('[' + tagName + '] START============================');
-      let driver = await Driver.create();
-      let btn_true = await driver.findComponent(ON.id('change11'));
-      await btn_true.click();
-      await CommonFunc.sleep(1000);
-      let strJsonNew = inspector.getInspectorByKey('matrixText2');
-      console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
-        .getElement('$attrs')
-        .getString('content')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] 二维数组下的数组 value has changed from 123,234,345 to 11,22,33');
-      let btn_true1 = await driver.findComponent(ON.id('clearArrayMonitor11'));
-      await btn_true1.click();
-      await CommonFunc.sleep(1000);
-      let btn_true2 = await driver.findComponent(ON.id('change22'));
-      await btn_true2.click();
-      await CommonFunc.sleep(1000);
-      let strJsonNew1 = inspector.getInspectorByKey('matrixText2');
-      console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
-        .getElement('$attrs')
-        .getString('content')));
-      expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] 二维数组下的数组 value has changed from 123,234,345 to 11,22,33');
+      try{
+        let driver = await Driver.create();
+        let btn_true = await driver.findComponent(ON.id('change11'));
+        await btn_true.click();
+        await CommonFunc.sleep(1000);
+        let strJsonNew = inspector.getInspectorByKey('matrixText2');
+        console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
+          .getElement('$attrs')
+          .getString('content')));
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] 二维数组下的数组 value has changed from 123,234,345 to 11,22,33');
+        let btn_true1 = await driver.findComponent(ON.id('clearArrayMonitor11'));
+        await btn_true1.click();
+        await CommonFunc.sleep(1000);
+        let btn_true2 = await driver.findComponent(ON.id('change22'));
+        await btn_true2.click();
+        await CommonFunc.sleep(1000);
+        let strJsonNew1 = inspector.getInspectorByKey('matrixText2');
+        console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
+          .getElement('$attrs')
+          .getString('content')));
+        expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] 二维数组下的数组 value has changed from 123,234,345 to 11,22,33');
+      } catch (err) {
+        console.error('AddMonitorTwoDimensionalArray_static_0200 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[' + tagName + '] END ===========================');
       done();
     });
@@ -140,26 +150,31 @@ export default function AddMonitorTwoDimensionalArray(): void {
     it('AddMonitorTwoDimensionalArray_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorTwoDimensionalArray_static_0300';
       console.info('[' + tagName + '] START============================');
-      let driver = await Driver.create();
-      let btn_true = await driver.findComponent(ON.id('change111'));
-      await btn_true.click();
-      await CommonFunc.sleep(1000);
-      let strJsonNew = inspector.getInspectorByKey('matrixText3');
-      console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
-        .getElement('$attrs')
-        .getString('content')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] 二维数组下的元素 value has changed from 555 to 999');
-      let btn_true1 = await driver.findComponent(ON.id('clearArrayMonitor111'));
-      await btn_true1.click();
-      await CommonFunc.sleep(1000);
-      let btn_true2 = await driver.findComponent(ON.id('change222'));
-      await btn_true2.click();
-      await CommonFunc.sleep(1000);
-      let strJsonNew1 = inspector.getInspectorByKey('matrixText3');
-      console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
-        .getElement('$attrs')
-        .getString('content')));
-      expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] 二维数组下的元素 value has changed from 555 to 999');
+      try{
+        let driver = await Driver.create();
+        let btn_true = await driver.findComponent(ON.id('change111'));
+        await btn_true.click();
+        await CommonFunc.sleep(1000);
+        let strJsonNew = inspector.getInspectorByKey('matrixText3');
+        console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
+          .getElement('$attrs')
+          .getString('content')));
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] 二维数组下的元素 value has changed from 555 to 999');
+        let btn_true1 = await driver.findComponent(ON.id('clearArrayMonitor111'));
+        await btn_true1.click();
+        await CommonFunc.sleep(1000);
+        let btn_true2 = await driver.findComponent(ON.id('change222'));
+        await btn_true2.click();
+        await CommonFunc.sleep(1000);
+        let strJsonNew1 = inspector.getInspectorByKey('matrixText3');
+        console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
+          .getElement('$attrs')
+          .getString('content')));
+        expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] 二维数组下的元素 value has changed from 555 to 999');
+      } catch (err) {
+        console.error('AddMonitorTwoDimensionalArray_static_0300 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[' + tagName + '] END ===========================');
       done();
     });
