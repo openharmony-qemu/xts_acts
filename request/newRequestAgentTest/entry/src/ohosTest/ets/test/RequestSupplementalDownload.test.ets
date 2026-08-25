@@ -2140,7 +2140,6 @@ export default function requestSupplementalDownTest() {
               expect(callback1Count > 0).assertTrue();
               expect(callback2Count > 0).assertTrue();
             } else {
-              expect(true).assertTrue();
             }
             downloadTask.off('progress');
             downloadTask.off('complete');
@@ -2158,7 +2157,6 @@ export default function requestSupplementalDownTest() {
             isDone = true;
             try {
               console.info(`====>SUB_Request_download_Supplemental_6900 timeout, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
-              expect(true).assertTrue();
               downloadTask.off('progress');
               downloadTask.off('complete');
               done();
@@ -2212,7 +2210,6 @@ export default function requestSupplementalDownTest() {
             if (callback2Count > 0) {
               expect(callback2Count > 0).assertTrue();
             } else {
-              expect(true).assertTrue();
             }
             downloadTask.off('progress');
             downloadTask.off('complete');
@@ -2232,7 +2229,6 @@ export default function requestSupplementalDownTest() {
             try {
               console.info(`====>SUB_Request_download_Supplemental_7000 timeout, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
               expect(callback1Count === 0).assertTrue();
-              expect(true).assertTrue();
               downloadTask.off('progress');
               downloadTask.off('complete');
               done();
@@ -2289,7 +2285,6 @@ export default function requestSupplementalDownTest() {
           expect(callback1Count > 0).assertTrue();
           expect(callback2Count > 0).assertTrue();
         } else {
-          expect(true).assertTrue();
         }
         downloadTask.off('pause');
         try {
@@ -2346,7 +2341,6 @@ export default function requestSupplementalDownTest() {
         if (callback2Count > 0) {
           expect(callback2Count > 0).assertTrue();
         } else {
-          expect(true).assertTrue();
         }
         downloadTask.off('pause');
         try {
@@ -2398,7 +2392,6 @@ export default function requestSupplementalDownTest() {
           expect(callback1Count > 0).assertTrue();
           expect(callback2Count > 0).assertTrue();
         } else {
-          expect(true).assertTrue();
         }
         done();
       } catch (err) {
@@ -2445,7 +2438,6 @@ export default function requestSupplementalDownTest() {
         if (callback2Count > 0) {
           expect(callback2Count > 0).assertTrue();
         } else {
-          expect(true).assertTrue();
         }
         done();
       } catch (err) {
@@ -2514,7 +2506,6 @@ export default function requestSupplementalDownTest() {
             isDone = true;
             try {
               console.info(`====>SUB_Request_download_Supplemental_7500 timeout, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
-              expect(true).assertTrue();
               downloadTask.off('fail');
               done();
             } catch (err) {
@@ -2579,7 +2570,6 @@ export default function requestSupplementalDownTest() {
             try {
               console.info(`====>SUB_Request_download_Supplemental_7600 timeout, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
               expect(callback1Count === 0).assertTrue();
-              expect(true).assertTrue();
               downloadTask.off('fail');
               done();
             } catch (err) {
@@ -2702,7 +2692,6 @@ export default function requestSupplementalDownTest() {
         if (callback2Count > 0) {
           expect(callback2Count > 0).assertTrue();
         } else {
-          expect(true).assertTrue();
         }
         done();
       } catch (err) {
