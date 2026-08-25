@@ -1,6 +1,6 @@
 'use static';
 import { Entry, Text, Column, Component, Button, ClickEvent, Color, $r, ColumnOptions, FlexAlign, Direction, Builder, Row, Margin } from '@ohos.arkui.component'
-import { State, Watch, PropRef } from '@ohos.arkui.stateManagement'
+import { State, Watch, PropRef, StoragePropRef } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import { ChipGroup, IconGroupSuffix, IconItemOptions, ChipGroupItemOptions, ChipItemStyle, SuffixImageIconOptions } from '@ohos.arkui.advanced.ChipGroup';
@@ -10,10 +10,12 @@ import { ChipSize , ChipSymbolGlyphOptions} from '@ohos.arkui.advanced.Chip';
 @Component
 struct ChipGroupOptionsPage {
   @State selected_index: Array<int> = [0, 1, 2, 3, 4, 5, 6];
+  @StoragePropRef('chipGroupOptionsTestIndex') testIndex: int = 0;
 
   build() {
     Column() {
-      ChipGroup({
+      if (this.testIndex == 0) {
+        ChipGroup({
         items: [
           {
             prefixIcon: { src: $r('app.media.startIcon') },
@@ -45,8 +47,10 @@ struct ChipGroupOptionsPage {
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
-      })
-      ChipGroup({
+        })
+      }
+      if (this.testIndex == 1) {
+        ChipGroup({
         items: [
           {
             prefixIcon: { src: $r('sys.media.ohos_ic_public_clock') },
@@ -83,8 +87,10 @@ struct ChipGroupOptionsPage {
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
-      })
-      ChipGroup({
+        })
+      }
+      if (this.testIndex == 2) {
+        ChipGroup({
         items: [
           {
             prefixIcon: { src: $r('sys.media.ohos_ic_public_cast_mirror') },
@@ -111,8 +117,10 @@ struct ChipGroupOptionsPage {
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
-      })
-      ChipGroup({
+        })
+      }
+      if (this.testIndex == 3) {
+        ChipGroup({
         items: [
           {
             prefixIcon: { src: $r('sys.media.ohos_ic_public_cast_mirror') },
@@ -133,8 +141,10 @@ struct ChipGroupOptionsPage {
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
-      })
-      ChipGroup({
+        })
+      }
+      if (this.testIndex == 4) {
+        ChipGroup({
         items: [
           {
             prefixIcon: { src: $r('sys.media.ohos_ic_public_cast_mirror') },
@@ -155,9 +165,11 @@ struct ChipGroupOptionsPage {
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
-      })
+        })
+      }
 
-      ChipGroup({
+      if (this.testIndex == 5) {
+        ChipGroup({
         items: [
           {
             prefixIcon: { src: $r('sys.media.ohos_ic_public_cast_mirror') },
@@ -178,9 +190,11 @@ struct ChipGroupOptionsPage {
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
-      })
+        })
+      }
 
-      ChipGroup({
+      if (this.testIndex == 6) {
+        ChipGroup({
         items: [
           {
             prefixIcon: { src: $r('sys.media.ohos_ic_public_cast_mirror') },
@@ -201,7 +215,8 @@ struct ChipGroupOptionsPage {
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
-      })
+        })
+      }
     }.width('100%').margin({ top: 30 } as Margin)
   }
 }

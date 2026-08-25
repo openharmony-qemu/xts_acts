@@ -69,10 +69,10 @@ export default function ChipV2OptionsEnabledTest(): void {
     it('SUB_ARKUI_API_ChipV2OptionsEnabledTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsEnabledTest_static_0100] START');
       await CommonFunc.sleep(1000);
-      const driver = Driver.create();
-      const chipList = await driver.findComponents(ON.type('Image').within(ON.id('ChipV2OptionsEnabledExample')));
-      console.info('[SUB_ARKUI_API_ChipV2OptionsEnabledTest_static_0100] length '+chipList?.length);
-      expect(chipList?.length).assertEqual(3);
+      const treeText = JSON.stringify(inspector.getInspectorTree());
+      const componentCount = treeText.split('"$type":"Image"').length - 1;
+      console.info('[SUB_ARKUI_API_ChipV2OptionsEnabledTest_static_0100] length '+componentCount);
+      expect(componentCount).assertEqual(3);
       console.info('[SUB_ARKUI_API_ChipV2OptionsEnabledTest_static_0100] END');
       done();
     });

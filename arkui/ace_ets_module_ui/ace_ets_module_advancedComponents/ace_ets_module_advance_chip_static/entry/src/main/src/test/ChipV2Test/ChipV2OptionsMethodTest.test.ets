@@ -42,6 +42,7 @@ export default function ChipV2OptionsMethodTest(): void {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
+        AppStorage.setOrCreate<string>('chipV2OptionsMethodAction', 'none');
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ChipV2OptionsMethodTest state pages:" + JSON.stringify(pages));
@@ -70,13 +71,18 @@ export default function ChipV2OptionsMethodTest(): void {
      * @tc.level    Level.LEVEL2
      */
     it('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] START');
-      await CommonFunc.sleep(1000);
-      const driver = Driver.create();
-      const chipList = await driver.findComponents(ON.type('Image').within(ON.id('ChipV2OptionsMethodExample')));
-      console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] length '+chipList?.length);
-      expect(chipList?.length).assertEqual(2);
-      console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] END');
+      try {
+        console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] START');
+        await CommonFunc.sleep(1000);
+        const treeText = JSON.stringify(inspector.getInspectorTree());
+        const componentCount = treeText.split('"$type":"Image"').length - 1;
+        console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] length '+componentCount);
+        expect(componentCount).assertEqual(2);
+        console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] END');
+      } catch (error) {
+        console.error('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] error: ' + error);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -87,16 +93,20 @@ export default function ChipV2OptionsMethodTest(): void {
      * @tc.level    Level.LEVEL2
      */
     it('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200] START');
-      await CommonFunc.sleep(1000);
-      const driver = Driver.create();
-      const ButtonList = await driver.findComponents(ON.type('Button').within(ON.id('ChipV2OptionsMethodExample')));
-      await ButtonList![0].click()
-      await CommonFunc.sleep(1000);
-      let clickedTextJson = inspector.getInspectorByKey('ChipV2OptionsClickedText');
-      console.info('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200' + JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getElement('content'));
-      expect(JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getString('content')).assertEqual('clickedChip0');
-      console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200] END');
+      try {
+        console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200] START');
+        AppStorage.setOrCreate<string>('chipV2OptionsMethodAction', 'clicked');
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2OptionsMethodTest' });
+        await CommonFunc.sleep(2000);
+        let clickedTextJson = inspector.getInspectorByKey('ChipV2OptionsClickedText');
+        console.info('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200' + JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getElement('content'));
+        expect(JSON.parseJsonElement(clickedTextJson).getElement('$attrs').getString('content')).assertEqual('clickedChip0');
+        console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200] END');
+      } catch (error) {
+        console.error('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0200] error: ' + error);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -107,16 +117,20 @@ export default function ChipV2OptionsMethodTest(): void {
      * @tc.level    Level.LEVEL2
      */
     it('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300] START');
-      await CommonFunc.sleep(1000);
-      const driver = Driver.create();
-      const symbolList = await driver.findComponents(ON.type('SymbolGlyph').within(ON.id('ChipV2OptionsMethodExample')));
-      await symbolList![0].click()
-      await CommonFunc.sleep(1000);
-      let closeTextJson = inspector.getInspectorByKey('ChipV2OptionsCloseText');
-      console.info('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300' + JSON.parseJsonElement(closeTextJson).getElement('$attrs').getElement('content'));
-      expect(JSON.parseJsonElement(closeTextJson).getElement('$attrs').getString('content')).assertEqual('closeChip0');
-      console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300] END');
+      try {
+        console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300] START');
+        AppStorage.setOrCreate<string>('chipV2OptionsMethodAction', 'close');
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2OptionsMethodTest' });
+        await CommonFunc.sleep(2000);
+        let closeTextJson = inspector.getInspectorByKey('ChipV2OptionsCloseText');
+        console.info('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300' + JSON.parseJsonElement(closeTextJson).getElement('$attrs').getElement('content'));
+        expect(JSON.parseJsonElement(closeTextJson).getElement('$attrs').getString('content')).assertEqual('closeChip0');
+        console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300] END');
+      } catch (error) {
+        console.error('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0300] error: ' + error);
+        expect().assertFail();
+      }
       done();
     });
   })

@@ -73,10 +73,10 @@ export default function ChipOptionsCloseOptionsTest(): void {
     it('ChipOptionsCloseOptionsTest_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ChipOptionsCloseOptionsTest_static_001] START');
       await CommonFunc.sleep(1000);
-      const driver = Driver.create();
-      const chipList = await driver.findComponents(ON.type('Image').within(ON.id('ChipOptionsCloseOptionsExample')));
-      console.info('[ChipOptionsCloseOptionsTest_static_001] length '+chipList?.length);
-      expect(chipList?.length).assertEqual(2);
+      const treeText = JSON.stringify(inspector.getInspectorTree());
+      const componentCount = treeText.split('"$type":"Image"').length - 1;
+      console.info('[ChipOptionsCloseOptionsTest_static_001] length '+componentCount);
+      expect(componentCount).assertEqual(2);
       console.info('[ChipOptionsCloseOptionsTest_static_001] END');
       done();
     });

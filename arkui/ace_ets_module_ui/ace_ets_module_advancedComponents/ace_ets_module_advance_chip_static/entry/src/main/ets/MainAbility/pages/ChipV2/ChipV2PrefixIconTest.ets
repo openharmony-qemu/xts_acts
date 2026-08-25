@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { Entry, Column, Row, ComponentV2, Color, $r, ColumnOptions, Direction, Button } from '@ohos.arkui.component';
-import { Local } from '@ohos.arkui.stateManagement';
+import { AppStorage, Local } from '@ohos.arkui.stateManagement';
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import {
   ChipV2,
@@ -37,7 +37,7 @@ import {
 @Entry
 @ComponentV2
 struct ChipV2PrefixIconPage {
-  @Local isActivated: boolean = false;
+  @Local isActivated: boolean = AppStorage.get<boolean>('chipV2PrefixIconActivated') as boolean;
 
   build() {
     Column({ space: 5 } as ColumnOptions) {

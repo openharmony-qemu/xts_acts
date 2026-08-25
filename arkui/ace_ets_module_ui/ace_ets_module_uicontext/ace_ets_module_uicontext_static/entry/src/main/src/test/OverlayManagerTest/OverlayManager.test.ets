@@ -46,7 +46,7 @@ function getContentByKey(key: string): string {
   return inspectorObj.getElement('$attrs').getString('content');
 }
 
-export default function OverlayManagerTest() {
+export default function OverlayManagerTest(): void {
   describe('OverlayManagerTest', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility('com.arkui.ace.ets.module.uicontext.static', 'EntryAbility');

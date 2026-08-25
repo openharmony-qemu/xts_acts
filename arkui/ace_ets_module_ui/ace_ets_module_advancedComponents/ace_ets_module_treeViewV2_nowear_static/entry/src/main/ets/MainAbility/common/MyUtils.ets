@@ -34,7 +34,7 @@ export default class Utils {
     })
   }
 
-  static sendEvent(message: string, eventId: number) {
+  static sendEvent(message: string, eventId: number): void {
     // let eventData: events_emitter.EventData = {
     //   data: {
     //     "msg": message
@@ -48,7 +48,7 @@ export default class Utils {
   }
 
   //获取组件所占矩形区域坐标
-  static getComponentRect(key: string) {
+  static getComponentRect(key: string): RectValue {
     let strJson: string = inspector.getInspectorByKey(key);
     let obj: Record<string, Object> = JSON.parse<Object>(strJson, Class.from<String>()) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));

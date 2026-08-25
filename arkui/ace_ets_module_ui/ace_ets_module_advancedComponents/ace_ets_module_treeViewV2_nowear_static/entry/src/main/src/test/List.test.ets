@@ -16,6 +16,6 @@
 
 import treeViewV2PageTest from './treeViewV2/treeViewV2Page.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   treeViewV2PageTest();
 }

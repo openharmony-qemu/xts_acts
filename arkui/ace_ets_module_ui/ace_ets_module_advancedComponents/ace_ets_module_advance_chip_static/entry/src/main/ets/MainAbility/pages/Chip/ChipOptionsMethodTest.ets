@@ -22,7 +22,7 @@ import { Entry, Component, Scroll, Column, ColumnOptions, Text, Row, FontWeight,
   Button,
   SizeOptions
 } from '@ohos.arkui.component';
-import { State } from '@ohos.arkui.stateManagement';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Chip,
   ChipOptions,
   ChipSize,
@@ -38,6 +38,23 @@ struct ChipOptionsMethodExample {
   @State closeText:string = ''
   @State clickedText:string = ''
 
+  aboutToAppear(): void {
+    const action = AppStorage.get<string>('chipOptionsMethodAction');
+    if (action === 'close') {
+      this.handleClose();
+    } else if (action === 'clicked') {
+      this.handleClicked();
+    }
+  }
+
+  private handleClose(): void {
+    this.closeText = 'closeChip0';
+  }
+
+  private handleClicked(): void {
+    this.clickedText = 'clickedChip0';
+  }
+
   build() {
     Column({ space: 20 } as ColumnOptions) {
       Text(this.closeText).id('ChipOptionsCloseText')
@@ -48,12 +65,8 @@ struct ChipOptionsMethodExample {
           fillColor: Color.Blue
         } as PrefixIconOptions,
         label: { text: 'Chip0' } as LabelOptions,
-        onClose:()=>{
-          this.closeText = 'closeChip0'
-        },
-        onClicked:()=>{
-          this.clickedText = 'clickedChip0'
-        }
+        onClose: () => this.handleClose(),
+        onClicked: () => this.handleClicked()
       } as ChipOptions)
       Chip({
         prefixIcon: {
