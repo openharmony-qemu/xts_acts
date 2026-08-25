@@ -910,6 +910,7 @@ export default function netfirewallTest() {
         done();
       }
     })
+
     /**
      * @tc.name   testNetFirewallAddNetFirewallRule_0400
      * @tc.number SUB_Network_NetFirewall_AddNetFirewallRule_0400
@@ -1443,6 +1444,193 @@ export default function netfirewallTest() {
         });
       }catch (err){
         console.log("test end ");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallAddNetFirewallRule_0800
+     * @tc.number SUB_Network_NetFirewall_AddNetFirewallRule_0800
+     * @tc.desc   Add a DOMAIN NetFirewallRule with prefix wildcard (*xx.xxx.xxx)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallAddNetFirewallRule_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallAddNetFirewallRule_0800';
+      console.info(`${caseName}---Start`);
+      try{
+        let domainRule: netFirewall.NetFirewallRule = {
+          userId: userId,
+          name: "rulePrefixWildcard",
+          description: "prefix wildcard domain rule",
+          direction: ruleDirection_RULE_OUT,
+          action: ruleAction_RULE_ALLOW,
+          type: ruleType_RULE_DOMAIN,
+          isEnabled: true,
+          appUid: 20001,
+          protocol: 6,
+          domains: [
+            {
+              isWildcard: true,
+              domain: "*ww.baidu.com"
+            }
+          ]
+        };
+        await netFirewall.addNetFirewallRule(domainRule).then(async (result: number) => {
+          console.info(`${caseName} rule Id: `, result);
+          ExpectTrue(result != undefined);
+          Current_Ruler_ID = result;
+          done();
+        }, (reason: BusinessError) => {
+          ExpectFail();
+          done();
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
+        });
+      }catch (err){
+        console.log("test end");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallAddNetFirewallRule_0900
+     * @tc.number SUB_Network_NetFirewall_AddNetFirewallRule_0900
+     * @tc.desc   Add a DOMAIN NetFirewallRule with middle prefix wildcard (xxx.xxx.xxx.*)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallAddNetFirewallRule_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallAddNetFirewallRule_0900';
+      console.info(`${caseName}---Start`);
+      try{
+        let domainRule: netFirewall.NetFirewallRule = {
+          userId: userId,
+          name: "ruleMiddleWildcard",
+          description: "middle wildcard domain rule",
+          direction: ruleDirection_RULE_OUT,
+          action: ruleAction_RULE_DENY,
+          type: ruleType_RULE_DOMAIN,
+          isEnabled: true,
+          appUid: 20001,
+          protocol: 6,
+          domains: [
+            {
+              isWildcard: true,
+              domain: "www.baidu.*"
+            }
+          ]
+        };
+        await netFirewall.addNetFirewallRule(domainRule).then(async (result: number) => {
+          console.info(`${caseName} rule Id: `, result);
+          ExpectTrue(result != undefined);
+          Current_Ruler_ID = result;
+          done();
+        }, (reason: BusinessError) => {
+          ExpectFail();
+          done();
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
+        });
+      }catch (err){
+        console.log("test end");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallAddNetFirewallRule_1000
+     * @tc.number SUB_Network_NetFirewall_AddNetFirewallRule_1000
+     * @tc.desc   Add a DOMAIN NetFirewallRule with both prefix and suffix wildcard (xx.xxxx.xxx.xx*)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallAddNetFirewallRule_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallAddNetFirewallRule_1000';
+      console.info(`${caseName}---Start`);
+      try{
+        let domainRule: netFirewall.NetFirewallRule = {
+          userId: userId,
+          name: "ruleBothWildcard",
+          description: "both wildcard domain rule",
+          direction: ruleDirection_RULE_IN,
+          action: ruleAction_RULE_ALLOW,
+          type: ruleType_RULE_DOMAIN,
+          isEnabled: true,
+          appUid: 20001,
+          protocol: 6,
+          domains: [
+            {
+              isWildcard: true,
+              domain: "www.baidu.c*"
+            }
+          ]
+        };
+        await netFirewall.addNetFirewallRule(domainRule).then(async (result: number) => {
+          console.info(`${caseName} rule Id: `, result);
+          ExpectTrue(result != undefined);
+          Current_Ruler_ID = result;
+          done();
+        }, (reason: BusinessError) => {
+          ExpectFail();
+          done();
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
+        });
+      }catch (err){
+        console.log("test end");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testNetFirewallAddNetFirewallRule_1200
+     * @tc.number SUB_Network_NetFirewall_AddNetFirewallRule_1200
+     * @tc.desc   Add a DOMAIN NetFirewallRule with both prefix and suffix wildcard (*.xxxx.xxx)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallAddNetFirewallRule_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallAddNetFirewallRule_1200';
+      console.info(`${caseName}---Start`);
+      try{
+        let domainRule: netFirewall.NetFirewallRule = {
+          userId: userId,
+          name: "ruleBothWildcard",
+          description: "both wildcard domain rule",
+          direction: ruleDirection_RULE_IN,
+          action: ruleAction_RULE_ALLOW,
+          type: ruleType_RULE_DOMAIN,
+          isEnabled: true,
+          appUid: 20001,
+          protocol: 6,
+          domains: [
+            {
+              isWildcard: true,
+              domain: "*.baidu.com"
+            }
+          ]
+        };
+        await netFirewall.addNetFirewallRule(domainRule).then(async (result: number) => {
+          console.info(`${caseName} rule Id: `, result);
+          ExpectTrue(result != undefined);
+          Current_Ruler_ID = result;
+          done();
+        }, (reason: BusinessError) => {
+          ExpectFail();
+          done();
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
+        });
+      }catch (err){
+        console.log("test end");
         console.log(`${caseName} catch err is `,JSON.stringify(err));
         ExpectFail();
         done();
