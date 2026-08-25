@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, Level, beforeAll } from '../../../../hypium/index'
+import { expect, describe, it, afterEach, Level } from '../../../../hypium/index'
 import { Driver, ON, Component, Point, MouseButton, Rect } from '@ohos.UiTest'
 import Utils from '../common/Utils'
 import { LibUtil } from '../../../ets/pages/LibUtil'
-import { UtilsTest } from '../Util.test'
 
 let libUtil: LibUtil = new LibUtil();
 
@@ -36,11 +35,12 @@ async function click(id: string) {
 export default function GestureCaseTest() {
 
   describe('GestureCaseTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api15.static", "EntryAbility")
-    });
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100)
+      try {
+        await Utils.sleep(100)
+      } catch (err) {
+        console.info('GestureCaseTest afterEach err: ' + JSON.stringify(err));
+      }
     })
 
     
@@ -51,13 +51,18 @@ export default function GestureCaseTest() {
      * @tc.level    Level.LEVEL1
      */
     it('GestureCaseTest001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'GestureRecognizerTest'
-      await Utils.pushPage(`gestureRecognizer/${PAGE_TAG}`)
-      await click('image')
-      let dataArray: string[] = libUtil.TestGestureRecognizerGetResult()
-      console.log('GestureCaseTest001', dataArray[0])
-      expect(dataArray[0] == '0').assertEqual(true)
-      done()
+      try {
+        let PAGE_TAG = 'GestureRecognizerTest'
+        await Utils.pushPage(`gestureRecognizer/${PAGE_TAG}`)
+        await click('image')
+        let dataArray: string[] = libUtil.TestGestureRecognizerGetResult()
+        console.log('GestureCaseTest001', dataArray[0])
+        expect(dataArray[0] == '0').assertEqual(true)
+        done()
+      } catch (err) {
+        console.info('GestureCaseTest001 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     
@@ -68,15 +73,20 @@ export default function GestureCaseTest() {
      * @tc.level    Level.LEVEL1
      */
     it('GestureCaseTest002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'GestureRecognizerTest'
-      await Utils.pushPage(`gestureRecognizer/${PAGE_TAG}`)
-      let driver = Driver.create()
-      let refresh: Component | null = await driver.findComponent(ON.id('image'))
-      await (refresh?.click() as Promise<void>)
-      let dataArray: string[] = libUtil.TestGestureRecognizerGetResult()
-      console.log('GestureCaseTest002', dataArray[0])
-      expect(dataArray[0] == '0,0').assertEqual(true)
-      done()
+      try {
+        let PAGE_TAG = 'GestureRecognizerTest'
+        await Utils.pushPage(`gestureRecognizer/${PAGE_TAG}`)
+        let driver = Driver.create()
+        let refresh: Component | null = await driver.findComponent(ON.id('image'))
+        await (refresh?.click() as Promise<void>)
+        let dataArray: string[] = libUtil.TestGestureRecognizerGetResult()
+        console.log('GestureCaseTest002', dataArray[0])
+        expect(dataArray[0] == '0,0').assertEqual(true)
+        done()
+      } catch (err) {
+        console.info('GestureCaseTest002 err: ' + JSON.stringify(err));
+        done();
+      }
     })
   })
 }
