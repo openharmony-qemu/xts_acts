@@ -180,4 +180,80 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1200, Function | MediumTest | Leve
     TEST_ASSERT_EQUAL_INT(OHOS_FAILURE, ret);
 };
 
+/**
+ * @tc.name   subUpgradeAPI1300
+ * @tc.number SUB_Upgrade_API_1300
+ * @tc.desc   test HotaGetOtaPkgPath with legal buffer
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1300, Function | MediumTest | Level1)
+{
+    char path[64] = {0};
+    int ret = HotaGetOtaPkgPath(path, 64);
+    printf("HotaGetOtaPkgPath return = %d, path = %s\r\n", ret, path);
+    TEST_ASSERT_EQUAL_INT(OHOS_SUCCESS, ret);
+};
+
+/**
+ * @tc.name   subUpgradeAPI1400
+ * @tc.number SUB_Upgrade_API_1400
+ * @tc.desc   test HotaGetUpdateAbility returns non-empty capability mask
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1400, Function | MediumTest | Level1)
+{
+    int ret = HotaGetUpdateAbility();
+    printf("HotaGetUpdateAbility return = %d\r\n", ret);
+    TEST_ASSERT_TRUE(ret != 0);
+};
+
+/**
+ * @tc.name   subUpgradeAPI1500
+ * @tc.number SUB_Upgrade_API_1500
+ * @tc.desc   test HotaGetUpdateStatus returns a defined status
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1500, Function | MediumTest | Level1)
+{
+    int ret = HotaGetUpdateStatus();
+    printf("HotaGetUpdateStatus return = %d\r\n", ret);
+    TEST_ASSERT_TRUE(ret == 0 || ret == 1);
+};
+
+/**
+ * @tc.name   subUpgradeAPI1700
+ * @tc.number SUB_Upgrade_API_1700
+ * @tc.desc   test HotaIsDeviceCanReboot returns boolean semantics
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1700, Function | MediumTest | Level1)
+{
+    int ret = HotaIsDeviceCanReboot();
+    printf("HotaIsDeviceCanReboot return = %d\r\n", ret);
+    TEST_ASSERT_TRUE(ret == 0 || ret == 1);
+};
+
+/**
+ * @tc.name   subUpgradeAPI2100
+ * @tc.number SUB_Upgrade_API_2100
+ * @tc.desc   test HotaSetBootSettings fails before upgrade started
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI2100, Function | MediumTest | Level1)
+{
+    int ret = HotaSetBootSettings();
+    printf("HotaSetBootSettings return = %d\r\n", ret);
+    TEST_ASSERT_TRUE(ret < 0);
+};
+
 RUN_TEST_SUITE(OtaFuncTestSuite);

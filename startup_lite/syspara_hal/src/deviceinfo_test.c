@@ -18,8 +18,29 @@
 #include "ohos_types.h"
 #include "parameter.h"
 #include "parameter_utils.h"
+#include <stdio.h>
+#include <string.h>
+
+#ifndef UDID_LEN
+#define UDID_LEN 65
+#endif
 
 #define QUERY_TIMES 50
+
+#define DECIMAL_BASE 10
+
+static int ParseVersionNumber(const char **pp)
+{
+    int num = 0;
+    const char *p = *pp;
+    while ((*p >= '0') && (*p <= '9')) {
+        num = num * DECIMAL_BASE + (*p - '0');
+        p++;
+    }
+    *pp = p;
+    return num;
+}
+
 
 LITE_TEST_SUIT(startup, deviceinfo, DeviceInfoTestSuite);
 
@@ -627,6 +648,399 @@ LITE_TEST_CASE(DeviceInfoTestSuite,
         int value = GetSdkApiVersion();
     }
     int value2 = GetSdkApiVersion();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+
+/**
+ * @tc.name   testGetOsReleaseType
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2501
+ * @tc.desc   test GetOsReleaseType, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetOsReleaseType,
+               Function | MediumTest | Level1)
+{
+    const char *value1 = GetOsReleaseType();
+    printf("OsReleaseType=%s\n", value1);
+    TEST_ASSERT_TRUE(value1 != NULL);
+    TEST_ASSERT_TRUE(value1[0] != '\0');
+    for (int i = 0; i < QUERY_TIMES; i++) {
+        const char *value = GetOsReleaseType();
+        TEST_ASSERT_TRUE(value != NULL);
+        TEST_ASSERT_TRUE(value[0] != '\0');
+    }
+    const char *value2 = GetOsReleaseType();
+    TEST_ASSERT_EQUAL_STRING(value1, value2);
+};
+
+/**
+ * @tc.name   testGetDevUdid
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2502
+ * @tc.desc   test GetDevUdid fill udid buffer.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetDevUdid,
+               Function | MediumTest | Level1)
+{
+    char udid[UDID_LEN] = {0};
+    int ret = GetDevUdid(udid, UDID_LEN);
+    printf("GetDevUdid ret=%d, udid=%s\n", ret, udid);
+    TEST_ASSERT_EQUAL_INT(0, ret);
+    TEST_ASSERT_TRUE(strlen(udid) == UDID_LEN - 1);
+    int allZero = 1;
+    for (int i = 0; i < (int)strlen(udid); i++) {
+        if (udid[i] != '0') {
+            allZero = 0;
+            break;
+        }
+    }
+    TEST_ASSERT_FALSE(allZero);
+    char udid2[UDID_LEN] = {0};
+    ret = GetDevUdid(udid2, UDID_LEN);
+    TEST_ASSERT_EQUAL_INT(0, ret);
+    TEST_ASSERT_EQUAL_STRING(udid, udid2);
+    ret = GetDevUdid(NULL, UDID_LEN);
+    TEST_ASSERT_TRUE(ret != 0);
+    ret = GetDevUdid(udid, 0);
+    TEST_ASSERT_TRUE(ret != 0);
+};
+
+
+/**
+ * @tc.name   testGetChipType
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2503
+ * @tc.desc   test GetChipType, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetChipType,
+               Function | MediumTest | Level1)
+{
+    const char *value1 = GetChipType();
+    printf("ChipType=%s\n", (value1 == NULL) ? "(null)" : value1);
+    const char *value2 = GetChipType();
+    TEST_ASSERT_TRUE(value1 == value2);
+};
+
+/**
+ * @tc.name   testGetBootCount
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2504
+ * @tc.desc   test GetBootCount, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetBootCount,
+               Function | MediumTest | Level1)
+{
+    int value1 = GetBootCount();
+    printf("BootCount=%d\n", value1);
+    TEST_ASSERT_TRUE(value1 >= 0);
+    int value2 = GetBootCount();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetDistributionOSApiName
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2506
+ * @tc.desc   test GetDistributionOSApiName, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetDistributionOSApiName,
+               Function | MediumTest | Level1)
+{
+    const char *value1 = GetDistributionOSApiName();
+    printf("DistributionOSApiName=%s\n", value1);
+    TEST_ASSERT_TRUE(value1 != NULL);
+    TEST_ASSERT_TRUE(value1[0] == '\0');
+    const char *value2 = GetDistributionOSApiName();
+    TEST_ASSERT_EQUAL_STRING(value1, value2);
+};
+
+/**
+ * @tc.name   testGetDistributionOSName
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2507
+ * @tc.desc   test GetDistributionOSName, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetDistributionOSName,
+               Function | MediumTest | Level1)
+{
+    const char *value1 = GetDistributionOSName();
+    printf("DistributionOSName=%s\n", value1);
+    TEST_ASSERT_TRUE(value1 != NULL);
+    TEST_ASSERT_TRUE(value1[0] == '\0');
+    const char *value2 = GetDistributionOSName();
+    TEST_ASSERT_EQUAL_STRING(value1, value2);
+};
+
+/**
+ * @tc.name   testGetDistributionOSReleaseType
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2508
+ * @tc.desc   test GetDistributionOSReleaseType, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetDistributionOSReleaseType,
+               Function | MediumTest | Level1)
+{
+    const char *value1 = GetDistributionOSReleaseType();
+    printf("DistributionOSReleaseType=%s\n", value1);
+    TEST_ASSERT_EQUAL_STRING(value1, GetOsReleaseType());
+    const char *value2 = GetDistributionOSReleaseType();
+    TEST_ASSERT_EQUAL_STRING(value1, value2);
+};
+
+/**
+ * @tc.name   testGetDistributionOSVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2509
+ * @tc.desc   test GetDistributionOSVersion, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetDistributionOSVersion,
+               Function | MediumTest | Level1)
+{
+    const char *value1 = GetDistributionOSVersion();
+    printf("DistributionOSVersion=%s\n", value1);
+    TEST_ASSERT_EQUAL_STRING(value1, GetOSFullName());
+    const char *value2 = GetDistributionOSVersion();
+    TEST_ASSERT_EQUAL_STRING(value1, value2);
+};
+
+/**
+ * @tc.name   testGetDistributionOSApiVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2510
+ * @tc.desc   test GetDistributionOSApiVersion > 0, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetDistributionOSApiVersion,
+               Function | MediumTest | Level1)
+{
+    int value1 = GetDistributionOSApiVersion();
+    printf("DistributionOSApiVersion=%d\n", value1);
+    TEST_ASSERT_EQUAL_INT(value1, GetSdkApiVersion());
+    int value2 = GetDistributionOSApiVersion();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetPerformanceClass
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2511
+ * @tc.desc   test GetPerformanceClass in valid range, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetPerformanceClass,
+               Function | MediumTest | Level1)
+{
+    int value1 = GetPerformanceClass();
+    printf("PerformanceClass=%d\n", value1);
+    TEST_ASSERT_EQUAL_INT(PERFORMANCE_CLASS_HIGH_LEVEL, value1);
+    int value2 = GetPerformanceClass();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetProductModelAlias
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2512
+ * @tc.desc   test GetProductModelAlias, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetProductModelAlias,
+               Function | MediumTest | Level1)
+{
+    const char *value1 = GetProductModelAlias();
+    printf("ProductModelAlias=%s\n", value1);
+    TEST_ASSERT_EQUAL_STRING(value1, GetProductModel());
+    const char *value2 = GetProductModelAlias();
+    TEST_ASSERT_EQUAL_STRING(value1, value2);
+};
+
+/**
+ * @tc.name   testGetSdkMinorApiVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2513
+ * @tc.desc   test GetSdkMinorApiVersion, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetSdkMinorApiVersion,
+               Function | MediumTest | Level1)
+{
+    int value1 = GetSdkMinorApiVersion();
+    printf("SdkMinorApiVersion=%d\n", value1);
+    int value2 = GetSdkMinorApiVersion();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetSdkPatchApiVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2514
+ * @tc.desc   test GetSdkPatchApiVersion, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetSdkPatchApiVersion,
+               Function | MediumTest | Level1)
+{
+    int value1 = GetSdkPatchApiVersion();
+    printf("SdkPatchApiVersion=%d\n", value1);
+    int value2 = GetSdkPatchApiVersion();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetMajorVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2515
+ * @tc.desc   test GetMajorVersion, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetMajorVersion,
+               Function | MediumTest | Level1)
+{
+    const char *fullName = GetOSFullName();
+    TEST_ASSERT_TRUE(fullName != NULL);
+    const char *p = (fullName == NULL) ? NULL : strchr(fullName, '-');
+    int major = 0, minor = 0, patch = 0, build = 0;
+    if (p != NULL) {
+        p++;
+        major = ParseVersionNumber(&p);
+        if (*p == '.') { p++; }
+        minor = ParseVersionNumber(&p);
+        if (*p == '.') { p++; }
+        patch = ParseVersionNumber(&p);
+        if (*p == '.') { p++; }
+        build = ParseVersionNumber(&p);
+    }
+    int value1 = GetMajorVersion();
+    printf("MajorVersion=%d, fullname=%s\n", value1, fullName);
+    TEST_ASSERT_EQUAL_INT(major, value1);
+    int value2 = GetMajorVersion();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetSeniorVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2516
+ * @tc.desc   test GetSeniorVersion, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetSeniorVersion,
+               Function | MediumTest | Level1)
+{
+    const char *fullName2 = GetOSFullName();
+    TEST_ASSERT_TRUE(fullName2 != NULL);
+    const char *p2 = (fullName2 == NULL) ? NULL : strchr(fullName2, '-');
+    int senior = 0;
+    if (p2 != NULL) {
+        p2++;
+        (void)ParseVersionNumber(&p2);        if (*p2 == '.') { p2++; }
+        senior = ParseVersionNumber(&p2);
+    }
+    int value1 = GetSeniorVersion();
+    printf("SeniorVersion=%d\n", value1);
+    TEST_ASSERT_EQUAL_INT(senior, value1);
+    int value2 = GetSeniorVersion();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetFeatureVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2517
+ * @tc.desc   test GetFeatureVersion, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetFeatureVersion,
+               Function | MediumTest | Level1)
+{
+    const char *fullName3 = GetOSFullName();
+    TEST_ASSERT_TRUE(fullName3 != NULL);
+    const char *p3 = (fullName3 == NULL) ? NULL : strchr(fullName3, '-');
+    int feature = 0;
+    if (p3 != NULL) {
+        p3++;
+        (void)ParseVersionNumber(&p3);        if (*p3 == '.') { p3++; }
+        (void)ParseVersionNumber(&p3);        if (*p3 == '.') { p3++; }
+        feature = ParseVersionNumber(&p3);
+    }
+    int value1 = GetFeatureVersion();
+    printf("FeatureVersion=%d\n", value1);
+    TEST_ASSERT_EQUAL_INT(feature, value1);
+    int value2 = GetFeatureVersion();
+    TEST_ASSERT_EQUAL_INT(value1, value2);
+};
+
+/**
+ * @tc.name   testGetBuildVersion
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_2518
+ * @tc.desc   test GetBuildVersion, consistent across queries.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+LITE_TEST_CASE(DeviceInfoTestSuite,
+               testGetBuildVersion,
+               Function | MediumTest | Level1)
+{
+    const char *fullName = GetOSFullName();
+    TEST_ASSERT_TRUE(fullName != NULL);
+    const char *p = (fullName == NULL) ? NULL : strchr(fullName, '-');
+    int major = 0, minor = 0, patch = 0, build = 0;
+    if (p != NULL) {
+        p++;
+        major = ParseVersionNumber(&p);
+        if (*p == '.') { p++; }
+        minor = ParseVersionNumber(&p);
+        if (*p == '.') { p++; }
+        patch = ParseVersionNumber(&p);
+        if (*p == '.') { p++; }
+        build = ParseVersionNumber(&p);
+    }
+    int value1 = GetBuildVersion();
+    printf("BuildVersion=%d, fullname=%s\n", value1, fullName);
+    TEST_ASSERT_EQUAL_INT(build, value1);
+    int value2 = GetBuildVersion();
     TEST_ASSERT_EQUAL_INT(value1, value2);
 };
 

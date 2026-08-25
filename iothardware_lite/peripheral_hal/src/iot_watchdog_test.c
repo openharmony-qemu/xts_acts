@@ -17,6 +17,7 @@
 #include "iot_errno.h"
 #include "iot_watchdog.h"
 
+
 void (*g_watchDogfunc)(void);
 
 LITE_TEST_SUIT(wifiiot, wifiiotlite, IotWatchDogTestSuite);
