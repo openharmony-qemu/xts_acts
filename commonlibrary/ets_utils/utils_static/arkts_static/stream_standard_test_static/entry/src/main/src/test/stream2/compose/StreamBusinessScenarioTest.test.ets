@@ -59,7 +59,7 @@ class BizCollectWritable extends stream.Writable {
     super();
   }
 
-  doWrite(data: Object, encoding: String, cb: Function): void {
+  doWrite(data: string | Uint8Array, encoding: string, cb: Function): void {
     let text: string = '';
     if (typeof data === 'string') {
       text = data as string;
@@ -449,7 +449,7 @@ class BizTransportDuplex extends stream.Duplex {
   doRead(size: int): void {
   }
 
-  doWrite(data: Object, encoding: String, cb: Function): void {
+  doWrite(data: string | Uint8Array, encoding: string, cb: Function): void {
     this.push(data as string | Uint8Array);
     cb.unsafeCall();
   }
@@ -536,7 +536,7 @@ class BizCorkWritable extends stream.Writable {
     super();
   }
 
-  doWrite(data: Object, encoding: String, cb: Function): void {
+  doWrite(data: string | Uint8Array, encoding: string, cb: Function): void {
     this.writeCount++;
     cb.unsafeCall();
   }
@@ -550,7 +550,7 @@ class CrashRecoveryWritable extends stream.Writable {
     super();
   }
 
-  doWrite(data: Object, encoding: String, cb: Function): void {
+  doWrite(data: string | Uint8Array, encoding: string, cb: Function): void {
     if (this.crashOnFirst) {
       this.crashOnFirst = false;
       cb.unsafeCall(new Error('consumer crashed'));

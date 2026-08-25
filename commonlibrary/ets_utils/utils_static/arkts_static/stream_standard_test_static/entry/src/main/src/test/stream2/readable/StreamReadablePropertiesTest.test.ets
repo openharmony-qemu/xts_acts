@@ -89,7 +89,7 @@ class SimpleWritable extends stream.Writable {
     super();
   }
 
-  doWrite(data: Object, encoding: string, callback: Function): void {
+  doWrite(data: string | Uint8Array, encoding: string, callback: Function): void {
     callback.unsafeCall();
   }
 }

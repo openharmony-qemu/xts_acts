@@ -52,7 +52,7 @@ class PipeWritable extends stream.Writable {
     super();
   }
 
-  doWrite(data: Object, encoding: String, cb: Function): void {
+  doWrite(data: string | Uint8Array, encoding: string, cb: Function): void {
     cb.unsafeCall();
   }
 }

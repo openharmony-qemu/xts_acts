@@ -45,7 +45,7 @@ class DuplexTestBase extends stream.Duplex {
   doRead(size: int): void {
   }
 
-  doWrite(data: Object, encoding: String, cb: Function): void {
+  doWrite(data: string | Uint8Array, encoding: string, cb: Function): void {
     cb.unsafeCall();
   }
 }
@@ -55,7 +55,7 @@ class TransformTestBase extends stream.Transform {
     super();
   }
 
-  doTransform(data: Object, encoding: String, cb: Function): void {
+  doTransform(data: string | Uint8Array, encoding: string, cb: Function): void {
     cb.unsafeCall(undefined, data);
   }
 }
@@ -65,7 +65,7 @@ class PipeWritable extends stream.Writable {
     super();
   }
 
-  doWrite(data: Object, encoding: String, cb: Function): void {
+  doWrite(data: string | Uint8Array, encoding: string, cb: Function): void {
     cb.unsafeCall();
   }
 }
