@@ -3020,5 +3020,50 @@ export default function UDPSocketTest() {
         done();
       }
     });
+    /**
+     * @tc.name   testConnectionUDPSocketType0100
+     * @tc.number SUB_NetworkMgr_Connection_UDPSocket_Type_0100
+     * @tc.desc   test connection.UDPSocket type (type UDPSocket = socket.UDPSocket) with constructUDPSocketInstance and connection module APIs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testConnectionUDPSocketType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testConnectionUDPSocketType0100';
+      console.info(`${caseName} test start`);
+      try {
+        let udpSocket: connection.UDPSocket = socket.constructUDPSocketInstance();
+        console.info(`${caseName} UDPSocket created`);
+        expectTrue(udpSocket !== undefined);
+        expectTrue(udpSocket !== null);
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            expectTrue(false);
+            done();
+          } else {
+            console.info(`${caseName} getDefaultNet success, netId: ${data.netId}`);
+            expectTrue(data.netId > 0);
+            expectTrue(data.netId !== undefined);
+            expectTrue(data.netId !== null);
+            udpSocket.close((err: BusinessError) => {
+              if (err) {
+                console.info(`${caseName} close err: ${JSON.stringify(err)}`);
+                expectEqual(err.code, 2300999);
+              } else {
+                console.info(`${caseName} close success`);
+                expectFail();
+              }
+              console.info(`${caseName}---End`);
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
+        expectFail();
+        done();
+      }
+    });
   });
 }
