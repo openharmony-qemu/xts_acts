@@ -14,62 +14,42 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
+import Utils from './Util.test';
 
-function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0)
-    }, time)
-  })
-}
+type targetType = string | int | boolean | null | undefined;
 
-function emitEvent<T>(actualValue: T, eventId: Long): void {
-  try {
-    let backData: events_emitter.EventData = {
-      data: {
-        'ACTION': actualValue as RecordData
-      }
-    };
-    let backEvent: events_emitter.InnerEvent = {
-      eventId: eventId,
-      priority: events_emitter.EventPriority.LOW
-    };
-    events_emitter.emit(backEvent, backData);
-  } catch (err) {
-    console.info('waitForAssert emit err: ' + JSON.stringify(err));
-  }
-}
-
-export async function waitForAssert<T, U>(
+export default async function waitForAssert<T extends targetType>(
   stateGetter: () => T,
-  check: (v1: T, v2: U) => boolean,
-  expectValue: U,
-  eventId: Long,
   testsuite: string,
+  expectValue: T,
+  eventId: Long,
   interval: int = 300,
-  tryTime: int = 20): Promise<T> {
+  tryTime: int = 20
+): Promise<Awaited<T>> {
   let nums = 0;
   let isSuccess = false;
   while (nums < tryTime) {
-    const currentValue = stateGetter();
+    const tempValue = await new Promise<T>((resolve) => {
+      setTimeout(() => resolve(stateGetter()), interval);
+    })
+    let currentValue = tempValue;
     console.log(testsuite + ' waitForAssert ' + nums + ' times, currentValue:' + currentValue
       + ', expectValue:' + expectValue);
-    if (check(currentValue, expectValue)) {
-      console.log(testsuite + ' waitForAssert success ' + nums + ' times');
+    if (currentValue == expectValue) {
+      console.log(testsuite + ' waitForAssert success');
       isSuccess = true;
-      emitEvent(expectValue, eventId);
+      await Utils.emitEvent(expectValue as boolean | string | number | object, eventId);
       return currentValue;
     }
     nums++;
-    await sleep(interval);
   }
   if (!isSuccess) {
     console.log(testsuite + ' waitForAssert failed');
   }
-  const currentValue = stateGetter();
-  console.log(testsuite + ' waitForAssert final, currentValue:' + currentValue + ', expectValue:' + expectValue);
-  emitEvent(currentValue, eventId);
+  const currentValue = await new Promise<T>((result) => {
+    setTimeout(() => result(stateGetter()), interval);
+  });
+  console.log(testsuite + ' waitForAssert final, currentValue:' + currentValue);
+  await Utils.emitEvent(currentValue as boolean | string | number | object, eventId);
   return currentValue;
 }

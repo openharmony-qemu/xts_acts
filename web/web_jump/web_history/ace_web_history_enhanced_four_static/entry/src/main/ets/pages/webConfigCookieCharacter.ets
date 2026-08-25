@@ -23,7 +23,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '../../../hypium/index';
 import testsuite from '../../src/test/List.test';
 import Utils from '../../src/test/Util.test';
-import { waitForAssert } from '../../src/test/WaitTest.test';
+import waitForAssert from '../../src/test/WaitTest.test';
 import image from '@ohos.multimedia.image';
 import emitter from '@ohos.events.emitter';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -43,8 +43,6 @@ struct webConfigCookieCharacter {
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
-  private cookieCheck = (v1: string, v2: string): boolean => v1 === v2;
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
@@ -118,14 +116,13 @@ struct webConfigCookieCharacter {
             case 'emitConfigCookieCharacter003': {
               try {
                 webView.WebCookieManager.configCookie("https://www.baidu.com", 'a=b\rc')
-                  .then(async () => {
+                  .then(() => {
                     console.log('configCookie success!');
-                    await waitForAssert(
+                    waitForAssert(
                       () => webView.WebCookieManager.fetchCookieSync("https://www.baidu.com"),
-                      this.cookieCheck,
+                      this.str,
                       'a=b',
-                      133480,
-                      this.str
+                      133480
                     );
                   })
                   .catch((error) => {
@@ -145,14 +142,13 @@ struct webConfigCookieCharacter {
             case 'emitConfigCookieCharacter004': {
               try {
                 webView.WebCookieManager.configCookie("https://www.baidu.com", 'a=b\0c')
-                  .then(async () => {
+                  .then(() => {
                     console.log('configCookie success!');
-                    await waitForAssert(
+                    waitForAssert(
                       () => webView.WebCookieManager.fetchCookieSync("https://www.baidu.com"),
-                      this.cookieCheck,
+                      this.str,
                       'a=b',
-                      133490,
-                      this.str
+                      133490
                     );
                   })
                   .catch((error) => {
@@ -221,14 +217,13 @@ struct webConfigCookieCharacter {
             case 'emitConfigCookieIncludeHttpOnlyCharacter003': {
               try {
                 webView.WebCookieManager.configCookie("https://www.baidu.com", 'a=b,HttpOnly\rc', false, true)
-                  .then(async () => {
+                  .then(() => {
                     console.log('configCookie success!');
-                    await waitForAssert(
+                    waitForAssert(
                       () => webView.WebCookieManager.fetchCookieSync("https://www.baidu.com"),
-                      this.cookieCheck,
+                      this.str,
                       'a=b,HttpOnly',
-                      133520,
-                      this.str
+                      133520
                     );
                   })
                   .catch((error) => {
@@ -248,14 +243,13 @@ struct webConfigCookieCharacter {
             case 'emitConfigCookieIncludeHttpOnlyCharacter004': {
               try {
                 webView.WebCookieManager.configCookie("https://www.baidu.com", 'a=b,HttpOnly\0c', false, true)
-                  .then(async () => {
+                  .then(() => {
                     console.log('configCookie success!');
-                    await waitForAssert(
+                    waitForAssert(
                       () => webView.WebCookieManager.fetchCookieSync("https://www.baidu.com"),
-                      this.cookieCheck,
+                      this.str,
                       'a=b,HttpOnly',
-                      133530,
-                      this.str
+                      133530
                     );
                   })
                   .catch((error) => {
@@ -302,14 +296,13 @@ struct webConfigCookieCharacter {
             case 'emitConfigCookieIncognitoCharacter001': {
               try {
                 webView.WebCookieManager.configCookie("https://www.baidu.com", 'a=b\nc', true, false)
-                  .then(async () => {
+                  .then(() => {
                     console.log('configCookie success!');
-                    await waitForAssert(
+                    waitForAssert(
                       () => webView.WebCookieManager.fetchCookieSync("https://www.baidu.com", true),
-                      this.cookieCheck,
+                      this.str,
                       'a=b',
-                      133550,
-                      this.str
+                      133550
                     );
                   })
                   .catch((error) => {
@@ -329,14 +322,13 @@ struct webConfigCookieCharacter {
             case 'emitConfigCookieIncognitoIncludeHttpOnlyCharacter001': {
               try {
                 webView.WebCookieManager.configCookie("https://www.baidu.com", 'a=b,HttpOnly\nc', true, true)
-                  .then(async () => {
+                  .then(() => {
                     console.log('configCookie success!');
-                    await waitForAssert(
+                    waitForAssert(
                       () => webView.WebCookieManager.fetchCookieSync("https://www.baidu.com", true),
-                      this.cookieCheck,
+                      this.str,
                       'a=b,HttpOnly',
-                      133560,
-                      this.str
+                      133560
                     );
                   })
                   .catch((error) => {
