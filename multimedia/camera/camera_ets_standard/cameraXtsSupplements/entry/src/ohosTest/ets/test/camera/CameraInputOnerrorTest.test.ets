@@ -978,15 +978,15 @@ export default function CameraInputOnerrorTest() {
     })
 
     /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_018
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_018
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1800
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1800
      * @tc.desc   CameraInput -on_error -cameraPosition -CAMERA_POSITION_FRONT.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUM
      * @tc.level  LEVEL2
      */
-    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_018', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_018';
+    it('SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1800', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1800';
       if (isEmpty(mCameraManager)) {
         console.info(TAG, `${testName} cameraManager is null.`);
         done();
@@ -1015,15 +1015,15 @@ export default function CameraInputOnerrorTest() {
     })
 
     /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_019
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_019
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1900
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1900
      * @tc.desc   CameraInput -on_error -cameraPosition - -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUM
      * @tc.level  LEVEL2
      */
-    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_019', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_019';
+    it('SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1900', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_CAMERA_POSITION_ERROR_1900';
       if (isEmpty(mCameraManager)) {
         console.info(TAG, `${testName} cameraManager is null.`);
         done();
@@ -1052,15 +1052,15 @@ export default function CameraInputOnerrorTest() {
     })
 
     /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_ON_ERROR_020
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_ON_ERROR_020
+     * @tc.name   SUB_CAMERA_CAMERA_INPUT_CAMERA_TYPE_ON_ERROR_0100
+     * @tc.number SUB_CAMERA_CAMERA_INPUT_CAMERA_TYPE_ON_ERROR_0100
      * @tc.desc   CameraInput -on_error -cameraType -CAMERA_TYPE_WIDE_ANGLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUM
      * @tc.level  LEVEL2
      */
-    it('SUB_CAMERA_CAMERA_INPUT_ON_ERROR_020', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_ON_ERROR_020';
+    it('SUB_CAMERA_CAMERA_INPUT_CAMERA_TYPE_ON_ERROR_0100', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAMERA_INPUT_CAMERA_TYPE_ON_ERROR_0100';
       if (isEmpty(mCameraManager)) {
         console.info(TAG, `${testName} cameraManager is null.`);
         done();
