@@ -59,7 +59,8 @@ export default function PromptActionShowDialogTest() {
       let button = await driver.findComponent(ON.id('btn_dialog_buttons_empty'));
       await button.click();
       await CommonFunc.sleep(2000);
-      await button.click();
+      let TextB = await driver.findComponent(ON.id('tit'));
+      await TextB.click();
       await CommonFunc.sleep(2000);
 
       let strJson: string = getInspectorByKey('dialog_test_result');

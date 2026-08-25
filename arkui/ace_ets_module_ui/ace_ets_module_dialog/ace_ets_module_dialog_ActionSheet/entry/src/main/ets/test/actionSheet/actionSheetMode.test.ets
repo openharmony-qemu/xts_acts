@@ -66,8 +66,10 @@ export default function actionSheetMode() {
       await CommonFunc.sleep(1000);
       console.info('[actionSheetMode_0100] showSheet click');
 
-      let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
-      expect(btn2 != null).assertTrue();
+      // let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
+      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+      let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm button'));
+      
       console.info('[actionSheetMode_0100] Confirm button');
 
       await CommonFunc.sleep(1000);
@@ -109,8 +111,10 @@ export default function actionSheetMode() {
       await CommonFunc.sleep(1000);
       console.info('[actionSheetMode_0200] showSheet click');
 
-      let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
-      expect(btn2 != null).assertTrue();
+      // let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
+      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+      let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm button'));
+      
       console.info('[actionSheetMode_0200] Confirm button');
 
       await CommonFunc.sleep(1000);
@@ -152,8 +156,10 @@ export default function actionSheetMode() {
       await CommonFunc.sleep(1000);
       console.info('[actionSheetMode_0300] showSheet click');
 
-      let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
-      expect(btn2 != null).assertTrue();
+      // let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
+      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+      let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm button'));
+      
       console.info('[actionSheetMode_0300] Confirm button');
 
       await CommonFunc.sleep(1000);
@@ -195,8 +201,10 @@ export default function actionSheetMode() {
       await CommonFunc.sleep(1000);
       console.info('[actionSheetMode_0400] showSheet click');
 
-      let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
-      expect(btn2 != null).assertTrue();
+      // let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
+      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+      let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm button'));
+      
       console.info('[actionSheetMode_0400] Confirm button');
 
       await CommonFunc.sleep(1000);
@@ -244,10 +252,15 @@ export default function actionSheetMode() {
       await CommonFunc.sleep(1000);
       console.info('[actionSheetMode_0500] showSheet click');
 
-      let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
-      expect(btn2 != null).assertTrue();
+      // let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
+      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+      let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm button'));
+      let btn4: Component = await driver.findComponent(ON.text('Confirm button'));
+      expect(btn4 != null).assertTrue();
+     
       console.info('[actionSheetMode_0500] Confirm button');
-      await btn2.click();
+      await btn4.click();
+      await CommonFunc.sleep(1000);
       console.info('[actionSheetMode_0500] END');
       done();
     });
@@ -283,10 +296,14 @@ export default function actionSheetMode() {
       await CommonFunc.sleep(1000);
       console.info('[actionSheetMode_0600] showSheet click');
 
-      let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
-      expect(btn2 != null).assertTrue();
+      // let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
+      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+      let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm button'));
+      let btn4: Component = await driver.findComponent(ON.text('Confirm button'));
+      expect(btn4 != null).assertTrue();
       console.info('[actionSheetMode_0600] Confirm button');
-      await btn2.click();
+      await btn4.click();
+      await CommonFunc.sleep(1000);
       console.info('[actionSheetMode_0600] END');
       done();
     });
@@ -316,8 +333,9 @@ export default function actionSheetMode() {
       await CommonFunc.sleep(1000);
       console.info('[actionSheetMode_0700] showSheet click');
 
-      let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
-      expect(btn2 != null).assertTrue();
+      // let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
+      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+      let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm button'));
       console.info('[actionSheetMode_0700] Confirm button');
 
       await CommonFunc.sleep(1000);
@@ -357,8 +375,10 @@ export default function actionSheetMode() {
       await CommonFunc.sleep(1000);
       console.info('[actionSheetMode_0800] showSheet click');
 
-      let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
-      expect(btn2 != null).assertTrue();
+      // let btn2: Component = await driver.findComponent(ON.text('Confirm button'));
+      let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
+      let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm button'));
+     
       console.info('[actionSheetMode_0800] Confirm button');
 
       await CommonFunc.sleep(1000);
